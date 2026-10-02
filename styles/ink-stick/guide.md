@@ -1,6 +1,7 @@
 ## Part 3. The Ink Stick art style
 
 **Style id:** `ink-stick`
+**Guide version:** 2 (2026-10-02). See the version history at the end.
 **Built from:** two reference images supplied by Biku
 - **Reference A:** a stern king in a crown, red cape and armor, under a stormy night sky with light rays
 - **Reference B:** two stick figures in a night scene under a crescent moon, one threatening and one frightened
@@ -35,7 +36,7 @@ Bold, black-outlined cartoon stick figures with big round heads and very express
 | **Torso** | One thick straight line, about 1.1 head diameters long, or a clothing shape built around that line. |
 | **Arms** | Thick lines, upper and lower arm each about 0.6 head diameter, bending at the elbow. Smooth gentle curves allowed, never wobbly. |
 | **Legs** | Thick lines, about 1.4 head diameters in total, bending at the knee. |
-| **Hands** | Rounded mitten shapes with a small thumb bump, about 0.3 head diameter, filled black. On costumed characters with sleeves, hands become white glove shapes with outlined fingers. |
+| **Hands** | About 0.3 head diameter. **Resting hands** (hanging, on hips, waving) are rounded mitten shapes with a small thumb bump, filled black. **Hands that hold or point** show fingers, like the king's glove around the handle in Reference A: four fingers wrapped around the object and a thumb on the near side, or one extended finger when pointing. On costumed characters with sleeves, hands are white gloves with black outlined fingers. On pure stick and partial characters, gripping hands stay filled black, with the fingers separated by thin white detail lines. |
 | **Feet** | Pure stick legs end in rounded line caps. With shoes: chunky outlined sneakers or boots. |
 
 #### Style 3.2 Line work
@@ -65,7 +66,7 @@ Bold, black-outlined cartoon stick figures with big round heads and very express
 
 Both references use white heads, which reads as "anyone". Many stories need the audience to see who a person is, so the style has an identity mode.
 
-- **Default mode:** white heads, black limbs and black mitten hands.
+- **Default mode:** white heads, black limbs and black hands (mittens when resting, fingers when holding or pointing).
 - **Identity mode:** switched on automatically when who a person is matters to the story (history, biography, real communities), and always on for brands that set it in their brand file.
   - Head and hands are filled with a skin tone. Limbs stay black lines.
   - The shadow tone is 15% darker than the skin tone.
@@ -236,7 +237,7 @@ Use the **lowest tier** that makes the character instantly recognizable.
 - Outlines on backgrounds
 - Gradients, textures or soft shading on characters
 - More than one shadow tone per color
-- Noses, ears, fingers on mitten hands or realistic anatomy
+- Noses, ears, fingers on resting hands, or realistic anatomy
 - Muddy, low-contrast character colors
 - Blood, wounds or gore
 - Copying any existing channel's characters, mascots, logos or branding
@@ -256,6 +257,7 @@ Any "no" is fixed before rendering.
 8. Is the clothing tier the lowest one that still makes the character recognizable?
 9. Is the caption area clear?
 10. Is there no blood, wound or gore?
+11. Does every hand that holds or points show fingers, while resting hands stay mittens?
 
 ### Style 12. Machine-readable tokens
 
@@ -264,7 +266,7 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
 ```json
 {
   "id": "ink-stick",
-  "version": 1,
+  "version": 2,
   "line": {
     "color": "#16161A",
     "outlinePctOfHead": [0.04, 0.05],
@@ -343,8 +345,20 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
     "emphasis": "#E9C23B",
     "safeBottomPct916": 0.25
   },
+  "hands": {
+    "resting": "mitten",
+    "holding": "fingers",
+    "pointing": "one-finger",
+    "gripFingers": 4
+  },
   "clothingTiers": ["pure-stick", "partial", "full-costume"],
   "violence": "implied-only"
 }
 ```
 
+### Version history
+
+| Version | Date | Change | Asked by |
+| --- | --- | --- | --- |
+| 1 | 2026-10-02 | First version, Part 3 of Build Plan v5 | Biku |
+| 2 | 2026-10-02 | Hands that hold or point show fingers, like the king's glove on the sword in Reference A. Resting hands stay mittens. Style Check question 11 added. | Biku |

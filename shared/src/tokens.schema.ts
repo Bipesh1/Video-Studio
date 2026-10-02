@@ -79,6 +79,13 @@ export const styleTokensSchema = z
       emphasis: hexColor,
       safeBottomPct916: unit,
     }),
+    // Guide v2: resting hands are mittens; hands that hold or point show fingers.
+    hands: z.object({
+      resting: z.enum(['mitten']),
+      holding: z.enum(['fingers']),
+      pointing: z.enum(['one-finger']),
+      gripFingers: z.number().int().min(3).max(4),
+    }),
     clothingTiers: z.array(z.string()).length(3),
     violence: z.enum(['implied-only']),
   })

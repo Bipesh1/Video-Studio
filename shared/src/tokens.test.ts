@@ -35,6 +35,16 @@ describe('styles/ink-stick/tokens.json', () => {
     expect(styleTokensSchema.safeParse(bad).success).toBe(false);
   });
 
+  it('requires fingers on holding hands (guide v2)', () => {
+    const parsed = parseStyleTokens(tokens);
+    expect(parsed.version).toBeGreaterThanOrEqual(2);
+    expect(parsed.hands.holding).toBe('fingers');
+    expect(parsed.hands.resting).toBe('mitten');
+    const bad = structuredClone(tokens) as { hands: { holding: string } };
+    bad.hands.holding = 'mitten';
+    expect(styleTokensSchema.safeParse(bad).success).toBe(false);
+  });
+
   it('rejects unknown top-level keys', () => {
     const bad = { ...(tokens as object), extra: 1 };
     expect(styleTokensSchema.safeParse(bad).success).toBe(false);
