@@ -41,6 +41,19 @@ New assets: search library/index.json first, then draw, look, fix, save.
 - styles/ink-stick/tokens.json
 - brands/<brand>.json
 
+## Art style rules: when to read them
+
+| File                                      | Holds                                                                     | Read it                                                                                   |
+| ----------------------------------------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `styles/ink-stick/guide.md`               | The full written style: proportions, faces, costumes, backgrounds, colors | All of it before drawing anything new                                                     |
+| `styles/ink-stick/guide.md`, Style 11     | The 10-question Style Check                                               | At every style check, for every still                                                     |
+| `styles/ink-stick/reference/`             | Biku's two reference pictures                                             | Look at both before drawing anything new, and compare the new stills against them         |
+| `styles/ink-stick/tokens.json`            | Every color, line weight and proportion                                   | Every video. Components read it automatically; never type these values by hand            |
+| `knowledge/playbooks/styles/ink-stick.md` | Lessons about the look from Biku's feedback                               | Every video. Where it and the guide disagree, the guide wins until Biku updates the guide |
+| `library/index.json` and `characters/`    | Everything already drawn                                                  | Every video, before drawing, so existing assets are reused                                |
+
+Reusing a library asset in a new pose or expression needs no full guide read, but its stills still go through the Style Check.
+
 ## Repository layout and commands
 
 - `shared/` Zod schemas shared by every part. `engine/` Remotion (React, TypeScript). `cli/` orchestrator. `audio/` Python workers managed by uv.
