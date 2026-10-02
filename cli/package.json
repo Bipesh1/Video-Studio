@@ -1,0 +1,9 @@
+{
+  "name": "@studio/cli",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@studio/shared": "0.1.0"
+  }
+}

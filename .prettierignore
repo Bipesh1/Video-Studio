@@ -1,0 +1,9 @@
+node_modules
+engine/out
+runs
+audio
+Video-Studio-Build-Plan-v5.md
+styles/ink-stick/guide.md
+package-lock.json
+.claude
+styles/ink-stick/tokens.json

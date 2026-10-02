@@ -1,0 +1,32 @@
+# dependencies and environments
+node_modules/
+engine/node_modules/
+cli/node_modules/
+audio/.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# build output
+dist/
+engine/out/
+*.tsbuildinfo
+
+# video runs: keep the data files, not the heavy media
+runs/**/audio/
+runs/**/stills/
+runs/**/preview/
+runs/**/out/
+runs/**/*.mp4
+runs/**/*.wav
+
+# large model files and caches
+audio/models/
+.cache/
+*.sf2
+
+# OS and editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/settings.json

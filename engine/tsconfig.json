@@ -1,0 +1,9 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "lib": ["DOM", "ES2022"],
+    "types": ["node"]
+  },
+  "include": ["src", "remotion.config.ts", "../styles/ink-stick/tokens.json"]
+}
