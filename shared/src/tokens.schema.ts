@@ -44,6 +44,8 @@ export const styleTokensSchema = z
     }),
     skinTones: z.array(hexColor).length(8),
     darkSkinRimFromIndex: z.number().int().min(0).max(7),
+    // Guide v3: hair fills named in Style 3.4, each [fill, shadow].
+    hair: z.record(z.string(), z.tuple([hexColor, hexColor])),
     face: z.object({
       eyeWidthPctOfHead: unit,
       pupilPctOfEye: unit,

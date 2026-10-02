@@ -1,7 +1,7 @@
 ## Part 3. The Ink Stick art style
 
 **Style id:** `ink-stick`
-**Guide version:** 2 (2026-10-02). See the version history at the end.
+**Guide version:** 3 (2026-10-03). See the version history at the end.
 **Built from:** two reference images supplied by Biku
 - **Reference A:** a stern king in a crown, red cape and armor, under a stormy night sky with light rays
 - **Reference B:** two stick figures in a night scene under a crescent moon, one threatening and one frightened
@@ -266,7 +266,7 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
 ```json
 {
   "id": "ink-stick",
-  "version": 2,
+  "version": 3,
   "line": {
     "color": "#16161A",
     "outlinePctOfHead": [0.04, 0.05],
@@ -295,6 +295,15 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
   },
   "skinTones": ["#F6E1CF", "#EBC6A6", "#D9A47E", "#C08258", "#9C6440", "#7A4A2E", "#5C3620", "#3F2416"],
   "darkSkinRimFromIndex": 5,
+  "hair": {
+    "black": ["#2B2729", "#1D1A1C"],
+    "dark-brown": ["#4A3226", "#36241B"],
+    "brown": ["#7A5234", "#5E3E27"],
+    "auburn": ["#9A4A2A", "#773820"],
+    "blond": ["#E2C26A", "#BC9E4E"],
+    "gray": ["#9DA0A6", "#7E8187"],
+    "white": ["#EDEDEA", "#C9CBCF"]
+  },
   "face": {
     "eyeWidthPctOfHead": 0.22,
     "pupilPctOfEye": 0.4,
@@ -362,3 +371,4 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
 | --- | --- | --- | --- |
 | 1 | 2026-10-02 | First version, Part 3 of Build Plan v5 | Biku |
 | 2 | 2026-10-02 | Hands that hold or point show fingers, like the king's glove on the sword in Reference A. Resting hands stay mittens. Style Check question 11 added. | Biku |
+| 3 | 2026-10-03 | Added color values for the hair colors Style 3.4 already names (black, dark brown, brown, auburn, blond, gray, white), each with one shadow tone 15 to 25% darker. No existing rule changed. Biku to confirm. | Claude, for identity mode |

@@ -4,24 +4,51 @@ import type { Vec2 } from './math';
 import type { HandPose, HandShape } from './types';
 import { ink, lineWeights, tokens, white } from '../tokens';
 
-/** Bare hands are filled black; gloves are white with black outlines (Style 3.1). */
-export type HandStyle = 'bare' | 'glove';
+/**
+ * bare: filled black, the default stick hand. glove: white with black outlines, for costumes
+ * with sleeves. skin: identity mode, filled with the skin tone and outlined (Style 3.4).
+ */
+export type HandStyle = 'bare' | 'glove' | 'skin';
 
 /** The shapes below are drawn for a 0.3 head-unit hand; this keeps them on the token size. */
 const S = body.hand / 0.3;
 
-type Paint = { fill: string; stroke: string; strokeWidth: number; detail: string };
+type Paint = {
+  fill: string;
+  stroke: string;
+  strokeWidth: number;
+  detail: string;
+  /** Parts drawn as separate outlined shapes (gloves and skin), not one black silhouette. */
+  outlined: boolean;
+  /** Glove cuff and stitched finger lines. */
+  cuff: boolean;
+};
 
-const paintFor = (style: HandStyle): Paint =>
-  style === 'glove'
-    ? { fill: white, stroke: ink, strokeWidth: lineWeights.outline * 0.85, detail: ink }
-    : // A bare hand is one black silhouette; a hairline of the same black merges the parts.
-      { fill: ink, stroke: ink, strokeWidth: 0.012, detail: white };
+const paintFor = (style: HandStyle, skin: string): Paint => {
+  const outlined = {
+    stroke: ink,
+    strokeWidth: lineWeights.outline * 0.85,
+    detail: ink,
+    outlined: true,
+  };
+  if (style === 'glove') return { ...outlined, fill: white, cuff: true };
+  if (style === 'skin') return { ...outlined, fill: skin, cuff: false };
+  // A bare hand is one black silhouette; a hairline of the same black merges the parts.
+  return {
+    fill: ink,
+    stroke: ink,
+    strokeWidth: 0.012,
+    detail: white,
+    outlined: false,
+    cuff: false,
+  };
+};
 
 const round = { strokeLinejoin: tokens.line.join, strokeLinecap: tokens.line.cap } as const;
 
 /** Resting hand: a rounded mitten with a small thumb bump. +y points to the fingertips. */
-function Mitten({ p, thumb, glove }: { p: Paint; thumb: 1 | -1; glove: boolean }) {
+function Mitten({ p, thumb }: { p: Paint; thumb: 1 | -1 }) {
+  const glove = p.cuff;
   const tx = thumb * 0.11;
   return (
     <g {...round}>
@@ -84,22 +111,24 @@ const fine = tokens.line.detailPctOfHead[0];
  * from the wrist. Four fingers wrap over the handle as stacked bands, with the thumb across
  * their wrist-side ends, like the king's glove in Reference A.
  */
-function Grip({ p, thumb, glove }: { p: Paint; thumb: 1 | -1; glove: boolean }) {
+function Grip({ p, thumb }: { p: Paint; thumb: 1 | -1 }) {
   const fingers = [-0.09, -0.03, 0.03, 0.09];
   const thumbPath = `M ${-thumb * 0.13} -0.02 Q ${-thumb * 0.03} -0.075 ${thumb * 0.1} -0.06`;
-  if (glove) {
+  if (p.outlined) {
     return (
       <g {...round}>
-        <rect
-          x={-0.1}
-          y={-0.22}
-          width={0.2}
-          height={0.08}
-          rx={0.025}
-          fill={p.fill}
-          stroke={p.stroke}
-          strokeWidth={p.strokeWidth}
-        />
+        {p.cuff && (
+          <rect
+            x={-0.1}
+            y={-0.22}
+            width={0.2}
+            height={0.08}
+            rx={0.025}
+            fill={p.fill}
+            stroke={p.stroke}
+            strokeWidth={p.strokeWidth}
+          />
+        )}
         <rect
           x={-0.12}
           y={-0.15}
@@ -162,13 +191,14 @@ function Grip({ p, thumb, glove }: { p: Paint; thumb: 1 | -1; glove: boolean }) 
  * Pointing hand: a fist with the index finger extended along +y (away from the wrist),
  * on the thumb side, and the curled fingers marked across the knuckles.
  */
-function Point({ p, thumb, glove }: { p: Paint; thumb: 1 | -1; glove: boolean }) {
+function Point({ p, thumb }: { p: Paint; thumb: 1 | -1 }) {
+  const glove = p.outlined;
   const fx = thumb * 0.05;
   const fw = 0.085;
   const inner = fx - thumb * (fw / 2);
   return (
     <g {...round}>
-      {glove && (
+      {p.cuff && (
         <rect
           x={-0.095}
           y={-0.22}
@@ -224,22 +254,23 @@ export const Hand = ({
   style,
   thumb,
   transform,
+  skin = tokens.fill.head,
 }: {
   shape: HandShape;
   style: HandStyle;
   thumb: 1 | -1;
   transform: string;
+  skin?: string;
 }) => {
-  const p = paintFor(style);
-  const glove = style === 'glove';
+  const p = paintFor(style, skin);
   return (
     <g transform={`${transform} scale(${S})`}>
       {shape === 'grip' ? (
-        <Grip p={p} thumb={thumb} glove={glove} />
+        <Grip p={p} thumb={thumb} />
       ) : shape === 'point' ? (
-        <Point p={p} thumb={thumb} glove={glove} />
+        <Point p={p} thumb={thumb} />
       ) : (
-        <Mitten p={p} thumb={thumb} glove={glove} />
+        <Mitten p={p} thumb={thumb} />
       )}
     </g>
   );

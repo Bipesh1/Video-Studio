@@ -24,7 +24,7 @@ const COLOR_PATTERNS = [
   /\b(?:rgba?|hsla?)\s*\(/,
   // Named colors only where a color is being set, so token lookups like accent('orange') pass.
   new RegExp(
-    String.raw`(?:fill|stroke|color|stopColor|floodColor|backgroundColor)\s*[=:]\s*\{?\s*['"` +
+    String.raw`\b(?:fill|stroke|color|stopColor|floodColor|backgroundColor)\s*[=:]\s*\{?\s*['"` +
       '`' +
       String.raw`](?:${NAMED})['"` +
       '`]',
@@ -49,6 +49,7 @@ describe('style tokens are the only source of color (ground rule 5)', () => {
     expect(findColorLiterals('fill={ink} clipPath="url(#faceClip)"')).toHaveLength(0);
     expect(findColorLiterals('fill="none"')).toHaveLength(0);
     expect(findColorLiterals("accent('orange')")).toHaveLength(0);
+    expect(findColorLiterals("hairColor: 'black'")).toHaveLength(0);
     expect(findColorLiterals('fill={"white"}')).toHaveLength(1);
   });
 

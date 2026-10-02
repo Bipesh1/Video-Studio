@@ -21,11 +21,12 @@ import type { Facing, HandShape } from '../rig/types';
 import { walkAt } from '../rig/walk';
 import { ink, lineWeights, palette, pick, tokens, white } from '../tokens';
 import { Rod } from './Rod';
+import { BG_SHEETS, CostumeSheet, AtmosVideo, HairTurnsSheet, IdentitySheet } from './part-b';
 import type { SandboxBg, SheetName } from './sheets';
 
 export type SandboxProps = { sheet: SheetName; bg: SandboxBg };
 
-type Colors = { base: string; ground: string; label: string };
+export type Colors = { base: string; ground: string; label: string };
 
 /** Sandbox backgrounds are flat palette fields with no outlines (Style 5.1). */
 const colorsFor = (bg: SandboxBg): Colors =>
@@ -41,7 +42,17 @@ const W = 1080;
 const H = 1920;
 const SEED = 4182;
 
-const Label = ({ x, y, c, children }: { x: number; y: number; c: Colors; children: ReactNode }) => (
+export const Label = ({
+  x,
+  y,
+  c,
+  children,
+}: {
+  x: number;
+  y: number;
+  c: Colors;
+  children: ReactNode;
+}) => (
   <text
     x={x}
     y={y}
@@ -58,7 +69,7 @@ const Label = ({ x, y, c, children }: { x: number; y: number; c: Colors; childre
 const standHead = computeSkeleton(resolvePose(stand)).head;
 
 /** A head-and-shoulders crop of a standing character, centered in a cell. */
-function Bust({
+export function Bust({
   id,
   cx,
   cy,
@@ -70,7 +81,9 @@ function Bust({
   facing = 'right',
   eyeStyle = 'round',
   lookAt,
+  extra: more = {},
 }: {
+  extra?: Partial<CharacterProps>;
   id: string;
   cx: number;
   cy: number;
@@ -103,6 +116,7 @@ function Bust({
           turn={turn}
           eyeStyle={eyeStyle}
           {...extra}
+          {...more}
         />
       </g>
     </g>
@@ -404,6 +418,13 @@ export const Sandbox = ({ sheet, bg }: SandboxProps) => {
     poses: <PosesSheet c={c} />,
     hands: <HandsSheet c={c} />,
     'walk-strip': <WalkStripSheet c={c} />,
+    'bg-simple': <BG_SHEETS.Simple />,
+    'bg-atmospheric': <BG_SHEETS.Atmospheric />,
+    'bg-palettes': <BG_SHEETS.Palettes c={c} />,
+    costume: <CostumeSheet c={c} />,
+    identity: <IdentitySheet c={c} />,
+    'hair-turns': <HairTurnsSheet c={c} />,
+    atmos: <AtmosVideo />,
     walk: <WalkVideo c={c} />,
     motion: <MotionVideo c={c} />,
   };

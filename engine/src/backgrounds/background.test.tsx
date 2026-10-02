@@ -1,0 +1,109 @@
+import { renderToStaticMarkup } from 'react-dom/server';
+import { describe, expect, it } from 'vitest';
+import { lineWeights, palette, tokens, white } from '../tokens';
+import { Background, NIGHT_PALETTES, backgroundSpec } from './Background';
+import type { Treatment } from './Background';
+import { bgRoles } from './roles';
+import { luminance } from '../tokens';
+
+const PALETTES = Object.keys(tokens.palettes);
+const TREATMENTS: Treatment[] = ['simple', 'atmospheric'];
+
+const render = (treatment: Treatment, name: string, frame = 0, cameraX = 0) =>
+  renderToStaticMarkup(
+    <svg>
+      <Background
+        spec={backgroundSpec(treatment, name, 7)}
+        width={1080}
+        height={1920}
+        frame={frame}
+        fps={30}
+        cameraX={cameraX}
+      />
+    </svg>,
+  );
+
+describe('backgrounds (Style 5)', () => {
+  it('have no outlines: the only strokes are white detail curls on silhouettes', () => {
+    for (const name of PALETTES) {
+      for (const tr of TREATMENTS) {
+        const strokes = [...render(tr, name).matchAll(/stroke="([^"]+)"/g)].map((m) => m[1]);
+        for (const s of strokes) expect([white, 'none']).toContain(s);
+      }
+    }
+  });
+
+  it('use blur and gradients only in the atmospheric treatment', () => {
+    const simple = render('simple', 'dusk-violet');
+    const atmo = render('atmospheric', 'storm-slate');
+    expect(simple).not.toContain('feGaussianBlur');
+    expect(atmo).toContain('feGaussianBlur');
+    expect(atmo).toContain('linearGradient');
+  });
+
+  it('keep light rays inside the token opacity range at every frame', () => {
+    const [lo, hi] = tokens.background.lightRayOpacity;
+    for (const frame of [0, 17, 45, 90, 133]) {
+      const svg = render('atmospheric', 'storm-slate', frame);
+      const ray = bgRoles('storm-slate').ray;
+      const opacities = [...svg.matchAll(new RegExp(`fill="${ray}" opacity="([0-9.]+)"`, 'g'))].map(
+        (m) => Number(m[1]),
+      );
+      expect(opacities.length).toBeGreaterThanOrEqual(2);
+      for (const o of opacities) {
+        expect(o).toBeGreaterThanOrEqual(lo - 1e-9);
+        expect(o).toBeLessThanOrEqual(hi + 1e-9);
+      }
+    }
+  });
+
+  it('are quieter than characters: every sky and ground is darker than a white head, except day skies', () => {
+    for (const name of NIGHT_PALETTES) {
+      const r = bgRoles(name);
+      for (const c of [r.skyTop, r.skyBottom, r.ground, r.far, r.mid]) {
+        expect(luminance(c)).toBeLessThan(luminance(tokens.fill.head) * 0.5);
+      }
+    }
+  });
+
+  it('get depth by value: far is lighter than mid, mid lighter than the ground on night palettes', () => {
+    for (const name of NIGHT_PALETTES) {
+      const r = bgRoles(name);
+      expect(luminance(r.far)).toBeGreaterThan(luminance(r.mid));
+      expect(luminance(r.mid)).toBeGreaterThan(luminance(r.ground));
+    }
+  });
+
+  it('take their colors from the token palette of the shot', () => {
+    for (const name of PALETTES) {
+      const r = bgRoles(name);
+      const p = palette(name);
+      expect(p).toContain(r.skyTop);
+    }
+  });
+
+  it('move layers by depth when the camera pans (parallax)', () => {
+    const shifts = [
+      ...render('atmospheric', 'storm-slate', 0, 100).matchAll(/translate\((-?[0-9.]+) 0\)/g),
+    ].map((m) => Number(m[1]));
+    expect(shifts).toContain(-0);
+    expect(new Set(shifts).size).toBeGreaterThanOrEqual(5);
+    expect(Math.min(...shifts)).toBeLessThan(-100);
+  });
+
+  it('are deterministic for the same seed and frame', () => {
+    expect(render('atmospheric', 'storm-slate', 12)).toBe(render('atmospheric', 'storm-slate', 12));
+  });
+
+  it('put moon and stars only in night palettes by default', () => {
+    expect(backgroundSpec('simple', 'clear-day', 1).moon).toBeNull();
+    expect(backgroundSpec('simple', 'clear-day', 1).stars).toBe(0);
+    expect(backgroundSpec('simple', 'dusk-violet', 1).moon).not.toBeNull();
+  });
+
+  it('draw silhouette detail lines thinner than character outlines', () => {
+    const svg = render('simple', 'dusk-violet');
+    const widths = [...svg.matchAll(/stroke-width="([0-9.]+)"/g)].map((m) => Number(m[1]));
+    for (const w of widths) expect(w / 1920).toBeLessThan(lineWeights.outline);
+  });
+});

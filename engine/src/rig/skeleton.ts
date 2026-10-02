@@ -1,5 +1,5 @@
 import { body } from './body';
-import { add, fromDown, mul, vec } from './math';
+import { DEG, add, clamp, fromDown, mul, vec } from './math';
 import type { Vec2 } from './math';
 import type { ArmJoints, Joints, LegJoints, LimbAngles, ResolvedPose } from './types';
 
@@ -26,11 +26,20 @@ function leg(hip: Vec2, a: LimbAngles): LegJoints {
   return { hip, knee, foot };
 }
 
+/**
+ * Body build options. shoulderSpread moves the two arm roots apart across the torso, for
+ * costumes with broad shoulders; it narrows as the body turns toward profile.
+ * Arm angles do not depend on the arm root, so IK reaches stay relative to each arm's shoulder.
+ */
+export type Build = { shoulderSpread?: number; turn?: number };
+
 /** Forward kinematics: every joint position from a resolved pose. */
-export function computeSkeleton(p: ResolvedPose): Joints {
+export function computeSkeleton(p: ResolvedPose, build: Build = {}): Joints {
   const hip = vec(p.rootX, p.hipY);
   const neck = neckOf(hip, p.torsoLean);
   const shoulder = shoulderOf(hip, p.torsoLean);
+  const across = vec(Math.cos(p.torsoLean * DEG), Math.sin(p.torsoLean * DEG));
+  const spread = (build.shoulderSpread ?? 0) * (1 - 0.8 * clamp(build.turn ?? 0, 0, 1));
   const headAngle = p.torsoLean + p.headTilt;
   const head = add(
     add(neck, mul(fromDown(180 - headAngle), body.headRadiusY - body.headSink)),
@@ -42,7 +51,10 @@ export function computeSkeleton(p: ResolvedPose): Joints {
     shoulder,
     head,
     headAngle,
-    arms: { front: arm(shoulder, p.arms.front), back: arm(shoulder, p.arms.back) },
+    arms: {
+      front: arm(add(shoulder, mul(across, spread)), p.arms.front),
+      back: arm(add(shoulder, mul(across, -spread)), p.arms.back),
+    },
     legs: { front: leg(hip, p.legs.front), back: leg(hip, p.legs.back) },
   };
 }

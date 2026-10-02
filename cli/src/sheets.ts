@@ -65,6 +65,7 @@ if (withVideo) {
     const id = videoId(sheet);
     const composition = await selectComposition({ serveUrl, id, inputProps: {} });
     const outputLocation = path.join(outDir, `${sheet}.mp4`);
+    const t0 = Date.now();
     await renderMedia({
       composition,
       serveUrl,
@@ -73,7 +74,11 @@ if (withVideo) {
       inputProps: {},
       concurrency,
     });
-    console.log(`  ${path.relative(projectRoot, outputLocation)}`);
+    const secs = (Date.now() - t0) / 1000;
+    const perSecond = secs / VIDEO_SHEETS[sheet];
+    console.log(
+      `  ${path.relative(projectRoot, outputLocation)} (${secs.toFixed(1)} s, ${perSecond.toFixed(2)} s per video second)`,
+    );
   }
 }
 

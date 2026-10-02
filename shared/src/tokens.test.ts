@@ -45,6 +45,13 @@ describe('styles/ink-stick/tokens.json', () => {
     expect(styleTokensSchema.safeParse(bad).success).toBe(false);
   });
 
+  it('has a fill and shadow for every hair color Style 3.4 names (guide v3)', () => {
+    const parsed = parseStyleTokens(tokens);
+    for (const name of ['black', 'dark-brown', 'brown', 'auburn', 'blond', 'gray', 'white']) {
+      expect(parsed.hair[name]).toHaveLength(2);
+    }
+  });
+
   it('rejects unknown top-level keys', () => {
     const bad = { ...(tokens as object), extra: 1 };
     expect(styleTokensSchema.safeParse(bad).success).toBe(false);

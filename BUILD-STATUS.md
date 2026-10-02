@@ -1,8 +1,66 @@
 # Build Status
 
-**Current phase:** Phase 1 part A complete (rig, IK, faces, expressions, 6 poses, walk cycle). Stopped at Biku's request.
-**Next:** Phase 1 part B: one costumed character, identity mode, both background treatments, captions, Kokoro voice with word timings, mouth movement synced to the voice, the 15-second 4-shot test, the style match sheet and the voice audition. Then Checkpoint 1.
-**Last updated:** 2026-10-02
+**Current phase:** Phase 1 part B complete (both background treatments, the costumed ruler, identity mode with skin tones and hair). Stopped at Biku's request.
+**Next:** Phase 1 part C: captions, Kokoro voice with word timings, mouth movement synced to the voice, the effects the test needs (sweat drops and similar), the 15-second 4-shot test, the style match sheet and the voice audition. Then Checkpoint 1.
+**Last updated:** 2026-10-03
+
+## Phase 1 part B. Backgrounds, costume, identity: done
+
+### Made
+
+| Area              | Where                          | What it does                                                                                                                                                                                                                                                                                                                        |
+| ----------------- | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Backgrounds       | `engine/src/backgrounds/`      | Simple (Reference B: flat sky, crescent moon, stars, flat ground, black bush with white curls, grass tufts) and atmospheric (Reference A: sky gradient, soft layered clouds with a lit edge, pulsing light rays, faint stars, far and mid hills, horizon haze, ground gradient, black foreground rock). No outlines. Blur only here |
+| Layers and motion | `Background.tsx`               | Sky, stars and moon, rays, clouds, far hills, mid hills, haze, ground and tufts, near silhouettes, each shifting at its own depth when the camera pans. Clouds drift, stars twinkle, rays pulse within the token opacity range, grass sways. Deterministic from a seed                                                              |
+| Palette roles     | `backgrounds/roles.ts`         | Maps each of the six token palettes to sky, ground, cloud, ray and depth colors. Far is lighter than mid, mid lighter than the ground. Moon and stars only on night palettes                                                                                                                                                        |
+| Costumed ruler    | `wardrobe/costumes/ruler.tsx`  | Tier 2, original design: three-point crown with ball tips and a crimson gem, crimson cape with darker lining and a high flared collar, steel breastplate with gold buttons and belt, armor skirt, pauldrons, steel sleeves and boots with gold trim, white gloves. Four colors                                                      |
+| Wardrobe system   | `engine/src/wardrobe/`         | Costume pieces attached to bones and drawn in the plan's order. Sleeves and trousers become outlined tubes. Every shape gets one hard shadow tone on the side away from the light                                                                                                                                                   |
+| Scepter           | `engine/src/props/Scepter.tsx` | First real prop: gold shaft, crimson orb, one glint. The gripping glove wraps over it                                                                                                                                                                                                                                               |
+| Identity mode     | `wardrobe/identity.ts`         | Eight token skin tones on head and hands; shadow 15% darker; a lighter rim on the lit side for tones 6 to 8. Hands become skin-filled and outlined                                                                                                                                                                                  |
+| Hair              | `wardrobe/hair.tsx`            | Starter set of 10 styles: bald, short crop, fade, afro, locs, braids, straight bob, bun, ponytail, head wrap. Plus beard and moustache. Hair stays out of the face, and swings to the back of the head in three-quarter and profile views                                                                                           |
+| Sandbox           | `npm run sheets`               | New sheets: simple scene, atmospheric scene, all palettes in both treatments, ruler in six poses, 12 identity portraits, hair at three turns. New video: atmospheric scene with a camera pan                                                                                                                                        |
+
+### Draw, look and fix loop
+
+Three rounds. Fixes made from looking at the stills:
+
+1. Trouser tubes poked out under the boots as round knobs: the legs now end at the ankle inside the boot.
+2. The ruler's collar hid behind the head: widened so it flares beside the jaw, like Reference A.
+3. Clouds looked flat: taller blobs and a bumpier top.
+4. The bush in the simple scene was too big and covered the character: smaller and cropped by the frame edge.
+5. Beards covered the face up to the eyes: redrawn as jaw beards below the mouth.
+6. In profile, short hair stopped at a level line and the hairline stroke crossed bare skin: hair now swings down at the back as the head turns, and the hairline is drawn only where there is hair, one outline wide.
+7. The fade's sides read as a helmet: faded sides lightened toward the skin.
+8. Day and interior palettes showed a moon and stars: those now appear only on night palettes.
+9. The foreground rock had a flat bottom and a straight cut side during the pan: now a sloped mound running off the frame.
+
+### Acceptance (part B)
+
+| Check                                                                      | Result                                                                                               |
+| -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Backgrounds have no outlines (only white detail curls on silhouettes)      | Pass, all 6 palettes in both treatments                                                              |
+| Light rays stay within the token opacity range                             | Pass                                                                                                 |
+| Depth by value, quieter than characters on night palettes                  | Pass                                                                                                 |
+| Parallax: layers shift by depth on a camera pan                            | Pass                                                                                                 |
+| Eight skin tones, 15% shadows, rim only on the darkest three               | Pass                                                                                                 |
+| Every hair style, with and without facial hair, at every head turn         | Pass (renders without errors)                                                                        |
+| Ruler: tier 2, at most four colors, gloves, cape behind and crown in front | Pass                                                                                                 |
+| No component uses a color outside `tokens.json`                            | Pass                                                                                                 |
+| Typecheck, lint, format                                                    | Pass. 61 tests in total                                                                              |
+| Style Check on every new still                                             | Pass, except question 5 (head size, open problem 1). Question 9 (caption area) passes on both scenes |
+
+Golden stills added: `knowledge/golden/rig-bg-simple.png`, `rig-bg-atmospheric.png`, `rig-bg-palettes.png`, `rig-costume.png`, `rig-identity.png`, `rig-hair-turns.png`.
+Files to watch: `engine/out/sandbox/atmos.mp4` (not in git; rebuild with `npm run sheets -- --video`).
+
+### Render speed with real scenes
+
+| Scene                                             | Seconds of render per second of video (1080x1920) |
+| ------------------------------------------------- | ------------------------------------------------- |
+| Phase 0 test scene                                | 1.5                                               |
+| Motion sheet (one stick character)                | 1.7                                               |
+| Atmospheric scene with the ruler and a camera pan | 4.9 to 5.3                                        |
+
+A 2:30 atmospheric video would take about 13 minutes per size, so about 40 minutes for all three sizes. That is over the 30-minute run budget. The cost is mostly the cloud and ray blur. Plan for Phase 4: render blurred background layers once per shot as images and reuse them, and render the 9:16 size by default.
 
 ## Phase 1 part A. Rig and faces: done
 
@@ -112,14 +170,17 @@ The realistic estimate assumes real shots cost about three times the test scene 
 
 ## Style changes since Phase 0
 
+- **Guide version 3 (2026-10-03, needs Biku's confirmation):** the guide names seven hair colors but gave no color values, and components may only use token colors. Added a `hair` block to `tokens.json` (black, dark brown, brown, auburn, blond, gray, white, each with one shadow tone). No existing rule changed. If Biku prefers other shades, only `tokens.json` and the Style 12 copy in the guide change.
+
 - **Guide version 2 (2026-10-02, asked by Biku):** hands that hold or point show fingers, like the king's glove on the sword in Reference A. Resting hands stay mittens. Style Check question 11 added. `tokens.json` is now version 2 with a `hands` block. Phase 1 must draw both hand types and a gripping hand on a prop.
 
 ## Open problems and notes
 
 1. **Head size conflict in the guide (needs Biku's decision).** Style 3.1 says the head is about a quarter of standing height, but its bone lengths (torso 1.1, legs 1.4 head-widths) make the head 0.29 of height. Reference B measures about 0.25 because its legs are longer, about 1.8 head-widths. The rig follows the bone numbers in `tokens.json`. Changing `legHeads` to about 1.8 would match a quarter exactly; that is a style change, so it waits for Biku.
 1. **Face layout constants.** Eye width and pupil size come from tokens. Eye spacing, brow gap, mouth height and the head-turn shifts are named in `engine/src/face/layout.ts`, because tokens do not cover them.
-1. **Effects not built yet.** Sweat drops, tears, anger mark and symbols belong to the expression table's extras column. They come with the close-up effect shot in part B and the full effect set in Phase 2.
-1. **Clothing.** Only tier 0 (pure stick) exists. Tier 1 clothing and shoes come in part B or Phase 2.
+1. **Effects not built yet.** Sweat drops, tears, anger mark and symbols belong to the expression table's extras column. The one the 15-second test needs comes in part C; the full set in Phase 2.
+1. **Clothing and hair still to build.** Tier 2 exists (the ruler). Tier 1 (tank top, jeans, sneakers) and the rest of the hair library (coils, twists, cornrows, curly, waves) come in Phase 2.
+1. **Dark skin and brows.** On tones 7 and 8 the black brows have low contrast, as the guide accepts (eyes, teeth and the rim carry the face). Worth a look at Checkpoint 1.
 
 1. **Render time is near the run budget.** All three sizes of a 2:30 video may exceed 30 minutes on this laptop. Options for Phase 4: render the 9:16 size by default and others on request, cache background layers, keep blur light.
 1. **Low free memory.** About 2 GB free with other apps open. Render concurrency is capped by free memory, so closing other apps makes renders faster.
