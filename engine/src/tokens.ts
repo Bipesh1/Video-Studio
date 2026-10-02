@@ -109,6 +109,12 @@ export const hairColor = (name: string): readonly [string, string] => {
   return c;
 };
 
+/**
+ * Tongue color. The guide names no tongue color, so it is derived from the effects red,
+ * lightened toward white so it reads against the dark mouth interior.
+ */
+export const tongue = lighten(tokens.effects.anger, 0.25);
+
 /** SVG mask luminance values. These are not visible colors: white shows, black hides. */
 export const MASK_SHOW = 'white';
 export const MASK_HIDE = 'black';

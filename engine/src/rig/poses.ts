@@ -65,7 +65,19 @@ export const holdObject: Pose = {
   legs: feet(0.22),
 };
 
-export const POSES = [stand, wave, point, shrug, handsUp, holdObject] as const;
+/** Both hands pressed over the mouth in shock. Both arms are drawn in front of the face. */
+export const handsOverMouth: Pose = {
+  id: 'hands-over-mouth',
+  torsoLean: -3,
+  headTilt: -3,
+  arms: {
+    front: { reach: vec(0.13, -0.4), bend: 1, thumb: -1, over: true },
+    back: { reach: vec(-0.13, -0.38), bend: -1, thumb: 1, over: true },
+  },
+  legs: feet(),
+};
+
+export const POSES = [stand, wave, point, shrug, handsUp, holdObject, handsOverMouth] as const;
 export type PoseId = (typeof POSES)[number]['id'];
 
 export const poseById = (id: string): Pose => {

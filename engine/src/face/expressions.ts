@@ -10,6 +10,8 @@ const eyes = (o: Partial<Eyes> = {}): Eyes => ({
   pupil: 1,
   scale: 1,
   closedArc: false,
+  squeeze: false,
+  strain: false,
   lookX: 0,
   lookY: 0,
   ...o,
@@ -22,6 +24,8 @@ const mouth = (o: Partial<Mouth> = {}): Mouth => ({
   skew: 0,
   round: 0,
   teeth: 'none',
+  arch: 0,
+  tongue: 0,
   shiftX: 0,
   ...o,
 });
@@ -91,6 +95,18 @@ export const EXPRESSIONS = {
     eyes: eyes({ upperLid: 0.58, lidTilt: -8, lookY: 0.3 }),
     mouth: mouth({ width: 0.13, open: 0.06, curve: -0.02 }),
   },
+  /** Crying out: eyes squeezed shut, strained brows, wide open mouth with teeth and tongue. */
+  wailing: {
+    ...both(brow(-0.01, 12, 0.05)),
+    eyes: eyes({ squeeze: true, strain: true }),
+    mouth: mouth({ width: 0.4, open: 0.2, curve: -0.08, arch: 0.22, teeth: 'top', tongue: 1 }),
+  },
+  /** Shock and dread: very wide eyes, tiny pupils, brows high and worried. */
+  horrified: {
+    ...both(brow(0.13, -12, 0.3, 0.3)),
+    eyes: eyes({ scale: 1.15, pupil: 0.42 }),
+    mouth: mouth({ width: 0.09, open: 0.09, round: 1 }),
+  },
 } satisfies Record<string, FaceParams>;
 
 export type ExpressionName = keyof typeof EXPRESSIONS;
@@ -132,6 +148,8 @@ export function blendFace(a: FaceParams, b: FaceParams, t: number): FaceParams {
       pupil: lerp(a.eyes.pupil, b.eyes.pupil, x),
       scale: lerp(a.eyes.scale, b.eyes.scale, x),
       closedArc: late ? b.eyes.closedArc : a.eyes.closedArc,
+      squeeze: late ? b.eyes.squeeze : a.eyes.squeeze,
+      strain: late ? b.eyes.strain : a.eyes.strain,
       lookX: lerp(a.eyes.lookX, b.eyes.lookX, x),
       lookY: lerp(a.eyes.lookY, b.eyes.lookY, x),
     },
@@ -142,6 +160,8 @@ export function blendFace(a: FaceParams, b: FaceParams, t: number): FaceParams {
       skew: lerp(a.mouth.skew, b.mouth.skew, x),
       round: lerp(a.mouth.round, b.mouth.round, x),
       teeth: late ? b.mouth.teeth : a.mouth.teeth,
+      arch: lerp(a.mouth.arch, b.mouth.arch, x),
+      tongue: lerp(a.mouth.tongue, b.mouth.tongue, x),
       shiftX: lerp(a.mouth.shiftX, b.mouth.shiftX, x),
     },
   };

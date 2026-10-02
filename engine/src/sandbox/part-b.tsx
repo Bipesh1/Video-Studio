@@ -10,7 +10,7 @@ import type { CharacterProps } from '../rig/Character';
 import { blinkAt, withLife } from '../rig/life';
 import { resolvePose } from '../rig/pose';
 import type { Pose } from '../rig/pose';
-import { handsUp, holdObject, point, stand, wave } from '../rig/poses';
+import { handsOverMouth, handsUp, holdObject, point, stand, wave } from '../rig/poses';
 import type { Facing, ResolvedPose } from '../rig/types';
 import { walkAt } from '../rig/walk';
 import { RULER } from '../wardrobe/costumes/ruler';
@@ -340,8 +340,40 @@ export function AtmosVideo() {
   );
 }
 
+/**
+ * Biku's expression request (2026-10-03): one character wailing with eyes squeezed shut and
+ * tongue out, the other horrified with both hands over the mouth, on a simple daytime set.
+ */
+function NewExpressionsScene() {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const spec = backgroundSpec('simple', 'clear-day', SEED, {
+    horizon: 0.62,
+    silhouettes: [{ kind: 'tree', x: 0.06, size: 0.22, layer: 'mid' }],
+  });
+  const head = 250;
+  const groundY = 1440;
+  const left = { x: 300, groundY, head, facing: 'right' as Facing };
+  const right = { x: 790, groundY, head, facing: 'left' as Facing };
+  const faceOf = (c: typeof left) => ({ x: c.x, y: c.groundY - 2.96 * c.head });
+  return (
+    <>
+      <Background spec={spec} width={W} height={H} frame={frame} fps={fps} />
+      <Character {...left} pose={resolvePose(stand)} face={EXPRESSIONS.wailing} turn={0.3} />
+      <Character
+        {...right}
+        pose={resolvePose(handsOverMouth)}
+        face={EXPRESSIONS.horrified}
+        turn={0.3}
+        lookAt={toLocal(faceOf(left), right)}
+      />
+    </>
+  );
+}
+
 export const BG_SHEETS = {
   Simple: SimpleScene,
   Atmospheric: AtmosphericScene,
   Palettes: PalettesSheet,
+  NewExpressions: NewExpressionsScene,
 };

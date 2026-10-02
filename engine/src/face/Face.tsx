@@ -1,6 +1,6 @@
 import { DEG, clamp, length, lerp, stops } from '../rig/math';
 import type { Vec2 } from '../rig/math';
-import { ink, lineWeights, tokens, white } from '../tokens';
+import { ink, lineWeights, tokens, tongue, white } from '../tokens';
 import { BROW_GAP, BROW_LEN, EYE_H, EYE_W, EYE_Y, MOUTH_Y, PUPIL_D, TURN } from './layout';
 import type { Brow, EyeStyle, Eyes, FaceParams, Mouth } from './types';
 
@@ -55,6 +55,7 @@ function RoundEye({
   const bottom = cy + h / 2;
   const lid = eyes.upperLid + (1 - eyes.upperLid) * blink;
 
+  if (eyes.squeeze) return <SqueezedEye slot={slot} />;
   if (eyes.closedArc) {
     return (
       <path
@@ -150,6 +151,59 @@ function RoundEye({
         stroke={ink}
         strokeWidth={eyeStroke}
       />
+    </g>
+  );
+}
+
+/** Eyes squeezed shut: a > for the left eye and a < for the right, pointing at the nose. */
+function SqueezedEye({ slot }: { slot: EyeSlot }) {
+  const w = EYE_W * slot.widthFactor;
+  const h = EYE_H * 0.55;
+  const cx = slot.x;
+  const cy = EYE_Y + 0.01;
+  const outer = cx + slot.side * w * 0.45;
+  const inner = cx - slot.side * w * 0.4;
+  return (
+    <path
+      d={`M ${outer} ${cy - h / 2} L ${inner} ${cy} L ${outer} ${cy + h / 2}`}
+      fill="none"
+      stroke={ink}
+      strokeWidth={eyeStroke * 1.2}
+      strokeLinecap={tokens.line.cap}
+      strokeLinejoin={tokens.line.join}
+    />
+  );
+}
+
+/** Stress lines: two creases between the brows and two at each outer eye corner. */
+function StrainLines({ slots, shift }: { slots: EyeSlot[]; shift: number }) {
+  const line = (d: string, key: string) => (
+    <path
+      key={key}
+      d={d}
+      fill="none"
+      stroke={ink}
+      strokeWidth={lineWeights.detail}
+      strokeLinecap={tokens.line.cap}
+    />
+  );
+  return (
+    <g>
+      {slots.length > 1 &&
+        [-1, 1].map((s) =>
+          line(
+            `M ${shift + s * 0.035} -0.37 Q ${shift + s * 0.055} -0.33 ${shift + s * 0.035} -0.29`,
+            `f${s}`,
+          ),
+        )}
+      {slots.map((slot) => {
+        const x0 = slot.x + slot.side * (EYE_W * slot.widthFactor * 0.5 + 0.025);
+        const x1 = x0 + slot.side * 0.05;
+        return [
+          line(`M ${x0} ${EYE_Y - 0.04} L ${x1} ${EYE_Y - 0.08}`, `a${slot.side}`),
+          line(`M ${x0} ${EYE_Y + 0.04} L ${x1} ${EYE_Y + 0.08}`, `b${slot.side}`),
+        ];
+      })}
     </g>
   );
 }
@@ -257,7 +311,7 @@ function MouthShape({
   }
 
   const gritted = m.teeth === 'gritted';
-  const upperCtrl = gritted ? midY - open * 0.5 : midY + m.curve * 0.4 - open * 0.2;
+  const upperCtrl = gritted ? midY - open * 0.5 : midY + m.curve * 0.4 - open * 0.2 - m.arch;
   const lowerCtrl = gritted ? midY + open * 0.9 : midY + m.curve * 1.6 + open * 1.9;
   const d = `M ${left.x} ${left.y} Q ${mx} ${upperCtrl} ${right.x} ${right.y} Q ${mx} ${lowerCtrl} ${left.x} ${left.y} Z`;
   const topEdge = midY + (upperCtrl - midY) / 2;
@@ -292,6 +346,15 @@ function MouthShape({
               strokeWidth={detail}
             />
           </>
+        )}
+        {m.tongue > 0.05 && (
+          <ellipse
+            cx={mx}
+            cy={bottomEdge - (bottomEdge - topEdge) * 0.08}
+            rx={w * 0.3 * m.tongue}
+            ry={(bottomEdge - topEdge) * 0.38 * m.tongue}
+            fill={tongue}
+          />
         )}
         {gritted && (
           <>
@@ -338,7 +401,7 @@ export const Face = ({ params, turn, blink, look, eyeStyle, skin, talk, idPrefix
   return (
     <g>
       {slots.map((slot) =>
-        eyeStyle === 'stern' ? (
+        eyeStyle === 'stern' && !params.eyes.squeeze ? (
           <SternEye key={slot.side} slot={slot} eyes={params.eyes} blink={blink} />
         ) : (
           <RoundEye
@@ -360,6 +423,7 @@ export const Face = ({ params, turn, blink, look, eyeStyle, skin, talk, idPrefix
           eyeScale={params.eyes.scale}
         />
       ))}
+      {params.eyes.strain && <StrainLines slots={slots} shift={shift} />}
       <MouthShape m={params.mouth} turn={t} talk={talk} clipId={`${idPrefix}-mouth`} />
     </g>
   );

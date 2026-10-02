@@ -228,12 +228,14 @@ export const Character = ({
   };
   const backGrips = pose.hands.back.shape === 'grip';
   const frontGrips = pose.hands.front.shape === 'grip';
+  // Hands that cover the face are drawn after the head.
+  const backOver = pose.hands.back.over === true;
 
   return (
     <g transform={`translate(${x} ${groundY}) scale(${sign * head} ${head})`}>
       {outfit?.back?.(ctx)}
-      {arm(j.arms.back, 'back')}
-      {!backGrips && handOf(j.arms.back, pose.hands.back)}
+      {!backOver && arm(j.arms.back, 'back')}
+      {!backOver && !backGrips && handOf(j.arms.back, pose.hands.back)}
       {leg(j.legs.back, 'back')}
       <line x1={j.hip.x} y1={j.hip.y} x2={j.neck.x} y2={j.neck.y} {...limbProps} />
       {outfit?.torso?.(ctx)}
@@ -283,6 +285,8 @@ export const Character = ({
         {outfit?.headwear?.(ctx)}
       </g>
 
+      {backOver && arm(j.arms.back, 'back')}
+      {backOver && !backGrips && handOf(j.arms.back, pose.hands.back)}
       {arm(j.arms.front, 'front')}
       {!frontGrips && handOf(j.arms.front, pose.hands.front)}
       {prop?.(frames, { uid, shadowSide })}

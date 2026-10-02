@@ -50,6 +50,18 @@ describe('expressions', () => {
     expect(EXPRESSIONS.exhausted.mouth.open).toBeGreaterThan(0);
   });
 
+  it('include the wailing and horrified faces Biku asked for', () => {
+    const w = EXPRESSIONS.wailing;
+    expect(w.eyes.squeeze).toBe(true);
+    expect(w.eyes.strain).toBe(true);
+    expect(w.mouth.tongue).toBeGreaterThan(0);
+    expect(w.mouth.teeth).toBe('top');
+    const h = EXPRESSIONS.horrified;
+    expect(h.eyes.scale).toBeGreaterThan(1.1);
+    expect(h.eyes.pupil).toBeLessThan(0.5);
+    expect(h.browLeft.raise).toBeGreaterThan(EXPRESSIONS.neutral.browLeft.raise);
+  });
+
   it('blend smoothly between endpoints', () => {
     expect(blendFace(EXPRESSIONS.neutral, EXPRESSIONS.angry, 0)).toEqual(EXPRESSIONS.neutral);
     expect(blendFace(EXPRESSIONS.neutral, EXPRESSIONS.angry, 1)).toEqual(EXPRESSIONS.angry);

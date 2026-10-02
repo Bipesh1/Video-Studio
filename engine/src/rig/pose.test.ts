@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { blinkAt, blinkStarts, withLife } from './life';
 import { DEFAULT_TRANSITION, poseAt, resolvePose } from './pose';
-import { POSES, handsUp, holdObject, point, stand, wave } from './poses';
+import { POSES, handsOverMouth, handsUp, holdObject, point, stand, wave } from './poses';
 import { computeSkeleton } from './skeleton';
 import { tokens } from '../tokens';
 
@@ -9,9 +9,20 @@ const [minT, maxT] = tokens.motion.poseTransitionFrames;
 const fps = tokens.motion.fps;
 
 describe('pose library', () => {
-  it('has six distinct poses', () => {
-    expect(POSES).toHaveLength(6);
-    expect(new Set(POSES.map((p) => p.id)).size).toBe(6);
+  it('has at least six distinct poses', () => {
+    expect(POSES.length).toBeGreaterThanOrEqual(6);
+    expect(new Set(POSES.map((p) => p.id)).size).toBe(POSES.length);
+  });
+
+  it('hands-over-mouth puts both hands on the mouth, drawn in front of the face', () => {
+    const r = resolvePose(handsOverMouth);
+    const j = computeSkeleton(r);
+    const mouth = { x: j.head.x, y: j.head.y + 0.22 };
+    for (const arm of [j.arms.front, j.arms.back]) {
+      // Each hand covers one side of the mouth.
+      expect(Math.hypot(arm.hand.x - mouth.x, arm.hand.y - mouth.y)).toBeLessThan(0.22);
+    }
+    expect(r.hands.back.over).toBe(true);
   });
 
   it('every standing pose puts both feet on the ground line', () => {

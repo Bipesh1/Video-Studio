@@ -126,7 +126,7 @@ export function Bust({
 function ExpressionsSheet({ c }: { c: Colors }) {
   const cols = 3;
   const cw = W / cols;
-  const ch = 480;
+  const ch = 384;
   return (
     <>
       {EXPRESSION_NAMES.map((name, i) => {
@@ -137,13 +137,13 @@ function ExpressionsSheet({ c }: { c: Colors }) {
             <Bust
               id={`x-${i}`}
               cx={cx}
-              cy={top + 215}
+              cy={top + 172}
               w={cw - 16}
-              h={410}
-              head={230}
+              h={326}
+              head={185}
               expression={name}
             />
-            <Label x={cx} y={top + 455} c={c}>
+            <Label x={cx} y={top + 366} c={c}>
               {name}
             </Label>
           </g>
@@ -211,6 +211,7 @@ const POSE_FACES: Record<string, { expression: ExpressionName; turn: number }> =
   shrug: { expression: 'thinking', turn: 0 },
   'hands-up': { expression: 'afraid', turn: 0 },
   'hold-object': { expression: 'smug', turn: 0.5 },
+  'hands-over-mouth': { expression: 'horrified', turn: 0 },
 };
 
 const rodProp: CharacterProps['prop'] = (hands) =>
@@ -218,13 +219,13 @@ const rodProp: CharacterProps['prop'] = (hands) =>
 
 function PosesSheet({ c }: { c: Colors }) {
   const cw = W / 2;
-  const ch = 640;
+  const ch = 480;
   return (
     <>
       {POSES.map((pose: Pose, i) => {
         const cx = cw * (i % 2) + cw / 2;
         const top = ch * Math.floor(i / 2);
-        const groundY = top + 580;
+        const groundY = top + 440;
         const f = POSE_FACES[pose.id] ?? { expression: 'neutral' as const, turn: 0 };
         return (
           <g key={pose.id}>
@@ -232,19 +233,19 @@ function PosesSheet({ c }: { c: Colors }) {
               x={cw * (i % 2) + 8}
               y={groundY}
               width={cw - 16}
-              height={ch - 590}
+              height={ch - 450}
               fill={c.ground}
             />
             <Character
               x={cx}
               groundY={groundY}
-              head={110}
+              head={90}
               pose={resolvePose(pose)}
               face={EXPRESSIONS[f.expression]}
               turn={f.turn}
               prop={rodProp}
             />
-            <Label x={cx} y={top + 50} c={c}>
+            <Label x={cx} y={top + 36} c={c}>
               {pose.id}
             </Label>
           </g>
@@ -425,6 +426,7 @@ export const Sandbox = ({ sheet, bg }: SandboxProps) => {
     identity: <IdentitySheet c={c} />,
     'hair-turns': <HairTurnsSheet c={c} />,
     atmos: <AtmosVideo />,
+    'new-expressions': <BG_SHEETS.NewExpressions />,
     walk: <WalkVideo c={c} />,
     motion: <MotionVideo c={c} />,
   };

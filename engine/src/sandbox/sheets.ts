@@ -11,6 +11,7 @@ export const STILL_SHEETS = [
   'costume',
   'identity',
   'hair-turns',
+  'new-expressions',
 ] as const;
 export const VIDEO_SHEETS = { walk: 4, motion: 7, atmos: 4 } as const;
 export const BACKGROUNDS = ['light', 'dark'] as const;

@@ -4,6 +4,18 @@
 **Next:** Phase 1 part C: captions, Kokoro voice with word timings, mouth movement synced to the voice, the effects the test needs (sweat drops and similar), the 15-second 4-shot test, the style match sheet and the voice audition. Then Checkpoint 1.
 **Last updated:** 2026-10-03
 
+## Extra: wailing and horrified expressions (2026-10-03, asked by Biku)
+
+Biku sent a new picture with two expressions and asked for them. Added:
+
+- **Wailing:** eyes squeezed shut as > and < chevrons, stress lines on the forehead and at the eye corners, strained brows, a wide crying mouth with the upper lip arched up, top teeth and a tongue.
+- **Horrified:** very wide eyes, tiny pupils, brows high and worried, small round mouth.
+- **Hands-over-mouth pose:** both hands pressed over the mouth, both arms drawn in front of the face.
+- New face parts usable by any expression: `squeeze`, `strain`, mouth `arch` and `tongue`. The tongue color is derived from the effects red, because the guide names no tongue color.
+- Sheet `new-expressions` restages the picture on a daytime set. Golden still `knowledge/golden/rig-new-expressions.png`. 63 tests pass.
+
+Not done, waiting on Biku: fingers on hands that cover the face (the picture shows spread fingers; guide v2 allows fingers only for holding and pointing, so this needs a guide change). The sweat drops and tears in the picture are effects, planned for part C. The sitting pose and the caveman-style tunic are Phase 2 items (pose library and wardrobe).
+
 ## Phase 1 part B. Backgrounds, costume, identity: done
 
 ### Made

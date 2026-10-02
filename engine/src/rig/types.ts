@@ -14,6 +14,8 @@ export type HandPose = {
    * (0 = handle along +x, -90 = handle pointing up). Omitted: handle across the forearm.
    */
   gripAxis?: number;
+  /** Draw this arm in front of the head, as when the hands cover the mouth. */
+  over?: boolean;
 };
 
 /** Upper bone angle from straight down, and the lower bone's bend relative to it, in degrees. */

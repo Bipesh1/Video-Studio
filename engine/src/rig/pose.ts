@@ -16,7 +16,7 @@ import { shoulderOf } from './skeleton';
 import type { HandPose, HandShape, LegState, LimbAngles, ResolvedPose } from './types';
 import { tokens } from '../tokens';
 
-type HandOptions = { hand?: HandShape; thumb?: 1 | -1; gripAxis?: number };
+type HandOptions = { hand?: HandShape; thumb?: 1 | -1; gripAxis?: number; over?: boolean };
 
 /**
  * An arm is either joint angles (degrees) or an IK reach: the hand center's position
@@ -68,6 +68,7 @@ export function armToHand(shoulder: Vec2, hand: Vec2, bend: 1 | -1): LimbAngles 
 function handOf(spec: HandOptions, defaultThumb: 1 | -1): HandPose {
   const hand: HandPose = { shape: spec.hand ?? 'mitten', thumb: spec.thumb ?? defaultThumb };
   if (spec.gripAxis !== undefined) hand.gripAxis = spec.gripAxis;
+  if (spec.over) hand.over = true;
   return hand;
 }
 

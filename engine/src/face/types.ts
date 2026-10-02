@@ -24,6 +24,10 @@ export type Eyes = {
   scale: number;
   /** Closed upward arcs, as when laughing. */
   closedArc: boolean;
+  /** Squeezed shut as > and < chevrons, as when wailing or straining. */
+  squeeze: boolean;
+  /** Stress lines on the forehead and at the outer eye corners. */
+  strain: boolean;
   /** Pupil direction bias, -1 to 1 on each axis. */
   lookX: number;
   lookY: number;
@@ -42,6 +46,10 @@ export type Mouth = {
   /** 1 draws a round O. */
   round: number;
   teeth: TeethMode;
+  /** Upper lip arched up, for a crying or wailing mouth with the corners pulled down. */
+  arch: number;
+  /** Tongue showing at the bottom of an open mouth, 0 to 1. */
+  tongue: number;
   /** Sideways offset of the whole mouth. */
   shiftX: number;
 };
