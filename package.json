@@ -12,6 +12,7 @@
   "scripts": {
     "doctor": "tsx cli/src/doctor.ts",
     "bench": "tsx cli/src/bench.ts",
+    "sheets": "tsx cli/src/sheets.ts",
     "test": "vitest run",
     "typecheck": "tsc -p shared/tsconfig.json && tsc -p engine/tsconfig.json && tsc -p cli/tsconfig.json",
     "lint": "eslint .",

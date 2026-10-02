@@ -1,5 +1,5 @@
 import { AbsoluteFill, interpolate, random, useCurrentFrame, useVideoConfig } from 'remotion';
-import { mid, palette, tokens } from '../tokens';
+import { MASK_HIDE, MASK_SHOW, mid, palette, tokens } from '../tokens';
 
 export const TEST_SCENE_SECONDS = 5;
 
@@ -95,12 +95,12 @@ export const TestScene = ({ seed }: Props) => {
           </clipPath>
           {/* Crescent: a full disc with a second disc cut out, so the sky gradient shows through. */}
           <mask id="moonMask">
-            <rect width={width} height={height} fill="white" />
+            <rect width={width} height={height} fill={MASK_SHOW} />
             <circle
               cx={width * 0.2 + head * 0.22}
               cy={height * 0.14 - head * 0.12}
               r={head * 0.5}
-              fill="black"
+              fill={MASK_HIDE}
             />
           </mask>
         </defs>

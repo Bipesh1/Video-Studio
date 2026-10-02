@@ -58,6 +58,7 @@ Reusing a library asset in a new pose or expression needs no full guide read, bu
 
 - `shared/` Zod schemas shared by every part. `engine/` Remotion (React, TypeScript). `cli/` orchestrator. `audio/` Python workers managed by uv.
 - `npm run doctor` reports every tool version. `npm run bench` renders the test scene and measures speed.
+- `npm run sheets` renders the sandbox contact sheets for the draw, look and fix loop (`--only=poses`, `--video`, `--golden`). Look at them before calling any drawing done.
 - `npm test`, `npm run typecheck`, `npm run lint`, `npm run format` must pass at the end of every phase.
 - Python: `cd audio && uv run pytest` and `uv run python -m studio_audio.doctor`.
 - Node is a loose binary at `F:\node.exe`. ffmpeg, espeak-ng, uv and fluidsynth are Scoop installs under `~/scoop`. espeak-ng needs `ESPEAK_DATA_PATH`, which Scoop set as a user variable.
