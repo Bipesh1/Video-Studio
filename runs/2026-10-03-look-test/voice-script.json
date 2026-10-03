@@ -1,0 +1,38 @@
+{
+  "leadInMs": 500,
+  "tailMs": 1500,
+  "lines": [
+    {
+      "id": "n1",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The king had *one* rule: nobody leaves the castle after dark.",
+      "speed": 0.95,
+      "pauseAfterMs": 1300
+    },
+    {
+      "id": "d1",
+      "speaker": "tom",
+      "voice": "am_puck",
+      "text": "I only went out for *snacks*!",
+      "speed": 1.0,
+      "pauseAfterMs": 1200
+    },
+    {
+      "id": "n2",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "But the king heard *everything*.",
+      "speed": 0.95,
+      "pauseAfterMs": 1300
+    },
+    {
+      "id": "n3",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Tom is *still* walking home.",
+      "speed": 0.95,
+      "pauseAfterMs": 0
+    }
+  ]
+}

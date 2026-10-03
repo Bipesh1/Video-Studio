@@ -1,5 +1,11 @@
 import { Composition } from 'remotion';
 import { TestScene, TEST_SCENE_SECONDS } from './compositions/TestScene';
+import {
+  LOOK_TEST_PLACEHOLDER,
+  LookTest,
+  calculateLookTestMetadata,
+} from './compositions/LookTest';
+import { STYLE_MATCH_PLACEHOLDER, StyleMatch } from './compositions/StyleMatch';
 import { Sandbox } from './sandbox/Sandbox';
 import { BACKGROUNDS, STILL_SHEETS, VIDEO_SHEETS, stillId, videoId } from './sandbox/sheets';
 import type { VideoSheet } from './sandbox/sheets';
@@ -41,6 +47,25 @@ export const RemotionRoot = () => {
         width={1920}
         height={1080}
         defaultProps={{ seed: 4182 }}
+      />
+      <Composition
+        id="LookTest"
+        component={LookTest}
+        durationInFrames={15 * fps}
+        fps={fps}
+        width={1080}
+        height={1920}
+        defaultProps={{ track: LOOK_TEST_PLACEHOLDER, audioSrc: null }}
+        calculateMetadata={calculateLookTestMetadata}
+      />
+      <Composition
+        id="StyleMatch"
+        component={StyleMatch}
+        durationInFrames={1}
+        fps={fps}
+        width={1920}
+        height={1080}
+        defaultProps={STYLE_MATCH_PLACEHOLDER}
       />
       {STILL_SHEETS.flatMap((sheet) =>
         BACKGROUNDS.map((bg) => (

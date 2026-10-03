@@ -97,6 +97,18 @@ describe('talking mouth', () => {
     expect(tokens.motion.mouthShapes).toHaveLength(3);
   });
 
+  it('moves only the speaking character: words from other lines leave the mouth closed', () => {
+    const track = [
+      { startMs: 0, endMs: 1000, lineId: 'n1' },
+      { startMs: 1500, endMs: 2200, lineId: 'd1' },
+    ];
+    const toms = track.filter((w) => w.lineId === 'd1');
+    for (let f = 0; f < 30; f++) expect(mouthShapeAt(f, fps, toms)).toBe('closed');
+    const during = new Set<string>();
+    for (let f = 46; f < 66; f++) during.add(mouthShapeAt(f, fps, toms));
+    expect(during.size).toBeGreaterThan(1);
+  });
+
   it('stays closed between words and moves during words', () => {
     expect(mouthShapeAt(0, fps, words)).toBe('closed');
     expect(mouthShapeAt(31, fps, words)).toBe('closed');

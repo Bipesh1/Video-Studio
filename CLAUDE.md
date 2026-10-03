@@ -58,6 +58,8 @@ Reusing a library asset in a new pose or expression needs no full guide read, bu
 
 - `shared/` Zod schemas shared by every part. `engine/` Remotion (React, TypeScript). `cli/` orchestrator. `audio/` Python workers managed by uv.
 - `npm run doctor` reports every tool version. `npm run bench` renders the test scene and measures speed.
+- `npm run look-test -- --all` builds the Phase 1 look test (voice, stills, video, style match sheets); `--audition` speaks the audition lines in every American English Kokoro voice. Each stage runs alone too.
+- Voice: `cd audio && uv run python -m studio_audio.voice synth --script <voice-script.json> --out <dir>` writes `voice.wav` and `timings.json` (contract in `shared/src/voice.schema.ts`). Kokoro 0.9.4 gives word timestamps itself.
 - `npm run sheets` renders the sandbox contact sheets for the draw, look and fix loop (`--only=poses`, `--video`, `--golden`). Look at them before calling any drawing done.
 - `npm test`, `npm run typecheck`, `npm run lint`, `npm run format` must pass at the end of every phase.
 - Python: `cd audio && uv run pytest` and `uv run python -m studio_audio.doctor`.

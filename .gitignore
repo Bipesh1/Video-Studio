@@ -30,3 +30,7 @@ audio/models/
 Thumbs.db
 .vscode/*
 !.vscode/settings.json
+
+# copied into the engine's public folder at render time
+engine/public/runs/
+engine/public/reference/

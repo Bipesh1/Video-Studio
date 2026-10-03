@@ -1,0 +1,72 @@
+{
+  "shots": [
+    {
+      "id": "n1",
+      "summary": "Closest to Reference A: stormy slate sky, soft lit clouds, pale rays, a stern crowned ruler in crimson and steel with a white gloved hand on the scepter. The design is original, not the reference king.",
+      "checks": [
+        { "n": 1, "question": "Thick black outline on every character and prop?", "answer": "yes", "note": "Head, crown, cape, armor, gloves and scepter are all outlined." },
+        { "n": 2, "question": "Background free of outlines?", "answer": "yes", "note": "Sky, clouds, rays, hills and the foreground rock have no outlines." },
+        { "n": 3, "question": "Characters brighter and more saturated than the background?", "answer": "yes", "note": "White head, gold crown and crimson cape stand out against the muted slate." },
+        { "n": 4, "question": "At most one shadow tone per color, from the light direction?", "answer": "yes", "note": "One hard shadow per fill, on the side away from the upper-left light. The cape lining is its darker inside color (Style 3.5)." },
+        { "n": 5, "question": "Heads round and about a quarter of body height?", "answer": "no", "note": "Round, but 0.29 of standing height from the token bone lengths. Waiting on Biku's decision." },
+        { "n": 6, "question": "Face clearly shows the emotion the narration calls for?", "answer": "yes", "note": "Stern almond eyes, sharp V brows and a frown for 'one rule'." },
+        { "n": 7, "question": "Identity mode on where the story needs it?", "answer": "n/a", "note": "A fictional ruler; who he is does not depend on skin tone." },
+        { "n": 8, "question": "Lowest clothing tier that still reads?", "answer": "yes", "note": "Tier 2 is needed to read as a king at a glance." },
+        { "n": 9, "question": "Caption area clear?", "answer": "yes", "note": "Only legs, cape hem and boots sit behind the captions; no face or key action." },
+        { "n": 10, "question": "No blood, wound or gore?", "answer": "yes", "note": "None." },
+        { "n": 11, "question": "Holding and pointing hands show fingers, resting hands are mittens?", "answer": "yes", "note": "The glove wraps four fingers around the scepter; the resting glove is a mitten." }
+      ]
+    },
+    {
+      "id": "d1",
+      "summary": "Closest to Reference B: flat violet night, crescent moon, black bush with white curls, two tier 0 stick figures. Tom's mouth moves with his line and the guard looks at him.",
+      "checks": [
+        { "n": 1, "question": "Thick black outline on every character and prop?", "answer": "yes", "note": "Heads outlined, thick stick limbs and torso." },
+        { "n": 2, "question": "Background free of outlines?", "answer": "yes", "note": "The bush carries white detail curls, as in Reference B, but no outline." },
+        { "n": 3, "question": "Characters brighter and more saturated than the background?", "answer": "yes", "note": "White heads on the muted violet." },
+        { "n": 4, "question": "At most one shadow tone per color, from the light direction?", "answer": "yes", "note": "One light-gray crescent on each head, away from the upper-left light." },
+        { "n": 5, "question": "Heads round and about a quarter of body height?", "answer": "no", "note": "Round, but 0.29 of standing height. Waiting on Biku's decision." },
+        { "n": 6, "question": "Face clearly shows the emotion the narration calls for?", "answer": "yes", "note": "The guard is smug; Tom is afraid and pleading, mouth moving with 'I only went out for snacks!'." },
+        { "n": 7, "question": "Identity mode on where the story needs it?", "answer": "n/a", "note": "Fictional characters in default mode, as the guide allows." },
+        { "n": 8, "question": "Lowest clothing tier that still reads?", "answer": "yes", "note": "Tier 0; nothing about them needs clothes to read." },
+        { "n": 9, "question": "Caption area clear?", "answer": "yes", "note": "Faces in the upper third, feet above the caption band." },
+        { "n": 10, "question": "No blood, wound or gore?", "answer": "yes", "note": "None." },
+        { "n": 11, "question": "Holding and pointing hands show fingers, resting hands are mittens?", "answer": "yes", "note": "The guard points with one finger (small at this size); Tom's raised hands are mittens." }
+      ]
+    },
+    {
+      "id": "n2",
+      "summary": "Emotional close-up: the head fills about 39% of the frame, horrified face, sweat drops flying out and fading, slow push-in.",
+      "checks": [
+        { "n": 1, "question": "Thick black outline on every character and prop?", "answer": "yes", "note": "Head and every sweat drop are outlined." },
+        { "n": 2, "question": "Background free of outlines?", "answer": "yes", "note": "Flat sky, moon and bush silhouette." },
+        { "n": 3, "question": "Characters brighter and more saturated than the background?", "answer": "yes", "note": "White head and light-blue drops against violet." },
+        { "n": 4, "question": "At most one shadow tone per color, from the light direction?", "answer": "yes", "note": "One head crescent on the right, away from the light." },
+        { "n": 5, "question": "Heads round and about a quarter of body height?", "answer": "no", "note": "Round; body proportion as in the other shots (0.29). Waiting on Biku's decision." },
+        { "n": 6, "question": "Face clearly shows the emotion the narration calls for?", "answer": "yes", "note": "Very wide eyes, tiny pupils, raised brows, small O mouth, flying sweat for 'the king heard everything'." },
+        { "n": 7, "question": "Identity mode on where the story needs it?", "answer": "n/a", "note": "Fictional character in default mode." },
+        { "n": 8, "question": "Lowest clothing tier that still reads?", "answer": "yes", "note": "Tier 0." },
+        { "n": 9, "question": "Caption area clear?", "answer": "yes", "note": "Only the torso and arm lines pass behind the captions." },
+        { "n": 10, "question": "No blood, wound or gore?", "answer": "yes", "note": "None." },
+        { "n": 11, "question": "Holding and pointing hands show fingers, resting hands are mittens?", "answer": "n/a", "note": "Hands are out of frame." }
+      ]
+    },
+    {
+      "id": "n3",
+      "summary": "Walking shot: Tom walks home in profile, exhausted, a sweat drop on his head; the camera follows and the buildings, tree and bush slide past at different depths.",
+      "checks": [
+        { "n": 1, "question": "Thick black outline on every character and prop?", "answer": "yes", "note": "Head, limbs and the sweat drop are outlined." },
+        { "n": 2, "question": "Background free of outlines?", "answer": "yes", "note": "Muted buildings and tree, black bush with white curls, no outlines." },
+        { "n": 3, "question": "Characters brighter and more saturated than the background?", "answer": "yes", "note": "White head stands out; the far layers are muted." },
+        { "n": 4, "question": "At most one shadow tone per color, from the light direction?", "answer": "yes", "note": "One head crescent, away from the light." },
+        { "n": 5, "question": "Heads round and about a quarter of body height?", "answer": "no", "note": "Round, but 0.29 of standing height. Waiting on Biku's decision." },
+        { "n": 6, "question": "Face clearly shows the emotion the narration calls for?", "answer": "yes", "note": "Heavy lids, drooping brows and a single sweat drop for a long walk home. Small at this distance." },
+        { "n": 7, "question": "Identity mode on where the story needs it?", "answer": "n/a", "note": "Fictional character in default mode." },
+        { "n": 8, "question": "Lowest clothing tier that still reads?", "answer": "yes", "note": "Tier 0." },
+        { "n": 9, "question": "Caption area clear?", "answer": "yes", "note": "Feet stay above the caption band." },
+        { "n": 10, "question": "No blood, wound or gore?", "answer": "yes", "note": "None." },
+        { "n": 11, "question": "Holding and pointing hands show fingers, resting hands are mittens?", "answer": "yes", "note": "Swinging hands are mittens." }
+      ]
+    }
+  ]
+}

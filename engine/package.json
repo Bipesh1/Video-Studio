@@ -10,7 +10,10 @@
     "compositions": "remotion compositions src/index.ts"
   },
   "dependencies": {
+    "@remotion/captions": "4.0.532",
     "@remotion/cli": "4.0.532",
+    "@remotion/fonts": "4.0.532",
+    "@remotion/media": "4.0.532",
     "@remotion/paths": "4.0.532",
     "@remotion/shapes": "4.0.532",
     "@studio/shared": "0.1.0",

@@ -1,8 +1,50 @@
 # Build Status
 
-**Current phase:** Phase 1 part B complete (both background treatments, the costumed ruler, identity mode with skin tones and hair). Stopped at Biku's request.
-**Next:** Phase 1 part C: captions, Kokoro voice with word timings, mouth movement synced to the voice, the effects the test needs (sweat drops and similar), the 15-second 4-shot test, the style match sheet and the voice audition. Then Checkpoint 1.
+**Current phase:** Phase 1 complete. **Stopped at Checkpoint 1**, waiting for Biku to judge the look and pick voices.
+**Next:** after Biku answers the questions in `runs/2026-10-03-look-test/checkpoint-1.md`, apply the answers, then start Phase 2 (character and world).
 **Last updated:** 2026-10-03
+
+## Checkpoint 1: waiting for Biku
+
+Review file: `runs/2026-10-03-look-test/checkpoint-1.md`. Questions: (1) how close the look is and what to change, (2) narrator and character voices, (3) head size, (4) hair colors (guide v3), (5) fingers on hands that cover the face.
+
+## Phase 1 part C. Voice, captions, look test: done
+
+### Made
+
+| Area              | Where                                                       | What it does                                                                                                                                                                                                                                                                                                                                                                           |
+| ----------------- | ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Voice worker      | `audio/src/studio_audio/voice.py`                           | Kokoro behind a `VoiceProvider` interface. Speaks a voice script line by line with per-line voice, speed and pauses, trims model silence, aligns Kokoro's word timestamps to the script's words (keeping punctuation and _emphasis_), normalizes to -17 LUFS mono with a peak limiter. Writes `voice.wav` and `timings.json`. Falls back to estimated timings if a provider gives none |
+| Voice contracts   | `shared/src/voice.schema.ts`                                | Zod schemas for the voice script and the voice track, with plain-language errors                                                                                                                                                                                                                                                                                                       |
+| Captions          | `engine/src/overlays/`                                      | Pages of at most two short lines from word timings, breaking at sentences, pauses and speaker changes. Fredoka, white with a black outline, emphasized words gold, in the bottom quarter, popping in per page. Uses the `@remotion/captions` Caption type; the CLI also writes an `.srt`                                                                                               |
+| Mouth movement    | `face/talk.ts`, `LookTest.tsx`                              | The speaking character's mouth cycles closed, half and open on that character's word timings only                                                                                                                                                                                                                                                                                      |
+| Effects           | `engine/src/effects/Sweat.tsx`                              | Flying sweat drops (outlined light-blue teardrops with a white highlight, arcing out and fading) and a resting drop                                                                                                                                                                                                                                                                    |
+| Camera            | `engine/src/camera/Camera.tsx`                              | Slow push-in toward a focus point                                                                                                                                                                                                                                                                                                                                                      |
+| Look test         | `engine/src/compositions/LookTest.tsx`, `npm run look-test` | The 4-shot test with voice, captions and audio; shot lengths from the voice timings. Stages: voice, stills, video, match, audition                                                                                                                                                                                                                                                     |
+| Style match sheet | `engine/src/compositions/StyleMatch.tsx`                    | Each test still beside both references with the Style Check answers from `runs/.../style-check.json`                                                                                                                                                                                                                                                                                   |
+| Voice audition    | `runs/2026-10-03-voice-audition/`                           | All 20 American English voices saying the same two lines, loudness matched, with an index of start times and Kokoro grades                                                                                                                                                                                                                                                             |
+| Font              | `engine/public/fonts/`                                      | Fredoka (SIL OFL 1.1), recorded in `LICENSES.md`                                                                                                                                                                                                                                                                                                                                       |
+
+### Draw, look and fix loop
+
+1. Shot 2 characters were small with faces mid-frame: bigger, horizon raised, faces in the upper third.
+2. The close-up's raised arms became huge black hands in the top corners: arms down and the head enlarged to 39% of the frame so the hands fall out of frame; arms angled so they do not merge with the torso.
+3. Shot 4 walker was small: enlarged.
+4. The voice stem measured -21 LUFS because peak safety scaled the whole track down: replaced with a real peak limiter.
+5. The video measured -13.3 LUFS and -0.9 dB peak because mono voice on two channels adds 3 LU: voice target -17 LUFS mono, ceiling -1.5 dB. Now -14.2 LUFS, -1.4 dB.
+6. The captions file had a leading space on lines after the first; trimmed.
+7. The style match sheet's summary ran off the page and a two-line title pushed the still down: layout fixed.
+
+### Acceptance (Phase 1)
+
+| Check                                | Result                                                             |
+| ------------------------------------ | ------------------------------------------------------------------ |
+| All rig and token tests pass         | Pass: 74 TypeScript tests, 16 Python tests                         |
+| Every still passes the Style Check   | Pass except question 5 (head size), which needs Biku's decision    |
+| Kokoro voice with word timings       | Pass: Kokoro 0.9.4 returns per-word timestamps; no Whisper needed  |
+| Mouth movement                       | Pass: Tom's mouth moves only during his line                       |
+| 15-second, 4-shot test               | `runs/2026-10-03-look-test/out/look-test.mp4`, 14.57 s, -14.2 LUFS |
+| Style match sheet and voice audition | Done                                                               |
 
 ## Extra: wailing and horrified expressions (2026-10-03, asked by Biku)
 
@@ -201,9 +243,9 @@ The realistic estimate assumes real shots cost about three times the test scene 
 1. **Imports in bundled code.** Remotion's bundler does not map `.js` suffixes to `.ts` files. Use extensionless relative imports in `engine/` and `shared/`.
 1. **zod is pinned to 4.5.4** to match Remotion 4.0.532. Upgrade both together with `npx remotion upgrade`.
 1. **Python is capped below 3.13** because Kokoro requires it and pydub uses `audioop`, which 3.13 removed.
-1. **Kokoro word timings** are not documented for 0.9.4. Phase 1 must test whether the pipeline returns token timestamps, and fall back to local Whisper alignment if not.
-1. **Kokoro model weights** (about 330 MB) download on first use in Phase 1.
-1. **Font and SoundFont** are not chosen yet. Font in Phase 1, SoundFont in Phase 3. Record both in `LICENSES.md`.
+1. **Kokoro word timings:** resolved. Kokoro 0.9.4 returns per-word start and end times. Loading the model takes about 1 to 2 minutes on this laptop; speaking the 15-second test takes about 1.5 minutes in all.
+1. **Kokoro model files** are in the Hugging Face cache (about 600 MB with the grammar model). The spaCy English model is pinned in `audio/pyproject.toml` so it is never fetched at run time.
+1. **Font chosen** (Fredoka, OFL). The SoundFont is still to choose in Phase 3.
 
 ## How to continue
 

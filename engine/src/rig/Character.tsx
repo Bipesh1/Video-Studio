@@ -50,6 +50,8 @@ export type CharacterProps = {
   squash?: number;
   /** Draws a held prop between the arm and the gripping fingers. */
   prop?: (hands: { front: HandFrame; back: HandFrame }, info: PropInfo) => ReactNode;
+  /** Effects drawn in head space around the head: sweat drops, symbols (Style 3.7). */
+  headEffects?: ReactNode;
 };
 
 const limbProps = {
@@ -142,6 +144,7 @@ export const Character = ({
   handStyle,
   squash = 0,
   prop,
+  headEffects,
 }: CharacterProps) => {
   const uid = `c${useId().replace(/[^A-Za-z0-9_-]/g, '')}`;
   const sign = facing === 'left' ? -1 : 1;
@@ -283,6 +286,7 @@ export const Character = ({
           </>
         )}
         {outfit?.headwear?.(ctx)}
+        {headEffects}
       </g>
 
       {backOver && arm(j.arms.back, 'back')}

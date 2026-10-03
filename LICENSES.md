@@ -33,7 +33,18 @@ Every third-party tool, library, font and sound asset used by Video Studio, with
 
 ## Fonts
 
-To be added in Phase 1: one heavy rounded open-licensed font, bundled locally. Candidate: Fredoka (SIL Open Font License 1.1).
+| Font                                   | License                   | Where                                                                         | Notes                                                                                                   |
+| -------------------------------------- | ------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Fredoka (variable, weights 300 to 700) | SIL Open Font License 1.1 | `engine/public/fonts/Fredoka-Variable.ttf`, license text in `Fredoka-OFL.txt` | Caption and label font (Style 9: heavy rounded sans-serif). Downloaded from the google/fonts repository |
+
+## Voice
+
+| Item                                  | License          | Notes                                                                          |
+| ------------------------------------- | ---------------- | ------------------------------------------------------------------------------ |
+| Kokoro-82M model and voices (hexgrad) | Apache-2.0       | Downloaded on first use into the Hugging Face cache (about 330 MB with voices) |
+| misaki (Kokoro phonemizer)            | Apache-2.0       | installed with kokoro                                                          |
+| spaCy en_core_web_sm 3.8.0            | MIT              | English grammar model misaki loads; pinned in `audio/pyproject.toml`           |
+| espeak-ng (fallback phonemes)         | GPL-3.0-or-later | command-line tool only                                                         |
 
 ## SoundFonts and sound assets
 
