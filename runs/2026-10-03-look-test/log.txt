@@ -133,3 +133,44 @@
 2026-10-03T07:24:01.169Z  faces: start
 2026-10-03T07:24:03.677Z    runs\2026-10-03-look-test\out\face-match.png
 2026-10-03T07:24:03.678Z  faces: done in 2.5 s
+2026-10-03T07:38:57.172Z  faces: start
+2026-10-03T07:38:57.183Z  bundle: start
+2026-10-03T07:39:03.250Z  bundle: done in 6.1 s
+2026-10-03T07:39:13.498Z    runs\2026-10-03-look-test\out\face-match.png
+2026-10-03T07:39:13.500Z  faces: done in 16.3 s
+2026-10-03T07:40:08.064Z  faces: start
+2026-10-03T07:40:08.073Z  bundle: start
+2026-10-03T07:40:13.146Z  bundle: done in 5.1 s
+2026-10-03T07:40:15.857Z    runs\2026-10-03-look-test\out\face-match.png
+2026-10-03T07:40:15.860Z  faces: done in 7.8 s
+2026-10-03T07:41:12.894Z  faces: start
+2026-10-03T07:41:12.918Z  bundle: start
+2026-10-03T07:41:18.921Z  bundle: done in 6.0 s
+2026-10-03T07:41:21.566Z    runs\2026-10-03-look-test\out\face-match.png
+2026-10-03T07:41:21.567Z  faces: done in 8.7 s
+2026-10-03T07:41:54.182Z  faces: start
+2026-10-03T07:41:54.189Z  bundle: start
+2026-10-03T07:41:58.891Z  bundle: done in 4.7 s
+2026-10-03T07:42:01.277Z    runs\2026-10-03-look-test\out\face-match.png
+2026-10-03T07:42:01.278Z  faces: done in 7.1 s
+2026-10-03T07:49:18.535Z  stills: start
+2026-10-03T07:49:18.728Z  bundle: start
+2026-10-03T07:49:23.104Z  bundle: done in 4.4 s
+2026-10-03T07:49:26.828Z    still n1 at frame 104: runs\2026-10-03-look-test\stills\n1.png
+2026-10-03T07:49:28.423Z    still d1 at frame 219: runs\2026-10-03-look-test\stills\d1.png
+2026-10-03T07:49:30.003Z    still n2 at frame 302: runs\2026-10-03-look-test\stills\n2.png
+2026-10-03T07:49:31.419Z    still n3 at frame 397: runs\2026-10-03-look-test\stills\n3.png
+2026-10-03T07:49:31.421Z  stills: done in 12.9 s
+2026-10-03T07:49:31.421Z  video: start
+2026-10-03T07:50:34.902Z    runs\2026-10-03-look-test\out\look-test.mp4: 14.57 s of video in 62.1 s (4.27 s per video second)
+2026-10-03T07:50:34.973Z    runs\2026-10-03-look-test\out\look-test.srt
+2026-10-03T07:50:35.313Z  video: done in 63.9 s
+2026-10-03T07:50:35.340Z  match: start
+2026-10-03T07:50:37.894Z    runs\2026-10-03-look-test\out\style-match-n1.png
+2026-10-03T07:50:40.568Z    runs\2026-10-03-look-test\out\style-match-d1.png
+2026-10-03T07:50:43.288Z    runs\2026-10-03-look-test\out\style-match-n2.png
+2026-10-03T07:50:46.470Z    runs\2026-10-03-look-test\out\style-match-n3.png
+2026-10-03T07:50:46.472Z  match: done in 11.1 s
+2026-10-03T07:50:46.472Z  faces: start
+2026-10-03T07:50:50.075Z    runs\2026-10-03-look-test\out\face-match.png
+2026-10-03T07:50:50.077Z  faces: done in 3.6 s

@@ -19,6 +19,15 @@ Biku: the angry faces in the references are more realistic with their curves, an
 - **Lesson L-0001** in `knowledge/lessons-log.md`, and the first rules in `knowledge/playbooks/styles/ink-stick.md`.
 - Look test, style match sheets and all golden stills re-rendered.
 
+## Checkpoint 1 feedback, round 2 (2026-10-03): applied
+
+Biku: the gritted mouth was a simple oval; the reference mouth is drawn more realistically. Done:
+
+- **New grimace drawing:** upper lip arching high and rising to one side, flatter lower lip, tilted mouth, two rows of separate teeth (bigger at the front) on a wavy bite line with slanted gaps, deep black corner gaps, slanted chin strokes. About twice as wide as tall.
+- **Eyes moved up slightly** (face layout) so the wide mouth fits below them; **hairlines raised** on every hair style so brows stay visible; surprised and horrified brows lowered a touch.
+- **Lesson L-0002** logged; style playbook updated.
+- Look test, style match sheets, face match sheet and all golden stills re-rendered. 75 tests pass.
+
 ## Phase 1 part C. Voice, captions, look test: done
 
 ### Made

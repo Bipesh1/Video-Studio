@@ -93,13 +93,13 @@ export const EXPRESSIONS = {
       width: 0.36,
       open: 0.28,
       curve: -0.015,
-      skew: -0.02,
+      skew: -0.025,
       teeth: 'gritted',
       chin: true,
     }),
   },
   surprised: {
-    ...both(brow(0.12, -4, 0.65)),
+    ...both(brow(0.09, -4, 0.65)),
     eyes: eyes({ scale: 1.12, pupil: 0.55 }),
     mouth: mouth({ width: 0.1, open: 0.12, round: 1 }),
   },
@@ -133,7 +133,7 @@ export const EXPRESSIONS = {
   },
   /** Shock and dread: very wide eyes, tiny pupils, brows high and worried. */
   horrified: {
-    ...both(brow(0.13, -12, 0.3, 0.3)),
+    ...both(brow(0.1, -12, 0.3, 0.3)),
     eyes: eyes({ scale: 1.15, pupil: 0.42 }),
     mouth: mouth({ width: 0.09, open: 0.09, round: 1, chin: true }),
   },

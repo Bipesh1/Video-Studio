@@ -156,7 +156,7 @@ function draw(style: HairStyle, c: HairCtx): HairDraw {
       return {
         back: [],
         front: [solid(topCap(0.535, 0.555, 0, -0.02))],
-        hairline: { top: -0.33, side: -0.1 },
+        hairline: { top: -0.42, side: -0.14 },
       };
     case 'fade': {
       const faded = fadeColor(h, c.skin);
@@ -166,14 +166,14 @@ function draw(style: HairStyle, c: HairCtx): HairDraw {
           { d: topCap(0.515, 0.535, 0, 0.02), fill: faded, shadow: shade(faded, 0.15) },
           solid(topCap(0.545, 0.62, -0.05, -0.26)),
         ],
-        hairline: { top: -0.36, side: -0.04 },
+        hairline: { top: -0.44, side: -0.08 },
       };
     }
     case 'afro':
       return {
         back: [],
         front: [solid(scallop(0, -0.24, 0.72, 18, 0.045))],
-        hairline: { top: -0.3, side: 0.02 },
+        hairline: { top: -0.41, side: -0.02 },
       };
     case 'locs':
     case 'braids': {
@@ -192,7 +192,7 @@ function draw(style: HairStyle, c: HairCtx): HairDraw {
         back: s.shapes,
         backDetails: s.lines,
         front: [solid(topCap(0.55, 0.57, 0, 0.0))],
-        hairline: { top: -0.31, side: -0.08 },
+        hairline: { top: -0.41, side: -0.12 },
         details: braids
           ? [-0.18, 0, 0.18].map((x, i) =>
               detail(`M ${x * 1.4} -0.5 Q ${x} -0.4 ${x * 0.9} -0.3`, i),
@@ -204,7 +204,7 @@ function draw(style: HairStyle, c: HairCtx): HairDraw {
       return {
         back: [],
         front: [solid(topCap(0.58, 0.6, -0.02, 0.34))],
-        hairline: { top: -0.32, side: 0.05 },
+        hairline: { top: -0.4, side: 0.02 },
         details: [detail('M 0.05 -0.6 Q 0.12 -0.45 0.1 -0.33', 0)],
       };
     case 'bun': {
@@ -217,7 +217,7 @@ function draw(style: HairStyle, c: HairCtx): HairDraw {
           'bun',
         ),
         front: [solid(topCap(0.53, 0.55, 0, -0.04))],
-        hairline: { top: -0.34, side: -0.08 },
+        hairline: { top: -0.42, side: -0.12 },
       };
     }
     case 'ponytail': {
@@ -231,7 +231,7 @@ function draw(style: HairStyle, c: HairCtx): HairDraw {
           { d: ellipse(bx, by + 0.03, 0.07, 0.05), fill: h.shadow, shadow: shade(h.shadow, 0.15) },
         ],
         front: [solid(topCap(0.53, 0.55, 0, -0.04))],
-        hairline: { top: -0.34, side: -0.08 },
+        hairline: { top: -0.42, side: -0.12 },
       };
     }
     case 'head-wrap': {
@@ -245,7 +245,7 @@ function draw(style: HairStyle, c: HairCtx): HairDraw {
           { d: ellipse(0.16, -0.78, 0.12, 0.09), ...f },
           { d: ellipse(-0.05, -0.8, 0.12, 0.09), ...f },
         ],
-        hairline: { top: -0.29, side: -0.12 },
+        hairline: { top: -0.38, side: -0.16 },
         details: [
           detail('M -0.42 -0.3 Q -0.1 -0.62 0.4 -0.42', 0),
           detail('M -0.3 -0.52 Q 0.05 -0.74 0.34 -0.62', 1),

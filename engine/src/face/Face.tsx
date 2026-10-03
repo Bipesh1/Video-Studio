@@ -184,8 +184,8 @@ function RoundEye({
 function WorryLines({ shift }: { shift: number }) {
   return (
     <g fill="none" stroke={ink} strokeWidth={lineWeights.detail} strokeLinecap={tokens.line.cap}>
-      <path d={`M ${shift - 0.25} -0.27 Q ${shift - 0.29} -0.32 ${shift - 0.25} -0.38`} />
-      <path d={`M ${shift - 0.19} -0.31 Q ${shift - 0.225} -0.35 ${shift - 0.195} -0.4`} />
+      <path d={`M ${shift - 0.27} -0.4 Q ${shift - 0.31} -0.44 ${shift - 0.28} -0.48`} />
+      <path d={`M ${shift - 0.2} -0.42 Q ${shift - 0.235} -0.455 ${shift - 0.21} -0.5`} />
     </g>
   );
 }
@@ -319,9 +319,7 @@ function MouthShape({
   const w = m.width * MOUTH_SCALE * stops(turn, TURN.mouthWidth);
   const open = Math.max(m.open * MOUTH_OPEN_SCALE, talk * 0.14);
   const sw = lineWeights.outline * 0.9;
-  // A gritted grimace grows downward, so it never crowds the eyes.
-  const drop = m.teeth === 'gritted' ? open * 0.15 : 0;
-  const cornerY = my - m.curve + drop;
+  const cornerY = my - m.curve;
   const left = { x: mx - w / 2, y: cornerY };
   const right = { x: mx + w / 2, y: cornerY - m.skew };
   const midY = (left.y + right.y) / 2;
@@ -380,6 +378,16 @@ function MouthShape({
   }
 
   const gritted = m.teeth === 'gritted';
+  if (gritted) {
+    // About twice as wide as tall, low on the face, like Reference B.
+    const gh = open * 0.62;
+    return (
+      <g>
+        <Grimace cx={mx} cy={midY} w={w * 1.12} h={gh} tilt={m.skew * 400} clipId={clipId} />
+        {m.chin && <ChinLines mx={mx} y={midY + gh * 0.62} />}
+      </g>
+    );
+  }
   const upperCtrl = gritted ? midY - open * 0.5 : midY + m.curve * 0.4 - open * 0.2 - m.arch;
   const lowerCtrl = gritted ? midY + open * 0.9 : midY + m.curve * 1.6 + open * 1.9;
   // A gritted grimace is a wide, uneven box with rounded corners (Reference B), not a lens.
@@ -464,12 +472,12 @@ function MouthShape({
   );
 }
 
-/** Two small curved strain lines on the chin (Reference B's frightened figure). */
+/** Two short slanted strain strokes on the chin (Reference B's frightened figure). */
 function ChinLines({ mx, y }: { mx: number; y: number }) {
   return (
     <g fill="none" stroke={ink} strokeWidth={lineWeights.detail} strokeLinecap={tokens.line.cap}>
-      <path d={`M ${mx - 0.05} ${y} q -0.012 0.025 0 0.045`} />
-      <path d={`M ${mx + 0.05} ${y} q 0.012 0.025 0 0.045`} />
+      <path d={`M ${mx - 0.035} ${y} L ${mx - 0.018} ${y + 0.04}`} />
+      <path d={`M ${mx + 0.01} ${y - 0.005} L ${mx + 0.032} ${y + 0.032}`} />
     </g>
   );
 }
@@ -528,3 +536,91 @@ export const Face = ({
     </g>
   );
 };
+
+/**
+ * A gritted grimace drawn like Reference B's frightened figure: the upper lip arches high and
+ * rises toward one side, the lower lip is flatter, the whole mouth tilts. Inside, two rows of
+ * separate teeth (bigger at the front, smaller toward the corners) meet on a wavy bite line,
+ * with slanted gaps between teeth and deep black gaps at both corners.
+ */
+function Grimace({
+  cx,
+  cy,
+  w,
+  h,
+  tilt,
+  clipId,
+}: {
+  cx: number;
+  cy: number;
+  w: number;
+  h: number;
+  tilt: number;
+  clipId: string;
+}) {
+  const N = 28;
+  const X = (u: number) => (u * w) / 2;
+  // Edge heights across the mouth, u from -1 (left corner) to 1 (right corner).
+  const top = (u: number) => -h * 0.5 * Math.pow(Math.max(0, 1 - u * u), 0.62) * (1 + 0.25 * u);
+  const bottom = (u: number) => h * 0.42 * Math.pow(Math.max(0, 1 - u * u), 0.5) * (1 - 0.12 * u);
+  const teethTop = (u: number) => top(u) * 0.8 + h * 0.03;
+  const teethBottom = (u: number) => bottom(u) * 0.78 - h * 0.02;
+  const bite = (u: number) => h * (0.03 + 0.045 * Math.sin(3.2 * Math.PI * u + 0.6)) * (1 - u * u);
+  const along = (f: (u: number) => number, from: number, to: number) =>
+    Array.from({ length: N + 1 }, (_, i) => {
+      const u = from + ((to - from) * i) / N;
+      return `${X(u)} ${f(u)}`;
+    });
+  const outline = `M ${[...along(top, -1, 1), ...along(bottom, 1, -1)].join(' L ')} Z`;
+  // Teeth stop short of the corners, leaving black gaps there.
+  const u0 = -0.8;
+  const u1 = 0.82;
+  const upperTeeth = `M ${[...along(teethTop, u0, u1), ...along(bite, u1, u0)].join(' L ')} Z`;
+  const lowerTeeth = `M ${[...along(bite, u0, u1), ...along(teethBottom, u1, u0)].join(' L ')} Z`;
+  const upperGaps = [-0.56, -0.29, 0, 0.3, 0.58];
+  const lowerGaps = [-0.44, -0.15, 0.15, 0.45];
+  const gap = lineWeights.detail * 1.25;
+  return (
+    <g transform={`translate(${cx} ${cy}) rotate(${tilt})`}>
+      <defs>
+        <clipPath id={clipId}>
+          <path d={outline} />
+        </clipPath>
+      </defs>
+      <path d={outline} fill={tokens.face.mouthInterior} />
+      <g clipPath={`url(#${clipId})`}>
+        <path d={upperTeeth} fill={white} />
+        <path d={lowerTeeth} fill={white} />
+        <g
+          stroke={ink}
+          fill="none"
+          strokeLinecap={tokens.line.cap}
+          strokeLinejoin={tokens.line.join}
+        >
+          <path d={`M ${along(bite, u0, u1).join(' L ')}`} strokeWidth={gap * 1.15} />
+          {upperGaps.map((u) => (
+            <path
+              key={`u${u}`}
+              d={`M ${X(u)} ${teethTop(u) - 0.02} L ${X(u * 0.9)} ${bite(u * 0.9)}`}
+              strokeWidth={gap}
+            />
+          ))}
+          {lowerGaps.map((u) => (
+            <path
+              key={`l${u}`}
+              d={`M ${X(u)} ${bite(u)} L ${X(u * 1.06)} ${teethBottom(u * 1.06) + 0.02}`}
+              strokeWidth={gap}
+            />
+          ))}
+        </g>
+      </g>
+      <path
+        d={outline}
+        fill="none"
+        stroke={ink}
+        strokeWidth={lineWeights.outline}
+        strokeLinejoin={tokens.line.join}
+      />
+    </g>
+  );
+}

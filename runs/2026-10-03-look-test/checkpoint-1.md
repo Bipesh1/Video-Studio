@@ -39,6 +39,10 @@ Narration and dialogue are Kokoro voices (narrator am_michael, Tom am_puck, both
 
 Biku asked for faces with the curves and detail of the references (the angry faces and the gritted teeth). Applied as guide v4 and lesson L-0001: eyes 30% of head width and overlapping, shaded curved eyelids, separate tapered brows with curls, wide frowns with curled corners, two-row gritted teeth with dark corners, and thin worry, bag and chin lines. The video, stills and sheets above are re-rendered with the new faces.
 
+## Feedback round 2 (2026-10-03): applied
+
+Biku said the gritted mouth was a simple oval. It is redrawn like Reference B (arched, tilted upper lip, flatter lower lip, two rows of separate slanted teeth on a wavy bite, black corner gaps, chin strokes). Lesson L-0002. All files above are re-rendered.
+
 ## Where it differs from the references (my honest read)
 
 - **Eyes are now close to Reference B's size** (30% of the head). Reference B's lids and pupils are still a little looser and more hand-drawn.

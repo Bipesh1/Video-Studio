@@ -15,3 +15,17 @@ Applied: guide v4 (eyes 30% of head width, pupils 30% of the eye) and new face p
   sheet at runs/2026-10-03-look-test/out/face-match.png.
 Status: active
 ```
+
+```
+L-0002 | 2026-10-03 | run: 2026-10-03-look-test (Checkpoint 1, round 2)
+Area: faces | Scope: style ink-stick | Source: Biku
+Lesson: A gritted mouth is never a plain oval. Draw it like Reference B: the upper lip arches
+  high and rises toward one side, the lower lip is flatter, the mouth tilts; two rows of
+  separate teeth, bigger at the front, meet on a wavy bite line with slanted gaps; deep black
+  gaps at both corners; two short slanted chin strokes below.
+Evidence: Biku compared our frightened mouth with Reference B and said ours was a simple oval
+  while the reference mouth is drawn more realistically.
+Applied: new grimace drawing in engine/src/face/Face.tsx; eyes moved up a little so the wide
+  mouth fits; hairlines raised so brows stay visible.
+Status: active
+```
