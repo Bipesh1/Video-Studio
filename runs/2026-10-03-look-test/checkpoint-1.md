@@ -7,6 +7,7 @@ Phase 1 is complete. The build is stopped here until Biku answers the questions 
 | File | What it is |
 | --- | --- |
 | `out/look-test.mp4` | The 15-second test video (14.6 s, 1080x1920, voice and captions, no music yet) |
+| `out/face-match.png` | Biku's faces from the references beside ours, after the first round of feedback |
 | `out/style-match-n1.png` | Shot 1 (ruler, atmospheric) next to both reference pictures, with the Style Check answered |
 | `out/style-match-d1.png` | Shot 2 (night, two characters, Tom speaks) |
 | `out/style-match-n2.png` | Shot 3 (close-up, horrified, flying sweat) |
@@ -34,17 +35,21 @@ Narration and dialogue are Kokoro voices (narrator am_michael, Tom am_puck, both
 | Render speed | 4.2 s of render per second of video (the atmospheric shot is the slowest) |
 | Style Check | Every answer yes or not applicable, except question 5 on every shot (head size, below) |
 
+## Feedback round 1 (2026-10-03): applied
+
+Biku asked for faces with the curves and detail of the references (the angry faces and the gritted teeth). Applied as guide v4 and lesson L-0001: eyes 30% of head width and overlapping, shaded curved eyelids, separate tapered brows with curls, wide frowns with curled corners, two-row gritted teeth with dark corners, and thin worry, bag and chin lines. The video, stills and sheets above are re-rendered with the new faces.
+
 ## Where it differs from the references (my honest read)
 
-- **Eyes are smaller than Reference B.** The token eye width is 22% of the head; in Reference B the eyes are closer to 27%. The faces read clearly, but Reference B's are more expressive.
+- **Eyes are now close to Reference B's size** (30% of the head). Reference B's lids and pupils are still a little looser and more hand-drawn.
 - **Heads are slightly bigger than a quarter of body height** (0.29), because the token bone lengths and the "quarter" rule disagree. Reference B has longer legs.
-- **Reference B's faces carry more detail:** stress lines, teeth and sweat at once. Tom's pleading face in shot 2 is milder, because his mouth is busy talking.
+- **Tom's pleading face in shot 2 is milder than Reference B's frightened figure,** because his mouth is busy talking instead of gritting its teeth.
 - **Shot 2 uses tier 0 figures.** Reference B's frightened figure wears a tank top, jeans and sneakers (tier 1), which is built in Phase 2.
 - **No music or sound effects yet.** Those come in Phase 3.
 
 ## Questions for Biku
 
-1. **The look.** How close is it to your two pictures? What should change first?
+1. **The look.** Are the faces close enough now (see `out/face-match.png`)? What should change next?
 2. **Voices.** Which voice for the narrator, and which for male and female characters? The audition file lists all 20.
 3. **Head size.** Keep heads at 0.29 of body height, or lengthen legs to about 1.8 head-widths so heads are exactly a quarter, like Reference B?
 4. **Hair colors.** Are the seven hair colors I picked (guide version 3) fine?

@@ -274,6 +274,7 @@ export const Character = ({
             look={look}
             eyeStyle={eyeStyle}
             skin={skin}
+            lidColor={skinSet.shadow}
             talk={talk}
             idPrefix={uid}
           />

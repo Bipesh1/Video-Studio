@@ -1,7 +1,7 @@
 ## Part 3. The Ink Stick art style
 
 **Style id:** `ink-stick`
-**Guide version:** 3 (2026-10-03). See the version history at the end.
+**Guide version:** 4 (2026-10-03). See the version history at the end.
 **Built from:** two reference images supplied by Biku
 - **Reference A:** a stern king in a crown, red cape and armor, under a stormy night sky with light rays
 - **Reference B:** two stick figures in a night scene under a crescent moon, one threatening and one frightened
@@ -104,9 +104,11 @@ Use the **lowest tier** that makes the character instantly recognizable.
 **Placement.** Features sit on the front of the head, eyes around the vertical middle, close together. Turning the head toward three-quarter view shifts all features toward one side. Profile puts them on one edge.
 
 **Parts:**
-- **Eyes:** large white ovals with black outlines, each about 22% of head width. Black filled pupils about 40% of the eye. Pupils move to show where a character looks.
+- **Eyes:** large white ovals with black outlines, each about 30% of head width, just overlapping. Black filled pupils about 30% of the eye. Pupils move to show where a character looks.
+- **Eyelids:** filled with the head's shadow tone, edged with a thick curved line, like both references.
+- **Detail lines** (thin, detail weight) add feeling where the references use them: worry lines on the forehead, bags under the eyes, curled frown corners, a lower-lip line, chin lines, stress lines at the eye corners.
 - **Stern eyes (from the king):** for cold, menacing or commanding characters, the eyes become black almond shapes under heavy brows.
-- **Brows:** thick black tapered wedges. They carry most of the emotion.
+- **Brows:** thick black tapered wedges, heavy at the inner end and fine at the tip, with a curl where the emotion needs it. Kept apart, never joined. They carry most of the emotion.
 - **Mouth:** a single line when calm. When open: dark interior `#3A1E22`, with teeth as a white band divided by thin lines when gritted.
 - **No nose and no ears** by default.
 
@@ -266,7 +268,7 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
 ```json
 {
   "id": "ink-stick",
-  "version": 3,
+  "version": 4,
   "line": {
     "color": "#16161A",
     "outlinePctOfHead": [0.04, 0.05],
@@ -305,8 +307,8 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
     "white": ["#EDEDEA", "#C9CBCF"]
   },
   "face": {
-    "eyeWidthPctOfHead": 0.22,
-    "pupilPctOfEye": 0.4,
+    "eyeWidthPctOfHead": 0.3,
+    "pupilPctOfEye": 0.3,
     "mouthInterior": "#3A1E22",
     "nose": false,
     "ears": false
@@ -372,3 +374,4 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
 | 1 | 2026-10-02 | First version, Part 3 of Build Plan v5 | Biku |
 | 2 | 2026-10-02 | Hands that hold or point show fingers, like the king's glove on the sword in Reference A. Resting hands stay mittens. Style Check question 11 added. | Biku |
 | 3 | 2026-10-03 | Added color values for the hair colors Style 3.4 already names (black, dark brown, brown, auburn, blond, gray, white), each with one shadow tone 15 to 25% darker. No existing rule changed. Biku to confirm. | Claude, for identity mode |
+| 4 | 2026-10-03 | Faces closer to the references, at Biku's Checkpoint 1 request: eyes 30% of head width (was 22%), pupils 30% of the eye (was 40%), shaded curved eyelids, separate tapered brows with curls, and thin detail lines for worry, bags, frown corners, lip and chin. | Biku |

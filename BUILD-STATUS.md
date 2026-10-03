@@ -8,6 +8,17 @@
 
 Review file: `runs/2026-10-03-look-test/checkpoint-1.md`. Questions: (1) how close the look is and what to change, (2) narrator and character voices, (3) head size, (4) hair colors (guide v3), (5) fingers on hands that cover the face.
 
+## Checkpoint 1 feedback, round 1 (2026-10-03): applied
+
+Biku: the angry faces in the references are more realistic with their curves, and the frightened face has teeth; match them. Done:
+
+- **Guide v4** (Biku's request): eyes 30% of head width (was 22%), pupils 30% of the eye (was 40%), eyes just overlapping. Guide text for eyes, eyelids, brows and detail lines updated; `tokens.json` version 4.
+- **New face parts:** eyelids filled with the head's shadow tone and edged with a thick curved line; bags under the eyes; forehead worry lines; brows that taper harder and curl at the tip, kept apart; frowns with curled corners and a wobble; lower-lip and chin lines; gritted teeth as a box with two rows of teeth and dark corners; mouths scaled up to the references' width.
+- **Expressions retuned:** angry, afraid, sad, determined, exhausted, horrified.
+- **Face match sheet** (`npm run look-test -- --faces`): each reference face cropped beside ours. Three look rounds.
+- **Lesson L-0001** in `knowledge/lessons-log.md`, and the first rules in `knowledge/playbooks/styles/ink-stick.md`.
+- Look test, style match sheets and all golden stills re-rendered.
+
 ## Phase 1 part C. Voice, captions, look test: done
 
 ### Made

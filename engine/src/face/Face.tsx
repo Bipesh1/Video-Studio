@@ -1,7 +1,19 @@
 import { DEG, clamp, length, lerp, stops } from '../rig/math';
 import type { Vec2 } from '../rig/math';
 import { ink, lineWeights, tokens, tongue, white } from '../tokens';
-import { BROW_GAP, BROW_LEN, EYE_H, EYE_W, EYE_Y, MOUTH_Y, PUPIL_D, TURN } from './layout';
+import {
+  BROW_GAP,
+  BROW_LEN,
+  BROW_OUT,
+  EYE_H,
+  EYE_W,
+  EYE_Y,
+  MOUTH_OPEN_SCALE,
+  MOUTH_SCALE,
+  MOUTH_Y,
+  PUPIL_D,
+  TURN,
+} from './layout';
 import type { Brow, EyeStyle, Eyes, FaceParams, Mouth } from './types';
 
 type FaceProps = {
@@ -13,8 +25,10 @@ type FaceProps = {
   /** Extra look direction, unit-ish vector in head space. */
   look: Vec2;
   eyeStyle: EyeStyle;
-  /** Head fill, used for eyelids. */
+  /** Head fill, used for the lower lid (a happy squint pushes the cheek up). */
   skin: string;
+  /** Upper eyelid fill: the head's shadow tone, as in both references. */
+  lidColor: string;
   /** Talking openness override, 0 to 1. */
   talk: number;
   idPrefix: string;
@@ -38,6 +52,7 @@ function RoundEye({
   blink,
   look,
   skin,
+  lidColor,
   clipId,
 }: {
   slot: EyeSlot;
@@ -45,6 +60,7 @@ function RoundEye({
   blink: number;
   look: Vec2;
   skin: string;
+  lidColor: string;
   clipId: string;
 }) {
   const w = EYE_W * slot.widthFactor * eyes.scale;
@@ -87,6 +103,9 @@ function RoundEye({
   const outerX = cx + slot.side * (w / 2 + LID_PAD);
   const innerY = lidY + tiltOffset;
   const outerY = lidY - tiltOffset;
+  // The lid edge arches with the eye, so heavy lids look like lids, not a ruler line.
+  const lidArc = h * 0.16 * (1 - Math.abs(lid - 0.5));
+  const lidCurve = `Q ${cx} ${lidY - lidArc} `;
 
   const r = (PUPIL_D / 2) * eyes.pupil;
   const dir = clampUnit({ x: eyes.lookX + look.x, y: eyes.lookY + look.y });
@@ -112,18 +131,15 @@ function RoundEye({
         {lid > 0.01 && (
           <>
             <path
-              d={`M ${pts([
-                { x: innerX, y: top - 0.1 },
-                { x: outerX, y: top - 0.1 },
-                { x: outerX, y: outerY },
-                { x: innerX, y: innerY },
-              ])} Z`}
-              fill={skin}
+              d={`M ${innerX} ${top - 0.1} L ${outerX} ${top - 0.1} L ${outerX} ${outerY} ${lidCurve}${innerX} ${innerY} Z`}
+              fill={lidColor}
             />
             <path
-              d={`M ${innerX} ${innerY} L ${outerX} ${outerY}`}
+              d={`M ${innerX} ${innerY} ${lidCurve}${outerX} ${outerY}`}
+              fill="none"
               stroke={ink}
-              strokeWidth={eyeStroke}
+              strokeWidth={eyeStroke * 1.15}
+              strokeLinecap={tokens.line.cap}
             />
           </>
         )}
@@ -151,13 +167,32 @@ function RoundEye({
         stroke={ink}
         strokeWidth={eyeStroke}
       />
+      {eyes.bags && (
+        <path
+          d={`M ${cx - w * 0.36} ${bottom + 0.03} Q ${cx} ${bottom + 0.075} ${cx + w * 0.36} ${bottom + 0.03}`}
+          fill="none"
+          stroke={ink}
+          strokeWidth={lineWeights.detail}
+          strokeLinecap={tokens.line.cap}
+        />
+      )}
+    </g>
+  );
+}
+
+/** Worry lines: two short arcs across the forehead, above the brows (Reference B). */
+function WorryLines({ shift }: { shift: number }) {
+  return (
+    <g fill="none" stroke={ink} strokeWidth={lineWeights.detail} strokeLinecap={tokens.line.cap}>
+      <path d={`M ${shift - 0.25} -0.27 Q ${shift - 0.29} -0.32 ${shift - 0.25} -0.38`} />
+      <path d={`M ${shift - 0.19} -0.31 Q ${shift - 0.225} -0.35 ${shift - 0.195} -0.4`} />
     </g>
   );
 }
 
 /** Eyes squeezed shut: a > for the left eye and a < for the right, pointing at the nose. */
 function SqueezedEye({ slot }: { slot: EyeSlot }) {
-  const w = EYE_W * slot.widthFactor;
+  const w = EYE_W * slot.widthFactor * 0.8;
   const h = EYE_H * 0.55;
   const cx = slot.x;
   const cy = EYE_Y + 0.01;
@@ -210,7 +245,7 @@ function StrainLines({ slots, shift }: { slots: EyeSlot[]; shift: number }) {
 
 /** Stern eyes (from the king): black almonds slanting down toward the face center. */
 function SternEye({ slot, eyes, blink }: { slot: EyeSlot; eyes: Eyes; blink: number }) {
-  const w = EYE_W * slot.widthFactor * 0.95;
+  const w = EYE_W * slot.widthFactor * 0.72;
   const open = (1 - blink * 0.92) * (1 - eyes.upperLid * 0.35);
   const hh = EYE_H * 0.34 * open;
   const cx = slot.x;
@@ -232,10 +267,10 @@ function SternEye({ slot, eyes, blink }: { slot: EyeSlot; eyes: Eyes; blink: num
   );
 }
 
-/** A thick tapered wedge, heavier at the inner end (Style 3.6). */
+/** A thick tapered wedge, heavier at the inner end, with an optional curled tip (Style 3.6). */
 function BrowShape({ slot, b, eyeScale }: { slot: EyeSlot; b: Brow; eyeScale: number }) {
   const bw = BROW_LEN * slot.widthFactor;
-  const cx = slot.x;
+  const cx = slot.x + slot.side * BROW_OUT * slot.widthFactor;
   const y = EYE_Y - (EYE_H * eyeScale) / 2 - BROW_GAP - b.raise;
   const innerX = cx - slot.side * (bw / 2);
   const outerX = cx + slot.side * (bw / 2);
@@ -245,8 +280,13 @@ function BrowShape({ slot, b, eyeScale }: { slot: EyeSlot; b: Brow; eyeScale: nu
   for (let i = 0; i <= n; i++) {
     const u = i / n;
     const x = lerp(innerX, outerX, u);
-    const by = y - b.arch * 0.07 * 4 * u * (1 - u) - b.wave * 0.014 * Math.sin(3 * Math.PI * u);
-    const th = lineWeights.brow * (0.8 - 0.45 * u + 0.35 * Math.sin(Math.PI * u));
+    const by =
+      y -
+      b.arch * 0.07 * 4 * u * (1 - u) -
+      b.wave * 0.014 * Math.sin(3 * Math.PI * u) -
+      b.curl * 0.06 * u * u * u;
+    // Heavy at the inner end, tapering to a fine tip (the hooked brows in Reference B).
+    const th = lineWeights.brow * (0.85 - 0.7 * u + 0.25 * Math.sin(Math.PI * u));
     upper.push({ x, y: by - th / 2 });
     lower.push({ x, y: by + th / 2 });
   }
@@ -276,10 +316,12 @@ function MouthShape({
 }) {
   const mx = stops(turn, TURN.mouthShift) + m.shiftX;
   const my = MOUTH_Y;
-  const w = m.width * stops(turn, TURN.mouthWidth);
-  const open = Math.max(m.open, talk * 0.12);
+  const w = m.width * MOUTH_SCALE * stops(turn, TURN.mouthWidth);
+  const open = Math.max(m.open * MOUTH_OPEN_SCALE, talk * 0.14);
   const sw = lineWeights.outline * 0.9;
-  const cornerY = my - m.curve;
+  // A gritted grimace grows downward, so it never crowds the eyes.
+  const drop = m.teeth === 'gritted' ? open * 0.15 : 0;
+  const cornerY = my - m.curve + drop;
   const left = { x: mx - w / 2, y: cornerY };
   const right = { x: mx + w / 2, y: cornerY - m.skew };
   const midY = (left.y + right.y) / 2;
@@ -299,21 +341,53 @@ function MouthShape({
     );
   }
   if (open < 0.02) {
+    // The quadratic curve as a cubic, so a wobble can push its two halves apart.
+    const q = { x: mx, y: my + m.curve };
+    const c1 = {
+      x: left.x + ((q.x - left.x) * 2) / 3,
+      y: left.y + ((q.y - left.y) * 2) / 3 + m.wobble * 0.03,
+    };
+    const c2 = {
+      x: right.x + ((q.x - right.x) * 2) / 3,
+      y: right.y + ((q.y - right.y) * 2) / 3 - m.wobble * 0.03,
+    };
+    // Corner hooks turn the same way as the mouth: down for a frown, up for a smile.
+    const hook = (p: { x: number; y: number }, side: -1 | 1) => {
+      const dy = (m.curve < 0 ? 1 : -1) * 0.04 * m.corners;
+      return `M ${p.x - side * 0.012} ${p.y - dy * 0.2} Q ${p.x + side * 0.012} ${p.y} ${p.x + side * 0.018} ${p.y + dy}`;
+    };
     return (
-      <path
-        d={`M ${left.x} ${left.y} Q ${mx} ${my + m.curve} ${right.x} ${right.y}`}
-        fill="none"
-        stroke={ink}
-        strokeWidth={sw}
-        strokeLinecap={tokens.line.cap}
-      />
+      <g fill="none" stroke={ink} strokeLinecap={tokens.line.cap} strokeLinejoin={tokens.line.join}>
+        <path
+          d={`M ${left.x} ${left.y} C ${c1.x} ${c1.y} ${c2.x} ${c2.y} ${right.x} ${right.y}`}
+          strokeWidth={sw}
+        />
+        {m.corners > 0.05 && (
+          <>
+            <path d={hook(left, -1)} strokeWidth={sw * 0.85} />
+            <path d={hook(right, 1)} strokeWidth={sw * 0.85} />
+          </>
+        )}
+        {m.lip && (
+          <path
+            d={`M ${mx - w * 0.2} ${my + 0.075} Q ${mx} ${my + 0.095} ${mx + w * 0.2} ${my + 0.075}`}
+            strokeWidth={lineWeights.detail}
+          />
+        )}
+        {m.chin && <ChinLines mx={mx} y={my + 0.13} />}
+      </g>
     );
   }
 
   const gritted = m.teeth === 'gritted';
   const upperCtrl = gritted ? midY - open * 0.5 : midY + m.curve * 0.4 - open * 0.2 - m.arch;
   const lowerCtrl = gritted ? midY + open * 0.9 : midY + m.curve * 1.6 + open * 1.9;
-  const d = `M ${left.x} ${left.y} Q ${mx} ${upperCtrl} ${right.x} ${right.y} Q ${mx} ${lowerCtrl} ${left.x} ${left.y} Z`;
+  // A gritted grimace is a wide, uneven box with rounded corners (Reference B), not a lens.
+  const gTop = midY - open * 0.48;
+  const gBot = midY + open * 0.52;
+  const d = gritted
+    ? `M ${left.x} ${left.y} C ${left.x + w * 0.02} ${gTop} ${right.x - w * 0.12} ${gTop + open * 0.06} ${right.x} ${right.y} C ${right.x - w * 0.02} ${gBot} ${left.x + w * 0.12} ${gBot - open * 0.05} ${left.x} ${left.y} Z`
+    : `M ${left.x} ${left.y} Q ${mx} ${upperCtrl} ${right.x} ${right.y} Q ${mx} ${lowerCtrl} ${left.x} ${left.y} Z`;
   const topEdge = midY + (upperCtrl - midY) / 2;
   const bottomEdge = midY + (lowerCtrl - midY) / 2;
   // Teeth lines use the thin end of the detail range so a small mouth stays readable.
@@ -357,37 +431,61 @@ function MouthShape({
           />
         )}
         {gritted && (
-          <>
-            <rect x={mx - w} y={topEdge - 0.2} width={w * 2} height={0.6} fill={white} />
-            <line
-              x1={mx - w}
-              x2={mx + w}
-              y1={(topEdge + bottomEdge) / 2}
-              y2={(topEdge + bottomEdge) / 2}
-              stroke={ink}
-              strokeWidth={detail}
+          <g>
+            {/* Teeth inset from the lips, so dark gaps show at the corners. */}
+            <path
+              d={d}
+              transform={`translate(${mx} ${midY}) scale(0.8 0.8) translate(${-mx} ${-midY})`}
+              fill={white}
             />
-            {[-1, 0, 1].map((k) => (
-              <line
-                key={k}
-                x1={mx + (k * w) / 4.5}
-                x2={mx + (k * w) / 4.5}
-                y1={topEdge - 0.1}
-                y2={bottomEdge + 0.1}
-                stroke={ink}
-                strokeWidth={detail}
+            <g stroke={ink} strokeWidth={detail} fill="none" strokeLinecap={tokens.line.cap}>
+              <path
+                d={`M ${mx - w * 0.42} ${midY} Q ${mx - w * 0.2} ${midY + open * 0.07} ${mx} ${midY} T ${mx + w * 0.42} ${midY}`}
               />
-            ))}
-          </>
+              {[-2, -1, 0, 1, 2].map((k) => (
+                <path
+                  key={`u${k}`}
+                  d={`M ${mx + (k * w) / 6} ${gTop - 0.05} L ${mx + (k * w) / 6} ${midY}`}
+                />
+              ))}
+              {[-1.5, -0.5, 0.5, 1.5].map((k) => (
+                <path
+                  key={`l${k}`}
+                  d={`M ${mx + (k * w) / 6} ${midY} L ${mx + (k * w) / 6} ${gBot + 0.05}`}
+                />
+              ))}
+            </g>
+          </g>
         )}
       </g>
       <path d={d} fill="none" stroke={ink} strokeWidth={sw} strokeLinejoin={tokens.line.join} />
+      {m.chin && <ChinLines mx={mx} y={Math.max(gBot, bottomEdge) + 0.05} />}
+    </g>
+  );
+}
+
+/** Two small curved strain lines on the chin (Reference B's frightened figure). */
+function ChinLines({ mx, y }: { mx: number; y: number }) {
+  return (
+    <g fill="none" stroke={ink} strokeWidth={lineWeights.detail} strokeLinecap={tokens.line.cap}>
+      <path d={`M ${mx - 0.05} ${y} q -0.012 0.025 0 0.045`} />
+      <path d={`M ${mx + 0.05} ${y} q 0.012 0.025 0 0.045`} />
     </g>
   );
 }
 
 /** All face features, drawn in head space (origin at the head center, radius 0.5). */
-export const Face = ({ params, turn, blink, look, eyeStyle, skin, talk, idPrefix }: FaceProps) => {
+export const Face = ({
+  params,
+  turn,
+  blink,
+  look,
+  eyeStyle,
+  skin,
+  lidColor,
+  talk,
+  idPrefix,
+}: FaceProps) => {
   const t = clamp(turn, 0, 1);
   const shift = stops(t, TURN.shift);
   const half = stops(t, TURN.halfSpacing);
@@ -411,6 +509,7 @@ export const Face = ({ params, turn, blink, look, eyeStyle, skin, talk, idPrefix
             blink={blink}
             look={look}
             skin={skin}
+            lidColor={lidColor}
             clipId={`${idPrefix}-eye${slot.side}`}
           />
         ),
@@ -424,6 +523,7 @@ export const Face = ({ params, turn, blink, look, eyeStyle, skin, talk, idPrefix
         />
       ))}
       {params.eyes.strain && <StrainLines slots={slots} shift={shift} />}
+      {params.eyes.worry && <WorryLines shift={shift} />}
       <MouthShape m={params.mouth} turn={t} talk={talk} clipId={`${idPrefix}-mouth`} />
     </g>
   );

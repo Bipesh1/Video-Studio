@@ -62,6 +62,18 @@ describe('expressions', () => {
     expect(h.browLeft.raise).toBeGreaterThan(EXPRESSIONS.neutral.browLeft.raise);
   });
 
+  it('carry the reference details Biku asked for at Checkpoint 1 (L-0001)', () => {
+    const a = EXPRESSIONS.angry;
+    expect(a.browLeft.curl).toBeGreaterThan(0);
+    expect(a.mouth.corners).toBeGreaterThan(0.5);
+    const f = EXPRESSIONS.afraid;
+    expect(f.mouth.teeth).toBe('gritted');
+    expect(f.eyes.bags).toBe(true);
+    expect(f.eyes.worry).toBe(true);
+    expect(f.mouth.chin).toBe(true);
+    expect(tokens.face.eyeWidthPctOfHead).toBeGreaterThanOrEqual(0.28);
+  });
+
   it('blend smoothly between endpoints', () => {
     expect(blendFace(EXPRESSIONS.neutral, EXPRESSIONS.angry, 0)).toEqual(EXPRESSIONS.neutral);
     expect(blendFace(EXPRESSIONS.neutral, EXPRESSIONS.angry, 1)).toEqual(EXPRESSIONS.angry);

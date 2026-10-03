@@ -9,6 +9,8 @@ export type Brow = {
   arch: number;
   /** Wobble for fear, 0 to 1. */
   wave: number;
+  /** Flick of the outer tip: positive curls it up, negative down (the hooked brows in Reference B). */
+  curl: number;
 };
 
 export type Eyes = {
@@ -28,6 +30,10 @@ export type Eyes = {
   squeeze: boolean;
   /** Stress lines on the forehead and at the outer eye corners. */
   strain: boolean;
+  /** Curved bag lines under the eyes (fear, sadness, tiredness, as in Reference B). */
+  bags: boolean;
+  /** Worry lines across the forehead. */
+  worry: boolean;
   /** Pupil direction bias, -1 to 1 on each axis. */
   lookX: number;
   lookY: number;
@@ -50,6 +56,14 @@ export type Mouth = {
   arch: number;
   /** Tongue showing at the bottom of an open mouth, 0 to 1. */
   tongue: number;
+  /** Little hooks at the mouth corners, like the king's frown crease. 0 none to 1. */
+  corners: number;
+  /** A short lower-lip line under a closed mouth. */
+  lip: boolean;
+  /** Two small strain lines on the chin. */
+  chin: boolean;
+  /** An uneven, wavy line for a tense mouth. -1 to 1. */
+  wobble: number;
   /** Sideways offset of the whole mouth. */
   shiftX: number;
 };

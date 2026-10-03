@@ -6,6 +6,7 @@ import {
   calculateLookTestMetadata,
 } from './compositions/LookTest';
 import { STYLE_MATCH_PLACEHOLDER, StyleMatch } from './compositions/StyleMatch';
+import { FaceMatch } from './compositions/FaceMatch';
 import { Sandbox } from './sandbox/Sandbox';
 import { BACKGROUNDS, STILL_SHEETS, VIDEO_SHEETS, stillId, videoId } from './sandbox/sheets';
 import type { VideoSheet } from './sandbox/sheets';
@@ -66,6 +67,14 @@ export const RemotionRoot = () => {
         width={1920}
         height={1080}
         defaultProps={STYLE_MATCH_PLACEHOLDER}
+      />
+      <Composition
+        id="FaceMatch"
+        component={FaceMatch}
+        durationInFrames={1}
+        fps={fps}
+        width={1080}
+        height={1920}
       />
       {STILL_SHEETS.flatMap((sheet) =>
         BACKGROUNDS.map((bg) => (

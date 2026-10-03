@@ -190,6 +190,15 @@ async function match() {
   }
 }
 
+async function faceMatch() {
+  const url = await bundled();
+  const composition = await selectComposition({ serveUrl: url, id: 'FaceMatch', inputProps: {} });
+  const out = path.join(runDir, 'out', 'face-match.png');
+  mkdirSync(path.dirname(out), { recursive: true });
+  await renderStill({ composition, serveUrl: url, output: out, inputProps: {} });
+  log(`  ${path.relative(projectRoot, out)}`);
+}
+
 async function audition() {
   const script = JSON.parse(readFileSync(path.join(runDir, 'voice-script.json'), 'utf8')) as {
     lines: Array<{ id: string; text: string }>;
@@ -221,6 +230,7 @@ async function main() {
   if (track && want('stills')) await timed('stills', () => stills(track));
   if (track && want('video')) await timed('video', () => video(track));
   if (want('match')) await timed('match', match);
+  if (want('match') || args.has('--faces')) await timed('faces', faceMatch);
   if (args.has('--audition')) await timed('audition', audition);
 }
 
