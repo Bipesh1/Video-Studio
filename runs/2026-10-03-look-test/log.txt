@@ -174,3 +174,87 @@
 2026-10-03T07:50:46.472Z  faces: start
 2026-10-03T07:50:50.075Z    runs\2026-10-03-look-test\out\face-match.png
 2026-10-03T07:50:50.077Z  faces: done in 3.6 s
+2026-10-03T10:31:05.340Z  stills: start
+2026-10-03T10:31:05.493Z  bundle: start
+2026-10-03T10:31:10.553Z  bundle: done in 5.1 s
+2026-10-03T10:31:13.842Z    still n1 at frame 104: runs\2026-10-03-look-test\stills\n1.png
+2026-10-03T10:31:15.452Z    still d1 at frame 219: runs\2026-10-03-look-test\stills\d1.png
+2026-10-03T10:31:16.962Z    still n2 at frame 302: runs\2026-10-03-look-test\stills\n2.png
+2026-10-03T10:31:18.452Z    still n3 at frame 397: runs\2026-10-03-look-test\stills\n3.png
+2026-10-03T10:31:18.454Z  stills: done in 13.1 s
+2026-10-03T10:31:18.454Z  video: start
+2026-10-03T10:32:12.895Z    runs\2026-10-03-look-test\out\look-test.mp4: 14.57 s of video in 53.0 s (3.64 s per video second)
+2026-10-03T10:32:12.899Z    runs\2026-10-03-look-test\out\look-test.srt
+2026-10-03T10:32:13.654Z  video: done in 55.2 s
+2026-10-03T10:32:13.655Z  match: start
+2026-10-03T10:32:17.244Z    runs\2026-10-03-look-test\out\style-match-n1.png
+2026-10-03T10:32:20.319Z    runs\2026-10-03-look-test\out\style-match-d1.png
+2026-10-03T10:32:23.480Z    runs\2026-10-03-look-test\out\style-match-n2.png
+2026-10-03T10:32:26.558Z    runs\2026-10-03-look-test\out\style-match-n3.png
+2026-10-03T10:32:26.560Z  match: done in 12.9 s
+2026-10-03T10:32:26.562Z  faces: start
+2026-10-03T10:32:29.480Z    runs\2026-10-03-look-test\out\face-match.png
+2026-10-03T10:32:29.481Z  faces: done in 2.9 s
+2026-10-03T10:36:14.853Z  stills: start
+2026-10-03T10:36:14.874Z  bundle: start
+2026-10-03T10:36:19.901Z  bundle: done in 5.0 s
+2026-10-03T10:36:24.557Z    still n1 at frame 104: runs\2026-10-03-look-test\stills\n1.png
+2026-10-03T10:36:26.786Z    still d1 at frame 219: runs\2026-10-03-look-test\stills\d1.png
+2026-10-03T10:36:28.889Z    still n2 at frame 302: runs\2026-10-03-look-test\stills\n2.png
+2026-10-03T10:36:34.015Z    still n3 at frame 397: runs\2026-10-03-look-test\stills\n3.png
+2026-10-03T10:36:34.016Z  stills: done in 19.2 s
+2026-10-03T10:36:34.017Z  video: start
+2026-10-03T10:37:23.978Z    runs\2026-10-03-look-test\out\look-test.mp4: 14.57 s of video in 46.6 s (3.20 s per video second)
+2026-10-03T10:37:23.982Z    runs\2026-10-03-look-test\out\look-test.srt
+2026-10-03T10:37:24.081Z  video: done in 50.1 s
+2026-10-03T10:37:24.082Z  match: start
+2026-10-03T10:37:27.433Z    runs\2026-10-03-look-test\out\style-match-n1.png
+2026-10-03T10:37:30.800Z    runs\2026-10-03-look-test\out\style-match-d1.png
+2026-10-03T10:37:33.627Z    runs\2026-10-03-look-test\out\style-match-n2.png
+2026-10-03T10:37:36.644Z    runs\2026-10-03-look-test\out\style-match-n3.png
+2026-10-03T10:37:36.645Z  match: done in 12.6 s
+2026-10-03T10:37:36.646Z  faces: start
+2026-10-03T10:37:39.550Z    runs\2026-10-03-look-test\out\face-match.png
+2026-10-03T10:37:39.552Z  faces: done in 2.9 s
+2026-10-03T10:47:55.285Z  stills: start
+2026-10-03T10:47:55.403Z  bundle: start
+2026-10-03T10:47:58.919Z  bundle: done in 3.5 s
+2026-10-03T10:48:03.251Z    still n1 at frame 104: runs\2026-10-03-look-test\stills\n1.png
+2026-10-03T10:48:04.905Z    still d1 at frame 219: runs\2026-10-03-look-test\stills\d1.png
+2026-10-03T10:48:06.753Z    still n2 at frame 302: runs\2026-10-03-look-test\stills\n2.png
+2026-10-03T10:48:11.376Z    still n3 at frame 397: runs\2026-10-03-look-test\stills\n3.png
+2026-10-03T10:48:11.377Z  stills: done in 16.1 s
+2026-10-03T10:48:11.378Z  video: start
+2026-10-03T10:49:04.783Z    runs\2026-10-03-look-test\out\look-test.mp4: 14.57 s of video in 49.8 s (3.42 s per video second)
+2026-10-03T10:49:04.792Z    runs\2026-10-03-look-test\out\look-test.srt
+2026-10-03T10:49:04.970Z  video: done in 53.6 s
+2026-10-03T10:49:04.972Z  match: start
+2026-10-03T10:49:07.768Z    runs\2026-10-03-look-test\out\style-match-n1.png
+2026-10-03T10:49:10.336Z    runs\2026-10-03-look-test\out\style-match-d1.png
+2026-10-03T10:49:12.958Z    runs\2026-10-03-look-test\out\style-match-n2.png
+2026-10-03T10:49:15.514Z    runs\2026-10-03-look-test\out\style-match-n3.png
+2026-10-03T10:49:15.515Z  match: done in 10.5 s
+2026-10-03T10:49:15.516Z  faces: start
+2026-10-03T10:49:18.409Z    runs\2026-10-03-look-test\out\face-match.png
+2026-10-03T10:49:18.411Z  faces: done in 2.9 s
+2026-10-03T10:54:07.074Z  stills: start
+2026-10-03T10:54:07.082Z  bundle: start
+2026-10-03T10:54:10.970Z  bundle: done in 3.9 s
+2026-10-03T10:54:14.067Z    still n1 at frame 104: runs\2026-10-03-look-test\stills\n1.png
+2026-10-03T10:54:15.514Z    still d1 at frame 219: runs\2026-10-03-look-test\stills\d1.png
+2026-10-03T10:54:17.017Z    still n2 at frame 302: runs\2026-10-03-look-test\stills\n2.png
+2026-10-03T10:54:18.625Z    still n3 at frame 397: runs\2026-10-03-look-test\stills\n3.png
+2026-10-03T10:54:18.627Z  stills: done in 11.6 s
+2026-10-03T10:54:18.628Z  video: start
+2026-10-03T10:55:10.682Z    runs\2026-10-03-look-test\out\look-test.mp4: 14.57 s of video in 50.5 s (3.46 s per video second)
+2026-10-03T10:55:10.685Z    runs\2026-10-03-look-test\out\look-test.srt
+2026-10-03T10:55:10.793Z  video: done in 52.2 s
+2026-10-03T10:55:10.794Z  match: start
+2026-10-03T10:55:13.465Z    runs\2026-10-03-look-test\out\style-match-n1.png
+2026-10-03T10:55:15.886Z    runs\2026-10-03-look-test\out\style-match-d1.png
+2026-10-03T10:55:18.563Z    runs\2026-10-03-look-test\out\style-match-n2.png
+2026-10-03T10:55:21.103Z    runs\2026-10-03-look-test\out\style-match-n3.png
+2026-10-03T10:55:21.104Z  match: done in 10.3 s
+2026-10-03T10:55:21.105Z  faces: start
+2026-10-03T10:55:23.618Z    runs\2026-10-03-look-test\out\face-match.png
+2026-10-03T10:55:23.619Z  faces: done in 2.5 s

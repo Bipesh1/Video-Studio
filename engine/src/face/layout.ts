@@ -9,7 +9,7 @@ export const EYE_H = EYE_W * 1.15;
 export const PUPIL_D = EYE_W * tokens.face.pupilPctOfEye;
 /** Eyes sit around the vertical middle of the head, close together. */
 /** Eyes sit a little above the middle, leaving room for a wide mouth below (Reference B). */
-export const EYE_Y = -0.05;
+export const EYE_Y = -0.08;
 /** Slightly negative: the eyes just overlap, as in both references. */
 export const EYE_GAP = -0.012;
 export const BROW_GAP = 0.045;

@@ -29,3 +29,28 @@ Applied: new grimace drawing in engine/src/face/Face.tsx; eyes moved up a little
   mouth fits; hairlines raised so brows stay visible.
 Status: active
 ```
+
+```
+L-0003 | 2026-10-03 | run: 2026-10-03-look-test (Checkpoint 1, round 3)
+Area: faces | Scope: style ink-stick | Source: Biku
+Lesson: Strong faces are composed, not just assembled. Fear tips the whole face down toward
+  where the character looks; eyes are big and overlapping with pupils resting on the bottom rim;
+  bag lines hug the eye bottoms and wrap up the sides; brows are lighter arcs; the mouth sits low
+  with a clear gap under the eyes. Angry uses big lidded eyes, thin hooked brows and a wide curled
+  frown. Stern almond eyes keep heavy brows sitting right on them.
+Evidence: Biku said our frightened face still was not like the reference and asked us to observe
+  its curves closely.
+Applied: face frame (tilt, scale, offset) per expression, brow weight, eyes moved up, bag lines
+  that wrap, worry lines high on the forehead, cheek fold and wavy upper lip on the grimace.
+Status: active
+
+L-0004 | 2026-10-03 | run: 2026-10-03-look-test (Checkpoint 1, round 3)
+Area: faces | Scope: style ink-stick | Source: Biku
+Lesson: Lines inside the face are thinner and softer than the head outline: about 2.2% of head
+  width in a soft dark gray, for eye outlines, lids, mouth, teeth and detail lines. Pupils, brows
+  and the mouth interior stay dark so expressions still read on a phone.
+Evidence: Biku said the head circle and the facial feature lines had the same thickness, while the
+  references use thin lines for subtle features; then asked for them thinner and less dark still.
+Applied: guide v5 then v6 (tokens face.featureLinePctOfHead 0.022, face.featureLineColor #3A3A40).
+Status: active
+```

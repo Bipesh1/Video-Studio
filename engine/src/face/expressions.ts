@@ -1,12 +1,15 @@
 import { clamp, lerp, smoothstep } from '../rig/math';
-import type { Brow, Eyes, FaceParams, Mouth } from './types';
+import type { Brow, Eyes, FaceFrame, FaceParams, Mouth } from './types';
 
-const brow = (raise = 0, tilt = 0, arch = 0.12, wave = 0, curl = 0): Brow => ({
+export const UPRIGHT: FaceFrame = { tilt: 0, scale: 1, dx: 0, dy: 0 };
+
+const brow = (raise = 0, tilt = 0, arch = 0.12, wave = 0, curl = 0, weight = 1): Brow => ({
   raise,
   tilt,
   arch,
   wave,
   curl,
+  weight,
 });
 
 const eyes = (o: Partial<Eyes> = {}): Eyes => ({
@@ -67,9 +70,9 @@ export const EXPRESSIONS = {
   },
   /** Like Reference B's threatening figure and the king: hooked V brows, heavy shaded lids, a wide frown with curled corners. */
   angry: {
-    ...both(brow(-0.045, 24, 0, 0, 0.7)),
-    eyes: eyes({ upperLid: 0.44, lidTilt: 18, pupil: 0.6 }),
-    mouth: mouth({ width: 0.3, curve: -0.04, corners: 1.1, wobble: 0.3 }),
+    ...both(brow(-0.02, 22, 0.1, 0, 1, 0.65)),
+    eyes: eyes({ upperLid: 0.45, lidTilt: 14, pupil: 0.55, scale: 1.18, lookX: 0.45 }),
+    mouth: mouth({ width: 0.32, curve: -0.035, corners: 1.2, wobble: 0.3 }),
   },
   shouting: {
     ...both(brow(-0.04, 29, 0, 0, 0.6)),
@@ -78,22 +81,23 @@ export const EXPRESSIONS = {
   },
   /** Like Reference B's frightened figure: wavy worried brows, drooping lids with bags, gritted teeth. */
   afraid: {
-    ...both(brow(0.06, -18, 0.25, 0.35, 0)),
+    frame: { tilt: -8, scale: 1, dx: 0, dy: 0.03 },
+    ...both(brow(0.035, -18, 0.55, 0.15, 0, 0.72)),
     eyes: eyes({
-      scale: 1.05,
-      upperLid: 0.3,
+      scale: 1.1,
+      upperLid: 0.32,
       lidTilt: -12,
       pupil: 0.5,
-      lookX: -0.45,
-      lookY: 0.55,
+      lookX: 0.45,
+      lookY: 0.9,
       bags: true,
       worry: true,
     }),
     mouth: mouth({
-      width: 0.36,
-      open: 0.28,
+      width: 0.34,
+      open: 0.26,
       curve: -0.015,
-      skew: -0.025,
+      skew: 0.03,
       teeth: 'gritted',
       chin: true,
     }),
@@ -163,13 +167,32 @@ const lerpBrow = (a: Brow, b: Brow, t: number): Brow => ({
   arch: lerp(a.arch, b.arch, t),
   wave: lerp(a.wave, b.wave, t),
   curl: lerp(a.curl, b.curl, t),
+  weight: lerp(a.weight, b.weight, t),
 });
 
 /** Blend two faces. Numbers interpolate; on/off choices switch at the halfway point. */
 export function blendFace(a: FaceParams, b: FaceParams, t: number): FaceParams {
   const x = clamp(t, 0, 1);
+  // Exact endpoints, so a finished blend is the target face itself, free of rounding.
+  if (x <= 0) return a;
+  if (x >= 1) return b;
   const late = x >= 0.5;
+  const fa = a.frame ?? UPRIGHT;
+  const fb = b.frame ?? UPRIGHT;
+  // Only faces that use a frame carry one, so blending two upright faces gives an upright face.
+  const frame =
+    a.frame || b.frame
+      ? {
+          frame: {
+            tilt: lerp(fa.tilt, fb.tilt, x),
+            scale: lerp(fa.scale, fb.scale, x),
+            dx: lerp(fa.dx, fb.dx, x),
+            dy: lerp(fa.dy, fb.dy, x),
+          },
+        }
+      : {};
   return {
+    ...frame,
     browLeft: lerpBrow(a.browLeft, b.browLeft, x),
     browRight: lerpBrow(a.browRight, b.browRight, x),
     eyes: {

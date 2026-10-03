@@ -11,6 +11,8 @@ export type Brow = {
   wave: number;
   /** Flick of the outer tip: positive curls it up, negative down (the hooked brows in Reference B). */
   curl: number;
+  /** Thickness multiplier: 1 is the token brow weight; worried brows are lighter. */
+  weight: number;
 };
 
 export type Eyes = {
@@ -68,12 +70,28 @@ export type Mouth = {
   shiftX: number;
 };
 
+/**
+ * How the whole set of features sits on the head. Reference B's frightened face tilts down
+ * toward where the character faces, with big features set low: that is a frame, not a pose.
+ */
+export type FaceFrame = {
+  /** Degrees; negative tips the face down toward the facing direction (mouth forward, as in Reference B). */
+  tilt: number;
+  /** Size of all features together; 1 is the guide size. */
+  scale: number;
+  /** Offset of the features, head units; +x is toward the facing direction, +y is down. */
+  dx: number;
+  dy: number;
+};
+
 export type FaceParams = {
   /** browLeft sits on the -x side of the face, browRight on the +x side. */
   browLeft: Brow;
   browRight: Brow;
   eyes: Eyes;
   mouth: Mouth;
+  /** Omitted means upright, guide size, centered. */
+  frame?: FaceFrame;
 };
 
 export type EyeStyle = 'round' | 'stern';

@@ -19,6 +19,17 @@ Biku: the angry faces in the references are more realistic with their curves, an
 - **Lesson L-0001** in `knowledge/lessons-log.md`, and the first rules in `knowledge/playbooks/styles/ink-stick.md`.
 - Look test, style match sheets and all golden stills re-rendered.
 
+## Checkpoint 1 feedback, round 3 (2026-10-03): applied
+
+Biku: the frightened face still was not like the reference (observe its curves); the face lines were as thick as the head outline, while the references use thin lines; then thinner and less dark still. Done:
+
+- **Face frame:** an expression can tilt, scale and shift all its features. Afraid tips down toward where the character looks.
+- **Afraid:** big overlapping eyes, pupils on the bottom rim, bags that wrap up the eye sides, lighter worried brows, worry lines high on the forehead, a low grimace with a wavy upper lip and a cheek fold.
+- **Angry:** big lidded eyes, thin hooked brows, wide curled frown. **Stern eyes** keep heavy brows sitting right on them.
+- **Guide v5 and v6:** face feature lines (eye outlines, lids, mouth, teeth, detail lines) now about 2.2% of head width in a soft dark gray (`#3A3A40`), thinner and softer than the head outline. New tokens `face.featureLinePctOfHead` and `face.featureLineColor`.
+- Eyes moved up a little more on every face; face blends now return exact faces at their ends.
+- **Lessons L-0003 and L-0004**; style playbook updated. Look test, sheets and all golden stills re-rendered. 75 tests pass.
+
 ## Checkpoint 1 feedback, round 2 (2026-10-03): applied
 
 Biku: the gritted mouth was a simple oval; the reference mouth is drawn more realistically. Done:

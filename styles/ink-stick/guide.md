@@ -1,7 +1,7 @@
 ## Part 3. The Ink Stick art style
 
 **Style id:** `ink-stick`
-**Guide version:** 4 (2026-10-03). See the version history at the end.
+**Guide version:** 6 (2026-10-03). See the version history at the end.
 **Built from:** two reference images supplied by Biku
 - **Reference A:** a stern king in a crown, red cape and armor, under a stormy night sky with light rays
 - **Reference B:** two stick figures in a night scene under a crescent moon, one threatening and one frightened
@@ -46,6 +46,7 @@ Bold, black-outlined cartoon stick figures with big round heads and very express
 | Outline of heads, costumes, props | `#16161A` | 4 to 5% |
 | Stick limbs and torso line | `#16161A` | 7 to 8% |
 | Inner details: folds, seams, buttons, teeth lines | `#16161A` | 2.5 to 3% |
+| Face features: eye outlines, eyelid edges, mouth, lips, teeth, bags, worry and chin lines | `#3A3A40`, a softer dark gray | about 2.2%, the eyelid edge a little heavier. Thinner and softer than the head outline. Pupils, brows and the mouth interior stay dark |
 | Eyebrows | `#16161A` filled shape | about 8%, tapered ends |
 
 - Round line caps and round joins everywhere.
@@ -268,7 +269,7 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
 ```json
 {
   "id": "ink-stick",
-  "version": 4,
+  "version": 6,
   "line": {
     "color": "#16161A",
     "outlinePctOfHead": [0.04, 0.05],
@@ -310,6 +311,8 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
     "eyeWidthPctOfHead": 0.3,
     "pupilPctOfEye": 0.3,
     "mouthInterior": "#3A1E22",
+    "featureLinePctOfHead": 0.022,
+    "featureLineColor": "#3A3A40",
     "nose": false,
     "ears": false
   },
@@ -375,3 +378,5 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
 | 2 | 2026-10-02 | Hands that hold or point show fingers, like the king's glove on the sword in Reference A. Resting hands stay mittens. Style Check question 11 added. | Biku |
 | 3 | 2026-10-03 | Added color values for the hair colors Style 3.4 already names (black, dark brown, brown, auburn, blond, gray, white), each with one shadow tone 15 to 25% darker. No existing rule changed. Biku to confirm. | Claude, for identity mode |
 | 4 | 2026-10-03 | Faces closer to the references, at Biku's Checkpoint 1 request: eyes 30% of head width (was 22%), pupils 30% of the eye (was 40%), shaded curved eyelids, separate tapered brows with curls, and thin detail lines for worry, bags, frown corners, lip and chin. | Biku |
+| 5 | 2026-10-03 | Face feature lines (eye outlines, mouth, lips) use the inner-detail weight, about 3%, thinner than the 4 to 5% head outline, so faces read finer and more attractive, as in the references. | Biku |
+| 6 | 2026-10-03 | Face feature lines thinner (about 2.2% of head width) and softer (#3A3A40 instead of the #16161A outline color), so faces look finer and more attractive. Pupils, brows and mouth interior stay dark. | Biku |

@@ -34,7 +34,14 @@ type FaceProps = {
   idPrefix: string;
 };
 
-const eyeStroke = lineWeights.outline * 0.85;
+/**
+ * Face feature lines are thinner than the head outline (Biku, Checkpoint 1; guide v5): the eyes
+ * and mouth use the top of the inner-detail range, so the face reads finer than the silhouette.
+ */
+const FEATURE_LINE = tokens.face.featureLinePctOfHead;
+/** Softer than the outline color, so faces read finer (guide v6). */
+const FEATURE_INK = tokens.face.featureLineColor;
+const eyeStroke = FEATURE_LINE;
 const LID_PAD = 0.03;
 
 type EyeSlot = { side: -1 | 1; x: number; widthFactor: number };
@@ -77,7 +84,7 @@ function RoundEye({
       <path
         d={`M ${cx - w * 0.42} ${cy + h * 0.1} Q ${cx} ${cy - h * 0.42} ${cx + w * 0.42} ${cy + h * 0.1}`}
         fill="none"
-        stroke={ink}
+        stroke={FEATURE_INK}
         strokeWidth={eyeStroke * 1.1}
         strokeLinecap={tokens.line.cap}
       />
@@ -89,7 +96,7 @@ function RoundEye({
       <path
         d={`M ${cx - w * 0.46} ${y} Q ${cx} ${y + h * 0.16} ${cx + w * 0.46} ${y}`}
         fill="none"
-        stroke={ink}
+        stroke={FEATURE_INK}
         strokeWidth={eyeStroke}
         strokeLinecap={tokens.line.cap}
       />
@@ -137,8 +144,8 @@ function RoundEye({
             <path
               d={`M ${innerX} ${innerY} ${lidCurve}${outerX} ${outerY}`}
               fill="none"
-              stroke={ink}
-              strokeWidth={eyeStroke * 1.15}
+              stroke={FEATURE_INK}
+              strokeWidth={eyeStroke * 1.3}
               strokeLinecap={tokens.line.cap}
             />
           </>
@@ -152,7 +159,7 @@ function RoundEye({
             <path
               d={`M ${cx - w / 2 - LID_PAD} ${lowerTop} Q ${cx} ${lowerTop - lowerArc} ${cx + w / 2 + LID_PAD} ${lowerTop}`}
               fill="none"
-              stroke={ink}
+              stroke={FEATURE_INK}
               strokeWidth={eyeStroke}
             />
           </>
@@ -164,15 +171,15 @@ function RoundEye({
         rx={w / 2}
         ry={h / 2}
         fill="none"
-        stroke={ink}
+        stroke={FEATURE_INK}
         strokeWidth={eyeStroke}
       />
       {eyes.bags && (
         <path
-          d={`M ${cx - w * 0.36} ${bottom + 0.03} Q ${cx} ${bottom + 0.075} ${cx + w * 0.36} ${bottom + 0.03}`}
+          d={`M ${cx - slot.side * w * 0.3} ${bottom + 0.035} Q ${cx + slot.side * w * 0.2} ${bottom + 0.07} ${cx + slot.side * (w * 0.5 + 0.02)} ${cy + h * 0.12}`}
           fill="none"
-          stroke={ink}
-          strokeWidth={lineWeights.detail}
+          stroke={FEATURE_INK}
+          strokeWidth={FEATURE_LINE * 0.9}
           strokeLinecap={tokens.line.cap}
         />
       )}
@@ -183,9 +190,19 @@ function RoundEye({
 /** Worry lines: two short arcs across the forehead, above the brows (Reference B). */
 function WorryLines({ shift }: { shift: number }) {
   return (
-    <g fill="none" stroke={ink} strokeWidth={lineWeights.detail} strokeLinecap={tokens.line.cap}>
-      <path d={`M ${shift - 0.27} -0.4 Q ${shift - 0.31} -0.44 ${shift - 0.28} -0.48`} />
-      <path d={`M ${shift - 0.2} -0.42 Q ${shift - 0.235} -0.455 ${shift - 0.21} -0.5`} />
+    <g
+      fill="none"
+      stroke={FEATURE_INK}
+      strokeWidth={FEATURE_LINE * 0.9}
+      strokeLinecap={tokens.line.cap}
+    >
+      {[0, 1, 2].map((k) => {
+        const x = shift + 0.06 + k * 0.045;
+        const y = -0.48 + k * 0.006;
+        return (
+          <path key={k} d={`M ${x} ${y} Q ${x - 0.025} ${y + 0.035} ${x - 0.005} ${y + 0.075}`} />
+        );
+      })}
     </g>
   );
 }
@@ -202,7 +219,7 @@ function SqueezedEye({ slot }: { slot: EyeSlot }) {
     <path
       d={`M ${outer} ${cy - h / 2} L ${inner} ${cy} L ${outer} ${cy + h / 2}`}
       fill="none"
-      stroke={ink}
+      stroke={FEATURE_INK}
       strokeWidth={eyeStroke * 1.2}
       strokeLinecap={tokens.line.cap}
       strokeLinejoin={tokens.line.join}
@@ -217,8 +234,8 @@ function StrainLines({ slots, shift }: { slots: EyeSlot[]; shift: number }) {
       key={key}
       d={d}
       fill="none"
-      stroke={ink}
-      strokeWidth={lineWeights.detail}
+      stroke={FEATURE_INK}
+      strokeWidth={FEATURE_LINE * 0.9}
       strokeLinecap={tokens.line.cap}
     />
   );
@@ -268,10 +285,24 @@ function SternEye({ slot, eyes, blink }: { slot: EyeSlot; eyes: Eyes; blink: num
 }
 
 /** A thick tapered wedge, heavier at the inner end, with an optional curled tip (Style 3.6). */
-function BrowShape({ slot, b, eyeScale }: { slot: EyeSlot; b: Brow; eyeScale: number }) {
+function BrowShape({
+  slot,
+  b,
+  eyeScale,
+  stern,
+}: {
+  slot: EyeSlot;
+  b: Brow;
+  eyeScale: number;
+  stern: boolean;
+}) {
   const bw = BROW_LEN * slot.widthFactor;
   const cx = slot.x + slot.side * BROW_OUT * slot.widthFactor;
-  const y = EYE_Y - (EYE_H * eyeScale) / 2 - BROW_GAP - b.raise;
+  // Stern almond eyes are small: their brows sit low and heavy right above them (the king).
+  const y = stern
+    ? EYE_Y + 0.03 - EYE_H * 0.2 - BROW_GAP - b.raise
+    : EYE_Y - (EYE_H * eyeScale) / 2 - BROW_GAP - b.raise;
+  const weight = stern ? Math.max(1, b.weight) : b.weight;
   const innerX = cx - slot.side * (bw / 2);
   const outerX = cx + slot.side * (bw / 2);
   const n = 14;
@@ -286,7 +317,7 @@ function BrowShape({ slot, b, eyeScale }: { slot: EyeSlot; b: Brow; eyeScale: nu
       b.wave * 0.014 * Math.sin(3 * Math.PI * u) -
       b.curl * 0.06 * u * u * u;
     // Heavy at the inner end, tapering to a fine tip (the hooked brows in Reference B).
-    const th = lineWeights.brow * (0.85 - 0.7 * u + 0.25 * Math.sin(Math.PI * u));
+    const th = lineWeights.brow * weight * (0.85 - 0.7 * u + 0.25 * Math.sin(Math.PI * u));
     upper.push({ x, y: by - th / 2 });
     lower.push({ x, y: by + th / 2 });
   }
@@ -318,7 +349,7 @@ function MouthShape({
   const my = MOUTH_Y;
   const w = m.width * MOUTH_SCALE * stops(turn, TURN.mouthWidth);
   const open = Math.max(m.open * MOUTH_OPEN_SCALE, talk * 0.14);
-  const sw = lineWeights.outline * 0.9;
+  const sw = FEATURE_LINE * 1.1;
   const cornerY = my - m.curve;
   const left = { x: mx - w / 2, y: cornerY };
   const right = { x: mx + w / 2, y: cornerY - m.skew };
@@ -333,7 +364,7 @@ function MouthShape({
         rx={w / 2}
         ry={ry}
         fill={tokens.face.mouthInterior}
-        stroke={ink}
+        stroke={FEATURE_INK}
         strokeWidth={sw}
       />
     );
@@ -355,7 +386,12 @@ function MouthShape({
       return `M ${p.x - side * 0.012} ${p.y - dy * 0.2} Q ${p.x + side * 0.012} ${p.y} ${p.x + side * 0.018} ${p.y + dy}`;
     };
     return (
-      <g fill="none" stroke={ink} strokeLinecap={tokens.line.cap} strokeLinejoin={tokens.line.join}>
+      <g
+        fill="none"
+        stroke={FEATURE_INK}
+        strokeLinecap={tokens.line.cap}
+        strokeLinejoin={tokens.line.join}
+      >
         <path
           d={`M ${left.x} ${left.y} C ${c1.x} ${c1.y} ${c2.x} ${c2.y} ${right.x} ${right.y}`}
           strokeWidth={sw}
@@ -369,7 +405,7 @@ function MouthShape({
         {m.lip && (
           <path
             d={`M ${mx - w * 0.2} ${my + 0.075} Q ${mx} ${my + 0.095} ${mx + w * 0.2} ${my + 0.075}`}
-            strokeWidth={lineWeights.detail}
+            strokeWidth={FEATURE_LINE * 0.9}
           />
         )}
         {m.chin && <ChinLines mx={mx} y={my + 0.13} />}
@@ -383,8 +419,15 @@ function MouthShape({
     const gh = open * 0.62;
     return (
       <g>
-        <Grimace cx={mx} cy={midY} w={w * 1.12} h={gh} tilt={m.skew * 400} clipId={clipId} />
-        {m.chin && <ChinLines mx={mx} y={midY + gh * 0.62} />}
+        <Grimace
+          cx={mx}
+          cy={midY + gh * 0.25}
+          w={w * 1.12}
+          h={gh}
+          tilt={m.skew * 400}
+          clipId={clipId}
+        />
+        {m.chin && <ChinLines mx={mx} y={midY + gh * 0.85} />}
       </g>
     );
   }
@@ -399,7 +442,7 @@ function MouthShape({
   const topEdge = midY + (upperCtrl - midY) / 2;
   const bottomEdge = midY + (lowerCtrl - midY) / 2;
   // Teeth lines use the thin end of the detail range so a small mouth stays readable.
-  const detail = tokens.line.detailPctOfHead[0];
+  const detail = FEATURE_LINE * 0.8;
 
   return (
     <g>
@@ -424,7 +467,7 @@ function MouthShape({
               x2={mx + w}
               y1={topEdge + (bottomEdge - topEdge) * 0.32}
               y2={topEdge + (bottomEdge - topEdge) * 0.32}
-              stroke={ink}
+              stroke={FEATURE_INK}
               strokeWidth={detail}
             />
           </>
@@ -446,7 +489,12 @@ function MouthShape({
               transform={`translate(${mx} ${midY}) scale(0.8 0.8) translate(${-mx} ${-midY})`}
               fill={white}
             />
-            <g stroke={ink} strokeWidth={detail} fill="none" strokeLinecap={tokens.line.cap}>
+            <g
+              stroke={FEATURE_INK}
+              strokeWidth={detail}
+              fill="none"
+              strokeLinecap={tokens.line.cap}
+            >
               <path
                 d={`M ${mx - w * 0.42} ${midY} Q ${mx - w * 0.2} ${midY + open * 0.07} ${mx} ${midY} T ${mx + w * 0.42} ${midY}`}
               />
@@ -466,7 +514,13 @@ function MouthShape({
           </g>
         )}
       </g>
-      <path d={d} fill="none" stroke={ink} strokeWidth={sw} strokeLinejoin={tokens.line.join} />
+      <path
+        d={d}
+        fill="none"
+        stroke={FEATURE_INK}
+        strokeWidth={sw}
+        strokeLinejoin={tokens.line.join}
+      />
       {m.chin && <ChinLines mx={mx} y={Math.max(gBot, bottomEdge) + 0.05} />}
     </g>
   );
@@ -475,7 +529,12 @@ function MouthShape({
 /** Two short slanted strain strokes on the chin (Reference B's frightened figure). */
 function ChinLines({ mx, y }: { mx: number; y: number }) {
   return (
-    <g fill="none" stroke={ink} strokeWidth={lineWeights.detail} strokeLinecap={tokens.line.cap}>
+    <g
+      fill="none"
+      stroke={FEATURE_INK}
+      strokeWidth={FEATURE_LINE * 0.9}
+      strokeLinecap={tokens.line.cap}
+    >
       <path d={`M ${mx - 0.035} ${y} L ${mx - 0.018} ${y + 0.04}`} />
       <path d={`M ${mx + 0.01} ${y - 0.005} L ${mx + 0.032} ${y + 0.032}`} />
     </g>
@@ -504,8 +563,9 @@ export const Face = ({
     ] as const
   ).filter((s) => s.widthFactor > 0.15);
 
+  const f = params.frame ?? { tilt: 0, scale: 1, dx: 0, dy: 0 };
   return (
-    <g>
+    <g transform={`translate(${f.dx} ${f.dy}) rotate(${f.tilt}) scale(${f.scale})`}>
       {slots.map((slot) =>
         eyeStyle === 'stern' && !params.eyes.squeeze ? (
           <SternEye key={slot.side} slot={slot} eyes={params.eyes} blink={blink} />
@@ -528,6 +588,7 @@ export const Face = ({
           slot={slot}
           b={slot.side < 0 ? params.browLeft : params.browRight}
           eyeScale={params.eyes.scale}
+          stern={eyeStyle === 'stern' && !params.eyes.squeeze}
         />
       ))}
       {params.eyes.strain && <StrainLines slots={slots} shift={shift} />}
@@ -560,8 +621,12 @@ function Grimace({
 }) {
   const N = 28;
   const X = (u: number) => (u * w) / 2;
+  // A positive tilt lowers the +x corner; the fold goes on the lower corner.
+  const fold = tilt >= 0 ? 1 : -1;
   // Edge heights across the mouth, u from -1 (left corner) to 1 (right corner).
-  const top = (u: number) => -h * 0.5 * Math.pow(Math.max(0, 1 - u * u), 0.62) * (1 + 0.25 * u);
+  const top = (u: number) =>
+    -h * 0.5 * Math.pow(Math.max(0, 1 - u * u), 0.62) * (1 + 0.25 * u) +
+    h * 0.05 * Math.sin(2.6 * Math.PI * u) * (1 - u * u);
   const bottom = (u: number) => h * 0.42 * Math.pow(Math.max(0, 1 - u * u), 0.5) * (1 - 0.12 * u);
   const teethTop = (u: number) => top(u) * 0.8 + h * 0.03;
   const teethBottom = (u: number) => bottom(u) * 0.78 - h * 0.02;
@@ -579,7 +644,7 @@ function Grimace({
   const lowerTeeth = `M ${[...along(bite, u0, u1), ...along(teethBottom, u1, u0)].join(' L ')} Z`;
   const upperGaps = [-0.56, -0.29, 0, 0.3, 0.58];
   const lowerGaps = [-0.44, -0.15, 0.15, 0.45];
-  const gap = lineWeights.detail * 1.25;
+  const gap = FEATURE_LINE * 0.85;
   return (
     <g transform={`translate(${cx} ${cy}) rotate(${tilt})`}>
       <defs>
@@ -592,7 +657,7 @@ function Grimace({
         <path d={upperTeeth} fill={white} />
         <path d={lowerTeeth} fill={white} />
         <g
-          stroke={ink}
+          stroke={FEATURE_INK}
           fill="none"
           strokeLinecap={tokens.line.cap}
           strokeLinejoin={tokens.line.join}
@@ -617,9 +682,17 @@ function Grimace({
       <path
         d={outline}
         fill="none"
-        stroke={ink}
-        strokeWidth={lineWeights.outline}
+        stroke={FEATURE_INK}
+        strokeWidth={FEATURE_LINE * 1.25}
         strokeLinejoin={tokens.line.join}
+      />
+      {/* A cheek fold curving around the lower corner, where the grimace pulls hardest. */}
+      <path
+        d={`M ${X(fold) + fold * 0.01} ${-h * 0.45} Q ${X(fold) + fold * 0.055} ${-h * 0.05} ${X(fold) + fold * 0.015} ${h * 0.35}`}
+        fill="none"
+        stroke={FEATURE_INK}
+        strokeWidth={FEATURE_LINE * 1.1}
+        strokeLinecap={tokens.line.cap}
       />
     </g>
   );

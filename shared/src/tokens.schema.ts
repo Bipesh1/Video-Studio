@@ -50,6 +50,9 @@ export const styleTokensSchema = z
       eyeWidthPctOfHead: unit,
       pupilPctOfEye: unit,
       mouthInterior: hexColor,
+      // Guide v6: face feature lines are thinner and softer than outlines.
+      featureLinePctOfHead: unit,
+      featureLineColor: hexColor,
       nose: z.literal(false),
       ears: z.literal(false),
     }),
