@@ -18,7 +18,7 @@ Biku asked for more lifelike motion and agreed to add a **motion polish** step t
 - Livelier faces: eye darts, smooth head turns toward the speaker, more mouth shapes for talking.
 - Walks with mood (proud, tired, sneaky, happy) and hands and heads moving in arcs.
 
-Goal is "alive", not "realistic": it must still read as the snappy reference style. Still open from earlier talk: whether Phase 2 builds the plan's full libraries or a smaller starter set with the rest drawn on demand.
+Goal is "alive", not "realistic": it must still read as the snappy reference style. **Decided by Biku (2026-10-04): starter set.** Phase 2 covers every category in the plan (poses, actions, clothes, hair and skin, character cards, effects, places, props, camera, on-screen extras, library index, `/draw`, motion polish) with a small, most-useful selection in each; the rest is drawn on demand during videos and saved to the library. Claude's reading of Biku's words; the exact selection is to be shown to Biku before building.
 
 ## Extra: first short video, "The King Who Taxed the Moon" (2026-10-04, asked by Biku)
 
