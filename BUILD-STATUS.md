@@ -22,6 +22,19 @@ Goal is "alive", not "realistic": it must still read as the snappy reference sty
 
 **Action is a priority (Biku, 2026-10-04).** The Phase 2 starter selection must include the action set, not leave it to on-demand drawing: run, jump, fall, fight (wind-up, swing, hit, recoil), push, pull, carry; impact flash, motion lines, dizzy stars; camera shake and fast push-in. Limits stay as the style sets them: violence by implication only, no blood or gore.
 
+### Phase 2 steps (agreed split, 2026-10-04)
+
+Each step ends with contact sheets for Biku, a commit and an update here. Start a step only when Biku asks.
+
+- **2A. Library foundation.** Apply Biku's head-size answer; `library/index.json` with every existing piece registered (tags, picture, code path); golden stills; the check that fails on unindexed pieces; `/draw`.
+- **2B. People.** Tier 1 clothes (shirt, tank top, trousers, skirt or dress, shoes, plain hat, hood or cloak, robe); costumes (soldier, queen or noble gown, villager or farmer); long hair; all skin tones and hair checked; age cues (child, adult, elder); character cards.
+- **2C. Poses and motion polish.** Sit, kneel, lie, cross arms, look up, look down, cower; cry, cheer, hug; wind-up and settle; lagging capes, hair and held objects; weight and breathing; eye darts, smooth head turns, more mouth shapes; mood walks; arcs.
+- **2D. Action.** Run, jump, fall, fight (wind-up, swing, hit, recoil), push, pull, carry, sneak; tears, anger mark, motion lines, impact flash, dizzy stars, symbols; camera shake, fast push-in, pan; a short action test clip.
+- **2E. World.** Places (night street, day street, field, forest, castle and throne room, home interior); about 10 props (sword, shield, coin, bag, book, lantern, door, chair, table, cup); wide, medium, close-up and over-the-shoulder framing; title card and labels.
+- **2F. Wrap-up.** Full contact sheets of everything, index complete, all checks passing, Phase 2 report.
+
+Left for on-demand drawing: the other nine places, climb, write, read, steer, row, salute, march, turn out pockets, lean, hands on head, counters, charts, maps, animals.
+
 ## Extra: first short video, "The King Who Taxed the Moon" (2026-10-04, asked by Biku)
 
 Biku asked for a short folktale of Claude's own. Written, drawn, voiced and rendered by hand, since the pipeline arrives in Phase 4.
