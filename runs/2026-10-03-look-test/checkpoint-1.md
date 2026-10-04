@@ -47,6 +47,10 @@ Biku said the gritted mouth was a simple oval. It is redrawn like Reference B (a
 
 Biku asked for the frightened face's curves to match more closely, and for face lines thinner and softer than the head outline. The frightened face now tips down toward where it looks, with big overlapping eyes, pupils on the bottom rim, wrapping bag lines, lighter brows and a low grimace. The angry face got bigger lidded eyes, thin hooked brows and a wide curled frown. Every line inside the face is now thin (about 2.2%) and soft gray (guide v6). Lessons L-0003 and L-0004.
 
+## Feedback round 4 (2026-10-04): noted, not built yet
+
+Biku sent the frightened face from Reference B again. The fixes helped, but the face is still not like the reference, and the wrinkles do not look real. This answers question 1 below: not close enough yet. Biku asked not to build it now. Saved as lesson L-0006 and as a proposed faces step before Phase 2 step 2B (see `BUILD-STATUS.md`).
+
 ## Where it differs from the references (my honest read)
 
 - **Eyes are now close to Reference B's size** (30% of the head). Reference B's lids and pupils are still a little looser and more hand-drawn.

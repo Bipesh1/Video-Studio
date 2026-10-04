@@ -65,3 +65,22 @@ Applied: engine/src/face/Face.tsx stops the pupil at the edge of the overlapping
   video re-rendered as moon-tax-v2.mp4.
 Status: active
 ```
+
+```
+L-0006 | 2026-10-04 | run: 2026-10-03-look-test (face match sheet)
+Area: faces | Scope: style ink-stick | Source: Biku
+Lesson: Wrinkles and creases must look hand-drawn, like Reference B's frightened face, not like
+  identical tally marks: thin strokes that are thicker in the middle and fine at both ends, each
+  with its own length and angle, following the curve of the eye or cheek they sit on.
+Evidence: Biku sent the frightened face from Reference B again and said the fixes so far are not
+  satisfactory to the core, and our wrinkles are still not realistic.
+Claude's reading of the gap (to confirm with Biku when it is built): our forehead, eye-corner and
+  chin lines are equal parallel ticks of one thickness. The reference has two arcs under the eye,
+  creases wrapping the outer eye, a cheek crease beside the mouth and fanned chin strokes. The
+  reference shades the lower lids (pushed up, pupils sitting on the lid line) where ours shades
+  the upper lids. Its features fill more of the head and its mouth is taller with bigger, uneven
+  teeth.
+Applied: not yet. Biku asked not to build it now. Proposed as a faces step before Phase 2 step 2B.
+  Needs a guide change (detail lines inside the face may taper), which is Biku's to approve.
+Status: active
+```

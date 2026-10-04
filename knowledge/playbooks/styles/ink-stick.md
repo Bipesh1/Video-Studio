@@ -16,3 +16,4 @@ Current best practice for the Ink Stick look, learned from real videos and Biku'
 - **In big close-ups, drop small forehead marks that could read as stray hair.** (look test, self-check)
 - **Check faces side by side with the references** when a new expression is drawn: render a face match sheet, not just a contact sheet. (L-0001)
 - **Both pupils are always fully visible.** Where the eyes overlap in a three-quarter view, the far pupil stops at the edge of the near eye. (L-0005, Biku)
+- **Wrinkles are hand-drawn creases, never tally marks.** Each is a thin stroke, thicker in the middle and fine at both ends, with its own length and angle, following the curve of the eye or cheek it sits on. Reference B's frightened face is the model. Not built into the face code yet, and the guide must first allow tapered detail lines (ask Biku). Until then, compare wrinkles by eye against the reference. (L-0006, Biku)

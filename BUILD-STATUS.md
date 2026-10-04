@@ -8,6 +8,8 @@
 
 Review file: `runs/2026-10-03-look-test/checkpoint-1.md`. Questions: (1) how close the look is and what to change, (2) narrator and character voices, (3) head size, (4) hair colors (guide v3), (5) fingers on hands that cover the face.
 
+**Question 1 answered (2026-10-04): not close enough yet.** Biku sent Reference B's frightened face again: the fixes helped, but the face is still not like the reference and the wrinkles do not look real. Biku asked not to build it now. Saved as lesson L-0006; see "Faces round 4" in the Phase 2 steps below.
+
 ## Phase 2 scope addition (2026-10-04, agreed by Biku)
 
 Biku asked for more lifelike motion and agreed to add a **motion polish** step to Phase 2, on top of the plan's list (Part 2, sections 7.3 to 7.7):
@@ -27,6 +29,7 @@ Goal is "alive", not "realistic": it must still read as the snappy reference sty
 Each step ends with contact sheets for Biku, a commit and an update here. Start a step only when Biku asks.
 
 - **2A. Library foundation.** Apply Biku's head-size answer; `library/index.json` with every existing piece registered (tags, picture, code path); golden stills; the check that fails on unindexed pieces; `/draw`.
+- **Faces round 4 (proposed, before 2B; waiting for Biku's go-ahead).** From lesson L-0006. Redraw wrinkles as hand-drawn creases (thicker in the middle, fine at the ends, each different, following the eye and cheek); for fear, shade the lower lids instead of the upper ones; let the features fill more of the head; make the gritted mouth taller with bigger, uneven teeth; then give every expression's wrinkles the same treatment. Compare at large size against the reference and show Biku a face sheet. Needs a guide change that Biku approves (tapered detail lines inside the face). Run this step at higher effort than the rest.
 - **2B. People.** Tier 1 clothes (shirt, tank top, trousers, skirt or dress, shoes, plain hat, hood or cloak, robe); costumes (soldier, queen or noble gown, villager or farmer); long hair; all skin tones and hair checked; age cues (child, adult, elder); character cards.
 - **2C. Poses and motion polish.** Sit, kneel, lie, cross arms, look up, look down, cower; cry, cheer, hug; wind-up and settle; lagging capes, hair and held objects; weight and breathing; eye darts, smooth head turns, more mouth shapes; mood walks; arcs.
 - **2D. Action.** Run, jump, fall, fight (wind-up, swing, hit, recoil), push, pull, carry, sneak; tears, anger mark, motion lines, impact flash, dizzy stars, symbols; camera shake, fast push-in, pan; a short action test clip.
