@@ -54,3 +54,14 @@ Evidence: Biku said the head circle and the facial feature lines had the same th
 Applied: guide v5 then v6 (tokens face.featureLinePctOfHead 0.022, face.featureLineColor #3A3A40).
 Status: active
 ```
+
+```
+L-0005 | 2026-10-04 | run: 2026-10-04-moon-tax
+Area: faces | Scope: style ink-stick | Source: Biku
+Lesson: A pupil must always be fully visible. In a three-quarter view the two eyes overlap, and a
+  character looking toward the near side pushed the far eye's pupil under the near eye.
+Evidence: Biku could not see the pupil in the king's right eye on the angry face in shot 3.
+Applied: engine/src/face/Face.tsx stops the pupil at the edge of the overlapping eye;
+  video re-rendered as moon-tax-v2.mp4.
+Status: active
+```

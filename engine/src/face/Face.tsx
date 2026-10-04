@@ -44,7 +44,13 @@ const FEATURE_INK = tokens.face.featureLineColor;
 const eyeStroke = FEATURE_LINE;
 const LID_PAD = 0.03;
 
-type EyeSlot = { side: -1 | 1; x: number; widthFactor: number };
+type EyeSlot = {
+  side: -1 | 1;
+  x: number;
+  widthFactor: number;
+  /** Where the neighbouring eye, drawn on top, starts to cover this one. */
+  coverX?: number;
+};
 
 function clampUnit(v: Vec2): Vec2 {
   const l = length(v);
@@ -118,7 +124,9 @@ function RoundEye({
   const dir = clampUnit({ x: eyes.lookX + look.x, y: eyes.lookY + look.y });
   const maxX = Math.max(0, w / 2 - r - 0.016);
   const maxY = Math.max(0, h / 2 - r - 0.016);
-  const px = cx + dir.x * maxX;
+  // The pupil never slides under the overlapping neighbour eye (Biku, 2026-10-04).
+  const clearX = slot.coverX === undefined ? Infinity : slot.coverX - r - eyeStroke;
+  const px = Math.min(cx + dir.x * maxX, Math.max(cx, clearX));
   const py = cy + dir.y * maxY;
 
   // The lower lid pushes up into a curve, like a happy squint.
@@ -562,6 +570,11 @@ export const Face = ({
       { side: 1, x: shift + half, widthFactor: stops(t, TURN.rightEyeWidth) },
     ] as const
   ).filter((s) => s.widthFactor > 0.15);
+  // The +x eye is drawn second, so its near edge covers the inner part of the -x eye.
+  const [under, over] = slots;
+  if (under && over) {
+    under.coverX = over.x - (EYE_W * over.widthFactor * params.eyes.scale) / 2;
+  }
 
   const f = params.frame ?? { tilt: 0, scale: 1, dx: 0, dy: 0 };
   return (

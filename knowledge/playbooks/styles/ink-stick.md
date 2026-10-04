@@ -15,3 +15,4 @@ Current best practice for the Ink Stick look, learned from real videos and Biku'
 - **Stern eyes keep heavy brows sitting right on them** (the king). (L-0003)
 - **In big close-ups, drop small forehead marks that could read as stray hair.** (look test, self-check)
 - **Check faces side by side with the references** when a new expression is drawn: render a face match sheet, not just a contact sheet. (L-0001)
+- **Both pupils are always fully visible.** Where the eyes overlap in a three-quarter view, the far pupil stops at the edge of the near eye. (L-0005, Biku)

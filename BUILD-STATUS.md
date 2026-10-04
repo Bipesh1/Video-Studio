@@ -17,6 +17,7 @@ Biku asked for a short folktale of Claude's own. Written, drawn, voiced and rend
 - **Reused:** the ruler costume and scepter, both background treatments, the walk, existing expressions. New for this video, kept inside the composition: a point-up pose for Mira and two king faces whose brows sit below the crown.
 - **Look and fix:** raised brows hid under the crown, Mira's pointing arm crossed her face, a foreground bush covered the walker, the belt and glove sat behind the captions. All fixed before the render.
 - **Measured:** -14.1 LUFS, peak -1.3 dB, 3.0 s of render per second of video.
+- **Feedback (2026-10-04):** Biku could not see the pupil in the king's far eye on the angry face. Fixed in the face code for every character (lesson L-0005) and re-rendered as `moon-tax-v2.mp4`; v1 is kept. Biku also found the story not very immersive: a note for future scripts, no remake asked.
 - **Limits Biku should know:** Mira and the villager are plain stick figures (no clothes or hair in default mode yet); voices are placeholders (narrator `am_michael`, Mira `af_heart`).
 
 ## Checkpoint 1 feedback, round 1 (2026-10-03): applied
