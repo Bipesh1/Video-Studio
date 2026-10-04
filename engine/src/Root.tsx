@@ -5,6 +5,12 @@ import {
   LookTest,
   calculateLookTestMetadata,
 } from './compositions/LookTest';
+import {
+  MOON_TAX_PLACEHOLDER,
+  MOON_TAX_SHOTS,
+  MoonTax,
+  calculateMoonTaxMetadata,
+} from './compositions/MoonTax';
 import { STYLE_MATCH_PLACEHOLDER, StyleMatch } from './compositions/StyleMatch';
 import { FaceMatch } from './compositions/FaceMatch';
 import { Sandbox } from './sandbox/Sandbox';
@@ -58,6 +64,16 @@ export const RemotionRoot = () => {
         height={1920}
         defaultProps={{ track: LOOK_TEST_PLACEHOLDER, audioSrc: null }}
         calculateMetadata={calculateLookTestMetadata}
+      />
+      <Composition
+        id="MoonTax"
+        component={MoonTax}
+        durationInFrames={24 * fps}
+        fps={fps}
+        width={1080}
+        height={1920}
+        defaultProps={{ track: MOON_TAX_PLACEHOLDER, audioSrc: null, shotLines: MOON_TAX_SHOTS }}
+        calculateMetadata={calculateMoonTaxMetadata}
       />
       <Composition
         id="StyleMatch"

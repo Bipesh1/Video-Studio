@@ -1,0 +1,54 @@
+{
+  "leadInMs": 500,
+  "tailMs": 1500,
+  "lines": [
+    {
+      "id": "n1",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Long ago, a proud king declared that the *moon* belonged to him.",
+      "speed": 0.95,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "n2",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Anyone who walked in its light had to pay him a *coin*.",
+      "speed": 0.95,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "n3",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "One night, a little girl named Mira stood before him.",
+      "speed": 0.95,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "d1",
+      "speaker": "mira",
+      "voice": "af_heart",
+      "text": "Then the moon owes *me*, king. It followed me all the way home!",
+      "speed": 1.0,
+      "pauseAfterMs": 1000
+    },
+    {
+      "id": "n4",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The king looked up. He could not make the moon *stop*.",
+      "speed": 0.95,
+      "pauseAfterMs": 1000
+    },
+    {
+      "id": "n5",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So the tax ended. And the moon still walks everyone home, for *free*.",
+      "speed": 0.95,
+      "pauseAfterMs": 0
+    }
+  ]
+}

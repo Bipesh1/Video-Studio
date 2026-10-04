@@ -1,0 +1,11 @@
+{
+  "composition": "MoonTax",
+  "output": "moon-tax",
+  "shots": [
+    { "line": "n1", "title": "s1 the proud king under his moon (atmospheric)" },
+    { "line": "n2", "title": "s2 a tired villager walks in the moonlight" },
+    { "line": "n3", "title": "s3 Mira points at the moon, the king is caught out" },
+    { "line": "n4", "title": "s4 close-up, the king looks up and sweats" },
+    { "line": "n5", "title": "s5 Mira walks home, the moon stays with her" }
+  ]
+}

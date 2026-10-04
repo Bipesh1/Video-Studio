@@ -2,11 +2,22 @@
 
 **Current phase:** Phase 1 complete. **Stopped at Checkpoint 1**, waiting for Biku to judge the look and pick voices.
 **Next:** after Biku answers the questions in `runs/2026-10-03-look-test/checkpoint-1.md`, apply the answers, then start Phase 2 (character and world).
-**Last updated:** 2026-10-03
+**Last updated:** 2026-10-04
 
 ## Checkpoint 1: waiting for Biku
 
 Review file: `runs/2026-10-03-look-test/checkpoint-1.md`. Questions: (1) how close the look is and what to change, (2) narrator and character voices, (3) head size, (4) hair colors (guide v3), (5) fingers on hands that cover the face.
+
+## Extra: first short video, "The King Who Taxed the Moon" (2026-10-04, asked by Biku)
+
+Biku asked for a short folktale of Claude's own. Written, drawn, voiced and rendered by hand, since the pipeline arrives in Phase 4.
+
+- **Video:** `runs/2026-10-04-moon-tax/out/moon-tax-v1.mp4` (26.7 s, 1080x1920, voice and captions, no music or sound effects yet). Script and shot list in `runs/2026-10-04-moon-tax/script.md`.
+- **Made:** `engine/src/compositions/MoonTax.tsx` (5 shots), `engine/src/compositions/shotPlan.ts` (shot times from any list of voice lines), `cli/src/short.ts` and `npm run short -- --run=<folder> --voice --stills --video` (reads `shots.json` in the run folder; each render takes the next version number, so nothing delivered is overwritten).
+- **Reused:** the ruler costume and scepter, both background treatments, the walk, existing expressions. New for this video, kept inside the composition: a point-up pose for Mira and two king faces whose brows sit below the crown.
+- **Look and fix:** raised brows hid under the crown, Mira's pointing arm crossed her face, a foreground bush covered the walker, the belt and glove sat behind the captions. All fixed before the render.
+- **Measured:** -14.1 LUFS, peak -1.3 dB, 3.0 s of render per second of video.
+- **Limits Biku should know:** Mira and the villager are plain stick figures (no clothes or hair in default mode yet); voices are placeholders (narrator `am_michael`, Mira `af_heart`).
 
 ## Checkpoint 1 feedback, round 1 (2026-10-03): applied
 
