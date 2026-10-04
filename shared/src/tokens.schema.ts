@@ -53,6 +53,8 @@ export const styleTokensSchema = z
       // Guide v6: face feature lines are thinner and softer than outlines.
       featureLinePctOfHead: unit,
       featureLineColor: hexColor,
+      // Guide v7: wrinkles and creases are fine tapered strokes; this is their fullest thickness.
+      creasePctOfHead: unit,
       nose: z.literal(false),
       ears: z.literal(false),
     }),

@@ -7,7 +7,7 @@ Phase 1 is complete. The build is stopped here until Biku answers the questions 
 | File | What it is |
 | --- | --- |
 | `out/look-test.mp4` | The 15-second test video (14.6 s, 1080x1920, voice and captions, no music yet) |
-| `out/face-match.png` | Biku's faces from the references beside ours, after the first round of feedback |
+| `out/face-match.png` | The reference faces beside ours at the same head size, after round 4 (`face-match-round3.png` is the sheet before it) |
 | `out/style-match-n1.png` | Shot 1 (ruler, atmospheric) next to both reference pictures, with the Style Check answered |
 | `out/style-match-d1.png` | Shot 2 (night, two characters, Tom speaks) |
 | `out/style-match-n2.png` | Shot 3 (close-up, horrified, flying sweat) |
@@ -47,9 +47,14 @@ Biku said the gritted mouth was a simple oval. It is redrawn like Reference B (a
 
 Biku asked for the frightened face's curves to match more closely, and for face lines thinner and softer than the head outline. The frightened face now tips down toward where it looks, with big overlapping eyes, pupils on the bottom rim, wrapping bag lines, lighter brows and a low grimace. The angry face got bigger lidded eyes, thin hooked brows and a wide curled frown. Every line inside the face is now thin (about 2.2%) and soft gray (guide v6). Lessons L-0003 and L-0004.
 
-## Feedback round 4 (2026-10-04): noted, not built yet
+## Feedback round 4 (2026-10-04): applied
 
-Biku sent the frightened face from Reference B again. The fixes helped, but the face is still not like the reference, and the wrinkles do not look real. This answers question 1 below: not close enough yet. Biku asked not to build it now. Saved as lesson L-0006 and as a proposed faces step before Phase 2 step 2B (see `BUILD-STATUS.md`).
+Biku sent the frightened face from Reference B again: the fixes had helped, but the face was still not like the reference and the wrinkles did not look real. Biku then said go and approved the rule change. Guide v7, lessons L-0006 and L-0007.
+
+- **Wrinkles** are now fine pen strokes that thin toward both ends, each a different length and angle: two small ticks between the brows, a crease under each eye, a cheek crease, two chin strokes. They are about half as thick as before.
+- **The frightened face was rebuilt from measurements of the reference.** It now tips down toward where the character looks (it tipped the opposite way before). The shading is on the lower lids, pushed up, with the pupils resting on them (it was on the upper lids). The grimace is wider, arches like a frown and has big uneven teeth.
+- **Smaller fixes found on the way:** the near eye now overlaps the far eye, the brow over the far eye is short, and raised brows no longer run into the head outline.
+- `out/face-match.png` now shows our faces at the same head size as the reference. The sheet from before this round is kept as `out/face-match-round3.png`, and the earlier video as `out/look-test-round3.mp4`.
 
 ## Where it differs from the references (my honest read)
 

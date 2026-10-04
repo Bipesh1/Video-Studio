@@ -32,10 +32,11 @@ describe('expressions', () => {
     // Happy: arched brows, upward mouth.
     expect(EXPRESSIONS.happy.browLeft.arch).toBeGreaterThan(n.browLeft.arch);
     expect(EXPRESSIONS.happy.mouth.curve).toBeGreaterThan(0);
-    // Afraid: raised wavy brows, wide eyes, tiny pupils, gritted teeth.
+    // Afraid: raised wavy brows, wide eyes, small pupils, gritted teeth.
     expect(EXPRESSIONS.afraid.browLeft.raise).toBeGreaterThan(n.browLeft.raise);
     expect(EXPRESSIONS.afraid.browLeft.wave).toBeGreaterThan(0);
-    expect(EXPRESSIONS.afraid.eyes.pupil).toBeLessThan(0.6);
+    expect(EXPRESSIONS.afraid.eyes.pupil).toBeLessThan(0.7);
+    expect(EXPRESSIONS.afraid.eyes.scale).toBeGreaterThan(1);
     expect(EXPRESSIONS.afraid.mouth.teeth).toBe('gritted');
     // Surprised: high arcs, very wide eyes, small round O.
     expect(EXPRESSIONS.surprised.eyes.scale).toBeGreaterThan(1);
@@ -72,6 +73,24 @@ describe('expressions', () => {
     expect(f.eyes.worry).toBe(true);
     expect(f.mouth.chin).toBe(true);
     expect(tokens.face.eyeWidthPctOfHead).toBeGreaterThanOrEqual(0.28);
+  });
+
+  it('draw the frightened face as measured on Reference B (L-0006)', () => {
+    const f = EXPRESSIONS.afraid;
+    // The face tips down toward where the character looks: the eye on that side sits lower.
+    expect(f.frame?.tilt).toBeGreaterThan(5);
+    // The shading is on the lower lids, pushed up, and the upper lids stay open.
+    expect(f.eyes.lowerShaded).toBe(true);
+    expect(f.eyes.lowerLid).toBeGreaterThan(0.2);
+    expect(f.eyes.upperLid).toBe(0);
+    // Worried brows: inner ends raised, lighter than the token weight, sagging in the middle.
+    expect(f.browLeft.tilt).toBeLessThan(-15);
+    expect(f.browLeft.weight).toBeLessThan(0.7);
+    expect(f.browLeft.arch).toBeLessThan(0);
+    // The grimace is wide enough to fill the lower head.
+    expect(f.mouth.width).toBeGreaterThan(0.4);
+    // Only the wince shades the lower lid; a happy squint stays a cheek.
+    expect(EXPRESSIONS.happy.eyes.lowerShaded).toBe(false);
   });
 
   it('blend smoothly between endpoints', () => {

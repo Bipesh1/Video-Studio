@@ -22,6 +22,11 @@ export type Eyes = {
   lidTilt: number;
   /** Lower lid pushed up, 0 none to 1 (happy squint). */
   lowerLid: number;
+  /**
+   * Draws the lower lid as a shaded lid with a bold edge, nearly level, with the pupils resting
+   * on it: the wince on Reference B's frightened face. Off, the lower lid is a cheek pushing up.
+   */
+  lowerShaded: boolean;
   /** Pupil size multiplier: 1 normal, about 0.5 tiny (afraid). */
   pupil: number;
   /** Whole-eye size multiplier: above 1 for wide eyes. */
@@ -32,9 +37,9 @@ export type Eyes = {
   squeeze: boolean;
   /** Stress lines on the forehead and at the outer eye corners. */
   strain: boolean;
-  /** Curved bag lines under the eyes (fear, sadness, tiredness, as in Reference B). */
+  /** A tapered crease under each eye, hugging its lower outer side (fear, sadness, tiredness). */
   bags: boolean;
-  /** Worry lines across the forehead. */
+  /** Two small worry ticks between the brows. */
   worry: boolean;
   /** Pupil direction bias, -1 to 1 on each axis. */
   lookX: number;
@@ -62,7 +67,7 @@ export type Mouth = {
   corners: number;
   /** A short lower-lip line under a closed mouth. */
   lip: boolean;
-  /** Two small strain lines on the chin. */
+  /** Short strain strokes fanned out on the chin. */
   chin: boolean;
   /** An uneven, wavy line for a tense mouth. -1 to 1. */
   wobble: number;
@@ -71,11 +76,11 @@ export type Mouth = {
 };
 
 /**
- * How the whole set of features sits on the head. Reference B's frightened face tilts down
- * toward where the character faces, with big features set low: that is a frame, not a pose.
+ * How the whole set of features sits on the head. Reference B's frightened face tips down toward
+ * where the character faces: the eye on that side sits lower. That is a frame, not a pose.
  */
 export type FaceFrame = {
-  /** Degrees; negative tips the face down toward the facing direction (mouth forward, as in Reference B). */
+  /** Degrees; positive tips the face down toward the facing direction, as in Reference B. */
   tilt: number;
   /** Size of all features together; 1 is the guide size. */
   scale: number;

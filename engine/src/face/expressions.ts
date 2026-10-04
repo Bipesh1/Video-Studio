@@ -16,6 +16,7 @@ const eyes = (o: Partial<Eyes> = {}): Eyes => ({
   upperLid: 0,
   lidTilt: 0,
   lowerLid: 0,
+  lowerShaded: false,
   pupil: 1,
   scale: 1,
   closedArc: false,
@@ -79,31 +80,35 @@ export const EXPRESSIONS = {
     eyes: eyes({ upperLid: 0.3, lidTilt: 20, pupil: 0.7 }),
     mouth: mouth({ width: 0.24, open: 0.15, curve: -0.03, teeth: 'top' }),
   },
-  /** Like Reference B's frightened figure: wavy worried brows, drooping lids with bags, gritted teeth. */
+  /**
+   * Like Reference B's frightened figure, measured from the picture: the face tips down toward
+   * where he looks, the lower lids push up shaded with the pupils resting on them, light worried
+   * brows sag from raised inner ends, and a wide arched grimace fills the lower head.
+   */
   afraid: {
-    frame: { tilt: -8, scale: 1, dx: 0, dy: 0.03 },
-    ...both(brow(0.035, -18, 0.55, 0.15, 0, 0.72)),
+    frame: { tilt: 11, scale: 1, dx: 0, dy: -0.012 },
+    ...both(brow(0.04, -25, -0.43, 0.05, 0.3, 0.5)),
     eyes: eyes({
-      scale: 1.1,
-      upperLid: 0.32,
-      lidTilt: -12,
-      pupil: 0.5,
-      lookX: 0.45,
+      scale: 1.15,
+      lowerLid: 0.25,
+      lowerShaded: true,
+      pupil: 0.69,
+      lookX: 0.7,
       lookY: 0.9,
       bags: true,
       worry: true,
     }),
     mouth: mouth({
-      width: 0.34,
+      width: 0.46,
       open: 0.26,
       curve: -0.015,
-      skew: 0.03,
+      skew: 0.006,
       teeth: 'gritted',
       chin: true,
     }),
   },
   surprised: {
-    ...both(brow(0.09, -4, 0.65)),
+    ...both(brow(0.05, -4, 0.5, 0, 0, 0.7)),
     eyes: eyes({ scale: 1.12, pupil: 0.55 }),
     mouth: mouth({ width: 0.1, open: 0.12, round: 1 }),
   },
@@ -135,9 +140,9 @@ export const EXPRESSIONS = {
     eyes: eyes({ squeeze: true, strain: true }),
     mouth: mouth({ width: 0.4, open: 0.2, curve: -0.08, arch: 0.22, teeth: 'top', tongue: 1 }),
   },
-  /** Shock and dread: very wide eyes, tiny pupils, brows high and worried. */
+  /** Shock and dread: very wide eyes, tiny pupils, light brows high and worried. */
   horrified: {
-    ...both(brow(0.1, -12, 0.3, 0.3)),
+    ...both(brow(0.055, -12, 0.3, 0.3, 0, 0.6)),
     eyes: eyes({ scale: 1.15, pupil: 0.42 }),
     mouth: mouth({ width: 0.09, open: 0.09, round: 1, chin: true }),
   },
@@ -199,6 +204,7 @@ export function blendFace(a: FaceParams, b: FaceParams, t: number): FaceParams {
       upperLid: lerp(a.eyes.upperLid, b.eyes.upperLid, x),
       lidTilt: lerp(a.eyes.lidTilt, b.eyes.lidTilt, x),
       lowerLid: lerp(a.eyes.lowerLid, b.eyes.lowerLid, x),
+      lowerShaded: late ? b.eyes.lowerShaded : a.eyes.lowerShaded,
       pupil: lerp(a.eyes.pupil, b.eyes.pupil, x),
       scale: lerp(a.eyes.scale, b.eyes.scale, x),
       closedArc: late ? b.eyes.closedArc : a.eyes.closedArc,

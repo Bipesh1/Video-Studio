@@ -28,6 +28,8 @@ type Row = {
   face: FaceParams;
   extra: Partial<CharacterProps>;
   cellBg: string;
+  /** Our head size as a fraction of the cell, matched to the head in the reference crop. */
+  head: number;
 };
 
 const ROWS: Row[] = [
@@ -37,13 +39,15 @@ const ROWS: Row[] = [
     face: EXPRESSIONS.angry,
     extra: { turn: 0.3 },
     cellBg: ourBg,
+    head: 0.84,
   },
   {
     label: 'Afraid (Reference B, right figure)',
     ref: { file: 'reference/reference-b-night-scene.jpeg', natW: 387, x: 175, y: 130, size: 120 },
     face: EXPRESSIONS.afraid,
-    extra: { turn: 0.3, facing: 'left', headEffects: <RestingSweat side={-1} /> },
+    extra: { turn: 0.45, facing: 'left', headEffects: <RestingSweat side={-1} /> },
     cellBg: ourBg,
+    head: 0.86,
   },
   {
     label: 'Stern ruler (Reference A)',
@@ -51,6 +55,7 @@ const ROWS: Row[] = [
     face: EXPRESSIONS.angry,
     extra: { turn: 0.25, eyeStyle: 'stern', outfit: RULER },
     cellBg: pick(palette('storm-slate'), 2),
+    head: 0.62,
   },
 ];
 
@@ -80,7 +85,7 @@ const RefCrop = ({ r }: { r: Row['ref'] }) => {
 };
 
 const OurFace = ({ row }: { row: Row }) => {
-  const head = CELL * 0.62;
+  const head = CELL * row.head;
   const sign = row.extra.facing === 'left' ? -1 : 1;
   return (
     <svg width={CELL} height={CELL} style={{ borderRadius: 16, backgroundColor: row.cellBg }}>

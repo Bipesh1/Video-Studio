@@ -13,13 +13,16 @@ export const EYE_Y = -0.08;
 /** Slightly negative: the eyes just overlap, as in both references. */
 export const EYE_GAP = -0.012;
 export const BROW_GAP = 0.045;
-export const BROW_LEN = EYE_W * 0.95;
+/** Brows are a little shorter than an eye is wide, as on both figures in Reference B. */
+export const BROW_LEN = EYE_W * 0.84;
 /** Brows sit a little outward of their eyes, so the two never join into one V. */
-export const BROW_OUT = EYE_W * 0.1;
+export const BROW_OUT = EYE_W * 0.14;
 export const MOUTH_Y = 0.24;
 /** Mouth sizes in the presets are scaled up to match the references' wide mouths. */
 export const MOUTH_SCALE = 1.35;
 export const MOUTH_OPEN_SCALE = 1.2;
+/** A wide mouth is pushed back until its front corner sits inside this radius of the head. */
+export const MOUTH_FIT_R = 0.445;
 
 /**
  * Feature placement by head turn, at turn = 0 (front), 0.5 (three-quarter), 1 (profile).

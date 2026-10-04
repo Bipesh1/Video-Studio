@@ -8,7 +8,19 @@
 
 Review file: `runs/2026-10-03-look-test/checkpoint-1.md`. Questions: (1) how close the look is and what to change, (2) narrator and character voices, (3) head size, (4) hair colors (guide v3), (5) fingers on hands that cover the face.
 
-**Question 1 answered (2026-10-04): not close enough yet.** Biku sent Reference B's frightened face again: the fixes helped, but the face is still not like the reference and the wrinkles do not look real. Biku asked not to build it now. Saved as lesson L-0006; see "Faces round 4" in the Phase 2 steps below.
+**Question 1 (2026-10-04): Biku said not close enough yet, then said go.** Faces round 4 is built (section below, guide v7). Question 1 is open again: Biku needs to look at `runs/2026-10-03-look-test/out/face-match.png` and say whether the frightened face and the wrinkles are close enough now.
+
+## Checkpoint 1 feedback, round 4 (2026-10-04): applied
+
+Biku sent Reference B's frightened face again: the fixes had helped, but the face was still not like the reference and the wrinkles did not look real. Biku approved loosening the guide's rule against tapered lines. Lessons L-0006 (Biku) and L-0007 (self-check: measure, do not eyeball).
+
+- **Method:** the reference face was enlarged 8 times with a grid and measured in head units; ours was compared at the same head size.
+- **What measuring found:** our face tipped the opposite way to the reference; the shading was on the upper lids, the reference has it on raised lower lids; the grimace was a quarter too narrow and lens-shaped; wrinkles were about twice too thick and all alike.
+- **Made:** `engine/src/face/crease.tsx` (tapered filled strokes: `Crease`, `TaperedStroke`), token `face.creasePctOfHead` 0.012 (tokens and guide version 7). In `Face.tsx`: worry ticks, under-eye creases, cheek, chin, strain and mouth-corner creases are all tapered and unequal; a closed mouth line thins toward its corners; `lowerShaded` lower lids with the pupil resting on them; the near eye is drawn over the far eye; the far brow is short; a wide mouth is pushed back to fit inside the head; a new grimace shape measured lip by lip.
+- **Expressions changed:** `afraid` rebuilt (frame tilt +11, lower lids 0.25 shaded, brows light and sagging, mouth width 0.46). `surprised` and `horrified` got lighter brows that stay inside the head outline. `BROW_LEN` and `BROW_OUT` in `layout.ts` changed, so every brow is a little shorter and further out.
+- **Look and fix:** three rounds on the face match sheet, then the expression, turn, identity and costume sheets and the stills of both videos. Golden stills re-saved.
+- **Kept for comparison:** `out/face-match-round3.png` and `out/look-test-round3.mp4` in the look test run; the moon video got a new version, `moon-tax-v3.mp4`.
+- **Still different from Reference B, by guide rule:** the mouth interior is dark maroon, not black; the sweat drop is one bold outlined drop, not two pale ones; face lines are soft gray, as Biku asked in round 3; heads stay perfect circles (the reference's jaw bulges around the mouth).
 
 ## Phase 2 scope addition (2026-10-04, agreed by Biku)
 
@@ -29,7 +41,7 @@ Goal is "alive", not "realistic": it must still read as the snappy reference sty
 Each step ends with contact sheets for Biku, a commit and an update here. Start a step only when Biku asks.
 
 - **2A. Library foundation.** Apply Biku's head-size answer; `library/index.json` with every existing piece registered (tags, picture, code path); golden stills; the check that fails on unindexed pieces; `/draw`.
-- **Faces round 4 (proposed, before 2B; waiting for Biku's go-ahead).** From lesson L-0006. Redraw wrinkles as hand-drawn creases (thicker in the middle, fine at the ends, each different, following the eye and cheek); for fear, shade the lower lids instead of the upper ones; let the features fill more of the head; make the gritted mouth taller with bigger, uneven teeth; then give every expression's wrinkles the same treatment. Compare at large size against the reference and show Biku a face sheet. Needs a guide change that Biku approves (tapered detail lines inside the face). Run this step at higher effort than the rest.
+- **Faces round 4: done (2026-10-04).** Built ahead of 2A at Biku's go-ahead; see the round 4 section above. Waiting for Biku's verdict on the face match sheet.
 - **2B. People.** Tier 1 clothes (shirt, tank top, trousers, skirt or dress, shoes, plain hat, hood or cloak, robe); costumes (soldier, queen or noble gown, villager or farmer); long hair; all skin tones and hair checked; age cues (child, adult, elder); character cards.
 - **2C. Poses and motion polish.** Sit, kneel, lie, cross arms, look up, look down, cower; cry, cheer, hug; wind-up and settle; lagging capes, hair and held objects; weight and breathing; eye darts, smooth head turns, more mouth shapes; mood walks; arcs.
 - **2D. Action.** Run, jump, fall, fight (wind-up, swing, hit, recoil), push, pull, carry, sneak; tears, anger mark, motion lines, impact flash, dizzy stars, symbols; camera shake, fast push-in, pan; a short action test clip.
@@ -48,6 +60,7 @@ Biku asked for a short folktale of Claude's own. Written, drawn, voiced and rend
 - **Look and fix:** raised brows hid under the crown, Mira's pointing arm crossed her face, a foreground bush covered the walker, the belt and glove sat behind the captions. All fixed before the render.
 - **Measured:** -14.1 LUFS, peak -1.3 dB, 3.0 s of render per second of video.
 - **Feedback (2026-10-04):** Biku could not see the pupil in the king's far eye on the angry face. Fixed in the face code for every character (lesson L-0005) and re-rendered as `moon-tax-v2.mp4`; v1 is kept. Biku also found the story not very immersive: a note for future scripts, no remake asked.
+- **Version 3 (2026-10-04):** re-rendered as `moon-tax-v3.mp4` with the round 4 faces (the king's worried close-up shows the new lower lids, grimace and creases). v1 and v2 are kept.
 - **Limits Biku should know:** Mira and the villager are plain stick figures (no clothes or hair in default mode yet); voices are placeholders (narrator `am_michael`, Mira `af_heart`).
 
 ## Checkpoint 1 feedback, round 1 (2026-10-03): applied
@@ -296,6 +309,8 @@ Files to watch: `engine/out/sandbox/walk.mp4` and `engine/out/sandbox/motion.mp4
 The realistic estimate assumes real shots cost about three times the test scene (more characters, blurred backgrounds, captions). Re-measure in Phase 1 with the look-test shots.
 
 ## Style changes since Phase 0
+
+- **Guide version 7 (2026-10-04, asked and approved by Biku):** creases inside the face are fine tapered pen strokes, about 1.2% of the head at their fullest, each a different length and angle; tapering is allowed inside the face (brows, creases, the ends of a closed mouth line). The frightened face follows Reference B as measured. New token `face.creasePctOfHead`. Versions 4 to 6 (faces closer to the references, thinner and softer face lines) are described in the guide's version history.
 
 - **Guide version 3 (2026-10-03, needs Biku's confirmation):** the guide names seven hair colors but gave no color values, and components may only use token colors. Added a `hair` block to `tokens.json` (black, dark brown, brown, auburn, blond, gray, white, each with one shadow tone). No existing rule changed. If Biku prefers other shades, only `tokens.json` and the Style 12 copy in the guide change.
 

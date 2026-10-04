@@ -1,7 +1,7 @@
 ## Part 3. The Ink Stick art style
 
 **Style id:** `ink-stick`
-**Guide version:** 6 (2026-10-03). See the version history at the end.
+**Guide version:** 7 (2026-10-04). See the version history at the end.
 **Built from:** two reference images supplied by Biku
 - **Reference A:** a stern king in a crown, red cape and armor, under a stormy night sky with light rays
 - **Reference B:** two stick figures in a night scene under a crescent moon, one threatening and one frightened
@@ -46,11 +46,13 @@ Bold, black-outlined cartoon stick figures with big round heads and very express
 | Outline of heads, costumes, props | `#16161A` | 4 to 5% |
 | Stick limbs and torso line | `#16161A` | 7 to 8% |
 | Inner details: folds, seams, buttons, teeth lines | `#16161A` | 2.5 to 3% |
-| Face features: eye outlines, eyelid edges, mouth, lips, teeth, bags, worry and chin lines | `#3A3A40`, a softer dark gray | about 2.2%, the eyelid edge a little heavier. Thinner and softer than the head outline. Pupils, brows and the mouth interior stay dark |
+| Face features: eye outlines, eyelid edges, mouth, lips | `#3A3A40`, a softer dark gray | about 2.2%, the eyelid edge a little heavier. Thinner and softer than the head outline. Pupils, brows and the mouth interior stay dark |
+| Creases inside the face: worry ticks, under-eye creases, cheek, chin and mouth-corner creases, teeth lines | `#3A3A40` | about 1.2% at the fullest point. Creases taper to a fine point at both ends, like pen strokes |
 | Eyebrows | `#16161A` filled shape | about 8%, tapered ends |
 
 - Round line caps and round joins everywhere.
 - Even, confident weight. No sketchy, broken or hairy lines.
+- **The one exception is inside the face.** Brows and creases taper, and a closed mouth line is a little finer toward its corners, so faces look drawn by hand. No two creases on a face have the same length and angle.
 - Every character shape and every prop is fully closed and outlined.
 - Line weight stays the same for all characters at the same size in a shot.
 
@@ -106,11 +108,12 @@ Use the **lowest tier** that makes the character instantly recognizable.
 
 **Parts:**
 - **Eyes:** large white ovals with black outlines, each about 30% of head width, just overlapping. Black filled pupils about 30% of the eye. Pupils move to show where a character looks.
-- **Eyelids:** filled with the head's shadow tone, edged with a thick curved line, like both references.
-- **Detail lines** (thin, detail weight) add feeling where the references use them: worry lines on the forehead, bags under the eyes, curled frown corners, a lower-lip line, chin lines, stress lines at the eye corners.
+- **Eyelids:** filled with the head's shadow tone, edged with a thick curved line, like both references. Anger and tiredness lower the upper lids. Fear pushes the **lower** lids up instead, with the pupils resting on them and the upper lids wide open.
+- **Overlap:** in a three-quarter view the near eye is drawn over the far eye, and the brow over the far eye is short.
+- **Creases** (tapered pen strokes, see Style 3.2) add feeling where the references use them: two small worry ticks between the brows, one crease hugging the lower outer side of each eye, a cheek crease beside a grimace, two short strokes fanned out on the chin, small creases at the corners of a frown, a lower-lip line, stress creases at the eye corners. Never draw them as a row of identical marks.
 - **Stern eyes (from the king):** for cold, menacing or commanding characters, the eyes become black almond shapes under heavy brows.
 - **Brows:** thick black tapered wedges, heavy at the inner end and fine at the tip, with a curl where the emotion needs it. Kept apart, never joined. They carry most of the emotion.
-- **Mouth:** a single line when calm. When open: dark interior `#3A1E22`, with teeth as a white band divided by thin lines when gritted.
+- **Mouth:** a single line when calm. When open: dark interior `#3A1E22`. When gritted: a wide bean that arches like a frown, with two rows of big uneven teeth right up to the lips, so the dark shows only at the two corners. A wide mouth is pushed back until it fits inside the head.
 - **No nose and no ears** by default.
 
 **Expressions:**
@@ -121,7 +124,7 @@ Use the **lowest tier** that makes the character instantly recognizable.
 | Happy | Arched up | Curved lower lids, or closed arcs when laughing | Wide upward curve, open when laughing | |
 | Sad | Inner ends raised | Drooping lids, pupils low | Downward curve | Tear drops |
 | Angry | Sharp V, inner ends low | Half-closed, small pupils, or stern eyes | Tight frown, or shouting with teeth | Red anger mark |
-| Afraid | Raised high, slightly wavy | Wide, tiny pupils | Gritted-teeth grimace | Flying sweat drops |
+| Afraid | Light, inner ends raised, sagging in the middle | Wide, small pupils resting on raised, shaded lower lids | Wide gritted-teeth grimace filling the lower head | Flying sweat drops. The whole face tips down toward where the character looks |
 | Surprised | High arcs | Very wide, small pupils | Small round O | Exclamation mark |
 | Determined | Low and straight, slight V | Narrowed | Firm line, corners down | |
 | Thinking | One brow raised | Pupils up and to the side | Small sideways mouth | Question mark |
@@ -236,7 +239,8 @@ Use the **lowest tier** that makes the character instantly recognizable.
 - Simple shapes that read on a small phone screen
 
 **Don't**
-- Thin, sketchy or tapered outlines, except brows
+- Thin, sketchy or tapered outlines. Tapering is only for brows and the creases inside a face
+- Wrinkles drawn as a row of identical marks
 - Outlines on backgrounds
 - Gradients, textures or soft shading on characters
 - More than one shadow tone per color
@@ -269,7 +273,7 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
 ```json
 {
   "id": "ink-stick",
-  "version": 6,
+  "version": 7,
   "line": {
     "color": "#16161A",
     "outlinePctOfHead": [0.04, 0.05],
@@ -313,6 +317,7 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
     "mouthInterior": "#3A1E22",
     "featureLinePctOfHead": 0.022,
     "featureLineColor": "#3A3A40",
+    "creasePctOfHead": 0.012,
     "nose": false,
     "ears": false
   },
@@ -380,3 +385,4 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
 | 4 | 2026-10-03 | Faces closer to the references, at Biku's Checkpoint 1 request: eyes 30% of head width (was 22%), pupils 30% of the eye (was 40%), shaded curved eyelids, separate tapered brows with curls, and thin detail lines for worry, bags, frown corners, lip and chin. | Biku |
 | 5 | 2026-10-03 | Face feature lines (eye outlines, mouth, lips) use the inner-detail weight, about 3%, thinner than the 4 to 5% head outline, so faces read finer and more attractive, as in the references. | Biku |
 | 6 | 2026-10-03 | Face feature lines thinner (about 2.2% of head width) and softer (#3A3A40 instead of the #16161A outline color), so faces look finer and more attractive. Pupils, brows and mouth interior stay dark. | Biku |
+| 7 | 2026-10-04 | Wrinkles look hand-drawn: creases inside the face are fine tapered pen strokes (about 1.2% at the fullest point), each a different length and angle, and tapering is now allowed inside the face. The frightened face follows Reference B as measured: lower lids pushed up and shaded with the pupils resting on them, the face tipped down toward where the character looks, a wide arched grimace with big teeth. The near eye overlaps the far eye. | Biku |

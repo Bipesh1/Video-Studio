@@ -80,7 +80,23 @@ Claude's reading of the gap (to confirm with Biku when it is built): our forehea
   reference shades the lower lids (pushed up, pupils sitting on the lid line) where ours shades
   the upper lids. Its features fill more of the head and its mouth is taller with bigger, uneven
   teeth.
-Applied: not yet. Biku asked not to build it now. Proposed as a faces step before Phase 2 step 2B.
-  Needs a guide change (detail lines inside the face may taper), which is Biku's to approve.
+Applied: 2026-10-04, after Biku said go and approved the rule change. Guide v7 and token
+  face.creasePctOfHead 0.012; creases are tapered filled strokes (engine/src/face/crease.tsx);
+  the frightened face is rebuilt from measurements of Reference B (lesson L-0007).
+Status: active
+```
+
+```
+L-0007 | 2026-10-04 | run: 2026-10-03-look-test (face match sheet, round 4)
+Area: faces | Scope: style ink-stick | Source: self-check
+Lesson: Measure the reference, do not eyeball it. Enlarge the face 8 times, lay a grid on it, and
+  read sizes, positions, tilt and line thickness off the picture in head units. Then compare ours
+  beside it at the same head size.
+Evidence: Three rounds of eyeballing left the frightened face tipping the opposite way to
+  Reference B, with the shading on the upper lids instead of the lower ones, a mouth a quarter too
+  narrow, and wrinkles twice too thick. Measuring found all four in one pass.
+Applied: afraid expression rebuilt from the measurements (tilt +11 degrees toward the look side,
+  lower lids shaded, grimace 0.6 of the head wide, near eye over far eye); the face match sheet
+  now draws our head at the reference's head size.
 Status: active
 ```
