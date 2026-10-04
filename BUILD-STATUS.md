@@ -8,6 +8,18 @@
 
 Review file: `runs/2026-10-03-look-test/checkpoint-1.md`. Questions: (1) how close the look is and what to change, (2) narrator and character voices, (3) head size, (4) hair colors (guide v3), (5) fingers on hands that cover the face.
 
+## Phase 2 scope addition (2026-10-04, agreed by Biku)
+
+Biku asked for more lifelike motion and agreed to add a **motion polish** step to Phase 2, on top of the plan's list (Part 2, sections 7.3 to 7.7):
+
+- Wind-up before big moves and overshoot-and-settle after them.
+- Parts that lag behind: capes, hair and held objects swing and catch up after the body.
+- Weight: leg-to-leg shifts, breathing, shoulders, heavier steps when tired.
+- Livelier faces: eye darts, smooth head turns toward the speaker, more mouth shapes for talking.
+- Walks with mood (proud, tired, sneaky, happy) and hands and heads moving in arcs.
+
+Goal is "alive", not "realistic": it must still read as the snappy reference style. Still open from earlier talk: whether Phase 2 builds the plan's full libraries or a smaller starter set with the rest drawn on demand.
+
 ## Extra: first short video, "The King Who Taxed the Moon" (2026-10-04, asked by Biku)
 
 Biku asked for a short folktale of Claude's own. Written, drawn, voiced and rendered by hand, since the pipeline arrives in Phase 4.
