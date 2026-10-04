@@ -54,6 +54,23 @@ New assets: search library/index.json first, then draw, look, fix, save.
 
 Reusing a library asset in a new pose or expression needs no full guide read, but its stills still go through the Style Check.
 
+## Where the drawing code lives
+
+Everything already drawn is reusable code under `engine/src/`. Look here before drawing anything; a video asks for these pieces by name and never redraws them. Once `library/index.json` exists (Phase 2), search it first.
+
+| Need                                                | Look in                                                           |
+| --------------------------------------------------- | ----------------------------------------------------------------- |
+| The character puppet (put a whole person on screen) | `engine/src/rig/Character.tsx`                                    |
+| Poses, and the walk                                 | `engine/src/rig/poses.ts`, `engine/src/rig/walk.ts`               |
+| Expressions and talking mouths                      | `engine/src/face/expressions.ts`, `engine/src/face/talk.ts`       |
+| Skin tones and hair                                 | `engine/src/wardrobe/identity.ts`, `engine/src/wardrobe/hair.tsx` |
+| Costumes                                            | `engine/src/wardrobe/costumes/`                                   |
+| Props, effects                                      | `engine/src/props/`, `engine/src/effects/`                        |
+| Backgrounds and their palettes                      | `engine/src/backgrounds/`                                         |
+| Camera, captions                                    | `engine/src/camera/`, `engine/src/overlays/`                      |
+| Worked examples of whole videos                     | `engine/src/compositions/LookTest.tsx`, `MoonTax.tsx`             |
+| Pictures of every piece                             | `npm run sheets` (contact sheets), `knowledge/golden/`            |
+
 ## Repository layout and commands
 
 - `shared/` Zod schemas shared by every part. `engine/` Remotion (React, TypeScript). `cli/` orchestrator. `audio/` Python workers managed by uv.
