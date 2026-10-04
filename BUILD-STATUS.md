@@ -20,6 +20,8 @@ Biku asked for more lifelike motion and agreed to add a **motion polish** step t
 
 Goal is "alive", not "realistic": it must still read as the snappy reference style. **Decided by Biku (2026-10-04): starter set.** Phase 2 covers every category in the plan (poses, actions, clothes, hair and skin, character cards, effects, places, props, camera, on-screen extras, library index, `/draw`, motion polish) with a small, most-useful selection in each; the rest is drawn on demand during videos and saved to the library. Claude's reading of Biku's words; the exact selection is to be shown to Biku before building.
 
+**Action is a priority (Biku, 2026-10-04).** The Phase 2 starter selection must include the action set, not leave it to on-demand drawing: run, jump, fall, fight (wind-up, swing, hit, recoil), push, pull, carry; impact flash, motion lines, dizzy stars; camera shake and fast push-in. Limits stay as the style sets them: violence by implication only, no blood or gore.
+
 ## Extra: first short video, "The King Who Taxed the Moon" (2026-10-04, asked by Biku)
 
 Biku asked for a short folktale of Claude's own. Written, drawn, voiced and rendered by hand, since the pipeline arrives in Phase 4.
