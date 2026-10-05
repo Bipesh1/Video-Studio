@@ -1,0 +1,1670 @@
+{
+  "version": 1,
+  "style": "ink-stick",
+  "assets": [
+    {
+      "id": "rig/character",
+      "kind": "rig",
+      "name": "Character puppet",
+      "description": "The stick figure itself: head, torso, arms, legs and hands. Every person on screen is this puppet with a pose, a face and optional skin, hair and costume.",
+      "tags": [
+        "character",
+        "person",
+        "figure",
+        "stick figure",
+        "body",
+        "puppet",
+        "human",
+        "man",
+        "woman",
+        "child"
+      ],
+      "code": {
+        "file": "engine/src/rig/Character.tsx",
+        "export": "Character"
+      },
+      "use": "<Character x groundY head pose face turn facing identity outfit prop />. A smaller head makes a child.",
+      "still": "knowledge/golden/assets/rig-character.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "pose/stand",
+      "kind": "pose",
+      "name": "Stand",
+      "description": "Standing still with the arms hanging at the sides. The default pose.",
+      "tags": ["pose", "standing", "idle", "still", "default", "waiting", "neutral"],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "stand"
+      },
+      "use": "pose={resolvePose(stand)}",
+      "still": "knowledge/golden/assets/pose-stand.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "pose/wave",
+      "kind": "pose",
+      "name": "Wave",
+      "description": "One arm raised in a wave, the other at the side.",
+      "tags": ["pose", "waving", "greeting", "hello", "goodbye", "hi", "friendly"],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "wave"
+      },
+      "use": "pose={resolvePose(wave)}",
+      "still": "knowledge/golden/assets/pose-wave.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "pose/point",
+      "kind": "pose",
+      "name": "Point",
+      "description": "One arm stretched out with a pointing finger, leaning slightly forward.",
+      "tags": ["pose", "pointing", "accuse", "direct", "show", "order", "there", "finger"],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "point"
+      },
+      "use": "pose={resolvePose(point)}",
+      "still": "knowledge/golden/assets/pose-point.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "pose/shrug",
+      "kind": "pose",
+      "name": "Shrug",
+      "description": "Both forearms raised to the sides and the head tilted, as in \"I do not know\".",
+      "tags": ["pose", "shrugging", "unsure", "confused", "whatever", "no idea", "question"],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "shrug"
+      },
+      "use": "pose={resolvePose(shrug)}",
+      "still": "knowledge/golden/assets/pose-shrug.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "pose/hands-up",
+      "kind": "pose",
+      "name": "Hands up",
+      "description": "Both arms raised above the head, knees a little bent.",
+      "tags": ["pose", "surrender", "caught", "stop", "scared", "arms up", "pleading", "cheer"],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "handsUp"
+      },
+      "use": "pose={resolvePose(handsUp)}",
+      "still": "knowledge/golden/assets/pose-hands-up.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "pose/hold-object",
+      "kind": "pose",
+      "name": "Hold object",
+      "description": "One arm reaching out with a closed fist around an upright object such as a staff, the other arm relaxed.",
+      "tags": [
+        "pose",
+        "holding",
+        "grip",
+        "carry",
+        "staff",
+        "scepter",
+        "sword",
+        "stick",
+        "torch",
+        "present"
+      ],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "holdObject"
+      },
+      "use": "pose={resolvePose(holdObject)}",
+      "still": "knowledge/golden/assets/pose-hold-object.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "pose/hands-over-mouth",
+      "kind": "pose",
+      "name": "Hands over mouth",
+      "description": "Both hands pressed over the mouth in shock.",
+      "tags": ["pose", "shock", "gasp", "horror", "cover mouth", "speechless", "oops", "secret"],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "handsOverMouth"
+      },
+      "use": "pose={resolvePose(handsOverMouth)}",
+      "still": "knowledge/golden/assets/pose-hands-over-mouth.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "action/walk",
+      "kind": "action",
+      "name": "Walk",
+      "description": "A walking cycle with planted feet and swinging arms. The character moves forward as time passes.",
+      "tags": [
+        "walking",
+        "walk cycle",
+        "move",
+        "travel",
+        "stroll",
+        "trudge",
+        "go",
+        "leave",
+        "arrive",
+        "journey"
+      ],
+      "code": {
+        "file": "engine/src/rig/walk.ts",
+        "export": "walkAt"
+      },
+      "use": "const w = walkAt(frame / fps); pose={w.pose} with turn={1}; the camera follows w.pose.rootX",
+      "still": "knowledge/golden/assets/action-walk.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "motion/life",
+      "kind": "motion",
+      "name": "Blinks and breathing",
+      "description": "Small movement while a character holds a pose: blinks every few seconds, breathing and a slight head bob.",
+      "tags": ["blink", "breathing", "idle motion", "alive", "hold", "eyes closed"],
+      "code": {
+        "file": "engine/src/rig/life.ts",
+        "export": "withLife"
+      },
+      "use": "pose={withLife(pose, frame, fps, seed)} blink={blinkAt(frame, fps, seed)}",
+      "still": "knowledge/golden/assets/motion-life.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "motion/talking-mouth",
+      "kind": "motion",
+      "name": "Talking mouth",
+      "description": "The mouth opens and closes in time with the spoken words of one voice line.",
+      "tags": ["talking", "speaking", "speech", "dialogue", "lip sync", "mouth", "say"],
+      "code": {
+        "file": "engine/src/face/talk.ts",
+        "export": "mouthShapeAt"
+      },
+      "use": "talk={MOUTH_OPENNESS[mouthShapeAt(frame, fps, wordsOfTheLine)]}",
+      "still": "knowledge/golden/assets/motion-talking-mouth.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "expression/neutral",
+      "kind": "expression",
+      "name": "Neutral",
+      "description": "A calm, plain face. The default.",
+      "tags": ["face", "expression", "emotion", "calm", "plain", "default", "resting", "listening"],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.neutral}",
+      "still": "knowledge/golden/assets/expression-neutral.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "expression/happy",
+      "kind": "expression",
+      "name": "Happy",
+      "description": "A smile with arched brows and lifted cheeks.",
+      "tags": [
+        "face",
+        "expression",
+        "emotion",
+        "smile",
+        "glad",
+        "pleased",
+        "joy",
+        "friendly",
+        "content",
+        "cheerful"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.happy}",
+      "still": "knowledge/golden/assets/expression-happy.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "expression/laughing",
+      "kind": "expression",
+      "name": "Laughing",
+      "description": "Eyes closed in arcs and a wide open laughing mouth.",
+      "tags": [
+        "face",
+        "expression",
+        "emotion",
+        "laugh",
+        "joy",
+        "funny",
+        "delighted",
+        "open mouth",
+        "closed eyes"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.laughing}",
+      "still": "knowledge/golden/assets/expression-laughing.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "expression/sad",
+      "kind": "expression",
+      "name": "Sad",
+      "description": "Raised inner brows, drooping lids, low pupils and a frown.",
+      "tags": [
+        "face",
+        "expression",
+        "emotion",
+        "unhappy",
+        "sorrow",
+        "down",
+        "frown",
+        "disappointed",
+        "lonely",
+        "upset"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.sad}",
+      "still": "knowledge/golden/assets/expression-sad.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "expression/angry",
+      "kind": "expression",
+      "name": "Angry",
+      "description": "Hooked V brows, heavy shaded lids and a wide frown with curled corners.",
+      "tags": [
+        "face",
+        "expression",
+        "emotion",
+        "mad",
+        "furious",
+        "frown",
+        "glare",
+        "threat",
+        "annoyed",
+        "stern",
+        "rage"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.angry}",
+      "still": "knowledge/golden/assets/expression-angry.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "expression/shouting",
+      "kind": "expression",
+      "name": "Shouting",
+      "description": "Angry brows with an open mouth showing teeth.",
+      "tags": [
+        "face",
+        "expression",
+        "emotion",
+        "yell",
+        "angry",
+        "loud",
+        "order",
+        "command",
+        "scream",
+        "open mouth"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.shouting}",
+      "still": "knowledge/golden/assets/expression-shouting.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "expression/afraid",
+      "kind": "expression",
+      "name": "Afraid",
+      "description": "The frightened face measured from Reference B: lower lids pushed up, pupils resting on them, worry creases and a wide gritted grimace. The face tips down toward where the character looks.",
+      "tags": [
+        "face",
+        "expression",
+        "emotion",
+        "fear",
+        "scared",
+        "frightened",
+        "terrified",
+        "nervous",
+        "worried",
+        "gritted teeth",
+        "panic",
+        "cower"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.afraid}",
+      "still": "knowledge/golden/assets/expression-afraid.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "expression/surprised",
+      "kind": "expression",
+      "name": "Surprised",
+      "description": "High light brows, very wide eyes and a small round mouth.",
+      "tags": [
+        "face",
+        "expression",
+        "emotion",
+        "shock",
+        "wow",
+        "gasp",
+        "astonished",
+        "amazed",
+        "startled",
+        "round mouth"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.surprised}",
+      "still": "knowledge/golden/assets/expression-surprised.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "expression/determined",
+      "kind": "expression",
+      "name": "Determined",
+      "description": "Low straight brows, narrowed eyes and a firm mouth.",
+      "tags": [
+        "face",
+        "expression",
+        "emotion",
+        "resolute",
+        "firm",
+        "serious",
+        "brave",
+        "focused",
+        "ready"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.determined}",
+      "still": "knowledge/golden/assets/expression-determined.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "expression/thinking",
+      "kind": "expression",
+      "name": "Thinking",
+      "description": "One brow raised, pupils up and to the side, small sideways mouth.",
+      "tags": [
+        "face",
+        "expression",
+        "emotion",
+        "wonder",
+        "curious",
+        "pondering",
+        "idea",
+        "question",
+        "doubt",
+        "planning"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.thinking}",
+      "still": "knowledge/golden/assets/expression-thinking.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "expression/smug",
+      "kind": "expression",
+      "name": "Smug",
+      "description": "One brow raised, half-closed lids and a one-sided smirk.",
+      "tags": [
+        "face",
+        "expression",
+        "emotion",
+        "proud",
+        "cocky",
+        "smirk",
+        "arrogant",
+        "pleased with self",
+        "sly",
+        "confident"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.smug}",
+      "still": "knowledge/golden/assets/expression-smug.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "expression/exhausted",
+      "kind": "expression",
+      "name": "Exhausted",
+      "description": "Drooping brows, heavy lids with a crease under each eye and a slack open mouth.",
+      "tags": [
+        "face",
+        "expression",
+        "emotion",
+        "tired",
+        "weary",
+        "worn out",
+        "sleepy",
+        "drained",
+        "fed up"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.exhausted}",
+      "still": "knowledge/golden/assets/expression-exhausted.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "expression/wailing",
+      "kind": "expression",
+      "name": "Wailing",
+      "description": "Eyes squeezed shut with stress creases and a wide crying mouth with tongue.",
+      "tags": [
+        "face",
+        "expression",
+        "emotion",
+        "crying",
+        "sobbing",
+        "grief",
+        "scream",
+        "tantrum",
+        "pain",
+        "tongue"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.wailing}",
+      "still": "knowledge/golden/assets/expression-wailing.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "expression/horrified",
+      "kind": "expression",
+      "name": "Horrified",
+      "description": "Very wide eyes with tiny pupils, light raised brows, a small round mouth and chin strokes.",
+      "tags": [
+        "face",
+        "expression",
+        "emotion",
+        "horror",
+        "dread",
+        "shock",
+        "terror",
+        "wide eyes",
+        "aghast",
+        "appalled"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.horrified}",
+      "still": "knowledge/golden/assets/expression-horrified.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "eyes/stern",
+      "kind": "eyes",
+      "name": "Stern eyes",
+      "description": "Black almond eyes under heavy brows, from the king in Reference A. For cold, commanding or menacing characters.",
+      "tags": [
+        "eyes",
+        "stern",
+        "menacing",
+        "cold",
+        "commanding",
+        "ruler",
+        "villain",
+        "serious",
+        "almond"
+      ],
+      "code": {
+        "file": "engine/src/face/Face.tsx",
+        "export": "Face"
+      },
+      "use": "eyeStyle=\"stern\" on the Character",
+      "still": "knowledge/golden/assets/eyes-stern.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "hand/mitten",
+      "kind": "hand",
+      "name": "Resting hand",
+      "description": "A rounded mitten with a small thumb bump, for hands that hang, rest or wave.",
+      "tags": ["hand", "mitten", "resting", "relaxed", "glove", "waving"],
+      "code": {
+        "file": "engine/src/rig/Hand.tsx",
+        "export": "Hand"
+      },
+      "use": "hand: 'mitten' in a pose arm (the default)",
+      "still": "knowledge/golden/assets/hand-mitten.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "hand/grip",
+      "kind": "hand",
+      "name": "Gripping hand",
+      "description": "A closed fist around a handle: fingers as fat bands that hide the handle, thumb across the top.",
+      "tags": ["hand", "grip", "fist", "holding", "fingers", "glove", "grasp"],
+      "code": {
+        "file": "engine/src/rig/Hand.tsx",
+        "export": "Hand"
+      },
+      "use": "hand: 'grip', gripAxis: -90 in a pose arm",
+      "still": "knowledge/golden/assets/hand-grip.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "hand/point",
+      "kind": "hand",
+      "name": "Pointing hand",
+      "description": "A fist with the index finger extended.",
+      "tags": ["hand", "pointing", "finger", "index", "glove", "accuse"],
+      "code": {
+        "file": "engine/src/rig/Hand.tsx",
+        "export": "Hand"
+      },
+      "use": "hand: 'point' in a pose arm",
+      "still": "knowledge/golden/assets/hand-point.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "skin/tone-1",
+      "kind": "skin",
+      "name": "Skin tone 1",
+      "description": "Identity mode skin tone 1 of 8, very light, with its one shadow tone.",
+      "tags": ["skin", "skin tone", "identity", "complexion", "very light", "tone 1"],
+      "code": {
+        "file": "engine/src/wardrobe/identity.ts",
+        "export": "skinColors"
+      },
+      "use": "identity={{ skinTone: 1, hair, hairColor }}",
+      "still": "knowledge/golden/assets/skin-tone-1.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "skin/tone-2",
+      "kind": "skin",
+      "name": "Skin tone 2",
+      "description": "Identity mode skin tone 2 of 8, light, with its one shadow tone.",
+      "tags": ["skin", "skin tone", "identity", "complexion", "light", "tone 2"],
+      "code": {
+        "file": "engine/src/wardrobe/identity.ts",
+        "export": "skinColors"
+      },
+      "use": "identity={{ skinTone: 2, hair, hairColor }}",
+      "still": "knowledge/golden/assets/skin-tone-2.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "skin/tone-3",
+      "kind": "skin",
+      "name": "Skin tone 3",
+      "description": "Identity mode skin tone 3 of 8, light tan, with its one shadow tone.",
+      "tags": ["skin", "skin tone", "identity", "complexion", "light tan", "tone 3"],
+      "code": {
+        "file": "engine/src/wardrobe/identity.ts",
+        "export": "skinColors"
+      },
+      "use": "identity={{ skinTone: 3, hair, hairColor }}",
+      "still": "knowledge/golden/assets/skin-tone-3.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "skin/tone-4",
+      "kind": "skin",
+      "name": "Skin tone 4",
+      "description": "Identity mode skin tone 4 of 8, tan, with its one shadow tone.",
+      "tags": ["skin", "skin tone", "identity", "complexion", "tan", "tone 4"],
+      "code": {
+        "file": "engine/src/wardrobe/identity.ts",
+        "export": "skinColors"
+      },
+      "use": "identity={{ skinTone: 4, hair, hairColor }}",
+      "still": "knowledge/golden/assets/skin-tone-4.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "skin/tone-5",
+      "kind": "skin",
+      "name": "Skin tone 5",
+      "description": "Identity mode skin tone 5 of 8, medium brown, with its one shadow tone.",
+      "tags": ["skin", "skin tone", "identity", "complexion", "medium brown", "tone 5"],
+      "code": {
+        "file": "engine/src/wardrobe/identity.ts",
+        "export": "skinColors"
+      },
+      "use": "identity={{ skinTone: 5, hair, hairColor }}",
+      "still": "knowledge/golden/assets/skin-tone-5.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "skin/tone-6",
+      "kind": "skin",
+      "name": "Skin tone 6",
+      "description": "Identity mode skin tone 6 of 8, brown, with its one shadow tone and a light rim so the face reads on dark backgrounds.",
+      "tags": ["skin", "skin tone", "identity", "complexion", "brown", "tone 6"],
+      "code": {
+        "file": "engine/src/wardrobe/identity.ts",
+        "export": "skinColors"
+      },
+      "use": "identity={{ skinTone: 6, hair, hairColor }}",
+      "still": "knowledge/golden/assets/skin-tone-6.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "skin/tone-7",
+      "kind": "skin",
+      "name": "Skin tone 7",
+      "description": "Identity mode skin tone 7 of 8, dark brown, with its one shadow tone and a light rim so the face reads on dark backgrounds.",
+      "tags": ["skin", "skin tone", "identity", "complexion", "dark brown", "tone 7"],
+      "code": {
+        "file": "engine/src/wardrobe/identity.ts",
+        "export": "skinColors"
+      },
+      "use": "identity={{ skinTone: 7, hair, hairColor }}",
+      "still": "knowledge/golden/assets/skin-tone-7.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "skin/tone-8",
+      "kind": "skin",
+      "name": "Skin tone 8",
+      "description": "Identity mode skin tone 8 of 8, very dark, with its one shadow tone and a light rim so the face reads on dark backgrounds.",
+      "tags": ["skin", "skin tone", "identity", "complexion", "very dark", "tone 8"],
+      "code": {
+        "file": "engine/src/wardrobe/identity.ts",
+        "export": "skinColors"
+      },
+      "use": "identity={{ skinTone: 8, hair, hairColor }}",
+      "still": "knowledge/golden/assets/skin-tone-8.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "hair/bald",
+      "kind": "hair",
+      "name": "Bald",
+      "description": "No hair at all.",
+      "tags": ["hair", "hairstyle", "identity", "bald", "shaved", "no hair", "elder", "monk"],
+      "code": {
+        "file": "engine/src/wardrobe/hair.tsx",
+        "export": "HAIR_STYLES"
+      },
+      "use": "identity={{ skinTone, hair: 'bald', hairColor }}",
+      "still": "knowledge/golden/assets/hair-bald.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "hair/short-crop",
+      "kind": "hair",
+      "name": "Short crop",
+      "description": "Short hair close to the head.",
+      "tags": ["hair", "hairstyle", "identity", "short", "crop", "man", "boy", "soldier", "neat"],
+      "code": {
+        "file": "engine/src/wardrobe/hair.tsx",
+        "export": "HAIR_STYLES"
+      },
+      "use": "identity={{ skinTone, hair: 'short-crop', hairColor }}",
+      "still": "knowledge/golden/assets/hair-short-crop.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "hair/fade",
+      "kind": "hair",
+      "name": "Fade",
+      "description": "Short on top with faded sides.",
+      "tags": ["hair", "hairstyle", "identity", "fade", "short", "modern", "man", "barber"],
+      "code": {
+        "file": "engine/src/wardrobe/hair.tsx",
+        "export": "HAIR_STYLES"
+      },
+      "use": "identity={{ skinTone, hair: 'fade', hairColor }}",
+      "still": "knowledge/golden/assets/hair-fade.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "hair/afro",
+      "kind": "hair",
+      "name": "Afro",
+      "description": "A big round afro.",
+      "tags": ["hair", "hairstyle", "identity", "afro", "curly", "round", "big hair", "volume"],
+      "code": {
+        "file": "engine/src/wardrobe/hair.tsx",
+        "export": "HAIR_STYLES"
+      },
+      "use": "identity={{ skinTone, hair: 'afro', hairColor }}",
+      "still": "knowledge/golden/assets/hair-afro.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "hair/locs",
+      "kind": "hair",
+      "name": "Locs",
+      "description": "Long locs hanging beside the face.",
+      "tags": ["hair", "hairstyle", "identity", "locs", "dreadlocks", "long", "ropes"],
+      "code": {
+        "file": "engine/src/wardrobe/hair.tsx",
+        "export": "HAIR_STYLES"
+      },
+      "use": "identity={{ skinTone, hair: 'locs', hairColor }}",
+      "still": "knowledge/golden/assets/hair-locs.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "hair/braids",
+      "kind": "hair",
+      "name": "Braids",
+      "description": "Long braids hanging beside the face.",
+      "tags": ["hair", "hairstyle", "identity", "braids", "plaits", "long", "woman", "girl"],
+      "code": {
+        "file": "engine/src/wardrobe/hair.tsx",
+        "export": "HAIR_STYLES"
+      },
+      "use": "identity={{ skinTone, hair: 'braids', hairColor }}",
+      "still": "knowledge/golden/assets/hair-braids.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "hair/straight-bob",
+      "kind": "hair",
+      "name": "Straight bob",
+      "description": "Straight hair cut at the jaw.",
+      "tags": ["hair", "hairstyle", "identity", "bob", "straight", "woman", "girl", "medium"],
+      "code": {
+        "file": "engine/src/wardrobe/hair.tsx",
+        "export": "HAIR_STYLES"
+      },
+      "use": "identity={{ skinTone, hair: 'straight-bob', hairColor }}",
+      "still": "knowledge/golden/assets/hair-straight-bob.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "hair/bun",
+      "kind": "hair",
+      "name": "Bun",
+      "description": "Hair tied in a bun on top of the head.",
+      "tags": ["hair", "hairstyle", "identity", "bun", "tied", "woman", "neat", "topknot"],
+      "code": {
+        "file": "engine/src/wardrobe/hair.tsx",
+        "export": "HAIR_STYLES"
+      },
+      "use": "identity={{ skinTone, hair: 'bun', hairColor }}",
+      "still": "knowledge/golden/assets/hair-bun.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "hair/ponytail",
+      "kind": "hair",
+      "name": "Ponytail",
+      "description": "Hair tied back in a ponytail.",
+      "tags": ["hair", "hairstyle", "identity", "ponytail", "tied", "girl", "woman", "sporty"],
+      "code": {
+        "file": "engine/src/wardrobe/hair.tsx",
+        "export": "HAIR_STYLES"
+      },
+      "use": "identity={{ skinTone, hair: 'ponytail', hairColor }}",
+      "still": "knowledge/golden/assets/hair-ponytail.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "hair/head-wrap",
+      "kind": "hair",
+      "name": "Head wrap",
+      "description": "A cloth wrap covering the hair, in an accent color.",
+      "tags": [
+        "hair",
+        "hairstyle",
+        "identity",
+        "head wrap",
+        "wrap",
+        "scarf",
+        "cloth",
+        "headscarf",
+        "turban",
+        "woman"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/hair.tsx",
+        "export": "HAIR_STYLES"
+      },
+      "use": "identity={{ skinTone, hair: 'head-wrap', hairColor }}",
+      "still": "knowledge/golden/assets/hair-head-wrap.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "hair-color/black",
+      "kind": "hair-color",
+      "name": "Black hair",
+      "description": "Black hair, with its one shadow tone.",
+      "tags": ["hair", "hair color", "identity", "black", "dark"],
+      "code": {
+        "file": "engine/src/tokens.ts",
+        "export": "hairColor"
+      },
+      "use": "identity={{ skinTone, hair, hairColor: 'black' }}",
+      "still": "knowledge/golden/assets/hair-color-black.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "hair-color/dark-brown",
+      "kind": "hair-color",
+      "name": "Dark brown hair",
+      "description": "Dark brown hair, with its one shadow tone.",
+      "tags": ["hair", "hair color", "identity", "dark brown", "brunette"],
+      "code": {
+        "file": "engine/src/tokens.ts",
+        "export": "hairColor"
+      },
+      "use": "identity={{ skinTone, hair, hairColor: 'dark-brown' }}",
+      "still": "knowledge/golden/assets/hair-color-dark-brown.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "hair-color/brown",
+      "kind": "hair-color",
+      "name": "Brown hair",
+      "description": "Brown hair, with its one shadow tone.",
+      "tags": ["hair", "hair color", "identity", "brown", "chestnut"],
+      "code": {
+        "file": "engine/src/tokens.ts",
+        "export": "hairColor"
+      },
+      "use": "identity={{ skinTone, hair, hairColor: 'brown' }}",
+      "still": "knowledge/golden/assets/hair-color-brown.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "hair-color/auburn",
+      "kind": "hair-color",
+      "name": "Auburn hair",
+      "description": "Auburn hair, with its one shadow tone.",
+      "tags": ["hair", "hair color", "identity", "auburn", "red", "ginger"],
+      "code": {
+        "file": "engine/src/tokens.ts",
+        "export": "hairColor"
+      },
+      "use": "identity={{ skinTone, hair, hairColor: 'auburn' }}",
+      "still": "knowledge/golden/assets/hair-color-auburn.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "hair-color/blond",
+      "kind": "hair-color",
+      "name": "Blond hair",
+      "description": "Blond hair, with its one shadow tone.",
+      "tags": ["hair", "hair color", "identity", "blond", "blonde", "yellow", "fair"],
+      "code": {
+        "file": "engine/src/tokens.ts",
+        "export": "hairColor"
+      },
+      "use": "identity={{ skinTone, hair, hairColor: 'blond' }}",
+      "still": "knowledge/golden/assets/hair-color-blond.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "hair-color/gray",
+      "kind": "hair-color",
+      "name": "Gray hair",
+      "description": "Gray hair, with its one shadow tone.",
+      "tags": ["hair", "hair color", "identity", "gray", "grey", "old", "elder", "aged"],
+      "code": {
+        "file": "engine/src/tokens.ts",
+        "export": "hairColor"
+      },
+      "use": "identity={{ skinTone, hair, hairColor: 'gray' }}",
+      "still": "knowledge/golden/assets/hair-color-gray.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "hair-color/white",
+      "kind": "hair-color",
+      "name": "White hair",
+      "description": "White hair, with its one shadow tone.",
+      "tags": ["hair", "hair color", "identity", "white", "old", "elder", "aged"],
+      "code": {
+        "file": "engine/src/tokens.ts",
+        "export": "hairColor"
+      },
+      "use": "identity={{ skinTone, hair, hairColor: 'white' }}",
+      "still": "knowledge/golden/assets/hair-color-white.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "facial-hair/beard",
+      "kind": "facial-hair",
+      "name": "Beard",
+      "description": "A full beard along the jaw, in the hair color.",
+      "tags": ["beard", "facial hair", "man", "elder", "identity", "bearded"],
+      "code": {
+        "file": "engine/src/wardrobe/hair.tsx",
+        "export": "FacialHairShape"
+      },
+      "use": "identity={{ skinTone, hair, hairColor, facialHair: 'beard' }}",
+      "still": "knowledge/golden/assets/facial-hair-beard.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "facial-hair/moustache",
+      "kind": "facial-hair",
+      "name": "Moustache",
+      "description": "A moustache above the mouth, in the hair color.",
+      "tags": ["moustache", "mustache", "facial hair", "man", "identity"],
+      "code": {
+        "file": "engine/src/wardrobe/hair.tsx",
+        "export": "FacialHairShape"
+      },
+      "use": "identity={{ skinTone, hair, hairColor, facialHair: 'moustache' }}",
+      "still": "knowledge/golden/assets/facial-hair-moustache.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "costume/ruler",
+      "kind": "costume",
+      "name": "Ruler",
+      "description": "A full royal costume: three-point gold crown, crimson cape with a high collar, steel breastplate, sleeves and boots with gold trim, white gloves. An original design in the spirit of Reference A.",
+      "tags": [
+        "costume",
+        "king",
+        "queen",
+        "ruler",
+        "royal",
+        "royalty",
+        "crown",
+        "cape",
+        "armor",
+        "medieval",
+        "emperor",
+        "monarch",
+        "castle",
+        "tier 2"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/costumes/ruler.tsx",
+        "export": "RULER"
+      },
+      "use": "outfit={RULER}",
+      "still": "knowledge/golden/assets/costume-ruler.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "prop/scepter",
+      "kind": "prop",
+      "name": "Scepter",
+      "description": "A gold scepter with a crimson orb, held upright in a gripping hand.",
+      "tags": [
+        "prop",
+        "scepter",
+        "sceptre",
+        "staff",
+        "rod",
+        "royal",
+        "king",
+        "gold",
+        "orb",
+        "held"
+      ],
+      "code": {
+        "file": "engine/src/props/Scepter.tsx",
+        "export": "Scepter"
+      },
+      "use": "prop={(hands, info) => <Scepter frame={hands.front} uid={info.uid} shadowSide={info.shadowSide} />} with the hold-object pose",
+      "still": "knowledge/golden/assets/prop-scepter.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "effect/sweat-flying",
+      "kind": "effect",
+      "name": "Flying sweat drops",
+      "description": "Light blue drops that fly out from the head in arcs and fade, on a loop. For fear, panic and strain.",
+      "tags": ["effect", "sweat", "drops", "fear", "panic", "nervous", "stress", "flying"],
+      "code": {
+        "file": "engine/src/effects/Sweat.tsx",
+        "export": "FlyingSweat"
+      },
+      "use": "headEffects={<FlyingSweat t={frame / fps} seed={seed} />}",
+      "still": "knowledge/golden/assets/effect-sweat-flying.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "effect/sweat-resting",
+      "kind": "effect",
+      "name": "Resting sweat drop",
+      "description": "One light blue drop sitting on the head. For worry, effort and tiredness.",
+      "tags": ["effect", "sweat", "drop", "worry", "tired", "nervous", "effort"],
+      "code": {
+        "file": "engine/src/effects/Sweat.tsx",
+        "export": "RestingSweat"
+      },
+      "use": "headEffects={<RestingSweat side={-1} />}",
+      "still": "knowledge/golden/assets/effect-sweat-resting.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "background/simple",
+      "kind": "background",
+      "name": "Simple background",
+      "description": "Flat color fields, a flat ground band and black silhouettes, from Reference B. For comedy, everyday scenes and fast explainers.",
+      "tags": [
+        "background",
+        "scene",
+        "simple",
+        "flat",
+        "outdoor",
+        "comedy",
+        "everyday",
+        "street",
+        "field"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/Background.tsx",
+        "export": "Background"
+      },
+      "use": "<Background spec={backgroundSpec('simple', palette, seed, overrides)} width height frame fps />",
+      "still": "knowledge/golden/assets/background-simple.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "background/atmospheric",
+      "kind": "background",
+      "name": "Atmospheric background",
+      "description": "A soft painted sky with layered clouds, light rays, stars, haze and hills, from Reference A. For drama, history, danger and emotional peaks.",
+      "tags": [
+        "background",
+        "scene",
+        "atmospheric",
+        "dramatic",
+        "sky",
+        "outdoor",
+        "drama",
+        "history",
+        "storm",
+        "epic"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/Background.tsx",
+        "export": "Background"
+      },
+      "use": "<Background spec={backgroundSpec('atmospheric', palette, seed, overrides)} width height frame fps />",
+      "still": "knowledge/golden/assets/background-atmospheric.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "palette/storm-slate",
+      "kind": "palette",
+      "name": "Storm slate",
+      "description": "Dark blue-gray night colors, from Reference A.",
+      "tags": [
+        "palette",
+        "colors",
+        "background",
+        "night",
+        "storm",
+        "drama",
+        "dark",
+        "blue",
+        "gray",
+        "castle",
+        "danger"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/roles.ts",
+        "export": "bgRoles"
+      },
+      "use": "backgroundSpec(treatment, 'storm-slate', seed)",
+      "still": "knowledge/golden/assets/palette-storm-slate.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "palette/dusk-violet",
+      "kind": "palette",
+      "name": "Dusk violet",
+      "description": "Muted violet night colors, from Reference B.",
+      "tags": [
+        "palette",
+        "colors",
+        "background",
+        "night",
+        "dusk",
+        "evening",
+        "violet",
+        "purple",
+        "comedy",
+        "tension",
+        "moonlight"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/roles.ts",
+        "export": "bgRoles"
+      },
+      "use": "backgroundSpec(treatment, 'dusk-violet', seed)",
+      "still": "knowledge/golden/assets/palette-dusk-violet.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "palette/clear-day",
+      "kind": "palette",
+      "name": "Clear day",
+      "description": "Blue sky and green ground for daytime.",
+      "tags": [
+        "palette",
+        "colors",
+        "background",
+        "day",
+        "daytime",
+        "sunny",
+        "blue sky",
+        "green",
+        "grass",
+        "morning",
+        "outdoor"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/roles.ts",
+        "export": "bgRoles"
+      },
+      "use": "backgroundSpec(treatment, 'clear-day', seed)",
+      "still": "knowledge/golden/assets/palette-clear-day.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "palette/warm-interior",
+      "kind": "palette",
+      "name": "Warm interior",
+      "description": "Warm tan and brown colors for indoor scenes.",
+      "tags": [
+        "palette",
+        "colors",
+        "background",
+        "indoor",
+        "interior",
+        "room",
+        "house",
+        "warm",
+        "brown",
+        "home",
+        "inside"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/roles.ts",
+        "export": "bgRoles"
+      },
+      "use": "backgroundSpec(treatment, 'warm-interior', seed)",
+      "still": "knowledge/golden/assets/palette-warm-interior.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "palette/danger",
+      "kind": "palette",
+      "name": "Danger",
+      "description": "Dark reds for threat, fire and battle.",
+      "tags": [
+        "palette",
+        "colors",
+        "background",
+        "danger",
+        "red",
+        "fire",
+        "battle",
+        "threat",
+        "war",
+        "alarm"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/roles.ts",
+        "export": "bgRoles"
+      },
+      "use": "backgroundSpec(treatment, 'danger', seed)",
+      "still": "knowledge/golden/assets/palette-danger.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "palette/cold-dawn",
+      "kind": "palette",
+      "name": "Cold dawn",
+      "description": "Pale blue-gray and cream for early morning.",
+      "tags": [
+        "palette",
+        "colors",
+        "background",
+        "dawn",
+        "morning",
+        "sunrise",
+        "cold",
+        "pale",
+        "mist",
+        "winter"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/roles.ts",
+        "export": "bgRoles"
+      },
+      "use": "backgroundSpec(treatment, 'cold-dawn', seed)",
+      "still": "knowledge/golden/assets/palette-cold-dawn.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "background-element/moon",
+      "kind": "background-element",
+      "name": "Crescent moon",
+      "description": "A flat pale yellow crescent moon with no outline. It stays put while other layers slide.",
+      "tags": ["background", "element", "moon", "crescent", "night", "sky"],
+      "code": {
+        "file": "engine/src/backgrounds/Background.tsx",
+        "export": "backgroundSpec"
+      },
+      "use": "moon: { x, y, r } in the background spec; null hides it",
+      "still": "knowledge/golden/assets/background-element-moon.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "background-element/stars",
+      "kind": "background-element",
+      "name": "Stars",
+      "description": "A few small white dots of varied size that twinkle.",
+      "tags": ["background", "element", "stars", "night", "sky", "twinkle"],
+      "code": {
+        "file": "engine/src/backgrounds/Background.tsx",
+        "export": "backgroundSpec"
+      },
+      "use": "stars: <count> in the background spec",
+      "still": "knowledge/golden/assets/background-element-stars.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "background-element/clouds",
+      "kind": "background-element",
+      "name": "Clouds",
+      "description": "Soft layered clouds that drift slowly, lighter on the edge facing the light.",
+      "tags": ["background", "element", "clouds", "sky", "storm", "weather", "overcast"],
+      "code": {
+        "file": "engine/src/backgrounds/Background.tsx",
+        "export": "backgroundSpec"
+      },
+      "use": "clouds: <count> in an atmospheric background spec",
+      "still": "knowledge/golden/assets/background-element-clouds.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "background-element/light-rays",
+      "kind": "background-element",
+      "name": "Light rays",
+      "description": "Two to four pale translucent beams from the light source, pulsing gently.",
+      "tags": [
+        "background",
+        "element",
+        "light rays",
+        "rays",
+        "beams",
+        "sunbeam",
+        "moonbeam",
+        "divine",
+        "dramatic"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/Background.tsx",
+        "export": "backgroundSpec"
+      },
+      "use": "rays: true in an atmospheric background spec",
+      "still": "knowledge/golden/assets/background-element-light-rays.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "background-element/hills",
+      "kind": "background-element",
+      "name": "Hills",
+      "description": "Soft distant hills on the horizon, lighter the farther away.",
+      "tags": [
+        "background",
+        "element",
+        "hills",
+        "mountains",
+        "horizon",
+        "landscape",
+        "distance",
+        "countryside"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/Background.tsx",
+        "export": "backgroundSpec"
+      },
+      "use": "hills: true in the background spec",
+      "still": "knowledge/golden/assets/background-element-hills.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "background-element/grass-tufts",
+      "kind": "background-element",
+      "name": "Grass tufts",
+      "description": "Small dark tufts of grass on the ground.",
+      "tags": ["background", "element", "grass", "tufts", "ground", "field", "meadow"],
+      "code": {
+        "file": "engine/src/backgrounds/Background.tsx",
+        "export": "backgroundSpec"
+      },
+      "use": "tufts: <count> in the background spec",
+      "still": "knowledge/golden/assets/background-element-grass-tufts.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "silhouette/bush",
+      "kind": "silhouette",
+      "name": "Bush",
+      "description": "A black bush with white curl details, like the one in Reference B.",
+      "tags": [
+        "background",
+        "silhouette",
+        "bush",
+        "shrub",
+        "plant",
+        "hedge",
+        "hiding place",
+        "garden"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/Background.tsx",
+        "export": "backgroundSpec"
+      },
+      "use": "silhouettes: [{ kind: 'bush', x, size, layer: 'near' | 'mid' }] in the background spec",
+      "still": "knowledge/golden/assets/silhouette-bush.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "silhouette/tree",
+      "kind": "silhouette",
+      "name": "Tree",
+      "description": "A round-topped tree silhouette.",
+      "tags": ["background", "silhouette", "tree", "forest", "woods", "park", "garden", "nature"],
+      "code": {
+        "file": "engine/src/backgrounds/Background.tsx",
+        "export": "backgroundSpec"
+      },
+      "use": "silhouettes: [{ kind: 'tree', x, size, layer: 'near' | 'mid' }] in the background spec",
+      "still": "knowledge/golden/assets/silhouette-tree.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "silhouette/rock",
+      "kind": "silhouette",
+      "name": "Rock",
+      "description": "A dark rock or boulder silhouette.",
+      "tags": [
+        "background",
+        "silhouette",
+        "rock",
+        "boulder",
+        "stone",
+        "cliff",
+        "mountain",
+        "coast"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/Background.tsx",
+        "export": "backgroundSpec"
+      },
+      "use": "silhouettes: [{ kind: 'rock', x, size, layer: 'near' | 'mid' }] in the background spec",
+      "still": "knowledge/golden/assets/silhouette-rock.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "silhouette/buildings",
+      "kind": "silhouette",
+      "name": "Buildings",
+      "description": "A row of plain building silhouettes.",
+      "tags": [
+        "background",
+        "silhouette",
+        "buildings",
+        "town",
+        "city",
+        "village",
+        "houses",
+        "street",
+        "skyline"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/Background.tsx",
+        "export": "backgroundSpec"
+      },
+      "use": "silhouettes: [{ kind: 'buildings', x, size, layer: 'near' | 'mid' }] in the background spec",
+      "still": "knowledge/golden/assets/silhouette-buildings.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "color/gold",
+      "kind": "color",
+      "name": "Gold",
+      "description": "The gold accent color with its shadow tone, for costumes and props.",
+      "tags": ["color", "accent", "gold", "yellow", "royal", "crown", "coin", "treasure"],
+      "code": {
+        "file": "engine/src/tokens.ts",
+        "export": "accent"
+      },
+      "use": "const [fill, shadow] = accent('gold')",
+      "still": "knowledge/golden/assets/color-gold.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "color/crimson",
+      "kind": "color",
+      "name": "Crimson",
+      "description": "The crimson accent color with its shadow tone, for costumes and props.",
+      "tags": ["color", "accent", "crimson", "red", "dark red", "cape", "royal"],
+      "code": {
+        "file": "engine/src/tokens.ts",
+        "export": "accent"
+      },
+      "use": "const [fill, shadow] = accent('crimson')",
+      "still": "knowledge/golden/assets/color-crimson.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "color/orange",
+      "kind": "color",
+      "name": "Orange",
+      "description": "The orange accent color with its shadow tone, for costumes and props.",
+      "tags": ["color", "accent", "orange", "bright", "warm", "fire"],
+      "code": {
+        "file": "engine/src/tokens.ts",
+        "export": "accent"
+      },
+      "use": "const [fill, shadow] = accent('orange')",
+      "still": "knowledge/golden/assets/color-orange.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "color/steel",
+      "kind": "color",
+      "name": "Steel",
+      "description": "The steel accent color with its shadow tone, for costumes and props.",
+      "tags": ["color", "accent", "steel", "gray", "grey", "metal", "armor", "iron"],
+      "code": {
+        "file": "engine/src/tokens.ts",
+        "export": "accent"
+      },
+      "use": "const [fill, shadow] = accent('steel')",
+      "still": "knowledge/golden/assets/color-steel.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "color/denim",
+      "kind": "color",
+      "name": "Denim",
+      "description": "The denim accent color with its shadow tone, for costumes and props.",
+      "tags": ["color", "accent", "denim", "navy", "blue", "jeans", "dark blue"],
+      "code": {
+        "file": "engine/src/tokens.ts",
+        "export": "accent"
+      },
+      "use": "const [fill, shadow] = accent('denim')",
+      "still": "knowledge/golden/assets/color-denim.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "color/glint",
+      "kind": "color",
+      "name": "Glint",
+      "description": "The glint accent color with its shadow tone, for costumes and props.",
+      "tags": ["color", "accent", "glint blue", "light blue", "glass", "ice", "water", "orb"],
+      "code": {
+        "file": "engine/src/tokens.ts",
+        "export": "accent"
+      },
+      "use": "const [fill, shadow] = accent('glint')",
+      "still": "knowledge/golden/assets/color-glint.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "color/forest",
+      "kind": "color",
+      "name": "Forest",
+      "description": "The forest accent color with its shadow tone, for costumes and props.",
+      "tags": ["color", "accent", "forest green", "green", "leaf", "nature"],
+      "code": {
+        "file": "engine/src/tokens.ts",
+        "export": "accent"
+      },
+      "use": "const [fill, shadow] = accent('forest')",
+      "still": "knowledge/golden/assets/color-forest.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "camera/push-in",
+      "kind": "camera",
+      "name": "Slow push-in",
+      "description": "The camera moves slowly closer to a focus point over a shot. For emotional lines.",
+      "tags": ["camera", "push in", "zoom", "close in", "emotional", "dramatic", "slow"],
+      "code": {
+        "file": "engine/src/camera/Camera.tsx",
+        "export": "PushIn"
+      },
+      "use": "<PushIn frame durationInFrames strength={0.08} focus={{ x, y }}>...</PushIn>",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "overlay/captions",
+      "kind": "overlay",
+      "name": "Captions",
+      "description": "White Fredoka captions with a black outline in the bottom quarter, two short lines at a time, the emphasized word in gold.",
+      "tags": ["captions", "subtitles", "text", "words", "overlay", "emphasis"],
+      "code": {
+        "file": "engine/src/overlays/Captions.tsx",
+        "export": "Captions"
+      },
+      "use": "<Captions pages={buildPages(toCaptions(track.words))} />",
+      "version": 1,
+      "added": "2026-10-05"
+    }
+  ]
+}

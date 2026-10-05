@@ -13,10 +13,15 @@ import type { BgRoles } from './roles';
  * No outlines anywhere. Built in layers that shift at different speeds when the camera pans.
  */
 
-export type Treatment = 'simple' | 'atmospheric';
+/** The two background treatments (Style 5.2). */
+export const TREATMENTS = ['simple', 'atmospheric'] as const;
+export type Treatment = (typeof TREATMENTS)[number];
+
+/** Every silhouette shape a background can place. */
+export const SILHOUETTE_KINDS = ['bush', 'tree', 'rock', 'buildings'] as const;
 
 export type Silhouette = {
-  kind: 'bush' | 'tree' | 'rock' | 'buildings';
+  kind: (typeof SILHOUETTE_KINDS)[number];
   /** Horizontal position as a fraction of the frame width. */
   x: number;
   /** Size as a fraction of the frame height. */

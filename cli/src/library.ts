@@ -1,0 +1,203 @@
+/**
+ * `npm run library -- <command>`: the library of everything already drawn (Part 2, section 6).
+ *
+ *   search <words> [--kind=costume]   find assets by plain words, best match first
+ *   list [--kind=pose]                every asset, grouped by kind
+ *   show <id>                         one asset in full
+ *   check                             fail if a drawing is missing from the index, or the index
+ *                                     points at code or a still that is not there
+ *   stills [--only=id,id]             render each asset's golden still into knowledge/golden/assets/
+ *   look <id>                         render one asset in three views on light and dark, for the
+ *                                     draw, look and fix loop (into engine/out/library/)
+ *   catalog                           render the picture catalog into library/catalog/
+ */
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync } from 'node:fs';
+import path from 'node:path';
+import { bundle } from '@remotion/bundler';
+import { renderStill, selectComposition } from '@remotion/renderer';
+import { ASSET_KINDS, libraryIndexSchema, parseOrExplain, searchLibrary } from '@studio/shared';
+import type { AssetKind, LibraryAsset, LibraryIndex } from '@studio/shared';
+import { catalogPageCount } from '../../engine/src/library/catalog';
+import { projectRoot, run } from './system.js';
+
+const [command, ...rest] = process.argv.slice(2);
+const flags = rest.filter((a) => a.startsWith('--'));
+const words = rest.filter((a) => !a.startsWith('--'));
+const flag = (name: string) =>
+  flags.find((f) => f.startsWith(`--${name}=`))?.slice(name.length + 3) ?? null;
+
+const engineDir = path.join(projectRoot, 'engine');
+const indexFile = path.join(projectRoot, 'library', 'index.json');
+
+function loadIndex(): LibraryIndex {
+  return parseOrExplain(
+    libraryIndexSchema,
+    JSON.parse(readFileSync(indexFile, 'utf8')),
+    'library/index.json',
+  );
+}
+
+function kindFlag(): AssetKind | undefined {
+  const k = flag('kind');
+  if (!k) return undefined;
+  if (!(ASSET_KINDS as readonly string[]).includes(k)) {
+    throw new Error(`Unknown kind "${k}". Kinds: ${ASSET_KINDS.join(', ')}`);
+  }
+  return k as AssetKind;
+}
+
+const line = (a: LibraryAsset) => `  ${a.id.padEnd(34)} ${a.name}`;
+
+function describe(a: LibraryAsset) {
+  console.log(`${a.id}  (${a.name}, version ${a.version})`);
+  console.log(`  ${a.description}`);
+  console.log(`  tags:  ${a.tags.join(', ')}`);
+  console.log(`  code:  ${a.code.file}  export ${a.code.export}`);
+  console.log(`  use:   ${a.use}`);
+  if (a.still) console.log(`  still: ${a.still}`);
+}
+
+function search() {
+  const kind = kindFlag();
+  const hits = searchLibrary(loadIndex(), words.join(' '), kind ? { kind } : {});
+  if (!hits.length) {
+    console.log(`Nothing in the library matches "${words.join(' ')}". It has to be drawn.`);
+    return;
+  }
+  for (const { asset } of hits.slice(0, 12)) {
+    describe(asset);
+    console.log('');
+  }
+  if (hits.length > 12) console.log(`...and ${hits.length - 12} more. Add a word or --kind=.`);
+}
+
+function list() {
+  const kind = kindFlag();
+  const index = loadIndex();
+  for (const k of ASSET_KINDS) {
+    if (kind && k !== kind) continue;
+    const assets = index.assets.filter((a) => a.kind === k);
+    if (!assets.length) continue;
+    console.log(`${k} (${assets.length})`);
+    for (const a of assets) console.log(line(a));
+  }
+  console.log(`\n${index.assets.length} assets in all.`);
+}
+
+function show() {
+  const id = words[0];
+  const asset = loadIndex().assets.find((a) => a.id === id);
+  if (!asset)
+    throw new Error(`No asset "${id}" in the library. Try: npm run library -- search <words>`);
+  describe(asset);
+}
+
+/** The checks live in one test file, so `npm test` and this command can never disagree. */
+function check() {
+  const r = run('npx', ['vitest', 'run', 'engine/src/library'], { cwd: projectRoot });
+  const out = `${r.stdout ?? ''}${r.stderr ?? ''}`;
+  if (r.status === 0) {
+    const n = loadIndex().assets.length;
+    console.log(
+      `The library is complete: ${n} assets, every one indexed and pointing at real code and pictures.`,
+    );
+    return;
+  }
+  console.log(out);
+  console.log('The library check failed. The lines above say which asset and what is missing.');
+  process.exitCode = 1;
+}
+
+let serveUrl: string | null = null;
+async function bundled() {
+  if (!serveUrl) {
+    console.log('Bundling the engine...');
+    serveUrl = await bundle({ entryPoint: path.join(engineDir, 'src', 'index.ts') });
+  }
+  return serveUrl;
+}
+
+async function stills() {
+  const only = flag('only')?.split(',');
+  const index = loadIndex();
+  const assets = index.assets.filter((a) => a.still && (!only || only.includes(a.id)));
+  if (only) {
+    const unknown = only.filter((id) => !index.assets.some((a) => a.id === id));
+    if (unknown.length) throw new Error(`Not in the index: ${unknown.join(', ')}`);
+  }
+  const url = await bundled();
+  for (const a of assets) {
+    const inputProps = { id: a.id };
+    const composition = await selectComposition({ serveUrl: url, id: 'LibraryAsset', inputProps });
+    const output = path.join(projectRoot, a.still as string);
+    mkdirSync(path.dirname(output), { recursive: true });
+    await renderStill({ composition, serveUrl: url, output, inputProps });
+    console.log(`  ${a.still}`);
+  }
+  console.log(`${assets.length} golden stills written.`);
+}
+
+async function look() {
+  const id = words[0];
+  if (!id) throw new Error('Give the asset id: npm run library -- look costume/ruler');
+  const url = await bundled();
+  const inputProps = { id };
+  const composition = await selectComposition({ serveUrl: url, id: 'LibraryLook', inputProps });
+  const outDir = path.join(engineDir, 'out', 'library');
+  mkdirSync(outDir, { recursive: true });
+  const base = path.join(outDir, id.replace('/', '-'));
+  await renderStill({ composition, serveUrl: url, output: `${base}-look.png`, inputProps });
+  // The same sheet at a third of the size: does it still read on a phone?
+  await renderStill({
+    composition,
+    serveUrl: url,
+    output: `${base}-look-phone.png`,
+    inputProps,
+    scale: 1 / 3,
+  });
+  console.log(`  ${path.relative(projectRoot, `${base}-look.png`)}`);
+  console.log(`  ${path.relative(projectRoot, `${base}-look-phone.png`)}`);
+}
+
+async function catalog() {
+  const index = loadIndex();
+  const pages = catalogPageCount(index.assets.filter((a) => a.still).length);
+  const outDir = path.join(projectRoot, 'library', 'catalog');
+  // Old pages go first, so a shorter catalog never leaves a stale last page behind.
+  if (existsSync(outDir)) {
+    for (const f of readdirSync(outDir)) {
+      if (/^page-\d+\.png$/.test(f)) rmSync(path.join(outDir, f));
+    }
+  }
+  mkdirSync(outDir, { recursive: true });
+  const url = await bundled();
+  for (let page = 1; page <= pages; page++) {
+    const inputProps = { page };
+    const composition = await selectComposition({
+      serveUrl: url,
+      id: 'LibraryCatalog',
+      inputProps,
+    });
+    const output = path.join(outDir, `page-${page}.png`);
+    await renderStill({ composition, serveUrl: url, output, inputProps });
+    console.log(`  ${path.relative(projectRoot, output)}`);
+  }
+}
+
+const commands: Record<string, () => void | Promise<void>> = {
+  search,
+  list,
+  show,
+  check,
+  stills,
+  look,
+  catalog,
+};
+
+const action = command ? commands[command] : undefined;
+if (!action) {
+  console.log('Commands: search <words>, list, show <id>, check, stills, look <id>, catalog');
+  process.exitCode = 1;
+} else {
+  await action();
+}

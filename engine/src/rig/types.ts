@@ -3,7 +3,8 @@ import type { Vec2 } from './math';
 export type Facing = 'left' | 'right';
 
 /** Resting hands are mittens; hands that hold or point show fingers (guide v2, Style 3.1). */
-export type HandShape = 'mitten' | 'grip' | 'point';
+export const HAND_SHAPES = ['mitten', 'grip', 'point'] as const;
+export type HandShape = (typeof HAND_SHAPES)[number];
 
 export type HandPose = {
   shape: HandShape;

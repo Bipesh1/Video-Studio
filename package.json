@@ -15,6 +15,7 @@
     "sheets": "tsx cli/src/sheets.ts",
     "look-test": "tsx cli/src/look-test.ts",
     "short": "tsx cli/src/short.ts",
+    "library": "tsx cli/src/library.ts",
     "test": "vitest run",
     "typecheck": "tsc -p shared/tsconfig.json && tsc -p engine/tsconfig.json && tsc -p cli/tsconfig.json",
     "lint": "eslint .",

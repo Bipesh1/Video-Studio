@@ -59,7 +59,9 @@ export type HairStyle =
   | 'ponytail'
   | 'head-wrap';
 
-export type FacialHair = 'none' | 'beard' | 'moustache';
+/** Facial hair that can be drawn; 'none' draws nothing. */
+export const FACIAL_HAIR = ['beard', 'moustache'] as const;
+export type FacialHair = 'none' | (typeof FACIAL_HAIR)[number];
 
 /**
  * Identity mode (Style 3.4): skin tone 1 to 8, hair style and color, facial hair.

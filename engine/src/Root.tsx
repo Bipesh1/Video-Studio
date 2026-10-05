@@ -13,6 +13,14 @@ import {
 } from './compositions/MoonTax';
 import { STYLE_MATCH_PLACEHOLDER, StyleMatch } from './compositions/StyleMatch';
 import { FaceMatch } from './compositions/FaceMatch';
+import {
+  LOOK_HEIGHT,
+  LOOK_WIDTH,
+  LibraryAsset,
+  LibraryCatalog,
+  LibraryLook,
+} from './library/Library';
+import { PREVIEW_SIZE } from './library/previews';
 import { Sandbox } from './sandbox/Sandbox';
 import { BACKGROUNDS, STILL_SHEETS, VIDEO_SHEETS, stillId, videoId } from './sandbox/sheets';
 import type { VideoSheet } from './sandbox/sheets';
@@ -91,6 +99,33 @@ export const RemotionRoot = () => {
         fps={fps}
         width={1080}
         height={1920}
+      />
+      <Composition
+        id="LibraryAsset"
+        component={LibraryAsset}
+        durationInFrames={1}
+        fps={fps}
+        width={PREVIEW_SIZE}
+        height={PREVIEW_SIZE}
+        defaultProps={{ id: 'rig/character' }}
+      />
+      <Composition
+        id="LibraryLook"
+        component={LibraryLook}
+        durationInFrames={1}
+        fps={fps}
+        width={LOOK_WIDTH}
+        height={LOOK_HEIGHT}
+        defaultProps={{ id: 'rig/character' }}
+      />
+      <Composition
+        id="LibraryCatalog"
+        component={LibraryCatalog}
+        durationInFrames={1}
+        fps={fps}
+        width={1080}
+        height={1920}
+        defaultProps={{ page: 1 }}
       />
       {STILL_SHEETS.flatMap((sheet) =>
         BACKGROUNDS.map((bg) => (

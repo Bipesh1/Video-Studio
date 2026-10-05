@@ -1,7 +1,7 @@
 # Build Status
 
-**Current phase:** Phase 1 complete. **Stopped at Checkpoint 1**, waiting for Biku to judge the look and pick voices.
-**Next:** after Biku answers the questions in `runs/2026-10-03-look-test/checkpoint-1.md`, apply the answers, then start Phase 2 (character and world).
+**Current phase:** Phase 2, step 2A (library foundation) done. Next step is 2B (people), started only when Biku asks. Checkpoint 1 questions 2 to 5 are still open.
+**Next:** Biku looks at the library catalog (`library/catalog/`) and answers the head-size question; then 2B. The steps are listed under "Phase 2 steps" below.
 **Last updated:** 2026-10-05
 
 ## Checkpoint 1: waiting for Biku
@@ -9,6 +9,39 @@
 Review file: `runs/2026-10-03-look-test/checkpoint-1.md`. Questions: (1) how close the look is and what to change, (2) narrator and character voices, (3) head size, (4) hair colors (guide v3), (5) fingers on hands that cover the face.
 
 **Question 1 (2026-10-04): Biku said not close enough yet, then said go.** Faces round 4 is built (section below, guide v7). Question 1 is open again: Biku needs to look at `runs/2026-10-03-look-test/out/face-match.png` and say whether the frightened face and the wrinkles are close enough now.
+
+## Phase 2A. Library foundation: done (2026-10-05)
+
+Asked by Biku ("start phase 2A"). Everything already drawn is now listed, searchable and pictured.
+
+### Made
+
+- `library/index.json`: 87 assets, each with an id (`<kind>/<name>`), a plain description, tags, the code file and exported name, a `use` hint, a golden still path, a version and a date. Schema and search in `shared/src/library.schema.ts`.
+- `npm run library -- search | list | show | look | stills | catalog | check` (`cli/src/library.ts`).
+- `engine/src/library/`: one preview drawing per asset (`previews.tsx`), and the pages that render them (`LibraryAsset`, `LibraryLook`, `LibraryCatalog`).
+- Golden stills for the 85 assets that can be pictured, in `knowledge/golden/assets/`. The camera move and the captions have none: they are judged in a shot.
+- `library/catalog/page-1.png` to `page-4.png`: the picture catalog for Biku.
+- `.claude/commands/draw.md`: `/draw <description>` runs the draw, look and fix loop and files the result in the library.
+- The check (`engine/src/library/library.test.tsx`, also `npm run library -- check`): fails if an expression, pose, hand shape, hair style, hair color, skin tone, facial hair, palette, accent color, background treatment or silhouette exists without an index entry; if a costume, prop, effect, camera or overlay file has no entry; if an entry points at code or a still that is not there; or if a pictured asset has no preview.
+
+### What is in the library now
+
+rig 1, poses 7, action 1 (walk), motion 2, expressions 14, eye style 1, hands 3, skin tones 8, hair styles 10, hair colors 7, facial hair 2, costume 1, prop 1, effects 2, backgrounds 2, palettes 6, background elements 6, silhouettes 4, accent colors 7, camera 1, overlay 1.
+
+### Acceptance (the part of Phase 2 that 2A covers)
+
+| Check                                               | Result                                                                                                                         |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Golden still saved for every asset                  | Yes, 85 of 85 that can be pictured                                                                                             |
+| Library search finds assets by tag                  | Yes: "king" finds the ruler costume, "scared" the afraid face, "night violet" the dusk palette; tested                         |
+| The check fails on an unindexed piece               | Yes, tried with a dummy prop file                                                                                              |
+| `/draw` exists and follows current Claude Code docs | Yes; custom commands in `.claude/commands/` still work and are the same as skills (checked in the official docs on 2026-10-05) |
+| Tests, typecheck, lint, format                      | Pass (93 tests)                                                                                                                |
+
+### Not done in 2A
+
+- **Head size.** The step was to apply Biku's answer, and there is no answer yet. Heads stay at 0.29 of standing height. Changing it later means re-checking every pose, so it should be settled before 2C.
+- **`characters/`** is still empty. Character cards are part of 2B.
 
 ## Feedback on the king's arms (2026-10-05): applied
 
@@ -50,7 +83,7 @@ Goal is "alive", not "realistic": it must still read as the snappy reference sty
 
 Each step ends with contact sheets for Biku, a commit and an update here. Start a step only when Biku asks.
 
-- **2A. Library foundation.** Apply Biku's head-size answer; `library/index.json` with every existing piece registered (tags, picture, code path); golden stills; the check that fails on unindexed pieces; `/draw`.
+- **2A. Library foundation: done (2026-10-05)** except the head-size answer, which Biku has not given yet. Was: apply Biku's head-size answer; `library/index.json` with every existing piece registered (tags, picture, code path); golden stills; the check that fails on unindexed pieces; `/draw`.
 - **Faces round 4: done (2026-10-04).** Built ahead of 2A at Biku's go-ahead; see the round 4 section above. Waiting for Biku's verdict on the face match sheet.
 - **2B. People.** Tier 1 clothes (shirt, tank top, trousers, skirt or dress, shoes, plain hat, hood or cloak, robe); costumes (soldier, queen or noble gown, villager or farmer); long hair; all skin tones and hair checked; age cues (child, adult, elder); character cards.
 - **2C. Poses and motion polish.** Sit, kneel, lie, cross arms, look up, look down, cower; cry, cheer, hug; wind-up and settle; lagging capes, hair and held objects; weight and breathing; eye darts, smooth head turns, more mouth shapes; mood walks; arcs.

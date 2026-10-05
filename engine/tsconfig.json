@@ -5,5 +5,10 @@
     "lib": ["DOM", "ES2022"],
     "types": ["node"]
   },
-  "include": ["src", "remotion.config.ts", "../styles/ink-stick/tokens.json"]
+  "include": [
+    "src",
+    "remotion.config.ts",
+    "../styles/ink-stick/tokens.json",
+    "../library/index.json"
+  ]
 }

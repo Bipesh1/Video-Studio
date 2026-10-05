@@ -56,7 +56,7 @@ Reusing a library asset in a new pose or expression needs no full guide read, bu
 
 ## Where the drawing code lives
 
-Everything already drawn is reusable code under `engine/src/`. Look here before drawing anything; a video asks for these pieces by name and never redraws them. Once `library/index.json` exists (Phase 2), search it first.
+Everything already drawn is reusable code under `engine/src/`, and every piece is listed in `library/index.json` with tags, a picture and where its code is. **Search the library before drawing anything:** `npm run library -- search <plain words>` (for example `search king night`). A video asks for these pieces by name and never redraws them. The table below is the map of the folders behind the index.
 
 | Need                                                | Look in                                                           |
 | --------------------------------------------------- | ----------------------------------------------------------------- |
@@ -69,7 +69,7 @@ Everything already drawn is reusable code under `engine/src/`. Look here before 
 | Backgrounds and their palettes                      | `engine/src/backgrounds/`                                         |
 | Camera, captions                                    | `engine/src/camera/`, `engine/src/overlays/`                      |
 | Worked examples of whole videos                     | `engine/src/compositions/LookTest.tsx`, `MoonTax.tsx`             |
-| Pictures of every piece                             | `npm run sheets` (contact sheets), `knowledge/golden/`            |
+| Pictures of every piece                             | `library/catalog/`, `knowledge/golden/assets/`, `npm run sheets`  |
 
 ## Repository layout and commands
 
@@ -77,6 +77,7 @@ Everything already drawn is reusable code under `engine/src/`. Look here before 
 - `npm run doctor` reports every tool version. `npm run bench` renders the test scene and measures speed.
 - `npm run look-test -- --all` builds the Phase 1 look test (voice, stills, video, style match sheets); `--audition` speaks the audition lines in every American English Kokoro voice. Each stage runs alone too.
 - Voice: `cd audio && uv run python -m studio_audio.voice synth --script <voice-script.json> --out <dir>` writes `voice.wav` and `timings.json` (contract in `shared/src/voice.schema.ts`). Kokoro 0.9.4 gives word timestamps itself.
+- Library: `npm run library -- search <words>` finds assets by tag (`--kind=costume` narrows it), `list` and `show <id>` print the index, `look <id>` renders one asset in three views on light and dark for the draw, look and fix loop, `stills` writes the golden stills in `knowledge/golden/assets/`, `catalog` renders the picture catalog in `library/catalog/`, and `check` fails if anything drawn is missing from the index. `/draw <description>` runs the whole loop for a new asset.
 - `npm run sheets` renders the sandbox contact sheets for the draw, look and fix loop (`--only=poses`, `--video`, `--golden`). Look at them before calling any drawing done.
 - `npm test`, `npm run typecheck`, `npm run lint`, `npm run format` must pass at the end of every phase.
 - Python: `cd audio && uv run pytest` and `uv run python -m studio_audio.doctor`.
