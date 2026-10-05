@@ -36,7 +36,8 @@ export const point: Pose = {
   headTilt: -2,
   arms: {
     front: { upper: 86, lower: 2, hand: 'point', thumb: -1 },
-    back: { upper: -8, lower: -10 },
+    // A resting arm bends forward at the elbow, never backward.
+    back: { upper: -12, lower: 8 },
   },
   legs: feet(0.24),
 };
@@ -55,12 +56,16 @@ export const handsUp: Pose = {
   legs: feet(0.28),
 };
 
-/** Holding an upright object in front, like the king's scepter. The hand grips with fingers. */
+/**
+ * Holding an upright object out in front, like the king's sword arm in Reference A: the arm
+ * reaches forward and a little down, the elbow ahead of the shoulder, never folded back.
+ * The other arm hangs relaxed with a slight forward bend. The hand grips with fingers.
+ */
 export const holdObject: Pose = {
   id: 'hold-object',
   arms: {
-    front: { reach: vec(0.62, 0.42), bend: ELBOW_DOWN, hand: 'grip', gripAxis: -90, thumb: 1 },
-    back: { upper: -10, lower: -8 },
+    front: { reach: vec(0.92, 0.46), bend: ELBOW_DOWN, hand: 'grip', gripAxis: -90, thumb: 1 },
+    back: { upper: -12, lower: 8 },
   },
   legs: feet(0.22),
 };

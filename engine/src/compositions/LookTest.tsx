@@ -94,7 +94,7 @@ function ShotRuler({ frame, durationInFrames, fps }: ShotProps) {
         fps={fps}
       />
       <Character
-        x={520}
+        x={490}
         groundY={1830}
         head={380}
         pose={withLife(resolvePose(holdObject), frame, fps, SEED)}

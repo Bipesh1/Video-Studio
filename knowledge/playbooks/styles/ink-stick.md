@@ -20,3 +20,10 @@ Current best practice for the Ink Stick look, learned from real videos and Biku'
 - **In a three-quarter view the near eye overlaps the far eye,** and the brow over the far eye is short and sits right over it, so it never touches the head outline. (L-0006, measured)
 - **Raised brows stay inside the head.** Surprised and horrified brows are lighter arcs; if a brow reaches the outline, lower it or lighten it. (self-check)
 - **Measure, do not eyeball.** Before matching a face to a reference, enlarge the reference 8 times with a grid and read sizes, positions, tilt and line thickness in head units. Compare at the same head size (`npm run look-test -- --faces`). (L-0007, self-check)
+
+## Bodies and arms
+
+- **The body agrees with the head.** When a costumed character is turned three-quarter, the arm on the side they face is the far arm and comes out from behind the chest; the other arm is the near one and hangs in front of the chest. Seen from the front, both arms hang beside the chest. The engine does this by view (`engine/src/rig/layers.ts`); check it on every new costume. (L-0008, Biku)
+- **No arm bends backward.** A resting arm hangs a little behind the body and bends forward at the elbow. An arm that holds something out reaches forward with the elbow ahead of the shoulder, like the king's sword arm in Reference A, never folded back against the body. (L-0008, Biku)
+- **A holding hand is a closed fist.** The fingers are fat bands that cover the handle; it shows only above and below the fist, with the thumb across the top. (L-0008, Biku)
+- **Keep hands out of the caption area,** above all white gloves behind white caption text. Move the character sideways if a hand lands there. (moon tax, self-check)

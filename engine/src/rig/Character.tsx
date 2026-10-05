@@ -9,6 +9,7 @@ import { Shaded, Tube, lightOffset } from '../wardrobe/Shaded';
 import type { Identity, Outfit, PieceContext } from '../wardrobe/types';
 import { body } from './body';
 import { Hand, handTransform } from './Hand';
+import { armLayers } from './layers';
 import type { HandStyle } from './Hand';
 import { DEG, clamp, length, mul, rotate, sub, vec } from './math';
 import type { Vec2 } from './math';
@@ -125,7 +126,8 @@ function Boot({
  * One Ink Stick character. Draw order (Part 2, section 7.1, with costume layers):
  * cape back, back arm, back leg, torso and costume, front leg, costume over the torso,
  * head (hair behind, head, face, facial hair, hair in front, headwear), front arm,
- * held prop, gripping fingers.
+ * held prop, gripping fingers. On a wide costumed body the arms change places so the chest
+ * agrees with the way the head is turned (see armLayers).
  */
 export const Character = ({
   x,
@@ -232,18 +234,31 @@ export const Character = ({
   const backGrips = pose.hands.back.shape === 'grip';
   const frontGrips = pose.hands.front.shape === 'grip';
   // Hands that cover the face are drawn after the head.
-  const backOver = pose.hands.back.over === true;
+  const layers = armLayers(
+    (outfit?.shoulderSpread ?? 0) > 0,
+    t,
+    pose.hands.front.over === true,
+    pose.hands.back.over === true,
+  );
+  const backArm = (
+    <>
+      {arm(j.arms.back, 'back')}
+      {!backGrips && handOf(j.arms.back, pose.hands.back)}
+    </>
+  );
+  const frontSleeve = arm(j.arms.front, 'front');
 
   return (
     <g transform={`translate(${x} ${groundY}) scale(${sign * head} ${head})`}>
       {outfit?.back?.(ctx)}
-      {!backOver && arm(j.arms.back, 'back')}
-      {!backOver && !backGrips && handOf(j.arms.back, pose.hands.back)}
+      {layers.back === 'behind' && backArm}
+      {layers.front === 'behind' && frontSleeve}
       {leg(j.legs.back, 'back')}
       <line x1={j.hip.x} y1={j.hip.y} x2={j.neck.x} y2={j.neck.y} {...limbProps} />
       {outfit?.torso?.(ctx)}
       {leg(j.legs.front, 'front')}
       {outfit?.overTorso?.(ctx)}
+      {layers.back === 'chest' && backArm}
 
       <g
         transform={`translate(${j.head.x} ${j.head.y}) rotate(${j.headAngle}) translate(0 ${ry}) scale(${1 + sq} ${1 - sq}) translate(0 ${-ry})`}
@@ -290,9 +305,8 @@ export const Character = ({
         {headEffects}
       </g>
 
-      {backOver && arm(j.arms.back, 'back')}
-      {backOver && !backGrips && handOf(j.arms.back, pose.hands.back)}
-      {arm(j.arms.front, 'front')}
+      {layers.back === 'top' && backArm}
+      {layers.front === 'top' && frontSleeve}
       {!frontGrips && handOf(j.arms.front, pose.hands.front)}
       {prop?.(frames, { uid, shadowSide })}
       {backGrips && handOf(j.arms.back, pose.hands.back)}

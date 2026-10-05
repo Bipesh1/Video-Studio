@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { blinkAt, blinkStarts, withLife } from './life';
 import { DEFAULT_TRANSITION, poseAt, resolvePose } from './pose';
-import { POSES, handsOverMouth, handsUp, holdObject, point, stand, wave } from './poses';
+import { POSES, handsOverMouth, handsUp, holdObject, point, shrug, stand, wave } from './poses';
 import { computeSkeleton } from './skeleton';
 import { tokens } from '../tokens';
 
@@ -40,6 +40,38 @@ describe('pose library', () => {
     if (!('reach' in spec)) throw new Error('hold-object should use an IK reach');
     expect(j.arms.front.hand.x - j.shoulder.x).toBeCloseTo(spec.reach.x, 9);
     expect(j.arms.front.hand.y - j.shoulder.y).toBeCloseTo(spec.reach.y, 9);
+  });
+
+  it('directional poses never bend an arm backward (Biku, 2026-10-05)', () => {
+    // The resting arm hangs a little behind the body and bends forward at the elbow.
+    for (const pose of [holdObject, point]) {
+      const back = resolvePose(pose).arms.back;
+      expect(back.upper).toBeLessThan(0);
+      expect(back.lower).toBeGreaterThan(0);
+    }
+    // The holding arm reaches out: its elbow is ahead of and below the shoulder, not folded back.
+    const arm = computeSkeleton(resolvePose(holdObject)).arms.front;
+    expect(arm.elbow.x).toBeGreaterThan(arm.shoulder.x + 0.2);
+    expect(arm.elbow.y).toBeGreaterThan(arm.shoulder.y);
+    expect(arm.hand.x).toBeGreaterThan(arm.elbow.x);
+  });
+
+  it('a hanging arm bends forward once the body is turned, and mirrors seen from the front', () => {
+    const r = resolvePose(stand);
+    // Seen from the front the two arms mirror each other.
+    const front = computeSkeleton(r, { turn: 0 }).arms.back;
+    expect(front.forearm).toBeLessThan(r.arms.back.upper);
+    // Turned three-quarter or to profile, the same arm bends forward at the elbow.
+    for (const turn of [0.5, 1]) {
+      const turned = computeSkeleton(r, { turn }).arms.back;
+      expect(turned.forearm).toBeGreaterThan(r.arms.back.upper);
+    }
+    // A shrug is a sideways gesture: it keeps its mirrored arms at every turn.
+    const s = resolvePose(shrug);
+    expect(computeSkeleton(s, { turn: 0.5 }).arms.back.forearm).toBeCloseTo(
+      s.arms.back.upper + s.arms.back.lower,
+      9,
+    );
   });
 
   it('hands follow guide v2: grip to hold, finger to point, mittens at rest', () => {

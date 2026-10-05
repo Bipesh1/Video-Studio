@@ -2,13 +2,23 @@
 
 **Current phase:** Phase 1 complete. **Stopped at Checkpoint 1**, waiting for Biku to judge the look and pick voices.
 **Next:** after Biku answers the questions in `runs/2026-10-03-look-test/checkpoint-1.md`, apply the answers, then start Phase 2 (character and world).
-**Last updated:** 2026-10-04
+**Last updated:** 2026-10-05
 
 ## Checkpoint 1: waiting for Biku
 
 Review file: `runs/2026-10-03-look-test/checkpoint-1.md`. Questions: (1) how close the look is and what to change, (2) narrator and character voices, (3) head size, (4) hair colors (guide v3), (5) fingers on hands that cover the face.
 
 **Question 1 (2026-10-04): Biku said not close enough yet, then said go.** Faces round 4 is built (section below, guide v7). Question 1 is open again: Biku needs to look at `runs/2026-10-03-look-test/out/face-match.png` and say whether the frightened face and the wrinkles are close enough now.
+
+## Feedback on the king's arms (2026-10-05): applied
+
+Biku said the king in the moon video looked weird: he faces forward but his arms are backward. Lesson L-0008.
+
+- **What was wrong:** the head was turned three-quarter but the body was layered as if turned the other way. The far arm was drawn over the chest with its elbow tucked back, the near arm was hidden behind the chest, the resting arm bent backward at the elbow, and the gripping fingers stuck out past the scepter.
+- **Made:** `engine/src/rig/layers.ts` (`armLayers`: which arm passes behind, in front of the chest, or on top, by view) used by `Character.tsx`; `naturalArm` in `skeleton.ts` (a hanging arm bends forward once the body is turned three-quarter or more; front-view poses keep mirrored arms); `hold-object` reaches out (0.92, 0.46) with a relaxed resting arm, `point` got the same resting arm; the grip in `Hand.tsx` is a closed fist that hides the handle.
+- **Reframed for the longer reach:** the king moved a little in three moon video shots and in look test shot 1.
+- **Checked on:** costume, hands, poses and turns sheets, and the stills of both videos. Golden stills re-saved. `moon-tax-v4.mp4` is the new version; `look-test-round4.mp4` keeps the previous look test video.
+- **For Phase 2:** every new costume and every new pose must be checked in front, three-quarter and profile for which arm is in front. Legs still use the old fixed order (back leg behind the skirt, front leg over it); it has not looked wrong so far, but check it when trousers and skirts arrive in 2B.
 
 ## Checkpoint 1 feedback, round 4 (2026-10-04): applied
 
@@ -60,6 +70,7 @@ Biku asked for a short folktale of Claude's own. Written, drawn, voiced and rend
 - **Look and fix:** raised brows hid under the crown, Mira's pointing arm crossed her face, a foreground bush covered the walker, the belt and glove sat behind the captions. All fixed before the render.
 - **Measured:** -14.1 LUFS, peak -1.3 dB, 3.0 s of render per second of video.
 - **Feedback (2026-10-04):** Biku could not see the pupil in the king's far eye on the angry face. Fixed in the face code for every character (lesson L-0005) and re-rendered as `moon-tax-v2.mp4`; v1 is kept. Biku also found the story not very immersive: a note for future scripts, no remake asked.
+- **Version 4 (2026-10-05):** re-rendered as `moon-tax-v4.mp4` after the arm fixes above (lesson L-0008). v1 to v3 are kept.
 - **Version 3 (2026-10-04):** re-rendered as `moon-tax-v3.mp4` with the round 4 faces (the king's worried close-up shows the new lower lids, grimace and creases). v1 and v2 are kept.
 - **Limits Biku should know:** Mira and the villager are plain stick figures (no clothes or hair in default mode yet); voices are placeholders (narrator `am_michael`, Mira `af_heart`).
 

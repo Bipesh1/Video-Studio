@@ -108,7 +108,7 @@ function ShotProudKing({ frame, durationInFrames, fps }: ShotProps) {
       frame={frame}
       durationInFrames={durationInFrames}
       strength={0.08}
-      focus={{ x: 560, y: 760 }}
+      focus={{ x: 540, y: 760 }}
     >
       <Background
         spec={backgroundSpec('atmospheric', 'storm-slate', SEED, { moon: MOON })}
@@ -118,7 +118,7 @@ function ShotProudKing({ frame, durationInFrames, fps }: ShotProps) {
         fps={fps}
       />
       <Character
-        x={560}
+        x={510}
         groundY={1850}
         head={370}
         pose={withLife(resolvePose(holdObject), frame, fps, SEED)}
@@ -182,7 +182,7 @@ function ShotMira({ frame, startFrame, fps, track }: ShotProps) {
   });
   const groundY = spec.horizon * H;
   const mira = { x: 280, groundY, head: 185, facing: 'right' as Facing };
-  const king = { x: 800, groundY, head: 250, facing: 'left' as Facing };
+  const king = { x: 835, groundY, head: 250, facing: 'left' as Facing };
   const faceOf = (c: typeof mira) => ({ x: c.x, y: c.groundY - FACE_UP * c.head });
   const moon = { x: spec.moon ? spec.moon.x * W : W / 2, y: spec.moon ? spec.moon.y * H : 0 };
 
@@ -242,7 +242,7 @@ function ShotMira({ frame, startFrame, fps, track }: ShotProps) {
 /** s4: close-up. The king looks up at the moon and knows he has lost. */
 function ShotLookUp({ frame, durationInFrames, fps }: ShotProps) {
   const head = 470;
-  const king = { x: 720, groundY: 720 + FACE_UP * head, head, facing: 'left' as Facing };
+  const king = { x: 790, groundY: 720 + FACE_UP * head, head, facing: 'left' as Facing };
   const spec = backgroundSpec('atmospheric', 'storm-slate', SEED + 5, {
     moon: { x: 0.2, y: 0.1, r: 0.06 },
   });
@@ -255,7 +255,7 @@ function ShotLookUp({ frame, durationInFrames, fps }: ShotProps) {
       frame={frame}
       durationInFrames={durationInFrames}
       strength={0.06}
-      focus={{ x: 700, y: 720 }}
+      focus={{ x: 770, y: 720 }}
     >
       <Background spec={spec} width={W} height={H} frame={frame} fps={fps} />
       <Character

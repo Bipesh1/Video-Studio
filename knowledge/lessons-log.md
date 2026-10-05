@@ -100,3 +100,21 @@ Applied: afraid expression rebuilt from the measurements (tilt +11 degrees towar
   now draws our head at the reference's head size.
 Status: active
 ```
+
+```
+L-0008 | 2026-10-05 | run: 2026-10-04-moon-tax (shot 1, moon-tax-v3)
+Area: poses | Scope: style ink-stick | Source: Biku
+Lesson: The body must agree with the way the head is turned. On a costumed body in three-quarter
+  view the arm on the side the character faces is the far arm: it comes out from behind the
+  chest. The other arm is the near one and hangs in front of the chest. No arm folds back or
+  bends backward at the elbow, and a hand that holds something is a closed fist around it.
+Evidence: Biku said the king looked weird: he faces forward but his arms are backward. The far
+  arm was drawn over the chest with its elbow tucked back, the near arm was hidden behind the
+  chest, the resting arm bent backward at the elbow, and the gripping fingers stuck out past the
+  scepter like an open hand.
+Applied: engine/src/rig/layers.ts (which arm passes in front of a wide chest, by view),
+  naturalArm in skeleton.ts (a hanging arm bends forward once the body is turned), hold-object
+  and point poses (arm reaches out, resting arm relaxed), Hand.tsx (the grip is a fist that hides
+  the handle). Video re-rendered as moon-tax-v4.mp4.
+Status: active
+```

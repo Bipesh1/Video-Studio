@@ -1,4 +1,5 @@
 import { body } from './body';
+import { THREE_QUARTER_FROM } from './layers';
 import { DEG, add, clamp, fromDown, mul, vec } from './math';
 import type { Vec2 } from './math';
 import type { ArmJoints, Joints, LegJoints, LimbAngles, ResolvedPose } from './types';
@@ -26,6 +27,21 @@ function leg(hip: Vec2, a: LimbAngles): LegJoints {
   return { hip, knee, foot };
 }
 
+/** A hanging arm swings at most this far from straight down, in degrees. */
+const HANGING_MAX = 30;
+
+/**
+ * An elbow cannot bend backward. Front-view poses mirror their two arms, which bends the back
+ * arm's elbow the other way; that is right seen from the front, where it reads as "outward".
+ * Once the body is turned, a hanging arm bends forward instead (Biku, 2026-10-05). Big sideways
+ * gestures such as a shrug keep their mirrored arms.
+ */
+export function naturalArm(a: LimbAngles, turn: number): LimbAngles {
+  const turned = turn >= THREE_QUARTER_FROM;
+  const hanging = Math.abs(a.upper) <= HANGING_MAX;
+  return turned && hanging && a.lower < 0 ? { ...a, lower: -a.lower } : a;
+}
+
 /**
  * Body build options. shoulderSpread moves the two arm roots apart across the torso, for
  * costumes with broad shoulders; it narrows as the body turns toward profile.
@@ -39,7 +55,8 @@ export function computeSkeleton(p: ResolvedPose, build: Build = {}): Joints {
   const neck = neckOf(hip, p.torsoLean);
   const shoulder = shoulderOf(hip, p.torsoLean);
   const across = vec(Math.cos(p.torsoLean * DEG), Math.sin(p.torsoLean * DEG));
-  const spread = (build.shoulderSpread ?? 0) * (1 - 0.8 * clamp(build.turn ?? 0, 0, 1));
+  const turn = clamp(build.turn ?? 0, 0, 1);
+  const spread = (build.shoulderSpread ?? 0) * (1 - 0.8 * turn);
   const headAngle = p.torsoLean + p.headTilt;
   const head = add(
     add(neck, mul(fromDown(180 - headAngle), body.headRadiusY - body.headSink)),
@@ -52,8 +69,8 @@ export function computeSkeleton(p: ResolvedPose, build: Build = {}): Joints {
     head,
     headAngle,
     arms: {
-      front: arm(add(shoulder, mul(across, spread)), p.arms.front),
-      back: arm(add(shoulder, mul(across, -spread)), p.arms.back),
+      front: arm(add(shoulder, mul(across, spread)), naturalArm(p.arms.front, turn)),
+      back: arm(add(shoulder, mul(across, -spread)), naturalArm(p.arms.back, turn)),
     },
     legs: { front: leg(hip, p.legs.front), back: leg(hip, p.legs.back) },
   };

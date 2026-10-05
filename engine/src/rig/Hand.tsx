@@ -107,20 +107,25 @@ function Mitten({ p, thumb }: { p: Paint; thumb: 1 | -1 }) {
 const fine = tokens.line.detailPctOfHead[0];
 
 /**
- * Gripping hand. The handle runs along the hand's x axis through the origin; +y points away
- * from the wrist. Four fingers wrap over the handle as stacked bands, with the thumb across
- * their wrist-side ends, like the king's glove in Reference A.
+ * Gripping hand: a closed fist around a handle, like the king's glove in Reference A. The
+ * handle runs along the hand's x axis through the origin; +y points away from the wrist.
+ * The fingers are fat bands stacked along the handle. They start on the wrist side of it and
+ * end in knuckles just past it, so they hide the handle completely: it shows only above and
+ * below the fist. The thumb lies across the top of the fist on the wrist side.
  */
 function Grip({ p, thumb }: { p: Paint; thumb: 1 | -1 }) {
   const fingers = [-0.09, -0.03, 0.03, 0.09];
-  const thumbPath = `M ${-thumb * 0.13} -0.02 Q ${-thumb * 0.03} -0.075 ${thumb * 0.1} -0.06`;
+  /** Where the fingers start (wrist side of the handle) and where the knuckles end. */
+  const from = -0.075;
+  const to = 0.115;
   if (p.outlined) {
+    const tx = thumb * 0.1;
     return (
       <g {...round}>
         {p.cuff && (
           <rect
             x={-0.1}
-            y={-0.22}
+            y={-0.25}
             width={0.2}
             height={0.08}
             rx={0.025}
@@ -130,11 +135,11 @@ function Grip({ p, thumb }: { p: Paint; thumb: 1 | -1 }) {
           />
         )}
         <rect
-          x={-0.12}
-          y={-0.15}
-          width={0.24}
-          height={0.17}
-          rx={0.07}
+          x={-0.125}
+          y={-0.18}
+          width={0.25}
+          height={0.2}
+          rx={0.075}
           fill={p.fill}
           stroke={p.stroke}
           strokeWidth={p.strokeWidth}
@@ -143,17 +148,21 @@ function Grip({ p, thumb }: { p: Paint; thumb: 1 | -1 }) {
           <rect
             key={x}
             x={x - 0.031}
-            y={-0.04}
+            y={from}
             width={0.062}
-            height={0.185}
+            height={to - from}
             rx={0.031}
             fill={p.fill}
             stroke={p.stroke}
             strokeWidth={p.strokeWidth * 0.8}
           />
         ))}
-        <path
-          d={`${thumbPath} Q ${thumb * 0.16} -0.05 ${thumb * 0.13} -0.0 Q ${-thumb * 0.02} 0.0 ${-thumb * 0.13} -0.02 Z`}
+        <ellipse
+          cx={tx}
+          cy={-0.085}
+          rx={0.043}
+          ry={0.082}
+          transform={`rotate(${thumb * 14} ${tx} -0.085)`}
           fill={p.fill}
           stroke={p.stroke}
           strokeWidth={p.strokeWidth * 0.8}
@@ -165,9 +174,9 @@ function Grip({ p, thumb }: { p: Paint; thumb: 1 | -1 }) {
     <g {...round}>
       <rect
         x={-0.125}
-        y={-0.14}
+        y={-0.16}
         width={0.25}
-        height={0.28}
+        height={to + 0.16}
         rx={0.09}
         fill={p.fill}
         stroke={p.stroke}
@@ -176,13 +185,18 @@ function Grip({ p, thumb }: { p: Paint; thumb: 1 | -1 }) {
       {[-0.06, 0, 0.06].map((x) => (
         <path
           key={x}
-          d={`M ${x} 0.0 L ${x} 0.13`}
+          d={`M ${x} ${from + 0.03} L ${x} ${to - 0.012}`}
           stroke={p.detail}
           strokeWidth={fine}
           fill="none"
         />
       ))}
-      <path d={thumbPath} stroke={p.detail} strokeWidth={fine} fill="none" />
+      <path
+        d={`M ${thumb * 0.06} -0.145 Q ${thumb * 0.02} -0.09 ${thumb * 0.075} ${from + 0.01}`}
+        stroke={p.detail}
+        strokeWidth={fine}
+        fill="none"
+      />
     </g>
   );
 }
