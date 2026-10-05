@@ -28,6 +28,8 @@ If the asset has a counterpart in a reference picture, measure the reference bef
 
 - Write it as an SVG React component in the right folder under `engine/src/` (CLAUDE.md, "Where the drawing code lives").
 - Take every color, line weight and proportion from `styles/ink-stick/tokens.json` through `engine/src/tokens.ts`. Never type a color or a line weight by hand.
+- Clothes take a cloth by name (`cloth('forest')` in `engine/src/wardrobe/cloth.tsx`). In data, name that field `cloth`, never `color`.
+- An everyday outfit is usually a new combination for `outfitFrom`, not a new drawing. Draw a garment only if no existing one fits.
 - Expose the options a scene will need (colors, size, pose or state).
 - Original designs only: nothing copied from an existing channel, character, logo or brand.
 

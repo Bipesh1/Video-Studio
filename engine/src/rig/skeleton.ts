@@ -1,8 +1,9 @@
 import { body } from './body';
+import { KNEE_FORWARD, solveTwoBone } from './ik';
 import { THREE_QUARTER_FROM } from './layers';
 import { DEG, add, clamp, fromDown, mul, vec } from './math';
 import type { Vec2 } from './math';
-import type { ArmJoints, Joints, LegJoints, LimbAngles, ResolvedPose } from './types';
+import type { ArmJoints, Joints, LegJoints, LegState, LimbAngles, ResolvedPose } from './types';
 
 /** Direction from the hip up along the torso, for a forward lean in degrees. */
 export const torsoUp = (lean: number): Vec2 => fromDown(180 - lean);
@@ -43,11 +44,22 @@ export function naturalArm(a: LimbAngles, turn: number): LimbAngles {
 }
 
 /**
+ * A leg hanging from a hip moved sideways. A planted foot stays where the pose put it, so the
+ * leg is solved again from the new hip; a free leg keeps its angles.
+ */
+function legFrom(hip: Vec2, a: LegState): LegJoints {
+  if (!a.foot) return leg(hip, a);
+  const ik = solveTwoBone(hip, a.foot, body.thigh, body.shin, a.bend ?? KNEE_FORWARD);
+  return { hip, knee: ik.joint, foot: ik.end };
+}
+
+/**
  * Body build options. shoulderSpread moves the two arm roots apart across the torso, for
- * costumes with broad shoulders; it narrows as the body turns toward profile.
+ * costumes with broad shoulders; hipSpread does the same for the two leg roots, for trousers.
+ * Both narrow as the body turns toward profile.
  * Arm angles do not depend on the arm root, so IK reaches stay relative to each arm's shoulder.
  */
-export type Build = { shoulderSpread?: number; turn?: number };
+export type Build = { shoulderSpread?: number; hipSpread?: number; turn?: number };
 
 /** Forward kinematics: every joint position from a resolved pose. */
 export function computeSkeleton(p: ResolvedPose, build: Build = {}): Joints {
@@ -57,6 +69,7 @@ export function computeSkeleton(p: ResolvedPose, build: Build = {}): Joints {
   const across = vec(Math.cos(p.torsoLean * DEG), Math.sin(p.torsoLean * DEG));
   const turn = clamp(build.turn ?? 0, 0, 1);
   const spread = (build.shoulderSpread ?? 0) * (1 - 0.8 * turn);
+  const hips = (build.hipSpread ?? 0) * (1 - 0.8 * turn);
   const headAngle = p.torsoLean + p.headTilt;
   const head = add(
     add(neck, mul(fromDown(180 - headAngle), body.headRadiusY - body.headSink)),
@@ -72,6 +85,11 @@ export function computeSkeleton(p: ResolvedPose, build: Build = {}): Joints {
       front: arm(add(shoulder, mul(across, spread)), naturalArm(p.arms.front, turn)),
       back: arm(add(shoulder, mul(across, -spread)), naturalArm(p.arms.back, turn)),
     },
-    legs: { front: leg(hip, p.legs.front), back: leg(hip, p.legs.back) },
+    legs: hips
+      ? {
+          front: legFrom(add(hip, vec(hips, 0)), p.legs.front),
+          back: legFrom(add(hip, vec(-hips, 0)), p.legs.back),
+        }
+      : { front: leg(hip, p.legs.front), back: leg(hip, p.legs.back) },
   };
 }

@@ -1,7 +1,7 @@
 # Build Status
 
-**Current phase:** Phase 2, step 2A (library foundation) done. Next step is 2B (people), started only when Biku asks. Checkpoint 1 questions 2 to 5 are still open.
-**Next:** Biku looks at the library catalog (`library/catalog/`) and answers the head-size question; then 2B. The steps are listed under "Phase 2 steps" below.
+**Current phase:** Phase 2, steps 2A (library foundation) and 2B (people) done. Next step is 2C (poses and motion polish), started only when Biku asks. Checkpoint 1 questions 2 to 5 are still open.
+**Next:** Biku looks at the 2B sheets (below) and answers the head-size question, which must be settled before 2C; then 2C. The steps are listed under "Phase 2 steps" below.
 **Last updated:** 2026-10-05
 
 ## Checkpoint 1: waiting for Biku
@@ -9,6 +9,48 @@
 Review file: `runs/2026-10-03-look-test/checkpoint-1.md`. Questions: (1) how close the look is and what to change, (2) narrator and character voices, (3) head size, (4) hair colors (guide v3), (5) fingers on hands that cover the face.
 
 **Question 1 (2026-10-04): Biku said not close enough yet, then said go.** Faces round 4 is built (section below, guide v7). Question 1 is open again: Biku needs to look at `runs/2026-10-03-look-test/out/face-match.png` and say whether the frightened face and the wrinkles are close enough now.
+
+## Phase 2B. People: done (2026-10-05)
+
+Asked by Biku ("start 2B"). Ordinary people can now be dressed, aged and saved.
+
+### Made
+
+- **Tier 1 clothes** (`engine/src/wardrobe/garments.tsx`): tank top, shirt (long or short sleeves), trousers, skirt, dress, robe, cloak, hood, brimmed hat, sneakers, boots. Mixed freely with `outfitFrom({ top, bottom, onePiece, shoes, hat, cloak })`. Shapes measured from the clothed figure in Reference B.
+- **Cloth colors** (`engine/src/wardrobe/cloth.tsx`): white plus the seven token accents, by name. In clothes data the field is called `cloth`, never `color`, so the guard against hand-typed colors stays strict.
+- **Three costumes** (`engine/src/wardrobe/costumes/`): `SOLDIER` (pointed helmet with gold band over a mail coif, crimson tabard, steel plates), `QUEEN` (navy gown to the ground, gold belt and hem, low crown of three arches with pearls, white gloves), `FARMER` (green shirt, navy trousers, boots, straw hat, built from the tier 1 garments).
+- **Long hair** (`hair/long`), drawn behind the whole body.
+- **Ages** (`age` on the Character): `child` shrinks the body to 0.78 under a full-size head; `elder` stoops (less from the front, fully in profile) and gets permanent face creases; `adult` is the default.
+- **Rig support:** `hipSpread` (trouser legs hang from hips set apart, planted feet stay put), short sleeves, a sneaker style in `Footwear.tsx`.
+- **Character cards:** schema in `shared/src/character.schema.ts`, `castFromCard` in `engine/src/wardrobe/cast.ts`, three sample cards in `characters/` (a child, an adult, an elder), `npm run library -- characters`, and saved characters show up in `search`.
+- **Library:** 105 assets now (18 new: 11 clothing, 3 costumes, long hair, 3 ages), all with previews and golden stills; the check covers garments, costumes and ages. Catalog is 5 pages.
+- **Sheets:** `clothes`, `costumes-b`, `ages`, `people` (`npm run sheets -- --only=clothes,costumes-b,ages,people`), golden copies in `knowledge/golden/rig-*.png`.
+
+### Draw, look and fix loop
+
+1. First pass: all four sheets rendered; clothes, queen, farmer and child read well at once.
+2. Fixed: the soldier's kettle helmet read as a bowler hat (now a pointed helmet over a mail coif); hats floated above the head (crown now comes down over the head, brim just above the brows); the elder leaned sideways in the front view (stoop now grows with the turn); long hair fell over one arm (now behind the body); the queen's crown was too small.
+3. Checked every new outfit in front, three-quarter and profile for which arm is in front (lesson L-0008), and the clothes sheet at phone size.
+
+### Acceptance (the part of Phase 2 that 2B covers)
+
+| Check                                                         | Result                                                                                       |
+| ------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| Golden still for every new asset                              | Yes, 103 of 103 that can be pictured                                                         |
+| Library search finds the new assets by tag                    | Yes: "guard helmet" finds the soldier, "grandmother" the elder, "jeans" the trousers; tested |
+| All eight skin tones and the hair styles checked with clothes | Yes, on the `people` and `identity` sheets                                                   |
+| Character cards load and draw                                 | Yes, three samples; a card naming something unknown fails in plain words                     |
+| Tests, typecheck, lint, format                                | Pass (119 tests)                                                                             |
+
+### Open after 2B
+
+- **Head size** is still unanswered and still 0.29. It must be settled before 2C.
+- **Cloth colors are few:** white, gold, crimson, orange, steel, denim, glint blue, forest green. There is no brown, tan or cream, which villagers and farmers would normally wear. Adding them is a style guide change, so it needs Biku's yes.
+- **Black brows on the two darkest skin tones** still have low contrast (known since Phase 1).
+- **A child's limbs are thinner** than an adult's at the same head size, because the whole body shrinks. It reads as a child; say so if it looks too thin.
+- **Soldier hands** are plain black mittens; steel gauntlets would need a new hand style.
+- **Legs** still use the fixed order (back leg behind, front leg in front). It looked right on every 2B outfit.
+- **Sample cards** in `characters/` are examples only. Biku decided characters are not saved by default.
 
 ## Phase 2A. Library foundation: done (2026-10-05)
 
@@ -85,7 +127,7 @@ Each step ends with contact sheets for Biku, a commit and an update here. Start 
 
 - **2A. Library foundation: done (2026-10-05)** except the head-size answer, which Biku has not given yet. Was: apply Biku's head-size answer; `library/index.json` with every existing piece registered (tags, picture, code path); golden stills; the check that fails on unindexed pieces; `/draw`.
 - **Faces round 4: done (2026-10-04).** Built ahead of 2A at Biku's go-ahead; see the round 4 section above. Waiting for Biku's verdict on the face match sheet.
-- **2B. People.** Tier 1 clothes (shirt, tank top, trousers, skirt or dress, shoes, plain hat, hood or cloak, robe); costumes (soldier, queen or noble gown, villager or farmer); long hair; all skin tones and hair checked; age cues (child, adult, elder); character cards.
+- **2B. People: done (2026-10-05).** Was: Tier 1 clothes (shirt, tank top, trousers, skirt or dress, shoes, plain hat, hood or cloak, robe); costumes (soldier, queen or noble gown, villager or farmer); long hair; all skin tones and hair checked; age cues (child, adult, elder); character cards.
 - **2C. Poses and motion polish.** Sit, kneel, lie, cross arms, look up, look down, cower; cry, cheer, hug; wind-up and settle; lagging capes, hair and held objects; weight and breathing; eye darts, smooth head turns, more mouth shapes; mood walks; arcs.
 - **2D. Action.** Run, jump, fall, fight (wind-up, swing, hit, recoil), push, pull, carry, sneak; tears, anger mark, motion lines, impact flash, dizzy stars, symbols; camera shake, fast push-in, pan; a short action test clip.
 - **2E. World.** Places (night street, day street, field, forest, castle and throne room, home interior); about 10 props (sword, shield, coin, bag, book, lantern, door, chair, table, cup); wide, medium, close-up and over-the-shoulder framing; title card and labels.

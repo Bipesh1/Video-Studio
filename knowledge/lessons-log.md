@@ -118,3 +118,16 @@ Applied: engine/src/rig/layers.ts (which arm passes in front of a wide chest, by
   the handle). Video re-rendered as moon-tax-v4.mp4.
 Status: active
 ```
+
+```
+L-0009 | 2026-10-05 | run: Phase 2B sheets (clothes, costumes-b, ages, people)
+Area: wardrobe | Scope: style ink-stick | Source: self-check
+Lesson: Check headgear and hair on the figure, small, in three views. A hat's crown comes down
+  over the top of the head with the brim just above the brows. A piece must read as what it is
+  at phone size. Hair that falls down the back is drawn behind the whole body.
+Evidence: On the first 2B sheets the soldier's round helmet with a brim read as a bowler hat,
+  hats floated above the head, and long hair fell in front of one arm and behind the other.
+Applied: the soldier wears a pointed helmet with a gold band over a mail coif; the brimmed hat
+  sits on the head; HAIR_BEHIND_BODY in hair.tsx draws long hair before the body.
+Status: active
+```

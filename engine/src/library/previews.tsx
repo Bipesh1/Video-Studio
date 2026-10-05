@@ -21,10 +21,12 @@ import type { HandShape, ResolvedPose } from '../rig/types';
 import { walkAt } from '../rig/walk';
 import { Rod } from '../sandbox/Rod';
 import { accent, ink, lineWeights, palette, pick, tokens } from '../tokens';
-import { RULER } from '../wardrobe/costumes/ruler';
+import { COSTUMES } from '../wardrobe/cast';
+import { GARMENTS, outfitFrom } from '../wardrobe/garments';
+import type { Clothes, Garment } from '../wardrobe/garments';
 import { HAIR_STYLES } from '../wardrobe/hair';
-import { FACIAL_HAIR } from '../wardrobe/types';
-import type { Identity } from '../wardrobe/types';
+import { AGES, FACIAL_HAIR } from '../wardrobe/types';
+import type { Age, Identity, Outfit } from '../wardrobe/types';
 
 /**
  * One small picture of every library asset, drawn into a square of PREVIEW_SIZE. These make the
@@ -94,6 +96,33 @@ const identity = (o: Partial<Identity>): Identity => ({
   hairColor: 'dark-brown',
   wrap: 'gold',
   ...o,
+});
+
+/** Each tier 1 garment on its own, with a plain white top where a bottom alone would look odd. */
+const GARMENT_LOOKS: Record<Garment, Clothes> = {
+  'tank-top': { top: { kind: 'tank-top', cloth: 'white' } },
+  shirt: { top: { kind: 'shirt', cloth: 'forest' } },
+  trousers: { bottom: { kind: 'trousers', cloth: 'denim' } },
+  skirt: { top: { kind: 'tank-top', cloth: 'white' }, bottom: { kind: 'skirt', cloth: 'denim' } },
+  dress: { onePiece: { kind: 'dress', cloth: 'crimson' } },
+  robe: { onePiece: { kind: 'robe', cloth: 'steel' } },
+  cloak: { top: { kind: 'shirt', cloth: 'white' }, cloak: { cloth: 'crimson' } },
+  hood: { onePiece: { kind: 'robe', cloth: 'denim' }, cloak: { cloth: 'forest', hood: true } },
+  'brim-hat': { hat: { kind: 'brim-hat', cloth: 'gold' } },
+  sneakers: { shoes: { kind: 'sneakers', cloth: 'white' } },
+  boots: { shoes: { kind: 'boots', cloth: 'steel' } },
+};
+
+/** The same person at three ages, so only the age cue differs. */
+const AGE_LOOKS: Record<Age, { identity: Identity; size: number }> = {
+  child: { identity: identity({ hair: 'ponytail' }), size: 0.86 },
+  adult: { identity: identity({}), size: 1 },
+  elder: { identity: identity({ hairColor: 'gray', facialHair: 'beard' }), size: 1 },
+};
+const EVERYDAY: Outfit = outfitFrom({
+  top: { kind: 'shirt', cloth: 'forest', sleeves: 'short' },
+  bottom: { kind: 'trousers', cloth: 'denim' },
+  shoes: { kind: 'boots', cloth: 'steel' },
 });
 
 const scene = (spec: BackgroundSpec): ReactNode => (
@@ -218,18 +247,36 @@ const entries: Array<[string, Preview]> = [
       }),
   ]),
 
-  [
-    'costume/ruler',
+  ...GARMENTS.map((g): [string, Preview] => [
+    `clothing/${g}`,
+    (o) => figure(o, standPose, { outfit: outfitFrom(GARMENT_LOOKS[g]) }, g === 'hood' ? 0.4 : 0),
+  ]),
+  ...Object.keys(COSTUMES).map((name): [string, Preview] => [
+    `costume/${name}`,
+    (o) =>
+      name === 'ruler'
+        ? figure(
+            o,
+            resolvePose(holdObject),
+            { outfit: COSTUMES.ruler as Outfit, prop: scepterProp, face: EXPRESSIONS.determined },
+            0.5,
+            BOX / 2 - 45,
+            80,
+          )
+        : figure(o, standPose, { outfit: COSTUMES[name] as Outfit }, 0.4, BOX / 2, 80),
+  ]),
+  ...AGES.map((age): [string, Preview] => [
+    `age/${age}`,
     (o) =>
       figure(
         o,
-        resolvePose(holdObject),
-        { outfit: RULER, prop: scepterProp, face: EXPRESSIONS.determined },
+        standPose,
+        { age, identity: AGE_LOOKS[age].identity, outfit: EVERYDAY },
         0.5,
-        BOX / 2 - 45,
-        80,
+        BOX / 2,
+        88 * AGE_LOOKS[age].size,
       ),
-  ],
+  ]),
   [
     'prop/scepter',
     () => (

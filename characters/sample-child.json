@@ -1,0 +1,19 @@
+{
+  "id": "sample-child",
+  "name": "Village Girl (sample)",
+  "description": "A sample card: a curious village girl with a ponytail, an orange dress and white sneakers. It shows how a child in everyday clothes is saved.",
+  "tags": ["sample", "girl", "child", "kid", "villager", "daughter"],
+  "age": "child",
+  "size": 0.86,
+  "identity": { "skinTone": 3, "hair": "ponytail", "hairColor": "dark-brown" },
+  "outfit": {
+    "clothes": {
+      "onePiece": { "kind": "dress", "cloth": "orange" },
+      "shoes": { "kind": "sneakers", "cloth": "white" }
+    }
+  },
+  "eyeStyle": "round",
+  "expression": "happy",
+  "version": 1,
+  "added": "2026-10-05"
+}

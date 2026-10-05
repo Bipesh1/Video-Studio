@@ -18,3 +18,5 @@ export {
   stillPathFor,
 } from './library.schema';
 export type { AssetKind, LibraryAsset, LibraryHit, LibraryIndex } from './library.schema';
+export { characterCardSchema, clothesSchema } from './character.schema';
+export type { CharacterCard, Clothes } from './character.schema';

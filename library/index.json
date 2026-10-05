@@ -905,6 +905,21 @@
       "added": "2026-10-05"
     },
     {
+      "id": "hair/long",
+      "kind": "hair",
+      "name": "Long hair",
+      "description": "Long hair falling down the back, behind the shoulders.",
+      "tags": ["hair", "hairstyle", "identity", "long", "flowing", "woman", "girl", "princess"],
+      "code": {
+        "file": "engine/src/wardrobe/hair.tsx",
+        "export": "HAIR_STYLES"
+      },
+      "use": "identity={{ skinTone, hair: 'long', hairColor }}",
+      "still": "knowledge/golden/assets/hair-long.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
       "id": "hair-color/black",
       "kind": "hair-color",
       "name": "Black hair",
@@ -1040,6 +1055,292 @@
       "added": "2026-10-05"
     },
     {
+      "id": "clothing/tank-top",
+      "kind": "clothing",
+      "name": "Tank top",
+      "description": "A sleeveless top with narrow straps, as on the frightened figure in Reference B. Arms stay stick lines.",
+      "tags": [
+        "clothing",
+        "clothes",
+        "tier 1",
+        "tank top",
+        "vest",
+        "sleeveless",
+        "undershirt",
+        "top",
+        "casual",
+        "summer",
+        "modern"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/garments.tsx",
+        "export": "outfitFrom"
+      },
+      "use": "outfit={outfitFrom({ top: { kind: 'tank-top', cloth: 'white' } })}",
+      "still": "knowledge/golden/assets/clothing-tank-top.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "clothing/shirt",
+      "kind": "clothing",
+      "name": "Shirt",
+      "description": "A plain buttoned shirt with long or short sleeves, in any cloth color.",
+      "tags": [
+        "clothing",
+        "clothes",
+        "tier 1",
+        "shirt",
+        "top",
+        "tunic",
+        "blouse",
+        "sleeves",
+        "everyday",
+        "villager",
+        "worker",
+        "office"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/garments.tsx",
+        "export": "outfitFrom"
+      },
+      "use": "outfit={outfitFrom({ top: { kind: 'shirt', cloth: 'forest', sleeves: 'short' } })}",
+      "still": "knowledge/golden/assets/clothing-shirt.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "clothing/trousers",
+      "kind": "clothing",
+      "name": "Trousers",
+      "description": "Long trousers with legs hanging from the hips, as the navy jeans in Reference B.",
+      "tags": [
+        "clothing",
+        "clothes",
+        "tier 1",
+        "trousers",
+        "pants",
+        "jeans",
+        "legs",
+        "bottom",
+        "everyday",
+        "modern"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/garments.tsx",
+        "export": "outfitFrom"
+      },
+      "use": "outfit={outfitFrom({ bottom: { kind: 'trousers', cloth: 'denim' } })}",
+      "still": "knowledge/golden/assets/clothing-trousers.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "clothing/skirt",
+      "kind": "clothing",
+      "name": "Skirt",
+      "description": "A knee-length skirt flaring from the waist, with stick legs below.",
+      "tags": ["clothing", "clothes", "tier 1", "skirt", "bottom", "woman", "girl", "everyday"],
+      "code": {
+        "file": "engine/src/wardrobe/garments.tsx",
+        "export": "outfitFrom"
+      },
+      "use": "outfit={outfitFrom({ bottom: { kind: 'skirt', cloth: 'denim' } })}",
+      "still": "knowledge/golden/assets/clothing-skirt.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "clothing/dress",
+      "kind": "clothing",
+      "name": "Dress",
+      "description": "A knee-length dress: a fitted top that flares from the waist.",
+      "tags": [
+        "clothing",
+        "clothes",
+        "tier 1",
+        "dress",
+        "frock",
+        "woman",
+        "girl",
+        "gown",
+        "everyday",
+        "party"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/garments.tsx",
+        "export": "outfitFrom"
+      },
+      "use": "outfit={outfitFrom({ onePiece: { kind: 'dress', cloth: 'crimson' } })}",
+      "still": "knowledge/golden/assets/clothing-dress.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "clothing/robe",
+      "kind": "clothing",
+      "name": "Robe",
+      "description": "A long robe from the shoulders to the ankles with wide sleeves and a cord at the waist.",
+      "tags": [
+        "clothing",
+        "clothes",
+        "tier 1",
+        "robe",
+        "monk",
+        "priest",
+        "wizard",
+        "elder",
+        "sage",
+        "teacher",
+        "long",
+        "habit",
+        "ancient"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/garments.tsx",
+        "export": "outfitFrom"
+      },
+      "use": "outfit={outfitFrom({ onePiece: { kind: 'robe', cloth: 'steel' } })}",
+      "still": "knowledge/golden/assets/clothing-robe.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "clothing/cloak",
+      "kind": "clothing",
+      "name": "Cloak",
+      "description": "A cloak down the back with a drape over each shoulder, worn over other clothes. The hood lies behind the neck.",
+      "tags": [
+        "clothing",
+        "clothes",
+        "tier 1",
+        "cloak",
+        "cape",
+        "mantle",
+        "traveler",
+        "traveller",
+        "journey",
+        "mystery",
+        "winter",
+        "medieval"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/garments.tsx",
+        "export": "outfitFrom"
+      },
+      "use": "outfit={outfitFrom({ ...clothes, cloak: { cloth: 'crimson' } })}",
+      "still": "knowledge/golden/assets/clothing-cloak.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "clothing/hood",
+      "kind": "clothing",
+      "name": "Hood",
+      "description": "The cloak with its hood pulled up, framing the face.",
+      "tags": [
+        "clothing",
+        "clothes",
+        "tier 1",
+        "hood",
+        "hooded",
+        "cloak",
+        "stranger",
+        "thief",
+        "monk",
+        "mystery",
+        "hidden",
+        "rain"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/garments.tsx",
+        "export": "outfitFrom"
+      },
+      "use": "outfit={outfitFrom({ ...clothes, cloak: { cloth: 'forest', hood: true } })}",
+      "still": "knowledge/golden/assets/clothing-hood.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "clothing/brim-hat",
+      "kind": "clothing",
+      "name": "Brimmed hat",
+      "description": "A plain hat with a wide flat brim, like a straw hat. It sits just above the brows.",
+      "tags": [
+        "clothing",
+        "clothes",
+        "tier 1",
+        "hat",
+        "straw hat",
+        "brim",
+        "farmer",
+        "sun hat",
+        "villager",
+        "traveler",
+        "summer"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/garments.tsx",
+        "export": "outfitFrom"
+      },
+      "use": "outfit={outfitFrom({ ...clothes, hat: { kind: 'brim-hat', cloth: 'gold' } })}",
+      "still": "knowledge/golden/assets/clothing-brim-hat.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "clothing/sneakers",
+      "kind": "clothing",
+      "name": "Sneakers",
+      "description": "Low chunky shoes with a round toe cap, a sole stripe and laces, as in Reference B.",
+      "tags": [
+        "clothing",
+        "clothes",
+        "tier 1",
+        "sneakers",
+        "shoes",
+        "trainers",
+        "footwear",
+        "feet",
+        "modern",
+        "casual"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/Footwear.tsx",
+        "export": "Footwear"
+      },
+      "use": "outfit={outfitFrom({ ...clothes, shoes: { kind: 'sneakers', cloth: 'white' } })}",
+      "still": "knowledge/golden/assets/clothing-sneakers.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "clothing/boots",
+      "kind": "clothing",
+      "name": "Boots",
+      "description": "Chunky ankle boots in any cloth color.",
+      "tags": [
+        "clothing",
+        "clothes",
+        "tier 1",
+        "boots",
+        "shoes",
+        "footwear",
+        "feet",
+        "worker",
+        "soldier",
+        "medieval"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/Footwear.tsx",
+        "export": "Footwear"
+      },
+      "use": "outfit={outfitFrom({ ...clothes, shoes: { kind: 'boots', cloth: 'steel' } })}",
+      "still": "knowledge/golden/assets/clothing-boots.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
       "id": "costume/ruler",
       "kind": "costume",
       "name": "Ruler",
@@ -1066,6 +1367,146 @@
       },
       "use": "outfit={RULER}",
       "still": "knowledge/golden/assets/costume-ruler.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "costume/soldier",
+      "kind": "costume",
+      "name": "Soldier",
+      "description": "A foot soldier in full costume: a pointed steel helmet with a gold band over a mail coif, a crimson tabard with a gold belt, steel shoulder plates, mail sleeves and leggings, boots. An original design.",
+      "tags": [
+        "costume",
+        "soldier",
+        "guard",
+        "knight",
+        "warrior",
+        "army",
+        "helmet",
+        "armor",
+        "medieval",
+        "castle",
+        "battle",
+        "sentry",
+        "tier 2"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/costumes/soldier.tsx",
+        "export": "SOLDIER"
+      },
+      "use": "outfit={SOLDIER}",
+      "still": "knowledge/golden/assets/costume-soldier.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "costume/queen",
+      "kind": "costume",
+      "name": "Queen",
+      "description": "A queen or noblewoman in full costume: a navy gown to the ground with gold belt and hem, short puffed sleeves, white gloves and a low gold crown of three arches with pearls. An original design.",
+      "tags": [
+        "costume",
+        "queen",
+        "princess",
+        "noble",
+        "noblewoman",
+        "lady",
+        "royal",
+        "royalty",
+        "gown",
+        "crown",
+        "medieval",
+        "castle",
+        "tier 2"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/costumes/queen.tsx",
+        "export": "QUEEN"
+      },
+      "use": "outfit={QUEEN}",
+      "still": "knowledge/golden/assets/costume-queen.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "costume/farmer",
+      "kind": "costume",
+      "name": "Farmer",
+      "description": "A farmer or villager: green short-sleeved shirt, navy trousers, plain boots and a straw hat. Built from the tier 1 garments.",
+      "tags": [
+        "costume",
+        "farmer",
+        "villager",
+        "peasant",
+        "worker",
+        "countryside",
+        "field",
+        "straw hat",
+        "commoner",
+        "tier 1"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/costumes/farmer.tsx",
+        "export": "FARMER"
+      },
+      "use": "outfit={FARMER}",
+      "still": "knowledge/golden/assets/costume-farmer.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "age/child",
+      "kind": "age",
+      "name": "Child",
+      "description": "A child: a smaller body under a full-size head. Use a smaller head size than the adults in the shot as well.",
+      "tags": ["age", "child", "kid", "boy", "girl", "young", "son", "daughter", "small"],
+      "code": {
+        "file": "engine/src/rig/Character.tsx",
+        "export": "Character"
+      },
+      "use": "age=\"child\" on the Character, with head about 0.86 of an adult's",
+      "still": "knowledge/golden/assets/age-child.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "age/adult",
+      "kind": "age",
+      "name": "Adult",
+      "description": "An adult: the standard proportions. This is the default.",
+      "tags": ["age", "adult", "grown-up", "man", "woman", "default", "parent"],
+      "code": {
+        "file": "engine/src/rig/Character.tsx",
+        "export": "Character"
+      },
+      "use": "age=\"adult\" on the Character (the default)",
+      "still": "knowledge/golden/assets/age-adult.png",
+      "version": 1,
+      "added": "2026-10-05"
+    },
+    {
+      "id": "age/elder",
+      "kind": "age",
+      "name": "Elder",
+      "description": "An elder: a stooped back and a few permanent creases on the face. Add gray or white hair and a beard for the rest.",
+      "tags": [
+        "age",
+        "elder",
+        "old",
+        "elderly",
+        "grandfather",
+        "grandmother",
+        "old man",
+        "old woman",
+        "aged",
+        "wise"
+      ],
+      "code": {
+        "file": "engine/src/rig/Character.tsx",
+        "export": "Character"
+      },
+      "use": "age=\"elder\" on the Character, with gray or white hair",
+      "still": "knowledge/golden/assets/age-elder.png",
       "version": 1,
       "added": "2026-10-05"
     },

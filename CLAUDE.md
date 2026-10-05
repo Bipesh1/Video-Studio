@@ -64,7 +64,10 @@ Everything already drawn is reusable code under `engine/src/`, and every piece i
 | Poses, and the walk                                 | `engine/src/rig/poses.ts`, `engine/src/rig/walk.ts`               |
 | Expressions and talking mouths                      | `engine/src/face/expressions.ts`, `engine/src/face/talk.ts`       |
 | Skin tones and hair                                 | `engine/src/wardrobe/identity.ts`, `engine/src/wardrobe/hair.tsx` |
-| Costumes                                            | `engine/src/wardrobe/costumes/`                                   |
+| Everyday clothes, mixed with `outfitFrom`           | `engine/src/wardrobe/garments.tsx` (cloth names, never colors)    |
+| Costumes                                            | `engine/src/wardrobe/costumes/`, by name in `wardrobe/cast.ts`    |
+| Ages (child, adult, elder)                          | `age` on the Character in `engine/src/rig/Character.tsx`          |
+| Saved characters (only for a series)                | `characters/<id>.json`, drawn with `castFromCard` in `cast.ts`    |
 | Props, effects                                      | `engine/src/props/`, `engine/src/effects/`                        |
 | Backgrounds and their palettes                      | `engine/src/backgrounds/`                                         |
 | Camera, captions                                    | `engine/src/camera/`, `engine/src/overlays/`                      |
@@ -77,7 +80,7 @@ Everything already drawn is reusable code under `engine/src/`, and every piece i
 - `npm run doctor` reports every tool version. `npm run bench` renders the test scene and measures speed.
 - `npm run look-test -- --all` builds the Phase 1 look test (voice, stills, video, style match sheets); `--audition` speaks the audition lines in every American English Kokoro voice. Each stage runs alone too.
 - Voice: `cd audio && uv run python -m studio_audio.voice synth --script <voice-script.json> --out <dir>` writes `voice.wav` and `timings.json` (contract in `shared/src/voice.schema.ts`). Kokoro 0.9.4 gives word timestamps itself.
-- Library: `npm run library -- search <words>` finds assets by tag (`--kind=costume` narrows it), `list` and `show <id>` print the index, `look <id>` renders one asset in three views on light and dark for the draw, look and fix loop, `stills` writes the golden stills in `knowledge/golden/assets/`, `catalog` renders the picture catalog in `library/catalog/`, and `check` fails if anything drawn is missing from the index. `/draw <description>` runs the whole loop for a new asset.
+- Library: `npm run library -- search <words>` finds assets by tag (`--kind=costume` narrows it), `list` and `show <id>` print the index, `characters` lists the saved character cards, `look <id>` renders one asset in three views on light and dark for the draw, look and fix loop, `stills` writes the golden stills in `knowledge/golden/assets/`, `catalog` renders the picture catalog in `library/catalog/`, and `check` fails if anything drawn is missing from the index. `/draw <description>` runs the whole loop for a new asset.
 - `npm run sheets` renders the sandbox contact sheets for the draw, look and fix loop (`--only=poses`, `--video`, `--golden`). Look at them before calling any drawing done.
 - `npm test`, `npm run typecheck`, `npm run lint`, `npm run format` must pass at the end of every phase.
 - Python: `cd audio && uv run pytest` and `uv run python -m studio_audio.doctor`.

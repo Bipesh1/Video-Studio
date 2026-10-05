@@ -1,0 +1,14 @@
+{
+  "id": "sample-queen",
+  "name": "The Queen (sample)",
+  "description": "A sample card: a calm, proud queen in the navy gown and low gold crown. It shows how a recurring character in a full costume is saved.",
+  "tags": ["sample", "queen", "royal", "noble", "woman", "ruler"],
+  "age": "adult",
+  "size": 1,
+  "identity": { "skinTone": 6, "hair": "bun", "hairColor": "black" },
+  "outfit": { "costume": "queen" },
+  "eyeStyle": "round",
+  "expression": "smug",
+  "version": 1,
+  "added": "2026-10-05"
+}

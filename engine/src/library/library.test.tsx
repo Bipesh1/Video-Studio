@@ -2,14 +2,17 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { KINDS_WITHOUT_STILL, searchLibrary, stillPathFor } from '@studio/shared';
+import type { AssetKind } from '@studio/shared';
 import { describe, expect, it } from 'vitest';
 import { SILHOUETTE_KINDS, TREATMENTS } from '../backgrounds/Background';
 import { EXPRESSION_NAMES } from '../face/expressions';
 import { POSES } from '../rig/poses';
 import { HAND_SHAPES } from '../rig/types';
 import { tokens } from '../tokens';
+import { COSTUMES } from '../wardrobe/cast';
+import { GARMENTS } from '../wardrobe/garments';
 import { HAIR_STYLES } from '../wardrobe/hair';
-import { FACIAL_HAIR } from '../wardrobe/types';
+import { AGES, FACIAL_HAIR } from '../wardrobe/types';
 import { library } from './data';
 import { PREVIEWS } from './previews';
 
@@ -37,6 +40,9 @@ describe('library index', () => {
       ...HAND_SHAPES.map((s) => `hand/${s}`),
       ...HAIR_STYLES.map((h) => `hair/${h}`),
       ...FACIAL_HAIR.map((f) => `facial-hair/${f}`),
+      ...GARMENTS.map((g) => `clothing/${g}`),
+      ...Object.keys(COSTUMES).map((c) => `costume/${c}`),
+      ...AGES.map((a) => `age/${a}`),
       ...tokens.skinTones.map((_, i) => `skin/tone-${i + 1}`),
       ...Object.keys(tokens.hair).map((c) => `hair-color/${c}`),
       ...Object.keys(tokens.accents).map((c) => `color/${c}`),
@@ -94,8 +100,13 @@ describe('library index', () => {
   });
 
   it('finds assets by tag (Phase 2 acceptance)', () => {
-    const first = (q: string) => searchLibrary(library, q)[0]?.asset.id;
+    const first = (q: string, kind?: AssetKind) =>
+      searchLibrary(library, q, kind ? { kind } : {})[0]?.asset.id;
     expect(first('king')).toBe('costume/ruler');
+    expect(first('guard helmet')).toBe('costume/soldier');
+    expect(first('grandmother')).toBe('age/elder');
+    expect(first('jeans')).toBe('clothing/trousers');
+    expect(first('straw hat', 'clothing')).toBe('clothing/brim-hat');
     expect(first('crown cape')).toBe('costume/ruler');
     expect(first('scared')).toBe('expression/afraid');
     // A pointing pose and a pointing hand both answer "pointing": both come first.

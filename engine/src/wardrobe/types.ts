@@ -31,10 +31,20 @@ export type Outfit = {
   /** Accent names the outfit uses. Style 3.5 allows at most 3 to 4 colors. */
   colors: readonly string[];
   shoulderSpread?: number;
+  /** Moves the two leg roots apart, so trouser legs hang from the hips, not from one point. */
+  hipSpread?: number;
   gloves?: boolean;
   sleeves?: TubeSpec;
+  /** Short sleeves stop above the elbow and the rest of the arm stays a stick line. */
+  sleeveLength?: 'long' | 'short';
   trousers?: TubeSpec;
-  boots?: { fill: string; shadow: string; trim?: readonly [string, string] };
+  /** Footwear. boot is the chunky default; sneaker is the low shoe in Reference B. */
+  boots?: {
+    fill: string;
+    shadow: string;
+    trim?: readonly [string, string];
+    style?: 'boot' | 'sneaker';
+  };
   /** Behind everything: a cape lining. */
   back?: Piece;
   /** Over the torso line: a shirt or breastplate. */
@@ -55,6 +65,7 @@ export type HairStyle =
   | 'locs'
   | 'braids'
   | 'straight-bob'
+  | 'long'
   | 'bun'
   | 'ponytail'
   | 'head-wrap';
@@ -74,3 +85,10 @@ export type Identity = {
   facialHair?: FacialHair;
   wrap?: string;
 };
+
+/**
+ * Age cues (Phase 2B). child: a smaller body under a full-size head. elder: a stooped back and
+ * a few permanent creases on the face. Hair color and clothes carry the rest.
+ */
+export const AGES = ['child', 'adult', 'elder'] as const;
+export type Age = (typeof AGES)[number];

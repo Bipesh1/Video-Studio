@@ -33,6 +33,8 @@ type FaceProps = {
   lidColor: string;
   /** Talking openness override, 0 to 1. */
   talk: number;
+  /** An elder's face: a few permanent creases whatever the expression. */
+  aged?: boolean;
   idPrefix: string;
 };
 
@@ -239,6 +241,43 @@ function WorryLines({ shift, eyeTop, turn }: { shift: number; eyeTop: number; tu
         weight={0.78}
         peak={0.45}
       />
+    </g>
+  );
+}
+
+/**
+ * An elder's permanent lines: two long creases across the forehead and a fold running down
+ * from beside the nose toward each mouth corner. Drawn under the brows and mouth.
+ */
+function AgeLines({ shift, eyeTop, turn }: { shift: number; eyeTop: number; turn: number }) {
+  const w = 1 - 0.45 * turn;
+  const y = eyeTop - 0.135;
+  return (
+    <g>
+      <Crease
+        from={{ x: shift - 0.17 * w, y: y + 0.012 }}
+        ctrl={{ x: shift - 0.02, y: y - 0.03 }}
+        to={{ x: shift + 0.15 * w, y: y + 0.006 }}
+        weight={0.85}
+        peak={0.4}
+      />
+      <Crease
+        from={{ x: shift - 0.12 * w, y: y - 0.045 }}
+        ctrl={{ x: shift + 0.01, y: y - 0.068 }}
+        to={{ x: shift + 0.11 * w, y: y - 0.04 }}
+        weight={0.65}
+        peak={0.55}
+      />
+      {[-1, 1].map((side) => (
+        <Crease
+          key={side}
+          from={{ x: shift + side * 0.1 * w, y: 0.1 }}
+          ctrl={{ x: shift + side * 0.17 * w, y: 0.16 }}
+          to={{ x: shift + side * 0.165 * w, y: 0.25 }}
+          weight={side < 0 ? 0.9 : 0.7}
+          peak={0.45}
+        />
+      ))}
     </g>
   );
 }
@@ -586,6 +625,7 @@ export const Face = ({
   skin,
   lidColor,
   talk,
+  aged = false,
   idPrefix,
 }: FaceProps) => {
   const t = clamp(turn, 0, 1);
@@ -636,6 +676,7 @@ export const Face = ({
           stern={stern}
         />
       ))}
+      {aged && <AgeLines shift={shift} eyeTop={eyeTop} turn={t} />}
       {params.eyes.strain && <StrainLines slots={slots} shift={shift} />}
       {params.eyes.worry && <WorryLines shift={shift} eyeTop={eyeTop} turn={t} />}
       <MouthShape m={params.mouth} turn={t} talk={talk} clipId={`${idPrefix}-mouth`} />

@@ -22,6 +22,7 @@ import { walkAt } from '../rig/walk';
 import { ink, lineWeights, palette, pick, tokens, white } from '../tokens';
 import { Rod } from './Rod';
 import { BG_SHEETS, CostumeSheet, AtmosVideo, HairTurnsSheet, IdentitySheet } from './part-b';
+import { AgesSheet, ClothesSheet, CostumesBSheet, PeopleSheet } from './part-c';
 import type { SandboxBg, SheetName } from './sheets';
 
 export type SandboxProps = { sheet: SheetName; bg: SandboxBg };
@@ -427,6 +428,10 @@ export const Sandbox = ({ sheet, bg }: SandboxProps) => {
     'hair-turns': <HairTurnsSheet c={c} />,
     atmos: <AtmosVideo />,
     'new-expressions': <BG_SHEETS.NewExpressions />,
+    clothes: <ClothesSheet c={c} />,
+    'costumes-b': <CostumesBSheet c={c} />,
+    ages: <AgesSheet c={c} />,
+    people: <PeopleSheet c={c} />,
     walk: <WalkVideo c={c} />,
     motion: <MotionVideo c={c} />,
   };

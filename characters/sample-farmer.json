@@ -1,0 +1,14 @@
+{
+  "id": "sample-farmer",
+  "name": "Old Farmer (sample)",
+  "description": "A sample card: an old farmer with a white beard and a straw hat. It shows how a recurring character is saved; delete it or copy it for a real one.",
+  "tags": ["sample", "farmer", "villager", "old man", "elder", "grandfather"],
+  "age": "elder",
+  "size": 1,
+  "identity": { "skinTone": 4, "hair": "short-crop", "hairColor": "white", "facialHair": "beard" },
+  "outfit": { "costume": "farmer" },
+  "eyeStyle": "round",
+  "expression": "neutral",
+  "version": 1,
+  "added": "2026-10-05"
+}

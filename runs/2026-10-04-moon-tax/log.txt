@@ -100,3 +100,12 @@
 2026-10-05T07:20:12.717Z    runs\2026-10-04-moon-tax\out\moon-tax-v4.mp4: 26.67 s of video in 142.6 s (5.35 s per video second)
 2026-10-05T07:20:12.726Z    runs\2026-10-04-moon-tax\out\moon-tax-v4.srt
 2026-10-05T07:20:13.553Z  video: done in 145.1 s
+2026-10-05T08:29:26.679Z  stills: start
+2026-10-05T08:29:26.815Z  bundle: start
+2026-10-05T08:29:31.152Z  bundle: done in 4.3 s
+2026-10-05T08:29:35.646Z    still n1 at frame 88: runs\2026-10-04-moon-tax\stills\n1.png
+2026-10-05T08:29:38.036Z    still n2 at frame 218: runs\2026-10-04-moon-tax\stills\n2.png
+2026-10-05T08:29:40.405Z    still n3 at frame 406: runs\2026-10-04-moon-tax\stills\n3.png
+2026-10-05T08:29:42.664Z    still n4 at frame 571: runs\2026-10-04-moon-tax\stills\n4.png
+2026-10-05T08:29:44.211Z    still n5 at frame 727: runs\2026-10-04-moon-tax\stills\n5.png
+2026-10-05T08:29:44.212Z  stills: done in 17.5 s

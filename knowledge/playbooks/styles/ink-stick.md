@@ -27,3 +27,11 @@ Current best practice for the Ink Stick look, learned from real videos and Biku'
 - **No arm bends backward.** A resting arm hangs a little behind the body and bends forward at the elbow. An arm that holds something out reaches forward with the elbow ahead of the shoulder, like the king's sword arm in Reference A, never folded back against the body. (L-0008, Biku)
 - **A holding hand is a closed fist.** The fingers are fat bands that cover the handle; it shows only above and below the fist, with the thumb across the top. (L-0008, Biku)
 - **Keep hands out of the caption area,** above all white gloves behind white caption text. Move the character sideways if a hand lands there. (moon tax, self-check)
+
+## Clothes and people
+
+- **Dress people from the library.** Everyday clothes are mixed with `outfitFrom`; search `npm run library -- search <words> --kind=clothing` first. A new everyday outfit is a combination, not a new drawing. (Phase 2B)
+- **Headgear sits on the head and must read at phone size.** The crown of a hat comes down over the top of the head and the brim crosses just above the brows. Check it small: a round steel helmet with a brim read as a bowler hat, so the soldier wears a pointed helmet over a mail coif. (L-0009, self-check)
+- **Long hair goes behind the body,** not over the shoulders, so no arm crosses it. (L-0009, self-check)
+- **Age is more than size.** A child is a smaller body under a full-size head, drawn smaller than the adults beside them. An elder stoops, has face creases, and needs gray or white hair to finish the read. (Phase 2B)
+- **At most four colors per outfit,** all from the cloth colors. There is no brown or tan yet; do not invent one. (Style 3.5)

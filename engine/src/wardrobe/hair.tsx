@@ -207,6 +207,22 @@ function draw(style: HairStyle, c: HairCtx): HairDraw {
         hairline: { top: -0.4, side: 0.02 },
         details: [detail('M 0.05 -0.6 Q 0.12 -0.45 0.1 -0.33', 0)],
       };
+    case 'long': {
+      // Hair falling behind the shoulders. As the head turns it gathers behind the head.
+      const dx = -0.2 * c.turn;
+      const right = 0.52 - 0.62 * c.turn;
+      const fall = `M ${dx - 0.52} -0.25 Q ${dx - 0.66} 0.45 ${dx - 0.5} 0.98 Q ${dx - 0.2} 1.08 ${dx + right * 0.2} 1.02 Q ${dx + right * 0.95} 1.02 ${dx + right} 0.9 Q ${dx + right * 1.22} 0.4 ${dx + right} -0.25 Z`;
+      return {
+        back: [solid(fall)],
+        backDetails: [
+          detail(`M ${dx - 0.36} 0.5 Q ${dx - 0.4} 0.8 ${dx - 0.34} 1.0`, 'l1'),
+          detail(`M ${dx - 0.14} 0.62 Q ${dx - 0.17} 0.85 ${dx - 0.12} 1.03`, 'l2'),
+        ],
+        front: [solid(topCap(0.57, 0.59, -0.02, 0.12))],
+        hairline: { top: -0.4, side: -0.02 },
+        details: [detail('M 0.05 -0.6 Q 0.12 -0.45 0.1 -0.33', 0)],
+      };
+    }
     case 'bun': {
       const bx = -0.24 * c.turn;
       const by = -0.6 + 0.1 * c.turn;
@@ -366,6 +382,9 @@ export const FacialHairShape = ({ kind, ctx }: { kind: FacialHair; ctx: HairCtx 
 
 export type { HairCtx };
 
+/** Styles whose back hair falls behind the whole body, so it is drawn before the body. */
+export const HAIR_BEHIND_BODY: readonly HairStyle[] = ['long'];
+
 export const HAIR_STYLES: readonly HairStyle[] = [
   'bald',
   'short-crop',
@@ -374,6 +393,7 @@ export const HAIR_STYLES: readonly HairStyle[] = [
   'locs',
   'braids',
   'straight-bob',
+  'long',
   'bun',
   'ponytail',
   'head-wrap',

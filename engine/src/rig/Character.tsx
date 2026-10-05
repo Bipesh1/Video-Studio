@@ -2,16 +2,17 @@ import { useId } from 'react';
 import type { ReactNode } from 'react';
 import { Face } from '../face/Face';
 import type { EyeStyle, FaceParams } from '../face/types';
-import { FacialHairShape, HairBack, HairFront } from '../wardrobe/hair';
+import { FacialHairShape, HAIR_BEHIND_BODY, HairBack, HairFront } from '../wardrobe/hair';
 import type { HairCtx } from '../wardrobe/hair';
+import { Footwear } from '../wardrobe/Footwear';
 import { DEFAULT_SKIN, identityHair, skinColors } from '../wardrobe/identity';
-import { Shaded, Tube, lightOffset } from '../wardrobe/Shaded';
-import type { Identity, Outfit, PieceContext } from '../wardrobe/types';
+import { Tube } from '../wardrobe/Shaded';
+import type { Age, Identity, Outfit, PieceContext } from '../wardrobe/types';
 import { body } from './body';
 import { Hand, handTransform } from './Hand';
 import { armLayers } from './layers';
 import type { HandStyle } from './Hand';
-import { DEG, clamp, length, mul, rotate, sub, vec } from './math';
+import { DEG, clamp, length, lerpVec, mul, rotate, sub, vec } from './math';
 import type { Vec2 } from './math';
 import { computeSkeleton } from './skeleton';
 import type { ArmJoints, Facing, HandPose, LegJoints, ResolvedPose } from './types';
@@ -45,6 +46,8 @@ export type CharacterProps = {
   identity?: Identity;
   /** A costume (Style 3.5, tier 1 or 2). Omit for a pure stick figure. */
   outfit?: Outfit;
+  /** Age cues: a child has a smaller body under the same head; an elder stoops. */
+  age?: Age;
   /** Overrides the hand style the identity and outfit imply. */
   handStyle?: HandStyle;
   /** Head squash for impacts, clamped to the token limit (Style 8: at most 8%). */
@@ -82,45 +85,10 @@ const ankle = (l: LegJoints): Vec2 => {
   return { x: l.foot.x - (dx / len) * 0.16, y: l.foot.y - (dy / len) * 0.16 };
 };
 
-/** A chunky outlined boot at a foot, toe pointing along dir (Style 3.1). */
-function Boot({
-  leg,
-  dir,
-  outfit,
-  id,
-  shadowSide,
-}: {
-  leg: LegJoints;
-  dir: 1 | -1;
-  outfit: NonNullable<Outfit['boots']>;
-  id: string;
-  shadowSide: 1 | -1;
-}) {
-  const f = leg.foot;
-  const X = (v: number) => f.x + v * dir;
-  const d = `M ${X(-0.09)} ${f.y} L ${X(0.2)} ${f.y} Q ${X(0.26)} ${f.y} ${X(0.24)} ${f.y - 0.07} Q ${X(0.2)} ${f.y - 0.12} ${X(0.08)} ${f.y - 0.13} L ${X(0.08)} ${f.y - 0.24} L ${X(-0.09)} ${f.y - 0.24} Z`;
-  const trim = outfit.trim;
-  return (
-    <g>
-      <Shaded
-        id={id}
-        d={d}
-        fill={outfit.fill}
-        shadow={outfit.shadow}
-        offset={lightOffset(shadowSide, 0.035)}
-      />
-      {trim && (
-        <Shaded
-          id={`${id}-t`}
-          d={`M ${X(-0.11)} ${f.y - 0.29} L ${X(0.1)} ${f.y - 0.29} L ${X(0.1)} ${f.y - 0.22} L ${X(-0.11)} ${f.y - 0.22} Z`}
-          fill={trim[0]}
-          shadow={trim[1]}
-          offset={lightOffset(shadowSide, 0.02)}
-        />
-      )}
-    </g>
-  );
-}
+/** A child's body is this fraction of an adult's, under a head of the same size. */
+export const CHILD_BODY = 0.78;
+/** How far an elder leans forward, in degrees; the head tips back to keep the face level. */
+export const ELDER_STOOP = 11;
 
 /**
  * One Ink Stick character. Draw order (Part 2, section 7.1, with costume layers):
@@ -143,6 +111,7 @@ export const Character = ({
   eyeStyle = 'round',
   identity,
   outfit,
+  age = 'adult',
   handStyle,
   squash = 0,
   prop,
@@ -151,7 +120,23 @@ export const Character = ({
   const uid = `c${useId().replace(/[^A-Za-z0-9_-]/g, '')}`;
   const sign = facing === 'left' ? -1 : 1;
   const t = clamp(turn, 0, 1);
-  const j = computeSkeleton(pose, { shoulderSpread: outfit?.shoulderSpread ?? 0, turn: t });
+  // An elder stoops forward. Seen from the front that lean points at the viewer, so only a
+  // little of it shows; it grows as the body turns to profile.
+  const stoop = age === 'elder' ? ELDER_STOOP * (0.3 + 0.7 * t) : 0;
+  const posed = stoop
+    ? { ...pose, torsoLean: pose.torsoLean + stoop, headTilt: pose.headTilt - stoop * 0.7 }
+    : pose;
+  const j = computeSkeleton(posed, {
+    shoulderSpread: outfit?.shoulderSpread ?? 0,
+    hipSpread: outfit?.hipSpread ?? 0,
+    turn: t,
+  });
+  // A child: everything below the head shrinks toward the ground point, and the head follows
+  // the neck down, so the head is big for the body.
+  const k = age === 'child' ? CHILD_BODY : 1;
+  const bodyScale =
+    k === 1 ? undefined : `translate(${posed.rootX} 0) scale(${k}) translate(${-posed.rootX} 0)`;
+  const headAt = vec(j.head.x + (k - 1) * (j.neck.x - posed.rootX), j.head.y + (k - 1) * j.neck.y);
   const rx = body.headRadiusX;
   const ry = body.headRadiusY;
   const outline = lineWeights.outline;
@@ -162,7 +147,7 @@ export const Character = ({
   const skinSet = identity ? skinColors(identity.skinTone) : DEFAULT_SKIN;
   const skin = skinSet.skin;
   const hands: HandStyle = handStyle ?? (outfit?.gloves ? 'glove' : identity ? 'skin' : 'bare');
-  const ctx: PieceContext = { j, lean: pose.torsoLean, turn: t, shadowSide, uid, skin };
+  const ctx: PieceContext = { j, lean: posed.torsoLean, turn: t, shadowSide, uid, skin };
   const hairCtx: HairCtx | null = identity
     ? {
         hair: identityHair(identity),
@@ -176,26 +161,37 @@ export const Character = ({
 
   let look = vec(0, 0);
   if (lookAt) {
-    const d = rotate(sub(lookAt, j.head), -j.headAngle * DEG);
+    const d = rotate(sub(lookAt, headAt), -j.headAngle * DEG);
     const l = length(d);
     if (l > 1e-6) look = mul(d, 1 / l);
   }
 
   const frames = {
-    front: { center: j.arms.front.hand, forearm: j.arms.front.forearm, hand: pose.hands.front },
-    back: { center: j.arms.back.hand, forearm: j.arms.back.forearm, hand: pose.hands.back },
+    front: { center: j.arms.front.hand, forearm: j.arms.front.forearm, hand: posed.hands.front },
+    back: { center: j.arms.back.hand, forearm: j.arms.back.forearm, hand: posed.hands.back },
   };
 
-  const arm = (a: ArmJoints, which: 'front' | 'back') => (
-    <g>
-      {outfit?.sleeves ? (
-        <Tube pts={[a.shoulder, a.elbow, a.wrist]} spec={outfit.sleeves} shadowSide={shadowSide} />
-      ) : (
-        <polyline points={line([a.shoulder, a.elbow, a.wrist])} {...limbProps} />
-      )}
-      {outfit?.shoulder?.(ctx, which)}
-    </g>
-  );
+  const arm = (a: ArmJoints, which: 'front' | 'back') => {
+    const sleeves = outfit?.sleeves;
+    const short = outfit?.sleeveLength === 'short';
+    return (
+      <g>
+        {sleeves && !short ? (
+          <Tube pts={[a.shoulder, a.elbow, a.wrist]} spec={sleeves} shadowSide={shadowSide} />
+        ) : (
+          <polyline points={line([a.shoulder, a.elbow, a.wrist])} {...limbProps} />
+        )}
+        {sleeves && short && (
+          <Tube
+            pts={[a.shoulder, lerpVec(a.shoulder, a.elbow, 0.62)]}
+            spec={sleeves}
+            shadowSide={shadowSide}
+          />
+        )}
+        {outfit?.shoulder?.(ctx, which)}
+      </g>
+    );
+  };
   const handOf = (a: ArmJoints, h: HandPose) => (
     <Hand
       shape={h.shape}
@@ -220,10 +216,10 @@ export const Character = ({
           <polyline points={line([l.hip, l.knee, l.foot])} {...limbProps} />
         )}
         {outfit?.boots && (
-          <Boot
-            leg={l}
+          <Footwear
+            foot={l.foot}
             dir={dir}
-            outfit={outfit.boots}
+            spec={outfit.boots}
             id={`${uid}-boot-${which}`}
             shadowSide={shadowSide}
           />
@@ -248,27 +244,36 @@ export const Character = ({
   );
   const frontSleeve = arm(j.arms.front, 'front');
 
+  const headTransform = `translate(${headAt.x} ${headAt.y}) rotate(${j.headAngle}) translate(0 ${ry}) scale(${1 + sq} ${1 - sq}) translate(0 ${-ry})`;
+  // Hair that falls down the back is drawn behind the whole body, not over the shoulders.
+  const hairBehind = Boolean(identity && HAIR_BEHIND_BODY.includes(identity.hair));
+
   return (
     <g transform={`translate(${x} ${groundY}) scale(${sign * head} ${head})`}>
-      {outfit?.back?.(ctx)}
-      {layers.back === 'behind' && backArm}
-      {layers.front === 'behind' && frontSleeve}
-      {leg(j.legs.back, 'back')}
-      <line x1={j.hip.x} y1={j.hip.y} x2={j.neck.x} y2={j.neck.y} {...limbProps} />
-      {outfit?.torso?.(ctx)}
-      {leg(j.legs.front, 'front')}
-      {outfit?.overTorso?.(ctx)}
-      {layers.back === 'chest' && backArm}
+      {hairBehind && hairCtx && identity && (
+        <g transform={headTransform}>
+          <HairBack style={identity.hair} ctx={hairCtx} />
+        </g>
+      )}
+      <g transform={bodyScale}>
+        {outfit?.back?.(ctx)}
+        {layers.back === 'behind' && backArm}
+        {layers.front === 'behind' && frontSleeve}
+        {leg(j.legs.back, 'back')}
+        <line x1={j.hip.x} y1={j.hip.y} x2={j.neck.x} y2={j.neck.y} {...limbProps} />
+        {outfit?.torso?.(ctx)}
+        {leg(j.legs.front, 'front')}
+        {outfit?.overTorso?.(ctx)}
+        {layers.back === 'chest' && backArm}
+      </g>
 
-      <g
-        transform={`translate(${j.head.x} ${j.head.y}) rotate(${j.headAngle}) translate(0 ${ry}) scale(${1 + sq} ${1 - sq}) translate(0 ${-ry})`}
-      >
+      <g transform={headTransform}>
         <defs>
           <clipPath id={`${uid}-head`}>
             <ellipse rx={rx - outline / 2} ry={ry - outline / 2} />
           </clipPath>
         </defs>
-        {hairCtx && identity && <HairBack style={identity.hair} ctx={hairCtx} />}
+        {hairCtx && identity && !hairBehind && <HairBack style={identity.hair} ctx={hairCtx} />}
         <ellipse rx={rx} ry={ry} fill={skinSet.shadow} />
         {/* Shading, rim light and every face feature stay inside the head outline. */}
         <g clipPath={`url(#${uid}-head)`}>
@@ -291,6 +296,7 @@ export const Character = ({
             skin={skin}
             lidColor={skinSet.shadow}
             talk={talk}
+            aged={age === 'elder'}
             idPrefix={uid}
           />
         </g>
@@ -305,12 +311,14 @@ export const Character = ({
         {headEffects}
       </g>
 
-      {layers.back === 'top' && backArm}
-      {layers.front === 'top' && frontSleeve}
-      {!frontGrips && handOf(j.arms.front, pose.hands.front)}
-      {prop?.(frames, { uid, shadowSide })}
-      {backGrips && handOf(j.arms.back, pose.hands.back)}
-      {frontGrips && handOf(j.arms.front, pose.hands.front)}
+      <g transform={bodyScale}>
+        {layers.back === 'top' && backArm}
+        {layers.front === 'top' && frontSleeve}
+        {!frontGrips && handOf(j.arms.front, pose.hands.front)}
+        {prop?.(frames, { uid, shadowSide })}
+        {backGrips && handOf(j.arms.back, pose.hands.back)}
+        {frontGrips && handOf(j.arms.front, pose.hands.front)}
+      </g>
     </g>
   );
 };

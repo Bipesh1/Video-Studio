@@ -4,6 +4,7 @@
  *   search <words> [--kind=costume]   find assets by plain words, best match first
  *   list [--kind=pose]                every asset, grouped by kind
  *   show <id>                         one asset in full
+ *   characters                        every saved character card in characters/
  *   check                             fail if a drawing is missing from the index, or the index
  *                                     points at code or a still that is not there
  *   stills [--only=id,id]             render each asset's golden still into knowledge/golden/assets/
@@ -15,8 +16,14 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync } from 'node:f
 import path from 'node:path';
 import { bundle } from '@remotion/bundler';
 import { renderStill, selectComposition } from '@remotion/renderer';
-import { ASSET_KINDS, libraryIndexSchema, parseOrExplain, searchLibrary } from '@studio/shared';
-import type { AssetKind, LibraryAsset, LibraryIndex } from '@studio/shared';
+import {
+  ASSET_KINDS,
+  characterCardSchema,
+  libraryIndexSchema,
+  parseOrExplain,
+  searchLibrary,
+} from '@studio/shared';
+import type { AssetKind, CharacterCard, LibraryAsset, LibraryIndex } from '@studio/shared';
 import { catalogPageCount } from '../../engine/src/library/catalog';
 import { projectRoot, run } from './system.js';
 
@@ -35,6 +42,49 @@ function loadIndex(): LibraryIndex {
     JSON.parse(readFileSync(indexFile, 'utf8')),
     'library/index.json',
   );
+}
+
+/** Every saved character card, validated. */
+function loadCards(): CharacterCard[] {
+  const dir = path.join(projectRoot, 'characters');
+  if (!existsSync(dir)) return [];
+  return readdirSync(dir)
+    .filter((f) => f.endsWith('.json'))
+    .map((f) =>
+      parseOrExplain(
+        characterCardSchema,
+        JSON.parse(readFileSync(path.join(dir, f), 'utf8')),
+        `characters/${f}`,
+      ),
+    );
+}
+
+function describeCard(c: CharacterCard) {
+  const wears = !c.outfit
+    ? 'a plain stick figure'
+    : 'costume' in c.outfit
+      ? `the ${c.outfit.costume} costume`
+      : Object.values(c.outfit.clothes)
+          .filter((g) => g !== undefined)
+          .map((g) => ('kind' in g ? `${g.cloth} ${g.kind}` : `${g.cloth} cloak`))
+          .join(', ');
+  console.log(`${c.id}  (${c.name}, ${c.age})`);
+  console.log(`  ${c.description}`);
+  console.log(`  wears: ${wears}`);
+  console.log(`  tags:  ${c.tags.join(', ')}`);
+  console.log(`  file:  characters/${c.id}.json`);
+}
+
+function characters() {
+  const cards = loadCards();
+  if (!cards.length) {
+    console.log('No saved characters yet.');
+    return;
+  }
+  for (const c of cards) {
+    describeCard(c);
+    console.log('');
+  }
 }
 
 function kindFlag(): AssetKind | undefined {
@@ -60,7 +110,18 @@ function describe(a: LibraryAsset) {
 function search() {
   const kind = kindFlag();
   const hits = searchLibrary(loadIndex(), words.join(' '), kind ? { kind } : {});
-  if (!hits.length) {
+  // Saved characters match on their name, tags or description.
+  const terms = words.map((w) => w.toLowerCase());
+  const cards = kind
+    ? []
+    : loadCards().filter((c) => {
+        // Whole words only, so "old" does not find "gold" and "man" does not find "woman".
+        const text = new Set(
+          `${c.name} ${c.tags.join(' ')} ${c.description}`.toLowerCase().split(/[^a-z0-9]+/),
+        );
+        return terms.length > 0 && terms.every((t) => text.has(t));
+      });
+  if (!hits.length && !cards.length) {
     console.log(`Nothing in the library matches "${words.join(' ')}". It has to be drawn.`);
     return;
   }
@@ -69,6 +130,13 @@ function search() {
     console.log('');
   }
   if (hits.length > 12) console.log(`...and ${hits.length - 12} more. Add a word or --kind=.`);
+  if (cards.length) {
+    console.log('Saved characters:');
+    for (const c of cards) {
+      describeCard(c);
+      console.log('');
+    }
+  }
 }
 
 function list() {
@@ -188,6 +256,7 @@ const commands: Record<string, () => void | Promise<void>> = {
   search,
   list,
   show,
+  characters,
   check,
   stills,
   look,
@@ -196,7 +265,9 @@ const commands: Record<string, () => void | Promise<void>> = {
 
 const action = command ? commands[command] : undefined;
 if (!action) {
-  console.log('Commands: search <words>, list, show <id>, check, stills, look <id>, catalog');
+  console.log(
+    'Commands: search <words>, list, show <id>, characters, check, stills, look <id>, catalog',
+  );
   process.exitCode = 1;
 } else {
   await action();
