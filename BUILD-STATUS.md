@@ -36,7 +36,7 @@ rig 1, poses 7, action 1 (walk), motion 2, expressions 14, eye style 1, hands 3,
 | Library search finds assets by tag                  | Yes: "king" finds the ruler costume, "scared" the afraid face, "night violet" the dusk palette; tested                         |
 | The check fails on an unindexed piece               | Yes, tried with a dummy prop file                                                                                              |
 | `/draw` exists and follows current Claude Code docs | Yes; custom commands in `.claude/commands/` still work and are the same as skills (checked in the official docs on 2026-10-05) |
-| Tests, typecheck, lint, format                      | Pass (93 tests)                                                                                                                |
+| Tests, typecheck, lint, format                      | Pass (104 tests)                                                                                                               |
 
 ### Not done in 2A
 
