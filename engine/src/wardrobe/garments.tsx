@@ -1,7 +1,7 @@
 import type { Clothes } from '@studio/shared';
 import type { ReactNode } from 'react';
 import { ink, lineWeights, tokens } from '../tokens';
-import { cloth, edge, fold, torsoFrame, turnWidth } from './cloth';
+import { cloth, edge, fold, hemTrail, torsoFrame, turnWidth } from './cloth';
 import type { Cloth } from './cloth';
 import { Shaded, lightOffset } from './Shaded';
 import type { Outfit, Piece, PieceContext } from './types';
@@ -165,10 +165,14 @@ const cloakBack =
     const k = cloth(color);
     const dx = -0.28 * c.turn;
     const right = 0.62 * (1 - 0.6 * c.turn);
+    // Follow-through: the hem trails the shoulders and lifts a little as it swings.
+    const hem = hemTrail(c);
+    const mid = dx + hem.x * 0.45;
+    const low = dx + hem.x;
     return (
       <g key="cloak-back" transform={torsoFrame(c)}>
         <path
-          d={`M ${dx - 0.3} -1.04 C ${dx - 0.5} -0.6 ${dx - 0.6} 0.3 ${dx - 0.62} 0.92 Q ${dx} 1.04 ${dx + right} 0.92 C ${dx + 0.58} 0.3 ${dx + 0.5} -0.6 ${dx + 0.3} -1.04 Z`}
+          d={`M ${dx - 0.3} -1.04 C ${dx - 0.5} -0.6 ${mid - 0.6} 0.3 ${low - 0.62} ${0.92 + hem.y} Q ${low} ${1.04 + hem.y} ${low + right} ${0.92 + hem.y} C ${mid + 0.58} 0.3 ${dx + 0.5} -0.6 ${dx + 0.3} -1.04 Z`}
           fill={k.shadow}
           stroke={ink}
           strokeWidth={lineWeights.outline}

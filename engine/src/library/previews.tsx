@@ -125,7 +125,7 @@ const rodProp: CharacterProps['prop'] = (hands) =>
   hands.front.hand.shape === 'grip' ? <Rod frame={hands.front} /> : null;
 const scepterProp: CharacterProps['prop'] = (hands, info) =>
   hands.front.hand.shape === 'grip' ? (
-    <Scepter frame={hands.front} uid={info.uid} shadowSide={info.shadowSide} />
+    <Scepter frame={hands.front} uid={info.uid} shadowSide={info.shadowSide} sway={info.sway} />
   ) : null;
 
 const identity = (o: Partial<Identity>): Identity => ({

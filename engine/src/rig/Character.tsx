@@ -9,6 +9,8 @@ import { DEFAULT_SKIN, identityHair, skinColors } from '../wardrobe/identity';
 import { Tube } from '../wardrobe/Shaded';
 import type { Age, Identity, Outfit, PieceContext } from '../wardrobe/types';
 import { body } from './body';
+import { NO_SWAY } from './follow';
+import type { Sway } from './follow';
 import { Hand, handTransform } from './Hand';
 import { armLayers } from './layers';
 import type { HandStyle } from './Hand';
@@ -22,7 +24,12 @@ import { ink, lineWeights, tokens } from '../tokens';
 export type HandFrame = { center: Vec2; forearm: number; hand: HandPose };
 
 /** Extra drawing context a held prop may use. */
-export type PropInfo = { uid: string; shadowSide: 1 | -1 };
+export type PropInfo = {
+  uid: string;
+  shadowSide: 1 | -1;
+  /** How far the loose end of a held thing trails the hand, in head units. Zero at rest. */
+  sway: Vec2;
+};
 
 export type CharacterProps = {
   /** Screen x of the character origin (the ground point under the hip at rootX 0), px. */
@@ -43,6 +50,8 @@ export type CharacterProps = {
   lookAt?: Vec2;
   /** A small offset of the eyes from where they are looking: eye darts (see gazeAt). */
   gaze?: Vec2;
+  /** Follow-through for capes, hair and held things (see swayOf). Left out: nothing sways. */
+  sway?: Sway;
   eyeStyle?: EyeStyle;
   /** Identity mode (Style 3.4): skin tone, hair and facial hair. Omit for default white heads. */
   identity?: Identity;
@@ -111,6 +120,7 @@ export const Character = ({
   talk = 0,
   lookAt,
   gaze,
+  sway = NO_SWAY,
   eyeStyle = 'round',
   identity,
   outfit,
@@ -150,7 +160,15 @@ export const Character = ({
   const skinSet = identity ? skinColors(identity.skinTone) : DEFAULT_SKIN;
   const skin = skinSet.skin;
   const hands: HandStyle = handStyle ?? (outfit?.gloves ? 'glove' : identity ? 'skin' : 'bare');
-  const ctx: PieceContext = { j, lean: posed.torsoLean, turn: t, shadowSide, uid, skin };
+  const ctx: PieceContext = {
+    j,
+    lean: posed.torsoLean,
+    turn: t,
+    shadowSide,
+    uid,
+    skin,
+    sway: sway.body,
+  };
   const hairCtx: HairCtx | null = identity
     ? {
         hair: identityHair(identity),
@@ -159,6 +177,7 @@ export const Character = ({
         shadowSide,
         uid,
         wrap: identity.wrap ?? 'crimson',
+        sway: sway.body,
       }
     : null;
 
@@ -319,7 +338,7 @@ export const Character = ({
         {layers.back === 'top' && backArm}
         {layers.front === 'top' && frontSleeve}
         {!frontGrips && handOf(j.arms.front, pose.hands.front)}
-        {prop?.(frames, { uid, shadowSide })}
+        {prop?.(frames, { uid, shadowSide, sway: sway.hand })}
         {backGrips && handOf(j.arms.back, pose.hands.back)}
         {frontGrips && handOf(j.arms.front, pose.hands.front)}
       </g>

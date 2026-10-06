@@ -25,6 +25,8 @@ type HairCtx = {
   uid: string;
   /** Accent name for a head wrap. */
   wrap: string;
+  /** How far loose hair trails the head, in head units. Left out or zero: it hangs straight. */
+  sway?: Vec2;
 };
 
 type HairShape = { d: string; fill: string; shadow: string };
@@ -120,12 +122,13 @@ function strands(
   const shapes: HairShape[] = [];
   const lines: ReactNode[] = [];
   const back = -0.28 * c.turn;
+  const trail = c.sway?.x ?? 0;
   xs.forEach((x0, i) => {
     // In profile the strands on the face side are hidden behind the head.
     if (c.turn > 0.5 && x0 > 0.15) return;
     const a = { x: x0 * 0.92 + back, y: -0.12 };
     const b = {
-      x: x0 * 1.08 + back + Math.sign(x0) * 0.03,
+      x: x0 * 1.08 + back + Math.sign(x0) * 0.03 - trail * 0.8,
       y: length - 0.06 * Math.abs(Math.cos(i)),
     };
     shapes.push({ d: strand(a, b, width), fill: c.hair.fill, shadow: c.hair.shadow });
@@ -211,12 +214,20 @@ function draw(style: HairStyle, c: HairCtx): HairDraw {
       // Hair falling behind the shoulders. As the head turns it gathers behind the head.
       const dx = -0.2 * c.turn;
       const right = 0.52 - 0.62 * c.turn;
-      const fall = `M ${dx - 0.52} -0.25 Q ${dx - 0.66} 0.45 ${dx - 0.5} 0.98 Q ${dx - 0.2} 1.08 ${dx + right * 0.2} 1.02 Q ${dx + right * 0.95} 1.02 ${dx + right} 0.9 Q ${dx + right * 1.22} 0.4 ${dx + right} -0.25 Z`;
+      // The ends trail the head when it moves and swing past when it stops.
+      const tx = -(c.sway?.x ?? 0) * 1.3;
+      const fall = `M ${dx - 0.52} -0.25 Q ${dx - 0.66 + tx * 0.4} 0.45 ${dx - 0.5 + tx} 0.98 Q ${dx - 0.2 + tx} 1.08 ${dx + right * 0.2 + tx} 1.02 Q ${dx + right * 0.95 + tx} 1.02 ${dx + right + tx} 0.9 Q ${dx + right * 1.22 + tx * 0.4} 0.4 ${dx + right} -0.25 Z`;
       return {
         back: [solid(fall)],
         backDetails: [
-          detail(`M ${dx - 0.36} 0.5 Q ${dx - 0.4} 0.8 ${dx - 0.34} 1.0`, 'l1'),
-          detail(`M ${dx - 0.14} 0.62 Q ${dx - 0.17} 0.85 ${dx - 0.12} 1.03`, 'l2'),
+          detail(
+            `M ${dx - 0.36 + tx * 0.5} 0.5 Q ${dx - 0.4 + tx * 0.8} 0.8 ${dx - 0.34 + tx} 1.0`,
+            'l1',
+          ),
+          detail(
+            `M ${dx - 0.14 + tx * 0.6} 0.62 Q ${dx - 0.17 + tx * 0.8} 0.85 ${dx - 0.12 + tx} 1.03`,
+            'l2',
+          ),
         ],
         front: [solid(topCap(0.57, 0.59, -0.02, 0.12))],
         hairline: { top: -0.4, side: -0.02 },
@@ -239,7 +250,7 @@ function draw(style: HairStyle, c: HairCtx): HairDraw {
     case 'ponytail': {
       const bx = -0.3 - 0.16 * c.turn;
       const by = -0.3;
-      const tip = { x: -0.52 - 0.14 * c.turn, y: 0.55 };
+      const tip = { x: -0.52 - 0.14 * c.turn - (c.sway?.x ?? 0) * 1.2, y: 0.55 };
       const tail = `M ${bx - 0.09} ${by} Q ${bx - 0.3} ${by + 0.4} ${tip.x} ${tip.y} Q ${bx + 0.05} ${by + 0.35} ${bx + 0.09} ${by} Z`;
       return {
         back: [

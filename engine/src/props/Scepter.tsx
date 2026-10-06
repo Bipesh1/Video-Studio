@@ -1,4 +1,5 @@
 import type { HandFrame } from '../rig/Character';
+import type { Vec2 } from '../rig/math';
 import { accent, ink, lineWeights, pick, white } from '../tokens';
 import { Shaded, lightOffset } from '../wardrobe/Shaded';
 
@@ -13,12 +14,17 @@ export const Scepter = ({
   frame,
   uid,
   shadowSide,
+  sway,
 }: {
   frame: HandFrame;
   uid: string;
   shadowSide: 1 | -1;
+  /** How far the top trails the hand (PropInfo.sway). Left out: it stands still in the hand. */
+  sway?: Vec2;
 }) => {
-  const axis = frame.hand.gripAxis ?? 90 - frame.forearm;
+  // Follow-through: when the hand moves, the heavy top lags and the scepter tips back.
+  const tip = sway ? Math.max(-14, Math.min(14, -sway.x * 60)) : 0;
+  const axis = (frame.hand.gripAxis ?? 90 - frame.forearm) + tip;
   const off = lightOffset(shadowSide, 0.025);
   const g = { fill: pick(gold, 0), shadow: pick(gold, 1) };
   // Drawn along +x: handle from -0.45 to 0.6, then a collar and an orb.

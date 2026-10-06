@@ -24,7 +24,7 @@ const SEED = 4182;
 
 const scepterProp: CharacterProps['prop'] = (hands, info) =>
   hands.front.hand.shape === 'grip' ? (
-    <Scepter frame={hands.front} uid={info.uid} shadowSide={info.shadowSide} />
+    <Scepter frame={hands.front} uid={info.uid} shadowSide={info.shadowSide} sway={info.sway} />
   ) : null;
 
 /** Simple treatment (Reference B): dusk violet night, two tier 0 characters facing each other. */

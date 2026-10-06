@@ -81,7 +81,7 @@ type ShotProps = {
 
 const scepterProp: CharacterProps['prop'] = (hands, info) =>
   hands.front.hand.shape === 'grip' ? (
-    <Scepter frame={hands.front} uid={info.uid} shadowSide={info.shadowSide} />
+    <Scepter frame={hands.front} uid={info.uid} shadowSide={info.shadowSide} sway={info.sway} />
   ) : null;
 
 /** The crown sits low on the brow, so the king's faces keep their brows under it (playbook, L-0002). */

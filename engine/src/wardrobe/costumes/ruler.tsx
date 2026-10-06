@@ -1,5 +1,6 @@
 import { lerp } from '../../rig/math';
 import { accent, ink, lineWeights, pick, tokens, white } from '../../tokens';
+import { hemTrail } from '../cloth';
 import { Shaded, lightOffset } from '../Shaded';
 import type { Outfit, PieceContext } from '../types';
 
@@ -43,7 +44,11 @@ const Stud = ({ x, y, r }: { x: number; y: number; r: number }) => (
 
 const capeBack = (c: PieceContext) => {
   const dx = -0.3 * c.turn;
-  const d = `M ${dx - 0.3} -1.02 C ${dx - 0.5} -0.6 ${dx - 0.64} 0.3 ${dx - 0.68} 0.86 Q ${dx} 0.98 ${dx + 0.68 * (1 - 0.6 * c.turn)} 0.86 C ${dx + 0.62} 0.3 ${dx + 0.5} -0.6 ${dx + 0.3} -1.02 Z`;
+  // Follow-through: the hem trails the shoulders and lifts a little as it swings.
+  const hem = hemTrail(c);
+  const mid = dx + hem.x * 0.45;
+  const low = dx + hem.x;
+  const d = `M ${dx - 0.3} -1.02 C ${dx - 0.5} -0.6 ${mid - 0.64} 0.3 ${low - 0.68} ${0.86 + hem.y} Q ${low} ${0.98 + hem.y} ${low + 0.68 * (1 - 0.6 * c.turn)} ${0.86 + hem.y} C ${mid + 0.62} 0.3 ${dx + 0.5} -0.6 ${dx + 0.3} -1.02 Z`;
   return (
     <g transform={torsoFrame(c)}>
       <path

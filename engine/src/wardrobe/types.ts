@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import type { Vec2 } from '../rig/math';
 import type { Joints } from '../rig/types';
 
 /** What every costume piece and hair shape is drawn from. */
@@ -13,6 +14,11 @@ export type PieceContext = {
   /** Unique id prefix for clip paths and masks. */
   uid: string;
   skin: string;
+  /**
+   * How far loose cloth trails the shoulders, in head units (see rig/follow.ts). Zero at rest.
+   * +x means the body has moved toward the facing direction and the cloth is behind it.
+   */
+  sway: Vec2;
 };
 
 export type Piece = (ctx: PieceContext) => ReactNode;

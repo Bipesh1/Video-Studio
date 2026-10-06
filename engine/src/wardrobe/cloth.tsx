@@ -49,3 +49,18 @@ export const edge = (d: string, key?: string): ReactNode => (
     strokeLinejoin={tokens.line.join}
   />
 );
+
+/** How far a hanging hem moves for a given sway, and how much it lifts as it swings out. */
+const HEM_REACH = 1.7;
+const HEM_LIFT = 0.18;
+/** A hem never swings farther than this, in head units, however fast the body moves. */
+const HEM_MAX = 0.42;
+
+/**
+ * Where the hem of a cape or cloak sits for the body's sway, in the torso frame: it trails
+ * behind a moving body (x) and lifts a little as it swings (y, negative is up).
+ */
+export function hemTrail(c: PieceContext, reach = HEM_REACH): { x: number; y: number } {
+  const x = Math.max(-HEM_MAX, Math.min(HEM_MAX, -c.sway.x * reach));
+  return { x, y: -Math.abs(x) * HEM_LIFT + c.sway.y * 0.5 };
+}
