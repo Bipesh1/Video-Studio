@@ -329,12 +329,15 @@ Status: active
 L-0021 | 2026-10-06 | run: Moon Tax still (the king's opening shot)
 Area: style | Scope: style ink-stick | Source: Biku
 Lesson: Biku finds the outline a little heavy. Lines are a little thinner than the first guide
-  said: outline about 3.8% of head width, stick limbs about 6.6%.
+  said: outline about 3.25% of head width, stick limbs about 5.8% (guide version 11).
 Evidence: Biku: "for the outer edges and line can we make it thinner", then "a little bit
   thinner since the thickness now is a little bit high in my opinion", "not too much thin".
-Applied: styles/ink-stick/guide.md and tokens.json version 10 (the guide is the authority;
+  After seeing the first step (version 10, about a sixth thinner): "a little bit more thinner".
+Applied: styles/ink-stick/guide.md and tokens.json version 11 (the guide is the authority;
   this entry only records why).
-Note (Claude's reading): he asked for a small change, so this is not a move toward a thin-line
-  style. Any further thinning is his to ask for.
+Note (Claude's reading): he asked for small steps, so this is not a move toward a thin-line
+  style. The outline is now only a little heavier than the inner detail lines (about 2.75%);
+  thinning it further would need the detail lines thinned too. Any further change is his to
+  ask for.
 Status: active
 ```
