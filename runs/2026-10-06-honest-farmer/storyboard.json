@@ -284,7 +284,8 @@
               "effect": "sweat-resting",
               "on": "tomas"
             }
-          ]
+          ],
+          "transition": "fade"
         },
         {
           "id": "s2b",
@@ -310,7 +311,7 @@
           "line": "n4",
           "words": "That morning, on the way to market,",
           "camera": {
-            "framing": "wide",
+            "framing": "medium",
             "move": "follow"
           },
           "actors": [
@@ -344,7 +345,7 @@
               "action": "walk",
               "expression": "neutral",
               "facing": "right",
-              "x": 0.34,
+              "x": 0.47,
               "then": [
                 {
                   "at": 0.45,
@@ -358,7 +359,7 @@
           "props": [
             {
               "prop": "bag",
-              "x": 0.62
+              "x": 0.6
             }
           ],
           "sfx": [
@@ -373,7 +374,7 @@
           "line": "n5",
           "words": "Inside was more money than he had seen",
           "camera": {
-            "framing": "medium",
+            "framing": "wide",
             "move": "none"
           },
           "actors": [
@@ -382,16 +383,20 @@
               "pose": "stand",
               "expression": "surprised",
               "facing": "right",
-              "x": 0.45,
-              "lookAt": "down",
+              "x": 0.47,
+              "lookAt": "bag",
               "then": [
                 {
-                  "at": 0.3,
-                  "pose": "hold-object",
-                  "lookAt": "coin",
-                  "holds": "coin"
+                  "at": 0.2,
+                  "pose": "kneel"
                 }
               ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "bag",
+              "x": 0.6
             }
           ],
           "sfx": [
@@ -412,11 +417,11 @@
           "actors": [
             {
               "character": "tomas",
-              "pose": "hold-object",
+              "pose": "kneel",
               "expression": "laughing",
               "facing": "right",
-              "x": 0.45,
-              "holds": "bag"
+              "x": 0.47,
+              "lookAt": "down"
             }
           ]
         }
@@ -455,12 +460,11 @@
           "actors": [
             {
               "character": "tomas",
-              "pose": "hold-object",
+              "pose": "kneel",
               "expression": "sad",
               "facing": "right",
-              "x": 0.45,
-              "lookAt": "down",
-              "holds": "bag"
+              "x": 0.47,
+              "lookAt": "down"
             }
           ]
         },
@@ -469,18 +473,23 @@
           "line": "n6",
           "words": "He thought about his broken roof.",
           "camera": {
-            "framing": "medium",
+            "framing": "wide",
             "move": "none"
           },
           "actors": [
             {
               "character": "tomas",
-              "pose": "hold-object",
+              "pose": "kneel",
               "expression": "thinking",
               "facing": "right",
-              "x": 0.45,
-              "lookAt": "up",
-              "holds": "bag"
+              "x": 0.47,
+              "lookAt": "up"
+            }
+          ],
+          "props": [
+            {
+              "prop": "bag",
+              "x": 0.6
             }
           ]
         },
@@ -496,19 +505,17 @@
           "actors": [
             {
               "character": "tomas",
-              "pose": "hold-object",
+              "pose": "kneel",
               "expression": "surprised",
               "facing": "right",
-              "x": 0.45,
-              "lookAt": "down",
-              "holds": "bag"
+              "x": 0.47,
+              "lookAt": "down"
             }
           ],
           "sfx": [
             {
-              "name": "whoosh",
-              "at": "start",
-              "gainDb": -3
+              "name": "pop",
+              "at": "start"
             }
           ]
         },
@@ -523,17 +530,24 @@
           "actors": [
             {
               "character": "tomas",
-              "pose": "hands-over-mouth",
-              "expression": "afraid",
+              "pose": "kneel",
+              "expression": "surprised",
               "facing": "right",
-              "x": 0.4,
-              "lookAt": "bag"
+              "x": 0.47,
+              "lookAt": "bag",
+              "then": [
+                {
+                  "at": 0.1,
+                  "pose": "hands-over-mouth",
+                  "expression": "afraid"
+                }
+              ]
             }
           ],
           "props": [
             {
               "prop": "bag",
-              "x": 0.62
+              "x": 0.6
             }
           ],
           "effects": [
@@ -544,8 +558,9 @@
           ],
           "sfx": [
             {
-              "name": "thud",
-              "at": "start"
+              "name": "whoosh",
+              "at": "start",
+              "gainDb": -3
             }
           ]
         }
@@ -773,7 +788,7 @@
           "line": "n10",
           "words": "He walked all the way to the castle.",
           "camera": {
-            "framing": "wide",
+            "framing": "medium",
             "move": "follow"
           },
           "actors": [
@@ -1006,7 +1021,8 @@
               "expression": "thinking",
               "facing": "left",
               "x": 0.7,
-              "lookAt": "tomas"
+              "lookAt": "tomas",
+              "holds": "coin"
             }
           ],
           "props": [
@@ -1247,6 +1263,7 @@
               "facing": "right",
               "x": 0.36,
               "lookAt": "queen",
+              "holds": "coin",
               "then": [
                 {
                   "at": 0.2,

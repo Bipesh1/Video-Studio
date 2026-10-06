@@ -91,6 +91,22 @@ describe('what the builder can put on screen', () => {
     expect(unbuildable(moonTax, {})).toEqual([]);
   });
 
+  it('says it cannot show a thing being put down yet', () => {
+    const sb = structuredClone(farmer);
+    const shot = shotOf(sb, 's1b');
+    const tomas = shot.actors[0];
+    if (!tomas) throw new Error('no tomas');
+    // He takes the bag and then lets go of it again, with the bag standing in the shot.
+    tomas.then = [
+      { at: 0.3, pose: 'hold-object', holds: 'bag' },
+      { at: 0.7, pose: 'stand', holds: null },
+    ];
+    expect(unbuildable(sb, {}).join('\n')).toContain(
+      'the builder cannot show "tomas" putting the bag down in shot "s1b" yet',
+    );
+    expect(unbuildable(farmer, {})).toEqual([]);
+  });
+
   it('names what it cannot build before any frame is drawn', () => {
     const sb = structuredClone(farmer);
     const shot = shotOf(sb, 's1a');
@@ -170,15 +186,17 @@ describe('where people look and what the camera frames', () => {
     // He walks in looking ahead and sees the bag once he has stopped.
     const tomas = { ...walker, lookAt: 'bag' };
     const atBag = lookTarget(tomas, road.shot, road.stage, road.placements);
-    expect(atBag?.x).toBeCloseTo(stageX(road.stage, 0.62), 6);
+    expect(atBag?.x).toBeCloseTo(stageX(road.stage, 0.6), 6);
     expect(atBag?.y).toBeLessThan(road.stage.groundY);
     expect(atBag?.y).toBeGreaterThan(road.stage.groundY - road.stage.head);
 
-    const coin = placed(farmer, 's2e');
-    const holder = coin.shot.actors[0];
+    // The queen turns her coin over in her hand and looks at it.
+    const coin = placed(farmer, 's6a');
+    const holder = coin.shot.actors[1];
     if (!holder) throw new Error('no holder');
     const atCoin = lookTarget(holder, coin.shot, coin.stage, coin.placements);
-    expect(atCoin?.x).toBeGreaterThan(stageX(coin.stage, 0.45));
+    // She faces left, so her hand and the coin in it are to the left of where she sits.
+    expect(atCoin?.x).toBeLessThan(stageX(coin.stage, 0.7));
 
     const up = placed(farmer, 's3b');
     const thinker = up.shot.actors[0];
@@ -415,14 +433,14 @@ describe('moving inside a shot', () => {
       .filter((t) => Math.abs(t.sy - head) < 0.5 && Math.abs(Math.abs(t.sx) - head) < 0.5);
 
   it('takes a thing in the hand partway through, not from the start', () => {
-    // Tomas lifts the coin 0.3 of the way into the shot.
-    expect(at('s2e', 0.1)).not.toContain('-coin');
-    expect(at('s2e', 0.6)).toContain('-coin');
+    // Tomas, on his knee, is given a coin a quarter of the way into the shot and rises with it.
+    expect(at('s7b', 0.1)).not.toContain('-coin');
+    expect(at('s7b', 0.6)).toContain('-coin');
   });
 
   it('walks someone in and stops them on their own spot', () => {
     const { stage } = placed(farmer, 's2d');
-    const spot = stageX(stage, 0.34);
+    const spot = stageX(stage, 0.47);
     const x = (share: number) => {
       const tomas = peopleOf(at('s2d', share), stage.head)[0];
       if (!tomas) throw new Error('nobody drawn');

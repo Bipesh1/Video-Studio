@@ -21,12 +21,12 @@ Place: field, clear day colors. Music: curious.
 
 | Shot | At | Who speaks | Words | What you see | Sound |
 | --- | --- | --- | --- | --- | --- |
-| s2a | 0:07 | Narrator | His name was Tomas. He worked his field from morning until night, | Wide shot. Tomas trudges, exhausted. Resting sweat drop on Tomas. The camera travels along. |   |
+| s2a | 0:07 | Narrator | His name was Tomas. He worked his field from morning until night, | Fade in. Wide shot. Tomas trudges, exhausted. Resting sweat drop on Tomas. The camera travels along. |   |
 | s2b | 0:10 | Narrator | and his family still went hungry. | Close-up. Tomas looks down, sad. |   |
-| s2c | 0:13 | Narrator | That morning, on the way to market, | Wide shot. Tomas walks, neutral. The camera travels along. | footsteps |
+| s2c | 0:13 | Narrator | That morning, on the way to market, | Medium shot. Tomas walks, neutral. The camera travels along. | footsteps |
 | s2d | 0:15 | Narrator | a heavy bag lay on the road. | Wide shot. Tomas walks, neutral, then stands and looks surprised and looks at the bag. In the scene: bag. | pop |
-| s2e | 0:17 | Narrator | Inside was more money than he had seen | Medium shot. Tomas stands, surprised, looking down, then holds the coin and looks at the coin. | ding |
-| s2f | 0:20 | Narrator | in his whole life. | Close-up. Tomas holds the bag, laughing. |   |
+| s2e | 0:17 | Narrator | Inside was more money than he had seen | Wide shot. Tomas stands, surprised, looking at the bag, then kneels. In the scene: bag. | ding |
+| s2f | 0:20 | Narrator | in his whole life. | Close-up. Tomas kneels, laughing, looking down. |   |
 
 ### Scene 3: rising trouble
 
@@ -34,10 +34,10 @@ Place: field, clear day colors. Music: tense.
 
 | Shot | At | Who speaks | Words | What you see | Sound |
 | --- | --- | --- | --- | --- | --- |
-| s3a | 0:22 | Narrator | He thought about his hungry children. | Close-up. Tomas holds the bag, sad, looking down. |   |
-| s3b | 0:24 | Narrator | He thought about his broken roof. | Medium shot. Tomas holds the bag, thinking, looking up. |   |
-| s3c | 0:26 | Narrator | Then he saw the mark on the bag. | Close-up. Tomas holds the bag, surprised, looking down. The camera jumps closer. | whoosh |
-| s3d | 0:29 | Narrator | It was the **queen's**. | Wide shot. Tomas covers the mouth with both hands, afraid, looking at the bag. In the scene: bag. Flying sweat drops on Tomas. | thud |
+| s3a | 0:22 | Narrator | He thought about his hungry children. | Close-up. Tomas kneels, sad, looking down. |   |
+| s3b | 0:24 | Narrator | He thought about his broken roof. | Wide shot. Tomas kneels, thinking, looking up. In the scene: bag. |   |
+| s3c | 0:26 | Narrator | Then he saw the mark on the bag. | Close-up. Tomas kneels, surprised, looking down. The camera jumps closer. | pop |
+| s3d | 0:29 | Narrator | It was the **queen's**. | Wide shot. Tomas kneels, surprised, looking at the bag, then covers the mouth with both hands and looks afraid. In the scene: bag. Flying sweat drops on Tomas. | whoosh |
 
 ### Scene 4: rising trouble
 
@@ -58,7 +58,7 @@ Place: castle, cold dawn colors. Music: tense.
 
 | Shot | At | Who speaks | Words | What you see | Sound |
 | --- | --- | --- | --- | --- | --- |
-| s5a | 0:41 | Narrator | He walked all the way to the castle. | Fade in. Wide shot. Tomas walks, holding the bag, determined. The camera travels along. | footsteps |
+| s5a | 0:41 | Narrator | He walked all the way to the castle. | Fade in. Medium shot. Tomas walks, holding the bag, determined. The camera travels along. | footsteps |
 | s5b | 0:44 | Narrator | The soldiers at the gate laughed at his old clothes. | Wide shot. Tomas holds the bag, sad, looking at a soldier at the gate. A soldier at the gate stands, smug, looking at Tomas, then points and looks laughing. A second soldier stands with arms crossed, laughing, looking at Tomas. In the scene: door. |   |
 | s5c | 0:47 | Tomas, the farmer | I have something that belongs to the queen. | Medium shot on Tomas. Tomas holds the bag, determined, looking at a soldier at the gate. A soldier at the gate stands, laughing, looking at Tomas, then looks surprised and looks at the bag. | pop |
 
@@ -69,7 +69,7 @@ Place: throne room, warm interior colors. Music: tense.
 | Shot | At | Who speaks | Words | What you see | Sound |
 | --- | --- | --- | --- | --- | --- |
 | s6a | 0:51 | Narrator | The queen counted the coins. All 100 were there. | Fade in. Wide shot. Tomas stands, neutral, looking at the queen. The queen sits, holding the coin, thinking, then looks surprised and looks at Tomas. In the scene: throne. | ding, ding |
-| s6b | 0:54 | The queen | Why did you not keep it? Nobody would have known. | Over the shoulder on the queen. Tomas stands, neutral, looking at the queen, seen from behind. The queen sits, thinking, looking at Tomas. In the scene: throne. |   |
+| s6b | 0:54 | The queen | Why did you not keep it? Nobody would have known. | Over the shoulder on the queen. Tomas stands, neutral, looking at the queen, seen from behind. The queen sits, holding the coin, thinking, looking at Tomas. In the scene: throne. |   |
 | s6c | 0:58 | Tomas, the farmer | **I** would have known. | Close-up on Tomas. Tomas stands, determined. The camera moves slowly closer. |   |
 | s6d | 1:00 | Narrator | The queen was quiet for a long time. | Close-up on the queen. The queen sits, thinking, looking down. In the scene: throne. |   |
 | s6e | 1:03 | The queen | I lost that bag on purpose. | Medium shot. Tomas stands, surprised, looking at the queen. The queen sits, happy, looking at Tomas, then stands. In the scene: throne. Exclamation mark on Tomas. | pop |
@@ -83,7 +83,7 @@ Place: throne room, warm interior colors. Music: triumph.
 | --- | --- | --- | --- | --- | --- |
 | s7a | 1:09 | Narrator | She trusted Tomas to look after the royal treasure. | Wide shot. Tomas stands, surprised, looking at the queen, then kneels and looks happy. The queen stands, happy, looking at Tomas. In the scene: throne. |   |
 | s7b | 1:13 | Narrator | And she gave him 10 gold coins every month, | Medium shot on Tomas. Tomas kneels, happy, then holds the coin and looks laughing and looks at the coin. | ding |
-| s7c | 1:15 | Narrator | for the rest of his life. | Wide shot. Tomas stands, happy, looking at the queen, then cheers and looks laughing. The queen stands, happy, looking at Tomas. In the scene: throne. |   |
+| s7c | 1:15 | Narrator | for the rest of his life. | Wide shot. Tomas stands, holding the coin, happy, looking at the queen, then cheers and looks laughing. The queen stands, happy, looking at Tomas. In the scene: throne. |   |
 
 ### Scene 8: closing line
 

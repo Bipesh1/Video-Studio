@@ -422,14 +422,27 @@ export function checkPlan(sb: Storyboard, world: World): PlanReport {
             `${at} shows the title in part ${scene.chapter}; the title belongs only at the start of part 1`,
           );
       }
-      // A cut inside a scene is the same moment seen again: nobody turns round, gets up or
-      // moves somewhere else between two frames (Biku, 2026-10-06: "its direction changes and
-      // looks like the posture didn't change in continuous frames").
-      if (previous && previous.scene.id === scene.id) {
-        const sameSize =
-          previous.shot.camera.framing === shot.camera.framing &&
-          shot.camera.move !== 'follow' &&
-          previous.shot.camera.move !== 'follow';
+      // A plain cut is the same moment seen again: nobody turns round, gets up, moves somewhere
+      // else or gains or loses what is in their hand between two frames (Biku, 2026-10-06:
+      // "its direction changes and looks like the posture didn't change in continuous
+      // frames"). That holds inside a scene, and into a new scene in the same place unless
+      // it comes in with a fade, which says time has passed.
+      const sameMoment =
+        previous &&
+        (previous.scene.id === scene.id ||
+          (shot.transition !== 'fade' && previous.scene.place === scene.place));
+      if (previous && sameMoment) {
+        const sameFraming = previous.shot.camera.framing === shot.camera.framing;
+        const travels = (other: Shot) => other.camera.move === 'follow';
+        const sameSize = sameFraming && !travels(shot) && !travels(previous.shot);
+        const shared = shot.actors.some((a) =>
+          previous?.shot.actors.some((b) => b.character === a.character),
+        );
+        if (sameFraming && shared && travels(shot) !== travels(previous.shot)) {
+          note(
+            `${at} is the same size of shot as "${previous.shot.id}", but the camera travels in one and stands still in the other, so the place jumps on the cut; change the shot size`,
+          );
+        }
         for (const actor of shot.actors) {
           const earlier = previous.shot.actors.find((a) => a.character === actor.character);
           if (!earlier || earlier.back || actor.back) continue;
@@ -441,6 +454,13 @@ export function checkPlan(sb: Storyboard, world: World): PlanReport {
           if (earlier.facing !== actor.facing) {
             note(
               `in ${at}, ${who} faces the other way after ${after}; keep them facing the same way`,
+            );
+          }
+          if (was.holds !== is.holds) {
+            const hands = (thing: string | undefined) =>
+              thing ? `holding the ${thing}` : 'with empty hands';
+            note(
+              `in ${at}, ${who} is ${hands(is.holds)} after ${after}, which left them ${hands(was.holds)}; let them take it inside a shot (a step), or bring the scene in with a fade`,
             );
           }
           if (isLow(was.pose) !== isLow(is.pose)) {

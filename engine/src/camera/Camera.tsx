@@ -9,6 +9,22 @@ import { ink } from '../tokens';
  * nested inside another. Plain cuts between shots are made by the shot sequences, not here.
  */
 
+/** How much closer a slow push-in is at a frame: 1 is where it began. */
+export const pushInZoom = (frame: number, durationInFrames: number, strength: number): number =>
+  interpolate(frame, [0, Math.max(1, durationInFrames)], [1, 1 + strength], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+    easing: Easing.inOut(Easing.quad),
+  });
+
+/** How much closer a fast push-in is at a frame: it lands in a few frames with a small overshoot. */
+export const punchInZoom = (frame: number, at: number, strength: number, frames: number): number =>
+  1 + strength * easeOutBack(clamp((frame - at) / Math.max(1, frames), 0, 1), 1.4);
+
+/** How far along a pan is at a frame, 0 to 1. */
+export const panShare = (frame: number, from: number, to: number): number =>
+  smoothstep((frame - from) / Math.max(1, to - from));
+
 /** A slow push-in toward a focus point, for emotional lines (Style 8). */
 export const PushIn = ({
   frame,
@@ -24,11 +40,7 @@ export const PushIn = ({
   focus: { x: number; y: number };
   children: ReactNode;
 }) => {
-  const zoom = interpolate(frame, [0, Math.max(1, durationInFrames)], [1, 1 + strength], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
-    easing: Easing.inOut(Easing.quad),
-  });
+  const zoom = pushInZoom(frame, durationInFrames, strength);
   return (
     <g
       transform={`translate(${focus.x} ${focus.y}) scale(${zoom}) translate(${-focus.x} ${-focus.y})`}
@@ -62,7 +74,7 @@ export const PunchIn = ({
   focus: { x: number; y: number };
   children: ReactNode;
 }) => {
-  const zoom = 1 + strength * easeOutBack(clamp((frame - at) / Math.max(1, frames), 0, 1), 1.4);
+  const zoom = punchInZoom(frame, at, strength, frames);
   return (
     <g
       transform={`translate(${focus.x} ${focus.y}) scale(${zoom}) translate(${-focus.x} ${-focus.y})`}
@@ -159,7 +171,7 @@ export const Pan = ({
   dy?: number;
   children: ReactNode;
 }) => {
-  const e = smoothstep((frame - from) / Math.max(1, to - from));
+  const e = panShare(frame, from, to);
   return <g transform={`translate(${-dx * e} ${-dy * e})`}>{children}</g>;
 };
 

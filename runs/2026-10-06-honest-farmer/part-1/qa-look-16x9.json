@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "video": "honest-farmer-part-1-16x9-v12.mp4",
+  "stills": {
+    "s1a": "ok",
+    "s1b": "ok",
+    "s2a": "ok",
+    "s2b": "ok",
+    "s2c": "ok",
+    "s2d": "ok",
+    "s2e": "ok",
+    "s2f": "ok",
+    "s3a": "ok",
+    "s3b": "ok",
+    "s3c": "ok",
+    "s3d": "ok",
+    "s4a": "ok",
+    "s4b": "ok",
+    "s4c": "ok",
+    "s4d": "ok"
+  },
+  "strips": {
+    "cut-s1a-s1b": "ok",
+    "cut-s1b-s2a": "ok",
+    "cut-s2a-s2b": "ok",
+    "cut-s2b-s2c": "ok",
+    "cut-s2c-s2d": "ok",
+    "cut-s2d-s2e": "ok",
+    "cut-s2e-s2f": "ok",
+    "cut-s2f-s3a": "ok",
+    "cut-s3a-s3b": "ok",
+    "cut-s3b-s3c": "ok",
+    "cut-s3c-s3d": "ok",
+    "cut-s3d-s4a": "ok",
+    "cut-s4a-s4b": "ok",
+    "cut-s4b-s4c": "ok",
+    "s1a-move-1": "ok",
+    "s1b-move-1": "ok",
+    "s1b-move-2": "ok",
+    "s2d-move-1": "ok",
+    "s2e-move-1": "ok",
+    "s3d-move-1": "ok",
+    "s4b-move-1": "ok",
+    "s4d-move-1": "ok"
+  },
+  "playbook": "ok",
+  "fixed": [
+    "The story went from the opening straight back to that morning on a plain cut, so Tomas seemed to lose the bag between two frames. That change of time now comes in with a fade.",
+    "A coin appeared in his hand from nowhere and turned into the bag on the next cut. He now walks up to the bag and kneels by it, and stays there until he sees whose it is.",
+    "The bag jumped from his hand to the ground on a cut. He does not hold it in that scene any more; when he sees the mark he springs to his feet beside it.",
+    "Two wide shots in a row made him jump sideways, and the tree and the bush jumped with him. The first is now a closer travelling shot, so the cut is a change of size.",
+    "His face switched from laughing to sad on a hard cut between two close-ups. A face now carries across a cut that is the same moment, so it turns over a few frames.",
+    "One caption sat over the bag and his knee. That shot is now wide, with the caption on the ground below him."
+  ],
+  "notes": [
+    "For the first second the title ribbon touches the top of Tomas's hat, while he is still standing.",
+    "The story speaks of the queen's mark on the bag, but the bag has no mark drawn on it; the shot shows his face when he sees it. A marked bag would have to be drawn."
+  ]
+}

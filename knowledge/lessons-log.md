@@ -517,3 +517,30 @@ Note (Claude's reading): L-0029 gave people steps, but I planned the opening as 
   by side instead of guessing.
 Status: active
 ```
+
+```
+L-0031 | 2026-10-06 | run: 2026-10-06-honest-farmer, part 1 (self-check of v10)
+Area: shots | Scope: general | Source: self-check
+Lesson: A thing follows the same rule as a person: it does not appear in a hand, change into
+  another thing or land on the ground between two shots. And when the story goes to another
+  time in the same place, it gets there through a fade.
+Evidence: Biku had passed v10 ("part 1 seems fine now"). The first self-check then measured
+  it clean, and the look at its frame strips found four faults the measurements cannot see:
+  the story cut from the opening straight back to that morning and Tomas lost the bag
+  between two frames; a coin appeared in his hand from nowhere and was the bag in the next
+  shot; the bag was in his hand in one shot and on the ground in the next; and two wide
+  shots in a row, one travelling and one still, made him and the trees jump sideways.
+Applied: shared/src/plan.ts (the planner points out what is in a hand changing on a cut, a
+  travelling shot cut against a still one of the same size, and holds a new scene in the
+  same place to the same moment unless it fades in); engine/src/stage/staging.ts (faces and
+  poses carry across such a cut); engine/src/stage/buildable.ts (says it cannot show a thing
+  being put down yet). The sample plan: he walks up to the bag, kneels by it and stays there
+  until he sees whose it is, then springs to his feet. Part 1 rendered again (v12), which
+  passes the self-check.
+Note (Claude's reading): the measurements catch what can be counted (a head out of frame, a
+  jump, a level) and the planner now catches these cuts, but they were found by looking at
+  strips of frames, not by either. The look is the part of the self-check that cannot be
+  skipped. Biku approved v10 before the check existed; v12 changes shots he had seen, so he
+  is told plainly what changed and v10 is still there.
+Status: active
+```

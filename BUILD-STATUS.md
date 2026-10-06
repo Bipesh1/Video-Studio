@@ -1,7 +1,7 @@
 # Build Status
 
-**Current phase:** Phase 4 (the full pipeline), steps 4A (foundation), 4B (script), 4C (shot planner) and 4D (assembly) done (2026-10-06). Phases 0 to 3 are complete. Next step is 4E (self-check), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
-**Next:** Biku watches part 1 of the sample story, built automatically from the plan: `runs/2026-10-06-honest-farmer/part-1/out/honest-farmer-part-1-16x9-v10.mp4` (42 seconds, wide, with voices, music, effects and captions; people now change posture inside a shot, as a movement that is seen). He says what to change, or "continue" for part 2 (its voice, sound and stills are made; its video is not rendered, by his rule that the next part waits for his word), or "start 4E". Before the test video in 4G he needs to give: a script, a name for his page, and his pick of voices.
+**Current phase:** Phase 4 (the full pipeline), steps 4A (foundation), 4B (script), 4C (shot planner), 4D (assembly) and 4E (self-check) done (2026-10-06). Phases 0 to 3 are complete. Next step is 4F (output), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
+**Next:** Biku reads the first self-check report, `runs/2026-10-06-honest-farmer/part-1/qa-report-16x9.md`, and watches the version it passed: `runs/2026-10-06-honest-farmer/part-1/out/honest-farmer-part-1-16x9-v12.mp4`. He had said of v10 "part 1 seems fine now"; the self-check then found four faults in v10 by looking and mended them, so v12 changes a few shots he had seen (v10 is still there). He says whether v12 is right, or "continue" for part 2 (not rendered; it waits for his word), or "start 4F". Before the test video in 4G he needs to give: a script, a name for his page, and his pick of voices.
 **Decided for Phase 4 (Biku, 2026-10-06):** his videos will be about 2 to 3 minutes. Biku proposed making them as parts of at most 1 minute from one script and combining them at the end. Agreed, with the studio doing the joining: one script is split into chapters of up to a minute at natural story breaks, each chapter is built and checked alone (so each fits the run budget and can be redone alone), then the chapters are joined into one final video in every size with one captions file; the chapters are kept too. Phase 4 must make the joins invisible: saved characters reused in every chapter, one voice and one loudness, music planned over the whole script so cuts fall on a pause or a mood change, the title only on the first chapter and the closing card only on the last. (The plan's 30-minute run budget then applies to a chapter, not to the whole video; this is Claude's reading and should be confirmed with Biku when Phase 4 starts.)
 **Also decided (Biku, 2026-10-06):** in a video made in parts, the studio stops after each part of about a minute and shows it; it goes on to the next part only when Biku says so ("so that its better than making all the video at once"). So a chapter is a checkpoint: no later chapter, no extra size and no joined video is rendered ahead of his go. Agreed by Biku the same day ("thats fine"): each chapter is shown in the phone size only, and the other two sizes and the joined video are made once every chapter is approved.
 **Last updated:** 2026-10-06
@@ -20,9 +20,37 @@ Each step ends with something Biku can look at, a commit and an update here. Sta
 - **4B. Script: done (2026-10-06).** The three script modes (as-is, refine, original) and splitting a long script into chapters of at most a minute.
 - **4C. Shot planner: done (2026-10-06).** A script turned into a full storyboard: who, where, doing what, camera, music, effects.
 - **4D. Assembly: done (2026-10-06).** A video built from a storyboard automatically, with voice, sound and captions.
-- **4E. Self-check.** The automatic checks and the plain-language QA report.
+- **4E. Self-check: done (2026-10-06).** The automatic checks and the plain-language QA report.
 - **4F. Output.** Preview first, then the three sizes, cover image, captions file, and joining chapters.
 - **4G. The test video.** One full 2 to 3 minute video in refine mode from Biku's script, made chapter by chapter, then Checkpoint 2.
+
+## Phase 4E. Self-check: done (2026-10-06)
+
+Asked by Biku ("part 1 seems fine now we will start phase 4E"). A finished part now checks itself before he sees it: `npm run qa -- --run=<run> --part=<n>` (Part 2, section 12).
+
+### Made
+
+- **Fourteen measured checks** of the newest video of a part: the file plays (size, speed, picture and sound, played through); the length; picture and voice in step (no gap between shots, the voice says the plan's words, each line heard over its own pictures); no dead silence; loudness and peak of the finished file; nothing drowning the words; captions fit; everyone inside the picture; no face under the title, a label or the captions; feet on the ground; nothing jumping; no picture held too long; whatever is picked up within reach; the plan's own checks again.
+- **The pictures are measured on every frame** from the same working-out they are drawn from (`engine/src/stage/staging.ts`, shared by `ShotPicture.tsx` and `measure.ts`), so what is measured is what is on screen: where each head lands, the title, label and caption boxes, feet against the ground, how far a head travels in one frame.
+- **Four checks made by looking:** every still against the 11 questions of the Style Check (held word for word to the style guide by a test) and 7 story questions; a strip of frames across every move inside a shot and every change of shot that keeps someone on screen; the playbook. Claude writes what it saw in `qa-look-<shape>.json`; a look that was not taken, or was taken at an older render, does not count, so the part cannot pass on measurements alone.
+- **The report Biku reads** (`qa-report-<shape>.md`): the verdict first, then what is left to fix, what is worth a second look, what was measured, what was looked at, what was found and put right on the way, and what the check cannot judge (how it sounds; whether the story holds him).
+- **The planner learned from it:** it points out what is in a hand changing on a cut, a travelling shot cut against a still one of the same size, and holds a new scene in the same place to the same moment unless it fades in. Faces and poses carry across such a cut. The builder says plainly that it cannot show a thing being put down yet.
+- **A chain of moves is body-aware:** walking into a kneel takes as long as any body move (`engine/src/rig/chain.ts`).
+- **Tests:** 80 new (the checks, the ffmpeg readers, the look, the report, the measurements on every pose and action so nothing drawn on purpose is mistaken for a fault, the planner's new notes). 540 in all.
+
+### What the first self-check found (part 1, v10, which Biku had passed)
+
+Measured: clean. By looking at the frame strips: four faults. The story cut from the opening straight back to "that morning" and Tomas lost the bag between two frames (now a fade). A coin appeared in his hand from nowhere and was the bag in the next shot. The bag was in his hand in one shot and on the ground in the next. Two wide shots in a row, one travelling and one still, made him and the trees jump sideways. Mended in the plan: he walks up to the bag, kneels by it and stays there until he sees whose it is, then springs to his feet; the walk is a closer shot. Two smaller things: a face switched from laughing to sad on a hard cut, and one caption sat over the bag. Rendered again as v11 and v12; v12 passes. Lesson L-0031. Three cuts of the same kind in part 2 were mended in the plan.
+
+### Open after 4E
+
+- **Biku has not seen v12 or the report.** v12 changes shots he passed in v10: the coin shot is gone, and he no longer holds the bag in the field after the opening.
+- **Worth his eye, in the report:** the title ribbon touches the top of Tomas's hat for the first second; the queen's mark on the bag is spoken of but the bag has no mark drawn on it (a marked bag would have to be drawn).
+- **For 4F, found by measuring the tall shape** (not built or shown yet): in a tall frame a shot that favours one of two people leaves the other outside the picture (s4b, s5c), and a closer title shot would put the title on the face. The check catches both; the tall layout has to be looked at in 4F.
+- **For 4F, the finished file's colour range:** the video is stored as full-range (`yuvj420p`). It plays, and the check accepts it, but the final render should set the standard range; confirm in the Remotion docs first.
+- **Not built:** putting a thing down inside a shot (the builder says so and the plan goes round it).
+- **Not redone, on purpose:** the practice videos and the Moon Tax video still show the quick kneel from before guide version 13.
+- **A real ear is still needed.** The check measures levels; it cannot hear.
 
 ## Phase 4D. Assembly: done (2026-10-06)
 

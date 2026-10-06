@@ -36,7 +36,18 @@ export function unbuildable(sb: Storyboard, cards: Record<string, CharacterCard>
           out.add(`the builder has no action called "${actor.action}"`);
         if (!(actor.expression in EXPRESSIONS))
           out.add(`the builder has no expression called "${actor.expression}"`);
+        // Taking a thing up is built (the hand reaches it); putting one down is not yet.
+        let inHand = actor.holds;
         for (const step of actor.then) {
+          if (step.holds !== undefined) {
+            const next = step.holds ?? undefined;
+            if (inHand && next !== inHand && shot.props.some((p) => p.prop === inHand)) {
+              out.add(
+                `the builder cannot show "${actor.character}" putting the ${inHand} down in shot "${shot.id}" yet`,
+              );
+            }
+            inHand = next;
+          }
           if (step.pose && !poses.has(step.pose))
             out.add(`the builder has no pose called "${step.pose}"`);
           if (step.action && !(step.action in ACTIONS))

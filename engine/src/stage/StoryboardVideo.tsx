@@ -5,14 +5,13 @@ import { AbsoluteFill, staticFile, useCurrentFrame, useVideoConfig } from 'remot
 import type { CalculateMetadataFunction } from 'remotion';
 import { Fade } from '../camera/Camera';
 import { Captions } from '../overlays/Captions';
-import { DEFAULT_PAGE_OPTIONS, buildPages, toCaptions } from '../overlays/captionPages';
-import type { PageOptions } from '../overlays/captionPages';
+import { buildPages, toCaptions } from '../overlays/captionPages';
 import { Label, TitleCard } from '../overlays/Titles';
 import { clamp } from '../rig/math';
 import { ink } from '../tokens';
 import { lookFrom } from '../wardrobe/cast';
 import { shotAt, timedShots } from './layout';
-import type { Size } from './layout';
+import { TITLE_FADE, TITLE_SECONDS, captionOptions, titleY } from './screen';
 import { ShotPicture } from './ShotPicture';
 
 export { HEAD_EFFECTS } from './names';
@@ -52,15 +51,7 @@ export const calculateStoryboardMetadata: CalculateMetadataFunction<StoryboardVi
   };
 };
 
-/** A wide frame shows one longer line at a time; a tall one takes two short lines. */
-export const captionOptions = (size: Size): PageOptions =>
-  size.width > size.height
-    ? { ...DEFAULT_PAGE_OPTIONS, maxLineChars: 34, maxLines: 1 }
-    : DEFAULT_PAGE_OPTIONS;
-
-/** How long the title stays, in seconds, and how long it takes to go. */
-const TITLE_SECONDS = 2.6;
-const TITLE_FADE = 0.25;
+export { captionOptions } from './screen';
 
 export const StoryboardVideo = ({
   storyboard,
@@ -113,7 +104,7 @@ export const StoryboardVideo = ({
               title={overlay.text}
               {...size}
               frame={local - 4}
-              y={width > height ? 0.13 : 0.17}
+              y={titleY(size)}
               {...(colors ? { paint: colors.titleRibbon } : {})}
             />
           </g>

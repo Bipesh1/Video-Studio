@@ -306,7 +306,7 @@
             }
           ],
           "sfx": [],
-          "transition": "cut",
+          "transition": "fade",
           "startMs": 8180,
           "endMs": 12760
         },
@@ -344,7 +344,7 @@
           "line": "n4",
           "words": "That morning, on the way to market,",
           "camera": {
-            "framing": "wide",
+            "framing": "medium",
             "move": "follow",
             "strength": 0.2
           },
@@ -389,7 +389,7 @@
               "expression": "neutral",
               "facing": "right",
               "headTurn": "three-quarter",
-              "x": 0.34,
+              "x": 0.47,
               "lookAt": "ahead",
               "back": false,
               "then": [
@@ -405,7 +405,7 @@
           "props": [
             {
               "prop": "bag",
-              "x": 0.62
+              "x": 0.6
             }
           ],
           "effects": [],
@@ -425,7 +425,7 @@
           "line": "n5",
           "words": "Inside was more money than he had seen",
           "camera": {
-            "framing": "medium",
+            "framing": "wide",
             "move": "none",
             "strength": 0.2
           },
@@ -436,20 +436,23 @@
               "expression": "surprised",
               "facing": "right",
               "headTurn": "three-quarter",
-              "x": 0.45,
-              "lookAt": "down",
+              "x": 0.47,
+              "lookAt": "bag",
               "back": false,
               "then": [
                 {
-                  "at": 0.3,
-                  "pose": "hold-object",
-                  "lookAt": "coin",
-                  "holds": "coin"
+                  "at": 0.2,
+                  "pose": "kneel"
                 }
               ]
             }
           ],
-          "props": [],
+          "props": [
+            {
+              "prop": "bag",
+              "x": 0.6
+            }
+          ],
           "effects": [],
           "sfx": [
             {
@@ -474,13 +477,12 @@
           "actors": [
             {
               "character": "tomas",
-              "pose": "hold-object",
+              "pose": "kneel",
               "expression": "laughing",
               "facing": "right",
               "headTurn": "three-quarter",
-              "x": 0.45,
-              "lookAt": "ahead",
-              "holds": "bag",
+              "x": 0.47,
+              "lookAt": "down",
               "back": false,
               "then": []
             }
@@ -528,13 +530,12 @@
           "actors": [
             {
               "character": "tomas",
-              "pose": "hold-object",
+              "pose": "kneel",
               "expression": "sad",
               "facing": "right",
               "headTurn": "three-quarter",
-              "x": 0.45,
+              "x": 0.47,
               "lookAt": "down",
-              "holds": "bag",
               "back": false,
               "then": []
             }
@@ -551,25 +552,29 @@
           "line": "n6",
           "words": "He thought about his broken roof.",
           "camera": {
-            "framing": "medium",
+            "framing": "wide",
             "move": "none",
             "strength": 0.2
           },
           "actors": [
             {
               "character": "tomas",
-              "pose": "hold-object",
+              "pose": "kneel",
               "expression": "thinking",
               "facing": "right",
               "headTurn": "three-quarter",
-              "x": 0.45,
+              "x": 0.47,
               "lookAt": "up",
-              "holds": "bag",
               "back": false,
               "then": []
             }
           ],
-          "props": [],
+          "props": [
+            {
+              "prop": "bag",
+              "x": 0.6
+            }
+          ],
           "effects": [],
           "sfx": [],
           "transition": "cut",
@@ -588,13 +593,12 @@
           "actors": [
             {
               "character": "tomas",
-              "pose": "hold-object",
+              "pose": "kneel",
               "expression": "surprised",
               "facing": "right",
               "headTurn": "three-quarter",
-              "x": 0.45,
+              "x": 0.47,
               "lookAt": "down",
-              "holds": "bag",
               "back": false,
               "then": []
             }
@@ -603,9 +607,9 @@
           "effects": [],
           "sfx": [
             {
-              "name": "whoosh",
+              "name": "pop",
               "at": "start",
-              "gainDb": -3
+              "gainDb": 0
             }
           ],
           "transition": "cut",
@@ -624,20 +628,26 @@
           "actors": [
             {
               "character": "tomas",
-              "pose": "hands-over-mouth",
-              "expression": "afraid",
+              "pose": "kneel",
+              "expression": "surprised",
               "facing": "right",
               "headTurn": "three-quarter",
-              "x": 0.4,
+              "x": 0.47,
               "lookAt": "bag",
               "back": false,
-              "then": []
+              "then": [
+                {
+                  "at": 0.1,
+                  "pose": "hands-over-mouth",
+                  "expression": "afraid"
+                }
+              ]
             }
           ],
           "props": [
             {
               "prop": "bag",
-              "x": 0.62
+              "x": 0.6
             }
           ],
           "effects": [
@@ -648,9 +658,9 @@
           ],
           "sfx": [
             {
-              "name": "thud",
+              "name": "whoosh",
               "at": "start",
-              "gainDb": 0
+              "gainDb": -3
             }
           ],
           "transition": "cut",

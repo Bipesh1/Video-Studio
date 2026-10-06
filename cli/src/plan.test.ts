@@ -325,7 +325,7 @@ describe('things worth a second look', () => {
       'looks at the bag standing on the ground, which a medium shot cuts off',
     );
     const hand = plan((s) => {
-      const shot = shotOf(s, 's2e');
+      const shot = shotOf(s, 's7b');
       shot.camera.framing = 'close-up';
     });
     expect(notes(hand)).toContain('looks at the coin in their hand, which a close-up cuts off');
@@ -386,6 +386,45 @@ describe('things worth a second look', () => {
     expect(notes(plan())).not.toContain('after the cut from');
   });
 
+  it('points out a thing that comes or goes from a hand on a cut', () => {
+    // As the self-check first found it: a coin in his hand, then at once the bag.
+    const swapped = plan((s) => {
+      const tomas = shotOf(s, 's2f').actors[0];
+      if (tomas) Object.assign(tomas, { pose: 'hold-object', holds: 'bag' });
+    });
+    expect(notes(swapped)).toContain(
+      'in shot "s2f", "tomas" is holding the bag after the cut from "s2e", which left them with empty hands',
+    );
+    // What a step puts in the hand counts as held at the end of the shot.
+    const kept = plan((s) => {
+      const tomas = shotOf(s, 's7c').actors[0];
+      if (tomas) delete tomas.holds;
+    });
+    expect(notes(kept)).toContain(
+      'in shot "s7c", "tomas" is with empty hands after the cut from "s7b", which left them holding the coin',
+    );
+  });
+
+  it('holds a new scene in the same place to the same moment, unless it fades in', () => {
+    // The story goes back to that morning: on a plain cut he would lose the bag between two frames.
+    const plain = plan((s) => {
+      shotOf(s, 's2a').transition = 'cut';
+    });
+    expect(notes(plain)).toContain(
+      'in shot "s2a", "tomas" is with empty hands after the cut from "s1b", which left them holding the bag',
+    );
+    expect(notes(plan())).not.toContain('shot "s2a"');
+  });
+
+  it('points out a travelling shot cut against a still one of the same size', () => {
+    const jump = plan((s) => {
+      shotOf(s, 's2c').camera.framing = 'wide';
+    });
+    expect(notes(jump)).toContain(
+      'shot "s2d" is the same size of shot as "s2c", but the camera travels in one and stands still in the other',
+    );
+  });
+
   it('checks the names in a step against the library', () => {
     const sb = plan((s) => {
       const tomas = shotOf(s, 's2d').actors[0];
@@ -439,7 +478,7 @@ describe('the shot list Biku reads', () => {
     expect(describeShot(shotOf(sb, 's2d'), sb, world)).toContain(
       'Tomas walks, neutral, then stands and looks surprised and looks at the bag.',
     );
-    expect(describeShot(shotOf(sb, 's2e'), sb, world)).toContain('then holds the coin');
+    expect(describeShot(shotOf(sb, 's7b'), sb, world)).toContain('then holds the coin');
     expect(describeShot(shotOf(sb, 's6b'), sb, world)).toContain(
       'Tomas stands, neutral, looking at the queen, seen from behind',
     );

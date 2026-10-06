@@ -20,6 +20,59 @@ const pop = (frame: number | undefined): number =>
 /** The line weight of title boxes, matched to the characters: a share of the frame width. */
 const edgeFor = (width: number) => width * 0.0075;
 
+/** The sizes of a title card in a frame, before anything is drawn. */
+export function titleCardLayout(title: string, width: number, height: number) {
+  // A wide frame has room for a longer line, so a short title stays on one.
+  const lines = wrapWords(viewerText(title), width > height ? 24 : 16).slice(0, 3);
+  const basis = textBasis(width, height);
+  const size = fitSize(lines, basis * 0.105, basis * 0.72);
+  const lineHeight = size * 1.12;
+  const textW = Math.max(...lines.map((l) => textWidth(l, size)));
+  return {
+    lines,
+    basis,
+    size,
+    lineHeight,
+    bw: Math.min(basis * 0.9, textW + size * 1.5),
+    bh: lineHeight * lines.length + size * 0.7,
+    tail: size * 0.55,
+  };
+}
+
+/** The box a title card's ribbon takes on screen, tails included. `y` is as for TitleCard. */
+export function titleCardBox(title: string, width: number, height: number, y = 0.3) {
+  const { bw, bh, tail } = titleCardLayout(title, width, height);
+  return { x: width / 2 - bw / 2 - tail, y: height * y - bh / 2, width: bw + 2 * tail, height: bh };
+}
+
+/** The sizes and place of a label in a frame, before anything is drawn. */
+export function labelLayout(
+  text: string,
+  width: number,
+  height: number,
+  at: 'top-left' | 'top-right' | 'top' = 'top-left',
+) {
+  const words = viewerText(text);
+  const basis = textBasis(width, height);
+  const size = fitSize([words], basis * 0.052, basis * 0.74);
+  const bw = textWidth(words, size) + size * 1.5;
+  const margin = basis * 0.05;
+  const cx =
+    at === 'top-left' ? margin + bw / 2 : at === 'top-right' ? width - margin - bw / 2 : width / 2;
+  return { words, basis, size, bw, bh: size * 1.75, cx, cy: height * 0.075 };
+}
+
+/** The box a label takes on screen. */
+export function labelBox(
+  text: string,
+  width: number,
+  height: number,
+  at: 'top-left' | 'top-right' | 'top' = 'top-left',
+) {
+  const { bw, bh, cx, cy } = labelLayout(text, width, height, at);
+  return { x: cx - bw / 2, y: cy - bh / 2, width: bw, height: bh };
+}
+
 /**
  * A title card: a ribbon banner across the upper middle of the frame with the title on it in
  * white, and an optional smaller line under it on a cream box. Long titles wrap onto two
@@ -46,19 +99,10 @@ export function TitleCard({
   y?: number;
 }) {
   const tones = accent(paint);
-  // A wide frame has room for a longer line, so a short title stays on one.
-  const lines = wrapWords(viewerText(title), width > height ? 24 : 16).slice(0, 3);
-  const basis = textBasis(width, height);
-  const maxText = basis * 0.72;
-  const size = fitSize(lines, basis * 0.105, maxText);
-  const lineHeight = size * 1.12;
-  const textW = Math.max(...lines.map((l) => textWidth(l, size)));
+  const { lines, basis, size, lineHeight, bw, bh, tail } = titleCardLayout(title, width, height);
   const edge = edgeFor(basis);
-  const bw = Math.min(basis * 0.9, textW + size * 1.5);
-  const bh = lineHeight * lines.length + size * 0.7;
   const cx = width / 2;
   const cy = height * y;
-  const tail = size * 0.55;
   const s = pop(frame);
   if (s <= 0) return null;
   // A ribbon: a box with a swallow-tail cut into each end.
@@ -151,16 +195,8 @@ export function Label({
   paint?: string;
 }) {
   const tones = accent(paint);
-  const words = viewerText(text);
-  const basis = textBasis(width, height);
-  const size = fitSize([words], basis * 0.052, basis * 0.74);
-  const bw = textWidth(words, size) + size * 1.5;
-  const bh = size * 1.75;
+  const { words, basis, size, bw, bh, cx, cy } = labelLayout(text, width, height, at);
   const edge = edgeFor(basis) * 0.8;
-  const margin = basis * 0.05;
-  const cx =
-    at === 'top-left' ? margin + bw / 2 : at === 'top-right' ? width - margin - bw / 2 : width / 2;
-  const cy = height * 0.075;
   const s = pop(frame);
   if (s <= 0) return null;
   return (

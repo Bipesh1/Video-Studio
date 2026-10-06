@@ -16,6 +16,7 @@ engine/out/
 runs/**/audio/
 runs/**/stills/
 runs/**/preview/
+runs/**/qa/
 runs/**/out/
 runs/**/*.mp4
 runs/**/*.wav

@@ -53,16 +53,16 @@
       "seed": 4
     },
     {
-      "name": "whoosh",
+      "name": "pop",
       "atMs": 28040,
-      "gainDb": -3,
+      "gainDb": 0,
       "pan": 0,
       "seed": 5
     },
     {
-      "name": "thud",
+      "name": "whoosh",
       "atMs": 29995,
-      "gainDb": 0,
+      "gainDb": -3,
       "pan": 0,
       "seed": 6
     },

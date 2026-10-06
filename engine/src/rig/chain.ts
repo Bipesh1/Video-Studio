@@ -1,6 +1,7 @@
 import { clamp, smoothstep } from './math';
-import { mixPoses } from './pose';
+import { BODY_MOVE, bodyMoveFrames, mixBodies, mixPoses } from './pose';
 import type { LegState, ResolvedPose } from './types';
+import { tokens } from '../tokens';
 
 /**
  * Moves one after another (Phase 2D): sneak, then run, then jump. Every action in the library
@@ -51,8 +52,15 @@ export function chainAt(time: number, links: readonly Link[], blend = CHAIN_BLEN
   }
   const pose = movePose(current.at(Math.max(0, time - current.from)), origin);
   const since = time - current.from;
-  if (!previous || since >= blend) return pose;
+  if (!previous) return pose;
   const left = movePose(previous.link.at(current.from - previous.link.from), previous.origin);
-  const e = smoothstep(clamp(since / blend, 0, 1));
-  return mixPoses(left, pose, e, e);
+  // A change that takes the whole body down or up (walking into a kneel) is seen to happen,
+  // like any body move (Style 8): it takes longer, and the feet travel with the hips.
+  const start = movePose(current.at(0), origin);
+  const travel = Math.abs(left.hipY - start.hipY);
+  const whole = travel >= BODY_MOVE;
+  const span = whole ? Math.max(blend, bodyMoveFrames(travel) / tokens.motion.fps) : blend;
+  if (since >= span) return pose;
+  const e = smoothstep(clamp(since / span, 0, 1));
+  return whole ? mixBodies(left, pose, e, e) : mixPoses(left, pose, e, e);
 }
