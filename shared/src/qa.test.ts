@@ -11,6 +11,7 @@ import {
   lengthCheck,
   lookChecks,
   loudnessCheck,
+  madeFromCheck,
   parseLoudness,
   parseProbe,
   parseSilences,
@@ -18,6 +19,7 @@ import {
   qaStrips,
   qaVerdict,
   silenceCheck,
+  soundDifference,
   stepCheck,
   wordsHeardCheck,
 } from './qa';
@@ -369,6 +371,81 @@ describe('nothing drowns the words', () => {
     expect(texts(wordsHeardCheck({ mix: null, track }))).toContain('no report of the mix');
     expect(texts(wordsHeardCheck({ mix: { ...mix, durationMs: 1000 }, track }))).toContain(
       'not of this voice',
+    );
+  });
+});
+
+describe('the video is of this plan and this sound', () => {
+  const rate = 8000;
+  /** Ten seconds of something like a voice over music: two tones that come and go, and a hiss. */
+  const mixOf = (seconds = 10): Int16Array => {
+    const out = new Int16Array(rate * seconds);
+    let noise = 7;
+    for (let i = 0; i < out.length; i++) {
+      const t = i / rate;
+      noise = (noise * 1103515245 + 12345) % 2147483648;
+      const hiss = (noise / 2147483648 - 0.5) * 600;
+      out[i] = Math.round(
+        6000 * Math.sin(2 * Math.PI * 220 * t) * (0.6 + 0.4 * Math.sin(2 * Math.PI * 0.7 * t)) +
+          2500 * Math.sin(2 * Math.PI * 523 * t) +
+          hiss,
+      );
+    }
+    return out;
+  };
+  const mix = mixOf();
+  /** The mix as a video file carries it: a touch quieter, a few samples late, a little noise. */
+  const encoded = (source: Int16Array, lag = 12): Int16Array =>
+    source.map((_, i) => Math.round((source[i - lag] ?? 0) * 0.97 + ((i * 37) % 11) - 5));
+
+  it('finds the sound of a video to be its mix, a few samples late and a touch quieter', () => {
+    const { worstDb } = soundDifference(encoded(mix), mix, rate);
+    expect(worstDb).toBeLessThan(-30);
+  });
+
+  it('finds one second where another sound effect was mixed in', () => {
+    const other = mix.slice();
+    // A thud in the seventh second that the mix as it stands does not have.
+    for (let i = 0; i < rate / 2; i++) {
+      const at = 6 * rate + 1000 + i;
+      other[at] = (other[at] ?? 0) + Math.round(5000 * Math.sin(2 * Math.PI * 90 * (i / rate)));
+    }
+    const found = soundDifference(encoded(other), mix, rate);
+    expect(found.worstDb).toBeGreaterThan(-30);
+    expect(found.atMs).toBe(6000);
+  });
+
+  it('passes a video made from the plan and the mix as they stand', () => {
+    const record = {
+      video: 'a-v2.mp4',
+      storyboard: 'abc',
+      mix: 'def',
+      madeAt: '2026-10-06T00:00:00Z',
+    };
+    const good = madeFromCheck({ record, storyboard: 'abc', sound: { worstDb: -40, atMs: 0 } });
+    expect(good.findings).toEqual([]);
+    expect(good.detail).toContain('40 dB under it at most');
+  });
+
+  it('fails a video older than its plan, one with the last mix in it, and one with no record', () => {
+    const record = {
+      video: 'a-v2.mp4',
+      storyboard: 'abc',
+      mix: 'def',
+      madeAt: '2026-10-06T00:00:00Z',
+    };
+    const sound = { worstDb: -40, atMs: 0 };
+    expect(texts(madeFromCheck({ record, storyboard: 'xyz', sound }))).toContain(
+      'the plan has changed since this video was made; render it again',
+    );
+    expect(
+      texts(madeFromCheck({ record, storyboard: 'abc', sound: { worstDb: -18, atMs: 29000 } })),
+    ).toContain('the sound in the video is not the mix as it stands now (they part most at 0:29)');
+    expect(texts(madeFromCheck({ record: null, storyboard: 'abc', sound }))).toContain(
+      'there is no record of what this video was made from',
+    );
+    expect(texts(madeFromCheck({ record, storyboard: 'abc', sound: null }))).toContain(
+      'could not be compared',
     );
   });
 });

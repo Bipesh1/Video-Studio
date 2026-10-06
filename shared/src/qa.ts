@@ -436,6 +436,106 @@ export function wordsHeardCheck(input: { mix: MixReport | null; track: VoiceTrac
   };
 }
 
+/** What the make stage writes beside a video: the plan and the mix it was rendered from. */
+export type MadeFrom = { video: string; storyboard: string; mix: string; madeAt: string };
+
+/**
+ * How far the sound in a video is from the mix it should carry, second by second: the level of
+ * what is left when one is taken from the other, in dB under the mix. Making a video file
+ * leaves about -40 dB; a different effect or another take of the music leaves -20 dB or more.
+ * Both are mono samples at the same rate. The two are lined up first, within 50 ms.
+ */
+export function soundDifference(
+  video: Int16Array,
+  mix: Int16Array,
+  rate: number,
+): { worstDb: number; atMs: number } {
+  const reach = Math.round(rate * 0.05);
+  const head = Math.min(rate * 10, Math.min(video.length, mix.length) - 2 * reach);
+  if (head <= rate) return { worstDb: 0, atMs: 0 };
+  const dot = (a: Int16Array, from: number, b: Int16Array, at: number, n: number) => {
+    let sum = 0;
+    for (let i = 0; i < n; i++) sum += (a[from + i] ?? 0) * (b[at + i] ?? 0);
+    return sum;
+  };
+  let lag = 0;
+  let best = -Infinity;
+  for (let l = -reach; l <= reach; l += Math.max(1, Math.round(rate / 4000))) {
+    const c = dot(video, reach + l, mix, reach, head);
+    if (c > best) {
+      best = c;
+      lag = l;
+    }
+  }
+  const n = Math.min(video.length - reach - lag, mix.length - reach) - reach;
+  const gain =
+    dot(video, reach + lag, mix, reach, n) / (dot(video, reach + lag, video, reach + lag, n) || 1);
+  let worstDb = -Infinity;
+  let atMs = 0;
+  for (let from = 0; from + rate <= n; from += rate) {
+    let left = 0;
+    let whole = 0;
+    for (let i = 0; i < rate; i++) {
+      const m = mix[reach + from + i] ?? 0;
+      const d = m - gain * (video[reach + lag + from + i] ?? 0);
+      left += d * d;
+      whole += m * m;
+    }
+    // A second with next to nothing in it cannot be compared.
+    if (whole / rate < 100) continue;
+    const db = 10 * Math.log10(left / whole + 1e-12);
+    if (db > worstDb) {
+      worstDb = db;
+      atMs = Math.round((from / rate) * 1000);
+    }
+  }
+  return { worstDb, atMs };
+}
+
+/** What is left of the mix in a video's sound may be no louder than this, in dB under the mix. */
+export const SOUND_MATCH_DB = -30;
+
+/**
+ * The video is of this plan and this sound: it was rendered from the storyboard as it stands,
+ * and the sound inside it is the mix as it stands. Without this a part could pass with every
+ * picture measured from a newer plan than the one in the video, or with the last mix's sound.
+ */
+export function madeFromCheck(input: {
+  /** What the make stage wrote beside the video; null when there is nothing. */
+  record: MadeFrom | null;
+  /** The storyboard of the part as it stands now. */
+  storyboard: string;
+  /** The video's sound against the mix; null when it could not be compared. */
+  sound: { worstDb: number; atMs: number } | null;
+}): QaCheck {
+  const { record, storyboard, sound } = input;
+  const findings: QaFinding[] = [];
+  if (!record) {
+    findings.push(problem('there is no record of what this video was made from; render it again'));
+  } else if (record.storyboard !== storyboard) {
+    findings.push(problem('the plan has changed since this video was made; render it again'));
+  }
+  if (!sound) {
+    findings.push(problem('the sound in the video could not be compared with the mix'));
+  } else if (sound.worstDb > SOUND_MATCH_DB) {
+    findings.push(
+      problem(
+        `the sound in the video is not the mix as it stands now (they part most at ${clock(sound.atMs)}); render it again`,
+        { atMs: sound.atMs },
+      ),
+    );
+  }
+  return {
+    id: 'made-from',
+    title: 'The video is of this plan and this sound',
+    by: 'measured',
+    detail: sound
+      ? `rendered from the plan as it stands; its sound is the mix as it stands, second for second (what is left over is ${Math.abs(Math.round(sound.worstDb))} dB under it at most)`
+      : 'the sound could not be compared',
+    findings,
+  };
+}
+
 // ------------------------------------------------------------------ what Claude saw
 
 const questionText = (id: string): string => QA_QUESTIONS.find((q) => q.id === id)?.text ?? id;

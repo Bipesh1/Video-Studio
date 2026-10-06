@@ -544,3 +544,24 @@ Note (Claude's reading): the measurements catch what can be counted (a head out 
   is told plainly what changed and v10 is still there.
 Status: active
 ```
+
+```
+L-0032 | 2026-10-06 | run: 2026-10-06-honest-farmer, part 2 (first render) and part 1 (v11)
+Area: engine | Scope: general | Source: self-check
+Lesson: A video is checked against what it was made from. It has to be of the plan as it
+  stands and carry the sound as it stands, and the check has to prove both from the file.
+Evidence: Part 2's first video failed to render: the renderer was handed its sound before
+  the sound existed. The same fault had passed unseen in part 1: when stills and video were
+  made in one go, the video got the mix of the render before. v11 (never shown) carried
+  v10's sound effects. v12 was right only because nothing in the sound had changed since
+  v11. No check noticed: loudness, silence and length are the same for either mix.
+Applied: cli/src/make.ts (the mix goes to the renderer before the engine is bundled, and a
+  bundle made before a newer mix is made again; a record of the plan and the mix is written
+  beside every video); shared/src/qa.ts and cli/src/qa.ts (a new measured check: the video's
+  record matches the plan as it stands, and the sound inside the file is compared with the
+  mix second by second). v12's sound was compared and found right; both parts rendered again.
+Note (Claude's reading): a check that measures the plan instead of the video says nothing
+  about a video older than its plan. Wherever a check reads a side file (the plan, the mix
+  report), something has to tie that file to the video being judged.
+Status: active
+```

@@ -6,6 +6,7 @@ import type { QaCheck, Storyboard, VoiceTrack } from '@studio/shared';
 import { describe, expect, it, vi } from 'vitest';
 import { ACTIONS } from '../rig/actions';
 import { POSES } from '../rig/poses';
+import { captionPagesFor } from './screen';
 import {
   FACE_COVERED,
   JUMP,
@@ -99,6 +100,21 @@ describe('what the measurements catch', () => {
     expect(found(measure(sb), 'problem').join('\n')).toContain(
       "in-frame: Tomas, the farmer's head is out of the picture (s2d)",
     );
+  });
+
+  it('someone on the move who is never seen at all', () => {
+    const gone = alone((actor) => {
+      delete actor.pose;
+      Object.assign(actor, { action: 'walk', then: [], lookAt: 'ahead', x: 1.9 });
+    });
+    expect(found(measure(gone), 'problem').join('\n')).toContain('head is out of the picture');
+    // Walking into the picture and stopping in it is how someone arrives: not a fault.
+    const arrives = alone((actor) => {
+      delete actor.pose;
+      Object.assign(actor, { action: 'run', lookAt: 'ahead', x: 0.5 });
+      actor.then = [{ at: 0.7, pose: 'stand' }];
+    });
+    expect(found(measure(arrives).filter((c) => c.id === 'in-frame'))).toEqual([]);
   });
 
   it('a face under the title', () => {
@@ -272,5 +288,47 @@ describe('captions', () => {
         .map((f) => f.text)
         .join('\n'),
     ).toContain('the caption "Stop." is up for only 0.10 s');
+  });
+});
+
+describe('a caption and its pictures', () => {
+  it('never stays up after the last picture of its own line has gone', () => {
+    // One line over one shot that ends 200 ms after its last word; the next line starts later.
+    const sb = structuredClone(farmer);
+    const [first, second] = sb.scenes[0]?.shots ?? [];
+    if (!first || !second) throw new Error('no shots');
+    Object.assign(first, { startMs: 0, endMs: 2200 });
+    Object.assign(second, { startMs: 2200, endMs: 6000 });
+    const word = (text: string, startMs: number, endMs: number, lineId: string) => ({
+      text,
+      startMs,
+      endMs,
+      lineId,
+      emphasis: false,
+    });
+    const track: VoiceTrack = {
+      version: 1,
+      audioFile: 'voice.wav',
+      sampleRate: 48000,
+      durationMs: 6000,
+      timingSource: 'kokoro',
+      loudnessLufs: -14,
+      lines: [],
+      words: [
+        word('Found.', 300, 2000, first.line),
+        word('Nobody', 2900, 3300, second.line),
+        word('saw.', 3300, 3700, second.line),
+      ],
+    };
+    const one = {
+      ...sb,
+      scenes: [{ ...(sb.scenes[0] as (typeof sb.scenes)[number]), shots: [first, second] }],
+    };
+    const pages = captionPagesFor(one, track, WIDE);
+    // Left alone it would stay 500 ms after its last word, 300 ms into the next shot.
+    expect(pages[0]?.endMs).toBe(2200);
+    // The last caption has its pictures to the end, so it keeps its moment after the last word.
+    expect(pages[1]?.endMs).toBe(4200);
+    expect(captionPagesFor(one, null, WIDE)).toEqual([]);
   });
 });

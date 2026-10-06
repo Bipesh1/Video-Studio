@@ -4,7 +4,7 @@
   "part": 1,
   "parts": 2,
   "size": "16:9",
-  "video": "honest-farmer-part-1-16x9-v12.mp4",
+  "video": "honest-farmer-part-1-16x9-v13.mp4",
   "seconds": 42.233333,
   "checkedOn": "2026-10-06",
   "checks": [
@@ -13,6 +13,13 @@
       "title": "The file plays",
       "by": "measured",
       "detail": "1920x1080, 30 pictures a second, 42.2 s, picture and sound both there; played through from start to finish",
+      "findings": []
+    },
+    {
+      "id": "made-from",
+      "title": "The video is of this plan and this sound",
+      "by": "measured",
+      "detail": "rendered from the plan as it stands; its sound is the mix as it stands, second for second (what is left over is 37 dB under it at most)",
       "findings": []
     },
     {
@@ -154,7 +161,8 @@
     "The bag jumped from his hand to the ground on a cut. He does not hold it in that scene any more; when he sees the mark he springs to his feet beside it.",
     "Two wide shots in a row made him jump sideways, and the tree and the bush jumped with him. The first is now a closer travelling shot, so the cut is a change of size.",
     "His face switched from laughing to sad on a hard cut between two close-ups. A face now carries across a cut that is the same moment, so it turns over a few frames.",
-    "One caption sat over the bag and his knee. That shot is now wide, with the caption on the ground below him."
+    "One caption sat over the bag and his knee. That shot is now wide, with the caption on the ground below him.",
+    "A caption stayed on screen for a few frames after its own picture had gone, over the next shot or a fade. A caption now leaves with the last picture of its line."
   ],
   "notes": [
     "For the first second the title ribbon touches the top of Tomas's hat, while he is still standing.",

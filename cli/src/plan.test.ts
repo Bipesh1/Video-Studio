@@ -405,6 +405,30 @@ describe('things worth a second look', () => {
     );
   });
 
+  it('remembers what someone held the last time they were seen, a few shots back', () => {
+    // As the self-check found it in part 2: the queen holds a coin, Tomas has a close-up,
+    // and when we see her again her hands are empty.
+    const forgotten = plan((s) => {
+      const queen = shotOf(s, 's6b').actors.find((a) => a.character === 'queen');
+      if (queen) queen.holds = 'coin';
+    });
+    expect(notes(forgotten)).toContain(
+      'in shot "s6d", "queen" is with empty hands after "s6b", which left them holding the coin',
+    );
+  });
+
+  it('points out a thing that stands somewhere else in the next shot', () => {
+    const moved = plan((s) => {
+      const throne = shotOf(s, 's7a').props.find((p) => p.prop === 'throne');
+      if (throne) throne.x = 0.82;
+    });
+    expect(notes(moved)).toContain(
+      'in shot "s7a", the throne stands somewhere else than in "s6e"; a thing stays where it is from shot to shot',
+    );
+    // Two chairs in one room are two things; neither is taken for the other.
+    expect(notes(plan())).not.toContain('stands somewhere else');
+  });
+
   it('holds a new scene in the same place to the same moment, unless it fades in', () => {
     // The story goes back to that morning: on a plain cut he would lose the bag between two frames.
     const plain = plan((s) => {

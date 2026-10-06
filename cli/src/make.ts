@@ -230,11 +230,29 @@ const SIZE: SizeName = (() => {
 const sizeTag = SIZE.replace(':', 'x');
 
 let serveUrl: string | null = null;
+const shaOfFile = (file: string) =>
+  createHash('sha256').update(readFileSync(file)).digest('hex').slice(0, 16);
+
+/** The mix the bundle was made with: the renderer serves its own copy of the sound, taken then. */
+let bundledMix: string | null = null;
+
+/**
+ * The engine bundled for rendering. The bundle takes its own copy of the sound at the moment
+ * it is made, so the mix goes in first, and a bundle made before a newer mix is made again:
+ * a video must never carry the sound of the render before it.
+ */
 async function bundled() {
-  if (!serveUrl) {
+  const mix = path.join(audioDir, 'mix.wav');
+  const current = existsSync(mix) ? shaOfFile(mix) : null;
+  if (!serveUrl || bundledMix !== current) {
+    if (current) {
+      mkdirSync(publicPart, { recursive: true });
+      copyFileSync(mix, path.join(publicPart, 'mix.wav'));
+    }
     serveUrl = await timed('bundle', () =>
       bundle({ entryPoint: path.join(engineDir, 'src', 'index.ts'), publicDir }),
     );
+    bundledMix = current;
   }
   return serveUrl;
 }
@@ -334,8 +352,6 @@ function nextVersion(outDir: string, name: string): number {
 async function video(timedPart: Storyboard) {
   const mix = path.join(audioDir, 'mix.wav');
   if (!existsSync(mix)) throw new Error('No sound yet for this part. Run the --sound stage first.');
-  mkdirSync(publicPart, { recursive: true });
-  copyFileSync(mix, path.join(publicPart, 'mix.wav'));
   const url = await bundled();
   const props = inputProps(timedPart, true);
   const composition = await selectComposition({
@@ -373,6 +389,18 @@ async function video(timedPart: Storyboard) {
   });
   writeFileSync(path.join(outDir, `${name}.srt`), srt);
   log(`  ${rel(path.join(outDir, `${name}.srt`))}`);
+  // What this video was made from, so the self-check can tell a video older than its plan.
+  const madeFrom = {
+    video: `${name}.mp4`,
+    storyboard: shaOfFile(path.join(partDir, 'storyboard.json')),
+    mix: shaOfFile(mix),
+    madeAt: new Date().toISOString(),
+  };
+  writeFileSync(
+    path.join(outDir, `${name}.json`),
+    `${JSON.stringify(madeFrom, null, 2)}\n`,
+    'utf8',
+  );
 }
 
 async function main() {

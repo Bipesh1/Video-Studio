@@ -5,13 +5,12 @@ import { AbsoluteFill, staticFile, useCurrentFrame, useVideoConfig } from 'remot
 import type { CalculateMetadataFunction } from 'remotion';
 import { Fade } from '../camera/Camera';
 import { Captions } from '../overlays/Captions';
-import { buildPages, toCaptions } from '../overlays/captionPages';
 import { Label, TitleCard } from '../overlays/Titles';
 import { clamp } from '../rig/math';
 import { ink } from '../tokens';
 import { lookFrom } from '../wardrobe/cast';
 import { shotAt, timedShots } from './layout';
-import { TITLE_FADE, TITLE_SECONDS, captionOptions, titleY } from './screen';
+import { TITLE_FADE, TITLE_SECONDS, captionPagesFor, titleY } from './screen';
 import { ShotPicture } from './ShotPicture';
 
 export { HEAD_EFFECTS } from './names';
@@ -72,7 +71,7 @@ export const StoryboardVideo = ({
       lookFrom(m.card ? (cards[m.card] ?? {}) : (m.look ?? {}), m.id),
     ]),
   );
-  const pages = track ? buildPages(toCaptions(track.words), captionOptions(size)) : [];
+  const pages = captionPagesFor(storyboard, track, size);
   const local = frame - ts.startFrame;
   const overlay = ts.shot.overlay;
   const titleGone = clamp((local / fps - TITLE_SECONDS) / TITLE_FADE, 0, 1);

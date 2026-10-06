@@ -281,6 +281,8 @@ export function checkPlan(sb: Storyboard, world: World): PlanReport {
   let totalSeconds = 0;
   let run: { framing: string; count: number; from: string } | null = null;
   let previous: { shot: Shot; scene: Scene } | null = null;
+  const lastSeen = new Map<string, { actor: Actor; shot: string }>();
+  const lastStood = new Map<string, { x: number; shot: string }>();
   const all = sb.scenes.flatMap((scene) => scene.shots.map((shot) => ({ shot, scene })));
 
   for (const scene of sb.scenes) {
@@ -431,6 +433,12 @@ export function checkPlan(sb: Storyboard, world: World): PlanReport {
         previous &&
         (previous.scene.id === scene.id ||
           (shot.transition !== 'fade' && previous.scene.place === scene.place));
+      // Who and what was last seen in this same moment, and in which shot. A fade or a new
+      // place starts afresh.
+      if (!sameMoment) {
+        lastSeen.clear();
+        lastStood.clear();
+      }
       if (previous && sameMoment) {
         const sameFraming = previous.shot.camera.framing === shot.camera.framing;
         const travels = (other: Shot) => other.camera.move === 'follow';
@@ -444,13 +452,17 @@ export function checkPlan(sb: Storyboard, world: World): PlanReport {
           );
         }
         for (const actor of shot.actors) {
-          const earlier = previous.shot.actors.find((a) => a.character === actor.character);
-          if (!earlier || earlier.back || actor.back) continue;
+          // The last shot they were in, which may be a few shots back: a close-up of someone
+          // else in between does not change what they hold or which way they face.
+          const seen = lastSeen.get(actor.character);
+          if (!seen || seen.actor.back || actor.back) continue;
+          const earlier = seen.actor;
+          const justBefore = seen.shot === previous.shot.id;
           const was = actorMoments(earlier).at(-1);
           const is = actorMoments(actor)[0];
           if (!was || !is) continue;
           const who = `"${actor.character}"`;
-          const after = `the cut from "${previous.shot.id}"`;
+          const after = justBefore ? `the cut from "${seen.shot}"` : `"${seen.shot}"`;
           if (earlier.facing !== actor.facing) {
             note(
               `in ${at}, ${who} faces the other way after ${after}; keep them facing the same way`,
@@ -468,7 +480,7 @@ export function checkPlan(sb: Storyboard, world: World): PlanReport {
             note(
               `in ${at}, ${who} is ${to} after ${after}, which left them ${from}; show them getting ${to} inside a shot (a step)`,
             );
-          } else if (sameSize) {
+          } else if (sameSize && justBefore) {
             const moved =
               earlier.x !== undefined &&
               actor.x !== undefined &&
@@ -482,6 +494,19 @@ export function checkPlan(sb: Storyboard, world: World): PlanReport {
           }
         }
       }
+      // A thing standing in the scene stays where it stands from shot to shot.
+      const once = (name: string) => shot.props.filter((p) => p.prop === name).length === 1;
+      for (const prop of shot.props) {
+        if (!once(prop.prop)) continue;
+        const stood = lastStood.get(prop.prop);
+        if (stood && Math.abs(stood.x - prop.x) > 0.03) {
+          note(
+            `in ${at}, the ${prop.prop} stands somewhere else than in "${stood.shot}"; a thing stays where it is from shot to shot`,
+          );
+        }
+        lastStood.set(prop.prop, { x: prop.x, shot: shot.id });
+      }
+      for (const actor of shot.actors) lastSeen.set(actor.character, { actor, shot: shot.id });
       // The picture changes: not the same size of shot again and again, not the same picture twice.
       if (run && run.framing === shot.camera.framing) run.count += 1;
       else run = { framing: shot.camera.framing, count: 1, from: shot.id };

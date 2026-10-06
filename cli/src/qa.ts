@@ -13,7 +13,9 @@
  * It ends with an error while anything is left to fix, or while the stills and strips of this
  * very video have not been looked at.
  */
+import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import {
   FPS,
@@ -25,6 +27,7 @@ import {
   lengthCheck,
   lookChecks,
   loudnessCheck,
+  madeFromCheck,
   mixReportSchema,
   parseLoudness,
   parseOrExplain,
@@ -37,11 +40,12 @@ import {
   qaStrips,
   qaVerdict,
   silenceCheck,
+  soundDifference,
   stepCheck,
   voiceTrackSchema,
   wordsHeardCheck,
 } from '@studio/shared';
-import type { QaCheck, QaLook, QaReport, QaStrip, SizeName } from '@studio/shared';
+import type { MadeFrom, QaCheck, QaLook, QaReport, QaStrip, SizeName } from '@studio/shared';
 import { captionCheck, pictureChecks } from '../../engine/src/stage/measure';
 import { projectRoot, run } from './system.js';
 import { loadStoryboard, loadWorld } from './world.js';
@@ -80,6 +84,40 @@ function newestVideo(): { file: string; size: SizeName } {
   }
   return newest;
 }
+
+/** A file's sound as mono samples at a low rate, enough to tell one mix from another. */
+const COMPARE_RATE = 8000;
+function samplesOf(file: string): Int16Array | null {
+  const raw = path.join(
+    os.tmpdir(),
+    `qa-${createHash('sha1').update(file).digest('hex').slice(0, 10)}.raw`,
+  );
+  const r = run(
+    'ffmpeg',
+    [
+      '-v',
+      'error',
+      '-y',
+      '-i',
+      file,
+      '-vn',
+      '-ac',
+      '1',
+      '-ar',
+      String(COMPARE_RATE),
+      '-f',
+      's16le',
+      raw,
+    ],
+    { timeoutMs: 300_000 },
+  );
+  if (r.status !== 0 || !existsSync(raw)) return null;
+  const bytes = readFileSync(raw);
+  return new Int16Array(bytes.buffer, bytes.byteOffset, Math.floor(bytes.byteLength / 2));
+}
+
+const shaOfFile = (file: string) =>
+  createHash('sha256').update(readFileSync(file)).digest('hex').slice(0, 16);
 
 function cutStrips(video: string, strips: readonly QaStrip[], dir: string): void {
   mkdirSync(dir, { recursive: true });
@@ -180,6 +218,14 @@ function main(): void {
   );
   const seconds = probe?.seconds ?? 0;
 
+  // ---- is this video of this plan and this sound?
+  const recordFile = video.replace(/\.mp4$/, '.json');
+  const record = existsSync(recordFile) ? (readJson(recordFile) as MadeFrom) : null;
+  const mixWav = path.join(partDir, 'audio', 'mix.wav');
+  const inVideo = samplesOf(video);
+  const inMix = existsSync(mixWav) ? samplesOf(mixWav) : null;
+  const sound = inVideo && inMix ? soundDifference(inVideo, inMix, COMPARE_RATE) : null;
+
   // ---- the plan it was built from
   const planned = checkPlan(whole, world);
   const named = checkStoryboard(whole, world);
@@ -221,6 +267,7 @@ function main(): void {
     checkedOn: new Date().toISOString().slice(0, 10),
     checks: [
       fileCheck({ probe, decodeErrors: `${played.stderr ?? ''}`, size, fps: FPS }),
+      madeFromCheck({ record, storyboard: shaOfFile(timedFile), sound }),
       lengthCheck({ seconds, parts, format }),
       stepCheck({ storyboard: part, track, videoSeconds: seconds }),
       silenceCheck({ silences: parseSilences(`${quiet.stderr ?? ''}`, seconds * 1000), track }),

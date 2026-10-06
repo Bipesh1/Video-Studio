@@ -788,8 +788,8 @@
           "line": "n10",
           "words": "He walked all the way to the castle.",
           "camera": {
-            "framing": "medium",
-            "move": "follow"
+            "framing": "wide",
+            "move": "none"
           },
           "actors": [
             {
@@ -797,8 +797,37 @@
               "action": "walk",
               "expression": "determined",
               "facing": "right",
-              "headTurn": "profile",
-              "holds": "bag"
+              "x": 0.26,
+              "holds": "bag",
+              "then": [
+                {
+                  "at": 0.6,
+                  "pose": "hold-object",
+                  "lookAt": "soldier-one"
+                }
+              ]
+            },
+            {
+              "character": "soldier-one",
+              "pose": "stand",
+              "expression": "smug",
+              "facing": "left",
+              "x": 0.62,
+              "lookAt": "tomas"
+            },
+            {
+              "character": "soldier-two",
+              "pose": "cross-arms",
+              "expression": "smug",
+              "facing": "left",
+              "x": 0.8,
+              "lookAt": "tomas"
+            }
+          ],
+          "props": [
+            {
+              "prop": "door",
+              "x": 0.94
             }
           ],
           "sfx": [
@@ -966,8 +995,7 @@
               "expression": "thinking",
               "facing": "left",
               "x": 0.7,
-              "lookAt": "coin",
-              "holds": "coin",
+              "lookAt": "bag",
               "then": [
                 {
                   "at": 0.6,
@@ -978,6 +1006,10 @@
             }
           ],
           "props": [
+            {
+              "prop": "bag",
+              "x": 0.57
+            },
             {
               "prop": "throne",
               "x": 0.7
@@ -1021,11 +1053,14 @@
               "expression": "thinking",
               "facing": "left",
               "x": 0.7,
-              "lookAt": "tomas",
-              "holds": "coin"
+              "lookAt": "tomas"
             }
           ],
           "props": [
+            {
+              "prop": "bag",
+              "x": 0.57
+            },
             {
               "prop": "throne",
               "x": 0.7
@@ -1116,12 +1151,6 @@
               "x": 0.7
             }
           ],
-          "effects": [
-            {
-              "effect": "symbol-exclaim",
-              "on": "tomas"
-            }
-          ],
           "sfx": [
             {
               "name": "pop",
@@ -1207,8 +1236,12 @@
           ],
           "props": [
             {
+              "prop": "bag",
+              "x": 0.57
+            },
+            {
               "prop": "throne",
-              "x": 0.82
+              "x": 0.7
             }
           ]
         },
@@ -1283,8 +1316,12 @@
           ],
           "props": [
             {
+              "prop": "bag",
+              "x": 0.57
+            },
+            {
               "prop": "throne",
-              "x": 0.82
+              "x": 0.7
             }
           ]
         }
@@ -1365,7 +1402,7 @@
             {
               "character": "tomas",
               "pose": "lie",
-              "expression": "happy",
+              "expression": "asleep",
               "facing": "right",
               "x": 0.45
             },
@@ -1374,7 +1411,7 @@
               "pose": "stand",
               "expression": "happy",
               "facing": "left",
-              "x": 0.75,
+              "x": 0.84,
               "lookAt": "tomas"
             }
           ],

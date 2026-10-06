@@ -147,6 +147,15 @@ export const EXPRESSIONS = {
     eyes: eyes({ scale: 1.15, pupil: 0.42 }),
     mouth: mouth({ width: 0.09, open: 0.09, round: 1, chin: true }),
   },
+  /**
+   * Asleep and at peace: the lids fully down, so each eye is one soft closed line (the same
+   * closed eye a blink passes through), brows at rest, the mouth a little open with breath.
+   */
+  asleep: {
+    ...both(brow(0.02, -8, 0.3, 0, 0, 0.6)),
+    eyes: eyes({ upperLid: 1 }),
+    mouth: mouth({ width: 0.085, open: 0.04, round: 0.7 }),
+  },
 } satisfies Record<string, FaceParams>;
 
 export type ExpressionName = keyof typeof EXPRESSIONS;

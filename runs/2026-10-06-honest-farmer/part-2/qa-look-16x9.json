@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "video": "honest-farmer-part-2-16x9-v3.mp4",
+  "stills": {
+    "s5a": "ok",
+    "s5b": "ok",
+    "s5c": "ok",
+    "s6a": "ok",
+    "s6b": "ok",
+    "s6c": "ok",
+    "s6d": "ok",
+    "s6e": "ok",
+    "s6f": "ok",
+    "s7a": "ok",
+    "s7b": "ok",
+    "s7c": "ok",
+    "s8a": "ok",
+    "s9a": "ok"
+  },
+  "strips": {
+    "cut-s5a-s5b": "ok",
+    "cut-s5b-s5c": "ok",
+    "cut-s5c-s6a": "ok",
+    "cut-s6a-s6b": "ok",
+    "cut-s6b-s6c": "ok",
+    "cut-s6d-s6e": "ok",
+    "cut-s6e-s6f": "ok",
+    "cut-s6f-s7a": "ok",
+    "cut-s7a-s7b": "ok",
+    "cut-s7b-s7c": "ok",
+    "cut-s7c-s8a": "ok",
+    "cut-s8a-s9a": "ok",
+    "s5a-move-1": "ok",
+    "s5b-move-1": "ok",
+    "s5c-move-1": "ok",
+    "s6a-move-1": "ok",
+    "s6e-move-1": "ok",
+    "s7a-move-1": "ok",
+    "s7b-move-1": "ok",
+    "s7c-move-1": "ok"
+  },
+  "playbook": "ok",
+  "fixed": [
+    "The library had no sleeping face, so Tomas would have slept with his eyes open in the last shot. A sleeping face was drawn and saved in the library.",
+    "The walk to the castle was a closer travelling shot in which the caption sat on his fist and the bag. He now walks up to the gate in the same wide shot the soldiers stand in, and stops in front of them.",
+    "The queen held a coin in two shots and it was gone in the next. The bag he brought now stands at her feet instead, and she looks into it.",
+    "The throne stood in one place in one scene and somewhere else in the next, in the same room. It stays where it stands.",
+    "The exclamation mark over his head was cut off by the top of the picture. It is gone; his face shows the surprise.",
+    "His wife stood on top of his hat in the last shot. She stands a step further off.",
+    "In the closer shot where the queen stands up, the top of the bag poked up behind the caption. The bag is out of that one shot.",
+    "A caption stayed on screen for a few frames after its own picture had gone, over a fade. A caption now leaves with the last picture of its line."
+  ],
+  "notes": [
+    "He sleeps on the bare floor: no bed is drawn. The line says \"a hard bed\", so it reads as the point of the story, but say so if you want a bed drawn.",
+    "When the queen gives him gold, a coin appears in his hand while she is out of the picture. The studio cannot yet show one person handing a thing to another.",
+    "The sleeping face is new. It is small in the last shot; you can see it large in knowledge/golden/assets/expression-asleep.png."
+  ]
+}

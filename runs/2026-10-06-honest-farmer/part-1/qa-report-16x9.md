@@ -2,7 +2,7 @@
 
 **Ready for you to watch.** Every check passed, with 4 things worth a second look.
 
-Video: `honest-farmer-part-1-16x9-v12.mp4` (42.2 s). Checked on 2026-10-06.
+Video: `honest-farmer-part-1-16x9-v13.mp4` (42.2 s). Checked on 2026-10-06.
 
 ## Worth a second look
 
@@ -16,6 +16,7 @@ Video: `honest-farmer-part-1-16x9-v12.mp4` (42.2 s). Checked on 2026-10-06.
 | Check | Result | What was checked |
 | --- | --- | --- |
 | The file plays | passed | 1920x1080, 30 pictures a second, 42.2 s, picture and sound both there; played through from start to finish |
+| The video is of this plan and this sound | passed | rendered from the plan as it stands; its sound is the mix as it stands, second for second (what is left over is 37 dB under it at most) |
 | The length is right | passed | 42.2 s; a part may be up to 60 s |
 | Picture and voice are in step | passed | 16 shots end to end with no gap, each line heard while its own pictures are on screen; picture and voice end together at 42.2 s |
 | There is no dead silence | passed | the sound never drops out; the longest pause between words is 0.9 s |
@@ -47,6 +48,7 @@ Video: `honest-farmer-part-1-16x9-v12.mp4` (42.2 s). Checked on 2026-10-06.
 - Two wide shots in a row made him jump sideways, and the tree and the bush jumped with him. The first is now a closer travelling shot, so the cut is a change of size.
 - His face switched from laughing to sad on a hard cut between two close-ups. A face now carries across a cut that is the same moment, so it turns over a few frames.
 - One caption sat over the bag and his knee. That shot is now wide, with the caption on the ground below him.
+- A caption stayed on screen for a few frames after its own picture had gone, over the next shot or a fade. A caption now leaves with the last picture of its line.
 
 ## What this check cannot judge
 

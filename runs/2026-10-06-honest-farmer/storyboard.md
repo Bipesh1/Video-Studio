@@ -58,7 +58,7 @@ Place: castle, cold dawn colors. Music: tense.
 
 | Shot | At | Who speaks | Words | What you see | Sound |
 | --- | --- | --- | --- | --- | --- |
-| s5a | 0:41 | Narrator | He walked all the way to the castle. | Fade in. Medium shot. Tomas walks, holding the bag, determined. The camera travels along. | footsteps |
+| s5a | 0:41 | Narrator | He walked all the way to the castle. | Fade in. Wide shot. Tomas walks, holding the bag, determined, then holds out a hand and looks at a soldier at the gate. A soldier at the gate stands, smug, looking at Tomas. A second soldier stands with arms crossed, smug, looking at Tomas. In the scene: door. | footsteps |
 | s5b | 0:44 | Narrator | The soldiers at the gate laughed at his old clothes. | Wide shot. Tomas holds the bag, sad, looking at a soldier at the gate. A soldier at the gate stands, smug, looking at Tomas, then points and looks laughing. A second soldier stands with arms crossed, laughing, looking at Tomas. In the scene: door. |   |
 | s5c | 0:47 | Tomas, the farmer | I have something that belongs to the queen. | Medium shot on Tomas. Tomas holds the bag, determined, looking at a soldier at the gate. A soldier at the gate stands, laughing, looking at Tomas, then looks surprised and looks at the bag. | pop |
 
@@ -68,11 +68,11 @@ Place: throne room, warm interior colors. Music: tense.
 
 | Shot | At | Who speaks | Words | What you see | Sound |
 | --- | --- | --- | --- | --- | --- |
-| s6a | 0:51 | Narrator | The queen counted the coins. All 100 were there. | Fade in. Wide shot. Tomas stands, neutral, looking at the queen. The queen sits, holding the coin, thinking, then looks surprised and looks at Tomas. In the scene: throne. | ding, ding |
-| s6b | 0:54 | The queen | Why did you not keep it? Nobody would have known. | Over the shoulder on the queen. Tomas stands, neutral, looking at the queen, seen from behind. The queen sits, holding the coin, thinking, looking at Tomas. In the scene: throne. |   |
+| s6a | 0:51 | Narrator | The queen counted the coins. All 100 were there. | Fade in. Wide shot. Tomas stands, neutral, looking at the queen. The queen sits, thinking, looking at the bag, then looks surprised and looks at Tomas. In the scene: bag, throne. | ding, ding |
+| s6b | 0:54 | The queen | Why did you not keep it? Nobody would have known. | Over the shoulder on the queen. Tomas stands, neutral, looking at the queen, seen from behind. The queen sits, thinking, looking at Tomas. In the scene: bag, throne. |   |
 | s6c | 0:58 | Tomas, the farmer | **I** would have known. | Close-up on Tomas. Tomas stands, determined. The camera moves slowly closer. |   |
 | s6d | 1:00 | Narrator | The queen was quiet for a long time. | Close-up on the queen. The queen sits, thinking, looking down. In the scene: throne. |   |
-| s6e | 1:03 | The queen | I lost that bag on purpose. | Medium shot. Tomas stands, surprised, looking at the queen. The queen sits, happy, looking at Tomas, then stands. In the scene: throne. Exclamation mark on Tomas. | pop |
+| s6e | 1:03 | The queen | I lost that bag on purpose. | Medium shot. Tomas stands, surprised, looking at the queen. The queen sits, happy, looking at Tomas, then stands. In the scene: throne. | pop |
 | s6f | 1:05 | The queen | I wanted to find one **honest** person in my kingdom. | Close-up on the queen. The queen points, happy. |   |
 
 ### Scene 7: payoff
@@ -81,9 +81,9 @@ Place: throne room, warm interior colors. Music: triumph.
 
 | Shot | At | Who speaks | Words | What you see | Sound |
 | --- | --- | --- | --- | --- | --- |
-| s7a | 1:09 | Narrator | She trusted Tomas to look after the royal treasure. | Wide shot. Tomas stands, surprised, looking at the queen, then kneels and looks happy. The queen stands, happy, looking at Tomas. In the scene: throne. |   |
+| s7a | 1:09 | Narrator | She trusted Tomas to look after the royal treasure. | Wide shot. Tomas stands, surprised, looking at the queen, then kneels and looks happy. The queen stands, happy, looking at Tomas. In the scene: bag, throne. |   |
 | s7b | 1:13 | Narrator | And she gave him 10 gold coins every month, | Medium shot on Tomas. Tomas kneels, happy, then holds the coin and looks laughing and looks at the coin. | ding |
-| s7c | 1:15 | Narrator | for the rest of his life. | Wide shot. Tomas stands, holding the coin, happy, looking at the queen, then cheers and looks laughing. The queen stands, happy, looking at Tomas. In the scene: throne. |   |
+| s7c | 1:15 | Narrator | for the rest of his life. | Wide shot. Tomas stands, holding the coin, happy, looking at the queen, then cheers and looks laughing. The queen stands, happy, looking at Tomas. In the scene: bag, throne. |   |
 
 ### Scene 8: closing line
 
@@ -99,4 +99,4 @@ Place: home interior, warm interior colors. Music: calm.
 
 | Shot | At | Who speaks | Words | What you see | Sound |
 | --- | --- | --- | --- | --- | --- |
-| s9a | 1:21 | Narrator | An honest man sleeps well, even on a **hard** bed. | Fade in. Wide shot. Tomas lies down, happy. His wife stands, happy, looking at Tomas. The camera moves slowly closer. |   |
+| s9a | 1:21 | Narrator | An honest man sleeps well, even on a **hard** bed. | Fade in. Wide shot. Tomas lies down, asleep. His wife stands, happy, looking at Tomas. The camera moves slowly closer. |   |

@@ -142,12 +142,14 @@ export type { QaAnswer, QaCheck, QaFinding, QaLook, QaQuestion, QaReport } from 
 export {
   EFFECT_UNDER_VOICE_DB,
   MUSIC_UNDER_VOICE_DB,
+  SOUND_MATCH_DB,
   checkResult,
   clock,
   fileCheck,
   lengthCheck,
   lookChecks,
   loudnessCheck,
+  madeFromCheck,
   parseLoudness,
   parseProbe,
   parseSilences,
@@ -155,7 +157,8 @@ export {
   qaStrips,
   qaVerdict,
   silenceCheck,
+  soundDifference,
   stepCheck,
   wordsHeardCheck,
 } from './qa';
-export type { QaStrip, QaVerdict, VideoProbe } from './qa';
+export type { MadeFrom, QaStrip, QaVerdict, VideoProbe } from './qa';

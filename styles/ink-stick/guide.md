@@ -1,7 +1,7 @@
 ## Part 3. The Ink Stick art style
 
 **Style id:** `ink-stick`
-**Guide version:** 12 (2026-10-06). See the version history at the end.
+**Guide version:** 13 (2026-10-06). See the version history at the end.
 **Built from:** two reference images supplied by Biku
 - **Reference A:** a stern king in a crown, red cape and armor, under a stormy night sky with light rays
 - **Reference B:** two stick figures in a night scene under a crescent moon, one threatening and one frightened

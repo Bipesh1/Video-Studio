@@ -159,7 +159,7 @@
           "words": "He walked all the way to the castle.",
           "camera": {
             "framing": "wide",
-            "move": "follow",
+            "move": "none",
             "strength": 0.2
           },
           "actors": [
@@ -168,13 +168,48 @@
               "action": "walk",
               "expression": "determined",
               "facing": "right",
-              "headTurn": "profile",
+              "headTurn": "three-quarter",
+              "x": 0.26,
               "lookAt": "ahead",
               "holds": "bag",
-              "back": false
+              "back": false,
+              "then": [
+                {
+                  "at": 0.6,
+                  "pose": "hold-object",
+                  "lookAt": "soldier-one"
+                }
+              ]
+            },
+            {
+              "character": "soldier-one",
+              "pose": "stand",
+              "expression": "smug",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.62,
+              "lookAt": "tomas",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "soldier-two",
+              "pose": "cross-arms",
+              "expression": "smug",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.8,
+              "lookAt": "tomas",
+              "back": false,
+              "then": []
             }
           ],
-          "props": [],
+          "props": [
+            {
+              "prop": "door",
+              "x": 0.94
+            }
+          ],
           "effects": [],
           "sfx": [
             {
@@ -206,17 +241,25 @@
               "x": 0.26,
               "lookAt": "soldier-one",
               "holds": "bag",
-              "back": false
+              "back": false,
+              "then": []
             },
             {
               "character": "soldier-one",
-              "pose": "point",
-              "expression": "laughing",
+              "pose": "stand",
+              "expression": "smug",
               "facing": "left",
               "headTurn": "three-quarter",
               "x": 0.62,
               "lookAt": "tomas",
-              "back": false
+              "back": false,
+              "then": [
+                {
+                  "at": 0.3,
+                  "pose": "point",
+                  "expression": "laughing"
+                }
+              ]
             },
             {
               "character": "soldier-two",
@@ -226,7 +269,8 @@
               "headTurn": "three-quarter",
               "x": 0.8,
               "lookAt": "tomas",
-              "back": false
+              "back": false,
+              "then": []
             }
           ],
           "props": [
@@ -261,26 +305,29 @@
               "x": 0.3,
               "lookAt": "soldier-one",
               "holds": "bag",
-              "back": false
+              "back": false,
+              "then": []
             },
             {
               "character": "soldier-one",
               "pose": "stand",
-              "expression": "surprised",
+              "expression": "laughing",
               "facing": "left",
               "headTurn": "three-quarter",
               "x": 0.62,
-              "lookAt": "bag",
-              "back": false
+              "lookAt": "tomas",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.45,
+                  "expression": "surprised",
+                  "lookAt": "bag"
+                }
+              ]
             }
           ],
           "props": [],
-          "effects": [
-            {
-              "effect": "symbol-exclaim",
-              "on": "soldier-one"
-            }
-          ],
+          "effects": [],
           "sfx": [
             {
               "name": "pop",
@@ -352,7 +399,8 @@
               "headTurn": "three-quarter",
               "x": 0.3,
               "lookAt": "queen",
-              "back": false
+              "back": false,
+              "then": []
             },
             {
               "character": "queen",
@@ -361,12 +409,22 @@
               "facing": "left",
               "headTurn": "three-quarter",
               "x": 0.7,
-              "lookAt": "coin",
-              "holds": "coin",
-              "back": false
+              "lookAt": "bag",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.6,
+                  "expression": "surprised",
+                  "lookAt": "tomas"
+                }
+              ]
             }
           ],
           "props": [
+            {
+              "prop": "bag",
+              "x": 0.57
+            },
             {
               "prop": "throne",
               "x": 0.7
@@ -408,7 +466,8 @@
               "headTurn": "three-quarter",
               "x": 0.3,
               "lookAt": "queen",
-              "back": true
+              "back": true,
+              "then": []
             },
             {
               "character": "queen",
@@ -418,10 +477,15 @@
               "headTurn": "three-quarter",
               "x": 0.7,
               "lookAt": "tomas",
-              "back": false
+              "back": false,
+              "then": []
             }
           ],
           "props": [
+            {
+              "prop": "bag",
+              "x": 0.57
+            },
             {
               "prop": "throne",
               "x": 0.7
@@ -452,7 +516,8 @@
               "headTurn": "three-quarter",
               "x": 0.3,
               "lookAt": "ahead",
-              "back": false
+              "back": false,
+              "then": []
             }
           ],
           "props": [],
@@ -481,7 +546,8 @@
               "headTurn": "three-quarter",
               "x": 0.7,
               "lookAt": "down",
-              "back": false
+              "back": false,
+              "then": []
             }
           ],
           "props": [
@@ -514,31 +580,33 @@
               "headTurn": "three-quarter",
               "x": 0.34,
               "lookAt": "queen",
-              "back": false
+              "back": false,
+              "then": []
             },
             {
               "character": "queen",
-              "pose": "stand",
+              "pose": "sit",
               "expression": "happy",
               "facing": "left",
               "headTurn": "three-quarter",
-              "x": 0.64,
+              "x": 0.7,
               "lookAt": "tomas",
-              "back": false
+              "back": false,
+              "then": [
+                {
+                  "at": 0.2,
+                  "pose": "stand"
+                }
+              ]
             }
           ],
           "props": [
             {
               "prop": "throne",
-              "x": 0.82
+              "x": 0.7
             }
           ],
-          "effects": [
-            {
-              "effect": "symbol-exclaim",
-              "on": "tomas"
-            }
-          ],
+          "effects": [],
           "sfx": [
             {
               "name": "pop",
@@ -567,9 +635,10 @@
               "expression": "happy",
               "facing": "left",
               "headTurn": "three-quarter",
-              "x": 0.64,
+              "x": 0.7,
               "lookAt": "ahead",
-              "back": false
+              "back": false,
+              "then": []
             }
           ],
           "props": [],
@@ -615,13 +684,20 @@
           "actors": [
             {
               "character": "tomas",
-              "pose": "kneel",
-              "expression": "happy",
+              "pose": "stand",
+              "expression": "surprised",
               "facing": "right",
               "headTurn": "three-quarter",
               "x": 0.36,
               "lookAt": "queen",
-              "back": false
+              "back": false,
+              "then": [
+                {
+                  "at": 0.35,
+                  "pose": "kneel",
+                  "expression": "happy"
+                }
+              ]
             },
             {
               "character": "queen",
@@ -631,13 +707,18 @@
               "headTurn": "three-quarter",
               "x": 0.62,
               "lookAt": "tomas",
-              "back": false
+              "back": false,
+              "then": []
             }
           ],
           "props": [
             {
+              "prop": "bag",
+              "x": 0.57
+            },
+            {
               "prop": "throne",
-              "x": 0.82
+              "x": 0.7
             }
           ],
           "effects": [],
@@ -659,14 +740,22 @@
           "actors": [
             {
               "character": "tomas",
-              "pose": "hold-object",
-              "expression": "laughing",
+              "pose": "kneel",
+              "expression": "happy",
               "facing": "right",
               "headTurn": "three-quarter",
-              "x": 0.4,
-              "lookAt": "coin",
-              "holds": "coin",
-              "back": false
+              "x": 0.36,
+              "lookAt": "ahead",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.25,
+                  "pose": "hold-object",
+                  "expression": "laughing",
+                  "lookAt": "coin",
+                  "holds": "coin"
+                }
+              ]
             }
           ],
           "props": [],
@@ -674,7 +763,7 @@
           "sfx": [
             {
               "name": "ding",
-              "at": "start",
+              "at": "middle",
               "gainDb": 0
             }
           ],
@@ -694,13 +783,21 @@
           "actors": [
             {
               "character": "tomas",
-              "action": "cheer",
-              "expression": "laughing",
+              "pose": "stand",
+              "expression": "happy",
               "facing": "right",
               "headTurn": "three-quarter",
               "x": 0.36,
-              "lookAt": "ahead",
-              "back": false
+              "lookAt": "queen",
+              "holds": "coin",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.2,
+                  "action": "cheer",
+                  "expression": "laughing"
+                }
+              ]
             },
             {
               "character": "queen",
@@ -710,13 +807,18 @@
               "headTurn": "three-quarter",
               "x": 0.62,
               "lookAt": "tomas",
-              "back": false
+              "back": false,
+              "then": []
             }
           ],
           "props": [
             {
+              "prop": "bag",
+              "x": 0.57
+            },
+            {
               "prop": "throne",
-              "x": 0.82
+              "x": 0.7
             }
           ],
           "effects": [],
@@ -761,7 +863,8 @@
               "facing": "right",
               "headTurn": "profile",
               "lookAt": "ahead",
-              "back": false
+              "back": false,
+              "then": []
             }
           ],
           "props": [],
@@ -801,21 +904,21 @@
           "line": "n17",
           "words": "An honest man sleeps well, even on a *hard* bed.",
           "camera": {
-            "framing": "medium",
+            "framing": "wide",
             "move": "push-in",
-            "strength": 0.5,
-            "focus": "tomas"
+            "strength": 0.6
           },
           "actors": [
             {
               "character": "tomas",
               "pose": "lie",
-              "expression": "happy",
+              "expression": "asleep",
               "facing": "right",
               "headTurn": "three-quarter",
               "x": 0.45,
               "lookAt": "ahead",
-              "back": false
+              "back": false,
+              "then": []
             },
             {
               "character": "wife",
@@ -823,9 +926,10 @@
               "expression": "happy",
               "facing": "left",
               "headTurn": "three-quarter",
-              "x": 0.75,
+              "x": 0.84,
               "lookAt": "tomas",
-              "back": false
+              "back": false,
+              "then": []
             }
           ],
           "props": [],

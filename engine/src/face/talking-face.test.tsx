@@ -58,3 +58,14 @@ describe('a speaking face', () => {
     }
   });
 });
+
+describe('a sleeping face', () => {
+  it('has both eyes closed, as the one soft line a blink passes through', () => {
+    const asleep = draw('asleep', MOUTH_FORMS.closed);
+    const awake = draw('neutral', MOUTH_FORMS.closed);
+    // No whites of the eyes and no pupils: nothing is clipped to an eye shape.
+    expect(awake).toContain('<clipPath');
+    expect(asleep).not.toContain('<clipPath');
+    expect(EXPRESSIONS.asleep.eyes.upperLid).toBe(1);
+  });
+});

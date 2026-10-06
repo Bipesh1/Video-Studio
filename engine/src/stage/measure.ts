@@ -13,7 +13,7 @@ import { computeSkeleton } from '../rig/skeleton';
 import { lookFrom } from '../wardrobe/cast';
 import { timedShots } from './layout';
 import type { Size, TimedShot } from './layout';
-import { TITLE_FADE, TITLE_SECONDS, captionOptions, titleY } from './screen';
+import { TITLE_FADE, TITLE_SECONDS, captionOptions, captionPagesFor, titleY } from './screen';
 import { stageShot } from './staging';
 
 /**
@@ -145,9 +145,7 @@ export function measureFrame(
 /** Every frame of a part, measured, shot by shot. */
 export function measurePart(input: MeasureInput): Array<{ ts: TimedShot; frames: FrameMeasure[] }> {
   const shots = timedShots(input.storyboard, input.fps);
-  const pages = input.track
-    ? buildPages(toCaptions(input.track.words), captionOptions(input.size))
-    : [];
+  const pages = captionPagesFor(input.storyboard, input.track, input.size);
   return shots.map((ts) => {
     const frames: FrameMeasure[] = [];
     for (let f = ts.startFrame; f < ts.endFrame; f++) {
@@ -237,9 +235,13 @@ export function pictureChecks(input: MeasureInput, limits: { maxShotS?: number }
         const p = m.people.find((x) => x.id === id);
         return p ? [{ m, p }] : [];
       });
-      // In the picture.
-      const cuts = seen.map(({ m, p }) => ({ ms: m.ms, cut: cutOff(p.head, size) }));
-      const worst = cuts.reduce((a, b) => (b.cut > a.cut ? b : a), { ms: 0, cut: 0 });
+      // In the picture. Walking or running in or out of it is how people arrive and leave, so
+      // someone on the move is judged only by whether they are ever seen; someone holding a
+      // pose has to be in the picture while they hold it.
+      const every = seen.map(({ m, p }) => ({ ms: m.ms, cut: cutOff(p.head, size), held: p.held }));
+      const everSeen = every.some((c) => c.cut < HEAD_CUT_GONE);
+      const cuts = everSeen ? every.filter((c) => c.held) : every;
+      const worst = cuts.reduce((a, b) => (b.cut > a.cut ? b : a), { ms: 0, cut: 0, held: true });
       if (worst.cut >= HEAD_CUT_GONE) {
         // Whoever the shot is about has to be in it. Someone standing by may fall outside a
         // narrow frame that favours another; that is worth a look, not a fault.

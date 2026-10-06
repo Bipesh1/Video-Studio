@@ -1307,6 +1307,34 @@
       "added": "2026-10-05"
     },
     {
+      "id": "expression/asleep",
+      "kind": "expression",
+      "name": "Asleep",
+      "description": "Eyes gently closed, brows at rest and a small mouth a little open with breath.",
+      "tags": [
+        "face",
+        "expression",
+        "sleep",
+        "asleep",
+        "sleeping",
+        "eyes closed",
+        "resting",
+        "peaceful",
+        "night",
+        "bed",
+        "dreaming",
+        "nap"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.asleep}",
+      "still": "knowledge/golden/assets/expression-asleep.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
       "id": "eyes/stern",
       "kind": "eyes",
       "name": "Stern eyes",
