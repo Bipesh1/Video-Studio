@@ -324,8 +324,16 @@ export type Shot = z.infer<typeof shotSchema>;
 export type Scene = z.infer<typeof sceneSchema>;
 export type Storyboard = z.infer<typeof storyboardSchema>;
 
-/** A rough spoken length for words not yet voiced: about 2.6 words a second, plus pauses. */
-export function estimateSeconds(text: string, wordsPerMinute = 155): number {
+/**
+ * How fast the Kokoro voices speak at speed 1, in words a minute, with no pauses counted.
+ * Measured on the look test and Moon Tax tracks (185 and 207 for the narrator; character
+ * voices run faster). Used to guess a length before the voice exists; the guess can be an
+ * eighth out either way.
+ */
+export const SPEAKING_WPM = 195;
+
+/** A rough spoken length for words not yet voiced, pauses not included. */
+export function estimateSeconds(text: string, wordsPerMinute = SPEAKING_WPM): number {
   const count = plainWords(text).split(' ').filter(Boolean).length;
   return (count / wordsPerMinute) * 60;
 }

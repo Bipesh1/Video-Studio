@@ -1,0 +1,10 @@
+{
+  "id": "woman-calm",
+  "name": "Woman, calm",
+  "description": "A second woman's voice, steadier and lower, for a queen or an elder. A placeholder until Biku picks.",
+  "version": 1,
+  "kokoroVoice": "af_bella",
+  "speed": 1.0,
+  "pauseScale": 1.0,
+  "pronunciations": {}
+}

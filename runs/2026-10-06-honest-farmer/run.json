@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "id": "2026-10-06-honest-farmer",
+  "created": "2026-10-06",
+  "mode": "refine",
+  "format": "story",
+  "brand": "my-page",
+  "voice": "narrator",
+  "sizes": [
+    "9:16",
+    "4:5",
+    "16:9"
+  ],
+  "masterPrompt": null
+}

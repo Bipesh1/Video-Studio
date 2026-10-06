@@ -42,13 +42,9 @@ function sceneSeconds(
   if (first?.startMs !== undefined && last?.endMs !== undefined) {
     return { seconds: (last.endMs - first.startMs) / 1000, measured: true };
   }
-  const wpm = format
-    ? (format.pacing.wordsPerMinute.min + format.pacing.wordsPerMinute.max) / 2
-    : 155;
   const pause = format?.pacing.pauseMs.normal ?? 500;
   const seconds = scene.lines.reduce(
-    (sum, l) =>
-      sum + estimateSeconds(l.text, wpm) / (l.speed ?? 1) + (l.pauseAfterMs ?? pause) / 1000,
+    (sum, l) => sum + estimateSeconds(l.text) / (l.speed ?? 1) + (l.pauseAfterMs ?? pause) / 1000,
     0,
   );
   return { seconds, measured: false };

@@ -69,6 +69,7 @@ export type {
 } from './plugins.schema';
 export {
   NARRATOR,
+  SPEAKING_WPM,
   actorSchema,
   castMemberSchema,
   estimateSeconds,
@@ -90,3 +91,14 @@ export type {
 } from './storyboard.schema';
 export { checkStoryboard } from './storyboard.check';
 export type { StoryboardReport, World } from './storyboard.check';
+export {
+  CHAPTER_PLAN_SHARE,
+  assignChapters,
+  checkScript,
+  lineSeconds,
+  originalWords,
+  scriptSchema,
+  spokenLineSchema,
+  spokenWords,
+} from './script.schema';
+export type { Script, ScriptReport, SpokenLine } from './script.schema';

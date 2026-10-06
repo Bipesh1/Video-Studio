@@ -1,7 +1,7 @@
 # Build Status
 
-**Current phase:** Phase 4 (the full pipeline), step 4A (foundation) done (2026-10-06). Phases 0 to 3 are complete. Next step is 4B (script modes and splitting into chapters), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
-**Next:** Biku says "start 4B". Before the test video in 4G he needs to give: a script, a name for his page (the brand file says "My Page" for now), and his pick of voices (the three voice files are placeholders). The Phase 3 sound was approved by Biku ("everything is fine in my opinion"); the questions at the end of `PHASE-2-REPORT.md` are still open.
+**Current phase:** Phase 4 (the full pipeline), steps 4A (foundation) and 4B (script) done (2026-10-06). Phases 0 to 3 are complete. Next step is 4C (the shot planner), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
+**Next:** Biku reads the two sample scripts (`runs/2026-10-06-honest-farmer/script.md` refined, `runs/2026-10-06-honest-farmer-as-is/script.md` as it is) and says whether the refining is the kind he wants, then "start 4C". Before the test video in 4G he needs to give: a script, a name for his page (the brand file says "My Page"; he has not picked a niche yet), and his pick of voices (the four voice files are placeholders). The questions at the end of `PHASE-2-REPORT.md` are still open.
 **Decided for Phase 4 (Biku, 2026-10-06):** his videos will be about 2 to 3 minutes. Biku proposed making them as parts of at most 1 minute from one script and combining them at the end. Agreed, with the studio doing the joining: one script is split into chapters of up to a minute at natural story breaks, each chapter is built and checked alone (so each fits the run budget and can be redone alone), then the chapters are joined into one final video in every size with one captions file; the chapters are kept too. Phase 4 must make the joins invisible: saved characters reused in every chapter, one voice and one loudness, music planned over the whole script so cuts fall on a pause or a mood change, the title only on the first chapter and the closing card only on the last. (The plan's 30-minute run budget then applies to a chapter, not to the whole video; this is Claude's reading and should be confirmed with Biku when Phase 4 starts.)
 **Also decided (Biku, 2026-10-06):** in a video made in parts, the studio stops after each part of about a minute and shows it; it goes on to the next part only when Biku says so ("so that its better than making all the video at once"). So a chapter is a checkpoint: no later chapter, no extra size and no joined video is rendered ahead of his go. Agreed by Biku the same day ("thats fine"): each chapter is shown in the phone size only, and the other two sizes and the joined video are made once every chapter is approved.
 **Last updated:** 2026-10-06
@@ -17,12 +17,42 @@ Review file: `runs/2026-10-03-look-test/checkpoint-1.md`. Questions: (1) how clo
 Each step ends with something Biku can look at, a commit and an update here. Start a step only when Biku asks.
 
 - **4A. Foundation: done (2026-10-06).** The storyboard (a video's master file), the first brand file, the six format templates, voices.
-- **4B. Script.** The three script modes (as-is, refine, original) and splitting a long script into chapters of at most a minute.
+- **4B. Script: done (2026-10-06).** The three script modes (as-is, refine, original) and splitting a long script into chapters of at most a minute.
 - **4C. Shot planner.** A script turned into a full storyboard: who, where, doing what, camera, music, effects.
 - **4D. Assembly.** A video built from a storyboard automatically, with voice, sound and captions.
 - **4E. Self-check.** The automatic checks and the plain-language QA report.
 - **4F. Output.** Preview first, then the three sizes, cover image, captions file, and joining chapters.
 - **4G. The test video.** One full 2 to 3 minute video in refine mode from Biku's script, made chapter by chapter, then Checkpoint 2.
+
+## Phase 4B. Script: done (2026-10-06)
+
+Asked by Biku ("start 4B"). The studio can now take a script in any of the three ways and get it ready for planning shots.
+
+### Made
+
+- **The run folder** (`npm run script -- new`): `runs/<date>-<name>/` with Biku's request, his script saved untouched as `script-original.md`, and the run's settings. A run is never overwritten.
+- **The script as data** (`script.json`, `shared/src/script.schema.ts`): every line with who says it, its words, the beat of the format it plays and its part. Claude writes it; the tools check it.
+- **The three modes, each held to its promise** (`npm run script -- check`):
+  - **as-is:** the script must be word for word what Biku wrote, down to a comma. The check names the first word that differs. Marking a word for caption emphasis is allowed, since it changes no word. His words are not judged against the writing rules.
+  - **refine:** his original must be saved, every change must be listed, every number he gave must still be there and none may be invented, the opening may not be a greeting, and there is no em dash.
+  - **original:** a factual format (explainer, top-list, quote, news-short) is refused without saved sources.
+  - Every mode: the format's beats in order with none missing, speakers with voices, the length inside the format's range (for as-is only a note, since no word may be cut).
+- **Parts of at most a minute** (`npm run script -- chapters`): as few parts as fit, as even as they can be, cut where the story turns when that costs little. Parts are planned to 88% of the limit because a length guessed from word counts can be an eighth out.
+- **Lengths from the real speaking pace:** the Kokoro voices speak about 195 words a minute (measured on the two voice tracks made so far). The first estimate used the formats' overall pace and counted pauses twice; Moon Tax now estimates at 27.3 s against a real 26.6 s.
+- **The page Biku reads** (`npm run script -- page`): `script.md`, with the parts, who says what, what changed and where his original is.
+- **The writing rules have a home:** `knowledge/playbooks/general.md` (the three modes, the nine writing rules of the plan, chapters, working with Biku) and a short playbook for each format in `knowledge/playbooks/formats/`. A file in `prompts/` (Biku's master prompt) replaces the writing rules, and the check holds a script to it.
+- **A fourth placeholder voice,** `woman-calm`, so two women in one story do not share a voice.
+- **Two worked examples from one sample script** (a 334-word tale written the way a first draft often is, with a greeting, a 44-word sentence and reported speech):
+  - `runs/2026-10-06-honest-farmer/`: refined to 229 words, about 1:25, 2 parts, 10 changes listed, every number kept.
+  - `runs/2026-10-06-honest-farmer-as-is/`: every word kept, about 1:57, 3 parts.
+- **Tests:** 31 new.
+
+### Open after 4B
+
+- **The refining is Claude's judgment.** The check proves the promises (numbers kept, changes listed), not that the result is better. Biku should read the sample and say if this is the kind of refining he wants: how much may be cut, whether reported speech may become spoken lines.
+- **Only numbers written as digits are protected** in refine mode. Names, places and numbers written as words are kept by care, not by the check.
+- **Original mode's research** (finding and saving sources) is done by Claude during a run; nothing automates it.
+- **Re-hooks every 20 to 30 seconds** and "specific beats general" are writing rules the check cannot test.
 
 ## Phase 4A. Foundation: done (2026-10-06)
 

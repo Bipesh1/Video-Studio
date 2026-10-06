@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "title": "The Honest Farmer",
+  "request": "use my script about the honest farmer as it is",
+  "mode": "as-is",
+  "format": "story",
+  "brand": "my-page",
+  "voice": "narrator",
+  "speakers": [],
+  "lines": [
+    {
+      "id": "n1",
+      "speaker": "narrator",
+      "text": "Hello everyone, today I am going to tell you a very old story about a farmer and a bag of gold.",
+      "beat": "hook",
+      "chapter": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "n2",
+      "speaker": "narrator",
+      "text": "Once upon a time, in a small village near a big castle, there lived a poor farmer named Tomas who worked in his field every single day from morning until night but he never had enough money to buy good food for his family.",
+      "beat": "setup",
+      "chapter": 1
+    },
+    {
+      "id": "n3",
+      "speaker": "narrator",
+      "text": "One morning, when he was walking to the market, he saw something lying on the road, and when he went closer he saw that it was a heavy bag, and inside the bag there were 100 gold coins.",
+      "beat": "setup",
+      "chapter": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "n4",
+      "speaker": "narrator",
+      "text": "Tomas had never seen so much money in his whole life.",
+      "beat": "setup",
+      "chapter": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "n5",
+      "speaker": "narrator",
+      "text": "He thought about his hungry children.",
+      "beat": "rising-trouble",
+      "chapter": 2
+    },
+    {
+      "id": "n6",
+      "speaker": "narrator",
+      "text": "He thought about his broken roof.",
+      "beat": "rising-trouble",
+      "chapter": 2
+    },
+    {
+      "id": "n7",
+      "speaker": "narrator",
+      "text": "Nobody was on the road and nobody had seen him.",
+      "beat": "rising-trouble",
+      "chapter": 2
+    },
+    {
+      "id": "n8",
+      "speaker": "narrator",
+      "text": "But then he saw that the bag had the mark of the queen on it.",
+      "beat": "rising-trouble",
+      "chapter": 2,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "n9",
+      "speaker": "narrator",
+      "text": "For 3 days Tomas could not sleep.",
+      "beat": "rising-trouble",
+      "chapter": 2
+    },
+    {
+      "id": "n10",
+      "speaker": "narrator",
+      "text": "His wife told him to keep the gold because the queen was rich and would never miss it.",
+      "beat": "rising-trouble",
+      "chapter": 2
+    },
+    {
+      "id": "n11",
+      "speaker": "narrator",
+      "text": "On the third night he made his decision.",
+      "beat": "rising-trouble",
+      "chapter": 2,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "n12",
+      "speaker": "narrator",
+      "text": "He walked all the way to the castle and the soldiers at the gate laughed at him because of his old clothes, but he told them that he had something that belonged to the queen.",
+      "beat": "rising-trouble",
+      "chapter": 2,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "n13",
+      "speaker": "narrator",
+      "text": "The queen was very surprised when she saw the bag.",
+      "beat": "turning-point",
+      "chapter": 3
+    },
+    {
+      "id": "n14",
+      "speaker": "narrator",
+      "text": "She counted the coins and all 100 were there.",
+      "beat": "turning-point",
+      "chapter": 3
+    },
+    {
+      "id": "n15",
+      "speaker": "narrator",
+      "text": "She asked him why he did not keep it, since nobody would have known.",
+      "beat": "turning-point",
+      "chapter": 3
+    },
+    {
+      "id": "n16",
+      "speaker": "narrator",
+      "text": "Tomas said that he would have known.",
+      "beat": "turning-point",
+      "chapter": 3,
+      "pauseAfterMs": 1100
+    },
+    {
+      "id": "n17",
+      "speaker": "narrator",
+      "text": "The queen was quiet for a long time.",
+      "beat": "turning-point",
+      "chapter": 3,
+      "pauseAfterMs": 1000
+    },
+    {
+      "id": "n18",
+      "speaker": "narrator",
+      "text": "Then she said that she had lost that bag on purpose, because she wanted to find one honest person in her kingdom to look after the royal treasure.",
+      "beat": "turning-point",
+      "chapter": 3,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "n19",
+      "speaker": "narrator",
+      "text": "She gave Tomas 10 gold coins every month for the rest of his life.",
+      "beat": "payoff",
+      "chapter": 3,
+      "pauseAfterMs": 800
+    },
+    {
+      "id": "n20",
+      "speaker": "narrator",
+      "text": "And from that day the people of the village said that an honest man sleeps well even on a hard bed.",
+      "beat": "closing-line",
+      "chapter": 3,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "n21",
+      "speaker": "narrator",
+      "text": "Thank you for watching.",
+      "beat": "closing-line",
+      "chapter": 3,
+      "pauseAfterMs": 600
+    }
+  ],
+  "sources": [],
+  "changes": []
+}

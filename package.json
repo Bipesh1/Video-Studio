@@ -17,6 +17,7 @@
     "short": "tsx cli/src/short.ts",
     "library": "tsx cli/src/library.ts",
     "sound": "tsx cli/src/sound.ts",
+    "script": "tsx cli/src/script.ts",
     "storyboard": "tsx cli/src/storyboard.ts",
     "test": "vitest run",
     "typecheck": "tsc -p shared/tsconfig.json && tsc -p engine/tsconfig.json && tsc -p cli/tsconfig.json",
