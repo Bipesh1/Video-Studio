@@ -1,7 +1,26 @@
 import { describe, expect, it } from 'vitest';
 import { blinkAt, blinkStarts, withLife } from './life';
-import { DEFAULT_TRANSITION, poseAt, resolvePose } from './pose';
-import { POSES, handsOverMouth, handsUp, holdObject, point, shrug, stand, wave } from './poses';
+import {
+  BIG_MOVE,
+  DEFAULT_TRANSITION,
+  WINDUP_DEPTH,
+  WINDUP_FRAMES,
+  moveFrames,
+  poseAt,
+  poseDistance,
+  resolvePose,
+} from './pose';
+import {
+  POSES,
+  handsOverMouth,
+  handsUp,
+  holdObject,
+  kneel,
+  point,
+  shrug,
+  stand,
+  wave,
+} from './poses';
 import { computeSkeleton } from './skeleton';
 import { tokens } from '../tokens';
 
@@ -95,6 +114,9 @@ describe('pose library', () => {
   });
 });
 
+/** A small move: standing, with the head a little down. */
+const lookDownLike = { ...stand, id: 'nod', headTilt: 8 };
+
 describe('pose to pose', () => {
   const keys = [
     { frame: 0, pose: stand },
@@ -106,16 +128,46 @@ describe('pose to pose', () => {
     expect(DEFAULT_TRANSITION).toBeLessThanOrEqual(maxT);
   });
 
-  it('holds before the key and lands exactly on the target after the snap', () => {
+  const move = moveFrames(resolvePose(stand), resolvePose(handsUp));
+  const done = 30 + move.windup + move.transition;
+
+  it('holds before the key and lands exactly on the target after the move', () => {
     expect(poseAt(29, keys)).toEqual(resolvePose(stand));
-    expect(poseAt(30 + DEFAULT_TRANSITION, keys)).toEqual(resolvePose(handsUp));
+    expect(poseAt(done, keys)).toEqual(resolvePose(handsUp));
+  });
+
+  it('winds up before a big move and not before a small one', () => {
+    const from = resolvePose(stand);
+    const to = resolvePose(handsUp);
+    expect(poseDistance(from, to)).toBeGreaterThan(BIG_MOVE);
+    expect(move.windup).toBe(WINDUP_FRAMES);
+    // During the wind-up the arm goes the other way first, by a fraction of the whole move.
+    const span = to.arms.front.upper - from.arms.front.upper;
+    const pulled = poseAt(30 + WINDUP_FRAMES, keys).arms.front.upper;
+    expect((pulled - from.arms.front.upper) / span).toBeCloseTo(-WINDUP_DEPTH, 6);
+    for (let f = 30; f <= 30 + WINDUP_FRAMES; f++) {
+      expect(poseAt(f, keys).arms.front.upper).toBeLessThanOrEqual(from.arms.front.upper);
+    }
+    // A small move snaps straight away.
+    expect(moveFrames(resolvePose(stand), resolvePose(lookDownLike)).windup).toBe(0);
+    // A key can ask for its own wind-up, or for none.
+    expect(moveFrames(from, to, { windup: 0 }).windup).toBe(0);
+  });
+
+  it('dips the hips in the middle of a big move and brings them back', () => {
+    const rest = resolvePose(stand).hipY;
+    const mid = poseAt(30 + move.windup + move.transition / 2, keys).hipY;
+    // y grows downward, so a dip is a larger y than the straight path between the two poses.
+    const straight = (rest + resolvePose(handsUp).hipY) / 2;
+    expect(mid).toBeGreaterThan(straight - 0.03);
+    expect(poseAt(done, keys).hipY).toBe(resolvePose(handsUp).hipY);
   });
 
   it('overshoots a little (under 8%) and keeps the feet planted during the snap', () => {
     const from = resolvePose(stand).arms.front.upper;
     const to = resolvePose(handsUp).arms.front.upper;
     let peak = from;
-    for (let f = 30; f <= 30 + DEFAULT_TRANSITION; f += 0.25) {
+    for (let f = 30; f <= done; f += 0.25) {
       const p = poseAt(f, keys);
       peak = Math.max(peak, p.arms.front.upper);
       const j = computeSkeleton(p);
@@ -127,11 +179,27 @@ describe('pose to pose', () => {
     expect(overshoot).toBeLessThan(0.08);
   });
 
-  it('life during holds moves the upper body only', () => {
+  it('life during holds shifts the weight but never moves a planted foot', () => {
     const base = resolvePose(stand);
-    const alive = withLife(base, 47, fps, 7);
-    expect(alive.legs).toEqual(base.legs);
-    expect(alive.headTilt).not.toBe(base.headTilt);
+    const feet = computeSkeleton(base).legs;
+    let hipMoved = false;
+    for (let f = 0; f < 300; f += 7) {
+      const alive = withLife(base, f, fps, 7);
+      const j = computeSkeleton(alive);
+      expect(j.legs.front.foot.x).toBeCloseTo(feet.front.foot.x, 6);
+      expect(j.legs.back.foot.x).toBeCloseTo(feet.back.foot.x, 6);
+      expect(Math.abs(j.legs.front.foot.y)).toBeLessThan(1e-6);
+      if (Math.abs(alive.rootX - base.rootX) > 0.01) hipMoved = true;
+    }
+    expect(hipMoved).toBe(true);
+    expect(withLife(base, 47, fps, 7).headTilt).not.toBe(base.headTilt);
+  });
+
+  it('life leaves the hip alone when a leg is not planted on a foot point', () => {
+    const base = resolvePose(kneel);
+    const alive = withLife(base, 60, fps, 3);
+    expect(alive.rootX).toBe(base.rootX);
+    expect(alive.hipY).toBe(base.hipY);
   });
 });
 

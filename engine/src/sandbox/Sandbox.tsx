@@ -11,7 +11,7 @@ import { Character } from '../rig/Character';
 import type { CharacterProps } from '../rig/Character';
 import { Hand, handTransform } from '../rig/Hand';
 import type { HandStyle } from '../rig/Hand';
-import { blinkAt, withLife } from '../rig/life';
+import { blinkAt, gazeAt, withLife } from '../rig/life';
 import { add, fromDown, mul, smoothstep, vec } from '../rig/math';
 import { poseAt, resolvePose } from '../rig/pose';
 import type { Pose } from '../rig/pose';
@@ -405,6 +405,7 @@ function MotionVideo({ c }: { c: Colors }) {
         face={faceAt(frame, faceKeys)}
         turn={turn}
         blink={blinkAt(frame, fps, SEED)}
+        gaze={gazeAt(frame, fps, SEED)}
         talk={MOUTH_OPENNESS[mouthShapeAt(frame, fps, MOTION_WORDS)]}
         prop={rodProp}
       />

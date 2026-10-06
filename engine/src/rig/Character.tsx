@@ -41,6 +41,8 @@ export type CharacterProps = {
   talk?: number;
   /** A point to look at, in this character's local head units. */
   lookAt?: Vec2;
+  /** A small offset of the eyes from where they are looking: eye darts (see gazeAt). */
+  gaze?: Vec2;
   eyeStyle?: EyeStyle;
   /** Identity mode (Style 3.4): skin tone, hair and facial hair. Omit for default white heads. */
   identity?: Identity;
@@ -108,6 +110,7 @@ export const Character = ({
   blink = 0,
   talk = 0,
   lookAt,
+  gaze,
   eyeStyle = 'round',
   identity,
   outfit,
@@ -165,6 +168,7 @@ export const Character = ({
     const l = length(d);
     if (l > 1e-6) look = mul(d, 1 / l);
   }
+  if (gaze) look = vec(look.x + gaze.x, look.y + gaze.y);
 
   const frames = {
     front: { center: j.arms.front.hand, forearm: j.arms.front.forearm, hand: posed.hands.front },

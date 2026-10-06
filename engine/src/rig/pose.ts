@@ -38,10 +38,29 @@ export type Pose = {
   legs: { front: LegSpec; back: LegSpec };
 };
 
-export type PoseKey = { frame: number; pose: Pose; transition?: number };
+export type PoseKey = {
+  frame: number;
+  pose: Pose;
+  /** Frames the snap itself takes. Default inside the token range. */
+  transition?: number;
+  /** Frames of wind-up before the snap. Left out, big moves get WINDUP_FRAMES and small ones none. */
+  windup?: number;
+};
 
 /** Overshoot for pose snaps: peaks about 5% past the target, then settles. */
 export const POSE_OVERSHOOT = 1.2;
+
+/**
+ * Anticipation (Part 2, section 7.4: "anticipation before big moves"). Before a big move the
+ * arms and head pull back a little the other way for a few frames, then snap.
+ */
+export const WINDUP_FRAMES = 3;
+/** How far the wind-up pulls back, as a fraction of the whole move. */
+export const WINDUP_DEPTH = 0.12;
+/** A move is big when a joint turns more than this many degrees, or the hip moves as much. */
+export const BIG_MOVE = 45;
+/** In a big move the hip dips this far mid-way and comes back up: the body has weight. */
+export const WEIGHT_DIP = 0.03;
 
 const [minTransition, maxTransition] = tokens.motion.poseTransitionFrames;
 
@@ -127,15 +146,35 @@ const lerpLimb = (a: LimbAngles, b: LimbAngles, t: number): LimbAngles => ({
 });
 
 /**
- * Blend two resolved poses. t runs 0 to 1 over the transition.
- * Arms and head take the overshooting ease. Hips and planted feet take a clamped ease,
- * so feet never sink below the ground or slide during a snap.
+ * How far apart two poses are, in degrees: the largest turn of any arm joint or of the torso,
+ * with hip travel counted as 100 degrees per head unit. Decides which moves are big.
  */
-export function blendPoses(a: ResolvedPose, b: ResolvedPose, t: number): ResolvedPose {
-  const e = easeOutBack(t, POSE_OVERSHOOT);
-  const ec = clamp(e, 0, 1);
+export function poseDistance(a: ResolvedPose, b: ResolvedPose): number {
+  const d = (x: number, y: number) => Math.abs(x - y);
+  return Math.max(
+    d(a.arms.front.upper, b.arms.front.upper),
+    d(a.arms.front.lower, b.arms.front.lower),
+    d(a.arms.back.upper, b.arms.back.upper),
+    d(a.arms.back.lower, b.arms.back.lower),
+    d(a.torsoLean, b.torsoLean) * 2,
+    Math.hypot(a.rootX - b.rootX, a.hipY - b.hipY) * 100,
+  );
+}
+
+/**
+ * Mix two resolved poses. `e` is how far along the upper body is and may run below 0 (a
+ * wind-up) or above 1 (an overshoot). `ec` is how far along the hips and planted feet are and
+ * stays inside 0 to 1, so feet never sink below the ground or slide. `dip` lowers the hip.
+ */
+export function mixPoses(
+  a: ResolvedPose,
+  b: ResolvedPose,
+  e: number,
+  ec: number,
+  dip = 0,
+): ResolvedPose {
   const rootX = lerp(a.rootX, b.rootX, ec);
-  const hipY = lerp(a.hipY, b.hipY, ec);
+  const hipY = lerp(a.hipY, b.hipY, ec) + dip;
   const hip = vec(rootX, hipY);
 
   const blendLeg = (la: LegState, lb: LegState): LegState => {
@@ -154,13 +193,38 @@ export function blendPoses(a: ResolvedPose, b: ResolvedPose, t: number): Resolve
       back: lerpLimb(a.arms.back, b.arms.back, e),
     },
     legs: { front: blendLeg(a.legs.front, b.legs.front), back: blendLeg(a.legs.back, b.legs.back) },
-    hands: t < 0.5 ? a.hands : b.hands,
+    hands: ec < 0.5 ? a.hands : b.hands,
   };
 }
 
 /**
- * The pose at a frame, given keys sorted by frame. Each key snaps in over its transition
- * (default inside the token range) with a small overshoot, then holds.
+ * Blend two resolved poses. t runs 0 to 1 over the transition.
+ * Arms and head take the overshooting ease. Hips and planted feet take a clamped ease,
+ * so feet never sink below the ground or slide during a snap.
+ */
+export function blendPoses(a: ResolvedPose, b: ResolvedPose, t: number): ResolvedPose {
+  const e = easeOutBack(t, POSE_OVERSHOOT);
+  return mixPoses(a, b, e, clamp(e, 0, 1));
+}
+
+/** The frames a key's move takes: wind-up first (big moves only, unless the key says), then the snap. */
+export function moveFrames(
+  from: ResolvedPose,
+  to: ResolvedPose,
+  key: Pick<PoseKey, 'transition' | 'windup'> = {},
+): { windup: number; transition: number; big: boolean } {
+  const big = poseDistance(from, to) > BIG_MOVE;
+  return {
+    windup: Math.max(0, key.windup ?? (big ? WINDUP_FRAMES : 0)),
+    transition: clamp(key.transition ?? DEFAULT_TRANSITION, minTransition, maxTransition),
+    big,
+  };
+}
+
+/**
+ * The pose at a frame, given keys sorted by frame. From each key's frame the body winds up (if
+ * the move is big), snaps to the new pose with a small overshoot and a dip of the hips, then
+ * holds. Hands and heads travel on arcs, because joints turn rather than slide.
  */
 export function poseAt(frame: number, keys: readonly PoseKey[]): ResolvedPose {
   const firstKey = keys[0];
@@ -174,8 +238,18 @@ export function poseAt(frame: number, keys: readonly PoseKey[]): ResolvedPose {
   const target = resolvePose(key.pose);
   const prev = keys[index - 1];
   if (!prev || frame < key.frame) return target;
-  const transition = clamp(key.transition ?? DEFAULT_TRANSITION, minTransition, maxTransition);
-  const t = (frame - key.frame) / transition;
-  if (t >= 1) return target;
-  return blendPoses(resolvePose(prev.pose), target, t);
+  const from = resolvePose(prev.pose);
+  const { windup, transition, big } = moveFrames(from, target, key);
+  const f = frame - key.frame;
+  if (f >= windup + transition) return target;
+  if (f < windup) {
+    // Pull back the other way, easing into the deepest point as the snap begins.
+    const back = -WINDUP_DEPTH * Math.sin(((f / windup) * Math.PI) / 2);
+    return mixPoses(from, target, back, 0);
+  }
+  const t = (f - windup) / transition;
+  const depth = windup > 0 ? WINDUP_DEPTH : 0;
+  const e = -depth + (1 + depth) * easeOutBack(t, POSE_OVERSHOOT);
+  const ec = clamp(easeOutBack(t, POSE_OVERSHOOT), 0, 1);
+  return mixPoses(from, target, e, ec, big ? WEIGHT_DIP * Math.sin(Math.PI * t) : 0);
 }
