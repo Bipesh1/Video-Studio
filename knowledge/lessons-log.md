@@ -344,3 +344,23 @@ Note (Claude's reading): two small steps did not reach what he wanted; the side-
   tokens (four props had it) hides until the style changes.
 Status: active
 ```
+
+```
+L-0022 | 2026-10-06 | run: 2026-10-06-honest-farmer (sample refine, step 4B)
+Area: script | Scope: all runs | Source: Biku
+Lesson: Alongside the narration, the stick figures speak for themselves, with words that come
+  from the script provided. When a script reports what someone said, give that line to the
+  character, in their own voice, with their mouth moving.
+Evidence: Asked whether turning "his wife told him to keep the gold" into the wife saying it
+  was all right, Biku answered: "yes like with narration the stick figures need to speak
+  themselves based on the script provided".
+Applied: knowledge/playbooks/general.md (script modes). The script and storyboard already
+  carry a speaker and a voice for every line, and the speaker's mouth moves.
+Note (Claude's reading, not Biku's words): in refine mode reported speech becomes a spoken
+  line and the change is listed. In as-is mode no word may change, so only speech the script
+  already quotes is given to the character, word for word. A character says only what the
+  script says or reports they said; nothing is invented for them. He did not answer how much
+  may be cut in a refine; the sample cut about a third.
+Status: active
+```
+

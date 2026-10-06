@@ -10,6 +10,8 @@ Start every run with `npm run script -- new`. It saves Biku's request and his sc
 - **refine** ("refine my script"): keep the story, the facts and his voice. Improve the hook, the rhythm for the ear, sentence length and slow passages. Every number he gave stays and none is added. List every change in `changes`, one plain sentence each. Do not stop for approval unless he asked.
 - **original** ("make a story about X"): research first, then write from the format's beats. Save every source with what it was used for. A factual format with no sources is refused.
 
+**Characters speak for themselves.** Alongside the narration, the stick figures say their own lines in their own voices, with words that come from the script provided. In refine mode, turn reported speech ("his wife told him to keep the gold") into a spoken line and list the change. In as-is mode, give a character only the speech the script already quotes, word for word. Never invent something for a character to say. (L-0022, Biku)
+
 If `prompts/<format>.md` or `prompts/master.md` exists, it is Biku's master prompt and replaces the writing rules below. Record it in the script as `masterPrompt`.
 
 ## Writing for attention

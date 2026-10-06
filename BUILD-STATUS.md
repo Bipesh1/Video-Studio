@@ -49,7 +49,7 @@ Asked by Biku ("start 4B"). The studio can now take a script in any of the three
 
 ### Open after 4B
 
-- **The refining is Claude's judgment.** The check proves the promises (numbers kept, changes listed), not that the result is better. Biku should read the sample and say if this is the kind of refining he wants: how much may be cut, whether reported speech may become spoken lines.
+- **The refining is Claude's judgment.** The check proves the promises (numbers kept, changes listed), not that the result is better. Biku read the sample on 2026-10-06 and answered the question about speech: "yes like with narration the stick figures need to speak themselves based on the script provided" (lesson L-0022, in the general playbook). How much may be cut in a refine is still not answered; the sample cut about a third.
 - **Only numbers written as digits are protected** in refine mode. Names, places and numbers written as words are kept by care, not by the check.
 - **Original mode's research** (finding and saving sources) is done by Claude during a run; nothing automates it.
 - **Re-hooks every 20 to 30 seconds** and "specific beats general" are writing rules the check cannot test.
