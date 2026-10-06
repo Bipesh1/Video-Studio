@@ -88,8 +88,18 @@ describe('moving the hip', () => {
 describe('everyday actions', () => {
   it('are listed by name and give a pose at any time', () => {
     expect(Object.keys(ACTIONS).sort()).toEqual([
+      'carry',
       'cheer',
       'cry',
+      'fall',
+      'fall-back',
+      'jump',
+      'pull',
+      'punch',
+      'push',
+      'recoil',
+      'run',
+      'swing',
       'walk',
       'walk-happy',
       'walk-proud',

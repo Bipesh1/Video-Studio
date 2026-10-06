@@ -517,6 +517,267 @@
       "added": "2026-10-06"
     },
     {
+      "id": "action/run",
+      "kind": "action",
+      "name": "Run",
+      "description": "A flat-out run: both feet off the ground between steps, the body thrown forward, elbows pumping. Loops.",
+      "tags": [
+        "action",
+        "run",
+        "running",
+        "sprint",
+        "chase",
+        "escape",
+        "flee",
+        "hurry",
+        "rush",
+        "fast"
+      ],
+      "code": {
+        "file": "engine/src/rig/walk.ts",
+        "export": "GAITS"
+      },
+      "use": "const r = walkAt(frame / fps, GAITS.run); pose={r.pose} with turn={1}; the body moves forward by r.pose.rootX",
+      "still": "knowledge/golden/assets/action-run.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "action/carry",
+      "kind": "action",
+      "name": "Carry a load",
+      "description": "Walking with a load held in both arms in front of the body, leaning back against the weight. Loops.",
+      "tags": [
+        "action",
+        "carry",
+        "carrying",
+        "load",
+        "heavy",
+        "box",
+        "sack",
+        "haul",
+        "deliver",
+        "lift"
+      ],
+      "code": {
+        "file": "engine/src/rig/walk.ts",
+        "export": "GAITS"
+      },
+      "use": "pose={walkAt(frame / fps, GAITS.carry).pose} and draw the load at the two hands with the prop slot",
+      "still": "knowledge/golden/assets/action-carry.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "action/push",
+      "kind": "action",
+      "name": "Push",
+      "description": "Pushing something heavy: the body leans hard into both arms and drives forward with short steps. Loops.",
+      "tags": [
+        "action",
+        "push",
+        "pushing",
+        "shove",
+        "heavy",
+        "cart",
+        "boulder",
+        "door",
+        "effort",
+        "strain"
+      ],
+      "code": {
+        "file": "engine/src/rig/walk.ts",
+        "export": "GAITS"
+      },
+      "use": "pose={walkAt(frame / fps, GAITS.push).pose}; move the pushed thing with the body",
+      "still": "knowledge/golden/assets/action-push.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "action/pull",
+      "kind": "action",
+      "name": "Pull",
+      "description": "Pulling on a rope or handle held in both fists, leaning back and stepping backward. Loops.",
+      "tags": [
+        "action",
+        "pull",
+        "pulling",
+        "drag",
+        "tug",
+        "rope",
+        "haul",
+        "heave",
+        "effort",
+        "strain"
+      ],
+      "code": {
+        "file": "engine/src/rig/walk.ts",
+        "export": "GAITS"
+      },
+      "use": "pose={walkAt(-frame / fps, GAITS.pull).pose} (time runs backward, so the feet step backward)",
+      "still": "knowledge/golden/assets/action-pull.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "action/jump",
+      "kind": "action",
+      "name": "Jump",
+      "description": "A jump: crouch with the arms back, spring up with the arms high, tuck the legs, land on bent knees and stand. Takes 1.1 seconds.",
+      "tags": [
+        "action",
+        "jump",
+        "jumping",
+        "leap",
+        "hop",
+        "spring",
+        "over",
+        "dodge",
+        "excited",
+        "bound"
+      ],
+      "code": {
+        "file": "engine/src/rig/moves.ts",
+        "export": "jumpAt"
+      },
+      "use": "pose={jumpAt(seconds, height, distance)} with seconds counted from the start of the jump",
+      "still": "knowledge/golden/assets/action-jump.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "action/fall",
+      "kind": "action",
+      "name": "Fall forward",
+      "description": "Falling flat on the face, as after a trip: toppling forward with the arms out, hitting the ground, one bounce, lying still.",
+      "tags": [
+        "action",
+        "fall",
+        "falling",
+        "trip",
+        "stumble",
+        "collapse",
+        "faceplant",
+        "slip",
+        "defeated",
+        "tumble"
+      ],
+      "code": {
+        "file": "engine/src/rig/moves.ts",
+        "export": "fallAt"
+      },
+      "use": "pose={fallAt(seconds)}; it ends lying down and stays there",
+      "still": "knowledge/golden/assets/action-fall.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "action/fall-back",
+      "kind": "action",
+      "name": "Fall backward",
+      "description": "Knocked flat on the back: going over backward with the arms flailing, landing, one bounce, lying still with a knee up.",
+      "tags": [
+        "action",
+        "fall",
+        "knocked down",
+        "knockout",
+        "faint",
+        "collapse",
+        "backward",
+        "defeated",
+        "flattened",
+        "ko"
+      ],
+      "code": {
+        "file": "engine/src/rig/moves.ts",
+        "export": "fallBackAt"
+      },
+      "use": "pose={fallBackAt(seconds)}; follow a recoil with it for a knock-down",
+      "still": "knowledge/golden/assets/action-fall-back.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "action/punch",
+      "kind": "action",
+      "name": "Punch",
+      "description": "A punch: the fist cocks back, the body steps in and the arm shoots straight out, holds a beat and returns. The hit lands 0.22 seconds in.",
+      "tags": [
+        "action",
+        "punch",
+        "hit",
+        "strike",
+        "fight",
+        "attack",
+        "fist",
+        "brawl",
+        "blow",
+        "violence"
+      ],
+      "code": {
+        "file": "engine/src/rig/moves.ts",
+        "export": "punchAt"
+      },
+      "use": "pose={punchAt(seconds)}; put an Impact flash at the fist at PUNCH.hit and start the other person recoilAt there",
+      "still": "knowledge/golden/assets/action-punch.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "action/swing",
+      "kind": "action",
+      "name": "Swing a held thing",
+      "description": "Swinging something held in the front hand: up and back over the shoulder, down hard in front with a step, follow through, back to upright.",
+      "tags": [
+        "action",
+        "swing",
+        "sword",
+        "club",
+        "strike",
+        "slash",
+        "fight",
+        "attack",
+        "chop",
+        "hammer",
+        "weapon"
+      ],
+      "code": {
+        "file": "engine/src/rig/moves.ts",
+        "export": "swingAt"
+      },
+      "use": "pose={swingAt(seconds)} with a prop in the front hand; the hit lands at SWING.hit",
+      "still": "knowledge/golden/assets/action-swing.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "action/recoil",
+      "kind": "action",
+      "name": "Recoil from a hit",
+      "description": "Being hit from the front: the head snaps back, the body buckles away, two stumbling steps backward, then upright again.",
+      "tags": [
+        "action",
+        "recoil",
+        "hit",
+        "stagger",
+        "stumble",
+        "hurt",
+        "struck",
+        "flinch",
+        "reel",
+        "fight"
+      ],
+      "code": {
+        "file": "engine/src/rig/moves.ts",
+        "export": "recoilAt"
+      },
+      "use": "pose={recoilAt(seconds)} with seconds counted from the moment the blow lands; add a head squash on the first frames",
+      "still": "knowledge/golden/assets/action-recoil.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
       "id": "motion/life",
       "kind": "motion",
       "name": "Blinks and breathing",

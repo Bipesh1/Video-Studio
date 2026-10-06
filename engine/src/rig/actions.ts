@@ -3,11 +3,14 @@ import type { Pose } from './pose';
 import { ELBOW_DOWN } from './ik';
 import { vec } from './math';
 import type { ResolvedPose } from './types';
-import { WALKS, walkAt } from './walk';
+import { fallAt, fallBackAt, jumpAt, punchAt, recoilAt, swingAt } from './moves';
+import { GAITS, WALKS, walkAt } from './walk';
 
 /**
- * Everyday actions (Part 2, section 7.4): poses that move on their own, as a function of time
- * in seconds, like the walk. Feet stay planted; only the body above them moves.
+ * Actions (Part 2, section 7.4): poses that move on their own, as a function of time in
+ * seconds. The everyday ones (cheer, cry) are here; the walks and the other ways of moving on
+ * foot are in walk.ts; the one-shot action moves (jump, falls, punch, swing, recoil) are in
+ * moves.ts. ACTIONS at the bottom lists them all by name.
  */
 
 const TWO_PI = Math.PI * 2;
@@ -85,6 +88,17 @@ export const ACTIONS = {
   'walk-happy': (time: number) => walkAt(time, WALKS.happy).pose,
   cheer: cheerAt,
   cry: cryAt,
+  run: (time: number) => walkAt(time, GAITS.run).pose,
+  carry: (time: number) => walkAt(time, GAITS.carry).pose,
+  push: (time: number) => walkAt(time, GAITS.push).pose,
+  // Time runs backward, so the feet step backward while the body leans away from the load.
+  pull: (time: number) => walkAt(-time, GAITS.pull).pose,
+  jump: (time: number) => jumpAt(time),
+  fall: fallAt,
+  'fall-back': fallBackAt,
+  punch: punchAt,
+  swing: swingAt,
+  recoil: recoilAt,
 } as const satisfies Record<string, (time: number) => ResolvedPose>;
 
 export type ActionName = keyof typeof ACTIONS;

@@ -25,6 +25,7 @@ import { BG_SHEETS, CostumeSheet, AtmosVideo, HairTurnsSheet, IdentitySheet } fr
 import { AgesSheet, ClothesSheet, CostumesBSheet, PeopleSheet, VillagersSheet } from './part-c';
 import { PosesBSheet } from './part-d';
 import { MoodsVideo, MouthsSheet, PolishVideo } from './part-e';
+import { MovesASheet, MovesBSheet } from './part-f';
 import type { SandboxBg, SheetName } from './sheets';
 
 export type SandboxProps = { sheet: SheetName; bg: SandboxBg };
@@ -438,6 +439,8 @@ export const Sandbox = ({ sheet, bg }: SandboxProps) => {
     'poses-b': <PosesBSheet c={c} />,
     mouths: <MouthsSheet c={c} />,
     villagers: <VillagersSheet c={c} />,
+    'moves-a': <MovesASheet c={c} />,
+    'moves-b': <MovesBSheet c={c} />,
     walk: <WalkVideo c={c} />,
     motion: <MotionVideo c={c} />,
     polish: <PolishVideo c={c} />,

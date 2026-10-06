@@ -19,12 +19,14 @@ import type { CharacterProps, HandFrame } from '../rig/Character';
 import { swayOf } from '../rig/follow';
 import { Hand } from '../rig/Hand';
 import { vec } from '../rig/math';
+import { JUMP, PUNCH, SWING } from '../rig/moves';
 import { poseAt, resolvePose } from '../rig/pose';
 import { POSES, handsUp, holdObject, stand } from '../rig/poses';
 import { computeSkeleton } from '../rig/skeleton';
 import { HAND_SHAPES } from '../rig/types';
 import type { HandShape, ResolvedPose } from '../rig/types';
 import { walkAt } from '../rig/walk';
+import { boulderProp, clubProp, crateProp, ropeProp } from '../sandbox/fixtures';
 import { Rod } from '../sandbox/Rod';
 import { accent, ink, lineWeights, palette, pick, tokens } from '../tokens';
 import { COSTUMES } from '../wardrobe/cast';
@@ -106,7 +108,17 @@ const POSE_VIEWS: Record<string, { turn?: number; dx?: number; face?: Expression
 };
 
 /** A moment of each action that shows what it is. */
-const ACTION_VIEWS: Record<ActionName, { time: number; turn: number; face: ExpressionName }> = {
+const ACTION_VIEWS: Record<
+  ActionName,
+  {
+    time: number;
+    turn: number;
+    face: ExpressionName;
+    head?: number;
+    dx?: number;
+    prop?: CharacterProps['prop'];
+  }
+> = {
   walk: { time: 0.3, turn: 1, face: 'neutral' },
   'walk-proud': { time: 0.36, turn: 1, face: 'smug' },
   'walk-tired': { time: 0.5, turn: 1, face: 'exhausted' },
@@ -114,6 +126,16 @@ const ACTION_VIEWS: Record<ActionName, { time: number; turn: number; face: Expre
   'walk-happy': { time: 0.26, turn: 1, face: 'happy' },
   cheer: { time: 0.12, turn: 0, face: 'laughing' },
   cry: { time: 0.1, turn: 0.5, face: 'wailing' },
+  run: { time: 0.27, turn: 1, face: 'determined' },
+  carry: { time: 0.3, turn: 1, face: 'exhausted', dx: -20, prop: crateProp },
+  push: { time: 0.3, turn: 1, face: 'determined', dx: -70, head: 80, prop: boulderProp },
+  pull: { time: 0.3, turn: 1, face: 'determined', dx: -30, prop: ropeProp },
+  jump: { time: (JUMP.takeoff + JUMP.land) / 2, turn: 1, face: 'determined', head: 72 },
+  fall: { time: 0.42, turn: 1, face: 'surprised', dx: 20, head: 80 },
+  'fall-back': { time: 0.42, turn: 1, face: 'surprised', dx: 30, head: 80 },
+  punch: { time: PUNCH.hit, turn: 1, face: 'angry', dx: -30 },
+  swing: { time: SWING.windup, turn: 1, face: 'angry', head: 76, prop: clubProp },
+  recoil: { time: 0.1, turn: 1, face: 'afraid', dx: 20 },
 };
 
 /** A plain block to sit on: a stand-in for a chair, throne or rock. */
@@ -261,7 +283,14 @@ const entries: Array<[string, Preview]> = [
     `action/${name}`,
     (o) => {
       const view = ACTION_VIEWS[name];
-      return figure(o, ACTIONS[name](view.time), { face: EXPRESSIONS[view.face] }, view.turn);
+      return figure(
+        o,
+        ACTIONS[name](view.time),
+        { face: EXPRESSIONS[view.face], ...(view.prop ? { prop: view.prop } : {}) },
+        view.turn,
+        BOX / 2 + (view.dx ?? 0),
+        view.head ?? POSE_HEAD,
+      );
     },
   ]),
   ['motion/life', (o) => headShot(o, { blink: 1 })],
