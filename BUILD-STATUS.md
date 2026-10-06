@@ -42,7 +42,7 @@ Asked by Biku ("start phase 4A"). Nothing here makes a picture yet; it is the pa
 ### Open after 4A
 
 - **The storyboard will grow.** Steps 4C and 4D will show what the planner and the assembly really need (exact stage positions, props on tables, timing inside a shot). The file has a version number for that.
-- **Brand name, watermark and closing card** wait for Biku.
+- **Brand name, watermark and closing card** wait for Biku. He has not picked a niche yet (2026-10-06) and will give the page name later; `brands/my-page.json` stays a placeholder and nothing is blocked by it.
 - **Voices** wait for Biku's pick (Checkpoint 1 question 2).
 - **No general or format playbooks yet** (`knowledge/playbooks/general.md`, `formats/<name>.md`); the writing rules of the plan (section 4.2) get their home in 4B.
 
