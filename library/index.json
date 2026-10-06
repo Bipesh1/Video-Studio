@@ -2267,6 +2267,325 @@
       "added": "2026-10-05"
     },
     {
+      "id": "prop/in-hand",
+      "kind": "prop",
+      "name": "A prop in a hand, or standing in the scene",
+      "description": "How every prop is put into a picture: in a hand so it turns with it, stays upright or hangs and swings; or standing on the ground or a table at the size of the characters.",
+      "tags": [
+        "prop",
+        "hold",
+        "holding",
+        "carry",
+        "in hand",
+        "place",
+        "stand",
+        "put down",
+        "grip",
+        "held"
+      ],
+      "code": {
+        "file": "engine/src/props/Hold.tsx",
+        "export": "InHand"
+      },
+      "use": "prop={(hands, info) => <InHand frame={hands.front} how=\"grip|upright|hang\" sway={info.sway}><Sword uid={info.uid} shadowSide={info.shadowSide} /></InHand>}; in the scene: <Placed x={px} y={groundPx} head={headPx}>...</Placed>",
+      "still": "knowledge/golden/assets/prop-in-hand.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "prop/sword",
+      "kind": "prop",
+      "name": "Sword",
+      "description": "A sword with a bright blade, a gold cross-guard and a brown grip. A story prop: raised, pointed, never shown wounding anyone.",
+      "tags": ["prop", "sword", "blade", "weapon", "knight", "soldier", "duel", "battle", "steel"],
+      "code": {
+        "file": "engine/src/props/Sword.tsx",
+        "export": "Sword"
+      },
+      "use": "<InHand frame={hands.front}><Sword uid shadowSide /></InHand> with a gripping hand; swingAt swings it",
+      "still": "knowledge/golden/assets/prop-sword.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "prop/shield",
+      "kind": "prop",
+      "name": "Shield",
+      "description": "A shield with a gold rim and boss on a field of one bright color. Covers the hand and forearm that carry it.",
+      "tags": [
+        "prop",
+        "shield",
+        "defend",
+        "block",
+        "knight",
+        "soldier",
+        "guard",
+        "armor",
+        "battle"
+      ],
+      "code": {
+        "file": "engine/src/props/Shield.tsx",
+        "export": "Shield"
+      },
+      "use": "<InHand frame={hands.back} how=\"upright\"><Shield uid shadowSide paint=\"crimson\" /></InHand> on a hand that is not gripping",
+      "still": "knowledge/golden/assets/prop-shield.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "prop/coin",
+      "kind": "prop",
+      "name": "Coin",
+      "description": "A big gold coin with a star stamped on it. For money, tax, payment, treasure and bribes.",
+      "tags": [
+        "prop",
+        "coin",
+        "money",
+        "gold",
+        "tax",
+        "pay",
+        "treasure",
+        "wealth",
+        "price",
+        "reward"
+      ],
+      "code": {
+        "file": "engine/src/props/Coin.tsx",
+        "export": "Coin"
+      },
+      "use": "<InHand frame={hands.front} how=\"upright\" reach={0.24}><Coin uid shadowSide /></InHand> to hold it up; several on a table with Placed",
+      "still": "knowledge/golden/assets/prop-coin.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "prop/bag",
+      "kind": "prop",
+      "name": "Bag",
+      "description": "A cloth bag tied at the neck, hanging from the hand or standing on the ground: a sack of coins, grain or loot.",
+      "tags": [
+        "prop",
+        "bag",
+        "sack",
+        "purse",
+        "loot",
+        "money bag",
+        "grain",
+        "carry",
+        "thief",
+        "luggage"
+      ],
+      "code": {
+        "file": "engine/src/props/Bag.tsx",
+        "export": "Bag"
+      },
+      "use": "<InHand frame={hands.front} how=\"hang\" sway={info.sway}><Bag uid shadowSide /></InHand> with a gripping hand",
+      "still": "knowledge/golden/assets/prop-bag.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "prop/book",
+      "kind": "prop",
+      "name": "Book",
+      "description": "A closed book with a bright cover and a gold mark. For study, law, scripture, records and stories.",
+      "tags": [
+        "prop",
+        "book",
+        "read",
+        "study",
+        "law",
+        "record",
+        "scripture",
+        "school",
+        "library",
+        "diary"
+      ],
+      "code": {
+        "file": "engine/src/props/Book.tsx",
+        "export": "Book"
+      },
+      "use": "<InHand frame={hands.front} how=\"upright\"><Book uid shadowSide paint=\"crimson\" /></InHand>",
+      "still": "knowledge/golden/assets/prop-book.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "prop/book-open",
+      "kind": "prop",
+      "name": "Open book",
+      "description": "An open book with two cream pages and lines of writing, held up to read or lying on a table.",
+      "tags": ["prop", "book", "open book", "reading", "read", "pages", "study", "story", "letter"],
+      "code": {
+        "file": "engine/src/props/Book.tsx",
+        "export": "Book"
+      },
+      "use": "<Book uid shadowSide open /> a little above the hands of someone reading",
+      "still": "knowledge/golden/assets/prop-book-open.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "prop/lantern",
+      "kind": "prop",
+      "name": "Lantern",
+      "description": "A lantern with a glowing glass and a flame, hanging from the hand or standing on a table, with a soft pool of light that flickers.",
+      "tags": [
+        "prop",
+        "lantern",
+        "lamp",
+        "light",
+        "night",
+        "dark",
+        "search",
+        "candle",
+        "glow",
+        "watchman"
+      ],
+      "code": {
+        "file": "engine/src/props/Lantern.tsx",
+        "export": "Lantern"
+      },
+      "use": "<InHand frame={hands.front} how=\"hang\" sway={info.sway}><Lantern uid shadowSide t={frame / fps} /></InHand>",
+      "still": "knowledge/golden/assets/prop-lantern.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "prop/cup",
+      "kind": "prop",
+      "name": "Cup",
+      "description": "A plain mug with a handle, in one bright color. For homes, taverns, tea and water.",
+      "tags": ["prop", "cup", "mug", "drink", "tea", "water", "tavern", "kitchen", "thirsty"],
+      "code": {
+        "file": "engine/src/props/Cup.tsx",
+        "export": "Cup"
+      },
+      "use": "<InHand frame={hands.front} how=\"upright\"><Cup uid shadowSide /></InHand> with a gripping hand; on a table CUP_REST.mug above the top",
+      "still": "knowledge/golden/assets/prop-cup.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "prop/goblet",
+      "kind": "prop",
+      "name": "Goblet",
+      "description": "A gold cup on a stem. For kings, feasts, toasts and poison plots.",
+      "tags": [
+        "prop",
+        "goblet",
+        "cup",
+        "chalice",
+        "wine",
+        "feast",
+        "toast",
+        "king",
+        "royal",
+        "poison"
+      ],
+      "code": {
+        "file": "engine/src/props/Cup.tsx",
+        "export": "Cup"
+      },
+      "use": "<Cup uid shadowSide kind=\"goblet\" /> in a gripping hand, or on a table CUP_REST.goblet above the top",
+      "still": "knowledge/golden/assets/prop-goblet.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "prop/door",
+      "kind": "prop",
+      "name": "Door",
+      "description": "A wooden door in its frame with iron bands and a gold ring, which swings open to show a dark room behind.",
+      "tags": [
+        "prop",
+        "door",
+        "doorway",
+        "entrance",
+        "knock",
+        "enter",
+        "leave",
+        "house",
+        "gate",
+        "open"
+      ],
+      "code": {
+        "file": "engine/src/props/Door.tsx",
+        "export": "Door"
+      },
+      "use": "<Placed x y={groundPx} head><Door uid shadowSide open={0 to 1} /></Placed>; draw a character after it to stand them in the doorway",
+      "still": "knowledge/golden/assets/prop-door.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "prop/chair",
+      "kind": "prop",
+      "name": "Chair",
+      "description": "A plain wooden chair seen from the side. A character in the sit pose at the same place sits on it.",
+      "tags": ["prop", "chair", "seat", "sit", "stool", "home", "school", "tavern", "furniture"],
+      "code": {
+        "file": "engine/src/props/Chair.tsx",
+        "export": "Chair"
+      },
+      "use": "<Placed x={sitterX} y={groundPx} head><Chair uid shadowSide /></Placed> drawn before the sitter; flip on Placed faces it left",
+      "still": "knowledge/golden/assets/prop-chair.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "prop/throne",
+      "kind": "prop",
+      "name": "Throne",
+      "description": "A tall gold throne with a crimson cushion and an armrest, seen from the side. For a ruler holding court.",
+      "tags": [
+        "prop",
+        "throne",
+        "king",
+        "queen",
+        "royal",
+        "ruler",
+        "court",
+        "palace",
+        "crown",
+        "seat"
+      ],
+      "code": {
+        "file": "engine/src/props/Chair.tsx",
+        "export": "Chair"
+      },
+      "use": "<Placed x={sitterX} y={groundPx} head><Chair uid shadowSide kind=\"throne\" /></Placed> drawn before the ruler, who uses the sit pose",
+      "still": "knowledge/golden/assets/prop-throne.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "prop/table",
+      "kind": "prop",
+      "name": "Table",
+      "description": "A wooden table seen from the side, with room on top for cups, books, coins and lanterns.",
+      "tags": [
+        "prop",
+        "table",
+        "desk",
+        "counter",
+        "meal",
+        "dinner",
+        "furniture",
+        "home",
+        "tavern",
+        "work"
+      ],
+      "code": {
+        "file": "engine/src/props/Table.tsx",
+        "export": "Table"
+      },
+      "use": "<Placed x y={groundPx} head><Table uid shadowSide width={2.4} /></Placed>; things stand on it at y = -TABLE.top",
+      "still": "knowledge/golden/assets/prop-table.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
       "id": "effect/sweat-flying",
       "kind": "effect",
       "name": "Flying sweat drops",

@@ -125,6 +125,11 @@ describe('library index', () => {
     expect(first('starburst')).toBe('effect/impact');
     expect(first('rumble')).toBe('camera/shake');
     expect(first('chase', 'camera')).toBe('camera/follow');
+    expect(first('treasure', 'prop')).toBe('prop/coin');
+    expect(first('wine feast')).toBe('prop/goblet');
+    expect(first('knock')).toBe('prop/door');
+    expect(first('watchman')).toBe('prop/lantern');
+    expect(first('court palace')).toBe('prop/throne');
     expect(first('leather')).toBe('color/brown');
     expect(first('khaki')).toBe('color/tan');
     expect(first('linen')).toBe('color/cream');

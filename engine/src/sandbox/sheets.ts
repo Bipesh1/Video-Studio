@@ -24,6 +24,8 @@ export const STILL_SHEETS = [
   'effects',
   'turn-steps',
   'shoes',
+  'props',
+  'props-in-use',
 ] as const;
 export const VIDEO_SHEETS = {
   walk: 4,

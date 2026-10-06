@@ -16,7 +16,18 @@ import { TearDrops, TearStreams } from '../effects/Tears';
 import { EXPRESSIONS, EXPRESSION_NAMES } from '../face/expressions';
 import type { ExpressionName } from '../face/expressions';
 import { MOUTH_FORMS } from '../face/talk';
+import { Bag } from '../props/Bag';
+import { Book } from '../props/Book';
+import { Chair } from '../props/Chair';
+import { Coin } from '../props/Coin';
+import { Cup } from '../props/Cup';
+import { Door } from '../props/Door';
+import { InHand, Placed } from '../props/Hold';
+import { Lantern } from '../props/Lantern';
 import { Scepter } from '../props/Scepter';
+import { Shield } from '../props/Shield';
+import { Sword } from '../props/Sword';
+import { Table } from '../props/Table';
 import { ACTIONS } from '../rig/actions';
 import { chainAt } from '../rig/chain';
 import type { ActionName } from '../rig/actions';
@@ -431,6 +442,57 @@ const entries: Array<[string, Preview]> = [
         <Scepter frame={upright} uid="lib-scepter" shadowSide={1} />
       </g>
     ),
+  ],
+  // Each prop on its own, standing where the ground line of a figure would be.
+  ...(
+    [
+      [
+        'sword',
+        150,
+        250,
+        (u) => <g transform="translate(-0.56 0)">{<Sword uid={u} shadowSide={1} />}</g>,
+      ],
+      ['shield', 250, 210, (u) => <Shield uid={u} shadowSide={1} />],
+      ['coin', 430, 200, (u) => <Coin uid={u} shadowSide={1} />],
+      ['bag', 330, 80, (u) => <Bag uid={u} shadowSide={1} />],
+      ['book', 330, 200, (u) => <Book uid={u} shadowSide={1} />],
+      ['book-open', 280, 200, (u) => <Book uid={u} shadowSide={1} open />],
+      ['lantern', 250, 90, (u) => <Lantern uid={u} shadowSide={1} />],
+      ['cup', 340, 200, (u) => <Cup uid={u} shadowSide={1} />],
+      ['goblet', 340, 200, (u) => <Cup uid={u} shadowSide={1} kind="goblet" />],
+      ['door', 80, 370, (u) => <Door uid={u} shadowSide={1} open={0.3} />],
+      ['chair', 170, 350, (u) => <Chair uid={u} shadowSide={1} />],
+      ['throne', 122, 362, (u) => <Chair uid={u} shadowSide={1} kind="throne" />],
+      ['table', 150, 320, (u) => <Table uid={u} shadowSide={1} />],
+    ] as Array<[string, number, number, (uid: string) => ReactNode]>
+  ).map(([name, head, y, draw]): [string, Preview] => [
+    `prop/${name}`,
+    () => (
+      <Placed x={BOX / 2} y={y} head={head}>
+        {draw(`lib-${name}`)}
+      </Placed>
+    ),
+  ]),
+  // A prop in a hand: a sword held out, the fingers wrapped over its grip.
+  [
+    'prop/in-hand',
+    (o) =>
+      figure(
+        o,
+        resolvePose(holdObject),
+        {
+          face: EXPRESSIONS.determined,
+          prop: (hands, info) =>
+            hands.front.hand.shape === 'grip' ? (
+              <InHand frame={hands.front}>
+                <Sword uid={`${info.uid}-sw`} shadowSide={info.shadowSide} />
+              </InHand>
+            ) : null,
+        },
+        0.5,
+        BOX / 2 - 60,
+        80,
+      ),
   ],
   [
     'effect/sweat-flying',

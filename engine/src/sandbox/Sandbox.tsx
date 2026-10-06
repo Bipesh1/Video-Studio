@@ -28,6 +28,7 @@ import { MoodsVideo, MouthsSheet, PolishVideo, TurnStepsSheet } from './part-e';
 import { MovesASheet, MovesBSheet, ShoesSheet } from './part-f';
 import { EffectsSheet } from './part-g';
 import { ActionVideo } from './part-h';
+import { PropsInUseSheet, PropsSheet } from './part-i';
 import type { SandboxBg, SheetName } from './sheets';
 
 export type SandboxProps = { sheet: SheetName; bg: SandboxBg };
@@ -446,6 +447,8 @@ export const Sandbox = ({ sheet, bg }: SandboxProps) => {
     effects: <EffectsSheet c={c} />,
     'turn-steps': <TurnStepsSheet c={c} />,
     shoes: <ShoesSheet c={c} />,
+    props: <PropsSheet c={c} />,
+    'props-in-use': <PropsInUseSheet c={c} />,
     walk: <WalkVideo c={c} />,
     motion: <MotionVideo c={c} />,
     polish: <PolishVideo c={c} />,
