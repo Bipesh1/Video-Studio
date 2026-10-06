@@ -146,3 +146,19 @@ Applied: CLOTH spring in engine/src/rig/follow.ts retuned; a talking mouth opens
   four faces and three views.
 Status: active
 ```
+
+```
+L-0011 | 2026-10-06 | run: Phase 2D action test clip (engine/out/sandbox/action.mp4)
+Area: action | Scope: style ink-stick | Source: self-check
+Lesson: Make a short clip that uses new moves together before calling them done. Moves that
+  look right one at a time on a sheet still fail in a scene: at the changes between them, at
+  the edges of the frame and against a moving background.
+Evidence: Every move passed its strip sheet. The first clip then showed the background running
+  out two screens into the chase, the guard off screen for most of it, characters too small to
+  read, and stars cut off by the frame edge. A knee also sank into the ground in the trip, which
+  a test for "nothing below the ground" caught before the sheet did.
+Applied: endless backgrounds (Background.tsx); chainAt for moves in a row (chain.ts); the trip
+  rebuilt as a tip over the feet (moves.ts); tests that no foot, knee or head goes under the
+  ground in any move; the clip reframed with bigger characters.
+Status: active
+```

@@ -18,6 +18,7 @@ import type { ExpressionName } from '../face/expressions';
 import { MOUTH_FORMS } from '../face/talk';
 import { Scepter } from '../props/Scepter';
 import { ACTIONS } from '../rig/actions';
+import { chainAt } from '../rig/chain';
 import type { ActionName } from '../rig/actions';
 import { body } from '../rig/body';
 import { Character } from '../rig/Character';
@@ -339,6 +340,20 @@ const entries: Array<[string, Preview]> = [
           ...(COSTUMES.ruler ? { outfit: COSTUMES.ruler } : {}),
           sway: swayOf((f) => walkAt(f / 30).pose, 9, 30),
         },
+        1,
+      ),
+  ],
+  // The moment a sneak turns into a run: half way through the blend between the two.
+  [
+    'motion/chain',
+    (o) =>
+      figure(
+        o,
+        chainAt(0.05, [
+          { from: -0.5, at: ACTIONS['walk-sneaky'] },
+          { from: 0, at: ACTIONS.run },
+        ]),
+        { face: EXPRESSIONS.afraid },
         1,
       ),
   ],

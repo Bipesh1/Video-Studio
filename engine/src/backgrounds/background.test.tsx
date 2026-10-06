@@ -91,6 +91,38 @@ describe('backgrounds (Style 5)', () => {
     expect(Math.min(...shifts)).toBeLessThan(-100);
   });
 
+  it('never run out when endless: ground layers repeat and wrap as the camera travels', () => {
+    const endless = (cameraX: number) =>
+      renderToStaticMarkup(
+        <svg>
+          <Background
+            spec={backgroundSpec('simple', 'clear-day', 7)}
+            width={1080}
+            height={1920}
+            frame={0}
+            fps={30}
+            cameraX={cameraX}
+            endless
+          />
+        </svg>,
+      );
+    const shifts = (html: string) =>
+      [...html.matchAll(/translate\((-?[\d.]+) 0\)/g)].map((m) => Number(m[1]));
+    // However far the camera has gone, no layer is ever more than one tile away.
+    for (const x of [0, 900, 40000, -3000]) {
+      for (const shift of shifts(endless(x)))
+        expect(Math.abs(shift)).toBeLessThanOrEqual(1080 * 1.2);
+    }
+    // Each repeating layer is drawn twice, so the grass is there twice.
+    const tufts = (html: string) => html.split('rotate(').length - 1;
+    expect(tufts(endless(0))).toBe(2 * tufts(render('simple', 'clear-day')));
+    // Twenty tiles on is a whole number of tiles for every layer, so the picture is the same.
+    const here = shifts(endless(100));
+    const there = shifts(endless(100 + 20 * 1080 * 1.2));
+    expect(there.length).toBe(here.length);
+    here.forEach((shift, i) => expect(there[i]).toBeCloseTo(shift, 6));
+  });
+
   it('are deterministic for the same seed and frame', () => {
     expect(render('atmospheric', 'storm-slate', 12)).toBe(render('atmospheric', 'storm-slate', 12));
   });

@@ -117,6 +117,14 @@ describe('library index', () => {
     expect(first('cape swing')).toBe('motion/follow-through');
     expect(first('turn around')).toBe('motion/head-turn');
     expect(first('lip sync')).toBe('motion/talking-mouth');
+    expect(first('sprint')).toBe('action/run');
+    expect(first('knocked down')).toBe('action/fall-back');
+    expect(first('punch', 'action')).toBe('action/punch');
+    expect(first('dazed')).toBe('effect/dizzy-stars');
+    expect(first('bawling')).toBe('effect/tear-streams');
+    expect(first('starburst')).toBe('effect/impact');
+    expect(first('rumble')).toBe('camera/shake');
+    expect(first('chase', 'camera')).toBe('camera/follow');
     expect(first('leather')).toBe('color/brown');
     expect(first('khaki')).toBe('color/tan');
     expect(first('linen')).toBe('color/cream');

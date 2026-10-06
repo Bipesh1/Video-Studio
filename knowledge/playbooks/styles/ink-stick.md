@@ -44,3 +44,13 @@ Current best practice for the Ink Stick look, learned from real videos and Biku'
 - **Pick the walk for the feeling:** proud for rulers and show-offs, tired for the defeated or the old, sneaky for thieves and spies, happy for children and good news. The face should say the same thing as the walk. (Phase 2C)
 - **Talking uses the word, not just the timing.** Give `talkAt` the voice track's words for that line (they carry the text), so the lips meet on m, b and p and round on "oo". Only the speaker's mouth moves. (Phase 2C, guide v8)
 - **Check motion as frame strips,** not only as a video: every fourth frame side by side shows a stiff cape, a sliding foot or a flickering mouth at once. (L-0010, self-check)
+
+## Action
+
+- **A hit is never shown landing on a body.** Stage it in four beats: the attacker's wind-up, the swing, an `Impact` flash over the point of contact with a `Shake` and a head squash on the same frame, then the other person's `recoilAt`. No blood, wounds or gore, ever. (Style 4, Phase 2D)
+- **Line the moments up from the exported times.** The flash, the shake and the recoil all start at `PUNCH.hit` or `SWING.hit`; a landing flash at `FALL.ground`. Never guess a frame number. (Phase 2D)
+- **Put moves together with `chainAt`,** not by hand: each move then starts where the last one ended and the change is blended. Read how far the character has gone from `pose.rootX`. (Phase 2D)
+- **A camera that follows someone needs an endless background** (`endless` on `Background`), or the scenery runs out after two screens. (L-0011, self-check)
+- **Keep action characters big.** A head of about a sixth of the frame width still fits two fighters; smaller and the faces are lost on a phone. (action clip, self-check)
+- **Motion lines are black,** so put them over sky or a light ground, and keep them clear of a second character. Symbols and dizzy stars need empty space above the head. (Style 3.7, action clip)
+- **Faces carry the action.** Change the face on the beat: determined, surprised with `!`, afraid while running, eyes squeezed shut on the hit, exhausted with stars after a fall. (action clip, self-check)

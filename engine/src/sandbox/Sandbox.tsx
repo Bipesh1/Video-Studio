@@ -27,6 +27,7 @@ import { PosesBSheet } from './part-d';
 import { MoodsVideo, MouthsSheet, PolishVideo } from './part-e';
 import { MovesASheet, MovesBSheet } from './part-f';
 import { EffectsSheet } from './part-g';
+import { ActionVideo } from './part-h';
 import type { SandboxBg, SheetName } from './sheets';
 
 export type SandboxProps = { sheet: SheetName; bg: SandboxBg };
@@ -447,6 +448,7 @@ export const Sandbox = ({ sheet, bg }: SandboxProps) => {
     motion: <MotionVideo c={c} />,
     polish: <PolishVideo c={c} />,
     moods: <MoodsVideo c={c} />,
+    action: <ActionVideo />,
   };
   return (
     <AbsoluteFill style={{ backgroundColor: c.base }}>

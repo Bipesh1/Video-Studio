@@ -58,25 +58,29 @@ Reusing a library asset in a new pose or expression needs no full guide read, bu
 
 Everything already drawn is reusable code under `engine/src/`, and every piece is listed in `library/index.json` with tags, a picture and where its code is. **Search the library before drawing anything:** `npm run library -- search <plain words>` (for example `search king night`). A video asks for these pieces by name and never redraws them. The table below is the map of the folders behind the index.
 
-| Need                                                 | Look in                                                           |
-| ---------------------------------------------------- | ----------------------------------------------------------------- |
-| The character puppet (put a whole person on screen)  | `engine/src/rig/Character.tsx`                                    |
-| Poses                                                | `engine/src/rig/poses.ts`                                         |
-| Actions by name: walk, mood walks, cheer, cry        | `engine/src/rig/actions.ts`, `engine/src/rig/walk.ts`             |
-| Moving between poses (wind-up, settle)               | `poseAt` in `engine/src/rig/pose.ts`                              |
-| Life in a hold: blinks, breathing, weight, eye darts | `engine/src/rig/life.ts`                                          |
-| Head turns; swinging capes, hair and held things     | `engine/src/rig/turn.ts`, `engine/src/rig/follow.ts`              |
-| Expressions and talking mouths                       | `engine/src/face/expressions.ts`, `engine/src/face/talk.ts`       |
-| Skin tones and hair                                  | `engine/src/wardrobe/identity.ts`, `engine/src/wardrobe/hair.tsx` |
-| Everyday clothes, mixed with `outfitFrom`            | `engine/src/wardrobe/garments.tsx` (cloth names, never colors)    |
-| Costumes                                             | `engine/src/wardrobe/costumes/`, by name in `wardrobe/cast.ts`    |
-| Ages (child, adult, elder)                           | `age` on the Character in `engine/src/rig/Character.tsx`          |
-| Saved characters (only for a series)                 | `characters/<id>.json`, drawn with `castFromCard` in `cast.ts`    |
-| Props, effects                                       | `engine/src/props/`, `engine/src/effects/`                        |
-| Backgrounds and their palettes                       | `engine/src/backgrounds/`                                         |
-| Camera, captions                                     | `engine/src/camera/`, `engine/src/overlays/`                      |
-| Worked examples of whole videos                      | `engine/src/compositions/LookTest.tsx`, `MoonTax.tsx`             |
-| Pictures of every piece                              | `library/catalog/`, `knowledge/golden/assets/`, `npm run sheets`  |
+| Need                                                  | Look in                                                           |
+| ----------------------------------------------------- | ----------------------------------------------------------------- |
+| The character puppet (put a whole person on screen)   | `engine/src/rig/Character.tsx`                                    |
+| Poses                                                 | `engine/src/rig/poses.ts`                                         |
+| Actions by name (every one is in `ACTIONS`)           | `engine/src/rig/actions.ts`                                       |
+| Walks, mood walks, run, carry, push, pull             | `engine/src/rig/walk.ts` (`WALKS`, `GAITS`)                       |
+| Jump, falls, punch, swing, recoil                     | `engine/src/rig/moves.ts`                                         |
+| Moves one after another (sneak, then run, then jump)  | `chainAt` in `engine/src/rig/chain.ts`                            |
+| Moving between poses (wind-up, settle)                | `poseAt` in `engine/src/rig/pose.ts`                              |
+| Life in a hold: blinks, breathing, weight, eye darts  | `engine/src/rig/life.ts`                                          |
+| Head turns; swinging capes, hair and held things      | `engine/src/rig/turn.ts`, `engine/src/rig/follow.ts`              |
+| Expressions and talking mouths                        | `engine/src/face/expressions.ts`, `engine/src/face/talk.ts`       |
+| Skin tones and hair                                   | `engine/src/wardrobe/identity.ts`, `engine/src/wardrobe/hair.tsx` |
+| Everyday clothes, mixed with `outfitFrom`             | `engine/src/wardrobe/garments.tsx` (cloth names, never colors)    |
+| Costumes                                              | `engine/src/wardrobe/costumes/`, by name in `wardrobe/cast.ts`    |
+| Ages (child, adult, elder)                            | `age` on the Character in `engine/src/rig/Character.tsx`          |
+| Saved characters (only for a series)                  | `characters/<id>.json`, drawn with `castFromCard` in `cast.ts`    |
+| Props, effects (tears, anger, stars, symbols, flash)  | `engine/src/props/`, `engine/src/effects/`                        |
+| Backgrounds and their palettes (`endless` for chases) | `engine/src/backgrounds/`                                         |
+| Camera (push-in, fast push-in, shake, pan), captions  | `engine/src/camera/`, `engine/src/overlays/`                      |
+| Worked examples of whole videos                       | `engine/src/compositions/LookTest.tsx`, `MoonTax.tsx`             |
+| A worked action scene (chase, fight, camera)          | `engine/src/sandbox/part-h.tsx`                                   |
+| Pictures of every piece                               | `library/catalog/`, `knowledge/golden/assets/`, `npm run sheets`  |
 
 ## Repository layout and commands
 

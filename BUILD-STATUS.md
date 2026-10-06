@@ -1,7 +1,7 @@
 # Build Status
 
-**Current phase:** Phase 2, steps 2A (library foundation), 2B (people) and 2C (poses and motion polish) done. Next step is 2D (action), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
-**Next:** Biku looks at the 2C pictures and clips and the villagers sheet (below) and says what to change. Then 2D. The steps are listed under "Phase 2 steps" below.
+**Current phase:** Phase 2, steps 2A (library foundation), 2B (people), 2C (poses and motion polish) and 2D (action) done. Next step is 2E (world: places, props, framing), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
+**Next:** Biku watches the action test clip `engine/out/sandbox/action.mp4` and looks at the 2D sheets (below) and says what to change. Then 2E. The steps are listed under "Phase 2 steps" below.
 **Last updated:** 2026-10-06
 
 ## Checkpoint 1: waiting for Biku
@@ -9,6 +9,49 @@
 Review file: `runs/2026-10-03-look-test/checkpoint-1.md`. Questions: (1) how close the look is and what to change, (2) narrator and character voices, (3) head size (answered 2026-10-06: fine as it is), (4) hair colors (guide v3), (5) fingers on hands that cover the face.
 
 **Question 1 (2026-10-04): Biku said not close enough yet, then said go.** Faces round 4 is built (section below, guide v7). Question 1 is open again: Biku needs to look at `runs/2026-10-03-look-test/out/face-match.png` and say whether the frightened face and the wrinkles are close enough now.
+
+## Phase 2D. Action: done (2026-10-06)
+
+Asked by Biku ("start 2D"). Characters can run, jump, fall and fight, with the effects and camera moves that go with it.
+
+### Made
+
+- **Ways of moving on foot** (`GAITS` in `engine/src/rig/walk.ts`): run (both feet off the ground between steps), carry, push, pull. They use the same planted-foot cycle as the walk, so no foot slides. Sneak was already there as the sneaky walk.
+- **One-shot moves** (`engine/src/rig/moves.ts`): jump, fall forward (a trip), fall backward (a knock-down), punch, swing with something held, recoil from a hit. Each is a pose for the seconds since it began, starts from a stand, and holds its last pose. Each body part is on its own track of timed values. The moments that matter are exported (`PUNCH.hit`, `JUMP.takeoff`, `FALL.ground` and so on).
+- **Moves one after another** (`chainAt` in `engine/src/rig/chain.ts`): sneak, then run, then jump. Each move starts where the last one left the body, with a short blend at each change.
+- **Effects** (`engine/src/effects/`): tear streams and single tear drops, the red anger mark, dizzy stars, the symbols `!`, `?` and `...`, the impact flash and motion lines. Symbols never read backward on a character facing left.
+- **Camera** (`engine/src/camera/Camera.tsx`): shake on an impact, fast push-in, pan. `shakeAt` gives the same jolt on every render.
+- **Following camera:** `endless` on the `Background` makes hills, silhouettes and grass repeat for ever, so a camera can follow a chase. Found while making the clip: the scenery ran out after two screens.
+- **Violence by implication only:** a hit is the swing, an impact flash over the point of contact, a shake and the other person's recoil. Nothing is wounded. Written into `moves.ts` and the playbook.
+- **Library:** 150 assets (24 new: 10 actions, 9 effects, 4 camera moves, the chain), all with previews and golden stills where they can be pictured.
+- **Sheets:** `moves-a`, `moves-b` (every move as a strip of moments) and `effects` (`npm run sheets -- --only=moves-a,moves-b,effects`), golden copies in `knowledge/golden/`.
+- **Action test clip:** `engine/out/sandbox/action.mp4` (13.5 seconds, no sound; `npm run sheets -- --only=action --video`). A hooded thief is spotted, chased and caught by a guard. Shot 1: sneak, `!`, run, motion lines, a jump over a crate, following camera. Shot 2: stand-off with anger mark and sweat, punch, impact flash, shake, head squash, recoil, turn, run, trip, landing flash, dizzy stars, cheer. Shot 3: pushing a block in tears while the guard strolls behind, a pan and a fast push-in.
+
+### Draw, look and fix loop
+
+1. Moves: the trip pushed its knees into the ground (now the body tips over its feet like a felled tree, legs straight); falls slowed down before hitting the ground (they now speed up all the way and bounce); the swing's arm crossed the face on the wind-up (it now cocks back behind the head); the run sat too low.
+2. Effects: symbols were cut off above the head and the dots read as rings (bigger, finer outline); stars and tear drops were too small.
+3. Clip: the background ran out during the chase (endless backgrounds); characters were too small in the frame (head size 150 to 180); the guard was off screen for most of the chase; the dizzy stars were off the right edge.
+
+### Acceptance (the part of Phase 2 that 2D covers)
+
+| Check                                                 | Result                                                                                    |
+| ----------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Golden still for every new asset that can be pictured | Yes, 20 of 20 (camera moves have no still)                                                |
+| Library search finds the new assets by tag            | Yes: "sprint", "knocked down", "dazed", "bawling", "starburst", "rumble", "chase"; tested |
+| Planted feet never slide or sink in any move          | Yes, tested for every gait and move                                                       |
+| No blood, wounds or gore                              | Yes: hits are shown by flash, shake and recoil only                                       |
+| Tests, typecheck, lint, format                        | Pass (225 tests)                                                                          |
+
+### Open after 2D
+
+- **The crate, the boulder and the club are plain stand-ins.** Real props come in 2E.
+- **Motion lines are black** (Style 3.7), so they are faint on night backgrounds. Changing that is a guide change.
+- **Symbols are white with a black outline.** The guide gives them no color; say if `!` should be red or gold.
+- **Clothes do not follow every move well.** The cloak covers a lying body like a blanket, and tabards and skirts do not flare in a jump.
+- **Dizzy stars on someone lying down** are partly hidden by an outstretched arm.
+- **Only the fighter's front arm punches or swings.** A two-handed swing, a kick and a block are not drawn yet.
+- **Endless backgrounds repeat every 1.2 screens,** so one tree comes round again and again in a long chase. More varied scenery comes with the places in 2E.
 
 ## Biku's answers after 2C (2026-10-06): applied
 
@@ -184,7 +227,7 @@ Each step ends with contact sheets for Biku, a commit and an update here. Start 
 - **Faces round 4: done (2026-10-04).** Built ahead of 2A at Biku's go-ahead; see the round 4 section above. Waiting for Biku's verdict on the face match sheet.
 - **2B. People: done (2026-10-05).** Was: Tier 1 clothes (shirt, tank top, trousers, skirt or dress, shoes, plain hat, hood or cloak, robe); costumes (soldier, queen or noble gown, villager or farmer); long hair; all skin tones and hair checked; age cues (child, adult, elder); character cards.
 - **2C. Poses and motion polish: done (2026-10-06).** Was: sit, kneel, lie, cross arms, look up, look down, cower; cry, cheer, hug; wind-up and settle; lagging capes, hair and held objects; weight and breathing; eye darts, smooth head turns, more mouth shapes; mood walks; arcs.
-- **2D. Action.** Run, jump, fall, fight (wind-up, swing, hit, recoil), push, pull, carry, sneak; tears, anger mark, motion lines, impact flash, dizzy stars, symbols; camera shake, fast push-in, pan; a short action test clip.
+- **2D. Action: done (2026-10-06).** Was: run, jump, fall, fight (wind-up, swing, hit, recoil), push, pull, carry, sneak; tears, anger mark, motion lines, impact flash, dizzy stars, symbols; camera shake, fast push-in, pan; a short action test clip.
 - **2E. World.** Places (night street, day street, field, forest, castle and throne room, home interior); about 10 props (sword, shield, coin, bag, book, lantern, door, chair, table, cup); wide, medium, close-up and over-the-shoulder framing; title card and labels.
 - **2F. Wrap-up.** Full contact sheets of everything, index complete, all checks passing, Phase 2 report.
 
@@ -465,7 +508,7 @@ The realistic estimate assumes real shots cost about three times the test scene 
 
 1. **Head size: resolved (2026-10-06).** Biku said the head size is fine. Heads stay at 0.29 of standing height and the guide now says so (version 9).
 1. **Face layout constants.** Eye width and pupil size come from tokens. Eye spacing, brow gap, mouth height and the head-turn shifts are named in `engine/src/face/layout.ts`, because tokens do not cover them.
-1. **Effects not built yet.** Sweat drops, tears, anger mark and symbols belong to the expression table's extras column. The one the 15-second test needs comes in part C; the full set in Phase 2.
+1. **Effects: built in 2D (2026-10-06).** Sweat, tears, anger mark, dizzy stars, symbols, impact flash and motion lines are in `engine/src/effects/`.
 1. **Clothing and hair still to build.** Tier 2 exists (the ruler). Tier 1 (tank top, jeans, sneakers) and the rest of the hair library (coils, twists, cornrows, curly, waves) come in Phase 2.
 1. **Dark skin and brows.** On tones 7 and 8 the black brows have low contrast, as the guide accepts (eyes, teeth and the rim carry the face). Worth a look at Checkpoint 1.
 

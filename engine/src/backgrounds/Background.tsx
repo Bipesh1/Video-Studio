@@ -97,14 +97,42 @@ type Ctx = {
   cameraX: number;
   id: string;
   atmo: boolean;
+  endless: boolean;
 };
 
 const rnd = (c: Ctx, key: string) => seeded(`${c.spec.seed}:${key}`);
 
-/** A layer that moves with the camera at a given depth (0 = sky, about 1 = foreground). */
-const Layer = ({ c, depth, children }: { c: Ctx; depth: number; children: ReactNode }) => (
-  <g transform={`translate(${-c.cameraX * depth} 0)`}>{children}</g>
-);
+/** In an endless background a ground-level layer repeats every this many frame widths. */
+const TILE = 1.2;
+
+/**
+ * A layer that moves with the camera at a given depth (0 = sky, about 1 = foreground).
+ * A layer that repeats is drawn twice, one tile apart, and wraps round as the camera travels,
+ * so an endless background never runs out however far the camera goes.
+ */
+const Layer = ({
+  c,
+  depth,
+  repeats = false,
+  children,
+}: {
+  c: Ctx;
+  depth: number;
+  repeats?: boolean;
+  children: ReactNode;
+}) => {
+  // In an endless background what does not repeat stays put: the sky, the moon, the flat ground.
+  const shift = c.endless && !repeats ? 0 : c.cameraX * depth;
+  if (!(c.endless && repeats)) return <g transform={`translate(${-shift} 0)`}>{children}</g>;
+  const tile = TILE * c.w;
+  const offset = ((shift % tile) + tile) % tile;
+  return (
+    <>
+      <g transform={`translate(${-offset} 0)`}>{children}</g>
+      <g transform={`translate(${tile - offset} 0)`}>{children}</g>
+    </>
+  );
+};
 
 function Sky({ c }: { c: Ctx }) {
   const gid = `${c.id}-sky`;
@@ -259,9 +287,12 @@ function hillPath(c: Ctx, key: string, base: number, amp: number): string {
   const p1 = rnd(c, `${key}a`) * 6.28;
   const p2 = rnd(c, `${key}b`) * 6.28;
   const pts: string[] = [];
+  // In an endless background the hills must meet themselves one tile along.
+  const round = (2 * Math.PI) / TILE;
+  const [f1, f2] = c.endless ? [2 * round, 3 * round] : [7.5, 17];
   for (let i = 0; i <= 48; i++) {
     const u = lerp(-0.5, 1.5, i / 48);
-    const y = base - amp * (0.6 + 0.4 * Math.sin(u * 7.5 + p1) + 0.25 * Math.sin(u * 17 + p2));
+    const y = base - amp * (0.6 + 0.4 * Math.sin(u * f1 + p1) + 0.25 * Math.sin(u * f2 + p2));
     pts.push(`${u * c.w} ${y}`);
   }
   return `M ${-0.5 * c.w} ${c.h} L ${pts.join(' L ')} L ${1.5 * c.w} ${c.h} Z`;
@@ -437,10 +468,24 @@ export type BackgroundProps = {
   fps: number;
   /** Camera pan in px; layers shift by their depth for parallax (Part 2, section 7.5). */
   cameraX?: number;
+  /**
+   * For a camera that travels a long way, as when it follows a runner: the hills, silhouettes
+   * and grass repeat for ever instead of sliding out of the picture. The sky, the moon, the
+   * clouds and the flat ground stay where they are.
+   */
+  endless?: boolean;
 };
 
 /** A complete background as SVG elements, sized to width by height. Pure: driven by frame. */
-export const Background = ({ spec, width, height, frame, fps, cameraX = 0 }: BackgroundProps) => {
+export const Background = ({
+  spec,
+  width,
+  height,
+  frame,
+  fps,
+  cameraX = 0,
+  endless = false,
+}: BackgroundProps) => {
   const id = `bg${useId().replace(/[^A-Za-z0-9_-]/g, '')}`;
   const c: Ctx = {
     spec,
@@ -451,6 +496,7 @@ export const Background = ({ spec, width, height, frame, fps, cameraX = 0 }: Bac
     cameraX,
     id,
     atmo: spec.treatment === 'atmospheric',
+    endless,
   };
   const mids = spec.silhouettes.filter((s) => s.layer === 'mid');
   const nears = spec.silhouettes.filter((s) => s.layer !== 'mid');
@@ -475,10 +521,10 @@ export const Background = ({ spec, width, height, frame, fps, cameraX = 0 }: Bac
       )}
       {spec.hills && (
         <>
-          <Layer c={c} depth={0.25}>
+          <Layer c={c} depth={0.25} repeats>
             <path d={hillPath(c, 'far', spec.horizon * height, height * 0.07)} fill={c.roles.far} />
           </Layer>
-          <Layer c={c} depth={0.45}>
+          <Layer c={c} depth={0.45} repeats>
             <path
               d={hillPath(c, 'mid', spec.horizon * height + height * 0.012, height * 0.035)}
               fill={c.roles.mid}
@@ -486,7 +532,7 @@ export const Background = ({ spec, width, height, frame, fps, cameraX = 0 }: Bac
           </Layer>
         </>
       )}
-      <Layer c={c} depth={0.5}>
+      <Layer c={c} depth={0.5} repeats>
         {mids.map((s, i) => (
           <SilhouetteShape key={i} c={c} s={s} i={i} />
         ))}
@@ -494,9 +540,11 @@ export const Background = ({ spec, width, height, frame, fps, cameraX = 0 }: Bac
       {c.atmo && <Haze c={c} />}
       <Layer c={c} depth={0.85}>
         <Ground c={c} />
+      </Layer>
+      <Layer c={c} depth={0.85} repeats>
         <Tufts c={c} />
       </Layer>
-      <Layer c={c} depth={1.15}>
+      <Layer c={c} depth={1.15} repeats>
         {nears.map((s, i) => (
           <SilhouetteShape key={i} c={c} s={s} i={i + mids.length} />
         ))}
