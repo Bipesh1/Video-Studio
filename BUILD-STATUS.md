@@ -1,7 +1,7 @@
 # Build Status
 
 **Current phase:** Phase 3 (sound) is built (2026-10-06). Phases 0 to 2 are complete. Next is Phase 4 (the full pipeline), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
-**Next:** Biku listens: `runs/2026-10-06-sound-test/sound-test.md` says what to play and what to answer (the nine mood samples, the effects reel, and Moon Tax v5 with sound). Claude cannot hear, so this listening is the real check. He also still has the questions at the end of `PHASE-2-REPORT.md`.
+**Next:** Phase 4 when Biku asks. Biku listened to the Phase 3 sound on 2026-10-06 and said "everything is fine in my opinion" (the moods, the effects, the levels in Moon Tax v5). Claude's reading: the current instrument set stays too, since he raised no objection after the license caution was explained. The questions at the end of `PHASE-2-REPORT.md` are still open.
 **Last updated:** 2026-10-06
 
 ## Checkpoint 1: waiting for Biku
@@ -38,7 +38,7 @@ Asked by Biku ("start phase 3"). The studio can now make music, sound effects an
 
 ### Open after Phase 3
 
-- **Nobody has listened yet.** Claude cannot hear; every check is a measurement. Biku's ears decide whether the moods and effects are good (lesson L-0020).
+- **Listened to by Biku on 2026-10-06:** "everything is fine in my opinion". Claude still cannot hear; every later sound change needs his ears again (lesson L-0020).
 - **The music is simple and loops.** A mood change happens at the planned time, not on a beat.
 - **No automatic choice of music and effects.** A sound plan is written by hand until the shot planner in Phase 4.
 - **The Phase 2 test clips have no sound.**
