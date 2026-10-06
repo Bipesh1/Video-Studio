@@ -8,7 +8,11 @@ import {
 import type { BackgroundSpec } from '../backgrounds/Background';
 import { FlyingSweat, RestingSweat } from '../effects/Sweat';
 import { EXPRESSIONS, EXPRESSION_NAMES } from '../face/expressions';
+import type { ExpressionName } from '../face/expressions';
 import { Scepter } from '../props/Scepter';
+import { ACTIONS } from '../rig/actions';
+import type { ActionName } from '../rig/actions';
+import { body } from '../rig/body';
 import { Character } from '../rig/Character';
 import type { CharacterProps, HandFrame } from '../rig/Character';
 import { Hand } from '../rig/Hand';
@@ -18,7 +22,6 @@ import { POSES, holdObject, stand } from '../rig/poses';
 import { computeSkeleton } from '../rig/skeleton';
 import { HAND_SHAPES } from '../rig/types';
 import type { HandShape, ResolvedPose } from '../rig/types';
-import { walkAt } from '../rig/walk';
 import { Rod } from '../sandbox/Rod';
 import { accent, ink, lineWeights, palette, pick, tokens } from '../tokens';
 import { COSTUMES } from '../wardrobe/cast';
@@ -80,6 +83,41 @@ const figure = (
     face={EXPRESSIONS.neutral}
     turn={o.turn ?? turn}
     {...extra}
+  />
+);
+
+const POSE_HEAD = 88;
+
+/** The view each pose reads best in, and where it sits in the square. */
+const POSE_VIEWS: Record<string, { turn?: number; dx?: number; face?: ExpressionName }> = {
+  'hold-object': { turn: 0.5, dx: -30 },
+  point: { turn: 0.5, dx: -30 },
+  sit: { turn: 0.5, dx: 10 },
+  kneel: { turn: 0.5, dx: -10, face: 'sad' },
+  lie: { turn: 0, dx: -40, face: 'exhausted' },
+  'cross-arms': { turn: 0, face: 'determined' },
+  'look-up': { turn: 0.5, face: 'surprised' },
+  'look-down': { turn: 0.5, face: 'sad' },
+  cower: { turn: 0.5, face: 'afraid' },
+  hug: { turn: 0.5, dx: -30, face: 'happy' },
+};
+
+/** A moment of each action that shows what it is. */
+const ACTION_VIEWS: Record<ActionName, { time: number; turn: number; face: ExpressionName }> = {
+  walk: { time: 0.3, turn: 1, face: 'neutral' },
+  cheer: { time: 0.12, turn: 0, face: 'laughing' },
+  cry: { time: 0.1, turn: 0.5, face: 'wailing' },
+};
+
+/** A plain block to sit on: a stand-in for a chair, throne or rock. */
+const Seat = ({ x, head }: { x: number; head: number }) => (
+  <rect
+    x={x - 0.62 * head}
+    y={362 - body.shin * head + 5}
+    width={0.74 * head}
+    height={body.shin * head - 5}
+    rx={5}
+    fill={pick(palette('cold-dawn'), 0)}
   />
 );
 
@@ -198,18 +236,27 @@ const entries: Array<[string, Preview]> = [
 
   ...POSES.map((p): [string, Preview] => [
     `pose/${p.id}`,
-    (o) =>
-      p === holdObject
-        ? figure(o, resolvePose(p), { prop: rodProp }, 0.5, BOX / 2 - 30)
-        : figure(o, resolvePose(p), {}, p.id === 'point' ? 0.5 : 0, p.id === 'point' ? 170 : 200),
-  ]),
-  [
-    'action/walk',
     (o) => {
-      const pose = walkAt(0.3).pose;
-      return figure(o, pose, {}, 1);
+      const view = POSE_VIEWS[p.id] ?? {};
+      const extra: Extra = {
+        ...(p === holdObject ? { prop: rodProp } : {}),
+        ...(view.face ? { face: EXPRESSIONS[view.face] } : {}),
+      };
+      return (
+        <>
+          {p.id === 'sit' && <Seat x={BOX / 2 + (view.dx ?? 0)} head={POSE_HEAD} />}
+          {figure(o, resolvePose(p), extra, view.turn ?? 0, BOX / 2 + (view.dx ?? 0), POSE_HEAD)}
+        </>
+      );
     },
-  ],
+  ]),
+  ...(Object.keys(ACTIONS) as ActionName[]).map((name): [string, Preview] => [
+    `action/${name}`,
+    (o) => {
+      const view = ACTION_VIEWS[name];
+      return figure(o, ACTIONS[name](view.time), { face: EXPRESSIONS[view.face] }, view.turn);
+    },
+  ]),
   ['motion/life', (o) => headShot(o, { blink: 1 })],
   ['motion/talking-mouth', (o) => headShot(o, { talk: 1 })],
 

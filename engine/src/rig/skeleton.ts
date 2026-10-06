@@ -30,17 +30,20 @@ function leg(hip: Vec2, a: LimbAngles): LegJoints {
 
 /** A hanging arm swings at most this far from straight down, in degrees. */
 const HANGING_MAX = 30;
+/** A resting elbow bends at most this far; a bigger bend is a gesture, such as folded arms. */
+const RESTING_BEND_MAX = 30;
 
 /**
  * An elbow cannot bend backward. Front-view poses mirror their two arms, which bends the back
  * arm's elbow the other way; that is right seen from the front, where it reads as "outward".
  * Once the body is turned, a hanging arm bends forward instead (Biku, 2026-10-05). Big sideways
- * gestures such as a shrug keep their mirrored arms.
+ * gestures such as a shrug, and deliberate bends such as folded arms, keep their arms as posed.
  */
 export function naturalArm(a: LimbAngles, turn: number): LimbAngles {
   const turned = turn >= THREE_QUARTER_FROM;
   const hanging = Math.abs(a.upper) <= HANGING_MAX;
-  return turned && hanging && a.lower < 0 ? { ...a, lower: -a.lower } : a;
+  const slight = a.lower < 0 && a.lower >= -RESTING_BEND_MAX;
+  return turned && hanging && slight ? { ...a, lower: -a.lower } : a;
 }
 
 /**

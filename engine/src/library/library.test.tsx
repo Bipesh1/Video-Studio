@@ -6,6 +6,7 @@ import type { AssetKind } from '@studio/shared';
 import { describe, expect, it } from 'vitest';
 import { SILHOUETTE_KINDS, TREATMENTS } from '../backgrounds/Background';
 import { EXPRESSION_NAMES } from '../face/expressions';
+import { ACTIONS } from '../rig/actions';
 import { POSES } from '../rig/poses';
 import { HAND_SHAPES } from '../rig/types';
 import { tokens } from '../tokens';
@@ -37,6 +38,7 @@ describe('library index', () => {
     const wanted = [
       ...EXPRESSION_NAMES.map((n) => `expression/${n}`),
       ...POSES.map((p) => `pose/${p.id}`),
+      ...Object.keys(ACTIONS).map((a) => `action/${a}`),
       ...HAND_SHAPES.map((s) => `hand/${s}`),
       ...HAIR_STYLES.map((h) => `hair/${h}`),
       ...FACIAL_HAIR.map((f) => `facial-hair/${f}`),
@@ -103,6 +105,9 @@ describe('library index', () => {
     const first = (q: string, kind?: AssetKind) =>
       searchLibrary(library, q, kind ? { kind } : {})[0]?.asset.id;
     expect(first('king')).toBe('costume/ruler');
+    expect(first('throne')).toBe('pose/sit');
+    expect(first('celebrate')).toBe('action/cheer');
+    expect(first('sobbing')).toBe('action/cry');
     expect(first('guard helmet')).toBe('costume/soldier');
     expect(first('grandmother')).toBe('age/elder');
     expect(first('jeans')).toBe('clothing/trousers');

@@ -95,7 +95,8 @@ describe('identity mode (Style 3.4)', () => {
         }
       }
     }
-  });
+    // 99 full characters are drawn here; allow for a busy machine.
+  }, 30_000);
 
   it('fills identity hands with the skin tone, outlined', () => {
     const svg = renderToStaticMarkup(

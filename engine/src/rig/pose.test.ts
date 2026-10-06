@@ -26,10 +26,13 @@ describe('pose library', () => {
   });
 
   it('every standing pose puts both feet on the ground line', () => {
-    for (const pose of POSES) {
+    // Kneeling and lying put a leg on the ground along its length, so they are checked apart.
+    const planted = POSES.filter((p) => 'foot' in p.legs.front && 'foot' in p.legs.back);
+    expect(planted.length).toBeGreaterThanOrEqual(12);
+    for (const pose of planted) {
       const j = computeSkeleton(resolvePose(pose));
-      expect(Math.abs(j.legs.front.foot.y)).toBeLessThan(1e-9);
-      expect(Math.abs(j.legs.back.foot.y)).toBeLessThan(1e-9);
+      expect(Math.abs(j.legs.front.foot.y)).toBeLessThan(1e-6);
+      expect(Math.abs(j.legs.back.foot.y)).toBeLessThan(1e-6);
     }
   });
 

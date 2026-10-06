@@ -145,6 +145,188 @@
       "added": "2026-10-05"
     },
     {
+      "id": "pose/sit",
+      "kind": "pose",
+      "name": "Sit",
+      "description": "Sitting on a seat as high as the shins: thighs level, shins down, hands on the lap. Needs a seat, throne, rock or ledge under it.",
+      "tags": ["pose", "sitting", "seated", "chair", "throne", "bench", "rest", "wait", "listen"],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "sit"
+      },
+      "use": "pose={resolvePose(sit)} with a seat body.shin high under the hip; best three-quarter or profile",
+      "still": "knowledge/golden/assets/pose-sit.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "pose/kneel",
+      "kind": "pose",
+      "name": "Kneel",
+      "description": "Down on one knee with the other foot planted, a hand on the raised knee and the head bowed.",
+      "tags": [
+        "pose",
+        "kneeling",
+        "bow",
+        "submit",
+        "beg",
+        "propose",
+        "pray",
+        "knight",
+        "respect",
+        "plead"
+      ],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "kneel"
+      },
+      "use": "pose={resolvePose(kneel)}; best three-quarter or profile",
+      "still": "knowledge/golden/assets/pose-kneel.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "pose/lie",
+      "kind": "pose",
+      "name": "Lie down",
+      "description": "Lying on the ground on one side with the head down, one arm along the body and one reaching forward.",
+      "tags": [
+        "pose",
+        "lying",
+        "asleep",
+        "sleeping",
+        "fallen",
+        "collapsed",
+        "defeated",
+        "dead",
+        "ground",
+        "rest"
+      ],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "lie"
+      },
+      "use": "pose={resolvePose(lie)} with turn={0}; the figure is about three heads long",
+      "still": "knowledge/golden/assets/pose-lie.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "pose/cross-arms",
+      "kind": "pose",
+      "name": "Cross arms",
+      "description": "Standing with both arms folded across the chest.",
+      "tags": [
+        "pose",
+        "arms crossed",
+        "folded arms",
+        "stubborn",
+        "waiting",
+        "unimpressed",
+        "guard",
+        "refuse",
+        "confident"
+      ],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "crossArms"
+      },
+      "use": "pose={resolvePose(crossArms)}",
+      "still": "knowledge/golden/assets/pose-cross-arms.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "pose/look-up",
+      "kind": "pose",
+      "name": "Look up",
+      "description": "Standing with the head tipped back to look at something above.",
+      "tags": ["pose", "looking up", "sky", "gaze", "wonder", "stars", "moon", "tall", "above"],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "lookUp"
+      },
+      "use": "pose={resolvePose(lookUp)} with lookAt on the thing above",
+      "still": "knowledge/golden/assets/pose-look-up.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "pose/look-down",
+      "kind": "pose",
+      "name": "Look down",
+      "description": "Standing with the head bowed to look at something below.",
+      "tags": [
+        "pose",
+        "looking down",
+        "bowed head",
+        "ashamed",
+        "sad",
+        "ground",
+        "below",
+        "grave",
+        "thinking"
+      ],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "lookDown"
+      },
+      "use": "pose={resolvePose(lookDown)} with lookAt on the thing below",
+      "still": "knowledge/golden/assets/pose-look-down.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "pose/cower",
+      "kind": "pose",
+      "name": "Cower",
+      "description": "Crouched and hunched with both arms raised over the head.",
+      "tags": [
+        "pose",
+        "cowering",
+        "crouch",
+        "afraid",
+        "shield",
+        "duck",
+        "hide",
+        "protect",
+        "terrified"
+      ],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "cower"
+      },
+      "use": "pose={resolvePose(cower)} with the afraid face",
+      "still": "knowledge/golden/assets/pose-cower.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "pose/hug",
+      "kind": "pose",
+      "name": "Hug",
+      "description": "Leaning in with both arms wrapped around someone standing close in front. Two characters in this pose, facing each other, make a hug.",
+      "tags": [
+        "pose",
+        "hugging",
+        "embrace",
+        "comfort",
+        "love",
+        "reunion",
+        "friends",
+        "family",
+        "goodbye"
+      ],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "hug"
+      },
+      "use": "pose={resolvePose(hug)} on two characters about 1.2 head-widths apart, facing each other",
+      "still": "knowledge/golden/assets/pose-hug.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
       "id": "action/walk",
       "kind": "action",
       "name": "Walk",
@@ -169,6 +351,57 @@
       "still": "knowledge/golden/assets/action-walk.png",
       "version": 1,
       "added": "2026-10-05"
+    },
+    {
+      "id": "action/cheer",
+      "kind": "action",
+      "name": "Cheer",
+      "description": "Arms thrown up in a V and pumping, the body bouncing on bent knees. Loops.",
+      "tags": [
+        "action",
+        "cheering",
+        "celebrate",
+        "victory",
+        "hooray",
+        "joy",
+        "win",
+        "crowd",
+        "jumping",
+        "excited"
+      ],
+      "code": {
+        "file": "engine/src/rig/actions.ts",
+        "export": "cheerAt"
+      },
+      "use": "pose={cheerAt(frame / fps)} with the laughing or happy face",
+      "still": "knowledge/golden/assets/action-cheer.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "action/cry",
+      "kind": "action",
+      "name": "Cry",
+      "description": "The face in both hands with the head bowed, shoulders shaking in bursts of sobs. Loops.",
+      "tags": [
+        "action",
+        "crying",
+        "sobbing",
+        "weeping",
+        "grief",
+        "sad",
+        "tears",
+        "upset",
+        "mourning"
+      ],
+      "code": {
+        "file": "engine/src/rig/actions.ts",
+        "export": "cryAt"
+      },
+      "use": "pose={cryAt(frame / fps)} with the wailing or sad face",
+      "still": "knowledge/golden/assets/action-cry.png",
+      "version": 1,
+      "added": "2026-10-06"
     },
     {
       "id": "motion/life",

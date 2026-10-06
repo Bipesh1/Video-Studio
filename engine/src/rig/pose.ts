@@ -106,6 +106,21 @@ export function resolvePose(pose: Pose, rootX = 0): ResolvedPose {
   };
 }
 
+/**
+ * Move the hip of a resolved pose, keeping planted feet where they are: the legs are solved
+ * again from the new hip. Legs given as angles ride along unchanged.
+ */
+export function shiftHip(pose: ResolvedPose, dx: number, dy: number): ResolvedPose {
+  const hip = vec(pose.rootX + dx, pose.hipY + dy);
+  const replant = (l: LegState): LegState => (l.foot ? legToFoot(hip, l.foot, l.bend ?? 1) : l);
+  return {
+    ...pose,
+    rootX: hip.x,
+    hipY: hip.y,
+    legs: { front: replant(pose.legs.front), back: replant(pose.legs.back) },
+  };
+}
+
 const lerpLimb = (a: LimbAngles, b: LimbAngles, t: number): LimbAngles => ({
   upper: lerp(a.upper, b.upper, t),
   lower: lerp(a.lower, b.lower, t),

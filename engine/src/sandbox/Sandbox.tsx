@@ -15,7 +15,7 @@ import { blinkAt, withLife } from '../rig/life';
 import { add, fromDown, mul, smoothstep, vec } from '../rig/math';
 import { poseAt, resolvePose } from '../rig/pose';
 import type { Pose } from '../rig/pose';
-import { POSES, handsUp, holdObject, point, shrug, stand, wave } from '../rig/poses';
+import { PHASE1_POSES, handsUp, holdObject, point, shrug, stand, wave } from '../rig/poses';
 import { computeSkeleton } from '../rig/skeleton';
 import type { Facing, HandShape } from '../rig/types';
 import { walkAt } from '../rig/walk';
@@ -23,6 +23,7 @@ import { ink, lineWeights, palette, pick, tokens, white } from '../tokens';
 import { Rod } from './Rod';
 import { BG_SHEETS, CostumeSheet, AtmosVideo, HairTurnsSheet, IdentitySheet } from './part-b';
 import { AgesSheet, ClothesSheet, CostumesBSheet, PeopleSheet } from './part-c';
+import { PosesBSheet } from './part-d';
 import type { SandboxBg, SheetName } from './sheets';
 
 export type SandboxProps = { sheet: SheetName; bg: SandboxBg };
@@ -223,7 +224,7 @@ function PosesSheet({ c }: { c: Colors }) {
   const ch = 480;
   return (
     <>
-      {POSES.map((pose: Pose, i) => {
+      {PHASE1_POSES.map((pose: Pose, i) => {
         const cx = cw * (i % 2) + cw / 2;
         const top = ch * Math.floor(i / 2);
         const groundY = top + 440;
@@ -432,6 +433,7 @@ export const Sandbox = ({ sheet, bg }: SandboxProps) => {
     'costumes-b': <CostumesBSheet c={c} />,
     ages: <AgesSheet c={c} />,
     people: <PeopleSheet c={c} />,
+    'poses-b': <PosesBSheet c={c} />,
     walk: <WalkVideo c={c} />,
     motion: <MotionVideo c={c} />,
   };
