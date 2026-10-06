@@ -170,3 +170,63 @@ export function soundPlanFor(timed: Storyboard): SoundPlan {
   }
   return { version: 1, music, sfx, musicGainDb: 0 };
 }
+
+// ------------------------------------------------------------------ joining the parts
+
+/** Seconds a join between two parts takes to dip: the picture to dark, the sound to quiet. */
+export const JOIN_DIP_S = 0.2;
+
+/** One finished part, as the join needs to know it. */
+export type JoinPart = {
+  /** How long the part's video is, in seconds. */
+  seconds: number;
+  /** True when the part opens on a fade from dark, so the part before it has to go dark first. */
+  fadesIn: boolean;
+};
+
+/**
+ * The ffmpeg filter that joins finished parts into one video, in order. Where the next part
+ * opens on a fade from dark, the part before goes dark over its last frames, so the join is
+ * one dip and not a cut to black. The sound dips for a moment at every join, so two pieces of
+ * music never meet on a click. Inputs are the part videos in order; outputs are [v] and [a].
+ */
+export function joinFilter(parts: readonly JoinPart[]): string {
+  if (parts.length < 2) throw new Error('A join needs at least two parts.');
+  const chains: string[] = [];
+  const labels: string[] = [];
+  parts.forEach((part, i) => {
+    const next = parts[i + 1];
+    const from = Math.max(0, part.seconds - JOIN_DIP_S).toFixed(3);
+    chains.push(
+      next?.fadesIn
+        ? `[${i}:v]fade=t=out:st=${from}:d=${JOIN_DIP_S}[v${i}]`
+        : `[${i}:v]null[v${i}]`,
+    );
+    const sound = [
+      ...(i > 0 ? [`afade=t=in:st=0:d=${JOIN_DIP_S}`] : []),
+      ...(next ? [`afade=t=out:st=${from}:d=${JOIN_DIP_S}`] : []),
+    ];
+    chains.push(`[${i}:a]${sound.length ? sound.join(',') : 'anull'}[a${i}]`);
+    labels.push(`[v${i}][a${i}]`);
+  });
+  chains.push(`${labels.join('')}concat=n=${parts.length}:v=1:a=1[v][a]`);
+  return chains.join(';');
+}
+
+/**
+ * The voices of the parts as one voice for the whole video: every line and word moved to
+ * where its part begins. `starts` is where each part begins in the joined video, in ms.
+ */
+export function joinTracks(tracks: readonly VoiceTrack[], starts: readonly number[]): VoiceTrack {
+  const first = tracks[0];
+  if (!first) throw new Error('There is no voice to join.');
+  const shift = <T extends { startMs: number; endMs: number }>(items: readonly T[], by: number) =>
+    items.map((item) => ({ ...item, startMs: item.startMs + by, endMs: item.endMs + by }));
+  const last = tracks.length - 1;
+  return {
+    ...first,
+    durationMs: (starts[last] ?? 0) + (tracks[last]?.durationMs ?? 0),
+    lines: tracks.flatMap((t, i) => shift(t.lines, starts[i] ?? 0)),
+    words: tracks.flatMap((t, i) => shift(t.words, starts[i] ?? 0)),
+  };
+}

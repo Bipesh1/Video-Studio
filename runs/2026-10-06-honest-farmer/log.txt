@@ -402,3 +402,11 @@
 2026-10-06T18:05:36.353Z  part 1    runs\2026-10-06-honest-farmer\part-1\out\honest-farmer-part-1-16x9-v13.mp4: 42.23 s of video, 1920x1080, in 90.9 s (2.15 s per video second)
 2026-10-06T18:05:36.359Z  part 1    runs\2026-10-06-honest-farmer\part-1\out\honest-farmer-part-1-16x9-v13.srt
 2026-10-06T18:05:36.377Z  part 1  video: done in 91.8 s
+2026-10-06T18:18:45.249Z  join    runs\2026-10-06-honest-farmer\part-1\out\honest-farmer-part-1-16x9-v13.mp4 (42.23 s)
+2026-10-06T18:18:45.250Z  join    runs\2026-10-06-honest-farmer\part-2\out\honest-farmer-part-2-16x9-v3.mp4 (42.40 s)
+2026-10-06T18:20:13.113Z  join    runs\2026-10-06-honest-farmer\out\honest-farmer-16x9-v1.mp4: 84.63 s, 1920x1080
+2026-10-06T18:20:13.113Z  join    runs\2026-10-06-honest-farmer\out\honest-farmer-16x9-v1.srt
+2026-10-06T18:20:13.114Z  join    ok   The file plays: 1920x1080, 30 pictures a second, 84.6 s, picture and sound both there; played through from start to finish
+2026-10-06T18:20:13.114Z  join    ok   It is as long as its parts together: 84.6 s; the 2 parts add up to 84.6 s
+2026-10-06T18:20:13.114Z  join    ok   There is no dead silence: the sound never drops out; the longest pause between words is 1.8 s
+2026-10-06T18:20:13.114Z  join    ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.1 dB (the limit is -1)

@@ -118,8 +118,11 @@ export {
 export type { PlanReport } from './plan';
 export {
   CUT_LEAD_MS,
+  JOIN_DIP_S,
   LEAD_IN_MS,
   TAIL_MS,
+  joinFilter,
+  joinTracks,
   partCount,
   partStoryboard,
   soundPlanFor,
@@ -162,3 +165,4 @@ export {
   wordsHeardCheck,
 } from './qa';
 export type { MadeFrom, QaStrip, QaVerdict, VideoProbe } from './qa';
+export type { JoinPart } from './assembly';
