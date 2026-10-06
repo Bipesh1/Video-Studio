@@ -12,7 +12,7 @@ Review file: `runs/2026-10-03-look-test/checkpoint-1.md`. Questions: (1) how clo
 
 **Question 1 (2026-10-04): Biku said not close enough yet, then said go.** Faces round 4 is built (section below, guide v7). Question 1 is open again: Biku needs to look at `runs/2026-10-03-look-test/out/face-match.png` and say whether the frightened face and the wrinkles are close enough now.
 
-## Fine outlines, bold limbs (2026-10-06): applied as guide version 12, waiting for Biku's final yes
+## Fine outlines, bold limbs (2026-10-06): guide version 12, confirmed by Biku
 
 Biku first asked for the outer edges a little thinner (versions 10 and 11, two small steps), then asked to see a pencil-thin version to compare. He looked at five thicknesses side by side (`engine/out/sandbox/lines-compare.png`) and said the pencil-thin one looks better on the king but too thin on a plain stick figure. Three mixes followed (`engine/out/sandbox/lines-mix.png`, and `lines-mix-phone.png` at phone size) and he picked **mix B**.
 
@@ -20,9 +20,11 @@ Biku first asked for the outer edges a little thinner (versions 10 and 11, two s
 
 **Fixed along the way:** the inner parts of four props (book, shield, chair and throne, door) carried their own fixed line thickness and stood out as heavy; they now use the style's detail line. Motion lines took the outline weight and nearly vanished; they now take their weight from the limbs.
 
+**Confirmed:** Biku looked at the wider set (Moon Tax stills, people, props in use, shot sizes, faces) and said "this looks good".
+
 **Still to look at with Biku:** the `!`, `?` and `...` symbols are white with a fine edge and are faint on a light background (fine on dark scenes). A plain figure has a fine ring for a head and bold limbs; Biku accepted that with mix B.
 
-**Not done on purpose:** the saved pictures (golden stills, check sheets, catalog pages) still show the old thick lines. They are redrawn once Biku says the look is final, so it is not done twice (`npm run sheets -- --golden`, `npm run library -- stills`, `npm run library -- catalog`; about 20 minutes). Videos already delivered are untouched; a new render would get a new version number.
+**Saved pictures retaken (2026-10-06):** all 31 check sheets, all 171 library pictures and the 8 catalog pages now show the new look. Videos already delivered (Moon Tax v1 to v5) and the Phase 2 test clips in `engine/out/sandbox/` are untouched and still show the old thick lines; a new render would get a new version number.
 
 ## Phase 3. Sound: done (2026-10-06)
 
