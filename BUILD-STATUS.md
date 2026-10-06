@@ -72,7 +72,7 @@ Asked by Biku ("start phase 4A"). Nothing here makes a picture yet; it is the pa
 ### Open after 4A
 
 - **The storyboard will grow.** Steps 4C and 4D will show what the planner and the assembly really need (exact stage positions, props on tables, timing inside a shot). The file has a version number for that.
-- **Brand name, watermark and closing card** wait for Biku. He has not picked a niche yet (2026-10-06) and will give the page name later; `brands/my-page.json` stays a placeholder and nothing is blocked by it.
+- **Brand name, watermark and closing card** wait for Biku. He has not picked a niche yet (2026-10-06) and will give the page name later; `brands/my-page.json` stays a placeholder and nothing is blocked by it. On 2026-10-06 he shared niche research he got elsewhere (not a decision yet): for Facebook, "what if" science first and mythology second, as 60 to 90 second vertical videos; for YouTube, tech, finance and business case studies as 8 to 12 minute videos, with historical battles second; possibly one page per niche. Claude's view given to him: mythology fits today's library best, "what if" science is a good fit after a batch of new drawings (space, planets, city, laboratory) and needs sourced facts, and 8 to 12 minute YouTube videos are well beyond what the studio is built and tested for (charts, wide layouts, longer music, hours of rendering).
 - **Voices** wait for Biku's pick (Checkpoint 1 question 2).
 - **No general or format playbooks yet** (`knowledge/playbooks/general.md`, `formats/<name>.md`); the writing rules of the plan (section 4.2) get their home in 4B.
 
