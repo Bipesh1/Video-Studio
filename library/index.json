@@ -2884,6 +2884,201 @@
       "added": "2026-10-05"
     },
     {
+      "id": "place/night-street",
+      "kind": "place",
+      "name": "Night street",
+      "description": "A village street after dark: houses with lit windows, a street lamp and the moon over a paved road.",
+      "tags": [
+        "place",
+        "setting",
+        "background",
+        "night",
+        "street",
+        "village",
+        "town",
+        "dark",
+        "alley",
+        "lamp",
+        "outdoor",
+        "thief"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "placeSpec"
+      },
+      "use": "<Background spec={placeSpec('night-street', seed)} width height frame fps />; stay in one place for a whole scene",
+      "still": "knowledge/golden/assets/place-night-street.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "place/day-street",
+      "kind": "place",
+      "name": "Day street",
+      "description": "A village street by day: houses and a tree along a paved road under a clear sky.",
+      "tags": [
+        "place",
+        "setting",
+        "background",
+        "day",
+        "street",
+        "village",
+        "town",
+        "market",
+        "road",
+        "outdoor",
+        "houses"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "placeSpec"
+      },
+      "use": "<Background spec={placeSpec('day-street', seed)} width height frame fps />; stay in one place for a whole scene",
+      "still": "knowledge/golden/assets/place-day-street.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "place/field",
+      "kind": "place",
+      "name": "Field",
+      "description": "Open farmland by day: rolling hills, a fence, a tree and long grass.",
+      "tags": [
+        "place",
+        "setting",
+        "background",
+        "field",
+        "farm",
+        "countryside",
+        "meadow",
+        "grass",
+        "hills",
+        "outdoor",
+        "harvest",
+        "day"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "placeSpec"
+      },
+      "use": "<Background spec={placeSpec('field', seed)} width height frame fps />; stay in one place for a whole scene",
+      "still": "knowledge/golden/assets/place-field.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "place/forest",
+      "kind": "place",
+      "name": "Forest",
+      "description": "Among trees by day: pines and round trees close together, with dark trunks framing the picture.",
+      "tags": [
+        "place",
+        "setting",
+        "background",
+        "forest",
+        "woods",
+        "trees",
+        "pine",
+        "wild",
+        "hunt",
+        "lost",
+        "outdoor",
+        "nature"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "placeSpec"
+      },
+      "use": "<Background spec={placeSpec('forest', seed)} width height frame fps />; stay in one place for a whole scene",
+      "still": "knowledge/golden/assets/place-forest.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "place/castle",
+      "kind": "place",
+      "name": "Castle",
+      "description": "A castle with towers and battlements on its hill under a stormy night sky, with light through the clouds.",
+      "tags": [
+        "place",
+        "setting",
+        "background",
+        "castle",
+        "fortress",
+        "kingdom",
+        "tower",
+        "storm",
+        "night",
+        "drama",
+        "siege",
+        "outdoor"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "placeSpec"
+      },
+      "use": "<Background spec={placeSpec('castle', seed)} width height frame fps />; stay in one place for a whole scene",
+      "still": "knowledge/golden/assets/place-castle.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "place/throne-room",
+      "kind": "place",
+      "name": "Throne room",
+      "description": "The great hall of a castle: stone columns, hanging banners and tall arched windows with pale light.",
+      "tags": [
+        "place",
+        "setting",
+        "background",
+        "throne room",
+        "palace",
+        "hall",
+        "court",
+        "castle",
+        "king",
+        "royal",
+        "indoor",
+        "interior"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "placeSpec"
+      },
+      "use": "<Background spec={placeSpec('throne-room', seed)} width height frame fps />; stay in one place for a whole scene",
+      "still": "knowledge/golden/assets/place-throne-room.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "place/home-interior",
+      "kind": "place",
+      "name": "Home interior",
+      "description": "A room in a house: a warm wall, a window with light coming in, a shelf of jars and books, a wooden floor.",
+      "tags": [
+        "place",
+        "setting",
+        "background",
+        "home",
+        "house",
+        "room",
+        "indoor",
+        "interior",
+        "kitchen",
+        "family",
+        "cottage",
+        "warm"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "placeSpec"
+      },
+      "use": "<Background spec={placeSpec('home-interior', seed)} width height frame fps />; stay in one place for a whole scene",
+      "still": "knowledge/golden/assets/place-home-interior.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
       "id": "palette/storm-slate",
       "kind": "palette",
       "name": "Storm slate",
@@ -3239,6 +3434,131 @@
       "still": "knowledge/golden/assets/silhouette-buildings.png",
       "version": 1,
       "added": "2026-10-05"
+    },
+    {
+      "id": "silhouette/house",
+      "kind": "silhouette",
+      "name": "House",
+      "description": "A house with a pitched roof, a chimney, a door and two windows that glow at night.",
+      "tags": [
+        "background",
+        "silhouette",
+        "house",
+        "home",
+        "cottage",
+        "village",
+        "street",
+        "roof",
+        "window"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/Background.tsx",
+        "export": "backgroundSpec"
+      },
+      "use": "silhouettes: [{ kind: 'house', x, size, layer: 'near' | 'mid' }] in the background spec",
+      "still": "knowledge/golden/assets/silhouette-house.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "silhouette/castle",
+      "kind": "silhouette",
+      "name": "Castle",
+      "description": "A castle keep between two towers, with battlements, a gate and a lit window.",
+      "tags": [
+        "background",
+        "silhouette",
+        "castle",
+        "fortress",
+        "tower",
+        "battlements",
+        "kingdom",
+        "keep",
+        "gate"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/Background.tsx",
+        "export": "backgroundSpec"
+      },
+      "use": "silhouettes: [{ kind: 'castle', x, size, layer: 'near' | 'mid' }] in the background spec",
+      "still": "knowledge/golden/assets/silhouette-castle.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "silhouette/pine",
+      "kind": "silhouette",
+      "name": "Pine",
+      "description": "A pointed pine in three tiers, for forests and mountains.",
+      "tags": [
+        "background",
+        "silhouette",
+        "pine",
+        "fir",
+        "conifer",
+        "forest",
+        "woods",
+        "evergreen",
+        "mountain"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/Background.tsx",
+        "export": "backgroundSpec"
+      },
+      "use": "silhouettes: [{ kind: 'pine', x, size, layer: 'near' | 'mid' }] in the background spec",
+      "still": "knowledge/golden/assets/silhouette-pine.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "silhouette/lamp-post",
+      "kind": "silhouette",
+      "name": "Lamp post",
+      "description": "A street lamp on a tall post, with a pool of light round it at night.",
+      "tags": [
+        "background",
+        "silhouette",
+        "lamp",
+        "lamp post",
+        "street light",
+        "street",
+        "night",
+        "town",
+        "light"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/Background.tsx",
+        "export": "backgroundSpec"
+      },
+      "use": "silhouettes: [{ kind: 'lamp-post', x, size, layer: 'near' | 'mid' }] in the background spec",
+      "still": "knowledge/golden/assets/silhouette-lamp-post.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "silhouette/fence",
+      "kind": "silhouette",
+      "name": "Fence",
+      "description": "A run of pointed fence posts with two rails.",
+      "tags": [
+        "background",
+        "silhouette",
+        "fence",
+        "farm",
+        "field",
+        "garden",
+        "paddock",
+        "boundary",
+        "wooden"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/Background.tsx",
+        "export": "backgroundSpec"
+      },
+      "use": "silhouettes: [{ kind: 'fence', x, size, layer: 'near' | 'mid' }] in the background spec",
+      "still": "knowledge/golden/assets/silhouette-fence.png",
+      "version": 1,
+      "added": "2026-10-06"
     },
     {
       "id": "color/gold",

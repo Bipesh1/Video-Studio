@@ -6,6 +6,8 @@ import {
   backgroundSpec,
 } from '../backgrounds/Background';
 import type { BackgroundSpec } from '../backgrounds/Background';
+import { PLACES, placeSpec } from '../backgrounds/places';
+import type { PlaceName } from '../backgrounds/places';
 import { AngerMark } from '../effects/AngerMark';
 import { DizzyStars } from '../effects/Dizzy';
 import { IMPACT_SECONDS, Impact } from '../effects/Impact';
@@ -607,6 +609,10 @@ const entries: Array<[string, Preview]> = [
     'background-element/grass-tufts',
     () => scene(backgroundSpec('simple', 'clear-day', SEED, { ...bare, tufts: 9 })),
   ],
+  ...(Object.keys(PLACES) as PlaceName[]).map((name): [string, Preview] => [
+    `place/${name}`,
+    () => scene(placeSpec(name, SEED)),
+  ]),
   ...SILHOUETTE_KINDS.map((kind): [string, Preview] => [
     `silhouette/${kind}`,
     () =>

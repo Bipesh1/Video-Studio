@@ -17,6 +17,12 @@ export type BgRoles = {
   moon: string;
   haze: string;
   tuft: string;
+  /** A paved street: the sky color pulled toward ink, so it is neutral, not grass. */
+  road: string;
+  /** Inside a room: the wall, the band where it meets the floor, and window or lamp light. */
+  wall: string;
+  trim: string;
+  light: string;
 };
 
 type Base = {
@@ -102,5 +108,9 @@ export function bgRoles(name: string): BgRoles {
     moon: tokens.background.moon,
     haze: lighten(b.skyBottom, 0.15),
     tuft: shade(b.ground, 0.45),
+    road: mix(b.skyBottom, ink, 0.5),
+    wall: b.skyTop,
+    trim: mix(b.skyTop, b.ground, 0.55),
+    light: lighten(b.skyBottom, 0.3),
   };
 }

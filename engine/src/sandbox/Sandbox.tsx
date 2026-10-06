@@ -29,6 +29,7 @@ import { MovesASheet, MovesBSheet, ShoesSheet } from './part-f';
 import { EffectsSheet } from './part-g';
 import { ActionVideo } from './part-h';
 import { PropsInUseSheet, PropsSheet } from './part-i';
+import { PlacesSheet } from './part-j';
 import type { SandboxBg, SheetName } from './sheets';
 
 export type SandboxProps = { sheet: SheetName; bg: SandboxBg };
@@ -449,6 +450,7 @@ export const Sandbox = ({ sheet, bg }: SandboxProps) => {
     shoes: <ShoesSheet c={c} />,
     props: <PropsSheet c={c} />,
     'props-in-use': <PropsInUseSheet c={c} />,
+    places: <PlacesSheet c={c} />,
     walk: <WalkVideo c={c} />,
     motion: <MotionVideo c={c} />,
     polish: <PolishVideo c={c} />,

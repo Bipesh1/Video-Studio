@@ -15,6 +15,7 @@ import { GARMENTS } from '../wardrobe/garments';
 import { HAIR_STYLES } from '../wardrobe/hair';
 import { AGES, FACIAL_HAIR } from '../wardrobe/types';
 import { library } from './data';
+import { PLACES } from '../backgrounds/places';
 import { PREVIEWS } from './previews';
 
 /**
@@ -50,6 +51,7 @@ describe('library index', () => {
       ...Object.keys(tokens.accents).map((c) => `color/${c}`),
       ...Object.keys(tokens.palettes).map((p) => `palette/${p}`),
       ...TREATMENTS.map((t) => `background/${t}`),
+      ...Object.keys(PLACES).map((p) => `place/${p}`),
       ...SILHOUETTE_KINDS.map((k) => `silhouette/${k}`),
     ];
     expect(missing(wanted), 'drawn but not in library/index.json').toEqual([]);
@@ -105,7 +107,7 @@ describe('library index', () => {
     const first = (q: string, kind?: AssetKind) =>
       searchLibrary(library, q, kind ? { kind } : {})[0]?.asset.id;
     expect(first('king')).toBe('costume/ruler');
-    expect(first('throne')).toBe('pose/sit');
+    expect(first('throne', 'pose')).toBe('pose/sit');
     expect(first('celebrate')).toBe('action/cheer');
     expect(first('sobbing')).toBe('action/cry');
     expect(first('guard helmet')).toBe('costume/soldier');
@@ -129,7 +131,11 @@ describe('library index', () => {
     expect(first('wine feast')).toBe('prop/goblet');
     expect(first('knock', 'prop')).toBe('prop/door');
     expect(first('watchman')).toBe('prop/lantern');
-    expect(first('court palace')).toBe('prop/throne');
+    expect(first('court palace', 'prop')).toBe('prop/throne');
+    expect(first('village night')).toBe('place/night-street');
+    expect(first('palace hall')).toBe('place/throne-room');
+    expect(first('woods', 'place')).toBe('place/forest');
+    expect(first('kitchen', 'place')).toBe('place/home-interior');
     expect(first('leather')).toBe('color/brown');
     expect(first('khaki')).toBe('color/tan');
     expect(first('linen')).toBe('color/cream');

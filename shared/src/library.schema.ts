@@ -24,6 +24,7 @@ export const ASSET_KINDS = [
   'prop',
   'effect',
   'background',
+  'place',
   'palette',
   'background-element',
   'silhouette',

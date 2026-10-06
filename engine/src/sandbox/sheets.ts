@@ -26,6 +26,7 @@ export const STILL_SHEETS = [
   'shoes',
   'props',
   'props-in-use',
+  'places',
 ] as const;
 export const VIDEO_SHEETS = {
   walk: 4,
