@@ -1,0 +1,10 @@
+{
+  "id": "woman",
+  "name": "Woman or girl",
+  "description": "A warm, bright woman's voice for a character who speaks. A placeholder until Biku picks.",
+  "version": 1,
+  "kokoroVoice": "af_heart",
+  "speed": 1.0,
+  "pauseScale": 1.0,
+  "pronunciations": {}
+}

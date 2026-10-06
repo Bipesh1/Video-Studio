@@ -1,0 +1,80 @@
+{
+  "id": "news-short",
+  "name": "News short",
+  "description": "What happened, why it matters and what comes next, told plainly. Pick it for a recent event.",
+  "version": 1,
+  "structure": [
+    {
+      "id": "headline",
+      "purpose": "The one thing that happened, in a sentence, with its date or place.",
+      "share": 0.15,
+      "moods": ["tense", "curious"],
+      "preferredShots": ["medium", "close-up"],
+      "backgroundTreatment": "atmospheric"
+    },
+    {
+      "id": "what-happened",
+      "purpose": "The events in order, each with its own picture.",
+      "share": 0.4,
+      "moods": ["tense", "curious", "sorrow"],
+      "preferredShots": ["wide", "medium"],
+      "backgroundTreatment": "simple"
+    },
+    {
+      "id": "why-it-matters",
+      "purpose": "Who is affected and how.",
+      "share": 0.25,
+      "moods": ["reflective", "tense", "hope"],
+      "preferredShots": ["medium", "close-up"],
+      "backgroundTreatment": "either"
+    },
+    {
+      "id": "what-next",
+      "purpose": "What is expected to happen next, or what is still unknown.",
+      "share": 0.2,
+      "moods": ["reflective", "curious", "hope"],
+      "preferredShots": ["wide", "medium"],
+      "backgroundTreatment": "simple"
+    }
+  ],
+  "lengthRange": {
+    "min": 30,
+    "max": 90
+  },
+  "shotLength": {
+    "min": 2,
+    "max": 4
+  },
+  "hookRules": ["The first 3 seconds state what happened. No greeting and no logo intro."],
+  "pacing": {
+    "wordsPerMinute": {
+      "min": 150,
+      "max": 175
+    },
+    "rehookEveryS": {
+      "min": 20,
+      "max": 30
+    },
+    "pauseMs": {
+      "normal": 400,
+      "afterBeat": 700
+    }
+  },
+  "sfxDensity": {
+    "level": "low",
+    "perMinute": {
+      "min": 3,
+      "max": 8
+    }
+  },
+  "captionMode": "full",
+  "factRules": {
+    "sourcesRequired": true,
+    "rules": [
+      "Every event has its date and comes from a saved source, with the date the source was read.",
+      "Opinion is never spoken as fact; a claim someone made is said to be their claim.",
+      "Names are spelled as in the source.",
+      "Real people are drawn as plain stick figures, never with a likeness."
+    ]
+  }
+}

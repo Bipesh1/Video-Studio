@@ -1,0 +1,23 @@
+{
+  "id": "my-page",
+  "pageName": "My Page",
+  "version": 1,
+  "colors": {
+    "captionEmphasis": "gold",
+    "titleRibbon": "crimson",
+    "label": "cream"
+  },
+  "font": "Fredoka",
+  "captions": {
+    "maxLines": 2,
+    "maxWordsPerPage": 5
+  },
+  "watermark": null,
+  "closingCard": null,
+  "defaults": {
+    "format": "story",
+    "voice": "narrator",
+    "sizes": ["9:16", "4:5", "16:9"]
+  },
+  "identityMode": "auto"
+}

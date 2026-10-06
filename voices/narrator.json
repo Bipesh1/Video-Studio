@@ -1,0 +1,10 @@
+{
+  "id": "narrator",
+  "name": "Narrator",
+  "description": "The storyteller: a calm, clear man's voice. A placeholder until Biku picks from the audition.",
+  "version": 1,
+  "kokoroVoice": "am_michael",
+  "speed": 1.0,
+  "pauseScale": 1.0,
+  "pronunciations": {}
+}

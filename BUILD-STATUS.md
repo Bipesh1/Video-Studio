@@ -1,7 +1,7 @@
 # Build Status
 
-**Current phase:** Phase 3 (sound) is built (2026-10-06). Phases 0 to 2 are complete. Next is Phase 4 (the full pipeline), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
-**Next:** Phase 4 when Biku asks. Biku listened to the Phase 3 sound on 2026-10-06 and said "everything is fine in my opinion" (the moods, the effects, the levels in Moon Tax v5). Claude's reading: the current instrument set stays too, since he raised no objection after the license caution was explained. The questions at the end of `PHASE-2-REPORT.md` are still open.
+**Current phase:** Phase 4 (the full pipeline), step 4A (foundation) done (2026-10-06). Phases 0 to 3 are complete. Next step is 4B (script modes and splitting into chapters), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
+**Next:** Biku says "start 4B". Before the test video in 4G he needs to give: a script, a name for his page (the brand file says "My Page" for now), and his pick of voices (the three voice files are placeholders). The Phase 3 sound was approved by Biku ("everything is fine in my opinion"); the questions at the end of `PHASE-2-REPORT.md` are still open.
 **Decided for Phase 4 (Biku, 2026-10-06):** his videos will be about 2 to 3 minutes. Biku proposed making them as parts of at most 1 minute from one script and combining them at the end. Agreed, with the studio doing the joining: one script is split into chapters of up to a minute at natural story breaks, each chapter is built and checked alone (so each fits the run budget and can be redone alone), then the chapters are joined into one final video in every size with one captions file; the chapters are kept too. Phase 4 must make the joins invisible: saved characters reused in every chapter, one voice and one loudness, music planned over the whole script so cuts fall on a pause or a mood change, the title only on the first chapter and the closing card only on the last. (The plan's 30-minute run budget then applies to a chapter, not to the whole video; this is Claude's reading and should be confirmed with Biku when Phase 4 starts.)
 **Also decided (Biku, 2026-10-06):** in a video made in parts, the studio stops after each part of about a minute and shows it; it goes on to the next part only when Biku says so ("so that its better than making all the video at once"). So a chapter is a checkpoint: no later chapter, no extra size and no joined video is rendered ahead of his go. Agreed by Biku the same day ("thats fine"): each chapter is shown in the phone size only, and the other two sizes and the joined video are made once every chapter is approved.
 **Last updated:** 2026-10-06
@@ -11,6 +11,40 @@
 Review file: `runs/2026-10-03-look-test/checkpoint-1.md`. Questions: (1) how close the look is and what to change, (2) narrator and character voices, (3) head size (answered 2026-10-06: fine as it is), (4) hair colors (guide v3), (5) fingers on hands that cover the face.
 
 **Question 1 (2026-10-04): Biku said not close enough yet, then said go.** Faces round 4 is built (section below, guide v7). Question 1 is open again: Biku needs to look at `runs/2026-10-03-look-test/out/face-match.png` and say whether the frightened face and the wrinkles are close enough now.
+
+## Phase 4. The full pipeline: steps (split agreed with Biku, 2026-10-06)
+
+Each step ends with something Biku can look at, a commit and an update here. Start a step only when Biku asks.
+
+- **4A. Foundation: done (2026-10-06).** The storyboard (a video's master file), the first brand file, the six format templates, voices.
+- **4B. Script.** The three script modes (as-is, refine, original) and splitting a long script into chapters of at most a minute.
+- **4C. Shot planner.** A script turned into a full storyboard: who, where, doing what, camera, music, effects.
+- **4D. Assembly.** A video built from a storyboard automatically, with voice, sound and captions.
+- **4E. Self-check.** The automatic checks and the plain-language QA report.
+- **4F. Output.** Preview first, then the three sizes, cover image, captions file, and joining chapters.
+- **4G. The test video.** One full 2 to 3 minute video in refine mode from Biku's script, made chapter by chapter, then Checkpoint 2.
+
+## Phase 4A. Foundation: done (2026-10-06)
+
+Asked by Biku ("start phase 4A"). Nothing here makes a picture yet; it is the paperwork every later step stands on.
+
+### Made
+
+- **The storyboard** (`shared/src/storyboard.schema.ts`): the one file that describes a whole video (ground rule 4). A video is a list of scenes; a scene has a beat, a music mood, a place with its treatment and colors, the lines to speak and the shots; every shot acts out some of the words of one line and names the camera, who is in it, their pose or action, their expression, where they look, what they hold, effects, sound effects, and any title or label. The file refuses a storyboard that disagrees with itself: words that do not add up to their line, someone not in the cast, an actor with no expression, a look at someone who is not there, chapters out of order.
+- **The storyboard check** (`shared/src/storyboard.check.ts`, `npm run storyboard -- check`): asks whether everything a storyboard names exists (every pose, place, prop, effect, costume, mood, voice, format and brand), whether the scenes follow the format's beats in order, whether a factual format has sources, and how long each chapter runs. Every problem is one plain sentence, and a missing library piece comes with the search command to run.
+- **Six formats** (`formats/`): story, explainer, top-list, quote, news-short, promo. Each lists its beats in order with what each beat is for, the music and shot sizes that suit it, how long the video and a shot may be, the hook rules, the pace, how many sound effects suit it, and its fact rules. Story, explainer and top-list go up to 3 minutes. Explainer, top-list, quote and news-short need sources.
+- **The first brand** (`brands/my-page.json`): a placeholder called "My Page" until Biku names his page. Gold emphasis in captions, crimson title ribbon, cream labels, no watermark and no closing card yet, all three sizes.
+- **Three voices** (`voices/`): narrator, woman, man. Placeholders using the Kokoro voices of the earlier tests until Biku picks.
+- **Chapters:** a scene carries its chapter number; a chapter is at most 60 seconds (`CHAPTER_MAX_S`), estimated from the word count before the voice exists and measured from the shot times after.
+- **A worked example** (`shared/src/fixtures/moon-tax.storyboard.json`): the Moon Tax tale as a proper storyboard, 6 scenes and 13 shots of 2 to 4 seconds. It passes the check and is the first thing step 4D will try to build.
+- **Tests:** 48 new (formats, brands, voices, storyboard shape, and the check against the real library and plug-in files).
+
+### Open after 4A
+
+- **The storyboard will grow.** Steps 4C and 4D will show what the planner and the assembly really need (exact stage positions, props on tables, timing inside a shot). The file has a version number for that.
+- **Brand name, watermark and closing card** wait for Biku.
+- **Voices** wait for Biku's pick (Checkpoint 1 question 2).
+- **No general or format playbooks yet** (`knowledge/playbooks/general.md`, `formats/<name>.md`); the writing rules of the plan (section 4.2) get their home in 4B.
 
 ## Fine outlines, bold limbs (2026-10-06): guide version 12, confirmed by Biku
 

@@ -1,0 +1,80 @@
+{
+  "id": "promo",
+  "name": "Promo",
+  "description": "A short video that gets the viewer to do one thing: follow, visit, buy or come along. Pick it to promote a page, a product or an event.",
+  "version": 1,
+  "structure": [
+    {
+      "id": "hook",
+      "purpose": "Show the problem or the wish the viewer already has.",
+      "share": 0.2,
+      "moods": ["curious", "comic", "tense"],
+      "preferredShots": ["close-up", "medium"],
+      "backgroundTreatment": "simple"
+    },
+    {
+      "id": "offer",
+      "purpose": "Show what answers it, in use, with one clear benefit.",
+      "share": 0.4,
+      "moods": ["upbeat", "hope"],
+      "preferredShots": ["medium", "wide"],
+      "backgroundTreatment": "simple"
+    },
+    {
+      "id": "proof",
+      "purpose": "One reason to believe it: a number, a name or a result.",
+      "share": 0.2,
+      "moods": ["upbeat", "triumph"],
+      "preferredShots": ["medium", "close-up"],
+      "backgroundTreatment": "either",
+      "optional": true
+    },
+    {
+      "id": "call-to-action",
+      "purpose": "Say the one thing to do next, and show it on screen.",
+      "share": 0.2,
+      "moods": ["upbeat", "triumph", "hope"],
+      "preferredShots": ["medium", "wide"],
+      "backgroundTreatment": "simple"
+    }
+  ],
+  "lengthRange": {
+    "min": 12,
+    "max": 45
+  },
+  "shotLength": {
+    "min": 2,
+    "max": 4
+  },
+  "hookRules": [
+    "The first 3 seconds show the viewer's own problem or wish. No greeting and no logo intro."
+  ],
+  "pacing": {
+    "wordsPerMinute": {
+      "min": 150,
+      "max": 175
+    },
+    "rehookEveryS": {
+      "min": 10,
+      "max": 15
+    },
+    "pauseMs": {
+      "normal": 300,
+      "afterBeat": 600
+    }
+  },
+  "sfxDensity": {
+    "level": "medium",
+    "perMinute": {
+      "min": 6,
+      "max": 14
+    }
+  },
+  "captionMode": "full",
+  "factRules": {
+    "sourcesRequired": false,
+    "rules": [
+      "Everything said about a product, a price, an offer or a date comes from what Biku supplies. Nothing is invented."
+    ]
+  }
+}

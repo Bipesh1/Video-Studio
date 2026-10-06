@@ -1,0 +1,10 @@
+{
+  "id": "man",
+  "name": "Man or boy",
+  "description": "A lively man's voice for a character who speaks. A placeholder until Biku picks.",
+  "version": 1,
+  "kokoroVoice": "am_puck",
+  "speed": 1.0,
+  "pauseScale": 1.0,
+  "pronunciations": {}
+}

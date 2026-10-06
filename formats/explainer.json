@@ -1,0 +1,99 @@
+{
+  "id": "explainer",
+  "name": "Explainer",
+  "description": "How or why something works or happened, made clear step by step. Pick it when the viewer should come away understanding one thing.",
+  "version": 1,
+  "structure": [
+    {
+      "id": "hook",
+      "purpose": "Ask the question the video answers, in its most surprising form.",
+      "share": 0.1,
+      "moods": ["curious", "tense"],
+      "preferredShots": ["close-up", "medium"],
+      "backgroundTreatment": "atmospheric"
+    },
+    {
+      "id": "why-it-matters",
+      "purpose": "Say what the viewer or the world gains or loses from the answer.",
+      "share": 0.1,
+      "moods": ["curious", "tense"],
+      "preferredShots": ["medium", "wide"],
+      "backgroundTreatment": "simple"
+    },
+    {
+      "id": "first-part",
+      "purpose": "Explain the first half of the answer with one clear picture for each idea.",
+      "share": 0.25,
+      "moods": ["curious", "upbeat", "calm"],
+      "preferredShots": ["wide", "medium"],
+      "backgroundTreatment": "simple"
+    },
+    {
+      "id": "second-part",
+      "purpose": "Explain the rest, building on what was just shown.",
+      "share": 0.25,
+      "moods": ["curious", "upbeat", "tense"],
+      "preferredShots": ["medium", "close-up"],
+      "backgroundTreatment": "simple",
+      "optional": true
+    },
+    {
+      "id": "surprise",
+      "purpose": "The fact or turn the viewer did not see coming.",
+      "share": 0.15,
+      "moods": ["tense", "comic", "triumph"],
+      "preferredShots": ["close-up", "medium"],
+      "backgroundTreatment": "atmospheric"
+    },
+    {
+      "id": "takeaway",
+      "purpose": "Say the answer once more in one plain sentence, and end on it.",
+      "share": 0.15,
+      "moods": ["reflective", "hope", "calm"],
+      "preferredShots": ["wide", "close-up"],
+      "backgroundTreatment": "either"
+    }
+  ],
+  "lengthRange": {
+    "min": 45,
+    "max": 180
+  },
+  "shotLength": {
+    "min": 2,
+    "max": 4
+  },
+  "hookRules": [
+    "The first 3 seconds show the most striking image or line. No greeting and no logo intro.",
+    "Within 10 seconds it is clear what someone could lose or gain."
+  ],
+  "pacing": {
+    "wordsPerMinute": {
+      "min": 145,
+      "max": 170
+    },
+    "rehookEveryS": {
+      "min": 20,
+      "max": 30
+    },
+    "pauseMs": {
+      "normal": 400,
+      "afterBeat": 800
+    }
+  },
+  "sfxDensity": {
+    "level": "medium",
+    "perMinute": {
+      "min": 5,
+      "max": 12
+    }
+  },
+  "captionMode": "full",
+  "factRules": {
+    "sourcesRequired": true,
+    "rules": [
+      "Every number, date and name comes from a saved source.",
+      "A rounded figure is spoken as about, nearly or more than, never as exact.",
+      "What is not known or is disputed is said to be so."
+    ]
+  }
+}

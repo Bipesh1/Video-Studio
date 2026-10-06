@@ -1,0 +1,96 @@
+{
+  "id": "story",
+  "name": "Story",
+  "description": "A tale with characters who want something: a folktale, a true episode told as a story, a fable. Pick it when the video follows people through events to an ending.",
+  "version": 1,
+  "structure": [
+    {
+      "id": "hook",
+      "purpose": "Open on the most striking moment or line of the whole story, so the viewer has to know more.",
+      "share": 0.1,
+      "moods": ["curious", "tense"],
+      "preferredShots": ["close-up", "medium"],
+      "backgroundTreatment": "atmospheric"
+    },
+    {
+      "id": "setup",
+      "purpose": "Show who this is about, where they are and what they want, in as few words as it takes.",
+      "share": 0.2,
+      "moods": ["curious", "calm", "upbeat"],
+      "preferredShots": ["wide", "medium"],
+      "backgroundTreatment": "simple"
+    },
+    {
+      "id": "rising-trouble",
+      "purpose": "Put something in their way and make it worse, with a new question or danger each time.",
+      "share": 0.3,
+      "moods": ["tense", "comic", "sorrow"],
+      "preferredShots": ["medium", "close-up", "over-shoulder"],
+      "backgroundTreatment": "either"
+    },
+    {
+      "id": "turning-point",
+      "purpose": "The moment everything changes: a choice, a discovery or a reversal, shown on a face.",
+      "share": 0.15,
+      "moods": ["tense", "hope", "triumph"],
+      "preferredShots": ["close-up", "medium"],
+      "backgroundTreatment": "atmospheric"
+    },
+    {
+      "id": "payoff",
+      "purpose": "Show what came of it and pay off what the opening promised.",
+      "share": 0.15,
+      "moods": ["triumph", "hope", "sorrow", "comic"],
+      "preferredShots": ["wide", "medium"],
+      "backgroundTreatment": "either"
+    },
+    {
+      "id": "closing-line",
+      "purpose": "End on one line worth remembering, over a picture that holds.",
+      "share": 0.1,
+      "moods": ["reflective", "calm", "hope"],
+      "preferredShots": ["wide", "close-up"],
+      "backgroundTreatment": "atmospheric"
+    }
+  ],
+  "lengthRange": {
+    "min": 20,
+    "max": 180
+  },
+  "shotLength": {
+    "min": 2,
+    "max": 4
+  },
+  "hookRules": [
+    "The first 3 seconds show the most striking image or line. No greeting and no logo intro.",
+    "Within 10 seconds it is clear what someone could lose or gain."
+  ],
+  "pacing": {
+    "wordsPerMinute": {
+      "min": 140,
+      "max": 165
+    },
+    "rehookEveryS": {
+      "min": 20,
+      "max": 30
+    },
+    "pauseMs": {
+      "normal": 450,
+      "afterBeat": 900
+    }
+  },
+  "sfxDensity": {
+    "level": "medium",
+    "perMinute": {
+      "min": 6,
+      "max": 14
+    }
+  },
+  "captionMode": "full",
+  "factRules": {
+    "sourcesRequired": false,
+    "rules": [
+      "A story told as true keeps to what really happened, and says so when a detail is imagined."
+    ]
+  }
+}

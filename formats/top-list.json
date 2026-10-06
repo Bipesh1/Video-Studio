@@ -1,0 +1,81 @@
+{
+  "id": "top-list",
+  "name": "Top list",
+  "description": "A countdown or a list of things, each with its own short scene. Pick it for rankings, records and collections of facts.",
+  "version": 1,
+  "structure": [
+    {
+      "id": "hook",
+      "purpose": "Promise the list and tease the best item on it.",
+      "share": 0.08,
+      "moods": ["upbeat", "curious"],
+      "preferredShots": ["medium", "close-up"],
+      "backgroundTreatment": "simple"
+    },
+    {
+      "id": "items",
+      "purpose": "One scene for each item, numbered on screen, each one a small surprise. Use this beat once per item.",
+      "share": 0.62,
+      "moods": ["upbeat", "curious", "comic", "tense"],
+      "preferredShots": ["medium", "wide", "close-up"],
+      "backgroundTreatment": "simple"
+    },
+    {
+      "id": "top-item",
+      "purpose": "The best one, given the most time and the strongest picture.",
+      "share": 0.2,
+      "moods": ["triumph", "tense", "upbeat"],
+      "preferredShots": ["close-up", "medium"],
+      "backgroundTreatment": "atmospheric"
+    },
+    {
+      "id": "sign-off",
+      "purpose": "One line that sums up the list or asks which the viewer would pick.",
+      "share": 0.1,
+      "moods": ["upbeat", "reflective"],
+      "preferredShots": ["wide", "medium"],
+      "backgroundTreatment": "simple"
+    }
+  ],
+  "lengthRange": {
+    "min": 45,
+    "max": 180
+  },
+  "shotLength": {
+    "min": 2,
+    "max": 4
+  },
+  "hookRules": [
+    "The first 3 seconds show the most striking image or line. No greeting and no logo intro.",
+    "Within 10 seconds it is clear what someone could lose or gain."
+  ],
+  "pacing": {
+    "wordsPerMinute": {
+      "min": 150,
+      "max": 175
+    },
+    "rehookEveryS": {
+      "min": 15,
+      "max": 25
+    },
+    "pauseMs": {
+      "normal": 350,
+      "afterBeat": 700
+    }
+  },
+  "sfxDensity": {
+    "level": "high",
+    "perMinute": {
+      "min": 10,
+      "max": 20
+    }
+  },
+  "captionMode": "full",
+  "factRules": {
+    "sourcesRequired": true,
+    "rules": [
+      "Every item and every figure comes from a saved source.",
+      "The order of a ranking follows the source, or the video says the order is its own choice."
+    ]
+  }
+}

@@ -40,3 +40,53 @@ export type {
   SfxName,
   SoundPlan,
 } from './sound.schema';
+export {
+  CAMERA_MOVES,
+  CHAPTER_MAX_S,
+  FPS,
+  FRAMINGS,
+  SCRIPT_MODES,
+  SIZES,
+  SIZE_NAMES,
+  TREATMENTS,
+  beatSchema,
+  brandSchema,
+  formatSchema,
+  idSchema,
+  viewerTextSchema,
+  voiceProfileSchema,
+} from './plugins.schema';
+export type {
+  Beat,
+  Brand,
+  CameraMove,
+  Format,
+  Framing,
+  ScriptMode,
+  SizeName,
+  Treatment,
+  VoiceProfile,
+} from './plugins.schema';
+export {
+  NARRATOR,
+  actorSchema,
+  castMemberSchema,
+  estimateSeconds,
+  lookSchema,
+  plainWords,
+  sceneSchema,
+  shotSchema,
+  storyLineSchema,
+  storyboardSchema,
+} from './storyboard.schema';
+export type {
+  Actor,
+  CastMember,
+  Look,
+  Scene,
+  Shot,
+  StoryLine,
+  Storyboard,
+} from './storyboard.schema';
+export { checkStoryboard } from './storyboard.check';
+export type { StoryboardReport, World } from './storyboard.check';

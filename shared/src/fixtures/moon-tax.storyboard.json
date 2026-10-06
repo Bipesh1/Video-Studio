@@ -1,0 +1,391 @@
+{
+  "version": 1,
+  "title": "The King Who Taxed the Moon",
+  "request": "a short folktale of your own",
+  "mode": "original",
+  "format": "story",
+  "style": "ink-stick",
+  "brand": "my-page",
+  "voice": "narrator",
+  "seed": 1004,
+  "sources": [],
+  "appliedLessons": ["L-0013", "L-0016"],
+  "cast": [
+    {
+      "id": "king",
+      "name": "The proud king",
+      "look": { "outfit": { "costume": "ruler" }, "eyeStyle": "round" }
+    },
+    {
+      "id": "mira",
+      "name": "Mira, a little girl",
+      "look": { "age": "child", "size": 0.8 },
+      "voice": "woman"
+    },
+    { "id": "villager", "name": "A tired villager" }
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "hook",
+      "mood": "curious",
+      "place": "castle",
+      "treatment": "atmospheric",
+      "palette": "storm-slate",
+      "lines": [
+        {
+          "id": "n1",
+          "speaker": "narrator",
+          "text": "Long ago, a proud king declared that the *moon* belonged to him.",
+          "pauseAfterMs": 700
+        }
+      ],
+      "shots": [
+        {
+          "id": "s1a",
+          "line": "n1",
+          "words": "Long ago, a proud king",
+          "camera": { "framing": "wide", "move": "push-in", "strength": 0.3 },
+          "actors": [
+            {
+              "character": "king",
+              "pose": "hold-object",
+              "holds": "scepter",
+              "expression": "smug",
+              "facing": "right",
+              "x": 0.5
+            }
+          ],
+          "overlay": { "kind": "title", "text": "The King Who Taxed the Moon" },
+          "sfx": [{ "name": "wind", "at": "start" }]
+        },
+        {
+          "id": "s1b",
+          "line": "n1",
+          "words": "declared that the *moon* belonged to him.",
+          "camera": { "framing": "close-up", "move": "none", "focus": "king" },
+          "actors": [
+            {
+              "character": "king",
+              "pose": "point",
+              "expression": "smug",
+              "facing": "right",
+              "lookAt": "up",
+              "x": 0.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "setup",
+      "mood": "curious",
+      "place": "night-street",
+      "treatment": "simple",
+      "palette": "dusk-violet",
+      "lines": [
+        {
+          "id": "n2",
+          "speaker": "narrator",
+          "text": "Anyone who walked in its light had to pay him a *coin*.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s2a",
+          "line": "n2",
+          "words": "Anyone who walked in its light",
+          "camera": { "framing": "wide", "move": "follow" },
+          "actors": [
+            {
+              "character": "villager",
+              "action": "walk-tired",
+              "expression": "sad",
+              "facing": "right",
+              "headTurn": "profile"
+            }
+          ],
+          "sfx": [{ "name": "footsteps", "at": "start", "gainDb": -2 }]
+        },
+        {
+          "id": "s2b",
+          "line": "n2",
+          "words": "had to pay him a *coin*.",
+          "camera": { "framing": "medium", "move": "none" },
+          "actors": [
+            {
+              "character": "villager",
+              "pose": "hold-object",
+              "holds": "coin",
+              "expression": "sad",
+              "facing": "right",
+              "lookAt": "coin",
+              "x": 0.45
+            }
+          ],
+          "sfx": [{ "name": "ding", "at": "end" }]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "chapter": 1,
+      "beat": "rising-trouble",
+      "mood": "comic",
+      "place": "night-street",
+      "treatment": "simple",
+      "palette": "dusk-violet",
+      "lines": [
+        {
+          "id": "n3",
+          "speaker": "narrator",
+          "text": "One night, a little girl named Mira stood before him.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "d1",
+          "speaker": "mira",
+          "text": "Then the moon owes *me*, king. It followed me all the way home!",
+          "pauseAfterMs": 1000
+        }
+      ],
+      "shots": [
+        {
+          "id": "s3a",
+          "line": "n3",
+          "words": "One night, a little girl named Mira",
+          "camera": { "framing": "wide", "move": "none" },
+          "actors": [
+            {
+              "character": "mira",
+              "action": "walk",
+              "expression": "determined",
+              "facing": "right",
+              "lookAt": "king",
+              "x": 0.3
+            },
+            {
+              "character": "king",
+              "pose": "hold-object",
+              "holds": "scepter",
+              "expression": "angry",
+              "facing": "left",
+              "lookAt": "mira",
+              "x": 0.7
+            }
+          ]
+        },
+        {
+          "id": "s3b",
+          "line": "n3",
+          "words": "stood before him.",
+          "camera": { "framing": "medium", "move": "none" },
+          "actors": [
+            {
+              "character": "mira",
+              "pose": "stand",
+              "expression": "determined",
+              "facing": "right",
+              "lookAt": "king",
+              "x": 0.35
+            },
+            {
+              "character": "king",
+              "pose": "cross-arms",
+              "expression": "angry",
+              "facing": "left",
+              "lookAt": "mira",
+              "x": 0.68
+            }
+          ]
+        },
+        {
+          "id": "s3c",
+          "line": "d1",
+          "words": "Then the moon owes *me*, king.",
+          "camera": { "framing": "medium", "move": "none", "focus": "mira" },
+          "actors": [
+            {
+              "character": "mira",
+              "pose": "point",
+              "expression": "happy",
+              "facing": "right",
+              "lookAt": "king",
+              "x": 0.35
+            },
+            {
+              "character": "king",
+              "pose": "cross-arms",
+              "expression": "angry",
+              "facing": "left",
+              "lookAt": "mira",
+              "x": 0.68
+            }
+          ],
+          "sfx": [{ "name": "pop", "at": "start" }]
+        },
+        {
+          "id": "s3d",
+          "line": "d1",
+          "words": "It followed me all the way home!",
+          "camera": { "framing": "close-up", "move": "punch-in", "strength": 0.2, "focus": "king" },
+          "actors": [
+            {
+              "character": "king",
+              "pose": "stand",
+              "expression": "surprised",
+              "facing": "left",
+              "x": 0.6
+            }
+          ],
+          "effects": [{ "effect": "symbol-exclaim", "on": "king" }]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "chapter": 1,
+      "beat": "turning-point",
+      "mood": "tense",
+      "place": "castle",
+      "treatment": "atmospheric",
+      "palette": "storm-slate",
+      "lines": [
+        {
+          "id": "n4",
+          "speaker": "narrator",
+          "text": "The king looked up. He could not make the moon *stop*.",
+          "pauseAfterMs": 1000
+        }
+      ],
+      "shots": [
+        {
+          "id": "s4a",
+          "line": "n4",
+          "words": "The king looked up.",
+          "camera": { "framing": "close-up", "move": "push-in", "strength": 0.3 },
+          "actors": [
+            {
+              "character": "king",
+              "pose": "look-up",
+              "expression": "surprised",
+              "facing": "right",
+              "lookAt": "up",
+              "x": 0.5
+            }
+          ],
+          "sfx": [{ "name": "whoosh", "at": "start" }]
+        },
+        {
+          "id": "s4b",
+          "line": "n4",
+          "words": "He could not make the moon *stop*.",
+          "camera": { "framing": "close-up", "move": "none" },
+          "actors": [
+            {
+              "character": "king",
+              "pose": "look-up",
+              "expression": "afraid",
+              "facing": "right",
+              "lookAt": "up",
+              "x": 0.5
+            }
+          ],
+          "effects": [{ "effect": "sweat-resting", "on": "king" }],
+          "sfx": [{ "name": "blip", "at": "middle" }]
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chapter": 1,
+      "beat": "payoff",
+      "mood": "calm",
+      "place": "night-street",
+      "treatment": "simple",
+      "palette": "dusk-violet",
+      "lines": [
+        {
+          "id": "n5",
+          "speaker": "narrator",
+          "text": "So the tax ended.",
+          "pauseAfterMs": 600
+        }
+      ],
+      "shots": [
+        {
+          "id": "s5a",
+          "line": "n5",
+          "words": "So the tax ended.",
+          "camera": { "framing": "medium", "move": "none" },
+          "transition": "fade",
+          "actors": [
+            {
+              "character": "king",
+              "pose": "shrug",
+              "expression": "exhausted",
+              "facing": "left",
+              "x": 0.6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 1,
+      "beat": "closing-line",
+      "mood": "calm",
+      "place": "night-street",
+      "treatment": "simple",
+      "palette": "dusk-violet",
+      "lines": [
+        {
+          "id": "n6",
+          "speaker": "narrator",
+          "text": "And the moon still walks everyone home, for *free*.",
+          "pauseAfterMs": 800
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6a",
+          "line": "n6",
+          "words": "And the moon still walks everyone home,",
+          "camera": { "framing": "wide", "move": "follow" },
+          "actors": [
+            {
+              "character": "mira",
+              "action": "walk-happy",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "profile"
+            }
+          ],
+          "sfx": [{ "name": "footsteps", "at": "start", "gainDb": -2 }]
+        },
+        {
+          "id": "s6b",
+          "line": "n6",
+          "words": "for *free*.",
+          "camera": { "framing": "medium", "move": "none" },
+          "actors": [
+            {
+              "character": "mira",
+              "pose": "wave",
+              "expression": "laughing",
+              "facing": "right",
+              "lookAt": "camera",
+              "headTurn": "front",
+              "x": 0.5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

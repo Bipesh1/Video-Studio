@@ -1,0 +1,73 @@
+{
+  "id": "quote",
+  "name": "Quote",
+  "description": "One saying, given a short scene that makes it land. Pick it for a proverb, a line from a speech or a piece of advice.",
+  "version": 1,
+  "structure": [
+    {
+      "id": "setup",
+      "purpose": "A moment that makes the viewer need the saying: who is speaking, or the trouble it answers.",
+      "share": 0.3,
+      "moods": ["reflective", "curious", "sorrow"],
+      "preferredShots": ["wide", "medium"],
+      "backgroundTreatment": "atmospheric"
+    },
+    {
+      "id": "the-quote",
+      "purpose": "The saying itself, word for word, with time to read it.",
+      "share": 0.45,
+      "moods": ["reflective", "hope", "calm"],
+      "preferredShots": ["close-up", "medium"],
+      "backgroundTreatment": "atmospheric"
+    },
+    {
+      "id": "meaning",
+      "purpose": "One line on what it means for the viewer today.",
+      "share": 0.25,
+      "moods": ["hope", "calm", "reflective"],
+      "preferredShots": ["wide", "medium"],
+      "backgroundTreatment": "simple",
+      "optional": true
+    }
+  ],
+  "lengthRange": {
+    "min": 12,
+    "max": 45
+  },
+  "shotLength": {
+    "min": 2,
+    "max": 5
+  },
+  "hookRules": [
+    "The first 3 seconds show a picture that raises a question. No greeting and no logo intro."
+  ],
+  "pacing": {
+    "wordsPerMinute": {
+      "min": 120,
+      "max": 150
+    },
+    "rehookEveryS": {
+      "min": 10,
+      "max": 20
+    },
+    "pauseMs": {
+      "normal": 600,
+      "afterBeat": 1200
+    }
+  },
+  "sfxDensity": {
+    "level": "low",
+    "perMinute": {
+      "min": 2,
+      "max": 6
+    }
+  },
+  "captionMode": "full",
+  "factRules": {
+    "sourcesRequired": true,
+    "rules": [
+      "The wording of the quote and who said it are checked against a saved source.",
+      "When nobody knows who first said it, the video says so and names no one."
+    ]
+  }
+}
