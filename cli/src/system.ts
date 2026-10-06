@@ -1,3 +1,4 @@
+import './scratch.js';
 import { spawnSync } from 'node:child_process';
 import type { SpawnSyncReturns } from 'node:child_process';
 import { statfsSync } from 'node:fs';

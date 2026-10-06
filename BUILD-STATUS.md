@@ -10,6 +10,12 @@ Review file: `runs/2026-10-03-look-test/checkpoint-1.md`. Questions: (1) how clo
 
 **Question 1 (2026-10-04): Biku said not close enough yet, then said go.** Faces round 4 is built (section below, guide v7). Question 1 is open again: Biku needs to look at `runs/2026-10-03-look-test/out/face-match.png` and say whether the frightened face and the wrinkles are close enough now.
 
+## Drive C filling up (2026-10-06): fixed
+
+Biku asked why drive C was filling up when the project is on F. Every picture the renderer drew left a browser profile folder in the Windows temporary folder on C, and every command left a built copy of the engine there: about 5,500 folders and 16 GB in four days. Biku deleted them by hand. Now every command keeps its scratch files in `.cache/tmp/` inside the project and deletes them when it ends (`cli/src/scratch.ts`), and one hidden browser is shared for a whole command instead of one per picture (`cli/src/render.ts`). Checked: a draw run leaves nothing behind on F or C. Lesson L-0018.
+
+Still on drive C, by design of the tools, and not moved: the Python package cache (uv), the Kokoro voice model (Hugging Face cache, about 330 MB) and the npm cache. They do not grow with use. They can be moved to F if Biku wants.
+
 ## Phase 2F. Wrap-up: done (2026-10-06)
 
 Asked by Biku ("start 2F"). Nothing new was drawn; everything was rendered again and checked.

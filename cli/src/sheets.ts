@@ -10,8 +10,6 @@
 import { copyFileSync, mkdirSync } from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { bundle } from '@remotion/bundler';
-import { renderMedia, renderStill, selectComposition } from '@remotion/renderer';
 import {
   BACKGROUNDS,
   STILL_SHEETS,
@@ -20,6 +18,7 @@ import {
   videoId,
 } from '../../engine/src/sandbox/sheets';
 import type { VideoSheet } from '../../engine/src/sandbox/sheets';
+import { bundle, finishRendering, renderMedia, renderStill, selectComposition } from './render.js';
 import { projectRoot } from './system.js';
 
 const args = process.argv.slice(2);
@@ -82,4 +81,5 @@ if (withVideo) {
   }
 }
 
+await finishRendering();
 console.log(`Done in ${((Date.now() - started) / 1000).toFixed(0)} s.`);

@@ -97,6 +97,7 @@ Everything already drawn is reusable code under `engine/src/`, and every piece i
 - `npm run sheets` renders the sandbox contact sheets for the draw, look and fix loop (`--only=poses`, `--video`, `--golden`). Look at them before calling any drawing done.
 - `npm test`, `npm run typecheck`, `npm run lint`, `npm run format` must pass at the end of every phase.
 - Python: `cd audio && uv run pytest` and `uv run python -m studio_audio.doctor`.
+- Every command that draws goes through `cli/src/render.ts` (one shared browser) and keeps its scratch files in `.cache/tmp/` inside the project, deleted when it ends. Never call the renderer directly from a new command, or its leftovers pile up in the system temporary folder on drive C.
 - Node is a loose binary at `F:\node.exe`. ffmpeg, espeak-ng, uv and fluidsynth are Scoop installs under `~/scoop`. espeak-ng needs `ESPEAK_DATA_PATH`, which Scoop set as a user variable.
 
 ## Permanent rules (proven)

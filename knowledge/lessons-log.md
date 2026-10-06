@@ -276,3 +276,20 @@ Note (Claude's reading, not Biku's words): a new garment should be looked at on 
   kneeling figure before it is called done, not only standing.
 Status: active
 ```
+
+```
+L-0018 | 2026-10-06 | run: Phase 2 picture refreshes (sheets, library stills, catalog, clips)
+Area: engine | Scope: all runs | Source: Biku
+Lesson: The studio keeps its scratch files inside the project and deletes them when a command
+  ends. Nothing it makes while working may pile up on another drive.
+Evidence: Biku: "why is my local disk C memory rising up even though my project is in F, it is
+  taking too much space". The renderer started a new hidden browser for every picture and left
+  each one's profile folder, plus a built copy of the engine per command, in the Windows
+  temporary folder on drive C: about 5,500 folders and 16 GB in four days, 3,300 of them on
+  the day every picture was redrawn twice. Drive C was 95% full.
+Applied: cli/src/scratch.ts (the temporary folder is .cache/tmp/<process id> in the project,
+  deleted on exit; leftovers of a crashed command are deleted by the next one);
+  cli/src/render.ts (one shared browser per command, used by sheets, library, look-test and
+  short); tests in cli/src/scratch.test.ts.
+Status: active
+```

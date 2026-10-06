@@ -19,13 +19,12 @@ import {
 } from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { bundle } from '@remotion/bundler';
 import { serializeSrt } from '@remotion/captions';
-import { renderMedia, renderStill, selectComposition } from '@remotion/renderer';
 import { parseOrExplain, voiceTrackSchema } from '@studio/shared';
 import type { VoiceTrack } from '@studio/shared';
 import { shotTimesFor } from '../../engine/src/compositions/shotPlan';
 import { buildPages, toCaptions } from '../../engine/src/overlays/captionPages';
+import { bundle, finishRendering, renderMedia, renderStill, selectComposition } from './render.js';
 import { projectRoot, run } from './system.js';
 
 type ShotsFile = {
@@ -188,4 +187,8 @@ async function main() {
   if (track && want('video')) await timed('video', () => video(track, plan));
 }
 
-await main();
+try {
+  await main();
+} finally {
+  await finishRendering();
+}

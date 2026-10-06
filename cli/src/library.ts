@@ -14,8 +14,6 @@
  */
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync } from 'node:fs';
 import path from 'node:path';
-import { bundle } from '@remotion/bundler';
-import { renderStill, selectComposition } from '@remotion/renderer';
 import {
   ASSET_KINDS,
   characterCardSchema,
@@ -25,6 +23,7 @@ import {
 } from '@studio/shared';
 import type { AssetKind, CharacterCard, LibraryAsset, LibraryIndex } from '@studio/shared';
 import { catalogPageCount } from '../../engine/src/library/catalog';
+import { bundle, finishRendering, renderStill, selectComposition } from './render.js';
 import { projectRoot, run } from './system.js';
 
 const [command, ...rest] = process.argv.slice(2);
@@ -270,5 +269,9 @@ if (!action) {
   );
   process.exitCode = 1;
 } else {
-  await action();
+  try {
+    await action();
+  } finally {
+    await finishRendering();
+  }
 }

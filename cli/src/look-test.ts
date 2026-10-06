@@ -20,13 +20,12 @@ import {
 } from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { bundle } from '@remotion/bundler';
 import { serializeSrt } from '@remotion/captions';
-import { renderMedia, renderStill, selectComposition } from '@remotion/renderer';
 import { parseOrExplain, voiceTrackSchema } from '@studio/shared';
 import type { VoiceTrack } from '@studio/shared';
 import { SHOT_TITLES, shotTimes } from '../../engine/src/compositions/lookTestPlan';
 import { buildPages, toCaptions } from '../../engine/src/overlays/captionPages';
+import { bundle, finishRendering, renderMedia, renderStill, selectComposition } from './render.js';
 import { projectRoot, run } from './system.js';
 
 const RUN = '2026-10-03-look-test';
@@ -234,4 +233,8 @@ async function main() {
   if (args.has('--audition')) await timed('audition', audition);
 }
 
-await main();
+try {
+  await main();
+} finally {
+  await finishRendering();
+}
