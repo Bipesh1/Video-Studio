@@ -395,3 +395,21 @@ Applied: npm run make writes a sheet of all the stills of a part (stills/sheet-<
   storyboards in a tall and a wide frame.
 Status: active
 ```
+
+```
+L-0025 | 2026-10-06 | run: 2026-10-06-honest-farmer, part 1 (the wide shot of Tomas with the bag)
+Area: props | Scope: style ink-stick | Source: Biku
+Lesson: A held thing must look gripped, not have a hand sitting in front of it. The part the
+  hand closes round (a neck, a handle, a stem) is narrower than the fist and runs right through
+  it, so the thing shows above the fist and below it.
+Evidence: Biku: "its not being caught nicely the hands is in front of the bag". The bag's neck
+  was shorter than the fist, so the fist covered it whole and sat on the bag's body. The same
+  rule was already written for handles (L-0008: a handle shows only above and below the
+  fist); the bag was drawn without it.
+Applied: engine/src/props/Bag.tsx, version 2: a longer gathered neck with its origin where
+  the hand holds, the cloth fanning out above the fist, the tie and the bag below. Prop
+  sheets, the library still and the catalog redrawn.
+Note (Claude's reading): every new prop that is held gets looked at in a hand, close up, on
+  the props-in-use sheet before it is saved.
+Status: active
+```

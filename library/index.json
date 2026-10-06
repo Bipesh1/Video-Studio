@@ -2385,7 +2385,7 @@
       "id": "prop/bag",
       "kind": "prop",
       "name": "Bag",
-      "description": "A cloth bag tied at the neck, hanging from the hand or standing on the ground: a sack of coins, grain or loot.",
+      "description": "A cloth bag tied at the neck, held by its gathered neck so cloth shows above the fist and the bag hangs below, or standing on the ground: a sack of coins, grain or loot.",
       "tags": [
         "prop",
         "bag",
@@ -2404,7 +2404,7 @@
       },
       "use": "<InHand frame={hands.front} how=\"hang\" sway={info.sway}><Bag uid shadowSide /></InHand> with a gripping hand",
       "still": "knowledge/golden/assets/prop-bag.png",
-      "version": 1,
+      "version": 2,
       "added": "2026-10-06"
     },
     {

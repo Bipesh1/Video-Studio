@@ -128,3 +128,26 @@
 2026-10-06T13:45:39.778Z  part 1    runs\2026-10-06-honest-farmer\part-1\out\honest-farmer-part-1-16x9-v2.mp4: 42.23 s of video, 1920x1080, in 98.1 s (2.32 s per video second)
 2026-10-06T13:45:39.781Z  part 1    runs\2026-10-06-honest-farmer\part-1\out\honest-farmer-part-1-16x9-v2.srt
 2026-10-06T13:45:39.783Z  part 1  video: done in 103.4 s
+2026-10-06T14:02:29.986Z  part 1  part 1 of 2, 16:9: 4 scenes, 16 shots
+2026-10-06T14:02:29.988Z  part 1  stills: start
+2026-10-06T14:02:29.990Z  part 1  bundle: start
+2026-10-06T14:02:34.169Z  part 1  bundle: done in 4.2 s
+2026-10-06T14:02:53.454Z  part 1    16 stills in runs\2026-10-06-honest-farmer\part-1\stills\16x9
+2026-10-06T14:02:53.985Z  part 1    runs\2026-10-06-honest-farmer\part-1\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-06T14:02:54.319Z  part 1    runs\2026-10-06-honest-farmer\part-1\stills\sheet-16x9-2.png (4 shots, 2 rows)
+2026-10-06T14:02:54.320Z  part 1  stills: done in 24.3 s
+2026-10-06T14:04:10.772Z  part 1  part 1 of 2, 16:9: 4 scenes, 16 shots
+2026-10-06T14:04:10.774Z  part 1  stills: start
+2026-10-06T14:04:10.778Z  part 1  bundle: start
+2026-10-06T14:04:15.057Z  part 1  bundle: done in 4.3 s
+2026-10-06T14:04:35.809Z  part 1    16 stills in runs\2026-10-06-honest-farmer\part-1\stills\16x9
+2026-10-06T14:04:36.300Z  part 1    runs\2026-10-06-honest-farmer\part-1\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-06T14:04:36.570Z  part 1    runs\2026-10-06-honest-farmer\part-1\stills\sheet-16x9-2.png (4 shots, 2 rows)
+2026-10-06T14:04:36.571Z  part 1  stills: done in 25.8 s
+2026-10-06T14:06:20.794Z  part 1  part 1 of 2, 16:9: 4 scenes, 16 shots
+2026-10-06T14:06:20.796Z  part 1  video: start
+2026-10-06T14:06:21.115Z  part 1  bundle: start
+2026-10-06T14:06:24.562Z  part 1  bundle: done in 3.4 s
+2026-10-06T14:08:13.053Z  part 1    runs\2026-10-06-honest-farmer\part-1\out\honest-farmer-part-1-16x9-v3.mp4: 42.23 s of video, 1920x1080, in 106.8 s (2.53 s per video second)
+2026-10-06T14:08:13.057Z  part 1    runs\2026-10-06-honest-farmer\part-1\out\honest-farmer-part-1-16x9-v3.srt
+2026-10-06T14:08:13.058Z  part 1  video: done in 112.3 s
