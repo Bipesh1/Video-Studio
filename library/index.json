@@ -520,31 +520,129 @@
       "id": "motion/life",
       "kind": "motion",
       "name": "Blinks and breathing",
-      "description": "Small movement while a character holds a pose: blinks every few seconds, breathing and a slight head bob.",
-      "tags": ["blink", "breathing", "idle motion", "alive", "hold", "eyes closed"],
+      "description": "Small movement while a character holds a pose: blinks every few seconds, breathing, a slight head bob and a slow shift of weight from leg to leg.",
+      "tags": ["blink", "breathing", "idle motion", "alive", "hold", "eyes closed", "weight shift"],
       "code": {
         "file": "engine/src/rig/life.ts",
         "export": "withLife"
       },
       "use": "pose={withLife(pose, frame, fps, seed)} blink={blinkAt(frame, fps, seed)}",
       "still": "knowledge/golden/assets/motion-life.png",
-      "version": 1,
+      "version": 2,
       "added": "2026-10-05"
     },
     {
       "id": "motion/talking-mouth",
       "kind": "motion",
       "name": "Talking mouth",
-      "description": "The mouth opens and closes in time with the spoken words of one voice line.",
-      "tags": ["talking", "speaking", "speech", "dialogue", "lip sync", "mouth", "say"],
+      "description": "The mouth forms the spoken words of one voice line with five shapes: closed, half, open, wide (ee) and round (oo).",
+      "tags": [
+        "talking",
+        "speaking",
+        "speech",
+        "dialogue",
+        "lip sync",
+        "mouth",
+        "say",
+        "mouth shapes",
+        "words"
+      ],
       "code": {
         "file": "engine/src/face/talk.ts",
-        "export": "mouthShapeAt"
+        "export": "talkAt"
       },
-      "use": "talk={MOUTH_OPENNESS[mouthShapeAt(frame, fps, wordsOfTheLine)]}",
+      "use": "talk={talkAt(frame, fps, wordsOfTheLine)} where the words are the voice track words of that line",
       "still": "knowledge/golden/assets/motion-talking-mouth.png",
-      "version": 1,
+      "version": 2,
       "added": "2026-10-05"
+    },
+    {
+      "id": "motion/pose-moves",
+      "kind": "motion",
+      "name": "Pose changes with wind-up and settle",
+      "description": "Moving from one pose to the next: a short wind-up the other way before a big move, a quick snap, a small overshoot and a dip of the hips, then the hold.",
+      "tags": [
+        "pose change",
+        "wind-up",
+        "anticipation",
+        "overshoot",
+        "settle",
+        "snap",
+        "transition",
+        "move",
+        "weight"
+      ],
+      "code": {
+        "file": "engine/src/rig/pose.ts",
+        "export": "poseAt"
+      },
+      "use": "pose={poseAt(frame, [{ frame: 0, pose: stand }, { frame: 40, pose: wave }])}",
+      "still": "knowledge/golden/assets/motion-pose-moves.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "motion/follow-through",
+      "kind": "motion",
+      "name": "Capes, hair and held things swing",
+      "description": "Loose things lag behind the body: a cape or cloak hem and long hair trail a walk and swing on past when the body stops, and the top of a held staff tips back as the arm moves.",
+      "tags": [
+        "cape",
+        "cloak",
+        "hair",
+        "swing",
+        "lag",
+        "follow-through",
+        "trail",
+        "flutter",
+        "sway",
+        "held object"
+      ],
+      "code": {
+        "file": "engine/src/rig/follow.ts",
+        "export": "swayOf"
+      },
+      "use": "sway={swayOf((f) => poseOfThisCharacterAt(f), frame, fps)} with the same function the scene uses for the pose",
+      "still": "knowledge/golden/assets/motion-follow-through.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "motion/eye-darts",
+      "kind": "motion",
+      "name": "Eye darts",
+      "description": "Small quick glances to the side every second or two, so the eyes are never frozen during a hold.",
+      "tags": ["eyes", "glance", "dart", "look around", "alive", "nervous", "gaze"],
+      "code": {
+        "file": "engine/src/rig/life.ts",
+        "export": "gazeAt"
+      },
+      "use": "gaze={gazeAt(frame, fps, seed)}",
+      "still": "knowledge/golden/assets/motion-eye-darts.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "motion/head-turn",
+      "kind": "motion",
+      "name": "Smooth head turn",
+      "description": "Turning to look the other way or toward a speaker: the head and body swing through the front view over a few frames instead of flipping.",
+      "tags": [
+        "turn",
+        "turn around",
+        "look at speaker",
+        "face the other way",
+        "head turn",
+        "look back"
+      ],
+      "code": {
+        "file": "engine/src/rig/turn.ts",
+        "export": "turnAt"
+      },
+      "use": "const t = turnAt(frame, [{ frame: 0, facing: \"right\", turn: 0.5 }, { frame: 60, facing: \"left\", turn: 0.5 }]); facing={t.facing} turn={t.turn}",
+      "still": "knowledge/golden/assets/motion-head-turn.png",
+      "version": 1,
+      "added": "2026-10-06"
     },
     {
       "id": "expression/neutral",

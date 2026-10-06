@@ -6,7 +6,7 @@ import {
   blendFace,
   faceAt,
 } from './expressions';
-import { MOUTH_SHAPES, mouthShapeAt } from './talk';
+import { MOUTH_FORMS, MOUTH_SHAPES, mouthShapeAt, shapesOfWord, talkAt } from './talk';
 import { tokens } from '../tokens';
 
 describe('expressions', () => {
@@ -123,9 +123,61 @@ describe('talking mouth', () => {
     { startMs: 1200, endMs: 1700 },
   ];
 
-  it('uses the three mouth shapes named in tokens', () => {
-    expect([...MOUTH_SHAPES].sort()).toEqual(['closed', 'half', 'open']);
-    expect(tokens.motion.mouthShapes).toHaveLength(3);
+  it('uses the five mouth shapes named in tokens', () => {
+    expect([...MOUTH_SHAPES].sort()).toEqual(['closed', 'half', 'open', 'round', 'wide']);
+    expect(Object.keys(MOUTH_FORMS).sort()).toEqual([...tokens.motion.mouthShapes].sort());
+  });
+
+  it('reads the shapes of a word from its spelling', () => {
+    expect(shapesOfWord('moon')).toEqual(['closed', 'round', 'half']);
+    expect(shapesOfWord('me')).toEqual(['closed', 'wide']);
+    expect(shapesOfWord('Pay,')).toEqual(['closed', 'open', 'wide']);
+    // A silent e at the end is not spoken, but the e of "the" is.
+    expect(shapesOfWord('gave')).toEqual(['half', 'open', 'half']);
+    expect(shapesOfWord('the')).toEqual(['half', 'wide']);
+    expect(shapesOfWord('phone')).toEqual(['half', 'round', 'half']);
+    expect(shapesOfWord('1969')).toEqual([]);
+  });
+
+  it('forms the word: lips together on m, round on oo', () => {
+    const moon = [{ startMs: 1000, endMs: 1500, text: 'moon' }];
+    expect(mouthShapeAt(30, fps, moon)).toBe('closed');
+    const during: string[] = [];
+    for (let f = 30; f < 45; f++) during.push(mouthShapeAt(f, fps, moon));
+    expect(during).toContain('round');
+    expect(during).not.toContain('open');
+    expect(talkAt(36, fps, moon)).toEqual(MOUTH_FORMS.round);
+  });
+
+  it('holds every shape for at least two frames', () => {
+    const word = [{ startMs: 0, endMs: 600, text: 'moonlight' }];
+    const shapes = Array.from({ length: 18 }, (_, f) => mouthShapeAt(f, fps, word));
+    let run = 1;
+    for (let f = 1; f < shapes.length; f++) {
+      if (shapes[f] === shapes[f - 1]) run++;
+      else {
+        expect(run).toBeGreaterThanOrEqual(2);
+        run = 1;
+      }
+    }
+    expect(new Set(shapes).size).toBeGreaterThanOrEqual(4);
+  });
+
+  it('keeps the vowel of a word too short for all its shapes', () => {
+    const quick = [{ startMs: 0, endMs: 90, text: 'the' }];
+    expect(mouthShapeAt(0, fps, quick)).toBe('wide');
+    expect(mouthShapeAt(2, fps, quick)).toBe('wide');
+  });
+
+  it('stays a little open in the short gaps inside a phrase', () => {
+    const phrase = [
+      { startMs: 0, endMs: 300, text: 'pay' },
+      { startMs: 380, endMs: 700, text: 'me' },
+      { startMs: 1400, endMs: 1700, text: 'now' },
+    ];
+    expect(mouthShapeAt(10, fps, phrase)).toBe('half');
+    expect(mouthShapeAt(30, fps, phrase)).toBe('closed');
+    expect(mouthShapeAt(60, fps, phrase)).toBe('closed');
   });
 
   it('moves only the speaking character: words from other lines leave the mouth closed', () => {

@@ -1,7 +1,7 @@
 ## Part 3. The Ink Stick art style
 
 **Style id:** `ink-stick`
-**Guide version:** 7 (2026-10-04). See the version history at the end.
+**Guide version:** 8 (2026-10-06). See the version history at the end.
 **Built from:** two reference images supplied by Biku
 - **Reference A:** a stern king in a crown, red cape and armor, under a stormy night sky with light rays
 - **Reference B:** two stick figures in a night scene under a crescent moon, one threatening and one frightened
@@ -217,7 +217,7 @@ Use the **lowest tier** that makes the character instantly recognizable.
 
 - **Pose to pose.** Characters snap between strong poses with quick transitions of 3 to 6 frames at 30 fps, then hold.
 - **Life during holds:** blinks every 2 to 4 seconds, a slight head bob, brow twitches, breathing.
-- **Talking:** three mouth shapes (closed, half, open) in time with the voice.
+- **Talking:** five mouth shapes in time with the voice: closed (lips together, as on m, b and p), half, open (as on "ah"), wide with the top teeth showing (as on "ee") and round (as on "oo"). The mouth forms each word, and every shape holds for at least two frames.
 - **Squash and stretch** on heads during impacts or surprise, no more than 8%.
 - **Effects animate:** sweat drops fly out and fade, symbols pop in with a small bounce.
 - **Backgrounds move slowly:** clouds drift, stars twinkle, light rays pulse gently, layers shift for depth when the camera moves.
@@ -273,7 +273,7 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
 ```json
 {
   "id": "ink-stick",
-  "version": 7,
+  "version": 8,
   "line": {
     "color": "#16161A",
     "outlinePctOfHead": [0.04, 0.05],
@@ -356,7 +356,7 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
     "poseTransitionFrames": [3, 6],
     "blinkEverySeconds": [2, 4],
     "maxSquash": 0.08,
-    "mouthShapes": ["closed", "half", "open"]
+    "mouthShapes": ["closed", "half", "open", "wide", "round"]
   },
   "captions": {
     "fill": "#F7F7F5",
@@ -386,3 +386,4 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
 | 5 | 2026-10-03 | Face feature lines (eye outlines, mouth, lips) use the inner-detail weight, about 3%, thinner than the 4 to 5% head outline, so faces read finer and more attractive, as in the references. | Biku |
 | 6 | 2026-10-03 | Face feature lines thinner (about 2.2% of head width) and softer (#3A3A40 instead of the #16161A outline color), so faces look finer and more attractive. Pupils, brows and mouth interior stay dark. | Biku |
 | 7 | 2026-10-04 | Wrinkles look hand-drawn: creases inside the face are fine tapered pen strokes (about 1.2% at the fullest point), each a different length and angle, and tapering is now allowed inside the face. The frightened face follows Reference B as measured: lower lids pushed up and shaded with the pupils resting on them, the face tipped down toward where the character looks, a wide arched grimace with big teeth. The near eye overlaps the far eye. | Biku |
+| 8 | 2026-10-06 | Talking uses five mouth shapes instead of three: wide ("ee", top teeth showing) and round ("oo") join closed, half and open, and the mouth forms each word instead of only opening and closing. Part of the Phase 2 motion polish. | Biku (Phase 2 scope) |

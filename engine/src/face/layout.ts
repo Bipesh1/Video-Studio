@@ -21,6 +21,8 @@ export const MOUTH_Y = 0.24;
 /** Mouth sizes in the presets are scaled up to match the references' wide mouths. */
 export const MOUTH_SCALE = 1.35;
 export const MOUTH_OPEN_SCALE = 1.2;
+/** The width of a calm mouth, before scaling. Talking shapes widen any mouth by a share of it. */
+export const CALM_MOUTH_W = 0.14;
 /** A wide mouth is pushed back until its front corner sits inside this radius of the head. */
 export const MOUTH_FIT_R = 0.445;
 

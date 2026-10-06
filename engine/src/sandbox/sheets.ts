@@ -17,6 +17,7 @@ export const STILL_SHEETS = [
   'ages',
   'people',
   'poses-b',
+  'mouths',
 ] as const;
 export const VIDEO_SHEETS = { walk: 4, motion: 7, atmos: 4, polish: 6, moods: 4 } as const;
 export const BACKGROUNDS = ['light', 'dark'] as const;

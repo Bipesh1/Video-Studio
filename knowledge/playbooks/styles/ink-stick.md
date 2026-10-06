@@ -35,3 +35,11 @@ Current best practice for the Ink Stick look, learned from real videos and Biku'
 - **Long hair goes behind the body,** not over the shoulders, so no arm crosses it. (L-0009, self-check)
 - **Age is more than size.** A child is a smaller body under a full-size head, drawn smaller than the adults beside them. An elder stoops, has face creases, and needs gray or white hair to finish the read. (Phase 2B)
 - **At most four colors per outfit,** all from the cloth colors. There is no brown or tan yet; do not invent one. (Style 3.5)
+
+## Motion
+
+- **Move people with the library's motion pieces, not by hand.** Pose changes go through `poseAt` (wind-up, snap, settle); holds through `withLife`, `blinkAt` and `gazeAt`; turns through `turnAt`; walks through `walkAt` with a mood from `WALKS`. Search `npm run library -- search <words> --kind=motion`. (Phase 2C)
+- **Anything loose needs `sway`.** A character with a cape, cloak, long hair or a held staff gets `sway={swayOf(...)}` from the same function that gives its pose, or the loose parts stay stiff. (Phase 2C)
+- **Pick the walk for the feeling:** proud for rulers and show-offs, tired for the defeated or the old, sneaky for thieves and spies, happy for children and good news. The face should say the same thing as the walk. (Phase 2C)
+- **Talking uses the word, not just the timing.** Give `talkAt` the voice track's words for that line (they carry the text), so the lips meet on m, b and p and round on "oo". Only the speaker's mouth moves. (Phase 2C, guide v8)
+- **Check motion as frame strips,** not only as a video: every fourth frame side by side shows a stiff cape, a sliding foot or a flickering mouth at once. (L-0010, self-check)

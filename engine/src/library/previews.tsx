@@ -9,19 +9,22 @@ import type { BackgroundSpec } from '../backgrounds/Background';
 import { FlyingSweat, RestingSweat } from '../effects/Sweat';
 import { EXPRESSIONS, EXPRESSION_NAMES } from '../face/expressions';
 import type { ExpressionName } from '../face/expressions';
+import { MOUTH_FORMS } from '../face/talk';
 import { Scepter } from '../props/Scepter';
 import { ACTIONS } from '../rig/actions';
 import type { ActionName } from '../rig/actions';
 import { body } from '../rig/body';
 import { Character } from '../rig/Character';
 import type { CharacterProps, HandFrame } from '../rig/Character';
+import { swayOf } from '../rig/follow';
 import { Hand } from '../rig/Hand';
 import { vec } from '../rig/math';
-import { resolvePose } from '../rig/pose';
-import { POSES, holdObject, stand } from '../rig/poses';
+import { poseAt, resolvePose } from '../rig/pose';
+import { POSES, handsUp, holdObject, stand } from '../rig/poses';
 import { computeSkeleton } from '../rig/skeleton';
 import { HAND_SHAPES } from '../rig/types';
 import type { HandShape, ResolvedPose } from '../rig/types';
+import { walkAt } from '../rig/walk';
 import { Rod } from '../sandbox/Rod';
 import { accent, ink, lineWeights, palette, pick, tokens } from '../tokens';
 import { COSTUMES } from '../wardrobe/cast';
@@ -262,7 +265,37 @@ const entries: Array<[string, Preview]> = [
     },
   ]),
   ['motion/life', (o) => headShot(o, { blink: 1 })],
-  ['motion/talking-mouth', (o) => headShot(o, { talk: 1 })],
+  ['motion/talking-mouth', (o) => headShot(o, { talk: MOUTH_FORMS.open })],
+  // Caught in the middle of the snap, after the wind-up: the arms are on their way up.
+  [
+    'motion/pose-moves',
+    (o) =>
+      figure(
+        o,
+        poseAt(6, [
+          { frame: 0, pose: stand },
+          { frame: 1, pose: handsUp },
+        ]),
+        { face: EXPRESSIONS.surprised },
+        0.5,
+      ),
+  ],
+  // The cape trails behind a walking body.
+  [
+    'motion/follow-through',
+    (o) =>
+      figure(
+        o,
+        walkAt(0.3).pose,
+        {
+          ...(COSTUMES.ruler ? { outfit: COSTUMES.ruler } : {}),
+          sway: swayOf((f) => walkAt(f / 30).pose, 9, 30),
+        },
+        1,
+      ),
+  ],
+  ['motion/eye-darts', (o) => headShot(o, { gaze: vec(0.35, 0.1) })],
+  ['motion/head-turn', (o) => headShot(o, {}, 0.7)],
 
   ...EXPRESSION_NAMES.map((name): [string, Preview] => [
     `expression/${name}`,

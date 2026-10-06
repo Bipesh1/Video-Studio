@@ -1,4 +1,5 @@
 import { clamp, lerp, smoothstep } from '../rig/math';
+import { CALM_MOUTH_W } from './layout';
 import type { Brow, Eyes, FaceFrame, FaceParams, Mouth } from './types';
 
 export const UPRIGHT: FaceFrame = { tilt: 0, scale: 1, dx: 0, dy: 0 };
@@ -30,7 +31,7 @@ const eyes = (o: Partial<Eyes> = {}): Eyes => ({
 });
 
 const mouth = (o: Partial<Mouth> = {}): Mouth => ({
-  width: 0.14,
+  width: CALM_MOUTH_W,
   open: 0,
   curve: 0,
   skew: 0,

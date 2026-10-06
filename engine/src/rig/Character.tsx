@@ -1,6 +1,8 @@
 import { useId } from 'react';
 import type { ReactNode } from 'react';
 import { Face } from '../face/Face';
+import { MOUTH_FORMS } from '../face/talk';
+import type { MouthForm } from '../face/talk';
 import type { EyeStyle, FaceParams } from '../face/types';
 import { FacialHairShape, HAIR_BEHIND_BODY, HairBack, HairFront } from '../wardrobe/hair';
 import type { HairCtx } from '../wardrobe/hair';
@@ -44,8 +46,8 @@ export type CharacterProps = {
   /** Head and body turn: 0 front, 0.5 three-quarter, 1 profile. */
   turn?: number;
   blink?: number;
-  /** Talking mouth openness, 0 to 1. */
-  talk?: number;
+  /** The talking mouth shape of the moment: talkAt(frame, fps, wordsOfTheLine). */
+  talk?: MouthForm;
   /** A point to look at, in this character's local head units. */
   lookAt?: Vec2;
   /** A small offset of the eyes from where they are looking: eye darts (see gazeAt). */
@@ -117,7 +119,7 @@ export const Character = ({
   face,
   turn = 0,
   blink = 0,
-  talk = 0,
+  talk = MOUTH_FORMS.closed,
   lookAt,
   gaze,
   sway = NO_SWAY,

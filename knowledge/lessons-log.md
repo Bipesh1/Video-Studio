@@ -131,3 +131,18 @@ Applied: the soldier wears a pointed helmet with a gold band over a mail coif; t
   sits on the head; HAIR_BEHIND_BODY in hair.tsx draws long hair before the body.
 Status: active
 ```
+
+```
+L-0010 | 2026-10-06 | run: Phase 2C clips (polish, moods, motion) and the mouths sheet
+Area: motion | Scope: style ink-stick | Source: self-check
+Lesson: Judge motion on frame strips and test new motion on more than the calm face. Lay every
+  second or fourth frame side by side; try a new mouth or body move on a happy, a sad and an
+  angry face, in front, three-quarter and profile.
+Evidence: The first cape never swung past the body, which the strip showed at once and the
+  numbers alone did not. The new talking shapes looked right on the calm face but were thin
+  slits on the sad and angry faces, and the wide shape would have run off a wide mouth.
+Applied: CLOTH spring in engine/src/rig/follow.ts retuned; a talking mouth opens more on a frown
+  and widens by a share of a calm mouth (Face.tsx); the mouths sheet shows all five shapes on
+  four faces and three views.
+Status: active
+```

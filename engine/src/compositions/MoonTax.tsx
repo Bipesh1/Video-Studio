@@ -7,7 +7,7 @@ import { PushIn } from '../camera/Camera';
 import { RestingSweat } from '../effects/Sweat';
 import { EXPRESSIONS, faceAt } from '../face/expressions';
 import type { FaceParams } from '../face/types';
-import { MOUTH_OPENNESS, mouthShapeAt } from '../face/talk';
+import { talkAt } from '../face/talk';
 import { Captions } from '../overlays/Captions';
 import { buildPages, toCaptions } from '../overlays/captionPages';
 import { Scepter } from '../props/Scepter';
@@ -191,7 +191,7 @@ function ShotMira({ frame, startFrame, fps, track }: ShotProps) {
   const speakAt = local(words[0]?.startMs ?? 0);
   const twist = words.find((w) => /follow/i.test(w.text)) ?? words[Math.floor(words.length / 2)];
   const twistAt = local(twist?.startMs ?? 0);
-  const talk = MOUTH_OPENNESS[mouthShapeAt(frame + startFrame, fps, words)];
+  const talk = talkAt(frame + startFrame, fps, words);
 
   const miraPose = poseAt(frame, [
     { frame: 0, pose: stand },

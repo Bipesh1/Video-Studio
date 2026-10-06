@@ -7,7 +7,7 @@ import { PushIn } from '../camera/Camera';
 import { FlyingSweat, RestingSweat } from '../effects/Sweat';
 import { EXPRESSIONS } from '../face/expressions';
 import type { FaceParams } from '../face/types';
-import { MOUTH_OPENNESS, mouthShapeAt } from '../face/talk';
+import { talkAt } from '../face/talk';
 import { Captions } from '../overlays/Captions';
 import { buildPages, toCaptions } from '../overlays/captionPages';
 import { Scepter } from '../props/Scepter';
@@ -122,7 +122,7 @@ function ShotCaught({ frame, globalFrame, fps, track }: ShotProps) {
   const tom = { x: 810, groundY, head, facing: 'left' as Facing };
   const faceOf = (c: typeof guard) => ({ x: c.x, y: c.groundY - 2.96 * c.head });
   const tomWords = track.words.filter((w) => w.lineId === 'd1');
-  const talk = MOUTH_OPENNESS[mouthShapeAt(globalFrame, fps, tomWords)];
+  const talk = talkAt(globalFrame, fps, tomWords);
   return (
     <>
       <Background spec={spec} width={W} height={H} frame={frame} fps={fps} />

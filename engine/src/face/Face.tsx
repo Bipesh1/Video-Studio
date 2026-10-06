@@ -6,6 +6,7 @@ import {
   BROW_GAP,
   BROW_LEN,
   BROW_OUT,
+  CALM_MOUTH_W,
   EYE_H,
   EYE_W,
   EYE_Y,
@@ -16,6 +17,7 @@ import {
   PUPIL_D,
   TURN,
 } from './layout';
+import type { MouthForm } from './talk';
 import type { Brow, EyeStyle, Eyes, FaceParams, Mouth } from './types';
 
 type FaceProps = {
@@ -31,8 +33,8 @@ type FaceProps = {
   skin: string;
   /** Eyelid fill: the head's shadow tone, as in both references. */
   lidColor: string;
-  /** Talking openness override, 0 to 1. */
-  talk: number;
+  /** The talking mouth shape of the moment (see talkAt). */
+  talk: MouthForm;
   /** An elder's face: a few permanent creases whatever the expression. */
   aged?: boolean;
   idPrefix: string;
@@ -47,6 +49,8 @@ const FEATURE_LINE = tokens.face.featureLinePctOfHead;
 const FEATURE_INK = tokens.face.featureLineColor;
 const eyeStroke = FEATURE_LINE;
 const LID_PAD = 0.03;
+/** How tall a fully open talking mouth is, in head widths. */
+const TALK_OPEN = 0.14;
 /** How far outside the eye outline the under-eye crease runs (measured on Reference B). */
 const BAG_OFFSET = 0.034;
 
@@ -441,20 +445,34 @@ function MouthShape({
 }: {
   m: Mouth;
   turn: number;
-  talk: number;
+  talk: MouthForm;
   clipId: string;
 }) {
   const mx = stops(turn, TURN.mouthShift) + m.shiftX;
   const my = MOUTH_Y;
-  const w = m.width * MOUTH_SCALE * stops(turn, TURN.mouthWidth);
-  const open = Math.max(m.open * MOUTH_OPEN_SCALE, talk * 0.14);
+  // A frown eats into the opening, so a talking mouth opens that much more on a frowning face.
+  const talkOpen = talk.open > 0 ? talk.open * TALK_OPEN + 0.57 * Math.max(0, -m.curve) : 0;
+  // A talking shape takes over only when it opens the mouth more than the expression does.
+  const talking = talkOpen > m.open * MOUTH_OPEN_SCALE;
+  const turnW = MOUTH_SCALE * stops(turn, TURN.mouthWidth);
+  // Narrowing takes a share of the mouth's own width; widening adds a share of a calm mouth's,
+  // so an already wide mouth does not run off the face.
+  const w = !talking
+    ? m.width * turnW
+    : talk.width < 1
+      ? m.width * turnW * talk.width
+      : (m.width + (talk.width - 1) * CALM_MOUTH_W) * turnW;
+  const open = Math.max(m.open * MOUTH_OPEN_SCALE, talkOpen);
+  const round = m.round > 0.5 || (talking && talk.round);
+  // How much of the opening the top teeth fill.
+  const teethDepth = m.teeth === 'top' ? 0.32 : talking ? talk.teeth : 0;
   const sw = FEATURE_LINE * 1.1;
   const cornerY = my - m.curve;
   const left = { x: mx - w / 2, y: cornerY };
   const right = { x: mx + w / 2, y: cornerY - m.skew };
   const midY = (left.y + right.y) / 2;
 
-  if (m.round > 0.5) {
+  if (round) {
     const ry = Math.max(open * 0.55, 0.035);
     return (
       <g>
@@ -536,7 +554,12 @@ function MouthShape({
   }
   const upperCtrl = midY + m.curve * 0.4 - open * 0.2 - m.arch;
   const lowerCtrl = midY + m.curve * 1.6 + open * 1.9;
-  const d = `M ${left.x} ${left.y} Q ${mx} ${upperCtrl} ${right.x} ${right.y} Q ${mx} ${lowerCtrl} ${left.x} ${left.y} Z`;
+  // A talking mouth is small, so its lower lip is a rounded U; an expression's is a wide bowl.
+  const uY = midY + ((lowerCtrl - midY) * 2) / 3;
+  const lowerLip = talking
+    ? `C ${right.x - w * 0.08} ${uY} ${left.x + w * 0.08} ${uY} ${left.x} ${left.y}`
+    : `Q ${mx} ${lowerCtrl} ${left.x} ${left.y}`;
+  const d = `M ${left.x} ${left.y} Q ${mx} ${upperCtrl} ${right.x} ${right.y} ${lowerLip} Z`;
   const topEdge = midY + (upperCtrl - midY) / 2;
   const bottomEdge = midY + (lowerCtrl - midY) / 2;
 
@@ -549,20 +572,20 @@ function MouthShape({
       </defs>
       <path d={d} fill={tokens.face.mouthInterior} />
       <g clipPath={`url(#${clipId})`}>
-        {m.teeth === 'top' && (
+        {teethDepth > 0 && (
           <>
             <rect
               x={mx - w}
               y={topEdge - 0.2}
               width={w * 2}
-              height={0.2 + (bottomEdge - topEdge) * 0.32}
+              height={0.2 + (bottomEdge - topEdge) * teethDepth}
               fill={white}
             />
             <line
               x1={mx - w}
               x2={mx + w}
-              y1={topEdge + (bottomEdge - topEdge) * 0.32}
-              y2={topEdge + (bottomEdge - topEdge) * 0.32}
+              y1={topEdge + (bottomEdge - topEdge) * teethDepth}
+              y2={topEdge + (bottomEdge - topEdge) * teethDepth}
               stroke={FEATURE_INK}
               strokeWidth={CREASE_W}
             />

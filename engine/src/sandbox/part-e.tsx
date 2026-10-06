@@ -1,6 +1,8 @@
 import { useCurrentFrame, useVideoConfig } from 'remotion';
 import { EXPRESSIONS } from '../face/expressions';
 import type { ExpressionName } from '../face/expressions';
+import { MOUTH_FORMS } from '../face/talk';
+import type { MouthShape } from '../face/talk';
 import { Scepter } from '../props/Scepter';
 import { Character } from '../rig/Character';
 import type { CharacterProps } from '../rig/Character';
@@ -16,7 +18,7 @@ import { FARMER } from '../wardrobe/costumes/farmer';
 import { RULER } from '../wardrobe/costumes/ruler';
 import { outfitFrom } from '../wardrobe/garments';
 import type { Identity } from '../wardrobe/types';
-import { Label } from './Sandbox';
+import { Bust, Label } from './Sandbox';
 import type { Colors } from './Sandbox';
 
 /**
@@ -235,6 +237,48 @@ export function MoodsVideo({ c }: { c: Colors }) {
           </g>
         );
       })}
+    </>
+  );
+}
+
+/** The five talking mouth shapes, on a calm face in three views and on three other faces. */
+const MOUTH_ROWS: Array<{ label: string; expression: ExpressionName; turn: number }> = [
+  { label: 'front', expression: 'neutral', turn: 0 },
+  { label: 'three-quarter', expression: 'neutral', turn: 0.5 },
+  { label: 'profile', expression: 'neutral', turn: 1 },
+  { label: 'happy', expression: 'happy', turn: 0.5 },
+  { label: 'sad', expression: 'sad', turn: 0.5 },
+  { label: 'angry', expression: 'angry', turn: 0.5 },
+];
+
+export function MouthsSheet({ c }: { c: Colors }) {
+  const shapes = Object.keys(MOUTH_FORMS) as MouthShape[];
+  const cw = W / shapes.length;
+  const ch = 290;
+  const top = 130;
+  return (
+    <>
+      {shapes.map((shape, i) => (
+        <Label key={shape} x={cw * (i + 0.5)} y={70} c={c}>
+          {shape}
+        </Label>
+      ))}
+      {MOUTH_ROWS.map((row, r) =>
+        shapes.map((shape, i) => (
+          <Bust
+            key={`${row.label}-${shape}`}
+            id={`mouth-${r}-${i}`}
+            cx={cw * (i + 0.5)}
+            cy={top + ch * (r + 0.5)}
+            w={cw - 10}
+            h={ch - 20}
+            head={178}
+            expression={row.expression}
+            turn={row.turn}
+            extra={{ talk: MOUTH_FORMS[shape] }}
+          />
+        )),
+      )}
     </>
   );
 }

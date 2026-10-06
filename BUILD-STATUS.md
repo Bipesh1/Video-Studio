@@ -1,14 +1,58 @@
 # Build Status
 
-**Current phase:** Phase 2, steps 2A (library foundation) and 2B (people) done. Next step is 2C (poses and motion polish), started only when Biku asks. Checkpoint 1 questions 2 to 5 are still open.
-**Next:** Biku looks at the 2B sheets (below) and answers the head-size question, which must be settled before 2C; then 2C. The steps are listed under "Phase 2 steps" below.
-**Last updated:** 2026-10-05
+**Current phase:** Phase 2, steps 2A (library foundation), 2B (people) and 2C (poses and motion polish) done. Next step is 2D (action), started only when Biku asks. Checkpoint 1 questions 2 to 5 are still open.
+**Next:** Biku looks at the 2C pictures and clips (below) and says what to change. The head-size question is still open. Then 2D. The steps are listed under "Phase 2 steps" below.
+**Last updated:** 2026-10-06
 
 ## Checkpoint 1: waiting for Biku
 
 Review file: `runs/2026-10-03-look-test/checkpoint-1.md`. Questions: (1) how close the look is and what to change, (2) narrator and character voices, (3) head size, (4) hair colors (guide v3), (5) fingers on hands that cover the face.
 
 **Question 1 (2026-10-04): Biku said not close enough yet, then said go.** Faces round 4 is built (section below, guide v7). Question 1 is open again: Biku needs to look at `runs/2026-10-03-look-test/out/face-match.png` and say whether the frightened face and the wrinkles are close enough now.
+
+## Phase 2C. Poses and motion polish: done (2026-10-06)
+
+Asked by Biku ("start 2c"). Characters have more ways to stand and sit, and they move less like cut-outs.
+
+### Made
+
+- **Eight poses** (`MORE_POSES` in `engine/src/rig/poses.ts`): sit, kneel, lie, cross arms, look up, look down, cower, hug. Their heights come from the bone lengths, so a later head-size change carries over.
+- **Two actions** (`engine/src/rig/actions.ts`): cheer (bouncing, arms up in a V) and cry (hunched, shaking with sobs). Every action is listed by name in `ACTIONS`.
+- **Four mood walks** (`WALKS` in `engine/src/rig/walk.ts`): proud, tired, sneaky, happy. Each is the same planted-foot walk with different numbers for speed, step height, bounce, lean, head and arms.
+- **Wind-up and settle** (`poseAt` in `engine/src/rig/pose.ts`): a big move starts with a short wind-up the other way, snaps, overshoots a little while the hips dip, then holds. Small moves skip the wind-up. Hands and heads travel on arcs because joints turn.
+- **Weight and breathing** (`withLife` in `engine/src/rig/life.ts`): during a hold the weight shifts slowly from leg to leg (planted feet stay put) and the arms move with the breath.
+- **Eye darts** (`gazeAt` in `life.ts`) and **smooth head turns** (`turnAt` in `engine/src/rig/turn.ts`): turning to face the other way swings through the front view instead of flipping.
+- **Follow-through** (`engine/src/rig/follow.ts`): loose things lag the body. The king's cape, the cloak and long hair trail a walk and swing on past when the body stops; the top of the held scepter tips back as the arm moves. A scene passes `sway={swayOf(...)}`.
+- **Talking with five mouth shapes** (`engine/src/face/talk.ts`): closed, half, open, wide ("ee", top teeth showing) and round ("oo"). The mouth forms each word from its spelling, holds every shape at least two frames, and stays a little open in the short gaps inside a phrase. A scene passes `talk={talkAt(frame, fps, words)}`. This is **guide version 8** (Style 8 said three shapes).
+- **Library:** 123 assets now (18 new: 8 poses, 6 actions, 4 motion pieces), all with previews and golden stills. The check covers every action.
+- **Sheets and clips:** stills `poses-b` and `mouths` (`npm run sheets -- --only=poses-b,mouths`); clips `polish` (cape, hair and scepter follow-through), `moods` (the four walks) and `motion` (wind-up, turns, talking) with `npm run sheets -- --only=polish,moods,motion --video`. They land in `engine/out/sandbox/`.
+
+### Draw, look and fix loop
+
+1. Poses: the two hugging figures stood too far apart, the cheering arms met over the head instead of making a V, the cowering hands hid the face, and the lying figure ran off its cell. All fixed.
+2. Follow-through: the first cape was too stiff and never swung past the body. Retuned so it trails a walk by about a seventh of a head and swings about half that far past when the body stops.
+3. Mood walks: all four read on the first pass (frame strips of each).
+4. Mouths: the open shape was a pointed drop on a small mouth (now a rounded U); the shapes were thin slits on frowning faces (a talking mouth now opens more on a frown); the "ee" shape ran off the face on wide mouths (it now widens by a share of a calm mouth, not of its own width).
+
+### Acceptance (the part of Phase 2 that 2C covers)
+
+| Check                                                    | Result                                                                                                   |
+| -------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Golden still for every new asset                         | Yes, 18 of 18                                                                                            |
+| Library search finds the new assets by tag               | Yes: "sneak" finds the sneaky walk, "cape swing" the follow-through, "turn around" the head turn; tested |
+| Feet stay planted through weight shifts and pose changes | Yes, tested                                                                                              |
+| Loose parts come to rest when the body stops             | Yes, tested                                                                                              |
+| Tests, typecheck, lint, format                           | Pass (152 tests)                                                                                         |
+
+### Open after 2C
+
+- **Head size** is still unanswered and still 0.29. If it changes, every pose sheet needs one more look.
+- **Guide version 8** changed "three mouth shapes" to five. It was built under the agreed motion polish scope ("more mouth shapes for talking"); Biku should say if the talking looks wrong.
+- **The mouth reads spelling, not sound.** Lips meet on m, b and p, round on o and u, open on a. Words spelled oddly ("one", "though") get an approximate shape. Kokoro could give real sounds later if this is not good enough.
+- **Wide frowning mouths** (the angry face) open only a little on the half and "ee" shapes.
+- **Only capes, cloaks, long hair, ponytails and the scepter swing.** Dress and robe hems, sleeves and other props do not yet.
+- **The sneaking figure's cloak** lies along the bent back instead of hanging straight down.
+- **The example videos** (`LookTest.tsx`, `MoonTax.tsx`) now use the new talking shapes. The delivered files are untouched; a new render would get a new version number.
 
 ## Phase 2B. People: done (2026-10-05)
 
@@ -128,7 +172,7 @@ Each step ends with contact sheets for Biku, a commit and an update here. Start 
 - **2A. Library foundation: done (2026-10-05)** except the head-size answer, which Biku has not given yet. Was: apply Biku's head-size answer; `library/index.json` with every existing piece registered (tags, picture, code path); golden stills; the check that fails on unindexed pieces; `/draw`.
 - **Faces round 4: done (2026-10-04).** Built ahead of 2A at Biku's go-ahead; see the round 4 section above. Waiting for Biku's verdict on the face match sheet.
 - **2B. People: done (2026-10-05).** Was: Tier 1 clothes (shirt, tank top, trousers, skirt or dress, shoes, plain hat, hood or cloak, robe); costumes (soldier, queen or noble gown, villager or farmer); long hair; all skin tones and hair checked; age cues (child, adult, elder); character cards.
-- **2C. Poses and motion polish.** Sit, kneel, lie, cross arms, look up, look down, cower; cry, cheer, hug; wind-up and settle; lagging capes, hair and held objects; weight and breathing; eye darts, smooth head turns, more mouth shapes; mood walks; arcs.
+- **2C. Poses and motion polish: done (2026-10-06).** Was: sit, kneel, lie, cross arms, look up, look down, cower; cry, cheer, hug; wind-up and settle; lagging capes, hair and held objects; weight and breathing; eye darts, smooth head turns, more mouth shapes; mood walks; arcs.
 - **2D. Action.** Run, jump, fall, fight (wind-up, swing, hit, recoil), push, pull, carry, sneak; tears, anger mark, motion lines, impact flash, dizzy stars, symbols; camera shake, fast push-in, pan; a short action test clip.
 - **2E. World.** Places (night street, day street, field, forest, castle and throne room, home interior); about 10 props (sword, shield, coin, bag, book, lantern, door, chair, table, cup); wide, medium, close-up and over-the-shoulder framing; title card and labels.
 - **2F. Wrap-up.** Full contact sheets of everything, index complete, all checks passing, Phase 2 report.
@@ -395,6 +439,8 @@ Files to watch: `engine/out/sandbox/walk.mp4` and `engine/out/sandbox/motion.mp4
 The realistic estimate assumes real shots cost about three times the test scene (more characters, blurred backgrounds, captions). Re-measure in Phase 1 with the look-test shots.
 
 ## Style changes since Phase 0
+
+- **Guide version 8 (2026-10-06, under the Phase 2 motion polish scope Biku agreed):** talking uses five mouth shapes instead of three. Wide ("ee", top teeth showing) and round ("oo") join closed, half and open, and the mouth forms each word. `tokens.json` is version 8 with five names in `motion.mouthShapes`.
 
 - **Guide version 7 (2026-10-04, asked and approved by Biku):** creases inside the face are fine tapered pen strokes, about 1.2% of the head at their fullest, each a different length and angle; tapering is allowed inside the face (brows, creases, the ends of a closed mouth line). The frightened face follows Reference B as measured. New token `face.creasePctOfHead`. Versions 4 to 6 (faces closer to the references, thinner and softer face lines) are described in the guide's version history.
 

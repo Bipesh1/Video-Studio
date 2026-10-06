@@ -3,7 +3,7 @@ import { AbsoluteFill, useCurrentFrame, useVideoConfig } from 'remotion';
 import { EXPRESSIONS, EXPRESSION_NAMES, faceAt } from '../face/expressions';
 import type { ExpressionName } from '../face/expressions';
 import { HEAD_TURNS } from '../face/layout';
-import { MOUTH_OPENNESS, mouthShapeAt } from '../face/talk';
+import { talkAt } from '../face/talk';
 import type { WordTiming } from '../face/talk';
 import type { EyeStyle } from '../face/types';
 import { body } from '../rig/body';
@@ -24,7 +24,7 @@ import { Rod } from './Rod';
 import { BG_SHEETS, CostumeSheet, AtmosVideo, HairTurnsSheet, IdentitySheet } from './part-b';
 import { AgesSheet, ClothesSheet, CostumesBSheet, PeopleSheet } from './part-c';
 import { PosesBSheet } from './part-d';
-import { MoodsVideo, PolishVideo } from './part-e';
+import { MoodsVideo, MouthsSheet, PolishVideo } from './part-e';
 import type { SandboxBg, SheetName } from './sheets';
 
 export type SandboxProps = { sheet: SheetName; bg: SandboxBg };
@@ -377,10 +377,10 @@ const MOTION_FACES: ExpressionName[] = [
 ];
 const MOTION_TURNS = [0, 0, 0.5, 0, 0, 0.5, 0];
 const MOTION_WORDS: WordTiming[] = [
-  { startMs: 1100, endMs: 1450 },
-  { startMs: 1550, endMs: 2050 },
-  { startMs: 2150, endMs: 2500 },
-  { startMs: 2600, endMs: 2950 },
+  { startMs: 1100, endMs: 1450, text: 'Pay' },
+  { startMs: 1550, endMs: 2050, text: 'me' },
+  { startMs: 2150, endMs: 2500, text: 'for' },
+  { startMs: 2600, endMs: 2950, text: 'moonlight' },
 ];
 
 function MotionVideo({ c }: { c: Colors }) {
@@ -407,7 +407,7 @@ function MotionVideo({ c }: { c: Colors }) {
         turn={turn}
         blink={blinkAt(frame, fps, SEED)}
         gaze={gazeAt(frame, fps, SEED)}
-        talk={MOUTH_OPENNESS[mouthShapeAt(frame, fps, MOTION_WORDS)]}
+        talk={talkAt(frame, fps, MOTION_WORDS)}
         prop={rodProp}
       />
     </>
@@ -436,6 +436,7 @@ export const Sandbox = ({ sheet, bg }: SandboxProps) => {
     ages: <AgesSheet c={c} />,
     people: <PeopleSheet c={c} />,
     'poses-b': <PosesBSheet c={c} />,
+    mouths: <MouthsSheet c={c} />,
     walk: <WalkVideo c={c} />,
     motion: <MotionVideo c={c} />,
     polish: <PolishVideo c={c} />,

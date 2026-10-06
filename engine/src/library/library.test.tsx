@@ -113,6 +113,10 @@ describe('library index', () => {
     expect(first('jeans')).toBe('clothing/trousers');
     expect(first('straw hat', 'clothing')).toBe('clothing/brim-hat');
     expect(first('crown cape')).toBe('costume/ruler');
+    expect(first('sneak')).toBe('action/walk-sneaky');
+    expect(first('cape swing')).toBe('motion/follow-through');
+    expect(first('turn around')).toBe('motion/head-turn');
+    expect(first('lip sync')).toBe('motion/talking-mouth');
     expect(first('scared')).toBe('expression/afraid');
     // A pointing pose and a pointing hand both answer "pointing": both come first.
     const pointing = searchLibrary(library, 'pointing').slice(0, 2);
