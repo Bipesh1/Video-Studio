@@ -1,7 +1,7 @@
 # Build Status
 
-**Current phase:** Phase 2, steps 2A (library foundation), 2B (people), 2C (poses and motion polish), 2D (action) and 2E (world) done. Next step is 2F (Phase 2 wrap-up), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
-**Next:** Biku watches the test scene `engine/out/sandbox/story.mp4` and looks at the 2E sheets (below) and says what to change. Then 2F.
+**Current phase:** Phase 2 is complete: steps 2A to 2F all done (2026-10-06). Next is Phase 3 (sound), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
+**Next:** Biku reads `PHASE-2-REPORT.md`, looks at the catalog (`library/catalog/`) and the clips in `engine/out/sandbox/`, and answers the questions at the end of the report. Then Phase 3 when asked.
 **Last updated:** 2026-10-06
 
 ## Checkpoint 1: waiting for Biku
@@ -9,6 +9,15 @@
 Review file: `runs/2026-10-03-look-test/checkpoint-1.md`. Questions: (1) how close the look is and what to change, (2) narrator and character voices, (3) head size (answered 2026-10-06: fine as it is), (4) hair colors (guide v3), (5) fingers on hands that cover the face.
 
 **Question 1 (2026-10-04): Biku said not close enough yet, then said go.** Faces round 4 is built (section below, guide v7). Question 1 is open again: Biku needs to look at `runs/2026-10-03-look-test/out/face-match.png` and say whether the frightened face and the wrinkles are close enough now.
+
+## Phase 2F. Wrap-up: done (2026-10-06)
+
+Asked by Biku ("start 2F"). Nothing new was drawn; everything was rendered again and checked.
+
+- **Report for Biku:** `PHASE-2-REPORT.md` (what the library holds, where to look, checks, known gaps, questions).
+- **Pictures:** all 31 check sheets (`knowledge/golden/rig-*.png`), all 171 library pictures (`knowledge/golden/assets/`), the 8 catalog pages (`library/catalog/`) and all 7 test clips (`engine/out/sandbox/*.mp4`) were rendered again after the dress fix.
+- **Plan acceptance:** every piece that can be pictured has a golden still (171 of 171); the 13 without one are camera moves, shot sizes and on-screen text, which are judged in a shot (decided in 2A). `npm run library -- check` passes and library search finds pieces by tag (tested).
+- **Checks:** 265 of 265 passed; typecheck, lint and format clean; 16 of 16 voice checks passed, all sound tools present.
 
 ## Phase 2E. World: done (2026-10-06)
 
@@ -54,6 +63,10 @@ Asked by Biku ("start 2E"). Stories now have places to happen in, things to hold
 - **The back view is simple:** the body is the same from behind, and long hair hangs to one side.
 - **A two-person medium shot is only a little closer than the wide shot** when the two stand far apart, because the camera never cuts anyone off. Stand them closer for a tighter two-shot.
 - **Title text width is estimated,** not measured, so very long titles shrink a little more than they need to.
+
+## Feedback on the story clip (2026-10-06): applied
+
+1. **"The dress doesn't cover the legs; the grandma is sitting but the clothes is straight."** Every skirt was one fixed shape hung from the hips, so on a seated figure it hung straight down while the legs stuck out bare. Skirts, dresses, robes and the queen's gown now drape over the legs wherever they are (`drapeOverLegs` in `engine/src/wardrobe/cloth.tsx`): over the lap and down from the knees when sitting, open with a stride, round a bent knee, never through the ground. Standing figures look almost the same as before; every golden still, sheet and catalog page was rendered again. New check sheet: `skirts` (four garments in eight leg poses). Lesson L-0017. The story clip is re-rendered.
 
 ## Feedback on the action clip (2026-10-06): applied
 
@@ -106,7 +119,7 @@ Asked by Biku ("start 2D"). Characters can run, jump, fall and fight, with the e
 - **The crate, the boulder and the club are plain stand-ins.** Real props come in 2E.
 - **Motion lines are black** (Style 3.7), so they are faint on night backgrounds. Changing that is a guide change.
 - **Symbols are white with a black outline.** The guide gives them no color; say if `!` should be red or gold.
-- **Clothes do not follow every move well.** The cloak covers a lying body like a blanket, and tabards and skirts do not flare in a jump.
+- **Clothes do not follow every move well.** The cloak covers a lying body like a blanket, and tabards do not flare in a jump. (Skirts, dresses, robes and gowns follow the legs since 2026-10-06; they still do not flutter.)
 - **Dizzy stars on someone lying down** are partly hidden by an outstretched arm.
 - **Only the fighter's front arm punches or swings.** A two-handed swing, a kick and a block are not drawn yet.
 - **Endless backgrounds repeat every 1.2 screens,** so one tree comes round again and again in a long chase. More varied scenery comes with the places in 2E.
@@ -287,7 +300,7 @@ Each step ends with contact sheets for Biku, a commit and an update here. Start 
 - **2C. Poses and motion polish: done (2026-10-06).** Was: sit, kneel, lie, cross arms, look up, look down, cower; cry, cheer, hug; wind-up and settle; lagging capes, hair and held objects; weight and breathing; eye darts, smooth head turns, more mouth shapes; mood walks; arcs.
 - **2D. Action: done (2026-10-06).** Was: run, jump, fall, fight (wind-up, swing, hit, recoil), push, pull, carry, sneak; tears, anger mark, motion lines, impact flash, dizzy stars, symbols; camera shake, fast push-in, pan; a short action test clip.
 - **2E. World: done (2026-10-06).** Was: places (night street, day street, field, forest, castle and throne room, home interior); about 10 props (sword, shield, coin, bag, book, lantern, door, chair, table, cup); wide, medium, close-up and over-the-shoulder framing; title card and labels.
-- **2F. Wrap-up.** Full contact sheets of everything, index complete, all checks passing, Phase 2 report.
+- **2F. Wrap-up: done (2026-10-06).** Was: full contact sheets of everything, index complete, all checks passing, Phase 2 report (`PHASE-2-REPORT.md`).
 
 Left for on-demand drawing: the other nine places, climb, write, read, steer, row, salute, march, turn out pockets, lean, hands on head, counters, charts, maps, animals.
 

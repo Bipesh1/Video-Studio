@@ -258,3 +258,21 @@ Applied: shoulderPlacement puts the near head low in a bottom corner (camera/Fra
   one scene in all four shot sizes.
 Status: active
 ```
+
+```
+L-0017 | 2026-10-06 | run: Phase 2E test scene (engine/out/sandbox/story.mp4), the home shot
+Area: clothes | Scope: style ink-stick | Source: Biku
+Lesson: Cloth lies on the body where the body is. A skirt, dress, robe or gown covers the legs
+  wherever the legs go: over the lap and down from the knees of someone sitting, open with a
+  stride, round a bent knee.
+Evidence: Biku: "the dress doesnt cover the legs the grandma is sitting but the clothes is
+  straight". Every skirt was one fixed shape hung from the hips, so on a seated figure it hung
+  straight down through the chair while the bare legs stuck out in front. It had only ever
+  been looked at on standing and walking figures.
+Applied: drapeOverLegs and the three lengths in DRAPES (engine/src/wardrobe/cloth.tsx), used
+  by the skirt, the dress, the robe and the queen's gown; the skirts sheet (four garments in
+  eight leg poses); tests in engine/src/wardrobe/drape.test.ts.
+Note (Claude's reading, not Biku's words): a new garment should be looked at on a sitting and a
+  kneeling figure before it is called done, not only standing.
+Status: active
+```

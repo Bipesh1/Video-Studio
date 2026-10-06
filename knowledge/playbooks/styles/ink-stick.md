@@ -34,6 +34,7 @@ Current best practice for the Ink Stick look, learned from real videos and Biku'
 
 ## Clothes and people
 
+- **Cloth lies on the body where the body is.** A skirt, dress, robe or gown covers the legs wherever they go: over the lap and down from the knees of someone sitting, open with a stride. The engine does this (`drapeOverLegs` in `wardrobe/cloth.tsx`); after a new garment or a new leg pose, look at the `skirts` sheet. (L-0017, Biku)
 - **Dress people from the library.** Everyday clothes are mixed with `outfitFrom`; search `npm run library -- search <words> --kind=clothing` first. A new everyday outfit is a combination, not a new drawing. (Phase 2B)
 - **Headgear sits on the head and must read at phone size.** The crown of a hat comes down over the top of the head and the brim crosses just above the brows. Check it small: a round steel helmet with a brim read as a bowler hat, so the soldier wears a pointed helmet over a mail coif. (L-0009, self-check)
 - **Long hair goes behind the body,** not over the shoulders, so no arm crosses it. (L-0009, self-check)

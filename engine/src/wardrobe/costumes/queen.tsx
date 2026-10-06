@@ -1,5 +1,5 @@
 import { accent, ink, lineWeights, pick, white } from '../../tokens';
-import { fold, torsoFrame, turnWidth } from '../cloth';
+import { DRAPES, drapeOverLegs, fold, fromTorso, torsoFrame, turnWidth } from '../cloth';
 import { Shaded, lightOffset } from '../Shaded';
 import type { Outfit, PieceContext } from '../types';
 
@@ -19,36 +19,62 @@ const gown = (c: PieceContext) => {
   const w = turnWidth(c);
   const x = (v: number) => v * w;
   const off = lightOffset(c.shadowSide, 0.07);
-  const dressShape = `M ${x(-0.11)} -1.07 Q 0 -0.9 ${x(0.11)} -1.07 L ${x(0.2)} -1.05 Q ${x(0.23)} -0.85 ${x(0.19)} -0.62 Q ${x(0.16)} -0.45 ${x(0.19)} -0.34 Q ${x(0.42)} 0.3 ${x(0.56)} 1.24 Q ${x(0.28)} 1.36 0 1.33 Q ${x(-0.28)} 1.36 ${x(-0.56)} 1.24 Q ${x(-0.42)} 0.3 ${x(-0.19)} -0.34 Q ${x(-0.16)} -0.45 ${x(-0.19)} -0.62 Q ${x(-0.23)} -0.85 ${x(-0.2)} -1.05 Z`;
-  const hem = `M ${x(-0.535)} 1.1 Q 0 1.2 ${x(0.535)} 1.1 L ${x(0.56)} 1.24 Q ${x(0.28)} 1.36 0 1.33 Q ${x(-0.28)} 1.36 ${x(-0.56)} 1.24 Z`;
+  // The fitted bodice, in the torso frame; the skirt below it drapes over the legs.
+  const bodice = `M ${x(-0.11)} -1.07 Q 0 -0.9 ${x(0.11)} -1.07 L ${x(0.2)} -1.05 Q ${x(0.23)} -0.85 ${x(0.19)} -0.62 Q ${x(0.16)} -0.45 ${x(0.19)} -0.34 L ${x(0.22)} -0.26 Q 0 -0.2 ${x(-0.22)} -0.26 L ${x(-0.19)} -0.34 Q ${x(-0.16)} -0.45 ${x(-0.19)} -0.62 Q ${x(-0.23)} -0.85 ${x(-0.2)} -1.05 Z`;
+  const drape = drapeOverLegs(c, DRAPES.floor);
+  const hemId = `${c.uid}-hemband`;
   const belt = `M ${x(-0.185)} -0.42 Q 0 -0.37 ${x(0.185)} -0.42 L ${x(0.2)} -0.31 Q 0 -0.26 ${x(-0.2)} -0.31 Z`;
   return (
-    <g transform={torsoFrame(c)}>
-      <Shaded id={`${c.uid}-gown`} d={dressShape} fill={N.fill} shadow={N.shadow} offset={off} />
-      {fold(`M ${x(-0.08)} -0.2 Q ${x(-0.16)} 0.4 ${x(-0.24)} 1.12`, 'f1')}
-      {fold(`M ${x(0.1)} -0.16 Q ${x(0.2)} 0.4 ${x(0.28)} 1.1`, 'f2')}
-      <Shaded
-        id={`${c.uid}-hem`}
-        d={hem}
-        fill={G.fill}
-        shadow={G.shadow}
-        offset={lightOffset(c.shadowSide, 0.04)}
-      />
-      <Shaded
-        id={`${c.uid}-sash`}
-        d={belt}
-        fill={G.fill}
-        shadow={G.shadow}
-        offset={lightOffset(c.shadowSide, 0.03)}
-      />
-      <circle
-        cx={0}
-        cy={-0.84}
-        r={0.04}
-        fill={G.fill}
+    <g>
+      <Shaded id={`${c.uid}-gown-skirt`} d={drape.d} fill={N.fill} shadow={N.shadow} offset={off} />
+      {/* The gold band along the bottom of the skirt: a strip of the skirt's own shape. */}
+      <defs>
+        <clipPath id={hemId}>
+          <path d={drape.d} />
+        </clipPath>
+      </defs>
+      <g clipPath={`url(#${hemId})`}>
+        <rect x={c.j.hip.x - 3} y={drape.low - 0.15} width={6} height={0.4} fill={G.fill} />
+        <rect
+          x={c.j.hip.x - 3}
+          y={drape.low - 0.15 - lineWeights.detail / 2}
+          width={6}
+          height={lineWeights.detail}
+          fill={ink}
+        />
+      </g>
+      <path
+        d={drape.d}
+        fill="none"
         stroke={ink}
-        strokeWidth={lineWeights.detail}
+        strokeWidth={lineWeights.outline}
+        strokeLinejoin="round"
       />
+      {drape.ends.map((end, i) => {
+        const from = fromTorso(c, x(i === 0 ? -0.08 : 0.1), -0.18);
+        return fold(
+          `M ${from.x} ${from.y} Q ${(from.x + end.x) / 2} ${(from.y + end.y) / 2} ${end.x} ${end.y + 0.05}`,
+          `f${i}`,
+        );
+      })}
+      <g transform={torsoFrame(c)}>
+        <Shaded id={`${c.uid}-gown`} d={bodice} fill={N.fill} shadow={N.shadow} offset={off} />
+        <Shaded
+          id={`${c.uid}-sash`}
+          d={belt}
+          fill={G.fill}
+          shadow={G.shadow}
+          offset={lightOffset(c.shadowSide, 0.03)}
+        />
+        <circle
+          cx={0}
+          cy={-0.84}
+          r={0.04}
+          fill={G.fill}
+          stroke={ink}
+          strokeWidth={lineWeights.detail}
+        />
+      </g>
     </g>
   );
 };

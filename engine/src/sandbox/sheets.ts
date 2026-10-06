@@ -24,6 +24,7 @@ export const STILL_SHEETS = [
   'effects',
   'turn-steps',
   'shoes',
+  'skirts',
   'props',
   'props-in-use',
   'places',

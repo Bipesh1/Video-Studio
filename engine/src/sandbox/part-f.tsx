@@ -8,7 +8,9 @@ import { resolvePose } from '../rig/pose';
 import { cower, kneel, sit, stand } from '../rig/poses';
 import type { ResolvedPose } from '../rig/types';
 import { GAITS } from '../rig/walk';
+import { QUEEN } from '../wardrobe/costumes/queen';
 import { outfitFrom } from '../wardrobe/garments';
+import type { Outfit } from '../wardrobe/types';
 import { boulderProp, clubProp, crateProp, ropeProp } from './fixtures';
 import { Label } from './Sandbox';
 import type { Colors } from './Sandbox';
@@ -243,6 +245,87 @@ export function ShoesSheet({ c }: { c: Colors }) {
           </g>
         );
       })}
+    </>
+  );
+}
+
+/**
+ * Skirts on legs (Biku, 2026-10-06): a skirt, a dress, a robe and a gown in the leg poses that
+ * matter. The cloth must lie over the thighs of someone sitting, open with a stride, and never
+ * hang straight down while the legs go somewhere else.
+ */
+const SKIRTS: Array<{ label: string; outfit: Outfit }> = [
+  {
+    label: 'skirt',
+    outfit: outfitFrom({
+      top: { kind: 'shirt', cloth: 'cream', sleeves: 'short' },
+      bottom: { kind: 'skirt', cloth: 'brown' },
+      shoes: { kind: 'boots', cloth: 'brown' },
+    }),
+  },
+  {
+    label: 'dress',
+    outfit: outfitFrom({
+      onePiece: { kind: 'dress', cloth: 'cream' },
+      shoes: { kind: 'boots', cloth: 'brown' },
+    }),
+  },
+  {
+    label: 'robe',
+    outfit: outfitFrom({
+      onePiece: { kind: 'robe', cloth: 'tan' },
+      shoes: { kind: 'boots', cloth: 'brown' },
+    }),
+  },
+  { label: 'gown', outfit: QUEEN },
+];
+
+const SKIRT_POSES: Array<{ label: string; pose: ResolvedPose; turn: number; dx?: number }> = [
+  { label: 'front', pose: resolvePose(stand), turn: 0 },
+  { label: 'stand', pose: resolvePose(stand), turn: 0.5 },
+  { label: 'walk', pose: ACTIONS.walk(0.02), turn: 1 },
+  { label: 'run', pose: ACTIONS.run(0.27), turn: 1 },
+  { label: 'sit', pose: resolvePose(sit), turn: 0.5, dx: -26 },
+  { label: 'sit side', pose: resolvePose(sit), turn: 1, dx: -26 },
+  { label: 'kneel', pose: resolvePose(kneel), turn: 0.5, dx: -16 },
+  { label: 'cower', pose: resolvePose(cower), turn: 0.5 },
+];
+
+export function SkirtsSheet({ c }: { c: Colors }) {
+  const cw = W / SKIRTS.length;
+  const ch = 236;
+  const head = 54;
+  return (
+    <>
+      {SKIRT_POSES.map((row, r) =>
+        SKIRTS.map((col, k) => {
+          const left = cw * k;
+          const top = ch * r;
+          const groundY = top + ch - 16;
+          return (
+            <g key={`${row.label}-${col.label}`}>
+              <rect x={left + 4} y={groundY} width={cw - 8} height={12} fill={c.ground} />
+              <Character
+                x={left + cw / 2 + (row.dx ?? 0) - row.pose.rootX * head}
+                groundY={groundY}
+                head={head}
+                pose={row.pose}
+                face={EXPRESSIONS.neutral}
+                turn={row.turn}
+                outfit={col.outfit}
+              />
+              <Label x={left + 60} y={top + 30} c={c}>
+                {k === 0 ? row.label : ''}
+              </Label>
+              {r === 0 && (
+                <Label x={left + cw - 50} y={top + 30} c={c}>
+                  {col.label}
+                </Label>
+              )}
+            </g>
+          );
+        }),
+      )}
     </>
   );
 }

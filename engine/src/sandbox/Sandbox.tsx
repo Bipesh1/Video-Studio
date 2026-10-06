@@ -25,7 +25,7 @@ import { BG_SHEETS, CostumeSheet, AtmosVideo, HairTurnsSheet, IdentitySheet } fr
 import { AgesSheet, ClothesSheet, CostumesBSheet, PeopleSheet, VillagersSheet } from './part-c';
 import { PosesBSheet } from './part-d';
 import { MoodsVideo, MouthsSheet, PolishVideo, TurnStepsSheet } from './part-e';
-import { MovesASheet, MovesBSheet, ShoesSheet } from './part-f';
+import { MovesASheet, MovesBSheet, ShoesSheet, SkirtsSheet } from './part-f';
 import { EffectsSheet } from './part-g';
 import { ActionVideo } from './part-h';
 import { PropsInUseSheet, PropsSheet } from './part-i';
@@ -450,6 +450,7 @@ export const Sandbox = ({ sheet, bg }: SandboxProps) => {
     effects: <EffectsSheet c={c} />,
     'turn-steps': <TurnStepsSheet c={c} />,
     shoes: <ShoesSheet c={c} />,
+    skirts: <SkirtsSheet c={c} />,
     props: <PropsSheet c={c} />,
     'props-in-use': <PropsInUseSheet c={c} />,
     places: <PlacesSheet c={c} />,

@@ -1,8 +1,18 @@
 import type { Clothes } from '@studio/shared';
 import type { ReactNode } from 'react';
 import { ink, lineWeights, tokens } from '../tokens';
-import { cloth, edge, fold, hemTrail, torsoFrame, turnWidth } from './cloth';
-import type { Cloth } from './cloth';
+import {
+  DRAPES,
+  cloth,
+  drapeOverLegs,
+  edge,
+  fold,
+  fromTorso,
+  hemTrail,
+  torsoFrame,
+  turnWidth,
+} from './cloth';
+import type { Cloth, Drape } from './cloth';
 import { Shaded, lightOffset } from './Shaded';
 import type { Outfit, Piece, PieceContext } from './types';
 
@@ -107,56 +117,95 @@ export const trouserTop = (color: string): Piece =>
     </>
   ));
 
-/** A knee-length skirt flaring from the waist. */
-export const skirt = (color: string): Piece =>
-  onTorso('skirt', color, (c, x, k) => (
-    <>
-      {shaded(
-        c,
-        'skirt',
-        `M ${x(-0.24)} -0.33 L ${x(0.24)} -0.33 Q ${x(0.34)} 0.15 ${x(0.43)} 0.58 Q ${x(0.2)} 0.68 0 0.65 Q ${x(-0.2)} 0.68 ${x(-0.43)} 0.58 Q ${x(-0.34)} 0.15 ${x(-0.24)} -0.33 Z`,
-        k,
-      )}
-      {fold(`M ${x(-0.24)} -0.25 Q 0 -0.21 ${x(0.24)} -0.25`, 'band')}
-      {fold(`M ${x(-0.09)} -0.18 Q ${x(-0.13)} 0.2 ${x(-0.17)} 0.6`, 'f1')}
-      {fold(`M ${x(0.12)} -0.14 Q ${x(0.17)} 0.2 ${x(0.21)} 0.58`, 'f2')}
-    </>
-  ));
+/**
+ * The skirt part of a garment, in the character's own space: draped over the legs, with a
+ * fold running down toward each leg.
+ */
+const draped = (c: PieceContext, name: string, k: Cloth, shape: Drape) => {
+  const drape = drapeOverLegs(c, shape);
+  const w = turnWidth(c);
+  return (
+    <g key={`${name}-skirt`}>
+      {shaded(c, `${name}-skirt`, drape.d, k)}
+      {drape.ends.map((end, i) => {
+        const from = fromTorso(c, (i === 0 ? -0.09 : 0.11) * w, -0.18);
+        const mid = { x: (from.x + end.x) / 2, y: (from.y + end.y) / 2 };
+        return fold(
+          `M ${from.x} ${from.y} Q ${mid.x + (i === 0 ? -0.04 : 0.04)} ${mid.y} ${end.x} ${end.y}`,
+          `f${i}`,
+        );
+      })}
+    </g>
+  );
+};
 
-/** A knee-length dress: a fitted top that flares from the waist. */
-export const dress = (color: string): Piece =>
-  onTorso('dress', color, (c, x, k) => (
-    <>
-      {shaded(
-        c,
-        'dress',
-        `M ${x(-0.1)} -1.08 Q 0 -0.93 ${x(0.1)} -1.08 L ${x(0.2)} -1.05 Q ${x(0.24)} -0.9 ${x(0.2)} -0.74 Q ${x(0.16)} -0.5 ${x(0.2)} -0.36 Q ${x(0.36)} 0.15 ${x(0.45)} 0.6 Q ${x(0.2)} 0.72 0 0.69 Q ${x(-0.2)} 0.72 ${x(-0.45)} 0.6 Q ${x(-0.36)} 0.15 ${x(-0.2)} -0.36 Q ${x(-0.16)} -0.5 ${x(-0.2)} -0.74 Q ${x(-0.24)} -0.9 ${x(-0.2)} -1.05 Z`,
-        k,
-      )}
-      {fold(`M ${x(-0.19)} -0.38 Q 0 -0.33 ${x(0.19)} -0.38`, 'waist')}
-      {fold(`M ${x(-0.07)} -0.2 Q ${x(-0.12)} 0.2 ${x(-0.16)} 0.62`, 'f1')}
-      {fold(`M ${x(0.1)} -0.16 Q ${x(0.16)} 0.2 ${x(0.2)} 0.6`, 'f2')}
-    </>
-  ));
+/** A knee-length skirt flaring from the waist, draped over the legs. */
+export const skirt =
+  (color: string): Piece =>
+  (c) => {
+    const k = cloth(color);
+    const w = turnWidth(c);
+    return (
+      <g key="skirt">
+        {draped(c, 'skirt', k, DRAPES.knee)}
+        <g transform={torsoFrame(c)}>
+          {fold(`M ${-0.24 * w} -0.25 Q 0 -0.21 ${0.24 * w} -0.25`, 'band')}
+        </g>
+      </g>
+    );
+  };
 
-/** A long robe from the shoulders to the ankles, tied with a cord. Its sleeves are wide tubes. */
-export const robe = (color: string): Piece =>
-  onTorso('robe', color, (c, x, k) => (
-    <>
-      {shaded(
-        c,
-        'robe',
-        `M ${x(-0.1)} -1.09 L 0 -0.95 L ${x(0.1)} -1.09 L ${x(0.26)} -1.04 Q ${x(0.3)} -0.8 ${x(0.27)} -0.5 Q ${x(0.36)} 0.4 ${x(0.43)} 1.2 Q ${x(0.2)} 1.3 0 1.27 Q ${x(-0.2)} 1.3 ${x(-0.43)} 1.2 Q ${x(-0.36)} 0.4 ${x(-0.27)} -0.5 Q ${x(-0.3)} -0.8 ${x(-0.26)} -1.04 Z`,
-        k,
-        0.07,
-      )}
-      {fold(`M ${x(-0.275)} -0.33 Q 0 -0.27 ${x(0.275)} -0.33`, 'cord1')}
-      {fold(`M ${x(-0.28)} -0.27 Q 0 -0.21 ${x(0.28)} -0.27`, 'cord2')}
-      {fold(`M ${x(0.07)} -0.25 Q ${x(0.1)} -0.1 ${x(0.07)} 0.04`, 'tail')}
-      {fold(`M 0 -0.95 Q ${x(-0.02)} -0.6 0 -0.3`, 'front')}
-      {fold(`M ${x(-0.02)} -0.18 Q ${x(0.03)} 0.5 ${x(-0.03)} 1.26`, 'hang')}
-    </>
-  ));
+/** A knee-length dress: a fitted top, and a skirt from the waist that drapes over the legs. */
+export const dress =
+  (color: string): Piece =>
+  (c) => {
+    const k = cloth(color);
+    const w = turnWidth(c);
+    const x = (v: number) => v * w;
+    return (
+      <g key="dress">
+        {draped(c, 'dress', k, DRAPES.knee)}
+        <g transform={torsoFrame(c)}>
+          {shaded(
+            c,
+            'dress',
+            `M ${x(-0.1)} -1.08 Q 0 -0.93 ${x(0.1)} -1.08 L ${x(0.2)} -1.05 Q ${x(0.24)} -0.9 ${x(0.2)} -0.74 Q ${x(0.16)} -0.5 ${x(0.2)} -0.36 L ${x(0.25)} -0.28 Q 0 -0.22 ${x(-0.25)} -0.28 L ${x(-0.2)} -0.36 Q ${x(-0.16)} -0.5 ${x(-0.2)} -0.74 Q ${x(-0.24)} -0.9 ${x(-0.2)} -1.05 Z`,
+            k,
+          )}
+        </g>
+      </g>
+    );
+  };
+
+/**
+ * A long robe from the shoulders to the ankles, tied with a cord. Its sleeves are wide tubes,
+ * and its skirt drapes over the legs.
+ */
+export const robe =
+  (color: string): Piece =>
+  (c) => {
+    const k = cloth(color);
+    const w = turnWidth(c);
+    const x = (v: number) => v * w;
+    return (
+      <g key="robe">
+        {draped(c, 'robe', k, DRAPES.ankle)}
+        <g transform={torsoFrame(c)}>
+          {shaded(
+            c,
+            'robe',
+            `M ${x(-0.1)} -1.09 L 0 -0.95 L ${x(0.1)} -1.09 L ${x(0.26)} -1.04 Q ${x(0.3)} -0.8 ${x(0.27)} -0.5 L ${x(0.3)} -0.2 Q 0 -0.14 ${x(-0.3)} -0.2 L ${x(-0.27)} -0.5 Q ${x(-0.3)} -0.8 ${x(-0.26)} -1.04 Z`,
+            k,
+            0.07,
+          )}
+          {fold(`M ${x(-0.275)} -0.33 Q 0 -0.27 ${x(0.275)} -0.33`, 'cord1')}
+          {fold(`M ${x(-0.28)} -0.27 Q 0 -0.21 ${x(0.28)} -0.27`, 'cord2')}
+          {fold(`M ${x(0.07)} -0.25 Q ${x(0.1)} -0.1 ${x(0.07)} 0.04`, 'tail')}
+          {fold(`M 0 -0.95 Q ${x(-0.02)} -0.6 0 -0.3`, 'front')}
+        </g>
+      </g>
+    );
+  };
 
 /** The back of a cloak, in the cloth's shadow tone: we look at its inside (Style 3.5). */
 const cloakBack =
