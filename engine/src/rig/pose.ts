@@ -1,13 +1,16 @@
 import { armReachToHand, body, STAND_HIP_HEIGHT } from './body';
-import { solveTwoBone } from './ik';
+import { KNEE_FORWARD, solveTwoBone } from './ik';
 import {
   add,
   angleFromDown,
   clamp,
   easeOutBack,
+  fromDown,
   lerp,
   lerpVec,
+  mul,
   normalizeDeg,
+  smoothstep,
   sub,
   vec,
 } from './math';
@@ -66,6 +69,24 @@ const [minTransition, maxTransition] = tokens.motion.poseTransitionFrames;
 
 /** Default snap length in frames, inside the token range (Style 8: 3 to 6 frames). */
 export const DEFAULT_TRANSITION = Math.round((minTransition + maxTransition) / 2);
+
+const [minBodyMove, maxBodyMove] = tokens.motion.bodyMoveFrames;
+
+/**
+ * A move of the whole body is one where the hips travel at least this far, in head units:
+ * kneeling, sitting down, getting up, lying down. It is not a snap. The body is seen to go
+ * there (Style 8, guide version 13; Biku on a kneel that took two frames: "looks like the
+ * posture didn't change in continuous frames").
+ */
+export const BODY_MOVE = 0.25;
+/** The hip travel that takes a body move its longest: all the way down onto a knee or a seat. */
+export const FULL_BODY_MOVE = 0.9;
+
+/** The frames a move of the whole body takes for how far the hips travel (Style 8). */
+export function bodyMoveFrames(travel: number): number {
+  const share = clamp((travel - BODY_MOVE) / (FULL_BODY_MOVE - BODY_MOVE), 0, 1);
+  return Math.round(lerp(minBodyMove, maxBodyMove, share));
+}
 
 function anglesFromIK(root: Vec2, target: Vec2, a: number, b: number, bend: 1 | -1): LimbAngles {
   const ik = solveTwoBone(root, target, a, b, bend);
@@ -197,6 +218,47 @@ export function mixPoses(
   };
 }
 
+/** Where a leg's foot is: the point it is planted on, or where its angles put it. */
+function footPoint(leg: LegState, hip: Vec2): Vec2 {
+  if (leg.foot) return leg.foot;
+  const knee = add(hip, mul(fromDown(leg.upper), body.thigh));
+  return add(knee, mul(fromDown(leg.upper + leg.lower), body.shin));
+}
+
+/** Which way a leg's knee bends: as it was placed, or as its angles show. */
+const kneeBend = (leg: LegState): 1 | -1 => leg.bend ?? (leg.lower <= 0 ? KNEE_FORWARD : 1);
+
+/**
+ * Mix two resolved poses for a move of the whole body. Like mixPoses, but every foot travels
+ * from where it was to where it will be while its leg is solved from the moving hip, so no
+ * foot sinks or swims however long the move takes. Both knees bend the way they do in the
+ * lower of the two poses: a straight leg has no say in it, and a knee never folds backward on
+ * the way up from a chair.
+ */
+export function mixBodies(a: ResolvedPose, b: ResolvedPose, e: number, ec: number): ResolvedPose {
+  const hipA = vec(a.rootX, a.hipY);
+  const hipB = vec(b.rootX, b.hipY);
+  const hip = lerpVec(hipA, hipB, ec);
+  const low = a.hipY >= b.hipY ? a : b;
+  const leg = (side: 'front' | 'back'): LegState => {
+    const foot = lerpVec(footPoint(a.legs[side], hipA), footPoint(b.legs[side], hipB), ec);
+    return legToFoot(hip, vec(foot.x, Math.min(0, foot.y)), kneeBend(low.legs[side]));
+  };
+  return {
+    rootX: hip.x,
+    hipY: hip.y,
+    torsoLean: lerp(a.torsoLean, b.torsoLean, e),
+    headTilt: lerp(a.headTilt, b.headTilt, e),
+    headBob: lerp(a.headBob, b.headBob, ec),
+    arms: {
+      front: lerpLimb(a.arms.front, b.arms.front, e),
+      back: lerpLimb(a.arms.back, b.arms.back, e),
+    },
+    legs: { front: leg('front'), back: leg('back') },
+    hands: ec < 0.5 ? a.hands : b.hands,
+  };
+}
+
 /**
  * Blend two resolved poses. t runs 0 to 1 over the transition.
  * Arms and head take the overshooting ease. Hips and planted feet take a clamped ease,
@@ -207,24 +269,33 @@ export function blendPoses(a: ResolvedPose, b: ResolvedPose, t: number): Resolve
   return mixPoses(a, b, e, clamp(e, 0, 1));
 }
 
-/** The frames a key's move takes: wind-up first (big moves only, unless the key says), then the snap. */
+/**
+ * The frames a key's move takes: wind-up first (big moves only, unless the key says), then the
+ * move itself. An arm or a head snaps; the whole body takes as long as its hips have far to go.
+ * A key may ask for a quicker body move (a cut hides the rest), never a slower one.
+ */
 export function moveFrames(
   from: ResolvedPose,
   to: ResolvedPose,
   key: Pick<PoseKey, 'transition' | 'windup'> = {},
-): { windup: number; transition: number; big: boolean } {
+): { windup: number; transition: number; big: boolean; whole: boolean } {
   const big = poseDistance(from, to) > BIG_MOVE;
+  const travel = Math.hypot(from.rootX - to.rootX, from.hipY - to.hipY);
+  const whole = travel >= BODY_MOVE;
+  const natural = whole ? bodyMoveFrames(travel) : DEFAULT_TRANSITION;
   return {
     windup: Math.max(0, key.windup ?? (big ? WINDUP_FRAMES : 0)),
-    transition: clamp(key.transition ?? DEFAULT_TRANSITION, minTransition, maxTransition),
+    transition: clamp(key.transition ?? natural, minTransition, whole ? natural : maxTransition),
     big,
+    whole,
   };
 }
 
 /**
  * The pose at a frame, given keys sorted by frame. From each key's frame the body winds up (if
  * the move is big), snaps to the new pose with a small overshoot and a dip of the hips, then
- * holds. Hands and heads travel on arcs, because joints turn rather than slide.
+ * holds. Hands and heads travel on arcs, because joints turn rather than slide. A move of the
+ * whole body (kneeling, sitting, getting up) is not a snap: it takes longer and is smooth.
  */
 export function poseAt(frame: number, keys: readonly PoseKey[]): ResolvedPose {
   const firstKey = keys[0];
@@ -239,16 +310,21 @@ export function poseAt(frame: number, keys: readonly PoseKey[]): ResolvedPose {
   const prev = keys[index - 1];
   if (!prev || frame < key.frame) return target;
   const from = resolvePose(prev.pose);
-  const { windup, transition, big } = moveFrames(from, target, key);
+  const { windup, transition, big, whole } = moveFrames(from, target, key);
   const f = frame - key.frame;
   if (f >= windup + transition) return target;
   if (f < windup) {
     // Pull back the other way, easing into the deepest point as the snap begins.
     const back = -WINDUP_DEPTH * Math.sin(((f / windup) * Math.PI) / 2);
-    return mixPoses(from, target, back, 0);
+    return whole ? mixBodies(from, target, back, 0) : mixPoses(from, target, back, 0);
   }
   const t = (f - windup) / transition;
   const depth = windup > 0 ? WINDUP_DEPTH : 0;
+  if (whole) {
+    // A body has weight: it starts and stops smoothly, and the arms and head go with it.
+    const along = smoothstep(t);
+    return mixBodies(from, target, -depth + (1 + depth) * along, along);
+  }
   const e = -depth + (1 + depth) * easeOutBack(t, POSE_OVERSHOOT);
   const ec = clamp(easeOutBack(t, POSE_OVERSHOOT), 0, 1);
   return mixPoses(from, target, e, ec, big ? WEIGHT_DIP * Math.sin(Math.PI * t) : 0);

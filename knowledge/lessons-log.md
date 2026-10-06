@@ -491,3 +491,29 @@ Note (Claude's reading): found by looking at the first try. With the camera lock
   that is about a face or a thing.
 Status: active
 ```
+
+```
+L-0030 | 2026-10-06 | run: 2026-10-06-honest-farmer, part 1 (the first seconds: kneeling, picking up the bag)
+Area: motion | Scope: general | Source: Biku
+Lesson: When someone kneels and picks a thing up, we see it happen as one movement: the body
+  goes down, the hand goes to the thing, they come up with it, facing the same way all
+  through. It does not happen between two frames or on a cut.
+Evidence: Biku on v8: "when it kneels and piks up he bag in first few secodn its direction
+  changes and looks like the posture didnt change in continuos frames". Frame by frame he was
+  right twice. The kneel took two frames, the style's quick snap. And the next shot cut to him
+  standing somewhere else, facing the other way, the bag already in his hand.
+Applied: styles/ink-stick/guide.md and tokens.json, version 13 (a move of the whole body takes
+  10 to 16 frames; arms, heads and faces still snap); engine/src/rig/pose.ts (the body goes
+  down and up smoothly with its feet on the ground and its knees bending forward);
+  engine/src/stage/ShotPicture.tsx (a step that takes a thing standing in the shot reaches
+  for it, closes the hand on it, and only then does it leave the ground); shared/src/plan.ts
+  (the planner points out someone who turns round, gets up or jumps somewhere on a cut). The
+  opening of the sample plan is now one action over two shots; two cuts of the same kind in
+  part 2 were mended. Part 1 rendered again (v10).
+Note (Claude's reading): L-0029 gave people steps, but I planned the opening as two separate
+  pictures and looked at each shot, never at the cut between them. A strip of frames across
+  every step and every cut that keeps someone on screen is part of looking at a part. How long
+  a body move takes is one number; if Biku finds it slow or quick, show him three speeds side
+  by side instead of guessing.
+Status: active
+```

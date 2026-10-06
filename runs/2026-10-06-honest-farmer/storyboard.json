@@ -155,8 +155,7 @@
           "words": "A poor farmer found *100* gold coins on an empty road.",
           "camera": {
             "framing": "wide",
-            "move": "push-in",
-            "strength": 0.25
+            "move": "none"
           },
           "actors": [
             {
@@ -177,7 +176,7 @@
           "props": [
             {
               "prop": "bag",
-              "x": 0.6
+              "x": 0.55
             }
           ],
           "sfx": [
@@ -197,23 +196,34 @@
           "words": "Nobody saw him. And nobody would ever know.",
           "camera": {
             "framing": "wide",
-            "move": "none"
+            "move": "push-in",
+            "strength": 0.25
           },
           "actors": [
             {
               "character": "tomas",
-              "pose": "hold-object",
+              "pose": "kneel",
               "expression": "afraid",
-              "facing": "left",
-              "x": 0.5,
-              "holds": "bag",
+              "facing": "right",
+              "x": 0.42,
+              "lookAt": "camera",
               "then": [
                 {
-                  "at": 0.5,
-                  "expression": "thinking",
-                  "lookAt": "camera"
+                  "at": 0.3,
+                  "pose": "hold-object",
+                  "holds": "bag"
+                },
+                {
+                  "at": 0.72,
+                  "expression": "thinking"
                 }
               ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "bag",
+              "x": 0.55
             }
           ],
           "sfx": [
@@ -1071,17 +1081,23 @@
             },
             {
               "character": "queen",
-              "pose": "stand",
+              "pose": "sit",
               "expression": "happy",
               "facing": "left",
-              "x": 0.64,
-              "lookAt": "tomas"
+              "x": 0.7,
+              "lookAt": "tomas",
+              "then": [
+                {
+                  "at": 0.2,
+                  "pose": "stand"
+                }
+              ]
             }
           ],
           "props": [
             {
               "prop": "throne",
-              "x": 0.82
+              "x": 0.7
             }
           ],
           "effects": [
@@ -1112,7 +1128,7 @@
               "pose": "point",
               "expression": "happy",
               "facing": "left",
-              "x": 0.64
+              "x": 0.7
             }
           ]
         }
@@ -1192,18 +1208,26 @@
           "actors": [
             {
               "character": "tomas",
-              "pose": "hold-object",
-              "expression": "laughing",
+              "pose": "kneel",
+              "expression": "happy",
               "facing": "right",
-              "x": 0.4,
-              "lookAt": "coin",
-              "holds": "coin"
+              "x": 0.36,
+              "lookAt": "ahead",
+              "then": [
+                {
+                  "at": 0.25,
+                  "pose": "hold-object",
+                  "expression": "laughing",
+                  "lookAt": "coin",
+                  "holds": "coin"
+                }
+              ]
             }
           ],
           "sfx": [
             {
               "name": "ding",
-              "at": "start"
+              "at": "middle"
             }
           ]
         },

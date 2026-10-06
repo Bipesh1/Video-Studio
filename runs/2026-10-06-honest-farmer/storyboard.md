@@ -12,8 +12,8 @@ Place: field, clear day colors. Music: curious.
 
 | Shot | At | Who speaks | Words | What you see | Sound |
 | --- | --- | --- | --- | --- | --- |
-| s1a | 0:00 | Narrator | A poor farmer found **100** gold coins on an empty road. | Wide shot. Tomas stands, surprised, looking at the bag, then kneels. In the scene: bag. The camera moves slowly closer. Title: "The Honest Farmer". | ding |
-| s1b | 0:03 | Narrator | Nobody saw him. And nobody would ever know. | Wide shot. Tomas holds the bag, afraid, then looks thinking and looking at us. | wind |
+| s1a | 0:00 | Narrator | A poor farmer found **100** gold coins on an empty road. | Wide shot. Tomas stands, surprised, looking at the bag, then kneels. In the scene: bag. Title: "The Honest Farmer". | ding |
+| s1b | 0:03 | Narrator | Nobody saw him. And nobody would ever know. | Wide shot. Tomas kneels, afraid, looking at us, then holds the bag, then looks thinking. In the scene: bag. The camera moves slowly closer. | wind |
 
 ### Scene 2: setup
 
@@ -72,7 +72,7 @@ Place: throne room, warm interior colors. Music: tense.
 | s6b | 0:54 | The queen | Why did you not keep it? Nobody would have known. | Over the shoulder on the queen. Tomas stands, neutral, looking at the queen, seen from behind. The queen sits, thinking, looking at Tomas. In the scene: throne. |   |
 | s6c | 0:58 | Tomas, the farmer | **I** would have known. | Close-up on Tomas. Tomas stands, determined. The camera moves slowly closer. |   |
 | s6d | 1:00 | Narrator | The queen was quiet for a long time. | Close-up on the queen. The queen sits, thinking, looking down. In the scene: throne. |   |
-| s6e | 1:03 | The queen | I lost that bag on purpose. | Medium shot. Tomas stands, surprised, looking at the queen. The queen stands, happy, looking at Tomas. In the scene: throne. Exclamation mark on Tomas. | pop |
+| s6e | 1:03 | The queen | I lost that bag on purpose. | Medium shot. Tomas stands, surprised, looking at the queen. The queen sits, happy, looking at Tomas, then stands. In the scene: throne. Exclamation mark on Tomas. | pop |
 | s6f | 1:05 | The queen | I wanted to find one **honest** person in my kingdom. | Close-up on the queen. The queen points, happy. |   |
 
 ### Scene 7: payoff
@@ -82,7 +82,7 @@ Place: throne room, warm interior colors. Music: triumph.
 | Shot | At | Who speaks | Words | What you see | Sound |
 | --- | --- | --- | --- | --- | --- |
 | s7a | 1:09 | Narrator | She trusted Tomas to look after the royal treasure. | Wide shot. Tomas stands, surprised, looking at the queen, then kneels and looks happy. The queen stands, happy, looking at Tomas. In the scene: throne. |   |
-| s7b | 1:13 | Narrator | And she gave him 10 gold coins every month, | Medium shot on Tomas. Tomas holds the coin, laughing, looking at the coin. | ding |
+| s7b | 1:13 | Narrator | And she gave him 10 gold coins every month, | Medium shot on Tomas. Tomas kneels, happy, then holds the coin and looks laughing and looks at the coin. | ding |
 | s7c | 1:15 | Narrator | for the rest of his life. | Wide shot. Tomas stands, happy, looking at the queen, then cheers and looks laughing. The queen stands, happy, looking at Tomas. In the scene: throne. |   |
 
 ### Scene 8: closing line

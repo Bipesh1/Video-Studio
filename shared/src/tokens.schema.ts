@@ -76,6 +76,8 @@ export const styleTokensSchema = z
     motion: z.object({
       fps: z.number().int().positive(),
       poseTransitionFrames: z.tuple([z.number().int(), z.number().int()]),
+      // Guide v13: a move of the whole body is seen to happen, so it takes longer than a snap.
+      bodyMoveFrames: z.tuple([z.number().int(), z.number().int()]),
       blinkEverySeconds: range,
       maxSquash: unit,
       mouthShapes: z.array(z.string()).min(1),

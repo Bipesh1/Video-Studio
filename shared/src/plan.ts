@@ -422,6 +422,46 @@ export function checkPlan(sb: Storyboard, world: World): PlanReport {
             `${at} shows the title in part ${scene.chapter}; the title belongs only at the start of part 1`,
           );
       }
+      // A cut inside a scene is the same moment seen again: nobody turns round, gets up or
+      // moves somewhere else between two frames (Biku, 2026-10-06: "its direction changes and
+      // looks like the posture didn't change in continuous frames").
+      if (previous && previous.scene.id === scene.id) {
+        const sameSize =
+          previous.shot.camera.framing === shot.camera.framing &&
+          shot.camera.move !== 'follow' &&
+          previous.shot.camera.move !== 'follow';
+        for (const actor of shot.actors) {
+          const earlier = previous.shot.actors.find((a) => a.character === actor.character);
+          if (!earlier || earlier.back || actor.back) continue;
+          const was = actorMoments(earlier).at(-1);
+          const is = actorMoments(actor)[0];
+          if (!was || !is) continue;
+          const who = `"${actor.character}"`;
+          const after = `the cut from "${previous.shot.id}"`;
+          if (earlier.facing !== actor.facing) {
+            note(
+              `in ${at}, ${who} faces the other way after ${after}; keep them facing the same way`,
+            );
+          }
+          if (isLow(was.pose) !== isLow(is.pose)) {
+            const [from, to] = isLow(was.pose) ? ['down', 'up'] : ['up', 'down'];
+            note(
+              `in ${at}, ${who} is ${to} after ${after}, which left them ${from}; show them getting ${to} inside a shot (a step)`,
+            );
+          } else if (sameSize) {
+            const moved =
+              earlier.x !== undefined &&
+              actor.x !== undefined &&
+              Math.abs(earlier.x - actor.x) > 0.03;
+            const reposed = was.pose !== undefined && is.pose !== undefined && was.pose !== is.pose;
+            if (moved || reposed) {
+              note(
+                `in ${at}, ${who} jumps to a new ${moved ? 'place' : 'pose'} after ${after}, a shot of the same size; let them get there inside a shot (a step), or change the shot size`,
+              );
+            }
+          }
+        }
+      }
       // The picture changes: not the same size of shot again and again, not the same picture twice.
       if (run && run.framing === shot.camera.framing) run.count += 1;
       else run = { framing: shot.camera.framing, count: 1, from: shot.id };

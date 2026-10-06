@@ -195,7 +195,7 @@ describe('where people look and what the camera frames', () => {
     const { shot, stage, placements } = placed(farmer, 's1a');
     const focus = shotFocus(shot, stage, placements);
     const tomasX = stageX(stage, 0.42);
-    const bagX = stageX(stage, 0.6);
+    const bagX = stageX(stage, 0.55);
     expect(focus.x).toBeCloseTo((tomasX + bagX) / 2, -Math.log10(stage.head * 0.6));
     expect(focus.span).toBeCloseTo(bagX - tomasX, -Math.log10(stage.head * 0.6));
     const t = shotTransform(shot.camera.framing, focus, WIDE);
@@ -214,7 +214,7 @@ describe('where people look and what the camera frames', () => {
     const both = placed(farmer, 's6e');
     const focus = shotFocus(both.shot, both.stage, both.placements);
     expect(focus.span).toBeCloseTo(
-      stageX(both.stage, 0.64) - stageX(both.stage, 0.34),
+      stageX(both.stage, 0.7) - stageX(both.stage, 0.34),
       -Math.log10(both.stage.head * 0.6),
     );
   });
@@ -457,11 +457,43 @@ describe('moving inside a shot', () => {
   });
 
   it('changes a face partway through without touching the body', () => {
-    // s1b: afraid, then thinking and looking at us; the bag stays in the hand throughout.
-    const early = at('s1b', 0.2);
-    const late = at('s1b', 0.9);
-    expect(early).not.toBe(late);
-    expect(early).toContain('-bag');
-    expect(late).toContain('-bag');
+    // s1b: once he is standing with the bag, his face turns from afraid to thinking.
+    const afraid = at('s1b', 0.68);
+    const thinking = at('s1b', 0.95);
+    expect(afraid).not.toBe(thinking);
+    expect(peopleOf(afraid, placed(farmer, 's1b').stage.head)[0]?.x).toBe(
+      peopleOf(thinking, placed(farmer, 's1b').stage.head)[0]?.x,
+    );
+  });
+
+  it('picks a thing up off the ground: there is one bag all the way, first standing, then in the hand', () => {
+    // s1b: kneeling by the bag, he takes it 0.3 of the way in and stands up with it.
+    const ts = timed('s1b');
+    const length = ts.endFrame - ts.startFrame;
+    const bags = (picture: string) => picture.match(/id="[^"]*bag-body"/g) ?? [];
+    const standing = 'id="s1b-bag-0-bag-body"';
+    for (let f = 0; f < length; f += 2) {
+      expect(bags(at('s1b', f / length)), `frame ${f}`).toHaveLength(1);
+    }
+    // While the hand is still on its way the bag has not left the ground.
+    expect(at('s1b', 0.1)).toContain(standing);
+    expect(at('s1b', 0.3 + 4 / length)).toContain(standing);
+    // Once the hand has closed on it, it goes where the hand goes.
+    expect(at('s1b', 0.3 + 12 / length)).not.toContain(standing);
+    expect(at('s1b', 0.9)).not.toContain(standing);
+  });
+
+  it('carries someone across a cut as they were: same place, same way round, same pose', () => {
+    // The opening is one action over two shots: he kneels in the first and is kneeling in the second.
+    const { stage } = placed(farmer, 's1a');
+    const end = peopleOf(at('s1a', 0.999), stage.head)[0];
+    const start = peopleOf(at('s1b', 0), stage.head)[0];
+    expect(end && start).toBeTruthy();
+    expect(start?.x).toBeCloseTo(end?.x ?? NaN, 3);
+    expect(Math.sign(start?.sx ?? 0)).toBe(Math.sign(end?.sx ?? 0));
+    const first = shotOf(farmer, 's1a').actors[0];
+    const second = shotOf(farmer, 's1b').actors[0];
+    expect(first?.then.at(-1)?.pose).toBe(second?.pose);
+    expect(first?.facing).toBe(second?.facing);
   });
 });

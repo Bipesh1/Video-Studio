@@ -13,14 +13,19 @@ import { TearDrops, TearStreams } from '../effects/Tears';
 import { EXPRESSIONS, faceAt } from '../face/expressions';
 import type { ExpressionName } from '../face/expressions';
 import { talkAt } from '../face/talk';
+import { STAND_HIP_HEIGHT, armReachToHand, body } from '../rig/body';
 import { chainAt, movePose } from '../rig/chain';
 import { CHILD_BODY, Character, toLocal } from '../rig/Character';
 import { swayOf } from '../rig/follow';
+import { ELBOW_DOWN } from '../rig/ik';
 import { blinkAt, gazeAt, withLife } from '../rig/life';
+import { length, sub, vec } from '../rig/math';
+import type { Vec2 } from '../rig/math';
 import { poseAt as posedAt, resolvePose } from '../rig/pose';
-import type { PoseKey } from '../rig/pose';
+import type { Pose, PoseKey } from '../rig/pose';
 import { poseById, stand } from '../rig/poses';
 import { seeded } from '../rig/random';
+import { shoulderOf } from '../rig/skeleton';
 import type { ResolvedPose } from '../rig/types';
 import type { Cast } from '../wardrobe/cast';
 import {
@@ -34,7 +39,7 @@ import {
   turnOf,
 } from './layout';
 import type { Placement, Size, TimedShot } from './layout';
-import { GRIPPED, SEATS, StandingProp, heldProp, standingProp } from './props';
+import { GRIPPED, SEATS, StandingProp, gripHeight, heldProp, standingProp } from './props';
 
 /**
  * One shot of a storyboard as a picture: the place in its light, the people in their poses
@@ -87,6 +92,8 @@ type Drawn = {
   now: ActorMoment;
   /** What they are doing at any frame of the shot. */
   momentAt: (frame: number) => ActorMoment;
+  /** Which of the shot's standing things they have picked up by a frame, by their place in the list. */
+  taken: (frame: number) => number[];
   /** Where they stand and how the body is at any frame, without the small moves of life. */
   whereAt: (frame: number) => { placement: Placement; pose: ResolvedPose };
   /** Whether they sit at any point in the shot, so a seat stays theirs. */
@@ -112,6 +119,41 @@ const poseOrStand = (id: string | undefined) => {
     return stand;
   }
 };
+
+/**
+ * Picking a thing up off the ground. The hand goes to it first, closes on it, and only then
+ * does it leave the ground with the hand (Biku, 2026-10-06, on a bag that was on the ground in
+ * one shot and in the hand in the next: "looks like the posture didn't change in continuous
+ * frames").
+ */
+const REACH_FRAMES = 10;
+/** How far a body leans to reach a thing, in degrees, and how far its head bows toward it. */
+const MAX_REACH_LEAN = 42;
+const REACH_BOW = 6;
+
+/**
+ * A pose reaching for a point: the same body, leaning toward it as far as it needs to, the
+ * near hand closing on it. The point is in the person's own space: head units, x the way they
+ * face, y down from the ground line.
+ */
+function reachingFor(pose: Pose, point: Vec2): Pose {
+  const hip = vec(0, -(pose.hipHeight ?? STAND_HIP_HEIGHT));
+  const arm = (body.upperArm + armReachToHand) * 0.98;
+  let lean = pose.torsoLean ?? 0;
+  while (lean < MAX_REACH_LEAN && length(sub(point, shoulderOf(hip, lean))) > arm) lean += 2;
+  // The hand that will carry it, already turned the way it will hold it.
+  const { hand = 'grip', gripAxis = -90, thumb = 1 } = poseById('hold-object').arms.front;
+  return {
+    ...pose,
+    id: `${pose.id}-reach`,
+    torsoLean: lean,
+    headTilt: (pose.headTilt ?? 0) + REACH_BOW,
+    arms: {
+      ...pose.arms,
+      front: { reach: sub(point, shoulderOf(hip, lean)), bend: ELBOW_DOWN, hand, gripAxis, thumb },
+    },
+  };
+}
 
 /** How long one move takes to hand over to the next inside a shot, in seconds. */
 const STEP_BLEND = 0.16;
@@ -193,13 +235,49 @@ export function ShotPicture({
     // "it can't change the posture in continuous frames?").
     const moments = actorMoments(actor);
     const startOf = (m: ActorMoment) => ts.startFrame + Math.round(m.at * duration);
-    const momentAt = (f: number): ActorMoment => {
+    const stretchAt = (f: number): ActorMoment => {
       let current = moments[0] as ActorMoment;
       for (const m of moments) if (startOf(m) <= f) current = m;
       return current;
     };
-    const now = momentAt(frame);
     const moving = moments.some((m) => m.action);
+    // A step that puts in the hand something standing in the shot picks it up: the nearest
+    // one, reached for first when it is in front of them and they are not on the move.
+    const pickups = moments.flatMap((m, i) => {
+      const from = moments[i - 1];
+      if (!from || !m.holds || m.holds === from.holds) return [];
+      const spot = shot.props
+        .map((p, index) => ({ index, prop: p.prop, x: stageX(stage, p.x) }))
+        .filter((p) => p.prop === m.holds)
+        .sort((a, b) => Math.abs(a.x - placement.x) - Math.abs(b.x - placement.x))[0];
+      if (!spot) return [];
+      const ahead = ((spot.x - placement.x) * sign) / placement.head;
+      const reach = !moving && ahead > 0;
+      return [
+        {
+          moment: m,
+          from,
+          index: spot.index,
+          reach,
+          point: vec(ahead, (-gripHeight(spot.prop) * stage.head) / placement.head),
+          grab: startOf(m) + (reach ? REACH_FRAMES : 0),
+        },
+      ];
+    });
+    const momentAt = (f: number): ActorMoment => {
+      const m = stretchAt(f);
+      const pick = pickups.find((p) => p.moment === m);
+      if (!pick || f >= pick.grab) return m;
+      // Still reaching: the hand is not on it yet.
+      const reaching = { ...m };
+      delete reaching.holds;
+      return pick.from.holds ? { ...reaching, holds: pick.from.holds } : reaching;
+    };
+    const taken = (f: number): number[] =>
+      pickups
+        .filter((p) => f >= p.grab && momentAt(f).holds === p.moment.holds)
+        .map((p) => p.index);
+    const now = momentAt(frame);
     // How the shot before left them, if the cut keeps them on screen.
     const before = previous?.shot.actors.find((a) => a.character === actor.character);
     const was = before ? actorMoments(before).at(-1) : undefined;
@@ -221,8 +299,14 @@ export function ShotPicture({
         } else {
           keys.push({ frame: ts.startFrame - 1, pose: poseOrStand(first.pose) });
         }
-        for (const m of moments.slice(1))
-          keys.push({ frame: startOf(m), pose: poseOrStand(m.pose) });
+        for (const m of moments.slice(1)) {
+          const pick = pickups.find((p) => p.moment === m);
+          if (pick?.reach) {
+            const reaching = reachingFor(poseOrStand(pick.from.pose), pick.point);
+            keys.push({ frame: startOf(m), pose: reaching });
+          }
+          keys.push({ frame: pick?.grab ?? startOf(m), pose: poseOrStand(m.pose) });
+        }
         return posedAt(f, keys);
       }
       const links = moments.map((m) => ({
@@ -256,6 +340,7 @@ export function ShotPicture({
       actor,
       now,
       momentAt,
+      taken,
       whereAt,
       sits: moments.some((m) => m.pose === 'sit'),
       ...whereAt(frame),
@@ -273,6 +358,8 @@ export function ShotPicture({
   const sceneAt = (f: number) => ({
     shot: {
       ...shot,
+      // A thing picked up is no longer standing in the scene.
+      props: shot.props.filter((_, i) => !drawn.some((d) => d.taken(f).includes(i))),
       actors: drawn.map((d) => {
         const moment = d.momentAt(f);
         const acting = { ...d.actor, lookAt: moment.lookAt };
@@ -347,10 +434,13 @@ export function ShotPicture({
     };
   };
 
+  const pickedUp = new Set(drawn.flatMap((d) => d.taken(frame)));
   const things = (behind: boolean): ReactNode =>
     shot.props
-      .filter((p) => (standingProp(p.prop)?.behindPeople ?? false) === behind)
-      .map((p, i) => {
+      .map((p, i) => ({ p, i }))
+      .filter(({ p }) => (standingProp(p.prop)?.behindPeople ?? false) === behind)
+      .filter(({ i }) => !pickedUp.has(i))
+      .map(({ p, i }) => {
         const seat = SEATS.includes(p.prop) ? sitterAt(p.x) : null;
         return (
           <StandingProp

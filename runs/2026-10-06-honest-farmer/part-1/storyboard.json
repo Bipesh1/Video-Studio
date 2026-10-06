@@ -155,8 +155,8 @@
           "words": "A poor farmer found *100* gold coins on an empty road.",
           "camera": {
             "framing": "wide",
-            "move": "push-in",
-            "strength": 0.25
+            "move": "none",
+            "strength": 0.2
           },
           "actors": [
             {
@@ -179,7 +179,7 @@
           "props": [
             {
               "prop": "bag",
-              "x": 0.6
+              "x": 0.55
             }
           ],
           "effects": [],
@@ -204,30 +204,38 @@
           "words": "Nobody saw him. And nobody would ever know.",
           "camera": {
             "framing": "wide",
-            "move": "none",
-            "strength": 0.2
+            "move": "push-in",
+            "strength": 0.25
           },
           "actors": [
             {
               "character": "tomas",
-              "pose": "hold-object",
+              "pose": "kneel",
               "expression": "afraid",
-              "facing": "left",
+              "facing": "right",
               "headTurn": "three-quarter",
-              "x": 0.5,
-              "lookAt": "ahead",
-              "holds": "bag",
+              "x": 0.42,
+              "lookAt": "camera",
               "back": false,
               "then": [
                 {
-                  "at": 0.5,
-                  "expression": "thinking",
-                  "lookAt": "camera"
+                  "at": 0.3,
+                  "pose": "hold-object",
+                  "holds": "bag"
+                },
+                {
+                  "at": 0.72,
+                  "expression": "thinking"
                 }
               ]
             }
           ],
-          "props": [],
+          "props": [
+            {
+              "prop": "bag",
+              "x": 0.55
+            }
+          ],
           "effects": [],
           "sfx": [
             {

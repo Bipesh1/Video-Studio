@@ -221,6 +221,7 @@ Brown, tan and cream are the plain cloth colors of ordinary people: leather, woo
 ### Style 8. Motion
 
 - **Pose to pose.** Characters snap between strong poses with quick transitions of 3 to 6 frames at 30 fps, then hold.
+- **A move of the whole body is seen to happen.** Kneeling, sitting down, getting up, lying down and picking something up are not snaps: the body takes 10 to 16 frames to get there, starting and stopping smoothly, with its feet on the ground all the way. Arms, heads and faces still snap.
 - **Life during holds:** blinks every 2 to 4 seconds, a slight head bob, brow twitches, breathing.
 - **Talking:** five mouth shapes in time with the voice: closed (lips together, as on m, b and p), half, open (as on "ah"), wide with the top teeth showing (as on "ee") and round (as on "oo"). The mouth forms each word, and every shape holds for at least two frames.
 - **Squash and stretch** on heads during impacts or surprise, no more than 8%.
@@ -278,7 +279,7 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
 ```json
 {
   "id": "ink-stick",
-  "version": 12,
+  "version": 13,
   "line": {
     "color": "#16161A",
     "outlinePctOfHead": [0.011, 0.013],
@@ -362,6 +363,7 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
   "motion": {
     "fps": 30,
     "poseTransitionFrames": [3, 6],
+    "bodyMoveFrames": [10, 16],
     "blinkEverySeconds": [2, 4],
     "maxSquash": 0.08,
     "mouthShapes": ["closed", "half", "open", "wide", "round"]
@@ -399,3 +401,4 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
 | 10 | 2026-10-06 | Lines a little thinner, at Biku's request ("the thickness now is a little bit high"): the outline of heads, costumes and props is 3.5 to 4.1% of head width (was 4 to 5%), and stick limbs and the torso line are 6.2 to 7% (was 7 to 8%). Inner details and face lines are unchanged. | Biku |
 | 11 | 2026-10-06 | Lines a little thinner again, at Biku's request after seeing version 10 ("a little bit more thinner"): the outline is 3 to 3.5% of head width and stick limbs and the torso line are 5.4 to 6.2%. Inner details and face lines are unchanged. | Biku |
 | 12 | 2026-10-06 | Fine outlines, bold limbs. Biku compared five thicknesses and three mixes side by side and chose mix B: the outline of heads, costumes and props is a fine pen line (1.1 to 1.3% of head width), inner details 0.8 to 1%, face lines about 1.2% and face creases about 0.7%, while stick limbs and the torso line stay bold (5.4 to 6.2%) so plain stick figures read on a phone. The main rule and Style Check question 1 now say "clean black outline" instead of "thick". This moves away from the heavy outlines of the two reference pictures on purpose. | Biku |
+| 13 | 2026-10-06 | A move of the whole body (kneeling, sitting down, getting up, lying down, picking something up) takes 10 to 16 frames and is seen to happen, instead of snapping in 3 to 6 frames like an arm or a head. Biku, on a kneel that took two frames in the first automatic video: "looks like the posture didn't change in continuous frames". | Biku |

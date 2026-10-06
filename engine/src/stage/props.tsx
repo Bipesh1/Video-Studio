@@ -87,6 +87,13 @@ const HELD: Record<string, HeldProp> = {
   ),
 };
 
+/**
+ * How high off the ground a hand takes hold of a thing standing there, in head units: the neck
+ * of a bag, the ring of a lantern, low down for anything else.
+ */
+export const gripHeight = (id: string): number =>
+  id === 'bag' ? BAG_DROP : id === 'lantern' ? LANTERN_DROP : 0.3;
+
 /** Props a hand must close round: the held hand becomes a gripping fist. */
 export const GRIPPED: readonly string[] = ['scepter', 'sword', 'bag', 'lantern', 'cup', 'goblet'];
 

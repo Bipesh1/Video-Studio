@@ -2,9 +2,11 @@ import { describe, expect, it } from 'vitest';
 import { blinkAt, blinkStarts, withLife } from './life';
 import {
   BIG_MOVE,
+  BODY_MOVE,
   DEFAULT_TRANSITION,
   WINDUP_DEPTH,
   WINDUP_FRAMES,
+  bodyMoveFrames,
   moveFrames,
   poseAt,
   poseDistance,
@@ -18,6 +20,7 @@ import {
   kneel,
   point,
   shrug,
+  sit,
   stand,
   wave,
 } from './poses';
@@ -226,5 +229,93 @@ describe('blinking', () => {
     expect(blinkAt(start - 1, fps, 9)).toBe(0);
     expect(blinkAt(start + 1, fps, 9)).toBe(1);
     expect(blinkAt(start + 6, fps, 9)).toBe(0);
+  });
+});
+
+describe('a move of the whole body', () => {
+  /**
+   * Style 8, guide version 13 (Biku, 2026-10-06, on a kneel that took two frames: "looks like
+   * the posture didn't change in continuous frames"): kneeling, sitting and getting up are
+   * seen to happen.
+   */
+  const [minBody, maxBody] = tokens.motion.bodyMoveFrames;
+  const up = resolvePose(stand);
+  const pairs = [
+    ['kneeling down', stand, kneel],
+    ['getting up off a knee', kneel, stand],
+    ['sitting down', stand, sit],
+    ['getting up from a seat', sit, stand],
+  ] as const;
+
+  it('takes 10 to 16 frames, longer the further the hips go, while an arm still snaps', () => {
+    for (const [, from, to] of pairs) {
+      const move = moveFrames(resolvePose(from), resolvePose(to));
+      expect(move.whole).toBe(true);
+      expect(move.transition).toBeGreaterThanOrEqual(minBody);
+      expect(move.transition).toBeLessThanOrEqual(maxBody);
+    }
+    expect(bodyMoveFrames(BODY_MOVE)).toBe(minBody);
+    expect(bodyMoveFrames(2)).toBe(maxBody);
+    expect(bodyMoveFrames(0.5)).toBeLessThan(bodyMoveFrames(0.9));
+    const arm = moveFrames(up, resolvePose(handsUp));
+    expect(arm.whole).toBe(false);
+    expect(arm.transition).toBeLessThanOrEqual(maxT);
+  });
+
+  it('can be asked to go quicker, where a cut hides the rest, but never slower', () => {
+    const down = resolvePose(kneel);
+    const natural = moveFrames(up, down).transition;
+    expect(moveFrames(up, down, { transition: 5 }).transition).toBe(5);
+    expect(moveFrames(up, down, { transition: 60 }).transition).toBe(natural);
+  });
+
+  it.each(pairs)('%s: every frame is a small step and lands on the pose', (_, from, to) => {
+    const keys = [
+      { frame: 0, pose: from },
+      { frame: 10, pose: to },
+    ];
+    const move = moveFrames(resolvePose(from), resolvePose(to));
+    const done = 10 + move.windup + move.transition;
+    const whole = Math.abs(resolvePose(to).hipY - resolvePose(from).hipY);
+    let before = poseAt(9, keys).hipY;
+    for (let f = 10; f <= done; f++) {
+      const now = poseAt(f, keys).hipY;
+      expect(Math.abs(now - before)).toBeLessThan(whole * 0.15);
+      before = now;
+    }
+    expect(poseAt(done, keys)).toEqual(resolvePose(to));
+  });
+
+  it.each(pairs)('%s: no foot or knee goes through the ground on the way', (_, from, to) => {
+    const keys = [
+      { frame: 0, pose: from },
+      { frame: 10, pose: to },
+    ];
+    const move = moveFrames(resolvePose(from), resolvePose(to));
+    for (let f = 10; f <= 10 + move.windup + move.transition; f += 0.5) {
+      const j = computeSkeleton(poseAt(f, keys));
+      for (const leg of [j.legs.front, j.legs.back]) {
+        expect(leg.foot.y).toBeLessThan(1e-6);
+        expect(leg.knee.y).toBeLessThan(0.03);
+      }
+    }
+  });
+
+  it('never folds a knee backward on the way up from a seat', () => {
+    const keys = [
+      { frame: 0, pose: sit },
+      { frame: 10, pose: stand },
+    ];
+    const move = moveFrames(resolvePose(sit), up);
+    // Every frame but the last, where the legs are straight and the pose itself takes over.
+    for (let f = 10; f < 10 + move.windup + move.transition; f++) {
+      const j = computeSkeleton(poseAt(f, keys));
+      for (const leg of [j.legs.front, j.legs.back]) {
+        // The knee stays in front of the straight line from hip to foot.
+        const along = (leg.knee.y - leg.hip.y) / (leg.foot.y - leg.hip.y);
+        const onLine = leg.hip.x + (leg.foot.x - leg.hip.x) * along;
+        expect(leg.knee.x).toBeGreaterThanOrEqual(onLine - 1e-6);
+      }
+    }
   });
 });

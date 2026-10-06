@@ -336,11 +336,11 @@ describe('things worth a second look', () => {
     expect(notes(low)).toContain('is down low holding the bag, which hangs to the floor');
     // The same holds for what a step brings about, and it is said only once.
     const later = plan((s) => {
-      const tomas = shotOf(s, 's1b').actors[0];
+      const tomas = shotOf(s, 's5b').actors[0];
       if (tomas) {
         tomas.then = [
           { at: 0.4, pose: 'kneel' },
-          { at: 0.7, expression: 'sad' },
+          { at: 0.7, expression: 'afraid' },
         ];
       }
     });
@@ -358,6 +358,32 @@ describe('things worth a second look', () => {
       if (tomas) tomas.then = [{ at: 0.5, expression: 'afraid' }];
     });
     expect(notes(face)).not.toContain('changes pose inside a close-up');
+  });
+
+  it('points out someone who turns round, gets up or jumps somewhere on a cut', () => {
+    // The opening as it first was: kneeling facing right, then at once standing facing left.
+    const jump = plan((s) => {
+      const tomas = shotOf(s, 's1b').actors[0];
+      if (tomas) Object.assign(tomas, { facing: 'left', pose: 'hold-object', x: 0.5, then: [] });
+    });
+    expect(notes(jump)).toContain(
+      'in shot "s1b", "tomas" faces the other way after the cut from "s1a"',
+    );
+    expect(notes(jump)).toContain(
+      'in shot "s1b", "tomas" is up after the cut from "s1a", which left them down',
+    );
+    // Standing in both, but somewhere else, in a shot of the same size.
+    const slide = plan((s) => {
+      const first = shotOf(s, 's1a').actors[0];
+      const second = shotOf(s, 's1b').actors[0];
+      if (first) first.then = [];
+      if (second) Object.assign(second, { pose: 'stand', x: 0.6, then: [] });
+    });
+    expect(notes(slide)).toContain(
+      'in shot "s1b", "tomas" jumps to a new place after the cut from "s1a", a shot of the same size',
+    );
+    // A closer shot may show a new gesture: a cut-in hides the change.
+    expect(notes(plan())).not.toContain('after the cut from');
   });
 
   it('checks the names in a step against the library', () => {
@@ -407,7 +433,7 @@ describe('the shot list Biku reads', () => {
 
   it('says each shot in a plain sentence', () => {
     expect(describeShot(shotOf(sb, 's1a'), sb, world)).toBe(
-      'Wide shot. Tomas stands, surprised, looking at the bag, then kneels. In the scene: bag. The camera moves slowly closer. Title: "The Honest Farmer".',
+      'Wide shot. Tomas stands, surprised, looking at the bag, then kneels. In the scene: bag. Title: "The Honest Farmer".',
     );
     // Every change inside a shot is said in order, in plain words.
     expect(describeShot(shotOf(sb, 's2d'), sb, world)).toContain(

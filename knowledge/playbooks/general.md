@@ -60,6 +60,7 @@ Run `npm run script -- check`. It refuses: an as-is script that is not word for 
 - **Know what a closer shot cuts off.** A thing standing on the ground shows only in a wide shot. A thing in a hand shows in a medium shot, not a close-up. Someone lying down beside someone standing needs a wide shot. (L-0023, self-check)
 - **Someone sitting, kneeling or lying does not hold a bag or a lantern;** it would hang to the floor. Stand it in the scene beside them. A chair or throne goes at the same `x` as its sitter. (L-0027)
 - **Let people move inside a shot** when the words describe something happening: a person's `then` lists what they do next (`at` a point of the shot from 0 to 1: a new pose or action, face, look, or thing in the hand). Walk in and stop, stand up, kneel, lift the coin, point. Give a move a medium or wide shot; a close-up shows only the change of face. (L-0029)
+- **A cut inside a scene keeps everyone as they were:** same place, same way round, same posture. Kneeling, getting up, turning round or picking a thing up happens inside a shot, as a step, never between two shots. To have someone pick a thing up, stand it in the shot just in front of them (about 0.13 along) and give them a step that holds it; the hand goes to it first. (L-0030)
 - **Recut the words when a cut falls badly.** A shot needs at least about a second and a half of words; move words between the shots of a line, never between lines.
 - **Faces carry the feeling:** pick the expression for what the character feels at those words, and change it when the feeling changes.
 - **Sound:** one music mood per scene from the beat's list; steps, doors, things landing and coins as effects, within the format's count.
@@ -69,7 +70,7 @@ Run `npm run plan -- check` (names, staging, word for word against the script), 
 
 ## Building a part
 
-`npm run make -- --run=<run> --part=<n> --size=<shape> --voice --time --sound --stills` speaks the part, writes the voice's times into its shots, mixes its sound and draws one still per shot. Look at the sheet of stills (`part-<n>/stills/sheet-*.png`) before anything else: floating feet, a covered face or a thing cut off show there at a glance (L-0024). Fix the storyboard, make it again, then add `--video`. A part is shown to Biku and the next one waits for his word.
+`npm run make -- --run=<run> --part=<n> --size=<shape> --voice --time --sound --stills` speaks the part, writes the voice's times into its shots, mixes its sound and draws one still per shot. Look at the sheet of stills (`part-<n>/stills/sheet-*.png`) before anything else: floating feet, a covered face or a thing cut off show there at a glance (L-0024). Fix the storyboard, make it again, then add `--video`, and look at a strip of frames across every step and every cut that keeps someone on screen: a still shows a pose, only a strip shows a move (L-0030). A part is shown to Biku and the next one waits for his word.
 
 ## Working with Biku
 
