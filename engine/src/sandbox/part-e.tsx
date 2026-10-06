@@ -1,5 +1,6 @@
 import { useCurrentFrame, useVideoConfig } from 'remotion';
 import { EXPRESSIONS } from '../face/expressions';
+import type { ExpressionName } from '../face/expressions';
 import { Scepter } from '../props/Scepter';
 import { Character } from '../rig/Character';
 import type { CharacterProps } from '../rig/Character';
@@ -9,10 +10,13 @@ import { blendPoses, mixPoses, moveFrames, resolvePose } from '../rig/pose';
 import type { Pose } from '../rig/pose';
 import { holdObject, stand } from '../rig/poses';
 import type { ResolvedPose } from '../rig/types';
-import { walkAt } from '../rig/walk';
+import { WALKS, walkAt } from '../rig/walk';
+import type { WalkMood } from '../rig/walk';
+import { FARMER } from '../wardrobe/costumes/farmer';
 import { RULER } from '../wardrobe/costumes/ruler';
 import { outfitFrom } from '../wardrobe/garments';
 import type { Identity } from '../wardrobe/types';
+import { Label } from './Sandbox';
 import type { Colors } from './Sandbox';
 
 /**
@@ -138,6 +142,99 @@ export function PolishVideo({ c }: { c: Colors }) {
         c={c}
         extra={{ outfit: DRESS, identity: LONG_HAIR }}
       />
+    </>
+  );
+}
+
+/** The four mood walks side by side, each on its own strip of ground. */
+const MOODS: Array<{
+  mood: WalkMood;
+  label: string;
+  face: ExpressionName;
+  extra: Partial<CharacterProps>;
+  size?: number;
+}> = [
+  { mood: 'proud', label: 'proud', face: 'smug', extra: { outfit: RULER } },
+  { mood: 'tired', label: 'tired', face: 'exhausted', extra: { outfit: FARMER } },
+  {
+    mood: 'sneaky',
+    label: 'sneaky',
+    face: 'determined',
+    extra: {
+      outfit: outfitFrom({
+        top: { kind: 'shirt', cloth: 'steel' },
+        bottom: { kind: 'trousers', cloth: 'steel' },
+        shoes: { kind: 'boots', cloth: 'steel' },
+        cloak: { cloth: 'forest', hood: true },
+      }),
+    },
+  },
+  {
+    mood: 'happy',
+    label: 'happy',
+    face: 'happy',
+    size: 0.86,
+    extra: {
+      age: 'child',
+      identity: { skinTone: 3, hair: 'ponytail', hairColor: 'dark-brown' },
+      outfit: outfitFrom({
+        onePiece: { kind: 'dress', cloth: 'orange' },
+        shoes: { kind: 'sneakers', cloth: 'white' },
+      }),
+    },
+  },
+];
+
+export function MoodsVideo({ c }: { c: Colors }) {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const cw = W / 2;
+  const ch = 960;
+  const adult = 150;
+  return (
+    <>
+      {MOODS.map((m, i) => {
+        const left = cw * (i % 2);
+        const top = ch * Math.floor(i / 2);
+        const groundY = top + ch - 110;
+        const head = adult * (m.size ?? 1);
+        const moving = (f: number) => walkAt(f / fps, WALKS[m.mood]).pose;
+        const pose = moving(frame);
+        const camera = pose.rootX * head;
+        const mark = 150;
+        const first = Math.floor((camera - 300) / mark);
+        return (
+          <g key={m.mood}>
+            <svg x={left} y={top} width={cw} height={ch} viewBox={`0 0 ${cw} ${ch}`}>
+              <rect x={8} y={groundY - top} width={cw - 16} height={70} fill={c.ground} />
+              {Array.from({ length: 6 }, (_, k) => (
+                <rect
+                  key={k}
+                  x={(first + k) * mark - camera + 250}
+                  y={groundY - top + 28}
+                  width={26}
+                  height={10}
+                  fill={c.base}
+                />
+              ))}
+              <Character
+                x={250 - camera}
+                groundY={groundY - top}
+                head={head}
+                pose={pose}
+                face={EXPRESSIONS[m.face]}
+                turn={1}
+                blink={blinkAt(frame, fps, 60 + i)}
+                sway={swayOf(moving, frame, fps)}
+                {...m.extra}
+              />
+            </svg>
+            <Label x={left + cw / 2} y={top + 60} c={c}>
+              {m.label}
+            </Label>
+          </g>
+        );
+      })}
     </>
   );
 }

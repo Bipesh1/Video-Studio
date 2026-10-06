@@ -25,6 +25,14 @@ export type WalkParams = {
   armSwing: number;
   /** Forward lean of the torso, degrees. */
   lean: number;
+  /** Head tilt, degrees: negative is chin up, positive is head down. Default level. */
+  headTilt?: number;
+  /** How far the head nods with each step, degrees. Default none. */
+  headNod?: number;
+  /** Elbow bend of the swinging arms, degrees. Default 18. */
+  armBend?: number;
+  /** Arms held up in front instead of swinging, as when sneaking: the pose of the near arm. */
+  carry?: { upper: number; lower: number };
 };
 
 export const DEFAULT_WALK: WalkParams = {
@@ -37,6 +45,70 @@ export const DEFAULT_WALK: WalkParams = {
   armSwing: 26,
   lean: 4,
 };
+
+/**
+ * Walks with a mood (Phase 2C). Each is the same planted-foot walk with different numbers, so
+ * the mood shows in the whole body: speed, step height, bounce, lean, head and arms.
+ */
+export const WALKS = {
+  normal: DEFAULT_WALK,
+  /** Chest out, chin up, slow high steps and a wide arm swing. */
+  proud: {
+    period: 1.15,
+    stance: 0.6,
+    stride: 0.9,
+    lift: 0.26,
+    hipHeight: 1.34,
+    bob: 0.02,
+    armSwing: 36,
+    lean: -6,
+    headTilt: -9,
+    armBend: 8,
+  },
+  /** Slow short steps that barely leave the ground, bent forward, head down, arms hanging. */
+  tired: {
+    period: 1.5,
+    stance: 0.68,
+    stride: 0.62,
+    lift: 0.07,
+    hipHeight: 1.27,
+    bob: 0.04,
+    armSwing: 9,
+    lean: 14,
+    headTilt: 16,
+    headNod: 3,
+    armBend: 5,
+  },
+  /** Crouched, with high careful steps, the head pushed forward and the hands held up. */
+  sneaky: {
+    period: 1.3,
+    stance: 0.62,
+    stride: 0.84,
+    lift: 0.34,
+    hipHeight: 1.1,
+    bob: 0.02,
+    armSwing: 5,
+    lean: 17,
+    headTilt: -12,
+    carry: { upper: 38, lower: 96 },
+  },
+  /** Quick and bouncy, with a big arm swing and the head up. */
+  happy: {
+    period: 0.8,
+    stance: 0.56,
+    stride: 0.9,
+    lift: 0.24,
+    hipHeight: 1.31,
+    bob: 0.06,
+    armSwing: 46,
+    lean: -1,
+    headTilt: -5,
+    headNod: 4,
+    armBend: 26,
+  },
+} as const satisfies Record<string, WalkParams>;
+
+export type WalkMood = keyof typeof WALKS;
 
 /** Forward speed in head units per second. */
 export const walkSpeed = (p: WalkParams): number => p.stride / (p.stance * p.period);
@@ -75,14 +147,22 @@ export function walkAt(time: number, p: WalkParams = DEFAULT_WALK): WalkFrame {
   const back = footAt(time, 0.5, p);
   // Arms swing opposite to the leg on their side.
   const swing = p.armSwing * Math.cos(2 * Math.PI * phase);
+  const bend = p.armBend ?? 18;
+  // Carried arms stay up in front and only bob with the steps; the far one sits a little lower.
+  const arms = p.carry
+    ? {
+        front: { upper: p.carry.upper - swing, lower: p.carry.lower },
+        back: { upper: p.carry.upper - 14 + swing, lower: p.carry.lower - 10 },
+      }
+    : { front: { upper: -swing, lower: bend }, back: { upper: swing, lower: bend } };
   return {
     pose: {
       rootX: hip.x,
       hipY,
       torsoLean: p.lean,
-      headTilt: 0,
+      headTilt: (p.headTilt ?? 0) + (p.headNod ?? 0) * Math.cos(4 * Math.PI * (phase - 0.05)),
       headBob: 0,
-      arms: { front: { upper: -swing, lower: 18 }, back: { upper: swing, lower: 18 } },
+      arms,
       legs: {
         front: legToFoot(hip, front.pos, KNEE_FORWARD),
         back: legToFoot(hip, back.pos, KNEE_FORWARD),

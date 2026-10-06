@@ -87,7 +87,15 @@ describe('moving the hip', () => {
 
 describe('everyday actions', () => {
   it('are listed by name and give a pose at any time', () => {
-    expect(Object.keys(ACTIONS).sort()).toEqual(['cheer', 'cry', 'walk']);
+    expect(Object.keys(ACTIONS).sort()).toEqual([
+      'cheer',
+      'cry',
+      'walk',
+      'walk-happy',
+      'walk-proud',
+      'walk-sneaky',
+      'walk-tired',
+    ]);
     for (const at of Object.values(ACTIONS)) {
       expect(Number.isFinite(at(1.234).hipY)).toBe(true);
     }

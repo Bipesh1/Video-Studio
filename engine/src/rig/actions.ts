@@ -3,7 +3,7 @@ import type { Pose } from './pose';
 import { ELBOW_DOWN } from './ik';
 import { vec } from './math';
 import type { ResolvedPose } from './types';
-import { walkAt } from './walk';
+import { WALKS, walkAt } from './walk';
 
 /**
  * Everyday actions (Part 2, section 7.4): poses that move on their own, as a function of time
@@ -79,6 +79,10 @@ export function cryAt(time: number): ResolvedPose {
 /** Every action by the name the library uses, as a pose over time in seconds. */
 export const ACTIONS = {
   walk: (time: number) => walkAt(time).pose,
+  'walk-proud': (time: number) => walkAt(time, WALKS.proud).pose,
+  'walk-tired': (time: number) => walkAt(time, WALKS.tired).pose,
+  'walk-sneaky': (time: number) => walkAt(time, WALKS.sneaky).pose,
+  'walk-happy': (time: number) => walkAt(time, WALKS.happy).pose,
   cheer: cheerAt,
   cry: cryAt,
 } as const satisfies Record<string, (time: number) => ResolvedPose>;

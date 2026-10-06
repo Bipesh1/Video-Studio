@@ -105,6 +105,10 @@ const POSE_VIEWS: Record<string, { turn?: number; dx?: number; face?: Expression
 /** A moment of each action that shows what it is. */
 const ACTION_VIEWS: Record<ActionName, { time: number; turn: number; face: ExpressionName }> = {
   walk: { time: 0.3, turn: 1, face: 'neutral' },
+  'walk-proud': { time: 0.36, turn: 1, face: 'smug' },
+  'walk-tired': { time: 0.5, turn: 1, face: 'exhausted' },
+  'walk-sneaky': { time: 0.4, turn: 1, face: 'determined' },
+  'walk-happy': { time: 0.26, turn: 1, face: 'happy' },
   cheer: { time: 0.12, turn: 0, face: 'laughing' },
   cry: { time: 0.1, turn: 0.5, face: 'wailing' },
 };

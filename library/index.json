@@ -353,6 +353,119 @@
       "added": "2026-10-05"
     },
     {
+      "id": "action/walk-proud",
+      "kind": "action",
+      "name": "Proud walk",
+      "description": "A slow strut: chest out, chin up, high steps and a wide arm swing.",
+      "tags": [
+        "action",
+        "walk",
+        "walking",
+        "mood",
+        "proud",
+        "strut",
+        "arrogant",
+        "confident",
+        "royal",
+        "parade",
+        "march",
+        "boastful"
+      ],
+      "code": {
+        "file": "engine/src/rig/walk.ts",
+        "export": "WALKS"
+      },
+      "use": "const w = walkAt(frame / fps, WALKS.proud); pose={w.pose} with turn={1}",
+      "still": "knowledge/golden/assets/action-walk-proud.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "action/walk-tired",
+      "kind": "action",
+      "name": "Tired walk",
+      "description": "A slow trudge: short steps that barely leave the ground, bent forward with the head down and the arms hanging.",
+      "tags": [
+        "action",
+        "walk",
+        "walking",
+        "mood",
+        "tired",
+        "trudge",
+        "exhausted",
+        "weary",
+        "sad",
+        "defeated",
+        "slow",
+        "old"
+      ],
+      "code": {
+        "file": "engine/src/rig/walk.ts",
+        "export": "WALKS"
+      },
+      "use": "const w = walkAt(frame / fps, WALKS.tired); pose={w.pose} with turn={1}",
+      "still": "knowledge/golden/assets/action-walk-tired.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "action/walk-sneaky",
+      "kind": "action",
+      "name": "Sneaky walk",
+      "description": "Creeping on high careful steps: crouched, head pushed forward, hands held up in front.",
+      "tags": [
+        "action",
+        "walk",
+        "walking",
+        "mood",
+        "sneaky",
+        "sneak",
+        "creep",
+        "tiptoe",
+        "thief",
+        "stealth",
+        "hide",
+        "quiet",
+        "spy"
+      ],
+      "code": {
+        "file": "engine/src/rig/walk.ts",
+        "export": "WALKS"
+      },
+      "use": "const w = walkAt(frame / fps, WALKS.sneaky); pose={w.pose} with turn={1}",
+      "still": "knowledge/golden/assets/action-walk-sneaky.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "action/walk-happy",
+      "kind": "action",
+      "name": "Happy walk",
+      "description": "A quick bouncy walk with a big arm swing and the head up.",
+      "tags": [
+        "action",
+        "walk",
+        "walking",
+        "mood",
+        "happy",
+        "bouncy",
+        "skip",
+        "cheerful",
+        "joy",
+        "excited",
+        "child",
+        "spring"
+      ],
+      "code": {
+        "file": "engine/src/rig/walk.ts",
+        "export": "WALKS"
+      },
+      "use": "const w = walkAt(frame / fps, WALKS.happy); pose={w.pose} with turn={1}",
+      "still": "knowledge/golden/assets/action-walk-happy.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
       "id": "action/cheer",
       "kind": "action",
       "name": "Cheer",

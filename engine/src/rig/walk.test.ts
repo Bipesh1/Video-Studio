@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { dist } from './math';
 import { computeSkeleton } from './skeleton';
-import { DEFAULT_WALK, walkAt, walkSpeed } from './walk';
+import { DEFAULT_WALK, WALKS, walkAt, walkSpeed } from './walk';
+import type { WalkMood } from './walk';
 
 const fps = 30;
 const frames = Math.round(3 * DEFAULT_WALK.period * fps);
@@ -68,5 +69,51 @@ describe('walk cycle', () => {
         expect(cross).toBeLessThanOrEqual(1e-9);
       }
     }
+  });
+});
+
+describe('walks with a mood (Phase 2C)', () => {
+  const moods = Object.keys(WALKS) as WalkMood[];
+
+  it('all keep their feet planted and within reach, whatever the mood', () => {
+    for (const mood of moods) {
+      const p = WALKS[mood];
+      const last: Record<(typeof sides)[number], number | null> = { front: null, back: null };
+      for (let f = 0; f <= Math.round(3 * p.period * fps); f++) {
+        const w = walkAt(f / fps, p);
+        const j = computeSkeleton(w.pose);
+        for (const s of sides) {
+          expect(dist(j.legs[s].foot, w.feet[s].pos), `${mood} ${s} foot`).toBeLessThan(1e-6);
+          const foot = w.feet[s];
+          if (foot.planted) {
+            const prev = last[s];
+            if (prev !== null && Math.abs(foot.pos.x - prev) > 1e-9) {
+              // A new plant is a whole stride on, never a slide.
+              expect(foot.pos.x - prev).toBeGreaterThan(p.stride * 0.9);
+            }
+            last[s] = foot.pos.x;
+          }
+        }
+      }
+    }
+  });
+
+  it('differ where a viewer would see it', () => {
+    const speed = (m: WalkMood) => walkSpeed(WALKS[m]);
+    expect(speed('tired')).toBeLessThan(speed('normal') * 0.6);
+    expect(speed('happy')).toBeGreaterThan(speed('normal') * 1.2);
+    // Proud leans back with the chin up; tired leans forward with the head down.
+    expect(WALKS.proud.lean).toBeLessThan(0);
+    expect(walkAt(0.3, WALKS.proud).pose.headTilt).toBeLessThan(-5);
+    expect(WALKS.tired.lean).toBeGreaterThan(10);
+    expect(walkAt(0.3, WALKS.tired).pose.headTilt).toBeGreaterThan(10);
+    // Sneaking is low, on high steps, with the hands held up in front.
+    expect(WALKS.sneaky.hipHeight).toBeLessThan(WALKS.normal.hipHeight - 0.15);
+    expect(WALKS.sneaky.lift).toBeGreaterThan(WALKS.normal.lift * 1.5);
+    const sneak = computeSkeleton(walkAt(0.4, WALKS.sneaky).pose);
+    expect(sneak.arms.front.hand.y).toBeLessThan(sneak.hip.y - 0.4);
+    expect(sneak.arms.front.hand.x).toBeGreaterThan(sneak.shoulder.x);
+    // Happy bounces more than twice as much as a plain walk.
+    expect(WALKS.happy.bob).toBeGreaterThan(WALKS.normal.bob * 2);
   });
 });

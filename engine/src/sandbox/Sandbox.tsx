@@ -24,7 +24,7 @@ import { Rod } from './Rod';
 import { BG_SHEETS, CostumeSheet, AtmosVideo, HairTurnsSheet, IdentitySheet } from './part-b';
 import { AgesSheet, ClothesSheet, CostumesBSheet, PeopleSheet } from './part-c';
 import { PosesBSheet } from './part-d';
-import { PolishVideo } from './part-e';
+import { MoodsVideo, PolishVideo } from './part-e';
 import type { SandboxBg, SheetName } from './sheets';
 
 export type SandboxProps = { sheet: SheetName; bg: SandboxBg };
@@ -439,6 +439,7 @@ export const Sandbox = ({ sheet, bg }: SandboxProps) => {
     walk: <WalkVideo c={c} />,
     motion: <MotionVideo c={c} />,
     polish: <PolishVideo c={c} />,
+    moods: <MoodsVideo c={c} />,
   };
   return (
     <AbsoluteFill style={{ backgroundColor: c.base }}>
