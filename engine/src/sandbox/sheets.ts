@@ -27,6 +27,9 @@ export const STILL_SHEETS = [
   'props',
   'props-in-use',
   'places',
+  'framing',
+  'back-views',
+  'titles',
 ] as const;
 export const VIDEO_SHEETS = {
   walk: 4,
@@ -35,6 +38,7 @@ export const VIDEO_SHEETS = {
   polish: 6,
   moods: 4,
   action: 13.8,
+  story: 14,
 } as const;
 export const BACKGROUNDS = ['light', 'dark'] as const;
 

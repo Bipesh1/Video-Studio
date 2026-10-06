@@ -27,6 +27,8 @@ type HairCtx = {
   wrap: string;
   /** How far loose hair trails the head, in head units. Left out or zero: it hangs straight. */
   sway?: Vec2;
+  /** Seen from behind: the hair covers the whole head, with no face showing through. */
+  back?: boolean;
 };
 
 type HairShape = { d: string; fill: string; shadow: string };
@@ -319,7 +321,7 @@ export const HairFront = ({ style, ctx }: { style: HairStyle; ctx: HairCtx }) =>
       <defs>
         <mask id={maskId} maskUnits="userSpaceOnUse" x={-2} y={-2} width={4} height={4}>
           <rect x={-2} y={-2} width={4} height={4} fill={MASK_SHOW} />
-          <path d={faceRegion(top, side, ctx.turn)} fill={MASK_HIDE} />
+          {!ctx.back && <path d={faceRegion(top, side, ctx.turn)} fill={MASK_HIDE} />}
         </mask>
         <clipPath id={hairClip}>
           {d.front.map((s, i) => (
@@ -337,20 +339,24 @@ export const HairFront = ({ style, ctx }: { style: HairStyle; ctx: HairCtx }) =>
               fill={s.fill}
               shadow={s.shadow}
               offset={off}
+              // On the back of a head the hair is one mass: the edge of its cap is not drawn.
+              outline={!ctx.back}
             />
           ))}
-          {d.details}
+          {!ctx.back && d.details}
         </g>
         {/* The hairline: only where there is hair, and only its hair-side half survives the
-            face mask, so it shows one outline wide. */}
-        <path
-          d={`M ${left.x} ${left.y} Q ${ctrl.x} ${ctrl.y} ${right.x} ${right.y}`}
-          clipPath={`url(#${hairClip})`}
-          fill="none"
-          stroke={ink}
-          strokeWidth={lineWeights.outline * 2}
-          strokeLinecap={tokens.line.cap}
-        />
+            face mask, so it shows one outline wide. There is none on the back of a head. */}
+        {!ctx.back && (
+          <path
+            d={`M ${left.x} ${left.y} Q ${ctrl.x} ${ctrl.y} ${right.x} ${right.y}`}
+            clipPath={`url(#${hairClip})`}
+            fill="none"
+            stroke={ink}
+            strokeWidth={lineWeights.outline * 2}
+            strokeLinecap={tokens.line.cap}
+          />
+        )}
       </g>
     </g>
   );

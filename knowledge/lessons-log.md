@@ -243,3 +243,18 @@ Applied: shoeFit and trouserEnd in engine/src/wardrobe/Footwear.tsx (the trouser
   which shows the lower body close up in 24 leg poses; tests.
 Status: active
 ```
+
+```
+L-0016 | 2026-10-06 | run: Phase 2E test scene (engine/out/sandbox/story.mp4)
+Area: staging | Scope: style ink-stick | Source: self-check
+Lesson: Build a scene once as a wide layout and get every closer shot from it with the camera.
+  Then check each shot for the one thing it is there to show: if a head, a hand or a prop that
+  matters is covered or cut off, move the camera or the near figure, not the story.
+Evidence: The first over-the-shoulder shot of the girl showing her coin had the grandmother's
+  head covering the coin, which was the whole point of the shot. The houses on the day street
+  were also the green of the grass until they were looked at beside the road.
+Applied: shoulderPlacement puts the near head low in a bottom corner (camera/Framing.tsx);
+  street buildings take their tone from the paving (Background.tsx); the framing sheet shows
+  one scene in all four shot sizes.
+Status: active
+```

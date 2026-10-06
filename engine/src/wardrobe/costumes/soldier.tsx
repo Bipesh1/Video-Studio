@@ -78,6 +78,8 @@ const helmet = (c: PieceContext) => {
   const coifOuter = ring(-0.03 - 0.05 * t, 0.03, 0.59, 0.62);
   const coifOpening = ring(0.04 + 0.2 * t, 0.07, 0.41 - 0.11 * t, 0.42);
   const coifId = `${c.uid}-coif`;
+  // From behind the mail covers the whole head: there is no opening for a face.
+  const coif = c.back ? coifOuter : `${coifOuter} ${coifOpening}`;
   const dome = 'M -0.52 -0.32 Q -0.5 -0.8 0 -1.02 Q 0.5 -0.8 0.52 -0.32 Q 0 -0.43 -0.52 -0.32 Z';
   const band = 'M -0.52 -0.32 Q 0 -0.43 0.52 -0.32 L 0.51 -0.44 Q 0 -0.55 -0.51 -0.44 Z';
   return (
@@ -87,15 +89,10 @@ const helmet = (c: PieceContext) => {
           <path d={coifOuter} transform={`translate(${off.x} ${off.y})`} />
         </clipPath>
       </defs>
-      <path d={`${coifOuter} ${coifOpening}`} fillRule="evenodd" fill={S.shadow} />
-      <path
-        d={`${coifOuter} ${coifOpening}`}
-        fillRule="evenodd"
-        fill={S.fill}
-        clipPath={`url(#${coifId})`}
-      />
+      <path d={coif} fillRule="evenodd" fill={S.shadow} />
+      <path d={coif} fillRule="evenodd" fill={S.fill} clipPath={`url(#${coifId})`} />
       {edge(coifOuter, 'coif-out')}
-      {edge(coifOpening, 'coif-in')}
+      {!c.back && edge(coifOpening, 'coif-in')}
       <Shaded id={`${c.uid}-helm`} d={dome} fill={S.fill} shadow={S.shadow} offset={off} />
       <path
         d="M -0.26 -0.82 Q -0.36 -0.68 -0.37 -0.56"

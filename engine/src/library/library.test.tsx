@@ -136,6 +136,9 @@ describe('library index', () => {
     expect(first('palace hall')).toBe('place/throne-room');
     expect(first('woods', 'place')).toBe('place/forest');
     expect(first('kitchen', 'place')).toBe('place/home-interior');
+    expect(first('reaction', 'camera')).toBe('camera/close-up');
+    expect(first('from behind')).toBe('rig/back-view');
+    expect(first('chapter')).toBe('overlay/title-card');
     expect(first('leather')).toBe('color/brown');
     expect(first('khaki')).toBe('color/tan');
     expect(first('linen')).toBe('color/cream');

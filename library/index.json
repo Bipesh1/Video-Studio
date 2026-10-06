@@ -29,6 +29,29 @@
       "added": "2026-10-05"
     },
     {
+      "id": "rig/back-view",
+      "kind": "rig",
+      "name": "Back view",
+      "description": "A character seen from behind: no face, hair and headwear covering the back of the head, a cape hanging over the body. For the near person in an over-the-shoulder shot, or someone walking away.",
+      "tags": [
+        "back",
+        "behind",
+        "from behind",
+        "back of head",
+        "walking away",
+        "over the shoulder",
+        "turned away"
+      ],
+      "code": {
+        "file": "engine/src/rig/Character.tsx",
+        "export": "Character"
+      },
+      "use": "<Character back ... /> with any costume, hair or age",
+      "still": "knowledge/golden/assets/rig-back-view.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
       "id": "pose/stand",
       "kind": "pose",
       "name": "Stand",
@@ -3867,6 +3890,103 @@
       "added": "2026-10-06"
     },
     {
+      "id": "camera/wide",
+      "kind": "camera",
+      "name": "Wide shot",
+      "description": "Whole figures with their surroundings. The layout every scene starts from: it shows where everyone is.",
+      "tags": [
+        "camera",
+        "shot",
+        "framing",
+        "wide",
+        "establishing",
+        "full body",
+        "whole scene",
+        "long shot",
+        "where"
+      ],
+      "code": {
+        "file": "engine/src/camera/Framing.tsx",
+        "export": "Framed"
+      },
+      "use": "<Framed shot=\"wide\" focus={focusBetween(focusOn(a, poseA), focusOn(b, poseB))} width height>scene</Framed>",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "camera/medium",
+      "kind": "camera",
+      "name": "Medium shot",
+      "description": "A person from the head to about the hips, or two people together. The everyday shot for talk and action.",
+      "tags": [
+        "camera",
+        "shot",
+        "framing",
+        "medium",
+        "mid shot",
+        "waist up",
+        "talk",
+        "dialogue",
+        "two shot"
+      ],
+      "code": {
+        "file": "engine/src/camera/Framing.tsx",
+        "export": "Framed"
+      },
+      "use": "<Framed shot=\"medium\" focus={focusOn(person, pose)} width height>the same wide scene</Framed>",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "camera/close-up",
+      "kind": "camera",
+      "name": "Close-up",
+      "description": "One face filling about two fifths of the frame. For the feeling on a face at an important moment.",
+      "tags": [
+        "camera",
+        "shot",
+        "framing",
+        "close-up",
+        "closeup",
+        "face",
+        "emotion",
+        "reaction",
+        "tight"
+      ],
+      "code": {
+        "file": "engine/src/camera/Framing.tsx",
+        "export": "Framed"
+      },
+      "use": "<Framed shot=\"close-up\" focus={focusOn(person, pose)} width height>the same wide scene</Framed>",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "camera/over-shoulder",
+      "kind": "camera",
+      "name": "Over the shoulder",
+      "description": "The person being looked at, past the back of the head and shoulder of the one looking. For a conversation or showing something to someone.",
+      "tags": [
+        "camera",
+        "shot",
+        "framing",
+        "over the shoulder",
+        "ots",
+        "conversation",
+        "listening",
+        "showing",
+        "two people",
+        "facing each other"
+      ],
+      "code": {
+        "file": "engine/src/camera/Framing.tsx",
+        "export": "Framed"
+      },
+      "use": "<Framed shot=\"over-shoulder\" focus={focusOn(far, pose)} ...>scene</Framed> then <Character {...shoulderPlacement(size)} back ... /> on top",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
       "id": "overlay/captions",
       "kind": "overlay",
       "name": "Captions",
@@ -3879,6 +3999,44 @@
       "use": "<Captions pages={buildPages(toCaptions(track.words))} />",
       "version": 1,
       "added": "2026-10-05"
+    },
+    {
+      "id": "overlay/title-card",
+      "kind": "overlay",
+      "name": "Title card",
+      "description": "A ribbon banner across the upper part of the frame with the title in white and an optional smaller line under it. Pops in with a small bounce. For the name of a video or a chapter.",
+      "tags": ["title", "title card", "banner", "heading", "chapter", "intro", "name", "text"],
+      "code": {
+        "file": "engine/src/overlays/Titles.tsx",
+        "export": "TitleCard"
+      },
+      "use": "<TitleCard title=\"The Golden Coin\" subtitle=\"A folktale\" width height frame={framesSinceItAppeared} paint=\"crimson\" />",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "overlay/label",
+      "kind": "overlay",
+      "name": "Label",
+      "description": "A small outlined box with dark text at the top of the frame, for a place, a date, a time or a name.",
+      "tags": [
+        "label",
+        "date",
+        "place name",
+        "caption box",
+        "later",
+        "time",
+        "location",
+        "name tag",
+        "text"
+      ],
+      "code": {
+        "file": "engine/src/overlays/Titles.tsx",
+        "export": "Label"
+      },
+      "use": "<Label text=\"That evening\" at=\"top-left\" width height frame={framesSinceItAppeared} />",
+      "version": 1,
+      "added": "2026-10-06"
     }
   ]
 }

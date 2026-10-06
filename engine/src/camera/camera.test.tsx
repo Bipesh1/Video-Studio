@@ -10,6 +10,10 @@ import {
   Shake,
   shakeAt,
 } from './Camera';
+import { SHOTS, focusBetween, focusOn, shotTransform, shoulderPlacement } from './Framing';
+import type { Focus } from './Framing';
+import { resolvePose } from '../rig/pose';
+import { stand } from '../rig/poses';
 
 /** Phase 2D camera moves (Style 8). */
 
@@ -121,5 +125,83 @@ describe('quick fade between scenes', () => {
     expect(darkAt(97)).toBeCloseTo(0.5, 9);
     expect(darkAt(103)).toBeCloseTo(0.5, 9);
     expect(FADE_FRAMES).toBeLessThanOrEqual(8);
+  });
+});
+
+describe('shot sizes by framing (Style 7)', () => {
+  const size = { width: 1080, height: 1920 };
+  // One person laid out wide, in the middle of the frame.
+  const one: Focus = focusOn({ x: 540, groundY: 1400, head: 200 }, resolvePose(stand));
+  const headAfter = (shot: (typeof SHOTS)[number], focus: Focus) => {
+    const t = shotTransform(shot, focus, size);
+    return {
+      size: focus.head * t.scale,
+      x: focus.x * t.scale + t.x,
+      y: focus.y * t.scale + t.y,
+      t,
+    };
+  };
+
+  it('leaves a scene that is already wide as it is', () => {
+    expect(shotTransform('wide', one, size).scale).toBeCloseTo(1, 1);
+  });
+
+  it('makes the head bigger from wide to medium to close-up', () => {
+    const wide = headAfter('wide', one).size;
+    const medium = headAfter('medium', one).size;
+    const close = headAfter('close-up', one).size;
+    expect(medium).toBeGreaterThan(wide * 1.5);
+    expect(close).toBeGreaterThan(medium * 1.6);
+    // A close-up head fills about two fifths of the frame height.
+    expect(close / size.height).toBeGreaterThan(0.36);
+    expect(close / size.height).toBeLessThan(0.42);
+  });
+
+  it('keeps the framed face in the upper part of the frame, clear of the captions', () => {
+    for (const shot of SHOTS) {
+      const h = headAfter(shot, one);
+      expect(h.y + h.size / 2).toBeLessThan(size.height * 0.75);
+      expect(h.y).toBeLessThan(size.height * 0.45);
+    }
+  });
+
+  it('never moves back from the layout or shows past the edge of the scene', () => {
+    const corners: Focus[] = [
+      { x: 60, y: 300, head: 200 },
+      { x: 1040, y: 300, head: 200 },
+      { x: 540, y: 1700, head: 200 },
+    ];
+    for (const shot of SHOTS) {
+      for (const focus of [one, ...corners]) {
+        const t = shotTransform(shot, focus, size);
+        expect(t.scale).toBeGreaterThanOrEqual(1);
+        expect(t.x).toBeLessThanOrEqual(1e-9);
+        expect(t.y).toBeLessThanOrEqual(1e-9);
+        expect(t.x + size.width * t.scale).toBeGreaterThanOrEqual(size.width - 1e-6);
+        expect(t.y + size.height * t.scale).toBeGreaterThanOrEqual(size.height - 1e-6);
+      }
+    }
+  });
+
+  it('keeps two people both in a medium shot', () => {
+    const a: Focus = { x: 300, y: 800, head: 200 };
+    const b: Focus = { x: 800, y: 800, head: 200 };
+    const t = shotTransform('medium', focusBetween(a, b), size);
+    for (const p of [a, b]) {
+      const x = p.x * t.scale + t.x;
+      expect(x - (p.head * t.scale) / 2).toBeGreaterThan(0);
+      expect(x + (p.head * t.scale) / 2).toBeLessThan(size.width);
+    }
+  });
+
+  it('puts the near shoulder at the edge of the frame, facing in', () => {
+    const left = shoulderPlacement(size, 'left');
+    const right = shoulderPlacement(size, 'right');
+    expect(left.x).toBeLessThan(size.width * 0.1);
+    expect(left.facing).toBe('right');
+    expect(right.x).toBeGreaterThan(size.width * 0.9);
+    expect(right.facing).toBe('left');
+    // In an over-the-shoulder shot the far person is on the other side from the near one.
+    expect(headAfter('over-shoulder', one).x).toBeGreaterThan(size.width * 0.55);
   });
 });

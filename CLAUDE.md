@@ -75,11 +75,16 @@ Everything already drawn is reusable code under `engine/src/`, and every piece i
 | Costumes                                              | `engine/src/wardrobe/costumes/`, by name in `wardrobe/cast.ts`    |
 | Ages (child, adult, elder)                            | `age` on the Character in `engine/src/rig/Character.tsx`          |
 | Saved characters (only for a series)                  | `characters/<id>.json`, drawn with `castFromCard` in `cast.ts`    |
-| Props, effects (tears, anger, stars, symbols, flash)  | `engine/src/props/`, `engine/src/effects/`                        |
+| Props, and putting them in a hand or a scene          | `engine/src/props/` (`InHand` and `Placed` in `Hold.tsx`)         |
+| Effects (tears, anger, stars, symbols, flash)         | `engine/src/effects/`                                             |
+| Places by name (street, forest, castle, home)         | `PLACES` in `engine/src/backgrounds/places.ts`                    |
 | Backgrounds and their palettes (`endless` for chases) | `engine/src/backgrounds/`                                         |
-| Camera (push-in, fast push-in, shake, pan), captions  | `engine/src/camera/`, `engine/src/overlays/`                      |
+| Shot sizes: wide, medium, close-up, over-shoulder     | `engine/src/camera/Framing.tsx`                                   |
+| Camera moves (push-in, shake, pan, fade), captions    | `engine/src/camera/Camera.tsx`, `engine/src/overlays/`            |
+| Title cards and labels                                | `engine/src/overlays/Titles.tsx`                                  |
 | Worked examples of whole videos                       | `engine/src/compositions/LookTest.tsx`, `MoonTax.tsx`             |
 | A worked action scene (chase, fight, camera)          | `engine/src/sandbox/part-h.tsx`                                   |
+| A worked story scene (places, props, shots, titles)   | `engine/src/sandbox/part-l.tsx`                                   |
 | Pictures of every piece                               | `library/catalog/`, `knowledge/golden/assets/`, `npm run sheets`  |
 
 ## Repository layout and commands

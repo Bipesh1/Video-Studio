@@ -326,6 +326,17 @@ const entries: Array<[string, Preview]> = [
       );
     },
   ]),
+  // Seen from behind: the king, crown and cape.
+  [
+    'rig/back-view',
+    (o) =>
+      figure(
+        o,
+        standPose,
+        { back: true, ...(COSTUMES.ruler ? { outfit: COSTUMES.ruler } : {}) },
+        0.5,
+      ),
+  ],
   ['motion/life', (o) => headShot(o, { blink: 1 })],
   ['motion/talking-mouth', (o) => headShot(o, { talk: MOUTH_FORMS.open })],
   // Caught in the middle of the snap, after the wind-up: the arms are on their way up.

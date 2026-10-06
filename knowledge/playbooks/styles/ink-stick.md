@@ -60,3 +60,12 @@ Current best practice for the Ink Stick look, learned from real videos and Biku'
 - **Keep action characters big.** A head of about a sixth of the frame width still fits two fighters; smaller and the faces are lost on a phone. (action clip, self-check)
 - **Motion lines are black,** so put them over sky or a light ground, and keep them clear of a second character. Symbols and dizzy stars need empty space above the head. (Style 3.7, action clip)
 - **Faces carry the action.** Change the face on the beat: determined, surprised with `!`, afraid while running, eyes squeezed shut on the hit, exhausted with stars after a fall. (action clip, self-check)
+
+## Places, props and shots
+
+- **Name the place, do not build it.** Start from `placeSpec('home-interior', seed)` and change only what the story needs. A new kind of place is drawn once and added to `PLACES`. (Phase 2E)
+- **Lay a scene out once, wide, then move the camera.** Everyone stands where they stand; medium, close-up and over-the-shoulder are the same layout through `Framed`. Never rebuild the scene for a closer shot, or the place will not match. (Phase 2E, L-0013)
+- **Pick the shot for what the viewer must see:** wide to show where we are, medium for talk and action, close-up for a feeling, over-the-shoulder when one person shows or says something to another. (Style 7)
+- **What is being shown must be seen.** In an over-the-shoulder shot the near head stays low in its corner; check that it does not cover the far person's face or hands. (story clip, self-check)
+- **Props come from the library and go in with `InHand` or `Placed`.** A thing held or pushed is placed from the hand, so they meet. Furniture is drawn before the person who uses it and tables after anyone sitting behind them. (Phase 2E, L-0014)
+- **A change of place or time gets a quick `Fade` and, if it helps, a `Label`** ("That evening"). Titles and labels sit at the top, never in the caption area, and never contain an em dash. (Style 9, ground rule 14)

@@ -30,6 +30,8 @@ import { EffectsSheet } from './part-g';
 import { ActionVideo } from './part-h';
 import { PropsInUseSheet, PropsSheet } from './part-i';
 import { PlacesSheet } from './part-j';
+import { BackViewsSheet, FramingSheet } from './part-k';
+import { StoryVideo, TitlesSheet } from './part-l';
 import type { SandboxBg, SheetName } from './sheets';
 
 export type SandboxProps = { sheet: SheetName; bg: SandboxBg };
@@ -451,11 +453,15 @@ export const Sandbox = ({ sheet, bg }: SandboxProps) => {
     props: <PropsSheet c={c} />,
     'props-in-use': <PropsInUseSheet c={c} />,
     places: <PlacesSheet c={c} />,
+    framing: <FramingSheet c={c} />,
+    'back-views': <BackViewsSheet c={c} />,
+    titles: <TitlesSheet />,
     walk: <WalkVideo c={c} />,
     motion: <MotionVideo c={c} />,
     polish: <PolishVideo c={c} />,
     moods: <MoodsVideo c={c} />,
     action: <ActionVideo />,
+    story: <StoryVideo />,
   };
   return (
     <AbsoluteFill style={{ backgroundColor: c.base }}>

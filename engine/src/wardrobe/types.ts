@@ -19,6 +19,8 @@ export type PieceContext = {
    * +x means the body has moved toward the facing direction and the cloth is behind it.
    */
   sway: Vec2;
+  /** The character is seen from behind: headwear has no opening for a face. */
+  back?: boolean;
 };
 
 export type Piece = (ctx: PieceContext) => ReactNode;

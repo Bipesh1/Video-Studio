@@ -1,7 +1,7 @@
 # Build Status
 
-**Current phase:** Phase 2, steps 2A (library foundation), 2B (people), 2C (poses and motion polish) and 2D (action) done. Next step is 2E (world: places, props, framing), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
-**Next:** Biku watches the re-cut action test clip `engine/out/sandbox/action.mp4` and says whether the three things he raised are fixed. Then 2E. The steps are listed under "Phase 2 steps" below.
+**Current phase:** Phase 2, steps 2A (library foundation), 2B (people), 2C (poses and motion polish), 2D (action) and 2E (world) done. Next step is 2F (Phase 2 wrap-up), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
+**Next:** Biku watches the test scene `engine/out/sandbox/story.mp4` and looks at the 2E sheets (below) and says what to change. Then 2F.
 **Last updated:** 2026-10-06
 
 ## Checkpoint 1: waiting for Biku
@@ -9,6 +9,51 @@
 Review file: `runs/2026-10-03-look-test/checkpoint-1.md`. Questions: (1) how close the look is and what to change, (2) narrator and character voices, (3) head size (answered 2026-10-06: fine as it is), (4) hair colors (guide v3), (5) fingers on hands that cover the face.
 
 **Question 1 (2026-10-04): Biku said not close enough yet, then said go.** Faces round 4 is built (section below, guide v7). Question 1 is open again: Biku needs to look at `runs/2026-10-03-look-test/out/face-match.png` and say whether the frightened face and the wrinkles are close enough now.
+
+## Phase 2E. World: done (2026-10-06)
+
+Asked by Biku ("start 2E"). Stories now have places to happen in, things to hold, shot sizes and titles.
+
+### Made
+
+- **Ten props** (`engine/src/props/`): sword, shield, coin, bag, book (closed and open), lantern (with a flickering pool of light), cup (mug and goblet), door (swings open), chair (and a throne), table. Each is outlined, in bright token colors, with one shadow tone and one glint.
+- **Holding and placing** (`engine/src/props/Hold.tsx`): `InHand` puts a prop in a hand so it turns with it, stays upright or hangs and swings; `Placed` stands one in the scene at the size of the characters.
+- **Seven places** (`PLACES` in `engine/src/backgrounds/places.ts`): night street, day street, field, forest, castle, throne room, home interior. A place is a recipe for a background, so a scene can still change anything about it.
+- **Rooms** (Style 5.3): a flat wall and floor, windows that throw light, a soft vignette; columns and banners for a hall, a shelf for a home.
+- **Five new background shapes**: house (windows glow at night), castle, pine, lamp post, fence. Streets are paved, and their buildings take a stone tone instead of the grass tone.
+- **Shot sizes** (`engine/src/camera/Framing.tsx`): wide, medium, close-up, over-the-shoulder. A scene is laid out once, wide; a closer shot is the same layout with the camera moved in (`Framed`), so the place and where people stand never change inside a scene.
+- **Back view** (`back` on the Character): no face, hair and headwear cover the back of the head, a cape hangs over the body. For the near person in an over-the-shoulder shot.
+- **Title card and labels** (`engine/src/overlays/Titles.tsx`): a ribbon banner for a title, a small box for a place, date or name, in the caption font. Text with an em dash is refused (ground rule 14).
+- **Library:** 184 assets (33 new: 14 props, 7 places, 5 background shapes, 4 shot sizes, the back view, 2 overlays). New kind `place`.
+- **Sheets:** `props`, `props-in-use`, `places`, `framing`, `back-views`, `titles` (`npm run sheets -- --only=props,props-in-use,places,framing,back-views,titles`), golden copies in `knowledge/golden/`.
+- **Test scene:** `engine/out/sandbox/story.mp4`, "The Golden Coin" (14 seconds, no sound; `npm run sheets -- --only=story --video`). A girl finds a coin on the street; that evening she shows it to her grandmother at home. Title card, two places with a fade and a label between them, coin, door, chair, table, book, lantern and cup, and all four shot sizes.
+
+### Draw, look and fix loop
+
+1. Props: read right on the first pass. The coin was mostly outline at its real size, so its ring went and its star became a flat darker shape.
+2. Places: the houses on the day street were the color of grass (they now take their tone from the paving); the forest was thin (more trees, and dark pines framing both sides).
+3. Back view: a hairline and the edge of the hair cap showed across the back of the head (both removed).
+4. Framing: the near head in the over-the-shoulder shot hid the coin being shown (it now sits low in a bottom corner, mostly out of frame).
+
+### Acceptance (the part of Phase 2 that 2E covers)
+
+| Check                                                        | Result                                                                                                             |
+| ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| Golden still for every new asset that can be pictured        | Yes, 27 of 27 (shot sizes and overlays have no still)                                                              |
+| Library search finds the new assets by tag                   | Yes: "treasure", "knock", "watchman", "village night", "palace hall", "reaction", "from behind", "chapter"; tested |
+| Backgrounds have no outlines; props are outlined             | Yes, tested for every palette                                                                                      |
+| Faces stay in the upper part of the frame in every shot size | Yes, tested                                                                                                        |
+| Tests, typecheck, lint, format                               | Pass (258 tests)                                                                                                   |
+
+### Open after 2E
+
+- **Props are a starter set.** Anything else a story needs (a crown on a cushion, a cart, a boat, food) is drawn on demand with `/draw` and saved.
+- **The action clip still uses plain blocks** for its crate and boulder. They can be swapped for real props when those are drawn.
+- **Nine places from the plan are left for on-demand drawing:** harbor and ship deck, battlefield, office, classroom, laboratory, courtroom, church, city skyline, space.
+- **Rooms are seen straight on,** with one back wall. There are no corners or side walls.
+- **The back view is simple:** the body is the same from behind, and long hair hangs to one side.
+- **A two-person medium shot is only a little closer than the wide shot** when the two stand far apart, because the camera never cuts anyone off. Stand them closer for a tighter two-shot.
+- **Title text width is estimated,** not measured, so very long titles shrink a little more than they need to.
 
 ## Feedback on the action clip (2026-10-06): applied
 
@@ -241,7 +286,7 @@ Each step ends with contact sheets for Biku, a commit and an update here. Start 
 - **2B. People: done (2026-10-05).** Was: Tier 1 clothes (shirt, tank top, trousers, skirt or dress, shoes, plain hat, hood or cloak, robe); costumes (soldier, queen or noble gown, villager or farmer); long hair; all skin tones and hair checked; age cues (child, adult, elder); character cards.
 - **2C. Poses and motion polish: done (2026-10-06).** Was: sit, kneel, lie, cross arms, look up, look down, cower; cry, cheer, hug; wind-up and settle; lagging capes, hair and held objects; weight and breathing; eye darts, smooth head turns, more mouth shapes; mood walks; arcs.
 - **2D. Action: done (2026-10-06).** Was: run, jump, fall, fight (wind-up, swing, hit, recoil), push, pull, carry, sneak; tears, anger mark, motion lines, impact flash, dizzy stars, symbols; camera shake, fast push-in, pan; a short action test clip.
-- **2E. World.** Places (night street, day street, field, forest, castle and throne room, home interior); about 10 props (sword, shield, coin, bag, book, lantern, door, chair, table, cup); wide, medium, close-up and over-the-shoulder framing; title card and labels.
+- **2E. World: done (2026-10-06).** Was: places (night street, day street, field, forest, castle and throne room, home interior); about 10 props (sword, shield, coin, bag, book, lantern, door, chair, table, cup); wide, medium, close-up and over-the-shoulder framing; title card and labels.
 - **2F. Wrap-up.** Full contact sheets of everything, index complete, all checks passing, Phase 2 report.
 
 Left for on-demand drawing: the other nine places, climb, write, read, steer, row, salute, march, turn out pockets, lean, hands on head, counters, charts, maps, animals.

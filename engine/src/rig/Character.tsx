@@ -70,6 +70,11 @@ export type CharacterProps = {
   prop?: (hands: { front: HandFrame; back: HandFrame }, info: PropInfo) => ReactNode;
   /** Effects drawn in head space around the head: sweat drops, symbols (Style 3.7). */
   headEffects?: ReactNode;
+  /**
+   * Seen from behind: no face, hair and headwear cover the back of the head, a cape hangs over
+   * the body. For the near person in an over-the-shoulder shot (see camera/Framing).
+   */
+  back?: boolean;
 };
 
 const limbProps = {
@@ -133,6 +138,7 @@ export const Character = ({
   squash = 0,
   prop,
   headEffects,
+  back = false,
 }: CharacterProps) => {
   const uid = `c${useId().replace(/[^A-Za-z0-9_-]/g, '')}`;
   const sign = facing === 'left' ? -1 : 1;
@@ -172,6 +178,7 @@ export const Character = ({
     uid,
     skin,
     sway: sway.body,
+    back,
   };
   const hairCtx: HairCtx | null = identity
     ? {
@@ -182,6 +189,7 @@ export const Character = ({
         uid,
         wrap: identity.wrap ?? 'crimson',
         sway: sway.body,
+        back,
       }
     : null;
 
@@ -287,6 +295,8 @@ export const Character = ({
   const headTransform = `translate(${headAt.x} ${headAt.y}) rotate(${j.headAngle}) translate(0 ${ry}) scale(${1 + sq} ${1 - sq}) translate(0 ${-ry})`;
   // Hair that falls down the back is drawn behind the whole body, not over the shoulders.
   const hairBehind = Boolean(identity && HAIR_BEHIND_BODY.includes(identity.hair));
+  // Seen from behind, a head with hair is all hair: it is filled with the hair color.
+  const backOfHead = back && identity && identity.hair !== 'bald' ? identityHair(identity) : null;
 
   return (
     <g transform={`translate(${x} ${groundY}) scale(${sign * head} ${head})`}>
@@ -296,7 +306,7 @@ export const Character = ({
         </g>
       )}
       <g transform={bodyScale}>
-        {outfit?.back?.(ctx)}
+        {!back && outfit?.back?.(ctx)}
         {layers.back === 'behind' && backArm}
         {layers.front === 'behind' && frontSleeve}
         {leg(j.legs.back, 'back')}
@@ -305,6 +315,8 @@ export const Character = ({
         {leg(j.legs.front, 'front')}
         {outfit?.overTorso?.(ctx)}
         {layers.back === 'chest' && backArm}
+        {/* From behind, a cape hangs over the body instead of showing round its edges. */}
+        {back && outfit?.back?.(ctx)}
       </g>
 
       <g transform={headTransform}>
@@ -314,10 +326,10 @@ export const Character = ({
           </clipPath>
         </defs>
         {hairCtx && identity && !hairBehind && <HairBack style={identity.hair} ctx={hairCtx} />}
-        <ellipse rx={rx} ry={ry} fill={skinSet.shadow} />
+        <ellipse rx={rx} ry={ry} fill={backOfHead ? backOfHead.shadow : skinSet.shadow} />
         {/* Shading, rim light and every face feature stay inside the head outline. */}
         <g clipPath={`url(#${uid}-head)`}>
-          {skinSet.rim && (
+          {skinSet.rim && !backOfHead && (
             <ellipse cx={-0.075 * shadowSide} cy={-0.06} rx={rx} ry={ry} fill={skinSet.rim} />
           )}
           <ellipse
@@ -325,25 +337,27 @@ export const Character = ({
             cy={-0.06 + (skinSet.rim ? 0.03 : 0)}
             rx={rx}
             ry={ry}
-            fill={skin}
+            fill={backOfHead ? backOfHead.fill : skin}
           />
-          <Face
-            params={face}
-            turn={t}
-            blink={blink}
-            look={look}
-            eyeStyle={eyeStyle}
-            skin={skin}
-            lidColor={skinSet.shadow}
-            talk={talk}
-            aged={age === 'elder'}
-            idPrefix={uid}
-          />
+          {!back && (
+            <Face
+              params={face}
+              turn={t}
+              blink={blink}
+              look={look}
+              eyeStyle={eyeStyle}
+              skin={skin}
+              lidColor={skinSet.shadow}
+              talk={talk}
+              aged={age === 'elder'}
+              idPrefix={uid}
+            />
+          )}
         </g>
         <ellipse rx={rx} ry={ry} fill="none" stroke={ink} strokeWidth={outline} />
         {hairCtx && identity && (
           <>
-            <FacialHairShape kind={identity.facialHair ?? 'none'} ctx={hairCtx} />
+            {!back && <FacialHairShape kind={identity.facialHair ?? 'none'} ctx={hairCtx} />}
             <HairFront style={identity.hair} ctx={hairCtx} />
           </>
         )}

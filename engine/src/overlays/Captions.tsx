@@ -2,10 +2,11 @@ import { loadFont } from '@remotion/fonts';
 import { interpolate, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
 import { tokens } from '../tokens';
 import { pageAt } from './captionPages';
+import { VIEWER_FONT } from './text';
 import type { CaptionPage } from './captionPages';
 
 /** Heavy rounded, openly licensed caption font (Style 9), bundled locally (SIL OFL 1.1). */
-export const CAPTION_FONT = 'Fredoka';
+export const CAPTION_FONT = VIEWER_FONT;
 
 // loadFont holds rendering until the font is ready, so frames never use a fallback font.
 void loadFont({

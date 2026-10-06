@@ -239,10 +239,15 @@ export const hood =
             <path d={outer} transform={`translate(${off.x} ${off.y})`} />
           </clipPath>
         </defs>
-        <path d={`${outer} ${opening}`} fillRule="evenodd" fill={k.shadow} />
-        <path d={`${outer} ${opening}`} fillRule="evenodd" fill={k.fill} clipPath={`url(#${id})`} />
+        <path d={c.back ? outer : `${outer} ${opening}`} fillRule="evenodd" fill={k.shadow} />
+        <path
+          d={c.back ? outer : `${outer} ${opening}`}
+          fillRule="evenodd"
+          fill={k.fill}
+          clipPath={`url(#${id})`}
+        />
         {edge(outer, 'outer')}
-        {edge(opening, 'opening')}
+        {!c.back && edge(opening, 'opening')}
       </g>
     );
   };
