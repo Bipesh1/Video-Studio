@@ -1,7 +1,7 @@
 ## Part 3. The Ink Stick art style
 
 **Style id:** `ink-stick`
-**Guide version:** 8 (2026-10-06). See the version history at the end.
+**Guide version:** 9 (2026-10-06). See the version history at the end.
 **Built from:** two reference images supplied by Biku
 - **Reference A:** a stern king in a crown, red cape and armor, under a stormy night sky with light rays
 - **Reference B:** two stick figures in a night scene under a crescent moon, one threatening and one frightened
@@ -31,7 +31,7 @@ Bold, black-outlined cartoon stick figures with big round heads and very express
 
 | Part | Rule |
 | --- | --- |
-| **Head** | A circle. It may be up to 10% taller than wide. Diameter is about **1/4 of standing height**, so heads are big. |
+| **Head** | A circle. It may be up to 10% taller than wide. Diameter is a little over **1/4 of standing height** (0.29 with the bone lengths below), so heads are big. |
 | **Neck** | None. The head sits directly on top of the torso. |
 | **Torso** | One thick straight line, about 1.1 head diameters long, or a clothing shape built around that line. |
 | **Arms** | Thick lines, upper and lower arm each about 0.6 head diameter, bending at the elbow. Smooth gentle curves allowed, never wobbly. |
@@ -203,6 +203,11 @@ Use the **lowest tier** that makes the character instantly recognizable.
 | Denim navy | `#2F3754` | `#232A41` |
 | Glint blue | `#A8DDF7` | `#7FBFE0` |
 | Forest green | `#3E7D4A` | `#2C5B35` |
+| Brown | `#7A4B2A` | `#623C22` |
+| Tan | `#C8A66E` | `#A4885A` |
+| Cream | `#EEDFB8` | `#C8BB9B` |
+
+Brown, tan and cream are the plain cloth colors of ordinary people: leather, wool, sacking and undyed linen for villagers, farmers, workers and monks. Pick the one that stands apart from the wearer's skin tone.
 
 ### Style 7. Composition and camera
 
@@ -258,7 +263,7 @@ Any "no" is fixed before rendering.
 2. Is the background free of outlines?
 3. Are characters brighter and more saturated than the background?
 4. Is there at most one shadow tone per color, coming from the scene's light direction?
-5. Are the heads round and about a quarter of body height?
+5. Are the heads round and a little over a quarter of body height?
 6. Does the face clearly show the emotion the narration calls for?
 7. Is identity mode on where the story needs it, with skin tone and hair correct?
 8. Is the clothing tier the lowest one that still makes the character recognizable?
@@ -273,7 +278,7 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
 ```json
 {
   "id": "ink-stick",
-  "version": 8,
+  "version": 9,
   "line": {
     "color": "#16161A",
     "outlinePctOfHead": [0.04, 0.05],
@@ -284,7 +289,7 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
     "join": "round"
   },
   "proportions": {
-    "headToHeight": 0.25,
+    "headToHeight": 0.29,
     "headAspectMax": 1.1,
     "torsoHeads": 1.1,
     "upperArmHeads": 0.6,
@@ -332,7 +337,10 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
     "steel": ["#3B3F47", "#2A2D33", "#565B64"],
     "denim": ["#2F3754", "#232A41"],
     "glint": ["#A8DDF7", "#7FBFE0"],
-    "forest": ["#3E7D4A", "#2C5B35"]
+    "forest": ["#3E7D4A", "#2C5B35"],
+    "brown": ["#7A4B2A", "#623C22"],
+    "tan": ["#C8A66E", "#A4885A"],
+    "cream": ["#EEDFB8", "#C8BB9B"]
   },
   "palettes": {
     "storm-slate": ["#1F2B3B", "#2E3E52", "#4B5E75", "#7E91A8", "#B9C8D8"],
@@ -387,3 +395,4 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
 | 6 | 2026-10-03 | Face feature lines thinner (about 2.2% of head width) and softer (#3A3A40 instead of the #16161A outline color), so faces look finer and more attractive. Pupils, brows and mouth interior stay dark. | Biku |
 | 7 | 2026-10-04 | Wrinkles look hand-drawn: creases inside the face are fine tapered pen strokes (about 1.2% at the fullest point), each a different length and angle, and tapering is now allowed inside the face. The frightened face follows Reference B as measured: lower lids pushed up and shaded with the pupils resting on them, the face tipped down toward where the character looks, a wide arched grimace with big teeth. The near eye overlaps the far eye. | Biku |
 | 8 | 2026-10-06 | Talking uses five mouth shapes instead of three: wide ("ee", top teeth showing) and round ("oo") join closed, half and open, and the mouth forms each word instead of only opening and closing. Part of the Phase 2 motion polish. | Biku (Phase 2 scope) |
+| 9 | 2026-10-06 | Three plain cloth colors for ordinary people: brown, tan and cream, each with one shadow tone. Head size settled: it stays as drawn, a little over a quarter of standing height (0.29), so Style 3.1, Style Check question 5 and the token now say so. | Biku |

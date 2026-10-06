@@ -34,7 +34,8 @@ Current best practice for the Ink Stick look, learned from real videos and Biku'
 - **Headgear sits on the head and must read at phone size.** The crown of a hat comes down over the top of the head and the brim crosses just above the brows. Check it small: a round steel helmet with a brim read as a bowler hat, so the soldier wears a pointed helmet over a mail coif. (L-0009, self-check)
 - **Long hair goes behind the body,** not over the shoulders, so no arm crosses it. (L-0009, self-check)
 - **Age is more than size.** A child is a smaller body under a full-size head, drawn smaller than the adults beside them. An elder stoops, has face creases, and needs gray or white hair to finish the read. (Phase 2B)
-- **At most four colors per outfit,** all from the cloth colors. There is no brown or tan yet; do not invent one. (Style 3.5)
+- **At most four colors per outfit,** all from the cloth colors. Ordinary people wear brown, tan and cream (guide v9); keep the bright colors for the people the story is about. (Style 3.5, Biku)
+- **Cloth must stand apart from the skin under it.** Tan on a mid skin tone and brown on a dark one nearly match; pick cream or another color there. (villagers sheet, self-check)
 
 ## Motion
 

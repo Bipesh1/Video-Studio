@@ -271,3 +271,92 @@ export function PeopleSheet({ c }: { c: Colors }) {
   ];
   return <Grid cells={cells} columns={3} cellHeight={640} head={104} c={c} />;
 }
+
+/** Brown, tan and cream cloth (guide v9) on ordinary people, across skin tones. */
+export function VillagersSheet({ c }: { c: Colors }) {
+  const cells: Cell[] = [
+    {
+      label: 'farmer',
+      turn: 0.5,
+      identity: { skinTone: 5, hair: 'short-crop', hairColor: 'black', facialHair: 'beard' },
+      outfit: FARMER,
+    },
+    { label: 'farmer, walking', turn: 1, pose: walking, outfit: FARMER },
+    {
+      label: 'cream shirt, brown skirt',
+      turn: 0.5,
+      expression: 'happy',
+      identity: { skinTone: 2, hair: 'straight-bob', hairColor: 'auburn' },
+      outfit: wear({
+        top: { kind: 'shirt', cloth: 'cream', sleeves: 'short' },
+        bottom: { kind: 'skirt', cloth: 'brown' },
+        shoes: { kind: 'boots', cloth: 'brown' },
+      }),
+    },
+    {
+      label: 'brown robe, elder',
+      turn: 0.5,
+      age: 'elder',
+      expression: 'thinking',
+      identity: { skinTone: 7, hair: 'bald', hairColor: 'white', facialHair: 'beard' },
+      outfit: wear({
+        onePiece: { kind: 'robe', cloth: 'brown' },
+        shoes: { kind: 'boots', cloth: 'steel' },
+      }),
+    },
+    {
+      label: 'tan dress, child',
+      turn: 0.5,
+      age: 'child',
+      size: 0.86,
+      expression: 'happy',
+      identity: { skinTone: 3, hair: 'ponytail', hairColor: 'dark-brown' },
+      outfit: wear({
+        onePiece: { kind: 'dress', cloth: 'tan' },
+        shoes: { kind: 'boots', cloth: 'brown' },
+      }),
+    },
+    {
+      label: 'cream dress',
+      turn: 0.5,
+      identity: { skinTone: 1, hair: 'long', hairColor: 'blond' },
+      outfit: wear({
+        onePiece: { kind: 'dress', cloth: 'cream' },
+        shoes: { kind: 'boots', cloth: 'brown' },
+      }),
+    },
+    {
+      label: 'brown and cream',
+      turn: 0.5,
+      expression: 'determined',
+      identity: { skinTone: 8, hair: 'fade', hairColor: 'black' },
+      outfit: wear({
+        top: { kind: 'shirt', cloth: 'brown' },
+        bottom: { kind: 'trousers', cloth: 'cream' },
+        shoes: { kind: 'boots', cloth: 'steel' },
+      }),
+    },
+    {
+      label: 'tan robe, brown hood',
+      turn: 0.5,
+      outfit: wear({
+        onePiece: { kind: 'robe', cloth: 'tan' },
+        shoes: { kind: 'boots', cloth: 'brown' },
+        cloak: { cloth: 'brown', hood: true },
+      }),
+    },
+    {
+      label: 'traveler, walking',
+      turn: 1,
+      pose: walking,
+      identity: { skinTone: 4, hair: 'short-crop', hairColor: 'dark-brown' },
+      outfit: wear({
+        top: { kind: 'shirt', cloth: 'cream' },
+        bottom: { kind: 'trousers', cloth: 'tan' },
+        shoes: { kind: 'boots', cloth: 'brown' },
+        cloak: { cloth: 'brown' },
+      }),
+    },
+  ];
+  return <Grid cells={cells} columns={3} cellHeight={640} head={104} c={c} />;
+}

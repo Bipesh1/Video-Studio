@@ -22,7 +22,7 @@ import { walkAt } from '../rig/walk';
 import { ink, lineWeights, palette, pick, tokens, white } from '../tokens';
 import { Rod } from './Rod';
 import { BG_SHEETS, CostumeSheet, AtmosVideo, HairTurnsSheet, IdentitySheet } from './part-b';
-import { AgesSheet, ClothesSheet, CostumesBSheet, PeopleSheet } from './part-c';
+import { AgesSheet, ClothesSheet, CostumesBSheet, PeopleSheet, VillagersSheet } from './part-c';
 import { PosesBSheet } from './part-d';
 import { MoodsVideo, MouthsSheet, PolishVideo } from './part-e';
 import type { SandboxBg, SheetName } from './sheets';
@@ -437,6 +437,7 @@ export const Sandbox = ({ sheet, bg }: SandboxProps) => {
     people: <PeopleSheet c={c} />,
     'poses-b': <PosesBSheet c={c} />,
     mouths: <MouthsSheet c={c} />,
+    villagers: <VillagersSheet c={c} />,
     walk: <WalkVideo c={c} />,
     motion: <MotionVideo c={c} />,
     polish: <PolishVideo c={c} />,

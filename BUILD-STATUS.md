@@ -1,14 +1,25 @@
 # Build Status
 
-**Current phase:** Phase 2, steps 2A (library foundation), 2B (people) and 2C (poses and motion polish) done. Next step is 2D (action), started only when Biku asks. Checkpoint 1 questions 2 to 5 are still open.
-**Next:** Biku looks at the 2C pictures and clips (below) and says what to change. The head-size question is still open. Then 2D. The steps are listed under "Phase 2 steps" below.
+**Current phase:** Phase 2, steps 2A (library foundation), 2B (people) and 2C (poses and motion polish) done. Next step is 2D (action), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
+**Next:** Biku looks at the 2C pictures and clips and the villagers sheet (below) and says what to change. Then 2D. The steps are listed under "Phase 2 steps" below.
 **Last updated:** 2026-10-06
 
 ## Checkpoint 1: waiting for Biku
 
-Review file: `runs/2026-10-03-look-test/checkpoint-1.md`. Questions: (1) how close the look is and what to change, (2) narrator and character voices, (3) head size, (4) hair colors (guide v3), (5) fingers on hands that cover the face.
+Review file: `runs/2026-10-03-look-test/checkpoint-1.md`. Questions: (1) how close the look is and what to change, (2) narrator and character voices, (3) head size (answered 2026-10-06: fine as it is), (4) hair colors (guide v3), (5) fingers on hands that cover the face.
 
 **Question 1 (2026-10-04): Biku said not close enough yet, then said go.** Faces round 4 is built (section below, guide v7). Question 1 is open again: Biku needs to look at `runs/2026-10-03-look-test/out/face-match.png` and say whether the frightened face and the wrinkles are close enough now.
+
+## Biku's answers after 2C (2026-10-06): applied
+
+Biku said: use the brown, tan and cream clothes, and the head size is fine.
+
+- **Three cloth colors added** (guide and tokens version 9): brown `#7A4B2A`, tan `#C8A66E`, cream `#EEDFB8`, each with one shadow tone. They are in the accent list, so every garment, cloak, hat and head wrap can use them by name (`cloth: 'brown'`).
+- **The farmer wears them:** green shirt, tan trousers, brown leather boots, straw hat (was navy trousers and steel boots). `costume/farmer` is version 2.
+- **Head size is settled:** it stays as drawn, 0.29 of standing height. The guide said "about a quarter" while its own bone lengths gave 0.29; Style 3.1, Style Check question 5 and the `headToHeight` token now say 0.29. Nothing on screen changed except the speed-test scene, which read that token.
+- **Library:** 126 assets (three new colors). Search finds them by "leather", "khaki" and "linen".
+- **Sheet:** `villagers` (`npm run sheets -- --only=villagers`), golden copy `knowledge/golden/rig-villagers.png`. Checked on light and dark backgrounds and on skin tones 1, 2, 3, 4, 5, 7 and 8.
+- **Found while looking:** tan cloth on a mid skin tone and brown on a dark one are close in color; the outline keeps them apart, but cream or a brighter color reads better there. In the playbook.
 
 ## Phase 2C. Poses and motion polish: done (2026-10-06)
 
@@ -46,7 +57,7 @@ Asked by Biku ("start 2c"). Characters have more ways to stand and sit, and they
 
 ### Open after 2C
 
-- **Head size** is still unanswered and still 0.29. If it changes, every pose sheet needs one more look.
+- **Head size:** answered on 2026-10-06, it stays (see the section above).
 - **Guide version 8** changed "three mouth shapes" to five. It was built under the agreed motion polish scope ("more mouth shapes for talking"); Biku should say if the talking looks wrong.
 - **The mouth reads spelling, not sound.** Lips meet on m, b and p, round on o and u, open on a. Words spelled oddly ("one", "though") get an approximate shape. Kokoro could give real sounds later if this is not good enough.
 - **Wide frowning mouths** (the angry face) open only a little on the half and "ee" shapes.
@@ -88,8 +99,8 @@ Asked by Biku ("start 2B"). Ordinary people can now be dressed, aged and saved.
 
 ### Open after 2B
 
-- **Head size** is still unanswered and still 0.29. It must be settled before 2C.
-- **Cloth colors are few:** white, gold, crimson, orange, steel, denim, glint blue, forest green. There is no brown, tan or cream, which villagers and farmers would normally wear. Adding them is a style guide change, so it needs Biku's yes.
+- **Head size:** closed on 2026-10-06. Biku said it is fine; it stays at 0.29.
+- **Cloth colors were few:** closed on 2026-10-06. Biku asked for brown, tan and cream; they are in guide version 9.
 - **Black brows on the two darkest skin tones** still have low contrast (known since Phase 1).
 - **A child's limbs are thinner** than an adult's at the same head size, because the whole body shrinks. It reads as a child; say so if it looks too thin.
 - **Soldier hands** are plain black mittens; steel gauntlets would need a new hand style.
@@ -440,6 +451,8 @@ The realistic estimate assumes real shots cost about three times the test scene 
 
 ## Style changes since Phase 0
 
+- **Guide version 9 (2026-10-06, asked by Biku):** brown, tan and cream cloth colors for ordinary people, and the head size wording now matches what is drawn (0.29 of standing height).
+
 - **Guide version 8 (2026-10-06, under the Phase 2 motion polish scope Biku agreed):** talking uses five mouth shapes instead of three. Wide ("ee", top teeth showing) and round ("oo") join closed, half and open, and the mouth forms each word. `tokens.json` is version 8 with five names in `motion.mouthShapes`.
 
 - **Guide version 7 (2026-10-04, asked and approved by Biku):** creases inside the face are fine tapered pen strokes, about 1.2% of the head at their fullest, each a different length and angle; tapering is allowed inside the face (brows, creases, the ends of a closed mouth line). The frightened face follows Reference B as measured. New token `face.creasePctOfHead`. Versions 4 to 6 (faces closer to the references, thinner and softer face lines) are described in the guide's version history.
@@ -450,7 +463,7 @@ The realistic estimate assumes real shots cost about three times the test scene 
 
 ## Open problems and notes
 
-1. **Head size conflict in the guide (needs Biku's decision).** Style 3.1 says the head is about a quarter of standing height, but its bone lengths (torso 1.1, legs 1.4 head-widths) make the head 0.29 of height. Reference B measures about 0.25 because its legs are longer, about 1.8 head-widths. The rig follows the bone numbers in `tokens.json`. Changing `legHeads` to about 1.8 would match a quarter exactly; that is a style change, so it waits for Biku.
+1. **Head size: resolved (2026-10-06).** Biku said the head size is fine. Heads stay at 0.29 of standing height and the guide now says so (version 9).
 1. **Face layout constants.** Eye width and pupil size come from tokens. Eye spacing, brow gap, mouth height and the head-turn shifts are named in `engine/src/face/layout.ts`, because tokens do not cover them.
 1. **Effects not built yet.** Sweat drops, tears, anger mark and symbols belong to the expression table's extras column. The one the 15-second test needs comes in part C; the full set in Phase 2.
 1. **Clothing and hair still to build.** Tier 2 exists (the ruler). Tier 1 (tank top, jeans, sneakers) and the rest of the hair library (coils, twists, cornrows, curly, waves) come in Phase 2.

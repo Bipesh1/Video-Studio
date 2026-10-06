@@ -1876,7 +1876,7 @@
       "id": "costume/farmer",
       "kind": "costume",
       "name": "Farmer",
-      "description": "A farmer or villager: green short-sleeved shirt, navy trousers, plain boots and a straw hat. Built from the tier 1 garments.",
+      "description": "A farmer or villager: green short-sleeved shirt, tan trousers, brown leather boots and a straw hat. Built from the tier 1 garments.",
       "tags": [
         "costume",
         "farmer",
@@ -1895,7 +1895,7 @@
       },
       "use": "outfit={FARMER}",
       "still": "knowledge/golden/assets/costume-farmer.png",
-      "version": 1,
+      "version": 2,
       "added": "2026-10-05"
     },
     {
@@ -2522,6 +2522,84 @@
       "still": "knowledge/golden/assets/color-forest.png",
       "version": 1,
       "added": "2026-10-05"
+    },
+    {
+      "id": "color/brown",
+      "kind": "color",
+      "name": "Brown",
+      "description": "The brown cloth color with its shadow tone: leather, wool and wood for ordinary people.",
+      "tags": [
+        "color",
+        "cloth",
+        "brown",
+        "leather",
+        "wool",
+        "wood",
+        "earth",
+        "villager",
+        "monk",
+        "boots"
+      ],
+      "code": {
+        "file": "engine/src/tokens.ts",
+        "export": "accent"
+      },
+      "use": "cloth: 'brown' in clothes data, or const [fill, shadow] = accent('brown')",
+      "still": "knowledge/golden/assets/color-brown.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "color/tan",
+      "kind": "color",
+      "name": "Tan",
+      "description": "The tan cloth color with its shadow tone: sacking, khaki and sand for ordinary people.",
+      "tags": [
+        "color",
+        "cloth",
+        "tan",
+        "khaki",
+        "sand",
+        "beige",
+        "sacking",
+        "burlap",
+        "villager",
+        "farmer"
+      ],
+      "code": {
+        "file": "engine/src/tokens.ts",
+        "export": "accent"
+      },
+      "use": "cloth: 'tan' in clothes data, or const [fill, shadow] = accent('tan')",
+      "still": "knowledge/golden/assets/color-tan.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "color/cream",
+      "kind": "color",
+      "name": "Cream",
+      "description": "The cream cloth color with its shadow tone: undyed linen and wool, softer than white.",
+      "tags": [
+        "color",
+        "cloth",
+        "cream",
+        "ivory",
+        "off-white",
+        "linen",
+        "undyed",
+        "apron",
+        "villager",
+        "parchment"
+      ],
+      "code": {
+        "file": "engine/src/tokens.ts",
+        "export": "accent"
+      },
+      "use": "cloth: 'cream' in clothes data, or const [fill, shadow] = accent('cream')",
+      "still": "knowledge/golden/assets/color-cream.png",
+      "version": 1,
+      "added": "2026-10-06"
     },
     {
       "id": "camera/push-in",
