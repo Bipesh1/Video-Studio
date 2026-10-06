@@ -21,6 +21,11 @@ export type MouthForm = {
   round: boolean;
   /** How much of the opening the top teeth fill, 0 to 1. They show on "ee". */
   teeth: number;
+  /**
+   * True while the line is being spoken, lips together or not. A face whose own mouth is open
+   * (shouting, laughing, wailing) needs this to know it should move with the words.
+   */
+  speaking?: boolean;
 };
 
 /**
@@ -131,5 +136,12 @@ export function mouthShapeAt(frame: number, fps: number, words: readonly WordTim
 }
 
 /** What to give a Character's `talk`: the mouth form at a frame for one voice line's words. */
-export const talkAt = (frame: number, fps: number, words: readonly WordTiming[]): MouthForm =>
-  MOUTH_FORMS[mouthShapeAt(frame, fps, words)];
+export function talkAt(frame: number, fps: number, words: readonly WordTiming[]): MouthForm {
+  const form = MOUTH_FORMS[mouthShapeAt(frame, fps, words)];
+  const first = words[0];
+  const last = words[words.length - 1];
+  const ms = (frame / fps) * 1000;
+  const speaking =
+    first !== undefined && last !== undefined && ms >= first.startMs - 40 && ms <= last.endMs + 60;
+  return speaking ? { ...form, speaking: true } : form;
+}

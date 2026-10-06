@@ -413,3 +413,21 @@ Note (Claude's reading): every new prop that is held gets looked at in a hand, c
   the props-in-use sheet before it is saved.
 Status: active
 ```
+
+```
+L-0026 | 2026-10-06 | run: 2026-10-06-honest-farmer, part 1 (the wife's line "Keep the gold!")
+Area: faces | Scope: style ink-stick | Source: Biku
+Lesson: Whoever speaks moves their mouth, whatever face they wear. A face whose own mouth is
+  open (shouting, laughing, wailing, surprised) closes and opens with the words too.
+Evidence: Biku: "when the wife says keep the gold the mouth doesnt move". She wore the
+  shouting face, whose mouth is already wide open. The talking shapes only took over when they
+  opened the mouth further than the expression did, so on an open-mouthed face they never
+  did, and the mouth stayed frozen open through the line. Frames cut from the video showed
+  the same mouth in all twelve.
+Applied: engine/src/face/talk.ts (talkAt says when a line is being spoken) and Face.tsx (an
+  open-mouthed face that is speaking scales its own opening with the talking shape, never
+  quite shut); tests in engine/src/face/talking-face.test.tsx. Part 1 rendered again (v4).
+Note (Claude's reading): after a part is rendered, cut a run of frames of each speaker's face
+  during their line and see that the mouth changes; a single still cannot show this.
+Status: active
+```

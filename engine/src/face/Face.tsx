@@ -51,6 +51,11 @@ const FEATURE_LINE = tokens.face.featureLinePctOfHead;
 const FEATURE_INK = tokens.face.featureLineColor;
 const eyeStroke = FEATURE_LINE;
 const LID_PAD = 0.03;
+/**
+ * How far an open-mouthed face closes between sounds while it speaks, as a share of its full
+ * opening. Not to zero: a shout never quite shuts.
+ */
+const OPEN_MOUTH_SHUT = 0.22;
 /** How tall a fully open talking mouth is, in head widths. */
 const TALK_OPEN = 0.14;
 /** How far outside the eye outline the under-eye crease runs (measured on Reference B). */
@@ -446,8 +451,12 @@ function MouthShape({
   const my = MOUTH_Y;
   // A frown eats into the opening, so a talking mouth opens that much more on a frowning face.
   const talkOpen = talk.open > 0 ? talk.open * TALK_OPEN + 0.57 * Math.max(0, -m.curve) : 0;
-  // A talking shape takes over only when it opens the mouth more than the expression does.
-  const talking = talkOpen > m.open * MOUTH_OPEN_SCALE;
+  // A face whose own mouth is open (shouting, laughing, wailing) keeps its shape while it
+  // speaks, and that mouth closes and opens with the words (Biku, 2026-10-06: "when the wife
+  // says keep the gold the mouth doesn't move").
+  const speaksOpen = talk.speaking === true && m.open > 0;
+  // Otherwise a talking shape takes over only when it opens the mouth more than the expression does.
+  const talking = !speaksOpen && talkOpen > m.open * MOUTH_OPEN_SCALE;
   const turnW = MOUTH_SCALE * stops(turn, TURN.mouthWidth);
   // Narrowing takes a share of the mouth's own width; widening adds a share of a calm mouth's,
   // so an already wide mouth does not run off the face.
@@ -456,7 +465,9 @@ function MouthShape({
     : talk.width < 1
       ? m.width * turnW * talk.width
       : (m.width + (talk.width - 1) * CALM_MOUTH_W) * turnW;
-  const open = Math.max(m.open * MOUTH_OPEN_SCALE, talkOpen);
+  const open = speaksOpen
+    ? m.open * MOUTH_OPEN_SCALE * (OPEN_MOUTH_SHUT + (1 - OPEN_MOUTH_SHUT) * Math.min(1, talk.open))
+    : Math.max(m.open * MOUTH_OPEN_SCALE, talkOpen);
   const round = m.round > 0.5 || (talking && talk.round);
   // How much of the opening the top teeth fill.
   const teethDepth = m.teeth === 'top' ? 0.32 : talking ? talk.teeth : 0;

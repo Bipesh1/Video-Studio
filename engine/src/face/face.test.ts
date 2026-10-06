@@ -147,7 +147,23 @@ describe('talking mouth', () => {
     for (let f = 30; f < 45; f++) during.push(mouthShapeAt(f, fps, moon));
     expect(during).toContain('round');
     expect(during).not.toContain('open');
-    expect(talkAt(36, fps, moon)).toEqual(MOUTH_FORMS.round);
+    expect(talkAt(36, fps, moon)).toMatchObject(MOUTH_FORMS.round);
+  });
+
+  it('knows when the line is being spoken, lips together or not', () => {
+    const line = [
+      { startMs: 1000, endMs: 1300, text: 'Keep' },
+      { startMs: 1300, endMs: 1400, text: 'the' },
+      { startMs: 1400, endMs: 1900, text: 'gold!' },
+    ];
+    // Before and after the line the mouth is the expression's own.
+    expect(talkAt(20, fps, line).speaking).toBeUndefined();
+    expect(talkAt(70, fps, line).speaking).toBeUndefined();
+    const during = Array.from({ length: 26 }, (_, i) => talkAt(31 + i, fps, line));
+    expect(during.every((form) => form.speaking === true)).toBe(true);
+    // And inside the line the lips do meet and part.
+    const openings = new Set(during.map((form) => form.open));
+    expect(openings.size).toBeGreaterThan(1);
   });
 
   it('holds every shape for at least two frames', () => {
