@@ -17,6 +17,7 @@ import { Hand, handTransform } from './Hand';
 import { armLayers } from './layers';
 import type { HandStyle } from './Hand';
 import { DEG, clamp, length, lerpVec, mul, rotate, sub, vec } from './math';
+import { MirrorContext } from './mirror';
 import type { Vec2 } from './math';
 import { computeSkeleton } from './skeleton';
 import type { ArmJoints, Facing, HandPose, LegJoints, ResolvedPose } from './types';
@@ -88,6 +89,15 @@ export function toLocal(
 ): Vec2 {
   const sign = c.facing === 'left' ? -1 : 1;
   return vec(((screen.x - c.x) / c.head) * sign, (screen.y - c.groundY) / c.head);
+}
+
+/** Convert a point in a character's local head units to a screen point: the reverse of toLocal. */
+export function toScreen(
+  local: Vec2,
+  c: { x: number; groundY: number; head: number; facing?: Facing },
+): Vec2 {
+  const sign = c.facing === 'left' ? -1 : 1;
+  return vec(c.x + local.x * c.head * sign, c.groundY + local.y * c.head);
 }
 
 /** Where a trouser leg ends inside a boot, so the tube's round end never shows under the sole. */
@@ -333,7 +343,7 @@ export const Character = ({
           </>
         )}
         {outfit?.headwear?.(ctx)}
-        {headEffects}
+        <MirrorContext.Provider value={sign}>{headEffects}</MirrorContext.Provider>
       </g>
 
       <g transform={bodyScale}>

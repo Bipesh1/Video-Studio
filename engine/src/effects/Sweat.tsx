@@ -4,9 +4,9 @@ import { ink, lineWeights, tokens, white } from '../tokens';
 
 /**
  * A sweat drop (Style 3.7): light blue teardrop, outlined, with a small white highlight.
- * Drawn in head space with the tip pointing along `tip` degrees (0 = up).
+ * Drawn in head space with the tip pointing along `tip` degrees (0 = up). Tears use it too.
  */
-function Drop({
+export function Drop({
   x,
   y,
   size,

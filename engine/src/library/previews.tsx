@@ -6,7 +6,13 @@ import {
   backgroundSpec,
 } from '../backgrounds/Background';
 import type { BackgroundSpec } from '../backgrounds/Background';
+import { AngerMark } from '../effects/AngerMark';
+import { DizzyStars } from '../effects/Dizzy';
+import { IMPACT_SECONDS, Impact } from '../effects/Impact';
+import { MotionLines } from '../effects/MotionLines';
 import { FlyingSweat, RestingSweat } from '../effects/Sweat';
+import { HeadSymbol } from '../effects/Symbol';
+import { TearDrops, TearStreams } from '../effects/Tears';
 import { EXPRESSIONS, EXPRESSION_NAMES } from '../face/expressions';
 import type { ExpressionName } from '../face/expressions';
 import { MOUTH_FORMS } from '../face/talk';
@@ -64,6 +70,19 @@ const headShot = (o: PreviewOptions, extra: Extra = {}, turn = 0.35, head = 250)
     x={BOX / 2 - standHead.x * head}
     groundY={BOX * 0.52 - standHead.y * head}
     head={head}
+    pose={standPose}
+    face={EXPRESSIONS.neutral}
+    turn={o.turn ?? turn}
+    {...extra}
+  />
+);
+
+/** A smaller head set low in the square, leaving room for an effect above it. */
+const effectShot = (o: PreviewOptions, extra: Extra, turn: number): ReactNode => (
+  <Character
+    x={BOX / 2 - standHead.x * 170}
+    groundY={BOX * 0.64 - standHead.y * 170}
+    head={170}
     pose={standPose}
     face={EXPRESSIONS.neutral}
     turn={o.turn ?? turn}
@@ -411,6 +430,63 @@ const entries: Array<[string, Preview]> = [
   [
     'effect/sweat-resting',
     (o) => headShot(o, { face: EXPRESSIONS.exhausted, headEffects: <RestingSweat side={-1} /> }),
+  ],
+  [
+    'effect/tear-streams',
+    (o) =>
+      headShot(
+        o,
+        {
+          face: EXPRESSIONS.wailing,
+          headEffects: <TearStreams turn={o.turn ?? 0.35} t={0.2} />,
+        },
+        0.35,
+        210,
+      ),
+  ],
+  [
+    'effect/tear-drops',
+    (o) =>
+      headShot(
+        o,
+        { face: EXPRESSIONS.sad, headEffects: <TearDrops turn={o.turn ?? 0.35} t={0.75} /> },
+        0.35,
+        210,
+      ),
+  ],
+  [
+    'effect/anger-mark',
+    (o) => headShot(o, { face: EXPRESSIONS.angry, headEffects: <AngerMark t={0.1} /> }, 0.5, 210),
+  ],
+  [
+    'effect/dizzy-stars',
+    (o) => effectShot(o, { face: EXPRESSIONS.exhausted, headEffects: <DizzyStars t={0.2} /> }, 0.2),
+  ],
+  [
+    'effect/symbol-exclaim',
+    (o) =>
+      effectShot(o, { face: EXPRESSIONS.surprised, headEffects: <HeadSymbol kind="!" /> }, 0.5),
+  ],
+  [
+    'effect/symbol-question',
+    (o) => effectShot(o, { face: EXPRESSIONS.thinking, headEffects: <HeadSymbol kind="?" /> }, 0.5),
+  ],
+  [
+    'effect/symbol-dots',
+    (o) => effectShot(o, { face: EXPRESSIONS.neutral, headEffects: <HeadSymbol kind="..." /> }, 0),
+  ],
+  ['effect/impact', () => <Impact x={BOX / 2} y={BOX / 2} head={210} t={IMPACT_SECONDS * 0.4} />],
+  [
+    'effect/motion-lines',
+    (o) => {
+      const run = ACTIONS.run(0.27);
+      return (
+        <>
+          <MotionLines x={176} y={196} head={88} direction={0} length={1} />
+          {figure(o, run, { face: EXPRESSIONS.determined }, 1, BOX / 2 + 30)}
+        </>
+      );
+    },
   ],
 
   ...TREATMENTS.map((treatment): [string, Preview] => [

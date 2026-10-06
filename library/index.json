@@ -2272,6 +2272,223 @@
       "added": "2026-10-05"
     },
     {
+      "id": "effect/tear-streams",
+      "kind": "effect",
+      "name": "Streams of tears",
+      "description": "Light blue streams running from both eyes down the cheeks and off the jaw, with drops flying off. For bawling, with the wailing face.",
+      "tags": [
+        "effect",
+        "tears",
+        "crying",
+        "bawling",
+        "sobbing",
+        "weeping",
+        "grief",
+        "wail",
+        "streams"
+      ],
+      "code": {
+        "file": "engine/src/effects/Tears.tsx",
+        "export": "TearStreams"
+      },
+      "use": "headEffects={<TearStreams turn={turn} t={frame / fps} />} with the same turn as the character",
+      "still": "knowledge/golden/assets/effect-tear-streams.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "effect/tear-drops",
+      "kind": "effect",
+      "name": "Tear drops",
+      "description": "Single tears that well up at each eye, roll down the cheek and fall. For quiet crying, with the sad face.",
+      "tags": [
+        "effect",
+        "tears",
+        "tear",
+        "crying",
+        "sad",
+        "weeping",
+        "sorrow",
+        "drops",
+        "heartbroken"
+      ],
+      "code": {
+        "file": "engine/src/effects/Tears.tsx",
+        "export": "TearDrops"
+      },
+      "use": "headEffects={<TearDrops turn={turn} t={frame / fps} />} with the same turn as the character",
+      "still": "knowledge/golden/assets/effect-tear-drops.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "effect/anger-mark",
+      "kind": "effect",
+      "name": "Anger mark",
+      "description": "A red cross-shaped vein mark that throbs near the top of the head. For anger and rage.",
+      "tags": ["effect", "anger", "angry", "rage", "furious", "vein", "mad", "annoyed", "temper"],
+      "code": {
+        "file": "engine/src/effects/AngerMark.tsx",
+        "export": "AngerMark"
+      },
+      "use": "headEffects={<AngerMark t={frame / fps} />} with the angry or shouting face",
+      "still": "knowledge/golden/assets/effect-anger-mark.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "effect/dizzy-stars",
+      "kind": "effect",
+      "name": "Dizzy stars",
+      "description": "Small gold stars circling the top of the head. For someone dazed, knocked silly or confused after a hit or a fall.",
+      "tags": [
+        "effect",
+        "dizzy",
+        "dazed",
+        "stars",
+        "knocked out",
+        "stunned",
+        "concussed",
+        "woozy",
+        "confused"
+      ],
+      "code": {
+        "file": "engine/src/effects/Dizzy.tsx",
+        "export": "DizzyStars"
+      },
+      "use": "headEffects={<DizzyStars t={frame / fps} />} after a recoil or a fall",
+      "still": "knowledge/golden/assets/effect-dizzy-stars.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "effect/symbol-exclaim",
+      "kind": "effect",
+      "name": "Exclamation mark",
+      "description": "A bold outlined ! that pops in over the head. For surprise, alarm or a sudden idea.",
+      "tags": [
+        "effect",
+        "symbol",
+        "exclamation",
+        "surprise",
+        "alarm",
+        "shock",
+        "notice",
+        "alert",
+        "sudden"
+      ],
+      "code": {
+        "file": "engine/src/effects/Symbol.tsx",
+        "export": "HeadSymbol"
+      },
+      "use": "headEffects={<HeadSymbol kind=\"!\" t={secondsSinceItAppeared} />}",
+      "still": "knowledge/golden/assets/effect-symbol-exclaim.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "effect/symbol-question",
+      "kind": "effect",
+      "name": "Question mark",
+      "description": "A bold outlined ? that pops in over the head. For puzzlement, doubt or thinking.",
+      "tags": [
+        "effect",
+        "symbol",
+        "question",
+        "confused",
+        "puzzled",
+        "wonder",
+        "doubt",
+        "thinking",
+        "unsure"
+      ],
+      "code": {
+        "file": "engine/src/effects/Symbol.tsx",
+        "export": "HeadSymbol"
+      },
+      "use": "headEffects={<HeadSymbol kind=\"?\" t={secondsSinceItAppeared} />}",
+      "still": "knowledge/golden/assets/effect-symbol-question.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "effect/symbol-dots",
+      "kind": "effect",
+      "name": "Three dots",
+      "description": "Three bold outlined dots that pop in one after another over the head. For a stunned or awkward silence.",
+      "tags": [
+        "effect",
+        "symbol",
+        "dots",
+        "ellipsis",
+        "silence",
+        "speechless",
+        "awkward",
+        "pause",
+        "waiting"
+      ],
+      "code": {
+        "file": "engine/src/effects/Symbol.tsx",
+        "export": "HeadSymbol"
+      },
+      "use": "headEffects={<HeadSymbol kind=\"...\" t={secondsSinceItAppeared} />}",
+      "still": "knowledge/golden/assets/effect-symbol-dots.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "effect/impact",
+      "kind": "effect",
+      "name": "Impact flash",
+      "description": "A brief white starburst with a black outline that bursts out and vanishes. For a blow, a crash or a hard landing; it covers the point of contact.",
+      "tags": [
+        "effect",
+        "impact",
+        "hit",
+        "flash",
+        "starburst",
+        "crash",
+        "punch",
+        "bang",
+        "collision",
+        "fight"
+      ],
+      "code": {
+        "file": "engine/src/effects/Impact.tsx",
+        "export": "Impact"
+      },
+      "use": "<Impact x={px} y={px} head={headPx} t={secondsSinceTheHit} /> in the scene, above the characters",
+      "still": "knowledge/golden/assets/effect-impact.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "effect/motion-lines",
+      "kind": "effect",
+      "name": "Motion lines",
+      "description": "Short black lines trailing something that moves fast: a runner, a fist, a thrown thing.",
+      "tags": [
+        "effect",
+        "motion",
+        "speed",
+        "lines",
+        "fast",
+        "whoosh",
+        "running",
+        "rush",
+        "dash",
+        "swing"
+      ],
+      "code": {
+        "file": "engine/src/effects/MotionLines.tsx",
+        "export": "MotionLines"
+      },
+      "use": "<MotionLines x={px} y={px} head={headPx} direction={0} frame={frame} /> just behind the moving thing; direction is the way it travels",
+      "still": "knowledge/golden/assets/effect-motion-lines.png",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
       "id": "background/simple",
       "kind": "background",
       "name": "Simple background",
@@ -2875,6 +3092,68 @@
       "use": "<PushIn frame durationInFrames strength={0.08} focus={{ x, y }}>...</PushIn>",
       "version": 1,
       "added": "2026-10-05"
+    },
+    {
+      "id": "camera/punch-in",
+      "kind": "camera",
+      "name": "Fast push-in",
+      "description": "The camera jumps closer to a focus point in a few frames and holds. For a shock, a reveal or the instant of a hit.",
+      "tags": [
+        "camera",
+        "push in",
+        "punch in",
+        "zoom",
+        "fast",
+        "snap zoom",
+        "shock",
+        "reveal",
+        "impact"
+      ],
+      "code": {
+        "file": "engine/src/camera/Camera.tsx",
+        "export": "PunchIn"
+      },
+      "use": "<PunchIn frame={frame} at={hitFrame} strength={0.18} focus={{ x, y }}>...</PunchIn>",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "camera/shake",
+      "kind": "camera",
+      "name": "Camera shake",
+      "description": "The whole picture jolts and settles in about a third of a second. For an impact: a blow, a crash, a landing, thunder.",
+      "tags": ["camera", "shake", "jolt", "impact", "rumble", "crash", "quake", "hit", "thunder"],
+      "code": {
+        "file": "engine/src/camera/Camera.tsx",
+        "export": "Shake"
+      },
+      "use": "<Shake frame={frame} fps={fps} at={hitFrame} width={width} height={height}>...</Shake>; at can be a list of frames",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "camera/pan",
+      "kind": "camera",
+      "name": "Pan",
+      "description": "The camera slides sideways or up and down across a scene bigger than the frame. Over a few frames it is a whip pan, kept for the change between scenes.",
+      "tags": [
+        "camera",
+        "pan",
+        "slide",
+        "follow",
+        "whip pan",
+        "travel",
+        "reveal",
+        "sideways",
+        "tilt"
+      ],
+      "code": {
+        "file": "engine/src/camera/Camera.tsx",
+        "export": "Pan"
+      },
+      "use": "<Pan frame={frame} from={startFrame} to={endFrame} dx={px}>...</Pan>; the scene must be drawn wider than the frame",
+      "version": 1,
+      "added": "2026-10-06"
     },
     {
       "id": "overlay/captions",
