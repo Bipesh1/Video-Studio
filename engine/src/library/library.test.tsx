@@ -127,7 +127,7 @@ describe('library index', () => {
     expect(first('chase', 'camera')).toBe('camera/follow');
     expect(first('treasure', 'prop')).toBe('prop/coin');
     expect(first('wine feast')).toBe('prop/goblet');
-    expect(first('knock')).toBe('prop/door');
+    expect(first('knock', 'prop')).toBe('prop/door');
     expect(first('watchman')).toBe('prop/lantern');
     expect(first('court palace')).toBe('prop/throne');
     expect(first('leather')).toBe('color/brown');
