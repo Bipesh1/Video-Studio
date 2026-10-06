@@ -1,7 +1,7 @@
 ## Part 3. The Ink Stick art style
 
 **Style id:** `ink-stick`
-**Guide version:** 9 (2026-10-06). See the version history at the end.
+**Guide version:** 10 (2026-10-06). See the version history at the end.
 **Built from:** two reference images supplied by Biku
 - **Reference A:** a stern king in a crown, red cape and armor, under a stormy night sky with light rays
 - **Reference B:** two stick figures in a night scene under a crescent moon, one threatening and one frightened
@@ -43,8 +43,8 @@ Bold, black-outlined cartoon stick figures with big round heads and very express
 
 | Line | Color | Weight (relative to head diameter) |
 | --- | --- | --- |
-| Outline of heads, costumes, props | `#16161A` | 4 to 5% |
-| Stick limbs and torso line | `#16161A` | 7 to 8% |
+| Outline of heads, costumes, props | `#16161A` | 3.5 to 4.1% |
+| Stick limbs and torso line | `#16161A` | 6.2 to 7% |
 | Inner details: folds, seams, buttons, teeth lines | `#16161A` | 2.5 to 3% |
 | Face features: eye outlines, eyelid edges, mouth, lips | `#3A3A40`, a softer dark gray | about 2.2%, the eyelid edge a little heavier. Thinner and softer than the head outline. Pupils, brows and the mouth interior stay dark |
 | Creases inside the face: worry ticks, under-eye creases, cheek, chin and mouth-corner creases, teeth lines | `#3A3A40` | about 1.2% at the fullest point. Creases taper to a fine point at both ends, like pen strokes |
@@ -278,11 +278,11 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
 ```json
 {
   "id": "ink-stick",
-  "version": 9,
+  "version": 10,
   "line": {
     "color": "#16161A",
-    "outlinePctOfHead": [0.04, 0.05],
-    "limbPctOfHead": [0.07, 0.08],
+    "outlinePctOfHead": [0.035, 0.041],
+    "limbPctOfHead": [0.062, 0.07],
     "detailPctOfHead": [0.025, 0.03],
     "browPctOfHead": 0.08,
     "cap": "round",
@@ -396,3 +396,4 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
 | 7 | 2026-10-04 | Wrinkles look hand-drawn: creases inside the face are fine tapered pen strokes (about 1.2% at the fullest point), each a different length and angle, and tapering is now allowed inside the face. The frightened face follows Reference B as measured: lower lids pushed up and shaded with the pupils resting on them, the face tipped down toward where the character looks, a wide arched grimace with big teeth. The near eye overlaps the far eye. | Biku |
 | 8 | 2026-10-06 | Talking uses five mouth shapes instead of three: wide ("ee", top teeth showing) and round ("oo") join closed, half and open, and the mouth forms each word instead of only opening and closing. Part of the Phase 2 motion polish. | Biku (Phase 2 scope) |
 | 9 | 2026-10-06 | Three plain cloth colors for ordinary people: brown, tan and cream, each with one shadow tone. Head size settled: it stays as drawn, a little over a quarter of standing height (0.29), so Style 3.1, Style Check question 5 and the token now say so. | Biku |
+| 10 | 2026-10-06 | Lines a little thinner, at Biku's request ("the thickness now is a little bit high"): the outline of heads, costumes and props is 3.5 to 4.1% of head width (was 4 to 5%), and stick limbs and the torso line are 6.2 to 7% (was 7 to 8%). Inner details and face lines are unchanged. | Biku |

@@ -12,6 +12,12 @@ Review file: `runs/2026-10-03-look-test/checkpoint-1.md`. Questions: (1) how clo
 
 **Question 1 (2026-10-04): Biku said not close enough yet, then said go.** Faces round 4 is built (section below, guide v7). Question 1 is open again: Biku needs to look at `runs/2026-10-03-look-test/out/face-match.png` and say whether the frightened face and the wrinkles are close enough now.
 
+## Thinner lines (2026-10-06): applied, waiting for Biku's verdict
+
+Biku: "make it a little bit thinner, not too much; the thickness now is a little bit high in my opinion". Guide and tokens are now version 10: the outline of heads, costumes and props is 3.5 to 4.1% of head width (was 4 to 5%), about a sixth thinner, and stick limbs and the torso line are 6.2 to 7% (was 7 to 8%). Inner details and face lines are unchanged. Nothing had to be redrawn by hand: hands, shoes and eyes all still read. Before and after, side by side: `engine/out/sandbox/lines-before-after.png` (left is before).
+
+**Not done on purpose:** the saved pictures (golden stills, check sheets, catalog pages) still show the old thickness. They are redrawn once Biku says the new thickness is right, so they are not redrawn twice (`npm run sheets -- --golden`, `npm run library -- stills`, `npm run library -- catalog`; about 20 minutes). Videos already delivered are untouched; a new render would get a new version number.
+
 ## Phase 3. Sound: done (2026-10-06)
 
 Asked by Biku ("start phase 3"). The studio can now make music, sound effects and a finished mix, all on this computer.

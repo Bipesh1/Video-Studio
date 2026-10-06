@@ -324,3 +324,17 @@ Applied: runs/2026-10-06-sound-test/sound-test.md opens with the statement; npm 
   check; the mix report (audio/mix.json) and mixProblems in shared/src/sound.schema.ts.
 Status: active
 ```
+
+```
+L-0021 | 2026-10-06 | run: Moon Tax still (the king's opening shot)
+Area: style | Scope: style ink-stick | Source: Biku
+Lesson: Biku finds the outline a little heavy. Lines are a little thinner than the first guide
+  said: outline about 3.8% of head width, stick limbs about 6.6%.
+Evidence: Biku: "for the outer edges and line can we make it thinner", then "a little bit
+  thinner since the thickness now is a little bit high in my opinion", "not too much thin".
+Applied: styles/ink-stick/guide.md and tokens.json version 10 (the guide is the authority;
+  this entry only records why).
+Note (Claude's reading): he asked for a small change, so this is not a move toward a thin-line
+  style. Any further thinning is his to ask for.
+Status: active
+```
