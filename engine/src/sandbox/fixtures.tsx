@@ -32,7 +32,13 @@ export const crateProp: Prop = (hands) => (
   />
 );
 
-/** Something heavy to push, standing on the ground in front of the hands. */
-export const boulderProp: Prop = (hands) => (
-  <Block x={hands.front.center.x + 0.62} y={-0.72} width={1.1} height={1.44} paint="brown" />
-);
+/**
+ * Something heavy to push, standing on the ground. Its near face is put where the palms are and
+ * it reaches above the upper hand, so both hands are flat against it (Biku, 2026-10-06).
+ */
+export const boulderProp: Prop = (hands) => {
+  const face = Math.max(hands.front.center.x, hands.back.center.x) + 0.03;
+  const top = Math.min(hands.front.center.y, hands.back.center.y) - 0.32;
+  const width = 1.3;
+  return <Block x={face + width / 2} y={top / 2} width={width} height={-top} paint="brown" />;
+};

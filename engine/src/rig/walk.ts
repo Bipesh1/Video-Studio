@@ -46,6 +46,12 @@ export type WalkParams = {
    * each hand is, from the ground point under the hip, in head units. They do not bob.
    */
   hold?: { front: Vec2; back: Vec2; hand?: HandShape; gripAxis?: number };
+  /**
+   * Where the feet work, from under the hips, in head units. Below zero they work behind the
+   * body and drive it forward, as when pushing; above zero they brace out in front, as when
+   * pulling. Default 0: the steps are centered under the hips.
+   */
+  footOffset?: number;
 };
 
 export const DEFAULT_WALK: WalkParams = {
@@ -156,18 +162,23 @@ export const GAITS = {
     headTilt: 3,
     hold: { front: vec(0.56, -1.72), back: vec(0.44, -1.66) },
   },
-  /** Pushing something heavy: the body leans hard into its arms and drives with short steps. */
+  /**
+   * Pushing something heavy: the body leans hard into its arms, both palms flat on the thing,
+   * and the legs drive from behind with the back leg stretching out. The near face of the
+   * pushed thing stands where the hands are (see hold) and must reach above them.
+   */
   push: {
     period: 1.1,
     stance: 0.66,
-    stride: 0.66,
+    stride: 0.8,
     lift: 0.08,
-    hipHeight: 1.12,
+    hipHeight: 1.1,
     bob: 0.03,
     armSwing: 0,
     lean: 34,
     headTilt: -20,
-    hold: { front: vec(1.6, -1.74), back: vec(1.52, -1.5) },
+    footOffset: -0.38,
+    hold: { front: vec(1.6, -1.72), back: vec(1.6, -1.44) },
   },
   /**
    * Pulling on a rope or handle held in both fists, leaning back against it. Run the time
@@ -183,6 +194,7 @@ export const GAITS = {
     armSwing: 0,
     lean: -26,
     headTilt: 12,
+    footOffset: 0.3,
     hold: { front: vec(0.78, -1.76), back: vec(0.52, -1.72), hand: 'grip', gripAxis: -9 },
   },
 } as const satisfies Record<string, WalkParams>;
@@ -201,7 +213,7 @@ function footAt(time: number, phaseOffset: number, p: WalkParams): FootState {
   const phase = cycles - cycleIndex;
   // Time at which this foot's current stance began; the hip was then half a stride behind it.
   const stanceStart = (cycleIndex - phaseOffset) * p.period;
-  const plantX = v * stanceStart + p.stride / 2;
+  const plantX = v * stanceStart + p.stride / 2 + (p.footOffset ?? 0);
   if (phase < p.stance) return { pos: vec(plantX, 0), planted: true };
   const s = (phase - p.stance) / (1 - p.stance);
   // A kick lifts the foot early, while it is still behind the body, as in a run.

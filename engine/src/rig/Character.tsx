@@ -6,7 +6,7 @@ import type { MouthForm } from '../face/talk';
 import type { EyeStyle, FaceParams } from '../face/types';
 import { FacialHairShape, HAIR_BEHIND_BODY, HairBack, HairFront } from '../wardrobe/hair';
 import type { HairCtx } from '../wardrobe/hair';
-import { Footwear } from '../wardrobe/Footwear';
+import { Footwear, trouserEnd } from '../wardrobe/Footwear';
 import { DEFAULT_SKIN, identityHair, skinColors } from '../wardrobe/identity';
 import { Tube } from '../wardrobe/Shaded';
 import type { Age, Identity, Outfit, PieceContext } from '../wardrobe/types';
@@ -99,14 +99,6 @@ export function toScreen(
   const sign = c.facing === 'left' ? -1 : 1;
   return vec(c.x + local.x * c.head * sign, c.groundY + local.y * c.head);
 }
-
-/** Where a trouser leg ends inside a boot, so the tube's round end never shows under the sole. */
-const ankle = (l: LegJoints): Vec2 => {
-  const dx = l.foot.x - l.knee.x;
-  const dy = l.foot.y - l.knee.y;
-  const len = Math.hypot(dx, dy) || 1;
-  return { x: l.foot.x - (dx / len) * 0.16, y: l.foot.y - (dy / len) * 0.16 };
-};
 
 /** A child's body is this fraction of an adult's, under a head of the same size. */
 export const CHILD_BODY = 0.78;
@@ -243,7 +235,19 @@ export const Character = ({
       <g>
         {outfit?.trousers ? (
           <Tube
-            pts={[l.hip, l.knee, outfit.boots ? ankle(l) : l.foot]}
+            pts={[
+              l.hip,
+              l.knee,
+              // The trouser leg ends inside the shoe, wherever the shoe sits on the leg.
+              outfit.boots
+                ? trouserEnd(
+                    l.foot,
+                    l.knee,
+                    dir,
+                    outfit.boots.style === 'sneaker' ? 'sneaker' : 'boot',
+                  )
+                : l.foot,
+            ]}
             spec={outfit.trousers}
             shadowSide={shadowSide}
           />
@@ -253,6 +257,7 @@ export const Character = ({
         {outfit?.boots && (
           <Footwear
             foot={l.foot}
+            knee={l.knee}
             dir={dir}
             spec={outfit.boots}
             id={`${uid}-boot-${which}`}

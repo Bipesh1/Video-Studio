@@ -1,6 +1,15 @@
 import { renderToStaticMarkup } from 'react-dom/server';
 import { describe, expect, it } from 'vitest';
-import { PUNCH_IN_FRAMES, Pan, PunchIn, SHAKE_SECONDS, Shake, shakeAt } from './Camera';
+import {
+  FADE_FRAMES,
+  Fade,
+  PUNCH_IN_FRAMES,
+  Pan,
+  PunchIn,
+  SHAKE_SECONDS,
+  Shake,
+  shakeAt,
+} from './Camera';
 
 /** Phase 2D camera moves (Style 8). */
 
@@ -96,5 +105,21 @@ describe('pan', () => {
     expect(shiftAt(25)).toBeCloseTo(-300, 6);
     expect(shiftAt(40)).toBe(-600);
     expect(shiftAt(90)).toBe(-600);
+  });
+});
+
+describe('quick fade between scenes', () => {
+  const darkAt = (frame: number) => {
+    const html = svg(<Fade frame={frame} at={100} width={1080} height={1920} />);
+    return html.includes('<rect') ? Number(/opacity="([\d.]+)"/.exec(html)?.[1]) : 0;
+  };
+
+  it('is fully dark on the frame the scene changes and clear a few frames either side', () => {
+    expect(darkAt(100)).toBe(1);
+    expect(darkAt(100 - FADE_FRAMES)).toBe(0);
+    expect(darkAt(100 + FADE_FRAMES)).toBe(0);
+    expect(darkAt(97)).toBeCloseTo(0.5, 9);
+    expect(darkAt(103)).toBeCloseTo(0.5, 9);
+    expect(FADE_FRAMES).toBeLessThanOrEqual(8);
   });
 });

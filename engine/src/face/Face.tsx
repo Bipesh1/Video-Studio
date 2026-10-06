@@ -16,7 +16,9 @@ import {
   MOUTH_Y,
   PUPIL_D,
   TURN,
+  eyeSlots,
 } from './layout';
+import type { EyeSlot } from './layout';
 import type { MouthForm } from './talk';
 import type { Brow, EyeStyle, Eyes, FaceParams, Mouth } from './types';
 
@@ -53,14 +55,6 @@ const LID_PAD = 0.03;
 const TALK_OPEN = 0.14;
 /** How far outside the eye outline the under-eye crease runs (measured on Reference B). */
 const BAG_OFFSET = 0.034;
-
-type EyeSlot = {
-  side: -1 | 1;
-  x: number;
-  widthFactor: number;
-  /** Where the near eye, drawn on top, stops covering this one. */
-  coverX?: number;
-};
 
 function clampUnit(v: Vec2): Vec2 {
   const l = length(v);
@@ -653,13 +647,7 @@ export const Face = ({
 }: FaceProps) => {
   const t = clamp(turn, 0, 1);
   const shift = stops(t, TURN.shift);
-  const half = stops(t, TURN.halfSpacing);
-  const slots: EyeSlot[] = (
-    [
-      { side: -1, x: shift - half, widthFactor: stops(t, TURN.leftEyeWidth) },
-      { side: 1, x: shift + half, widthFactor: stops(t, TURN.rightEyeWidth) },
-    ] as const
-  ).filter((s) => s.widthFactor > 0.15);
+  const slots = eyeSlots(t);
   // The near (-x) eye is drawn last, so it overlaps the far eye, as on both figures in
   // Reference B. Its +x edge is where the far eye starts to show.
   const near = slots.find((s) => s.side === -1);

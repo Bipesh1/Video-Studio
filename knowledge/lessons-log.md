@@ -162,3 +162,84 @@ Applied: endless backgrounds (Background.tsx); chainAt for moves in a row (chain
   ground in any move; the clip reframed with bigger characters.
 Status: active
 ```
+
+```
+L-0012 | 2026-10-06 | run: Phase 2D action test clip, first cut (shot 2, the stand-off)
+Area: faces | Scope: style ink-stick | Source: Biku
+Lesson: A face must look right at every head turn, not only at front, three-quarter and
+  profile. Turning from three-quarter to profile, the far eye narrows and is gone by three
+  quarters of the way; the near eye slides to the front of the face and is the one eye of the
+  profile. The two eyes never sit on top of each other.
+Evidence: Biku: "the eyes look weird like two eyes". Both characters were held at a turn of
+  0.8, between three-quarter and profile, where the old layout squashed the near eye onto the
+  far one. A sheet of the faces at every step of the turn showed it from 0.6 to 0.9 on every
+  expression.
+Applied: eyeSlots in engine/src/face/layout.ts (tears read the same eyes); the turn-steps
+  sheet; tests that the eyes never overlap by more than a sliver at any turn. Side effect: in
+  profile the brow now slopes the right way round (an angry brow is low at the front).
+Status: active
+```
+
+```
+L-0013 | 2026-10-06 | run: Phase 2D action test clip, first cut
+Area: story and staging | Scope: general | Source: Biku
+Lesson: (1) What happens must make sense. Each action follows from the one before for a reason
+  the viewer can see. After a punch a character may shrug it off, stagger or go down: all of
+  these are fine, people can take punches. What reads as weird is a string of moves with
+  nothing linking them. (2) One continuous story stays in one place at one time of day. The
+  setting changes only when the story moves, and then a quick fade marks it. (3) Inside a
+  scene, cut plainly and on movement, so the action carries over the cut. A clip made to test
+  things must still make sense as a story.
+Evidence: Biku: "when the soldier punches the thief he doesn't fall immediately he runs and
+  falls that's weird" and "why did the surrounding changed from light to dark and the
+  transition is weird too". The punched thief staggered, turned, ran off and tripped for no
+  reason; the chase was in daylight and the fight at night, only to show two palettes
+  (Claude's own choice, and the wrong one); the cut went from a guard in mid-jump to two people
+  standing.
+Corrected: Claude first wrote point 1 as "someone hit hard goes down on the blow". Biku
+  corrected it the same day: "the fall doesn't always have to come with the blow since one can
+  take punches. It looked weird because it made no sense, that's why I said it." The rule is
+  about sense, not about falling.
+Applied: the clip re-cut in engine/src/sandbox/part-h.tsx: one place and one afternoon; the
+  fight shot opens on both still running; the punch knocks the thief down, which is one sensible
+  outcome and not the only one; a quick fade (Fade in Camera.tsx) before the last shot, where
+  time has passed.
+Status: active
+```
+
+```
+L-0014 | 2026-10-06 | run: Phase 2D action test clip, second cut (shot 3, the push)
+Area: poses | Scope: style ink-stick | Source: Biku
+Lesson: A character must really touch what it pushes, holds or leans on, and its feet must be
+  where the effort comes from. Place the thing from the hands, so it meets them. In a push the
+  palms are flat on the thing and the legs drive from behind the hips; in a pull the feet brace
+  out in front. Check contact and feet in a close-up, not on a small strip.
+Evidence: Biku: "the hand isn't touching the objects and the shoes also look weirdly
+  positioned". The block was shorter than the height of the hands, so the fists hung in the air
+  above its corner, and the feet took small steps bunched under the hips, so the body leaned
+  hard with nothing driving it.
+Applied: footOffset in engine/src/rig/walk.ts (push drives from behind, pull braces in front,
+  a longer pushing step); both palms at the same distance, one above the other; the block
+  stand-in is placed from the hands and reaches above them (sandbox/fixtures.tsx); tests for
+  where the feet work.
+Status: active
+```
+
+```
+L-0015 | 2026-10-06 | run: Phase 2D action test clip, third cut (shot 3, the push)
+Area: wardrobe | Scope: style ink-stick | Source: Biku
+Lesson: A shoe is part of the leg, not a stamp at the end of it. Its upper part follows the
+  shin, so the leg goes down into it. A foot on the ground stays flat only as far as an ankle
+  bends; past that the heel or the toe lifts; a foot in the air is square to its shin; a shin
+  lying forward on the ground points the foot straight back. Check shoes close up on every
+  kind of leg pose, not only on a standing figure.
+Evidence: Biku: "the shoes still look weird like they are not properly attached to the leg".
+  Boots were always drawn standing upright and flat. On the slanted legs of the push the leg
+  entered the boot at the toe and the upper stuck up empty behind it. The same fault was in
+  every bent, lifted or lying leg since Phase 1; nobody had looked at shoes closer than a
+  whole figure.
+Applied: shoeFit and trouserEnd in engine/src/wardrobe/Footwear.tsx (the trouser leg ends
+  inside the shoe wherever it sits; no part of a shoe goes under the ground); the shoes sheet,
+  which shows the lower body close up in 24 leg poses; tests.
+Status: active
+```

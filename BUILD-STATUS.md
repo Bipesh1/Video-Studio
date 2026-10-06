@@ -1,7 +1,7 @@
 # Build Status
 
 **Current phase:** Phase 2, steps 2A (library foundation), 2B (people), 2C (poses and motion polish) and 2D (action) done. Next step is 2E (world: places, props, framing), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
-**Next:** Biku watches the action test clip `engine/out/sandbox/action.mp4` and looks at the 2D sheets (below) and says what to change. Then 2E. The steps are listed under "Phase 2 steps" below.
+**Next:** Biku watches the re-cut action test clip `engine/out/sandbox/action.mp4` and says whether the three things he raised are fixed. Then 2E. The steps are listed under "Phase 2 steps" below.
 **Last updated:** 2026-10-06
 
 ## Checkpoint 1: waiting for Biku
@@ -9,6 +9,19 @@
 Review file: `runs/2026-10-03-look-test/checkpoint-1.md`. Questions: (1) how close the look is and what to change, (2) narrator and character voices, (3) head size (answered 2026-10-06: fine as it is), (4) hair colors (guide v3), (5) fingers on hands that cover the face.
 
 **Question 1 (2026-10-04): Biku said not close enough yet, then said go.** Faces round 4 is built (section below, guide v7). Question 1 is open again: Biku needs to look at `runs/2026-10-03-look-test/out/face-match.png` and say whether the frightened face and the wrinkles are close enough now.
+
+## Feedback on the action clip (2026-10-06): applied
+
+Biku watched the first cut and said three things, then one more on each of the next two cuts. All are fixed and the clip is re-cut (still `engine/out/sandbox/action.mp4`, 13.8 seconds; the clip is a test, not a delivered video).
+
+1. **"The eyes look weird like two eyes."** Both characters were held at a head turn between three-quarter and profile, where the near eye was squashed onto the far one. Fixed in the face itself (`eyeSlots` in `engine/src/face/layout.ts`): the far eye narrows and is gone by three quarters of the way to profile, the near eye slides to the front and is the profile eye, and the two never sit on top of each other. Front and three-quarter views are unchanged. In profile the brow now slopes the right way round (an angry brow is low at the front), so side-view faces changed a little and every golden still was rendered again. New check sheet: `turn-steps`.
+2. **"When the soldier punches the thief he doesn't fall immediately, he runs and falls."** The sequence made no sense: punched, then running off, then falling for no reason. In the re-cut the punch knocks him down, with flash, shake and stars. Biku added afterwards that a fall does not always have to come with a blow, since a character can take punches; the point is that what happens must make sense. The stagger, the run and the trip stay in the library for scenes where they fit.
+3. **"Why did the surrounding change from light to dark, and the transition is weird."** The whole story is now in one place on one afternoon. The fight shot opens with both still running in, so the chase carries over the cut. The last shot, where time has passed, comes in after a quick fade (`Fade` in `engine/src/camera/Camera.tsx`, new, in the library as `camera/fade`).
+
+4. **"The hand isn't touching the object and the shoes look weirdly positioned"** (second cut, the push). The block was shorter than the hands, so the fists hung above it, and the feet were bunched under the hips. Now both palms are flat on the block, which is placed from the hands and reaches above them, and the legs drive from behind with the back leg stretched out. The pull braces its feet in front. New `footOffset` on the walk settings; lesson L-0014.
+5. **"The shoes still look weird, like they are not properly attached to the leg"** (third cut). Boots were always drawn upright and flat, so a slanted leg entered them at the toe. Shoes now follow the leg in every pose: the upper part leans with the shin, a heel lifts when the leg leans far forward, a foot in the air is square to its shin, and a trouser leg always ends inside the shoe (`shoeFit` in `engine/src/wardrobe/Footwear.tsx`). This changes every figure with shoes a little, so all golden stills were rendered again. New close-up check sheet: `shoes`. Lesson L-0015.
+
+Lessons L-0012 (faces at every turn) and L-0013 (story and staging: every action needs a reason the viewer can see; one story, one place, one light; cut on movement, fade for a change of time) are in the log and the playbook. Library: 151 assets.
 
 ## Phase 2D. Action: done (2026-10-06)
 
@@ -25,7 +38,7 @@ Asked by Biku ("start 2D"). Characters can run, jump, fall and fight, with the e
 - **Violence by implication only:** a hit is the swing, an impact flash over the point of contact, a shake and the other person's recoil. Nothing is wounded. Written into `moves.ts` and the playbook.
 - **Library:** 150 assets (24 new: 10 actions, 9 effects, 4 camera moves, the chain), all with previews and golden stills where they can be pictured.
 - **Sheets:** `moves-a`, `moves-b` (every move as a strip of moments) and `effects` (`npm run sheets -- --only=moves-a,moves-b,effects`), golden copies in `knowledge/golden/`.
-- **Action test clip:** `engine/out/sandbox/action.mp4` (13.5 seconds, no sound; `npm run sheets -- --only=action --video`). A hooded thief is spotted, chased and caught by a guard. Shot 1: sneak, `!`, run, motion lines, a jump over a crate, following camera. Shot 2: stand-off with anger mark and sweat, punch, impact flash, shake, head squash, recoil, turn, run, trip, landing flash, dizzy stars, cheer. Shot 3: pushing a block in tears while the guard strolls behind, a pan and a fast push-in.
+- **Action test clip:** `engine/out/sandbox/action.mp4` (13.8 seconds, no sound; `npm run sheets -- --only=action --video`). A hooded thief is spotted, chased and caught by a guard, in one place on one afternoon. Shot 1: sneak, `!`, run, motion lines, a jump over a crate, following camera. Shot 2: both run in, he stops and turns, hands up, anger mark and sweat, punch, impact flash, shake, head squash, knocked flat at once, landing flash, dizzy stars, cheer. Shot 3, after a quick fade: pushing a block in tears while the guard strolls behind, a pan and a fast push-in. Re-cut after Biku's feedback (section above).
 
 ### Draw, look and fix loop
 

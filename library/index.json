@@ -3205,6 +3205,29 @@
       "added": "2026-10-06"
     },
     {
+      "id": "camera/fade",
+      "kind": "camera",
+      "name": "Quick fade between scenes",
+      "description": "The picture dips to dark and comes back on the next scene. For a change of place or time; shots inside one scene change with a plain cut.",
+      "tags": [
+        "camera",
+        "fade",
+        "transition",
+        "scene change",
+        "later",
+        "time passes",
+        "dip to black",
+        "next day"
+      ],
+      "code": {
+        "file": "engine/src/camera/Camera.tsx",
+        "export": "Fade"
+      },
+      "use": "<Fade frame={frame} at={frameTheSceneChanges} width={width} height={height} /> drawn over everything",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
       "id": "overlay/captions",
       "kind": "overlay",
       "name": "Captions",

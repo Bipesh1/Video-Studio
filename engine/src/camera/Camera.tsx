@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { Easing, interpolate } from 'remotion';
 import { clamp, easeOutBack, smoothstep } from '../rig/math';
 import { seeded } from '../rig/random';
+import { ink } from '../tokens';
 
 /**
  * A 2D camera over the whole scene (Part 2, section 7.6). Each move wraps the scene and can be
@@ -160,4 +161,30 @@ export const Pan = ({
 }) => {
   const e = smoothstep((frame - from) / Math.max(1, to - from));
   return <g transform={`translate(${-dx * e} ${-dy * e})`}>{children}</g>;
+};
+
+/** Frames a quick fade takes to go dark, and again to come back. */
+export const FADE_FRAMES = 6;
+
+/**
+ * A quick fade between two scenes (Style 8): the picture dips to dark and comes back on the
+ * next scene. Use it when the place or the time changes; inside one scene, shots change with
+ * a plain cut. `at` is the frame the scene changes on. Draw it over everything else.
+ */
+export const Fade = ({
+  frame,
+  at,
+  width,
+  height,
+  frames = FADE_FRAMES,
+}: {
+  frame: number;
+  at: number;
+  width: number;
+  height: number;
+  frames?: number;
+}) => {
+  const dark = clamp(1 - Math.abs(frame - at) / Math.max(1, frames), 0, 1);
+  if (dark <= 0) return null;
+  return <rect width={width} height={height} fill={ink} opacity={dark} />;
 };

@@ -26,18 +26,65 @@ export const CALM_MOUTH_W = 0.14;
 /** A wide mouth is pushed back until its front corner sits inside this radius of the head. */
 export const MOUTH_FIT_R = 0.445;
 
+/** Half the distance between the two eyes of a face seen from the front. */
+const FRONT_HALF = EYE_W / 2 + EYE_GAP / 2;
+/** Where the two eyes sit in a three-quarter view. */
+const QUARTER_NEAR = 0.15 - EYE_W * 0.45;
+const QUARTER_FAR = 0.15 + EYE_W * 0.45;
+/** Where the one eye of a profile sits. */
+const PROFILE_EYE = 0.25;
+
 /**
- * Feature placement by head turn, at turn = 0 (front), 0.5 (three-quarter), 1 (profile).
- * The +x eye is on the side the head turns toward; it foreshortens. The -x eye hides in profile.
+ * Feature placement by head turn. The eye values are given at turn = 0 (front), 0.25, 0.5
+ * (three-quarter), 0.75 and 1 (profile); the others at 0, 0.5 and 1.
+ *
+ * The near eye is the -x one. It is drawn over the other, slides toward the front of the face
+ * as the head turns, and is the one eye of a profile. The far eye, on the side the head turns
+ * toward, narrows against the near eye and is gone by three quarters of the way to profile.
+ * The two never sit on top of each other, so a head can be held at any turn (Biku, 2026-10-06).
  */
 export const TURN = {
   shift: [0, 0.15, 0.25],
-  halfSpacing: [EYE_W / 2 + EYE_GAP / 2, EYE_W * 0.45, 0],
-  leftEyeWidth: [1, 1, 0],
-  rightEyeWidth: [1, 0.8, 0.8],
+  nearEyeX: [-FRONT_HALF, (QUARTER_NEAR - FRONT_HALF) / 2, QUARTER_NEAR, 0.13, PROFILE_EYE],
+  farEyeX: [FRONT_HALF, (QUARTER_FAR + FRONT_HALF) / 2, QUARTER_FAR, 0.3, 0.37],
+  nearEyeWidth: [1, 1, 1, 0.9, 0.8],
+  farEyeWidth: [1, 0.9, 0.8, 0.2, 0],
   mouthShift: [0, 0.15, 0.25],
   mouthWidth: [1, 0.85, 0.55],
 } as const;
+
+/** An eye narrower than this share of its full width is not drawn. */
+export const EYE_HIDDEN_BELOW = 0.25;
+
+export type EyeSlot = {
+  /** -1 is the near eye, 1 the far eye. */
+  side: -1 | 1;
+  x: number;
+  widthFactor: number;
+  /** Where the near eye, drawn on top, stops covering this one. */
+  coverX?: number;
+};
+
+const clamp01 = (t: number) => Math.min(1, Math.max(0, t));
+
+/** Piecewise-linear through values placed evenly from turn 0 to turn 1. */
+const at = (turn: number, values: readonly number[]): number => {
+  const span = values.length - 1;
+  const u = clamp01(turn) * span;
+  const i = Math.min(span - 1, Math.floor(u));
+  const a = values[i] ?? 0;
+  const b = values[i + 1] ?? a;
+  return a + (b - a) * (u - i);
+};
+
+/** The eyes that show at a head turn and where they sit. Everything on the face reads this. */
+export function eyeSlots(turn: number): EyeSlot[] {
+  const slots: EyeSlot[] = [
+    { side: -1, x: at(turn, TURN.nearEyeX), widthFactor: at(turn, TURN.nearEyeWidth) },
+    { side: 1, x: at(turn, TURN.farEyeX), widthFactor: at(turn, TURN.farEyeWidth) },
+  ];
+  return slots.filter((s) => s.widthFactor >= EYE_HIDDEN_BELOW);
+}
 
 export const HEAD_TURNS = { front: 0, 'three-quarter': 0.5, profile: 1 } as const;
 export type HeadTurn = keyof typeof HEAD_TURNS;

@@ -96,6 +96,30 @@ describe('ways of moving on foot', () => {
     expect(ahead.size).toBe(1);
   });
 
+  it('pushing drives from behind the hips, pulling braces out in front', () => {
+    const feet = (name: 'push' | 'pull' | 'carry') => {
+      const xs: number[] = [];
+      for (let f = 0; f < framesOf(GAITS[name].period * 2); f++) {
+        const w = walkAt(f / fps, GAITS[name]);
+        for (const s of sides) if (w.feet[s].planted) xs.push(w.feet[s].pos.x - w.pose.rootX);
+      }
+      return { nearest: Math.max(...xs), farthest: Math.min(...xs), ahead: Math.max(...xs) };
+    };
+    // No planted foot is ever ahead of the hips in a push, and the back foot is far behind.
+    expect(feet('push').nearest).toBeLessThan(0.05);
+    expect(feet('push').farthest).toBeLessThan(-0.7);
+    // In a pull no planted foot is ever behind the hips.
+    expect(feet('pull').farthest).toBeGreaterThan(-0.05);
+    // A carry steps evenly under the body.
+    expect(feet('carry').nearest).toBeCloseTo(-feet('carry').farthest, 1);
+  });
+
+  it('both palms of a push are at the same distance ahead, one above the other', () => {
+    const j = computeSkeleton(walkAt(0.3, GAITS.push).pose);
+    expect(j.arms.front.hand.x).toBeCloseTo(j.arms.back.hand.x, 6);
+    expect(j.arms.back.hand.y - j.arms.front.hand.y).toBeGreaterThan(0.2);
+  });
+
   it('pulling steps backward while still facing the load', () => {
     expect(ACTIONS.pull(1).rootX).toBeLessThan(ACTIONS.pull(0).rootX - 0.3);
     expect(ACTIONS.pull(0.4).torsoLean).toBeLessThan(-15);

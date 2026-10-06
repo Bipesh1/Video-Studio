@@ -22,6 +22,8 @@ export const STILL_SHEETS = [
   'moves-a',
   'moves-b',
   'effects',
+  'turn-steps',
+  'shoes',
 ] as const;
 export const VIDEO_SHEETS = {
   walk: 4,
@@ -29,7 +31,7 @@ export const VIDEO_SHEETS = {
   atmos: 4,
   polish: 6,
   moods: 4,
-  action: 13.5,
+  action: 13.8,
 } as const;
 export const BACKGROUNDS = ['light', 'dark'] as const;
 

@@ -6,6 +6,7 @@ import {
   blendFace,
   faceAt,
 } from './expressions';
+import { EYE_W, eyeSlots } from './layout';
 import { MOUTH_FORMS, MOUTH_SHAPES, mouthShapeAt, shapesOfWord, talkAt } from './talk';
 import { tokens } from '../tokens';
 
@@ -202,6 +203,52 @@ describe('talking mouth', () => {
       }
       expect(shapes.has('open')).toBe(true);
       expect(shapes.has('half')).toBe(true);
+    }
+  });
+});
+
+describe('eyes as the head turns', () => {
+  const half = (slot: { widthFactor: number }) => (EYE_W * slot.widthFactor) / 2;
+
+  it('never puts one eye on top of the other, at any turn (Biku, 2026-10-06)', () => {
+    for (let turn = 0; turn <= 1.0001; turn += 0.0125) {
+      const [near, far] = eyeSlots(turn);
+      if (!near || !far) continue;
+      // The eyes may just overlap, as in the references, but never by more than a sliver.
+      const overlap = near.x + half(near) - (far.x - half(far));
+      expect(overlap).toBeLessThan(EYE_W * 0.08);
+      expect(far.x).toBeGreaterThan(near.x + half(near) * 0.9);
+    }
+  });
+
+  it('keeps the front and three-quarter views where they have always been', () => {
+    const [frontNear, frontFar] = eyeSlots(0);
+    expect(frontNear?.x).toBeCloseTo(-(frontFar?.x ?? 0), 9);
+    expect(frontNear?.widthFactor).toBe(1);
+    expect(frontFar?.widthFactor).toBe(1);
+    const [near, far] = eyeSlots(0.5);
+    expect(near?.x).toBeCloseTo(0.015, 9);
+    expect(far?.x).toBeCloseTo(0.285, 9);
+    expect(near?.widthFactor).toBe(1);
+    expect(far?.widthFactor).toBeCloseTo(0.8, 9);
+  });
+
+  it('shows one eye from three quarters of the way to profile, at the front of the face', () => {
+    expect(eyeSlots(0.6)).toHaveLength(2);
+    expect(eyeSlots(0.75)).toHaveLength(1);
+    const profile = eyeSlots(1);
+    expect(profile).toHaveLength(1);
+    expect(profile[0]?.side).toBe(-1);
+    expect(profile[0]?.x).toBeCloseTo(0.25, 9);
+    expect(profile[0]?.widthFactor).toBeCloseTo(0.8, 9);
+  });
+
+  it('moves the eyes smoothly: no jump from one step of a turn to the next', () => {
+    let last = eyeSlots(0)[0]?.x ?? 0;
+    for (let turn = 0.0125; turn <= 1.0001; turn += 0.0125) {
+      const x = eyeSlots(turn)[0]?.x ?? 0;
+      expect(Math.abs(x - last)).toBeLessThan(0.01);
+      last = x;
     }
   });
 });

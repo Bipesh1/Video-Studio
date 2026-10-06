@@ -1,7 +1,7 @@
 import { useId } from 'react';
-import { EYE_H, EYE_W, EYE_Y, TURN } from '../face/layout';
+import { EYE_H, EYE_W, EYE_Y, eyeSlots } from '../face/layout';
 import { body } from '../rig/body';
-import { clamp, stops, vec } from '../rig/math';
+import { clamp, vec } from '../rig/math';
 import type { Vec2 } from '../rig/math';
 import { ink, lineWeights, tokens, white } from '../tokens';
 import { Drop } from './Sweat';
@@ -14,17 +14,9 @@ import { Drop } from './Sweat';
 
 type Eye = { side: -1 | 1; x: number; width: number };
 
-/** The eyes that show at a head turn, with the same placement the face uses. */
-function eyesAt(turn: number): Eye[] {
-  const t = clamp(turn, 0, 1);
-  const shift = stops(t, TURN.shift);
-  const half = stops(t, TURN.halfSpacing);
-  const eyes: Eye[] = [
-    { side: -1, x: shift - half, width: stops(t, TURN.leftEyeWidth) },
-    { side: 1, x: shift + half, width: stops(t, TURN.rightEyeWidth) },
-  ];
-  return eyes.filter((e) => e.width > 0.15);
-}
+/** The eyes that show at a head turn, exactly where the face draws them. */
+const eyesAt = (turn: number): Eye[] =>
+  eyeSlots(turn).map((slot) => ({ side: slot.side, x: slot.x, width: slot.widthFactor }));
 
 /**
  * The line a tear runs along: from the lower outer corner of an eye, out around the mouth and

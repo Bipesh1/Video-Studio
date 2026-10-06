@@ -19,6 +19,7 @@ Current best practice for the Ink Stick look, learned from real videos and Biku'
 - **Wrinkles are hand-drawn creases, never tally marks.** Each is a thin pen stroke (about 1.2% of the head at its fullest, guide v7), fine at both ends, with its own length and angle, following the curve of the eye or cheek it sits on. Use the `Crease` piece in `engine/src/face/crease.tsx`; never a plain even stroke. (L-0006, Biku)
 - **In a three-quarter view the near eye overlaps the far eye,** and the brow over the far eye is short and sits right over it, so it never touches the head outline. (L-0006, measured)
 - **Raised brows stay inside the head.** Surprised and horrified brows are lighter arcs; if a brow reaches the outline, lower it or lighten it. (self-check)
+- **A head can be held at any turn.** Front and three-quarter show two eyes; from three quarters of the way to profile there is one. If a face ever shows one eye squashed onto the other, the layout is wrong, not the scene. Check new faces on the turn-steps sheet. (L-0012, Biku)
 - **Measure, do not eyeball.** Before matching a face to a reference, enlarge the reference 8 times with a grid and read sizes, positions, tilt and line thickness in head units. Compare at the same head size (`npm run look-test -- --faces`). (L-0007, self-check)
 
 ## Bodies and arms
@@ -26,6 +27,9 @@ Current best practice for the Ink Stick look, learned from real videos and Biku'
 - **The body agrees with the head.** When a costumed character is turned three-quarter, the arm on the side they face is the far arm and comes out from behind the chest; the other arm is the near one and hangs in front of the chest. Seen from the front, both arms hang beside the chest. The engine does this by view (`engine/src/rig/layers.ts`); check it on every new costume. (L-0008, Biku)
 - **No arm bends backward.** A resting arm hangs a little behind the body and bends forward at the elbow. An arm that holds something out reaches forward with the elbow ahead of the shoulder, like the king's sword arm in Reference A, never folded back against the body. (L-0008, Biku)
 - **A holding hand is a closed fist.** The fingers are fat bands that cover the handle; it shows only above and below the fist, with the thumb across the top. (L-0008, Biku)
+- **Hands touch what they push, hold or lean on.** Place the thing from the hand positions so it meets them, and make it big enough to reach them: a pushed block must stand taller than the upper hand. Look at the contact in a close-up before calling it done. (L-0014, Biku)
+- **Shoes follow the leg.** The upper part of a shoe leans with the shin and the leg goes down into it; a heel lifts when the leg leans far forward. The engine does this (`Footwear.tsx`); after any new leg pose, look at the feet close up on the `shoes` sheet. (L-0015, Biku)
+- **Feet show where the effort comes from.** Pushing drives from behind the hips with the back leg stretched out; pulling braces the feet out in front. Feet bunched under a leaning body look wrong. (L-0014, Biku)
 - **Keep hands out of the caption area,** above all white gloves behind white caption text. Move the character sideways if a hand lands there. (moon tax, self-check)
 
 ## Clothes and people
@@ -48,6 +52,8 @@ Current best practice for the Ink Stick look, learned from real videos and Biku'
 ## Action
 
 - **A hit is never shown landing on a body.** Stage it in four beats: the attacker's wind-up, the swing, an `Impact` flash over the point of contact with a `Shake` and a head squash on the same frame, then the other person's `recoilAt`. No blood, wounds or gore, ever. (Style 4, Phase 2D)
+- **Every action needs a reason the viewer can see.** After a hit a character may shrug it off, stagger or go down; people can take punches, so all of these are fine. What reads as weird is a string of moves with nothing linking them, such as being punched, then running off, then falling over. Ask of each beat: why does this happen now? (L-0013, Biku)
+- **One story, one place, one light.** A chase and the fight that ends it happen in the same place at the same time of day. Change the setting only when the story moves, and mark it with the quick `Fade`. Inside a scene, cut plainly and on movement so the action carries across. (L-0013, Biku)
 - **Line the moments up from the exported times.** The flash, the shake and the recoil all start at `PUNCH.hit` or `SWING.hit`; a landing flash at `FALL.ground`. Never guess a frame number. (Phase 2D)
 - **Put moves together with `chainAt`,** not by hand: each move then starts where the last one ended and the change is blended. Read how far the character has gone from `pose.rootX`. (Phase 2D)
 - **A camera that follows someone needs an endless background** (`endless` on `Background`), or the scenery runs out after two screens. (L-0011, self-check)

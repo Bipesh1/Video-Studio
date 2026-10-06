@@ -24,8 +24,8 @@ import { Rod } from './Rod';
 import { BG_SHEETS, CostumeSheet, AtmosVideo, HairTurnsSheet, IdentitySheet } from './part-b';
 import { AgesSheet, ClothesSheet, CostumesBSheet, PeopleSheet, VillagersSheet } from './part-c';
 import { PosesBSheet } from './part-d';
-import { MoodsVideo, MouthsSheet, PolishVideo } from './part-e';
-import { MovesASheet, MovesBSheet } from './part-f';
+import { MoodsVideo, MouthsSheet, PolishVideo, TurnStepsSheet } from './part-e';
+import { MovesASheet, MovesBSheet, ShoesSheet } from './part-f';
 import { EffectsSheet } from './part-g';
 import { ActionVideo } from './part-h';
 import type { SandboxBg, SheetName } from './sheets';
@@ -444,6 +444,8 @@ export const Sandbox = ({ sheet, bg }: SandboxProps) => {
     'moves-a': <MovesASheet c={c} />,
     'moves-b': <MovesBSheet c={c} />,
     effects: <EffectsSheet c={c} />,
+    'turn-steps': <TurnStepsSheet c={c} />,
+    shoes: <ShoesSheet c={c} />,
     walk: <WalkVideo c={c} />,
     motion: <MotionVideo c={c} />,
     polish: <PolishVideo c={c} />,

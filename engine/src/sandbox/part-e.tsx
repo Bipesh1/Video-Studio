@@ -282,3 +282,40 @@ export function MouthsSheet({ c }: { c: Colors }) {
     </>
   );
 }
+
+/**
+ * The face at every step of a head turn from three-quarter to profile, on six expressions.
+ * No step may show a doubled eye: a scene can hold a head at any of these turns.
+ */
+const TURN_STEPS = [0.5, 0.625, 0.75, 0.875, 1] as const;
+const TURN_FACES: ExpressionName[] = ['neutral', 'angry', 'shouting', 'afraid', 'sad', 'happy'];
+
+export function TurnStepsSheet({ c }: { c: Colors }) {
+  const cw = W / TURN_STEPS.length;
+  const ch = 290;
+  const top = 130;
+  return (
+    <>
+      {TURN_STEPS.map((turn, i) => (
+        <Label key={turn} x={cw * (i + 0.5)} y={70} c={c}>
+          {`turn ${turn}`}
+        </Label>
+      ))}
+      {TURN_FACES.map((expression, r) =>
+        TURN_STEPS.map((turn, i) => (
+          <Bust
+            key={`${expression}-${turn}`}
+            id={`turn-step-${r}-${i}`}
+            cx={cw * (i + 0.5)}
+            cy={top + ch * (r + 0.5)}
+            w={cw - 10}
+            h={ch - 20}
+            head={178}
+            expression={expression}
+            turn={turn}
+          />
+        )),
+      )}
+    </>
+  );
+}

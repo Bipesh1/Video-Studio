@@ -3,9 +3,12 @@ import type { ExpressionName } from '../face/expressions';
 import { ACTIONS } from '../rig/actions';
 import { Character } from '../rig/Character';
 import type { CharacterProps } from '../rig/Character';
-import { FALL, JUMP, PUNCH, RECOIL, SWING } from '../rig/moves';
+import { FALL, JUMP, PUNCH, RECOIL, SWING, jumpAt } from '../rig/moves';
+import { resolvePose } from '../rig/pose';
+import { cower, kneel, sit, stand } from '../rig/poses';
 import type { ResolvedPose } from '../rig/types';
 import { GAITS } from '../rig/walk';
+import { outfitFrom } from '../wardrobe/garments';
 import { boulderProp, clubProp, crateProp, ropeProp } from './fixtures';
 import { Label } from './Sandbox';
 import type { Colors } from './Sandbox';
@@ -157,3 +160,89 @@ function Strips({ strips, c }: { strips: Strip[]; c: Colors }) {
 
 export const MovesASheet = ({ c }: { c: Colors }) => <Strips strips={STRIPS_A} c={c} />;
 export const MovesBSheet = ({ c }: { c: Colors }) => <Strips strips={STRIPS_B} c={c} />;
+
+/**
+ * Shoes on legs, close up (Biku, 2026-10-06): the lower half of the body in every kind of leg
+ * pose, in boots and in sneakers. The upper part of each shoe must follow its shin, a planted
+ * shoe must sit on the ground, and no leg may enter a shoe at the toe.
+ */
+const BOOTS = outfitFrom({
+  top: { kind: 'shirt', cloth: 'cream' },
+  bottom: { kind: 'trousers', cloth: 'tan' },
+  shoes: { kind: 'boots', cloth: 'brown' },
+});
+const SNEAKERS = outfitFrom({
+  top: { kind: 'tank-top', cloth: 'white' },
+  bottom: { kind: 'trousers', cloth: 'denim' },
+  shoes: { kind: 'sneakers', cloth: 'white' },
+});
+
+type ShoeCell = { label: string; pose: ResolvedPose; dx?: number; sneakers?: boolean };
+
+const SHOE_CELLS: ShoeCell[] = [
+  { label: 'stand', pose: resolvePose(stand) },
+  { label: 'walk, heel down', pose: ACTIONS.walk(0.02) },
+  { label: 'walk, passing', pose: ACTIONS.walk(0.3) },
+  { label: 'walk, toe off', pose: ACTIONS.walk(0.62) },
+  { label: 'run, landing', pose: ACTIONS.run(0.02) },
+  { label: 'run, in the air', pose: ACTIONS.run(0.27) },
+  { label: 'push, driving', pose: ACTIONS.push(0.1), dx: 40 },
+  { label: 'push, toe off', pose: ACTIONS.push(0.7), dx: 40 },
+  { label: 'pull', pose: ACTIONS.pull(0.3), dx: -30 },
+  { label: 'sneak', pose: ACTIONS['walk-sneaky'](0.4) },
+  { label: 'kneel', pose: resolvePose(kneel), dx: -20 },
+  { label: 'sit', pose: resolvePose(sit), dx: -30 },
+  { label: 'cower', pose: resolvePose(cower) },
+  { label: 'jump, in the air', pose: jumpAt((JUMP.takeoff + JUMP.land) / 2, 0.25, 0) },
+  { label: 'punch, stepped in', pose: ACTIONS.punch(PUNCH.hit), dx: -20 },
+  { label: 'fallen on the back', pose: ACTIONS['fall-back'](FALL.end), dx: -40 },
+  { label: 'fallen on the face', pose: ACTIONS.fall(FALL.end), dx: 90 },
+  { label: 'recoil', pose: ACTIONS.recoil(0.2), dx: 20 },
+  { label: 'sneakers, stand', pose: resolvePose(stand), sneakers: true },
+  { label: 'sneakers, walk', pose: ACTIONS.walk(0.3), sneakers: true },
+  { label: 'sneakers, run', pose: ACTIONS.run(0.27), sneakers: true },
+  { label: 'sneakers, push', pose: ACTIONS.push(0.7), dx: 40, sneakers: true },
+  { label: 'sneakers, kneel', pose: resolvePose(kneel), dx: -20, sneakers: true },
+  { label: 'sneakers, fallen', pose: ACTIONS['fall-back'](FALL.end), dx: -40, sneakers: true },
+];
+
+export function ShoesSheet({ c }: { c: Colors }) {
+  const cols = 4;
+  const cw = W / cols;
+  const ch = 312;
+  const head = 150;
+  return (
+    <>
+      {SHOE_CELLS.map((cell, i) => {
+        const left = cw * (i % cols);
+        const top = ch * Math.floor(i / cols);
+        const groundY = top + ch - 34;
+        const id = `shoe-cell-${i}`;
+        return (
+          <g key={cell.label}>
+            <defs>
+              <clipPath id={id}>
+                <rect x={left + 3} y={top + 46} width={cw - 6} height={ch - 48} />
+              </clipPath>
+            </defs>
+            <g clipPath={`url(#${id})`}>
+              <rect x={left + 3} y={groundY} width={cw - 6} height={40} fill={c.ground} />
+              <Character
+                x={left + cw / 2 + (cell.dx ?? 0) - cell.pose.rootX * head}
+                groundY={groundY}
+                head={head}
+                pose={cell.pose}
+                face={EXPRESSIONS.neutral}
+                turn={1}
+                outfit={cell.sneakers ? SNEAKERS : BOOTS}
+              />
+            </g>
+            <Label x={left + cw / 2} y={top + 34} c={c}>
+              {cell.label}
+            </Label>
+          </g>
+        );
+      })}
+    </>
+  );
+}
