@@ -67,6 +67,7 @@ Everything already drawn is reusable code under `engine/src/`, and every piece i
 | Jump, falls, punch, swing, recoil                       | `engine/src/rig/moves.ts`                                                                |
 | Moves one after another (sneak, then run, then jump)    | `chainAt` in `engine/src/rig/chain.ts`                                                   |
 | Moving between poses (wind-up, settle)                  | `poseAt` in `engine/src/rig/pose.ts`                                                     |
+| A change inside a shot (walk in and stop, stand up)     | `then` on a person in the storyboard (`actorMoments`)                                    |
 | Life in a hold: blinks, breathing, weight, eye darts    | `engine/src/rig/life.ts`                                                                 |
 | Head turns; swinging capes, hair and held things        | `engine/src/rig/turn.ts`, `engine/src/rig/follow.ts`                                     |
 | Expressions and talking mouths                          | `engine/src/face/expressions.ts`, `engine/src/face/talk.ts`                              |

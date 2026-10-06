@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import fixture from './fixtures/moon-tax.storyboard.json';
-import { estimateSeconds, plainWords, storyboardSchema } from './storyboard.schema';
+import { actorMoments, estimateSeconds, plainWords, storyboardSchema } from './storyboard.schema';
 import type { Storyboard } from './storyboard.schema';
 
 type Raw = typeof fixture;
@@ -201,6 +201,68 @@ describe('storyboard', () => {
     expect(storyboardSchema.safeParse({ ...fixture, appliedLessons: ['lesson 7'] }).success).toBe(
       false,
     );
+  });
+});
+
+describe('changes inside a shot', () => {
+  /** The king of the first shot, given things to do next. */
+  const withSteps = (then: unknown[]) =>
+    edited((sb) => {
+      Object.assign(shot(sb, 0, 0).actors[0] as object, { then });
+    });
+
+  it('carries on whatever a step leaves unsaid', () => {
+    const sb = storyboardSchema.parse(
+      withSteps([
+        { at: 0.3, expression: 'angry' },
+        { at: 0.5, action: 'walk', lookAt: 'camera' },
+        { at: 0.8, pose: 'kneel', holds: null },
+      ]),
+    );
+    const king = sb.scenes[0]?.shots[0]?.actors[0];
+    if (!king) throw new Error('no king');
+    expect(actorMoments(king)).toEqual([
+      { at: 0, pose: 'hold-object', expression: 'smug', lookAt: 'ahead', holds: 'scepter' },
+      { at: 0.3, pose: 'hold-object', expression: 'angry', lookAt: 'ahead', holds: 'scepter' },
+      { at: 0.5, action: 'walk', expression: 'angry', lookAt: 'camera', holds: 'scepter' },
+      { at: 0.8, pose: 'kneel', expression: 'angry', lookAt: 'camera' },
+    ]);
+  });
+
+  it('is one stretch for someone with no steps', () => {
+    const king = storyboardSchema.parse(fixture).scenes[0]?.shots[0]?.actors[0];
+    if (!king) throw new Error('no king');
+    expect(king.then).toEqual([]);
+    expect(actorMoments(king)).toHaveLength(1);
+  });
+
+  it('refuses a step with both a pose and an action, or one that changes nothing', () => {
+    expect(issues(withSteps([{ at: 0.5, pose: 'kneel', action: 'walk' }]))).toContain(
+      'a pose or an action, not both',
+    );
+    expect(issues(withSteps([{ at: 0.5 }]))).toContain('has to change something');
+  });
+
+  it('wants steps inside the shot and in order of time', () => {
+    expect(storyboardSchema.safeParse(withSteps([{ at: 0, pose: 'kneel' }])).success).toBe(false);
+    expect(storyboardSchema.safeParse(withSteps([{ at: 1, pose: 'kneel' }])).success).toBe(false);
+    const backwards = withSteps([
+      { at: 0.6, pose: 'kneel' },
+      { at: 0.4, pose: 'stand' },
+    ]);
+    expect(issues(backwards)).toContain('not in order of time');
+  });
+
+  it('refuses a step that looks at something not in the shot, and allows what is', () => {
+    expect(issues(withSteps([{ at: 0.5, lookAt: 'mira' }]))).toContain(
+      'then looks at \\"mira\\", which is not in the shot',
+    );
+    // What they hold from the start, and what a step puts in their hand.
+    expect(storyboardSchema.safeParse(withSteps([{ at: 0.5, lookAt: 'scepter' }])).success).toBe(
+      true,
+    );
+    const taken = withSteps([{ at: 0.5, holds: 'coin', lookAt: 'coin' }]);
+    expect(storyboardSchema.safeParse(taken).success).toBe(true);
   });
 });
 

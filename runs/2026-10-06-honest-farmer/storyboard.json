@@ -154,18 +154,24 @@
           "line": "n1",
           "words": "A poor farmer found *100* gold coins on an empty road.",
           "camera": {
-            "framing": "medium",
+            "framing": "wide",
             "move": "push-in",
             "strength": 0.25
           },
           "actors": [
             {
               "character": "tomas",
-              "pose": "kneel",
+              "pose": "stand",
               "expression": "surprised",
               "facing": "right",
               "x": 0.42,
-              "lookAt": "bag"
+              "lookAt": "bag",
+              "then": [
+                {
+                  "at": 0.3,
+                  "pose": "kneel"
+                }
+              ]
             }
           ],
           "props": [
@@ -197,12 +203,17 @@
             {
               "character": "tomas",
               "pose": "hold-object",
-              "expression": "thinking",
+              "expression": "afraid",
               "facing": "left",
-              "headTurn": "front",
               "x": 0.5,
-              "lookAt": "camera",
-              "holds": "bag"
+              "holds": "bag",
+              "then": [
+                {
+                  "at": 0.5,
+                  "expression": "thinking",
+                  "lookAt": "camera"
+                }
+              ]
             }
           ],
           "sfx": [
@@ -320,11 +331,18 @@
           "actors": [
             {
               "character": "tomas",
-              "pose": "stand",
-              "expression": "surprised",
+              "action": "walk",
+              "expression": "neutral",
               "facing": "right",
               "x": 0.34,
-              "lookAt": "bag"
+              "then": [
+                {
+                  "at": 0.45,
+                  "pose": "stand",
+                  "expression": "surprised",
+                  "lookAt": "bag"
+                }
+              ]
             }
           ],
           "props": [
@@ -333,16 +351,10 @@
               "x": 0.62
             }
           ],
-          "effects": [
-            {
-              "effect": "symbol-question",
-              "on": "tomas"
-            }
-          ],
           "sfx": [
             {
               "name": "pop",
-              "at": "start"
+              "at": "middle"
             }
           ]
         },
@@ -352,24 +364,30 @@
           "words": "Inside was more money than he had seen",
           "camera": {
             "framing": "medium",
-            "move": "punch-in",
-            "strength": 0.2
+            "move": "none"
           },
           "actors": [
             {
               "character": "tomas",
-              "pose": "hold-object",
+              "pose": "stand",
               "expression": "surprised",
               "facing": "right",
               "x": 0.45,
-              "lookAt": "coin",
-              "holds": "coin"
+              "lookAt": "down",
+              "then": [
+                {
+                  "at": 0.3,
+                  "pose": "hold-object",
+                  "lookAt": "coin",
+                  "holds": "coin"
+                }
+              ]
             }
           ],
           "sfx": [
             {
               "name": "ding",
-              "at": "start"
+              "at": "middle"
             }
           ]
         },
@@ -632,11 +650,17 @@
             },
             {
               "character": "wife",
-              "pose": "point",
+              "pose": "stand",
               "expression": "shouting",
               "facing": "left",
               "x": 0.62,
-              "lookAt": "tomas"
+              "lookAt": "tomas",
+              "then": [
+                {
+                  "at": 0.2,
+                  "pose": "point"
+                }
+              ]
             }
           ],
           "props": [
@@ -678,17 +702,29 @@
           "line": "n9",
           "words": "On the third night, he made his decision.",
           "camera": {
-            "framing": "close-up",
-            "move": "push-in",
-            "strength": 0.35,
+            "framing": "medium",
+            "move": "none",
             "focus": "tomas"
           },
           "actors": [
             {
               "character": "tomas",
-              "pose": "stand",
-              "expression": "determined",
+              "pose": "sit",
+              "expression": "exhausted",
               "facing": "right",
+              "x": 0.3,
+              "then": [
+                {
+                  "at": 0.4,
+                  "pose": "stand",
+                  "expression": "determined"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
               "x": 0.3
             }
           ]
@@ -769,11 +805,18 @@
             },
             {
               "character": "soldier-one",
-              "pose": "point",
-              "expression": "laughing",
+              "pose": "stand",
+              "expression": "smug",
               "facing": "left",
               "x": 0.62,
-              "lookAt": "tomas"
+              "lookAt": "tomas",
+              "then": [
+                {
+                  "at": 0.3,
+                  "pose": "point",
+                  "expression": "laughing"
+                }
+              ]
             },
             {
               "character": "soldier-two",
@@ -813,16 +856,17 @@
             {
               "character": "soldier-one",
               "pose": "stand",
-              "expression": "surprised",
+              "expression": "laughing",
               "facing": "left",
               "x": 0.62,
-              "lookAt": "bag"
-            }
-          ],
-          "effects": [
-            {
-              "effect": "symbol-exclaim",
-              "on": "soldier-one"
+              "lookAt": "tomas",
+              "then": [
+                {
+                  "at": 0.45,
+                  "expression": "surprised",
+                  "lookAt": "bag"
+                }
+              ]
             }
           ],
           "sfx": [
@@ -898,7 +942,14 @@
               "facing": "left",
               "x": 0.7,
               "lookAt": "coin",
-              "holds": "coin"
+              "holds": "coin",
+              "then": [
+                {
+                  "at": 0.6,
+                  "expression": "surprised",
+                  "lookAt": "tomas"
+                }
+              ]
             }
           ],
           "props": [
@@ -1100,11 +1151,18 @@
           "actors": [
             {
               "character": "tomas",
-              "pose": "kneel",
-              "expression": "happy",
+              "pose": "stand",
+              "expression": "surprised",
               "facing": "right",
               "x": 0.36,
-              "lookAt": "queen"
+              "lookAt": "queen",
+              "then": [
+                {
+                  "at": 0.35,
+                  "pose": "kneel",
+                  "expression": "happy"
+                }
+              ]
             },
             {
               "character": "queen",
@@ -1160,10 +1218,18 @@
           "actors": [
             {
               "character": "tomas",
-              "action": "cheer",
-              "expression": "laughing",
+              "pose": "stand",
+              "expression": "happy",
               "facing": "right",
-              "x": 0.36
+              "x": 0.36,
+              "lookAt": "queen",
+              "then": [
+                {
+                  "at": 0.2,
+                  "action": "cheer",
+                  "expression": "laughing"
+                }
+              ]
             },
             {
               "character": "queen",

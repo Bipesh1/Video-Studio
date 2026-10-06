@@ -2,7 +2,7 @@ import type { LibraryIndex } from './library.schema';
 import type { Format } from './plugins.schema';
 import type { Script } from './script.schema';
 import type { World } from './storyboard.check';
-import { NARRATOR, SPEAKING_WPM, plainWords } from './storyboard.schema';
+import { NARRATOR, SPEAKING_WPM, actorMoments, plainWords } from './storyboard.schema';
 import type { Actor, Scene, Shot, Storyboard } from './storyboard.schema';
 
 /**
@@ -252,27 +252,20 @@ export type PlanReport = {
   soundEffects: number;
 };
 
-const sameActors = (a: Shot, b: Shot): boolean =>
+/** What a shot shows of its people, as text: two shots with the same text are the same picture. */
+const actorsKey = (shot: Shot): string =>
   JSON.stringify(
-    a.actors.map(({ character, pose, action, expression, facing, x }) => [
+    shot.actors.map(({ character, pose, action, expression, facing, x, then }) => [
       character,
       pose,
       action,
       expression,
       facing,
       x,
-    ]),
-  ) ===
-  JSON.stringify(
-    b.actors.map(({ character, pose, action, expression, facing, x }) => [
-      character,
-      pose,
-      action,
-      expression,
-      facing,
-      x,
+      then,
     ]),
   );
+const sameActors = (a: Shot, b: Shot): boolean => actorsKey(a) === actorsKey(b);
 
 /**
  * Staging rules, on top of `checkStoryboard`: is every shot a picture, and do the pictures
@@ -370,28 +363,46 @@ export function checkPlan(sb: Storyboard, world: World): PlanReport {
           }
         }
       }
+      // Each of these is said once, however many stretches of the shot it holds for.
+      const note = (text: string) => {
+        if (!notes.includes(text)) notes.push(text);
+      };
+      const isLow = (pose: string | undefined) =>
+        pose === 'sit' || pose === 'kneel' || pose === 'lie';
       for (const actor of shot.actors) {
-        const low = actor.pose === 'sit' || actor.pose === 'kneel' || actor.pose === 'lie';
-        if (low && actor.holds && HANGING_PROPS.includes(actor.holds)) {
-          notes.push(
-            `in ${at}, "${actor.character}" is down low holding the ${actor.holds}, which hangs to the floor; stand it in the scene beside them instead`,
-          );
+        for (const moment of actorMoments(actor)) {
+          if (isLow(moment.pose) && moment.holds && HANGING_PROPS.includes(moment.holds)) {
+            note(
+              `in ${at}, "${actor.character}" is down low holding the ${moment.holds}, which hangs to the floor; stand it in the scene beside them instead`,
+            );
+          }
+        }
+      }
+      if (shot.camera.framing === 'close-up') {
+        for (const actor of shot.actors) {
+          if (actor.then.some((step) => step.pose !== undefined || step.action !== undefined)) {
+            notes.push(
+              `in ${at}, "${actor.character}" changes pose inside a close-up, which shows only the face; make it a medium shot`,
+            );
+          }
         }
       }
       // A closer shot is cut at the hips or the chin, so it cannot show the ground or a hand.
       if (shot.camera.framing !== 'wide') {
         for (const actor of shot.actors) {
-          const onGround = shot.props.some((p) => p.prop === actor.lookAt);
-          const lying = actor.pose === 'kneel' || actor.pose === 'lie' || actor.pose === 'sit';
-          if (onGround && !lying) {
-            notes.push(
-              `in ${at}, "${actor.character}" looks at the ${actor.lookAt} standing on the ground, which a ${shot.camera.framing} shot cuts off; make the shot wide`,
-            );
-          }
-          if (shot.camera.framing === 'close-up' && actor.holds && actor.lookAt === actor.holds) {
-            notes.push(
-              `in ${at}, "${actor.character}" looks at the ${actor.holds} in their hand, which a close-up cuts off; make it a medium shot`,
-            );
+          for (const moment of actorMoments(actor)) {
+            const onGround = shot.props.some((p) => p.prop === moment.lookAt);
+            if (onGround && !isLow(moment.pose)) {
+              note(
+                `in ${at}, "${actor.character}" looks at the ${moment.lookAt} standing on the ground, which a ${shot.camera.framing} shot cuts off; make the shot wide`,
+              );
+            }
+            const inHand = moment.holds !== undefined && moment.lookAt === moment.holds;
+            if (shot.camera.framing === 'close-up' && inHand) {
+              note(
+                `in ${at}, "${actor.character}" looks at the ${moment.holds} in their hand, which a close-up cuts off; make it a medium shot`,
+              );
+            }
           }
         }
       }
@@ -552,6 +563,24 @@ export function describeShot(shot: Shot, sb: Storyboard, world: World): string {
       bits.push(`looking at ${who.has(actor.lookAt) ? person(actor.lookAt) : thing(actor.lookAt)}`);
     }
     if (actor.back) bits.push('seen from behind');
+    // What they do next inside the shot, each as a short clause.
+    for (const step of actor.then) {
+      const next: string[] = [];
+      const move = step.action ? `action/${step.action}` : step.pose ? `pose/${step.pose}` : null;
+      if (move) {
+        const verb = DOING_WORDS[move] ?? nameOf(world.library, move);
+        next.push(move === 'pose/hold-object' && step.holds ? `holds ${thing(step.holds)}` : verb);
+      }
+      if (step.holds && move !== 'pose/hold-object') next.push(`takes ${thing(step.holds)}`);
+      if (step.holds === null) next.push('lets go');
+      if (step.expression)
+        next.push(`looks ${nameOf(world.library, `expression/${step.expression}`)}`);
+      if (step.lookAt && LOOK_WORDS[step.lookAt]) next.push(LOOK_WORDS[step.lookAt] as string);
+      else if (step.lookAt && step.lookAt !== 'ahead') {
+        next.push(`looks at ${who.has(step.lookAt) ? person(step.lookAt) : thing(step.lookAt)}`);
+      }
+      bits.push(`then ${next.join(' and ')}`);
+    }
     parts.push(bits.join(', '));
   }
   if (shot.props.length) {

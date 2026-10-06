@@ -70,7 +70,9 @@ export type {
 export {
   NARRATOR,
   SPEAKING_WPM,
+  actorMoments,
   actorSchema,
+  actorStepSchema,
   castMemberSchema,
   estimateSeconds,
   lookSchema,
@@ -82,6 +84,8 @@ export {
 } from './storyboard.schema';
 export type {
   Actor,
+  ActorMoment,
+  ActorStep,
   CastMember,
   Look,
   Scene,

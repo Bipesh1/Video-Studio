@@ -1,9 +1,10 @@
-import { NARRATOR } from '@studio/shared';
-import type { Actor, CharacterCard, Storyboard, VoiceTrack } from '@studio/shared';
+import { NARRATOR, actorMoments } from '@studio/shared';
+import type { Actor, ActorMoment, CharacterCard, Storyboard, VoiceTrack } from '@studio/shared';
 import type { ReactNode } from 'react';
 import { Background } from '../backgrounds/Background';
 import { Pan, PunchIn, PushIn, Shake } from '../camera/Camera';
 import { Framed, shoulderPlacement } from '../camera/Framing';
+import type { Focus } from '../camera/Framing';
 import { AngerMark } from '../effects/AngerMark';
 import { DizzyStars } from '../effects/Dizzy';
 import { FlyingSweat, RestingSweat } from '../effects/Sweat';
@@ -12,13 +13,13 @@ import { TearDrops, TearStreams } from '../effects/Tears';
 import { EXPRESSIONS, faceAt } from '../face/expressions';
 import type { ExpressionName } from '../face/expressions';
 import { talkAt } from '../face/talk';
-import { movePose } from '../rig/chain';
+import { chainAt, movePose } from '../rig/chain';
 import { CHILD_BODY, Character, toLocal } from '../rig/Character';
 import { swayOf } from '../rig/follow';
 import { blinkAt, gazeAt, withLife } from '../rig/life';
-import { clamp } from '../rig/math';
-import { blendPoses, resolvePose } from '../rig/pose';
-import { stand } from '../rig/poses';
+import { poseAt as posedAt, resolvePose } from '../rig/pose';
+import type { PoseKey } from '../rig/pose';
+import { poseById, stand } from '../rig/poses';
 import { seeded } from '../rig/random';
 import type { ResolvedPose } from '../rig/types';
 import type { Cast } from '../wardrobe/cast';
@@ -82,13 +83,74 @@ function headEffects(effects: readonly string[], t: number, turn: number, seed: 
 
 type Drawn = {
   actor: Actor;
+  /** What they are doing right now: their starting state or the latest step of the shot. */
+  now: ActorMoment;
+  /** What they are doing at any frame of the shot. */
+  momentAt: (frame: number) => ActorMoment;
+  /** Where they stand and how the body is at any frame, without the small moves of life. */
+  whereAt: (frame: number) => { placement: Placement; pose: ResolvedPose };
+  /** Whether they sit at any point in the shot, so a seat stays theirs. */
+  sits: boolean;
   placement: Placement;
   /** The pose for looking and framing: where the body is, without the small moves of life. */
   pose: ResolvedPose;
+  /** The pose at a frame, life and travel included. */
   poseAt: (frame: number) => ResolvedPose;
+  /** True when an action carries them along at some point in the shot. */
+  moving: boolean;
+  /** The frame each stretch of the shot starts on, and the face it wears. */
+  faces: Array<{ frame: number; expression: string }>;
   /** How far the action has carried them, px, when the camera travels along. */
   travel: number;
 };
+
+/** A pose by name, or standing when the name is not one the engine knows. */
+const poseOrStand = (id: string | undefined) => {
+  try {
+    return poseById(id ?? 'stand');
+  } catch {
+    return stand;
+  }
+};
+
+/** How long one move takes to hand over to the next inside a shot, in seconds. */
+const STEP_BLEND = 0.16;
+
+/**
+ * How far behind the camera follows, in seconds. Locked to a head it hides every move of the
+ * body: someone who stands up stays put while the room drops behind them. A beat behind, the
+ * body is seen to move and the camera then comes to rest on it.
+ */
+const CAMERA_LAG = 0.5;
+/** A cut lands with the camera already where the shot wants it, once the new pose is in. */
+const CUT_SETTLE = POSE_FRAMES + 3;
+
+/** The camera's aim a beat behind: the aims of the last stretch, eased in and out. */
+function trailing(aimAt: (frame: number) => Focus, frame: number, frames: number): Focus {
+  const n = Math.max(1, frames);
+  let total = 0;
+  let x = 0;
+  let y = 0;
+  let head = 0;
+  let span = 0;
+  let spans = false;
+  for (let k = 0; k < n; k++) {
+    const weight = Math.sin((Math.PI * (k + 0.5)) / n);
+    const aim = aimAt(frame - k);
+    total += weight;
+    x += aim.x * weight;
+    y += aim.y * weight;
+    head += aim.head * weight;
+    span += (aim.span ?? 0) * weight;
+    spans ||= aim.span !== undefined;
+  }
+  return {
+    x: x / total,
+    y: y / total,
+    head: head / total,
+    ...(spans ? { span: span / total } : {}),
+  };
+}
 
 export function ShotPicture({
   ts,
@@ -127,61 +189,126 @@ export function ShotPicture({
     const placement = placeActor(actor, stage, castSize(member, cards));
     const seed = seedFor(storyboard.seed, actor.character);
     const sign = actor.facing === 'left' ? -1 : 1;
-    const was = previous?.shot.actors.find((a) => a.character === actor.character);
-    const target = basePose(actor);
-    const poseAt = (f: number): ResolvedPose => {
-      const at = f - ts.startFrame;
-      if (actor.action) return basePose(actor, Math.max(0, at) / fps);
-      const settled = withLife(target, f, fps, seed);
-      if (!was || was.action || was.pose === actor.pose || at >= POSE_FRAMES) return settled;
-      return blendPoses(basePose(was), settled, clamp(at / POSE_FRAMES, 0, 1));
+    // A shot is one or more stretches: how they start, then each step (Biku, 2026-10-06:
+    // "it can't change the posture in continuous frames?").
+    const moments = actorMoments(actor);
+    const startOf = (m: ActorMoment) => ts.startFrame + Math.round(m.at * duration);
+    const momentAt = (f: number): ActorMoment => {
+      let current = moments[0] as ActorMoment;
+      for (const m of moments) if (startOf(m) <= f) current = m;
+      return current;
     };
-    const now = poseAt(frame);
+    const now = momentAt(frame);
+    const moving = moments.some((m) => m.action);
+    // How the shot before left them, if the cut keeps them on screen.
+    const before = previous?.shot.actors.find((a) => a.character === actor.character);
+    const was = before ? actorMoments(before).at(-1) : undefined;
+
+    // The body with no life in it. Held poses wind up, snap and settle from one to the next;
+    // once an action is involved, each move starts where the last one left the body.
+    const bare = (f: number): ResolvedPose => {
+      if (!moving) {
+        const keys: PoseKey[] = [];
+        const first = moments[0] as ActorMoment;
+        if (was && !was.action && was.pose !== first.pose) {
+          keys.push({ frame: ts.startFrame - 1, pose: poseOrStand(was.pose) });
+          keys.push({
+            frame: ts.startFrame,
+            pose: poseOrStand(first.pose),
+            transition: POSE_FRAMES,
+            windup: 0,
+          });
+        } else {
+          keys.push({ frame: ts.startFrame - 1, pose: poseOrStand(first.pose) });
+        }
+        for (const m of moments.slice(1))
+          keys.push({ frame: startOf(m), pose: poseOrStand(m.pose) });
+        return posedAt(f, keys);
+      }
+      const links = moments.map((m) => ({
+        from: (m.at * duration) / fps,
+        at: (seconds: number) => basePose(m, seconds),
+      }));
+      return chainAt(Math.max(0, f - ts.startFrame) / fps, links, STEP_BLEND);
+    };
+    const poseAt = (f: number): ResolvedPose =>
+      momentAt(f).action ? bare(f) : withLife(bare(f), f, fps, seed);
+
     // An action carries the body along. With a travelling camera the body stays where it is
-    // and the place slides by; without one it passes through its spot in the middle of the shot.
-    const middle = actor.action ? basePose(actor, duration / fps / 2).rootX : 0;
-    const carried = actor.action ? now.rootX : 0;
-    const x = placement.x + (follows ? 0 : carried - middle) * placement.head * sign;
+    // and the place slides by. Without one, they are on their spot while they hold a pose
+    // (so they walk in and stop there, or stand there and walk off); someone who moves for
+    // the whole shot passes through their spot in the middle of it.
+    const held = moments.find((m) => !m.action);
+    const settle = held && held.at > 0 ? Math.round(STEP_BLEND * fps) : 0;
+    const onSpot = held ? startOf(held) + settle : ts.startFrame + Math.round(duration / 2);
+    const carried = moving ? bare(frame).rootX : 0;
+    const anchor = moving ? bare(onSpot).rootX : 0;
+    const whereAt = (f: number) => {
+      const still = bare(f);
+      const gone = moving && !follows ? still.rootX - anchor : 0;
+      return {
+        placement: { ...placement, x: placement.x + gone * placement.head * sign },
+        // For looking and framing, the travel is already in where they stand.
+        pose: moving ? movePose(still, -still.rootX) : still,
+      };
+    };
     return {
       actor,
-      placement: { ...placement, x },
-      pose: actor.action ? now : target,
+      now,
+      momentAt,
+      whereAt,
+      sits: moments.some((m) => m.pose === 'sit'),
+      ...whereAt(frame),
       poseAt,
-      travel: follows && actor.action ? carried * placement.head * sign : 0,
+      moving,
+      faces: [
+        ...(was ? [{ frame: previous?.startFrame ?? 0, expression: was.expression }] : []),
+        ...moments.map((m) => ({ frame: startOf(m), expression: m.expression })),
+      ],
+      travel: follows && moving ? carried * placement.head * sign : 0,
     };
   });
 
-  const placements = new Map(
-    drawn.map((d) => [
-      d.actor.character,
-      // For looking and framing, an action's travel is already in the placement.
-      { placement: d.placement, pose: d.actor.action ? movePose(d.pose, -d.pose.rootX) : d.pose },
-    ]),
-  );
+  // The shot as it is at a frame: who looks where, holds what and stands how.
+  const sceneAt = (f: number) => ({
+    shot: {
+      ...shot,
+      actors: drawn.map((d) => {
+        const moment = d.momentAt(f);
+        const acting = { ...d.actor, lookAt: moment.lookAt };
+        delete acting.holds;
+        return moment.holds ? { ...acting, holds: moment.holds } : acting;
+      }),
+    },
+    placements: new Map(drawn.map((d) => [d.actor.character, d.whereAt(f)])),
+  });
+  const { shot: shotNow, placements } = sceneAt(frame);
+  const aimAt = (f: number): Focus => {
+    const scene = sceneAt(Math.max(ts.startFrame + CUT_SETTLE, f));
+    return shotFocus(scene.shot, stage, scene.placements);
+  };
   const overShoulder = shot.camera.framing === 'over-shoulder';
   const near = overShoulder ? drawn.find((d) => d.actor.back) : undefined;
-  const focus = shotFocus(shot, stage, placements);
+  const focus = trailing(aimAt, frame, Math.round(CAMERA_LAG * fps));
   const side: 'left' | 'right' = near && near.placement.x > focus.x ? 'right' : 'left';
   const cameraX = drawn.find((d) => d.travel !== 0)?.travel ?? 0;
 
   const person = (d: Drawn, index: number): ReactNode => {
-    const { actor, placement } = d;
+    const { actor, placement, now } = d;
     const seed = seedFor(storyboard.seed, actor.character);
     const turn = turnOf(actor);
-    const was = previous?.shot.actors.find((a) => a.character === actor.character);
-    const expression = was
-      ? faceAt(frame, [
-          { frame: previous?.startFrame ?? 0, expression: face(was.expression) },
-          { frame: ts.startFrame, expression: face(actor.expression) },
-        ])
-      : face(actor.expression);
-    const target = lookTarget(actor, shot, stage, placements);
+    const expression = faceAt(
+      frame,
+      d.faces.map((f) => ({ frame: f.frame, expression: face(f.expression) })),
+    );
+    const acting = shotNow.actors[index] ?? actor;
+    const target = lookTarget(acting, shotNow, stage, placements);
     const speaking = line?.speaker === actor.character && line.speaker !== NARRATOR;
-    const held = actor.holds ? heldProp(actor.holds) : undefined;
+    const held = now.holds ? heldProp(now.holds) : undefined;
     let pose = d.poseAt(frame);
     // The travel is already in where they stand, so the pose itself stays over its own feet.
-    if (actor.action) pose = movePose(pose, -pose.rootX);
-    if (held && actor.holds && GRIPPED.includes(actor.holds) && pose.hands.front.shape !== 'grip') {
+    if (d.moving) pose = movePose(pose, -pose.rootX);
+    if (held && now.holds && GRIPPED.includes(now.holds) && pose.hands.front.shape !== 'grip') {
       pose = { ...pose, hands: { ...pose.hands, front: { ...pose.hands.front, shape: 'grip' } } };
     }
     const look = looks.get(actor.character);
@@ -210,9 +337,7 @@ export function ShotPicture({
   // face, and is the size of their body, so a child gets a child's chair (Biku, 2026-10-06:
   // "the daughter is not sitting properly on the chair").
   const sitterAt = (x: number) => {
-    const sitter = drawn.find(
-      (d) => d.actor.pose === 'sit' && Math.abs((d.actor.x ?? 0.5) - x) < 0.04,
-    );
+    const sitter = drawn.find((d) => d.sits && Math.abs((d.actor.x ?? 0.5) - x) < 0.04);
     if (!sitter) return null;
     const child = looks.get(sitter.actor.character)?.age === 'child';
     return {

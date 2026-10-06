@@ -154,20 +154,26 @@
           "line": "n1",
           "words": "A poor farmer found *100* gold coins on an empty road.",
           "camera": {
-            "framing": "medium",
+            "framing": "wide",
             "move": "push-in",
             "strength": 0.25
           },
           "actors": [
             {
               "character": "tomas",
-              "pose": "kneel",
+              "pose": "stand",
               "expression": "surprised",
               "facing": "right",
               "headTurn": "three-quarter",
               "x": 0.42,
               "lookAt": "bag",
-              "back": false
+              "back": false,
+              "then": [
+                {
+                  "at": 0.3,
+                  "pose": "kneel"
+                }
+              ]
             }
           ],
           "props": [
@@ -205,13 +211,20 @@
             {
               "character": "tomas",
               "pose": "hold-object",
-              "expression": "thinking",
+              "expression": "afraid",
               "facing": "left",
-              "headTurn": "front",
+              "headTurn": "three-quarter",
               "x": 0.5,
-              "lookAt": "camera",
+              "lookAt": "ahead",
               "holds": "bag",
-              "back": false
+              "back": false,
+              "then": [
+                {
+                  "at": 0.5,
+                  "expression": "thinking",
+                  "lookAt": "camera"
+                }
+              ]
             }
           ],
           "props": [],
@@ -273,7 +286,8 @@
               "facing": "right",
               "headTurn": "profile",
               "lookAt": "ahead",
-              "back": false
+              "back": false,
+              "then": []
             }
           ],
           "props": [],
@@ -306,7 +320,8 @@
               "headTurn": "three-quarter",
               "x": 0.5,
               "lookAt": "down",
-              "back": false
+              "back": false,
+              "then": []
             }
           ],
           "props": [],
@@ -333,7 +348,8 @@
               "facing": "right",
               "headTurn": "profile",
               "lookAt": "ahead",
-              "back": false
+              "back": false,
+              "then": []
             }
           ],
           "props": [],
@@ -361,13 +377,21 @@
           "actors": [
             {
               "character": "tomas",
-              "pose": "stand",
-              "expression": "surprised",
+              "action": "walk",
+              "expression": "neutral",
               "facing": "right",
               "headTurn": "three-quarter",
               "x": 0.34,
-              "lookAt": "bag",
-              "back": false
+              "lookAt": "ahead",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.45,
+                  "pose": "stand",
+                  "expression": "surprised",
+                  "lookAt": "bag"
+                }
+              ]
             }
           ],
           "props": [
@@ -376,16 +400,11 @@
               "x": 0.62
             }
           ],
-          "effects": [
-            {
-              "effect": "symbol-question",
-              "on": "tomas"
-            }
-          ],
+          "effects": [],
           "sfx": [
             {
               "name": "pop",
-              "at": "start",
+              "at": "middle",
               "gainDb": 0
             }
           ],
@@ -399,20 +418,27 @@
           "words": "Inside was more money than he had seen",
           "camera": {
             "framing": "medium",
-            "move": "punch-in",
+            "move": "none",
             "strength": 0.2
           },
           "actors": [
             {
               "character": "tomas",
-              "pose": "hold-object",
+              "pose": "stand",
               "expression": "surprised",
               "facing": "right",
               "headTurn": "three-quarter",
               "x": 0.45,
-              "lookAt": "coin",
-              "holds": "coin",
-              "back": false
+              "lookAt": "down",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.3,
+                  "pose": "hold-object",
+                  "lookAt": "coin",
+                  "holds": "coin"
+                }
+              ]
             }
           ],
           "props": [],
@@ -420,7 +446,7 @@
           "sfx": [
             {
               "name": "ding",
-              "at": "start",
+              "at": "middle",
               "gainDb": 0
             }
           ],
@@ -447,7 +473,8 @@
               "x": 0.45,
               "lookAt": "ahead",
               "holds": "bag",
-              "back": false
+              "back": false,
+              "then": []
             }
           ],
           "props": [],
@@ -500,7 +527,8 @@
               "x": 0.45,
               "lookAt": "down",
               "holds": "bag",
-              "back": false
+              "back": false,
+              "then": []
             }
           ],
           "props": [],
@@ -529,7 +557,8 @@
               "x": 0.45,
               "lookAt": "up",
               "holds": "bag",
-              "back": false
+              "back": false,
+              "then": []
             }
           ],
           "props": [],
@@ -558,7 +587,8 @@
               "x": 0.45,
               "lookAt": "down",
               "holds": "bag",
-              "back": false
+              "back": false,
+              "then": []
             }
           ],
           "props": [],
@@ -592,7 +622,8 @@
               "headTurn": "three-quarter",
               "x": 0.4,
               "lookAt": "bag",
-              "back": false
+              "back": false,
+              "then": []
             }
           ],
           "props": [
@@ -666,7 +697,8 @@
               "headTurn": "three-quarter",
               "x": 0.3,
               "lookAt": "bag",
-              "back": false
+              "back": false,
+              "then": []
             },
             {
               "character": "wife",
@@ -676,7 +708,8 @@
               "headTurn": "three-quarter",
               "x": 0.62,
               "lookAt": "tomas",
-              "back": false
+              "back": false,
+              "then": []
             },
             {
               "character": "child",
@@ -686,7 +719,8 @@
               "headTurn": "three-quarter",
               "x": 0.8,
               "lookAt": "tomas",
-              "back": false
+              "back": false,
+              "then": []
             }
           ],
           "props": [
@@ -738,17 +772,24 @@
               "headTurn": "three-quarter",
               "x": 0.3,
               "lookAt": "wife",
-              "back": false
+              "back": false,
+              "then": []
             },
             {
               "character": "wife",
-              "pose": "point",
+              "pose": "stand",
               "expression": "shouting",
               "facing": "left",
               "headTurn": "three-quarter",
               "x": 0.62,
               "lookAt": "tomas",
-              "back": false
+              "back": false,
+              "then": [
+                {
+                  "at": 0.2,
+                  "pose": "point"
+                }
+              ]
             }
           ],
           "props": [
@@ -790,7 +831,8 @@
               "headTurn": "three-quarter",
               "x": 0.62,
               "lookAt": "ahead",
-              "back": false
+              "back": false,
+              "then": []
             }
           ],
           "props": [],
@@ -805,24 +847,36 @@
           "line": "n9",
           "words": "On the third night, he made his decision.",
           "camera": {
-            "framing": "close-up",
-            "move": "push-in",
-            "strength": 0.35,
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
             "focus": "tomas"
           },
           "actors": [
             {
               "character": "tomas",
-              "pose": "stand",
-              "expression": "determined",
+              "pose": "sit",
+              "expression": "exhausted",
               "facing": "right",
               "headTurn": "three-quarter",
               "x": 0.3,
               "lookAt": "ahead",
-              "back": false
+              "back": false,
+              "then": [
+                {
+                  "at": 0.4,
+                  "pose": "stand",
+                  "expression": "determined"
+                }
+              ]
             }
           ],
-          "props": [],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.3
+            }
+          ],
           "effects": [],
           "sfx": [],
           "transition": "cut",

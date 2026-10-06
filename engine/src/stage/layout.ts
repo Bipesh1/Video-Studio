@@ -79,7 +79,10 @@ export function placeActor(actor: Actor, stage: Stage, size: number): Placement 
 }
 
 /** The held pose a shot names, or the action's pose at the start, with no life added. */
-export function basePose(actor: Pick<Actor, 'pose' | 'action'>, seconds = 0): ResolvedPose {
+export function basePose(
+  actor: { pose?: string | undefined; action?: string | undefined },
+  seconds = 0,
+): ResolvedPose {
   if (actor.action) {
     const action = ACTIONS[actor.action as ActionName];
     if (action) return action(seconds);

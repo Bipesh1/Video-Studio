@@ -188,6 +188,12 @@ export function checkStoryboard(sb: Storyboard, world: World): StoryboardReport 
         if (actor.action) need('action', actor.action, at);
         need('expression', actor.expression, at);
         if (actor.holds) need('prop', actor.holds, at);
+        for (const step of actor.then) {
+          if (step.pose) need('pose', step.pose, at);
+          if (step.action) need('action', step.action, at);
+          if (step.expression) need('expression', step.expression, at);
+          if (step.holds) need('prop', step.holds, at);
+        }
       }
       for (const prop of shot.props) need('prop', prop.prop, at);
       for (const effect of shot.effects) need('effect', effect.effect, at);

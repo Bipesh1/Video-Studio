@@ -213,6 +213,7 @@ describe('staging rules', () => {
           headTurn: 'three-quarter',
           lookAt: 'ahead',
           back: false,
+          then: [],
           x: 0.7,
         },
       ];
@@ -333,6 +334,40 @@ describe('things worth a second look', () => {
       if (tomas) tomas.holds = 'bag';
     });
     expect(notes(low)).toContain('is down low holding the bag, which hangs to the floor');
+    // The same holds for what a step brings about, and it is said only once.
+    const later = plan((s) => {
+      const tomas = shotOf(s, 's1b').actors[0];
+      if (tomas) {
+        tomas.then = [
+          { at: 0.4, pose: 'kneel' },
+          { at: 0.7, expression: 'sad' },
+        ];
+      }
+    });
+    expect(notes(later).split('is down low holding the bag')).toHaveLength(2);
+  });
+
+  it('points out a change of pose that a close-up would hide', () => {
+    const close = plan((s) => {
+      shotOf(s, 's4d').camera.framing = 'close-up';
+    });
+    expect(notes(close)).toContain('changes pose inside a close-up, which shows only the face');
+    // A change of face alone is what a close-up is for.
+    const face = plan((s) => {
+      const tomas = shotOf(s, 's2b').actors[0];
+      if (tomas) tomas.then = [{ at: 0.5, expression: 'afraid' }];
+    });
+    expect(notes(face)).not.toContain('changes pose inside a close-up');
+  });
+
+  it('checks the names in a step against the library', () => {
+    const sb = plan((s) => {
+      const tomas = shotOf(s, 's2d').actors[0];
+      if (tomas) tomas.then = [{ at: 0.5, pose: 'moonwalk', expression: 'baffled' }];
+    });
+    const found = checkStoryboard(sb, world).problems.join('\n');
+    expect(found).toContain('the library has no pose called "moonwalk"');
+    expect(found).toContain('the library has no expression called "baffled"');
   });
 
   it('has nothing to point out in the sample plan', () => {
@@ -372,8 +407,13 @@ describe('the shot list Biku reads', () => {
 
   it('says each shot in a plain sentence', () => {
     expect(describeShot(shotOf(sb, 's1a'), sb, world)).toBe(
-      'Medium shot. Tomas kneels, surprised, looking at the bag. In the scene: bag. The camera moves slowly closer. Title: "The Honest Farmer".',
+      'Wide shot. Tomas stands, surprised, looking at the bag, then kneels. In the scene: bag. The camera moves slowly closer. Title: "The Honest Farmer".',
     );
+    // Every change inside a shot is said in order, in plain words.
+    expect(describeShot(shotOf(sb, 's2d'), sb, world)).toContain(
+      'Tomas walks, neutral, then stands and looks surprised and looks at the bag.',
+    );
+    expect(describeShot(shotOf(sb, 's2e'), sb, world)).toContain('then holds the coin');
     expect(describeShot(shotOf(sb, 's6b'), sb, world)).toContain(
       'Tomas stands, neutral, looking at the queen, seen from behind',
     );

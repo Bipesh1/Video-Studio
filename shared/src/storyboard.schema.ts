@@ -61,6 +61,39 @@ export const storyLineSchema = z
   })
   .strict();
 
+const lookAtSchema = z.union([z.enum(['camera', 'up', 'down', 'ahead']), idSchema]);
+
+/**
+ * A change inside a shot (Biku, 2026-10-06: "it can't change the posture in continuous
+ * frames?"). Part of the way through the shot the person moves, in one continuous motion, into
+ * a new pose or action, takes a new face, turns their eyes, or picks something up or puts it
+ * down. Anything a step leaves out stays as it was.
+ */
+export const actorStepSchema = z
+  .object({
+    /** When in the shot it happens: 0 is the start, 1 the end. */
+    at: z.number().gt(0).lt(1),
+    pose: idSchema.optional(),
+    action: idSchema.optional(),
+    expression: idSchema.optional(),
+    lookAt: lookAtSchema.optional(),
+    /** A prop to take in the hand, or null to let go of what is held. */
+    holds: idSchema.nullable().optional(),
+  })
+  .strict()
+  .refine((step) => !(step.pose && step.action), {
+    message: 'a step takes a pose or an action, not both',
+  })
+  .refine(
+    (step) =>
+      step.pose !== undefined ||
+      step.action !== undefined ||
+      step.expression !== undefined ||
+      step.lookAt !== undefined ||
+      step.holds !== undefined,
+    { message: 'a step has to change something' },
+  );
+
 /** One person in one shot. */
 export const actorSchema = z
   .object({
@@ -75,11 +108,13 @@ export const actorSchema = z
     /** Where they stand across the wide layout: 0 is the left edge, 1 the right. */
     x: z.number().min(0).max(1).optional(),
     /** Who or what they look at: a cast member, a prop in the shot, or a direction. */
-    lookAt: z.union([z.enum(['camera', 'up', 'down', 'ahead']), idSchema]).default('ahead'),
+    lookAt: lookAtSchema.default('ahead'),
     /** A library prop in their hand. */
     holds: idSchema.optional(),
     /** Seen from behind, as the near person in an over-the-shoulder shot. */
     back: z.boolean().default(false),
+    /** What they do next inside the shot, in order (see actorStepSchema). */
+    then: z.array(actorStepSchema).default([]),
   })
   .strict()
   .refine((a) => Boolean(a.pose) !== Boolean(a.action), {
@@ -276,6 +311,28 @@ export const storyboardSchema = z
           }
           if (a.lookAt === a.character)
             issue(`in shot "${shot.id}", "${a.character}" looks at themselves`);
+          let moment = 0;
+          let inHand = a.holds;
+          for (const step of a.then) {
+            if (step.at <= moment) {
+              issue(`in shot "${shot.id}", the steps of "${a.character}" are not in order of time`);
+            }
+            moment = step.at;
+            if (step.holds !== undefined) inHand = step.holds ?? undefined;
+            const target = step.lookAt;
+            if (target === undefined || ['camera', 'up', 'down', 'ahead'].includes(target))
+              continue;
+            const there =
+              inShot.has(target) ||
+              shot.props.some((p) => p.prop === target) ||
+              shot.actors.some((o) => o.holds === target) ||
+              inHand === target;
+            if (!there || target === a.character) {
+              issue(
+                `in shot "${shot.id}", "${a.character}" then looks at "${target}", which is not in the shot`,
+              );
+            }
+          }
         }
         for (const e of shot.effects) {
           if (!inShot.has(e.on))
@@ -320,6 +377,7 @@ export type Look = z.infer<typeof lookSchema>;
 export type CastMember = z.infer<typeof castMemberSchema>;
 export type StoryLine = z.infer<typeof storyLineSchema>;
 export type Actor = z.infer<typeof actorSchema>;
+export type ActorStep = z.infer<typeof actorStepSchema>;
 export type Shot = z.infer<typeof shotSchema>;
 export type Scene = z.infer<typeof sceneSchema>;
 export type Storyboard = z.infer<typeof storyboardSchema>;
@@ -336,4 +394,48 @@ export const SPEAKING_WPM = 195;
 export function estimateSeconds(text: string, wordsPerMinute = SPEAKING_WPM): number {
   const count = plainWords(text).split(' ').filter(Boolean).length;
   return (count / wordsPerMinute) * 60;
+}
+
+/** What someone is doing during one stretch of a shot: from `at` until their next step. */
+export type ActorMoment = {
+  at: number;
+  pose?: string;
+  action?: string;
+  expression: string;
+  lookAt: string;
+  holds?: string;
+};
+
+/**
+ * A person's shot as stretches of time: how they start, then each step with everything it
+ * left unsaid carried on from the stretch before.
+ */
+export function actorMoments(actor: Actor): ActorMoment[] {
+  const first: ActorMoment = {
+    at: 0,
+    ...(actor.action ? { action: actor.action } : { pose: actor.pose ?? 'stand' }),
+    expression: actor.expression,
+    lookAt: actor.lookAt,
+    ...(actor.holds ? { holds: actor.holds } : {}),
+  };
+  const out = [first];
+  for (const step of actor.then) {
+    const before = out[out.length - 1] ?? first;
+    const moves = step.pose !== undefined || step.action !== undefined;
+    const holds = step.holds === undefined ? before.holds : (step.holds ?? undefined);
+    out.push({
+      at: step.at,
+      ...(moves
+        ? step.action
+          ? { action: step.action }
+          : { pose: step.pose ?? 'stand' }
+        : before.action
+          ? { action: before.action }
+          : { pose: before.pose ?? 'stand' }),
+      expression: step.expression ?? before.expression,
+      lookAt: step.lookAt ?? before.lookAt,
+      ...(holds ? { holds } : {}),
+    });
+  }
+  return out;
 }

@@ -165,8 +165,10 @@ describe('where people look and what the camera frames', () => {
     expect(lookTarget(wife, home.shot, home.stage, home.placements)).toEqual(tomasHead);
 
     const road = placed(farmer, 's2d');
-    const tomas = road.shot.actors[0];
-    if (!tomas) throw new Error('no tomas');
+    const walker = road.shot.actors[0];
+    if (!walker) throw new Error('no tomas');
+    // He walks in looking ahead and sees the bag once he has stopped.
+    const tomas = { ...walker, lookAt: 'bag' };
     const atBag = lookTarget(tomas, road.shot, road.stage, road.placements);
     expect(atBag?.x).toBeCloseTo(stageX(road.stage, 0.62), 6);
     expect(atBag?.y).toBeLessThan(road.stage.groundY);
@@ -370,5 +372,96 @@ describe('sitting and standing properly', () => {
     const things = placedThings(pictureOf('s4a'));
     const bag = things.find((t) => Math.abs(t.x - stageX(stage, 0.385)) < 0.5);
     expect(bag?.y).toBeCloseTo(stage.groundY, 3);
+  });
+});
+
+describe('moving inside a shot', () => {
+  const shots = timedShots(farmer, fps);
+  const looks = new Map(farmer.cast.map((m) => [m.id, lookFrom(m.look ?? {}, m.id)]));
+  const timed = (id: string) => {
+    const ts = shots.find((x) => x.shot.id === id);
+    if (!ts) throw new Error(`no shot ${id}`);
+    return ts;
+  };
+  /** The picture of a shot at a point of it, 0 the start and 1 the end. */
+  const at = (id: string, share: number): string => {
+    const ts = timed(id);
+    return renderToStaticMarkup(
+      <svg>
+        <ShotPicture
+          ts={ts}
+          shots={shots}
+          storyboard={farmer}
+          cards={{}}
+          looks={looks}
+          track={null}
+          size={WIDE}
+          frame={Math.round(ts.startFrame + (ts.endFrame - ts.startFrame) * share)}
+          fps={fps}
+        />
+      </svg>,
+    );
+  };
+  /** Where the camera put the whole scene: the first "translate(x y) scale(s)" in a picture. */
+  const cameraOf = (picture: string) => {
+    const m = /translate\(([-\d.]+) ([-\d.]+)\) scale\(([-\d.]+)\)/.exec(picture);
+    if (!m) throw new Error('no camera');
+    return { x: Number(m[1]), y: Number(m[2]), scale: Number(m[3]) };
+  };
+  /** Where each person stands: every "translate(x y) scale(a b)" with a body-sized scale. */
+  const peopleOf = (picture: string, head: number) =>
+    [...picture.matchAll(/translate\(([-\d.]+) ([-\d.]+)\) scale\(([-\d.]+) ([-\d.]+)\)/g)]
+      .map((m) => ({ x: Number(m[1]), sx: Number(m[3]), sy: Number(m[4]) }))
+      .filter((t) => Math.abs(t.sy - head) < 0.5 && Math.abs(Math.abs(t.sx) - head) < 0.5);
+
+  it('takes a thing in the hand partway through, not from the start', () => {
+    // Tomas lifts the coin 0.3 of the way into the shot.
+    expect(at('s2e', 0.1)).not.toContain('-coin');
+    expect(at('s2e', 0.6)).toContain('-coin');
+  });
+
+  it('walks someone in and stops them on their own spot', () => {
+    const { stage } = placed(farmer, 's2d');
+    const spot = stageX(stage, 0.34);
+    const x = (share: number) => {
+      const tomas = peopleOf(at('s2d', share), stage.head)[0];
+      if (!tomas) throw new Error('nobody drawn');
+      return tomas.x;
+    };
+    // He comes from behind his spot, gets nearer with every step, and stays once he is there.
+    expect(x(0)).toBeLessThan(x(0.25));
+    expect(x(0.25)).toBeLessThan(spot);
+    expect(x(0.7)).toBeCloseTo(spot, 3);
+    expect(x(0.95)).toBeCloseTo(spot, 3);
+  });
+
+  it('lets the body move in the frame, the camera following a beat behind', () => {
+    // Tomas stands up from his chair 0.4 of the way into a medium shot.
+    const ts = timed('s4d');
+    const length = ts.endFrame - ts.startFrame;
+    const share = (frames: number) => 0.4 + frames / length;
+    const seated = cameraOf(at('s4d', 0.3));
+    const justUp = cameraOf(at('s4d', share(4)));
+    const settled = cameraOf(at('s4d', 0.95));
+    // The camera ends up higher, on the standing head.
+    expect(settled.y - seated.y).toBeGreaterThan(60);
+    // Four frames in, the body is most of the way up and the camera has hardly begun.
+    expect(justUp.y - seated.y).toBeLessThan((settled.y - seated.y) * 0.2);
+    // It never jumps: no frame moves it more than a small share of the whole way.
+    let before = seated.y;
+    for (let f = 0; f <= 24; f++) {
+      const now = cameraOf(at('s4d', share(f))).y;
+      expect(Math.abs(now - before)).toBeLessThan((settled.y - seated.y) * 0.12);
+      before = now;
+    }
+  });
+
+  it('changes a face partway through without touching the body', () => {
+    // s1b: afraid, then thinking and looking at us; the bag stays in the hand throughout.
+    const early = at('s1b', 0.2);
+    const late = at('s1b', 0.9);
+    expect(early).not.toBe(late);
+    expect(early).toContain('-bag');
+    expect(late).toContain('-bag');
   });
 });

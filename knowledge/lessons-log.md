@@ -469,3 +469,25 @@ Note (Claude's reading): a pose is checked wearing shoes and clothes, not only a
   figure, before it is saved.
 Status: active
 ```
+
+```
+L-0029 | 2026-10-06 | run: 2026-10-06-honest-farmer, part 1 (seen in the whole part)
+Area: motion | Scope: general | Source: Biku
+Lesson: A character can change posture inside a shot, in one continuous motion: walk in and
+  stop, stand up, kneel down, lift a thing, raise an arm, change face.
+Evidence: Biku: "it cant change th eposture in continuos frames?". The engine could always
+  do it, but the builder that turns a plan into a video gave each person one pose or action
+  for a whole shot, so every change of posture happened on a cut and each shot was a held
+  picture with only breathing and blinking in it.
+Applied: shared/src/storyboard.schema.ts (a person in a shot has `then`: steps, each at a
+  point of the shot, changing pose or action, face, where they look, what they hold);
+  engine/src/stage/ShotPicture.tsx (plays them as one motion; someone who walks in stops on
+  their own spot; the camera follows a beat behind so the body is seen to move); the shot
+  list says them in plain words ("then kneels"); a staging note for a change of pose inside
+  a close-up. Ten shots of the sample plan use it; part 1 rendered again (v8).
+Note (Claude's reading): found by looking at the first try. With the camera locked to the
+  head, standing up looked like the room dropping behind a still man, and a close-up hid the
+  move altogether. Not every shot needs a step: a held picture is still right for a line
+  that is about a face or a thing.
+Status: active
+```
