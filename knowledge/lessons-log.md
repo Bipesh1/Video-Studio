@@ -293,3 +293,34 @@ Applied: cli/src/scratch.ts (the temporary folder is .cache/tmp/<process id> in 
   short); tests in cli/src/scratch.test.ts.
 Status: active
 ```
+
+```
+L-0019 | 2026-10-06 | run: Phase 3 sound test (runs/2026-10-06-sound-test)
+Area: sfx | Scope: all runs | Source: self-check
+Lesson: A low sound needs a part in the middle of the range, or a phone will not play it.
+  A thud, a footstep or a blow is built from a low body plus a knock or slap between about
+  200 and 4000 Hz.
+Evidence: The first thud, footsteps and hit had almost all their energy below 200 Hz, which a
+  phone speaker hardly reproduces. They measured on target and would have been silent for
+  most viewers.
+Applied: the knock, sole and slap parts in audio/src/studio_audio/sfx.py; a test that each of
+  these effects keeps more than a fifth of its energy above 200 Hz.
+Status: active
+```
+
+```
+L-0020 | 2026-10-06 | run: Phase 3 sound test (runs/2026-10-06-sound-test)
+Area: mix | Scope: all runs | Source: self-check
+Lesson: Claude cannot hear. Sound is checked by measuring it (loudness, true peak, where the
+  energy sits, how loud each instrument is against the others, how far the music is under the
+  voice), and every sound report says plainly that it was measured and not listened to, so
+  Biku knows the listening is his.
+Evidence: The first music had the tune of one instrument 10 dB over everything else in four
+  moods, and one tune rocked between two notes; both were found only by measuring each
+  instrument alone and printing the notes. Two measuring mistakes also had to be caught: a
+  picture of the sound with a stretched scale put every low sound in the wrong place, and a
+  measurement that faded the start of each clip hid the very knock it was looking for.
+Applied: runs/2026-10-06-sound-test/sound-test.md opens with the statement; npm run sound --
+  check; the mix report (audio/mix.json) and mixProblems in shared/src/sound.schema.ts.
+Status: active
+```

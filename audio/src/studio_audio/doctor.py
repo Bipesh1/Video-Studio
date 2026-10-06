@@ -34,6 +34,19 @@ def tool_version(name: str, args: list[str]) -> str:
     return text[0] if text else f"exit code {out.returncode}"
 
 
+def soundfont_report() -> str:
+    from .soundfont import NAME, SHA256, SoundFontMissing, find_soundfont, sha256_of
+
+    try:
+        path = find_soundfont()
+    except SoundFontMissing:
+        return "MISSING (run: uv run python -m studio_audio.soundfont fetch)"
+    size = path.stat().st_size / 1e6
+    if path.name == NAME and sha256_of(path) != SHA256:
+        return f"{path.name}, {size:.0f} MB, but not the expected file (fetch it again)"
+    return f"{path.name}, {size:.0f} MB"
+
+
 def main() -> int:
     print(f"python     {sys.version.split()[0]}  ({sys.executable})")
     missing = 0
@@ -45,6 +58,9 @@ def main() -> int:
         v = tool_version(name, args)
         missing += v.startswith("MISSING")
         print(f"{name:<11}{v}")
+    font = soundfont_report()
+    missing += font.startswith("MISSING")
+    print(f"{'soundfont':<11}{font}")
     print("All audio dependencies present." if missing == 0 else f"{missing} missing.")
     return 1 if missing else 0
 

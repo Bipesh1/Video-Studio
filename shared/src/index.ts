@@ -12,6 +12,7 @@ export type { ScriptLine, VoiceScript, WordTiming, VoiceLine, VoiceTrack } from 
 export {
   ASSET_KINDS,
   KINDS_WITHOUT_STILL,
+  SOUND_KINDS,
   libraryAssetSchema,
   libraryIndexSchema,
   searchLibrary,
@@ -20,3 +21,22 @@ export {
 export type { AssetKind, LibraryAsset, LibraryHit, LibraryIndex } from './library.schema';
 export { characterCardSchema, clothesSchema } from './character.schema';
 export type { CharacterCard, Clothes } from './character.schema';
+export {
+  AMBIENT_SFX,
+  LOUDNESS_TARGET,
+  MUSIC_MOODS,
+  SFX_NAMES,
+  mixProblems,
+  mixReportSchema,
+  musicSegmentSchema,
+  sfxCueSchema,
+  soundPlanSchema,
+} from './sound.schema';
+export type {
+  MixReport,
+  MusicMood,
+  MusicSegment,
+  SfxCue,
+  SfxName,
+  SoundPlan,
+} from './sound.schema';

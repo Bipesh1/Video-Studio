@@ -1,7 +1,7 @@
 # Build Status
 
-**Current phase:** Phase 2 is complete: steps 2A to 2F all done (2026-10-06). Next is Phase 3 (sound), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
-**Next:** Biku reads `PHASE-2-REPORT.md`, looks at the catalog (`library/catalog/`) and the clips in `engine/out/sandbox/`, and answers the questions at the end of the report. Then Phase 3 when asked.
+**Current phase:** Phase 3 (sound) is built (2026-10-06). Phases 0 to 2 are complete. Next is Phase 4 (the full pipeline), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
+**Next:** Biku listens: `runs/2026-10-06-sound-test/sound-test.md` says what to play and what to answer (the nine mood samples, the effects reel, and Moon Tax v5 with sound). Claude cannot hear, so this listening is the real check. He also still has the questions at the end of `PHASE-2-REPORT.md`.
 **Last updated:** 2026-10-06
 
 ## Checkpoint 1: waiting for Biku
@@ -9,6 +9,41 @@
 Review file: `runs/2026-10-03-look-test/checkpoint-1.md`. Questions: (1) how close the look is and what to change, (2) narrator and character voices, (3) head size (answered 2026-10-06: fine as it is), (4) hair colors (guide v3), (5) fingers on hands that cover the face.
 
 **Question 1 (2026-10-04): Biku said not close enough yet, then said go.** Faces round 4 is built (section below, guide v7). Question 1 is open again: Biku needs to look at `runs/2026-10-03-look-test/out/face-match.png` and say whether the frightened face and the wrinkles are close enough now.
+
+## Phase 3. Sound: done (2026-10-06)
+
+Asked by Biku ("start phase 3"). The studio can now make music, sound effects and a finished mix, all on this computer.
+
+### Made
+
+- **Nine music moods** (`audio/src/studio_audio/music.py`): tense, sorrow, hope, triumph, reflective, curious, upbeat, calm, comic. Each is written as notes (a chord loop, a bass line, a tune in four-bar phrases, light drums where they fit), played by FluidSynth through a free instrument set, with a quiet held tone under four of them. Any length, and the same mood, length and seed always give the same music.
+- **Eleven sound effects** (`audio/src/studio_audio/sfx.py`): whoosh, pop, thud, click, footsteps, wind, crowd murmur, creak, blip, hit, ding. All made from scratch; wind and crowd murmur run under a whole shot.
+- **The mix** (`audio/src/studio_audio/mix.py`): the voice is never changed; music dips under it and rises in the pauses; effects sit under the voice and lower still on a word; the result is mastered to -14 LUFS with the true peak at or below -1 dB. It writes `mix.wav`, the music and effects on their own, and `mix.json` with the measured levels.
+- **The sound plan** (`shared/src/sound.schema.ts`): a run's `sound-plan.json` says which mood starts when and which effect happens when. The same file holds the list of moods and effects and the loudness target, and tests on both sides fail if Python and the engine disagree.
+- **Commands:** `npm run sound -- list | samples | reel | mix --run=<run> | check`, and a `--sound` stage in `npm run short`. The video uses the mix when the run has a sound plan.
+- **Library:** 204 assets (20 new: 9 music moods, 11 effects), so `npm run library -- search danger music` finds the tense mood.
+- **Own tracks:** a file in `music/` or `sfx/` named after a mood or effect replaces the studio's own.
+- **Instrument set:** GeneralUser GS 2.0.3, 32 MB, in `audio/soundfonts/` on drive F, not in git; `uv run python -m studio_audio.soundfont fetch` gets it again. License and one caution recorded in `LICENSES.md`.
+
+### Where to listen
+
+`runs/2026-10-06-sound-test/sound-test.md` lists everything. In short: `runs/2026-10-06-sound-test/out/music-<mood>.mp3` (nine samples), `out/sfx-reel.mp3`, and `runs/2026-10-04-moon-tax/out/moon-tax-v5.mp4` (the Moon Tax short with sound; v1 to v4 are untouched).
+
+### Measured (plan acceptance: loudness within target on every sample; no clipping)
+
+- All nine mood samples: -14.0 LUFS, true peaks between -1.1 and -3.3 dB, none clipped.
+- Effects reel: -14.04 LUFS, true peak -1.1 dB; no effect clipped.
+- Moon Tax v5 mix: -14.04 LUFS, true peak -1.1 dB; the finished video file measures -14.0 LUFS and -1.1 dB with FFmpeg. Music 17.1 dB under the voice while someone speaks, 11.5 dB in the pauses.
+- `npm run sound -- check` passes.
+
+### Open after Phase 3
+
+- **Nobody has listened yet.** Claude cannot hear; every check is a measurement. Biku's ears decide whether the moods and effects are good (lesson L-0020).
+- **The music is simple and loops.** A mood change happens at the planned time, not on a beat.
+- **No automatic choice of music and effects.** A sound plan is written by hand until the shot planner in Phase 4.
+- **The Phase 2 test clips have no sound.**
+- **The instrument set's license has one caution** about where some samples first came from (`LICENSES.md`). Biku to say if he wants the larger MIT-licensed set instead.
+- **Low sounds on phones:** thud, footsteps and hit were rebuilt to carry in the middle range (lesson L-0019); worth checking on a real phone.
 
 ## Drive C filling up (2026-10-06): fixed
 
@@ -598,7 +633,7 @@ The realistic estimate assumes real shots cost about three times the test scene 
 1. **Python is capped below 3.13** because Kokoro requires it and pydub uses `audioop`, which 3.13 removed.
 1. **Kokoro word timings:** resolved. Kokoro 0.9.4 returns per-word start and end times. Loading the model takes about 1 to 2 minutes on this laptop; speaking the 15-second test takes about 1.5 minutes in all.
 1. **Kokoro model files** are in the Hugging Face cache (about 600 MB with the grammar model). The spaCy English model is pinned in `audio/pyproject.toml` so it is never fetched at run time.
-1. **Font chosen** (Fredoka, OFL). The SoundFont is still to choose in Phase 3.
+1. **Font chosen** (Fredoka, OFL). SoundFont chosen in Phase 3: GeneralUser GS 2.0.3 (see `LICENSES.md`).
 
 ## How to continue
 

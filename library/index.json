@@ -4037,6 +4037,327 @@
       "use": "<Label text=\"That evening\" at=\"top-left\" width height frame={framesSinceItAppeared} />",
       "version": 1,
       "added": "2026-10-06"
+    },
+    {
+      "id": "music/tense",
+      "kind": "music",
+      "name": "Tense music",
+      "description": "Danger close by: a low pulse, trembling strings and a waiting drum. For threats, chases about to start, a secret about to come out.",
+      "tags": [
+        "music",
+        "tense",
+        "danger",
+        "suspense",
+        "threat",
+        "dark",
+        "fear",
+        "villain",
+        "night"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/music.py",
+        "export": "MOODS"
+      },
+      "use": "sound-plan.json: \"music\": [{ \"mood\": \"tense\", \"startMs\": 0 }]",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "music/sorrow",
+      "kind": "music",
+      "name": "Sorrowful music",
+      "description": "Loss and regret: a slow piano under a cello line. For a death, a parting, a defeat.",
+      "tags": ["music", "sorrow", "sad", "loss", "grief", "slow", "crying", "defeat", "goodbye"],
+      "code": {
+        "file": "audio/src/studio_audio/music.py",
+        "export": "MOODS"
+      },
+      "use": "sound-plan.json: \"music\": [{ \"mood\": \"sorrow\", \"startMs\": 0 }]",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "music/hope",
+      "kind": "music",
+      "name": "Hopeful music",
+      "description": "Things may turn out well: rising piano, warm strings and a flute. For a new start, a plan forming, help arriving.",
+      "tags": ["music", "hope", "hopeful", "warm", "new start", "inspiring", "rising", "dawn"],
+      "code": {
+        "file": "audio/src/studio_audio/music.py",
+        "export": "MOODS"
+      },
+      "use": "sound-plan.json: \"music\": [{ \"mood\": \"hope\", \"startMs\": 0 }]",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "music/triumph",
+      "kind": "music",
+      "name": "Triumphant music",
+      "description": "A win: brass, a marching drum and a trumpet tune. For a victory, a crowning, a goal reached.",
+      "tags": [
+        "music",
+        "triumph",
+        "victory",
+        "win",
+        "heroic",
+        "fanfare",
+        "march",
+        "royal",
+        "proud"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/music.py",
+        "export": "MOODS"
+      },
+      "use": "sound-plan.json: \"music\": [{ \"mood\": \"triumph\", \"startMs\": 0 }]",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "music/reflective",
+      "kind": "music",
+      "name": "Reflective music",
+      "description": "Thinking it over: soft electric piano and a few vibraphone notes. For a lesson, a memory, the quiet after an event.",
+      "tags": ["music", "reflective", "thoughtful", "memory", "lesson", "quiet", "moral", "ending"],
+      "code": {
+        "file": "audio/src/studio_audio/music.py",
+        "export": "MOODS"
+      },
+      "use": "sound-plan.json: \"music\": [{ \"mood\": \"reflective\", \"startMs\": 0 }]",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "music/curious",
+      "kind": "music",
+      "name": "Curious music",
+      "description": "Something odd to find out: plucked strings and a marimba that pokes about. For a question, a mystery, an opening hook.",
+      "tags": [
+        "music",
+        "curious",
+        "mystery",
+        "question",
+        "sneaky",
+        "playful",
+        "hook",
+        "opening",
+        "explainer"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/music.py",
+        "export": "MOODS"
+      },
+      "use": "sound-plan.json: \"music\": [{ \"mood\": \"curious\", \"startMs\": 0 }]",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "music/upbeat",
+      "kind": "music",
+      "name": "Upbeat music",
+      "description": "Good news and energy: strummed guitar, bass, drums and a bright piano tune. For lists, facts, a happy ending.",
+      "tags": ["music", "upbeat", "happy", "energy", "bright", "fun", "positive", "list", "promo"],
+      "code": {
+        "file": "audio/src/studio_audio/music.py",
+        "export": "MOODS"
+      },
+      "use": "sound-plan.json: \"music\": [{ \"mood\": \"upbeat\", \"startMs\": 0 }]",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "music/calm",
+      "kind": "music",
+      "name": "Calm music",
+      "description": "Peace and rest: a harp, a soft pad and a little flute. For a quiet scene, nature, sleep, walking home.",
+      "tags": ["music", "calm", "peace", "gentle", "rest", "soft", "nature", "night", "home"],
+      "code": {
+        "file": "audio/src/studio_audio/music.py",
+        "export": "MOODS"
+      },
+      "use": "sound-plan.json: \"music\": [{ \"mood\": \"calm\", \"startMs\": 0 }]",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "music/comic",
+      "kind": "music",
+      "name": "Comic music",
+      "description": "Something silly: an oom-pah tuba and a bassoon with a spring in its step. For a fool, a mishap, a joke.",
+      "tags": ["music", "comic", "funny", "silly", "joke", "clumsy", "fool", "bouncy", "mishap"],
+      "code": {
+        "file": "audio/src/studio_audio/music.py",
+        "export": "MOODS"
+      },
+      "use": "sound-plan.json: \"music\": [{ \"mood\": \"comic\", \"startMs\": 0 }]",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "sfx/whoosh",
+      "kind": "sfx",
+      "name": "Whoosh",
+      "description": "A fast move through the air. For a sword swing, a dash, a thrown thing, a quick camera move.",
+      "tags": ["sound", "whoosh", "swish", "swing", "fast", "air", "dash", "throw", "transition"],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "sound-plan.json: \"sfx\": [{ \"name\": \"whoosh\", \"atMs\": 1200 }]",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "sfx/pop",
+      "kind": "sfx",
+      "name": "Pop",
+      "description": "A small bright pop. For something appearing, a title or label landing, a bubble.",
+      "tags": ["sound", "pop", "appear", "title", "bubble", "bright", "small"],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "sound-plan.json: \"sfx\": [{ \"name\": \"pop\", \"atMs\": 1200 }]",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "sfx/thud",
+      "kind": "sfx",
+      "name": "Thud",
+      "description": "A heavy dull landing. For a fall, a dropped load, a door closing, a body hitting the ground.",
+      "tags": ["sound", "thud", "fall", "landing", "drop", "heavy", "door", "ground"],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "sound-plan.json: \"sfx\": [{ \"name\": \"thud\", \"atMs\": 1200 }]",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "sfx/click",
+      "kind": "sfx",
+      "name": "Click",
+      "description": "A tiny tick. For a latch, a switch, a lock, a cut on the beat.",
+      "tags": ["sound", "click", "tick", "latch", "switch", "lock", "small"],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "sound-plan.json: \"sfx\": [{ \"name\": \"click\", \"atMs\": 1200 }]",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "sfx/footsteps",
+      "kind": "sfx",
+      "name": "Footsteps",
+      "description": "Steps on a hard floor, two a second, for as long as the walk lasts.",
+      "tags": ["sound", "footsteps", "steps", "walk", "walking", "feet", "floor", "street"],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "sound-plan.json: \"sfx\": [{ \"name\": \"footsteps\", \"atMs\": 1200 }]",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "sfx/wind",
+      "kind": "sfx",
+      "name": "Wind",
+      "description": "Open-air wind with soft gusts, running under a whole shot. For a storm sky, a hilltop, an empty street at night.",
+      "tags": ["sound", "wind", "storm", "outdoors", "ambient", "bed", "night", "weather", "air"],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "sound-plan.json: \"sfx\": [{ \"name\": \"wind\", \"atMs\": 1200 }]",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "sfx/crowd-murmur",
+      "kind": "sfx",
+      "name": "Crowd murmur",
+      "description": "A room or street full of people talking with no words to make out, running under a whole shot. For a market, a court, a hall.",
+      "tags": [
+        "sound",
+        "crowd",
+        "murmur",
+        "people",
+        "talking",
+        "ambient",
+        "bed",
+        "market",
+        "court",
+        "hall"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "sound-plan.json: \"sfx\": [{ \"name\": \"crowd-murmur\", \"atMs\": 1200 }]",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "sfx/creak",
+      "kind": "sfx",
+      "name": "Creak",
+      "description": "Wood under strain. For a door opening slowly, a floorboard, a chair, a ship.",
+      "tags": ["sound", "creak", "wood", "door", "floorboard", "ship", "chair", "slow"],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "sound-plan.json: \"sfx\": [{ \"name\": \"creak\", \"atMs\": 1200 }]",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "sfx/blip",
+      "kind": "sfx",
+      "name": "Blip",
+      "description": "A drop: a quick rising plip. For a sweat drop, a tear, a small idea, a tiny surprise.",
+      "tags": ["sound", "blip", "drop", "sweat", "tear", "plip", "idea", "small"],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "sound-plan.json: \"sfx\": [{ \"name\": \"blip\", \"atMs\": 1200 }]",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "sfx/hit",
+      "kind": "sfx",
+      "name": "Hit",
+      "description": "A cartoon blow landing, with no crunch. For a punch, a swing that connects, a bump.",
+      "tags": ["sound", "hit", "punch", "blow", "impact", "fight", "bump", "smack"],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "sound-plan.json: \"sfx\": [{ \"name\": \"hit\", \"atMs\": 1200 }]",
+      "version": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "sfx/ding",
+      "kind": "sfx",
+      "name": "Ding",
+      "description": "A coin or a small bell ringing out. For money, a prize, a good idea, a right answer.",
+      "tags": ["sound", "ding", "coin", "bell", "money", "prize", "ring", "idea"],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "sound-plan.json: \"sfx\": [{ \"name\": \"ding\", \"atMs\": 1200 }]",
+      "version": 1,
+      "added": "2026-10-06"
     }
   ]
 }

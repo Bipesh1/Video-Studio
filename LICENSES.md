@@ -48,7 +48,15 @@ Every third-party tool, library, font and sound asset used by Video Studio, with
 
 ## SoundFonts and sound assets
 
-To be added in Phase 3: one free-licensed SoundFont for FluidSynth. Candidate: GeneralUser GS (GeneralUser GS License, free for any use) or FluidR3_GM (MIT).
+| Asset                                                 | License                     | Notes                                                                                                                                                                                                                                                                                                                                                       |
+| ----------------------------------------------------- | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| GeneralUser GS 2.0.3 SoundFont (S. Christian Collins) | GeneralUser GS License v2.0 | The instruments FluidSynth plays the music with. Free for private and commercial music. Downloaded once into `audio/soundfonts/` (32 MB, not kept in git) from the author's repository, pinned to one commit and checked by its SHA-256 (`audio/src/studio_audio/soundfont.py`). The full license text is in `audio/soundfonts/GeneralUser-GS-LICENSE.txt`. |
+| Music                                                 | made by the studio          | Every tune is written by `audio/src/studio_audio/music.py` from chords and scales. No recording or existing melody is used.                                                                                                                                                                                                                                 |
+| Sound effects                                         | made by the studio          | Every effect is synthesized by `audio/src/studio_audio/sfx.py` with numpy and scipy. No sample library is used.                                                                                                                                                                                                                                             |
+
+**One caution about the SoundFont.** Its author says some of its instrument samples came from free banks on the internet and he cannot be fully sure where every one began, though none came from a commercial product and nobody has complained since 2000. That is normal for free SoundFonts and the license allows making money from music made with it. If Biku ever wants no doubt at all, drop another `.sf2` into `audio/soundfonts/` (for example FluidR3_GM, MIT license, 140 MB) or put finished tracks in `music/`; nothing else has to change.
+
+Files Biku adds to `music/` or `sfx/` replace the studio's own sounds. Their licenses are Biku's to check and should be listed here.
 
 ## Reference images
 

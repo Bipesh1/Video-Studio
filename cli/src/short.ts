@@ -4,9 +4,11 @@
  * The run folder holds voice-script.json and shots.json (composition id, output name, and the
  * voice line each shot opens on). Stages, run in this order when given:
  *   --voice      speak voice-script.json into audio/voice.wav and audio/timings.json
+ *   --sound      mix the voice with the music and effects in sound-plan.json into audio/mix.wav
  *   --stills     render one still per shot into stills/ (look at these before the video)
  *   --video      render out/<output>-v<N>.mp4 and .srt; N is the next free version number
- *   --all        voice, stills and video
+ *   --all        voice, sound (when the run has a sound plan), stills and video
+ * The video uses audio/mix.wav when the run has a sound plan, and the bare voice otherwise.
  * `--at=0.6` moves the still to that fraction of each shot. Every stage logs to log.txt.
  */
 import {
@@ -25,6 +27,7 @@ import type { VoiceTrack } from '@studio/shared';
 import { shotTimesFor } from '../../engine/src/compositions/shotPlan';
 import { buildPages, toCaptions } from '../../engine/src/overlays/captionPages';
 import { bundle, finishRendering, renderMedia, renderStill, selectComposition } from './render.js';
+import { hasSoundPlan, mixRun } from './sound-stage.js';
 import { projectRoot, run } from './system.js';
 
 type ShotsFile = {
@@ -100,6 +103,15 @@ function loadTrack(): VoiceTrack {
   );
 }
 
+/** The finished mix when the run has a sound plan, and the bare voice when it has none. */
+function soundFile(): string {
+  if (!hasSoundPlan(runDir)) return 'voice.wav';
+  if (!existsSync(path.join(runDir, 'audio', 'mix.wav'))) {
+    throw new Error('This run has a sound plan but no mix yet. Run the --sound stage first.');
+  }
+  return 'mix.wav';
+}
+
 function loadShots(): ShotsFile {
   return JSON.parse(readFileSync(path.join(runDir, 'shots.json'), 'utf8')) as ShotsFile;
 }
@@ -108,7 +120,7 @@ let serveUrl: string | null = null;
 async function bundled() {
   if (!serveUrl) {
     mkdirSync(publicRun, { recursive: true });
-    copyFileSync(path.join(runDir, 'audio', 'voice.wav'), path.join(publicRun, 'voice.wav'));
+    copyFileSync(path.join(runDir, 'audio', soundFile()), path.join(publicRun, soundFile()));
     serveUrl = await timed('bundle', () =>
       bundle({ entryPoint: path.join(engineDir, 'src', 'index.ts'), publicDir }),
     );
@@ -142,7 +154,7 @@ function nextVersion(outDir: string, name: string): number {
 async function video(track: VoiceTrack, plan: ShotsFile) {
   const url = await bundled();
   const shotLines = plan.shots.map((s) => s.line);
-  const inputProps = { track, audioSrc: `runs/${RUN}/voice.wav`, shotLines };
+  const inputProps = { track, audioSrc: `runs/${RUN}/${soundFile()}`, shotLines };
   const composition = await selectComposition({ serveUrl: url, id: plan.composition, inputProps });
   const outDir = path.join(runDir, 'out');
   mkdirSync(outDir, { recursive: true });
@@ -175,12 +187,17 @@ async function video(track: VoiceTrack, plan: ShotsFile) {
 }
 
 async function main() {
-  if (!want('voice') && !want('stills') && !want('video')) {
-    console.log('Give at least one stage: --voice --stills --video or --all');
+  if (!want('voice') && !want('sound') && !want('stills') && !want('video')) {
+    console.log('Give at least one stage: --voice --sound --stills --video or --all');
     process.exitCode = 1;
     return;
   }
   if (want('voice')) await timed('voice', voice);
+  if (args.has('--sound') || (all && hasSoundPlan(runDir))) {
+    await timed('sound', () => {
+      for (const line of mixRun(runDir)) log(`  ${line}`);
+    });
+  }
   const track = want('stills') || want('video') ? loadTrack() : null;
   const plan = loadShots();
   if (track && want('stills')) await timed('stills', () => stills(track, plan));

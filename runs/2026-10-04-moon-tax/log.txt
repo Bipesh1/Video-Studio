@@ -109,3 +109,12 @@
 2026-10-05T08:29:42.664Z    still n4 at frame 571: runs\2026-10-04-moon-tax\stills\n4.png
 2026-10-05T08:29:44.211Z    still n5 at frame 727: runs\2026-10-04-moon-tax\stills\n5.png
 2026-10-05T08:29:44.212Z  stills: done in 17.5 s
+2026-10-06T10:32:56.766Z  sound: start
+2026-10-06T10:32:56.808Z    mix is already up to date (the plan and the voice have not changed)
+2026-10-06T10:32:56.825Z  sound: done in 0.1 s
+2026-10-06T10:32:56.829Z  video: start
+2026-10-06T10:32:56.835Z  bundle: start
+2026-10-06T10:33:13.562Z  bundle: done in 16.7 s
+2026-10-06T10:35:08.876Z    runs\2026-10-04-moon-tax\out\moon-tax-v5.mp4: 26.67 s of video in 95.0 s (3.56 s per video second)
+2026-10-06T10:35:08.880Z    runs\2026-10-04-moon-tax\out\moon-tax-v5.srt
+2026-10-06T10:35:08.906Z  video: done in 132.1 s

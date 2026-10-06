@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "music": [
+    { "mood": "curious", "startMs": 0 },
+    { "mood": "comic", "startMs": 8600 },
+    { "mood": "tense", "startMs": 16400 },
+    { "mood": "calm", "startMs": 20400 }
+  ],
+  "sfx": [
+    { "name": "wind", "atMs": 0, "durationMs": 4800, "gainDb": -2 },
+    { "name": "ding", "atMs": 8250 },
+    { "name": "footsteps", "atMs": 5200, "durationMs": 2500 },
+    { "name": "pop", "atMs": 12700 },
+    { "name": "whoosh", "atMs": 16500 },
+    { "name": "blip", "atMs": 18200 },
+    { "name": "footsteps", "atMs": 21000, "durationMs": 3500, "gainDb": -2 }
+  ]
+}

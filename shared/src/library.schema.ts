@@ -31,11 +31,19 @@ export const ASSET_KINDS = [
   'color',
   'camera',
   'overlay',
+  'music',
+  'sfx',
 ] as const;
 export type AssetKind = (typeof ASSET_KINDS)[number];
 
-/** Kinds with nothing to picture on their own: they are judged in a shot, not in a still. */
-export const KINDS_WITHOUT_STILL: readonly AssetKind[] = ['camera', 'overlay'];
+/**
+ * Kinds with nothing to picture on their own: camera moves and overlays are judged in a shot,
+ * and music and sound effects are heard, not seen.
+ */
+export const KINDS_WITHOUT_STILL: readonly AssetKind[] = ['camera', 'overlay', 'music', 'sfx'];
+
+/** Kinds made by the Python sound workers instead of the drawing engine. */
+export const SOUND_KINDS: readonly AssetKind[] = ['music', 'sfx'];
 
 const tag = z
   .string()
@@ -51,8 +59,8 @@ export const libraryAssetSchema = z
     description: z.string().min(10),
     tags: z.array(tag).min(3),
     code: z.object({
-      /** Path from the project root to the file that draws it. */
-      file: z.string().regex(/^(engine|shared)\/src\/.+\.(ts|tsx)$/),
+      /** Path from the project root to the file that draws it (or, for sound, makes it). */
+      file: z.string().regex(/^((engine|shared)\/src\/.+\.(ts|tsx)|audio\/src\/.+\.py)$/),
       /** The exported name to import from that file. */
       export: z.string().regex(/^[A-Za-z_][A-Za-z0-9_]*$/),
     }),
@@ -73,6 +81,12 @@ export const libraryAssetSchema = z
       ctx.addIssue({
         code: 'custom',
         message: `id "${a.id}" must start with its kind "${a.kind}/"`,
+      });
+    }
+    if (a.code.file.endsWith('.py') !== SOUND_KINDS.includes(a.kind)) {
+      ctx.addIssue({
+        code: 'custom',
+        message: `"${a.id}": sound is made in audio/ and everything else is drawn in engine/`,
       });
     }
     if (!a.still && !KINDS_WITHOUT_STILL.includes(a.kind)) {

@@ -30,6 +30,8 @@ packages = ["src/studio_audio"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+# Test files stay inside the project, not in the system temporary folder (lesson L-0018).
+addopts = ["--basetemp=../.cache/pytest-audio"]
 
 [tool.hatch.metadata]
 # Needed for the pinned en-core-web-sm wheel URL above.

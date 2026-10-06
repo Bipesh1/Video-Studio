@@ -58,34 +58,37 @@ Reusing a library asset in a new pose or expression needs no full guide read, bu
 
 Everything already drawn is reusable code under `engine/src/`, and every piece is listed in `library/index.json` with tags, a picture and where its code is. **Search the library before drawing anything:** `npm run library -- search <plain words>` (for example `search king night`). A video asks for these pieces by name and never redraws them. The table below is the map of the folders behind the index.
 
-| Need                                                  | Look in                                                           |
-| ----------------------------------------------------- | ----------------------------------------------------------------- |
-| The character puppet (put a whole person on screen)   | `engine/src/rig/Character.tsx`                                    |
-| Poses                                                 | `engine/src/rig/poses.ts`                                         |
-| Actions by name (every one is in `ACTIONS`)           | `engine/src/rig/actions.ts`                                       |
-| Walks, mood walks, run, carry, push, pull             | `engine/src/rig/walk.ts` (`WALKS`, `GAITS`)                       |
-| Jump, falls, punch, swing, recoil                     | `engine/src/rig/moves.ts`                                         |
-| Moves one after another (sneak, then run, then jump)  | `chainAt` in `engine/src/rig/chain.ts`                            |
-| Moving between poses (wind-up, settle)                | `poseAt` in `engine/src/rig/pose.ts`                              |
-| Life in a hold: blinks, breathing, weight, eye darts  | `engine/src/rig/life.ts`                                          |
-| Head turns; swinging capes, hair and held things      | `engine/src/rig/turn.ts`, `engine/src/rig/follow.ts`              |
-| Expressions and talking mouths                        | `engine/src/face/expressions.ts`, `engine/src/face/talk.ts`       |
-| Skin tones and hair                                   | `engine/src/wardrobe/identity.ts`, `engine/src/wardrobe/hair.tsx` |
-| Everyday clothes, mixed with `outfitFrom`             | `engine/src/wardrobe/garments.tsx` (cloth names, never colors)    |
-| Costumes                                              | `engine/src/wardrobe/costumes/`, by name in `wardrobe/cast.ts`    |
-| Ages (child, adult, elder)                            | `age` on the Character in `engine/src/rig/Character.tsx`          |
-| Saved characters (only for a series)                  | `characters/<id>.json`, drawn with `castFromCard` in `cast.ts`    |
-| Props, and putting them in a hand or a scene          | `engine/src/props/` (`InHand` and `Placed` in `Hold.tsx`)         |
-| Effects (tears, anger, stars, symbols, flash)         | `engine/src/effects/`                                             |
-| Places by name (street, forest, castle, home)         | `PLACES` in `engine/src/backgrounds/places.ts`                    |
-| Backgrounds and their palettes (`endless` for chases) | `engine/src/backgrounds/`                                         |
-| Shot sizes: wide, medium, close-up, over-shoulder     | `engine/src/camera/Framing.tsx`                                   |
-| Camera moves (push-in, shake, pan, fade), captions    | `engine/src/camera/Camera.tsx`, `engine/src/overlays/`            |
-| Title cards and labels                                | `engine/src/overlays/Titles.tsx`                                  |
-| Worked examples of whole videos                       | `engine/src/compositions/LookTest.tsx`, `MoonTax.tsx`             |
-| A worked action scene (chase, fight, camera)          | `engine/src/sandbox/part-h.tsx`                                   |
-| A worked story scene (places, props, shots, titles)   | `engine/src/sandbox/part-l.tsx`                                   |
-| Pictures of every piece                               | `library/catalog/`, `knowledge/golden/assets/`, `npm run sheets`  |
+| Need                                                  | Look in                                                               |
+| ----------------------------------------------------- | --------------------------------------------------------------------- |
+| The character puppet (put a whole person on screen)   | `engine/src/rig/Character.tsx`                                        |
+| Poses                                                 | `engine/src/rig/poses.ts`                                             |
+| Actions by name (every one is in `ACTIONS`)           | `engine/src/rig/actions.ts`                                           |
+| Walks, mood walks, run, carry, push, pull             | `engine/src/rig/walk.ts` (`WALKS`, `GAITS`)                           |
+| Jump, falls, punch, swing, recoil                     | `engine/src/rig/moves.ts`                                             |
+| Moves one after another (sneak, then run, then jump)  | `chainAt` in `engine/src/rig/chain.ts`                                |
+| Moving between poses (wind-up, settle)                | `poseAt` in `engine/src/rig/pose.ts`                                  |
+| Life in a hold: blinks, breathing, weight, eye darts  | `engine/src/rig/life.ts`                                              |
+| Head turns; swinging capes, hair and held things      | `engine/src/rig/turn.ts`, `engine/src/rig/follow.ts`                  |
+| Expressions and talking mouths                        | `engine/src/face/expressions.ts`, `engine/src/face/talk.ts`           |
+| Skin tones and hair                                   | `engine/src/wardrobe/identity.ts`, `engine/src/wardrobe/hair.tsx`     |
+| Everyday clothes, mixed with `outfitFrom`             | `engine/src/wardrobe/garments.tsx` (cloth names, never colors)        |
+| Costumes                                              | `engine/src/wardrobe/costumes/`, by name in `wardrobe/cast.ts`        |
+| Ages (child, adult, elder)                            | `age` on the Character in `engine/src/rig/Character.tsx`              |
+| Saved characters (only for a series)                  | `characters/<id>.json`, drawn with `castFromCard` in `cast.ts`        |
+| Props, and putting them in a hand or a scene          | `engine/src/props/` (`InHand` and `Placed` in `Hold.tsx`)             |
+| Effects (tears, anger, stars, symbols, flash)         | `engine/src/effects/`                                                 |
+| Places by name (street, forest, castle, home)         | `PLACES` in `engine/src/backgrounds/places.ts`                        |
+| Backgrounds and their palettes (`endless` for chases) | `engine/src/backgrounds/`                                             |
+| Shot sizes: wide, medium, close-up, over-shoulder     | `engine/src/camera/Framing.tsx`                                       |
+| Camera moves (push-in, shake, pan, fade), captions    | `engine/src/camera/Camera.tsx`, `engine/src/overlays/`                |
+| Title cards and labels                                | `engine/src/overlays/Titles.tsx`                                      |
+| Music moods (nine), written as notes                  | `MOODS` in `audio/src/studio_audio/music.py`                          |
+| Sound effects (eleven), made from scratch             | `EFFECTS` in `audio/src/studio_audio/sfx.py`                          |
+| The mix: voice, music and effects into one track      | `audio/src/studio_audio/mix.py`, plan in `shared/src/sound.schema.ts` |
+| Worked examples of whole videos                       | `engine/src/compositions/LookTest.tsx`, `MoonTax.tsx`                 |
+| A worked action scene (chase, fight, camera)          | `engine/src/sandbox/part-h.tsx`                                       |
+| A worked story scene (places, props, shots, titles)   | `engine/src/sandbox/part-l.tsx`                                       |
+| Pictures of every piece                               | `library/catalog/`, `knowledge/golden/assets/`, `npm run sheets`      |
 
 ## Repository layout and commands
 
@@ -93,7 +96,9 @@ Everything already drawn is reusable code under `engine/src/`, and every piece i
 - `npm run doctor` reports every tool version. `npm run bench` renders the test scene and measures speed.
 - `npm run look-test -- --all` builds the Phase 1 look test (voice, stills, video, style match sheets); `--audition` speaks the audition lines in every American English Kokoro voice. Each stage runs alone too.
 - Voice: `cd audio && uv run python -m studio_audio.voice synth --script <voice-script.json> --out <dir>` writes `voice.wav` and `timings.json` (contract in `shared/src/voice.schema.ts`). Kokoro 0.9.4 gives word timestamps itself.
-- Library: `npm run library -- search <words>` finds assets by tag (`--kind=costume` narrows it), `list` and `show <id>` print the index, `characters` lists the saved character cards, `look <id>` renders one asset in three views on light and dark for the draw, look and fix loop, `stills` writes the golden stills in `knowledge/golden/assets/`, `catalog` renders the picture catalog in `library/catalog/`, and `check` fails if anything drawn is missing from the index. `/draw <description>` runs the whole loop for a new asset.
+- Sound: `npm run sound -- list` names every mood and effect; `samples` and `reel` write the listening files to `runs/2026-10-06-sound-test/out/`; `mix --run=<run>` mixes a run's voice with its `sound-plan.json` (which mood starts when, which effect happens when) into `audio/mix.wav` and `audio/mix.json`; `check` fails unless everything is at -14 LUFS with the true peak at or below -1 dB. `npm run short -- --run=<run> --sound --video` mixes and renders. A file in `music/` or `sfx/` named after a mood or effect replaces the studio's own. Claude cannot hear: judge sound by the measured report and tell Biku it needs his ears.
+- The instrument set for the music is not in git. Get it once with `cd audio && uv run python -m studio_audio.soundfont fetch` (32 MB, into `audio/soundfonts/`).
+- Library: `npm run library -- search <words>` finds assets by tag, music moods and sound effects included (`--kind=costume` narrows it), `list` and `show <id>` print the index, `characters` lists the saved character cards, `look <id>` renders one asset in three views on light and dark for the draw, look and fix loop, `stills` writes the golden stills in `knowledge/golden/assets/`, `catalog` renders the picture catalog in `library/catalog/`, and `check` fails if anything drawn is missing from the index. `/draw <description>` runs the whole loop for a new asset.
 - `npm run sheets` renders the sandbox contact sheets for the draw, look and fix loop (`--only=poses`, `--video`, `--golden`). Look at them before calling any drawing done.
 - `npm test`, `npm run typecheck`, `npm run lint`, `npm run format` must pass at the end of every phase.
 - Python: `cd audio && uv run pytest` and `uv run python -m studio_audio.doctor`.

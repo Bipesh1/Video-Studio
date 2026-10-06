@@ -1,7 +1,13 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { KINDS_WITHOUT_STILL, searchLibrary, stillPathFor } from '@studio/shared';
+import {
+  KINDS_WITHOUT_STILL,
+  MUSIC_MOODS,
+  SFX_NAMES,
+  searchLibrary,
+  stillPathFor,
+} from '@studio/shared';
 import type { AssetKind } from '@studio/shared';
 import { describe, expect, it } from 'vitest';
 import { SILHOUETTE_KINDS, TREATMENTS } from '../backgrounds/Background';
@@ -53,6 +59,8 @@ describe('library index', () => {
       ...TREATMENTS.map((t) => `background/${t}`),
       ...Object.keys(PLACES).map((p) => `place/${p}`),
       ...SILHOUETTE_KINDS.map((k) => `silhouette/${k}`),
+      ...MUSIC_MOODS.map((m) => `music/${m}`),
+      ...SFX_NAMES.map((n) => `sfx/${n}`),
     ];
     expect(missing(wanted), 'drawn but not in library/index.json').toEqual([]);
   });
@@ -76,9 +84,16 @@ describe('library index', () => {
     const broken = library.assets.flatMap((a) => {
       const file = join(root, a.code.file);
       if (!existsSync(file)) return [`${a.id}: no file ${a.code.file}`];
-      const exported = new RegExp(String.raw`\bexport\b[^\n]*\b${a.code.export}\b`).test(
-        readFileSync(file, 'utf8'),
-      );
+      const source = readFileSync(file, 'utf8');
+      if (a.code.file.endsWith('.py')) {
+        // A sound: the Python worker holds a list by that name, with this piece in it.
+        const name = a.id.slice(a.id.indexOf('/') + 1);
+        const listed =
+          new RegExp(String.raw`^${a.code.export}\b`, 'm').test(source) &&
+          source.includes(`"${name}"`);
+        return listed ? [] : [`${a.id}: ${a.code.file} has no "${name}" in ${a.code.export}`];
+      }
+      const exported = new RegExp(String.raw`\bexport\b[^\n]*\b${a.code.export}\b`).test(source);
       return exported ? [] : [`${a.id}: ${a.code.file} does not export ${a.code.export}`];
     });
     expect(broken).toEqual([]);
@@ -127,6 +142,13 @@ describe('library index', () => {
     expect(first('starburst')).toBe('effect/impact');
     expect(first('rumble')).toBe('camera/shake');
     expect(first('chase', 'camera')).toBe('camera/follow');
+    // Sound is found the same way as pictures.
+    expect(first('danger', 'music')).toBe('music/tense');
+    expect(first('funny', 'music')).toBe('music/comic');
+    expect(first('victory', 'music')).toBe('music/triumph');
+    expect(first('coin', 'sfx')).toBe('sfx/ding');
+    expect(first('punch', 'sfx')).toBe('sfx/hit');
+    expect(first('walking', 'sfx')).toBe('sfx/footsteps');
     expect(first('treasure', 'prop')).toBe('prop/coin');
     expect(first('wine feast')).toBe('prop/goblet');
     expect(first('knock', 'prop')).toBe('prop/door');
