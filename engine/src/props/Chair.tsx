@@ -1,4 +1,5 @@
 import { body } from '../rig/body';
+import { lineWeights } from '../tokens';
 import { Shaded, lightOffset } from '../wardrobe/Shaded';
 import { Glint, detail, paintOf } from './Hold';
 import type { PropProps } from './Hold';
@@ -36,7 +37,7 @@ export function Chair({
           d={`M -0.2 ${-s - 0.1} L -0.2 -2.3 Q -0.1 -2.36 -0.06 -2.26 L -0.06 ${-s - 0.1} Z`}
           {...cushion}
           offset={lightOffset(shadowSide, 0.02)}
-          strokeWidth={0.03}
+          strokeWidth={lineWeights.detail}
         />
         <Shaded
           id={`${uid}-throne-base`}
@@ -49,7 +50,7 @@ export function Chair({
           d={`M -0.2 ${-s - 0.1} L 0.66 ${-s - 0.1} Q 0.72 ${-s - 0.04} 0.66 ${-s + 0.04} L -0.2 ${-s + 0.04} Z`}
           {...cushion}
           offset={lightOffset(shadowSide, 0.02)}
-          strokeWidth={0.03}
+          strokeWidth={lineWeights.detail}
         />
         {/* The armrest and its post. */}
         <Shaded

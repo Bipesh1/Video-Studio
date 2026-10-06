@@ -1,7 +1,7 @@
 ## Part 3. The Ink Stick art style
 
 **Style id:** `ink-stick`
-**Guide version:** 11 (2026-10-06). See the version history at the end.
+**Guide version:** 12 (2026-10-06). See the version history at the end.
 **Built from:** two reference images supplied by Biku
 - **Reference A:** a stern king in a crown, red cape and armor, under a stormy night sky with light rays
 - **Reference B:** two stick figures in a night scene under a crescent moon, one threatening and one frightened
@@ -23,7 +23,7 @@ Bold, black-outlined cartoon stick figures with big round heads and very express
 | Gloved hands on costumed characters | Small white glints on props |
 
 **The rule both references share, and the most important rule in this style:**
-**Characters and props have thick black outlines. Backgrounds have none.**
+**Characters and props have clean black outlines, fine as a pen line. Backgrounds have none.** (The outlines were thick until guide version 12; Biku chose the fine line on 2026-10-06. Stick limbs stay bold.)
 
 ### Style 3. Characters
 
@@ -43,11 +43,11 @@ Bold, black-outlined cartoon stick figures with big round heads and very express
 
 | Line | Color | Weight (relative to head diameter) |
 | --- | --- | --- |
-| Outline of heads, costumes, props | `#16161A` | 3 to 3.5% |
-| Stick limbs and torso line | `#16161A` | 5.4 to 6.2% |
-| Inner details: folds, seams, buttons, teeth lines | `#16161A` | 2.5 to 3% |
-| Face features: eye outlines, eyelid edges, mouth, lips | `#3A3A40`, a softer dark gray | about 2.2%, the eyelid edge a little heavier. Thinner and softer than the head outline. Pupils, brows and the mouth interior stay dark |
-| Creases inside the face: worry ticks, under-eye creases, cheek, chin and mouth-corner creases, teeth lines | `#3A3A40` | about 1.2% at the fullest point. Creases taper to a fine point at both ends, like pen strokes |
+| Outline of heads, costumes, props | `#16161A` | 1.1 to 1.3%, a fine pen line |
+| Stick limbs and torso line | `#16161A` | 5.4 to 6.2%. Much bolder than the outline, so a plain stick figure still reads on a phone |
+| Inner details: folds, seams, buttons, teeth lines | `#16161A` | 0.8 to 1% |
+| Face features: eye outlines, eyelid edges, mouth, lips | `#3A3A40`, a softer dark gray | about 1.2%, the eyelid edge a little heavier. As fine as the head outline, and softer. Pupils, brows and the mouth interior stay dark |
+| Creases inside the face: worry ticks, under-eye creases, cheek, chin and mouth-corner creases, teeth lines | `#3A3A40` | about 0.7% at the fullest point. Creases taper to a fine point at both ends, like pen strokes |
 | Eyebrows | `#16161A` filled shape | about 8%, tapered ends |
 
 - Round line caps and round joins everywhere.
@@ -259,7 +259,7 @@ Brown, tan and cream are the plain cloth colors of ordinary people: leather, woo
 
 Any "no" is fixed before rendering.
 
-1. Does every character and prop have a thick black outline?
+1. Does every character and prop have a clean black outline?
 2. Is the background free of outlines?
 3. Are characters brighter and more saturated than the background?
 4. Is there at most one shadow tone per color, coming from the scene's light direction?
@@ -278,12 +278,12 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
 ```json
 {
   "id": "ink-stick",
-  "version": 11,
+  "version": 12,
   "line": {
     "color": "#16161A",
-    "outlinePctOfHead": [0.03, 0.035],
+    "outlinePctOfHead": [0.011, 0.013],
     "limbPctOfHead": [0.054, 0.062],
-    "detailPctOfHead": [0.025, 0.03],
+    "detailPctOfHead": [0.008, 0.01],
     "browPctOfHead": 0.08,
     "cap": "round",
     "join": "round"
@@ -320,9 +320,9 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
     "eyeWidthPctOfHead": 0.3,
     "pupilPctOfEye": 0.3,
     "mouthInterior": "#3A1E22",
-    "featureLinePctOfHead": 0.022,
+    "featureLinePctOfHead": 0.012,
     "featureLineColor": "#3A3A40",
-    "creasePctOfHead": 0.012,
+    "creasePctOfHead": 0.007,
     "nose": false,
     "ears": false
   },
@@ -398,3 +398,4 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
 | 9 | 2026-10-06 | Three plain cloth colors for ordinary people: brown, tan and cream, each with one shadow tone. Head size settled: it stays as drawn, a little over a quarter of standing height (0.29), so Style 3.1, Style Check question 5 and the token now say so. | Biku |
 | 10 | 2026-10-06 | Lines a little thinner, at Biku's request ("the thickness now is a little bit high"): the outline of heads, costumes and props is 3.5 to 4.1% of head width (was 4 to 5%), and stick limbs and the torso line are 6.2 to 7% (was 7 to 8%). Inner details and face lines are unchanged. | Biku |
 | 11 | 2026-10-06 | Lines a little thinner again, at Biku's request after seeing version 10 ("a little bit more thinner"): the outline is 3 to 3.5% of head width and stick limbs and the torso line are 5.4 to 6.2%. Inner details and face lines are unchanged. | Biku |
+| 12 | 2026-10-06 | Fine outlines, bold limbs. Biku compared five thicknesses and three mixes side by side and chose mix B: the outline of heads, costumes and props is a fine pen line (1.1 to 1.3% of head width), inner details 0.8 to 1%, face lines about 1.2% and face creases about 0.7%, while stick limbs and the torso line stay bold (5.4 to 6.2%) so plain stick figures read on a phone. The main rule and Style Check question 1 now say "clean black outline" instead of "thick". This moves away from the heavy outlines of the two reference pictures on purpose. | Biku |

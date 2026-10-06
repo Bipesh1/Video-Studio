@@ -1,3 +1,4 @@
+import { lineWeights } from '../tokens';
 import { Shaded, lightOffset } from '../wardrobe/Shaded';
 import { Glint, detail, paintOf } from './Hold';
 import type { PropProps } from './Hold';
@@ -35,7 +36,7 @@ export function Book({
           d="M -0.5 -0.34 Q -0.25 -0.4 0 -0.3 Q 0.25 -0.4 0.5 -0.34 L 0.5 0.3 Q 0.25 0.24 0 0.34 Q -0.25 0.24 -0.5 0.3 Z"
           {...pages}
           offset={lightOffset(shadowSide, 0.03)}
-          strokeWidth={0.03}
+          strokeWidth={lineWeights.detail}
         />
         {detail('M 0 -0.3 L 0 0.34')}
         {detail('M -0.4 -0.16 L -0.12 -0.18')}
@@ -55,7 +56,7 @@ export function Book({
         d={`M ${-w + 0.05} ${-h + 0.04} L ${w} ${-h + 0.04} L ${w} ${h} L ${-w + 0.05} ${h} Z`}
         {...pages}
         offset={lightOffset(shadowSide, 0.02)}
-        strokeWidth={0.03}
+        strokeWidth={lineWeights.detail}
       />
       <Shaded
         id={`${uid}-book-cover`}
@@ -69,7 +70,7 @@ export function Book({
         d="M -0.08 -0.16 L 0.12 -0.16 L 0.12 0.02 L -0.08 0.02 Z"
         {...gold}
         offset={lightOffset(shadowSide, 0.015)}
-        strokeWidth={0.03}
+        strokeWidth={lineWeights.detail}
       />
       <Glint x={0.04} y={-0.27} length={0.14} />
     </g>

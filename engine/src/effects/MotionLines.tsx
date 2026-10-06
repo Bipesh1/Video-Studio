@@ -10,6 +10,12 @@ import { ink, lineWeights, tokens } from '../tokens';
  * Placed in the scene, not on a character: x and y are the screen point of the moving thing,
  * and `head` is the head size of the characters in the shot, so the line weight matches theirs.
  */
+/**
+ * A motion line is a stroke that is the whole drawing, like a stick limb, so it takes its
+ * weight from the limbs and not from the fine outline (guide version 12).
+ */
+const MOTION_LINE_WEIGHT = 0.6;
+
 export function MotionLines({
   x,
   y,
@@ -44,7 +50,7 @@ export function MotionLines({
     <g
       transform={`translate(${x} ${y}) scale(${head})`}
       stroke={ink}
-      strokeWidth={lineWeights.outline}
+      strokeWidth={lineWeights.limb * MOTION_LINE_WEIGHT}
       strokeLinecap={tokens.line.cap}
       fill="none"
     >

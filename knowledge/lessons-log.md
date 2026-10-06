@@ -326,18 +326,21 @@ Status: active
 ```
 
 ```
-L-0021 | 2026-10-06 | run: Moon Tax still (the king's opening shot)
+L-0021 | 2026-10-06 | run: Moon Tax stills (the king, and Mira as a plain stick figure)
 Area: style | Scope: style ink-stick | Source: Biku
-Lesson: Biku finds the outline a little heavy. Lines are a little thinner than the first guide
-  said: outline about 3.25% of head width, stick limbs about 5.8% (guide version 11).
-Evidence: Biku: "for the outer edges and line can we make it thinner", then "a little bit
-  thinner since the thickness now is a little bit high in my opinion", "not too much thin".
-  After seeing the first step (version 10, about a sixth thinner): "a little bit more thinner".
-Applied: styles/ink-stick/guide.md and tokens.json version 11 (the guide is the authority;
-  this entry only records why).
-Note (Claude's reading): he asked for small steps, so this is not a move toward a thin-line
-  style. The outline is now only a little heavier than the inner detail lines (about 2.75%);
-  thinning it further would need the detail lines thinned too. Any further change is his to
-  ask for.
+Lesson: Biku prefers fine outlines to heavy ones. The outline of heads, clothes and props is a
+  fine pen line, while stick limbs stay bold so plain figures read on a phone. When he asks
+  for a change of look, show the choices side by side, on a costumed figure and a plain one,
+  large and at phone size, and let him pick.
+Evidence: Biku: "for the outer edges and line can we make it thinner", "a little bit thinner",
+  "a little bit more thinner", then "can you make it pencil sketch thin so i can compare all
+  the thickness". On the five-way comparison: "it looks better on number 5 for the king but
+  for the plain its too thin". On the three mixes: "B is good".
+Applied: styles/ink-stick/guide.md and tokens.json version 12 (the guide is the authority; this
+  entry records why); props and motion lines that carried their own thickness now follow the
+  tokens.
+Note (Claude's reading): two small steps did not reach what he wanted; the side-by-side
+  picture found it in one go. Thickness that is typed into a drawing instead of read from the
+  tokens (four props had it) hides until the style changes.
 Status: active
 ```

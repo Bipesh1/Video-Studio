@@ -12,11 +12,17 @@ Review file: `runs/2026-10-03-look-test/checkpoint-1.md`. Questions: (1) how clo
 
 **Question 1 (2026-10-04): Biku said not close enough yet, then said go.** Faces round 4 is built (section below, guide v7). Question 1 is open again: Biku needs to look at `runs/2026-10-03-look-test/out/face-match.png` and say whether the frightened face and the wrinkles are close enough now.
 
-## Thinner lines (2026-10-06): applied, waiting for Biku's verdict
+## Fine outlines, bold limbs (2026-10-06): applied as guide version 12, waiting for Biku's final yes
 
-Biku: "make it a little bit thinner, not too much; the thickness now is a little bit high in my opinion". Done in two small steps. Version 10: outline 3.5 to 4.1% of head width (was 4 to 5%), limbs 6.2 to 7% (was 7 to 8%). Biku looked and said "a little bit more thinner", so version 11, the current one: the outline of heads, costumes and props is 3 to 3.5% (a little over a quarter thinner than the original), and stick limbs and the torso line are 5.4 to 6.2%. Inner details and face lines are unchanged. Nothing had to be redrawn by hand: hands, shoes and eyes all still read, also at phone size. Side by side: `engine/out/sandbox/lines-before-after.png` (left the original, middle the first step, right now).
+Biku first asked for the outer edges a little thinner (versions 10 and 11, two small steps), then asked to see a pencil-thin version to compare. He looked at five thicknesses side by side (`engine/out/sandbox/lines-compare.png`) and said the pencil-thin one looks better on the king but too thin on a plain stick figure. Three mixes followed (`engine/out/sandbox/lines-mix.png`, and `lines-mix-phone.png` at phone size) and he picked **mix B**.
 
-**Not done on purpose:** the saved pictures (golden stills, check sheets, catalog pages) still show the old thickness. They are redrawn once Biku says the new thickness is right, so they are not redrawn twice (`npm run sheets -- --golden`, `npm run library -- stills`, `npm run library -- catalog`; about 20 minutes). Videos already delivered are untouched; a new render would get a new version number.
+**The style now (guide and tokens version 12):** the outline of heads, costumes and props is a fine pen line, 1.1 to 1.3% of head width (it was 4 to 5% at the start of the day); inner details 0.8 to 1%; face lines about 1.2% and face creases about 0.7%; stick limbs and the torso line stay bold at 5.4 to 6.2%, so a plain stick figure still reads on a phone. The guide's main rule and Style Check question 1 now say "clean black outline" instead of "thick". This is a deliberate move away from the heavy outlines of the two reference pictures.
+
+**Fixed along the way:** the inner parts of four props (book, shield, chair and throne, door) carried their own fixed line thickness and stood out as heavy; they now use the style's detail line. Motion lines took the outline weight and nearly vanished; they now take their weight from the limbs.
+
+**Still to look at with Biku:** the `!`, `?` and `...` symbols are white with a fine edge and are faint on a light background (fine on dark scenes). A plain figure has a fine ring for a head and bold limbs; Biku accepted that with mix B.
+
+**Not done on purpose:** the saved pictures (golden stills, check sheets, catalog pages) still show the old thick lines. They are redrawn once Biku says the look is final, so it is not done twice (`npm run sheets -- --golden`, `npm run library -- stills`, `npm run library -- catalog`; about 20 minutes). Videos already delivered are untouched; a new render would get a new version number.
 
 ## Phase 3. Sound: done (2026-10-06)
 

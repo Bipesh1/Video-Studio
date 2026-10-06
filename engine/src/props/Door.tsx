@@ -1,4 +1,4 @@
-import { shade } from '../tokens';
+import { lineWeights, shade } from '../tokens';
 import { Shaded, lightOffset } from '../wardrobe/Shaded';
 import { Glint, detail, paintOf } from './Hold';
 import type { PropProps } from './Hold';
@@ -56,7 +56,7 @@ export function Door({ uid, shadowSide, open = 0 }: PropProps & { open?: number 
           d={`M ${x(0)} ${y - 0.1} L ${x(0.82)} ${y - 0.1} L ${x(0.82)} ${y + 0.1} L ${x(0)} ${y + 0.1} Z`}
           {...iron}
           offset={lightOffset(shadowSide, 0.025)}
-          strokeWidth={0.03}
+          strokeWidth={lineWeights.detail}
         />
       ))}
       <Shaded

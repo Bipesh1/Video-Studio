@@ -1,3 +1,4 @@
+import { lineWeights } from '../tokens';
 import { Shaded, lightOffset } from '../wardrobe/Shaded';
 import { Glint, detail, paintOf } from './Hold';
 import type { PropProps } from './Hold';
@@ -24,7 +25,7 @@ export function Shield({ uid, shadowSide, paint = 'crimson' }: PropProps & { pai
         d={shape(0.8)}
         {...field}
         offset={lightOffset(shadowSide, 0.04)}
-        strokeWidth={0.03}
+        strokeWidth={lineWeights.detail}
       />
       {detail('M 0 -0.46 L 0 -0.16')}
       {detail('M 0 0.16 L 0 0.42')}
