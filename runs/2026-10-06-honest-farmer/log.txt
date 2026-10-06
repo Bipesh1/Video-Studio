@@ -410,3 +410,171 @@
 2026-10-06T18:20:13.114Z  join    ok   It is as long as its parts together: 84.6 s; the 2 parts add up to 84.6 s
 2026-10-06T18:20:13.114Z  join    ok   There is no dead silence: the sound never drops out; the longest pause between words is 1.8 s
 2026-10-06T18:20:13.114Z  join    ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.1 dB (the limit is -1)
+2026-10-06T18:25:11.568Z  part 1  part 1 of 2, 9:16: 4 scenes, 16 shots
+2026-10-06T18:25:11.570Z  part 1  stills: start
+2026-10-06T18:25:11.589Z  part 1  bundle: start
+2026-10-06T18:25:18.508Z  part 1  bundle: done in 6.9 s
+2026-10-06T18:25:39.413Z  part 1    16 stills in runs\2026-10-06-honest-farmer\part-1\stills\9x16
+2026-10-06T18:25:39.909Z  part 1    runs\2026-10-06-honest-farmer\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-06T18:25:40.257Z  part 1    runs\2026-10-06-honest-farmer\part-1\stills\sheet-9x16-2.png (4 shots, 1 rows)
+2026-10-06T18:25:40.258Z  part 1  stills: done in 28.7 s
+2026-10-06T18:25:44.722Z  part 2  part 2 of 2, 9:16: 5 scenes, 14 shots
+2026-10-06T18:25:44.724Z  part 2  stills: start
+2026-10-06T18:25:44.751Z  part 2  bundle: start
+2026-10-06T18:25:49.586Z  part 2  bundle: done in 4.8 s
+2026-10-06T18:26:09.722Z  part 2    14 stills in runs\2026-10-06-honest-farmer\part-2\stills\9x16
+2026-10-06T18:26:10.484Z  part 2    runs\2026-10-06-honest-farmer\part-2\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-06T18:26:10.764Z  part 2    runs\2026-10-06-honest-farmer\part-2\stills\sheet-9x16-2.png (2 shots, 1 rows)
+2026-10-06T18:26:10.764Z  part 2  stills: done in 26.0 s
+2026-10-06T18:28:35.711Z  part 1  part 1 of 2, 9:16: 4 scenes, 16 shots
+2026-10-06T18:28:35.713Z  part 1  stills: start
+2026-10-06T18:28:35.734Z  part 1  bundle: start
+2026-10-06T18:28:41.390Z  part 1  bundle: done in 5.7 s
+2026-10-06T18:29:01.022Z  part 1    16 stills in runs\2026-10-06-honest-farmer\part-1\stills\9x16
+2026-10-06T18:29:01.524Z  part 1    runs\2026-10-06-honest-farmer\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-06T18:29:01.812Z  part 1    runs\2026-10-06-honest-farmer\part-1\stills\sheet-9x16-2.png (4 shots, 1 rows)
+2026-10-06T18:29:01.812Z  part 1  stills: done in 26.1 s
+2026-10-06T18:29:06.219Z  part 2  part 2 of 2, 9:16: 5 scenes, 14 shots
+2026-10-06T18:29:06.221Z  part 2  stills: start
+2026-10-06T18:29:06.249Z  part 2  bundle: start
+2026-10-06T18:29:10.169Z  part 2  bundle: done in 3.9 s
+2026-10-06T18:29:27.353Z  part 2    14 stills in runs\2026-10-06-honest-farmer\part-2\stills\9x16
+2026-10-06T18:29:27.982Z  part 2    runs\2026-10-06-honest-farmer\part-2\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-06T18:29:28.297Z  part 2    runs\2026-10-06-honest-farmer\part-2\stills\sheet-9x16-2.png (2 shots, 1 rows)
+2026-10-06T18:29:28.298Z  part 2  stills: done in 22.1 s
+2026-10-06T18:39:02.468Z  part 1  part 1 of 2, 16:9: 4 scenes, 16 shots
+2026-10-06T18:39:02.469Z  part 1  preview: start
+2026-10-06T18:39:02.489Z  part 1  bundle: start
+2026-10-06T18:39:07.748Z  part 1  bundle: done in 5.3 s
+2026-10-06T18:40:25.278Z  part 1    runs\2026-10-06-honest-farmer\part-1\preview\honest-farmer-part-1-16x9-preview.mp4: 42.23 s of video, 960x540, in 75.6 s (1.79 s per video second)
+2026-10-06T18:40:25.289Z  part 1    runs\2026-10-06-honest-farmer\part-1\preview\honest-farmer-part-1-16x9-preview.srt
+2026-10-06T18:40:25.320Z  part 1  preview: done in 82.9 s
+2026-10-06T18:41:57.225Z  part 1  part 1 of 2, 16:9: 4 scenes, 16 shots
+2026-10-06T18:41:57.226Z  part 1  preview: start
+2026-10-06T18:41:57.244Z  part 1  bundle: start
+2026-10-06T18:42:08.550Z  part 1  bundle: done in 11.3 s
+2026-10-06T18:43:11.970Z  part 1    runs\2026-10-06-honest-farmer\part-1\preview\honest-farmer-part-1-16x9-preview.mp4: 42.23 s of video, 960x540, in 59.4 s (1.41 s per video second)
+2026-10-06T18:43:11.974Z  part 1    runs\2026-10-06-honest-farmer\part-1\preview\honest-farmer-part-1-16x9-preview.srt
+2026-10-06T18:43:11.986Z  part 1  preview: done in 74.8 s
+2026-10-06T18:43:44.497Z  part 1  part 1 of 2, 16:9: 4 scenes, 16 shots
+2026-10-06T18:43:44.498Z  part 1  video: start
+2026-10-06T18:43:44.517Z  part 1  bundle: start
+2026-10-06T18:43:48.441Z  part 1  bundle: done in 3.9 s
+2026-10-06T18:45:28.841Z  part 1    runs\2026-10-06-honest-farmer\part-1\out\honest-farmer-part-1-16x9-v14.mp4: 42.23 s of video, 1920x1080, in 98.7 s (2.34 s per video second)
+2026-10-06T18:45:28.846Z  part 1    runs\2026-10-06-honest-farmer\part-1\out\honest-farmer-part-1-16x9-v14.srt
+2026-10-06T18:45:28.861Z  part 1  video: done in 104.4 s
+2026-10-06T18:49:32.039Z  part 2  part 2 of 2, 16:9: 5 scenes, 14 shots
+2026-10-06T18:49:32.041Z  part 2  video: start
+2026-10-06T18:49:32.071Z  part 2  bundle: start
+2026-10-06T18:49:37.916Z  part 2  bundle: done in 5.8 s
+2026-10-06T18:51:56.193Z  part 2    runs\2026-10-06-honest-farmer\part-2\out\honest-farmer-part-2-16x9-v4.mp4: 42.40 s of video, 1920x1080, in 136.5 s (3.22 s per video second)
+2026-10-06T18:51:56.197Z  part 2    runs\2026-10-06-honest-farmer\part-2\out\honest-farmer-part-2-16x9-v4.srt
+2026-10-06T18:51:56.211Z  part 2  video: done in 144.2 s
+2026-10-06T18:52:51.651Z  part 1  part 1 of 2, 9:16: 4 scenes, 16 shots
+2026-10-06T18:52:51.653Z  part 1  stills: start
+2026-10-06T18:52:51.684Z  part 1  bundle: start
+2026-10-06T18:52:56.053Z  part 1  bundle: done in 4.4 s
+2026-10-06T18:53:14.397Z  part 1    16 stills in runs\2026-10-06-honest-farmer\part-1\stills\9x16
+2026-10-06T18:53:14.916Z  part 1    runs\2026-10-06-honest-farmer\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-06T18:53:15.239Z  part 1    runs\2026-10-06-honest-farmer\part-1\stills\sheet-9x16-2.png (4 shots, 1 rows)
+2026-10-06T18:53:15.239Z  part 1  stills: done in 23.6 s
+2026-10-06T18:53:15.240Z  part 1  preview: start
+2026-10-06T18:54:26.268Z  part 1    runs\2026-10-06-honest-farmer\part-1\preview\honest-farmer-part-1-9x16-preview.mp4: 42.23 s of video, 540x960, in 70.1 s (1.66 s per video second)
+2026-10-06T18:54:26.272Z  part 1    runs\2026-10-06-honest-farmer\part-1\preview\honest-farmer-part-1-9x16-preview.srt
+2026-10-06T18:54:26.283Z  part 1  preview: done in 71.0 s
+2026-10-06T18:54:30.390Z  part 2  part 2 of 2, 9:16: 5 scenes, 14 shots
+2026-10-06T18:54:30.392Z  part 2  stills: start
+2026-10-06T18:54:30.414Z  part 2  bundle: start
+2026-10-06T18:54:34.176Z  part 2  bundle: done in 3.8 s
+2026-10-06T18:54:52.361Z  part 2    14 stills in runs\2026-10-06-honest-farmer\part-2\stills\9x16
+2026-10-06T18:54:53.007Z  part 2    runs\2026-10-06-honest-farmer\part-2\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-06T18:54:53.240Z  part 2    runs\2026-10-06-honest-farmer\part-2\stills\sheet-9x16-2.png (2 shots, 1 rows)
+2026-10-06T18:54:53.241Z  part 2  stills: done in 22.8 s
+2026-10-06T18:54:53.241Z  part 2  preview: start
+2026-10-06T18:56:59.123Z  part 2    runs\2026-10-06-honest-farmer\part-2\preview\honest-farmer-part-2-9x16-preview.mp4: 42.40 s of video, 540x960, in 125.0 s (2.95 s per video second)
+2026-10-06T18:56:59.126Z  part 2    runs\2026-10-06-honest-farmer\part-2\preview\honest-farmer-part-2-9x16-preview.srt
+2026-10-06T18:56:59.137Z  part 2  preview: done in 125.9 s
+2026-10-06T19:02:13.890Z  part 2  part 2 of 2, 9:16: 5 scenes, 14 shots
+2026-10-06T19:02:13.891Z  part 2  stills: start
+2026-10-06T19:02:13.911Z  part 2  bundle: start
+2026-10-06T19:02:18.634Z  part 2  bundle: done in 4.7 s
+2026-10-06T19:02:35.122Z  part 2    14 stills in runs\2026-10-06-honest-farmer\part-2\stills\9x16
+2026-10-06T19:02:35.915Z  part 2    runs\2026-10-06-honest-farmer\part-2\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-06T19:02:36.159Z  part 2    runs\2026-10-06-honest-farmer\part-2\stills\sheet-9x16-2.png (2 shots, 1 rows)
+2026-10-06T19:02:36.159Z  part 2  stills: done in 22.3 s
+2026-10-06T19:02:36.159Z  part 2  preview: start
+2026-10-06T19:04:40.239Z  part 2    runs\2026-10-06-honest-farmer\part-2\preview\honest-farmer-part-2-9x16-preview.mp4: 42.40 s of video, 540x960, in 123.2 s (2.91 s per video second)
+2026-10-06T19:04:40.242Z  part 2    runs\2026-10-06-honest-farmer\part-2\preview\honest-farmer-part-2-9x16-preview.srt
+2026-10-06T19:04:40.255Z  part 2  preview: done in 124.1 s
+2026-10-06T19:06:10.057Z  part 2  part 2 of 2, 9:16: 5 scenes, 14 shots
+2026-10-06T19:06:10.058Z  part 2  stills: start
+2026-10-06T19:06:10.081Z  part 2  bundle: start
+2026-10-06T19:06:14.947Z  part 2  bundle: done in 4.9 s
+2026-10-06T19:06:32.108Z  part 2    14 stills in runs\2026-10-06-honest-farmer\part-2\stills\9x16
+2026-10-06T19:06:32.734Z  part 2    runs\2026-10-06-honest-farmer\part-2\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-06T19:06:32.937Z  part 2    runs\2026-10-06-honest-farmer\part-2\stills\sheet-9x16-2.png (2 shots, 1 rows)
+2026-10-06T19:06:32.938Z  part 2  stills: done in 22.9 s
+2026-10-06T19:06:32.938Z  part 2  preview: start
+2026-10-06T19:08:31.150Z  part 2    runs\2026-10-06-honest-farmer\part-2\preview\honest-farmer-part-2-9x16-preview.mp4: 42.40 s of video, 540x960, in 117.4 s (2.77 s per video second)
+2026-10-06T19:08:31.153Z  part 2    runs\2026-10-06-honest-farmer\part-2\preview\honest-farmer-part-2-9x16-preview.srt
+2026-10-06T19:08:31.166Z  part 2  preview: done in 118.2 s
+2026-10-06T19:10:08.876Z  part 1  part 1 of 2, 9:16: 4 scenes, 16 shots
+2026-10-06T19:10:08.877Z  part 1  video: start
+2026-10-06T19:10:08.895Z  part 1  bundle: start
+2026-10-06T19:10:13.537Z  part 1  bundle: done in 4.6 s
+2026-10-06T19:11:58.078Z  part 1    runs\2026-10-06-honest-farmer\part-1\out\honest-farmer-part-1-9x16-v1.mp4: 42.23 s of video, 1080x1920, in 102.7 s (2.43 s per video second)
+2026-10-06T19:11:58.084Z  part 1    runs\2026-10-06-honest-farmer\part-1\out\honest-farmer-part-1-9x16-v1.srt
+2026-10-06T19:11:58.102Z  part 1  video: done in 109.2 s
+2026-10-06T19:12:29.176Z  part 2  part 2 of 2, 9:16: 5 scenes, 14 shots
+2026-10-06T19:12:29.178Z  part 2  video: start
+2026-10-06T19:12:29.197Z  part 2  bundle: start
+2026-10-06T19:12:32.827Z  part 2  bundle: done in 3.6 s
+2026-10-06T19:15:10.596Z  part 2    runs\2026-10-06-honest-farmer\part-2\out\honest-farmer-part-2-9x16-v1.mp4: 42.40 s of video, 1080x1920, in 156.0 s (3.68 s per video second)
+2026-10-06T19:15:10.600Z  part 2    runs\2026-10-06-honest-farmer\part-2\out\honest-farmer-part-2-9x16-v1.srt
+2026-10-06T19:15:10.611Z  part 2  video: done in 161.4 s
+2026-10-06T19:17:27.960Z  output  16:9 full video:
+2026-10-06T19:18:28.617Z  output      F:\Video Studio\runs\2026-10-06-honest-farmer\cuts\full\audio\mix.wav: 84.63 s, -14.02 LUFS, true peak -1.1 dB, 6 music moods, 15 effects, music -17.3 dB under the voice
+2026-10-06T19:20:00.299Z  output    runs\2026-10-06-honest-farmer\out\honest-farmer-16x9-v2.mp4: 84.63 s, 1920x1080
+2026-10-06T19:20:00.299Z  output      ok   The file plays: 1920x1080, 30 pictures a second, 84.6 s, picture and sound both there; played through from start to finish
+2026-10-06T19:20:00.300Z  output      ok   It is as long as its parts together: 84.6 s; its 2 pieces add up to 84.6 s
+2026-10-06T19:20:00.300Z  output      ok   Its pictures are the parts that passed: every frame against honest-farmer-part-1-16x9-v14.mp4 and honest-farmer-part-2-16x9-v4.mp4 (the strongest difference is 1 of 255; over 16 would be a different picture)
+2026-10-06T19:20:00.300Z  output      ok   Its sound is the mix made for the whole video: second for second (what is left over is 33 dB under it at most)
+2026-10-06T19:20:00.301Z  output      ok   There is no dead silence: the sound never drops out; the longest pause between words is 1.8 s
+2026-10-06T19:20:00.301Z  output      ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.1 dB (the limit is -1)
+2026-10-06T19:20:00.301Z  output      ok   Nothing drowns the words: 15 sound effects, the loudest of those over words 12 dB under the voice; the music sits 17.3 dB under the voice while someone speaks
+2026-10-06T19:20:00.301Z  output      FIX  Every join and the cover hold up: a strip of frames across the join between parts, and the cover picture
+2026-10-06T19:20:00.302Z  output            problem: the joins and the cover have not been looked at yet
+2026-10-06T19:20:00.302Z  output      to look at: runs\2026-10-06-honest-farmer\out\look\honest-farmer-16x9-v2 (each join) and runs\2026-10-06-honest-farmer\out\honest-farmer-16x9-v2-cover.jpg; then write runs\2026-10-06-honest-farmer\out\honest-farmer-16x9-v2.look.json
+2026-10-06T19:20:00.302Z  output  9:16 full video:
+2026-10-06T19:20:00.734Z  output      mix is already up to date (the plan and the voice have not changed)
+2026-10-06T19:21:42.457Z  output    runs\2026-10-06-honest-farmer\out\honest-farmer-9x16-v1.mp4: 84.63 s, 1080x1920
+2026-10-06T19:21:42.457Z  output      ok   The file plays: 1080x1920, 30 pictures a second, 84.6 s, picture and sound both there; played through from start to finish
+2026-10-06T19:21:42.458Z  output      ok   It is as long as its parts together: 84.6 s; its 2 pieces add up to 84.6 s
+2026-10-06T19:21:42.458Z  output      ok   Its pictures are the parts that passed: every frame against honest-farmer-part-1-9x16-v1.mp4 and honest-farmer-part-2-9x16-v1.mp4 (the strongest difference is 1 of 255; over 16 would be a different picture)
+2026-10-06T19:21:42.458Z  output      ok   Its sound is the mix made for the whole video: second for second (what is left over is 33 dB under it at most)
+2026-10-06T19:21:42.459Z  output      ok   There is no dead silence: the sound never drops out; the longest pause between words is 1.8 s
+2026-10-06T19:21:42.459Z  output      ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.1 dB (the limit is -1)
+2026-10-06T19:21:42.459Z  output      ok   Nothing drowns the words: 15 sound effects, the loudest of those over words 12 dB under the voice; the music sits 17.3 dB under the voice while someone speaks
+2026-10-06T19:21:42.460Z  output      FIX  Every join and the cover hold up: a strip of frames across the join between parts, and the cover picture
+2026-10-06T19:21:42.460Z  output            problem: the joins and the cover have not been looked at yet
+2026-10-06T19:21:42.460Z  output      to look at: runs\2026-10-06-honest-farmer\out\look\honest-farmer-9x16-v1 (each join) and runs\2026-10-06-honest-farmer\out\honest-farmer-9x16-v1-cover.jpg; then write runs\2026-10-06-honest-farmer\out\honest-farmer-9x16-v1.look.json
+2026-10-06T19:21:42.462Z  output  runs\2026-10-06-honest-farmer\delivery.md
+2026-10-06T19:25:08.041Z  output  16:9 full video:
+2026-10-06T19:25:08.349Z  output    runs\2026-10-06-honest-farmer\out\honest-farmer-16x9-v2.mp4: already made from these parts
+2026-10-06T19:25:14.435Z  output      runs\2026-10-06-honest-farmer\out\honest-farmer-16x9-v2-cover-side.jpg
+2026-10-06T19:25:14.436Z  output      FIX  Every join and the cover hold up: the joins and the cover have not been looked at yet
+2026-10-06T19:25:14.559Z  output  9:16 full video:
+2026-10-06T19:25:14.817Z  output    runs\2026-10-06-honest-farmer\out\honest-farmer-9x16-v1.mp4: already made from these parts
+2026-10-06T19:25:16.650Z  output      runs\2026-10-06-honest-farmer\out\honest-farmer-9x16-v1-cover-side.jpg
+2026-10-06T19:25:16.651Z  output      FIX  Every join and the cover hold up: the joins and the cover have not been looked at yet
+2026-10-06T19:25:16.774Z  output  runs\2026-10-06-honest-farmer\delivery.md
+2026-10-06T19:25:37.129Z  output  16:9 full video:
+2026-10-06T19:25:37.389Z  output    runs\2026-10-06-honest-farmer\out\honest-farmer-16x9-v2.mp4: already made from these parts
+2026-10-06T19:25:37.497Z  output  9:16 full video:
+2026-10-06T19:25:37.747Z  output    runs\2026-10-06-honest-farmer\out\honest-farmer-9x16-v1.mp4: already made from these parts
+2026-10-06T19:25:37.858Z  output  runs\2026-10-06-honest-farmer\delivery.md
+2026-10-06T19:35:28.721Z  output  16:9 full video:
+2026-10-06T19:35:29.160Z  output    runs\2026-10-06-honest-farmer\out\honest-farmer-16x9-v2.mp4: already made from these parts
+2026-10-06T19:35:29.363Z  output  9:16 full video:
+2026-10-06T19:35:29.725Z  output    runs\2026-10-06-honest-farmer\out\honest-farmer-9x16-v1.mp4: already made from these parts
+2026-10-06T19:35:29.896Z  output  runs\2026-10-06-honest-farmer\delivery.md

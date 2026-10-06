@@ -99,6 +99,7 @@ export function newRun(run: NewRun, world: World): { dir: string; id: string; ma
         brand: run.brand,
         voice: brand?.defaults.voice ?? NARRATOR,
         sizes: brand?.defaults.sizes ?? ['9:16'],
+        vertical: brand?.defaults.vertical ?? 'full',
         masterPrompt: findMasterPrompt(run.root, run.format),
       },
       null,

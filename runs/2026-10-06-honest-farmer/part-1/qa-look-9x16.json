@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "video": "honest-farmer-part-1-9x16-preview.mp4",
+  "stills": {
+    "s1a": "ok",
+    "s1b": "ok",
+    "s2a": "ok",
+    "s2b": "ok",
+    "s2c": "ok",
+    "s2d": "ok",
+    "s2e": "ok",
+    "s2f": "ok",
+    "s3a": "ok",
+    "s3b": "ok",
+    "s3c": "ok",
+    "s3d": "ok",
+    "s4a": "ok",
+    "s4b": "ok",
+    "s4c": "ok",
+    "s4d": "ok"
+  },
+  "strips": {
+    "cut-s1a-s1b": "ok",
+    "cut-s1b-s2a": "ok",
+    "cut-s2a-s2b": "ok",
+    "cut-s2b-s2c": "ok",
+    "cut-s2c-s2d": "ok",
+    "cut-s2d-s2e": "ok",
+    "cut-s2e-s2f": "ok",
+    "cut-s2f-s3a": "ok",
+    "cut-s3a-s3b": "ok",
+    "cut-s3b-s3c": "ok",
+    "cut-s3c-s3d": "ok",
+    "cut-s3d-s4a": "ok",
+    "cut-s4a-s4b": "ok",
+    "cut-s4b-s4c": "ok",
+    "s1a-move-1": "ok",
+    "s1b-move-1": "ok",
+    "s1b-move-2": "ok",
+    "s2d-move-1": "ok",
+    "s2e-move-1": "ok",
+    "s3d-move-1": "ok",
+    "s4b-move-1": "ok",
+    "s4d-move-1": "ok"
+  },
+  "playbook": "ok",
+  "fixed": [
+    "In a narrow frame people stood too close together: a pointing arm reached through the person it pointed at. The scene is now laid out as many heads wide in a tall frame as in a wide one, and the camera closes in from there."
+  ],
+  "notes": [
+    "In the vertical cut the walk to market has its caption over his shins and the bush.",
+    "When his wife says \"Keep the gold!\" the vertical frame shows her alone, pointing off to the side; Tomas is in the wide cut only.",
+    "Backgrounds are seen from closer in the vertical cut, so there is less of each place in the picture."
+  ]
+}

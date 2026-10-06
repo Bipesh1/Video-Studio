@@ -17,7 +17,8 @@
   "defaults": {
     "format": "story",
     "voice": "narrator",
-    "sizes": ["9:16", "4:5", "16:9"]
+    "sizes": ["16:9", "9:16"],
+    "vertical": "full"
   },
   "identityMode": "auto"
 }

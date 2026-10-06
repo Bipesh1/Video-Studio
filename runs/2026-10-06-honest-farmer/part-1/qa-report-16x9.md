@@ -2,7 +2,7 @@
 
 **Ready for you to watch.** Every check passed, with 4 things worth a second look.
 
-Video: `honest-farmer-part-1-16x9-v13.mp4` (42.2 s). Checked on 2026-10-06.
+Video: `honest-farmer-part-1-16x9-v14.mp4` (42.2 s). Checked on 2026-10-07.
 
 ## Worth a second look
 
@@ -24,12 +24,13 @@ Video: `honest-farmer-part-1-16x9-v13.mp4` (42.2 s). Checked on 2026-10-06.
 | Nothing drowns the words | passed | 8 sound effects, the loudest of those over words 12 dB under the voice; the music sits 17 dB under the voice while someone speaks |
 | Captions fit the screen | passed | 24 captions of one line; the widest takes 70% of the width; the briefest stays up 0.9 s |
 | Everyone is inside the picture | passed | where every head lands on screen, on all 1267 frames of the 16 shots |
-| No face is under the title or the captions | passed | every face against the title, any label and the captions, on every frame |
+| No face is under the title or the captions | passed | every face against the title, any label, the captions, on every frame |
 | Feet are on the ground | passed | the lowest foot or knee of every body against the ground line, on every frame |
 | Nothing jumps | passed | the furthest anyone moves in one frame on the way into a pose is 0.08 of a head (Tomas, the farmer, shot s1b); a jump would be over 0.3 |
 | No picture is held too long | passed, with a note | the longest shot is 4.6 s (s2a); the longest with nothing moving in it is 2.6 s |
 | Whatever is picked up is within reach | passed | 1 time someone takes a thing in their hand inside a shot |
 | The plan's own checks still pass | passed | every name in the library, the staging rules, the format's beats, for all 30 shots of the video |
+| The pictures are the ones that were looked at | passed | Claude looked at "honest-farmer-part-1-16x9-v13.mp4"; every frame of this video was compared with it (the strongest difference is 3 of 255; over 16 would be a different picture) |
 
 ## What Claude looked at
 

@@ -21,7 +21,7 @@
     "plan": "tsx cli/src/plan.ts",
     "make": "tsx cli/src/make.ts",
     "qa": "tsx cli/src/qa.ts",
-    "join": "tsx cli/src/join.ts",
+    "output": "tsx cli/src/output.ts",
     "storyboard": "tsx cli/src/storyboard.ts",
     "test": "vitest run",
     "typecheck": "tsc -p shared/tsconfig.json && tsc -p engine/tsconfig.json && tsc -p cli/tsconfig.json",

@@ -2,7 +2,7 @@ import type { Actor, CastMember, CharacterCard, Scene, Shot, Storyboard } from '
 import { isPlace, sceneBackground } from '../backgrounds/places';
 import type { PlaceName } from '../backgrounds/places';
 import type { BackgroundSpec } from '../backgrounds/Background';
-import { focusBetween, focusOn, layoutHead } from '../camera/Framing';
+import { STAGE_HEADS, STAGE_SHARE, focusBetween, focusOn, layoutHead } from '../camera/Framing';
 import type { Focus } from '../camera/Framing';
 import { ACTIONS } from '../rig/actions';
 import type { ActionName } from '../rig/actions';
@@ -49,7 +49,7 @@ export function stageFor(
     groundY: (background.horizon + 0.034) * size.height,
     centre: size.width / 2,
     // Wide enough to stand people apart, never so wide that two people lose each other.
-    span: Math.min(0.86 * size.width, 9.5 * head),
+    span: Math.min(STAGE_SHARE * size.width, STAGE_HEADS * head),
     background,
   };
 }
@@ -139,6 +139,38 @@ export function lookTarget(
 
 /** What the camera frames in a shot: the one it favours, or everyone, or the things. */
 export function shotFocus(
+  shot: Shot,
+  stage: Stage,
+  placements: ReadonlyMap<string, { placement: Placement; pose: ResolvedPose }>,
+  /** The people holding a pose right now: a wide shot keeps their whole bodies in the picture. */
+  whole?: ReadonlySet<string>,
+): Focus {
+  const aim = aimOf(shot, stage, placements);
+  if (!whole || shot.camera.framing !== 'wide') return aim;
+  const ends = shot.actors
+    .filter((a) => whole.has(a.character))
+    .flatMap((a) => {
+      const p = placements.get(a.character);
+      if (!p) return [];
+      const j = computeSkeleton(p.pose);
+      const half = 0.5;
+      const xs = [
+        j.head.x - half,
+        j.head.x + half,
+        j.legs.front.foot.x,
+        j.legs.back.foot.x,
+        j.arms.front.hand.x,
+        j.arms.back.hand.x,
+      ].map((x) => toScreen(vec(x, 0), p.placement).x);
+      return [Math.min(...xs), Math.max(...xs)];
+    });
+  return ends.length
+    ? { ...aim, keep: { left: Math.min(...ends), right: Math.max(...ends) } }
+    : aim;
+}
+
+/** Where the camera aims for a shot: the one it favours, or everyone and what they look at. */
+function aimOf(
   shot: Shot,
   stage: Stage,
   placements: ReadonlyMap<string, { placement: Placement; pose: ResolvedPose }>,

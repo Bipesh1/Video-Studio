@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "curious",
+      "startMs": 0
+    },
+    {
+      "mood": "tense",
+      "startMs": 23510
+    },
+    {
+      "mood": "sorrow",
+      "startMs": 32020
+    },
+    {
+      "mood": "tense",
+      "startMs": 42233
+    },
+    {
+      "mood": "triumph",
+      "startMs": 68763
+    },
+    {
+      "mood": "calm",
+      "startMs": 77473
+    }
+  ],
+  "sfx": [
+    {
+      "name": "ding",
+      "atMs": 60,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "wind",
+      "atMs": 4570,
+      "durationMs": 3460,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "footsteps",
+      "atMs": 15120,
+      "durationMs": 1922,
+      "gainDb": -2,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "pop",
+      "atMs": 18346,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "ding",
+      "atMs": 20680,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "pop",
+      "atMs": 28040,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 5
+    },
+    {
+      "name": "whoosh",
+      "atMs": 29995,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 6
+    },
+    {
+      "name": "creak",
+      "atMs": 32080,
+      "gainDb": -2,
+      "pan": 0,
+      "seed": 7
+    },
+    {
+      "name": "footsteps",
+      "atMs": 42293,
+      "durationMs": 2280,
+      "gainDb": -2,
+      "pan": 0,
+      "seed": 8
+    },
+    {
+      "name": "pop",
+      "atMs": 49558,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 9
+    },
+    {
+      "name": "ding",
+      "atMs": 51013,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 10
+    },
+    {
+      "name": "ding",
+      "atMs": 54263,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 11
+    },
+    {
+      "name": "pop",
+      "atMs": 63123,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 12
+    },
+    {
+      "name": "ding",
+      "atMs": 73821,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 13
+    },
+    {
+      "name": "footsteps",
+      "atMs": 77533,
+      "durationMs": 1920,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 14
+    }
+  ],
+  "musicGainDb": 0
+}

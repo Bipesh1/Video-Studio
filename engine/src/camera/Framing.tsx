@@ -21,6 +21,12 @@ export type Focus = {
   head: number;
   /** For two people framed together: how far apart their heads are, px. */
   span?: number;
+  /**
+   * The left and right ends of what a wide shot must not cut off: the whole bodies of the
+   * people holding a pose in it, px in the layout. When they already fit, nothing changes.
+   * `zoom` is how much closer a push-in ends, so they still fit when it gets there.
+   */
+  keep?: { left: number; right: number; zoom?: number };
 };
 
 type Size = { width: number; height: number };
@@ -53,8 +59,22 @@ const WIDE_TARGETS: Record<Shot, { head: number; x: number; y: number; room: num
 
 const targetsFor = (size: Size) => (size.width > size.height ? WIDE_TARGETS : TARGETS);
 
-/** How big a head is in the wide layout of a frame this shape, px: where every scene starts. */
-export const layoutHead = (size: Size): number => targetsFor(size).wide.head * size.height;
+/**
+ * How many heads wide a scene is laid out, and the share of the frame's width that takes. It
+ * is the same in every frame shape, so people stand as far apart in a tall frame as in a wide
+ * one: nobody's pointing arm reaches through the person it points at (found by looking at the
+ * tall shape, 2026-10-07). The camera then closes in on whoever a shot is about.
+ */
+export const STAGE_HEADS = 9.5;
+export const STAGE_SHARE = 0.86;
+
+/**
+ * How big a head is in the layout of a frame this shape, px: where every scene starts. In a
+ * wide frame that is the size of a head in a wide shot. A tall frame is too narrow to lay a
+ * scene out at that size, so its layout is smaller and even a wide shot closes in from it.
+ */
+export const layoutHead = (size: Size): number =>
+  Math.min(targetsFor(size).wide.head * size.height, (STAGE_SHARE * size.width) / STAGE_HEADS);
 
 /** A standing head's height above the ground, in head units. */
 const HEAD_HEIGHT = -computeSkeleton(resolvePose(stand)).head.y;
@@ -93,11 +113,41 @@ export function shotTransform(
   const fits = (0.94 * size.width) / ((focus.span ?? 0) + target.room * focus.head);
   const scale = Math.max(1, Math.min((target.head * size.height) / focus.head, fits));
   const tx = (shot === 'over-shoulder' && side === 'right' ? 1 - target.x : target.x) * size.width;
-  const clampTo = (v: number, span: number) => Math.min(0, Math.max(span - span * scale, v));
-  return {
+  const clampTo = (v: number, span: number, by = scale) =>
+    Math.min(0, Math.max(span - span * by, v));
+  const framed = {
     scale,
     x: clampTo(tx - focus.x * scale, size.width),
     y: clampTo(target.y * size.height - focus.y * scale, size.height),
+  };
+  // A wide shot shows whole figures: someone lying down, or standing at the edge of a narrow
+  // frame, is not cut off at the side. The camera slides over first, and moves back only if
+  // sliding is not enough.
+  const keep = focus.keep;
+  if (!keep) return framed;
+  // Room at each side: a little air, and more when a push-in is going to close in.
+  const half = size.width / 2;
+  const edge = half - (half - 0.03 * size.width) / (keep.zoom ?? 1);
+  // The frame x of a layout point is point * scale + x, so both ends are in when x is between:
+  const least = (by: number) => edge - keep.left * by;
+  const most = (by: number) => size.width - edge - keep.right * by;
+  if (framed.x >= least(scale) - 0.5 && framed.x <= most(scale) + 0.5) return framed;
+  const room = size.width - 2 * edge;
+  const fitted = Math.max(1, Math.min(scale, room / Math.max(1, keep.right - keep.left)));
+  const slid = (by: number) => {
+    // As near the usual framing as keeps both ends in; centred on them if they cannot both be.
+    const wanted = tx - focus.x * by;
+    const x =
+      least(by) <= most(by)
+        ? Math.min(most(by), Math.max(least(by), wanted))
+        : half - ((keep.left + keep.right) / 2) * by;
+    return clampTo(x, size.width, by);
+  };
+  return {
+    scale: fitted,
+    x: slid(fitted),
+    // The head keeps its height in the frame: the camera moves back about the faces.
+    y: clampTo(target.y * size.height - focus.y * fitted, size.height, fitted),
   };
 }
 

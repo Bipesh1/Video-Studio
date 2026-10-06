@@ -4067,6 +4067,52 @@
       "added": "2026-10-06"
     },
     {
+      "id": "overlay/watermark",
+      "kind": "overlay",
+      "name": "Page mark",
+      "description": "The page's name, small and see-through, in one corner of every frame. A bottom corner sits just above the caption band. Drawn only when the brand file has a watermark.",
+      "tags": [
+        "watermark",
+        "page mark",
+        "logo",
+        "brand",
+        "channel name",
+        "corner",
+        "overlay",
+        "text"
+      ],
+      "code": {
+        "file": "engine/src/overlays/Brand.tsx",
+        "export": "Watermark"
+      },
+      "use": "<Watermark mark={{ text: \"Page name\", corner: \"top-right\", opacity: 0.75 }} width height />",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "overlay/closing-card",
+      "kind": "overlay",
+      "name": "Closing card",
+      "description": "The card after the last shot: the page's line on a ribbon over a quiet flat field, with an optional smaller line under it. Added by the output step when the brand file has a closing card.",
+      "tags": [
+        "closing card",
+        "end card",
+        "outro",
+        "thanks",
+        "subscribe",
+        "brand",
+        "ending",
+        "text"
+      ],
+      "code": {
+        "file": "engine/src/overlays/Brand.tsx",
+        "export": "ClosingCard"
+      },
+      "use": "<ClosingCard text=\"Thanks for watching\" subtext=\"A new story every week\" width height frame={framesSinceItBegan} />",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
       "id": "music/tense",
       "kind": "music",
       "name": "Tense music",

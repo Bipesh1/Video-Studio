@@ -1,0 +1,180 @@
+{
+  "version": 1,
+  "title": "The Honest Farmer",
+  "part": 1,
+  "parts": 2,
+  "size": "9:16",
+  "video": "honest-farmer-part-1-9x16-v1.mp4",
+  "seconds": 42.233333,
+  "checkedOn": "2026-10-07",
+  "checks": [
+    {
+      "id": "plays",
+      "title": "The file plays",
+      "by": "measured",
+      "detail": "1080x1920, 30 pictures a second, 42.2 s, picture and sound both there; played through from start to finish",
+      "findings": []
+    },
+    {
+      "id": "made-from",
+      "title": "The video is of this plan and this sound",
+      "by": "measured",
+      "detail": "rendered from the plan as it stands; its sound is the mix as it stands, second for second (what is left over is 37 dB under it at most)",
+      "findings": []
+    },
+    {
+      "id": "length",
+      "title": "The length is right",
+      "by": "measured",
+      "detail": "42.2 s; a part may be up to 60 s",
+      "findings": []
+    },
+    {
+      "id": "in-step",
+      "title": "Picture and voice are in step",
+      "by": "measured",
+      "detail": "16 shots end to end with no gap, each line heard while its own pictures are on screen; picture and voice end together at 42.2 s",
+      "findings": []
+    },
+    {
+      "id": "silence",
+      "title": "There is no dead silence",
+      "by": "measured",
+      "detail": "the sound never drops out; the longest pause between words is 0.9 s",
+      "findings": []
+    },
+    {
+      "id": "loudness",
+      "title": "The sound is at the right level",
+      "by": "measured",
+      "detail": "loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.1 dB (the limit is -1)",
+      "findings": []
+    },
+    {
+      "id": "words-heard",
+      "title": "Nothing drowns the words",
+      "by": "measured",
+      "detail": "8 sound effects, the loudest of those over words 12 dB under the voice; the music sits 17 dB under the voice while someone speaks",
+      "findings": []
+    },
+    {
+      "id": "captions",
+      "title": "Captions fit the screen",
+      "by": "measured",
+      "detail": "23 captions of up to 2 lines; the widest takes 74% of the width; the briefest stays up 0.9 s",
+      "findings": []
+    },
+    {
+      "id": "in-frame",
+      "title": "Everyone is inside the picture",
+      "by": "measured",
+      "detail": "where every head lands on screen, on all 1267 frames of the 16 shots",
+      "findings": [
+        {
+          "level": "note",
+          "shot": "s4b",
+          "atMs": 34666.666666666664,
+          "text": "Tomas, the farmer is in this shot's plan but falls outside the picture"
+        }
+      ]
+    },
+    {
+      "id": "faces-clear",
+      "title": "No face is under the title or the captions",
+      "by": "measured",
+      "detail": "every face against the title, any label, the captions, on every frame",
+      "findings": []
+    },
+    {
+      "id": "feet",
+      "title": "Feet are on the ground",
+      "by": "measured",
+      "detail": "the lowest foot or knee of every body against the ground line, on every frame",
+      "findings": []
+    },
+    {
+      "id": "smooth",
+      "title": "Nothing jumps",
+      "by": "measured",
+      "detail": "the furthest anyone moves in one frame on the way into a pose is 0.12 of a head (Tomas, the farmer, shot s2d); a jump would be over 0.3",
+      "findings": []
+    },
+    {
+      "id": "held",
+      "title": "No picture is held too long",
+      "by": "measured",
+      "detail": "the longest shot is 4.6 s (s2a); the longest with nothing moving in it is 2.6 s",
+      "findings": [
+        {
+          "level": "note",
+          "shot": "s1a",
+          "atMs": 0,
+          "text": "the shot stays for 4.5 s, a little over the 4 s a shot should take"
+        },
+        {
+          "level": "note",
+          "shot": "s2a",
+          "atMs": 8166,
+          "text": "the shot stays for 4.6 s, a little over the 4 s a shot should take"
+        }
+      ]
+    },
+    {
+      "id": "reach",
+      "title": "Whatever is picked up is within reach",
+      "by": "measured",
+      "detail": "1 time someone takes a thing in their hand inside a shot",
+      "findings": []
+    },
+    {
+      "id": "plan",
+      "title": "The plan's own checks still pass",
+      "by": "measured",
+      "detail": "every name in the library, the staging rules, the format's beats, for all 30 shots of the video",
+      "findings": []
+    },
+    {
+      "id": "same-pictures",
+      "title": "The pictures are the ones that were looked at",
+      "by": "measured",
+      "detail": "Claude looked at \"honest-farmer-part-1-9x16-preview.mp4\"; every frame of this video was compared with it (the strongest difference is 14 of 255; over 16 would be a different picture)",
+      "findings": []
+    },
+    {
+      "id": "style",
+      "title": "Every still passes the Style Check",
+      "by": "looked",
+      "detail": "16 stills, each against the 11 questions of the style guide",
+      "findings": []
+    },
+    {
+      "id": "story",
+      "title": "Every still tells its part of the story",
+      "by": "looked",
+      "detail": "16 stills, each against 7 questions: in frame, face visible, expression, hands, feet, action, setting",
+      "findings": []
+    },
+    {
+      "id": "motion",
+      "title": "Every move and every cut holds up frame by frame",
+      "by": "looked",
+      "detail": "22 strips of frames, one across each move inside a shot and each cut that keeps someone on screen",
+      "findings": []
+    },
+    {
+      "id": "playbook",
+      "title": "The playbook was followed",
+      "by": "looked",
+      "detail": "the rules of the general, format and style playbooks, read against the finished part",
+      "findings": []
+    }
+  ],
+  "fixed": [
+    "In a narrow frame people stood too close together: a pointing arm reached through the person it pointed at. The scene is now laid out as many heads wide in a tall frame as in a wide one, and the camera closes in from there."
+  ],
+  "notes": [
+    "In the vertical cut the walk to market has its caption over his shins and the bush.",
+    "When his wife says \"Keep the gold!\" the vertical frame shows her alone, pointing off to the side; Tomas is in the wide cut only.",
+    "Backgrounds are seen from closer in the vertical cut, so there is less of each place in the picture."
+  ]
+}

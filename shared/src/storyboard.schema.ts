@@ -241,6 +241,18 @@ export const storyboardSchema = z
       .array(z.string().regex(/^L-\d{4}$/, 'a lesson id looks like L-0007'))
       .default([]),
     cast: z.array(castMemberSchema).default([]),
+    /**
+     * The cover picture: which shot it shows, how far into it, and in what size of shot. Left
+     * out, the cover is the opening shot.
+     */
+    cover: z
+      .object({
+        shot: idSchema,
+        at: z.number().min(0).max(1).default(0.6),
+        framing: z.enum(FRAMINGS).optional(),
+      })
+      .strict()
+      .optional(),
     scenes: z.array(sceneSchema).min(1),
   })
   .strict()
@@ -254,6 +266,9 @@ export const storyboardSchema = z
       }
     };
     const cast = new Set(sb.cast.map((m) => m.id));
+    if (sb.cover && !sb.scenes.some((scene) => scene.shots.some((s) => s.id === sb.cover?.shot))) {
+      issue(`the cover shows shot "${sb.cover.shot}", which is not in the video`);
+    }
     once(
       sb.cast.map((m) => m.id),
       'cast member',

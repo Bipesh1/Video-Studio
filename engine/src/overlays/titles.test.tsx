@@ -1,6 +1,7 @@
 import { renderToStaticMarkup } from 'react-dom/server';
 import { describe, expect, it } from 'vitest';
 import { ink, tokens } from '../tokens';
+import { ClosingCard, Watermark, markBox } from './Brand';
 import { LABEL_PLACES, Label, TITLE_POP_FRAMES, TitleCard } from './Titles';
 import { fitSize, textWidth, viewerText, wrapWords } from './text';
 
@@ -77,5 +78,48 @@ describe('label', () => {
 
   it('refuses an em dash too', () => {
     expect(() => svg(<Label text={'Later — much later'} {...size} />)).toThrow(/em dash/);
+  });
+});
+
+describe("a page's mark and closing card", () => {
+  const wide = { width: 1920, height: 1080 };
+  const tall = { width: 1080, height: 1920 };
+
+  it('puts the mark in its corner, inside the frame, in both shapes', () => {
+    for (const size of [wide, tall]) {
+      const box = markBox({ text: 'Your Page', corner: 'top-right' }, size.width, size.height);
+      expect(box.x + box.width).toBeLessThan(size.width);
+      expect(box.x).toBeGreaterThan(size.width * 0.6);
+      expect(box.y).toBeGreaterThan(0);
+      expect(box.y).toBeLessThan(size.height * 0.1);
+      const left = markBox({ text: 'Your Page', corner: 'top-left' }, size.width, size.height);
+      expect(left.x).toBeLessThan(size.width * 0.1);
+    }
+  });
+
+  it('keeps a bottom corner above the captions', () => {
+    const lowWide = markBox({ text: 'Your Page', corner: 'bottom-left' }, wide.width, wide.height);
+    expect(lowWide.y + lowWide.height).toBeLessThanOrEqual(wide.height * 0.8);
+    const lowTall = markBox({ text: 'Your Page', corner: 'bottom-right' }, tall.width, tall.height);
+    expect(lowTall.y + lowTall.height).toBeLessThanOrEqual(tall.height * 0.75);
+    expect(lowTall.y).toBeGreaterThan(tall.height * 0.6);
+  });
+
+  it('draws the mark see-through and the closing card with its two lines', () => {
+    const mark = renderToStaticMarkup(
+      <svg>
+        <Watermark mark={{ text: 'Your Page', corner: 'top-right', opacity: 0.75 }} {...wide} />
+      </svg>,
+    );
+    expect(mark).toContain('Your Page');
+    expect(mark).toContain('opacity="0.75"');
+    const card = renderToStaticMarkup(
+      <svg>
+        <ClosingCard text="Thanks for watching" subtext="A new story every week" {...wide} />
+      </svg>,
+    );
+    expect(card).toContain('Thanks for watching');
+    expect(card).toContain('A new story every week');
+    expect(() => markBox({ text: 'A — B', corner: 'top-left' }, 1920, 1080)).toThrow('em dash');
   });
 });

@@ -1,10 +1,13 @@
 import { describe, expect, it } from 'vitest';
-import { JOIN_DIP_S, joinFilter, joinTracks } from './assembly';
+import { JOIN_DIP_S, joinFilter, joinTracks, partStoryboard } from './assembly';
+import fixture from './fixtures/moon-tax.storyboard.json';
+import { storyboardSchema } from './storyboard.schema';
 import type { VoiceTrack } from './voice.schema';
 
 /**
- * Joining the finished parts of a video into one (the first piece of Phase 4F): the join is
- * one dip, never a cut to black, and the captions of the whole video run on one clock.
+ * Joining the finished parts of a video into one (Phase 4F): the pictures join on one dip,
+ * never a cut to black, and the voice of the whole video runs on one clock. The sound itself
+ * is not joined: it is mixed once for the whole video (output.test.ts).
  */
 
 describe('the join between parts', () => {
@@ -15,33 +18,31 @@ describe('the join between parts', () => {
     ]);
     expect(filter.split(';')).toEqual([
       `[0:v]fade=t=out:st=42.033:d=${JOIN_DIP_S}[v0]`,
-      `[0:a]afade=t=out:st=42.033:d=${JOIN_DIP_S}[a0]`,
       '[1:v]null[v1]',
-      `[1:a]afade=t=in:st=0:d=${JOIN_DIP_S}[a1]`,
-      '[v0][a0][v1][a1]concat=n=2:v=1:a=1[v][a]',
+      '[v0][v1]concat=n=2:v=1:a=0,format=yuv420p[v]',
     ]);
   });
 
-  it('leaves the picture alone on a plain cut, and still eases the sound across it', () => {
-    const filter = joinFilter([
+  it('leaves the picture alone on a plain cut, and goes dark before a closing card', () => {
+    const chains = joinFilter([
       { seconds: 30, fadesIn: false },
       { seconds: 30, fadesIn: false },
-      { seconds: 20, fadesIn: true },
-    ]);
-    const chains = filter.split(';');
+      // The page's closing card comes up out of the dark.
+      { seconds: 3, fadesIn: true },
+    ]).split(';');
     expect(chains[0]).toBe('[0:v]null[v0]');
-    // The middle part goes dark for the third, and its sound dips at both ends.
-    expect(chains[2]).toBe(`[1:v]fade=t=out:st=29.800:d=${JOIN_DIP_S}[v1]`);
-    expect(chains[3]).toBe(
-      `[1:a]afade=t=in:st=0:d=${JOIN_DIP_S},afade=t=out:st=29.800:d=${JOIN_DIP_S}[a1]`,
-    );
-    // The last part's sound comes in and is not taken out again.
-    expect(chains[5]).toBe(`[2:a]afade=t=in:st=0:d=${JOIN_DIP_S}[a2]`);
-    expect(chains[6]).toBe('[v0][a0][v1][a1][v2][a2]concat=n=3:v=1:a=1[v][a]');
+    expect(chains[1]).toBe(`[1:v]fade=t=out:st=29.800:d=${JOIN_DIP_S}[v1]`);
+    expect(chains[2]).toBe('[2:v]null[v2]');
+    expect(chains[3]).toBe('[v0][v1][v2]concat=n=3:v=1:a=0,format=yuv420p[v]');
+    // No sound is touched: every chain is a picture.
+    expect(chains.join(';')).not.toMatch(/:a\]|afade/);
   });
 
-  it('needs at least two parts', () => {
-    expect(() => joinFilter([{ seconds: 30, fadesIn: false }])).toThrow('at least two parts');
+  it('passes a video in one part through as it is', () => {
+    expect(joinFilter([{ seconds: 30, fadesIn: false }])).toBe(
+      '[0:v]null[v0];[v0]format=yuv420p[v]',
+    );
+    expect(() => joinFilter([])).toThrow('nothing to join');
   });
 });
 
@@ -75,5 +76,23 @@ describe('one voice for the whole video', () => {
 
   it('has no voice to join when there are no parts', () => {
     expect(() => joinTracks([], [])).toThrow('no voice to join');
+  });
+});
+
+describe('a part and the cover', () => {
+  it('leaves the cover with the whole video, so choosing another never changes a part', () => {
+    const whole = storyboardSchema.parse({ ...fixture, cover: { shot: 's2b', framing: 'medium' } });
+    expect(whole.cover).toEqual({ shot: 's2b', at: 0.6, framing: 'medium' });
+    const part = partStoryboard(whole, 1);
+    expect('cover' in part).toBe(false);
+    const other = storyboardSchema.parse({ ...fixture, cover: { shot: 's1a', at: 0.2 } });
+    expect(JSON.stringify(partStoryboard(other, 1))).toBe(JSON.stringify(part));
+  });
+
+  it('refuses a cover of a shot that is not in the video', () => {
+    const bad = storyboardSchema.safeParse({ ...fixture, cover: { shot: 's99z' } });
+    expect(JSON.stringify(bad.error?.issues ?? [])).toContain(
+      'the cover shows shot \\"s99z\\", which is not in the video',
+    );
   });
 });

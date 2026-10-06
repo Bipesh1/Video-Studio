@@ -134,6 +134,10 @@ function trailing(aimAt: (frame: number) => Focus, frame: number, frames: number
   let head = 0;
   let span = 0;
   let spans = false;
+  let left = 0;
+  let right = 0;
+  let kept = 0;
+  let zoom = 1;
   for (let k = 0; k < n; k++) {
     const weight = Math.sin((Math.PI * (k + 0.5)) / n);
     const aim = aimAt(frame - k);
@@ -143,12 +147,19 @@ function trailing(aimAt: (frame: number) => Focus, frame: number, frames: number
     head += aim.head * weight;
     span += (aim.span ?? 0) * weight;
     spans ||= aim.span !== undefined;
+    if (aim.keep) {
+      zoom = aim.keep.zoom ?? 1;
+      left += aim.keep.left * weight;
+      right += aim.keep.right * weight;
+      kept += weight;
+    }
   }
   return {
     x: x / total,
     y: y / total,
     head: head / total,
     ...(spans ? { span: span / total } : {}),
+    ...(kept > 0 ? { keep: { left: left / kept, right: right / kept, zoom } } : {}),
   };
 }
 
@@ -334,11 +345,23 @@ export function stageShot({
       }),
     },
     placements: new Map(drawn.map((d) => [d.actor.character, d.whereAt(f)])),
+    // Whoever holds a pose: a wide shot keeps the whole of them in the picture.
+    held: new Set(drawn.filter((d) => !d.momentAt(f).action).map((d) => d.actor.character)),
   });
   const { shot: shotNow, placements } = sceneAt(frame);
+  // How much closer the camera's own move ends (as ShotPicture applies it), so a wide shot
+  // still holds whole figures when a push-in has finished.
+  const strength = shot.camera.strength;
+  const closer =
+    shot.camera.move === 'push-in'
+      ? 1 + 0.32 * strength
+      : shot.camera.move === 'punch-in'
+        ? 1 + 0.7 * strength
+        : 1;
   const aimAt = (f: number): Focus => {
     const scene = sceneAt(Math.max(ts.startFrame + CUT_SETTLE, f));
-    return shotFocus(scene.shot, stage, scene.placements);
+    const aim = shotFocus(scene.shot, stage, scene.placements, scene.held);
+    return aim.keep ? { ...aim, keep: { ...aim.keep, zoom: closer } } : aim;
   };
   const overShoulder = shot.camera.framing === 'over-shoulder';
   const near = overShoulder ? drawn.find((d) => d.actor.back) : undefined;

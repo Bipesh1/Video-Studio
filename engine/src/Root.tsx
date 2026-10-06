@@ -22,6 +22,12 @@ import {
 } from './library/Library';
 import { PREVIEW_SIZE } from './library/previews';
 import { Sandbox } from './sandbox/Sandbox';
+import {
+  ClosingCardVideo,
+  Cover,
+  calculateClosingMetadata,
+  calculateCoverMetadata,
+} from './stage/Cover';
 import { StoryboardVideo, calculateStoryboardMetadata } from './stage/StoryboardVideo';
 import { STORYBOARD_PLACEHOLDER } from './stage/placeholder';
 import { BACKGROUNDS, STILL_SHEETS, VIDEO_SHEETS, stillId, videoId } from './sandbox/sheets';
@@ -95,6 +101,36 @@ export const RemotionRoot = () => {
         height={1920}
         defaultProps={STORYBOARD_PLACEHOLDER}
         calculateMetadata={calculateStoryboardMetadata}
+      />
+      {/* The cover picture of a video: one shot held still, with the title on it. */}
+      <Composition
+        id="Cover"
+        component={Cover}
+        durationInFrames={1}
+        fps={fps}
+        width={1920}
+        height={1080}
+        defaultProps={{
+          storyboard: STORYBOARD_PLACEHOLDER.storyboard,
+          cards: {},
+          size: '16:9',
+          shot: 's1a',
+          at: 0.6,
+          title: STORYBOARD_PLACEHOLDER.storyboard.title,
+          layout: 'words',
+        }}
+        calculateMetadata={calculateCoverMetadata}
+      />
+      {/* A page's closing card, as the short clip that ends its videos. */}
+      <Composition
+        id="ClosingCard"
+        component={ClosingCardVideo}
+        durationInFrames={3 * fps}
+        fps={fps}
+        width={1920}
+        height={1080}
+        defaultProps={{ text: 'Thanks for watching', size: '16:9', seconds: 3 }}
+        calculateMetadata={calculateClosingMetadata}
       />
       <Composition
         id="StyleMatch"

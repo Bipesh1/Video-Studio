@@ -166,3 +166,22 @@ export {
 } from './qa';
 export type { MadeFrom, QaStrip, QaVerdict, VideoProbe } from './qa';
 export type { JoinPart } from './assembly';
+export { VERTICAL_CUTS } from './plugins.schema';
+export type { VerticalCut } from './plugins.schema';
+export {
+  COVER_WIDE,
+  SAME_PICTURE,
+  SHORTS_MAX_S,
+  cutUse,
+  deliveryPage,
+  differingStretches,
+  mergeSoundPlans,
+  outputChoiceSchema,
+  outputCuts,
+  outputLookCheck,
+  outputLookSchema,
+  parsePictureDifference,
+  pictureDifferenceFilter,
+  samePicturesCheck,
+} from './output';
+export type { Cut, Delivered, OutputChoice, OutputLook } from './output';

@@ -49,6 +49,9 @@ export async function renderMedia(
 ): ReturnType<typeof remotionRenderMedia> {
   return remotionRenderMedia({
     timeoutInMilliseconds: PATIENCE_MS,
+    // The colours every player and video site expects (BT.709, standard range). Left to the
+    // renderer's own default, the file is full-range, which some players show washed out.
+    colorSpace: 'bt709',
     ...options,
     puppeteerInstance: await browser(),
   });

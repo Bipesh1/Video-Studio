@@ -1,7 +1,7 @@
 # Build Status
 
-**Current phase:** Phase 4 (the full pipeline), steps 4A (foundation), 4B (script), 4C (shot planner), 4D (assembly) and 4E (self-check) done (2026-10-06). Phases 0 to 3 are complete. Next step is 4F (output), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
-**Next:** Biku watches the whole sample story as one video, joined at his word ("combine these two videos", 2026-10-07): `runs/2026-10-06-honest-farmer/out/honest-farmer-16x9-v1.mp4` (1 minute 25 seconds, wide), with its captions file beside it. It is made of part 1 v13 and part 2 v3, each of which passed its self-check (`part-1/qa-report-16x9.md`, `part-2/qa-report-16x9.md`). He says what to change, or "start 4F" for the rest of the output step (his choice of shapes, the vertical layout, cover image, music that runs across the join). Before the test video in 4G he needs to give: a script, a name for his page, and his pick of voices.
+**Current phase:** Phase 4 (the full pipeline), steps 4A to 4F done (4F, output, on 2026-10-07). Phases 0 to 3 are complete. Next step is 4G (the test video from Biku's own script), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
+**Next:** Biku reads `runs/2026-10-06-honest-farmer/delivery.md` and watches the two finished files in `runs/2026-10-06-honest-farmer/out/`: `honest-farmer-16x9-v2.mp4` (wide, for YouTube) and `honest-farmer-9x16-v1.mp4` (vertical, for Shorts and Reels), each 1 min 25 s with a cover picture and a captions file. He picks a cover style from `out/cover-choices-wide.png` (1 to 4) and `out/cover-choices-vertical.png` (1 to 3), and looks at `out/page-mark-and-closing-card-sample.png` to see what his page's mark and closing card will look like once he names the page. For 4G he needs to give: a script, a name for his page, and his pick of voices.
 **Decided for Phase 4 (Biku, 2026-10-06):** his videos will be about 2 to 3 minutes. Biku proposed making them as parts of at most 1 minute from one script and combining them at the end. Agreed, with the studio doing the joining: one script is split into chapters of up to a minute at natural story breaks, each chapter is built and checked alone (so each fits the run budget and can be redone alone), then the chapters are joined into one final video in every size with one captions file; the chapters are kept too. Phase 4 must make the joins invisible: saved characters reused in every chapter, one voice and one loudness, music planned over the whole script so cuts fall on a pause or a mood change, the title only on the first chapter and the closing card only on the last. (The plan's 30-minute run budget then applies to a chapter, not to the whole video; this is Claude's reading and should be confirmed with Biku when Phase 4 starts.)
 **Also decided (Biku, 2026-10-06):** in a video made in parts, the studio stops after each part of about a minute and shows it; it goes on to the next part only when Biku says so ("so that its better than making all the video at once"). So a chapter is a checkpoint: no later chapter, no extra size and no joined video is rendered ahead of his go. Agreed by Biku the same day ("thats fine"): each chapter is shown in the phone size only, and the other two sizes and the joined video are made once every chapter is approved.
 **Last updated:** 2026-10-06
@@ -21,8 +21,40 @@ Each step ends with something Biku can look at, a commit and an update here. Sta
 - **4C. Shot planner: done (2026-10-06).** A script turned into a full storyboard: who, where, doing what, camera, music, effects.
 - **4D. Assembly: done (2026-10-06).** A video built from a storyboard automatically, with voice, sound and captions.
 - **4E. Self-check: done (2026-10-06).** The automatic checks and the plain-language QA report.
-- **4F. Output.** Preview first, then the three sizes, cover image, captions file, and joining chapters. Joining is built (2026-10-07, asked for ahead of the step): `npm run join`.
+- **4F. Output: done (2026-10-07).** Preview first, then the shapes he chooses, cover image, captions file, and joining chapters.
 - **4G. The test video.** One full 2 to 3 minute video in refine mode from Biku's script, made chapter by chapter, then Checkpoint 2.
+
+## Phase 4F. Output: done (2026-10-07)
+
+Asked by Biku ("start 4F"). A checked video now becomes the files he uploads: `npm run output -- --run=<run>`.
+
+### Made
+
+- **His choice of shapes.** A page has its usual shapes in its brand file (the placeholder page: wide and vertical, the vertical one the whole video); any one video can have its own (`--sizes=`, `--vertical=full|teaser`), kept in the run's file. A teaser is part 1 alone, vertical. The 4:5 shape is still there and measured, not made unless asked for.
+- **The vertical shape, looked at for the first time** (lesson L-0033). People stood too close in a narrow frame; a scene is now laid out as many heads wide in every shape. A wide shot keeps whole figures in the picture. No shot of the wide cut changed (measured).
+- **Preview first** (`npm run make ... --preview`, `npm run qa ... --preview`): a half-size video, about 1.6 times quicker here, checked and looked at before the final one is made. The look then carries to the final by measurement (lesson L-0034): the check "the pictures are the ones that were looked at" compares every frame.
+- **The standard colour setting** (BT.709, standard range) on every render and on the finished files. The earlier renders were full-range, which some players show washed out. Confirmed in the installed renderer first.
+- **One sound for the whole video.** The parts' voices go end to end, each exactly as long as its pictures, and one sound plan covers them all, so music in the same mood plays on across a join and a change of mood blends as it does inside a part.
+- **The join**: pictures only, dark before a part that opens on a fade.
+- **The cover picture**: one shot of the video (the storyboard's `cover`), in four title styles. Wide covers are 1280x720, the size YouTube asks for.
+- **The page's mark and closing card** (`engine/src/overlays/Brand.tsx`): drawn when the brand file has them. The placeholder page has neither, so nothing shows yet. The closing card path was run end to end on a throwaway copy (3 s card after the last shot, music carrying on under it) and removed.
+- **One captions file** for the whole video, and **`delivery.md`**: what to upload where, with each file's checks.
+- **The finished file is checked**: it plays, its length, its pictures are the parts that passed (frame for frame), its sound is the mix made for it, no dead silence, the loudness, nothing drowning the words, and Claude's look at each join and the cover.
+- **Platform facts checked on 2026-10-07**: YouTube shows a vertical video of up to three minutes as a Short and asks for a 1280x720 cover under 2 MB (YouTube Help); Facebook shares every video as a Reel, 9:16 at 1080x1920 (third-party guides, not Meta's own page).
+- **Tests:** 23 new (577 in all).
+
+### The sample story, delivered
+
+`runs/2026-10-06-honest-farmer/out/`: `honest-farmer-16x9-v2.mp4` and `honest-farmer-9x16-v1.mp4`, 84.6 s each, -14.0 LUFS, peak -1.1 dB, with covers and captions files. Made from part 1 v14 and part 2 v4 (wide; the same pictures as v13 and v3, re-rendered for the colour setting, the look carried by measurement) and part 1 v1 and part 2 v1 (vertical; previews looked at in full). `honest-farmer-16x9-v1.mp4` is the first join of the day before, kept but superseded.
+
+### Open after 4F
+
+- **Biku has not seen any of it.** The vertical cut is new to him, and so is the look of the covers.
+- **His choices:** a cover style (wide 1 to 4, vertical 1 to 3); whether the vertical cut should be the whole video or a teaser; the page name, and with it the text of the mark and the closing card.
+- **What the vertical cut loses** (in its reports): every place is seen from closer (the night street is mostly a wall, no moon); two shots show one person alone where the wide cut shows two; the walk to market has its caption over his shins. If he wants more of each place in the vertical cut, backgrounds have to be drawn wider than the frame: engine work.
+- **The sound of the join** is for his ears: the sad music now blends into the tense music under the dip.
+- **Not built:** cover text other than the title; a cover drawn specially (it is always a shot of the video); the watermark on videos already rendered (a page that gains a mark needs its parts rendered again).
+- **The practice videos and Moon Tax** are still in the old colour setting and the old tall layout.
 
 ## Phase 4E. Self-check: done (2026-10-06)
 

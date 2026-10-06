@@ -168,6 +168,57 @@ describe('the stage', () => {
   });
 });
 
+describe('a tall frame and a wide one', () => {
+  const scene = sceneOf(farmer, 's5b');
+
+  it('lays a scene out as many heads wide in both, so people stand as far apart', () => {
+    const tall = stageFor(scene, TALL, farmer.seed);
+    const wide = stageFor(scene, WIDE, farmer.seed);
+    expect(tall.span / tall.head).toBeCloseTo(9.5, 6);
+    expect(wide.span / wide.head).toBeCloseTo(9.5, 6);
+    // The soldier who points stands more than an arm away from Tomas in either shape.
+    for (const stage of [tall, wide]) {
+      expect((stageX(stage, 0.62) - stageX(stage, 0.26)) / stage.head).toBeGreaterThan(3);
+    }
+  });
+
+  it('keeps a whole body in a wide shot: sliding first, moving back only if it must', () => {
+    const focus = { x: 540, y: 800, head: 98 };
+    const plain = shotTransform('wide', focus, TALL);
+    const inside = (t: { scale: number; x: number }, left: number, right: number) =>
+      left * t.scale + t.x >= 0.03 * TALL.width - 1 &&
+      right * t.scale + t.x <= 0.97 * TALL.width + 1;
+    // Already in the picture: nothing changes.
+    expect(shotTransform('wide', { ...focus, keep: { left: 450, right: 630 } }, TALL)).toEqual(
+      plain,
+    );
+    // A little off to one side: the camera slides over and stays as close.
+    const slid = shotTransform('wide', { ...focus, keep: { left: 240, right: 640 } }, TALL);
+    expect(slid.scale).toBeCloseTo(plain.scale, 6);
+    expect(inside(plain, 240, 640)).toBe(false);
+    expect(inside(slid, 240, 640)).toBe(true);
+    // Someone lying down beside someone standing: too wide to slide, so the camera moves back.
+    const back = shotTransform('wide', { ...focus, keep: { left: 200, right: 900 } }, TALL);
+    expect(back.scale).toBeLessThan(plain.scale);
+    expect(back.scale).toBeGreaterThanOrEqual(1);
+    expect(inside(back, 200, 900)).toBe(true);
+    // A push-in is going to close in: the camera leaves room for where it ends.
+    const pushed = shotTransform(
+      'wide',
+      { ...focus, keep: { left: 200, right: 900, zoom: 1.2 } },
+      TALL,
+    );
+    expect(pushed.scale).toBeLessThan(back.scale);
+    // A closer shot is meant to cut bodies off: the rule is for wide shots only.
+    const { stage, shot, placements } = placed(farmer, 's9a');
+    const whole = new Set(shot.actors.map((a) => a.character));
+    expect(shotFocus(shot, stage, placements, whole).keep).toBeDefined();
+    const closer = { ...shot, camera: { ...shot.camera, framing: 'medium' as const } };
+    expect(shotFocus(closer, stage, placements, whole).keep).toBeUndefined();
+    expect(shotFocus(shot, stage, placements).keep).toBeUndefined();
+  });
+});
+
 describe('where people look and what the camera frames', () => {
   it('turns eyes to another person, a thing on the ground, a thing in a hand, or up', () => {
     const home = placed(farmer, 's4b');

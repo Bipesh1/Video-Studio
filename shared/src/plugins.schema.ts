@@ -28,6 +28,10 @@ export type Framing = (typeof FRAMINGS)[number];
 export const CAMERA_MOVES = ['none', 'push-in', 'punch-in', 'pan', 'shake', 'follow'] as const;
 export type CameraMove = (typeof CAMERA_MOVES)[number];
 
+/** The vertical shape of a video is the whole of it, or a teaser: its first part alone. */
+export const VERTICAL_CUTS = ['full', 'teaser'] as const;
+export type VerticalCut = (typeof VERTICAL_CUTS)[number];
+
 /** The two background treatments (Style 5.2). */
 export const TREATMENTS = ['simple', 'atmospheric'] as const;
 export type Treatment = (typeof TREATMENTS)[number];
@@ -189,7 +193,10 @@ export const brandSchema = z
         format: idSchema,
         /** The narrator: a file name under voices/. */
         voice: idSchema,
+        /** The shapes its videos are made in. The first is the one each part is shown in. */
         sizes: z.array(z.enum(SIZE_NAMES)).min(1),
+        /** The vertical shape is the whole video, or a teaser: its first part alone. */
+        vertical: z.enum(VERTICAL_CUTS).default('full'),
       })
       .strict(),
     /**

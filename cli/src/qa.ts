@@ -39,6 +39,7 @@ import {
   qaReportSchema,
   qaStrips,
   qaVerdict,
+  samePicturesCheck,
   silenceCheck,
   soundDifference,
   stepCheck,
@@ -47,8 +48,16 @@ import {
 } from '@studio/shared';
 import type { MadeFrom, QaCheck, QaLook, QaReport, QaStrip, SizeName } from '@studio/shared';
 import { captionCheck, pictureChecks } from '../../engine/src/stage/measure';
+import { pictureDifference } from './media.js';
 import { projectRoot, run } from './system.js';
 import { loadStoryboard, loadWorld } from './world.js';
+
+/** Today's date where the studio runs. */
+const today = (): string => {
+  const d = new Date();
+  const two = (n: number) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${two(d.getMonth() + 1)}-${two(d.getDate())}`;
+};
 
 const argv = process.argv.slice(2);
 const value = (name: string) =>
@@ -56,10 +65,12 @@ const value = (name: string) =>
 const RUN = value('run');
 if (!RUN) throw new Error('Give the run folder: --run=<folder name under runs/>');
 const PART = Number(value('part') ?? 1);
+/** Check the small preview of the part instead of its final video. */
+const PREVIEW = argv.includes('--preview');
 
 const runDir = path.join(projectRoot, 'runs', RUN);
 const partDir = path.join(runDir, `part-${PART}`);
-const outDir = path.join(partDir, 'out');
+const outDir = path.join(partDir, PREVIEW ? 'preview' : 'out');
 const rel = (file: string) => path.relative(projectRoot, file);
 const readJson = (file: string): unknown => JSON.parse(readFileSync(file, 'utf8'));
 
@@ -70,16 +81,16 @@ function newestVideo(): { file: string; size: SizeName } {
     throw new Error(`--size is one of ${SIZE_NAMES.join(', ')}`);
   }
   const found = (existsSync(outDir) ? readdirSync(outDir) : []).flatMap((name) => {
-    const m = /-(\d+)x(\d+)-v(\d+)\.mp4$/.exec(name);
+    const m = (PREVIEW ? /-(\d+)x(\d+)-(preview)\.mp4$/ : /-(\d+)x(\d+)-v(\d+)\.mp4$/).exec(name);
     if (!m) return [];
     const size = `${m[1]}:${m[2]}` as SizeName;
     if (!(SIZE_NAMES as readonly string[]).includes(size) || (asked && size !== asked)) return [];
-    return [{ file: path.join(outDir, name), size, version: Number(m[3]) }];
+    return [{ file: path.join(outDir, name), size, version: PREVIEW ? 1 : Number(m[3]) }];
   });
   const newest = found.sort((a, b) => b.version - a.version)[0];
   if (!newest) {
     throw new Error(
-      `There is no video of part ${PART}${asked ? ` in ${asked}` : ''} yet. Make it first: npm run make -- --run=${RUN} --part=${PART} --video`,
+      `There is no ${PREVIEW ? 'preview' : 'video'} of part ${PART}${asked ? ` in ${asked}` : ''} yet. Make it first: npm run make -- --run=${RUN} --part=${PART} --${PREVIEW ? 'preview' : 'video'}`,
     );
   }
   return newest;
@@ -167,7 +178,10 @@ function main(): void {
     ? parseOrExplain(mixReportSchema, readJson(mixFile), 'audio/mix.json')
     : null;
   const { file: video, size: sizeName } = newestVideo();
-  const size = SIZES[sizeName];
+  const full = SIZES[sizeName];
+  // A preview is half the size each way; the pictures are measured at full size all the same.
+  const size = full;
+  const fileSize = PREVIEW ? { width: full.width / 2, height: full.height / 2 } : full;
   const shape = sizeName.replace(':', 'x');
   const format = world.formats[whole.format] ?? null;
   console.log(`Checking ${rel(video)}`);
@@ -253,9 +267,50 @@ function main(): void {
     : null;
   const shotIds = part.scenes.flatMap((scene) => scene.shots.map((s) => s.id));
   const videoName = path.basename(video);
-  const looked = look?.video === videoName ? look : null;
+  // A look taken at another render of this part stands for this one if the two show the same
+  // pictures, frame for frame: a preview for its final video, an earlier render for a later.
+  let same: QaCheck | null = null;
+  if (look && look.video !== videoName) {
+    const other = [
+      path.join(partDir, 'out', look.video),
+      path.join(partDir, 'preview', look.video),
+    ].find((f) => existsSync(f));
+    if (other) {
+      const values = pictureDifference(other, video);
+      const otherProbe = parseProbe(
+        run('ffprobe', [
+          '-v',
+          'error',
+          '-print_format',
+          'json',
+          '-show_streams',
+          '-show_format',
+          other,
+        ]).stdout,
+      );
+      same = samePicturesCheck({
+        looked: look.video,
+        video: videoName,
+        values,
+        frames: {
+          looked: Math.round((otherProbe?.seconds ?? 0) * FPS),
+          video: Math.round(seconds * FPS),
+        },
+        fps: FPS,
+      });
+    }
+  }
+  const carried = same !== null && same.findings.length === 0;
+  const looked = look && (look.video === videoName || carried) ? look : null;
 
-  const input = { storyboard: part, track, size, cards: world.characters, fps: FPS };
+  const input = {
+    storyboard: part,
+    track,
+    size,
+    cards: world.characters,
+    fps: FPS,
+    mark: world.brands[whole.brand]?.watermark ?? null,
+  };
   const report: QaReport = qaReportSchema.parse({
     version: 1,
     title: whole.title,
@@ -264,9 +319,9 @@ function main(): void {
     size: sizeName,
     video: videoName,
     seconds,
-    checkedOn: new Date().toISOString().slice(0, 10),
+    checkedOn: today(),
     checks: [
-      fileCheck({ probe, decodeErrors: `${played.stderr ?? ''}`, size, fps: FPS }),
+      fileCheck({ probe, decodeErrors: `${played.stderr ?? ''}`, size: fileSize, fps: FPS }),
       madeFromCheck({ record, storyboard: shaOfFile(timedFile), sound }),
       lengthCheck({ seconds, parts, format }),
       stepCheck({ storyboard: part, track, videoSeconds: seconds }),
@@ -276,7 +331,13 @@ function main(): void {
       captionCheck(track, size),
       ...pictureChecks(input, format ? { maxShotS: format.shotLength.max } : {}),
       plan,
-      ...lookChecks({ look, video: videoName, shots: shotIds, strips: strips.map((s) => s.id) }),
+      ...(same ? [same] : []),
+      ...lookChecks({
+        look,
+        video: carried && look ? look.video : videoName,
+        shots: shotIds,
+        strips: strips.map((s) => s.id),
+      }),
     ],
     fixed: looked?.fixed ?? [],
     notes: looked?.notes ?? [],

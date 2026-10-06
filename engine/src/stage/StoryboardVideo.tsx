@@ -4,6 +4,8 @@ import type { CharacterCard, SizeName, Storyboard, VoiceTrack } from '@studio/sh
 import { AbsoluteFill, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
 import type { CalculateMetadataFunction } from 'remotion';
 import { Fade } from '../camera/Camera';
+import { Watermark } from '../overlays/Brand';
+import type { Mark } from '../overlays/Brand';
 import { Captions } from '../overlays/Captions';
 import { Label, TitleCard } from '../overlays/Titles';
 import { clamp } from '../rig/math';
@@ -33,6 +35,8 @@ export type StoryboardVideoProps = {
   cards: Record<string, CharacterCard>;
   /** The accent a caption's stressed word takes, and the ribbon and label colors (the brand). */
   colors?: { titleRibbon: string; label: string };
+  /** The page's mark in a corner of every frame, when the brand has one. */
+  mark?: Mark | null;
 };
 
 export const calculateStoryboardMetadata: CalculateMetadataFunction<StoryboardVideoProps> = ({
@@ -58,6 +62,7 @@ export const StoryboardVideo = ({
   audioSrc,
   cards,
   colors,
+  mark,
 }: StoryboardVideoProps) => {
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
@@ -116,6 +121,7 @@ export const StoryboardVideo = ({
             {...(colors ? { paint: colors.label } : {})}
           />
         )}
+        {mark && <Watermark mark={mark} {...size} />}
         {fadeAt !== null && <Fade frame={frame} at={fadeAt} {...size} />}
       </svg>
       <Captions pages={pages} />

@@ -35,8 +35,12 @@ export function partStoryboard(sb: Storyboard, part: number): Storyboard {
   const scenes = sb.scenes.filter((s) => s.chapter === part);
   if (scenes.length === 0)
     throw new Error(`This video has no part ${part}. It has ${partCount(sb)}.`);
+  // The cover belongs to the whole video, not to a part: choosing another cover must not
+  // make a part's plan look changed.
+  const rest = { ...sb };
+  delete rest.cover;
   return {
-    ...sb,
+    ...rest,
     scenes: scenes.map((scene) => ({
       ...scene,
       chapter: 1,
@@ -173,27 +177,26 @@ export function soundPlanFor(timed: Storyboard): SoundPlan {
 
 // ------------------------------------------------------------------ joining the parts
 
-/** Seconds a join between two parts takes to dip: the picture to dark, the sound to quiet. */
+/** Seconds the picture takes to go dark before a part that opens on a fade. */
 export const JOIN_DIP_S = 0.2;
 
-/** One finished part, as the join needs to know it. */
+/** One finished piece of picture, as the join needs to know it. */
 export type JoinPart = {
-  /** How long the part's video is, in seconds. */
+  /** How long it is, in seconds. */
   seconds: number;
-  /** True when the part opens on a fade from dark, so the part before it has to go dark first. */
+  /** True when it opens on a fade from dark, so the piece before it has to go dark first. */
   fadesIn: boolean;
 };
 
 /**
- * The ffmpeg filter that joins finished parts into one video, in order. Where the next part
- * opens on a fade from dark, the part before goes dark over its last frames, so the join is
- * one dip and not a cut to black. The sound dips for a moment at every join, so two pieces of
- * music never meet on a click. Inputs are the part videos in order; outputs are [v] and [a].
+ * The ffmpeg filter that joins the pictures of finished parts into one, in order. Where the
+ * next piece opens on a fade from dark, the one before goes dark over its last frames, so the
+ * join is one dip and not a cut to black. Inputs are the videos in order; the output is [v].
+ * The sound is not joined: it is mixed once for the whole video (mergeSoundPlans).
  */
 export function joinFilter(parts: readonly JoinPart[]): string {
-  if (parts.length < 2) throw new Error('A join needs at least two parts.');
+  if (!parts.length) throw new Error('There is nothing to join.');
   const chains: string[] = [];
-  const labels: string[] = [];
   parts.forEach((part, i) => {
     const next = parts[i + 1];
     const from = Math.max(0, part.seconds - JOIN_DIP_S).toFixed(3);
@@ -202,14 +205,13 @@ export function joinFilter(parts: readonly JoinPart[]): string {
         ? `[${i}:v]fade=t=out:st=${from}:d=${JOIN_DIP_S}[v${i}]`
         : `[${i}:v]null[v${i}]`,
     );
-    const sound = [
-      ...(i > 0 ? [`afade=t=in:st=0:d=${JOIN_DIP_S}`] : []),
-      ...(next ? [`afade=t=out:st=${from}:d=${JOIN_DIP_S}`] : []),
-    ];
-    chains.push(`[${i}:a]${sound.length ? sound.join(',') : 'anull'}[a${i}]`);
-    labels.push(`[v${i}][a${i}]`);
   });
-  chains.push(`${labels.join('')}concat=n=${parts.length}:v=1:a=1[v][a]`);
+  const labels = parts.map((_, i) => `[v${i}]`).join('');
+  chains.push(
+    parts.length > 1
+      ? `${labels}concat=n=${parts.length}:v=1:a=0,format=yuv420p[v]`
+      : '[v0]format=yuv420p[v]',
+  );
   return chains.join(';');
 }
 

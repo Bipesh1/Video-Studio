@@ -5,6 +5,8 @@ import { captionBox, captionLayout } from '../overlays/captionLayout';
 import type { Box } from '../overlays/captionLayout';
 import { buildPages, pageAt, toCaptions } from '../overlays/captionPages';
 import type { CaptionPage } from '../overlays/captionPages';
+import { markBox } from '../overlays/Brand';
+import type { Mark } from '../overlays/Brand';
 import { labelBox, titleCardBox } from '../overlays/Titles';
 import { movePose } from '../rig/chain';
 import { CHILD_BODY, toScreen } from '../rig/Character';
@@ -45,6 +47,8 @@ export type FrameMeasure = {
   title: Box | null;
   label: Box | null;
   caption: Box | null;
+  /** The page's mark, when the brand has one. */
+  mark: Box | null;
   /** Things someone takes in this shot that they cannot reach. */
   outOfReach: Array<{ who: string; thing: string }>;
 };
@@ -56,6 +60,8 @@ export type MeasureInput = {
   size: Size;
   cards: Record<string, CharacterCard>;
   fps: number;
+  /** The page's mark, when the brand has one. */
+  mark?: Mark | null;
 };
 
 /** One frame of a shot, measured. */
@@ -136,6 +142,7 @@ export function measureFrame(
         : null,
     label: overlay?.kind === 'label' ? labelBox(overlay.text, size.width, size.height) : null,
     caption: page ? captionBox(page, size.width, size.height) : null,
+    mark: input.mark ? markBox(input.mark, size.width, size.height) : null,
     outOfReach: drawn.flatMap((d) =>
       d.outOfReach.map((thing) => ({ who: d.actor.character, thing })),
     ),
@@ -268,6 +275,7 @@ export function pictureChecks(input: MeasureInput, limits: { maxShotS?: number }
         ['the title', (m: FrameMeasure) => m.title],
         ['the label', (m: FrameMeasure) => m.label],
         ['the captions', (m: FrameMeasure) => m.caption],
+        ["the page's mark", (m: FrameMeasure) => m.mark],
       ] as const) {
         const covered = seen.filter(({ m, p }) => faceCovered(p.head, pick(m)) > FACE_COVERED);
         // A single frame is a caption popping in as a head passes; a few frames is a face covered.
@@ -379,7 +387,7 @@ export function pictureChecks(input: MeasureInput, limits: { maxShotS?: number }
       id: 'faces-clear',
       title: 'No face is under the title or the captions',
       by: 'measured',
-      detail: 'every face against the title, any label and the captions, on every frame',
+      detail: `every face against the title, any label, the captions${input.mark ? " and the page's mark" : ''}, on every frame`,
       findings: faces,
     },
     {

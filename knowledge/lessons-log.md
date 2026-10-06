@@ -565,3 +565,50 @@ Note (Claude's reading): a check that measures the plan instead of the video say
   report), something has to tie that file to the video being judged.
 Status: active
 ```
+
+```
+L-0033 | 2026-10-07 | run: 2026-10-06-honest-farmer, the vertical shape (first look, Phase 4F)
+Area: camera | Scope: general | Source: self-check
+Lesson: A scene is laid out in heads, not in shares of the frame, so people stand as far
+  apart in a tall frame as in a wide one. And a wide shot shows whole figures: someone lying
+  down or standing at the edge of a narrow frame is not cut off at the side.
+Evidence: The first vertical stills of the sample story, never shown. A soldier's pointing
+  arm reached through the man he pointed at, three people at a table overlapped, and a wife
+  stood on her sleeping husband's hat: the stage was 86% of the frame's width whatever the
+  shape, which is 9.5 heads in a wide frame and under 5 in a tall one. Once that was mended
+  the sleeping man ran off the edge of the last shot.
+Applied: engine/src/camera/Framing.tsx (the stage is 9.5 heads wide in every shape; a tall
+  frame lays it out smaller and even a wide shot closes in from there; a wide shot keeps the
+  whole of everyone holding a pose in the picture, sliding first, moving back only if it
+  must, and allowing for a push-in); engine/src/stage/layout.ts and staging.ts. Measured: no
+  shot of the wide cut changes.
+Note (Claude's reading): the price is that a tall frame sees every place from closer, so
+  there is less of it in the picture (the night street lost its moon). A shot that favours
+  one of two people shows that one alone in a tall frame. Both are said to Biku plainly; if
+  he wants the vertical cut to show more of a place, backgrounds need to be drawn wider
+  than the frame, which is engine work.
+Status: active
+```
+
+```
+L-0034 | 2026-10-07 | run: 2026-10-06-honest-farmer (Phase 4F, output)
+Area: engine | Scope: general | Source: self-check
+Lesson: A look stands for another render only when the two are measured to show the same
+  pictures, frame for frame. Then a preview can be checked first and the final video made
+  after, and a render made again for a setting that does not touch the picture needs no
+  second look.
+Evidence: The final files needed the standard colour setting, which meant rendering both
+  wide parts again after they had been looked at. Twice before I had compared renders by
+  hand with a measure that turned out too blunt: a bag missing from one shot barely moved
+  it. The measure now in use left 1 to 3 between two renders of the same pictures, 12 to 14
+  between a half-size preview and its final, 19 for that bag and 44 for a caption.
+Applied: shared/src/output.ts (the comparison, in squares that are the same share of any
+  frame shape, and the check "the pictures are the ones that were looked at");
+  cli/src/qa.ts (a look taken at the preview or an earlier render carries when the check
+  passes); cli/src/make.ts (--preview); cli/src/output.ts (the finished file's pictures are
+  checked against the parts that passed, and its sound against the mix made for it).
+Note (Claude's reading): the room between a preview's noise (14) and the smallest real
+  difference found (19) is thin. When the check says a preview and its final differ, that
+  may be the drawing and not a fault: look again rather than raise the limit.
+Status: active
+```

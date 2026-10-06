@@ -125,6 +125,11 @@
       }
     }
   ],
+  "cover": {
+    "shot": "s1b",
+    "at": 0.6,
+    "framing": "medium"
+  },
   "scenes": [
     {
       "id": "s1",

@@ -71,11 +71,22 @@ Run `npm run plan -- check` (names, staging, word for word against the script), 
 
 ## Building a part
 
-`npm run make -- --run=<run> --part=<n> --size=<shape> --voice --time --sound --stills` speaks the part, writes the voice's times into its shots, mixes its sound and draws one still per shot. Look at the sheet of stills (`part-<n>/stills/sheet-*.png`) before anything else: floating feet, a covered face or a thing cut off show there at a glance (L-0024). Fix the storyboard, make it again, then add `--video`, and look at a strip of frames across every step and every cut that keeps someone on screen: a still shows a pose, only a strip shows a move (L-0030).
+`npm run make -- --run=<run> --part=<n> --size=<shape> --voice --time --sound --stills` speaks the part, writes the voice's times into its shots, mixes its sound and draws one still per shot. Look at the sheet of stills (`part-<n>/stills/sheet-*.png`) before anything else: floating feet, a covered face or a thing cut off show there at a glance (L-0024). Fix the storyboard, make it again, then add `--preview` (a half-size video, quicker to make), and look at a strip of frames across every step and every cut that keeps someone on screen: a still shows a pose, only a strip shows a move (L-0030).
 
-Then the self-check, before Biku sees anything: `npm run qa -- --run=<run> --part=<n>`. It measures the newest video (the file plays, the length, picture and voice in step, silence, loudness, nothing drowning the words, captions, everyone in frame, no face under the title or captions, feet on the ground, nothing jumping, no picture held too long, things within reach, the plan's own checks) and cuts a strip of frames across every move and every change of shot into `part-<n>/qa/<video>/`. Look at every still against the 11 questions of the Style Check and the 7 of the story check, and at every strip; write what you saw in `part-<n>/qa-look-<shape>.json` (the video's name, "ok" or each "no" for every still and strip, what was put right on the way, what is worth Biku's eye). Fix what is found in the storyboard, make the part again, and look again: a look at an older render does not count. When it says ready, `part-<n>/qa-report-<shape>.md` is the page Biku reads with the video. The look is the part that finds what cannot be measured (L-0031).
+Then the self-check, before Biku sees anything: `npm run qa -- --run=<run> --part=<n> --preview`. It measures the newest video (the file plays, the length, picture and voice in step, silence, loudness, nothing drowning the words, captions, everyone in frame, no face under the title or captions, feet on the ground, nothing jumping, no picture held too long, things within reach, the plan's own checks) and cuts a strip of frames across every move and every change of shot into `part-<n>/qa/<video>/`. Look at every still against the 11 questions of the Style Check and the 7 of the story check, and at every strip; write what you saw in `part-<n>/qa-look-<shape>.json` (the video's name, "ok" or each "no" for every still and strip, what was put right on the way, what is worth Biku's eye). Fix what is found in the storyboard, make the part again, and look again: a look at an older render does not count. When it says ready, `part-<n>/qa-report-<shape>.md` is the page Biku reads with the video. The look is the part that finds what cannot be measured (L-0031).
 
 A part is shown to Biku and the next one waits for his word.
+
+When the preview passes, make the final video (`--video`) and run `npm run qa` once more without `--preview`: the look carries over if every frame of the final shows the same picture as the preview, and it says so (L-0034).
+
+## The other shape, and the finished files
+
+A part is shown to Biku in the page's first shape. When every part is approved, make the others the same way (`--size=9:16`: stills, preview, check and look, final), then `npm run output -- --run=<run>`.
+
+- **Look at a tall frame as its own picture.** It sees every place from closer, a shot that favours one of two people shows that one alone, and a medium shot shows the whole body with the caption over the legs. Say what the vertical cut loses; do not change the plan for it unless it is a fault there (L-0033).
+- **The cover is one shot of the video**, named in the storyboard (`cover`: the shot, how far into it, and a shot size). Pick the moment that shows who the story is about and what is at stake, with the face readable when the picture is small.
+- **The output step** mixes the sound once for the whole video, joins the parts, adds the page's closing card if it has one, and checks the finished file. Look at the strip across each join and at the cover, write `out/<name>.look.json`, and run it again. `delivery.md` is the page Biku reads: what to upload where.
+- A new style of cover, mark or closing card is a change of look: show Biku numbered choices.
 
 ## Working with Biku
 

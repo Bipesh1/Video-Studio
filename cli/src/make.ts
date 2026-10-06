@@ -7,6 +7,7 @@
  *   --time     write the voice's times into the shots (storyboard.json of the part)
  *   --sound    music and effects from the storyboard, mixed under the voice (audio/mix.wav)
  *   --stills   one still per shot, and all of them on one sheet, to look at before the video
+ *   --preview  the part as a small, quick video to check before the final one is made
  *   --video    the part as a video, in the size given; each render gets the next version number
  *   --all      all of the above
  *
@@ -265,6 +266,7 @@ function inputProps(timedPart: Storyboard, withSound: boolean) {
     audioSrc: withSound ? `runs/${RUN}/part-${PART}/mix.wav` : null,
     size: SIZE,
     cards: world.characters,
+    mark: brand?.watermark ?? null,
     ...(brand
       ? { colors: { titleRibbon: brand.colors.titleRibbon, label: brand.colors.label } }
       : {}),
@@ -349,7 +351,15 @@ function nextVersion(outDir: string, name: string): number {
   return v;
 }
 
-async function video(timedPart: Storyboard) {
+/** A preview is half the size each way and more roughly packed: a quarter of the picture to draw. */
+const PREVIEW_SCALE = 0.5;
+
+/**
+ * The part as a video. The final one is never written over: each takes the next version
+ * number. A preview is a scratch copy to check first (Part 2, section 11, step 9): small,
+ * quick, and written over by the next preview.
+ */
+async function video(timedPart: Storyboard, preview = false) {
   const mix = path.join(audioDir, 'mix.wav');
   if (!existsSync(mix)) throw new Error('No sound yet for this part. Run the --sound stage first.');
   const url = await bundled();
@@ -359,11 +369,11 @@ async function video(timedPart: Storyboard) {
     id: 'Storyboard',
     inputProps: props,
   });
-  const outDir = path.join(partDir, 'out');
+  const outDir = path.join(partDir, preview ? 'preview' : 'out');
   mkdirSync(outDir, { recursive: true });
   const slug = RUN?.replace(/^\d{4}-\d{2}-\d{2}-/, '') ?? 'video';
   const base = `${slug}-part-${PART}-${sizeTag}`;
-  const name = `${base}-v${nextVersion(outDir, base)}`;
+  const name = preview ? `${base}-preview` : `${base}-v${nextVersion(outDir, base)}`;
   const out = path.join(outDir, `${name}.mp4`);
   const t0 = Date.now();
   await renderMedia({
@@ -373,12 +383,13 @@ async function video(timedPart: Storyboard) {
     audioCodec: 'aac',
     outputLocation: out,
     inputProps: props,
+    ...(preview ? { scale: PREVIEW_SCALE } : {}),
     concurrency: Math.max(1, Math.min(Math.floor(os.cpus().length / 2), 4)),
   });
   const secs = (Date.now() - t0) / 1000;
   const videoSecs = composition.durationInFrames / composition.fps;
   log(
-    `  ${rel(out)}: ${videoSecs.toFixed(2)} s of video, ${composition.width}x${composition.height}, in ${secs.toFixed(1)} s (${(secs / videoSecs).toFixed(2)} s per video second)`,
+    `  ${rel(out)}: ${videoSecs.toFixed(2)} s of video, ${composition.width * (preview ? PREVIEW_SCALE : 1)}x${composition.height * (preview ? PREVIEW_SCALE : 1)}, in ${secs.toFixed(1)} s (${(secs / videoSecs).toFixed(2)} s per video second)`,
   );
   const track = loadTrack();
   const pages = buildPages(toCaptions(track.words));
@@ -404,7 +415,7 @@ async function video(timedPart: Storyboard) {
 }
 
 async function main() {
-  const stages = ['voice', 'time', 'sound', 'stills', 'video'];
+  const stages = ['voice', 'time', 'sound', 'stills', 'preview', 'video'];
   if (!stages.some(want)) {
     console.log(`Give at least one stage: ${stages.map((s) => `--${s}`).join(' ')} or --all`);
     process.exitCode = 1;
@@ -421,6 +432,8 @@ async function main() {
   if (want('time')) timedPart = await timed('time', () => time(part));
   if (want('sound')) await timed('sound', () => sound(timedPart ?? loadTimed()));
   if (want('stills')) await timed('stills', () => stills(timedPart ?? loadTimed()));
+  // A preview is asked for by name; --all makes the stills and the final video.
+  if (args.has('--preview')) await timed('preview', () => video(timedPart ?? loadTimed(), true));
   if (want('video')) await timed('video', () => video(timedPart ?? loadTimed()));
 }
 

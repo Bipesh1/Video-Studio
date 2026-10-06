@@ -4,9 +4,9 @@
   "part": 2,
   "parts": 2,
   "size": "16:9",
-  "video": "honest-farmer-part-2-16x9-v3.mp4",
+  "video": "honest-farmer-part-2-16x9-v4.mp4",
   "seconds": 42.4,
-  "checkedOn": "2026-10-06",
+  "checkedOn": "2026-10-07",
   "checks": [
     {
       "id": "plays",
@@ -75,7 +75,7 @@
       "id": "faces-clear",
       "title": "No face is under the title or the captions",
       "by": "measured",
-      "detail": "every face against the title, any label and the captions, on every frame",
+      "detail": "every face against the title, any label, the captions, on every frame",
       "findings": []
     },
     {
@@ -118,6 +118,13 @@
       "title": "The plan's own checks still pass",
       "by": "measured",
       "detail": "every name in the library, the staging rules, the format's beats, for all 30 shots of the video",
+      "findings": []
+    },
+    {
+      "id": "same-pictures",
+      "title": "The pictures are the ones that were looked at",
+      "by": "measured",
+      "detail": "Claude looked at \"honest-farmer-part-2-16x9-v3.mp4\"; every frame of this video was compared with it (the strongest difference is 3 of 255; over 16 would be a different picture)",
       "findings": []
     },
     {
