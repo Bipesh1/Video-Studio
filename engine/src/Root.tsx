@@ -22,6 +22,8 @@ import {
 } from './library/Library';
 import { PREVIEW_SIZE } from './library/previews';
 import { Sandbox } from './sandbox/Sandbox';
+import { StoryboardVideo, calculateStoryboardMetadata } from './stage/StoryboardVideo';
+import { STORYBOARD_PLACEHOLDER } from './stage/placeholder';
 import { BACKGROUNDS, STILL_SHEETS, VIDEO_SHEETS, stillId, videoId } from './sandbox/sheets';
 import type { VideoSheet } from './sandbox/sheets';
 import { tokens } from './tokens';
@@ -82,6 +84,17 @@ export const RemotionRoot = () => {
         height={1920}
         defaultProps={{ track: MOON_TAX_PLACEHOLDER, audioSrc: null, shotLines: MOON_TAX_SHOTS }}
         calculateMetadata={calculateMoonTaxMetadata}
+      />
+      {/* Any storyboard as a video. Its size and length come from its props. */}
+      <Composition
+        id="Storyboard"
+        component={StoryboardVideo}
+        durationInFrames={30 * fps}
+        fps={fps}
+        width={1080}
+        height={1920}
+        defaultProps={STORYBOARD_PLACEHOLDER}
+        calculateMetadata={calculateStoryboardMetadata}
       />
       <Composition
         id="StyleMatch"

@@ -57,12 +57,17 @@ Run `npm run script -- check`. It refuses: an as-is script that is not word for 
 - **Open on the most striking picture,** with a character in it. The title goes on that first shot, once.
 - **Whoever speaks is on screen, face to us,** for their line. People face who they look at.
 - **Change the picture:** vary the shot size, never the same picture twice in a row, close-ups for the moments that matter, wide when someone arrives or the place is new.
+- **Know what a closer shot cuts off.** A thing standing on the ground shows only in a wide shot. A thing in a hand shows in a medium shot, not a close-up. Someone lying down beside someone standing needs a wide shot. (L-0023, self-check)
 - **Recut the words when a cut falls badly.** A shot needs at least about a second and a half of words; move words between the shots of a line, never between lines.
 - **Faces carry the feeling:** pick the expression for what the character feels at those words, and change it when the feeling changes.
 - **Sound:** one music mood per scene from the beat's list; steps, doors, things landing and coins as effects, within the format's count.
 - Reuse the library. If the plan needs something it lacks, `npm run plan -- needs` names it; draw it with `/draw` before going on.
 
 Run `npm run plan -- check` (names, staging, word for word against the script), then `npm run plan -- page` for `storyboard.md`, the shot list Biku reads.
+
+## Building a part
+
+`npm run make -- --run=<run> --part=<n> --size=<shape> --voice --time --sound --stills` speaks the part, writes the voice's times into its shots, mixes its sound and draws one still per shot. Look at the sheet of stills (`part-<n>/stills/sheet-*.png`) before anything else: floating feet, a covered face or a thing cut off show there at a glance (L-0024). Fix the storyboard, make it again, then add `--video`. A part is shown to Biku and the next one waits for his word.
 
 ## Working with Biku
 

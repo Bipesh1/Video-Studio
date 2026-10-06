@@ -1,0 +1,102 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "lines": [
+    {
+      "id": "n10",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "He walked all the way to the castle.",
+      "speed": 1,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "n11",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The soldiers at the gate laughed at his old clothes.",
+      "speed": 1,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "d2",
+      "speaker": "tomas",
+      "voice": "am_puck",
+      "text": "I have something that belongs to the queen.",
+      "speed": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "n12",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The queen counted the coins. All 100 were there.",
+      "speed": 1,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "d3",
+      "speaker": "queen",
+      "voice": "af_bella",
+      "text": "Why did you not keep it? Nobody would have known.",
+      "speed": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "d4",
+      "speaker": "tomas",
+      "voice": "am_puck",
+      "text": "*I* would have known.",
+      "speed": 1,
+      "pauseAfterMs": 1200
+    },
+    {
+      "id": "n13",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The queen was quiet for a long time.",
+      "speed": 1,
+      "pauseAfterMs": 1000
+    },
+    {
+      "id": "d5",
+      "speaker": "queen",
+      "voice": "af_bella",
+      "text": "I lost that bag on purpose. I wanted to find one *honest* person in my kingdom.",
+      "speed": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "n14",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "She trusted Tomas to look after the royal treasure.",
+      "speed": 1,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "n15",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "And she gave him 10 gold coins every month, for the rest of his life.",
+      "speed": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "n16",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "In the village, they still say it.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "n17",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "An honest man sleeps well, even on a *hard* bed.",
+      "speed": 1,
+      "pauseAfterMs": 900
+    }
+  ]
+}

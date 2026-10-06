@@ -1,7 +1,7 @@
 # Build Status
 
-**Current phase:** Phase 4 (the full pipeline), steps 4A (foundation), 4B (script) and 4C (shot planner) done (2026-10-06). Phases 0 to 3 are complete. Next step is 4D (assembly: a video built from a storyboard), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
-**Next:** Biku reads the shot list `runs/2026-10-06-honest-farmer/storyboard.md` (30 shots, 2 parts) and says whether the pictures are what he would want for those words, then "start 4D". Before the test video in 4G he needs to give: a script, a name for his page (the brand file says "My Page"), and his pick of voices (the four voice files are placeholders). The questions at the end of `PHASE-2-REPORT.md` are still open.
+**Current phase:** Phase 4 (the full pipeline), steps 4A (foundation), 4B (script), 4C (shot planner) and 4D (assembly) done (2026-10-06). Phases 0 to 3 are complete. Next step is 4E (self-check), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
+**Next:** Biku watches part 1 of the sample story, built automatically from the plan: `runs/2026-10-06-honest-farmer/part-1/out/honest-farmer-part-1-16x9-v2.mp4` (42 seconds, wide, with voices, music, effects and captions). He says what to change, or "continue" for part 2 (its voice, sound and stills are made; its video is not rendered, by his rule that the next part waits for his word), or "start 4E". Before the test video in 4G he needs to give: a script, a name for his page, and his pick of voices.
 **Decided for Phase 4 (Biku, 2026-10-06):** his videos will be about 2 to 3 minutes. Biku proposed making them as parts of at most 1 minute from one script and combining them at the end. Agreed, with the studio doing the joining: one script is split into chapters of up to a minute at natural story breaks, each chapter is built and checked alone (so each fits the run budget and can be redone alone), then the chapters are joined into one final video in every size with one captions file; the chapters are kept too. Phase 4 must make the joins invisible: saved characters reused in every chapter, one voice and one loudness, music planned over the whole script so cuts fall on a pause or a mood change, the title only on the first chapter and the closing card only on the last. (The plan's 30-minute run budget then applies to a chapter, not to the whole video; this is Claude's reading and should be confirmed with Biku when Phase 4 starts.)
 **Also decided (Biku, 2026-10-06):** in a video made in parts, the studio stops after each part of about a minute and shows it; it goes on to the next part only when Biku says so ("so that its better than making all the video at once"). So a chapter is a checkpoint: no later chapter, no extra size and no joined video is rendered ahead of his go. Agreed by Biku the same day ("thats fine"): each chapter is shown in the phone size only, and the other two sizes and the joined video are made once every chapter is approved.
 **Last updated:** 2026-10-06
@@ -19,10 +19,40 @@ Each step ends with something Biku can look at, a commit and an update here. Sta
 - **4A. Foundation: done (2026-10-06).** The storyboard (a video's master file), the first brand file, the six format templates, voices.
 - **4B. Script: done (2026-10-06).** The three script modes (as-is, refine, original) and splitting a long script into chapters of at most a minute.
 - **4C. Shot planner: done (2026-10-06).** A script turned into a full storyboard: who, where, doing what, camera, music, effects.
-- **4D. Assembly.** A video built from a storyboard automatically, with voice, sound and captions.
+- **4D. Assembly: done (2026-10-06).** A video built from a storyboard automatically, with voice, sound and captions.
 - **4E. Self-check.** The automatic checks and the plain-language QA report.
 - **4F. Output.** Preview first, then the three sizes, cover image, captions file, and joining chapters.
 - **4G. The test video.** One full 2 to 3 minute video in refine mode from Biku's script, made chapter by chapter, then Checkpoint 2.
+
+## Phase 4D. Assembly: done (2026-10-06)
+
+Asked by Biku ("start 4D"). A storyboard now becomes a video with no hand work: `npm run make` builds one part from the plan. Until now every video was a hand-written program of its own.
+
+### Made
+
+- **The storyboard builder** (`engine/src/stage/`): draws whichever shot is on screen from the storyboard alone: the place in the light the scene asks for, each person in their pose or action with their face, where they look, what they hold, the things standing around them, effects on heads, the camera (shot size, push-in, punch-in, shake, pan, travelling along with a walker), the title or a label, a fade. Faces and poses blend across a cut that keeps someone on screen; the speaker's mouth moves with their words; everyone blinks, breathes and sways.
+- **Tall and wide from the same plan.** A scene is laid out once on a stage sized to the frame: in a wide frame people take a bigger share of the height, the shot sizes are closer, captions show one longer line low in the frame, and titles stay on one line. Wide (16:9) is the main shape for Biku's YouTube page and is what was built and looked at; tall draws and is tested, and gets its eyes-on check in 4F.
+- **One part at a time** (`shared/src/assembly.ts`, `npm run make`): a part of the storyboard stands alone in `runs/<run>/part-<n>/`. Voice script from its lines (each speaker's own Kokoro voice, speed and pause), the voice, the voice's times written into the shots, the sound plan from the scenes' moods and the shots' effects, the mix, a still per shot with sheets of them all, and the video. A stage is skipped when its inputs have not changed. Renders are never overwritten.
+- **What it refuses to build:** a plan with a problem; something the builder cannot put on screen yet (named in plain words); with the real voice, a shot more than 1.2 s over the format's limit or a part over 60 s.
+- **Props by name** (`engine/src/stage/props.tsx`): every library prop can be held or stood in a scene. A seat turns to face the way its sitter faces.
+- **Smaller changes it needed:** a place can be asked for in other light (`sceneBackground`); a cast member's look is built the same way as a saved card's (`lookFrom`); captions, titles and labels size themselves for any frame shape (`textBasis`); the draw commands wait longer for a slow first start.
+- **The first automatic video:** part 1 of the Honest Farmer, 42.2 s, 1920x1080, 16 shots, 3 speakers' voices, 3 music moods, 8 sound effects. Sound: -14.0 LUFS, true peak -1.1 dB in the finished file. Rendered at about 2.3 s per second of video.
+- **Tests:** 33 new (every shot of both worked storyboards draws in a tall and a wide frame; the hand-offs; what the builder can and cannot show).
+
+### What was wrong on the way, and found only by looking
+
+Lessons L-0023 and L-0024. Walking figures floated because their travel was taken off the body but not the planted feet. The title sat on the face. Captions sized for a tall frame covered the middle of a wide one. The walker slid backward when the camera travelled. Closer shots cut off the bag on the ground, the coin in the hand, and a standing person beside a lying one. A chair faced the wrong way. An unrelated one-sample slip in the held music tone stopped the mix.
+
+### Open after 4D
+
+- **Biku has not seen it yet.** Part 1 is the first thing made this way; his eye decides.
+- **Part 2 is not rendered as a video** (voice, sound and stills are made). It waits for his word.
+- **Missing from the library, found by this story:** a sleeping or eyes-closed calm face (the last shot has Tomas "asleep" with his eyes open).
+- **The builder cannot yet show** an impact flash or motion lines (they live in the scene, not on a head), a thing standing on a table, a door opening, someone walking in or out, or a change of pose or face inside one shot.
+- **The brand's watermark and closing card** are not drawn yet (4F).
+- **A voice file's pronunciations** are not applied yet; all are empty.
+- **Shot lengths:** two shots of part 1 ran 4.5 and 4.6 s against the 4 s limit, because the narrator speaks some lines slower than the estimate. They are noted, not refused.
+- **Captions in a wide frame** sit over the ground, so they cross feet and things on the ground in wide shots.
 
 ## Phase 4C. Shot planner: done (2026-10-06)
 

@@ -2,7 +2,7 @@ import { loadFont } from '@remotion/fonts';
 import { interpolate, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
 import { tokens } from '../tokens';
 import { pageAt } from './captionPages';
-import { VIEWER_FONT } from './text';
+import { VIEWER_FONT, textBasis } from './text';
 import type { CaptionPage } from './captionPages';
 
 /** Heavy rounded, openly licensed caption font (Style 9), bundled locally (SIL OFL 1.1). */
@@ -15,9 +15,12 @@ void loadFont({
   weight: '300 700',
 });
 
+/** The share of a wide frame's height kept for captions, at the bottom. */
+const WIDE_SAFE_BOTTOM = 0.2;
+
 type Props = {
   pages: readonly CaptionPage[];
-  /** Caption font size in px for a 1080 wide frame; scales with the frame width. */
+  /** Caption font size in px for a 1080 wide tall frame; scales with the frame (textBasis). */
   size?: number;
 };
 
@@ -33,10 +36,12 @@ export const Captions = ({ pages, size = 78 }: Props) => {
   const page = pageAt(pages, ms);
   if (!page) return null;
 
-  const scale = width / 1080;
+  const scale = textBasis(width, height) / 1080;
   const fontSize = size * scale;
   const lineHeight = fontSize * 1.18;
-  const safeTop = height * (1 - tokens.captions.safeBottomPct916);
+  // A wide frame is short, so its captions keep to a thinner band along the bottom.
+  const safeShare = width > height ? WIDE_SAFE_BOTTOM : tokens.captions.safeBottomPct916;
+  const safeTop = height * (1 - safeShare);
   const blockHeight = lineHeight * page.lines.length;
   const firstBaseline = safeTop + (height - safeTop - blockHeight) * 0.42 + fontSize;
   const pageFrame = Math.round((page.startMs / 1000) * fps);

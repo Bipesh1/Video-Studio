@@ -1,0 +1,829 @@
+{
+  "version": 1,
+  "title": "The Honest Farmer",
+  "request": "refine my script about the honest farmer",
+  "mode": "refine",
+  "format": "story",
+  "style": "ink-stick",
+  "brand": "my-page",
+  "voice": "narrator",
+  "seed": 24590,
+  "sources": [],
+  "appliedLessons": [
+    "L-0013",
+    "L-0014",
+    "L-0016",
+    "L-0022"
+  ],
+  "cast": [
+    {
+      "id": "tomas",
+      "name": "Tomas, the farmer",
+      "look": {
+        "identity": {
+          "skinTone": 4,
+          "hair": "short-crop",
+          "hairColor": "dark-brown",
+          "facialHair": "beard"
+        },
+        "outfit": {
+          "costume": "farmer"
+        }
+      },
+      "voice": "man"
+    },
+    {
+      "id": "wife",
+      "name": "His wife",
+      "look": {
+        "identity": {
+          "skinTone": 4,
+          "hair": "bun",
+          "hairColor": "dark-brown"
+        },
+        "outfit": {
+          "clothes": {
+            "onePiece": {
+              "kind": "dress",
+              "cloth": "brown"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        }
+      },
+      "voice": "woman"
+    },
+    {
+      "id": "child",
+      "name": "Their daughter",
+      "look": {
+        "age": "child",
+        "size": 0.8,
+        "identity": {
+          "skinTone": 4,
+          "hair": "braids",
+          "hairColor": "dark-brown"
+        },
+        "outfit": {
+          "clothes": {
+            "onePiece": {
+              "kind": "dress",
+              "cloth": "tan"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "queen",
+      "name": "The queen",
+      "look": {
+        "identity": {
+          "skinTone": 6,
+          "hair": "bun",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "costume": "queen"
+        }
+      },
+      "voice": "woman-calm"
+    },
+    {
+      "id": "soldier-one",
+      "name": "A soldier at the gate",
+      "look": {
+        "identity": {
+          "skinTone": 5,
+          "hair": "fade",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "costume": "soldier"
+        }
+      }
+    },
+    {
+      "id": "soldier-two",
+      "name": "A second soldier",
+      "look": {
+        "identity": {
+          "skinTone": 2,
+          "hair": "short-crop",
+          "hairColor": "brown"
+        },
+        "outfit": {
+          "costume": "soldier"
+        }
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "hook",
+      "mood": "curious",
+      "place": "field",
+      "treatment": "simple",
+      "palette": "clear-day",
+      "lines": [
+        {
+          "id": "n1",
+          "speaker": "narrator",
+          "text": "A poor farmer found *100* gold coins on an empty road.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "n2",
+          "speaker": "narrator",
+          "text": "Nobody saw him. And nobody would ever know.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s1a",
+          "line": "n1",
+          "words": "A poor farmer found *100* gold coins on an empty road.",
+          "camera": {
+            "framing": "medium",
+            "move": "push-in",
+            "strength": 0.25
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "pose": "kneel",
+              "expression": "surprised",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.42,
+              "lookAt": "bag",
+              "back": false
+            }
+          ],
+          "props": [
+            {
+              "prop": "bag",
+              "x": 0.6
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "overlay": {
+            "kind": "title",
+            "text": "The Honest Farmer"
+          },
+          "transition": "cut",
+          "startMs": 0,
+          "endMs": 4510
+        },
+        {
+          "id": "s1b",
+          "line": "n2",
+          "words": "Nobody saw him. And nobody would ever know.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "pose": "hold-object",
+              "expression": "thinking",
+              "facing": "left",
+              "headTurn": "front",
+              "x": 0.5,
+              "lookAt": "camera",
+              "holds": "bag",
+              "back": false
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "wind",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 4510,
+          "endMs": 8180
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "setup",
+      "mood": "curious",
+      "place": "field",
+      "treatment": "simple",
+      "palette": "clear-day",
+      "lines": [
+        {
+          "id": "n3",
+          "speaker": "narrator",
+          "text": "His name was Tomas. He worked his field from morning until night, and his family still went hungry."
+        },
+        {
+          "id": "n4",
+          "speaker": "narrator",
+          "text": "That morning, on the way to market, a heavy bag lay on the road."
+        },
+        {
+          "id": "n5",
+          "speaker": "narrator",
+          "text": "Inside was more money than he had seen in his whole life.",
+          "pauseAfterMs": 800
+        }
+      ],
+      "shots": [
+        {
+          "id": "s2a",
+          "line": "n3",
+          "words": "His name was Tomas. He worked his field from morning until night,",
+          "camera": {
+            "framing": "wide",
+            "move": "follow",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "action": "walk-tired",
+              "expression": "exhausted",
+              "facing": "right",
+              "headTurn": "profile",
+              "lookAt": "ahead",
+              "back": false
+            }
+          ],
+          "props": [],
+          "effects": [
+            {
+              "effect": "sweat-resting",
+              "on": "tomas"
+            }
+          ],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 8180,
+          "endMs": 12760
+        },
+        {
+          "id": "s2b",
+          "line": "n3",
+          "words": "and his family still went hungry.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "pose": "look-down",
+              "expression": "sad",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "down",
+              "back": false
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 12760,
+          "endMs": 15060
+        },
+        {
+          "id": "s2c",
+          "line": "n4",
+          "words": "That morning, on the way to market,",
+          "camera": {
+            "framing": "wide",
+            "move": "follow",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "action": "walk",
+              "expression": "neutral",
+              "facing": "right",
+              "headTurn": "profile",
+              "lookAt": "ahead",
+              "back": false
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "footsteps",
+              "at": "start",
+              "gainDb": -2
+            }
+          ],
+          "transition": "cut",
+          "startMs": 15060,
+          "endMs": 17192
+        },
+        {
+          "id": "s2d",
+          "line": "n4",
+          "words": "a heavy bag lay on the road.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "pose": "stand",
+              "expression": "surprised",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.34,
+              "lookAt": "bag",
+              "back": false
+            }
+          ],
+          "props": [
+            {
+              "prop": "bag",
+              "x": 0.62
+            }
+          ],
+          "effects": [
+            {
+              "effect": "symbol-question",
+              "on": "tomas"
+            }
+          ],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 17192,
+          "endMs": 19500
+        },
+        {
+          "id": "s2e",
+          "line": "n5",
+          "words": "Inside was more money than he had seen",
+          "camera": {
+            "framing": "medium",
+            "move": "punch-in",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "pose": "hold-object",
+              "expression": "surprised",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.45,
+              "lookAt": "coin",
+              "holds": "coin",
+              "back": false
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 19500,
+          "endMs": 21860
+        },
+        {
+          "id": "s2f",
+          "line": "n5",
+          "words": "in his whole life.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "pose": "hold-object",
+              "expression": "laughing",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.45,
+              "lookAt": "ahead",
+              "holds": "bag",
+              "back": false
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 21860,
+          "endMs": 23510
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "chapter": 1,
+      "beat": "rising-trouble",
+      "mood": "tense",
+      "place": "field",
+      "treatment": "simple",
+      "palette": "clear-day",
+      "lines": [
+        {
+          "id": "n6",
+          "speaker": "narrator",
+          "text": "He thought about his hungry children. He thought about his broken roof."
+        },
+        {
+          "id": "n7",
+          "speaker": "narrator",
+          "text": "Then he saw the mark on the bag. It was the *queen's*.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s3a",
+          "line": "n6",
+          "words": "He thought about his hungry children.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "pose": "hold-object",
+              "expression": "sad",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.45,
+              "lookAt": "down",
+              "holds": "bag",
+              "back": false
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 23510,
+          "endMs": 25805
+        },
+        {
+          "id": "s3b",
+          "line": "n6",
+          "words": "He thought about his broken roof.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "pose": "hold-object",
+              "expression": "thinking",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.45,
+              "lookAt": "up",
+              "holds": "bag",
+              "back": false
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 25805,
+          "endMs": 27980
+        },
+        {
+          "id": "s3c",
+          "line": "n7",
+          "words": "Then he saw the mark on the bag.",
+          "camera": {
+            "framing": "close-up",
+            "move": "punch-in",
+            "strength": 0.25
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "pose": "hold-object",
+              "expression": "surprised",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.45,
+              "lookAt": "down",
+              "holds": "bag",
+              "back": false
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "whoosh",
+              "at": "start",
+              "gainDb": -3
+            }
+          ],
+          "transition": "cut",
+          "startMs": 27980,
+          "endMs": 29935
+        },
+        {
+          "id": "s3d",
+          "line": "n7",
+          "words": "It was the *queen's*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "pose": "hands-over-mouth",
+              "expression": "afraid",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "bag",
+              "back": false
+            }
+          ],
+          "props": [
+            {
+              "prop": "bag",
+              "x": 0.62
+            }
+          ],
+          "effects": [
+            {
+              "effect": "sweat-flying",
+              "on": "tomas"
+            }
+          ],
+          "sfx": [
+            {
+              "name": "thud",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 29935,
+          "endMs": 32020
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "chapter": 1,
+      "beat": "rising-trouble",
+      "mood": "sorrow",
+      "place": "home-interior",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "n8",
+          "speaker": "narrator",
+          "text": "For 3 days, Tomas could not sleep."
+        },
+        {
+          "id": "d1",
+          "speaker": "wife",
+          "text": "Keep the gold! The queen is rich. She will never miss it.",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "n9",
+          "speaker": "narrator",
+          "text": "On the third night, he made his decision.",
+          "pauseAfterMs": 600
+        }
+      ],
+      "shots": [
+        {
+          "id": "s4a",
+          "line": "n8",
+          "words": "For 3 days, Tomas could not sleep.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "pose": "sit",
+              "expression": "exhausted",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "bag",
+              "holds": "bag",
+              "back": false
+            },
+            {
+              "character": "wife",
+              "pose": "stand",
+              "expression": "sad",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.62,
+              "lookAt": "tomas",
+              "back": false
+            },
+            {
+              "character": "child",
+              "pose": "sit",
+              "expression": "sad",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.8,
+              "lookAt": "tomas",
+              "back": false
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.3
+            },
+            {
+              "prop": "table",
+              "x": 0.46
+            },
+            {
+              "prop": "chair",
+              "x": 0.8
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "creak",
+              "at": "start",
+              "gainDb": -2
+            }
+          ],
+          "transition": "fade",
+          "startMs": 32020,
+          "endMs": 34670
+        },
+        {
+          "id": "s4b",
+          "line": "d1",
+          "words": "Keep the gold! The queen is rich.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "wife"
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "pose": "sit",
+              "expression": "sad",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "wife",
+              "holds": "bag",
+              "back": false
+            },
+            {
+              "character": "wife",
+              "pose": "point",
+              "expression": "shouting",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.62,
+              "lookAt": "tomas",
+              "back": false
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.3
+            },
+            {
+              "prop": "table",
+              "x": 0.46
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 34670,
+          "endMs": 36698
+        },
+        {
+          "id": "s4c",
+          "line": "d1",
+          "words": "She will never miss it.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "wife"
+          },
+          "actors": [
+            {
+              "character": "wife",
+              "pose": "cross-arms",
+              "expression": "determined",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.62,
+              "lookAt": "ahead",
+              "back": false
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 36698,
+          "endMs": 38270
+        },
+        {
+          "id": "s4d",
+          "line": "n9",
+          "words": "On the third night, he made his decision.",
+          "camera": {
+            "framing": "close-up",
+            "move": "push-in",
+            "strength": 0.35,
+            "focus": "tomas"
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "pose": "stand",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "ahead",
+              "back": false
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 38270,
+          "endMs": 42220
+        }
+      ]
+    }
+  ]
+}

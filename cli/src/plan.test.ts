@@ -358,9 +358,7 @@ describe('the shot list Biku reads', () => {
     expect(describeShot(shotOf(sb, 's6b'), sb, world)).toContain(
       'Tomas stands, neutral, looking at the queen, seen from behind',
     );
-    expect(describeShot(shotOf(sb, 's2b'), sb, world)).toBe(
-      'Close-up. Tomas looks down, sad. Resting sweat drop on Tomas.',
-    );
+    expect(describeShot(shotOf(sb, 's2b'), sb, world)).toBe('Close-up. Tomas looks down, sad.');
     expect(describeShot(shotOf(sb, 's4a'), sb, world).startsWith('Fade in. Wide shot.')).toBe(true);
   });
 

@@ -21,12 +21,12 @@ Place: field, clear day colors. Music: curious.
 
 | Shot | At | Who speaks | Words | What you see | Sound |
 | --- | --- | --- | --- | --- | --- |
-| s2a | 0:07 | Narrator | His name was Tomas. He worked his field from morning until night, | Wide shot. Tomas carries a load, exhausted. The camera travels along. |   |
-| s2b | 0:10 | Narrator | and his family still went hungry. | Close-up. Tomas looks down, sad. Resting sweat drop on Tomas. |   |
+| s2a | 0:07 | Narrator | His name was Tomas. He worked his field from morning until night, | Wide shot. Tomas trudges, exhausted. Resting sweat drop on Tomas. The camera travels along. |   |
+| s2b | 0:10 | Narrator | and his family still went hungry. | Close-up. Tomas looks down, sad. |   |
 | s2c | 0:13 | Narrator | That morning, on the way to market, | Wide shot. Tomas walks, neutral. The camera travels along. | footsteps |
-| s2d | 0:15 | Narrator | a heavy bag lay on the road. | Medium shot. Tomas stands, surprised, looking at the bag. In the scene: bag. Question mark on Tomas. | pop |
-| s2e | 0:17 | Narrator | Inside was more money than he had seen | Close-up. Tomas holds the coin, surprised, looking at the coin. The camera jumps closer. | ding |
-| s2f | 0:20 | Narrator | in his whole life. | Medium shot. Tomas holds the bag, laughing, looking at the bag. |   |
+| s2d | 0:15 | Narrator | a heavy bag lay on the road. | Wide shot. Tomas stands, surprised, looking at the bag. In the scene: bag. Question mark on Tomas. | pop |
+| s2e | 0:17 | Narrator | Inside was more money than he had seen | Medium shot. Tomas holds the coin, surprised, looking at the coin. The camera jumps closer. | ding |
+| s2f | 0:20 | Narrator | in his whole life. | Close-up. Tomas holds the bag, laughing. |   |
 
 ### Scene 3: rising trouble
 
@@ -36,8 +36,8 @@ Place: field, clear day colors. Music: tense.
 | --- | --- | --- | --- | --- | --- |
 | s3a | 0:22 | Narrator | He thought about his hungry children. | Close-up. Tomas holds the bag, sad, looking down. |   |
 | s3b | 0:24 | Narrator | He thought about his broken roof. | Medium shot. Tomas holds the bag, thinking, looking up. |   |
-| s3c | 0:26 | Narrator | Then he saw the mark on the bag. | Close-up. Tomas holds the bag, surprised, looking at the bag. The camera jumps closer. | whoosh |
-| s3d | 0:29 | Narrator | It was the **queen's**. | Medium shot. Tomas covers the mouth with both hands, afraid, looking at the bag. In the scene: bag. Flying sweat drops on Tomas. | thud |
+| s3c | 0:26 | Narrator | Then he saw the mark on the bag. | Close-up. Tomas holds the bag, surprised, looking down. The camera jumps closer. | whoosh |
+| s3d | 0:29 | Narrator | It was the **queen's**. | Wide shot. Tomas covers the mouth with both hands, afraid, looking at the bag. In the scene: bag. Flying sweat drops on Tomas. | thud |
 
 ### Scene 4: rising trouble
 
@@ -99,4 +99,4 @@ Place: home interior, warm interior colors. Music: calm.
 
 | Shot | At | Who speaks | Words | What you see | Sound |
 | --- | --- | --- | --- | --- | --- |
-| s9a | 1:21 | Narrator | An honest man sleeps well, even on a **hard** bed. | Fade in. Medium shot on Tomas. Tomas lies down, happy. His wife stands, happy, looking at Tomas. The camera moves slowly closer. |   |
+| s9a | 1:21 | Narrator | An honest man sleeps well, even on a **hard** bed. | Fade in. Wide shot. Tomas lies down, happy. His wife stands, happy, looking at Tomas. The camera moves slowly closer. |   |

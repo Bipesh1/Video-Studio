@@ -368,6 +368,23 @@ export function checkPlan(sb: Storyboard, world: World): PlanReport {
           }
         }
       }
+      // A closer shot is cut at the hips or the chin, so it cannot show the ground or a hand.
+      if (shot.camera.framing !== 'wide') {
+        for (const actor of shot.actors) {
+          const onGround = shot.props.some((p) => p.prop === actor.lookAt);
+          const lying = actor.pose === 'kneel' || actor.pose === 'lie' || actor.pose === 'sit';
+          if (onGround && !lying) {
+            notes.push(
+              `in ${at}, "${actor.character}" looks at the ${actor.lookAt} standing on the ground, which a ${shot.camera.framing} shot cuts off; make the shot wide`,
+            );
+          }
+          if (shot.camera.framing === 'close-up' && actor.holds && actor.lookAt === actor.holds) {
+            notes.push(
+              `in ${at}, "${actor.character}" looks at the ${actor.holds} in their hand, which a close-up cuts off; make it a medium shot`,
+            );
+          }
+        }
+      }
       if (shot.camera.framing === 'over-shoulder') {
         const backs = shot.actors.filter((a) => a.back).length;
         if (backs !== 1)

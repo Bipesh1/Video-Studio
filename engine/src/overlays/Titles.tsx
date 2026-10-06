@@ -1,6 +1,6 @@
 import { clamp, easeOutBack } from '../rig/math';
 import { accent, ink, pick, tokens } from '../tokens';
-import { VIEWER_FONT, fitSize, textWidth, viewerText, wrapWords } from './text';
+import { textBasis, VIEWER_FONT, fitSize, textWidth, viewerText, wrapWords } from './text';
 
 /**
  * Titles and labels (Style 9): outlined boxes and banners with flat fills, made like props,
@@ -46,13 +46,15 @@ export function TitleCard({
   y?: number;
 }) {
   const tones = accent(paint);
-  const lines = wrapWords(viewerText(title), 16).slice(0, 3);
-  const maxText = width * 0.72;
-  const size = fitSize(lines, width * 0.105, maxText);
+  // A wide frame has room for a longer line, so a short title stays on one.
+  const lines = wrapWords(viewerText(title), width > height ? 24 : 16).slice(0, 3);
+  const basis = textBasis(width, height);
+  const maxText = basis * 0.72;
+  const size = fitSize(lines, basis * 0.105, maxText);
   const lineHeight = size * 1.12;
   const textW = Math.max(...lines.map((l) => textWidth(l, size)));
-  const edge = edgeFor(width);
-  const bw = Math.min(width * 0.9, textW + size * 1.5);
+  const edge = edgeFor(basis);
+  const bw = Math.min(basis * 0.9, textW + size * 1.5);
   const bh = lineHeight * lines.length + size * 0.7;
   const cx = width / 2;
   const cy = height * y;
@@ -62,7 +64,7 @@ export function TitleCard({
   // A ribbon: a box with a swallow-tail cut into each end.
   const ribbon = `M ${-bw / 2 - tail} ${-bh / 2} L ${bw / 2 + tail} ${-bh / 2} L ${bw / 2} 0 L ${bw / 2 + tail} ${bh / 2} L ${-bw / 2 - tail} ${bh / 2} L ${-bw / 2} 0 Z`;
   const sub = subtitle ? viewerText(subtitle) : null;
-  const subSize = sub ? fitSize([sub], size * 0.46, width * 0.7) : 0;
+  const subSize = sub ? fitSize([sub], size * 0.46, basis * 0.7) : 0;
   const subW = sub ? textWidth(sub, subSize) + subSize * 1.6 : 0;
   const subH = subSize * 1.7;
   return (
@@ -150,11 +152,12 @@ export function Label({
 }) {
   const tones = accent(paint);
   const words = viewerText(text);
-  const size = fitSize([words], width * 0.052, width * 0.74);
+  const basis = textBasis(width, height);
+  const size = fitSize([words], basis * 0.052, basis * 0.74);
   const bw = textWidth(words, size) + size * 1.5;
   const bh = size * 1.75;
-  const edge = edgeFor(width) * 0.8;
-  const margin = width * 0.05;
+  const edge = edgeFor(basis) * 0.8;
+  const margin = basis * 0.05;
   const cx =
     at === 'top-left' ? margin + bw / 2 : at === 'top-right' ? width - margin - bw / 2 : width / 2;
   const cy = height * 0.075;

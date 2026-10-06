@@ -112,3 +112,13 @@ export {
   storyboardPage,
 } from './plan';
 export type { PlanReport } from './plan';
+export {
+  CUT_LEAD_MS,
+  LEAD_IN_MS,
+  TAIL_MS,
+  partCount,
+  partStoryboard,
+  soundPlanFor,
+  timeShots,
+  voiceScriptFor,
+} from './assembly';

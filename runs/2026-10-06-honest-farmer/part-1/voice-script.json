@@ -1,0 +1,86 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "lines": [
+    {
+      "id": "n1",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "A poor farmer found *100* gold coins on an empty road.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "n2",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Nobody saw him. And nobody would ever know.",
+      "speed": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "n3",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "His name was Tomas. He worked his field from morning until night, and his family still went hungry.",
+      "speed": 1,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "n4",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "That morning, on the way to market, a heavy bag lay on the road.",
+      "speed": 1,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "n5",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Inside was more money than he had seen in his whole life.",
+      "speed": 1,
+      "pauseAfterMs": 800
+    },
+    {
+      "id": "n6",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "He thought about his hungry children. He thought about his broken roof.",
+      "speed": 1,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "n7",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Then he saw the mark on the bag. It was the *queen's*.",
+      "speed": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "n8",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "For 3 days, Tomas could not sleep.",
+      "speed": 1,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "d1",
+      "speaker": "wife",
+      "voice": "af_heart",
+      "text": "Keep the gold! The queen is rich. She will never miss it.",
+      "speed": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "n9",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "On the third night, he made his decision.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    }
+  ]
+}

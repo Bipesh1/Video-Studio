@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "curious",
+      "startMs": 0
+    },
+    {
+      "mood": "tense",
+      "startMs": 23510
+    },
+    {
+      "mood": "sorrow",
+      "startMs": 32020
+    }
+  ],
+  "sfx": [
+    {
+      "name": "ding",
+      "atMs": 60,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "wind",
+      "atMs": 4570,
+      "durationMs": 3460,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "footsteps",
+      "atMs": 15120,
+      "durationMs": 1922,
+      "gainDb": -2,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "pop",
+      "atMs": 17252,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "ding",
+      "atMs": 19560,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "whoosh",
+      "atMs": 28040,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 5
+    },
+    {
+      "name": "thud",
+      "atMs": 29995,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 6
+    },
+    {
+      "name": "creak",
+      "atMs": 32080,
+      "gainDb": -2,
+      "pan": 0,
+      "seed": 7
+    }
+  ],
+  "musicGainDb": 0
+}

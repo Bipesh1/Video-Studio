@@ -1,5 +1,5 @@
-import { backgroundSpec } from './Background';
-import type { BackgroundSpec } from './Background';
+import { NIGHT_PALETTES, backgroundSpec } from './Background';
+import type { BackgroundSpec, Treatment } from './Background';
 
 /**
  * Places (Part 2, section 7.5: set kits): ready-made backgrounds a story can name. Each is a
@@ -121,3 +121,30 @@ export function placeSpec(
 ): BackgroundSpec {
   return { ...PLACES[name](seed), ...overrides };
 }
+
+/**
+ * A place as a storyboard asks for it: the place's shapes, in the treatment and colors the
+ * scene names. The same castle can stand under a stormy night or a cold dawn. Night colors
+ * bring the moon and stars; day colors take them away. A room has neither.
+ */
+export function sceneBackground(
+  name: PlaceName,
+  treatment: Treatment,
+  palette: string,
+  seed: number,
+): BackgroundSpec {
+  const place = PLACES[name](seed);
+  const light = backgroundSpec(treatment, palette, seed);
+  const night = NIGHT_PALETTES.includes(palette) && !place.interior;
+  return {
+    ...place,
+    treatment,
+    palette,
+    moon: night ? (place.moon ?? light.moon ?? { x: 0.2, y: 0.1, r: 0.05 }) : null,
+    stars: night ? Math.max(place.stars, light.stars, 10) : 0,
+    clouds: place.interior ? 0 : light.clouds,
+    rays: place.interior ? place.rays : light.rays,
+  };
+}
+
+export const isPlace = (name: string): name is PlaceName => name in PLACES;

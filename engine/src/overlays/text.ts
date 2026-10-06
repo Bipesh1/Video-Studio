@@ -4,6 +4,13 @@
  */
 export const VIEWER_FONT = 'Fredoka';
 
+/**
+ * The width on-screen text is sized from. A tall or squarish frame uses its own width, as it
+ * always did; a wide frame uses a little less than its height, so captions and titles keep
+ * about the same size beside the characters instead of growing with the extra width.
+ */
+export const textBasis = (width: number, height: number): number => Math.min(width, height * 0.9);
+
 /** How wide a letter of the heavy caption font is on average, as a share of its size. */
 const LETTER = 0.56;
 

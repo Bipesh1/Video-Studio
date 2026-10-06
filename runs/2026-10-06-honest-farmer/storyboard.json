@@ -252,10 +252,16 @@
           "actors": [
             {
               "character": "tomas",
-              "action": "carry",
+              "action": "walk-tired",
               "expression": "exhausted",
               "facing": "right",
               "headTurn": "profile"
+            }
+          ],
+          "effects": [
+            {
+              "effect": "sweat-resting",
+              "on": "tomas"
             }
           ]
         },
@@ -275,12 +281,6 @@
               "facing": "right",
               "x": 0.5,
               "lookAt": "down"
-            }
-          ],
-          "effects": [
-            {
-              "effect": "sweat-resting",
-              "on": "tomas"
             }
           ]
         },
@@ -314,7 +314,7 @@
           "line": "n4",
           "words": "a heavy bag lay on the road.",
           "camera": {
-            "framing": "medium",
+            "framing": "wide",
             "move": "none"
           },
           "actors": [
@@ -351,7 +351,7 @@
           "line": "n5",
           "words": "Inside was more money than he had seen",
           "camera": {
-            "framing": "close-up",
+            "framing": "medium",
             "move": "punch-in",
             "strength": 0.2
           },
@@ -378,7 +378,7 @@
           "line": "n5",
           "words": "in his whole life.",
           "camera": {
-            "framing": "medium",
+            "framing": "close-up",
             "move": "none"
           },
           "actors": [
@@ -388,7 +388,6 @@
               "expression": "laughing",
               "facing": "right",
               "x": 0.45,
-              "lookAt": "bag",
               "holds": "bag"
             }
           ]
@@ -473,7 +472,7 @@
               "expression": "surprised",
               "facing": "right",
               "x": 0.45,
-              "lookAt": "bag",
+              "lookAt": "down",
               "holds": "bag"
             }
           ],
@@ -490,7 +489,7 @@
           "line": "n7",
           "words": "It was the *queen's*.",
           "camera": {
-            "framing": "medium",
+            "framing": "wide",
             "move": "none"
           },
           "actors": [
@@ -1245,10 +1244,9 @@
           "line": "n17",
           "words": "An honest man sleeps well, even on a *hard* bed.",
           "camera": {
-            "framing": "medium",
+            "framing": "wide",
             "move": "push-in",
-            "strength": 0.5,
-            "focus": "tomas"
+            "strength": 0.6
           },
           "actors": [
             {

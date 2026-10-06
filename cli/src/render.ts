@@ -16,6 +16,9 @@ import {
 
 type Browser = Awaited<ReturnType<typeof openBrowser>>;
 
+/** A browser's first start after a fresh build can take a while on this machine. */
+const PATIENCE_MS = 120_000;
+
 let shared: Promise<Browser> | null = null;
 const browser = (): Promise<Browser> => (shared ??= openBrowser('chrome'));
 
@@ -24,19 +27,31 @@ export const bundle = remotionBundle;
 export async function selectComposition(
   options: Parameters<typeof remotionSelectComposition>[0],
 ): ReturnType<typeof remotionSelectComposition> {
-  return remotionSelectComposition({ ...options, puppeteerInstance: await browser() });
+  return remotionSelectComposition({
+    timeoutInMilliseconds: PATIENCE_MS,
+    ...options,
+    puppeteerInstance: await browser(),
+  });
 }
 
 export async function renderStill(
   options: Parameters<typeof remotionRenderStill>[0],
 ): ReturnType<typeof remotionRenderStill> {
-  return remotionRenderStill({ ...options, puppeteerInstance: await browser() });
+  return remotionRenderStill({
+    timeoutInMilliseconds: PATIENCE_MS,
+    ...options,
+    puppeteerInstance: await browser(),
+  });
 }
 
 export async function renderMedia(
   options: Parameters<typeof remotionRenderMedia>[0],
 ): ReturnType<typeof remotionRenderMedia> {
-  return remotionRenderMedia({ ...options, puppeteerInstance: await browser() });
+  return remotionRenderMedia({
+    timeoutInMilliseconds: PATIENCE_MS,
+    ...options,
+    puppeteerInstance: await browser(),
+  });
 }
 
 /** Close the shared browser. Safe to call when nothing was drawn. */

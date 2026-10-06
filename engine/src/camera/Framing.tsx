@@ -40,6 +40,22 @@ const TARGETS: Record<Shot, { head: number; x: number; y: number; room: number }
   'over-shoulder': { head: 0.17, x: 0.66, y: 0.3, room: 1.6 },
 };
 
+/**
+ * The same four shots in a frame wider than it is tall. There is less height, so a head takes
+ * a larger share of it, and the face sits a little higher to leave the bottom for captions.
+ */
+const WIDE_TARGETS: Record<Shot, { head: number; x: number; y: number; room: number }> = {
+  wide: { head: 0.15, x: 0.5, y: 0.34, room: 1.6 },
+  medium: { head: 0.27, x: 0.5, y: 0.33, room: 1.6 },
+  'close-up': { head: 0.5, x: 0.5, y: 0.4, room: 1.3 },
+  'over-shoulder': { head: 0.25, x: 0.62, y: 0.33, room: 1.6 },
+};
+
+const targetsFor = (size: Size) => (size.width > size.height ? WIDE_TARGETS : TARGETS);
+
+/** How big a head is in the wide layout of a frame this shape, px: where every scene starts. */
+export const layoutHead = (size: Size): number => targetsFor(size).wide.head * size.height;
+
 /** A standing head's height above the ground, in head units. */
 const HEAD_HEIGHT = -computeSkeleton(resolvePose(stand)).head.y;
 
@@ -73,7 +89,7 @@ export function shotTransform(
   size: Size,
   side: 'left' | 'right' = 'left',
 ): { scale: number; x: number; y: number } {
-  const target = TARGETS[shot];
+  const target = targetsFor(size)[shot];
   const fits = (0.94 * size.width) / ((focus.span ?? 0) + target.room * focus.head);
   const scale = Math.max(1, Math.min((target.head * size.height) / focus.head, fits));
   const tx = (shot === 'over-shoulder' && side === 'right' ? 1 - target.x : target.x) * size.width;
@@ -116,10 +132,10 @@ export function shoulderPlacement(
 ): { x: number; groundY: number; head: number; facing: Facing } {
   // Low in a bottom corner and mostly out of the frame, so it never covers the far person's
   // face or what they are doing with their hands.
-  const head = 0.5 * size.width;
+  const head = 0.5 * Math.min(size.width, size.height * 0.8);
   return {
     x: (side === 'left' ? 0 : 1) * size.width,
-    groundY: 0.52 * size.height + HEAD_HEIGHT * head,
+    groundY: (size.width > size.height ? 0.6 : 0.52) * size.height + HEAD_HEIGHT * head,
     head,
     facing: side === 'left' ? 'right' : 'left',
   };

@@ -1,0 +1,841 @@
+{
+  "version": 1,
+  "title": "The Honest Farmer",
+  "request": "refine my script about the honest farmer",
+  "mode": "refine",
+  "format": "story",
+  "style": "ink-stick",
+  "brand": "my-page",
+  "voice": "narrator",
+  "seed": 24590,
+  "sources": [],
+  "appliedLessons": [
+    "L-0013",
+    "L-0014",
+    "L-0016",
+    "L-0022"
+  ],
+  "cast": [
+    {
+      "id": "tomas",
+      "name": "Tomas, the farmer",
+      "look": {
+        "identity": {
+          "skinTone": 4,
+          "hair": "short-crop",
+          "hairColor": "dark-brown",
+          "facialHair": "beard"
+        },
+        "outfit": {
+          "costume": "farmer"
+        }
+      },
+      "voice": "man"
+    },
+    {
+      "id": "wife",
+      "name": "His wife",
+      "look": {
+        "identity": {
+          "skinTone": 4,
+          "hair": "bun",
+          "hairColor": "dark-brown"
+        },
+        "outfit": {
+          "clothes": {
+            "onePiece": {
+              "kind": "dress",
+              "cloth": "brown"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        }
+      },
+      "voice": "woman"
+    },
+    {
+      "id": "child",
+      "name": "Their daughter",
+      "look": {
+        "age": "child",
+        "size": 0.8,
+        "identity": {
+          "skinTone": 4,
+          "hair": "braids",
+          "hairColor": "dark-brown"
+        },
+        "outfit": {
+          "clothes": {
+            "onePiece": {
+              "kind": "dress",
+              "cloth": "tan"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "queen",
+      "name": "The queen",
+      "look": {
+        "identity": {
+          "skinTone": 6,
+          "hair": "bun",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "costume": "queen"
+        }
+      },
+      "voice": "woman-calm"
+    },
+    {
+      "id": "soldier-one",
+      "name": "A soldier at the gate",
+      "look": {
+        "identity": {
+          "skinTone": 5,
+          "hair": "fade",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "costume": "soldier"
+        }
+      }
+    },
+    {
+      "id": "soldier-two",
+      "name": "A second soldier",
+      "look": {
+        "identity": {
+          "skinTone": 2,
+          "hair": "short-crop",
+          "hairColor": "brown"
+        },
+        "outfit": {
+          "costume": "soldier"
+        }
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s5",
+      "chapter": 1,
+      "beat": "rising-trouble",
+      "mood": "tense",
+      "place": "castle",
+      "treatment": "atmospheric",
+      "palette": "cold-dawn",
+      "lines": [
+        {
+          "id": "n10",
+          "speaker": "narrator",
+          "text": "He walked all the way to the castle."
+        },
+        {
+          "id": "n11",
+          "speaker": "narrator",
+          "text": "The soldiers at the gate laughed at his old clothes."
+        },
+        {
+          "id": "d2",
+          "speaker": "tomas",
+          "text": "I have something that belongs to the queen.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s5a",
+          "line": "n10",
+          "words": "He walked all the way to the castle.",
+          "camera": {
+            "framing": "wide",
+            "move": "follow",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "action": "walk",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "profile",
+              "lookAt": "ahead",
+              "holds": "bag",
+              "back": false
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "footsteps",
+              "at": "start",
+              "gainDb": -2
+            }
+          ],
+          "transition": "fade",
+          "startMs": 0,
+          "endMs": 2490
+        },
+        {
+          "id": "s5b",
+          "line": "n11",
+          "words": "The soldiers at the gate laughed at his old clothes.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "pose": "hold-object",
+              "expression": "sad",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.26,
+              "lookAt": "soldier-one",
+              "holds": "bag",
+              "back": false
+            },
+            {
+              "character": "soldier-one",
+              "pose": "point",
+              "expression": "laughing",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.62,
+              "lookAt": "tomas",
+              "back": false
+            },
+            {
+              "character": "soldier-two",
+              "pose": "cross-arms",
+              "expression": "laughing",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.8,
+              "lookAt": "tomas",
+              "back": false
+            }
+          ],
+          "props": [
+            {
+              "prop": "door",
+              "x": 0.94
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 2490,
+          "endMs": 5930
+        },
+        {
+          "id": "s5c",
+          "line": "d2",
+          "words": "I have something that belongs to the queen.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "tomas"
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "pose": "hold-object",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "soldier-one",
+              "holds": "bag",
+              "back": false
+            },
+            {
+              "character": "soldier-one",
+              "pose": "stand",
+              "expression": "surprised",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.62,
+              "lookAt": "bag",
+              "back": false
+            }
+          ],
+          "props": [],
+          "effects": [
+            {
+              "effect": "symbol-exclaim",
+              "on": "soldier-one"
+            }
+          ],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": "middle",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 5930,
+          "endMs": 8720
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 1,
+      "beat": "turning-point",
+      "mood": "tense",
+      "place": "throne-room",
+      "treatment": "atmospheric",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "n12",
+          "speaker": "narrator",
+          "text": "The queen counted the coins. All 100 were there."
+        },
+        {
+          "id": "d3",
+          "speaker": "queen",
+          "text": "Why did you not keep it? Nobody would have known.",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "d4",
+          "speaker": "tomas",
+          "text": "*I* would have known.",
+          "pauseAfterMs": 1200
+        },
+        {
+          "id": "n13",
+          "speaker": "narrator",
+          "text": "The queen was quiet for a long time.",
+          "pauseAfterMs": 1000
+        },
+        {
+          "id": "d5",
+          "speaker": "queen",
+          "text": "I lost that bag on purpose. I wanted to find one *honest* person in my kingdom.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6a",
+          "line": "n12",
+          "words": "The queen counted the coins. All 100 were there.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "pose": "stand",
+              "expression": "neutral",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "queen",
+              "back": false
+            },
+            {
+              "character": "queen",
+              "pose": "sit",
+              "expression": "thinking",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.7,
+              "lookAt": "coin",
+              "holds": "coin",
+              "back": false
+            }
+          ],
+          "props": [
+            {
+              "prop": "throne",
+              "x": 0.7
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "start",
+              "gainDb": 0
+            },
+            {
+              "name": "ding",
+              "at": "end",
+              "gainDb": -3
+            }
+          ],
+          "transition": "fade",
+          "startMs": 8720,
+          "endMs": 12480
+        },
+        {
+          "id": "s6b",
+          "line": "d3",
+          "words": "Why did you not keep it? Nobody would have known.",
+          "camera": {
+            "framing": "over-shoulder",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "queen"
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "pose": "stand",
+              "expression": "neutral",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "queen",
+              "back": true
+            },
+            {
+              "character": "queen",
+              "pose": "sit",
+              "expression": "thinking",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.7,
+              "lookAt": "tomas",
+              "back": false
+            }
+          ],
+          "props": [
+            {
+              "prop": "throne",
+              "x": 0.7
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 12480,
+          "endMs": 15630
+        },
+        {
+          "id": "s6c",
+          "line": "d4",
+          "words": "*I* would have known.",
+          "camera": {
+            "framing": "close-up",
+            "move": "push-in",
+            "strength": 0.3,
+            "focus": "tomas"
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "pose": "stand",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "ahead",
+              "back": false
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 15630,
+          "endMs": 17720
+        },
+        {
+          "id": "s6d",
+          "line": "n13",
+          "words": "The queen was quiet for a long time.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "queen"
+          },
+          "actors": [
+            {
+              "character": "queen",
+              "pose": "sit",
+              "expression": "thinking",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.7,
+              "lookAt": "down",
+              "back": false
+            }
+          ],
+          "props": [
+            {
+              "prop": "throne",
+              "x": 0.7
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 17720,
+          "endMs": 20830
+        },
+        {
+          "id": "s6e",
+          "line": "d5",
+          "words": "I lost that bag on purpose.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "pose": "stand",
+              "expression": "surprised",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.34,
+              "lookAt": "queen",
+              "back": false
+            },
+            {
+              "character": "queen",
+              "pose": "stand",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.64,
+              "lookAt": "tomas",
+              "back": false
+            }
+          ],
+          "props": [
+            {
+              "prop": "throne",
+              "x": 0.82
+            }
+          ],
+          "effects": [
+            {
+              "effect": "symbol-exclaim",
+              "on": "tomas"
+            }
+          ],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 20830,
+          "endMs": 23130
+        },
+        {
+          "id": "s6f",
+          "line": "d5",
+          "words": "I wanted to find one *honest* person in my kingdom.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "queen"
+          },
+          "actors": [
+            {
+              "character": "queen",
+              "pose": "point",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.64,
+              "lookAt": "ahead",
+              "back": false
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 23130,
+          "endMs": 26530
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "chapter": 1,
+      "beat": "payoff",
+      "mood": "triumph",
+      "place": "throne-room",
+      "treatment": "atmospheric",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "n14",
+          "speaker": "narrator",
+          "text": "She trusted Tomas to look after the royal treasure."
+        },
+        {
+          "id": "n15",
+          "speaker": "narrator",
+          "text": "And she gave him 10 gold coins every month, for the rest of his life.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s7a",
+          "line": "n14",
+          "words": "She trusted Tomas to look after the royal treasure.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "pose": "kneel",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.36,
+              "lookAt": "queen",
+              "back": false
+            },
+            {
+              "character": "queen",
+              "pose": "stand",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.62,
+              "lookAt": "tomas",
+              "back": false
+            }
+          ],
+          "props": [
+            {
+              "prop": "throne",
+              "x": 0.82
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 26530,
+          "endMs": 30040
+        },
+        {
+          "id": "s7b",
+          "line": "n15",
+          "words": "And she gave him 10 gold coins every month,",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "tomas"
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "pose": "hold-object",
+              "expression": "laughing",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "coin",
+              "holds": "coin",
+              "back": false
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 30040,
+          "endMs": 33135
+        },
+        {
+          "id": "s7c",
+          "line": "n15",
+          "words": "for the rest of his life.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "action": "cheer",
+              "expression": "laughing",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.36,
+              "lookAt": "ahead",
+              "back": false
+            },
+            {
+              "character": "queen",
+              "pose": "stand",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.62,
+              "lookAt": "tomas",
+              "back": false
+            }
+          ],
+          "props": [
+            {
+              "prop": "throne",
+              "x": 0.82
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 33135,
+          "endMs": 35240
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "chapter": 1,
+      "beat": "closing-line",
+      "mood": "calm",
+      "place": "night-street",
+      "treatment": "simple",
+      "palette": "dusk-violet",
+      "lines": [
+        {
+          "id": "n16",
+          "speaker": "narrator",
+          "text": "In the village, they still say it.",
+          "pauseAfterMs": 500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s8a",
+          "line": "n16",
+          "words": "In the village, they still say it.",
+          "camera": {
+            "framing": "wide",
+            "move": "follow",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "action": "walk-happy",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "profile",
+              "lookAt": "ahead",
+              "back": false
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "footsteps",
+              "at": "start",
+              "gainDb": -3
+            }
+          ],
+          "transition": "fade",
+          "startMs": 35240,
+          "endMs": 37370
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "chapter": 1,
+      "beat": "closing-line",
+      "mood": "calm",
+      "place": "home-interior",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "n17",
+          "speaker": "narrator",
+          "text": "An honest man sleeps well, even on a *hard* bed.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s9a",
+          "line": "n17",
+          "words": "An honest man sleeps well, even on a *hard* bed.",
+          "camera": {
+            "framing": "medium",
+            "move": "push-in",
+            "strength": 0.5,
+            "focus": "tomas"
+          },
+          "actors": [
+            {
+              "character": "tomas",
+              "pose": "lie",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.45,
+              "lookAt": "ahead",
+              "back": false
+            },
+            {
+              "character": "wife",
+              "pose": "stand",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.75,
+              "lookAt": "tomas",
+              "back": false
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "fade",
+          "startMs": 37370,
+          "endMs": 42370
+        }
+      ]
+    }
+  ]
+}

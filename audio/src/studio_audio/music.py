@@ -578,7 +578,9 @@ def render(
         audio = np.concatenate([audio, np.zeros((n - len(audio), 2))])
     if mood.drone:
         rng = np.random.default_rng([zlib.crc32(mood.name.encode()), seed, 99])
-        tone = held_tone(mood, mood.drone, seconds, rng)[:n]
+        tone = held_tone(mood, mood.drone, seconds + 0.01, rng)[: len(audio)]
+        if len(tone) < len(audio):
+            tone = np.concatenate([tone, np.zeros((len(audio) - len(tone), 2))])
         music_level, tone_level = loudness(audio), loudness(tone)
         if np.isfinite(music_level) and np.isfinite(tone_level):
             audio = audio + tone * db_to_gain(music_level + mood.drone.level_db - tone_level)

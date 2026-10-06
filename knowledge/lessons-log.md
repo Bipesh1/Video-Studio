@@ -363,3 +363,35 @@ Note (Claude's reading, not Biku's words): in refine mode reported speech become
   may be cut in a refine; the sample cut about a third.
 Status: active
 ```
+
+```
+L-0023 | 2026-10-06 | run: 2026-10-06-honest-farmer, part 1 and part 2 stills (step 4D)
+Area: shots | Scope: all runs | Source: self-check
+Lesson: A closer shot shows only part of a person, so plan for what it cuts off. A thing
+  standing on the ground is seen only in a wide shot; a thing in a hand is lost in a close-up;
+  someone lying down and someone standing fit together only in a wide shot.
+Evidence: The first stills built from the plan had the bag on the road cut off by a medium
+  shot twice, the coin in Tomas's hand out of a close-up, and his wife cut off at the chest
+  when a medium shot framed him lying down. The plan had passed every staging rule.
+Applied: two new staging notes in checkPlan (shared/src/plan.ts); the builder keeps a thing
+  someone looks at inside the frame when the shot is wide enough to hold it
+  (engine/src/stage/layout.ts, shotFocus); the planning rules in the general playbook; four
+  shots of the sample plan changed.
+Status: active
+```
+
+```
+L-0024 | 2026-10-06 | run: 2026-10-06-honest-farmer, part 1 (step 4D)
+Area: engine | Scope: all runs | Source: self-check
+Lesson: Look at the stills of every shot before rendering a video, and at frames of the video
+  after. The builder was wrong in ways no check could see.
+Evidence: In the first stills the walking figures floated above the ground with their legs
+  out (the travel was taken off the body but not off the planted feet), the title sat on the
+  face, and captions sized for a tall frame covered the middle of a wide one. In the first
+  video the walker slid backward while the camera travelled. All four were plain at a glance
+  on the sheet of stills and invisible to the tests.
+Applied: npm run make writes a sheet of all the stills of a part (stills/sheet-<size>-<n>.png);
+  the fixes are in engine/src/stage/ and the overlays; tests draw every shot of both worked
+  storyboards in a tall and a wide frame.
+Status: active
+```

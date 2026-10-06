@@ -1,0 +1,130 @@
+2026-10-06T13:26:33.805Z  part 1  part 1 of 2, 16:9: 4 scenes, 16 shots
+2026-10-06T13:26:33.806Z  part 1  voice: start
+2026-10-06T13:28:05.536Z  part 1    voice.wav: 42.22 s, 114 words, timings from kokoro, -17.11 LUFS
+2026-10-06T13:28:05.537Z  part 1  voice: done in 91.7 s
+2026-10-06T13:28:05.537Z  part 1  time: start
+2026-10-06T13:28:05.556Z  part 1    16 shots over 42.2 s: shortest 1.6 s, longest 4.6 s
+2026-10-06T13:28:05.557Z  part 1    note: cast member "queen" is never seen or heard
+2026-10-06T13:28:05.557Z  part 1    note: cast member "soldier-one" is never seen or heard
+2026-10-06T13:28:05.558Z  part 1    note: cast member "soldier-two" is never seen or heard
+2026-10-06T13:28:05.558Z  part 1    note: shot "s2f" is only 1.6 s long
+2026-10-06T13:28:05.559Z  part 1    note: shot "s4c" is only 1.6 s long
+2026-10-06T13:28:05.559Z  part 1    PROBLEM: shot "s1a" stays on screen 4.5 s; the story format allows 4 s. Split it.
+2026-10-06T13:28:05.559Z  part 1    PROBLEM: shot "s2a" stays on screen 4.6 s; the story format allows 4 s. Split it.
+2026-10-06T13:28:05.560Z  part 1    PROBLEM: no scene plays the "turning-point" beat, which the story format needs
+2026-10-06T13:28:05.560Z  part 1    PROBLEM: no scene plays the "payoff" beat, which the story format needs
+2026-10-06T13:28:05.560Z  part 1    PROBLEM: no scene plays the "closing-line" beat, which the story format needs
+2026-10-06T13:28:36.147Z  part 1  part 1 of 2, 16:9: 4 scenes, 16 shots
+2026-10-06T13:28:36.148Z  part 1  voice: start
+2026-10-06T13:28:36.151Z  part 1    the voice is already made for these lines
+2026-10-06T13:28:36.151Z  part 1  voice: done in 0.0 s
+2026-10-06T13:28:36.151Z  part 1  time: start
+2026-10-06T13:28:36.157Z  part 1    16 shots over 42.2 s: shortest 1.6 s, longest 4.6 s
+2026-10-06T13:28:36.157Z  part 1    note: cast member "queen" is never seen or heard
+2026-10-06T13:28:36.157Z  part 1    note: cast member "soldier-one" is never seen or heard
+2026-10-06T13:28:36.158Z  part 1    note: cast member "soldier-two" is never seen or heard
+2026-10-06T13:28:36.158Z  part 1    note: shot "s2f" is only 1.6 s long
+2026-10-06T13:28:36.158Z  part 1    note: shot "s4c" is only 1.6 s long
+2026-10-06T13:28:36.158Z  part 1    PROBLEM: shot "s1a" stays on screen 4.5 s; the story format allows 4 s. Split it.
+2026-10-06T13:28:36.158Z  part 1    PROBLEM: shot "s2a" stays on screen 4.6 s; the story format allows 4 s. Split it.
+2026-10-06T13:28:36.159Z  part 1    PROBLEM: no scene plays the "turning-point" beat, which the story format needs
+2026-10-06T13:28:36.159Z  part 1    PROBLEM: no scene plays the "payoff" beat, which the story format needs
+2026-10-06T13:28:36.159Z  part 1    PROBLEM: no scene plays the "closing-line" beat, which the story format needs
+2026-10-06T13:29:18.593Z  part 1  part 1 of 2, 16:9: 4 scenes, 16 shots
+2026-10-06T13:29:18.595Z  part 1  voice: start
+2026-10-06T13:29:18.599Z  part 1    the voice is already made for these lines
+2026-10-06T13:29:18.599Z  part 1  voice: done in 0.0 s
+2026-10-06T13:29:18.599Z  part 1  time: start
+2026-10-06T13:29:18.605Z  part 1    16 shots over 42.2 s: shortest 1.6 s, longest 4.6 s
+2026-10-06T13:29:18.606Z  part 1    note: shot "s1a" is 4.5 s long, a little over the 4 s a shot should take
+2026-10-06T13:29:18.606Z  part 1    note: shot "s2a" is 4.6 s long, a little over the 4 s a shot should take
+2026-10-06T13:29:18.606Z  part 1  time: done in 0.0 s
+2026-10-06T13:29:18.607Z  part 1  sound: start
+2026-10-06T13:29:47.828Z  part 1  part 1 of 2, 16:9: 4 scenes, 16 shots
+2026-10-06T13:29:47.829Z  part 1  sound: start
+2026-10-06T13:29:56.254Z  part 1    F:\Video Studio\runs\2026-10-06-honest-farmer\part-1\audio\mix.wav: 42.22 s, -14.05 LUFS, true peak -1.1 dB, 3 music moods, 8 effects, music -17.0 dB under the voice
+2026-10-06T13:29:56.254Z  part 1  sound: done in 8.4 s
+2026-10-06T13:30:04.482Z  part 1  part 1 of 2, 16:9: 4 scenes, 16 shots
+2026-10-06T13:30:04.484Z  part 1  stills: start
+2026-10-06T13:30:04.486Z  part 1  bundle: start
+2026-10-06T13:30:24.151Z  part 1  bundle: done in 19.7 s
+2026-10-06T13:34:49.461Z  part 1  part 1 of 2, 16:9: 4 scenes, 16 shots
+2026-10-06T13:34:49.463Z  part 1  stills: start
+2026-10-06T13:34:49.466Z  part 1  bundle: start
+2026-10-06T13:34:53.128Z  part 1  bundle: done in 3.7 s
+2026-10-06T13:35:10.899Z  part 1    16 stills in runs\2026-10-06-honest-farmer\part-1\stills\16x9
+2026-10-06T13:35:14.298Z  part 1    runs\2026-10-06-honest-farmer\part-1\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-06T13:35:14.560Z  part 1    runs\2026-10-06-honest-farmer\part-1\stills\sheet-16x9-2.png (4 shots, 2 rows)
+2026-10-06T13:35:14.560Z  part 1  stills: done in 25.1 s
+2026-10-06T13:36:23.992Z  part 1  part 1 of 2, 16:9: 4 scenes, 16 shots
+2026-10-06T13:36:23.993Z  part 1  stills: start
+2026-10-06T13:36:23.995Z  part 1  bundle: start
+2026-10-06T13:36:28.604Z  part 1  bundle: done in 4.6 s
+2026-10-06T13:36:45.487Z  part 1    16 stills in runs\2026-10-06-honest-farmer\part-1\stills\16x9
+2026-10-06T13:36:45.912Z  part 1    runs\2026-10-06-honest-farmer\part-1\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-06T13:36:46.184Z  part 1    runs\2026-10-06-honest-farmer\part-1\stills\sheet-16x9-2.png (4 shots, 2 rows)
+2026-10-06T13:36:46.184Z  part 1  stills: done in 22.2 s
+2026-10-06T13:37:48.445Z  part 1  part 1 of 2, 16:9: 4 scenes, 16 shots
+2026-10-06T13:37:48.446Z  part 1  time: start
+2026-10-06T13:37:48.451Z  part 1    16 shots over 42.2 s: shortest 1.6 s, longest 4.6 s
+2026-10-06T13:37:48.451Z  part 1    note: shot "s1a" is 4.5 s long, a little over the 4 s a shot should take
+2026-10-06T13:37:48.452Z  part 1    note: shot "s2a" is 4.6 s long, a little over the 4 s a shot should take
+2026-10-06T13:37:48.452Z  part 1  time: done in 0.0 s
+2026-10-06T13:37:48.452Z  part 1  sound: start
+2026-10-06T13:37:48.458Z  part 1    mix is already up to date (the plan and the voice have not changed)
+2026-10-06T13:37:48.459Z  part 1  sound: done in 0.0 s
+2026-10-06T13:37:48.459Z  part 1  stills: start
+2026-10-06T13:37:48.460Z  part 1  bundle: start
+2026-10-06T13:37:53.474Z  part 1  bundle: done in 5.0 s
+2026-10-06T13:38:11.281Z  part 1    16 stills in runs\2026-10-06-honest-farmer\part-1\stills\16x9
+2026-10-06T13:38:11.784Z  part 1    runs\2026-10-06-honest-farmer\part-1\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-06T13:38:12.042Z  part 1    runs\2026-10-06-honest-farmer\part-1\stills\sheet-16x9-2.png (4 shots, 2 rows)
+2026-10-06T13:38:12.042Z  part 1  stills: done in 23.6 s
+2026-10-06T13:38:28.604Z  part 1  part 1 of 2, 16:9: 4 scenes, 16 shots
+2026-10-06T13:38:28.606Z  part 1  time: start
+2026-10-06T13:38:28.610Z  part 1    16 shots over 42.2 s: shortest 1.6 s, longest 4.6 s
+2026-10-06T13:38:28.611Z  part 1    note: shot "s1a" is 4.5 s long, a little over the 4 s a shot should take
+2026-10-06T13:38:28.611Z  part 1    note: shot "s2a" is 4.6 s long, a little over the 4 s a shot should take
+2026-10-06T13:38:28.611Z  part 1  time: done in 0.0 s
+2026-10-06T13:38:28.612Z  part 1  sound: start
+2026-10-06T13:38:28.619Z  part 1    mix is already up to date (the plan and the voice have not changed)
+2026-10-06T13:38:28.620Z  part 1  sound: done in 0.0 s
+2026-10-06T13:38:28.620Z  part 1  video: start
+2026-10-06T13:38:28.627Z  part 1  bundle: start
+2026-10-06T13:38:32.012Z  part 1  bundle: done in 3.4 s
+2026-10-06T13:40:19.879Z  part 1    runs\2026-10-06-honest-farmer\part-1\out\honest-farmer-part-1-16x9-v1.mp4: 42.23 s of video, 1920x1080, in 105.8 s (2.51 s per video second)
+2026-10-06T13:40:19.883Z  part 1    runs\2026-10-06-honest-farmer\part-1\out\honest-farmer-part-1-16x9-v1.srt
+2026-10-06T13:40:19.885Z  part 1  video: done in 111.3 s
+2026-10-06T13:41:30.570Z  part 2  part 2 of 2, 16:9: 5 scenes, 14 shots
+2026-10-06T13:41:30.572Z  part 2  voice: start
+2026-10-06T13:42:40.271Z  part 2    voice.wav: 42.37 s, 114 words, timings from kokoro, -17.17 LUFS
+2026-10-06T13:42:40.271Z  part 2  voice: done in 69.7 s
+2026-10-06T13:42:40.272Z  part 2  time: start
+2026-10-06T13:42:40.289Z  part 2    14 shots over 42.4 s: shortest 2.1 s, longest 5.0 s
+2026-10-06T13:42:40.290Z  part 2    note: shot "s9a" is 5.0 s long, a little over the 4 s a shot should take
+2026-10-06T13:42:40.290Z  part 2  time: done in 0.0 s
+2026-10-06T13:42:40.290Z  part 2  sound: start
+2026-10-06T13:42:52.320Z  part 2    F:\Video Studio\runs\2026-10-06-honest-farmer\part-2\audio\mix.wav: 42.37 s, -14.04 LUFS, true peak -1.0 dB, 3 music moods, 7 effects, music -17.4 dB under the voice
+2026-10-06T13:42:52.321Z  part 2  sound: done in 12.0 s
+2026-10-06T13:42:52.321Z  part 2  stills: start
+2026-10-06T13:42:52.322Z  part 2  bundle: start
+2026-10-06T13:42:58.565Z  part 2  bundle: done in 6.2 s
+2026-10-06T13:43:15.582Z  part 2    14 stills in runs\2026-10-06-honest-farmer\part-2\stills\16x9
+2026-10-06T13:43:16.201Z  part 2    runs\2026-10-06-honest-farmer\part-2\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-06T13:43:16.413Z  part 2    runs\2026-10-06-honest-farmer\part-2\stills\sheet-16x9-2.png (2 shots, 1 rows)
+2026-10-06T13:43:16.413Z  part 2  stills: done in 24.1 s
+2026-10-06T13:43:56.326Z  part 1  part 1 of 2, 16:9: 4 scenes, 16 shots
+2026-10-06T13:43:56.328Z  part 1  time: start
+2026-10-06T13:43:56.333Z  part 1    16 shots over 42.2 s: shortest 1.6 s, longest 4.6 s
+2026-10-06T13:43:56.334Z  part 1    note: shot "s1a" is 4.5 s long, a little over the 4 s a shot should take
+2026-10-06T13:43:56.334Z  part 1    note: shot "s2a" is 4.6 s long, a little over the 4 s a shot should take
+2026-10-06T13:43:56.335Z  part 1  time: done in 0.0 s
+2026-10-06T13:43:56.335Z  part 1  sound: start
+2026-10-06T13:43:56.343Z  part 1    mix is already up to date (the plan and the voice have not changed)
+2026-10-06T13:43:56.343Z  part 1  sound: done in 0.0 s
+2026-10-06T13:43:56.344Z  part 1  video: start
+2026-10-06T13:43:56.587Z  part 1  bundle: start
+2026-10-06T13:43:59.808Z  part 1  bundle: done in 3.2 s
+2026-10-06T13:45:39.778Z  part 1    runs\2026-10-06-honest-farmer\part-1\out\honest-farmer-part-1-16x9-v2.mp4: 42.23 s of video, 1920x1080, in 98.1 s (2.32 s per video second)
+2026-10-06T13:45:39.781Z  part 1    runs\2026-10-06-honest-farmer\part-1\out\honest-farmer-part-1-16x9-v2.srt
+2026-10-06T13:45:39.783Z  part 1  video: done in 103.4 s
