@@ -666,7 +666,6 @@
               "headTurn": "three-quarter",
               "x": 0.3,
               "lookAt": "bag",
-              "holds": "bag",
               "back": false
             },
             {
@@ -696,8 +695,12 @@
               "x": 0.3
             },
             {
+              "prop": "bag",
+              "x": 0.385
+            },
+            {
               "prop": "table",
-              "x": 0.46
+              "x": 0.5
             },
             {
               "prop": "chair",
@@ -735,7 +738,6 @@
               "headTurn": "three-quarter",
               "x": 0.3,
               "lookAt": "wife",
-              "holds": "bag",
               "back": false
             },
             {
@@ -755,8 +757,12 @@
               "x": 0.3
             },
             {
+              "prop": "bag",
+              "x": 0.385
+            },
+            {
               "prop": "table",
-              "x": 0.46
+              "x": 0.5
             }
           ],
           "effects": [],

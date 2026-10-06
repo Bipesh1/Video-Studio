@@ -18,6 +18,8 @@ import type { Actor, Scene, Shot, Storyboard } from './storyboard.schema';
  */
 
 const TODO = 'todo';
+/** Props that hang down from the hand, so a low hand puts them on the floor. */
+const HANGING_PROPS = ['bag', 'lantern'];
 const SECONDS_PER_WORD = 60 / SPEAKING_WPM;
 const JOINING_WORDS = new Set([
   'and',
@@ -366,6 +368,14 @@ export function checkPlan(sb: Storyboard, world: World): PlanReport {
               `in ${at}, "${actor.character}" looks at "${other.character}" but faces away from them`,
             );
           }
+        }
+      }
+      for (const actor of shot.actors) {
+        const low = actor.pose === 'sit' || actor.pose === 'kneel' || actor.pose === 'lie';
+        if (low && actor.holds && HANGING_PROPS.includes(actor.holds)) {
+          notes.push(
+            `in ${at}, "${actor.character}" is down low holding the ${actor.holds}, which hangs to the floor; stand it in the scene beside them instead`,
+          );
         }
       }
       // A closer shot is cut at the hips or the chin, so it cannot show the ground or a hand.

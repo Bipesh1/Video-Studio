@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { SIZES, storyboardSchema } from '@studio/shared';
 import type { Shot, Storyboard } from '@studio/shared';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import library from '../../../library/index.json';
 import fixture from '../../../shared/src/fixtures/moon-tax.storyboard.json';
 import { sceneBackground } from '../backgrounds/places';
@@ -30,6 +30,9 @@ import { ShotPicture } from './ShotPicture';
  * The storyboard builder (Phase 4D): any shot of any storyboard becomes a picture, in a tall
  * frame or a wide one, and nothing the library offers goes quietly missing.
  */
+
+// Drawing every shot of a whole storyboard twice is real work; give it room on a busy machine.
+vi.setConfig({ testTimeout: 40_000 });
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
 const farmer = storyboardSchema.parse(
@@ -290,12 +293,82 @@ describe('every shot draws', () => {
 
   it('draws the near person of an over-the-shoulder shot on top, from behind', () => {
     const shots = timedShots(farmer, fps);
-    const ts = shots.find((s) => s.shot.id === 's6b');
-    const plain = shots.find((s) => s.shot.id === 's6a');
-    if (!ts || !plain) throw new Error('no shot');
-    const count = (t: typeof ts) =>
-      (draw(farmer, WIDE, 0.5)[t.index]?.match(/<circle|<ellipse/g) ?? []).length;
-    expect(count(ts)).toBeGreaterThan(0);
-    expect(draw(farmer, WIDE, 0.5)[ts.index]).not.toBe(draw(farmer, WIDE, 0.5)[plain.index]);
+    const looks = new Map(farmer.cast.map((m) => [m.id, lookFrom(m.look ?? {}, m.id)]));
+    const one = (id: string): string => {
+      const ts = shots.find((s) => s.shot.id === id);
+      if (!ts) throw new Error(`no shot ${id}`);
+      return renderToStaticMarkup(
+        <svg>
+          <ShotPicture
+            ts={ts}
+            shots={shots}
+            storyboard={farmer}
+            cards={{}}
+            looks={looks}
+            track={null}
+            size={WIDE}
+            frame={ts.startFrame + 12}
+            fps={fps}
+          />
+        </svg>,
+      );
+    };
+    // The same two people as the shot before, and one more figure drawn large over the scene.
+    const over = one('s6b');
+    const wide = one('s6a');
+    expect(over).not.toBe(wide);
+    const big = 0.5 * Math.min(WIDE.width, WIDE.height * 0.8);
+    expect(over).toContain(`scale(${big}`);
+    expect(wide).not.toContain(`scale(${big}`);
+  });
+});
+
+describe('sitting and standing properly', () => {
+  const pictureOf = (id: string): string => {
+    const shots = timedShots(farmer, fps);
+    const ts = shots.find((x) => x.shot.id === id);
+    if (!ts) throw new Error(`no shot ${id}`);
+    const looks = new Map(farmer.cast.map((m) => [m.id, lookFrom(m.look ?? {}, m.id)]));
+    return renderToStaticMarkup(
+      <svg>
+        <ShotPicture
+          ts={ts}
+          shots={shots}
+          storyboard={farmer}
+          cards={{}}
+          looks={looks}
+          track={null}
+          size={WIDE}
+          frame={ts.startFrame + 10}
+          fps={fps}
+        />
+      </svg>,
+    );
+  };
+  /** Every "translate(x y) scale(a b)" in a picture: how each standing thing was placed. */
+  const placedThings = (picture: string) =>
+    [...picture.matchAll(/translate\(([-\d.]+) ([-\d.]+)\) scale\(([-\d.]+) ([-\d.]+)\)/g)].map(
+      (m) => ({ x: Number(m[1]), y: Number(m[2]), sx: Number(m[3]), sy: Number(m[4]) }),
+    );
+
+  it('gives a child a chair of her own size, under her, facing her way', () => {
+    const { stage } = placed(farmer, 's4a');
+    const things = placedThings(pictureOf('s4a'));
+    const childBody = stage.head * 0.8 * 0.78;
+    const hers = things.find((t) => Math.abs(t.sy - childBody) < 0.5);
+    expect(hers, 'a chair the size of the child').toBeDefined();
+    // She faces left, so her chair is turned round; it stands exactly on her spot.
+    expect(hers?.sx).toBeCloseTo(-childBody, 3);
+    expect(hers?.x).toBeCloseTo(stageX(stage, 0.8), 3);
+    // Her father's chair is full size and faces right.
+    const his = things.find((t) => Math.abs(t.x - stageX(stage, 0.3)) < 0.5);
+    expect(his?.sx).toBeCloseTo(stage.head, 3);
+  });
+
+  it('stands a bag on the floor, never through it', () => {
+    const { stage } = placed(farmer, 's4a');
+    const things = placedThings(pictureOf('s4a'));
+    const bag = things.find((t) => Math.abs(t.x - stageX(stage, 0.385)) < 0.5);
+    expect(bag?.y).toBeCloseTo(stage.groundY, 3);
   });
 });

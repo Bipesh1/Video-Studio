@@ -58,6 +58,7 @@ Run `npm run script -- check`. It refuses: an as-is script that is not word for 
 - **Whoever speaks is on screen, face to us,** for their line. People face who they look at.
 - **Change the picture:** vary the shot size, never the same picture twice in a row, close-ups for the moments that matter, wide when someone arrives or the place is new.
 - **Know what a closer shot cuts off.** A thing standing on the ground shows only in a wide shot. A thing in a hand shows in a medium shot, not a close-up. Someone lying down beside someone standing needs a wide shot. (L-0023, self-check)
+- **Someone sitting, kneeling or lying does not hold a bag or a lantern;** it would hang to the floor. Stand it in the scene beside them. A chair or throne goes at the same `x` as its sitter. (L-0027)
 - **Recut the words when a cut falls badly.** A shot needs at least about a second and a half of words; move words between the shots of a line, never between lines.
 - **Faces carry the feeling:** pick the expression for what the character feels at those words, and change it when the feeling changes.
 - **Sound:** one music mood per scene from the beat's list; steps, doors, things landing and coins as effects, within the format's count.

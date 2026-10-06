@@ -316,6 +316,25 @@ describe('things worth a second look', () => {
     expect(notes(sb)).toContain('shot "s2e" would be on screen only about 1.2 s');
   });
 
+  it('points out what a closer shot cuts off, and a bag that would drag on the floor', () => {
+    const ground = plan((s) => {
+      shotOf(s, 's2d').camera.framing = 'medium';
+    });
+    expect(notes(ground)).toContain(
+      'looks at the bag standing on the ground, which a medium shot cuts off',
+    );
+    const hand = plan((s) => {
+      const shot = shotOf(s, 's2e');
+      shot.camera.framing = 'close-up';
+    });
+    expect(notes(hand)).toContain('looks at the coin in their hand, which a close-up cuts off');
+    const low = plan((s) => {
+      const tomas = shotOf(s, 's4a').actors[0];
+      if (tomas) tomas.holds = 'bag';
+    });
+    expect(notes(low)).toContain('is down low holding the bag, which hangs to the floor');
+  });
+
   it('has nothing to point out in the sample plan', () => {
     expect(checkPlan(plan(), world).notes).toEqual([]);
   });

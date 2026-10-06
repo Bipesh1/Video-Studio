@@ -13,7 +13,7 @@ import { EXPRESSIONS, faceAt } from '../face/expressions';
 import type { ExpressionName } from '../face/expressions';
 import { talkAt } from '../face/talk';
 import { movePose } from '../rig/chain';
-import { Character, toLocal } from '../rig/Character';
+import { CHILD_BODY, Character, toLocal } from '../rig/Character';
 import { swayOf } from '../rig/follow';
 import { blinkAt, gazeAt, withLife } from '../rig/life';
 import { clamp } from '../rig/math';
@@ -33,7 +33,7 @@ import {
   turnOf,
 } from './layout';
 import type { Placement, Size, TimedShot } from './layout';
-import { GRIPPED, StandingProp, heldProp, standingProp } from './props';
+import { GRIPPED, SEATS, StandingProp, heldProp, standingProp } from './props';
 
 /**
  * One shot of a storyboard as a picture: the place in its light, the people in their poses
@@ -206,28 +206,40 @@ export function ShotPicture({
     );
   };
 
-  // A chair or a throne faces the way the person sitting on it faces.
-  const sitsFacingLeft = (x: number): boolean =>
-    shot.actors.some(
-      (actor) =>
-        actor.pose === 'sit' && actor.facing === 'left' && Math.abs((actor.x ?? 0.5) - x) < 0.04,
+  // A seat belongs to whoever sits on it: it stands exactly under them, faces the way they
+  // face, and is the size of their body, so a child gets a child's chair (Biku, 2026-10-06:
+  // "the daughter is not sitting properly on the chair").
+  const sitterAt = (x: number) => {
+    const sitter = drawn.find(
+      (d) => d.actor.pose === 'sit' && Math.abs((d.actor.x ?? 0.5) - x) < 0.04,
     );
+    if (!sitter) return null;
+    const child = looks.get(sitter.actor.character)?.age === 'child';
+    return {
+      x: sitter.placement.x,
+      head: sitter.placement.head * (child ? CHILD_BODY : 1),
+      flip: sitter.actor.facing === 'left',
+    };
+  };
 
   const things = (behind: boolean): ReactNode =>
     shot.props
       .filter((p) => (standingProp(p.prop)?.behindPeople ?? false) === behind)
-      .map((p, i) => (
-        <StandingProp
-          key={`${p.prop}-${i}-${behind ? 'b' : 'f'}`}
-          id={p.prop}
-          uid={`${shot.id}-${p.prop}-${i}`}
-          x={stageX(stage, p.x) - cameraX}
-          groundY={stage.groundY}
-          head={stage.head}
-          t={(frame - ts.sceneStartFrame) / fps}
-          flip={sitsFacingLeft(p.x)}
-        />
-      ));
+      .map((p, i) => {
+        const seat = SEATS.includes(p.prop) ? sitterAt(p.x) : null;
+        return (
+          <StandingProp
+            key={`${p.prop}-${i}-${behind ? 'b' : 'f'}`}
+            id={p.prop}
+            uid={`${shot.id}-${p.prop}-${i}`}
+            x={(seat?.x ?? stageX(stage, p.x)) - cameraX}
+            groundY={stage.groundY}
+            head={seat?.head ?? stage.head}
+            t={(frame - ts.sceneStartFrame) / fps}
+            flip={seat?.flip ?? false}
+          />
+        );
+      });
 
   const scenePicture = (
     <Framed shot={shot.camera.framing} focus={focus} side={side} {...size}>

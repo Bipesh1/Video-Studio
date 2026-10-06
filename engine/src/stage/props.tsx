@@ -21,6 +21,15 @@ import type { CharacterProps } from '../rig/Character';
 
 type HeldProp = NonNullable<CharacterProps['prop']>;
 
+/**
+ * How far a thing hanging from a hand would go below the ground (y = 0 in a character's own
+ * space), so it can be lifted to rest on it. A low hand, as when sitting, is the usual cause.
+ */
+const sunk = (handY: number, drop: number): number => Math.max(0, handY + drop);
+
+/** Props that hang down from the hand that holds them. */
+export const HANGING: readonly string[] = ['bag', 'lantern'];
+
 const HELD: Record<string, HeldProp> = {
   scepter: (hands, info) => (
     <Scepter frame={hands.front} uid={info.uid} shadowSide={info.shadowSide} sway={info.sway} />
@@ -41,9 +50,11 @@ const HELD: Record<string, HeldProp> = {
     </InHand>
   ),
   bag: (hands, info) => (
-    <InHand frame={hands.front} how="hang" sway={info.sway}>
-      <Bag uid={`${info.uid}-bag`} shadowSide={info.shadowSide} />
-    </InHand>
+    <g transform={`translate(0 ${-sunk(hands.front.center.y, BAG_DROP)})`}>
+      <InHand frame={hands.front} how="hang" sway={info.sway}>
+        <Bag uid={`${info.uid}-bag`} shadowSide={info.shadowSide} />
+      </InHand>
+    </g>
   ),
   book: (hands, info) => (
     <InHand frame={hands.front} how="upright">
@@ -58,9 +69,11 @@ const HELD: Record<string, HeldProp> = {
     </g>
   ),
   lantern: (hands, info) => (
-    <InHand frame={hands.front} how="hang" sway={info.sway}>
-      <Lantern uid={`${info.uid}-lantern`} shadowSide={info.shadowSide} />
-    </InHand>
+    <g transform={`translate(0 ${-sunk(hands.front.center.y, LANTERN_DROP)})`}>
+      <InHand frame={hands.front} how="hang" sway={info.sway}>
+        <Lantern uid={`${info.uid}-lantern`} shadowSide={info.shadowSide} />
+      </InHand>
+    </g>
   ),
   cup: (hands, info) => (
     <InHand frame={hands.front} how="upright">
@@ -76,6 +89,9 @@ const HELD: Record<string, HeldProp> = {
 
 /** Props a hand must close round: the held hand becomes a gripping fist. */
 export const GRIPPED: readonly string[] = ['scepter', 'sword', 'bag', 'lantern', 'cup', 'goblet'];
+
+/** Props someone sits on: they take their place, their facing and their size from the sitter. */
+export const SEATS: readonly string[] = ['chair', 'throne'];
 
 /** The library props an actor can hold. */
 export const HELD_PROPS: readonly string[] = Object.keys(HELD);

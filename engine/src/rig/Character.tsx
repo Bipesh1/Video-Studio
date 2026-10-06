@@ -260,7 +260,23 @@ export const Character = ({
             shadowSide={shadowSide}
           />
         ) : (
-          <polyline points={line([l.hip, l.knee, l.foot])} {...limbProps} />
+          // A bare stick leg ends inside the shoe too, so its round end never shows under the sole
+          // (Biku, 2026-10-06: "the legs go through the shoes").
+          <polyline
+            points={line([
+              l.hip,
+              l.knee,
+              outfit?.boots
+                ? trouserEnd(
+                    l.foot,
+                    l.knee,
+                    dir,
+                    outfit.boots.style === 'sneaker' ? 'sneaker' : 'boot',
+                  )
+                : l.foot,
+            ])}
+            {...limbProps}
+          />
         )}
         {outfit?.boots && (
           <Footwear

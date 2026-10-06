@@ -431,3 +431,41 @@ Note (Claude's reading): after a part is rendered, cut a run of frames of each s
   during their line and see that the mouth changes; a single still cannot show this.
 Status: active
 ```
+
+```
+L-0027 | 2026-10-06 | run: 2026-10-06-honest-farmer, part 1 (the home scene)
+Area: props | Scope: style ink-stick | Source: Biku
+Lesson: A seat fits whoever sits on it, and a leg ends inside its shoe. Things a body rests
+  on or wears are sized and placed from that body, not from the scene.
+Evidence: Biku: "the daughter is not sitting properly on the chair and in the second pic the
+  legs go through the shoes". The chair was drawn at an adult's size wherever the plan put it,
+  so the child's hips were far below the seat and she sat inside its frame. The wife wears a
+  dress, so her legs are bare stick lines; they ran to the sole, and since the outline became
+  a fine line (guide version 12) their round ends showed as dots under the boots. While fixing
+  it, the bag in the seated farmer's hand turned out to hang through the floor.
+Applied: engine/src/stage/ShotPicture.tsx (a chair or throne stands under its sitter, faces
+  their way and is the size of their body); engine/src/rig/Character.tsx (a bare leg ends
+  inside the shoe, as a trouser leg already did); engine/src/stage/props.tsx (a hanging thing
+  is lifted to rest on the ground) and a staging note for it; the home scene of the sample
+  plan now stands the bag by the table. Tests for each. Saved library pictures retaken.
+Note (Claude's reading): the shoe fault is the kind a change of style lets out. After any
+  change to the tokens, look again at joins: hand on thing, foot in shoe, body on seat.
+Status: active
+```
+
+```
+L-0028 | 2026-10-06 | run: 2026-10-06-honest-farmer, part 1 (the opening shot, Tomas kneeling)
+Area: poses | Scope: style ink-stick | Source: Biku
+Lesson: A foot must look like a foot doing something. In a kneel the back foot has its toes
+  tucked on the ground and its heel up, not laid out flat behind the leg.
+Evidence: Biku: "look at the shoes and legs its weirdly positioned". The kneel pose laid the
+  back shin flat along the ground, and a shoe on a flat shin is drawn in line with it, so the
+  boot stretched out behind as one long shape. The pose had been drawn and checked on a plain
+  stick figure with no shoes, where a flat shin looks fine.
+Applied: engine/src/rig/poses.ts (the kneel's back shin slopes up to the ankle, so the shoe
+  stands on its toe); the kneel still, the poses, shoes and skirts sheets and the catalog
+  redrawn; part 1 rendered again (v6).
+Note (Claude's reading): a pose is checked wearing shoes and clothes, not only as a bare
+  figure, before it is saved.
+Status: active
+```

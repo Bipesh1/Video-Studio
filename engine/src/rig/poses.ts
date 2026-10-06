@@ -121,7 +121,7 @@ export const kneel: Pose = {
   arms: { front: { reach: vec(0.56, 0.88), bend: ELBOW_DOWN }, back: resting },
   legs: {
     front: { foot: vec(0.52, 0), bend: KNEE_FORWARD },
-    back: { upper: -8, lower: -84 },
+    back: { upper: -8, lower: -100 },
   },
 };
 

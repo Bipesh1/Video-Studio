@@ -45,8 +45,8 @@ Place: home interior, warm interior colors. Music: sorrow.
 
 | Shot | At | Who speaks | Words | What you see | Sound |
 | --- | --- | --- | --- | --- | --- |
-| s4a | 0:31 | Narrator | For 3 days, Tomas could not sleep. | Fade in. Wide shot. Tomas sits, holding the bag, exhausted. His wife stands, sad, looking at Tomas. Their daughter sits, sad, looking at Tomas. In the scene: chair, table. | creak |
-| s4b | 0:33 | His wife | Keep the gold! The queen is rich. | Medium shot on his wife. Tomas sits, holding the bag, sad, looking at his wife. His wife points, shouting, looking at Tomas. In the scene: chair, table. |   |
+| s4a | 0:31 | Narrator | For 3 days, Tomas could not sleep. | Fade in. Wide shot. Tomas sits, exhausted, looking at the bag. His wife stands, sad, looking at Tomas. Their daughter sits, sad, looking at Tomas. In the scene: chair, bag, table. | creak |
+| s4b | 0:33 | His wife | Keep the gold! The queen is rich. | Medium shot on his wife. Tomas sits, sad, looking at his wife. His wife points, shouting, looking at Tomas. In the scene: chair, bag, table. |   |
 | s4c | 0:35 | His wife | She will never miss it. | Close-up on his wife. His wife stands with arms crossed, determined. |   |
 | s4d | 0:38 | Narrator | On the third night, he made his decision. | Close-up on Tomas. Tomas stands, determined. The camera moves slowly closer. |   |
 
