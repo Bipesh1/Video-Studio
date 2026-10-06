@@ -202,9 +202,7 @@ describe('every mode', () => {
     a.beat = 'flashback';
     expect(problems(unknown)).toContain('has no beat called "flashback"');
     const order = refined();
-    const b = order.lines[order.lines.length - 1];
-    if (!b) throw new Error('no line');
-    b.beat = 'hook';
+    for (const line of order.lines.filter((l) => l.beat === 'closing-line')) line.beat = 'hook';
     const found = problems(order);
     expect(found).toContain('comes after a later beat');
     expect(found).toContain('no line plays the "closing-line" beat');

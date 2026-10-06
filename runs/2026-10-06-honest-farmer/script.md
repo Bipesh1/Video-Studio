@@ -18,7 +18,7 @@ About 1:25 long (229 words), in 2 parts. Lengths are estimates until the voice i
 | d1 | His wife | Keep the gold! The queen is rich. She will never miss it. |
 | n9 | Narrator | On the third night, he made his decision. |
 
-## Part 2 (about 0:43)
+## Part 2 (about 0:44)
 
 | Line | Who | Words |
 | --- | --- | --- |
@@ -32,7 +32,8 @@ About 1:25 long (229 words), in 2 parts. Lengths are estimates until the voice i
 | d5 | The queen | I lost that bag on purpose. I wanted to find one **honest** person in my kingdom. |
 | n14 | Narrator | She trusted Tomas to look after the royal treasure. |
 | n15 | Narrator | And she gave him 10 gold coins every month, for the rest of his life. |
-| n16 | Narrator | In the village, they still say it. An honest man sleeps well, even on a **hard** bed. |
+| n16 | Narrator | In the village, they still say it. |
+| n17 | Narrator | An honest man sleeps well, even on a **hard** bed. |
 
 ## What changed
 

@@ -47,6 +47,23 @@ Also: no em dashes in anything a viewer reads or hears written down (ground rule
 
 Run `npm run script -- check`. It refuses: an as-is script that is not word for word the original, a refine with no changes listed or with a number lost or invented, a factual original with no sources, a greeting as the opening, an em dash, a beat missing or out of order, a part over a minute. Then `npm run script -- page` writes `script.md` for Biku.
 
+## The shot plan
+
+`npm run plan -- draft` lays the checked script out as `storyboard.json`: scenes, lines, and the words cut into shots of 2 to 4 seconds, with every decision marked "todo". `npm run plan -- menu` lists everything a shot can use. Then decide, shot by shot:
+
+- **A scene is one place and one time.** Regroup the draft's scenes by where things happen. Change place only when the story moves, and bring a new time or place in with a fade (L-0013).
+- **Lay each scene out once, wide:** give everyone a spot (`x`, 0 left to 1 right) and keep it for the scene. Closer shots are the same layout with the camera moved in (L-0016).
+- **Every shot is a picture of its words.** Someone doing something: a pose or an action, an expression, where they look, what they hold. A shot of nobody and nothing is refused.
+- **Open on the most striking picture,** with a character in it. The title goes on that first shot, once.
+- **Whoever speaks is on screen, face to us,** for their line. People face who they look at.
+- **Change the picture:** vary the shot size, never the same picture twice in a row, close-ups for the moments that matter, wide when someone arrives or the place is new.
+- **Recut the words when a cut falls badly.** A shot needs at least about a second and a half of words; move words between the shots of a line, never between lines.
+- **Faces carry the feeling:** pick the expression for what the character feels at those words, and change it when the feeling changes.
+- **Sound:** one music mood per scene from the beat's list; steps, doors, things landing and coins as effects, within the format's count.
+- Reuse the library. If the plan needs something it lacks, `npm run plan -- needs` names it; draw it with `/draw` before going on.
+
+Run `npm run plan -- check` (names, staging, word for word against the script), then `npm run plan -- page` for `storyboard.md`, the shot list Biku reads.
+
 ## Working with Biku
 
 - Report in plain language: what was made, where it is, what he needs to decide. No code words.

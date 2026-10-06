@@ -179,10 +179,18 @@
     {
       "id": "n16",
       "speaker": "narrator",
-      "text": "In the village, they still say it. An honest man sleeps well, even on a *hard* bed.",
+      "text": "In the village, they still say it.",
       "beat": "closing-line",
       "chapter": 2,
-      "pauseAfterMs": 800
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "n17",
+      "speaker": "narrator",
+      "text": "An honest man sleeps well, even on a *hard* bed.",
+      "beat": "closing-line",
+      "chapter": 2,
+      "pauseAfterMs": 900
     }
   ],
   "sources": [],

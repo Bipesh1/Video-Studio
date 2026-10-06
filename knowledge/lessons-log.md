@@ -363,4 +363,3 @@ Note (Claude's reading, not Biku's words): in refine mode reported speech become
   may be cut in a refine; the sample cut about a third.
 Status: active
 ```
-

@@ -102,3 +102,13 @@ export {
   spokenWords,
 } from './script.schema';
 export type { Script, ScriptReport, SpokenLine } from './script.schema';
+export {
+  checkPlan,
+  describeShot,
+  draftStoryboard,
+  scriptMismatch,
+  shotSeconds,
+  splitIntoShots,
+  storyboardPage,
+} from './plan';
+export type { PlanReport } from './plan';

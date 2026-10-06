@@ -1,7 +1,7 @@
 # Build Status
 
-**Current phase:** Phase 4 (the full pipeline), steps 4A (foundation) and 4B (script) done (2026-10-06). Phases 0 to 3 are complete. Next step is 4C (the shot planner), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
-**Next:** Biku reads the two sample scripts (`runs/2026-10-06-honest-farmer/script.md` refined, `runs/2026-10-06-honest-farmer-as-is/script.md` as it is) and says whether the refining is the kind he wants, then "start 4C". Before the test video in 4G he needs to give: a script, a name for his page (the brand file says "My Page"; he has not picked a niche yet), and his pick of voices (the four voice files are placeholders). The questions at the end of `PHASE-2-REPORT.md` are still open.
+**Current phase:** Phase 4 (the full pipeline), steps 4A (foundation), 4B (script) and 4C (shot planner) done (2026-10-06). Phases 0 to 3 are complete. Next step is 4D (assembly: a video built from a storyboard), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
+**Next:** Biku reads the shot list `runs/2026-10-06-honest-farmer/storyboard.md` (30 shots, 2 parts) and says whether the pictures are what he would want for those words, then "start 4D". Before the test video in 4G he needs to give: a script, a name for his page (the brand file says "My Page"), and his pick of voices (the four voice files are placeholders). The questions at the end of `PHASE-2-REPORT.md` are still open.
 **Decided for Phase 4 (Biku, 2026-10-06):** his videos will be about 2 to 3 minutes. Biku proposed making them as parts of at most 1 minute from one script and combining them at the end. Agreed, with the studio doing the joining: one script is split into chapters of up to a minute at natural story breaks, each chapter is built and checked alone (so each fits the run budget and can be redone alone), then the chapters are joined into one final video in every size with one captions file; the chapters are kept too. Phase 4 must make the joins invisible: saved characters reused in every chapter, one voice and one loudness, music planned over the whole script so cuts fall on a pause or a mood change, the title only on the first chapter and the closing card only on the last. (The plan's 30-minute run budget then applies to a chapter, not to the whole video; this is Claude's reading and should be confirmed with Biku when Phase 4 starts.)
 **Also decided (Biku, 2026-10-06):** in a video made in parts, the studio stops after each part of about a minute and shows it; it goes on to the next part only when Biku says so ("so that its better than making all the video at once"). So a chapter is a checkpoint: no later chapter, no extra size and no joined video is rendered ahead of his go. Agreed by Biku the same day ("thats fine"): each chapter is shown in the phone size only, and the other two sizes and the joined video are made once every chapter is approved.
 **Last updated:** 2026-10-06
@@ -18,11 +18,34 @@ Each step ends with something Biku can look at, a commit and an update here. Sta
 
 - **4A. Foundation: done (2026-10-06).** The storyboard (a video's master file), the first brand file, the six format templates, voices.
 - **4B. Script: done (2026-10-06).** The three script modes (as-is, refine, original) and splitting a long script into chapters of at most a minute.
-- **4C. Shot planner.** A script turned into a full storyboard: who, where, doing what, camera, music, effects.
+- **4C. Shot planner: done (2026-10-06).** A script turned into a full storyboard: who, where, doing what, camera, music, effects.
 - **4D. Assembly.** A video built from a storyboard automatically, with voice, sound and captions.
 - **4E. Self-check.** The automatic checks and the plain-language QA report.
 - **4F. Output.** Preview first, then the three sizes, cover image, captions file, and joining chapters.
 - **4G. The test video.** One full 2 to 3 minute video in refine mode from Biku's script, made chapter by chapter, then Checkpoint 2.
+
+## Phase 4C. Shot planner: done (2026-10-06)
+
+Asked by Biku ("start 4C"). A checked script can now be turned into a full shot plan. Claude makes the directing decisions; the tools do the mechanical parts and hold the plan to the staging rules.
+
+### Made
+
+- **The draft** (`npm run plan -- draft`): the script laid out as `storyboard.json` with everything mechanical done: scenes by beat and part, every line copied word for word, the words cut into shots of 2 to 4 seconds at full stops and commas (never inside an emphasized phrase), each speaker on screen for their own line, the title on the first shot, the format's usual music and shot sizes. Every decision left is marked "todo", and the checks refuse a storyboard that still has one. An existing storyboard is never written over.
+- **The menu** (`npm run plan -- menu`): every place, pose, action, expression, prop, effect, costume, camera move, music mood and sound effect by name, to plan from.
+- **Staging rules** (`checkPlan` in `shared/src/plan.ts`, run by `npm run plan -- check`). Refused: a shot that shows nobody and nothing; two people with no positions, or on the same spot; someone who looks at a person while facing away from them; a speaker whose face is in none of the shots of their line; an over-the-shoulder shot without exactly one back; the title anywhere but the start of part 1; a shot that would stay on screen too long. Pointed out: a shot too quick to take in, the same picture twice in a row, four shots of one size in a row, music that does not suit the beat, a change of light on a plain cut, too few or too many sound effects.
+- **Word for word against the script:** the plan must have the script's lines, words, speakers, beats and parts exactly.
+- **The library check** (`npm run plan -- needs`, stage 4 of a run): every library piece the video uses, by kind, and what would have to be drawn first.
+- **The shot list Biku reads** (`npm run plan -- page`): `storyboard.md`, each shot as a row with when it starts, who speaks, the words, what you see in a plain sentence ("Tomas kneels, surprised, looking at the bag"), and the sound.
+- **The planning rules** are written in `knowledge/playbooks/general.md` ("The shot plan").
+- **A full worked plan:** `runs/2026-10-06-honest-farmer/storyboard.json`, the refined Honest Farmer story as 30 shots in 9 scenes and 2 parts, with 6 people (Tomas, his wife, their daughter, the queen, two soldiers), 5 places, 15 sound effects and 5 music moods. It uses 83 library pieces and needs nothing drawn. It passes every check with nothing pointed out, and is what step 4D will build.
+- **Tests:** 30 new.
+
+### Open after 4C
+
+- **Nobody has seen these shots as pictures yet.** A plan that passes every rule can still look wrong on screen; step 4D shows it.
+- **What a shot cannot say yet:** a thing standing on a table, a door opening, someone walking in from off screen or from one spot to another, a change of pose or face inside a shot, two actions one after another. Step 4D will show which of these the storyboard has to learn first.
+- **The directing is Claude's judgment.** The rules catch staging faults, not dull pictures. Biku's eye on the shot list and on the first built part is the real check.
+- **The closing saying got its own line** in the sample script (n17), so the last picture can be Tomas asleep at home; the script page was rewritten.
 
 ## Phase 4B. Script: done (2026-10-06)
 
