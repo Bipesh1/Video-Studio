@@ -42,6 +42,7 @@ Each step ends with something Biku can look at, a commit and an update here. Sta
 
 ### Open
 
+- **A suggestion from Biku, not to be made now (2026-10-07):** the other person should speak to the host too. Where she says "You try the obvious defence. That is not all mine.", he should say the objection himself, "by asking or saying something". For a later video, or this one if he asks.
 - Parts 2 to 4 are planned but not built; their stills have not been looked at, and the vault, the four grounds under one Sun and the ending will need the same care part 1 took.
 - The door is the old wooden one; a modern door is not drawn.
 - No sound of paper, pencil or a cash register exists; part 1 uses the small sounds there are. Music comes in at part 3, as his script asks.
