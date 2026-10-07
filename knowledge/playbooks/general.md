@@ -95,7 +95,9 @@ A part is shown to Biku in the page's first shape. When every part is approved, 
 - **Things of the sky are props:** `sun`, `full-moon`, `earth`, `planet`, `planet-ringed`, `planet-giant`, `planet-ice`, `asteroid`, `black-hole`, `rocket`, `rocket-flying`. Each hangs at a sensible height; `y` (heads off the ground) and `size` move and scale it. In a wide frame the sky of a wide shot is about five heads tall, so keep `y` under about 4.
 - **Explosion, fire and smoke** stand in a scene the same way (`explosion`, `fire`, `smoke`). An explosion goes off as its shot begins. Nobody is shown hurt by one: people cower, run or look on.
 - **Explainer graphics** are a shot's `overlay`: `number` (one figure, with a few words under it), `pointer` (an arrow from a label to a person or thing named in `to`), `orbit` (one body going round another). One per shot. Keep a person out from under the number: use a wide shot.
-- In a tall frame the camera stays on the people. A thing far from them is in the picture only when someone looks at it (`lookAt`) or an arrow names it; otherwise keep it within about a third of the stage of them.
+- **Wide or tall, a shot shows what it is about** (Biku, 2026-10-07: "whenever I say either I need vertical or wide it must be good"). The tall picture is made on its own from the same plan, never cut from the wide one. In a wide shot the camera keeps every thing of the shot in the picture (furniture apart) and moves back when it has to, which makes people smaller.
+- **Give a thing its own place in the tall picture** with `tall` on the prop (`x`, `y`, `size`; what is left out stays). A tall picture is about five heads wide and nine tall: put a thing of the sky above the people instead of beside them, and bring a thing on the ground to within about three heads of them. The self-check says when the camera has had to stand far back, and when a thing is cut off.
+- Look at the stills of a science shot in both shapes before building either video.
 
 ## Working with Biku
 

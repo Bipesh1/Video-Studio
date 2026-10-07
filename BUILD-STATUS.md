@@ -37,14 +37,23 @@ Asked by Biku: the figures a "what if" science page needs, the first batch of th
 - **Style guide version 14:** two new background palettes (deep space, Moon dust) and one accent (ocean blue). A thing of the sky that a shot is about is an outlined prop; far off in a place's sky it has no outline.
 - **Built into the video builder:** a shot plan can name every one of them, and the self-check measures the new graphics against faces.
 - **An arrow keeps what it names in the picture:** the camera frames the person and the named thing together, and the label is always whole inside the frame, in a tall picture too (the first tall look had the label cut off and the rocket out of sight).
-- **Tests:** 587 in all.
+- **Tests:** 592 in all.
+
+### Wide or tall, a shot shows what it is about (Biku, 2026-10-07)
+
+Biku: "fix it so whenever I say either I need vertical or wide it must be good." The first tall look at the science shots had the rocket, the asteroid and the explosion cut off or out of the picture.
+
+- **The camera keeps the things of a wide shot in the picture** in every shape (furniture apart, which is part of the room), and someone acting on the spot (floating) as well. It slides first and moves back only when it has to.
+- **A thing can have its own place in a tall picture** (`tall` on a prop in the shot plan): above the people instead of beside them. The tall picture is made on its own, never cut from the wide one.
+- **The self-check measures things as well as people:** a thing a shot shows that is out of the picture is a problem, one cut by the edge is a note, and so is a shot where the camera has had to stand far back.
+- **The clouds on the Earth** are drawn as clouds; seen big, each was a plain white bar.
+- The farmer video is laid out exactly as before in every shape (measured).
 
 ### Open
 
 - **The host is not chosen.** Four choices are on a sheet; the host's saved character card is written when Biku picks.
 - **Not built:** one thing shown hitting another (an asteroid striking the Earth is two shots: it falls, then the blast); a number that counts up; the second batch of the list (ocean, desert, ice, satellite, telescope and the rest); a "wonder" music mood and rumble, explosion and alarm sounds, so a blast has no sound of its own yet.
-- **In a tall frame** a thing far from the people can fall outside the picture unless someone looks at it or an arrow names it; the self-check does not yet warn about it.
-- **Above the Earth**, the long white cloud on the Earth reads as a plain white bar when seen close in a tall picture.
+- **People have no place of their own in a tall picture yet**, only things do. Three people spread across a wide shot are small in the tall one (the palace gate shot of the farmer video: 56% of the usual size).
 - **The lint now skips `.cache/`**, where a render's scratch files live.
 
 ## Phase 4F. Output: done (2026-10-07)

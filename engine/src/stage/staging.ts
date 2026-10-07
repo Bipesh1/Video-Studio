@@ -13,7 +13,7 @@ import { poseById, stand } from '../rig/poses';
 import { seeded } from '../rig/random';
 import { shoulderOf } from '../rig/skeleton';
 import type { ResolvedPose } from '../rig/types';
-import { basePose, castSize, placeActor, shotFocus, stageFor, stageX } from './layout';
+import { basePose, castSize, placeActor, shotFocus, shotInShape, stageFor, stageX } from './layout';
 import type { Placement, Size, TimedShot } from './layout';
 import { gripHeight } from './props';
 
@@ -51,6 +51,8 @@ export type Drawn = {
   poseAt: (frame: number) => ResolvedPose;
   /** True when an action carries them along at some point in the shot. */
   moving: boolean;
+  /** True when no action of theirs carries them off their spot in this shot. */
+  stays: boolean;
   /** The frame each stretch of the shot starts on, and the face it wears. */
   faces: Array<{ frame: number; expression: string }>;
   /** How far the action has carried them, px, when the camera travels along. */
@@ -183,7 +185,8 @@ export function stageShot({
   frame: number;
   fps: number;
 }) {
-  const { shot, scene } = ts;
+  const { scene } = ts;
+  const shot = shotInShape(ts.shot, size);
   const stage = stageFor(scene, size, storyboard.seed);
   const local = frame - ts.startFrame;
   const t = local / fps;
@@ -323,6 +326,12 @@ export function stageShot({
       ...whereAt(frame),
       poseAt,
       moving,
+      // An action done on the spot (floating, waving) goes nowhere: they are as much in their
+      // place as someone holding a pose.
+      stays:
+        Math.max(
+          ...[ts.startFrame, onSpot, ts.endFrame - 1].map((f) => Math.abs(bare(f).rootX - anchor)),
+        ) < 0.2,
       faces: [
         ...(was ? [{ frame: previous?.startFrame ?? 0, expression: was.expression }] : []),
         ...moments.map((m) => ({ frame: startOf(m), expression: m.expression })),
@@ -345,8 +354,11 @@ export function stageShot({
       }),
     },
     placements: new Map(drawn.map((d) => [d.actor.character, d.whereAt(f)])),
-    // Whoever holds a pose: a wide shot keeps the whole of them in the picture.
-    held: new Set(drawn.filter((d) => !d.momentAt(f).action).map((d) => d.actor.character)),
+    // Whoever holds a pose, or acts on the spot: a wide shot keeps the whole of them in the
+    // picture. Someone walking in or out is not held to it.
+    held: new Set(
+      drawn.filter((d) => !d.momentAt(f).action || d.stays).map((d) => d.actor.character),
+    ),
   });
   const { shot: shotNow, placements } = sceneAt(frame);
   // How much closer the camera's own move ends (as ShotPicture applies it), so a wide shot

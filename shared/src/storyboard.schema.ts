@@ -134,6 +134,19 @@ export const placedPropSchema = z
     y: z.number().min(0).max(14).optional(),
     /** Bigger or smaller than usual: 1 is as drawn. */
     size: z.number().min(0.2).max(6).optional(),
+    /**
+     * Its own place in a picture taller than it is wide, where it differs: a tall picture is
+     * narrow and has a great deal of sky, so a thing beside someone in the wide picture is
+     * often better above them in the tall one. What is left out stays as above.
+     */
+    tall: z
+      .object({
+        x: z.number().min(0).max(1).optional(),
+        y: z.number().min(0).max(14).optional(),
+        size: z.number().min(0.2).max(6).optional(),
+      })
+      .strict()
+      .optional(),
   })
   .strict();
 

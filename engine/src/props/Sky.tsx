@@ -217,17 +217,23 @@ export function Earth({ uid, shadowSide, r = 1.6, t = 0, outlined = true }: SkyP
       ))}
     </g>
   );
-  const cloud = (x: number, y: number, w: number, key: string) => (
+  // A cloud is three soft streaks, one on another: seen big, one streak alone is a white bar.
+  const streak = (x: number, y: number, w: number) => (
     <rect
-      key={key}
       x={(x - w / 2) * r}
       y={(y - 0.035) * r}
       width={w * r}
       height={0.07 * r}
       rx={0.035 * r}
       fill={white}
-      opacity={0.9}
     />
+  );
+  const cloud = (x: number, y: number, w: number, key: string) => (
+    <g key={key} opacity={0.9}>
+      {streak(x, y, w)}
+      {streak(x + w * 0.12, y - 0.05, w * 0.58)}
+      {streak(x - w * 0.14, y + 0.05, w * 0.46)}
+    </g>
   );
   const drift = ((t / 26) % 1) * 2.6;
   return (

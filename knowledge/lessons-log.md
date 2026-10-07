@@ -658,3 +658,24 @@ Note (Claude's reading): this is the third time a check passed by reading someth
   believing it.
 Status: active
 ```
+
+```
+L-0037 | 2026-10-07 | run: 2026-10-07-science-figures (first tall look at the new pieces)
+Area: engine | Scope: general | Source: Biku
+Lesson: Wide or tall, a shot shows what it is about. The tall picture is made on its own
+  from the same plan, never cut from the wide one, and a thing has its own place in it
+  when it needs one.
+Evidence: The new sky things, rocket and explosion were laid out and looked at wide. In the
+  tall sheet the rocket an arrow pointed at was out of the picture, the asteroid and the
+  explosion were cut off. Biku: "fix it so whenever I say either I need vertical or wide it
+  must be good."
+Applied: engine/src/stage/layout.ts (a wide shot keeps its things in the picture; `tall`
+  places), engine/src/stage/props.tsx (how far each thing reaches), engine/src/stage/
+  measure.ts (the self-check measures things: out of the picture, cut off, camera far back),
+  shared/src/storyboard.schema.ts (`tall` on a prop), knowledge/playbooks/general.md.
+Note (Claude's reading): I listed "things far apart fall outside the tall picture" under
+  what still looks off and went on, the same thing L-0035 was about. He asked three times
+  whether a good vertical was possible before saying fix it; the answer he needed was the
+  fix.
+Status: active
+```

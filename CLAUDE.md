@@ -58,55 +58,55 @@ Reusing a library asset in a new pose or expression needs no full guide read, bu
 
 Everything already drawn is reusable code under `engine/src/`, and every piece is listed in `library/index.json` with tags, a picture and where its code is. **Search the library before drawing anything:** `npm run library -- search <plain words>` (for example `search king night`). A video asks for these pieces by name and never redraws them. The table below is the map of the folders behind the index.
 
-| Need                                                       | Look in                                                                                               |
-| ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| The character puppet (put a whole person on screen)        | `engine/src/rig/Character.tsx`                                                                        |
-| Poses                                                      | `engine/src/rig/poses.ts`                                                                             |
-| Actions by name (every one is in `ACTIONS`)                | `engine/src/rig/actions.ts`                                                                           |
-| Walks, mood walks, run, carry, push, pull                  | `engine/src/rig/walk.ts` (`WALKS`, `GAITS`)                                                           |
-| Jump, falls, punch, swing, recoil                          | `engine/src/rig/moves.ts`                                                                             |
-| Moves one after another (sneak, then run, then jump)       | `chainAt` in `engine/src/rig/chain.ts`                                                                |
-| Moving between poses (wind-up, settle)                     | `poseAt` in `engine/src/rig/pose.ts`                                                                  |
-| A change inside a shot (walk in and stop, stand up)        | `then` on a person in the storyboard (`actorMoments`)                                                 |
-| Life in a hold: blinks, breathing, weight, eye darts       | `engine/src/rig/life.ts`                                                                              |
-| Head turns; swinging capes, hair and held things           | `engine/src/rig/turn.ts`, `engine/src/rig/follow.ts`                                                  |
-| Expressions and talking mouths                             | `engine/src/face/expressions.ts`, `engine/src/face/talk.ts`                                           |
-| Skin tones and hair                                        | `engine/src/wardrobe/identity.ts`, `engine/src/wardrobe/hair.tsx`                                     |
-| Everyday clothes, mixed with `outfitFrom`                  | `engine/src/wardrobe/garments.tsx` (cloth names, never colors)                                        |
-| Costumes                                                   | `engine/src/wardrobe/costumes/`, by name in `wardrobe/cast.ts`                                        |
-| Ages (child, adult, elder)                                 | `age` on the Character in `engine/src/rig/Character.tsx`                                              |
-| Saved characters (only for a series)                       | `characters/<id>.json`, drawn with `castFromCard` in `cast.ts`                                        |
-| Props, and putting them in a hand or a scene               | `engine/src/props/` (`InHand` and `Placed` in `Hold.tsx`)                                             |
-| Sun, Moon, Earth, planets, asteroid, black hole, rocket    | `engine/src/props/Sky.tsx`, `Rocket.tsx`; a shot hangs them with `y` and `size`                       |
-| Effects (tears, anger, stars, symbols, flash)              | `engine/src/effects/`                                                                                 |
-| Explosion, fire, smoke (stood in a scene like a prop)      | `engine/src/effects/Blast.tsx`                                                                        |
-| Places by name (street, forest, castle, home)              | `PLACES` in `engine/src/backgrounds/places.ts`                                                        |
-| Backgrounds and their palettes (`endless` for chases)      | `engine/src/backgrounds/`                                                                             |
-| Shot sizes: wide, medium, close-up, over-shoulder          | `engine/src/camera/Framing.tsx`                                                                       |
-| Camera moves (push-in, shake, pan, fade), captions         | `engine/src/camera/Camera.tsx`, `engine/src/overlays/`                                                |
-| Title cards and labels                                     | `engine/src/overlays/Titles.tsx`                                                                      |
-| Big number, arrow with a label, orbit diagram              | `engine/src/overlays/Explain.tsx`; a shot's `overlay` of kind number, pointer or orbit                |
-| A page's mark and closing card                             | `engine/src/overlays/Brand.tsx`, set in `brands/<brand>.json`                                         |
-| The cover picture (four title styles)                      | `engine/src/stage/Cover.tsx`; the shot is the storyboard's `cover`                                    |
-| Music moods (nine), written as notes                       | `MOODS` in `audio/src/studio_audio/music.py`                                                          |
-| Sound effects (eleven), made from scratch                  | `EFFECTS` in `audio/src/studio_audio/sfx.py`                                                          |
-| The mix: voice, music and effects into one track           | `audio/src/studio_audio/mix.py`, plan in `shared/src/sound.schema.ts`                                 |
-| The script: words, speakers, beats, chapters; its rules    | `shared/src/script.schema.ts`, run tools in `cli/src/script-stage.ts`                                 |
-| Two worked script runs (refined, and used as it is)        | `runs/2026-10-06-honest-farmer/`, `runs/2026-10-06-honest-farmer-as-is/`                              |
-| The shot planner: draft, staging rules, shot list page     | `shared/src/plan.ts`, command in `cli/src/plan.ts`                                                    |
-| A worked shot plan (30 shots, 2 parts, 6 people)           | `runs/2026-10-06-honest-farmer/storyboard.json` and `storyboard.md`                                   |
-| The storyboard builder: any shot as a picture              | `engine/src/stage/` (`ShotPicture.tsx`, `layout.ts`, `props.tsx`, `StoryboardVideo.tsx`)              |
-| A shot worked out for one frame, before it is drawn        | `stageShot` in `engine/src/stage/staging.ts` (the picture and the self-check share it)                |
-| The self-check: checks, questions, the report page         | `shared/src/qa.ts`, `shared/src/qa.schema.ts`; the pictures measured in `engine/src/stage/measure.ts` |
-| The output: shapes, one sound for the whole, same-pictures | `shared/src/output.ts`, `cli/src/output.ts`, `cli/src/media.ts`                                       |
-| Part, voice script, shot times, sound plan                 | `shared/src/assembly.ts`, command in `cli/src/make.ts`                                                |
-| The storyboard: a video's master file, and its rules       | `shared/src/storyboard.schema.ts`, checked by `storyboard.check.ts`                                   |
-| A worked example storyboard                                | `shared/src/fixtures/moon-tax.storyboard.json`                                                        |
-| Formats, brands and voices (one JSON file each)            | `formats/`, `brands/`, `voices/`, rules in `shared/src/plugins.schema.ts`                             |
-| Worked examples of whole videos                            | `engine/src/compositions/LookTest.tsx`, `MoonTax.tsx`                                                 |
-| A worked action scene (chase, fight, camera)               | `engine/src/sandbox/part-h.tsx`                                                                       |
-| A worked story scene (places, props, shots, titles)        | `engine/src/sandbox/part-l.tsx`                                                                       |
-| Pictures of every piece                                    | `library/catalog/`, `knowledge/golden/assets/`, `npm run sheets`                                      |
+| Need                                                       | Look in                                                                                                        |
+| ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| The character puppet (put a whole person on screen)        | `engine/src/rig/Character.tsx`                                                                                 |
+| Poses                                                      | `engine/src/rig/poses.ts`                                                                                      |
+| Actions by name (every one is in `ACTIONS`)                | `engine/src/rig/actions.ts`                                                                                    |
+| Walks, mood walks, run, carry, push, pull                  | `engine/src/rig/walk.ts` (`WALKS`, `GAITS`)                                                                    |
+| Jump, falls, punch, swing, recoil                          | `engine/src/rig/moves.ts`                                                                                      |
+| Moves one after another (sneak, then run, then jump)       | `chainAt` in `engine/src/rig/chain.ts`                                                                         |
+| Moving between poses (wind-up, settle)                     | `poseAt` in `engine/src/rig/pose.ts`                                                                           |
+| A change inside a shot (walk in and stop, stand up)        | `then` on a person in the storyboard (`actorMoments`)                                                          |
+| Life in a hold: blinks, breathing, weight, eye darts       | `engine/src/rig/life.ts`                                                                                       |
+| Head turns; swinging capes, hair and held things           | `engine/src/rig/turn.ts`, `engine/src/rig/follow.ts`                                                           |
+| Expressions and talking mouths                             | `engine/src/face/expressions.ts`, `engine/src/face/talk.ts`                                                    |
+| Skin tones and hair                                        | `engine/src/wardrobe/identity.ts`, `engine/src/wardrobe/hair.tsx`                                              |
+| Everyday clothes, mixed with `outfitFrom`                  | `engine/src/wardrobe/garments.tsx` (cloth names, never colors)                                                 |
+| Costumes                                                   | `engine/src/wardrobe/costumes/`, by name in `wardrobe/cast.ts`                                                 |
+| Ages (child, adult, elder)                                 | `age` on the Character in `engine/src/rig/Character.tsx`                                                       |
+| Saved characters (only for a series)                       | `characters/<id>.json`, drawn with `castFromCard` in `cast.ts`                                                 |
+| Props, and putting them in a hand or a scene               | `engine/src/props/` (`InHand` and `Placed` in `Hold.tsx`)                                                      |
+| Sun, Moon, Earth, planets, asteroid, black hole, rocket    | `engine/src/props/Sky.tsx`, `Rocket.tsx`; a shot hangs them with `y` and `size`, and `tall` for a tall picture |
+| Effects (tears, anger, stars, symbols, flash)              | `engine/src/effects/`                                                                                          |
+| Explosion, fire, smoke (stood in a scene like a prop)      | `engine/src/effects/Blast.tsx`                                                                                 |
+| Places by name (street, forest, castle, home)              | `PLACES` in `engine/src/backgrounds/places.ts`                                                                 |
+| Backgrounds and their palettes (`endless` for chases)      | `engine/src/backgrounds/`                                                                                      |
+| Shot sizes: wide, medium, close-up, over-shoulder          | `engine/src/camera/Framing.tsx`                                                                                |
+| Camera moves (push-in, shake, pan, fade), captions         | `engine/src/camera/Camera.tsx`, `engine/src/overlays/`                                                         |
+| Title cards and labels                                     | `engine/src/overlays/Titles.tsx`                                                                               |
+| Big number, arrow with a label, orbit diagram              | `engine/src/overlays/Explain.tsx`; a shot's `overlay` of kind number, pointer or orbit                         |
+| A page's mark and closing card                             | `engine/src/overlays/Brand.tsx`, set in `brands/<brand>.json`                                                  |
+| The cover picture (four title styles)                      | `engine/src/stage/Cover.tsx`; the shot is the storyboard's `cover`                                             |
+| Music moods (nine), written as notes                       | `MOODS` in `audio/src/studio_audio/music.py`                                                                   |
+| Sound effects (eleven), made from scratch                  | `EFFECTS` in `audio/src/studio_audio/sfx.py`                                                                   |
+| The mix: voice, music and effects into one track           | `audio/src/studio_audio/mix.py`, plan in `shared/src/sound.schema.ts`                                          |
+| The script: words, speakers, beats, chapters; its rules    | `shared/src/script.schema.ts`, run tools in `cli/src/script-stage.ts`                                          |
+| Two worked script runs (refined, and used as it is)        | `runs/2026-10-06-honest-farmer/`, `runs/2026-10-06-honest-farmer-as-is/`                                       |
+| The shot planner: draft, staging rules, shot list page     | `shared/src/plan.ts`, command in `cli/src/plan.ts`                                                             |
+| A worked shot plan (30 shots, 2 parts, 6 people)           | `runs/2026-10-06-honest-farmer/storyboard.json` and `storyboard.md`                                            |
+| The storyboard builder: any shot as a picture              | `engine/src/stage/` (`ShotPicture.tsx`, `layout.ts`, `props.tsx`, `StoryboardVideo.tsx`)                       |
+| A shot worked out for one frame, before it is drawn        | `stageShot` in `engine/src/stage/staging.ts` (the picture and the self-check share it)                         |
+| The self-check: checks, questions, the report page         | `shared/src/qa.ts`, `shared/src/qa.schema.ts`; the pictures measured in `engine/src/stage/measure.ts`          |
+| The output: shapes, one sound for the whole, same-pictures | `shared/src/output.ts`, `cli/src/output.ts`, `cli/src/media.ts`                                                |
+| Part, voice script, shot times, sound plan                 | `shared/src/assembly.ts`, command in `cli/src/make.ts`                                                         |
+| The storyboard: a video's master file, and its rules       | `shared/src/storyboard.schema.ts`, checked by `storyboard.check.ts`                                            |
+| A worked example storyboard                                | `shared/src/fixtures/moon-tax.storyboard.json`                                                                 |
+| Formats, brands and voices (one JSON file each)            | `formats/`, `brands/`, `voices/`, rules in `shared/src/plugins.schema.ts`                                      |
+| Worked examples of whole videos                            | `engine/src/compositions/LookTest.tsx`, `MoonTax.tsx`                                                          |
+| A worked action scene (chase, fight, camera)               | `engine/src/sandbox/part-h.tsx`                                                                                |
+| A worked story scene (places, props, shots, titles)        | `engine/src/sandbox/part-l.tsx`                                                                                |
+| Pictures of every piece                                    | `library/catalog/`, `knowledge/golden/assets/`, `npm run sheets`                                               |
 
 ## Repository layout and commands
 

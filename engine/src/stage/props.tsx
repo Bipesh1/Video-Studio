@@ -103,6 +103,12 @@ export const GRIPPED: readonly string[] = ['scepter', 'sword', 'bag', 'lantern',
 /** Props someone sits on: they take their place, their facing and their size from the sitter. */
 export const SEATS: readonly string[] = ['chair', 'throne'];
 
+/**
+ * Furniture: part of the room. The camera does not move back to fit it in, and it may run off
+ * the edge of a narrow picture like the walls do.
+ */
+export const SCENERY: readonly string[] = [...SEATS, 'door', 'table'];
+
 /** The library props an actor can hold. */
 export const HELD_PROPS: readonly string[] = Object.keys(HELD);
 
@@ -237,6 +243,55 @@ Object.assign(STANDING, {
     behindPeople: true,
   },
 } satisfies Record<string, Standing>);
+
+type Reach = { side: number; up: number; down: number };
+const stands = (side: number, up: number): Reach => ({ side, up, down: 0 });
+const ball = (r: number, side = r): Reach => ({ side, up: r, down: r });
+
+/**
+ * How far each thing reaches from where it is placed, in heads: to each side, up and down. A
+ * wide shot keeps this much of it in the picture, and the self-check measures it against the
+ * frame. It is the body of the thing: a glow or a tail of fire may run past the edge.
+ */
+const REACH: Record<string, Reach> = {
+  chair: stands(0.5, 1.6),
+  throne: stands(0.7, 2.4),
+  door: stands(0.8, 3.2),
+  table: stands(0.85, 1.3),
+  bag: stands(0.35, 0.7),
+  lantern: stands(0.25, 0.7),
+  coin: stands(0.2, 0.35),
+  cup: stands(0.2, 0.4),
+  goblet: stands(0.2, 0.55),
+  book: stands(0.3, 0.5),
+  'book-open': stands(0.4, 0.4),
+  shield: stands(0.45, 1.15),
+  sword: stands(0.3, 1.8),
+  sun: ball(1.8),
+  'full-moon': ball(1.1),
+  earth: ball(1.6),
+  planet: ball(1.2),
+  'planet-ringed': ball(1.2, 2.45),
+  'planet-giant': ball(1.5),
+  'planet-ice': ball(1.2),
+  asteroid: ball(0.8),
+  'black-hole': ball(1.4, 3),
+  'rocket-flying': { side: 1.2, up: 1.7, down: 1.9 },
+  rocket: stands(0.75, 3.3),
+  explosion: { side: 2, up: 2, down: 1.6 },
+  fire: stands(0.9, 1.6),
+  smoke: stands(0.8, 2.8),
+};
+
+/** The things whose reach is written down: every one that can stand in a scene. */
+export const REACHES: readonly string[] = Object.keys(REACH);
+
+/** How far a thing placed in a shot reaches, in heads, at the size the shot gives it. */
+export function propReach(p: { prop: string; size?: number | undefined }): Reach {
+  const reach = REACH[p.prop] ?? stands(0.5, 1);
+  const k = p.size ?? 1;
+  return { side: reach.side * k, up: reach.up * k, down: reach.down * k };
+}
 
 /** How long an explosion placed in a shot is on screen, in seconds. */
 export const BLAST_SECONDS = EXPLOSION_SECONDS;

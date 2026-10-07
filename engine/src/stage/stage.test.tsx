@@ -19,13 +19,14 @@ import {
   placeActor,
   shotAt,
   shotFocus,
+  shotInShape,
   stageFor,
   stageX,
   timedShots,
 } from './layout';
 import { pointerPlace } from './measure';
 import { HEAD_EFFECTS } from './names';
-import { HELD_PROPS, STANDING_PROPS, propHeight } from './props';
+import { HELD_PROPS, REACHES, STANDING_PROPS, propHeight, propReach } from './props';
 import { ShotPicture } from './ShotPicture';
 
 /**
@@ -371,6 +372,60 @@ describe('where people look and what the camera frames', () => {
       pointerPlace({ storyboard: sb, track: null, size: TALL, cards: {}, fps }, ts, shots, byHand)
         .at,
     ).toEqual({ x: 0.3, y: 0.2 });
+  });
+
+  it('keeps the things of a wide shot in a tall picture, but not the furniture', () => {
+    expect([...REACHES].sort()).toEqual([...STANDING_PROPS].sort());
+    const sb = structuredClone(farmer);
+    const shot = shotOf(sb, 's1a');
+    const tomas = shot.actors[0];
+    if (!tomas) throw new Error('no farmer');
+    tomas.lookAt = 'ahead';
+    tomas.x = 0.2;
+    tomas.then = [];
+    const inPicture = (prop: string, x: number) => {
+      shot.props = [{ prop, x }];
+      const { stage, placements } = placed(sb, 's1a', TALL);
+      const focus = shotFocus(shot, stage, placements, new Set(['tomas']));
+      const t = shotTransform(shot.camera.framing, focus, TALL);
+      const side = propReach({ prop }).side * stage.head;
+      const head = headPoint(
+        placements.get('tomas')?.placement ?? placeActor(tomas, stage, 1),
+        basePose(tomas),
+      );
+      return {
+        left: (stageX(stage, x) - side) * t.scale + t.x,
+        right: (stageX(stage, x) + side) * t.scale + t.x,
+        farmer: head.x * t.scale + t.x,
+        scale: t.scale,
+      };
+    };
+    // A rocket far along the road: the whole of it and the farmer are in the narrow picture.
+    const rocket = inPicture('rocket', 0.85);
+    expect(rocket.left).toBeGreaterThan(0);
+    expect(rocket.right).toBeLessThan(TALL.width);
+    expect(rocket.farmer).toBeGreaterThan(0);
+    expect(rocket.farmer).toBeLessThan(TALL.width);
+    // A door is part of the room: the camera stays on the farmer and the door is out of it.
+    const door = inPicture('door', 0.85);
+    expect(door.scale).toBeGreaterThan(rocket.scale);
+    expect(door.left).toBeGreaterThan(TALL.width);
+  });
+
+  it('gives a thing its own place in a tall picture when the plan says so', () => {
+    const shot = structuredClone(shotOf(farmer, 's1a'));
+    shot.props = [
+      { prop: 'sun', x: 0.2, tall: { x: 0.5, y: 5.6 } },
+      { prop: 'planet', x: 0.8, y: 2, size: 0.6, tall: { size: 0.8 } },
+      { prop: 'bag', x: 0.55 },
+    ];
+    expect(shotInShape(shot, WIDE)).toBe(shot);
+    expect(shotInShape(shot, TALL).props).toEqual([
+      { prop: 'sun', x: 0.5, y: 5.6 },
+      { prop: 'planet', x: 0.8, y: 2, size: 0.8 },
+      { prop: 'bag', x: 0.55 },
+    ]);
+    expect(shotInShape(shot, SIZES['4:5']).props[0]).toEqual({ prop: 'sun', x: 0.5, y: 5.6 });
   });
 
   it('frames the one the camera favours, and both of two people otherwise', () => {

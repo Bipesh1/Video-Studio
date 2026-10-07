@@ -7,7 +7,7 @@ import type {
   VoiceTrack,
 } from '@studio/shared';
 import { PUNCH_IN_FRAMES, panShare, punchInZoom, pushInZoom } from '../camera/Camera';
-import { shotTransform } from '../camera/Framing';
+import { layoutScale, shotTransform } from '../camera/Framing';
 import { captionBox, captionLayout } from '../overlays/captionLayout';
 import type { Box } from '../overlays/captionLayout';
 import { buildPages, pageAt, toCaptions } from '../overlays/captionPages';
@@ -22,7 +22,7 @@ import { clamp, vec } from '../rig/math';
 import { computeSkeleton } from '../rig/skeleton';
 import { lookFrom } from '../wardrobe/cast';
 import { stageX, timedShots } from './layout';
-import { propHeight, standingProp } from './props';
+import { SCENERY, propHeight, propReach, standingProp } from './props';
 import type { Size, TimedShot } from './layout';
 import { TITLE_FADE, TITLE_SECONDS, captionOptions, captionPagesFor, titleY } from './screen';
 import { stageShot } from './staging';
@@ -60,6 +60,13 @@ export type FrameMeasure = {
   mark: Box | null;
   /** Things someone takes in this shot that they cannot reach. */
   outOfReach: Array<{ who: string; thing: string }>;
+  /** The things standing or hanging in the shot, furniture apart: the body of each on screen, px. */
+  things: Array<{ key: string; prop: string; box: Box }>;
+  /**
+   * In a wide shot, how big people are against a wide shot's usual size: 1 as usual, less when
+   * the camera has moved back to fit everything in. Null in any other shot.
+   */
+  back: number | null;
 };
 
 export type MeasureInput = {
@@ -229,6 +236,27 @@ export function measureFrame(
     outOfReach: drawn.flatMap((d) =>
       d.outOfReach.map((thing) => ({ who: d.actor.character, thing })),
     ),
+    things: staged.shotNow.props.flatMap((p, i) => {
+      if (SCENERY.includes(p.prop)) return [];
+      const reach = propReach(p);
+      const head = staged.stage.head;
+      const x = stageX(staged.stage, p.x) - staged.cameraX;
+      const y = staged.stage.groundY - propHeight(p) * head;
+      const onScreen = (px: number, py: number) => ({
+        x: eye.x + (px * t.scale + t.x - eye.x) * zoom - slide,
+        y: eye.y + (py * t.scale + t.y - eye.y) * zoom,
+      });
+      const from = onScreen(x - reach.side * head, y - reach.up * head);
+      const to = onScreen(x + reach.side * head, y + reach.down * head);
+      return [
+        {
+          key: `${p.prop}-${i}`,
+          prop: p.prop,
+          box: { x: from.x, y: from.y, width: to.x - from.x, height: to.y - from.y },
+        },
+      ];
+    }),
+    back: shot.camera.framing === 'wide' ? t.scale / layoutScale(size) : null,
   };
 }
 
@@ -259,6 +287,15 @@ export function cutOff(head: Circle, size: Size): number {
   );
 }
 
+/** How much of a thing is out of the picture, as a share of its body: 0 inside, 1 gone. */
+export function thingOut(box: Box, size: Size): number {
+  const w = Math.min(box.x + box.width, size.width) - Math.max(box.x, 0);
+  const h = Math.min(box.y + box.height, size.height) - Math.max(box.y, 0);
+  const area = box.width * box.height;
+  if (area <= 0) return 0;
+  return 1 - (Math.max(0, w) * Math.max(0, h)) / area;
+}
+
 /** The share of a face that a box covers. The face is the middle of the head, where the features are. */
 export function faceCovered(head: Circle, box: Box | null): number {
   if (!box) return 0;
@@ -275,6 +312,11 @@ export const headTravel = (from: Circle, to: Circle): number =>
 /** A head more cut off than this by the edge of the picture is worth a look; past half, it is gone. */
 export const HEAD_CUT_NOTE = 0.3;
 export const HEAD_CUT_GONE = 0.5;
+/** A thing more out of the picture than this is worth a look; past half, it is not really in it. */
+export const THING_CUT_NOTE = 0.2;
+export const THING_CUT_GONE = 0.5;
+/** A wide shot in which people are smaller than this share of their usual size stands far back. */
+export const FAR_BACK = 0.7;
 /** A face covered by more than this share is covered. */
 export const FACE_COVERED = 0.08;
 /** Legs deeper than this under the ground line, in head units, go through the ground. */
@@ -309,6 +351,8 @@ export function pictureChecks(input: MeasureInput, limits: { maxShotS?: number }
   const jumps: QaFinding[] = [];
   const held: QaFinding[] = [];
   const reach: QaFinding[] = [];
+  const things: QaFinding[] = [];
+  let thingsSeen = 0;
   let fastest = { share: 0, who: '', shot: '' };
   let longest = { s: 0, shot: '' };
   let longestStill = 0;
@@ -412,6 +456,53 @@ export function pictureChecks(input: MeasureInput, limits: { maxShotS?: number }
         });
       }
     }
+    // The things of the shot, in the picture like the people. A wide shot shows all of them; a
+    // closer shot has to show only what someone looks at or what an arrow names.
+    const wide = shot.camera.framing === 'wide';
+    const named =
+      shot.overlay?.kind === 'pointer' && typeof shot.overlay.to === 'string'
+        ? shot.overlay.to
+        : null;
+    const keys = [...new Set(all.flatMap((m) => m.things.map((x) => x.key)))];
+    for (const key of keys) {
+      const seen = all.flatMap((m) => {
+        const x = m.things.find((y) => y.key === key);
+        return x ? [{ ms: m.ms, out: thingOut(x.box, size), prop: x.prop }] : [];
+      });
+      const best = seen.reduce((a, b) => (b.out < a.out ? b : a));
+      const lookedAt = shot.actors.some(
+        (a) => a.lookAt === best.prop || a.then.some((step) => step.lookAt === best.prop),
+      );
+      const pointedAt = best.prop === named;
+      if (!wide && !pointedAt && !(lookedAt && shot.camera.framing !== 'close-up')) continue;
+      thingsSeen++;
+      const what = best.prop.replace(/-/g, ' ');
+      if (best.out >= THING_CUT_GONE) {
+        things.push({
+          level: wide || pointedAt ? 'problem' : 'note',
+          ...at,
+          atMs: best.ms,
+          text: pointedAt
+            ? `the arrow points at the ${what}, which is out of the picture`
+            : `the ${what} is out of the picture, or more than half of it is`,
+        });
+      } else if (best.out > THING_CUT_NOTE) {
+        things.push({
+          level: 'note',
+          ...at,
+          atMs: best.ms,
+          text: `the edge of the picture cuts off ${Math.round(best.out * 100)}% of the ${what}`,
+        });
+      }
+    }
+    const back = Math.min(...all.map((m) => m.back ?? 1));
+    if (shot.actors.length > 0 && back < FAR_BACK) {
+      things.push({
+        level: 'note',
+        ...at,
+        text: `the camera stands back to fit everyone and everything in, so people are ${Math.round(back * 100)}% of their usual size; in this shape, put people and things nearer each other, or a thing above them`,
+      });
+    }
     // Reach.
     for (const miss of all[0]?.outOfReach ?? []) {
       reach.push({
@@ -465,6 +556,15 @@ export function pictureChecks(input: MeasureInput, limits: { maxShotS?: number }
       by: 'measured',
       detail: `where every head lands on screen, on all ${frames} frames of the ${shots} shots`,
       findings: inFrame,
+    },
+    {
+      id: 'things-in-frame',
+      title: 'The things a shot shows are inside the picture',
+      by: 'measured',
+      detail: thingsSeen
+        ? `the body of every thing standing or hanging in a shot against the edges of the picture, on every frame (${thingsSeen} checked)`
+        : 'no shot of this part has a thing standing or hanging in it',
+      findings: things,
     },
     {
       id: 'faces-clear',

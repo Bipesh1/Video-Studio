@@ -16,6 +16,7 @@ import {
   headTravel,
   measurePart,
   pictureChecks,
+  thingOut,
 } from './measure';
 
 /**
@@ -73,6 +74,7 @@ describe('the worked plan', () => {
     expect(found(checks)).toEqual([]);
     expect(checks.map((c) => c.id)).toEqual([
       'in-frame',
+      'things-in-frame',
       'faces-clear',
       'feet',
       'smooth',
@@ -88,6 +90,24 @@ describe('the worked plan', () => {
     expect(found(checks, 'note').join('\n')).toContain(
       "is in this shot's plan but falls outside the picture (s4b)",
     );
+  });
+});
+
+describe('the things a shot shows', () => {
+  it('catches a thing hung out of the picture, and passes it in its own tall place', () => {
+    const high = edited('s1a', (shot) => {
+      shot.props.push({ prop: 'sun', x: 0.5, y: 13, tall: { y: 5 } });
+    });
+    expect(found(measure(high), 'problem').join('\n')).toContain(
+      'things-in-frame: the sun is out of the picture, or more than half of it is (s1a)',
+    );
+    expect(found(measure(high, TALL)).filter((f) => f.includes('the sun'))).toEqual([]);
+  });
+
+  it('measures how much of a thing is outside the frame', () => {
+    expect(thingOut({ x: 100, y: 100, width: 200, height: 200 }, WIDE)).toBe(0);
+    expect(thingOut({ x: -100, y: 100, width: 200, height: 200 }, WIDE)).toBeCloseTo(0.5, 6);
+    expect(thingOut({ x: 100, y: -300, width: 200, height: 200 }, WIDE)).toBe(1);
   });
 });
 

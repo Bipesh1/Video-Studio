@@ -278,6 +278,19 @@ describe('things in the sky and explainer graphics', () => {
     expect(storyboardSchema.safeParse(tooHigh).success).toBe(false);
   });
 
+  it('lets a thing have its own place in a tall picture', () => {
+    const ok = edited((sb) => {
+      Object.assign(shot(sb, 0, 0), {
+        props: [{ prop: 'sun', x: 0.2, tall: { x: 0.5, y: 5.6 } }],
+      });
+    });
+    expect(storyboardSchema.safeParse(ok).success).toBe(true);
+    const misspelt = edited((sb) => {
+      Object.assign(shot(sb, 0, 0), { props: [{ prop: 'sun', x: 0.2, tall: { up: 5 } }] });
+    });
+    expect(storyboardSchema.safeParse(misspelt).success).toBe(false);
+  });
+
   it('takes a big number, an arrow that names its target or a point, and an orbit diagram', () => {
     const overlays = [
       { kind: 'number', text: '1,670 km/h', caption: 'how fast the ground moves' },

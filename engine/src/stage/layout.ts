@@ -20,7 +20,7 @@ import { resolvePose } from '../rig/pose';
 import { poseById } from '../rig/poses';
 import { computeSkeleton } from '../rig/skeleton';
 import type { Facing, ResolvedPose } from '../rig/types';
-import { propHeight, standingProp } from './props';
+import { SCENERY, propHeight, propReach, standingProp } from './props';
 
 /**
  * Where everything in a storyboard shot goes, with no drawing in it (so it can be tested and
@@ -148,17 +148,51 @@ export function lookTarget(
   return null;
 }
 
+/**
+ * A shot as it is laid out in a frame this shape: in a picture taller than it is wide, each
+ * thing stands where its `tall` place says, when it has one.
+ */
+export function shotInShape(shot: Shot, size: Size): Shot {
+  if (size.width > size.height || !shot.props.some((p) => p.tall)) return shot;
+  return {
+    ...shot,
+    props: shot.props.map((p) => {
+      const { tall, ...rest } = p;
+      if (!tall) return p;
+      return {
+        ...rest,
+        ...(tall.x !== undefined ? { x: tall.x } : {}),
+        ...(tall.y !== undefined ? { y: tall.y } : {}),
+        ...(tall.size !== undefined ? { size: tall.size } : {}),
+      };
+    }),
+  };
+}
+
 /** What the camera frames in a shot: the one it favours, or everyone, or the things. */
 export function shotFocus(
   shot: Shot,
   stage: Stage,
   placements: ReadonlyMap<string, { placement: Placement; pose: ResolvedPose }>,
-  /** The people holding a pose right now: a wide shot keeps their whole bodies in the picture. */
+  /**
+   * The people holding a pose right now: a wide shot keeps their whole bodies in the picture,
+   * and the things standing or hanging in it with them.
+   */
   whole?: ReadonlySet<string>,
 ): Focus {
   const aim = aimOf(shot, stage, placements);
   if (!whole || shot.camera.framing !== 'wide') return aim;
-  const ends = shot.actors
+  // A tall picture is narrow: without this the rocket beside an astronaut, or the rock falling
+  // on a city, is outside it (Biku, 2026-10-07: wide or vertical, "it must be good"). Furniture
+  // is part of the room and is not kept.
+  const things = shot.props
+    .filter((p) => !SCENERY.includes(p.prop))
+    .flatMap((p) => {
+      const x = stageX(stage, p.x);
+      const side = propReach(p).side * stage.head;
+      return [x - side, x + side];
+    });
+  const bodies = shot.actors
     .filter((a) => whole.has(a.character))
     .flatMap((a) => {
       const p = placements.get(a.character);
@@ -175,6 +209,7 @@ export function shotFocus(
       ].map((x) => toScreen(vec(x, 0), p.placement).x);
       return [Math.min(...xs), Math.max(...xs)];
     });
+  const ends = [...bodies, ...things];
   return ends.length
     ? { ...aim, keep: { left: Math.min(...ends), right: Math.max(...ends) } }
     : aim;
