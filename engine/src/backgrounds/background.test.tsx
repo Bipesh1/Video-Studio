@@ -123,6 +123,51 @@ describe('backgrounds (Style 5)', () => {
     here.forEach((shift, i) => expect(there[i]).toBeCloseTo(shift, 6));
   });
 
+  it('reach past their own canvas when the camera can see past it, and stand again to each side', () => {
+    // A tall frame lays a scene out wider than the picture (L-0033), so the place has to go on
+    // to both sides, above and below (Biku, 2026-10-07: "everything like bush and grass in
+    // vertical is shown too big").
+    const world = { left: 570, right: 570, top: 1400, bottom: 600 };
+    const wider = (treatment: Treatment, name: string) =>
+      renderToStaticMarkup(
+        <svg>
+          <Background
+            spec={backgroundSpec(treatment, name, 7)}
+            width={1080}
+            height={1920}
+            frame={0}
+            fps={30}
+            world={world}
+          />
+        </svg>,
+      );
+    const plain = render('simple', 'clear-day');
+    const wide = wider('simple', 'clear-day');
+    // The grass is there three times: on the canvas and one tile to each side.
+    const tufts = (html: string) => html.split('rotate(').length - 1;
+    expect(tufts(wide)).toBe(3 * tufts(plain));
+    expect(wide).toContain(`translate(${-1.2 * 1080} 0)`);
+    expect(wide).toContain(`translate(${1.2 * 1080} 0)`);
+    // The sky goes on above the canvas and the ground below it.
+    expect(wide).toContain('y="-1400"');
+    expect(wide).toContain('y="1920"');
+    expect(plain).not.toContain('y="-1400"');
+    // Asked for nothing, a background is exactly what it always was.
+    const none = renderToStaticMarkup(
+      <svg>
+        <Background
+          spec={backgroundSpec('simple', 'clear-day', 7)}
+          width={1080}
+          height={1920}
+          frame={0}
+          fps={30}
+          world={null}
+        />
+      </svg>,
+    );
+    expect(none.replace(/bg[A-Za-z0-9_-]+/g, 'bg')).toBe(plain.replace(/bg[A-Za-z0-9_-]+/g, 'bg'));
+  });
+
   it('are deterministic for the same seed and frame', () => {
     expect(render('atmospheric', 'storm-slate', 12)).toBe(render('atmospheric', 'storm-slate', 12));
   });

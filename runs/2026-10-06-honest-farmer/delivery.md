@@ -26,18 +26,18 @@ For YouTube, as a normal wide video.
 
 ## Vertical full video (1 min 25 s)
 
-For YouTube Shorts and Facebook Reels.
+For Facebook Reels (it also fits as a YouTube Short, if you want one).
 
-- Video: `honest-farmer-9x16-v1.mp4`
-- Cover picture: `honest-farmer-9x16-v1-cover-side.jpg`
-- Captions file: `honest-farmer-9x16-v1.srt`
+- Video: `honest-farmer-9x16-v2.mp4`
+- Cover picture: `honest-farmer-9x16-v2-cover-side.jpg`
+- Captions file: `honest-farmer-9x16-v2.srt`
 - Title to type in: The Honest Farmer
 
 | Check | Result |
 | --- | --- |
 | The file plays | passed: 1080x1920, 30 pictures a second, 84.6 s, picture and sound both there; played through from start to finish |
 | It is as long as its parts together | passed: 84.6 s; its 2 pieces add up to 84.6 s |
-| Its pictures are the parts that passed | passed: every frame against honest-farmer-part-1-9x16-v1.mp4 and honest-farmer-part-2-9x16-v1.mp4 (the strongest difference is 1 of 255; over 16 would be a different picture) |
+| Its pictures are the parts that passed | passed: every frame against honest-farmer-part-1-9x16-v2.mp4 and honest-farmer-part-2-9x16-v2.mp4 (the strongest difference is 1 of 255; over 16 would be a different picture) |
 | Its sound is the mix made for the whole video | passed: second for second (what is left over is 33 dB under it at most) |
 | There is no dead silence | passed: the sound never drops out; the longest pause between words is 1.8 s |
 | The sound is at the right level | passed: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.1 dB (the limit is -1) |
@@ -51,11 +51,10 @@ For YouTube Shorts and Facebook Reels.
 - He sleeps on the bare floor: no bed is drawn. The line says "a hard bed", so it reads as the point of the story, but say so if you want a bed drawn.
 - When the queen gives him gold, a coin appears in his hand while she is out of the picture. The studio cannot yet show one person handing a thing to another.
 - The sleeping face is new. It is small in the last shot; you can see it large in knowledge/golden/assets/expression-asleep.png.
-- In the vertical cut the walk to market has its caption over his shins and the bush.
+- In the vertical cut the walk to market passes a bush, and the caption sits over it for a moment.
 - When his wife says "Keep the gold!" the vertical frame shows her alone, pointing off to the side; Tomas is in the wide cut only.
-- Backgrounds are seen from closer in the vertical cut, so there is less of each place in the picture.
+- With three people at the table the camera stands further back in the vertical cut, so they are small and there is a lot of floor below them.
 - At the gate, when he says he has something of the queen's, the vertical frame shows him alone; the soldier's surprise is in the wide cut only.
-- The night street is seen from so close in the vertical cut that it is mostly a house wall: the moon and the sky are out of the picture.
 - He sleeps on the bare floor: no bed is drawn.
 - When the queen gives him gold, a coin appears in his hand while she is out of the picture.
 

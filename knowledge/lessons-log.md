@@ -612,3 +612,49 @@ Note (Claude's reading): the room between a preview's noise (14) and the smalles
   may be the drawing and not a fault: look again rather than raise the limit.
 Status: active
 ```
+
+```
+L-0035 | 2026-10-07 | run: 2026-10-06-honest-farmer, the vertical file (honest-farmer-9x16-v1)
+Area: backgrounds | Scope: general | Source: Biku
+Lesson: In the vertical video the things in a place (a bush, the grass) are not shown too
+  big. A place looks the same size beside a person as it does in the wide video.
+Evidence: Biku: "the verticla form the wide is not that good cause every thing like vbush an
+  dgras in vrtical is shown too big i guess. if its nt fixable i will post wide in youtube and
+  reels in acebook and if i want shorts i will tell specically". After L-0033 a tall frame laid
+  its scene out small and the camera closed in about twice to show it, and the place was
+  closed in on with it: a bush as tall as a man, grass like spikes, a street that was one wall.
+Applied: engine/src/stage/ShotPicture.tsx (in a tall frame the place is drawn into the layout
+  smaller by as much as a wide shot closes in, so a wide shot shows it one to one);
+  engine/src/backgrounds/Background.tsx (a place reaches past its own canvas: sky up, ground
+  down, hills, trees and grass again to each side; a foreground bush keeps to the far sides);
+  engine/src/camera/Framing.tsx (`layoutScale`); engine/src/stage/layout.ts (feet stand the
+  same way below the horizon). All 30 wide stills came out byte for byte the same. Both
+  vertical parts and the vertical file made again (honest-farmer-9x16-v2).
+Note (Claude's reading): I had seen this and written it up as a loss to live with ("every
+  place is seen from closer"), with the fix put off as engine work. He saw the same thing and
+  called it not good. A fault I can name in a report is a fault to fix or to bring to him as
+  a question, not a note. His plan for the pages, as he gave it: the wide video for YouTube,
+  the vertical one for Facebook Reels, a YouTube Short only when he asks for one. He gave it
+  as what he would do if this could not be fixed; the delivery page is worded that way now,
+  and whether Shorts stay off by default is his to confirm.
+Status: active
+```
+
+```
+L-0036 | 2026-10-07 | run: 2026-10-06-honest-farmer (vertical previews, while fixing L-0035)
+Area: engine | Scope: general | Source: self-check
+Lesson: Nothing that is looked at is written over under the same name. A look names the
+  file it was taken at, so a file made again under that name carries the old look with it.
+Evidence: Previews were scratch files, one per part and shape, written over each time. After
+  the backgrounds were redrawn, the new vertical previews passed the self-check at once: the
+  look of the day before named the same file, and the strips of frames beside it were the
+  old ones, kept because they already existed. The check said ready for pictures nobody had
+  looked at. Caught because "ready" came back before I had looked.
+Applied: cli/src/make.ts (a preview takes the next number like every render); cli/src/qa.ts
+  (checks the newest numbered preview). The unnumbered previews, never shown, were removed.
+Note (Claude's reading): this is the third time a check passed by reading something beside
+  the video instead of the video (L-0032 the sound, L-0034 a blunt comparison). When a check
+  passes sooner than the work it stands for could have been done, find out why before
+  believing it.
+Status: active
+```

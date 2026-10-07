@@ -130,7 +130,15 @@ type Ctx = {
   id: string;
   atmo: boolean;
   endless: boolean;
+  world: World | null;
 };
+
+/**
+ * How far past its own canvas a background has to reach, px. In a tall frame a scene is wider
+ * than the picture (L-0033), so the camera sees past both sides of the canvas, and above and
+ * below it when it moves back to fit several people.
+ */
+export type World = { left: number; right: number; top: number; bottom: number };
 
 const rnd = (c: Ctx, key: string) => seeded(`${c.spec.seed}:${key}`);
 
@@ -155,11 +163,25 @@ const Layer = ({
 }) => {
   // In an endless background what does not repeat stays put: the sky, the moon, the flat ground.
   const shift = c.endless && !repeats ? 0 : c.cameraX * depth;
-  if (!(c.endless && repeats)) return <g transform={`translate(${-shift} 0)`}>{children}</g>;
   const tile = TILE * c.w;
+  if (!c.endless && repeats && c.world) {
+    // A wider world: the hills, bushes and grass stand again one tile along on each side.
+    return (
+      <>
+        {c.world.left > 0 && <g transform={`translate(${-tile - shift} 0)`}>{children}</g>}
+        <g transform={`translate(${-shift} 0)`}>{children}</g>
+        {c.world.right > 0 && <g transform={`translate(${tile - shift} 0)`}>{children}</g>}
+      </>
+    );
+  }
+  if (!(c.endless && repeats)) return <g transform={`translate(${-shift} 0)`}>{children}</g>;
   const offset = ((shift % tile) + tile) % tile;
   return (
     <>
+      {/* A wider world can be seen to the left of the canvas too. */}
+      {c.world && c.world.left > 0 && (
+        <g transform={`translate(${-tile - offset} 0)`}>{children}</g>
+      )}
       <g transform={`translate(${-offset} 0)`}>{children}</g>
       <g transform={`translate(${tile - offset} 0)`}>{children}</g>
     </>
@@ -177,6 +199,16 @@ function Sky({ c }: { c: Ctx }) {
         </linearGradient>
       </defs>
       <rect x={-c.w} y={0} width={c.w * 3} height={c.h} fill={`url(#${gid})`} />
+      {/* Above the canvas the sky goes on in the tone it has at the top. */}
+      {c.world && c.world.top > 0 && (
+        <rect
+          x={-c.w}
+          y={-c.world.top}
+          width={c.w * 3}
+          height={c.world.top + 1}
+          fill={c.atmo ? c.roles.skyTop : c.roles.skyBottom}
+        />
+      )}
     </>
   );
 }
@@ -319,9 +351,10 @@ function hillPath(c: Ctx, key: string, base: number, amp: number): string {
   const p1 = rnd(c, `${key}a`) * 6.28;
   const p2 = rnd(c, `${key}b`) * 6.28;
   const pts: string[] = [];
-  // In an endless background the hills must meet themselves one tile along.
+  // In an endless background, and in one that stands again to each side of its canvas, the
+  // hills must meet themselves one tile along.
   const round = (2 * Math.PI) / TILE;
-  const [f1, f2] = c.endless ? [2 * round, 3 * round] : [7.5, 17];
+  const [f1, f2] = c.endless || c.world ? [2 * round, 3 * round] : [7.5, 17];
   for (let i = 0; i <= 48; i++) {
     const u = lerp(-0.5, 1.5, i / 48);
     const y = base - amp * (0.6 + 0.4 * Math.sin(u * f1 + p1) + 0.25 * Math.sin(u * f2 + p2));
@@ -366,6 +399,16 @@ function Ground({ c }: { c: Ctx }) {
         height={c.h - y + 2}
         fill={c.spec.ground === 'road' ? c.roles.road : c.atmo ? `url(#${gid})` : c.roles.ground}
       />
+      {/* Below the canvas the ground goes on. */}
+      {c.world && c.world.bottom > 0 && (
+        <rect
+          x={-c.w}
+          y={c.h}
+          width={c.w * 3}
+          height={c.world.bottom}
+          fill={c.spec.ground === 'road' ? c.roles.road : c.roles.ground}
+        />
+      )}
       {/* A street has a paler strip along its far edge, where it meets the houses. */}
       {c.spec.ground === 'road' && (
         <rect
@@ -393,6 +436,16 @@ function Wall({ c }: { c: Ctx }) {
         </linearGradient>
       </defs>
       <rect x={-c.w} y={0} width={c.w * 3} height={floor} fill={`url(#${gid})`} />
+      {/* Above the canvas the wall goes on in the tone it has at the top. */}
+      {c.world && c.world.top > 0 && (
+        <rect
+          x={-c.w}
+          y={-c.world.top}
+          width={c.w * 3}
+          height={c.world.top + 1}
+          fill={c.atmo ? shade(c.roles.wall, 0.3) : c.roles.wall}
+        />
+      )}
       <rect
         x={-c.w}
         y={floor - c.h * 0.02}
@@ -454,6 +507,8 @@ function Hall({ c, room }: { c: Ctx; room: Interior }) {
   const columns = Array.from({ length: room.columns }, (_, i) => ((i + 0.5) / room.columns) * c.w);
   const cw = c.h * 0.034;
   const gaps = columns.slice(0, -1).map((x, i) => (x + (columns[i + 1] ?? x)) / 2);
+  // Columns run on up past the top of the canvas.
+  const up = c.world?.top ?? 0;
   return (
     <>
       {gaps.slice(0, room.banners).map((x, i) => {
@@ -478,8 +533,8 @@ function Hall({ c, room }: { c: Ctx; room: Interior }) {
       })}
       {columns.map((x, i) => (
         <g key={`column-${i}`}>
-          <rect x={x - cw / 2} y={0} width={cw} height={floor} fill={stone} />
-          <rect x={x - cw / 2} y={0} width={cw * 0.28} height={floor} fill={lit} />
+          <rect x={x - cw / 2} y={-up} width={cw} height={floor + up} fill={stone} />
+          <rect x={x - cw / 2} y={-up} width={cw * 0.28} height={floor + up} fill={lit} />
           <rect
             x={x - cw * 0.8}
             y={floor - c.h * 0.03}
@@ -538,7 +593,13 @@ function Vignette({ c }: { c: Ctx }) {
           <stop offset="1" stopColor={ink} stopOpacity={c.atmo ? 0.5 : 0.3} />
         </radialGradient>
       </defs>
-      <rect x={0} y={0} width={c.w} height={c.h} fill={`url(#${gid})`} />
+      <rect
+        x={-(c.world?.left ?? 0)}
+        y={-(c.world?.top ?? 0)}
+        width={c.w + (c.world?.left ?? 0) + (c.world?.right ?? 0)}
+        height={c.h + (c.world?.top ?? 0) + (c.world?.bottom ?? 0)}
+        fill={`url(#${gid})`}
+      />
     </>
   );
 }
@@ -580,7 +641,11 @@ const Curl = ({ x, y, r, w }: { x: number; y: number; r: number; w: number }) =>
 
 function SilhouetteShape({ c, s, i }: { c: Ctx; s: Silhouette; i: number }) {
   const base = c.spec.horizon * c.h + (s.layer === 'mid' ? 0 : c.h * 0.03);
-  const x = s.x * c.w;
+  // A foreground shape frames the picture from its edge. In a world wider than the picture it
+  // keeps to the far sides of that world, clear of where people stand.
+  const spread =
+    s.layer !== 'mid' && c.world && !c.endless ? 1 + (c.world.left + c.world.right) / c.w : 1;
+  const x = c.w / 2 + (s.x - 0.5) * c.w * spread;
   const size = s.size * c.h;
   const fill = s.layer === 'mid' ? c.roles.mid : c.roles.near;
   const detailW = c.h * 0.0035;
@@ -883,6 +948,8 @@ export type BackgroundProps = {
    * clouds and the flat ground stay where they are.
    */
   endless?: boolean;
+  /** How far past the canvas it has to reach, when the camera can see past it (see World). */
+  world?: World | null;
 };
 
 /** A complete background as SVG elements, sized to width by height. Pure: driven by frame. */
@@ -894,6 +961,7 @@ export const Background = ({
   fps,
   cameraX = 0,
   endless = false,
+  world = null,
 }: BackgroundProps) => {
   const id = `bg${useId().replace(/[^A-Za-z0-9_-]/g, '')}`;
   const base = bgRoles(spec.palette);
@@ -917,6 +985,7 @@ export const Background = ({
     id,
     atmo: spec.treatment === 'atmospheric',
     endless,
+    world,
   };
   const mids = spec.silhouettes.filter((s) => s.layer === 'mid');
   const nears = spec.silhouettes.filter((s) => s.layer !== 'mid');
@@ -985,7 +1054,7 @@ export const Background = ({
       <Layer c={c} depth={0.85} repeats>
         <Tufts c={c} />
       </Layer>
-      <Layer c={c} depth={1.15} repeats>
+      <Layer c={c} depth={1.15} repeats={endless || !world}>
         {nears.map((s, i) => (
           <SilhouetteShape key={i} c={c} s={s} i={i + mids.length} />
         ))}

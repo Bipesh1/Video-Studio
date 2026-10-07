@@ -81,11 +81,13 @@ function newestVideo(): { file: string; size: SizeName } {
     throw new Error(`--size is one of ${SIZE_NAMES.join(', ')}`);
   }
   const found = (existsSync(outDir) ? readdirSync(outDir) : []).flatMap((name) => {
-    const m = (PREVIEW ? /-(\d+)x(\d+)-(preview)\.mp4$/ : /-(\d+)x(\d+)-v(\d+)\.mp4$/).exec(name);
+    const m = (PREVIEW ? /-(\d+)x(\d+)-preview-v(\d+)\.mp4$/ : /-(\d+)x(\d+)-v(\d+)\.mp4$/).exec(
+      name,
+    );
     if (!m) return [];
     const size = `${m[1]}:${m[2]}` as SizeName;
     if (!(SIZE_NAMES as readonly string[]).includes(size) || (asked && size !== asked)) return [];
-    return [{ file: path.join(outDir, name), size, version: PREVIEW ? 1 : Number(m[3]) }];
+    return [{ file: path.join(outDir, name), size, version: Number(m[3]) }];
   });
   const newest = found.sort((a, b) => b.version - a.version)[0];
   if (!newest) {

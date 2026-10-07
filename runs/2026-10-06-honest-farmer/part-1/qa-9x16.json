@@ -4,7 +4,7 @@
   "part": 1,
   "parts": 2,
   "size": "9:16",
-  "video": "honest-farmer-part-1-9x16-v1.mp4",
+  "video": "honest-farmer-part-1-9x16-v2.mp4",
   "seconds": 42.233333,
   "checkedOn": "2026-10-07",
   "checks": [
@@ -137,7 +137,7 @@
       "id": "same-pictures",
       "title": "The pictures are the ones that were looked at",
       "by": "measured",
-      "detail": "Claude looked at \"honest-farmer-part-1-9x16-preview.mp4\"; every frame of this video was compared with it (the strongest difference is 14 of 255; over 16 would be a different picture)",
+      "detail": "Claude looked at \"honest-farmer-part-1-9x16-preview-v1.mp4\"; every frame of this video was compared with it (the strongest difference is 14 of 255; over 16 would be a different picture)",
       "findings": []
     },
     {
@@ -170,11 +170,12 @@
     }
   ],
   "fixed": [
+    "In the vertical cut every place was shown too big: a bush as tall as a man, grass like spikes, and little of the place in the picture. A place is now drawn at its own size in a tall frame, the same size beside a person as in the wide cut, and it reaches as far as the camera can see.",
     "In a narrow frame people stood too close together: a pointing arm reached through the person it pointed at. The scene is now laid out as many heads wide in a tall frame as in a wide one, and the camera closes in from there."
   ],
   "notes": [
-    "In the vertical cut the walk to market has its caption over his shins and the bush.",
+    "In the vertical cut the walk to market passes a bush, and the caption sits over it for a moment.",
     "When his wife says \"Keep the gold!\" the vertical frame shows her alone, pointing off to the side; Tomas is in the wide cut only.",
-    "Backgrounds are seen from closer in the vertical cut, so there is less of each place in the picture."
+    "With three people at the table the camera stands further back in the vertical cut, so they are small and there is a lot of floor below them."
   ]
 }

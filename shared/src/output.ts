@@ -46,9 +46,11 @@ export function outputCuts(choice: OutputChoice, parts: number): Cut[] {
 export function cutUse(cut: Cut, seconds: number): string {
   if (cut.size === '16:9') return 'YouTube, as a normal wide video';
   if (cut.size === '4:5') return 'a Facebook or Instagram feed post';
+  // The vertical video is for Facebook Reels; it can go up as a YouTube Short too, which
+  // Biku does only when he says so (2026-10-07).
   const short =
     seconds <= SHORTS_MAX_S
-      ? 'YouTube Shorts and Facebook Reels'
+      ? 'Facebook Reels (it also fits as a YouTube Short, if you want one)'
       : `Facebook Reels (it is over ${SHORTS_MAX_S / 60} minutes, too long for a YouTube Short)`;
   return cut.kind === 'teaser' ? `${short}, as a teaser for the full video` : short;
 }

@@ -76,6 +76,15 @@ export const STAGE_SHARE = 0.86;
 export const layoutHead = (size: Size): number =>
   Math.min(targetsFor(size).wide.head * size.height, (STAGE_SHARE * size.width) / STAGE_HEADS);
 
+/**
+ * How much closer the camera stands, in a wide shot, than the layout is drawn: 1 in a wide
+ * frame, about 2 in a tall one. A background drawn into the layout this much smaller is back
+ * at its own size in a wide shot, so a bush is as big beside a person as it was drawn to be
+ * (Biku, 2026-10-07: "everything like bush and grass in vertical is shown too big").
+ */
+export const layoutScale = (size: Size): number =>
+  (targetsFor(size).wide.head * size.height) / layoutHead(size);
+
 /** A standing head's height above the ground, in head units. */
 const HEAD_HEIGHT = -computeSkeleton(resolvePose(stand)).head.y;
 

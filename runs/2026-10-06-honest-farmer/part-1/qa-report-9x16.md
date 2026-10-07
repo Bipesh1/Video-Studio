@@ -2,16 +2,16 @@
 
 **Ready for you to watch.** Every check passed, with 6 things worth a second look.
 
-Video: `honest-farmer-part-1-9x16-v1.mp4` (42.2 s). Checked on 2026-10-07.
+Video: `honest-farmer-part-1-9x16-v2.mp4` (42.2 s). Checked on 2026-10-07.
 
 ## Worth a second look
 
 - Tomas, the farmer is in this shot's plan but falls outside the picture (shot s4b, at 0:35).
 - The shot stays for 4.5 s, a little over the 4 s a shot should take (shot s1a, at 0:00).
 - The shot stays for 4.6 s, a little over the 4 s a shot should take (shot s2a, at 0:08).
-- In the vertical cut the walk to market has its caption over his shins and the bush.
+- In the vertical cut the walk to market passes a bush, and the caption sits over it for a moment.
 - When his wife says "Keep the gold!" the vertical frame shows her alone, pointing off to the side; Tomas is in the wide cut only.
-- Backgrounds are seen from closer in the vertical cut, so there is less of each place in the picture.
+- With three people at the table the camera stands further back in the vertical cut, so they are small and there is a lot of floor below them.
 
 ## What the studio measured
 
@@ -32,7 +32,7 @@ Video: `honest-farmer-part-1-9x16-v1.mp4` (42.2 s). Checked on 2026-10-07.
 | No picture is held too long | passed, with a note | the longest shot is 4.6 s (s2a); the longest with nothing moving in it is 2.6 s |
 | Whatever is picked up is within reach | passed | 1 time someone takes a thing in their hand inside a shot |
 | The plan's own checks still pass | passed | every name in the library, the staging rules, the format's beats, for all 30 shots of the video |
-| The pictures are the ones that were looked at | passed | Claude looked at "honest-farmer-part-1-9x16-preview.mp4"; every frame of this video was compared with it (the strongest difference is 14 of 255; over 16 would be a different picture) |
+| The pictures are the ones that were looked at | passed | Claude looked at "honest-farmer-part-1-9x16-preview-v1.mp4"; every frame of this video was compared with it (the strongest difference is 14 of 255; over 16 would be a different picture) |
 
 ## What Claude looked at
 
@@ -45,6 +45,7 @@ Video: `honest-farmer-part-1-9x16-v1.mp4` (42.2 s). Checked on 2026-10-07.
 
 ## Found and put right on the way
 
+- In the vertical cut every place was shown too big: a bush as tall as a man, grass like spikes, and little of the place in the picture. A place is now drawn at its own size in a tall frame, the same size beside a person as in the wide cut, and it reaches as far as the camera can see.
 - In a narrow frame people stood too close together: a pointing arm reached through the person it pointed at. The scene is now laid out as many heads wide in a tall frame as in a wide one, and the camera closes in from there.
 
 ## What this check cannot judge

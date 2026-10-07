@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "video": "honest-farmer-part-1-9x16-preview.mp4",
+  "video": "honest-farmer-part-1-9x16-preview-v1.mp4",
   "stills": {
     "s1a": "ok",
     "s1b": "ok",
@@ -45,11 +45,12 @@
   },
   "playbook": "ok",
   "fixed": [
+    "In the vertical cut every place was shown too big: a bush as tall as a man, grass like spikes, and little of the place in the picture. A place is now drawn at its own size in a tall frame, the same size beside a person as in the wide cut, and it reaches as far as the camera can see.",
     "In a narrow frame people stood too close together: a pointing arm reached through the person it pointed at. The scene is now laid out as many heads wide in a tall frame as in a wide one, and the camera closes in from there."
   ],
   "notes": [
-    "In the vertical cut the walk to market has its caption over his shins and the bush.",
+    "In the vertical cut the walk to market passes a bush, and the caption sits over it for a moment.",
     "When his wife says \"Keep the gold!\" the vertical frame shows her alone, pointing off to the side; Tomas is in the wide cut only.",
-    "Backgrounds are seen from closer in the vertical cut, so there is less of each place in the picture."
+    "With three people at the table the camera stands further back in the vertical cut, so they are small and there is a lot of floor below them."
   ]
 }

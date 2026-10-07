@@ -7,7 +7,7 @@
  *   --time     write the voice's times into the shots (storyboard.json of the part)
  *   --sound    music and effects from the storyboard, mixed under the voice (audio/mix.wav)
  *   --stills   one still per shot, and all of them on one sheet, to look at before the video
- *   --preview  the part as a small, quick video to check before the final one is made
+ *   --preview  the part as a small, quick video to check before the final one is made (numbered too)
  *   --video    the part as a video, in the size given; each render gets the next version number
  *   --all      all of the above
  *
@@ -356,8 +356,8 @@ const PREVIEW_SCALE = 0.5;
 
 /**
  * The part as a video. The final one is never written over: each takes the next version
- * number. A preview is a scratch copy to check first (Part 2, section 11, step 9): small,
- * quick, and written over by the next preview.
+ * number. A preview is a scratch copy to check first (Part 2, section 11, step 9): small
+ * and quick, in its own folder, numbered the same way.
  */
 async function video(timedPart: Storyboard, preview = false) {
   const mix = path.join(audioDir, 'mix.wav');
@@ -373,7 +373,9 @@ async function video(timedPart: Storyboard, preview = false) {
   mkdirSync(outDir, { recursive: true });
   const slug = RUN?.replace(/^\d{4}-\d{2}-\d{2}-/, '') ?? 'video';
   const base = `${slug}-part-${PART}-${sizeTag}`;
-  const name = preview ? `${base}-preview` : `${base}-v${nextVersion(outDir, base)}`;
+  // Numbered like every render: a look at one preview can never stand for the next.
+  const stem = preview ? `${base}-preview` : base;
+  const name = `${stem}-v${nextVersion(outDir, stem)}`;
   const out = path.join(outDir, `${name}.mp4`);
   const t0 = Date.now();
   await renderMedia({

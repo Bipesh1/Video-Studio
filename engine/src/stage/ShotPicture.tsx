@@ -180,16 +180,41 @@ export function ShotPicture({
         );
       });
 
+  const horizonY = stage.background.horizon * size.height;
   const scenePicture = (
     <Framed shot={shot.camera.framing} focus={focus} side={side} {...size}>
-      <Background
-        spec={stage.background}
-        {...size}
-        frame={frame}
-        fps={fps}
-        cameraX={cameraX}
-        endless={follows}
-      />
+      {stage.scale > 1.001 ? (
+        // In a tall frame the scene is wider than the picture and laid out smaller. The place is
+        // drawn into it smaller by as much, about its own horizon, so a wide shot shows it at
+        // the size it was drawn to be, and it reaches past its canvas wherever the camera can.
+        <g
+          transform={`translate(${(size.width / 2) * (1 - 1 / stage.scale)} ${horizonY * (1 - 1 / stage.scale)}) scale(${1 / stage.scale})`}
+        >
+          <Background
+            spec={stage.background}
+            {...size}
+            frame={frame}
+            fps={fps}
+            cameraX={cameraX * stage.scale}
+            endless={follows}
+            world={{
+              left: ((stage.scale - 1) * size.width) / 2,
+              right: ((stage.scale - 1) * size.width) / 2,
+              top: horizonY * (stage.scale - 1),
+              bottom: (size.height - horizonY) * (stage.scale - 1),
+            }}
+          />
+        </g>
+      ) : (
+        <Background
+          spec={stage.background}
+          {...size}
+          frame={frame}
+          fps={fps}
+          cameraX={cameraX}
+          endless={follows}
+        />
+      )}
       {things(true)}
       {drawn.filter((d) => d !== near).map(person)}
       {things(false)}

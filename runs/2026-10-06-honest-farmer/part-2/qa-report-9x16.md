@@ -1,15 +1,14 @@
 # Self-check: The Honest Farmer, part 2 of 2 (tall)
 
-**Ready for you to watch.** Every check passed, with 6 things worth a second look.
+**Ready for you to watch.** Every check passed, with 5 things worth a second look.
 
-Video: `honest-farmer-part-2-9x16-v1.mp4` (42.4 s). Checked on 2026-10-07.
+Video: `honest-farmer-part-2-9x16-v2.mp4` (42.4 s). Checked on 2026-10-07.
 
 ## Worth a second look
 
 - A soldier at the gate is in this shot's plan but falls outside the picture (shot s5c, at 0:09).
 - The shot stays for 5.0 s, a little over the 4 s a shot should take (shot s9a, at 0:37).
 - At the gate, when he says he has something of the queen's, the vertical frame shows him alone; the soldier's surprise is in the wide cut only.
-- The night street is seen from so close in the vertical cut that it is mostly a house wall: the moon and the sky are out of the picture.
 - He sleeps on the bare floor: no bed is drawn.
 - When the queen gives him gold, a coin appears in his hand while she is out of the picture.
 
@@ -28,11 +27,11 @@ Video: `honest-farmer-part-2-9x16-v1.mp4` (42.4 s). Checked on 2026-10-07.
 | Everyone is inside the picture | passed, with a note | where every head lands on screen, on all 1271 frames of the 14 shots |
 | No face is under the title or the captions | passed | every face against the title, any label, the captions, on every frame |
 | Feet are on the ground | passed | the lowest foot or knee of every body against the ground line, on every frame |
-| Nothing jumps | passed | the furthest anyone moves in one frame on the way into a pose is 0.08 of a head (Tomas, the farmer, shot s5a); a jump would be over 0.3 |
+| Nothing jumps | passed | the furthest anyone moves in one frame on the way into a pose is 0.07 of a head (Tomas, the farmer, shot s5a); a jump would be over 0.3 |
 | No picture is held too long | passed, with a note | the longest shot is 5.0 s (s9a); the longest with nothing moving in it is 3.4 s |
 | Whatever is picked up is within reach | passed | 1 time someone takes a thing in their hand inside a shot |
 | The plan's own checks still pass | passed | every name in the library, the staging rules, the format's beats, for all 30 shots of the video |
-| The pictures are the ones that were looked at | passed | Claude looked at "honest-farmer-part-2-9x16-preview.mp4"; every frame of this video was compared with it (the strongest difference is 12 of 255; over 16 would be a different picture) |
+| The pictures are the ones that were looked at | passed | Claude looked at "honest-farmer-part-2-9x16-preview-v1.mp4"; every frame of this video was compared with it (the strongest difference is 12 of 255; over 16 would be a different picture) |
 
 ## What Claude looked at
 
@@ -45,6 +44,7 @@ Video: `honest-farmer-part-2-9x16-v1.mp4` (42.4 s). Checked on 2026-10-07.
 
 ## Found and put right on the way
 
+- In the vertical cut every place was shown too big: a bush as tall as a man, grass like spikes, and little of the place in the picture. A place is now drawn at its own size in a tall frame, the same size beside a person as in the wide cut, and it reaches as far as the camera can see.
 - In the last shot the sleeping farmer ran off the edge of the narrow frame. In a wide shot the camera now keeps the whole of anyone holding a pose in the picture, and still does when a push-in has finished.
 
 ## What this check cannot judge

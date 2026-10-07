@@ -83,7 +83,7 @@ When the preview passes, make the final video (`--video`) and run `npm run qa` o
 
 A part is shown to Biku in the page's first shape. When every part is approved, make the others the same way (`--size=9:16`: stills, preview, check and look, final), then `npm run output -- --run=<run>`.
 
-- **Look at a tall frame as its own picture.** It sees every place from closer, a shot that favours one of two people shows that one alone, and a medium shot shows the whole body with the caption over the legs. Say what the vertical cut loses; do not change the plan for it unless it is a fault there (L-0033).
+- **Look at a tall frame as its own picture.** A place is drawn at the same size beside a person as in the wide cut (L-0035), but the frame is narrow: a shot that favours one of two people shows that one alone, three people side by side put the camera further back, and a medium shot shows the whole body with the caption over the legs. A fault there is a fault to fix; say plainly what is only different (L-0033).
 - **The cover is one shot of the video**, named in the storyboard (`cover`: the shot, how far into it, and a shot size). Pick the moment that shows who the story is about and what is at stake, with the face readable when the picture is small.
 - **The output step** mixes the sound once for the whole video, joins the parts, adds the page's closing card if it has one, and checks the finished file. Look at the strip across each join and at the cover, write `out/<name>.look.json`, and run it again. `delivery.md` is the page Biku reads: what to upload where.
 - A new style of cover, mark or closing card is a change of look: show Biku numbered choices.

@@ -57,7 +57,9 @@ describe('which files to deliver', () => {
     const tall: Cut = { size: '9:16', kind: 'full', parts: [1, 2] };
     const teaser: Cut = { size: '9:16', kind: 'teaser', parts: [1] };
     expect(cutUse(wide, 85)).toBe('YouTube, as a normal wide video');
-    expect(cutUse(tall, 85)).toBe('YouTube Shorts and Facebook Reels');
+    expect(cutUse(tall, 85)).toBe(
+      'Facebook Reels (it also fits as a YouTube Short, if you want one)',
+    );
     expect(cutUse(teaser, 42)).toContain('as a teaser for the full video');
     // A vertical video over three minutes is not a Short.
     expect(SHORTS_MAX_S).toBe(180);

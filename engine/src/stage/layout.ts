@@ -2,7 +2,14 @@ import type { Actor, CastMember, CharacterCard, Scene, Shot, Storyboard } from '
 import { isPlace, sceneBackground } from '../backgrounds/places';
 import type { PlaceName } from '../backgrounds/places';
 import type { BackgroundSpec } from '../backgrounds/Background';
-import { STAGE_HEADS, STAGE_SHARE, focusBetween, focusOn, layoutHead } from '../camera/Framing';
+import {
+  STAGE_HEADS,
+  STAGE_SHARE,
+  focusBetween,
+  focusOn,
+  layoutHead,
+  layoutScale,
+} from '../camera/Framing';
 import type { Focus } from '../camera/Framing';
 import { ACTIONS } from '../rig/actions';
 import type { ActionName } from '../rig/actions';
@@ -26,6 +33,8 @@ export type Size = { width: number; height: number };
 export type Stage = {
   /** An adult's head, px, in the wide layout. */
   head: number;
+  /** How much closer a wide shot stands than the layout is drawn (see layoutScale). */
+  scale: number;
   /** The line people stand on, px from the top. */
   groundY: number;
   /** The middle of the stage and how wide it is, px: x of 0 and 1 are its two ends. */
@@ -45,8 +54,10 @@ export function stageFor(
   const head = layoutHead(size);
   return {
     head,
-    // Feet stand a little way into the ground, below the horizon.
-    groundY: (background.horizon + 0.034) * size.height,
+    scale: layoutScale(size),
+    // Feet stand a little way into the ground, below the horizon: the same little way on
+    // screen in a wide shot whatever the shape of the frame.
+    groundY: (background.horizon + 0.034 / layoutScale(size)) * size.height,
     centre: size.width / 2,
     // Wide enough to stand people apart, never so wide that two people lose each other.
     span: Math.min(STAGE_SHARE * size.width, STAGE_HEADS * head),

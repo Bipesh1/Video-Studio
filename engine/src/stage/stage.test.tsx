@@ -8,7 +8,7 @@ import { describe, expect, it, vi } from 'vitest';
 import library from '../../../library/index.json';
 import fixture from '../../../shared/src/fixtures/moon-tax.storyboard.json';
 import { sceneBackground } from '../backgrounds/places';
-import { shotTransform } from '../camera/Framing';
+import { layoutScale, shotTransform } from '../camera/Framing';
 import { lookFrom } from '../wardrobe/cast';
 import { unbuildable } from './buildable';
 import {
@@ -180,6 +180,47 @@ describe('a tall frame and a wide one', () => {
     for (const stage of [tall, wide]) {
       expect((stageX(stage, 0.62) - stageX(stage, 0.26)) / stage.head).toBeGreaterThan(3);
     }
+  });
+
+  it('draws a place at its own size in a tall frame: as big beside a person as in a wide one', () => {
+    // Biku, 2026-10-07: "everything like bush and grass in vertical is shown too big".
+    expect(layoutScale(WIDE)).toBe(1);
+    expect(layoutScale(TALL)).toBeCloseTo((0.105 * 1920) / ((0.86 * 1080) / 9.5), 6);
+    const tall = stageFor(scene, TALL, farmer.seed);
+    const wide = stageFor(scene, WIDE, farmer.seed);
+    expect(wide.scale).toBe(1);
+    expect(tall.scale).toBeGreaterThan(2);
+    // In a wide shot a head is the size the shot asks for, and the place is drawn one to one:
+    // the layout is closed in on by exactly as much as the place was drawn smaller into it.
+    expect(tall.head * tall.scale).toBeCloseTo(0.105 * 1920, 6);
+    // Feet stand the same little way below the horizon on screen in both shapes.
+    const below = (stage: typeof tall, size: { width: number; height: number }) =>
+      ((stage.groundY - stage.background.horizon * size.height) * stage.scale) / size.height;
+    expect(below(tall, TALL)).toBeCloseTo(below(wide, WIDE), 6);
+    // The picture wraps the place in that scale in a tall frame, and in nothing in a wide one.
+    const shots = timedShots(farmer, fps);
+    const ts = shots.find((x) => x.shot.id === 's5b');
+    if (!ts) throw new Error('no shot s5b');
+    const looks = new Map(farmer.cast.map((m) => [m.id, lookFrom(m.look ?? {}, m.id)]));
+    const picture = (size: { width: number; height: number }) =>
+      renderToStaticMarkup(
+        <svg>
+          <ShotPicture
+            ts={ts}
+            shots={shots}
+            storyboard={farmer}
+            cards={{}}
+            looks={looks}
+            track={null}
+            size={size}
+            frame={ts.startFrame + 10}
+            fps={fps}
+          />
+        </svg>,
+      );
+    expect(picture(TALL)).toContain(`scale(${1 / tall.scale})`);
+    expect(picture(WIDE)).not.toContain(`scale(${1 / tall.scale})`);
+    expect(picture(WIDE)).not.toMatch(/scale\(0\.\d+\)/);
   });
 
   it('keeps a whole body in a wide shot: sliding first, moving back only if it must', () => {

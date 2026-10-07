@@ -4,7 +4,7 @@
   "part": 2,
   "parts": 2,
   "size": "9:16",
-  "video": "honest-farmer-part-2-9x16-v1.mp4",
+  "video": "honest-farmer-part-2-9x16-v2.mp4",
   "seconds": 42.4,
   "checkedOn": "2026-10-07",
   "checks": [
@@ -96,7 +96,7 @@
       "id": "smooth",
       "title": "Nothing jumps",
       "by": "measured",
-      "detail": "the furthest anyone moves in one frame on the way into a pose is 0.08 of a head (Tomas, the farmer, shot s5a); a jump would be over 0.3",
+      "detail": "the furthest anyone moves in one frame on the way into a pose is 0.07 of a head (Tomas, the farmer, shot s5a); a jump would be over 0.3",
       "findings": []
     },
     {
@@ -131,7 +131,7 @@
       "id": "same-pictures",
       "title": "The pictures are the ones that were looked at",
       "by": "measured",
-      "detail": "Claude looked at \"honest-farmer-part-2-9x16-preview.mp4\"; every frame of this video was compared with it (the strongest difference is 12 of 255; over 16 would be a different picture)",
+      "detail": "Claude looked at \"honest-farmer-part-2-9x16-preview-v1.mp4\"; every frame of this video was compared with it (the strongest difference is 12 of 255; over 16 would be a different picture)",
       "findings": []
     },
     {
@@ -164,11 +164,11 @@
     }
   ],
   "fixed": [
+    "In the vertical cut every place was shown too big: a bush as tall as a man, grass like spikes, and little of the place in the picture. A place is now drawn at its own size in a tall frame, the same size beside a person as in the wide cut, and it reaches as far as the camera can see.",
     "In the last shot the sleeping farmer ran off the edge of the narrow frame. In a wide shot the camera now keeps the whole of anyone holding a pose in the picture, and still does when a push-in has finished."
   ],
   "notes": [
     "At the gate, when he says he has something of the queen's, the vertical frame shows him alone; the soldier's surprise is in the wide cut only.",
-    "The night street is seen from so close in the vertical cut that it is mostly a house wall: the moon and the sky are out of the picture.",
     "He sleeps on the bare floor: no bed is drawn.",
     "When the queen gives him gold, a coin appears in his hand while she is out of the picture."
   ]
