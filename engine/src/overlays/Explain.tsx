@@ -298,3 +298,292 @@ export function OrbitDiagram({
     </g>
   );
 }
+
+/** The sizes of a page of writing in a frame, before anything is drawn. */
+export function pageLayout(lines: readonly string[], width: number, height: number) {
+  const basis = textBasis(width, height);
+  const texts = lines.map(viewerText);
+  // A wide frame has room for a bigger sheet.
+  const w = basis * (width > height ? 1.12 : 0.88);
+  const size = fitSize(texts, basis * 0.074, w * 0.84);
+  const lineH = size * 1.75;
+  const h = lineH * texts.length + size * 2.5;
+  return {
+    texts,
+    basis,
+    size,
+    lineH,
+    w,
+    h,
+    cx: width / 2,
+    cy: height * (width > height ? 0.4 : 0.36),
+  };
+}
+
+/** The box a page of writing takes on screen. */
+export function pageBox(lines: readonly string[], width: number, height: number) {
+  const { w, h, cx, cy } = pageLayout(lines, width, height);
+  return { x: cx - w / 2, y: cy - h / 2, width: w, height: h };
+}
+
+/**
+ * A page held up to the camera: a bill, a letter, a notice. A cream sheet with a gold band and
+ * a few short lines of writing; one line can be marked in gold. It pops in like a title and
+ * keeps out of the caption area. Use it in a shot with nobody in it: it fills the picture.
+ */
+export function Page({
+  lines,
+  stress,
+  width,
+  height,
+  frame,
+}: {
+  lines: readonly string[];
+  /** Which line is marked, counting from 0. */
+  stress?: number | undefined;
+  width: number;
+  height: number;
+  frame?: number;
+}) {
+  const { texts, basis, size, lineH, w, h, cx, cy } = pageLayout(lines, width, height);
+  const s = pop(frame);
+  if (s <= 0) return null;
+  const paper = accent('cream');
+  const gold = accent('gold');
+  const edge = basis * 0.006;
+  const left = -w / 2 + size * 0.85;
+  return (
+    <g transform={`translate(${cx} ${cy}) rotate(-1.5) scale(${s})`}>
+      <rect x={-w / 2} y={-h / 2} width={w} height={h} rx={edge * 2} fill={pick(paper, 1)} />
+      <rect
+        x={-w / 2}
+        y={-h / 2}
+        width={w}
+        height={h - edge * 4}
+        rx={edge * 2}
+        fill={pick(paper, 0)}
+      />
+      <rect
+        x={-w / 2}
+        y={-h / 2}
+        width={w}
+        height={h}
+        rx={edge * 2}
+        fill="none"
+        stroke={ink}
+        strokeWidth={edge}
+      />
+      <rect
+        x={left}
+        y={-h / 2 + size * 0.62}
+        width={w - size * 1.7}
+        height={size * 0.4}
+        fill={pick(gold, 0)}
+        stroke={ink}
+        strokeWidth={edge * 0.6}
+      />
+      {texts.map((text, i) => {
+        const y = -h / 2 + size * 2.3 + i * lineH;
+        return (
+          <g key={`${i}-${text}`}>
+            {i === stress && (
+              <rect
+                x={left - size * 0.3}
+                y={y - size * 1.0}
+                width={textWidth(text, size) + size * 0.6}
+                height={size * 1.36}
+                rx={size * 0.2}
+                fill={pick(gold, 0)}
+              />
+            )}
+            <text
+              x={left}
+              y={y}
+              fontFamily={font}
+              fontWeight={i === stress ? 700 : 600}
+              fontSize={size}
+              fill={ink}
+            >
+              {text}
+            </text>
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+/** A counter's number as it is written: whole, with commas, after its sign ("$1,234,567"). */
+export const meterText = (value: number, prefix = ''): string =>
+  prefix +
+  Math.max(0, Math.floor(value))
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+/** The sizes of the corner counter in a frame. `digits` is the longest number it will show. */
+export function meterLayout(label: string, digits: number, width: number, height: number) {
+  const basis = textBasis(width, height);
+  const size = basis * 0.038;
+  const small = basis * 0.0205;
+  const cell = size * 0.6;
+  // Every fourth place is a comma, which takes half the room of a figure.
+  const w = Math.max(textWidth(viewerText(label), small), cell * digits * 0.9) + size * 0.9;
+  const h = size * 1.2 + small * 1.75;
+  const margin = basis * 0.022;
+  return {
+    basis,
+    size,
+    small,
+    cell,
+    w,
+    h,
+    x: width - w - margin,
+    y: height * (width > height ? 0.03 : 0.045),
+  };
+}
+
+/** The box the corner counter takes on screen. */
+export function meterBox(label: string, digits: number, width: number, height: number) {
+  const { x, y, w, h } = meterLayout(label, digits, width, height);
+  return { x, y, width: w, height: h };
+}
+
+/**
+ * A counter in the top corner that runs through the whole video: a dark plate with a few
+ * words and a number in gold. Every figure has its own place, so the number does not shake
+ * as it climbs.
+ */
+export function Meter({
+  label,
+  text,
+  digits,
+  width,
+  height,
+  opacity = 1,
+}: {
+  label: string;
+  /** The number as written, from meterText. */
+  text: string;
+  digits: number;
+  width: number;
+  height: number;
+  opacity?: number;
+}) {
+  const { basis, size, small, cell, w, h, x, y } = meterLayout(label, digits, width, height);
+  if (opacity <= 0) return null;
+  const plate = accent('steel');
+  const gold = accent('gold');
+  const edge = basis * 0.004;
+  const right = x + w - size * 0.45;
+  // Each figure has its own place, counted from the right; a comma takes half of one.
+  const chars = [...text];
+  const places: number[] = [];
+  let at = 0;
+  for (let i = chars.length - 1; i >= 0; i--) {
+    const wide = chars[i] === ',' ? 0.5 : 1;
+    places[i] = at + wide / 2;
+    at += wide;
+  }
+  return (
+    <g opacity={opacity}>
+      <rect x={x} y={y} width={w} height={h} rx={h * 0.16} fill={pick(plate, 1)} />
+      <rect
+        x={x}
+        y={y}
+        width={w}
+        height={h}
+        rx={h * 0.16}
+        fill="none"
+        stroke={ink}
+        strokeWidth={edge}
+      />
+      <text
+        x={right}
+        y={y + small * 1.35}
+        textAnchor="end"
+        fontFamily={font}
+        fontWeight={500}
+        fontSize={small}
+        fill={white}
+      >
+        {viewerText(label)}
+      </text>
+      {chars.map((ch, i) => (
+        <text
+          key={i}
+          x={right - (places[i] ?? 0) * cell}
+          y={y + small * 1.75 + size * 0.86}
+          textAnchor="middle"
+          fontFamily={font}
+          fontWeight={700}
+          fontSize={size}
+          fill={pick(gold, 0)}
+        >
+          {ch}
+        </text>
+      ))}
+    </g>
+  );
+}
+
+/** How wide and tall a tag is, in head units. */
+export function sceneTagSize(text: string) {
+  const size = 0.3;
+  return { size, width: textWidth(viewerText(text), size) + 0.36, height: 0.52 };
+}
+
+/**
+ * A tag tied to a thing in the scene ("SUNLIGHT", "USA, one year"): a small cream label on a
+ * short string, drawn in the scene in head units so it stays with its thing. The origin is
+ * where the string is tied.
+ */
+export function SceneTag({
+  text,
+  frame,
+  below = false,
+}: {
+  text: string;
+  frame?: number;
+  /** True for a tag that hangs under its thing, like a price tag, instead of standing on it. */
+  below?: boolean;
+}) {
+  const { size, width, height } = sceneTagSize(text);
+  const s = pop(frame);
+  if (s <= 0) return null;
+  const tones = accent('cream');
+  const dy = below ? 0.3 : -0.3;
+  return (
+    <g transform={`scale(${s})`}>
+      <path
+        d={`M 0 0 L 0.06 ${dy}`}
+        stroke={ink}
+        strokeWidth={lineWeights.detail * 1.6}
+        strokeLinecap={tokens.line.cap}
+      />
+      <g transform={`translate(0.06 ${dy + (below ? height : 0)}) rotate(-4)`}>
+        <rect
+          x={-width / 2}
+          y={-height}
+          width={width}
+          height={height}
+          rx={0.1}
+          fill={pick(tones, 0)}
+          stroke={ink}
+          strokeWidth={lineWeights.outline}
+        />
+        {/* The words are set at a size a browser draws well, then scaled to the scene. */}
+        <g transform={`translate(0 ${-height / 2 + size * 0.36}) scale(0.01)`}>
+          <text
+            textAnchor="middle"
+            fontFamily={font}
+            fontWeight={700}
+            fontSize={size * 100}
+            fill={ink}
+          >
+            {viewerText(text)}
+          </text>
+        </g>
+      </g>
+    </g>
+  );
+}

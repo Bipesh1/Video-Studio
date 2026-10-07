@@ -7,8 +7,9 @@ import { Fade } from '../camera/Camera';
 import { Watermark } from '../overlays/Brand';
 import type { Mark } from '../overlays/Brand';
 import { Captions } from '../overlays/Captions';
-import { BigNumber, OrbitDiagram, Pointer } from '../overlays/Explain';
+import { BigNumber, Meter, OrbitDiagram, Page, Pointer, meterText } from '../overlays/Explain';
 import { Label, TitleCard } from '../overlays/Titles';
+import type { Overlay } from '@studio/shared';
 import { clamp } from '../rig/math';
 import { ink } from '../tokens';
 import { lookFrom } from '../wardrobe/cast';
@@ -39,6 +40,12 @@ export type StoryboardVideoProps = {
   colors?: { titleRibbon: string; label: string };
   /** The page's mark in a corner of every frame, when the brand has one. */
   mark?: Mark | null;
+  /**
+   * For a video with a counter in its corner: how far into the whole video this part starts,
+   * in ms, and whether it is the last part, where the counter stops and fades.
+   */
+  meterStartMs?: number;
+  meterEnds?: boolean;
 };
 
 export const calculateStoryboardMetadata: CalculateMetadataFunction<StoryboardVideoProps> = ({
@@ -58,6 +65,18 @@ export const calculateStoryboardMetadata: CalculateMetadataFunction<StoryboardVi
 
 export { captionOptions } from './screen';
 
+/** True when two shots in a row hold up the same page, whatever line is marked. */
+const samePage = (before: Overlay | undefined, now: Overlay): boolean =>
+  before?.kind === 'page' && now.kind === 'page' && before.lines.join('|') === now.lines.join('|');
+
+/** Frames the counter takes to fade as the video ends, and how long before that it stops. */
+const METER_FADE = 24;
+const METER_HOLD = 54;
+
+/** The most figures a video's counter can come to: three minutes of it, written out. */
+export const meterDigits = (meter: { perSecond: number; prefix?: string | undefined }): number =>
+  meterText(meter.perSecond * 200, meter.prefix).length;
+
 export const StoryboardVideo = ({
   storyboard,
   track,
@@ -65,9 +84,13 @@ export const StoryboardVideo = ({
   cards,
   colors,
   mark,
+  meterStartMs = 0,
+  meterEnds = true,
 }: StoryboardVideoProps) => {
   const frame = useCurrentFrame();
-  const { fps, width, height } = useVideoConfig();
+  const { fps, width, height, durationInFrames: lastFrame } = useVideoConfig();
+  // In the last part the counter stops a little before the end, then fades.
+  const meterStop = meterEnds ? lastFrame - METER_HOLD : lastFrame;
   const size = { width, height };
   const shots = timedShots(storyboard, fps);
   const ts = shotAt(shots, frame);
@@ -139,6 +162,15 @@ export const StoryboardVideo = ({
             frame={local - 4}
           />
         )}
+        {overlay?.kind === 'page' && (
+          <Page
+            lines={overlay.lines}
+            stress={overlay.stress}
+            {...size}
+            // A page that was already up in the shot before stays up: it does not pop in again.
+            {...(samePage(shots[ts.index - 1]?.shot.overlay, overlay) ? {} : { frame: local - 4 })}
+          />
+        )}
         {overlay?.kind === 'orbit' && (
           <>
             <OrbitDiagram
@@ -149,6 +181,19 @@ export const StoryboardVideo = ({
             />
             {overlay.text && <Label text={overlay.text} {...size} frame={local - 4} at="top" />}
           </>
+        )}
+        {storyboard.meter && (
+          <Meter
+            label={storyboard.meter.label}
+            digits={meterDigits(storyboard.meter)}
+            text={meterText(
+              storyboard.meter.perSecond *
+                ((meterStartMs + (Math.min(frame, meterStop) / fps) * 1000) / 1000),
+              storyboard.meter.prefix,
+            )}
+            {...size}
+            opacity={meterEnds ? clamp((lastFrame - frame) / METER_FADE, 0, 1) : 1}
+          />
         )}
         {mark && <Watermark mark={mark} {...size} />}
         {fadeAt !== null && <Fade frame={frame} at={fadeAt} {...size} />}

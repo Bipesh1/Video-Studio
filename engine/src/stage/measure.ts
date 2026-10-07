@@ -13,7 +13,7 @@ import type { Box } from '../overlays/captionLayout';
 import { buildPages, pageAt, toCaptions } from '../overlays/captionPages';
 import type { CaptionPage } from '../overlays/captionPages';
 import { markBox } from '../overlays/Brand';
-import { bigNumberBox, pointerBox } from '../overlays/Explain';
+import { bigNumberBox, meterBox, meterText, pageBox, pointerBox } from '../overlays/Explain';
 import type { Mark } from '../overlays/Brand';
 import { labelBox, titleCardBox } from '../overlays/Titles';
 import { movePose } from '../rig/chain';
@@ -58,6 +58,8 @@ export type FrameMeasure = {
   caption: Box | null;
   /** The page's mark, when the brand has one. */
   mark: Box | null;
+  /** The counter in the corner, when the video has one. */
+  meter: Box | null;
   /** Things someone takes in this shot that they cannot reach. */
   outOfReach: Array<{ who: string; thing: string }>;
   /** The things standing or hanging in the shot, furniture apart: the body of each on screen, px. */
@@ -230,9 +232,19 @@ export function measureFrame(
                 size.width,
                 size.height,
               )
-            : null,
+            : overlay?.kind === 'page'
+              ? pageBox(overlay.lines, size.width, size.height)
+              : null,
     caption: page ? captionBox(page, size.width, size.height) : null,
     mark: input.mark ? markBox(input.mark, size.width, size.height) : null,
+    meter: storyboard.meter
+      ? meterBox(
+          storyboard.meter.label,
+          meterText(storyboard.meter.perSecond * 200, storyboard.meter.prefix).length,
+          size.width,
+          size.height,
+        )
+      : null,
     outOfReach: drawn.flatMap((d) =>
       d.outOfReach.map((thing) => ({ who: d.actor.character, thing })),
     ),
@@ -403,6 +415,7 @@ export function pictureChecks(input: MeasureInput, limits: { maxShotS?: number }
         ['the label or number', (m: FrameMeasure) => m.label],
         ['the captions', (m: FrameMeasure) => m.caption],
         ["the page's mark", (m: FrameMeasure) => m.mark],
+        ['the counter', (m: FrameMeasure) => m.meter],
       ] as const) {
         const covered = seen.filter(({ m, p }) => faceCovered(p.head, pick(m)) > FACE_COVERED);
         // A single frame is a caption popping in as a head passes; a few frames is a face covered.

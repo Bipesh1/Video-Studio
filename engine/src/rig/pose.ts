@@ -280,7 +280,13 @@ export function moveFrames(
   key: Pick<PoseKey, 'transition' | 'windup'> = {},
 ): { windup: number; transition: number; big: boolean; whole: boolean } {
   const big = poseDistance(from, to) > BIG_MOVE;
-  const travel = Math.hypot(from.rootX - to.rootX, from.hipY - to.hipY);
+  // How far the hips go, or how far the shoulders go when the body bows over still hips: a deep
+  // lean to reach the floor carries the head as far as a kneel does (the envelope picked up
+  // from a kneel, 2026-10-07: the head went 0.6 of its width in one frame).
+  const bow =
+    tokens.proportions.torsoHeads *
+    Math.abs(Math.sin(((to.torsoLean - from.torsoLean) * Math.PI) / 180));
+  const travel = Math.max(Math.hypot(from.rootX - to.rootX, from.hipY - to.hipY), bow);
   const whole = travel >= BODY_MOVE;
   const natural = whole ? bodyMoveFrames(travel) : DEFAULT_TRANSITION;
   return {

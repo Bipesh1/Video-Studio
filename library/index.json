@@ -5198,6 +5198,460 @@
       "use": "sound-plan.json: \"sfx\": [{ \"name\": \"ding\", \"atMs\": 1200 }]",
       "version": 1,
       "added": "2026-10-06"
+    },
+    {
+      "id": "prop/envelope",
+      "kind": "prop",
+      "name": "Glowing envelope",
+      "description": "A gold envelope with a small seal that glows warm enough to light a room. Held up, or lying on the floor or a table.",
+      "tags": [
+        "prop",
+        "envelope",
+        "letter",
+        "mail",
+        "glow",
+        "light",
+        "gold",
+        "mystery",
+        "bill",
+        "post"
+      ],
+      "code": {
+        "file": "engine/src/props/Bill.tsx",
+        "export": "Envelope"
+      },
+      "use": "holds: \"envelope\", or props: [{ prop: \"envelope\", x }]; \"from\" slides it in under a door",
+      "still": "knowledge/golden/assets/prop-envelope.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "prop/bill",
+      "kind": "prop",
+      "name": "Bill",
+      "description": "A bill or letter: a cream sheet with a gold band across the top and a few lines of writing. Held up to read, or standing in a scene.",
+      "tags": [
+        "prop",
+        "bill",
+        "letter",
+        "paper",
+        "page",
+        "invoice",
+        "document",
+        "money",
+        "read",
+        "statement"
+      ],
+      "code": {
+        "file": "engine/src/props/Bill.tsx",
+        "export": "Bill"
+      },
+      "use": "holds: \"bill\", or props: [{ prop: \"bill\", x }]; to show what it says use the \"page\" overlay",
+      "still": "knowledge/golden/assets/prop-bill.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "prop/bills",
+      "kind": "prop",
+      "name": "Pile of bills",
+      "description": "A small pile of ordinary bills lying on a table.",
+      "tags": [
+        "prop",
+        "bills",
+        "papers",
+        "pile",
+        "paperwork",
+        "table",
+        "money",
+        "household",
+        "invoice",
+        "debt"
+      ],
+      "code": {
+        "file": "engine/src/props/Bill.tsx",
+        "export": "Bills"
+      },
+      "use": "props: [{ prop: \"bills\", x, y: 1.3 }] to lie on a table",
+      "still": "knowledge/golden/assets/prop-bills.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "prop/coin-stack",
+      "kind": "prop",
+      "name": "Stack of coins",
+      "description": "A stack of a dozen gold coins, about one head tall. For money, a price, savings, or one bar of a comparison.",
+      "tags": [
+        "prop",
+        "coins",
+        "stack",
+        "money",
+        "gold",
+        "savings",
+        "price",
+        "wealth",
+        "pay",
+        "count"
+      ],
+      "code": {
+        "file": "engine/src/props/Bill.tsx",
+        "export": "CoinStack"
+      },
+      "use": "props: [{ prop: \"coin-stack\", x, tag: \"USA, one year\" }]; size makes it bigger",
+      "still": "knowledge/golden/assets/prop-coin-stack.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "prop/coin-tower",
+      "kind": "prop",
+      "name": "Tower of coins",
+      "description": "A tower of gold coins nearly four heads tall. For a fortune, or the tall bar of a comparison beside a small stack.",
+      "tags": [
+        "prop",
+        "coins",
+        "tower",
+        "money",
+        "gold",
+        "fortune",
+        "rich",
+        "wealth",
+        "treasure",
+        "compare"
+      ],
+      "code": {
+        "file": "engine/src/props/Bill.tsx",
+        "export": "CoinStack"
+      },
+      "use": "props: [{ prop: \"coin-tower\", x, tag: \"World, one year\" }]",
+      "still": "knowledge/golden/assets/prop-coin-tower.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "prop/coal",
+      "kind": "prop",
+      "name": "Lump of coal",
+      "description": "A dark lump of coal with the green print of an old fern in it. For fuel, energy, mining and ancient plants.",
+      "tags": [
+        "prop",
+        "coal",
+        "rock",
+        "fuel",
+        "energy",
+        "fossil",
+        "fern",
+        "mine",
+        "black",
+        "ancient"
+      ],
+      "code": {
+        "file": "engine/src/props/Bill.tsx",
+        "export": "Coal"
+      },
+      "use": "props: [{ prop: \"coal\", x, tag: \"SUNLIGHT\" }]",
+      "still": "knowledge/golden/assets/prop-coal.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "prop/fuel-can",
+      "kind": "prop",
+      "name": "Fuel can",
+      "description": "A red fuel can with a spout and a grip. For petrol, oil, cars and energy.",
+      "tags": ["prop", "fuel", "can", "petrol", "gas", "oil", "car", "energy", "red", "jerry-can"],
+      "code": {
+        "file": "engine/src/props/Bill.tsx",
+        "export": "FuelCan"
+      },
+      "use": "props: [{ prop: \"fuel-can\", x }]",
+      "still": "knowledge/golden/assets/prop-fuel-can.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "prop/bread",
+      "kind": "prop",
+      "name": "Loaf of bread",
+      "description": "A loaf of bread with three cuts across its top. For food, dinner, a kitchen or hunger.",
+      "tags": [
+        "prop",
+        "bread",
+        "loaf",
+        "food",
+        "dinner",
+        "meal",
+        "kitchen",
+        "hungry",
+        "bakery",
+        "eat"
+      ],
+      "code": {
+        "file": "engine/src/props/Bill.tsx",
+        "export": "Bread"
+      },
+      "use": "props: [{ prop: \"bread\", x, y: 1.3 }] to stand on a table",
+      "still": "knowledge/golden/assets/prop-bread.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "prop/wind",
+      "kind": "prop",
+      "name": "Gust of wind",
+      "description": "Three pale lines of moving air that curl at the end and drift. Best over a dark or blue sky.",
+      "tags": [
+        "prop",
+        "wind",
+        "gust",
+        "air",
+        "weather",
+        "breeze",
+        "storm",
+        "blow",
+        "sky",
+        "energy"
+      ],
+      "code": {
+        "file": "engine/src/props/Weather.tsx",
+        "export": "Wind"
+      },
+      "use": "props: [{ prop: \"wind\", x, y }]",
+      "still": "knowledge/golden/assets/prop-wind.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "prop/rain-cloud",
+      "kind": "prop",
+      "name": "Rain cloud",
+      "description": "A white cloud with drops falling from it on a loop.",
+      "tags": [
+        "prop",
+        "rain",
+        "cloud",
+        "weather",
+        "water",
+        "storm",
+        "wet",
+        "sky",
+        "drops",
+        "shower"
+      ],
+      "code": {
+        "file": "engine/src/props/Weather.tsx",
+        "export": "RainCloud"
+      },
+      "use": "props: [{ prop: \"rain-cloud\", x, y }]",
+      "still": "knowledge/golden/assets/prop-rain-cloud.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "effect/coin-rain",
+      "kind": "effect",
+      "name": "Coins raining down",
+      "description": "Gold coins that fall onto someone's head one after another, turning as they come. For money arriving, a windfall, a wage.",
+      "tags": [
+        "effect",
+        "coins",
+        "money",
+        "rain",
+        "gold",
+        "rich",
+        "windfall",
+        "pay",
+        "lucky",
+        "falling"
+      ],
+      "code": {
+        "file": "engine/src/effects/CoinRain.tsx",
+        "export": "CoinRain"
+      },
+      "use": "effects: [{ effect: \"coin-rain\", on: \"<person>\" }]",
+      "still": "knowledge/golden/assets/effect-coin-rain.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "place/sea",
+      "kind": "place",
+      "name": "Open sea",
+      "description": "Open sea to the horizon with nothing on it, under any sky.",
+      "tags": [
+        "sea",
+        "ocean",
+        "water",
+        "waves",
+        "horizon",
+        "empty",
+        "coast",
+        "sail",
+        "blue",
+        "outdoors"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "placeSpec"
+      },
+      "use": "placeSpec('sea', seed); in a scene: place \"sea\" with palette \"clear-day\"",
+      "still": "knowledge/golden/assets/place-sea.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "place/plain",
+      "kind": "place",
+      "name": "Empty plain",
+      "description": "An empty plain: low hills and grass, and nothing anyone built.",
+      "tags": [
+        "plain",
+        "grassland",
+        "meadow",
+        "empty",
+        "wild",
+        "nature",
+        "prehistoric",
+        "hills",
+        "outdoors",
+        "open"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "placeSpec"
+      },
+      "use": "placeSpec('plain', seed); in a scene: place \"plain\" with palette \"clear-day\"",
+      "still": "knowledge/golden/assets/place-plain.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "place/bare-rock",
+      "kind": "place",
+      "name": "Bare rock",
+      "description": "Bare gray rock with a few dark hollows under the sky, before anything lived.",
+      "tags": [
+        "rock",
+        "barren",
+        "desert",
+        "lifeless",
+        "early-earth",
+        "stone",
+        "wasteland",
+        "empty",
+        "prehistoric",
+        "outdoors"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "placeSpec"
+      },
+      "use": "placeSpec('bare-rock', seed); in a scene: place \"bare-rock\" with palette \"cold-dawn\"",
+      "still": "knowledge/golden/assets/place-bare-rock.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "place/vault",
+      "kind": "place",
+      "name": "Bank vault",
+      "description": "A bank vault: a round steel door in the back wall and rows of locked boxes.",
+      "tags": [
+        "vault",
+        "bank",
+        "safe",
+        "money",
+        "treasure",
+        "savings",
+        "strongroom",
+        "steel",
+        "indoors",
+        "gold"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "placeSpec"
+      },
+      "use": "placeSpec('vault', seed); in a scene: place \"vault\" with palette \"storm-slate\"",
+      "still": "knowledge/golden/assets/place-vault.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "overlay/page",
+      "kind": "overlay",
+      "name": "Page held up to the camera",
+      "description": "A bill, letter or notice filling the picture: a cream sheet with a gold band and up to five short lines of writing, one of them marked in gold.",
+      "tags": [
+        "page",
+        "bill",
+        "letter",
+        "document",
+        "text",
+        "read",
+        "notice",
+        "invoice",
+        "paper",
+        "writing"
+      ],
+      "code": {
+        "file": "engine/src/overlays/Explain.tsx",
+        "export": "Page"
+      },
+      "use": "overlay: { kind: \"page\", lines: [\"FROM: THE SUN\", \"AMOUNT DUE: $30\"], stress: 1 } in a shot with nobody in it",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "overlay/meter",
+      "kind": "overlay",
+      "name": "Corner counter",
+      "description": "A counter in the top corner of the whole video: a dark plate with a few words and a gold number that climbs every frame, then stops and fades at the end.",
+      "tags": [
+        "counter",
+        "meter",
+        "number",
+        "running",
+        "total",
+        "clock",
+        "money",
+        "tally",
+        "corner",
+        "count-up"
+      ],
+      "code": {
+        "file": "engine/src/overlays/Explain.tsx",
+        "export": "Meter"
+      },
+      "use": "on the storyboard: meter: { label: \"Sunlight delivered since you pressed play\", perSecond: 8360000000, prefix: \"$\" }",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "overlay/tag",
+      "kind": "overlay",
+      "name": "Tag on a thing",
+      "description": "A small cream tag on a short string tied to a thing in the scene, with a word or two on it. It pops up a moment into the shot.",
+      "tags": [
+        "tag",
+        "label",
+        "name",
+        "price",
+        "sticker",
+        "marker",
+        "note",
+        "caption",
+        "word",
+        "identify"
+      ],
+      "code": {
+        "file": "engine/src/overlays/Explain.tsx",
+        "export": "SceneTag"
+      },
+      "use": "on a prop: { prop: \"coal\", x, tag: \"SUNLIGHT\" }",
+      "version": 1,
+      "added": "2026-10-07"
     }
   ]
 }

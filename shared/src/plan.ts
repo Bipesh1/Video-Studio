@@ -687,7 +687,9 @@ export function describeShot(shot: Shot, sb: Storyboard, world: World): string {
             ? `Big number: "${o.text}"${o.caption ? ` (${o.caption})` : ''}`
             : o.kind === 'pointer'
               ? `An arrow labelled "${o.text}"`
-              : `A diagram: the ${o.around} going round the ${o.center}`,
+              : o.kind === 'page'
+                ? `A page held up to the camera: "${o.lines.join(' / ')}"`
+                : `A diagram: the ${o.around} going round the ${o.center}`,
     );
   }
   return `${parts.map(sentence).join('. ')}.`;

@@ -1,0 +1,1384 @@
+{
+  "version": 1,
+  "title": "What If the Sun Sent You a Bill?",
+  "request": "i have a script of about 3 minute long videos can i send it to you and see the final product",
+  "mode": "as-is",
+  "format": "explainer",
+  "style": "ink-stick",
+  "brand": "my-page",
+  "voice": "narrator",
+  "seed": 67745,
+  "sources": [
+    "Wikipedia, \"Solar energy\": the Earth receives 174 petawatts of sunlight at the top of the atmosphere, about 30 percent of which is reflected back to space. https://en.wikipedia.org/wiki/Solar_energy",
+    "US Energy Information Administration, Short-Term Energy Outlook: average US residential electricity price of 17.3 cents per kilowatt-hour in 2025 and a projected 18.2 cents in 2026. https://www.eia.gov/outlooks/steo/report/elec_coal_renew.php",
+    "Wikipedia, \"List of countries by GDP (nominal)\", IMF 2026 forecasts: United States about 32.4 trillion dollars, world about 126.3 trillion dollars. https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)",
+    "Wikipedia, \"World population\": about 8.3 billion people in 2026. https://en.wikipedia.org/wiki/World_population",
+    "Wikipedia, \"Sun\": luminosity of 3.828 x 10^26 watts, about 4 billion kilograms of matter converted to energy each second. https://en.wikipedia.org/wiki/Sun",
+    "NASA, Sun facts: about 4.5 billion years old, with about 5 billion years left. https://science.nasa.gov/sun/facts/",
+    "US Energy Information Administration, Coal explained: coal holds energy stored by plants that lived hundreds of millions of years ago. https://www.eia.gov/energyexplained/coal/",
+    "US Energy Information Administration, Sources of energy: wind comes from uneven heating by the Sun, and geothermal and nuclear energy do not come from the Sun. https://www.eia.gov/energyexplained/what-is-energy/sources-of-energy.php"
+  ],
+  "appliedLessons": [],
+  "cast": [],
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "hook",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "atmospheric",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n1",
+          "speaker": "narrator",
+          "text": "An envelope slides under your door.",
+          "speed": 0.92
+        },
+        {
+          "id": "n2",
+          "speaker": "narrator",
+          "text": "No stamp. It is warm.",
+          "speed": 0.92
+        },
+        {
+          "id": "n3",
+          "speaker": "narrator",
+          "text": "Inside is a bill, and the name at the top is yours.",
+          "speed": 0.92
+        },
+        {
+          "id": "n4",
+          "speaker": "narrator",
+          "text": "Sender: the *Sun.*",
+          "speed": 0.92,
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "n5",
+          "speaker": "narrator",
+          "text": "Amount due, for the last hour of sunlight on Earth: thirty *trillion* dollars.",
+          "speed": 0.92,
+          "pauseAfterMs": 1000
+        }
+      ],
+      "shots": [
+        {
+          "id": "s1a",
+          "line": "n1",
+          "words": "An envelope slides under your door.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "title",
+            "text": "What If the Sun Sent You a Bill?"
+          },
+          "transition": "cut"
+        },
+        {
+          "id": "s1b",
+          "line": "n2",
+          "words": "No stamp. It is warm.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s1c",
+          "line": "n3",
+          "words": "Inside is a bill,",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s1d",
+          "line": "n3",
+          "words": "and the name at the top is yours.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s1e",
+          "line": "n4",
+          "words": "Sender: the *Sun.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s1f",
+          "line": "n5",
+          "words": "Amount due, for the last hour of sunlight on Earth:",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s1g",
+          "line": "n5",
+          "words": "thirty *trillion* dollars.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "why-it-matters",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n6",
+          "speaker": "narrator",
+          "text": "You laugh. Then you check the sum.",
+          "speed": 0.92
+        },
+        {
+          "id": "n7",
+          "speaker": "narrator",
+          "text": "Take all the sunlight that lands on this planet in one *hour.*",
+          "speed": 0.92
+        },
+        {
+          "id": "n8",
+          "speaker": "narrator",
+          "text": "Price it like the electricity in your wall.",
+          "speed": 0.92
+        },
+        {
+          "id": "n9",
+          "speaker": "narrator",
+          "text": "Thirty trillion. About what the whole United States earns in a year.",
+          "speed": 0.92,
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "n10",
+          "speaker": "narrator",
+          "text": "Every *four* hours, the Sun delivers the value of everything the entire world earns in a year.",
+          "speed": 0.92
+        },
+        {
+          "id": "n11",
+          "speaker": "narrator",
+          "text": "And then it does it again.",
+          "speed": 0.92,
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "n12",
+          "speaker": "narrator",
+          "text": "In under ninety minutes, the Earth soaks up more energy than every city, car and factory will use this year.",
+          "speed": 0.92,
+          "pauseAfterMs": 1000
+        }
+      ],
+      "shots": [
+        {
+          "id": "s2a",
+          "line": "n6",
+          "words": "You laugh. Then you check the sum.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2b",
+          "line": "n7",
+          "words": "Take all the sunlight that lands on",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2c",
+          "line": "n7",
+          "words": "this planet in one *hour.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2d",
+          "line": "n8",
+          "words": "Price it like the electricity in your wall.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2e",
+          "line": "n9",
+          "words": "Thirty trillion. About what the whole United",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2f",
+          "line": "n9",
+          "words": "States earns in a year.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2g",
+          "line": "n10",
+          "words": "Every *four* hours, the Sun delivers the value of",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2h",
+          "line": "n10",
+          "words": "everything the entire world earns in a year.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2i",
+          "line": "n11",
+          "words": "And then it does it again.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2j",
+          "line": "n12",
+          "words": "In under ninety minutes,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2k",
+          "line": "n12",
+          "words": "the Earth soaks up more energy than every city,",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2l",
+          "line": "n12",
+          "words": "car and factory will use this year.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "chapter": 2,
+      "beat": "first-part",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n13",
+          "speaker": "narrator",
+          "text": "You try the obvious defence. That is not all mine.",
+          "speed": 0.92
+        },
+        {
+          "id": "n14",
+          "speaker": "narrator",
+          "text": "Fine. Split it between every person alive.",
+          "speed": 0.92
+        },
+        {
+          "id": "n15",
+          "speaker": "narrator",
+          "text": "Your share is more than three thousand dollars. An hour.",
+          "speed": 0.92,
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "n16",
+          "speaker": "narrator",
+          "text": "Thirty *million* dollars a year, delivered to you, for free, since the day you were born.",
+          "speed": 0.92,
+          "pauseAfterMs": 1000
+        },
+        {
+          "id": "n17",
+          "speaker": "narrator",
+          "text": "Then you look at your real bills. Electricity. Fuel. Food.",
+          "speed": 0.92
+        },
+        {
+          "id": "n18",
+          "speaker": "narrator",
+          "text": "And you notice something.",
+          "speed": 0.92,
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "n19",
+          "speaker": "narrator",
+          "text": "Coal is sunlight that plants caught hundreds of millions of years ago.",
+          "speed": 0.92
+        },
+        {
+          "id": "n20",
+          "speaker": "narrator",
+          "text": "Oil is the same story.",
+          "speed": 0.92
+        },
+        {
+          "id": "n21",
+          "speaker": "narrator",
+          "text": "Wind is air the Sun warmed. Rain is water the Sun lifted.",
+          "speed": 0.92
+        },
+        {
+          "id": "n22",
+          "speaker": "narrator",
+          "text": "Your dinner is this summer's light.",
+          "speed": 0.92,
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "n23",
+          "speaker": "narrator",
+          "text": "You have almost never paid for energy.",
+          "speed": 0.92
+        },
+        {
+          "id": "n24",
+          "speaker": "narrator",
+          "text": "You have only paid for *delivery.*",
+          "speed": 0.92,
+          "pauseAfterMs": 1000
+        }
+      ],
+      "shots": [
+        {
+          "id": "s3a",
+          "line": "n13",
+          "words": "You try the obvious defence. That is not all mine.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3b",
+          "line": "n14",
+          "words": "Fine. Split it between every person alive.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3c",
+          "line": "n15",
+          "words": "Your share is more than three thousand dollars. An hour.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3d",
+          "line": "n16",
+          "words": "Thirty *million* dollars a year, delivered to you, for free,",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3e",
+          "line": "n16",
+          "words": "since the day you were born.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3f",
+          "line": "n17",
+          "words": "Then you look at your real bills. Electricity. Fuel. Food.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3g",
+          "line": "n18",
+          "words": "And you notice something.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3h",
+          "line": "n19",
+          "words": "Coal is sunlight that plants caught hundreds",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3i",
+          "line": "n19",
+          "words": "of millions of years ago.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3j",
+          "line": "n20",
+          "words": "Oil is the same story.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3k",
+          "line": "n21",
+          "words": "Wind is air the Sun warmed.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3l",
+          "line": "n21",
+          "words": "Rain is water the Sun lifted.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3m",
+          "line": "n22",
+          "words": "Your dinner is this summer's light.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3n",
+          "line": "n23",
+          "words": "You have almost never paid for energy.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3o",
+          "line": "n24",
+          "words": "You have only paid for *delivery.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "chapter": 3,
+      "beat": "second-part",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n25",
+          "speaker": "narrator",
+          "text": "And the coal and the oil? That is a *savings* account.",
+          "speed": 0.92
+        },
+        {
+          "id": "n26",
+          "speaker": "narrator",
+          "text": "Sunlight, deposited a little at a time, over hundreds of millions of years.",
+          "speed": 0.92
+        },
+        {
+          "id": "n27",
+          "speaker": "narrator",
+          "text": "We found the account a few hundred years ago.",
+          "speed": 0.92
+        },
+        {
+          "id": "n28",
+          "speaker": "narrator",
+          "text": "We have been emptying it ever since.",
+          "speed": 0.92,
+          "pauseAfterMs": 1000
+        }
+      ],
+      "shots": [
+        {
+          "id": "s4a",
+          "line": "n25",
+          "words": "And the coal and the oil?",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4b",
+          "line": "n25",
+          "words": "That is a *savings* account.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4c",
+          "line": "n26",
+          "words": "Sunlight, deposited a little at a time,",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4d",
+          "line": "n26",
+          "words": "over hundreds of millions of years.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4e",
+          "line": "n27",
+          "words": "We found the account a few hundred years ago.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4f",
+          "line": "n28",
+          "words": "We have been emptying it ever since.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chapter": 3,
+      "beat": "surprise",
+      "mood": "tense",
+      "place": "todo",
+      "treatment": "atmospheric",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n29",
+          "speaker": "narrator",
+          "text": "So you turn the bill over, looking for the catch.",
+          "speed": 0.86
+        },
+        {
+          "id": "n30",
+          "speaker": "narrator",
+          "text": "There is a second page. It shows what this costs the sender.",
+          "speed": 0.86,
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "n31",
+          "speaker": "narrator",
+          "text": "Every second, the Sun destroys four million *tonnes* of itself to make that light.",
+          "speed": 0.86
+        },
+        {
+          "id": "n32",
+          "speaker": "narrator",
+          "text": "And Earth catches almost none of it. One part in two billion.",
+          "speed": 0.86
+        },
+        {
+          "id": "n33",
+          "speaker": "narrator",
+          "text": "The rest pours into empty space, unbilled, unseen, for *nobody.*",
+          "speed": 0.86,
+          "pauseAfterMs": 1100
+        }
+      ],
+      "shots": [
+        {
+          "id": "s5a",
+          "line": "n29",
+          "words": "So you turn the bill over, looking for the catch.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5b",
+          "line": "n30",
+          "words": "There is a second page.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5c",
+          "line": "n30",
+          "words": "It shows what this costs the sender.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5d",
+          "line": "n31",
+          "words": "Every second, the Sun destroys four million *tonnes*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5e",
+          "line": "n31",
+          "words": "of itself to make that light.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5f",
+          "line": "n32",
+          "words": "And Earth catches almost none of it.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5g",
+          "line": "n32",
+          "words": "One part in two billion.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5h",
+          "line": "n33",
+          "words": "The rest pours into empty space, unbilled,",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5i",
+          "line": "n33",
+          "words": "unseen, for *nobody.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 4,
+      "beat": "surprise",
+      "mood": "tense",
+      "place": "todo",
+      "treatment": "atmospheric",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n34",
+          "speaker": "narrator",
+          "text": "It has done this for four and a half billion years.",
+          "speed": 0.86
+        },
+        {
+          "id": "n35",
+          "speaker": "narrator",
+          "text": "Before your street. Before people.",
+          "speed": 0.86
+        },
+        {
+          "id": "n36",
+          "speaker": "narrator",
+          "text": "Before anything alive could look up.",
+          "speed": 0.86
+        },
+        {
+          "id": "n37",
+          "speaker": "narrator",
+          "text": "It lit oceans with nothing in them.",
+          "speed": 0.86,
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "n38",
+          "speaker": "narrator",
+          "text": "No *invoice.* No reminder. No *interest.*",
+          "speed": 0.86,
+          "pauseAfterMs": 1100
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6a",
+          "line": "n34",
+          "words": "It has done this for four",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6b",
+          "line": "n34",
+          "words": "and a half billion years.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6c",
+          "line": "n35",
+          "words": "Before your street. Before people.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6d",
+          "line": "n36",
+          "words": "Before anything alive could look up.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6e",
+          "line": "n37",
+          "words": "It lit oceans with nothing in them.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6f",
+          "line": "n38",
+          "words": "No *invoice.* No reminder. No *interest.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "chapter": 4,
+      "beat": "takeaway",
+      "mood": "reflective",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n39",
+          "speaker": "narrator",
+          "text": "At the bottom there is one last line, and it is not a demand.",
+          "speed": 0.86
+        },
+        {
+          "id": "n40",
+          "speaker": "narrator",
+          "text": "Amount due: nothing.",
+          "speed": 0.86,
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "n41",
+          "speaker": "narrator",
+          "text": "It was never a bill. It was a statement.",
+          "speed": 0.86
+        },
+        {
+          "id": "n42",
+          "speaker": "narrator",
+          "text": "*Paid* in full, by the sender.",
+          "speed": 0.86
+        },
+        {
+          "id": "n43",
+          "speaker": "narrator",
+          "text": "Remaining credit: about five billion years.",
+          "speed": 0.86,
+          "pauseAfterMs": 1000
+        },
+        {
+          "id": "n44",
+          "speaker": "narrator",
+          "text": "You fold it up. Outside, it is morning.",
+          "speed": 0.86,
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "n45",
+          "speaker": "narrator",
+          "text": "And for the first time in your life, you feel the Sun on your face and know exactly what it is *worth.*",
+          "speed": 0.86,
+          "pauseAfterMs": 1200
+        }
+      ],
+      "shots": [
+        {
+          "id": "s7a",
+          "line": "n39",
+          "words": "At the bottom there is one last line,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7b",
+          "line": "n39",
+          "words": "and it is not a demand.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7c",
+          "line": "n40",
+          "words": "Amount due: nothing.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7d",
+          "line": "n41",
+          "words": "It was never a bill. It was a statement.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7e",
+          "line": "n42",
+          "words": "*Paid* in full, by the sender.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7f",
+          "line": "n43",
+          "words": "Remaining credit: about five billion years.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7g",
+          "line": "n44",
+          "words": "You fold it up. Outside, it is morning.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7h",
+          "line": "n45",
+          "words": "And for the first time in your life,",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7i",
+          "line": "n45",
+          "words": "you feel the Sun on your face",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7j",
+          "line": "n45",
+          "words": "and know exactly what it is *worth.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    }
+  ]
+}

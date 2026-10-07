@@ -139,15 +139,47 @@ export function timeShots(part: Storyboard, track: VoiceTrack): Storyboard {
  * carries on is not started again), and each shot's effects at their moment in the shot.
  * Footsteps and the ambient effects run for the length of their shot.
  */
+/** How loud the breath of the room is under a scene with no music, against an effect's usual level. */
+const ROOM_TONE_DB = -6;
+
 export function soundPlanFor(timed: Storyboard): SoundPlan {
   const music: SoundPlan['music'] = [];
   const sfx: SfxCue[] = [];
+  let quietSoFar = false;
+  let room: SfxCue | null = null;
   for (const scene of timed.scenes) {
     const first = scene.shots[0];
     if (first?.startMs === undefined)
       throw new Error('The shots have no times yet. Make the voice first.');
-    if (music[music.length - 1]?.mood !== scene.mood) {
-      music.push({ mood: scene.mood, startMs: music.length === 0 ? 0 : first.startMs });
+    // A quiet scene has no music, as long as none has begun. Music that comes in after a
+    // quiet opening comes in where its scene starts.
+    const quiet = scene.quiet === true && music.length === 0;
+    if (quiet) {
+      quietSoFar = true;
+      // A scene with no music is not dead air: a faint breath of the room runs under it, one
+      // long stretch for as long as the quiet lasts.
+      const last = scene.shots[scene.shots.length - 1];
+      const from = first.startMs;
+      const to = last?.endMs ?? from;
+      if (room && Math.abs(room.atMs + (room.durationMs ?? 0) - from) < 400) {
+        room.durationMs = to - room.atMs;
+      } else {
+        room = {
+          name: 'wind',
+          atMs: from,
+          durationMs: to - from,
+          gainDb: ROOM_TONE_DB,
+          pan: 0,
+          seed: 0,
+        };
+        sfx.push(room);
+      }
+    }
+    if (!quiet && music[music.length - 1]?.mood !== scene.mood) {
+      music.push({
+        mood: scene.mood,
+        startMs: music.length === 0 && !quietSoFar ? 0 : first.startMs,
+      });
     }
     for (const shot of scene.shots) {
       const start = shot.startMs ?? 0;

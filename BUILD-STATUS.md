@@ -1,7 +1,7 @@
 # Build Status
 
-**Current phase:** Phase 4 (the full pipeline), steps 4A to 4F done (4F, output, on 2026-10-07). Phases 0 to 3 are complete. Next step is 4G (the test video from Biku's own script), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
-**Next:** Biku looks at the science figures in `runs/2026-10-07-science-figures/` (six sheets) and picks the host from `1-host-choices.png` (1 to 4, or says what to change). Still waiting from before: whether the vertical cut is good now (`runs/2026-10-06-honest-farmer/out/honest-farmer-9x16-v2.mp4`), a cover style, the page name. For 4G he needs to give a script (or a "what if" topic), the page name and his pick of voices.
+**Current phase:** Phase 4 (the full pipeline), steps 4A to 4F done. **4G (the test video from Biku's own script) is under way:** "What If the Sun Sent You a Bill?", run `runs/2026-10-07-sun-bill/`, four parts. Part 1 is built and checked in the wide shape and shown to Biku on 2026-10-07; parts 2, 3 and 4 wait for his go, one at a time.
+**Next:** Biku watches `runs/2026-10-07-sun-bill/part-1/out/sun-bill-part-1-16x9-v1.mp4` and says go or what to change. Then part 2 (`npm run make -- --run=2026-10-07-sun-bill --part=2 --size=16:9 --voice --time --sound --stills`, look, preview, check, video). The whole plan is already written; `runs/2026-10-07-sun-bill/shot-plan.py` writes `storyboard.json` (change the plan there and run it again). After all four parts: the vertical shape, then `npm run output`. Still open from before: the host for later videos, a cover style, the page name, voices.
 **Niche (Biku, 2026-10-07):** "what if" science videos, with one host in every video and other characters as actors when needed.
 **Decided for Phase 4 (Biku, 2026-10-06):** his videos will be about 2 to 3 minutes. Biku proposed making them as parts of at most 1 minute from one script and combining them at the end. Agreed, with the studio doing the joining: one script is split into chapters of up to a minute at natural story breaks, each chapter is built and checked alone (so each fits the run budget and can be redone alone), then the chapters are joined into one final video in every size with one captions file; the chapters are kept too. Phase 4 must make the joins invisible: saved characters reused in every chapter, one voice and one loudness, music planned over the whole script so cuts fall on a pause or a mood change, the title only on the first chapter and the closing card only on the last. (The plan's 30-minute run budget then applies to a chapter, not to the whole video; this is Claude's reading and should be confirmed with Biku when Phase 4 starts.)
 **Also decided (Biku, 2026-10-06):** in a video made in parts, the studio stops after each part of about a minute and shows it; it goes on to the next part only when Biku says so ("so that its better than making all the video at once"). So a chapter is a checkpoint: no later chapter, no extra size and no joined video is rendered ahead of his go. Agreed by Biku the same day ("thats fine"): each chapter is shown in the phone size only, and the other two sizes and the joined video are made once every chapter is approved.
@@ -24,6 +24,22 @@ Each step ends with something Biku can look at, a commit and an update here. Sta
 - **4E. Self-check: done (2026-10-06).** The automatic checks and the plain-language QA report.
 - **4F. Output: done (2026-10-07).** Preview first, then the shapes he chooses, cover image, captions file, and joining chapters.
 - **4G. The test video.** One full 2 to 3 minute video in refine mode from Biku's script, made chapter by chapter, then Checkpoint 2.
+
+## 4G. The first video from Biku's own script (started 2026-10-07)
+
+"What If the Sun Sent You a Bill?": 427 words, used exactly as written (as-is mode), about 2 minutes 55, in four parts of 39 to 49 seconds. The main character is "you" (no host). His whole script, with its on-screen and sound notes and its sources, is kept as `script-brief.md`.
+
+- **Drawn for it (18 pieces, library now 260):** a glowing envelope, a bill, a pile of bills, a stack and a tower of coins, coal, a fuel can, bread, a gust of wind, a rain cloud, coins raining on a head; four places (open sea, empty plain, bare rock, bank vault); a page held up to the camera, a counter in the corner of the whole video, a tag tied to a thing.
+- **Built into the builder:** a thing can slide in as a shot opens; a scene can have no music (a faint room tone runs under it); the counter carries on from part to part; a deep bow to pick something off the floor takes as long as any move of the whole body.
+- **Part 1 (wide):** 48.7 s, 18 shots, passed the self-check as `sun-bill-part-1-16x9-v1.mp4`.
+- **Simplified from his on-screen notes, and told to him:** you stand with the envelope held out instead of sitting at a table with a pencil; the room is dark blue at night (warm colours kept for the morning at the end); the sum is shown with the Earth, its price tag and stacks of coins.
+
+### Open
+
+- Parts 2 to 4 are planned but not built; their stills have not been looked at, and the vault, the four grounds under one Sun and the ending will need the same care part 1 took.
+- The door is the old wooden one; a modern door is not drawn.
+- No sound of paper, pencil or a cash register exists; part 1 uses the small sounds there are. Music comes in at part 3, as his script asks.
+- The vertical shape of this video is not made yet; the plan already gives the sky things their own tall places.
 
 ## Science figures, first batch (2026-10-07)
 

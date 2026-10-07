@@ -481,8 +481,9 @@ export function soundDifference(
       left += d * d;
       whole += m * m;
     }
-    // A second with next to nothing in it cannot be compared.
-    if (whole / rate < 100) continue;
+    // A second with next to nothing in it cannot be compared: silence, or only the faint
+    // breath of a room (about 46 dB under full), which making a video file does not keep exactly.
+    if (whole / rate < 27000) continue;
     const db = 10 * Math.log10(left / whole + 1e-12);
     if (db > worstDb) {
       worstDb = db;

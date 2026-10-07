@@ -14,4 +14,5 @@ export const HEAD_EFFECTS: readonly string[] = [
   'symbol-exclaim',
   'symbol-question',
   'symbol-dots',
+  'coin-rain',
 ];

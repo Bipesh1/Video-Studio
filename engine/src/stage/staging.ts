@@ -7,7 +7,7 @@ import { ELBOW_DOWN } from '../rig/ik';
 import { withLife } from '../rig/life';
 import { length, sub, vec } from '../rig/math';
 import type { Vec2 } from '../rig/math';
-import { poseAt as posedAt } from '../rig/pose';
+import { moveFrames, poseAt as posedAt, resolvePose } from '../rig/pose';
 import type { Pose, PoseKey } from '../rig/pose';
 import { poseById, stand } from '../rig/poses';
 import { seeded } from '../rig/random';
@@ -230,14 +230,22 @@ export function stageShot({
       if (!spot) return [];
       const ahead = ((spot.x - placement.x) * sign) / placement.head;
       const reach = !moving && ahead > 0;
+      const point = vec(ahead, (-gripHeight(spot.prop) * stage.head) / placement.head);
+      // The hand is on it when the body has got there: a deep bow from a kneel to something
+      // flat on the floor takes as long as any move of the whole body.
+      const base = poseOrStand(from.pose);
+      const reachFrames = Math.max(
+        REACH_FRAMES,
+        moveFrames(resolvePose(base), resolvePose(reachingFor(base, point))).transition + 1,
+      );
       return [
         {
           moment: m,
           from,
           index: spot.index,
           reach,
-          point: vec(ahead, (-gripHeight(spot.prop) * stage.head) / placement.head),
-          grab: startOf(m) + (reach ? REACH_FRAMES : 0),
+          point,
+          grab: startOf(m) + (reach ? reachFrames : 0),
         },
       ];
     });

@@ -291,6 +291,33 @@ describe('things in the sky and explainer graphics', () => {
     expect(storyboardSchema.safeParse(misspelt).success).toBe(false);
   });
 
+  it('takes a page held up to the camera, a tag on a thing, a thing that slides in, a counter and a quiet scene', () => {
+    const ok = edited((sb) => {
+      Object.assign(shot(sb, 0, 0), {
+        props: [
+          { prop: 'coin', x: 0.6, tag: 'SUNLIGHT' },
+          { prop: 'bag', x: 0.5, from: 0.95 },
+        ],
+        overlay: { kind: 'page', lines: ['FROM: THE SUN', 'AMOUNT DUE: $30'], stress: 1 },
+      });
+      Object.assign(sb, {
+        meter: {
+          label: 'Sunlight delivered since you pressed play',
+          perSecond: 8360000000,
+          prefix: '$',
+        },
+      });
+      Object.assign(sb.scenes[0] ?? {}, { quiet: true });
+    });
+    expect(storyboardSchema.safeParse(ok).success).toBe(true);
+    const tooLong = edited((sb) => {
+      Object.assign(shot(sb, 0, 0), {
+        overlay: { kind: 'page', lines: ['1', '2', '3', '4', '5', '6'] },
+      });
+    });
+    expect(storyboardSchema.safeParse(tooLong).success).toBe(false);
+  });
+
   it('takes a big number, an arrow that names its target or a point, and an orbit diagram', () => {
     const overlays = [
       { kind: 'number', text: '1,670 km/h', caption: 'how fast the ground moves' },

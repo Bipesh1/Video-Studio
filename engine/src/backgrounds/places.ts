@@ -201,6 +201,50 @@ export const PLACES = {
         ],
       },
     }),
+  /** Open sea to the horizon, with nothing on it. */
+  sea: (seed: number) =>
+    backgroundSpec('simple', 'clear-day', seed, {
+      horizon: 0.7,
+      ground: 'water',
+      hills: false,
+      tufts: 0,
+      silhouettes: [],
+    }),
+  /** An empty plain: low hills and grass, and nothing anyone built. */
+  plain: (seed: number) =>
+    backgroundSpec('simple', 'clear-day', seed, {
+      horizon: 0.7,
+      hills: true,
+      tufts: 12,
+      silhouettes: [],
+    }),
+  /** Bare rock before anything lived: gray ground with a few dark hollows, under the sky. */
+  'bare-rock': (seed: number) =>
+    backgroundSpec('simple', 'clear-day', seed, {
+      horizon: 0.7,
+      ground: 'rock',
+      hills: false,
+      tufts: 0,
+      silhouettes: [],
+    }),
+  /** A bank vault: a round steel door in the back wall and rows of locked boxes. */
+  vault: (seed: number) =>
+    backgroundSpec('simple', 'storm-slate', seed, {
+      horizon: 0.72,
+      ground: 'floor',
+      tufts: 0,
+      silhouettes: [],
+      interior: {
+        windows: [],
+        columns: 0,
+        banners: 0,
+        shelf: false,
+        fittings: [
+          { kind: 'vault-boxes', x: 0.16 },
+          { kind: 'vault-door', x: 0.62 },
+        ],
+      },
+    }),
 } as const satisfies Record<string, (seed: number) => BackgroundSpec>;
 
 export type PlaceName = keyof typeof PLACES;

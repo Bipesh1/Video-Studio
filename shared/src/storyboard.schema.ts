@@ -133,7 +133,11 @@ export const placedPropSchema = z
      */
     y: z.number().min(0).max(14).optional(),
     /** Bigger or smaller than usual: 1 is as drawn. */
-    size: z.number().min(0.2).max(6).optional(),
+    size: z.number().min(0.1).max(6).optional(),
+    /** A few words on a tag tied to it ("SUNLIGHT"), which pops up a moment into the shot. */
+    tag: viewerTextSchema.optional(),
+    /** Where it starts, when it slides to its place as the shot opens: an envelope under a door. */
+    from: z.number().min(-0.2).max(1.2).optional(),
     /**
      * Its own place in a picture taller than it is wide, where it differs: a tall picture is
      * narrow and has a great deal of sky, so a thing beside someone in the wide picture is
@@ -143,7 +147,7 @@ export const placedPropSchema = z
       .object({
         x: z.number().min(0).max(1).optional(),
         y: z.number().min(0).max(14).optional(),
-        size: z.number().min(0.2).max(6).optional(),
+        size: z.number().min(0.1).max(6).optional(),
       })
       .strict()
       .optional(),
@@ -182,6 +186,15 @@ export const overlaySchema = z.discriminatedUnion('kind', [
       to: z.union([idSchema, pointSchema]),
       /** The middle of the label. Left out, it sits up and to the side of what it names. */
       at: pointSchema.optional(),
+    })
+    .strict(),
+  z
+    .object({
+      /** A page held up to the camera: a bill or a letter, with a few short lines of writing. */
+      kind: z.literal('page'),
+      lines: z.array(viewerTextSchema).min(1).max(5),
+      /** Which line is marked in gold, counting from 0. */
+      stress: z.number().int().min(0).max(4).optional(),
     })
     .strict(),
   z
@@ -269,6 +282,11 @@ export const sceneSchema = z
     beat: idSchema,
     /** The music mood from the start of this scene. */
     mood: z.enum(MUSIC_MOODS),
+    /**
+     * True for a scene with no music under it. It holds only before the first music of the
+     * video: once music has begun it plays on.
+     */
+    quiet: z.boolean().optional(),
     /** The place (the plan calls it the set), its treatment and its colors. */
     place: idSchema,
     treatment: z.enum(TREATMENTS),
@@ -313,6 +331,19 @@ export const storyboardSchema = z
         shot: idSchema,
         at: z.number().min(0).max(1).default(0.6),
         framing: z.enum(FRAMINGS).optional(),
+      })
+      .strict()
+      .optional(),
+    /**
+     * A counter in the top corner of the whole video: a few words and a number that climbs by
+     * `perSecond` from the first frame, and stops and fades as the video ends.
+     */
+    meter: z
+      .object({
+        label: viewerTextSchema,
+        perSecond: z.number().positive(),
+        /** A sign before the number, such as "$". */
+        prefix: z.string().max(3).optional(),
       })
       .strict()
       .optional(),

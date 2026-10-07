@@ -5,6 +5,10 @@ import { Background } from '../backgrounds/Background';
 import { Pan, PunchIn, PushIn, Shake } from '../camera/Camera';
 import { Framed, shoulderPlacement } from '../camera/Framing';
 import { AngerMark } from '../effects/AngerMark';
+import { SceneTag } from '../overlays/Explain';
+import { Placed } from '../props/Hold';
+import { clamp } from '../rig/math';
+import { CoinRain } from '../effects/CoinRain';
 import { DizzyStars } from '../effects/Dizzy';
 import { FlyingSweat, RestingSweat } from '../effects/Sweat';
 import { HeadSymbol } from '../effects/Symbol';
@@ -21,7 +25,15 @@ import { stand } from '../rig/poses';
 import type { Cast } from '../wardrobe/cast';
 import { lookTarget, stageX, turnOf } from './layout';
 import type { Size, TimedShot } from './layout';
-import { GRIPPED, SEATS, StandingProp, heldProp, standingProp } from './props';
+import {
+  GRIPPED,
+  SEATS,
+  StandingProp,
+  heldProp,
+  propHeight,
+  propReach,
+  standingProp,
+} from './props';
 import { seedFor, stageShot } from './staging';
 import type { Drawn } from './staging';
 
@@ -30,6 +42,11 @@ import type { Drawn } from './staging';
  * with their faces, what they hold, the things around them, and the camera. No captions, no
  * sound and no fonts here, so a shot can be drawn and tested on its own.
  */
+
+/** Frames into a shot before a thing's tag pops up. */
+const TAG_AFTER = 9;
+
+const easeOutCubic = (t: number): number => 1 - (1 - t) ** 3;
 
 const face = (name: string) => EXPRESSIONS[name as ExpressionName] ?? EXPRESSIONS.neutral;
 
@@ -57,6 +74,8 @@ function headEffects(effects: readonly string[], t: number, turn: number, seed: 
             return <HeadSymbol key={effect} kind="?" t={t} />;
           case 'symbol-dots':
             return <HeadSymbol key={effect} kind="..." t={t} />;
+          case 'coin-rain':
+            return <CoinRain key={effect} t={t} />;
           default:
             return null;
         }
@@ -159,6 +178,10 @@ export function ShotPicture({
   };
 
   const pickedUp = new Set(drawn.flatMap((d) => d.taken(frame)));
+  const before = shots[ts.index - 1];
+  const taggedBefore = (p: { prop: string; tag?: string | undefined }): boolean =>
+    before?.scene.id === ts.scene.id &&
+    before.shot.props.some((q) => q.prop === p.prop && q.tag === p.tag);
   const things = (behind: boolean): ReactNode =>
     shot.props
       .map((p, i) => ({ p, i }))
@@ -166,20 +189,48 @@ export function ShotPicture({
       .filter(({ i }) => !pickedUp.has(i))
       .map(({ p, i }) => {
         const seat = SEATS.includes(p.prop) ? sitterAt(p.x) : null;
+        // A thing that slides in: from where it starts to its place, over the shot's first third.
+        const slid =
+          p.from === undefined
+            ? p.x
+            : p.from + (p.x - p.from) * easeOutCubic(clamp(local / (duration * 0.34), 0, 1));
+        const x = (seat?.x ?? stageX(stage, slid)) - cameraX;
+        const head = seat?.head ?? stage.head;
         return (
-          <StandingProp
-            key={`${p.prop}-${i}-${behind ? 'b' : 'f'}`}
-            id={p.prop}
-            uid={`${shot.id}-${p.prop}-${i}`}
-            x={(seat?.x ?? stageX(stage, p.x)) - cameraX}
-            groundY={stage.groundY}
-            head={seat?.head ?? stage.head}
-            t={(frame - ts.sceneStartFrame) / fps}
-            shotT={local / fps}
-            flip={seat?.flip ?? false}
-            up={p.y}
-            size={p.size}
-          />
+          <g key={`${p.prop}-${i}-${behind ? 'b' : 'f'}`}>
+            <StandingProp
+              id={p.prop}
+              uid={`${shot.id}-${p.prop}-${i}`}
+              x={x}
+              groundY={stage.groundY}
+              head={head}
+              t={(frame - ts.sceneStartFrame) / fps}
+              shotT={local / fps}
+              flip={seat?.flip ?? false}
+              up={p.y}
+              size={p.size}
+            />
+            {p.tag && (
+              <Placed
+                x={x}
+                // A thing on the ground wears its tag on top; a thing that hangs has it under it.
+                y={
+                  stage.groundY -
+                  (propHeight(p) +
+                    (propHeight(p) > 0 ? -propReach(p).down * 0.92 : propReach(p).up * 0.92)) *
+                    head
+                }
+                head={head}
+              >
+                <SceneTag
+                  text={p.tag}
+                  below={propHeight(p) > 0}
+                  // A tag that was already on this thing in the shot before does not pop in again.
+                  {...(taggedBefore(p) ? {} : { frame: local - TAG_AFTER })}
+                />
+              </Placed>
+            )}
+          </g>
         );
       });
 

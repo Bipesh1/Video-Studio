@@ -3,7 +3,18 @@ import type { ReactNode } from 'react';
 import { Asteroid, BlackHole, Earth, FullMoon, Planet, Sun } from '../props/Sky';
 import { DEG, lerp } from '../rig/math';
 import { seeded } from '../rig/random';
-import { MASK_HIDE, MASK_SHOW, ink, lighten, mix, shade, tokens, white } from '../tokens';
+import {
+  MASK_HIDE,
+  MASK_SHOW,
+  accent,
+  ink,
+  lighten,
+  mix,
+  pick,
+  shade,
+  tokens,
+  white,
+} from '../tokens';
 import { bgRoles } from './roles';
 import type { BgRoles } from './roles';
 
@@ -45,7 +56,7 @@ export type Silhouette = {
  * What the ground is: grass with tufts, a paved street, the floor of a room, the gray dust of
  * the Moon with its craters, or none at all, out in space.
  */
-export type GroundKind = 'grass' | 'road' | 'floor' | 'dust' | 'none';
+export type GroundKind = 'grass' | 'road' | 'floor' | 'dust' | 'water' | 'rock' | 'none';
 
 /** Something far off in the sky of a place: part of the background, so it has no outline. */
 export const SKY_BODIES = [
@@ -79,6 +90,8 @@ export const FITTINGS = [
   'lab-bench',
   'lab-shelves',
   'board',
+  'vault-door',
+  'vault-boxes',
 ] as const;
 export type Fitting = { kind: (typeof FITTINGS)[number]; x: number };
 
@@ -463,10 +476,60 @@ function Craters({ c }: { c: Ctx }) {
   );
 }
 
+/** The color of open water under this sky, and of bare rock. */
+const waterOf = (c: Ctx) => mix(pick(accent('ocean'), 0), c.roles.skyTop, 0.35);
+const rockOf = (c: Ctx) => mix(pick(accent('steel'), 2), c.roles.skyBottom, 0.45);
+
 function Ground({ c }: { c: Ctx }) {
   const y = c.spec.horizon * c.h;
   const gid = `${c.id}-ground`;
   if (c.spec.ground === 'none') return null;
+  if (c.spec.ground === 'water' || c.spec.ground === 'rock') {
+    const water = c.spec.ground === 'water';
+    const fill = water ? waterOf(c) : rockOf(c);
+    const pale = mix(fill, c.roles.skyBottom, water ? 0.45 : 0.3);
+    const marks = Array.from({ length: water ? 16 : 9 }, (_, i) => ({
+      key: i,
+      x: (rnd(c, `mark-x-${i}`) * 1.6 - 0.3) * c.w,
+      y: y + (0.03 + rnd(c, `mark-y-${i}`) * 0.9) * (c.h - y),
+      w: (0.05 + rnd(c, `mark-w-${i}`) * 0.09) * c.w,
+    }));
+    return (
+      <>
+        <rect
+          x={-c.w}
+          y={y}
+          width={c.w * 3}
+          height={c.h - y + 2 + (c.world?.bottom ?? 0)}
+          fill={fill}
+        />
+        {/* A paler line where the sea or the rock meets the sky. */}
+        <rect x={-c.w} y={y} width={c.w * 3} height={c.h * 0.008} fill={pale} />
+        {marks.map((m) =>
+          water ? (
+            <rect
+              key={m.key}
+              x={m.x}
+              y={m.y}
+              width={m.w}
+              height={c.h * 0.006}
+              rx={c.h * 0.003}
+              fill={pale}
+            />
+          ) : (
+            <ellipse
+              key={m.key}
+              cx={m.x}
+              cy={m.y}
+              rx={m.w * 0.5}
+              ry={c.h * 0.008}
+              fill={mix(fill, ink, 0.22)}
+            />
+          ),
+        )}
+      </>
+    );
+  }
   return (
     <>
       {c.atmo && (
@@ -947,6 +1010,67 @@ function Fittings({ c, room }: { c: Ctx; room: Interior }) {
               />
             ))}
             <rect x={x - u * 16} y={floor - u * 30.6} width={u * 32} height={u * 1.2} fill={dark} />
+          </g>
+        );
+      case 'vault-door': {
+        // A round strongroom door in the back wall: a rim, the door, bolts round it and a wheel.
+        const cy = floor - u * 30;
+        const steel = mix(c.roles.wall, c.roles.light, 0.35);
+        return (
+          <g key={i}>
+            <circle cx={x} cy={cy} r={u * 26} fill={dark} />
+            <circle cx={x} cy={cy} r={u * 23} fill={steel} />
+            <circle cx={x} cy={cy} r={u * 17.5} fill={mix(steel, dark, 0.3)} />
+            {Array.from({ length: 10 }, (_, k) => {
+              const a = (Math.PI * 2 * k) / 10;
+              return (
+                <circle
+                  key={k}
+                  cx={x + Math.cos(a) * u * 20.2}
+                  cy={cy + Math.sin(a) * u * 20.2}
+                  r={u * 1.3}
+                  fill={dark}
+                />
+              );
+            })}
+            {[0, 60, 120].map((turn) => (
+              <rect
+                key={turn}
+                x={x - u * 9}
+                y={cy - u * 1}
+                width={u * 18}
+                height={u * 2}
+                fill={dark}
+                transform={`rotate(${turn} ${x} ${cy})`}
+              />
+            ))}
+            <circle cx={x} cy={cy} r={u * 3.4} fill={steel} />
+          </g>
+        );
+      }
+      case 'vault-boxes':
+        // Rows of locked boxes on the wall, each with a small plate.
+        return (
+          <g key={i}>
+            <rect x={x - u * 19} y={floor - u * 50} width={u * 38} height={u * 44} fill={dark} />
+            {Array.from({ length: 20 }, (_, k) => {
+              const col = k % 4;
+              const row = Math.floor(k / 4);
+              const bx = x - u * 17.5 + col * u * 9;
+              const by = floor - u * 48.5 + row * u * 8.4;
+              return (
+                <g key={k}>
+                  <rect x={bx} y={by} width={u * 8} height={u * 7.4} fill={soft} />
+                  <rect
+                    x={bx + u * 2.6}
+                    y={by + u * 3}
+                    width={u * 2.8}
+                    height={u * 1.4}
+                    fill={dark}
+                  />
+                </g>
+              );
+            })}
           </g>
         );
       default:

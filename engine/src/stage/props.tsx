@@ -1,5 +1,16 @@
 import type { ReactNode } from 'react';
 import { Bag, BAG_DROP } from '../props/Bag';
+import {
+  BILL,
+  Bill,
+  Bills,
+  Bread,
+  Coal,
+  CoinStack,
+  ENVELOPE,
+  Envelope,
+  FuelCan,
+} from '../props/Bill';
 import { BOOK, Book } from '../props/Book';
 import { Chair } from '../props/Chair';
 import { COIN_RADIUS, Coin } from '../props/Coin';
@@ -14,6 +25,7 @@ import { SHIELD, Shield } from '../props/Shield';
 import { Asteroid, BlackHole, Earth, FullMoon, Planet, Sun } from '../props/Sky';
 import { Sword } from '../props/Sword';
 import { Table } from '../props/Table';
+import { RainCloud, Wind } from '../props/Weather';
 import type { CharacterProps } from '../rig/Character';
 
 /**
@@ -86,6 +98,17 @@ const HELD: Record<string, HeldProp> = {
   goblet: (hands, info) => (
     <InHand frame={hands.front} how="upright">
       <Cup uid={`${info.uid}-goblet`} shadowSide={info.shadowSide} kind="goblet" />
+    </InHand>
+  ),
+  // Held up by a corner, at the fingertips, so the whole of it shows beside the hand.
+  envelope: (hands, info) => (
+    <InHand frame={hands.front} how="upright" reach={0.2}>
+      <Envelope uid={`${info.uid}-envelope`} shadowSide={info.shadowSide} />
+    </InHand>
+  ),
+  bill: (hands, info) => (
+    <InHand frame={hands.front} how="upright" reach={0.26}>
+      <Bill uid={`${info.uid}-bill`} shadowSide={info.shadowSide} />
     </InHand>
   ),
 };
@@ -230,6 +253,45 @@ Object.assign(STANDING, {
     eyeHeight: 1.8,
     behindPeople: true,
   },
+  // Lying on the floor or a table, its glow lighting what is round it.
+  envelope: {
+    draw: (uid, t) => lift(ENVELOPE.height / 2, <Envelope uid={uid} shadowSide={1} t={t} />),
+    eyeHeight: 0.22,
+    behindPeople: false,
+  },
+  bill: {
+    draw: (uid) => lift(BILL.height / 2, <Bill uid={uid} shadowSide={1} />),
+    eyeHeight: 0.35,
+    behindPeople: false,
+  },
+  bills: {
+    draw: (uid) => <Bills uid={uid} shadowSide={1} />,
+    eyeHeight: 0.15,
+    behindPeople: false,
+  },
+  'coin-stack': {
+    draw: (uid) => <CoinStack uid={uid} shadowSide={1} coins={12} />,
+    eyeHeight: 0.5,
+    behindPeople: true,
+  },
+  'coin-tower': {
+    draw: (uid) => <CoinStack uid={uid} shadowSide={1} coins={48} />,
+    eyeHeight: 1.9,
+    behindPeople: true,
+  },
+  coal: { draw: (uid) => <Coal uid={uid} shadowSide={1} />, eyeHeight: 0.25, behindPeople: false },
+  'fuel-can': {
+    draw: (uid) => <FuelCan uid={uid} shadowSide={1} />,
+    eyeHeight: 0.4,
+    behindPeople: false,
+  },
+  bread: {
+    draw: (uid) => <Bread uid={uid} shadowSide={1} />,
+    eyeHeight: 0.22,
+    behindPeople: false,
+  },
+  wind: sky(2.4, (_uid, t) => <Wind t={t} />),
+  'rain-cloud': sky(3.6, (uid, t) => <RainCloud uid={uid} shadowSide={1} t={t} />),
   // An explosion goes off as its shot begins. It is in front of people: it is what the shot shows.
   explosion: sky(1.6, (_uid, _t, shotT) => <Explosion t={shotT} size={2} />, false),
   fire: {
@@ -281,6 +343,16 @@ const REACH: Record<string, Reach> = {
   explosion: { side: 2, up: 2, down: 1.6 },
   fire: stands(0.9, 1.6),
   smoke: stands(0.8, 2.8),
+  envelope: stands(0.33, 0.44),
+  bill: stands(0.27, 0.7),
+  bills: stands(0.4, 0.26),
+  'coin-stack': stands(0.23, 1.0),
+  'coin-tower': stands(0.23, 3.8),
+  coal: stands(0.46, 0.5),
+  'fuel-can': stands(0.38, 0.84),
+  bread: stands(0.44, 0.44),
+  wind: { side: 1.3, up: 0.7, down: 0.6 },
+  'rain-cloud': { side: 1.15, up: 1.1, down: 1.3 },
 };
 
 /** The things whose reach is written down: every one that can stand in a scene. */

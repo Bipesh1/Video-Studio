@@ -1,0 +1,102 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "lines": [
+    {
+      "id": "n1",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "An envelope slides under your door.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n2",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "No stamp. It is warm.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n3",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Inside is a bill, and the name at the top is yours.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n4",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Sender: the *Sun.*",
+      "speed": 0.92,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "n5",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Amount due, for the last hour of sunlight on Earth: thirty *trillion* dollars.",
+      "speed": 0.92,
+      "pauseAfterMs": 1000
+    },
+    {
+      "id": "n6",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "You laugh. Then you check the sum.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n7",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Take all the sunlight that lands on this planet in one *hour.*",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n8",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Price it like the electricity in your wall.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n9",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Thirty trillion. About what the whole United States earns in a year.",
+      "speed": 0.92,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "n10",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Every *four* hours, the Sun delivers the value of everything the entire world earns in a year.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n11",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "And then it does it again.",
+      "speed": 0.92,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "n12",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "In under ninety minutes, the Earth soaks up more energy than every city, car and factory will use this year.",
+      "speed": 0.92,
+      "pauseAfterMs": 1000
+    }
+  ]
+}

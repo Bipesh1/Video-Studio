@@ -99,6 +99,19 @@ A part is shown to Biku in the page's first shape. When every part is approved, 
 - **Give a thing its own place in the tall picture** with `tall` on the prop (`x`, `y`, `size`; what is left out stays). A tall picture is about five heads wide and nine tall: put a thing of the sky above the people instead of beside them, and bring a thing on the ground to within about three heads of them. The self-check says when the camera has had to stand far back, and when a thing is cut off.
 - Look at the stills of a science shot in both shapes before building either video.
 
+## A script that comes with its own directions
+
+Learned on "What If the Sun Sent You a Bill?" (2026-10-07), a script with narration, on-screen notes, sound notes and sources.
+
+- **Keep his whole script beside the run** (`script-brief.md`) and give `script new` a file of the narration alone, so as-is mode can hold the spoken words to his, word for word. His sources go into `script.json`.
+- **His on-screen notes are what to aim at, not a shot list.** Show the idea of each beat with what the studio can draw, and say plainly in the report what was simplified.
+- **Words on a page** (a bill, a letter) are a shot of nobody with a `page` overlay; mark the line being read with `stress`, and keep the same lines in the next shot so the page stays up.
+- **A word on a thing** is the prop's `tag` ("SUNLIGHT"). A thing on the ground wears it on top, a thing that hangs has it underneath. Keep tagged things about two and a half heads apart.
+- **A counter through the whole video** is the storyboard's `meter`. Keep tags, small suns and tall stacks out of the top right corner, where it sits.
+- **No music** where the script asks for none: `quiet` on the scene. A faint room tone runs under it, and music can come in later.
+- **Someone carrying a small thing holds it out** (`hold-object`), or a medium shot hides it under the captions.
+- **Picking up something flat on the floor:** kneel first, then a step that holds it (the body bows to it), and stand up in the next shot. One short shot has no room for all three.
+
 ## Working with Biku
 
 - Report in plain language: what was made, where it is, what he needs to decide. No code words.

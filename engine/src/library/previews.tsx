@@ -19,7 +19,9 @@ import { TearDrops, TearStreams } from '../effects/Tears';
 import { EXPRESSIONS, EXPRESSION_NAMES } from '../face/expressions';
 import type { ExpressionName } from '../face/expressions';
 import { MOUTH_FORMS } from '../face/talk';
+import { CoinRain } from '../effects/CoinRain';
 import { Bag } from '../props/Bag';
+import { Bill, Bills, Bread, Coal, CoinStack, Envelope, FuelCan } from '../props/Bill';
 import { Book } from '../props/Book';
 import { Chair } from '../props/Chair';
 import { Coin } from '../props/Coin';
@@ -33,6 +35,7 @@ import { Shield } from '../props/Shield';
 import { Asteroid, BlackHole, Earth, FullMoon, Planet, Sun } from '../props/Sky';
 import { Sword } from '../props/Sword';
 import { Table } from '../props/Table';
+import { RainCloud, Wind } from '../props/Weather';
 import { ACTIONS } from '../rig/actions';
 import { chainAt } from '../rig/chain';
 import type { ActionName } from '../rig/actions';
@@ -532,6 +535,16 @@ const entries: Array<[string, Preview]> = [
         ),
       ],
       ['black-hole', 60, 200, (u) => <BlackHole uid={u} shadowSide={1} t={0.4} />],
+      ['envelope', 150, 200, (u) => <Envelope uid={u} shadowSide={1} t={0.4} />],
+      ['bill', 300, 200, (u) => <Bill uid={u} shadowSide={1} />],
+      ['bills', 300, 250, (u) => <Bills uid={u} shadowSide={1} />],
+      ['coin-stack', 220, 320, (u) => <CoinStack uid={u} shadowSide={1} coins={12} />],
+      ['coin-tower', 86, 372, (u) => <CoinStack uid={u} shadowSide={1} coins={48} />],
+      ['coal', 300, 290, (u) => <Coal uid={u} shadowSide={1} />],
+      ['fuel-can', 280, 330, (u) => <FuelCan uid={u} shadowSide={1} />],
+      ['bread', 300, 280, (u) => <Bread uid={u} shadowSide={1} />],
+      ['wind', 120, 200, () => <Wind t={0.3} />],
+      ['rain-cloud', 130, 190, (u) => <RainCloud uid={u} shadowSide={1} t={0.2} />],
     ] as Array<[string, number, number, (uid: string) => ReactNode]>
   ).map(([name, head, y, draw]): [string, Preview] => [
     `prop/${name}`,
@@ -619,6 +632,10 @@ const entries: Array<[string, Preview]> = [
   [
     'effect/symbol-dots',
     (o) => effectShot(o, { face: EXPRESSIONS.neutral, headEffects: <HeadSymbol kind="..." /> }, 0),
+  ],
+  [
+    'effect/coin-rain',
+    (o) => effectShot(o, { face: EXPRESSIONS.happy, headEffects: <CoinRain t={0.2} /> }, 0.2),
   ],
   [
     'effect/explosion',

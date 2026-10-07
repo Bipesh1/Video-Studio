@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "video": "sun-bill-part-1-16x9-preview-v6.mp4",
+  "stills": {
+    "s1a": "ok",
+    "s1b": "ok",
+    "s1c": "ok",
+    "s1e": "ok",
+    "s1f": "ok",
+    "s1g": "ok",
+    "s2a": "ok",
+    "s2b": "ok",
+    "s2c": "ok",
+    "s2d": "ok",
+    "s2e": "ok",
+    "s2f": "ok",
+    "s2g": "ok",
+    "s2h": "ok",
+    "s2i": "ok",
+    "s3a": "ok",
+    "s3b": "ok",
+    "s3c": "ok"
+  },
+  "strips": {
+    "cut-s1a-s1b": "ok",
+    "cut-s1b-s1c": "ok",
+    "cut-s2a-s2b": "ok",
+    "cut-s2b-s2c": "ok",
+    "cut-s2c-s2d": "ok",
+    "cut-s2d-s2e": "ok",
+    "cut-s2e-s2f": "ok",
+    "cut-s2f-s2g": "ok",
+    "cut-s2g-s2h": "ok",
+    "cut-s2h-s2i": "ok",
+    "s1a-move-1": "ok",
+    "s1b-move-1": "ok",
+    "s1b-move-2": "ok",
+    "s1c-move-1": "ok",
+    "s1c-move-2": "ok",
+    "s2a-move-1": "ok"
+  },
+  "playbook": "ok",
+  "fixed": [
+    "The envelope hung at the side of the body and the captions covered it. It is now held out in front like a lamp.",
+    "The tags on the Earth and the coin stacks were cut off by the top of the picture or lay on one another. A thing that hangs now wears its tag underneath, and the stacks stand further apart.",
+    "The reach down for the envelope snapped: the head went more than half its width in one frame. A deep bow now takes as long as any move of the whole body, and the hand closes when the body has got there.",
+    "The quiet stretches measured as dead silence. A faint breath of the room now runs under every scene that has no music.",
+    "One shot ran 5.7 seconds with the real voice. Its words are now three shots.",
+    "The row of four small suns was cut by the top of the picture and its tag lay over the tag of the coin tower. The suns sit lower and have no tag."
+  ],
+  "notes": [
+    "The room is dark blue for the night, not the warm colours the script names for it, so the envelope's glow is the light in the room; the warm colours are kept for the morning at the end.",
+    "The script has you sitting at a table with a pencil. Here you stay on your feet with the envelope held out, and the sum is shown by the Earth, its price tag and the stacks of coins.",
+    "The door is a plain wooden one with iron bands, drawn for old stories. A modern door is not drawn yet.",
+    "The sound has no music in this part, as the script asks: a faint room tone, and small sounds on the envelope, the page and the coin stacks. Claude cannot hear; the listening is Biku's."
+  ]
+}

@@ -19,6 +19,7 @@ const OVERLAY_ASSETS = {
   label: 'label',
   number: 'big-number',
   pointer: 'pointer',
+  page: 'page',
   orbit: 'orbit-diagram',
 } as const;
 

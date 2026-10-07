@@ -1,0 +1,1081 @@
+{
+  "version": 1,
+  "title": "What If the Sun Sent You a Bill?",
+  "request": "i have a script of about 3 minute long videos can i send it to you and see the final product",
+  "mode": "as-is",
+  "format": "explainer",
+  "style": "ink-stick",
+  "brand": "my-page",
+  "voice": "narrator",
+  "seed": 67745,
+  "sources": [
+    "Wikipedia, \"Solar energy\": the Earth receives 174 petawatts of sunlight at the top of the atmosphere, about 30 percent of which is reflected back to space. https://en.wikipedia.org/wiki/Solar_energy",
+    "US Energy Information Administration, Short-Term Energy Outlook: average US residential electricity price of 17.3 cents per kilowatt-hour in 2025 and a projected 18.2 cents in 2026. https://www.eia.gov/outlooks/steo/report/elec_coal_renew.php",
+    "Wikipedia, \"List of countries by GDP (nominal)\", IMF 2026 forecasts: United States about 32.4 trillion dollars, world about 126.3 trillion dollars. https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)",
+    "Wikipedia, \"World population\": about 8.3 billion people in 2026. https://en.wikipedia.org/wiki/World_population",
+    "Wikipedia, \"Sun\": luminosity of 3.828 x 10^26 watts, about 4 billion kilograms of matter converted to energy each second. https://en.wikipedia.org/wiki/Sun",
+    "NASA, Sun facts: about 4.5 billion years old, with about 5 billion years left. https://science.nasa.gov/sun/facts/",
+    "US Energy Information Administration, Coal explained: coal holds energy stored by plants that lived hundreds of millions of years ago. https://www.eia.gov/energyexplained/coal/",
+    "US Energy Information Administration, Sources of energy: wind comes from uneven heating by the Sun, and geothermal and nuclear energy do not come from the Sun. https://www.eia.gov/energyexplained/what-is-energy/sources-of-energy.php"
+  ],
+  "appliedLessons": [],
+  "cast": [
+    {
+      "id": "you",
+      "name": "You",
+      "look": {
+        "identity": {
+          "skinTone": 3,
+          "hair": "short-crop",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "hoodie",
+              "cloth": "ocean"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "denim"
+            },
+            "shoes": {
+              "kind": "sneakers",
+              "cloth": "white"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "taker1",
+      "name": "Someone with a sack",
+      "look": {
+        "identity": {
+          "skinTone": 5,
+          "hair": "fade",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "tan"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "taker2",
+      "name": "Someone with a sack",
+      "look": {
+        "identity": {
+          "skinTone": 1,
+          "hair": "bun",
+          "hairColor": "brown"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "cream"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "taker3",
+      "name": "Someone with a sack",
+      "look": {
+        "identity": {
+          "skinTone": 6,
+          "hair": "short-crop",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "brown"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    }
+  ],
+  "meter": {
+    "label": "Sunlight delivered since you pressed play",
+    "perSecond": 8360000000,
+    "prefix": "$"
+  },
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "hook",
+      "mood": "curious",
+      "quiet": true,
+      "place": "living-room",
+      "treatment": "atmospheric",
+      "palette": "storm-slate",
+      "lines": [
+        {
+          "id": "n1",
+          "speaker": "narrator",
+          "text": "An envelope slides under your door.",
+          "speed": 0.92
+        },
+        {
+          "id": "n2",
+          "speaker": "narrator",
+          "text": "No stamp. It is warm.",
+          "speed": 0.92
+        },
+        {
+          "id": "n3",
+          "speaker": "narrator",
+          "text": "Inside is a bill, and the name at the top is yours.",
+          "speed": 0.92
+        },
+        {
+          "id": "n4",
+          "speaker": "narrator",
+          "text": "Sender: the *Sun.*",
+          "speed": 0.92,
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "n5",
+          "speaker": "narrator",
+          "text": "Amount due, for the last hour of sunlight on Earth: thirty *trillion* dollars.",
+          "speed": 0.92,
+          "pauseAfterMs": 1000
+        }
+      ],
+      "shots": [
+        {
+          "id": "s1a",
+          "line": "n1",
+          "words": "An envelope slides under your door.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "stand",
+              "expression": "neutral",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "envelope",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.45,
+                  "expression": "surprised"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "door",
+              "x": 0.97
+            },
+            {
+              "prop": "envelope",
+              "x": 0.5,
+              "from": 0.93
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "whoosh",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "overlay": {
+            "kind": "title",
+            "text": "What If the Sun Sent You a Bill?"
+          },
+          "transition": "cut",
+          "startMs": 0,
+          "endMs": 2700
+        },
+        {
+          "id": "s1b",
+          "line": "n2",
+          "words": "No stamp. It is warm.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "stand",
+              "expression": "surprised",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "envelope",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.04,
+                  "pose": "kneel",
+                  "expression": "surprised"
+                },
+                {
+                  "at": 0.34,
+                  "pose": "kneel",
+                  "expression": "surprised",
+                  "holds": "envelope"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "door",
+              "x": 0.97
+            },
+            {
+              "prop": "envelope",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "blip",
+              "at": "middle",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 2700,
+          "endMs": 4670
+        },
+        {
+          "id": "s1c",
+          "line": "n3",
+          "words": "Inside is a bill, and the name at the top is yours.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "kneel",
+              "expression": "thinking",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "envelope",
+              "holds": "envelope",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.04,
+                  "pose": "hold-object",
+                  "expression": "thinking",
+                  "holds": "envelope"
+                },
+                {
+                  "at": 0.55,
+                  "pose": "hold-object",
+                  "expression": "surprised",
+                  "holds": "envelope"
+                }
+              ]
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 4670,
+          "endMs": 8710
+        },
+        {
+          "id": "s1e",
+          "line": "n4",
+          "words": "Sender: the *Sun.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "FROM: THE SUN",
+              "FOR: ONE HOUR OF SUNLIGHT",
+              "AMOUNT DUE: $30,000,000,000,000"
+            ],
+            "stress": 0
+          },
+          "transition": "cut",
+          "startMs": 8710,
+          "endMs": 10490
+        },
+        {
+          "id": "s1f",
+          "line": "n5",
+          "words": "Amount due, for the last hour of sunlight on Earth:",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "FROM: THE SUN",
+              "FOR: ONE HOUR OF SUNLIGHT",
+              "AMOUNT DUE: $30,000,000,000,000"
+            ],
+            "stress": 1
+          },
+          "transition": "cut",
+          "startMs": 10490,
+          "endMs": 13930
+        },
+        {
+          "id": "s1g",
+          "line": "n5",
+          "words": "thirty *trillion* dollars.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "thud",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "FROM: THE SUN",
+              "FOR: ONE HOUR OF SUNLIGHT",
+              "AMOUNT DUE: $30,000,000,000,000"
+            ],
+            "stress": 2
+          },
+          "transition": "cut",
+          "startMs": 13930,
+          "endMs": 16470
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "why-it-matters",
+      "mood": "curious",
+      "quiet": true,
+      "place": "living-room",
+      "treatment": "simple",
+      "palette": "storm-slate",
+      "lines": [
+        {
+          "id": "n6",
+          "speaker": "narrator",
+          "text": "You laugh. Then you check the sum.",
+          "speed": 0.92
+        },
+        {
+          "id": "n7",
+          "speaker": "narrator",
+          "text": "Take all the sunlight that lands on this planet in one *hour.*",
+          "speed": 0.92
+        },
+        {
+          "id": "n8",
+          "speaker": "narrator",
+          "text": "Price it like the electricity in your wall.",
+          "speed": 0.92
+        },
+        {
+          "id": "n9",
+          "speaker": "narrator",
+          "text": "Thirty trillion. About what the whole United States earns in a year.",
+          "speed": 0.92,
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "n10",
+          "speaker": "narrator",
+          "text": "Every *four* hours, the Sun delivers the value of everything the entire world earns in a year.",
+          "speed": 0.92
+        },
+        {
+          "id": "n11",
+          "speaker": "narrator",
+          "text": "And then it does it again.",
+          "speed": 0.92,
+          "pauseAfterMs": 600
+        }
+      ],
+      "shots": [
+        {
+          "id": "s2a",
+          "line": "n6",
+          "words": "You laugh. Then you check the sum.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "laughing",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "ahead",
+              "holds": "envelope",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.45,
+                  "expression": "thinking",
+                  "lookAt": "envelope"
+                }
+              ]
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 16470,
+          "endMs": 18810
+        },
+        {
+          "id": "s2b",
+          "line": "n7",
+          "words": "Take all the sunlight that lands on",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "thinking",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "earth",
+              "holds": "envelope",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "door",
+              "x": 0.97
+            },
+            {
+              "prop": "earth",
+              "x": 0.74,
+              "y": 3,
+              "size": 0.75,
+              "tall": {
+                "x": 0.52,
+                "y": 5.7
+              }
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 18810,
+          "endMs": 20917
+        },
+        {
+          "id": "s2c",
+          "line": "n7",
+          "words": "this planet in one *hour.*",
+          "camera": {
+            "framing": "wide",
+            "move": "push-in",
+            "strength": 0.4
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "surprised",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "earth",
+              "holds": "envelope",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "door",
+              "x": 0.97
+            },
+            {
+              "prop": "earth",
+              "x": 0.74,
+              "y": 3,
+              "size": 0.75,
+              "tag": "ONE HOUR OF SUNLIGHT",
+              "tall": {
+                "x": 0.52,
+                "y": 5.7
+              }
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 20917,
+          "endMs": 22750
+        },
+        {
+          "id": "s2d",
+          "line": "n8",
+          "words": "Price it like the electricity in your wall.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "earth",
+              "holds": "envelope",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "door",
+              "x": 0.97
+            },
+            {
+              "prop": "earth",
+              "x": 0.74,
+              "y": 3,
+              "size": 0.75,
+              "tag": "$30 TRILLION",
+              "tall": {
+                "x": 0.52,
+                "y": 5.7
+              }
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "click",
+              "at": "middle",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 22750,
+          "endMs": 25650
+        },
+        {
+          "id": "s2e",
+          "line": "n9",
+          "words": "Thirty trillion. About what the whole United",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "surprised",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "up",
+              "holds": "envelope",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "door",
+              "x": 0.97
+            },
+            {
+              "prop": "coin-stack",
+              "x": 0.62,
+              "size": 2,
+              "tag": "SUN: 1 HOUR"
+            },
+            {
+              "prop": "coin-stack",
+              "x": 0.88,
+              "size": 2,
+              "tag": "USA: 1 YEAR"
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "click",
+              "at": "start",
+              "gainDb": 0
+            },
+            {
+              "name": "click",
+              "at": "middle",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 25650,
+          "endMs": 28652
+        },
+        {
+          "id": "s2f",
+          "line": "n9",
+          "words": "States earns in a year.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "surprised",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "ahead",
+              "holds": "envelope",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 28652,
+          "endMs": 30640
+        },
+        {
+          "id": "s2g",
+          "line": "n10",
+          "words": "Every *four* hours, the Sun delivers the value of",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "thinking",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "up",
+              "holds": "envelope",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "door",
+              "x": 0.97
+            },
+            {
+              "prop": "coin-tower",
+              "x": 0.89,
+              "size": 0.85,
+              "tag": "WORLD: 1 YEAR"
+            },
+            {
+              "prop": "sun",
+              "x": 0.5,
+              "y": 4.25,
+              "size": 0.26,
+              "tall": {
+                "x": 0.3,
+                "y": 6.4
+              }
+            },
+            {
+              "prop": "sun",
+              "x": 0.5700000000000001,
+              "y": 4.25,
+              "size": 0.26,
+              "tall": {
+                "x": 0.42,
+                "y": 6.4
+              }
+            },
+            {
+              "prop": "sun",
+              "x": 0.64,
+              "y": 4.25,
+              "size": 0.26,
+              "tall": {
+                "x": 0.54,
+                "y": 6.4
+              }
+            },
+            {
+              "prop": "sun",
+              "x": 0.71,
+              "y": 4.25,
+              "size": 0.26,
+              "tall": {
+                "x": 0.6599999999999999,
+                "y": 6.4
+              }
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "click",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 30640,
+          "endMs": 34165
+        },
+        {
+          "id": "s2h",
+          "line": "n10",
+          "words": "everything the entire world earns in a year.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "horrified",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "up",
+              "holds": "envelope",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "door",
+              "x": 0.97
+            },
+            {
+              "prop": "coin-tower",
+              "x": 0.89,
+              "size": 0.85,
+              "tag": "WORLD: 1 YEAR"
+            },
+            {
+              "prop": "sun",
+              "x": 0.5,
+              "y": 4.25,
+              "size": 0.26,
+              "tall": {
+                "x": 0.3,
+                "y": 6.4
+              }
+            },
+            {
+              "prop": "sun",
+              "x": 0.5700000000000001,
+              "y": 4.25,
+              "size": 0.26,
+              "tall": {
+                "x": 0.42,
+                "y": 6.4
+              }
+            },
+            {
+              "prop": "sun",
+              "x": 0.64,
+              "y": 4.25,
+              "size": 0.26,
+              "tall": {
+                "x": 0.54,
+                "y": 6.4
+              }
+            },
+            {
+              "prop": "sun",
+              "x": 0.71,
+              "y": 4.25,
+              "size": 0.26,
+              "tall": {
+                "x": 0.6599999999999999,
+                "y": 6.4
+              }
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 34165,
+          "endMs": 37340
+        },
+        {
+          "id": "s2i",
+          "line": "n11",
+          "words": "And then it does it again.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "exhausted",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "ahead",
+              "holds": "envelope",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 37340,
+          "endMs": 39390
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "chapter": 1,
+      "beat": "why-it-matters",
+      "mood": "curious",
+      "quiet": true,
+      "place": "city",
+      "treatment": "simple",
+      "palette": "clear-day",
+      "lines": [
+        {
+          "id": "n12",
+          "speaker": "narrator",
+          "text": "In under ninety minutes, the Earth soaks up more energy than every city, car and factory will use this year.",
+          "speed": 0.92,
+          "pauseAfterMs": 1000
+        }
+      ],
+      "shots": [
+        {
+          "id": "s3a",
+          "line": "n12",
+          "words": "In under ninety minutes, the Earth soaks up",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "sun",
+              "x": 0.5,
+              "y": 2.2,
+              "size": 0.7,
+              "tall": {
+                "x": 0.5,
+                "y": 5.4
+              }
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "overlay": {
+            "kind": "number",
+            "text": "90 minutes",
+            "caption": "of sunlight"
+          },
+          "transition": "fade",
+          "startMs": 39390,
+          "endMs": 42157
+        },
+        {
+          "id": "s3b",
+          "line": "n12",
+          "words": "more energy than every city, car and factory",
+          "camera": {
+            "framing": "wide",
+            "move": "pan",
+            "strength": 0.5
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "sun",
+              "x": 0.5,
+              "y": 2.2,
+              "size": 0.7,
+              "tall": {
+                "x": 0.5,
+                "y": 5.4
+              }
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 42157,
+          "endMs": 45495
+        },
+        {
+          "id": "s3c",
+          "line": "n12",
+          "words": "will use this year.",
+          "camera": {
+            "framing": "wide",
+            "move": "push-in",
+            "strength": 0.4
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "sun",
+              "x": 0.5,
+              "y": 2.2,
+              "size": 0.7,
+              "tall": {
+                "x": 0.5,
+                "y": 5.4
+              }
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "label",
+            "text": "More than a whole year of it"
+          },
+          "transition": "cut",
+          "startMs": 45495,
+          "endMs": 48650
+        }
+      ]
+    }
+  ]
+}

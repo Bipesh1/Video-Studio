@@ -258,6 +258,30 @@ async function bundled() {
   return serveUrl;
 }
 
+/**
+ * For a video with a counter: how far into the whole video this part starts, from the voices
+ * of the parts before it, and whether it is the last part. A part is built after the ones
+ * before it, so their voices exist; one that does not is counted from the script's guess.
+ */
+function meterAt(): { meterStartMs?: number; meterEnds?: boolean } {
+  const whole = loadStoryboard(path.join(runDir, 'storyboard.json'));
+  if (!whole.meter) return {};
+  let startMs = 0;
+  for (let n = 1; n < PART; n++) {
+    const timings = path.join(runDir, `part-${n}`, 'audio', 'timings.json');
+    if (!existsSync(timings))
+      throw new Error(
+        `This video has a counter that runs through every part, so part ${n} needs its voice before part ${PART} is drawn.`,
+      );
+    startMs += parseOrExplain(
+      voiceTrackSchema,
+      JSON.parse(readFileSync(timings, 'utf8')),
+      'timings.json',
+    ).durationMs;
+  }
+  return { meterStartMs: startMs, meterEnds: PART === partCount(whole) };
+}
+
 function inputProps(timedPart: Storyboard, withSound: boolean) {
   const brand = world.brands[timedPart.brand];
   return {
@@ -267,6 +291,7 @@ function inputProps(timedPart: Storyboard, withSound: boolean) {
     size: SIZE,
     cards: world.characters,
     mark: brand?.watermark ?? null,
+    ...meterAt(),
     ...(brand
       ? { colors: { titleRibbon: brand.colors.titleRibbon, label: brand.colors.label } }
       : {}),
