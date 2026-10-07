@@ -5,7 +5,7 @@
     {
       "name": "wind",
       "atMs": 0,
-      "durationMs": 48650,
+      "durationMs": 46520,
       "gainDb": -6,
       "pan": 0,
       "seed": 0
@@ -19,70 +19,70 @@
     },
     {
       "name": "blip",
-      "atMs": 3685,
+      "atMs": 3430,
       "gainDb": 0,
       "pan": 0,
       "seed": 2
     },
     {
       "name": "pop",
-      "atMs": 8770,
+      "atMs": 8220,
       "gainDb": 0,
       "pan": 0,
       "seed": 3
     },
     {
       "name": "thud",
-      "atMs": 13990,
+      "atMs": 13618,
       "gainDb": 0,
       "pan": 0,
       "seed": 4
     },
     {
       "name": "pop",
-      "atMs": 18870,
+      "atMs": 20218,
       "gainDb": 0,
       "pan": 0,
       "seed": 5
     },
     {
       "name": "click",
-      "atMs": 24200,
+      "atMs": 23315,
       "gainDb": 0,
       "pan": 0,
       "seed": 6
     },
     {
       "name": "click",
-      "atMs": 25710,
+      "atMs": 24760,
       "gainDb": 0,
       "pan": 0,
       "seed": 7
     },
     {
       "name": "click",
-      "atMs": 27151,
+      "atMs": 26093,
       "gainDb": 0,
       "pan": 0,
       "seed": 8
     },
     {
       "name": "click",
-      "atMs": 30700,
+      "atMs": 29440,
       "gainDb": 0,
       "pan": 0,
       "seed": 9
     },
     {
       "name": "ding",
-      "atMs": 34225,
+      "atMs": 32768,
       "gainDb": 0,
       "pan": 0,
       "seed": 10
     },
     {
       "name": "pop",
-      "atMs": 39450,
+      "atMs": 37640,
       "gainDb": 0,
       "pan": 0,
       "seed": 11

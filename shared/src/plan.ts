@@ -305,6 +305,9 @@ export function checkPlan(sb: Storyboard, world: World): PlanReport {
     }
     for (const line of scene.lines) {
       if (line.speaker === NARRATOR) continue;
+      // A host tells the whole video: seen speaking where they are in the shot, heard over
+      // the rest. How often they are seen is counted for the whole plan, further down.
+      if (sb.cast.find((m) => m.id === line.speaker)?.host) continue;
       const shots = scene.shots.filter((s) => s.line === line.id);
       const seen = shots.filter((s) =>
         s.actors.some((a) => a.character === line.speaker && !a.back),

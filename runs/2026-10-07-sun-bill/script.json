@@ -6,11 +6,17 @@
   "format": "explainer",
   "brand": "my-page",
   "voice": "narrator",
-  "speakers": [],
+  "speakers": [
+    {
+      "id": "host",
+      "name": "The host",
+      "voice": "woman-calm"
+    }
+  ],
   "lines": [
     {
       "id": "n1",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "An envelope slides under your door.",
       "beat": "hook",
       "chapter": 1,
@@ -18,7 +24,7 @@
     },
     {
       "id": "n2",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "No stamp. It is warm.",
       "beat": "hook",
       "chapter": 1,
@@ -26,7 +32,7 @@
     },
     {
       "id": "n3",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "Inside is a bill, and the name at the top is yours.",
       "beat": "hook",
       "chapter": 1,
@@ -34,7 +40,7 @@
     },
     {
       "id": "n4",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "Sender: the *Sun.*",
       "beat": "hook",
       "chapter": 1,
@@ -43,7 +49,7 @@
     },
     {
       "id": "n5",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "Amount due, for the last hour of sunlight on Earth: thirty *trillion* dollars.",
       "beat": "hook",
       "chapter": 1,
@@ -52,7 +58,7 @@
     },
     {
       "id": "n6",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "You laugh. Then you check the sum.",
       "beat": "why-it-matters",
       "chapter": 1,
@@ -60,7 +66,7 @@
     },
     {
       "id": "n7",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "Take all the sunlight that lands on this planet in one *hour.*",
       "beat": "why-it-matters",
       "chapter": 1,
@@ -68,7 +74,7 @@
     },
     {
       "id": "n8",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "Price it like the electricity in your wall.",
       "beat": "why-it-matters",
       "chapter": 1,
@@ -76,7 +82,7 @@
     },
     {
       "id": "n9",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "Thirty trillion. About what the whole United States earns in a year.",
       "beat": "why-it-matters",
       "chapter": 1,
@@ -85,7 +91,7 @@
     },
     {
       "id": "n10",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "Every *four* hours, the Sun delivers the value of everything the entire world earns in a year.",
       "beat": "why-it-matters",
       "chapter": 1,
@@ -93,7 +99,7 @@
     },
     {
       "id": "n11",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "And then it does it again.",
       "beat": "why-it-matters",
       "chapter": 1,
@@ -102,7 +108,7 @@
     },
     {
       "id": "n12",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "In under ninety minutes, the Earth soaks up more energy than every city, car and factory will use this year.",
       "beat": "why-it-matters",
       "chapter": 1,
@@ -111,7 +117,7 @@
     },
     {
       "id": "n13",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "You try the obvious defence. That is not all mine.",
       "beat": "first-part",
       "chapter": 2,
@@ -119,7 +125,7 @@
     },
     {
       "id": "n14",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "Fine. Split it between every person alive.",
       "beat": "first-part",
       "chapter": 2,
@@ -127,7 +133,7 @@
     },
     {
       "id": "n15",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "Your share is more than three thousand dollars. An hour.",
       "beat": "first-part",
       "chapter": 2,
@@ -136,7 +142,7 @@
     },
     {
       "id": "n16",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "Thirty *million* dollars a year, delivered to you, for free, since the day you were born.",
       "beat": "first-part",
       "chapter": 2,
@@ -145,7 +151,7 @@
     },
     {
       "id": "n17",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "Then you look at your real bills. Electricity. Fuel. Food.",
       "beat": "first-part",
       "chapter": 2,
@@ -153,7 +159,7 @@
     },
     {
       "id": "n18",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "And you notice something.",
       "beat": "first-part",
       "chapter": 2,
@@ -162,7 +168,7 @@
     },
     {
       "id": "n19",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "Coal is sunlight that plants caught hundreds of millions of years ago.",
       "beat": "first-part",
       "chapter": 2,
@@ -170,7 +176,7 @@
     },
     {
       "id": "n20",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "Oil is the same story.",
       "beat": "first-part",
       "chapter": 2,
@@ -178,7 +184,7 @@
     },
     {
       "id": "n21",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "Wind is air the Sun warmed. Rain is water the Sun lifted.",
       "beat": "first-part",
       "chapter": 2,
@@ -186,7 +192,7 @@
     },
     {
       "id": "n22",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "Your dinner is this summer's light.",
       "beat": "first-part",
       "chapter": 2,
@@ -195,7 +201,7 @@
     },
     {
       "id": "n23",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "You have almost never paid for energy.",
       "beat": "first-part",
       "chapter": 2,
@@ -203,7 +209,7 @@
     },
     {
       "id": "n24",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "You have only paid for *delivery.*",
       "beat": "first-part",
       "chapter": 2,
@@ -212,7 +218,7 @@
     },
     {
       "id": "n25",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "And the coal and the oil? That is a *savings* account.",
       "beat": "second-part",
       "chapter": 3,
@@ -220,7 +226,7 @@
     },
     {
       "id": "n26",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "Sunlight, deposited a little at a time, over hundreds of millions of years.",
       "beat": "second-part",
       "chapter": 3,
@@ -228,7 +234,7 @@
     },
     {
       "id": "n27",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "We found the account a few hundred years ago.",
       "beat": "second-part",
       "chapter": 3,
@@ -236,7 +242,7 @@
     },
     {
       "id": "n28",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "We have been emptying it ever since.",
       "beat": "second-part",
       "chapter": 3,
@@ -245,7 +251,7 @@
     },
     {
       "id": "n29",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "So you turn the bill over, looking for the catch.",
       "beat": "surprise",
       "chapter": 3,
@@ -253,7 +259,7 @@
     },
     {
       "id": "n30",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "There is a second page. It shows what this costs the sender.",
       "beat": "surprise",
       "chapter": 3,
@@ -262,7 +268,7 @@
     },
     {
       "id": "n31",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "Every second, the Sun destroys four million *tonnes* of itself to make that light.",
       "beat": "surprise",
       "chapter": 3,
@@ -270,7 +276,7 @@
     },
     {
       "id": "n32",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "And Earth catches almost none of it. One part in two billion.",
       "beat": "surprise",
       "chapter": 3,
@@ -278,7 +284,7 @@
     },
     {
       "id": "n33",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "The rest pours into empty space, unbilled, unseen, for *nobody.*",
       "beat": "surprise",
       "chapter": 3,
@@ -287,7 +293,7 @@
     },
     {
       "id": "n34",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "It has done this for four and a half billion years.",
       "beat": "surprise",
       "chapter": 4,
@@ -295,7 +301,7 @@
     },
     {
       "id": "n35",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "Before your street. Before people.",
       "beat": "surprise",
       "chapter": 4,
@@ -303,7 +309,7 @@
     },
     {
       "id": "n36",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "Before anything alive could look up.",
       "beat": "surprise",
       "chapter": 4,
@@ -311,7 +317,7 @@
     },
     {
       "id": "n37",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "It lit oceans with nothing in them.",
       "beat": "surprise",
       "chapter": 4,
@@ -320,7 +326,7 @@
     },
     {
       "id": "n38",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "No *invoice.* No reminder. No *interest.*",
       "beat": "surprise",
       "chapter": 4,
@@ -329,7 +335,7 @@
     },
     {
       "id": "n39",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "At the bottom there is one last line, and it is not a demand.",
       "beat": "takeaway",
       "chapter": 4,
@@ -337,7 +343,7 @@
     },
     {
       "id": "n40",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "Amount due: nothing.",
       "beat": "takeaway",
       "chapter": 4,
@@ -346,7 +352,7 @@
     },
     {
       "id": "n41",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "It was never a bill. It was a statement.",
       "beat": "takeaway",
       "chapter": 4,
@@ -354,7 +360,7 @@
     },
     {
       "id": "n42",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "*Paid* in full, by the sender.",
       "beat": "takeaway",
       "chapter": 4,
@@ -362,7 +368,7 @@
     },
     {
       "id": "n43",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "Remaining credit: about five billion years.",
       "beat": "takeaway",
       "chapter": 4,
@@ -371,7 +377,7 @@
     },
     {
       "id": "n44",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "You fold it up. Outside, it is morning.",
       "beat": "takeaway",
       "chapter": 4,
@@ -380,7 +386,7 @@
     },
     {
       "id": "n45",
-      "speaker": "narrator",
+      "speaker": "host",
       "text": "And for the first time in your life, you feel the Sun on your face and know exactly what it is *worth.*",
       "beat": "takeaway",
       "chapter": 4,

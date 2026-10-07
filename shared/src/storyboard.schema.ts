@@ -42,6 +42,11 @@ export const castMemberSchema = z
     look: lookSchema.optional(),
     /** Their voice (voices/<voice>.json), when they speak. */
     voice: idSchema.optional(),
+    /**
+     * True for the host of the video: the one who tells it. A host is seen speaking, and is
+     * also heard over pictures they are not in (a page, a place, someone else's face).
+     */
+    host: z.boolean().optional(),
   })
   .strict()
   .refine((m) => !(m.card && m.look), {

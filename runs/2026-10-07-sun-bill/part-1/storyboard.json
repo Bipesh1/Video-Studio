@@ -21,6 +21,13 @@
   "appliedLessons": [],
   "cast": [
     {
+      "id": "host",
+      "name": "The host",
+      "card": "host",
+      "voice": "woman-calm",
+      "host": true
+    },
+    {
       "id": "you",
       "name": "You",
       "look": {
@@ -151,32 +158,32 @@
       "lines": [
         {
           "id": "n1",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "An envelope slides under your door.",
           "speed": 0.92
         },
         {
           "id": "n2",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "No stamp. It is warm.",
           "speed": 0.92
         },
         {
           "id": "n3",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Inside is a bill, and the name at the top is yours.",
           "speed": 0.92
         },
         {
           "id": "n4",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Sender: the *Sun.*",
           "speed": 0.92,
           "pauseAfterMs": 600
         },
         {
           "id": "n5",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Amount due, for the last hour of sunlight on Earth: thirty *trillion* dollars.",
           "speed": 0.92,
           "pauseAfterMs": 1000
@@ -193,6 +200,17 @@
             "strength": 0.2
           },
           "actors": [
+            {
+              "character": "host",
+              "pose": "point",
+              "expression": "thinking",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.13,
+              "lookAt": "envelope",
+              "back": false,
+              "then": []
+            },
             {
               "character": "you",
               "pose": "stand",
@@ -235,7 +253,7 @@
           },
           "transition": "cut",
           "startMs": 0,
-          "endMs": 2700
+          "endMs": 2440
         },
         {
           "id": "s1b",
@@ -247,6 +265,17 @@
             "strength": 0.2
           },
           "actors": [
+            {
+              "character": "host",
+              "pose": "stand",
+              "expression": "neutral",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.13,
+              "lookAt": "you",
+              "back": false,
+              "then": []
+            },
             {
               "character": "you",
               "pose": "stand",
@@ -290,8 +319,8 @@
             }
           ],
           "transition": "cut",
-          "startMs": 2700,
-          "endMs": 4670
+          "startMs": 2440,
+          "endMs": 4420
         },
         {
           "id": "s1c",
@@ -303,6 +332,17 @@
             "strength": 0.2
           },
           "actors": [
+            {
+              "character": "host",
+              "pose": "point",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.13,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            },
             {
               "character": "you",
               "pose": "kneel",
@@ -333,8 +373,8 @@
           "effects": [],
           "sfx": [],
           "transition": "cut",
-          "startMs": 4670,
-          "endMs": 8710
+          "startMs": 4420,
+          "endMs": 8160
         },
         {
           "id": "s1e",
@@ -365,8 +405,8 @@
             "stress": 0
           },
           "transition": "cut",
-          "startMs": 8710,
-          "endMs": 10490
+          "startMs": 8160,
+          "endMs": 10030
         },
         {
           "id": "s1f",
@@ -391,8 +431,8 @@
             "stress": 1
           },
           "transition": "cut",
-          "startMs": 10490,
-          "endMs": 13930
+          "startMs": 10030,
+          "endMs": 13558
         },
         {
           "id": "s1g",
@@ -423,8 +463,8 @@
             "stress": 2
           },
           "transition": "cut",
-          "startMs": 13930,
-          "endMs": 16470
+          "startMs": 13558,
+          "endMs": 15950
         }
       ]
     },
@@ -440,38 +480,38 @@
       "lines": [
         {
           "id": "n6",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "You laugh. Then you check the sum.",
           "speed": 0.92
         },
         {
           "id": "n7",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Take all the sunlight that lands on this planet in one *hour.*",
           "speed": 0.92
         },
         {
           "id": "n8",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Price it like the electricity in your wall.",
           "speed": 0.92
         },
         {
           "id": "n9",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Thirty trillion. About what the whole United States earns in a year.",
           "speed": 0.92,
           "pauseAfterMs": 600
         },
         {
           "id": "n10",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Every *four* hours, the Sun delivers the value of everything the entire world earns in a year.",
           "speed": 0.92
         },
         {
           "id": "n11",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "And then it does it again.",
           "speed": 0.92,
           "pauseAfterMs": 600
@@ -511,8 +551,8 @@
           "effects": [],
           "sfx": [],
           "transition": "cut",
-          "startMs": 16470,
-          "endMs": 18810
+          "startMs": 15950,
+          "endMs": 18410
         },
         {
           "id": "s2b",
@@ -521,49 +561,28 @@
           "camera": {
             "framing": "medium",
             "move": "none",
-            "strength": 0.2
+            "strength": 0.2,
+            "focus": "host"
           },
           "actors": [
             {
-              "character": "you",
-              "pose": "hold-object",
-              "expression": "thinking",
+              "character": "host",
+              "pose": "point",
+              "expression": "happy",
               "facing": "right",
               "headTurn": "three-quarter",
-              "x": 0.4,
-              "lookAt": "earth",
-              "holds": "envelope",
+              "x": 0.13,
+              "lookAt": "camera",
               "back": false,
               "then": []
             }
           ],
-          "props": [
-            {
-              "prop": "door",
-              "x": 0.97
-            },
-            {
-              "prop": "earth",
-              "x": 0.74,
-              "y": 3,
-              "size": 0.75,
-              "tall": {
-                "x": 0.52,
-                "y": 5.7
-              }
-            }
-          ],
+          "props": [],
           "effects": [],
-          "sfx": [
-            {
-              "name": "pop",
-              "at": "start",
-              "gainDb": 0
-            }
-          ],
+          "sfx": [],
           "transition": "cut",
-          "startMs": 18810,
-          "endMs": 20917
+          "startMs": 18410,
+          "endMs": 20158
         },
         {
           "id": "s2c",
@@ -571,10 +590,21 @@
           "words": "this planet in one *hour.*",
           "camera": {
             "framing": "wide",
-            "move": "push-in",
-            "strength": 0.4
+            "move": "none",
+            "strength": 0.2
           },
           "actors": [
+            {
+              "character": "host",
+              "pose": "point",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.13,
+              "lookAt": "earth",
+              "back": false,
+              "then": []
+            },
             {
               "character": "you",
               "pose": "hold-object",
@@ -606,10 +636,16 @@
             }
           ],
           "effects": [],
-          "sfx": [],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
           "transition": "cut",
-          "startMs": 20917,
-          "endMs": 22750
+          "startMs": 20158,
+          "endMs": 21930
         },
         {
           "id": "s2d",
@@ -621,6 +657,17 @@
             "strength": 0.2
           },
           "actors": [
+            {
+              "character": "host",
+              "pose": "shrug",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.13,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            },
             {
               "character": "you",
               "pose": "hold-object",
@@ -660,8 +707,8 @@
             }
           ],
           "transition": "cut",
-          "startMs": 22750,
-          "endMs": 25650
+          "startMs": 21930,
+          "endMs": 24700
         },
         {
           "id": "s2e",
@@ -673,6 +720,17 @@
             "strength": 0.2
           },
           "actors": [
+            {
+              "character": "host",
+              "pose": "point",
+              "expression": "surprised",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.13,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            },
             {
               "character": "you",
               "pose": "hold-object",
@@ -718,8 +776,8 @@
             }
           ],
           "transition": "cut",
-          "startMs": 25650,
-          "endMs": 28652
+          "startMs": 24700,
+          "endMs": 27485
         },
         {
           "id": "s2f",
@@ -748,8 +806,8 @@
           "effects": [],
           "sfx": [],
           "transition": "cut",
-          "startMs": 28652,
-          "endMs": 30640
+          "startMs": 27485,
+          "endMs": 29380
         },
         {
           "id": "s2g",
@@ -761,6 +819,17 @@
             "strength": 0.2
           },
           "actors": [
+            {
+              "character": "host",
+              "pose": "point",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.13,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            },
             {
               "character": "you",
               "pose": "hold-object",
@@ -835,84 +904,33 @@
             }
           ],
           "transition": "cut",
-          "startMs": 30640,
-          "endMs": 34165
+          "startMs": 29380,
+          "endMs": 32708
         },
         {
           "id": "s2h",
           "line": "n10",
           "words": "everything the entire world earns in a year.",
           "camera": {
-            "framing": "wide",
+            "framing": "medium",
             "move": "none",
-            "strength": 0.2
+            "strength": 0.2,
+            "focus": "host"
           },
           "actors": [
             {
-              "character": "you",
-              "pose": "hold-object",
-              "expression": "horrified",
+              "character": "host",
+              "pose": "hands-up",
+              "expression": "surprised",
               "facing": "right",
               "headTurn": "three-quarter",
-              "x": 0.4,
-              "lookAt": "up",
-              "holds": "envelope",
+              "x": 0.13,
+              "lookAt": "camera",
               "back": false,
               "then": []
             }
           ],
-          "props": [
-            {
-              "prop": "door",
-              "x": 0.97
-            },
-            {
-              "prop": "coin-tower",
-              "x": 0.89,
-              "size": 0.85,
-              "tag": "WORLD: 1 YEAR"
-            },
-            {
-              "prop": "sun",
-              "x": 0.5,
-              "y": 4.25,
-              "size": 0.26,
-              "tall": {
-                "x": 0.3,
-                "y": 6.4
-              }
-            },
-            {
-              "prop": "sun",
-              "x": 0.5700000000000001,
-              "y": 4.25,
-              "size": 0.26,
-              "tall": {
-                "x": 0.42,
-                "y": 6.4
-              }
-            },
-            {
-              "prop": "sun",
-              "x": 0.64,
-              "y": 4.25,
-              "size": 0.26,
-              "tall": {
-                "x": 0.54,
-                "y": 6.4
-              }
-            },
-            {
-              "prop": "sun",
-              "x": 0.71,
-              "y": 4.25,
-              "size": 0.26,
-              "tall": {
-                "x": 0.6599999999999999,
-                "y": 6.4
-              }
-            }
-          ],
+          "props": [],
           "effects": [],
           "sfx": [
             {
@@ -922,8 +940,8 @@
             }
           ],
           "transition": "cut",
-          "startMs": 34165,
-          "endMs": 37340
+          "startMs": 32708,
+          "endMs": 35770
         },
         {
           "id": "s2i",
@@ -952,8 +970,8 @@
           "effects": [],
           "sfx": [],
           "transition": "cut",
-          "startMs": 37340,
-          "endMs": 39390
+          "startMs": 35770,
+          "endMs": 37580
         }
       ]
     },
@@ -969,7 +987,7 @@
       "lines": [
         {
           "id": "n12",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "In under ninety minutes, the Earth soaks up more energy than every city, car and factory will use this year.",
           "speed": 0.92,
           "pauseAfterMs": 1000
@@ -985,12 +1003,24 @@
             "move": "none",
             "strength": 0.2
           },
-          "actors": [],
+          "actors": [
+            {
+              "character": "host",
+              "pose": "point",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.24,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
           "props": [
             {
               "prop": "sun",
-              "x": 0.5,
-              "y": 2.2,
+              "x": 0.64,
+              "y": 2.3,
               "size": 0.7,
               "tall": {
                 "x": 0.5,
@@ -1012,36 +1042,37 @@
             "caption": "of sunlight"
           },
           "transition": "fade",
-          "startMs": 39390,
-          "endMs": 42157
+          "startMs": 37580,
+          "endMs": 40323
         },
         {
           "id": "s3b",
           "line": "n12",
           "words": "more energy than every city, car and factory",
           "camera": {
-            "framing": "wide",
-            "move": "pan",
-            "strength": 0.5
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
           },
-          "actors": [],
-          "props": [
+          "actors": [
             {
-              "prop": "sun",
-              "x": 0.5,
-              "y": 2.2,
-              "size": 0.7,
-              "tall": {
-                "x": 0.5,
-                "y": 5.4
-              }
+              "character": "host",
+              "pose": "shrug",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.24,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
             }
           ],
+          "props": [],
           "effects": [],
           "sfx": [],
           "transition": "cut",
-          "startMs": 42157,
-          "endMs": 45495
+          "startMs": 40323,
+          "endMs": 43435
         },
         {
           "id": "s3c",
@@ -1052,12 +1083,24 @@
             "move": "push-in",
             "strength": 0.4
           },
-          "actors": [],
+          "actors": [
+            {
+              "character": "host",
+              "pose": "stand",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.24,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
           "props": [
             {
               "prop": "sun",
-              "x": 0.5,
-              "y": 2.2,
+              "x": 0.64,
+              "y": 2.3,
               "size": 0.7,
               "tall": {
                 "x": 0.5,
@@ -1072,8 +1115,8 @@
             "text": "More than a whole year of it"
           },
           "transition": "cut",
-          "startMs": 45495,
-          "endMs": 48650
+          "startMs": 43435,
+          "endMs": 46520
         }
       ]
     }

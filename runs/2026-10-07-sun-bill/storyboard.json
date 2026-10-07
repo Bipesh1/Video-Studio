@@ -21,6 +21,13 @@
   "appliedLessons": [],
   "cast": [
     {
+      "id": "host",
+      "name": "The host",
+      "card": "host",
+      "voice": "woman-calm",
+      "host": true
+    },
+    {
       "id": "you",
       "name": "You",
       "look": {
@@ -150,32 +157,32 @@
       "lines": [
         {
           "id": "n1",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "An envelope slides under your door.",
           "speed": 0.92
         },
         {
           "id": "n2",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "No stamp. It is warm.",
           "speed": 0.92
         },
         {
           "id": "n3",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Inside is a bill, and the name at the top is yours.",
           "speed": 0.92
         },
         {
           "id": "n4",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Sender: the *Sun.*",
           "speed": 0.92,
           "pauseAfterMs": 600
         },
         {
           "id": "n5",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Amount due, for the last hour of sunlight on Earth: thirty *trillion* dollars.",
           "speed": 0.92,
           "pauseAfterMs": 1000
@@ -192,6 +199,15 @@
             "strength": 0.2
           },
           "actors": [
+            {
+              "character": "host",
+              "expression": "thinking",
+              "facing": "right",
+              "x": 0.13,
+              "lookAt": "envelope",
+              "headTurn": "three-quarter",
+              "pose": "point"
+            },
             {
               "character": "you",
               "expression": "neutral",
@@ -241,6 +257,15 @@
             "strength": 0.2
           },
           "actors": [
+            {
+              "character": "host",
+              "expression": "neutral",
+              "facing": "right",
+              "x": 0.13,
+              "lookAt": "you",
+              "headTurn": "three-quarter",
+              "pose": "stand"
+            },
             {
               "character": "you",
               "expression": "surprised",
@@ -292,6 +317,15 @@
             "strength": 0.2
           },
           "actors": [
+            {
+              "character": "host",
+              "expression": "happy",
+              "facing": "right",
+              "x": 0.13,
+              "lookAt": "camera",
+              "headTurn": "three-quarter",
+              "pose": "point"
+            },
             {
               "character": "you",
               "expression": "thinking",
@@ -417,38 +451,38 @@
       "lines": [
         {
           "id": "n6",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "You laugh. Then you check the sum.",
           "speed": 0.92
         },
         {
           "id": "n7",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Take all the sunlight that lands on this planet in one *hour.*",
           "speed": 0.92
         },
         {
           "id": "n8",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Price it like the electricity in your wall.",
           "speed": 0.92
         },
         {
           "id": "n9",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Thirty trillion. About what the whole United States earns in a year.",
           "speed": 0.92,
           "pauseAfterMs": 600
         },
         {
           "id": "n10",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Every *four* hours, the Sun delivers the value of everything the entire world earns in a year.",
           "speed": 0.92
         },
         {
           "id": "n11",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "And then it does it again.",
           "speed": 0.92,
           "pauseAfterMs": 600
@@ -493,42 +527,23 @@
           "camera": {
             "framing": "medium",
             "move": "none",
-            "strength": 0.2
+            "strength": 0.2,
+            "focus": "host"
           },
           "actors": [
             {
-              "character": "you",
-              "expression": "thinking",
+              "character": "host",
+              "expression": "happy",
               "facing": "right",
-              "x": 0.4,
-              "pose": "hold-object",
-              "lookAt": "earth",
-              "holds": "envelope"
+              "x": 0.13,
+              "lookAt": "camera",
+              "headTurn": "three-quarter",
+              "pose": "point"
             }
           ],
-          "props": [
-            {
-              "prop": "door",
-              "x": 0.97
-            },
-            {
-              "prop": "earth",
-              "x": 0.74,
-              "y": 3.0,
-              "size": 0.75,
-              "tall": {
-                "x": 0.52,
-                "y": 5.7
-              }
-            }
-          ],
+          "props": [],
           "effects": [],
-          "sfx": [
-            {
-              "name": "pop",
-              "at": "start"
-            }
-          ],
+          "sfx": [],
           "transition": "cut"
         },
         {
@@ -537,10 +552,19 @@
           "words": "this planet in one *hour.*",
           "camera": {
             "framing": "wide",
-            "move": "push-in",
-            "strength": 0.4
+            "move": "none",
+            "strength": 0.2
           },
           "actors": [
+            {
+              "character": "host",
+              "expression": "happy",
+              "facing": "right",
+              "x": 0.13,
+              "lookAt": "earth",
+              "headTurn": "three-quarter",
+              "pose": "point"
+            },
             {
               "character": "you",
               "expression": "surprised",
@@ -569,7 +593,12 @@
             }
           ],
           "effects": [],
-          "sfx": [],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": "start"
+            }
+          ],
           "transition": "cut"
         },
         {
@@ -582,6 +611,15 @@
             "strength": 0.2
           },
           "actors": [
+            {
+              "character": "host",
+              "expression": "smug",
+              "facing": "right",
+              "x": 0.13,
+              "lookAt": "camera",
+              "headTurn": "three-quarter",
+              "pose": "shrug"
+            },
             {
               "character": "you",
               "expression": "determined",
@@ -628,6 +666,15 @@
             "strength": 0.2
           },
           "actors": [
+            {
+              "character": "host",
+              "expression": "surprised",
+              "facing": "right",
+              "x": 0.13,
+              "lookAt": "camera",
+              "headTurn": "three-quarter",
+              "pose": "point"
+            },
             {
               "character": "you",
               "expression": "surprised",
@@ -704,6 +751,15 @@
           },
           "actors": [
             {
+              "character": "host",
+              "expression": "happy",
+              "facing": "right",
+              "x": 0.13,
+              "lookAt": "camera",
+              "headTurn": "three-quarter",
+              "pose": "point"
+            },
+            {
               "character": "you",
               "expression": "thinking",
               "facing": "right",
@@ -779,73 +835,23 @@
           "line": "n10",
           "words": "everything the entire world earns in a year.",
           "camera": {
-            "framing": "wide",
+            "framing": "medium",
             "move": "none",
-            "strength": 0.2
+            "strength": 0.2,
+            "focus": "host"
           },
           "actors": [
             {
-              "character": "you",
-              "expression": "horrified",
+              "character": "host",
+              "expression": "surprised",
               "facing": "right",
-              "x": 0.4,
-              "pose": "hold-object",
-              "lookAt": "up",
-              "holds": "envelope"
+              "x": 0.13,
+              "lookAt": "camera",
+              "headTurn": "three-quarter",
+              "pose": "hands-up"
             }
           ],
-          "props": [
-            {
-              "prop": "door",
-              "x": 0.97
-            },
-            {
-              "prop": "coin-tower",
-              "x": 0.89,
-              "size": 0.85,
-              "tag": "WORLD: 1 YEAR"
-            },
-            {
-              "prop": "sun",
-              "x": 0.5,
-              "y": 4.25,
-              "size": 0.26,
-              "tall": {
-                "x": 0.3,
-                "y": 6.4
-              }
-            },
-            {
-              "prop": "sun",
-              "x": 0.5700000000000001,
-              "y": 4.25,
-              "size": 0.26,
-              "tall": {
-                "x": 0.42,
-                "y": 6.4
-              }
-            },
-            {
-              "prop": "sun",
-              "x": 0.64,
-              "y": 4.25,
-              "size": 0.26,
-              "tall": {
-                "x": 0.54,
-                "y": 6.4
-              }
-            },
-            {
-              "prop": "sun",
-              "x": 0.71,
-              "y": 4.25,
-              "size": 0.26,
-              "tall": {
-                "x": 0.6599999999999999,
-                "y": 6.4
-              }
-            }
-          ],
+          "props": [],
           "effects": [],
           "sfx": [
             {
@@ -893,7 +899,7 @@
       "lines": [
         {
           "id": "n12",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "In under ninety minutes, the Earth soaks up more energy than every city, car and factory will use this year.",
           "speed": 0.92,
           "pauseAfterMs": 1000
@@ -909,12 +915,22 @@
             "move": "none",
             "strength": 0.2
           },
-          "actors": [],
+          "actors": [
+            {
+              "character": "host",
+              "expression": "happy",
+              "facing": "right",
+              "x": 0.24,
+              "lookAt": "camera",
+              "headTurn": "three-quarter",
+              "pose": "point"
+            }
+          ],
           "props": [
             {
               "prop": "sun",
-              "x": 0.5,
-              "y": 2.2,
+              "x": 0.64,
+              "y": 2.3,
               "size": 0.7,
               "tall": {
                 "x": 0.5,
@@ -941,23 +957,22 @@
           "line": "n12",
           "words": "more energy than every city, car and factory",
           "camera": {
-            "framing": "wide",
-            "move": "pan",
-            "strength": 0.5
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
           },
-          "actors": [],
-          "props": [
+          "actors": [
             {
-              "prop": "sun",
-              "x": 0.5,
-              "y": 2.2,
-              "size": 0.7,
-              "tall": {
-                "x": 0.5,
-                "y": 5.4
-              }
+              "character": "host",
+              "expression": "happy",
+              "facing": "right",
+              "x": 0.24,
+              "lookAt": "camera",
+              "headTurn": "three-quarter",
+              "pose": "shrug"
             }
           ],
+          "props": [],
           "effects": [],
           "sfx": [],
           "transition": "cut"
@@ -971,12 +986,22 @@
             "move": "push-in",
             "strength": 0.4
           },
-          "actors": [],
+          "actors": [
+            {
+              "character": "host",
+              "expression": "smug",
+              "facing": "right",
+              "x": 0.24,
+              "lookAt": "camera",
+              "headTurn": "three-quarter",
+              "pose": "stand"
+            }
+          ],
           "props": [
             {
               "prop": "sun",
-              "x": 0.5,
-              "y": 2.2,
+              "x": 0.64,
+              "y": 2.3,
               "size": 0.7,
               "tall": {
                 "x": 0.5,
@@ -1006,26 +1031,26 @@
       "lines": [
         {
           "id": "n13",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "You try the obvious defence. That is not all mine.",
           "speed": 0.92
         },
         {
           "id": "n14",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Fine. Split it between every person alive.",
           "speed": 0.92
         },
         {
           "id": "n15",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Your share is more than three thousand dollars. An hour.",
           "speed": 0.92,
           "pauseAfterMs": 600
         },
         {
           "id": "n16",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Thirty *million* dollars a year, delivered to you, for free, since the day you were born.",
           "speed": 0.92,
           "pauseAfterMs": 1000
@@ -1066,6 +1091,15 @@
             "strength": 0.2
           },
           "actors": [
+            {
+              "character": "host",
+              "expression": "happy",
+              "facing": "right",
+              "x": 0.13,
+              "lookAt": "earth",
+              "headTurn": "three-quarter",
+              "pose": "point"
+            },
             {
               "character": "you",
               "expression": "thinking",
@@ -1141,6 +1175,15 @@
             "strength": 0.2
           },
           "actors": [
+            {
+              "character": "host",
+              "expression": "happy",
+              "facing": "right",
+              "x": 0.13,
+              "lookAt": "camera",
+              "headTurn": "three-quarter",
+              "pose": "hands-up"
+            },
             {
               "character": "you",
               "expression": "surprised",
@@ -1230,26 +1273,26 @@
       "lines": [
         {
           "id": "n17",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Then you look at your real bills. Electricity. Fuel. Food.",
           "speed": 0.92
         },
         {
           "id": "n18",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "And you notice something.",
           "speed": 0.92,
           "pauseAfterMs": 600
         },
         {
           "id": "n19",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Coal is sunlight that plants caught hundreds of millions of years ago.",
           "speed": 0.92
         },
         {
           "id": "n20",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Oil is the same story.",
           "speed": 0.92
         }
@@ -1265,6 +1308,15 @@
             "strength": 0.2
           },
           "actors": [
+            {
+              "character": "host",
+              "expression": "neutral",
+              "facing": "right",
+              "x": 0.13,
+              "lookAt": "camera",
+              "headTurn": "three-quarter",
+              "pose": "point"
+            },
             {
               "character": "you",
               "expression": "neutral",
@@ -1329,6 +1381,15 @@
             "strength": 0.2
           },
           "actors": [
+            {
+              "character": "host",
+              "expression": "happy",
+              "facing": "right",
+              "x": 0.13,
+              "lookAt": "coal",
+              "headTurn": "three-quarter",
+              "pose": "point"
+            },
             {
               "character": "you",
               "expression": "thinking",
@@ -1404,6 +1465,15 @@
           },
           "actors": [
             {
+              "character": "host",
+              "expression": "happy",
+              "facing": "right",
+              "x": 0.13,
+              "lookAt": "camera",
+              "headTurn": "three-quarter",
+              "pose": "stand"
+            },
+            {
               "character": "you",
               "expression": "thinking",
               "facing": "right",
@@ -1461,7 +1531,7 @@
       "lines": [
         {
           "id": "n21",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Wind is air the Sun warmed. Rain is water the Sun lifted.",
           "speed": 0.92
         }
@@ -1535,20 +1605,20 @@
       "lines": [
         {
           "id": "n22",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Your dinner is this summer's light.",
           "speed": 0.92,
           "pauseAfterMs": 600
         },
         {
           "id": "n23",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "You have almost never paid for energy.",
           "speed": 0.92
         },
         {
           "id": "n24",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "You have only paid for *delivery.*",
           "speed": 0.92,
           "pauseAfterMs": 1000
@@ -1565,6 +1635,15 @@
             "strength": 0.2
           },
           "actors": [
+            {
+              "character": "host",
+              "expression": "happy",
+              "facing": "right",
+              "x": 0.13,
+              "lookAt": "bread",
+              "headTurn": "three-quarter",
+              "pose": "point"
+            },
             {
               "character": "you",
               "expression": "happy",
@@ -1668,7 +1747,7 @@
       "lines": [
         {
           "id": "n25",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "And the coal and the oil? That is a *savings* account.",
           "speed": 0.92
         }
@@ -1684,6 +1763,15 @@
             "strength": 0.2
           },
           "actors": [
+            {
+              "character": "host",
+              "expression": "thinking",
+              "facing": "right",
+              "x": 0.13,
+              "lookAt": "camera",
+              "headTurn": "three-quarter",
+              "pose": "shrug"
+            },
             {
               "character": "you",
               "expression": "thinking",
@@ -1761,19 +1849,19 @@
       "lines": [
         {
           "id": "n26",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Sunlight, deposited a little at a time, over hundreds of millions of years.",
           "speed": 0.92
         },
         {
           "id": "n27",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "We found the account a few hundred years ago.",
           "speed": 0.92
         },
         {
           "id": "n28",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "We have been emptying it ever since.",
           "speed": 0.92,
           "pauseAfterMs": 1000
@@ -1978,13 +2066,13 @@
       "lines": [
         {
           "id": "n29",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "So you turn the bill over, looking for the catch.",
           "speed": 0.86
         },
         {
           "id": "n30",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "There is a second page. It shows what this costs the sender.",
           "speed": 0.86,
           "pauseAfterMs": 600
@@ -2080,19 +2168,19 @@
       "lines": [
         {
           "id": "n31",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Every second, the Sun destroys four million *tonnes* of itself to make that light.",
           "speed": 0.86
         },
         {
           "id": "n32",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "And Earth catches almost none of it. One part in two billion.",
           "speed": 0.86
         },
         {
           "id": "n33",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "The rest pours into empty space, unbilled, unseen, for *nobody.*",
           "speed": 0.86,
           "pauseAfterMs": 1100
@@ -2318,7 +2406,7 @@
       "lines": [
         {
           "id": "n34",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "It has done this for four and a half billion years.",
           "speed": 0.86
         }
@@ -2367,7 +2455,7 @@
       "lines": [
         {
           "id": "n35",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Before your street. Before people.",
           "speed": 0.86
         }
@@ -2412,7 +2500,7 @@
       "lines": [
         {
           "id": "n36",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Before anything alive could look up.",
           "speed": 0.86
         }
@@ -2457,7 +2545,7 @@
       "lines": [
         {
           "id": "n37",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "It lit oceans with nothing in them.",
           "speed": 0.86,
           "pauseAfterMs": 600
@@ -2503,7 +2591,7 @@
       "lines": [
         {
           "id": "n38",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "No *invoice.* No reminder. No *interest.*",
           "speed": 0.86,
           "pauseAfterMs": 1100
@@ -2549,39 +2637,39 @@
       "lines": [
         {
           "id": "n39",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "At the bottom there is one last line, and it is not a demand.",
           "speed": 0.86
         },
         {
           "id": "n40",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Amount due: nothing.",
           "speed": 0.86,
           "pauseAfterMs": 700
         },
         {
           "id": "n41",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "It was never a bill. It was a statement.",
           "speed": 0.86
         },
         {
           "id": "n42",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "*Paid* in full, by the sender.",
           "speed": 0.86
         },
         {
           "id": "n43",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "Remaining credit: about five billion years.",
           "speed": 0.86,
           "pauseAfterMs": 1000
         },
         {
           "id": "n44",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "You fold it up. Outside, it is morning.",
           "speed": 0.86,
           "pauseAfterMs": 600
@@ -2806,7 +2894,7 @@
       "lines": [
         {
           "id": "n45",
-          "speaker": "narrator",
+          "speaker": "host",
           "text": "And for the first time in your life, you feel the Sun on your face and know exactly what it is *worth.*",
           "speed": 0.86,
           "pauseAfterMs": 1200

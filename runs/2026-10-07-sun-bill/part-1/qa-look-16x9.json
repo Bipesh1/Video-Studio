@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "video": "sun-bill-part-1-16x9-preview-v6.mp4",
+  "video": "sun-bill-part-1-16x9-preview-v7.mp4",
   "stills": {
     "s1a": "ok",
     "s1b": "ok",
@@ -24,14 +24,14 @@
   "strips": {
     "cut-s1a-s1b": "ok",
     "cut-s1b-s1c": "ok",
-    "cut-s2a-s2b": "ok",
     "cut-s2b-s2c": "ok",
     "cut-s2c-s2d": "ok",
     "cut-s2d-s2e": "ok",
     "cut-s2e-s2f": "ok",
     "cut-s2f-s2g": "ok",
     "cut-s2g-s2h": "ok",
-    "cut-s2h-s2i": "ok",
+    "cut-s3a-s3b": "ok",
+    "cut-s3b-s3c": "ok",
     "s1a-move-1": "ok",
     "s1b-move-1": "ok",
     "s1b-move-2": "ok",
@@ -46,9 +46,13 @@
     "The reach down for the envelope snapped: the head went more than half its width in one frame. A deep bow now takes as long as any move of the whole body, and the hand closes when the body has got there.",
     "The quiet stretches measured as dead silence. A faint breath of the room now runs under every scene that has no music.",
     "One shot ran 5.7 seconds with the real voice. Its words are now three shots.",
-    "The row of four small suns was cut by the top of the picture and its tag lay over the tag of the coin tower. The suns sit lower and have no tag."
+    "The row of four small suns was cut by the top of the picture and its tag lay over the tag of the coin tower. The suns sit lower and have no tag.",
+    "Biku asked for a host who speaks instead of a narrator. The host now stands in the room and in the street and says every line, with her mouth moving; the person who gets the envelope acts it out without a word.",
+    "When she pointed, her finger came right up to the other person's back, and in the street it lay over the Sun. She stands a little further off and the Sun hangs clear of her hand."
   ],
   "notes": [
+    "The host is the scientist with the bun, glasses and lab coat (number 2 on the host sheet), with the calm woman's voice. Claude picked both because Biku said to pick; they are his to change.",
+    "She is heard over the bill held up to the camera and over the close-ups of the other person, where she is not in the picture.",
     "The room is dark blue for the night, not the warm colours the script names for it, so the envelope's glow is the light in the room; the warm colours are kept for the morning at the end.",
     "The script has you sitting at a table with a pencil. Here you stay on your feet with the envelope held out, and the sum is shown by the Earth, its price tag and the stacks of coins.",
     "The door is a plain wooden one with iron bands, drawn for old stories. A modern door is not drawn yet.",

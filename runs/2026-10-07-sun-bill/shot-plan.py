@@ -8,10 +8,14 @@ import json
 
 RUN = 'F:/Video Studio/runs/2026-10-07-sun-bill/'
 draft = json.load(io.open(RUN + 'storyboard.draft.json', encoding='utf8'))
-LINES = {l['id']: l for sc in draft['scenes'] for l in sc['lines']}
+LINES = {l['id']: dict(l, speaker='host') for sc in draft['scenes'] for l in sc['lines']}
 
 YOU = 'you'
+HOST = 'host'
+HX = 0.13  # where the host stands in the room, at the side of the story she tells
+
 CAST = [
+    {'id': HOST, 'name': 'The host', 'card': 'host', 'voice': 'woman-calm', 'host': True},
     {'id': YOU, 'name': 'You',
      'look': {'identity': {'skinTone': 3, 'hair': 'short-crop', 'hairColor': 'black'},
               'outfit': {'clothes': {'top': {'kind': 'hoodie', 'cloth': 'ocean'},
@@ -47,6 +51,33 @@ def you(face, pose='stand', action=None, look=None, holds=ENV, then=None, x=X, f
     if turn:
         a['headTurn'] = turn
     return a
+
+
+def host(face='neutral', pose='stand', look='camera', x=HX, action=None, facing='right'):
+    a = {'character': HOST, 'expression': face, 'facing': facing, 'x': x, 'lookAt': look, 'headTurn': 'three-quarter'}
+    if action:
+        a['action'] = action
+    else:
+        a['pose'] = pose
+    return a
+
+
+# How the host stands in the wide shots of the room, where nothing else is said about her.
+HOST_IN = {
+    's1a': host('thinking', 'point', look=ENV),
+    's1b': host('neutral', look=YOU),
+    's2c': host('happy', 'point', look='earth'),
+    's2d': host('smug', 'shrug'),
+    's2e': host('surprised', 'point'),
+    's2g': host('happy', 'point'),
+    's4b': host('happy', 'point', look='earth'),
+    's4d': host('happy', 'hands-up'),
+    's5a': host('neutral', 'point'),
+    's5c': host('happy', 'point', look='coal'),
+    's5e': host('happy'),
+    's7a': host('happy', 'point', look='bread'),
+    's8a': host('thinking', 'shrug'),
+}
 
 
 def shot(sid, line, words, framing, actors=(), props=(), overlay=None, move='none', strength=0.2,
@@ -105,7 +136,7 @@ def suns(tag=False):
     return out
 
 
-SUN_CITY = {'prop': 'sun', 'x': 0.5, 'y': 2.2, 'size': 0.7, 'tall': {'x': 0.5, 'y': 5.4}}
+SUN_CITY = {'prop': 'sun', 'x': 0.64, 'y': 2.3, 'size': 0.7, 'tall': {'x': 0.5, 'y': 5.4}}
 
 SCENES = [
     # ------------------------------------------------------------------ part 1
@@ -120,7 +151,8 @@ SCENES = [
                         {'at': 0.34, 'pose': 'kneel', 'holds': ENV, 'expression': 'surprised'}])],
              [DOOR, {'prop': ENV, 'x': X + 0.1}], sfx=[('blip', 'middle')]),
         shot('s1c', 'n3', 'Inside is a bill, and the name at the top is yours.', 'medium',
-             [you('thinking', pose='kneel', look=ENV,
+             [host('happy', 'point', look='camera'),
+              you('thinking', pose='kneel', look=ENV,
                   then=[{'at': 0.04, 'pose': 'hold-object', 'holds': ENV, 'expression': 'thinking'},
                         {'at': 0.55, 'pose': 'hold-object', 'holds': ENV, 'expression': 'surprised'}])]),
         shot('s1e', 'n4', 'Sender: the *Sun.*', 'wide', overlay=page(BILL_1, 0), sfx=[('pop', 'start')]),
@@ -130,10 +162,9 @@ SCENES = [
     scene('s2', 1, 'why-it-matters', 'curious', 'living-room', NIGHT, ['n6', 'n7', 'n8', 'n9', 'n10', 'n11'], [
         shot('s2a', 'n6', 'You laugh. Then you check the sum.', 'medium',
              [you('laughing', then=[{'at': 0.45, 'expression': 'thinking', 'lookAt': ENV}])]),
-        shot('s2b', 'n7', 'Take all the sunlight that lands on', 'medium', [you('thinking', look='earth')], [DOOR, earth()],
-             sfx=[('pop', 'start')]),
+        shot('s2b', 'n7', 'Take all the sunlight that lands on', 'medium', [host('happy', 'point')], focus=HOST),
         shot('s2c', 'n7', 'this planet in one *hour.*', 'wide', [you('surprised', look='earth')],
-             [DOOR, earth('ONE HOUR OF SUNLIGHT')], move='push-in', strength=0.4),
+             [DOOR, earth('ONE HOUR OF SUNLIGHT')], sfx=[('pop', 'start')]),
         shot('s2d', 'n8', 'Price it like the electricity in your wall.', 'wide', [you('determined', look='earth')],
              [DOOR, earth('$30 TRILLION')], sfx=[('click', 'middle')]),
         shot('s2e', 'n9', 'Thirty trillion. About what the whole United', 'wide',
@@ -143,17 +174,15 @@ SCENES = [
              [you('thinking', look='up')],
              [DOOR, {'prop': 'coin-tower', 'x': 0.89, 'size': 0.85, 'tag': 'WORLD: 1 YEAR'}] + suns(),
              sfx=[('click', 'start')]),
-        shot('s2h', 'n10', 'everything the entire world earns in a year.', 'wide',
-             [you('horrified', look='up')],
-             [DOOR, {'prop': 'coin-tower', 'x': 0.89, 'size': 0.85, 'tag': 'WORLD: 1 YEAR'}] + suns(True),
-             sfx=[('ding', 'start')]),
+        shot('s2h', 'n10', 'everything the entire world earns in a year.', 'medium',
+             [host('surprised', 'hands-up')], focus=HOST, sfx=[('ding', 'start')]),
         shot('s2i', 'n11', 'And then it does it again.', 'close-up', [you('exhausted')]),
     ], quiet=True),
     scene('s3', 1, 'why-it-matters', 'curious', 'city', 'clear-day', ['n12'], [
-        shot('s3a', 'n12', 'In under ninety minutes, the Earth soaks up', 'wide', [], [SUN_CITY],
+        shot('s3a', 'n12', 'In under ninety minutes, the Earth soaks up', 'wide', [host('happy', 'point', x=0.24)], [SUN_CITY],
              overlay={'kind': 'number', 'text': '90 minutes', 'caption': 'of sunlight'}, fade=True, sfx=[('pop', 'start')]),
-        shot('s3b', 'n12', 'more energy than every city, car and factory', 'wide', [], [SUN_CITY], move='pan', strength=0.5),
-        shot('s3c', 'n12', 'will use this year.', 'wide', [], [SUN_CITY],
+        shot('s3b', 'n12', 'more energy than every city, car and factory', 'medium', [host('happy', 'shrug', x=0.24)]),
+        shot('s3c', 'n12', 'will use this year.', 'wide', [host('smug', x=0.24)], [SUN_CITY],
              overlay={'kind': 'label', 'text': 'More than a whole year of it'}, move='push-in', strength=0.4),
     ], quiet=True),
     # ------------------------------------------------------------------ part 2
@@ -285,6 +314,15 @@ SCENES += [
              [you('happy', pose='look-up', holds=None, x=0.42, look='up')], move='push-in', strength=0.5),
     ]),
 ]
+
+# The host stands at the side of every wide shot of the room that has you in it.
+for sc in SCENES:
+    if sc['place'] != 'living-room':
+        continue
+    for sh in sc['shots']:
+        there = any(a['character'] == HOST for a in sh['actors'])
+        if sh['camera']['framing'] == 'wide' and sh['actors'] and not there:
+            sh['actors'].insert(0, HOST_IN.get(sh['id'], host()))
 
 sb = {k: v for k, v in draft.items() if k not in ('scenes', 'cast')}
 sb['cast'] = CAST

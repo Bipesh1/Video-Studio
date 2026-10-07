@@ -90,7 +90,7 @@ A part is shown to Biku in the page's first shape. When every part is approved, 
 
 ## Science videos ("what if")
 
-- **One host.** The same scientist explains in every video (Biku, 2026-10-07); other people are cast as needed. The host opens and closes in the lab; the "what if" itself happens out in the world or in space.
+- **One host, who speaks** (Biku, 2026-10-07). The saved character `host` tells every video in her own voice instead of a narrator: cast her with `card: "host"` and `host: true` and give her every line. She stands at the side of the scenes she tells and points at what she talks about, a good two and a half heads from anyone she points past; other people act the story out. She is heard over a page, a far place or someone else's close-up.
 - **Places:** `lab`, `living-room`, `city` (palette `clear-day`, or `dusk-violet` for night), `space`, `earth-orbit`, `moon-surface`. Space is always dark whatever palette a scene names. In `space` and `earth-orbit` there is no ground: give people the `float` action.
 - **Things of the sky are props:** `sun`, `full-moon`, `earth`, `planet`, `planet-ringed`, `planet-giant`, `planet-ice`, `asteroid`, `black-hole`, `rocket`, `rocket-flying`. Each hangs at a sensible height; `y` (heads off the ground) and `size` move and scale it. In a wide frame the sky of a wide shot is about five heads tall, so keep `y` under about 4.
 - **Explosion, fire and smoke** stand in a scene the same way (`explosion`, `fire`, `smoke`). An explosion goes off as its shot begins. Nobody is shown hurt by one: people cower, run or look on.

@@ -1,0 +1,21 @@
+{
+  "id": "host",
+  "name": "The Host",
+  "description": "The host of the what-if science videos: a scientist with her hair in a bun, round glasses and a white lab coat. She tells every video and stands in its scenes. Picked by Claude on 2026-10-07 when Biku said to pick one; his to change.",
+  "tags": ["host", "scientist", "presenter", "narrator", "woman", "lab coat", "glasses", "science"],
+  "age": "adult",
+  "size": 1,
+  "identity": {
+    "skinTone": 5,
+    "hair": "bun",
+    "hairColor": "black"
+  },
+  "outfit": {
+    "costume": "scientist"
+  },
+  "eyeStyle": "round",
+  "expression": "happy",
+  "voice": "woman-calm",
+  "version": 1,
+  "added": "2026-10-07"
+}
