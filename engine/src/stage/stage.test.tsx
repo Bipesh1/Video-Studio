@@ -9,6 +9,7 @@ import library from '../../../library/index.json';
 import fixture from '../../../shared/src/fixtures/moon-tax.storyboard.json';
 import { sceneBackground } from '../backgrounds/places';
 import { layoutScale, shotTransform } from '../camera/Framing';
+import { pointerBox } from '../overlays/Explain';
 import { lookFrom } from '../wardrobe/cast';
 import { unbuildable } from './buildable';
 import {
@@ -22,8 +23,9 @@ import {
   stageX,
   timedShots,
 } from './layout';
+import { pointerPlace } from './measure';
 import { HEAD_EFFECTS } from './names';
-import { HELD_PROPS, STANDING_PROPS } from './props';
+import { HELD_PROPS, STANDING_PROPS, propHeight } from './props';
 import { ShotPicture } from './ShotPicture';
 
 /**
@@ -55,7 +57,7 @@ const sceneOf = (sb: Storyboard, id: string) => {
   if (!found) throw new Error(`no scene for ${id}`);
   return found;
 };
-const placed = (sb: Storyboard, id: string, size = WIDE) => {
+const placed = (sb: Storyboard, id: string, size: { width: number; height: number } = WIDE) => {
   const shot = shotOf(sb, id);
   const stage = stageFor(sceneOf(sb, id), size, sb.seed);
   const placements = new Map(
@@ -80,10 +82,19 @@ describe('what the builder can put on screen', () => {
   it('shows every effect that sits on a head, and says which two it cannot show yet', () => {
     const effects = ids('effect');
     for (const e of HEAD_EFFECTS) expect(effects).toContain(e);
-    expect(effects.filter((e) => !HEAD_EFFECTS.includes(e)).sort()).toEqual([
-      'impact',
-      'motion-lines',
-    ]);
+    // An explosion, a fire and smoke happen in the world: they are stood in a scene like a prop.
+    const inScene = effects.filter((e) => STANDING_PROPS.includes(e)).sort();
+    expect(inScene).toEqual(['explosion', 'fire', 'smoke']);
+    expect(
+      effects.filter((e) => !HEAD_EFFECTS.includes(e) && !STANDING_PROPS.includes(e)).sort(),
+    ).toEqual(['impact', 'motion-lines']);
+  });
+
+  it('hangs the things of the sky where a shot says, or at their usual height', () => {
+    expect(propHeight({ prop: 'sun' })).toBeGreaterThan(3);
+    expect(propHeight({ prop: 'sun', y: 1.5 })).toBe(1.5);
+    expect(propHeight({ prop: 'rocket' })).toBe(0);
+    expect(propHeight({ prop: 'table' })).toBe(0);
   });
 
   it('can build both worked storyboards as they stand', () => {
@@ -313,6 +324,53 @@ describe('where people look and what the camera frames', () => {
       expect(x * t.scale + t.x).toBeGreaterThan(0);
       expect(x * t.scale + t.x).toBeLessThan(WIDE.width);
     }
+  });
+
+  it('keeps what an arrow names, and the whole of its label, in a tall picture', () => {
+    // The farmer looks ahead, the bag is far along the road, and an arrow names the bag.
+    const sb = structuredClone(farmer);
+    const shot = shotOf(sb, 's1a');
+    const tomas = shot.actors[0];
+    const bag = shot.props[0];
+    if (!tomas || !bag) throw new Error('no farmer or no bag');
+    tomas.lookAt = 'ahead';
+    tomas.x = 0.25;
+    tomas.then = [];
+    bag.x = 0.75;
+    const alone = placed(sb, 's1a', TALL);
+    expect(shotFocus(alone.shot, alone.stage, alone.placements).span ?? 0).toBe(0);
+
+    const overlay = { kind: 'pointer' as const, text: 'One hundred gold coins', to: 'bag' };
+    shot.overlay = overlay;
+    const { stage, placements } = placed(sb, 's1a', TALL);
+    const focus = shotFocus(shot, stage, placements);
+    expect(focus.span).toBeGreaterThan(stage.head * 3);
+    const t = shotTransform(shot.camera.framing, focus, TALL);
+    const bagX = stageX(stage, bag.x) * t.scale + t.x;
+    expect(bagX).toBeGreaterThan(0);
+    expect(bagX).toBeLessThan(TALL.width);
+
+    const shots = timedShots(sb, fps);
+    const ts = shots.find((x) => x.shot.id === 's1a');
+    if (!ts) throw new Error('no shot');
+    const place = pointerPlace(
+      { storyboard: sb, track: null, size: TALL, cards: {}, fps },
+      ts,
+      shots,
+      overlay,
+    );
+    const box = pointerBox(overlay.text, place.at, TALL.width, TALL.height);
+    expect(box.x).toBeGreaterThan(0);
+    expect(box.x + box.width).toBeLessThan(TALL.width);
+    // The arrow ends on the bag, where the bag is in this shape of frame.
+    expect(place.to.x * TALL.width).toBeGreaterThan(0);
+    expect(place.to.x * TALL.width).toBeLessThan(TALL.width);
+    // A place given by hand is used as it is.
+    const byHand = { ...overlay, at: { x: 0.3, y: 0.2 } };
+    expect(
+      pointerPlace({ storyboard: sb, track: null, size: TALL, cards: {}, fps }, ts, shots, byHand)
+        .at,
+    ).toEqual({ x: 0.3, y: 0.2 });
   });
 
   it('frames the one the camera favours, and both of two people otherwise', () => {

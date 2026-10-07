@@ -77,12 +77,15 @@ Everything already drawn is reusable code under `engine/src/`, and every piece i
 | Ages (child, adult, elder)                                 | `age` on the Character in `engine/src/rig/Character.tsx`                                              |
 | Saved characters (only for a series)                       | `characters/<id>.json`, drawn with `castFromCard` in `cast.ts`                                        |
 | Props, and putting them in a hand or a scene               | `engine/src/props/` (`InHand` and `Placed` in `Hold.tsx`)                                             |
+| Sun, Moon, Earth, planets, asteroid, black hole, rocket    | `engine/src/props/Sky.tsx`, `Rocket.tsx`; a shot hangs them with `y` and `size`                       |
 | Effects (tears, anger, stars, symbols, flash)              | `engine/src/effects/`                                                                                 |
+| Explosion, fire, smoke (stood in a scene like a prop)      | `engine/src/effects/Blast.tsx`                                                                        |
 | Places by name (street, forest, castle, home)              | `PLACES` in `engine/src/backgrounds/places.ts`                                                        |
 | Backgrounds and their palettes (`endless` for chases)      | `engine/src/backgrounds/`                                                                             |
 | Shot sizes: wide, medium, close-up, over-shoulder          | `engine/src/camera/Framing.tsx`                                                                       |
 | Camera moves (push-in, shake, pan, fade), captions         | `engine/src/camera/Camera.tsx`, `engine/src/overlays/`                                                |
 | Title cards and labels                                     | `engine/src/overlays/Titles.tsx`                                                                      |
+| Big number, arrow with a label, orbit diagram              | `engine/src/overlays/Explain.tsx`; a shot's `overlay` of kind number, pointer or orbit                |
 | A page's mark and closing card                             | `engine/src/overlays/Brand.tsx`, set in `brands/<brand>.json`                                         |
 | The cover picture (four title styles)                      | `engine/src/stage/Cover.tsx`; the shot is the storyboard's `cover`                                    |
 | Music moods (nine), written as notes                       | `MOODS` in `audio/src/studio_audio/music.py`                                                          |

@@ -1,8 +1,8 @@
 # Build Status
 
 **Current phase:** Phase 4 (the full pipeline), steps 4A to 4F done (4F, output, on 2026-10-07). Phases 0 to 3 are complete. Next step is 4G (the test video from Biku's own script), started only when Biku asks. Checkpoint 1 questions 2, 4 and 5 are still open.
-**Next:** Biku watches the two finished files in `runs/2026-10-06-honest-farmer/out/` (listed in `runs/2026-10-06-honest-farmer/delivery.md`): `honest-farmer-16x9-v2.mp4` (wide, for YouTube) and `honest-farmer-9x16-v2.mp4` (vertical, for Facebook Reels; made again on 2026-10-07 after he said the bush and grass were shown too big in v1). He says whether the vertical is good now, picks a cover style from `out/cover-choices-wide.png` (1 to 4) and `out/cover-choices-vertical-v2.png` (1 to 3), and looks at `out/page-mark-and-closing-card-sample.png`. For 4G he needs to give: a script, a name for his page, and his pick of voices.
-**His plan for the pages (Biku, 2026-10-07, given as what he would do if the vertical could not be fixed; to confirm now that it is):** the wide video goes on YouTube, the vertical one on Facebook as a Reel, and a YouTube Short is made only when he asks for one.
+**Next:** Biku looks at the science figures in `runs/2026-10-07-science-figures/` (six sheets) and picks the host from `1-host-choices.png` (1 to 4, or says what to change). Still waiting from before: whether the vertical cut is good now (`runs/2026-10-06-honest-farmer/out/honest-farmer-9x16-v2.mp4`), a cover style, the page name. For 4G he needs to give a script (or a "what if" topic), the page name and his pick of voices.
+**Niche (Biku, 2026-10-07):** "what if" science videos, with one host in every video and other characters as actors when needed.
 **Decided for Phase 4 (Biku, 2026-10-06):** his videos will be about 2 to 3 minutes. Biku proposed making them as parts of at most 1 minute from one script and combining them at the end. Agreed, with the studio doing the joining: one script is split into chapters of up to a minute at natural story breaks, each chapter is built and checked alone (so each fits the run budget and can be redone alone), then the chapters are joined into one final video in every size with one captions file; the chapters are kept too. Phase 4 must make the joins invisible: saved characters reused in every chapter, one voice and one loudness, music planned over the whole script so cuts fall on a pause or a mood change, the title only on the first chapter and the closing card only on the last. (The plan's 30-minute run budget then applies to a chapter, not to the whole video; this is Claude's reading and should be confirmed with Biku when Phase 4 starts.)
 **Also decided (Biku, 2026-10-06):** in a video made in parts, the studio stops after each part of about a minute and shows it; it goes on to the next part only when Biku says so ("so that its better than making all the video at once"). So a chapter is a checkpoint: no later chapter, no extra size and no joined video is rendered ahead of his go. Agreed by Biku the same day ("thats fine"): each chapter is shown in the phone size only, and the other two sizes and the joined video are made once every chapter is approved.
 **Last updated:** 2026-10-06
@@ -24,6 +24,28 @@ Each step ends with something Biku can look at, a commit and an update here. Sta
 - **4E. Self-check: done (2026-10-06).** The automatic checks and the plain-language QA report.
 - **4F. Output: done (2026-10-07).** Preview first, then the shapes he chooses, cover image, captions file, and joining chapters.
 - **4G. The test video.** One full 2 to 3 minute video in refine mode from Biku's script, made chapter by chapter, then Checkpoint 2.
+
+## Science figures, first batch (2026-10-07)
+
+Asked by Biku: the figures a "what if" science page needs, the first batch of the list he approved plus the black hole and the rocket. Drawn, looked at alone and in real shots (wide and tall), and added to the library (242 pieces).
+
+- **Places (6):** outer space, above the Earth, on the Moon, a modern city street (day or night), a modern living room, a science lab.
+- **Things of the sky (9) and a rocket:** Sun, full Moon, Earth, a planet in four kinds (red, ringed, gas giant, ice), asteroid with a tail of fire, black hole; a rocket standing or in flight. A shot hangs them at a height and size.
+- **People:** a scientist (lab coat and glasses), an astronaut (suit and clear helmet), and modern clothes: T-shirt, hoodie, jacket, lab coat, glasses.
+- **Effects:** explosion, fire, smoke (stood in a scene like a prop), and floating with no gravity (an action).
+- **Explainer graphics:** a big number, an arrow with a label that finds what it names, an orbit diagram.
+- **Style guide version 14:** two new background palettes (deep space, Moon dust) and one accent (ocean blue). A thing of the sky that a shot is about is an outlined prop; far off in a place's sky it has no outline.
+- **Built into the video builder:** a shot plan can name every one of them, and the self-check measures the new graphics against faces.
+- **An arrow keeps what it names in the picture:** the camera frames the person and the named thing together, and the label is always whole inside the frame, in a tall picture too (the first tall look had the label cut off and the rocket out of sight).
+- **Tests:** 587 in all.
+
+### Open
+
+- **The host is not chosen.** Four choices are on a sheet; the host's saved character card is written when Biku picks.
+- **Not built:** one thing shown hitting another (an asteroid striking the Earth is two shots: it falls, then the blast); a number that counts up; the second batch of the list (ocean, desert, ice, satellite, telescope and the rest); a "wonder" music mood and rumble, explosion and alarm sounds, so a blast has no sound of its own yet.
+- **In a tall frame** a thing far from the people can fall outside the picture unless someone looks at it or an arrow names it; the self-check does not yet warn about it.
+- **Above the Earth**, the long white cloud on the Earth reads as a plain white bar when seen close in a tall picture.
+- **The lint now skips `.cache/`**, where a render's scratch files live.
 
 ## Phase 4F. Output: done (2026-10-07)
 

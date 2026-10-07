@@ -79,6 +79,16 @@ function base(name: string): Base {
         clouds: [c(0), c(1), c(2)],
         ray: c(2),
       };
+    case 'deep-space':
+      return { skyTop: c(0), skyBottom: c(1), ground: c(0), clouds: [c(0), c(1), c(2)], ray: c(2) };
+    case 'moon-dust':
+      return {
+        skyTop: c(0),
+        skyBottom: c(1),
+        ground: c(2),
+        clouds: [c(0), c(1), c(3)],
+        ray: lighten(c(2), 0.3),
+      };
     default: {
       // Any other palette: order its colors by value, darkest at the ground, lightest at the horizon.
       const sorted = [...p].sort((a, b) => luminance(a) - luminance(b));

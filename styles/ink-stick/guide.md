@@ -1,7 +1,7 @@
 ## Part 3. The Ink Stick art style
 
 **Style id:** `ink-stick`
-**Guide version:** 13 (2026-10-06). See the version history at the end.
+**Guide version:** 14 (2026-10-07). See the version history at the end.
 **Built from:** two reference images supplied by Biku
 - **Reference A:** a stern king in a crown, red cape and armor, under a stormy night sky with light rays
 - **Reference B:** two stick figures in a night scene under a crescent moon, one threatening and one frightened
@@ -187,6 +187,8 @@ Use the **lowest tier** that makes the character instantly recognizable.
 | **Warm interior** | `#E8C9A0` `#C99B6B` `#8E6440` | |
 | **Danger** | `#4A1A1E` `#6E2328` `#8A2A2E` | |
 | **Cold dawn** | `#AFC3D6` `#D7E1EA` `#F1E3C8` | |
+| **Deep space** (outer space) | sky `#0D1020` to `#171C33`, far glow `#262D4B` | |
+| **Moon dust** (the Moon, bare worlds) | the deep space sky, ground `#9A9FA8`, shadow `#757B86` | |
 
 ### Style 6. Color rules
 
@@ -206,6 +208,7 @@ Use the **lowest tier** that makes the character instantly recognizable.
 | Brown | `#7A4B2A` | `#623C22` |
 | Tan | `#C8A66E` | `#A4885A` |
 | Cream | `#EEDFB8` | `#C8BB9B` |
+| Ocean blue | `#2E6DB4` | `#22528A` |
 
 Brown, tan and cream are the plain cloth colors of ordinary people: leather, wool, sacking and undyed linen for villagers, farmers, workers and monks. Pick the one that stands apart from the wearer's skin tone.
 
@@ -279,7 +282,7 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
 ```json
 {
   "id": "ink-stick",
-  "version": 13,
+  "version": 14,
   "line": {
     "color": "#16161A",
     "outlinePctOfHead": [0.011, 0.013],
@@ -341,7 +344,8 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
     "forest": ["#3E7D4A", "#2C5B35"],
     "brown": ["#7A4B2A", "#623C22"],
     "tan": ["#C8A66E", "#A4885A"],
-    "cream": ["#EEDFB8", "#C8BB9B"]
+    "cream": ["#EEDFB8", "#C8BB9B"],
+    "ocean": ["#2E6DB4", "#22528A"]
   },
   "palettes": {
     "storm-slate": ["#1F2B3B", "#2E3E52", "#4B5E75", "#7E91A8", "#B9C8D8"],
@@ -349,7 +353,9 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
     "clear-day": ["#8FC3E8", "#CFE8F7", "#7DB36A", "#5E8F50"],
     "warm-interior": ["#E8C9A0", "#C99B6B", "#8E6440"],
     "danger": ["#4A1A1E", "#6E2328", "#8A2A2E"],
-    "cold-dawn": ["#AFC3D6", "#D7E1EA", "#F1E3C8"]
+    "cold-dawn": ["#AFC3D6", "#D7E1EA", "#F1E3C8"],
+    "deep-space": ["#0D1020", "#171C33", "#262D4B"],
+    "moon-dust": ["#0D1020", "#171C33", "#9A9FA8", "#757B86"]
   },
   "background": {
     "outlines": false,
@@ -402,3 +408,4 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
 | 11 | 2026-10-06 | Lines a little thinner again, at Biku's request after seeing version 10 ("a little bit more thinner"): the outline is 3 to 3.5% of head width and stick limbs and the torso line are 5.4 to 6.2%. Inner details and face lines are unchanged. | Biku |
 | 12 | 2026-10-06 | Fine outlines, bold limbs. Biku compared five thicknesses and three mixes side by side and chose mix B: the outline of heads, costumes and props is a fine pen line (1.1 to 1.3% of head width), inner details 0.8 to 1%, face lines about 1.2% and face creases about 0.7%, while stick limbs and the torso line stay bold (5.4 to 6.2%) so plain stick figures read on a phone. The main rule and Style Check question 1 now say "clean black outline" instead of "thick". This moves away from the heavy outlines of the two reference pictures on purpose. | Biku |
 | 13 | 2026-10-06 | A move of the whole body (kneeling, sitting down, getting up, lying down, picking something up) takes 10 to 16 frames and is seen to happen, instead of snapping in 3 to 6 frames like an arm or a head. Biku, on a kneel that took two frames in the first automatic video: "looks like the posture didn't change in continuous frames". | Biku |
+| 14 | 2026-10-07 | Colors for the "what if" science videos: two background palettes, deep space (a near-black blue sky) and Moon dust (that sky over gray ground), and one accent, ocean blue, for the Earth seen from space. In space a planet, the Sun or the Moon that a shot is about is drawn as a prop, outlined and bright; far off in the sky of a place it is a background shape with no outline. | Biku (asked for the science figures) |

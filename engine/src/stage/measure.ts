@@ -1,4 +1,11 @@
-import type { CharacterCard, QaCheck, QaFinding, Storyboard, VoiceTrack } from '@studio/shared';
+import type {
+  CharacterCard,
+  Overlay,
+  QaCheck,
+  QaFinding,
+  Storyboard,
+  VoiceTrack,
+} from '@studio/shared';
 import { PUNCH_IN_FRAMES, panShare, punchInZoom, pushInZoom } from '../camera/Camera';
 import { shotTransform } from '../camera/Framing';
 import { captionBox, captionLayout } from '../overlays/captionLayout';
@@ -6,14 +13,16 @@ import type { Box } from '../overlays/captionLayout';
 import { buildPages, pageAt, toCaptions } from '../overlays/captionPages';
 import type { CaptionPage } from '../overlays/captionPages';
 import { markBox } from '../overlays/Brand';
+import { bigNumberBox, pointerBox } from '../overlays/Explain';
 import type { Mark } from '../overlays/Brand';
 import { labelBox, titleCardBox } from '../overlays/Titles';
 import { movePose } from '../rig/chain';
 import { CHILD_BODY, toScreen } from '../rig/Character';
-import { vec } from '../rig/math';
+import { clamp, vec } from '../rig/math';
 import { computeSkeleton } from '../rig/skeleton';
 import { lookFrom } from '../wardrobe/cast';
-import { timedShots } from './layout';
+import { stageX, timedShots } from './layout';
+import { propHeight, standingProp } from './props';
 import type { Size, TimedShot } from './layout';
 import { TITLE_FADE, TITLE_SECONDS, captionOptions, captionPagesFor, titleY } from './screen';
 import { stageShot } from './staging';
@@ -63,6 +72,68 @@ export type MeasureInput = {
   /** The page's mark, when the brand has one. */
   mark?: Mark | null;
 };
+
+/**
+ * Where a person or a thing of a shot is on screen at a frame, px: a head, or the middle of a
+ * prop. For an arrow that names what it points at. Null when the shot has no such thing.
+ */
+export function pointOnScreen(
+  input: MeasureInput,
+  ts: TimedShot,
+  shots: readonly TimedShot[],
+  frame: number,
+  target: string,
+): { x: number; y: number } | null {
+  const { storyboard, track, size, cards, fps } = input;
+  const staged = stageShot({ ts, shots, storyboard, cards, track, size, frame, fps });
+  const t = shotTransform(staged.shot.camera.framing, staged.focus, size, staged.side);
+  const person = staged.drawn.find((d) => d.actor.character === target);
+  const thing = staged.shot.props.find((p) => p.prop === target);
+  const at = person
+    ? toScreen(computeSkeleton(person.pose).head, person.placement)
+    : thing
+      ? vec(
+          stageX(staged.stage, thing.x),
+          staged.stage.groundY -
+            ((standingProp(thing.prop)?.eyeHeight ?? 0.5) + propHeight(thing)) * staged.stage.head,
+        )
+      : null;
+  return at ? { x: at.x * t.scale + t.x, y: at.y * t.scale + t.y } : null;
+}
+
+/**
+ * Where a shot's arrow points and where its label sits, as shares of the frame. A named target
+ * is found where it is in this frame shape. Left to itself the label sits well above the target,
+ * a little toward the middle of the picture, and always whole inside the frame.
+ */
+export function pointerPlace(
+  input: MeasureInput,
+  ts: TimedShot,
+  shots: readonly TimedShot[],
+  overlay: Extract<Overlay, { kind: 'pointer' }>,
+): { at: { x: number; y: number }; to: { x: number; y: number } } {
+  const { width, height } = input.size;
+  const found =
+    typeof overlay.to === 'string'
+      ? pointOnScreen(input, ts, shots, ts.startFrame + 8, overlay.to)
+      : null;
+  const to =
+    typeof overlay.to === 'string'
+      ? found
+        ? { x: found.x / width, y: found.y / height }
+        : { x: 0.5, y: 0.4 }
+      : overlay.to;
+  if (overlay.at) return { at: overlay.at, to };
+  const half = pointerBox(overlay.text, { x: 0.5, y: 0.5 }, width, height).width / 2 / width;
+  const air = Math.min(0.5, half + 0.03);
+  return {
+    at: {
+      x: clamp(to.x + (to.x > 0.5 ? -0.1 : 0.1), air, 1 - air),
+      y: clamp(to.y - 0.3, 0.08, 0.6),
+    },
+    to,
+  };
+}
 
 /** One frame of a shot, measured. */
 export function measureFrame(
@@ -140,7 +211,19 @@ export function measureFrame(
       overlay?.kind === 'title' && titleUp
         ? titleCardBox(overlay.text, size.width, size.height, titleY(size))
         : null,
-    label: overlay?.kind === 'label' ? labelBox(overlay.text, size.width, size.height) : null,
+    label:
+      overlay?.kind === 'label'
+        ? labelBox(overlay.text, size.width, size.height)
+        : overlay?.kind === 'number'
+          ? bigNumberBox(overlay.text, overlay.caption, size.width, size.height)
+          : overlay?.kind === 'pointer'
+            ? pointerBox(
+                overlay.text,
+                pointerPlace(input, ts, shots, overlay).at,
+                size.width,
+                size.height,
+              )
+            : null,
     caption: page ? captionBox(page, size.width, size.height) : null,
     mark: input.mark ? markBox(input.mark, size.width, size.height) : null,
     outOfReach: drawn.flatMap((d) =>
@@ -273,7 +356,7 @@ export function pictureChecks(input: MeasureInput, limits: { maxShotS?: number }
       // Faces clear of what is laid over the picture.
       for (const [what, pick] of [
         ['the title', (m: FrameMeasure) => m.title],
-        ['the label', (m: FrameMeasure) => m.label],
+        ['the label or number', (m: FrameMeasure) => m.label],
         ['the captions', (m: FrameMeasure) => m.caption],
         ["the page's mark", (m: FrameMeasure) => m.mark],
       ] as const) {

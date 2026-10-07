@@ -20,7 +20,7 @@ import { resolvePose } from '../rig/pose';
 import { poseById } from '../rig/poses';
 import { computeSkeleton } from '../rig/skeleton';
 import type { Facing, ResolvedPose } from '../rig/types';
-import { standingProp } from './props';
+import { propHeight, standingProp } from './props';
 
 /**
  * Where everything in a storyboard shot goes, with no drawing in it (so it can be tested and
@@ -142,7 +142,7 @@ export function lookTarget(
   if (held) return toScreen(HELD_AT, held.placement);
   const thing = shot.props.find((p) => p.prop === actor.lookAt);
   if (thing) {
-    const height = standingProp(thing.prop)?.eyeHeight ?? 0.5;
+    const height = (standingProp(thing.prop)?.eyeHeight ?? 0.5) + propHeight(thing);
     return vec(stageX(stage, thing.x), stage.groundY - height * stage.head);
   }
   return null;
@@ -194,12 +194,14 @@ function aimOf(
   const favoured = shot.camera.focus ? focusOf(shot.camera.focus) : null;
   if (favoured) return favoured;
   const all = seen.map((a) => focusOf(a.character)).filter((f): f is Focus => f !== null);
-  // A thing someone looks at belongs in the picture with them, unless the shot is a close-up.
+  // A thing someone looks at, or that an arrow names, belongs in the picture with them, unless
+  // the shot is a close-up.
+  const named = shot.overlay?.kind === 'pointer' ? shot.overlay.to : null;
   const lookedAt =
     shot.camera.framing === 'close-up'
       ? []
       : shot.props
-          .filter((p) => seen.some((a) => a.lookAt === p.prop))
+          .filter((p) => p.prop === named || seen.some((a) => a.lookAt === p.prop))
           .map((p) => stageX(stage, p.x));
   const first = all[0];
   if (all.length === 1 && first && lookedAt.length === 0) return first;
@@ -211,12 +213,15 @@ function aimOf(
     const between = focusBetween(heads[0] as Focus, heads[heads.length - 1] as Focus);
     return { ...between, x: (left + right) / 2, span: right - left };
   }
-  // Nobody in the shot: frame the things, at about the height of a standing head.
+  // Nobody in the shot: frame the things, at about the height of a standing head, or at the
+  // height of whatever hangs in the sky.
   const xs = shot.props.map((p) => stageX(stage, p.x));
   const x = xs.length ? (Math.min(...xs) + Math.max(...xs)) / 2 : stage.centre;
+  const ups = shot.props.map(propHeight).filter((up) => up > 0);
+  const up = ups.length ? ups.reduce((a, b) => a + b, 0) / ups.length + 0.6 : 2.6;
   return {
     x,
-    y: stage.groundY - 2.6 * stage.head,
+    y: stage.groundY - up * stage.head,
     head: stage.head,
     span: xs.length > 1 ? Math.max(...xs) - Math.min(...xs) : 0,
   };

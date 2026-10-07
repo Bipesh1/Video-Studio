@@ -1,8 +1,9 @@
 import { useId } from 'react';
 import type { ReactNode } from 'react';
+import { Asteroid, BlackHole, Earth, FullMoon, Planet, Sun } from '../props/Sky';
 import { DEG, lerp } from '../rig/math';
 import { seeded } from '../rig/random';
-import { MASK_HIDE, MASK_SHOW, ink, mix, shade, tokens, white } from '../tokens';
+import { MASK_HIDE, MASK_SHOW, ink, lighten, mix, shade, tokens, white } from '../tokens';
 import { bgRoles } from './roles';
 import type { BgRoles } from './roles';
 
@@ -28,6 +29,7 @@ export const SILHOUETTE_KINDS = [
   'pine',
   'lamp-post',
   'fence',
+  'tower',
 ] as const;
 
 export type Silhouette = {
@@ -39,8 +41,46 @@ export type Silhouette = {
   layer?: 'near' | 'mid';
 };
 
-/** What the ground is: grass with tufts, a paved street, or the floor of a room. */
-export type GroundKind = 'grass' | 'road' | 'floor';
+/**
+ * What the ground is: grass with tufts, a paved street, the floor of a room, the gray dust of
+ * the Moon with its craters, or none at all, out in space.
+ */
+export type GroundKind = 'grass' | 'road' | 'floor' | 'dust' | 'none';
+
+/** Something far off in the sky of a place: part of the background, so it has no outline. */
+export const SKY_BODIES = [
+  'sun',
+  'full-moon',
+  'earth',
+  'planet',
+  'ringed-planet',
+  'asteroid',
+  'black-hole',
+] as const;
+export type SkyBody = {
+  kind: (typeof SKY_BODIES)[number];
+  /** Its middle, as fractions of the frame (x of the width, y of the height). */
+  x: number;
+  y: number;
+  /** Its radius as a fraction of the frame height. */
+  r: number;
+  /** A planet's color: an accent of the style by name. */
+  paint?: string;
+};
+
+/** What stands in a room or hangs on its wall. All of it is background: flat and quiet. */
+export const FITTINGS = [
+  'sofa',
+  'floor-lamp',
+  'tv',
+  'picture',
+  'plant',
+  'rug',
+  'lab-bench',
+  'lab-shelves',
+  'board',
+] as const;
+export type Fitting = { kind: (typeof FITTINGS)[number]; x: number };
 
 /**
  * A room (Style 5.3): a flat wall and floor, a soft vignette, and windows as the light. Every
@@ -52,6 +92,8 @@ export type Interior = {
   columns: number;
   banners: number;
   shelf: boolean;
+  /** Furniture and things on the wall, each at a place across the room (0 left, 1 right). */
+  fittings?: Fitting[];
 };
 
 export type BackgroundSpec = {
@@ -71,10 +113,18 @@ export type BackgroundSpec = {
   ground: GroundKind;
   /** Set for a room. The sky, hills and clouds are then left out. */
   interior: Interior | null;
+  /** The Sun, the Earth, a planet and the like, far off in the sky. */
+  bodies?: SkyBody[];
 };
 
 /** Palettes that read as night: they get a moon and stars by default. */
-export const NIGHT_PALETTES: readonly string[] = ['storm-slate', 'dusk-violet', 'danger'];
+export const NIGHT_PALETTES: readonly string[] = [
+  'storm-slate',
+  'dusk-violet',
+  'danger',
+  'deep-space',
+  'moon-dust',
+];
 
 /** Sensible defaults per treatment. Override any field. */
 export function backgroundSpec(
@@ -207,6 +257,16 @@ function Sky({ c }: { c: Ctx }) {
           width={c.w * 3}
           height={c.world.top + 1}
           fill={c.atmo ? c.roles.skyTop : c.roles.skyBottom}
+        />
+      )}
+      {/* With no ground, the sky goes on below the canvas as well. */}
+      {c.world && c.world.bottom > 0 && c.spec.ground === 'none' && (
+        <rect
+          x={-c.w}
+          y={c.h - 1}
+          width={c.w * 3}
+          height={c.world.bottom + 1}
+          fill={c.roles.skyBottom}
         />
       )}
     </>
@@ -379,9 +439,34 @@ function Haze({ c }: { c: Ctx }) {
   );
 }
 
+/** Craters in gray dust: flat ovals, each with a lit far wall, bigger toward the front. */
+function Craters({ c }: { c: Ctx }) {
+  const y0 = c.spec.horizon * c.h;
+  const depth = c.h - y0;
+  const dark = mix(c.roles.ground, ink, 0.22);
+  const lit = lighten(c.roles.ground, 0.22);
+  return (
+    <>
+      {Array.from({ length: 9 }, (_, i) => {
+        const far = rnd(c, `cy${i}`) ** 1.4;
+        const x = lerp(-0.2, 1.2, (i + rnd(c, `cx${i}`) * 0.8) / 9) * c.w;
+        const y = y0 + depth * (0.1 + 0.8 * far);
+        const rx = c.h * (0.018 + 0.05 * far + 0.02 * rnd(c, `cs${i}`));
+        return (
+          <g key={i}>
+            <ellipse cx={x} cy={y} rx={rx} ry={rx * 0.3} fill={lit} />
+            <ellipse cx={x} cy={y + rx * 0.05} rx={rx * 0.9} ry={rx * 0.24} fill={dark} />
+          </g>
+        );
+      })}
+    </>
+  );
+}
+
 function Ground({ c }: { c: Ctx }) {
   const y = c.spec.horizon * c.h;
   const gid = `${c.id}-ground`;
+  if (c.spec.ground === 'none') return null;
   return (
     <>
       {c.atmo && (
@@ -408,6 +493,13 @@ function Ground({ c }: { c: Ctx }) {
           height={c.world.bottom}
           fill={c.spec.ground === 'road' ? c.roles.road : c.roles.ground}
         />
+      )}
+      {c.spec.ground === 'dust' && (
+        <>
+          {/* A low far ridge against the black sky, then the craters. */}
+          <path d={hillPath(c, 'ridge', y + c.h * 0.004, c.h * 0.022)} fill={c.roles.ground} />
+          <Craters c={c} />
+        </>
       )}
       {/* A street has a paler strip along its far edge, where it meets the houses. */}
       {c.spec.ground === 'road' && (
@@ -582,6 +674,288 @@ function Shelf({ c }: { c: Ctx }) {
   );
 }
 
+/** The Sun, the Earth and the like, far off: no outlines, and a little of the sky in them. */
+function Bodies({ c }: { c: Ctx }) {
+  return (
+    <>
+      {(c.spec.bodies ?? []).map((b, i) => {
+        const uid = `${c.id}-body${i}`;
+        const common = { uid, shadowSide: 1 as const, r: 1, t: c.t, outlined: false };
+        return (
+          <g key={i} transform={`translate(${b.x * c.w} ${b.y * c.h}) scale(${b.r * c.h})`}>
+            {b.kind === 'sun' && <Sun {...common} />}
+            {b.kind === 'full-moon' && <FullMoon {...common} paint="gray" />}
+            {b.kind === 'earth' && <Earth {...common} />}
+            {b.kind === 'planet' && <Planet {...common} paint={b.paint ?? 'orange'} />}
+            {b.kind === 'ringed-planet' && (
+              <Planet {...common} paint={b.paint ?? 'tan'} bands ring="cream" />
+            )}
+            {b.kind === 'asteroid' && <Asteroid {...common} />}
+            {b.kind === 'black-hole' && <BlackHole {...common} />}
+          </g>
+        );
+      })}
+    </>
+  );
+}
+
+/**
+ * What stands in a room: a modern living room's sofa, lamp and television, a lab's bench,
+ * shelves and board. Background, so flat shapes in the room's own tones and no outlines.
+ */
+function Fittings({ c, room }: { c: Ctx; room: Interior }) {
+  const floor = c.spec.horizon * c.h;
+  const u = c.h * 0.01;
+  const wood = mix(c.roles.wall, c.roles.ground, 0.8);
+  const dark = mix(c.roles.ground, ink, 0.35);
+  const soft = mix(c.roles.wall, c.roles.ground, 0.4);
+  const pale = c.roles.light;
+  const draw = (f: Fitting, i: number): ReactNode => {
+    const x = f.x * c.w;
+    switch (f.kind) {
+      case 'rug':
+        return (
+          <g key={i}>
+            <ellipse cx={x} cy={floor + u * 10} rx={u * 34} ry={u * 5} fill={soft} />
+            <ellipse cx={x} cy={floor + u * 10} rx={u * 28} ry={u * 3.6} fill={wood} />
+          </g>
+        );
+      case 'sofa':
+        return (
+          <g key={i}>
+            <rect
+              x={x - u * 21}
+              y={floor - u * 17}
+              width={u * 42}
+              height={u * 14}
+              rx={u * 3}
+              fill={wood}
+            />
+            <rect
+              x={x - u * 24}
+              y={floor - u * 11.5}
+              width={u * 6}
+              height={u * 11}
+              rx={u * 2.4}
+              fill={dark}
+            />
+            <rect
+              x={x + u * 18}
+              y={floor - u * 11.5}
+              width={u * 6}
+              height={u * 11}
+              rx={u * 2.4}
+              fill={dark}
+            />
+            <rect
+              x={x - u * 18.5}
+              y={floor - u * 8.5}
+              width={u * 18}
+              height={u * 5}
+              rx={u * 1.6}
+              fill={soft}
+            />
+            <rect
+              x={x + u * 0.5}
+              y={floor - u * 8.5}
+              width={u * 18}
+              height={u * 5}
+              rx={u * 1.6}
+              fill={soft}
+            />
+            <rect x={x - u * 20} y={floor - u * 4} width={u * 40} height={u * 3.4} fill={wood} />
+            <rect x={x - u * 19} y={floor - u * 0.8} width={u * 2} height={u * 1.6} fill={dark} />
+            <rect x={x + u * 17} y={floor - u * 0.8} width={u * 2} height={u * 1.6} fill={dark} />
+          </g>
+        );
+      case 'floor-lamp':
+        return (
+          <g key={i}>
+            <circle cx={x} cy={floor - u * 30} r={u * 13} fill={pale} opacity={0.22} />
+            <rect x={x - u * 0.45} y={floor - u * 27} width={u * 0.9} height={u * 27} fill={dark} />
+            <ellipse cx={x} cy={floor} rx={u * 3.4} ry={u * 0.9} fill={dark} />
+            <path
+              d={`M ${x - u * 3} ${floor - u * 33} L ${x + u * 3} ${floor - u * 33} L ${x + u * 5} ${floor - u * 26} L ${x - u * 5} ${floor - u * 26} Z`}
+              fill={pale}
+            />
+          </g>
+        );
+      case 'tv':
+        return (
+          <g key={i}>
+            <rect x={x - u * 13} y={floor - u * 7} width={u * 26} height={u * 7} fill={wood} />
+            <rect x={x - u * 12} y={floor - u * 5.6} width={u * 11.4} height={u * 4} fill={soft} />
+            <rect x={x + u * 0.6} y={floor - u * 5.6} width={u * 11.4} height={u * 4} fill={soft} />
+            <rect x={x - u * 1} y={floor - u * 9} width={u * 2} height={u * 2} fill={dark} />
+            <rect
+              x={x - u * 11}
+              y={floor - u * 22}
+              width={u * 22}
+              height={u * 13}
+              rx={u * 0.8}
+              fill={dark}
+            />
+            <path
+              d={`M ${x - u * 10} ${floor - u * 21} L ${x + u * 1} ${floor - u * 21} L ${x - u * 6} ${floor - u * 10} L ${x - u * 10} ${floor - u * 10} Z`}
+              fill={pale}
+              opacity={0.16}
+            />
+          </g>
+        );
+      case 'picture':
+        return (
+          <g key={i}>
+            <rect x={x - u * 7} y={floor - u * 44} width={u * 14} height={u * 10} fill={dark} />
+            <rect x={x - u * 6} y={floor - u * 43} width={u * 12} height={u * 8} fill={pale} />
+            <path
+              d={`M ${x - u * 6} ${floor - u * 35} L ${x - u * 2} ${floor - u * 40} L ${x + u * 1} ${floor - u * 37.5} L ${x + u * 3.4} ${floor - u * 39.5} L ${x + u * 6} ${floor - u * 35} Z`}
+              fill={soft}
+            />
+          </g>
+        );
+      case 'plant':
+        return (
+          <g key={i}>
+            {[-28, -8, 14, 32].map((turn, k) => (
+              <ellipse
+                key={k}
+                cx={x}
+                cy={floor - u * 16}
+                rx={u * 2.4}
+                ry={u * 8}
+                fill={k % 2 ? dark : wood}
+                transform={`rotate(${turn} ${x} ${floor - u * 8})`}
+              />
+            ))}
+            <path
+              d={`M ${x - u * 4} ${floor - u * 8} L ${x + u * 4} ${floor - u * 8} L ${x + u * 3} ${floor} L ${x - u * 3} ${floor} Z`}
+              fill={soft}
+            />
+          </g>
+        );
+      case 'lab-bench':
+        return (
+          <g key={i}>
+            <rect x={x - u * 26} y={floor - u * 13} width={u * 52} height={u * 13} fill={wood} />
+            {[-25, -12, 1, 14].map((dx) => (
+              <rect
+                key={dx}
+                x={x + u * dx}
+                y={floor - u * 10.6}
+                width={u * 11}
+                height={u * 9.6}
+                fill={soft}
+              />
+            ))}
+            <rect x={x - u * 27} y={floor - u * 14.4} width={u * 54} height={u * 1.8} fill={pale} />
+            {/* A flask, a rack of tubes and a microscope on the bench. */}
+            <path
+              d={`M ${x - u * 20} ${floor - u * 22} L ${x - u * 18} ${floor - u * 22} L ${x - u * 18} ${floor - u * 19.4} L ${x - u * 15.4} ${floor - u * 14.4} L ${x - u * 22.6} ${floor - u * 14.4} L ${x - u * 20} ${floor - u * 19.4} Z`}
+              fill={pale}
+            />
+            <path
+              d={`M ${x - u * 21} ${floor - u * 17.4} L ${x - u * 17} ${floor - u * 17.4} L ${x - u * 15.4} ${floor - u * 14.4} L ${x - u * 22.6} ${floor - u * 14.4} Z`}
+              fill={dark}
+            />
+            {[-9, -6.6, -4.2].map((dx, k) => (
+              <g key={dx}>
+                <rect
+                  x={x + u * dx}
+                  y={floor - u * 20.5}
+                  width={u * 1.4}
+                  height={u * 6}
+                  rx={u * 0.7}
+                  fill={pale}
+                />
+                <rect
+                  x={x + u * dx}
+                  y={floor - u * (17.2 - k * 0.7)}
+                  width={u * 1.4}
+                  height={u * (2.7 - k * 0.7)}
+                  rx={u * 0.7}
+                  fill={dark}
+                />
+              </g>
+            ))}
+            <rect
+              x={x - u * 10.2}
+              y={floor - u * 16.4}
+              width={u * 8.6}
+              height={u * 1}
+              fill={dark}
+            />
+            <path
+              d={`M ${x + u * 9} ${floor - u * 14.4} L ${x + u * 17} ${floor - u * 14.4} L ${x + u * 17} ${floor - u * 15.6} L ${x + u * 14} ${floor - u * 15.6} L ${x + u * 14} ${floor - u * 21} L ${x + u * 15.6} ${floor - u * 25} L ${x + u * 13.4} ${floor - u * 26} L ${x + u * 10.6} ${floor - u * 19.6} L ${x + u * 12.4} ${floor - u * 18.8} L ${x + u * 12.4} ${floor - u * 15.6} L ${x + u * 9} ${floor - u * 15.6} Z`}
+              fill={dark}
+            />
+          </g>
+        );
+      case 'lab-shelves':
+        return (
+          <g key={i}>
+            {[38, 49].map((up, row) => (
+              <g key={up}>
+                <rect
+                  x={x - u * 15}
+                  y={floor - u * up}
+                  width={u * 30}
+                  height={u * 1.3}
+                  fill={c.roles.trim}
+                />
+                {[-13, -9, -5.4, -0.6, 3.4, 8, 11.4].map((dx, k) => {
+                  const tall = 3.4 + 3.4 * rnd(c, `jar${i}-${row}-${k}`);
+                  return (
+                    <rect
+                      key={dx}
+                      x={x + u * dx}
+                      y={floor - u * (up + tall)}
+                      width={u * (k % 3 === 0 ? 3 : 2.2)}
+                      height={u * tall}
+                      rx={u * 0.5}
+                      fill={k % 2 ? pale : soft}
+                    />
+                  );
+                })}
+              </g>
+            ))}
+          </g>
+        );
+      case 'board':
+        return (
+          <g key={i}>
+            <rect
+              x={x - u * 17}
+              y={floor - u * 52}
+              width={u * 34}
+              height={u * 22}
+              fill={c.roles.trim}
+            />
+            <rect x={x - u * 16} y={floor - u * 51} width={u * 32} height={u * 20} fill={pale} />
+            {/* A chart that climbs, and three lines of writing: fills, never strokes. */}
+            <path
+              d={`M ${x - u * 13} ${floor - u * 34} L ${x - u * 7} ${floor - u * 39} L ${x - u * 3} ${floor - u * 37} L ${x + u * 2} ${floor - u * 45} L ${x + u * 2} ${floor - u * 34} Z`}
+              fill={soft}
+            />
+            {[47, 43.6, 40.2].map((up, k) => (
+              <rect
+                key={up}
+                x={x + u * 5}
+                y={floor - u * up}
+                width={u * (9 - k * 2)}
+                height={u * 1}
+                fill={soft}
+              />
+            ))}
+            <rect x={x - u * 16} y={floor - u * 30.6} width={u * 32} height={u * 1.2} fill={dark} />
+          </g>
+        );
+      default:
+        return null;
+    }
+  };
+  return <>{(room.fittings ?? []).map(draw)}</>;
+}
+
 /** The soft darkening toward the corners that every room gets (Style 5.3). */
 function Vignette({ c }: { c: Ctx }) {
   const gid = `${c.id}-vignette`;
@@ -707,6 +1081,58 @@ function SilhouetteShape({ c, s, i }: { c: Ctx; s: Silhouette; i: number }) {
           fill={fill}
         />
       );
+    case 'tower': {
+      // A modern block: a flat-roofed slab with rows of windows, a set-back top on the tall ones.
+      const night = NIGHT_PALETTES.includes(c.spec.palette);
+      const w = size * (0.3 + 0.12 * rnd(c, `tw${i}`));
+      const glass = night ? c.roles.moon : mix(fill, c.roles.skyBottom, 0.5);
+      const dim = mix(fill, ink, 0.25);
+      const cols = 3 + Math.floor(rnd(c, `tc${i}`) * 2);
+      const pane = w / (cols * 2 + 1);
+      const rows = Math.max(3, Math.floor((size * 0.82) / (pane * 2.1)));
+      const tall = size > c.h * 0.36;
+      return (
+        <g>
+          {tall && (
+            <>
+              <rect
+                x={x - w * 0.3}
+                y={base - size * 1.1}
+                width={w * 0.6}
+                height={size * 0.12}
+                fill={fill}
+              />
+              <rect
+                x={x - pane * 0.2}
+                y={base - size * 1.26}
+                width={pane * 0.4}
+                height={size * 0.17}
+                fill={dim}
+              />
+            </>
+          )}
+          <rect x={x - w / 2} y={base - size} width={w} height={size + 2} fill={fill} />
+          <rect x={x - w / 2} y={base - size} width={w} height={size * 0.025} fill={dim} />
+          {Array.from({ length: rows * cols }, (_, k) => {
+            const row = Math.floor(k / cols);
+            const col = k % cols;
+            // By night most windows are dark and some are lit; by day they all catch the sky.
+            const on = !night || rnd(c, `tl${i}-${k}`) < 0.5;
+            return (
+              <rect
+                key={k}
+                x={x - w / 2 + pane * (1 + col * 2)}
+                y={base - size * 0.93 + row * pane * 2.1}
+                width={pane}
+                height={pane * 1.25}
+                fill={on ? glass : dim}
+                opacity={night && on ? 0.9 : 1}
+              />
+            );
+          })}
+        </g>
+      );
+    }
     case 'house': {
       const night = NIGHT_PALETTES.includes(c.spec.palette);
       const w = size * 0.95;
@@ -1000,6 +1426,7 @@ export const Background = ({
           {room.shelf && <Shelf c={c} />}
           <Hall c={c} room={room} />
           <Ground c={c} />
+          <Fittings c={c} room={room} />
         </Layer>
         <Layer c={c} depth={1.15}>
           {nears.map((s, i) => (
@@ -1019,6 +1446,11 @@ export const Background = ({
         <Stars c={c} />
         <Moon c={c} />
       </Layer>
+      {spec.bodies && spec.bodies.length > 0 && (
+        <Layer c={c} depth={0.06}>
+          <Bodies c={c} />
+        </Layer>
+      )}
       {spec.rays && (
         <Layer c={c} depth={0.08}>
           <Rays c={c} />

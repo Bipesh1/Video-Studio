@@ -2,7 +2,7 @@ import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
-  { ignores: ['**/node_modules/**', 'engine/out/**', 'runs/**', 'audio/**', '.claude/**'] },
+  { ignores: ['**/node_modules/**', 'engine/out/**', 'runs/**', 'audio/**', '.claude/**', '.cache/**'] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {

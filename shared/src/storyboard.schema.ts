@@ -127,8 +127,61 @@ export const placedPropSchema = z
     prop: idSchema,
     /** Where it stands across the wide layout: 0 is the left edge, 1 the right. */
     x: z.number().min(0).max(1),
+    /**
+     * How high it is off the ground, in heads: for the Sun, a planet, a rocket in flight.
+     * Left out, a thing of the sky hangs at its usual height and everything else stands.
+     */
+    y: z.number().min(0).max(14).optional(),
+    /** Bigger or smaller than usual: 1 is as drawn. */
+    size: z.number().min(0.2).max(6).optional(),
   })
   .strict();
+
+/** A point on the screen, as shares of the frame: 0, 0 is the top left corner. */
+const pointSchema = z.object({ x: z.number().min(0).max(1), y: z.number().min(0).max(1) }).strict();
+
+/** What an orbit diagram can show in its middle and going round. */
+export const ORBIT_BODIES = ['sun', 'earth', 'moon', 'planet'] as const;
+
+/**
+ * Text or a graphic over the picture: the video's title, a label for a place, date or name,
+ * the one big number a shot is about, an arrow with a label, or a diagram of an orbit.
+ */
+export const overlaySchema = z.discriminatedUnion('kind', [
+  z.object({ kind: z.literal('title'), text: viewerTextSchema }).strict(),
+  z.object({ kind: z.literal('label'), text: viewerTextSchema }).strict(),
+  z
+    .object({
+      kind: z.literal('number'),
+      text: viewerTextSchema,
+      /** A few words under the number. */
+      caption: viewerTextSchema.optional(),
+    })
+    .strict(),
+  z
+    .object({
+      kind: z.literal('pointer'),
+      text: viewerTextSchema,
+      /**
+       * What the arrow points at: a person or a thing in the shot by name, so the arrow finds it
+       * in a wide frame and a tall one alike, or a point on the screen.
+       */
+      to: z.union([idSchema, pointSchema]),
+      /** The middle of the label. Left out, it sits up and to the side of what it names. */
+      at: pointSchema.optional(),
+    })
+    .strict(),
+  z
+    .object({
+      kind: z.literal('orbit'),
+      center: z.enum(ORBIT_BODIES),
+      around: z.enum(ORBIT_BODIES),
+      /** A few words under the diagram. */
+      text: viewerTextSchema.optional(),
+    })
+    .strict(),
+]);
+export type Overlay = z.infer<typeof overlaySchema>;
 
 /** An effect drawn on or beside someone: sweat, tears, an anger mark, a symbol. */
 export const shotEffectSchema = z.object({ effect: idSchema, on: idSchema }).strict();
@@ -167,10 +220,7 @@ export const shotSchema = z
     effects: z.array(shotEffectSchema).default([]),
     sfx: z.array(shotSoundSchema).default([]),
     /** Text over the picture: the video's title, or a label for a place, date or name. */
-    overlay: z
-      .object({ kind: z.enum(['title', 'label']), text: viewerTextSchema })
-      .strict()
-      .optional(),
+    overlay: overlaySchema.optional(),
     /** How this shot arrives. A fade is for a change of time or place (lesson L-0013). */
     transition: z.enum(['cut', 'fade']).default('cut'),
     /** Filled in by the voice stage: shot length is always driven by the audio. */

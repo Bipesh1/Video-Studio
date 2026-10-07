@@ -145,6 +145,13 @@ describe('character cards', () => {
   });
 
   it('know every full costume by name', () => {
-    expect(Object.keys(COSTUMES).sort()).toEqual(['farmer', 'queen', 'ruler', 'soldier']);
+    expect(Object.keys(COSTUMES).sort()).toEqual([
+      'astronaut',
+      'farmer',
+      'queen',
+      'ruler',
+      'scientist',
+      'soldier',
+    ]);
   });
 });

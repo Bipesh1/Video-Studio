@@ -1,6 +1,7 @@
 import type { Clothes } from '@studio/shared';
 import type { ReactNode } from 'react';
-import { ink, lineWeights, tokens } from '../tokens';
+import { EYE_H, EYE_W, EYE_Y, eyeSlots } from '../face/layout';
+import { accent, ink, lineWeights, pick, tokens } from '../tokens';
 import {
   DRAPES,
   cloth,
@@ -36,6 +37,11 @@ export const GARMENTS = [
   'brim-hat',
   'sneakers',
   'boots',
+  't-shirt',
+  'hoodie',
+  'jacket',
+  'lab-coat',
+  'glasses',
 ] as const;
 export type Garment = (typeof GARMENTS)[number];
 
@@ -95,6 +101,148 @@ export const shirt = (color: string): Piece =>
       ))}
     </>
   ));
+
+/** The body of a plain top, shoulder to hem: shared by the T-shirt, the hoodie and what is under a jacket. */
+const topBody = (x: (v: number) => number, hem = -0.29) =>
+  `M ${x(-0.1)} -1.09 Q 0 -0.97 ${x(0.1)} -1.09 L ${x(0.25)} -1.04 Q ${x(0.29)} -0.9 ${x(0.26)} -0.74 L ${x(0.265)} ${hem} Q 0 ${hem + 0.07} ${x(-0.265)} ${hem} L ${x(-0.26)} -0.74 Q ${x(-0.29)} -0.9 ${x(-0.25)} -1.04 Z`;
+
+/** A plain T-shirt: a round neck and nothing else. Its short sleeves are tubes on the arms. */
+export const tShirt = (color: string): Piece =>
+  onTorso('tee', color, (c, x, k) => (
+    <>
+      {shaded(c, 'tee', topBody(x), k)}
+      {fold(`M ${x(-0.1)} -1.06 Q 0 -0.93 ${x(0.1)} -1.06`, 'neck')}
+    </>
+  ));
+
+/**
+ * A hoodie: a loose top with a band at the hem, a pouch pocket, two cords, and the hood lying
+ * in a roll round the neck.
+ */
+export const hoodie = (color: string): Piece =>
+  onTorso('hoodie', color, (c, x, k) => (
+    <>
+      {/* The hood, down: a soft roll behind the neck that shows at both sides of it. */}
+      {shaded(
+        c,
+        'hood-roll',
+        `M ${x(-0.22)} -1.02 Q ${x(-0.26)} -1.2 ${x(-0.08)} -1.17 Q 0 -1.08 ${x(0.08)} -1.17 Q ${x(0.26)} -1.2 ${x(0.22)} -1.02 Q 0 -0.9 ${x(-0.22)} -1.02 Z`,
+        k,
+        0.03,
+      )}
+      {shaded(c, 'hoodie', topBody(x, -0.25), k)}
+      {fold(`M ${x(-0.1)} -1.06 Q 0 -0.9 ${x(0.1)} -1.06`, 'neck')}
+      {fold(`M ${x(-0.035)} -0.96 L ${x(-0.045)} -0.76`, 'cord-a')}
+      {fold(`M ${x(0.035)} -0.96 L ${x(0.045)} -0.78`, 'cord-b')}
+      {fold(
+        `M ${x(-0.15)} -0.33 L ${x(-0.11)} -0.52 L ${x(0.11)} -0.52 L ${x(0.15)} -0.33`,
+        'pouch',
+      )}
+      {fold(`M ${x(-0.262)} -0.33 Q 0 -0.27 ${x(0.262)} -0.33`, 'band')}
+    </>
+  ));
+
+/**
+ * An open jacket or a lab coat over a plain top. The two fronts hang from the shoulders and
+ * leave a strip of the top showing between them; `hem` is how far down they go (a jacket to
+ * the hips, a lab coat to the thighs).
+ */
+const openFront = (name: string, color: string, under: string, hem: number, coat: boolean): Piece =>
+  onTorso(name, color, (c, x, k) => {
+    const inner = cloth(under);
+    const flare = coat ? 0.05 : 0.01;
+    const front = (s: 1 | -1) =>
+      `M ${x(s * 0.1)} -1.09 L ${x(s * 0.255)} -1.045 Q ${x(s * 0.3)} -0.9 ${x(s * 0.27)} -0.74 L ${x(s * (0.275 + flare))} ${hem} Q ${x(s * 0.16)} ${hem + 0.05} ${x(s * 0.055)} ${hem + 0.02} L ${x(s * 0.06)} -0.7 Z`;
+    return (
+      <>
+        {shaded(c, `${name}-under`, topBody(x), inner, 0.03)}
+        {fold(`M ${x(-0.1)} -1.06 Q 0 -0.93 ${x(0.1)} -1.06`, 'neck')}
+        {shaded(c, `${name}-l`, front(-1), k)}
+        {shaded(c, `${name}-r`, front(1), k)}
+        {/* The lapels fold back from the neck. */}
+        {fold(`M ${x(-0.1)} -1.09 L ${x(-0.17)} -0.84 L ${x(-0.06)} -0.7`, 'lapel-l')}
+        {fold(`M ${x(0.1)} -1.09 L ${x(0.17)} -0.84 L ${x(0.06)} -0.7`, 'lapel-r')}
+        {coat ? (
+          <>
+            {fold(
+              `M ${x(0.13)} -0.62 L ${x(0.22)} -0.62 L ${x(0.22)} -0.5 L ${x(0.13)} -0.5 Z`,
+              'pocket',
+            )}
+            {fold(`M ${x(-0.23)} -0.08 L ${x(-0.12)} -0.08`, 'hip-pocket')}
+            {[-0.5, -0.3].map((y) => (
+              <circle key={y} cx={x(-0.085)} cy={y} r={0.014} fill={ink} />
+            ))}
+          </>
+        ) : (
+          fold(`M ${x(0.12)} -0.42 L ${x(0.22)} -0.44`, 'pocket')
+        )}
+      </>
+    );
+  });
+
+export const jacket = (color: string, under = 'white'): Piece =>
+  openFront('jacket', color, under, -0.27, false);
+export const labCoat = (color: string, under = 'white'): Piece =>
+  openFront('coat', color, under, 0.3, true);
+
+/**
+ * A pair of glasses, in head space: a round frame over each eye, a bridge between them and
+ * an arm back to the side of the head. They sit on the eyes wherever the head is turned.
+ */
+export const glasses: Piece = (c) => {
+  if (c.back) return null;
+  const slots = eyeSlots(c.turn);
+  const frame = lineWeights.outline * 1.5;
+  const tint = pick(accent('glint'), 0);
+  const lens = slots.map((slot) => ({
+    x: slot.x,
+    rx: (EYE_W * slot.widthFactor) / 2 + 0.032,
+    ry: EYE_H / 2 + 0.028,
+  }));
+  const near = lens[0];
+  const far = lens[1];
+  if (!near) return null;
+  const line = (d: string, key: string) => (
+    <path
+      key={key}
+      d={d}
+      fill="none"
+      stroke={ink}
+      strokeWidth={frame}
+      strokeLinecap={tokens.line.cap}
+    />
+  );
+  return (
+    <g key="glasses">
+      {/* The arm goes back from the near lens to the side of the head. */}
+      {line(
+        `M ${near.x - near.rx} ${EYE_Y - 0.02} L ${Math.min(near.x - near.rx - 0.02, -0.47)} ${EYE_Y - 0.05}`,
+        'arm',
+      )}
+      {far &&
+        c.turn < 0.25 &&
+        line(`M ${far.x + far.rx} ${EYE_Y - 0.02} L 0.47 ${EYE_Y - 0.05}`, 'arm-far')}
+      {far &&
+        line(
+          `M ${near.x + near.rx} ${EYE_Y - 0.03} Q ${(near.x + near.rx + far.x - far.rx) / 2} ${EYE_Y - 0.07} ${far.x - far.rx} ${EYE_Y - 0.03}`,
+          'bridge',
+        )}
+      {[...lens].reverse().map((l, i) => (
+        <ellipse
+          key={i}
+          cx={l.x}
+          cy={EYE_Y}
+          rx={l.rx}
+          ry={l.ry}
+          fill={tint}
+          fillOpacity={0.16}
+          stroke={ink}
+          strokeWidth={frame}
+        />
+      ))}
+    </g>
+  );
+};
 
 /**
  * The top of a pair of trousers: waist to crotch, over the tops of both legs. Its lower edge
@@ -340,6 +488,7 @@ const pieces = (list: Array<Piece | undefined>): Piece | undefined => {
 /** Put garments together into one outfit a Character can wear. */
 export function outfitFrom(clothes: Clothes, id = 'clothes'): Outfit {
   const { top, bottom, onePiece, shoes, hat, cloak } = clothes;
+  const specs = clothes.glasses ?? false;
   const colors = [
     ...new Set([top, bottom, onePiece, shoes, hat, cloak].flatMap((g) => (g ? [g.cloth] : []))),
   ];
@@ -363,6 +512,23 @@ export function outfitFrom(clothes: Clothes, id = 'clothes'): Outfit {
       outfit.sleeveLength = top.sleeves ?? 'long';
       outfit.shoulderSpread = 0.2;
       over.push(shirt(top.cloth));
+    } else if (top.kind === 't-shirt') {
+      outfit.sleeves = { fill: k.fill, shadow: k.shadow, width: 0.17 };
+      outfit.sleeveLength = top.sleeves ?? 'short';
+      outfit.shoulderSpread = 0.2;
+      over.push(tShirt(top.cloth));
+    } else if (top.kind === 'hoodie' || top.kind === 'jacket' || top.kind === 'lab-coat') {
+      outfit.sleeves = { fill: k.fill, shadow: k.shadow, width: 0.19 };
+      outfit.sleeveLength = 'long';
+      outfit.shoulderSpread = 0.21;
+      over.push(
+        top.kind === 'hoodie'
+          ? hoodie(top.cloth)
+          : top.kind === 'jacket'
+            ? jacket(top.cloth, top.under)
+            : labCoat(top.cloth, top.under),
+      );
+      if (top.under && !colors.includes(top.under)) outfit.colors = [...colors, top.under];
     } else {
       outfit.shoulderSpread = 0.15;
       over.push(tankTop(top.cloth));
@@ -389,6 +555,7 @@ export function outfitFrom(clothes: Clothes, id = 'clothes'): Outfit {
   const headwear = pieces([
     cloak?.hood ? hood(cloak.cloth) : undefined,
     hat ? brimHat(hat.cloth) : undefined,
+    specs ? glasses : undefined,
   ]);
   if (headwear) outfit.headwear = headwear;
 

@@ -7,11 +7,13 @@ import { Fade } from '../camera/Camera';
 import { Watermark } from '../overlays/Brand';
 import type { Mark } from '../overlays/Brand';
 import { Captions } from '../overlays/Captions';
+import { BigNumber, OrbitDiagram, Pointer } from '../overlays/Explain';
 import { Label, TitleCard } from '../overlays/Titles';
 import { clamp } from '../rig/math';
 import { ink } from '../tokens';
 import { lookFrom } from '../wardrobe/cast';
 import { shotAt, timedShots } from './layout';
+import { pointerPlace } from './measure';
 import { TITLE_FADE, TITLE_SECONDS, captionPagesFor, titleY } from './screen';
 import { ShotPicture } from './ShotPicture';
 
@@ -120,6 +122,33 @@ export const StoryboardVideo = ({
             frame={local - 4}
             {...(colors ? { paint: colors.label } : {})}
           />
+        )}
+        {overlay?.kind === 'number' && (
+          <BigNumber
+            value={overlay.text}
+            {...(overlay.caption ? { caption: overlay.caption } : {})}
+            {...size}
+            frame={local - 4}
+          />
+        )}
+        {overlay?.kind === 'pointer' && (
+          <Pointer
+            text={overlay.text}
+            {...pointerPlace({ storyboard, track, size, cards, fps }, ts, shots, overlay)}
+            {...size}
+            frame={local - 4}
+          />
+        )}
+        {overlay?.kind === 'orbit' && (
+          <>
+            <OrbitDiagram
+              center={overlay.center}
+              around={overlay.around}
+              {...size}
+              t={local / fps}
+            />
+            {overlay.text && <Label text={overlay.text} {...size} frame={local - 4} at="top" />}
+          </>
         )}
         {mark && <Watermark mark={mark} {...size} />}
         {fadeAt !== null && <Fade frame={frame} at={fadeAt} {...size} />}

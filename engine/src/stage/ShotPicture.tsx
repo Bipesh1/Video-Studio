@@ -175,7 +175,10 @@ export function ShotPicture({
             groundY={stage.groundY}
             head={seat?.head ?? stage.head}
             t={(frame - ts.sceneStartFrame) / fps}
+            shotT={local / fps}
             flip={seat?.flip ?? false}
+            up={p.y}
+            size={p.size}
           />
         );
       });

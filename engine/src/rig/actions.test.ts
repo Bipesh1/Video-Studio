@@ -93,6 +93,7 @@ describe('everyday actions', () => {
       'cry',
       'fall',
       'fall-back',
+      'float',
       'jump',
       'pull',
       'punch',

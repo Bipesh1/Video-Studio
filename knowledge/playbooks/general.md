@@ -88,6 +88,15 @@ A part is shown to Biku in the page's first shape. When every part is approved, 
 - **The output step** mixes the sound once for the whole video, joins the parts, adds the page's closing card if it has one, and checks the finished file. Look at the strip across each join and at the cover, write `out/<name>.look.json`, and run it again. `delivery.md` is the page Biku reads: what to upload where.
 - A new style of cover, mark or closing card is a change of look: show Biku numbered choices.
 
+## Science videos ("what if")
+
+- **One host.** The same scientist explains in every video (Biku, 2026-10-07); other people are cast as needed. The host opens and closes in the lab; the "what if" itself happens out in the world or in space.
+- **Places:** `lab`, `living-room`, `city` (palette `clear-day`, or `dusk-violet` for night), `space`, `earth-orbit`, `moon-surface`. Space is always dark whatever palette a scene names. In `space` and `earth-orbit` there is no ground: give people the `float` action.
+- **Things of the sky are props:** `sun`, `full-moon`, `earth`, `planet`, `planet-ringed`, `planet-giant`, `planet-ice`, `asteroid`, `black-hole`, `rocket`, `rocket-flying`. Each hangs at a sensible height; `y` (heads off the ground) and `size` move and scale it. In a wide frame the sky of a wide shot is about five heads tall, so keep `y` under about 4.
+- **Explosion, fire and smoke** stand in a scene the same way (`explosion`, `fire`, `smoke`). An explosion goes off as its shot begins. Nobody is shown hurt by one: people cower, run or look on.
+- **Explainer graphics** are a shot's `overlay`: `number` (one figure, with a few words under it), `pointer` (an arrow from a label to a person or thing named in `to`), `orbit` (one body going round another). One per shot. Keep a person out from under the number: use a wide shot.
+- In a tall frame the camera stays on the people. A thing far from them is in the picture only when someone looks at it (`lookAt`) or an arrow names it; otherwise keep it within about a third of the stage of them.
+
 ## Working with Biku
 
 - Report in plain language: what was made, where it is, what he needs to decide. No code words.

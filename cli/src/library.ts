@@ -64,8 +64,10 @@ function describeCard(c: CharacterCard) {
     : 'costume' in c.outfit
       ? `the ${c.outfit.costume} costume`
       : Object.values(c.outfit.clothes)
-          .filter((g) => g !== undefined)
-          .map((g) => ('kind' in g ? `${g.cloth} ${g.kind}` : `${g.cloth} cloak`))
+          .flatMap((g) => (g === undefined || g === false ? [] : [g]))
+          .map((g) =>
+            g === true ? 'glasses' : 'kind' in g ? `${g.cloth} ${g.kind}` : `${g.cloth} cloak`,
+          )
           .join(', ');
   console.log(`${c.id}  (${c.name}, ${c.age})`);
   console.log(`  ${c.description}`);

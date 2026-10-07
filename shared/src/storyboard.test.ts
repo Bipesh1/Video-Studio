@@ -266,6 +266,48 @@ describe('changes inside a shot', () => {
   });
 });
 
+describe('things in the sky and explainer graphics', () => {
+  it('lets a thing hang at a height and be bigger or smaller', () => {
+    const ok = edited((sb) => {
+      Object.assign(shot(sb, 0, 0), { props: [{ prop: 'sun', x: 0.7, y: 3.2, size: 0.6 }] });
+    });
+    expect(storyboardSchema.safeParse(ok).success).toBe(true);
+    const tooHigh = edited((sb) => {
+      Object.assign(shot(sb, 0, 0), { props: [{ prop: 'sun', x: 0.7, y: 40 }] });
+    });
+    expect(storyboardSchema.safeParse(tooHigh).success).toBe(false);
+  });
+
+  it('takes a big number, an arrow that names its target or a point, and an orbit diagram', () => {
+    const overlays = [
+      { kind: 'number', text: '1,670 km/h', caption: 'how fast the ground moves' },
+      { kind: 'pointer', text: 'The king', to: 'king' },
+      { kind: 'pointer', text: 'Here', to: { x: 0.6, y: 0.3 }, at: { x: 0.3, y: 0.15 } },
+      { kind: 'orbit', center: 'earth', around: 'moon', text: 'One trip takes 27 days' },
+    ];
+    for (const overlay of overlays) {
+      const sb = edited((s) => {
+        Object.assign(shot(s, 0, 1), { overlay });
+      });
+      expect(storyboardSchema.safeParse(sb).success, overlay.kind).toBe(true);
+    }
+  });
+
+  it('refuses a graphic it does not know, a number with no text, and an em dash in one', () => {
+    for (const overlay of [
+      { kind: 'chart', text: 'Sales' },
+      { kind: 'number' },
+      { kind: 'number', text: '5 — 6' },
+      { kind: 'orbit', center: 'earth', around: 'comet' },
+    ]) {
+      const sb = edited((s) => {
+        Object.assign(shot(s, 0, 1), { overlay });
+      });
+      expect(storyboardSchema.safeParse(sb).success, JSON.stringify(overlay)).toBe(false);
+    }
+  });
+});
+
 describe('words and lengths', () => {
   it('compares words without emphasis marks or extra spaces', () => {
     expect(plainWords('the  *moon*   belonged')).toBe('the moon belonged');

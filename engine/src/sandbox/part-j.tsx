@@ -36,7 +36,7 @@ type Person = {
 };
 
 /** Who stands in each place: people who belong there. */
-const CAST: Record<PlaceName, [Person, Person]> = {
+const CAST: Partial<Record<PlaceName, [Person, Person]>> = {
   'night-street': [
     { outfit: SOLDIER, face: 'determined' },
     { outfit: FARMER, face: 'afraid' },
@@ -80,7 +80,7 @@ const CAST: Record<PlaceName, [Person, Person]> = {
 };
 
 export function PlacesSheet({ c }: { c: Colors }) {
-  const names = Object.keys(PLACES) as PlaceName[];
+  const names = (Object.keys(PLACES) as PlaceName[]).filter((name) => CAST[name]);
   const cols = 3;
   const cw = W / cols;
   const ch = cw * (H / W);
@@ -96,7 +96,7 @@ export function PlacesSheet({ c }: { c: Colors }) {
           <g key={name}>
             <svg x={left + 4} y={top + 4} width={cw - 8} height={ch - 8} viewBox={`0 0 ${W} ${H}`}>
               <Background spec={spec} width={W} height={H} frame={0} fps={30} />
-              {CAST[name].map((p, k) => (
+              {(CAST[name] ?? []).map((p, k) => (
                 <Character
                   key={k}
                   x={k === 0 ? 330 : 760}

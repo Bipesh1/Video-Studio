@@ -13,6 +13,15 @@ import type { Look, Scene, Storyboard } from './storyboard.schema';
  * Problems must be fixed before any stage runs. Notes are things to know, not faults.
  */
 
+/** The library piece behind each kind of overlay. */
+const OVERLAY_ASSETS = {
+  title: 'title-card',
+  label: 'label',
+  number: 'big-number',
+  pointer: 'pointer',
+  orbit: 'orbit-diagram',
+} as const;
+
 export type World = {
   library: LibraryIndex;
   formats: Record<string, Format>;
@@ -102,6 +111,11 @@ export function checkStoryboard(sb: Storyboard, world: World): StoryboardReport 
     if (l.outfit && 'clothes' in l.outfit) {
       for (const piece of Object.values(l.outfit.clothes)) {
         if (!piece) continue;
+        if (piece === true) {
+          need('clothing', 'glasses', where);
+          continue;
+        }
+        if ('under' in piece && piece.under) cloth(piece.under, where);
         if ('kind' in piece) need('clothing', piece.kind, where);
         else {
           need('clothing', 'cloak', where);
@@ -182,7 +196,7 @@ export function checkStoryboard(sb: Storyboard, world: World): StoryboardReport 
       need('camera', shot.camera.framing, at);
       if (shot.camera.move !== 'none') need('camera', shot.camera.move, at);
       if (shot.transition === 'fade') need('camera', 'fade', at);
-      if (shot.overlay) need('overlay', shot.overlay.kind === 'title' ? 'title-card' : 'label', at);
+      if (shot.overlay) need('overlay', OVERLAY_ASSETS[shot.overlay.kind], at);
       for (const actor of shot.actors) {
         if (actor.pose) need('pose', actor.pose, at);
         if (actor.action) need('action', actor.action, at);
@@ -195,7 +209,10 @@ export function checkStoryboard(sb: Storyboard, world: World): StoryboardReport 
           if (step.holds) need('prop', step.holds, at);
         }
       }
-      for (const prop of shot.props) need('prop', prop.prop, at);
+      // A thing in a scene is a prop, or an effect that happens in the world (fire, smoke).
+      for (const prop of shot.props) {
+        need(ids.has(`effect/${prop.prop}`) ? 'effect' : 'prop', prop.prop, at);
+      }
       for (const effect of shot.effects) need('effect', effect.effect, at);
       for (const sound of shot.sfx) need('sfx', sound.name, at);
       if (shot.startMs !== undefined && shot.endMs !== undefined && format) {

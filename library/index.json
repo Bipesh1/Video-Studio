@@ -801,6 +801,31 @@
       "added": "2026-10-06"
     },
     {
+      "id": "action/float",
+      "kind": "action",
+      "name": "Float",
+      "description": "Hanging in the air with no gravity: the body bobs slowly, arms and legs drifting loose.",
+      "tags": [
+        "float",
+        "floating",
+        "weightless",
+        "no gravity",
+        "space",
+        "astronaut",
+        "drift",
+        "dream",
+        "hover"
+      ],
+      "code": {
+        "file": "engine/src/rig/actions.ts",
+        "export": "floatAt"
+      },
+      "use": "action: \"float\"",
+      "still": "knowledge/golden/assets/action-float.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
       "id": "motion/life",
       "kind": "motion",
       "name": "Blinks and breathing",
@@ -2122,6 +2147,99 @@
       "added": "2026-10-05"
     },
     {
+      "id": "clothing/t-shirt",
+      "kind": "clothing",
+      "name": "T-shirt",
+      "description": "A plain round-necked T-shirt with short sleeves.",
+      "tags": ["t-shirt", "tee", "top", "modern", "casual", "everyday", "summer", "clothes"],
+      "code": {
+        "file": "engine/src/wardrobe/garments.tsx",
+        "export": "tShirt"
+      },
+      "use": "outfitFrom({ top: { kind: 't-shirt', cloth: 'orange' } })",
+      "still": "knowledge/golden/assets/clothing-t-shirt.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "clothing/hoodie",
+      "kind": "clothing",
+      "name": "Hoodie",
+      "description": "A loose hooded top with a pouch pocket, two cords and the hood lying round the neck.",
+      "tags": [
+        "hoodie",
+        "sweatshirt",
+        "top",
+        "modern",
+        "casual",
+        "teenager",
+        "everyday",
+        "clothes"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/garments.tsx",
+        "export": "hoodie"
+      },
+      "use": "outfitFrom({ top: { kind: 'hoodie', cloth: 'ocean' } })",
+      "still": "knowledge/golden/assets/clothing-hoodie.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "clothing/jacket",
+      "kind": "clothing",
+      "name": "Jacket",
+      "description": "An open jacket with lapels over a plain top of another color.",
+      "tags": ["jacket", "coat", "blazer", "modern", "smart", "office", "everyday", "clothes"],
+      "code": {
+        "file": "engine/src/wardrobe/garments.tsx",
+        "export": "jacket"
+      },
+      "use": "outfitFrom({ top: { kind: 'jacket', cloth: 'brown', under: 'cream' } })",
+      "still": "knowledge/golden/assets/clothing-jacket.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "clothing/lab-coat",
+      "kind": "clothing",
+      "name": "Lab coat",
+      "description": "A long open white coat to the thighs with pockets, over a plain top.",
+      "tags": ["lab coat", "white coat", "scientist", "doctor", "science", "lab", "clothes"],
+      "code": {
+        "file": "engine/src/wardrobe/garments.tsx",
+        "export": "labCoat"
+      },
+      "use": "outfitFrom({ top: { kind: 'lab-coat', cloth: 'white', under: 'glint' } })",
+      "still": "knowledge/golden/assets/clothing-lab-coat.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "clothing/glasses",
+      "kind": "clothing",
+      "name": "Glasses",
+      "description": "A pair of round glasses that sit on the eyes wherever the head is turned.",
+      "tags": [
+        "glasses",
+        "spectacles",
+        "scientist",
+        "teacher",
+        "clever",
+        "reading",
+        "face",
+        "accessory"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/garments.tsx",
+        "export": "glasses"
+      },
+      "use": "outfitFrom({ ..., glasses: true })",
+      "still": "knowledge/golden/assets/clothing-glasses.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
       "id": "costume/ruler",
       "kind": "costume",
       "name": "Ruler",
@@ -2234,6 +2352,56 @@
       "still": "knowledge/golden/assets/costume-farmer.png",
       "version": 2,
       "added": "2026-10-05"
+    },
+    {
+      "id": "costume/scientist",
+      "kind": "costume",
+      "name": "Scientist",
+      "description": "A white lab coat over a pale blue top, dark trousers, brown shoes and glasses. The one who explains in the science videos.",
+      "tags": [
+        "scientist",
+        "host",
+        "lab coat",
+        "glasses",
+        "science",
+        "professor",
+        "doctor",
+        "researcher",
+        "explainer"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/costumes/scientist.tsx",
+        "export": "SCIENTIST"
+      },
+      "use": "outfit: { costume: \"scientist\" }",
+      "still": "knowledge/golden/assets/costume-scientist.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "costume/astronaut",
+      "kind": "costume",
+      "name": "Astronaut",
+      "description": "A bulky white space suit with a chest panel, a pack on the back, gloves and boots, and a clear round helmet with the head inside.",
+      "tags": [
+        "astronaut",
+        "space suit",
+        "spaceman",
+        "space",
+        "helmet",
+        "moon",
+        "rocket",
+        "science",
+        "explorer"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/costumes/astronaut.tsx",
+        "export": "ASTRONAUT"
+      },
+      "use": "outfit: { costume: \"astronaut\" }",
+      "still": "knowledge/golden/assets/costume-astronaut.png",
+      "version": 1,
+      "added": "2026-10-07"
     },
     {
       "id": "age/child",
@@ -2637,6 +2805,264 @@
       "added": "2026-10-06"
     },
     {
+      "id": "prop/sun",
+      "kind": "prop",
+      "name": "Sun",
+      "description": "A gold ball in a ring of orange flares that breathe, with a soft glow round it.",
+      "tags": ["sun", "star", "space", "sky", "heat", "light", "flare", "solar", "day", "science"],
+      "code": {
+        "file": "engine/src/props/Sky.tsx",
+        "export": "Sun"
+      },
+      "use": "<Sun uid shadowSide={1} r={1.5} t={seconds} />; in a shot: props: [{ prop: \"sun\", x: 0.7, y: 5 }]",
+      "still": "knowledge/golden/assets/prop-sun.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "prop/full-moon",
+      "kind": "prop",
+      "name": "Full Moon",
+      "description": "The whole round Moon with its craters: warm in a night sky, or gray as it looks from space.",
+      "tags": [
+        "moon",
+        "full moon",
+        "space",
+        "night",
+        "sky",
+        "crater",
+        "lunar",
+        "tide",
+        "orbit",
+        "science"
+      ],
+      "code": {
+        "file": "engine/src/props/Sky.tsx",
+        "export": "FullMoon"
+      },
+      "use": "<FullMoon uid shadowSide={1} r={1.1} paint=\"gray\" />; in a shot: props: [{ prop: \"full-moon\", x: 0.7, y: 5 }]",
+      "still": "knowledge/golden/assets/prop-full-moon.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "prop/earth",
+      "kind": "prop",
+      "name": "Earth",
+      "description": "The Earth from space: blue ocean, green land that slowly turns, white caps and cloud, a thin haze of air.",
+      "tags": [
+        "earth",
+        "planet",
+        "world",
+        "globe",
+        "space",
+        "home",
+        "ocean",
+        "orbit",
+        "science",
+        "blue"
+      ],
+      "code": {
+        "file": "engine/src/props/Sky.tsx",
+        "export": "Earth"
+      },
+      "use": "<Earth uid shadowSide={1} r={1.6} t={seconds} />; in a shot: props: [{ prop: \"earth\", x: 0.5, y: 4, size: 1.5 }]",
+      "still": "knowledge/golden/assets/prop-earth.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "prop/planet",
+      "kind": "prop",
+      "name": "Planet",
+      "description": "A planet as a ball in any color of the style, with darker patches. Orange-red by default, like Mars.",
+      "tags": [
+        "planet",
+        "mars",
+        "world",
+        "space",
+        "red planet",
+        "orbit",
+        "sky",
+        "science",
+        "solar system"
+      ],
+      "code": {
+        "file": "engine/src/props/Sky.tsx",
+        "export": "Planet"
+      },
+      "use": "<Planet uid shadowSide={1} r={1.2} paint=\"orange\" />; in a shot: props: [{ prop: \"planet\", x: 0.6, y: 4 }]",
+      "still": "knowledge/golden/assets/prop-planet.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "prop/planet-ringed",
+      "kind": "prop",
+      "name": "Ringed planet",
+      "description": "A banded tan planet with a wide ring that passes behind it and in front, like Saturn.",
+      "tags": [
+        "planet",
+        "saturn",
+        "ring",
+        "rings",
+        "space",
+        "gas giant",
+        "orbit",
+        "science",
+        "solar system"
+      ],
+      "code": {
+        "file": "engine/src/props/Sky.tsx",
+        "export": "Planet"
+      },
+      "use": "<Planet uid shadowSide={1} paint=\"tan\" bands ring=\"cream\" />; in a shot: props: [{ prop: \"planet-ringed\", x: 0.6, y: 4 }]",
+      "still": "knowledge/golden/assets/prop-planet-ringed.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "prop/planet-giant",
+      "kind": "prop",
+      "name": "Gas giant",
+      "description": "A big brown planet with bands of weather and one storm spot, like Jupiter.",
+      "tags": [
+        "planet",
+        "jupiter",
+        "gas giant",
+        "giant",
+        "bands",
+        "storm",
+        "space",
+        "science",
+        "solar system"
+      ],
+      "code": {
+        "file": "engine/src/props/Sky.tsx",
+        "export": "Planet"
+      },
+      "use": "<Planet uid shadowSide={1} paint=\"brown\" bands />; in a shot: props: [{ prop: \"planet-giant\", x: 0.6, y: 4 }]",
+      "still": "knowledge/golden/assets/prop-planet-giant.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "prop/planet-ice",
+      "kind": "prop",
+      "name": "Ice planet",
+      "description": "A pale blue planet, like Uranus or Neptune, or a frozen world.",
+      "tags": ["planet", "ice", "frozen", "neptune", "uranus", "cold", "blue", "space", "science"],
+      "code": {
+        "file": "engine/src/props/Sky.tsx",
+        "export": "Planet"
+      },
+      "use": "<Planet uid shadowSide={1} paint=\"glint\" />; in a shot: props: [{ prop: \"planet-ice\", x: 0.6, y: 4 }]",
+      "still": "knowledge/golden/assets/prop-planet-ice.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "prop/asteroid",
+      "kind": "prop",
+      "name": "Asteroid",
+      "description": "A lump of brown rock with a long tail of fire streaming behind it. Without the fire it is a rock drifting in space.",
+      "tags": [
+        "asteroid",
+        "meteor",
+        "comet",
+        "rock",
+        "impact",
+        "fire",
+        "space",
+        "danger",
+        "falling",
+        "science"
+      ],
+      "code": {
+        "file": "engine/src/props/Sky.tsx",
+        "export": "Asteroid"
+      },
+      "use": "<Asteroid uid shadowSide={1} r={0.7} t={seconds} heading={145} />; in a shot: props: [{ prop: \"asteroid\", x: 0.7, y: 6 }]",
+      "still": "knowledge/golden/assets/prop-asteroid.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "prop/black-hole",
+      "kind": "prop",
+      "name": "Black hole",
+      "description": "A ball of nothing with a thin ring of light at its edge and a wide disc of glowing dust that turns round it.",
+      "tags": [
+        "black hole",
+        "space",
+        "gravity",
+        "void",
+        "dark",
+        "danger",
+        "star",
+        "science",
+        "universe"
+      ],
+      "code": {
+        "file": "engine/src/props/Sky.tsx",
+        "export": "BlackHole"
+      },
+      "use": "<BlackHole uid shadowSide={1} r={1.2} t={seconds} />; in a shot: props: [{ prop: \"black-hole\", x: 0.5, y: 4 }]",
+      "still": "knowledge/golden/assets/prop-black-hole.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "prop/rocket",
+      "kind": "prop",
+      "name": "Rocket",
+      "description": "A white rocket with a red nose and fins, a round window and a dark nozzle. It stands on its fins, or flies with fire pouring from its engine.",
+      "tags": [
+        "rocket",
+        "spaceship",
+        "launch",
+        "space",
+        "astronaut",
+        "fly",
+        "engine",
+        "science",
+        "travel"
+      ],
+      "code": {
+        "file": "engine/src/props/Rocket.tsx",
+        "export": "Rocket"
+      },
+      "use": "<Rocket uid shadowSide={1} flame={1} t={seconds} />; in a shot: props: [{ prop: \"rocket\", x: 0.6 }] or \"rocket-flying\"",
+      "still": "knowledge/golden/assets/prop-rocket.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "prop/rocket-flying",
+      "kind": "prop",
+      "name": "Rocket in flight",
+      "description": "The rocket up in the air, tilted on its way, with fire pouring from its engine.",
+      "tags": [
+        "rocket",
+        "launch",
+        "flying",
+        "liftoff",
+        "space",
+        "travel",
+        "fire",
+        "science",
+        "spaceship"
+      ],
+      "code": {
+        "file": "engine/src/props/Rocket.tsx",
+        "export": "Rocket"
+      },
+      "use": "in a shot: props: [{ prop: \"rocket-flying\", x: 0.6, y: 4 }]",
+      "still": "knowledge/golden/assets/prop-rocket-flying.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
       "id": "effect/sweat-flying",
       "kind": "effect",
       "name": "Flying sweat drops",
@@ -2882,6 +3308,72 @@
       "still": "knowledge/golden/assets/effect-motion-lines.png",
       "version": 1,
       "added": "2026-10-06"
+    },
+    {
+      "id": "effect/explosion",
+      "kind": "effect",
+      "name": "Explosion",
+      "description": "A white flash, a ball of fire that bursts out and rolls up into gray smoke, and bits of rock thrown clear. Nobody is shown hurt by it.",
+      "tags": [
+        "explosion",
+        "blast",
+        "boom",
+        "impact",
+        "disaster",
+        "bomb",
+        "fireball",
+        "danger",
+        "crash",
+        "science"
+      ],
+      "code": {
+        "file": "engine/src/effects/Blast.tsx",
+        "export": "Explosion"
+      },
+      "use": "<Explosion t={secondsSinceItWentOff} size={2} />; in a shot: props: [{ prop: \"explosion\", x: 0.6, y: 1.5 }]",
+      "still": "knowledge/golden/assets/effect-explosion.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "effect/fire",
+      "kind": "effect",
+      "name": "Fire",
+      "description": "A fire burning on the ground: three tongues of flame that lick and sway, orange outside and gold within, with smoke if wanted.",
+      "tags": [
+        "fire",
+        "flames",
+        "burning",
+        "campfire",
+        "heat",
+        "disaster",
+        "hot",
+        "danger",
+        "blaze"
+      ],
+      "code": {
+        "file": "engine/src/effects/Blast.tsx",
+        "export": "Fire"
+      },
+      "use": "<Fire t={seconds} size={1.4} smoke />; in a shot: props: [{ prop: \"fire\", x: 0.6 }]",
+      "still": "knowledge/golden/assets/effect-fire.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "effect/smoke",
+      "kind": "effect",
+      "name": "Smoke",
+      "description": "Gray puffs that rise from the ground one after another, growing and thinning as they go.",
+      "tags": ["smoke", "steam", "fumes", "burning", "pollution", "chimney", "aftermath", "cloud"],
+      "code": {
+        "file": "engine/src/effects/Blast.tsx",
+        "export": "Smoke"
+      },
+      "use": "<Smoke t={seconds} size={1} />; in a shot: props: [{ prop: \"smoke\", x: 0.6 }]",
+      "still": "knowledge/golden/assets/effect-smoke.png",
+      "version": 1,
+      "added": "2026-10-07"
     },
     {
       "id": "background/simple",
@@ -3130,6 +3622,158 @@
       "added": "2026-10-06"
     },
     {
+      "id": "place/space",
+      "kind": "place",
+      "name": "Outer space",
+      "description": "A near-black sky full of stars, with no ground. People in it float.",
+      "tags": [
+        "space",
+        "outer space",
+        "stars",
+        "universe",
+        "night",
+        "dark",
+        "float",
+        "science",
+        "galaxy"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "placeSpec"
+      },
+      "use": "placeSpec('space', seed); in a scene: place \"space\" with palette \"deep-space\"",
+      "still": "knowledge/golden/assets/place-space.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "place/earth-orbit",
+      "kind": "place",
+      "name": "Above the Earth",
+      "description": "In space above the Earth: the planet large below, the Sun small and far, stars all round.",
+      "tags": [
+        "space",
+        "orbit",
+        "earth",
+        "planet",
+        "astronaut",
+        "satellite",
+        "stars",
+        "science",
+        "above"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "placeSpec"
+      },
+      "use": "placeSpec('earth-orbit', seed); in a scene: place \"earth-orbit\" with palette \"deep-space\"",
+      "still": "knowledge/golden/assets/place-earth-orbit.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "place/moon-surface",
+      "kind": "place",
+      "name": "On the Moon",
+      "description": "Gray dust and craters under a black starry sky, with the Earth hanging in it. Works for any bare rocky world.",
+      "tags": [
+        "moon",
+        "surface",
+        "crater",
+        "dust",
+        "space",
+        "astronaut",
+        "landing",
+        "barren",
+        "planet",
+        "science"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "placeSpec"
+      },
+      "use": "placeSpec('moon-surface', seed); in a scene: place \"moon-surface\" with palette \"moon-dust\"",
+      "still": "knowledge/golden/assets/place-moon-surface.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "place/city",
+      "kind": "place",
+      "name": "City street",
+      "description": "A modern city street: tall blocks with rows of windows and a street lamp. By night some windows are lit.",
+      "tags": [
+        "city",
+        "modern",
+        "street",
+        "buildings",
+        "skyscraper",
+        "town",
+        "urban",
+        "downtown",
+        "night",
+        "day"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "placeSpec"
+      },
+      "use": "placeSpec('city', seed); in a scene: place \"city\" with palette \"clear-day\", or \"dusk-violet\" for night",
+      "still": "knowledge/golden/assets/place-city.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "place/living-room",
+      "kind": "place",
+      "name": "Living room",
+      "description": "A modern living room: a sofa on a rug, a floor lamp, a television, a picture on the wall, a plant.",
+      "tags": [
+        "living room",
+        "home",
+        "modern",
+        "sofa",
+        "tv",
+        "house",
+        "indoors",
+        "family",
+        "everyday"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "placeSpec"
+      },
+      "use": "placeSpec('living-room', seed); in a scene: place \"living-room\" with palette \"warm-interior\"",
+      "still": "knowledge/golden/assets/place-living-room.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "place/lab",
+      "kind": "place",
+      "name": "Science lab",
+      "description": "A science lab: a bench with a flask, test tubes and a microscope, shelves of jars, a board with a chart.",
+      "tags": [
+        "lab",
+        "laboratory",
+        "science",
+        "scientist",
+        "experiment",
+        "research",
+        "indoors",
+        "school",
+        "microscope"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "placeSpec"
+      },
+      "use": "placeSpec('lab', seed); in a scene: place \"lab\" with palette \"cold-dawn\"",
+      "still": "knowledge/golden/assets/place-lab.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
       "id": "palette/storm-slate",
       "kind": "palette",
       "name": "Storm slate",
@@ -3288,6 +3932,36 @@
       "still": "knowledge/golden/assets/palette-cold-dawn.png",
       "version": 1,
       "added": "2026-10-05"
+    },
+    {
+      "id": "palette/deep-space",
+      "kind": "palette",
+      "name": "Deep space",
+      "description": "A near-black blue sky for outer space.",
+      "tags": ["space", "night", "dark", "black", "stars", "universe", "palette"],
+      "code": {
+        "file": "engine/src/backgrounds/roles.ts",
+        "export": "bgRoles"
+      },
+      "use": "palette: \"deep-space\"",
+      "still": "knowledge/golden/assets/palette-deep-space.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "palette/moon-dust",
+      "kind": "palette",
+      "name": "Moon dust",
+      "description": "The deep space sky over pale gray ground, for the Moon and other bare worlds.",
+      "tags": ["moon", "gray", "dust", "space", "barren", "night", "palette"],
+      "code": {
+        "file": "engine/src/backgrounds/roles.ts",
+        "export": "bgRoles"
+      },
+      "use": "palette: \"moon-dust\"",
+      "still": "knowledge/golden/assets/palette-moon-dust.png",
+      "version": 1,
+      "added": "2026-10-07"
     },
     {
       "id": "background-element/moon",
@@ -3612,6 +4286,21 @@
       "added": "2026-10-06"
     },
     {
+      "id": "silhouette/tower",
+      "kind": "silhouette",
+      "name": "Tower block",
+      "description": "A modern block of flats or offices: a flat-roofed slab with rows of windows, lit at night.",
+      "tags": ["tower", "skyscraper", "building", "city", "modern", "office", "flats", "skyline"],
+      "code": {
+        "file": "engine/src/backgrounds/Background.tsx",
+        "export": "backgroundSpec"
+      },
+      "use": "silhouettes: [{ kind: 'tower', x: 0.5, size: 0.5, layer: 'mid' }]",
+      "still": "knowledge/golden/assets/silhouette-tower.png",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
       "id": "color/gold",
       "kind": "color",
       "name": "Gold",
@@ -3793,6 +4482,21 @@
       "still": "knowledge/golden/assets/color-cream.png",
       "version": 1,
       "added": "2026-10-06"
+    },
+    {
+      "id": "color/ocean",
+      "kind": "color",
+      "name": "Ocean blue",
+      "description": "A clear mid blue with its shadow tone: the sea on the Earth seen from space.",
+      "tags": ["blue", "ocean", "sea", "water", "earth", "color", "cloth"],
+      "code": {
+        "file": "engine/src/tokens.ts",
+        "export": "accent"
+      },
+      "use": "cloth('ocean') or paintOf('ocean')",
+      "still": "knowledge/golden/assets/color-ocean.png",
+      "version": 1,
+      "added": "2026-10-07"
     },
     {
       "id": "camera/push-in",
@@ -4109,6 +4813,68 @@
         "export": "ClosingCard"
       },
       "use": "<ClosingCard text=\"Thanks for watching\" subtext=\"A new story every week\" width height frame={framesSinceItBegan} />",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "overlay/big-number",
+      "kind": "overlay",
+      "name": "Big number",
+      "description": "The one figure a shot is about, large in gold with a black outline, and an optional short line under it in a cream box.",
+      "tags": [
+        "number",
+        "figure",
+        "statistic",
+        "fact",
+        "speed",
+        "date",
+        "counter",
+        "explainer",
+        "text"
+      ],
+      "code": {
+        "file": "engine/src/overlays/Explain.tsx",
+        "export": "BigNumber"
+      },
+      "use": "overlay: { kind: \"number\", text: \"1,670 km/h\", caption: \"how fast the ground moves\" }",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "overlay/pointer",
+      "kind": "overlay",
+      "name": "Arrow with a label",
+      "description": "A cream box with a few words and a bold arrow from it to the thing it names.",
+      "tags": ["arrow", "pointer", "label", "callout", "name", "explainer", "diagram", "text"],
+      "code": {
+        "file": "engine/src/overlays/Explain.tsx",
+        "export": "Pointer"
+      },
+      "use": "overlay: { kind: \"pointer\", text: \"The Moon\", at: { x: 0.3, y: 0.2 }, to: { x: 0.6, y: 0.35 } }",
+      "version": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "overlay/orbit-diagram",
+      "kind": "overlay",
+      "name": "Orbit diagram",
+      "description": "One thing in the middle, a tilted dashed ring round it, and a smaller thing going round on the ring. For reading, not to scale.",
+      "tags": [
+        "orbit",
+        "diagram",
+        "circle",
+        "around",
+        "solar system",
+        "moon",
+        "gravity",
+        "explainer",
+        "science"
+      ],
+      "code": {
+        "file": "engine/src/overlays/Explain.tsx",
+        "export": "OrbitDiagram"
+      },
+      "use": "overlay: { kind: \"orbit\", center: \"earth\", around: \"moon\" }",
       "version": 1,
       "added": "2026-10-07"
     },

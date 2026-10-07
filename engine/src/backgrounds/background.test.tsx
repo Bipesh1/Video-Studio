@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { lineWeights, palette, tokens, white } from '../tokens';
 import { Background, NIGHT_PALETTES, backgroundSpec } from './Background';
 import type { Treatment } from './Background';
+import { placeSpec, sceneBackground } from './places';
 import { bgRoles } from './roles';
 import { luminance } from '../tokens';
 
@@ -67,7 +68,8 @@ describe('backgrounds (Style 5)', () => {
   });
 
   it('get depth by value: far is lighter than mid, mid lighter than the ground on night palettes', () => {
-    for (const name of NIGHT_PALETTES) {
+    // In space the rule turns over: the ground of the Moon is lit and the sky behind it is black.
+    for (const name of NIGHT_PALETTES.filter((n) => n !== 'deep-space' && n !== 'moon-dust')) {
       const r = bgRoles(name);
       expect(luminance(r.far)).toBeGreaterThan(luminance(r.mid));
       expect(luminance(r.mid)).toBeGreaterThan(luminance(r.ground));
@@ -166,6 +168,31 @@ describe('backgrounds (Style 5)', () => {
       </svg>,
     );
     expect(none.replace(/bg[A-Za-z0-9_-]+/g, 'bg')).toBe(plain.replace(/bg[A-Za-z0-9_-]+/g, 'bg'));
+  });
+
+  it('paint space dark and the Moon pale, with the Earth in its sky and no outline on it', () => {
+    const space = bgRoles('deep-space');
+    const moon = bgRoles('moon-dust');
+    expect(luminance(space.skyTop)).toBeLessThan(0.02);
+    expect(luminance(moon.ground)).toBeGreaterThan(luminance(moon.skyBottom) * 4);
+    const html = renderToStaticMarkup(
+      <svg>
+        <Background
+          spec={placeSpec('moon-surface', 7)}
+          width={1920}
+          height={1080}
+          frame={0}
+          fps={30}
+        />
+      </svg>,
+    );
+    // A body far off in a sky is background: nothing on it is stroked in ink.
+    expect(html).not.toContain(`stroke="${tokens.line.color}"`);
+    expect(placeSpec('moon-surface', 7).bodies?.[0]?.kind).toBe('earth');
+    // Space has no ground at all, and keeps its own dark sky whatever light a scene asks for.
+    expect(placeSpec('space', 7).ground).toBe('none');
+    expect(sceneBackground('space', 'atmospheric', 'clear-day', 7).palette).toBe('deep-space');
+    expect(sceneBackground('city', 'simple', 'dusk-violet', 7).palette).toBe('dusk-violet');
   });
 
   it('are deterministic for the same seed and frame', () => {

@@ -9,6 +9,7 @@ import type { BackgroundSpec } from '../backgrounds/Background';
 import { PLACES, placeSpec } from '../backgrounds/places';
 import type { PlaceName } from '../backgrounds/places';
 import { AngerMark } from '../effects/AngerMark';
+import { Explosion, Fire, Smoke } from '../effects/Blast';
 import { DizzyStars } from '../effects/Dizzy';
 import { IMPACT_SECONDS, Impact } from '../effects/Impact';
 import { MotionLines } from '../effects/MotionLines';
@@ -26,8 +27,10 @@ import { Cup } from '../props/Cup';
 import { Door } from '../props/Door';
 import { InHand, Placed } from '../props/Hold';
 import { Lantern } from '../props/Lantern';
+import { Rocket } from '../props/Rocket';
 import { Scepter } from '../props/Scepter';
 import { Shield } from '../props/Shield';
+import { Asteroid, BlackHole, Earth, FullMoon, Planet, Sun } from '../props/Sky';
 import { Sword } from '../props/Sword';
 import { Table } from '../props/Table';
 import { ACTIONS } from '../rig/actions';
@@ -152,6 +155,7 @@ const ACTION_VIEWS: Record<
     prop?: CharacterProps['prop'];
   }
 > = {
+  float: { time: 0.9, turn: 0.4, face: 'surprised' },
   walk: { time: 0.3, turn: 1, face: 'neutral' },
   'walk-proud': { time: 0.36, turn: 1, face: 'smug' },
   'walk-tired': { time: 0.5, turn: 1, face: 'exhausted' },
@@ -211,6 +215,20 @@ const GARMENT_LOOKS: Record<Garment, Clothes> = {
   'brim-hat': { hat: { kind: 'brim-hat', cloth: 'gold' } },
   sneakers: { shoes: { kind: 'sneakers', cloth: 'white' } },
   boots: { shoes: { kind: 'boots', cloth: 'steel' } },
+  't-shirt': {
+    top: { kind: 't-shirt', cloth: 'orange' },
+    bottom: { kind: 'trousers', cloth: 'denim' },
+  },
+  hoodie: { top: { kind: 'hoodie', cloth: 'ocean' }, bottom: { kind: 'trousers', cloth: 'steel' } },
+  jacket: {
+    top: { kind: 'jacket', cloth: 'brown', under: 'cream' },
+    bottom: { kind: 'trousers', cloth: 'denim' },
+  },
+  'lab-coat': {
+    top: { kind: 'lab-coat', cloth: 'white', under: 'glint' },
+    bottom: { kind: 'trousers', cloth: 'denim' },
+  },
+  glasses: { glasses: true },
 };
 
 /** The same person at three ages, so only the age cue differs. */
@@ -420,7 +438,10 @@ const entries: Array<[string, Preview]> = [
 
   ...GARMENTS.map((g): [string, Preview] => [
     `clothing/${g}`,
-    (o) => figure(o, standPose, { outfit: outfitFrom(GARMENT_LOOKS[g]) }, g === 'hood' ? 0.4 : 0),
+    (o) =>
+      g === 'glasses'
+        ? headShot(o, { outfit: outfitFrom(GARMENT_LOOKS[g]) })
+        : figure(o, standPose, { outfit: outfitFrom(GARMENT_LOOKS[g]) }, g === 'hood' ? 0.4 : 0),
   ]),
   ...Object.keys(COSTUMES).map((name): [string, Preview] => [
     `costume/${name}`,
@@ -477,6 +498,40 @@ const entries: Array<[string, Preview]> = [
       ['chair', 170, 350, (u) => <Chair uid={u} shadowSide={1} />],
       ['throne', 122, 362, (u) => <Chair uid={u} shadowSide={1} kind="throne" />],
       ['table', 150, 320, (u) => <Table uid={u} shadowSide={1} />],
+      ['rocket', 104, 372, (u) => <Rocket uid={u} shadowSide={1} />],
+      [
+        'rocket-flying',
+        80,
+        262,
+        (u) => (
+          <g transform="rotate(32)">
+            <Rocket uid={u} shadowSide={1} flame={1} t={0.3} />
+          </g>
+        ),
+      ],
+      ['sun', 78, 200, (u) => <Sun uid={u} shadowSide={1} t={0.6} />],
+      ['full-moon', 130, 200, (u) => <FullMoon uid={u} shadowSide={1} />],
+      ['earth', 96, 200, (u) => <Earth uid={u} shadowSide={1} t={3} />],
+      ['planet', 120, 200, (u) => <Planet uid={u} shadowSide={1} />],
+      [
+        'planet-ringed',
+        62,
+        200,
+        (u) => <Planet uid={u} shadowSide={1} paint="tan" bands ring="cream" />,
+      ],
+      ['planet-giant', 120, 200, (u) => <Planet uid={u} shadowSide={1} paint="brown" bands />],
+      ['planet-ice', 120, 200, (u) => <Planet uid={u} shadowSide={1} paint="glint" />],
+      [
+        'asteroid',
+        90,
+        250,
+        (u) => (
+          <g transform="translate(-0.9 0.4)">
+            <Asteroid uid={u} shadowSide={1} t={0.2} />
+          </g>
+        ),
+      ],
+      ['black-hole', 60, 200, (u) => <BlackHole uid={u} shadowSide={1} t={0.4} />],
     ] as Array<[string, number, number, (uid: string) => ReactNode]>
   ).map(([name, head, y, draw]): [string, Preview] => [
     `prop/${name}`,
@@ -564,6 +619,30 @@ const entries: Array<[string, Preview]> = [
   [
     'effect/symbol-dots',
     (o) => effectShot(o, { face: EXPRESSIONS.neutral, headEffects: <HeadSymbol kind="..." /> }, 0),
+  ],
+  [
+    'effect/explosion',
+    () => (
+      <Placed x={BOX / 2} y={BOX * 0.56} head={70}>
+        <Explosion t={0.34} size={2} seed={3} />
+      </Placed>
+    ),
+  ],
+  [
+    'effect/fire',
+    () => (
+      <Placed x={BOX / 2} y={350} head={150}>
+        <Fire t={0.3} size={1.9} />
+      </Placed>
+    ),
+  ],
+  [
+    'effect/smoke',
+    () => (
+      <Placed x={BOX / 2} y={380} head={86}>
+        <Smoke t={1.1} size={1} />
+      </Placed>
+    ),
   ],
   ['effect/impact', () => <Impact x={BOX / 2} y={BOX / 2} head={210} t={IMPACT_SECONDS * 0.4} />],
   [

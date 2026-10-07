@@ -16,9 +16,11 @@ export const clothesSchema = z
   .object({
     top: z
       .object({
-        kind: z.enum(['tank-top', 'shirt']),
+        kind: z.enum(['tank-top', 'shirt', 't-shirt', 'hoodie', 'jacket', 'lab-coat']),
         cloth: name,
         sleeves: z.enum(['long', 'short']).optional(),
+        /** What shows under an open jacket or lab coat. Left out, white. */
+        under: name.optional(),
       })
       .strict()
       .optional(),
@@ -39,6 +41,8 @@ export const clothesSchema = z
       .object({ kind: z.enum(['brim-hat']), cloth: name })
       .strict()
       .optional(),
+    /** A pair of glasses. */
+    glasses: z.boolean().optional(),
     /** A cloak down the back with drapes over the shoulders; hood: true pulls the hood up. */
     cloak: z.object({ cloth: name, hood: z.boolean().optional() }).strict().optional(),
   })

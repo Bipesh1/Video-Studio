@@ -1,3 +1,4 @@
+import { STAND_HIP_HEIGHT } from './body';
 import { resolvePose, shiftHip } from './pose';
 import type { Pose } from './pose';
 import { ELBOW_DOWN } from './ik';
@@ -79,6 +80,40 @@ export function cryAt(time: number): ResolvedPose {
   };
 }
 
+/** Hanging in the air: arms drifting out, legs loose under the body, nothing planted. */
+const FLOAT: Pose = {
+  id: 'float',
+  hipHeight: STAND_HIP_HEIGHT + 0.5,
+  torsoLean: 3,
+  headTilt: -3,
+  arms: { front: { upper: 50, lower: 26 }, back: { upper: -54, lower: -22 } },
+  legs: { front: { upper: 16, lower: -30 }, back: { upper: -10, lower: -22 } },
+};
+
+/**
+ * Floating with no gravity: the body hangs off the ground and bobs slowly, the arms and legs
+ * drift a little out of time with each other, and the head rolls a touch. For space, for a
+ * fall that never lands, for a dream. It goes on for as long as it is held.
+ */
+export function floatAt(time: number): ResolvedPose {
+  const base = resolvePose(FLOAT);
+  const slow = (speed: number, phase = 0) => Math.sin(time * speed + phase);
+  return {
+    ...base,
+    hipY: base.hipY - 0.09 * slow(1.1),
+    torsoLean: base.torsoLean + 4 * slow(0.7, 1),
+    headTilt: base.headTilt + 3 * slow(0.9, 2),
+    arms: {
+      front: { upper: 50 + 9 * slow(0.8), lower: 26 + 8 * slow(1.3, 1) },
+      back: { upper: -54 - 8 * slow(0.75, 2), lower: -22 - 7 * slow(1.2) },
+    },
+    legs: {
+      front: { upper: 16 + 7 * slow(0.9, 1), lower: -30 - 9 * slow(1.1) },
+      back: { upper: -10 + 6 * slow(0.8, 3), lower: -22 - 8 * slow(1.0, 2) },
+    },
+  };
+}
+
 /** Every action by the name the library uses, as a pose over time in seconds. */
 export const ACTIONS = {
   walk: (time: number) => walkAt(time).pose,
@@ -99,6 +134,7 @@ export const ACTIONS = {
   punch: punchAt,
   swing: swingAt,
   recoil: recoilAt,
+  float: floatAt,
 } as const satisfies Record<string, (time: number) => ResolvedPose>;
 
 export type ActionName = keyof typeof ACTIONS;

@@ -4,9 +4,11 @@ import type { ExpressionName } from '../face/expressions';
 import type { EyeStyle, FaceParams } from '../face/types';
 import { tokens } from '../tokens';
 import { CLOTH_COLORS } from './cloth';
+import { ASTRONAUT } from './costumes/astronaut';
 import { FARMER } from './costumes/farmer';
 import { QUEEN } from './costumes/queen';
 import { RULER } from './costumes/ruler';
+import { SCIENTIST } from './costumes/scientist';
 import { SOLDIER } from './costumes/soldier';
 import { outfitFrom } from './garments';
 import { HAIR_STYLES } from './hair';
@@ -18,6 +20,8 @@ export const COSTUMES: Readonly<Record<string, Outfit>> = {
   soldier: SOLDIER,
   queen: QUEEN,
   farmer: FARMER,
+  scientist: SCIENTIST,
+  astronaut: ASTRONAUT,
 };
 
 /** Everything a Character needs from a card. Spread `look` onto the Character. */
@@ -66,8 +70,9 @@ export function lookFrom(card: Look, name: string): Cast['look'] {
   } else if (card.outfit) {
     const clothes = card.outfit.clothes;
     for (const g of Object.values(clothes)) {
-      if (g) oneOf('cloth color', g.cloth, CLOTH_COLORS, name);
+      if (g && typeof g === 'object') oneOf('cloth color', g.cloth, CLOTH_COLORS, name);
     }
+    if (clothes.top?.under) oneOf('cloth color', clothes.top.under, CLOTH_COLORS, name);
     look.outfit = outfitFrom(clothes, name);
   }
   return look;

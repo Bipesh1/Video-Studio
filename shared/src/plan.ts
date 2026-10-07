@@ -677,7 +677,18 @@ export function describeShot(shot: Shot, sb: Storyboard, world: World): string {
   }
   if (shot.camera.move !== 'none') parts.push(MOVE_WORDS[shot.camera.move] ?? shot.camera.move);
   if (shot.overlay) {
-    parts.push(`${shot.overlay.kind === 'title' ? 'Title' : 'Label'}: "${shot.overlay.text}"`);
+    const o = shot.overlay;
+    parts.push(
+      o.kind === 'title'
+        ? `Title: "${o.text}"`
+        : o.kind === 'label'
+          ? `Label: "${o.text}"`
+          : o.kind === 'number'
+            ? `Big number: "${o.text}"${o.caption ? ` (${o.caption})` : ''}`
+            : o.kind === 'pointer'
+              ? `An arrow labelled "${o.text}"`
+              : `A diagram: the ${o.around} going round the ${o.center}`,
+    );
   }
   return `${parts.map(sentence).join('. ')}.`;
 }

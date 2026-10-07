@@ -109,6 +109,98 @@ export const PLACES = {
         shelf: true,
       },
     }),
+  /** Out in space: a near-black sky full of stars, and no ground to stand on. */
+  space: (seed: number) =>
+    backgroundSpec('simple', 'deep-space', seed, {
+      horizon: 0.74,
+      ground: 'none',
+      tufts: 0,
+      moon: null,
+      stars: 70,
+      silhouettes: [],
+    }),
+  /** Above the Earth: the planet large below, the Sun small and far, stars all round. */
+  'earth-orbit': (seed: number) =>
+    backgroundSpec('simple', 'deep-space', seed, {
+      horizon: 0.74,
+      ground: 'none',
+      tufts: 0,
+      moon: null,
+      stars: 60,
+      silhouettes: [],
+      bodies: [
+        { kind: 'sun', x: 0.86, y: 0.14, r: 0.045 },
+        { kind: 'earth', x: 0.3, y: 0.92, r: 0.44 },
+      ],
+    }),
+  /** On the Moon: gray dust and craters under a black sky, with the Earth hanging in it. */
+  'moon-surface': (seed: number) =>
+    backgroundSpec('simple', 'moon-dust', seed, {
+      horizon: 0.7,
+      ground: 'dust',
+      tufts: 0,
+      moon: null,
+      stars: 50,
+      silhouettes: [],
+      bodies: [{ kind: 'earth', x: 0.76, y: 0.2, r: 0.085 }],
+    }),
+  /** A modern city street: tall blocks with rows of windows, lit at night. */
+  city: (seed: number) =>
+    backgroundSpec('simple', 'clear-day', seed, {
+      horizon: 0.7,
+      ground: 'road',
+      tufts: 0,
+      silhouettes: [
+        { kind: 'tower', x: 0.06, size: 0.34, layer: 'mid' },
+        { kind: 'tower', x: 0.22, size: 0.5, layer: 'mid' },
+        { kind: 'tower', x: 0.39, size: 0.3, layer: 'mid' },
+        { kind: 'tower', x: 0.55, size: 0.44, layer: 'mid' },
+        { kind: 'tower', x: 0.72, size: 0.54, layer: 'mid' },
+        { kind: 'tower', x: 0.9, size: 0.36, layer: 'mid' },
+        { kind: 'lamp-post', x: 0.955, size: 0.4, layer: 'near' },
+      ],
+    }),
+  /** A modern living room: a sofa, a lamp, a television, a picture on the wall. */
+  'living-room': (seed: number) =>
+    backgroundSpec('simple', 'warm-interior', seed, {
+      horizon: 0.72,
+      ground: 'floor',
+      tufts: 0,
+      silhouettes: [],
+      interior: {
+        windows: [{ x: 0.52, y: 0.14, w: 0.2, h: 0.22 }],
+        columns: 0,
+        banners: 0,
+        shelf: false,
+        fittings: [
+          { kind: 'rug', x: 0.42 },
+          { kind: 'picture', x: 0.24 },
+          { kind: 'sofa', x: 0.24 },
+          { kind: 'floor-lamp', x: 0.04 },
+          { kind: 'tv', x: 0.8 },
+          { kind: 'plant', x: 0.97 },
+        ],
+      },
+    }),
+  /** A science lab: a bench with flasks and a microscope, shelves of jars, a board with a chart. */
+  lab: (seed: number) =>
+    backgroundSpec('simple', 'cold-dawn', seed, {
+      horizon: 0.72,
+      ground: 'floor',
+      tufts: 0,
+      silhouettes: [],
+      interior: {
+        windows: [],
+        columns: 0,
+        banners: 0,
+        shelf: false,
+        fittings: [
+          { kind: 'board', x: 0.26 },
+          { kind: 'lab-shelves', x: 0.76 },
+          { kind: 'lab-bench', x: 0.72 },
+        ],
+      },
+    }),
 } as const satisfies Record<string, (seed: number) => BackgroundSpec>;
 
 export type PlaceName = keyof typeof PLACES;
@@ -134,6 +226,8 @@ export function sceneBackground(
   seed: number,
 ): BackgroundSpec {
   const place = PLACES[name](seed);
+  // Space is always dark: a place with no ground, or the Moon's dust, keeps its own sky.
+  if (place.ground === 'none' || place.ground === 'dust') return place;
   const light = backgroundSpec(treatment, palette, seed);
   const night = NIGHT_PALETTES.includes(palette) && !place.interior;
   return {
