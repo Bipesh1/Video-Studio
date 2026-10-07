@@ -281,11 +281,12 @@ SCENES = [
     # ------------------------------------------------------------------ part 4
 ]
 
-SUN_SKY = {'prop': 'sun', 'x': 0.72, 'y': 3.7, 'size': 0.7, 'tall': {'x': 0.5, 'y': 6.2}}
+SUN_SKY = {'prop': 'sun', 'x': 0.6, 'y': 3.2, 'size': 0.7, 'tall': {'x': 0.5, 'y': 6.2}}
 SCENES += [
     scene('s12', 4, 'surprise', 'tense', 'city', 'clear-day', ['n34'], [
-        shot('s12a', 'n34', 'It has done this for four and a half billion years.', 'wide', [], [SUN_SKY],
-             overlay={'kind': 'number', 'text': '4,500,000,000 years'}, fade=True),
+        shot('s12a', 'n34', 'It has done this for four and a half billion years.', 'wide',
+             [host('happy', 'point', x=0.22)], [SUN_SKY],
+             overlay={'kind': 'label', 'text': '4,500,000,000 years'}, fade=True),
     ]),
     scene('s13', 4, 'surprise', 'tense', 'plain', 'clear-day', ['n35'], [
         shot('s13a', 'n35', 'Before your street. Before people.', 'wide', [], [SUN_SKY], fade=True),
@@ -298,15 +299,14 @@ SCENES += [
     ]),
     scene('s16', 4, 'surprise', 'tense', 'space', 'deep-space', ['n38'], [
         shot('s16a', 'n38', 'No *invoice.* No reminder. No *interest.*', 'wide', [],
-             [{'prop': 'sun', 'x': 0.5, 'y': 3.0, 'size': 1.7, 'tall': {'y': 5.2, 'size': 1.3}}], fade=True,
-             move='push-in', strength=0.4),
+             [{'prop': 'sun', 'x': 0.5, 'y': 2.9, 'size': 1.25, 'tall': {'y': 5.2, 'size': 1.3}}], fade=True,
+             move='push-in', strength=0.25),
     ], treatment='atmospheric'),
     scene('s17', 4, 'takeaway', 'hope', 'living-room', 'warm-interior', ['n39', 'n40', 'n41', 'n42', 'n43', 'n44'], [
-        shot('s17a', 'n39', 'At the bottom there is one last line,', 'medium', [you('thinking', look=ENV)], fade=True),
+        shot('s17a', 'n39', 'At the bottom there is one last line,', 'medium', [host('happy', 'point')], focus=HOST, fade=True),
         shot('s17b', 'n39', 'and it is not a demand.', 'close-up', [you('surprised', look='down')]),
         shot('s17c', 'n40', 'Amount due: nothing.', 'wide', overlay=page(BILL_4, 0), sfx=[('pop', 'start')]),
-        shot('s17d', 'n41', 'It was never a bill. It was a statement.', 'medium',
-             [you('surprised', then=[{'at': 0.45, 'expression': 'happy'}])]),
+        shot('s17d', 'n41', 'It was never a bill. It was a statement.', 'medium', [host('happy', 'shrug')], focus=HOST),
         shot('s17e', 'n42', '*Paid* in full, by the sender.', 'wide', overlay=page(BILL_4, 1), sfx=[('ding', 'start')]),
         shot('s17f', 'n43', 'Remaining credit: about five billion years.', 'wide', overlay=page(BILL_4, 2)),
         shot('s17g', 'n44', 'You fold it up. Outside, it is morning.', 'medium',
@@ -315,7 +315,7 @@ SCENES += [
     ]),
     scene('s18', 4, 'takeaway', 'hope', 'day-street', 'clear-day', ['n45'], [
         shot('s18a', 'n45', 'And for the first time in your life,', 'wide',
-             [you('neutral', holds=None, x=0.42, look='up')], [dict(SUN_SKY, x=0.7)], fade=True),
+             [host('happy', x=0.16), you('neutral', holds=None, x=0.42, look='up')], [dict(SUN_SKY, x=0.72, y=3.4)], fade=True),
         shot('s18b', 'n45', 'you feel the Sun on your face', 'medium', [you('happy', pose='look-up', holds=None, x=0.42, look='up')]),
         shot('s18c', 'n45', 'and know exactly what it is *worth.*', 'close-up',
              [you('happy', pose='look-up', holds=None, x=0.42, look='up')], move='push-in', strength=0.5),

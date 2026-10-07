@@ -1,0 +1,102 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "lines": [
+    {
+      "id": "n34",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "It has done this for four and a half billion years.",
+      "speed": 0.86,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n35",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "Before your street. Before people.",
+      "speed": 0.86,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n36",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "Before anything alive could look up.",
+      "speed": 0.86,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n37",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "It lit oceans with nothing in them.",
+      "speed": 0.86,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "n38",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "No *invoice.* No reminder. No *interest.*",
+      "speed": 0.86,
+      "pauseAfterMs": 1100
+    },
+    {
+      "id": "n39",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "At the bottom there is one last line, and it is not a demand.",
+      "speed": 0.86,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n40",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "Amount due: nothing.",
+      "speed": 0.86,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "n41",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "It was never a bill. It was a statement.",
+      "speed": 0.86,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n42",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "*Paid* in full, by the sender.",
+      "speed": 0.86,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n43",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "Remaining credit: about five billion years.",
+      "speed": 0.86,
+      "pauseAfterMs": 1000
+    },
+    {
+      "id": "n44",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "You fold it up. Outside, it is morning.",
+      "speed": 0.86,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "n45",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "And for the first time in your life, you feel the Sun on your face and know exactly what it is *worth.*",
+      "speed": 0.86,
+      "pauseAfterMs": 1200
+    }
+  ]
+}

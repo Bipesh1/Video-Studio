@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "video": "sun-bill-part-4-16x9-preview-v2.mp4",
+  "stills": {
+    "s12a": "ok",
+    "s13a": "ok",
+    "s14a": "ok",
+    "s15a": "ok",
+    "s16a": "ok",
+    "s17a": "ok",
+    "s17b": "ok",
+    "s17c": "ok",
+    "s17d": "ok",
+    "s17e": "ok",
+    "s17f": "ok",
+    "s17g": "ok",
+    "s18a": "ok",
+    "s18b": "ok",
+    "s18c": "ok"
+  },
+  "strips": {
+    "cut-s17g-s18a": "ok",
+    "cut-s18a-s18b": "ok",
+    "cut-s18b-s18c": "ok",
+    "s17g-move-1": "ok"
+  },
+  "playbook": "ok",
+  "fixed": [
+    "The Sun over the four grounds sat half under the counter in the corner, and the big number of years lay over it. The Sun hangs further in, and the years are a label at the side.",
+    "The Sun seen close was cut off by the top of the picture. It is smaller and the move toward it gentler.",
+    "The last part was told with the host nowhere in it. She stands in the street under the Sun, speaks in the morning room, and is beside you outside at the end."
+  ],
+  "notes": [
+    "The same Sun hangs in the same place over the city, the empty plain, the bare rock and the sea; the script asks for the same patch of ground, which the studio cannot show changing.",
+    "The door does not open on screen. You walk toward it with the envelope, the picture fades, and you are outside in the morning. The envelope's glow and the tags do not fade out one by one.",
+    "The morning room is in the warm colours the script names; every earlier room scene is dark blue.",
+    "The counter stops at about 1.41 trillion dollars and fades over the last second. The script says about 1.5 trillion: the video is a little shorter than three minutes.",
+    "One shot of the bill runs a little over four seconds.",
+    "The music changes from the tense mood to the hopeful one at the last line of the bill. There is no sound of birds. Claude cannot hear; the listening is Biku's."
+  ]
+}

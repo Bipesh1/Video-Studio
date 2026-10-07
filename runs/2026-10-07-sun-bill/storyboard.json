@@ -2504,12 +2504,22 @@
             "move": "none",
             "strength": 0.2
           },
-          "actors": [],
+          "actors": [
+            {
+              "character": "host",
+              "expression": "happy",
+              "facing": "right",
+              "x": 0.22,
+              "lookAt": "camera",
+              "headTurn": "three-quarter",
+              "pose": "point"
+            }
+          ],
           "props": [
             {
               "prop": "sun",
-              "x": 0.72,
-              "y": 3.7,
+              "x": 0.6,
+              "y": 3.2,
               "size": 0.7,
               "tall": {
                 "x": 0.5,
@@ -2521,7 +2531,7 @@
           "sfx": [],
           "transition": "fade",
           "overlay": {
-            "kind": "number",
+            "kind": "label",
             "text": "4,500,000,000 years"
           }
         }
@@ -2557,8 +2567,8 @@
           "props": [
             {
               "prop": "sun",
-              "x": 0.72,
-              "y": 3.7,
+              "x": 0.6,
+              "y": 3.2,
               "size": 0.7,
               "tall": {
                 "x": 0.5,
@@ -2602,8 +2612,8 @@
           "props": [
             {
               "prop": "sun",
-              "x": 0.72,
-              "y": 3.7,
+              "x": 0.6,
+              "y": 3.2,
               "size": 0.7,
               "tall": {
                 "x": 0.5,
@@ -2648,8 +2658,8 @@
           "props": [
             {
               "prop": "sun",
-              "x": 0.72,
-              "y": 3.7,
+              "x": 0.6,
+              "y": 3.2,
               "size": 0.7,
               "tall": {
                 "x": 0.5,
@@ -2688,15 +2698,15 @@
           "camera": {
             "framing": "wide",
             "move": "push-in",
-            "strength": 0.4
+            "strength": 0.25
           },
           "actors": [],
           "props": [
             {
               "prop": "sun",
               "x": 0.5,
-              "y": 3.0,
-              "size": 1.7,
+              "y": 2.9,
+              "size": 1.25,
               "tall": {
                 "y": 5.2,
                 "size": 1.3
@@ -2766,17 +2776,18 @@
           "camera": {
             "framing": "medium",
             "move": "none",
-            "strength": 0.2
+            "strength": 0.2,
+            "focus": "host"
           },
           "actors": [
             {
-              "character": "you",
-              "expression": "thinking",
+              "character": "host",
+              "expression": "happy",
               "facing": "right",
-              "x": 0.4,
-              "pose": "hold-object",
-              "lookAt": "envelope",
-              "holds": "envelope"
+              "x": 0.13,
+              "lookAt": "camera",
+              "headTurn": "three-quarter",
+              "pose": "point"
             }
           ],
           "props": [],
@@ -2845,22 +2856,18 @@
           "camera": {
             "framing": "medium",
             "move": "none",
-            "strength": 0.2
+            "strength": 0.2,
+            "focus": "host"
           },
           "actors": [
             {
-              "character": "you",
-              "expression": "surprised",
+              "character": "host",
+              "expression": "happy",
               "facing": "right",
-              "x": 0.4,
-              "pose": "hold-object",
-              "holds": "envelope",
-              "then": [
-                {
-                  "at": 0.45,
-                  "expression": "happy"
-                }
-              ]
+              "x": 0.13,
+              "lookAt": "camera",
+              "headTurn": "three-quarter",
+              "pose": "shrug"
             }
           ],
           "props": [],
@@ -2995,6 +3002,15 @@
           },
           "actors": [
             {
+              "character": "host",
+              "expression": "happy",
+              "facing": "right",
+              "x": 0.16,
+              "lookAt": "camera",
+              "headTurn": "three-quarter",
+              "pose": "stand"
+            },
+            {
               "character": "you",
               "expression": "neutral",
               "facing": "right",
@@ -3006,8 +3022,8 @@
           "props": [
             {
               "prop": "sun",
-              "x": 0.7,
-              "y": 3.7,
+              "x": 0.72,
+              "y": 3.4,
               "size": 0.7,
               "tall": {
                 "x": 0.5,

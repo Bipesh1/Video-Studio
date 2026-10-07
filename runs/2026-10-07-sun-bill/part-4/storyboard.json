@@ -1,0 +1,812 @@
+{
+  "version": 1,
+  "title": "What If the Sun Sent You a Bill?",
+  "request": "i have a script of about 3 minute long videos can i send it to you and see the final product",
+  "mode": "as-is",
+  "format": "explainer",
+  "style": "ink-stick",
+  "brand": "my-page",
+  "voice": "narrator",
+  "seed": 67745,
+  "sources": [
+    "Wikipedia, \"Solar energy\": the Earth receives 174 petawatts of sunlight at the top of the atmosphere, about 30 percent of which is reflected back to space. https://en.wikipedia.org/wiki/Solar_energy",
+    "US Energy Information Administration, Short-Term Energy Outlook: average US residential electricity price of 17.3 cents per kilowatt-hour in 2025 and a projected 18.2 cents in 2026. https://www.eia.gov/outlooks/steo/report/elec_coal_renew.php",
+    "Wikipedia, \"List of countries by GDP (nominal)\", IMF 2026 forecasts: United States about 32.4 trillion dollars, world about 126.3 trillion dollars. https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)",
+    "Wikipedia, \"World population\": about 8.3 billion people in 2026. https://en.wikipedia.org/wiki/World_population",
+    "Wikipedia, \"Sun\": luminosity of 3.828 x 10^26 watts, about 4 billion kilograms of matter converted to energy each second. https://en.wikipedia.org/wiki/Sun",
+    "NASA, Sun facts: about 4.5 billion years old, with about 5 billion years left. https://science.nasa.gov/sun/facts/",
+    "US Energy Information Administration, Coal explained: coal holds energy stored by plants that lived hundreds of millions of years ago. https://www.eia.gov/energyexplained/coal/",
+    "US Energy Information Administration, Sources of energy: wind comes from uneven heating by the Sun, and geothermal and nuclear energy do not come from the Sun. https://www.eia.gov/energyexplained/what-is-energy/sources-of-energy.php"
+  ],
+  "appliedLessons": [],
+  "cast": [
+    {
+      "id": "host",
+      "name": "The host",
+      "card": "host",
+      "voice": "woman-calm",
+      "host": true
+    },
+    {
+      "id": "you",
+      "name": "You",
+      "look": {
+        "identity": {
+          "skinTone": 3,
+          "hair": "short-crop",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "hoodie",
+              "cloth": "ocean"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "denim"
+            },
+            "shoes": {
+              "kind": "sneakers",
+              "cloth": "white"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "taker1",
+      "name": "Someone with a sack",
+      "look": {
+        "identity": {
+          "skinTone": 5,
+          "hair": "fade",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "tan"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "taker2",
+      "name": "Someone with a sack",
+      "look": {
+        "identity": {
+          "skinTone": 1,
+          "hair": "bun",
+          "hairColor": "brown"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "cream"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "taker3",
+      "name": "Someone with a sack",
+      "look": {
+        "identity": {
+          "skinTone": 6,
+          "hair": "short-crop",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "brown"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    }
+  ],
+  "meter": {
+    "label": "Sunlight delivered since you pressed play",
+    "perSecond": 8360000000,
+    "prefix": "$"
+  },
+  "scenes": [
+    {
+      "id": "s12",
+      "chapter": 1,
+      "beat": "surprise",
+      "mood": "tense",
+      "place": "city",
+      "treatment": "simple",
+      "palette": "clear-day",
+      "lines": [
+        {
+          "id": "n34",
+          "speaker": "host",
+          "text": "It has done this for four and a half billion years.",
+          "speed": 0.86
+        }
+      ],
+      "shots": [
+        {
+          "id": "s12a",
+          "line": "n34",
+          "words": "It has done this for four and a half billion years.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "host",
+              "pose": "point",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.22,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "sun",
+              "x": 0.6,
+              "y": 3.2,
+              "size": 0.7,
+              "tall": {
+                "x": 0.5,
+                "y": 6.2
+              }
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "label",
+            "text": "4,500,000,000 years"
+          },
+          "transition": "fade",
+          "startMs": 0,
+          "endMs": 3450
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "chapter": 1,
+      "beat": "surprise",
+      "mood": "tense",
+      "place": "plain",
+      "treatment": "simple",
+      "palette": "clear-day",
+      "lines": [
+        {
+          "id": "n35",
+          "speaker": "host",
+          "text": "Before your street. Before people.",
+          "speed": 0.86
+        }
+      ],
+      "shots": [
+        {
+          "id": "s13a",
+          "line": "n35",
+          "words": "Before your street. Before people.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "sun",
+              "x": 0.6,
+              "y": 3.2,
+              "size": 0.7,
+              "tall": {
+                "x": 0.5,
+                "y": 6.2
+              }
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "fade",
+          "startMs": 3450,
+          "endMs": 6020
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "chapter": 1,
+      "beat": "surprise",
+      "mood": "tense",
+      "place": "bare-rock",
+      "treatment": "simple",
+      "palette": "cold-dawn",
+      "lines": [
+        {
+          "id": "n36",
+          "speaker": "host",
+          "text": "Before anything alive could look up.",
+          "speed": 0.86
+        }
+      ],
+      "shots": [
+        {
+          "id": "s14a",
+          "line": "n36",
+          "words": "Before anything alive could look up.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "sun",
+              "x": 0.6,
+              "y": 3.2,
+              "size": 0.7,
+              "tall": {
+                "x": 0.5,
+                "y": 6.2
+              }
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "fade",
+          "startMs": 6020,
+          "endMs": 8480
+        }
+      ]
+    },
+    {
+      "id": "s15",
+      "chapter": 1,
+      "beat": "surprise",
+      "mood": "tense",
+      "place": "sea",
+      "treatment": "simple",
+      "palette": "clear-day",
+      "lines": [
+        {
+          "id": "n37",
+          "speaker": "host",
+          "text": "It lit oceans with nothing in them.",
+          "speed": 0.86,
+          "pauseAfterMs": 600
+        }
+      ],
+      "shots": [
+        {
+          "id": "s15a",
+          "line": "n37",
+          "words": "It lit oceans with nothing in them.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "sun",
+              "x": 0.6,
+              "y": 3.2,
+              "size": 0.7,
+              "tall": {
+                "x": 0.5,
+                "y": 6.2
+              }
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "fade",
+          "startMs": 8480,
+          "endMs": 11080
+        }
+      ]
+    },
+    {
+      "id": "s16",
+      "chapter": 1,
+      "beat": "surprise",
+      "mood": "tense",
+      "place": "space",
+      "treatment": "atmospheric",
+      "palette": "deep-space",
+      "lines": [
+        {
+          "id": "n38",
+          "speaker": "host",
+          "text": "No *invoice.* No reminder. No *interest.*",
+          "speed": 0.86,
+          "pauseAfterMs": 1100
+        }
+      ],
+      "shots": [
+        {
+          "id": "s16a",
+          "line": "n38",
+          "words": "No *invoice.* No reminder. No *interest.*",
+          "camera": {
+            "framing": "wide",
+            "move": "push-in",
+            "strength": 0.25
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "sun",
+              "x": 0.5,
+              "y": 2.9,
+              "size": 1.25,
+              "tall": {
+                "y": 5.2,
+                "size": 1.3
+              }
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "fade",
+          "startMs": 11080,
+          "endMs": 15010
+        }
+      ]
+    },
+    {
+      "id": "s17",
+      "chapter": 1,
+      "beat": "takeaway",
+      "mood": "hope",
+      "place": "living-room",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "n39",
+          "speaker": "host",
+          "text": "At the bottom there is one last line, and it is not a demand.",
+          "speed": 0.86
+        },
+        {
+          "id": "n40",
+          "speaker": "host",
+          "text": "Amount due: nothing.",
+          "speed": 0.86,
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "n41",
+          "speaker": "host",
+          "text": "It was never a bill. It was a statement.",
+          "speed": 0.86
+        },
+        {
+          "id": "n42",
+          "speaker": "host",
+          "text": "*Paid* in full, by the sender.",
+          "speed": 0.86
+        },
+        {
+          "id": "n43",
+          "speaker": "host",
+          "text": "Remaining credit: about five billion years.",
+          "speed": 0.86,
+          "pauseAfterMs": 1000
+        },
+        {
+          "id": "n44",
+          "speaker": "host",
+          "text": "You fold it up. Outside, it is morning.",
+          "speed": 0.86,
+          "pauseAfterMs": 600
+        }
+      ],
+      "shots": [
+        {
+          "id": "s17a",
+          "line": "n39",
+          "words": "At the bottom there is one last line,",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "host"
+          },
+          "actors": [
+            {
+              "character": "host",
+              "pose": "point",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.13,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "fade",
+          "startMs": 15010,
+          "endMs": 17683
+        },
+        {
+          "id": "s17b",
+          "line": "n39",
+          "words": "and it is not a demand.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "surprised",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "down",
+              "holds": "envelope",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 17683,
+          "endMs": 19370
+        },
+        {
+          "id": "s17c",
+          "line": "n40",
+          "words": "Amount due: nothing.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "AMOUNT DUE: $0",
+              "PAID IN FULL BY SENDER",
+              "REMAINING CREDIT: 5,000,000,000 YEARS"
+            ],
+            "stress": 0
+          },
+          "transition": "cut",
+          "startMs": 19370,
+          "endMs": 21740
+        },
+        {
+          "id": "s17d",
+          "line": "n41",
+          "words": "It was never a bill. It was a statement.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "host"
+          },
+          "actors": [
+            {
+              "character": "host",
+              "pose": "shrug",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.13,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 21740,
+          "endMs": 24590
+        },
+        {
+          "id": "s17e",
+          "line": "n42",
+          "words": "*Paid* in full, by the sender.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "AMOUNT DUE: $0",
+              "PAID IN FULL BY SENDER",
+              "REMAINING CREDIT: 5,000,000,000 YEARS"
+            ],
+            "stress": 1
+          },
+          "transition": "cut",
+          "startMs": 24590,
+          "endMs": 26670
+        },
+        {
+          "id": "s17f",
+          "line": "n43",
+          "words": "Remaining credit: about five billion years.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "AMOUNT DUE: $0",
+              "PAID IN FULL BY SENDER",
+              "REMAINING CREDIT: 5,000,000,000 YEARS"
+            ],
+            "stress": 2
+          },
+          "transition": "cut",
+          "startMs": 26670,
+          "endMs": 30770
+        },
+        {
+          "id": "s17g",
+          "line": "n44",
+          "words": "You fold it up. Outside, it is morning.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "door",
+              "holds": "envelope",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.5,
+                  "action": "walk",
+                  "expression": "happy",
+                  "holds": "envelope"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "door",
+              "x": 0.97
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "creak",
+              "at": "end",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 30770,
+          "endMs": 34120
+        }
+      ]
+    },
+    {
+      "id": "s18",
+      "chapter": 1,
+      "beat": "takeaway",
+      "mood": "hope",
+      "place": "day-street",
+      "treatment": "simple",
+      "palette": "clear-day",
+      "lines": [
+        {
+          "id": "n45",
+          "speaker": "host",
+          "text": "And for the first time in your life, you feel the Sun on your face and know exactly what it is *worth.*",
+          "speed": 0.86,
+          "pauseAfterMs": 1200
+        }
+      ],
+      "shots": [
+        {
+          "id": "s18a",
+          "line": "n45",
+          "words": "And for the first time in your life,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "host",
+              "pose": "stand",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.16,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "you",
+              "pose": "stand",
+              "expression": "neutral",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.42,
+              "lookAt": "up",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "sun",
+              "x": 0.72,
+              "y": 3.4,
+              "size": 0.7,
+              "tall": {
+                "x": 0.5,
+                "y": 6.2
+              }
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "fade",
+          "startMs": 34120,
+          "endMs": 36293
+        },
+        {
+          "id": "s18b",
+          "line": "n45",
+          "words": "you feel the Sun on your face",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "look-up",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.42,
+              "lookAt": "up",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 36293,
+          "endMs": 38218
+        },
+        {
+          "id": "s18c",
+          "line": "n45",
+          "words": "and know exactly what it is *worth.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "push-in",
+            "strength": 0.5
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "look-up",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.42,
+              "lookAt": "up",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 38218,
+          "endMs": 42270
+        }
+      ]
+    }
+  ]
+}

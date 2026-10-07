@@ -143,7 +143,7 @@ Place: city street, clear day colors. Music: tense.
 
 | Shot | At | Who speaks | Words | What you see | Sound |
 | --- | --- | --- | --- | --- | --- |
-| s12a | 2:08 | The host | It has done this for four and a half billion years. | Fade in. Wide shot. In the scene: sun. Big number: "4,500,000,000 years". |   |
+| s12a | 2:08 | The host | It has done this for four and a half billion years. | Fade in. Wide shot. The host points, happy, looking at us. In the scene: sun. Label: "4,500,000,000 years". |   |
 
 ### Scene 13: surprise
 
@@ -183,10 +183,10 @@ Place: living room, warm interior colors. Music: hope.
 
 | Shot | At | Who speaks | Words | What you see | Sound |
 | --- | --- | --- | --- | --- | --- |
-| s17a | 2:23 | The host | At the bottom there is one last line, | Fade in. Medium shot. You holds the glowing envelope, thinking, looking at the glowing envelope. |   |
+| s17a | 2:23 | The host | At the bottom there is one last line, | Fade in. Medium shot on the host. The host points, happy, looking at us. |   |
 | s17b | 2:26 | The host | and it is not a demand. | Close-up. You holds the glowing envelope, surprised, looking down. |   |
 | s17c | 2:28 | The host | Amount due: nothing. | Wide shot. A page held up to the camera: "AMOUNT DUE: $0 / PAID IN FULL BY SENDER / REMAINING CREDIT: 5,000,000,000 YEARS". | pop |
-| s17d | 2:30 | The host | It was never a bill. It was a statement. | Medium shot. You holds the glowing envelope, surprised, then looks happy. |   |
+| s17d | 2:30 | The host | It was never a bill. It was a statement. | Medium shot on the host. The host shrugs, happy, looking at us. |   |
 | s17e | 2:34 | The host | **Paid** in full, by the sender. | Wide shot. A page held up to the camera: "AMOUNT DUE: $0 / PAID IN FULL BY SENDER / REMAINING CREDIT: 5,000,000,000 YEARS". | ding |
 | s17f | 2:36 | The host | Remaining credit: about five billion years. | Wide shot. A page held up to the camera: "AMOUNT DUE: $0 / PAID IN FULL BY SENDER / REMAINING CREDIT: 5,000,000,000 YEARS". |   |
 | s17g | 2:39 | The host | You fold it up. Outside, it is morning. | Medium shot. You holds the glowing envelope, happy, looking at the door, then walks and takes the glowing envelope and looks happy. In the scene: door. | creak |
@@ -197,6 +197,6 @@ Place: day street, clear day colors. Music: hope.
 
 | Shot | At | Who speaks | Words | What you see | Sound |
 | --- | --- | --- | --- | --- | --- |
-| s18a | 2:43 | The host | And for the first time in your life, | Fade in. Wide shot. You stands, neutral, looking up. In the scene: sun. |   |
+| s18a | 2:43 | The host | And for the first time in your life, | Fade in. Wide shot. The host stands, happy, looking at us. You stands, neutral, looking up. In the scene: sun. |   |
 | s18b | 2:46 | The host | you feel the Sun on your face | Medium shot. You looks up, happy. |   |
 | s18c | 2:48 | The host | and know exactly what it is **worth.** | Close-up. You looks up, happy. The camera moves slowly closer. |   |
