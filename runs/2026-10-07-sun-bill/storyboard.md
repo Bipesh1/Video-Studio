@@ -54,9 +54,9 @@ Place: living room, storm slate colors. Music: curious.
 | Shot | At | Who speaks | Words | What you see | Sound |
 | --- | --- | --- | --- | --- | --- |
 | s4a | 0:47 | The host | You try the obvious defence. That is not all mine. | Fade in. Medium shot. You shrugs, holding the glowing envelope, smug. |   |
-| s4b | 0:50 | The host | Fine. Split it between every person alive. | Wide shot. The host points, happy, looking at the earth. You holds the glowing envelope, thinking, looking at the earth. In the scene: door, earth. | pop |
+| s4b | 0:50 | The host | Fine. Split it between every person alive. | Wide shot. The host points, happy, looking at the earth. You holds the glowing envelope, thinking, looking at the earth. In the scene: door, table, pile of bills, earth. | pop |
 | s4c | 0:53 | The host | Your share is more than three thousand dollars. An hour. | Wide shot. A page held up to the camera: "AMOUNT DUE: $30,000,000,000,000 / SPLIT BETWEEN EVERYONE ALIVE / YOUR SHARE: $3,600 PER HOUR". | pop |
-| s4d | 0:57 | The host | Thirty **million** dollars a year, delivered to you, for free, | Wide shot. The host throws both hands up, happy, looking at us. You holds the glowing envelope, surprised, looking up, then looks happy. In the scene: door. Coins raining down on You. | ding, ding |
+| s4d | 0:57 | The host | Thirty **million** dollars a year, delivered to you, for free, | Wide shot. The host throws both hands up, happy, looking at us. You holds the glowing envelope, surprised, looking up, then looks happy. In the scene: door, table, pile of bills. Coins raining down on You. | ding, ding |
 | s4e | 1:00 | The host | since the day you were born. | Medium shot. You holds the glowing envelope, happy, looking up. Coins raining down on You. | ding |
 
 ### Scene 5: first part
@@ -77,8 +77,8 @@ Place: field, storm slate colors. Music: curious.
 
 | Shot | At | Who speaks | Words | What you see | Sound |
 | --- | --- | --- | --- | --- | --- |
-| s6a | 1:16 | The host | Wind is air the Sun warmed. | Fade in. Wide shot. In the scene: gust of wind. | wind |
-| s6b | 1:18 | The host | Rain is water the Sun lifted. | Wide shot. In the scene: rain cloud. | ding |
+| s6a | 1:16 | The host | Wind is air the Sun warmed. | Fade in. Wide shot. The host points, happy, looking at us. In the scene: gust of wind. | wind |
+| s6b | 1:18 | The host | Rain is water the Sun lifted. | Wide shot. The host looks up, happy. In the scene: rain cloud. | ding |
 
 ### Scene 7: first part
 

@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "video": "sun-bill-part-2-16x9-preview-v4.mp4",
+  "stills": {
+    "s4a": "ok",
+    "s4b": "ok",
+    "s4c": "ok",
+    "s4d": "ok",
+    "s4e": "ok",
+    "s5a": "ok",
+    "s5b": "ok",
+    "s5c": "ok",
+    "s5d": "ok",
+    "s5e": "ok",
+    "s6a": "ok",
+    "s6b": "ok",
+    "s7a": "ok",
+    "s7b": "ok",
+    "s7c": "ok"
+  },
+  "strips": {
+    "cut-s4a-s4b": "ok",
+    "cut-s4d-s4e": "ok",
+    "cut-s4e-s5a": "ok",
+    "cut-s5a-s5b": "ok",
+    "cut-s5b-s5c": "ok",
+    "cut-s5c-s5d": "ok",
+    "cut-s5d-s5e": "ok",
+    "cut-s5e-s6a": "ok",
+    "cut-s6a-s6b": "ok",
+    "cut-s6b-s7a": "ok",
+    "cut-s7a-s7b": "ok",
+    "cut-s7b-s7c": "ok",
+    "s4d-move-1": "ok"
+  },
+  "playbook": "ok",
+  "fixed": [
+    "The coins raining on your head were too small to see. They are bigger and there are more of them.",
+    "The lump of coal was lost on the dark floor. It is half as big again.",
+    "The tag on the fuel can lay over the host, and the tag on the bread hung down over the table. The can stands clear of her, and a thing on a table wears its tag on top.",
+    "The table of bills appeared from nowhere halfway through. It stands in the room from the start of this part.",
+    "The tag under the Earth (8.3 billion people) was hidden by the table, then by the envelope. The Earth now hangs over the table, clear of both.",
+    "The wind and the rain were shown with nobody there. The host now stands in the field and points them out."
+  ],
+  "notes": [
+    "The table of bills is in the room from this part on; it was not there in part 1.",
+    "The top of the Earth in the shot about sharing the bill slips a little under the counter in the corner.",
+    "Two shots run a little over four seconds (the coins raining, and the look at the real bills).",
+    "The wind and the rain are shown outside in a field at night, with the host there; the script has them at the window of the room.",
+    "No music in this part, as the script asks: a faint room tone and a small bell on each tag. Claude cannot hear; the listening is Biku's."
+  ]
+}

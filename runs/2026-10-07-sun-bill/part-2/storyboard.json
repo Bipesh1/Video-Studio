@@ -1,0 +1,1000 @@
+{
+  "version": 1,
+  "title": "What If the Sun Sent You a Bill?",
+  "request": "i have a script of about 3 minute long videos can i send it to you and see the final product",
+  "mode": "as-is",
+  "format": "explainer",
+  "style": "ink-stick",
+  "brand": "my-page",
+  "voice": "narrator",
+  "seed": 67745,
+  "sources": [
+    "Wikipedia, \"Solar energy\": the Earth receives 174 petawatts of sunlight at the top of the atmosphere, about 30 percent of which is reflected back to space. https://en.wikipedia.org/wiki/Solar_energy",
+    "US Energy Information Administration, Short-Term Energy Outlook: average US residential electricity price of 17.3 cents per kilowatt-hour in 2025 and a projected 18.2 cents in 2026. https://www.eia.gov/outlooks/steo/report/elec_coal_renew.php",
+    "Wikipedia, \"List of countries by GDP (nominal)\", IMF 2026 forecasts: United States about 32.4 trillion dollars, world about 126.3 trillion dollars. https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)",
+    "Wikipedia, \"World population\": about 8.3 billion people in 2026. https://en.wikipedia.org/wiki/World_population",
+    "Wikipedia, \"Sun\": luminosity of 3.828 x 10^26 watts, about 4 billion kilograms of matter converted to energy each second. https://en.wikipedia.org/wiki/Sun",
+    "NASA, Sun facts: about 4.5 billion years old, with about 5 billion years left. https://science.nasa.gov/sun/facts/",
+    "US Energy Information Administration, Coal explained: coal holds energy stored by plants that lived hundreds of millions of years ago. https://www.eia.gov/energyexplained/coal/",
+    "US Energy Information Administration, Sources of energy: wind comes from uneven heating by the Sun, and geothermal and nuclear energy do not come from the Sun. https://www.eia.gov/energyexplained/what-is-energy/sources-of-energy.php"
+  ],
+  "appliedLessons": [],
+  "cast": [
+    {
+      "id": "host",
+      "name": "The host",
+      "card": "host",
+      "voice": "woman-calm",
+      "host": true
+    },
+    {
+      "id": "you",
+      "name": "You",
+      "look": {
+        "identity": {
+          "skinTone": 3,
+          "hair": "short-crop",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "hoodie",
+              "cloth": "ocean"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "denim"
+            },
+            "shoes": {
+              "kind": "sneakers",
+              "cloth": "white"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "taker1",
+      "name": "Someone with a sack",
+      "look": {
+        "identity": {
+          "skinTone": 5,
+          "hair": "fade",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "tan"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "taker2",
+      "name": "Someone with a sack",
+      "look": {
+        "identity": {
+          "skinTone": 1,
+          "hair": "bun",
+          "hairColor": "brown"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "cream"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "taker3",
+      "name": "Someone with a sack",
+      "look": {
+        "identity": {
+          "skinTone": 6,
+          "hair": "short-crop",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "brown"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    }
+  ],
+  "meter": {
+    "label": "Sunlight delivered since you pressed play",
+    "perSecond": 8360000000,
+    "prefix": "$"
+  },
+  "scenes": [
+    {
+      "id": "s4",
+      "chapter": 1,
+      "beat": "first-part",
+      "mood": "curious",
+      "quiet": true,
+      "place": "living-room",
+      "treatment": "simple",
+      "palette": "storm-slate",
+      "lines": [
+        {
+          "id": "n13",
+          "speaker": "host",
+          "text": "You try the obvious defence. That is not all mine.",
+          "speed": 0.92
+        },
+        {
+          "id": "n14",
+          "speaker": "host",
+          "text": "Fine. Split it between every person alive.",
+          "speed": 0.92
+        },
+        {
+          "id": "n15",
+          "speaker": "host",
+          "text": "Your share is more than three thousand dollars. An hour.",
+          "speed": 0.92,
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "n16",
+          "speaker": "host",
+          "text": "Thirty *million* dollars a year, delivered to you, for free, since the day you were born.",
+          "speed": 0.92,
+          "pauseAfterMs": 1000
+        }
+      ],
+      "shots": [
+        {
+          "id": "s4a",
+          "line": "n13",
+          "words": "You try the obvious defence. That is not all mine.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "shrug",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "ahead",
+              "holds": "envelope",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "fade",
+          "startMs": 0,
+          "endMs": 3740
+        },
+        {
+          "id": "s4b",
+          "line": "n14",
+          "words": "Fine. Split it between every person alive.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "host",
+              "pose": "point",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.13,
+              "lookAt": "earth",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "thinking",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "earth",
+              "holds": "envelope",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "door",
+              "x": 0.97
+            },
+            {
+              "prop": "table",
+              "x": 0.8
+            },
+            {
+              "prop": "bills",
+              "x": 0.85,
+              "y": 1.25
+            },
+            {
+              "prop": "earth",
+              "x": 0.78,
+              "y": 3.75,
+              "size": 0.75,
+              "tag": "8.3 BILLION PEOPLE",
+              "tall": {
+                "x": 0.52,
+                "y": 5.7
+              }
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 3740,
+          "endMs": 7040
+        },
+        {
+          "id": "s4c",
+          "line": "n15",
+          "words": "Your share is more than three thousand dollars. An hour.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "AMOUNT DUE: $30,000,000,000,000",
+              "SPLIT BETWEEN EVERYONE ALIVE",
+              "YOUR SHARE: $3,600 PER HOUR"
+            ],
+            "stress": 2
+          },
+          "transition": "cut",
+          "startMs": 7040,
+          "endMs": 10930
+        },
+        {
+          "id": "s4d",
+          "line": "n16",
+          "words": "Thirty *million* dollars a year, delivered to you, for free,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "host",
+              "pose": "hands-up",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.13,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "surprised",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "up",
+              "holds": "envelope",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.5,
+                  "expression": "happy"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "door",
+              "x": 0.97
+            },
+            {
+              "prop": "table",
+              "x": 0.8
+            },
+            {
+              "prop": "bills",
+              "x": 0.85,
+              "y": 1.25
+            }
+          ],
+          "effects": [
+            {
+              "effect": "coin-rain",
+              "on": "you"
+            }
+          ],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "start",
+              "gainDb": 0
+            },
+            {
+              "name": "ding",
+              "at": "middle",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 10930,
+          "endMs": 15002
+        },
+        {
+          "id": "s4e",
+          "line": "n16",
+          "words": "since the day you were born.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "up",
+              "holds": "envelope",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [
+            {
+              "effect": "coin-rain",
+              "on": "you"
+            }
+          ],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 15002,
+          "endMs": 17250
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chapter": 1,
+      "beat": "first-part",
+      "mood": "curious",
+      "quiet": true,
+      "place": "living-room",
+      "treatment": "simple",
+      "palette": "storm-slate",
+      "lines": [
+        {
+          "id": "n17",
+          "speaker": "host",
+          "text": "Then you look at your real bills. Electricity. Fuel. Food.",
+          "speed": 0.92
+        },
+        {
+          "id": "n18",
+          "speaker": "host",
+          "text": "And you notice something.",
+          "speed": 0.92,
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "n19",
+          "speaker": "host",
+          "text": "Coal is sunlight that plants caught hundreds of millions of years ago.",
+          "speed": 0.92
+        },
+        {
+          "id": "n20",
+          "speaker": "host",
+          "text": "Oil is the same story.",
+          "speed": 0.92
+        }
+      ],
+      "shots": [
+        {
+          "id": "s5a",
+          "line": "n17",
+          "words": "Then you look at your real bills. Electricity. Fuel. Food.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "host",
+              "pose": "point",
+              "expression": "neutral",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.13,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "neutral",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "bills",
+              "holds": "envelope",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "door",
+              "x": 0.97
+            },
+            {
+              "prop": "table",
+              "x": 0.8
+            },
+            {
+              "prop": "bills",
+              "x": 0.85,
+              "y": 1.25
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 17250,
+          "endMs": 21690
+        },
+        {
+          "id": "s5b",
+          "line": "n18",
+          "words": "And you notice something.",
+          "camera": {
+            "framing": "close-up",
+            "move": "push-in",
+            "strength": 0.5
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "thinking",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "down",
+              "holds": "envelope",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 21690,
+          "endMs": 23560
+        },
+        {
+          "id": "s5c",
+          "line": "n19",
+          "words": "Coal is sunlight that plants caught hundreds",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "host",
+              "pose": "point",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.13,
+              "lookAt": "coal",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "thinking",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "coal",
+              "holds": "envelope",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "door",
+              "x": 0.97
+            },
+            {
+              "prop": "table",
+              "x": 0.8
+            },
+            {
+              "prop": "bills",
+              "x": 0.85,
+              "y": 1.25
+            },
+            {
+              "prop": "coal",
+              "x": 0.58,
+              "size": 1.5,
+              "tag": "SUNLIGHT"
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 23560,
+          "endMs": 26307
+        },
+        {
+          "id": "s5d",
+          "line": "n19",
+          "words": "of millions of years ago.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "surprised",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "down",
+              "holds": "envelope",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 26307,
+          "endMs": 27850
+        },
+        {
+          "id": "s5e",
+          "line": "n20",
+          "words": "Oil is the same story.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "host",
+              "pose": "stand",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.09,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "thinking",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "fuel-can",
+              "holds": "envelope",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "door",
+              "x": 0.97
+            },
+            {
+              "prop": "table",
+              "x": 0.8
+            },
+            {
+              "prop": "bills",
+              "x": 0.85,
+              "y": 1.25
+            },
+            {
+              "prop": "coal",
+              "x": 0.58,
+              "size": 1.5,
+              "tag": "SUNLIGHT"
+            },
+            {
+              "prop": "fuel-can",
+              "x": 0.27,
+              "size": 1.2,
+              "tag": "SUNLIGHT"
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 27850,
+          "endMs": 29560
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 1,
+      "beat": "first-part",
+      "mood": "curious",
+      "quiet": true,
+      "place": "field",
+      "treatment": "simple",
+      "palette": "storm-slate",
+      "lines": [
+        {
+          "id": "n21",
+          "speaker": "host",
+          "text": "Wind is air the Sun warmed. Rain is water the Sun lifted.",
+          "speed": 0.92
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6a",
+          "line": "n21",
+          "words": "Wind is air the Sun warmed.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "host",
+              "pose": "point",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.2,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "wind",
+              "x": 0.5,
+              "y": 2.7,
+              "tag": "SUNLIGHT"
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "wind",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "fade",
+          "startMs": 29560,
+          "endMs": 31790
+        },
+        {
+          "id": "s6b",
+          "line": "n21",
+          "words": "Rain is water the Sun lifted.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "host",
+              "pose": "look-up",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.2,
+              "lookAt": "up",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "rain-cloud",
+              "x": 0.5,
+              "y": 3.3,
+              "tag": "SUNLIGHT"
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 31790,
+          "endMs": 33960
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "chapter": 1,
+      "beat": "first-part",
+      "mood": "curious",
+      "quiet": true,
+      "place": "living-room",
+      "treatment": "simple",
+      "palette": "storm-slate",
+      "lines": [
+        {
+          "id": "n22",
+          "speaker": "host",
+          "text": "Your dinner is this summer's light.",
+          "speed": 0.92,
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "n23",
+          "speaker": "host",
+          "text": "You have almost never paid for energy.",
+          "speed": 0.92
+        },
+        {
+          "id": "n24",
+          "speaker": "host",
+          "text": "You have only paid for *delivery.*",
+          "speed": 0.92,
+          "pauseAfterMs": 1000
+        }
+      ],
+      "shots": [
+        {
+          "id": "s7a",
+          "line": "n22",
+          "words": "Your dinner is this summer's light.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "host",
+              "pose": "point",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.13,
+              "lookAt": "bread",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "bread",
+              "holds": "envelope",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "door",
+              "x": 0.97
+            },
+            {
+              "prop": "table",
+              "x": 0.8
+            },
+            {
+              "prop": "bills",
+              "x": 0.85,
+              "y": 1.25
+            },
+            {
+              "prop": "bread",
+              "x": 0.75,
+              "y": 1.25,
+              "tag": "SUNLIGHT"
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "fade",
+          "startMs": 33960,
+          "endMs": 36250
+        },
+        {
+          "id": "s7b",
+          "line": "n23",
+          "words": "You have almost never paid for energy.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "surprised",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "envelope",
+              "holds": "envelope",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 36250,
+          "endMs": 38830
+        },
+        {
+          "id": "s7c",
+          "line": "n24",
+          "words": "You have only paid for *delivery.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "push-in",
+            "strength": 0.5
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "ahead",
+              "holds": "envelope",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 38830,
+          "endMs": 42560
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "version": 1,
+  "title": "What If the Sun Sent You a Bill?",
+  "part": 2,
+  "parts": 4,
+  "size": "16:9",
+  "video": "sun-bill-part-2-16x9-v1.mp4",
+  "seconds": 42.566667,
+  "checkedOn": "2026-10-07",
+  "checks": [
+    {
+      "id": "plays",
+      "title": "The file plays",
+      "by": "measured",
+      "detail": "1920x1080, 30 pictures a second, 42.6 s, picture and sound both there; played through from start to finish",
+      "findings": []
+    },
+    {
+      "id": "made-from",
+      "title": "The video is of this plan and this sound",
+      "by": "measured",
+      "detail": "rendered from the plan as it stands; its sound is the mix as it stands, second for second (what is left over is 40 dB under it at most)",
+      "findings": []
+    },
+    {
+      "id": "length",
+      "title": "The length is right",
+      "by": "measured",
+      "detail": "42.6 s; a part may be up to 60 s",
+      "findings": []
+    },
+    {
+      "id": "in-step",
+      "title": "Picture and voice are in step",
+      "by": "measured",
+      "detail": "15 shots end to end with no gap, each line heard while its own pictures are on screen; picture and voice end together at 42.6 s",
+      "findings": []
+    },
+    {
+      "id": "silence",
+      "title": "There is no dead silence",
+      "by": "measured",
+      "detail": "the sound never drops out; the longest pause between words is 1.0 s",
+      "findings": []
+    },
+    {
+      "id": "loudness",
+      "title": "The sound is at the right level",
+      "by": "measured",
+      "detail": "loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.1 dB (the limit is -1)",
+      "findings": []
+    },
+    {
+      "id": "words-heard",
+      "title": "Nothing drowns the words",
+      "by": "measured",
+      "detail": "11 sound effects, the loudest of those over words 12 dB under the voice",
+      "findings": []
+    },
+    {
+      "id": "captions",
+      "title": "Captions fit the screen",
+      "by": "measured",
+      "detail": "27 captions of one line; the widest takes 68% of the width; the briefest stays up 0.7 s",
+      "findings": []
+    },
+    {
+      "id": "in-frame",
+      "title": "Everyone is inside the picture",
+      "by": "measured",
+      "detail": "where every head lands on screen, on all 1277 frames of the 15 shots",
+      "findings": []
+    },
+    {
+      "id": "things-in-frame",
+      "title": "The things a shot shows are inside the picture",
+      "by": "measured",
+      "detail": "the body of every thing standing or hanging in a shot against the edges of the picture, on every frame (13 checked)",
+      "findings": []
+    },
+    {
+      "id": "faces-clear",
+      "title": "No face is under the title or the captions",
+      "by": "measured",
+      "detail": "every face against the title, any label, the captions, on every frame",
+      "findings": []
+    },
+    {
+      "id": "feet",
+      "title": "Feet are on the ground",
+      "by": "measured",
+      "detail": "the lowest foot or knee of every body against the ground line, on every frame",
+      "findings": []
+    },
+    {
+      "id": "smooth",
+      "title": "Nothing jumps",
+      "by": "measured",
+      "detail": "the furthest anyone moves in one frame on the way into a pose is 0.00 of a head (The host, shot s4b); a jump would be over 0.3",
+      "findings": []
+    },
+    {
+      "id": "held",
+      "title": "No picture is held too long",
+      "by": "measured",
+      "detail": "the longest shot is 4.4 s (s5a); the longest with nothing moving in it is 4.4 s",
+      "findings": [
+        {
+          "level": "note",
+          "shot": "s4d",
+          "atMs": 10933,
+          "text": "the shot stays for 4.1 s, a little over the 4 s a shot should take"
+        },
+        {
+          "level": "note",
+          "shot": "s5a",
+          "atMs": 17266,
+          "text": "the shot stays for 4.4 s, a little over the 4 s a shot should take"
+        }
+      ]
+    },
+    {
+      "id": "reach",
+      "title": "Whatever is picked up is within reach",
+      "by": "measured",
+      "detail": "nobody takes a thing in their hand inside a shot",
+      "findings": []
+    },
+    {
+      "id": "plan",
+      "title": "The plan's own checks still pass",
+      "by": "measured",
+      "detail": "every name in the library, the staging rules, the format's beats, for all 63 shots of the video",
+      "findings": [
+        {
+          "level": "note",
+          "text": "in shot \"s1b\", \"host\" jumps to a new pose after the cut from \"s1a\", a shot of the same size; let them get there inside a shot (a step), or change the shot size"
+        },
+        {
+          "level": "note",
+          "text": "in shot \"s2d\", \"host\" jumps to a new pose after the cut from \"s2c\", a shot of the same size; let them get there inside a shot (a step), or change the shot size"
+        },
+        {
+          "level": "note",
+          "text": "in shot \"s2e\", \"host\" jumps to a new pose after the cut from \"s2d\", a shot of the same size; let them get there inside a shot (a step), or change the shot size"
+        },
+        {
+          "level": "note",
+          "text": "in shot \"s6b\", \"host\" jumps to a new pose after the cut from \"s6a\", a shot of the same size; let them get there inside a shot (a step), or change the shot size"
+        },
+        {
+          "level": "note",
+          "text": "four wide shots in a row from \"s5e\"; vary the shot size"
+        },
+        {
+          "level": "note",
+          "text": "four wide shots in a row from \"s9a\"; vary the shot size"
+        },
+        {
+          "level": "note",
+          "text": "four wide shots in a row from \"s12a\"; vary the shot size"
+        },
+        {
+          "level": "note",
+          "text": "in shot \"s17g\", \"you\" looks at the door standing on the ground, which a medium shot cuts off; make the shot wide"
+        }
+      ]
+    },
+    {
+      "id": "same-pictures",
+      "title": "The pictures are the ones that were looked at",
+      "by": "measured",
+      "detail": "Claude looked at \"sun-bill-part-2-16x9-preview-v4.mp4\"; every frame of this video was compared with it (the strongest difference is 11 of 255; over 16 would be a different picture)",
+      "findings": []
+    },
+    {
+      "id": "style",
+      "title": "Every still passes the Style Check",
+      "by": "looked",
+      "detail": "15 stills, each against the 11 questions of the style guide",
+      "findings": []
+    },
+    {
+      "id": "story",
+      "title": "Every still tells its part of the story",
+      "by": "looked",
+      "detail": "15 stills, each against 7 questions: in frame, face visible, expression, hands, feet, action, setting",
+      "findings": []
+    },
+    {
+      "id": "motion",
+      "title": "Every move and every cut holds up frame by frame",
+      "by": "looked",
+      "detail": "13 strips of frames, one across each move inside a shot and each cut that keeps someone on screen",
+      "findings": []
+    },
+    {
+      "id": "playbook",
+      "title": "The playbook was followed",
+      "by": "looked",
+      "detail": "the rules of the general, format and style playbooks, read against the finished part",
+      "findings": []
+    }
+  ],
+  "fixed": [
+    "The coins raining on your head were too small to see. They are bigger and there are more of them.",
+    "The lump of coal was lost on the dark floor. It is half as big again.",
+    "The tag on the fuel can lay over the host, and the tag on the bread hung down over the table. The can stands clear of her, and a thing on a table wears its tag on top.",
+    "The table of bills appeared from nowhere halfway through. It stands in the room from the start of this part.",
+    "The tag under the Earth (8.3 billion people) was hidden by the table, then by the envelope. The Earth now hangs over the table, clear of both.",
+    "The wind and the rain were shown with nobody there. The host now stands in the field and points them out."
+  ],
+  "notes": [
+    "The table of bills is in the room from this part on; it was not there in part 1.",
+    "The top of the Earth in the shot about sharing the bill slips a little under the counter in the corner.",
+    "Two shots run a little over four seconds (the coins raining, and the look at the real bills).",
+    "The wind and the rain are shown outside in a field at night, with the host there; the script has them at the window of the room.",
+    "No music in this part, as the script asks: a faint room tone and a small bell on each tag. Claude cannot hear; the listening is Biku's."
+  ]
+}

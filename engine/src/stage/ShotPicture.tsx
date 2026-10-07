@@ -48,6 +48,9 @@ const TAG_AFTER = 9;
 
 const easeOutCubic = (t: number): number => 1 - (1 - t) ** 3;
 
+/** True for a thing of the sky, which hangs in the air unless a shot says where. */
+const hangs = (prop: string): boolean => standingProp(prop)?.hangs !== undefined;
+
 const face = (name: string) => EXPRESSIONS[name as ExpressionName] ?? EXPRESSIONS.neutral;
 
 function headEffects(effects: readonly string[], t: number, turn: number, seed: number): ReactNode {
@@ -213,18 +216,19 @@ export function ShotPicture({
             {p.tag && (
               <Placed
                 x={x}
-                // A thing on the ground wears its tag on top; a thing that hangs has it under it.
+                // A thing on the ground or a table wears its tag on top; a thing of the sky has
+                // it hanging under it.
                 y={
                   stage.groundY -
                   (propHeight(p) +
-                    (propHeight(p) > 0 ? -propReach(p).down * 0.92 : propReach(p).up * 0.92)) *
+                    (hangs(p.prop) ? -propReach(p).down * 0.92 : propReach(p).up * 0.92)) *
                     head
                 }
                 head={head}
               >
                 <SceneTag
                   text={p.tag}
-                  below={propHeight(p) > 0}
+                  below={hangs(p.prop)}
                   // A tag that was already on this thing in the shot before does not pop in again.
                   {...(taggedBefore(p) ? {} : { frame: local - TAG_AFTER })}
                 />

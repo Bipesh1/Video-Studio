@@ -1116,10 +1116,19 @@
               "x": 0.97
             },
             {
+              "prop": "table",
+              "x": 0.8
+            },
+            {
+              "prop": "bills",
+              "x": 0.85,
+              "y": 1.25
+            },
+            {
               "prop": "earth",
-              "x": 0.74,
-              "y": 3.0,
-              "size": 0.9,
+              "x": 0.78,
+              "y": 3.75,
+              "size": 0.75,
               "tall": {
                 "x": 0.52,
                 "y": 5.7
@@ -1204,6 +1213,15 @@
             {
               "prop": "door",
               "x": 0.97
+            },
+            {
+              "prop": "table",
+              "x": 0.8
+            },
+            {
+              "prop": "bills",
+              "x": 0.85,
+              "y": 1.25
             }
           ],
           "effects": [
@@ -1334,11 +1352,11 @@
             },
             {
               "prop": "table",
-              "x": 0.72
+              "x": 0.8
             },
             {
               "prop": "bills",
-              "x": 0.76,
+              "x": 0.85,
               "y": 1.25
             }
           ],
@@ -1407,16 +1425,17 @@
             },
             {
               "prop": "table",
-              "x": 0.72
+              "x": 0.8
             },
             {
               "prop": "bills",
-              "x": 0.76,
+              "x": 0.85,
               "y": 1.25
             },
             {
               "prop": "coal",
-              "x": 0.56,
+              "x": 0.58,
+              "size": 1.5,
               "tag": "SUNLIGHT"
             }
           ],
@@ -1468,7 +1487,7 @@
               "character": "host",
               "expression": "happy",
               "facing": "right",
-              "x": 0.13,
+              "x": 0.09,
               "lookAt": "camera",
               "headTurn": "three-quarter",
               "pose": "stand"
@@ -1490,21 +1509,23 @@
             },
             {
               "prop": "table",
-              "x": 0.72
+              "x": 0.8
             },
             {
               "prop": "bills",
-              "x": 0.76,
+              "x": 0.85,
               "y": 1.25
             },
             {
               "prop": "coal",
-              "x": 0.56,
+              "x": 0.58,
+              "size": 1.5,
               "tag": "SUNLIGHT"
             },
             {
               "prop": "fuel-can",
-              "x": 0.25,
+              "x": 0.27,
+              "size": 1.2,
               "tag": "SUNLIGHT"
             }
           ],
@@ -1546,7 +1567,17 @@
             "move": "none",
             "strength": 0.2
           },
-          "actors": [],
+          "actors": [
+            {
+              "character": "host",
+              "expression": "happy",
+              "facing": "right",
+              "x": 0.2,
+              "lookAt": "camera",
+              "headTurn": "three-quarter",
+              "pose": "point"
+            }
+          ],
           "props": [
             {
               "prop": "wind",
@@ -1573,7 +1604,17 @@
             "move": "none",
             "strength": 0.2
           },
-          "actors": [],
+          "actors": [
+            {
+              "character": "host",
+              "expression": "happy",
+              "facing": "right",
+              "x": 0.2,
+              "lookAt": "up",
+              "headTurn": "three-quarter",
+              "pose": "look-up"
+            }
+          ],
           "props": [
             {
               "prop": "rain-cloud",
@@ -1661,16 +1702,16 @@
             },
             {
               "prop": "table",
-              "x": 0.72
+              "x": 0.8
             },
             {
               "prop": "bills",
-              "x": 0.76,
+              "x": 0.85,
               "y": 1.25
             },
             {
               "prop": "bread",
-              "x": 0.66,
+              "x": 0.75,
               "y": 1.25,
               "tag": "SUNLIGHT"
             }
@@ -1789,21 +1830,23 @@
             },
             {
               "prop": "table",
-              "x": 0.72
+              "x": 0.8
             },
             {
               "prop": "bills",
-              "x": 0.76,
+              "x": 0.85,
               "y": 1.25
             },
             {
               "prop": "coal",
-              "x": 0.56,
+              "x": 0.58,
+              "size": 1.5,
               "tag": "SUNLIGHT"
             },
             {
               "prop": "fuel-can",
-              "x": 0.25,
+              "x": 0.27,
+              "size": 1.2,
               "tag": "SUNLIGHT"
             }
           ],

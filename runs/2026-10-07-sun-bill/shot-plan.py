@@ -74,7 +74,7 @@ HOST_IN = {
     's4d': host('happy', 'hands-up'),
     's5a': host('neutral', 'point'),
     's5c': host('happy', 'point', look='coal'),
-    's5e': host('happy'),
+    's5e': host('happy', x=0.09),
     's7a': host('happy', 'point', look='bread'),
     's8a': host('thinking', 'shrug'),
 }
@@ -103,7 +103,7 @@ def scene(sid, chapter, beat, mood, place, palette, lines, shots, treatment='sim
 
 NIGHT = 'storm-slate'
 DOOR = {'prop': 'door', 'x': 0.97}
-TABLE = [{'prop': 'table', 'x': 0.72}, {'prop': 'bills', 'x': 0.76, 'y': 1.25}]
+TABLE = [{'prop': 'table', 'x': 0.8}, {'prop': 'bills', 'x': 0.85, 'y': 1.25}]
 BILL_1 = ['FROM: THE SUN', 'FOR: ONE HOUR OF SUNLIGHT', 'AMOUNT DUE: $30,000,000,000,000']
 BILL_2 = ['AMOUNT DUE: $30,000,000,000,000', 'SPLIT BETWEEN EVERYONE ALIVE', 'YOUR SHARE: $3,600 PER HOUR']
 BILL_3 = ['PAGE 2', 'WHAT THIS COSTS THE SENDER']
@@ -190,11 +190,11 @@ SCENES = [
         shot('s4a', 'n13', 'You try the obvious defence. That is not all mine.', 'medium',
              [you('smug', pose='shrug')], fade=True),
         shot('s4b', 'n14', 'Fine. Split it between every person alive.', 'wide', [you('thinking', look='earth')],
-             [DOOR, earth('8.3 BILLION PEOPLE', 0.9)], sfx=[('pop', 'start')]),
+             [DOOR] + TABLE + [dict(earth('8.3 BILLION PEOPLE', 0.75), x=0.78, y=3.75)], sfx=[('pop', 'start')]),
         shot('s4c', 'n15', 'Your share is more than three thousand dollars. An hour.', 'wide', overlay=page(BILL_2, 2),
              sfx=[('pop', 'start')]),
         shot('s4d', 'n16', 'Thirty *million* dollars a year, delivered to you, for free,', 'wide',
-             [you('surprised', look='up', then=[{'at': 0.5, 'expression': 'happy'}])], [DOOR],
+             [you('surprised', look='up', then=[{'at': 0.5, 'expression': 'happy'}])], [DOOR] + TABLE,
              effects=[{'effect': 'coin-rain', 'on': YOU}], sfx=[('ding', 'start'), ('ding', 'middle')]),
         shot('s4e', 'n16', 'since the day you were born.', 'medium', [you('happy', look='up')],
              effects=[{'effect': 'coin-rain', 'on': YOU}], sfx=[('ding', 'start')]),
@@ -204,28 +204,28 @@ SCENES = [
              [you('neutral', look='bills')], [DOOR] + TABLE),
         shot('s5b', 'n18', 'And you notice something.', 'close-up', [you('thinking', look='down')], move='push-in', strength=0.5),
         shot('s5c', 'n19', 'Coal is sunlight that plants caught hundreds', 'wide', [you('thinking', look='coal')],
-             [DOOR] + TABLE + [{'prop': 'coal', 'x': 0.56, 'tag': 'SUNLIGHT'}], sfx=[('ding', 'start')]),
+             [DOOR] + TABLE + [{'prop': 'coal', 'x': 0.58, 'size': 1.5, 'tag': 'SUNLIGHT'}], sfx=[('ding', 'start')]),
         shot('s5d', 'n19', 'of millions of years ago.', 'close-up', [you('surprised', look='down')]),
         shot('s5e', 'n20', 'Oil is the same story.', 'wide', [you('thinking', look='fuel-can')],
-             [DOOR] + TABLE + [{'prop': 'coal', 'x': 0.56, 'tag': 'SUNLIGHT'}, {'prop': 'fuel-can', 'x': 0.25, 'tag': 'SUNLIGHT'}],
+             [DOOR] + TABLE + [{'prop': 'coal', 'x': 0.58, 'size': 1.5, 'tag': 'SUNLIGHT'}, {'prop': 'fuel-can', 'x': 0.27, 'size': 1.2, 'tag': 'SUNLIGHT'}],
              sfx=[('ding', 'start')]),
     ], quiet=True),
     scene('s6', 2, 'first-part', 'curious', 'field', NIGHT, ['n21'], [
-        shot('s6a', 'n21', 'Wind is air the Sun warmed.', 'wide', [],
+        shot('s6a', 'n21', 'Wind is air the Sun warmed.', 'wide', [host('happy', 'point', x=0.2)],
              [{'prop': 'wind', 'x': 0.5, 'y': 2.7, 'tag': 'SUNLIGHT'}], fade=True, sfx=[('wind', 'start')]),
-        shot('s6b', 'n21', 'Rain is water the Sun lifted.', 'wide', [],
+        shot('s6b', 'n21', 'Rain is water the Sun lifted.', 'wide', [host('happy', 'look-up', look='up', x=0.2)],
              [{'prop': 'rain-cloud', 'x': 0.5, 'y': 3.3, 'tag': 'SUNLIGHT'}], sfx=[('ding', 'start')]),
     ], quiet=True),
     scene('s7', 2, 'first-part', 'curious', 'living-room', NIGHT, ['n22', 'n23', 'n24'], [
         shot('s7a', 'n22', "Your dinner is this summer's light.", 'wide', [you('happy', look='bread')],
-             [DOOR] + TABLE + [{'prop': 'bread', 'x': 0.66, 'y': 1.25, 'tag': 'SUNLIGHT'}], fade=True, sfx=[('ding', 'start')]),
+             [DOOR] + TABLE + [{'prop': 'bread', 'x': 0.75, 'y': 1.25, 'tag': 'SUNLIGHT'}], fade=True, sfx=[('ding', 'start')]),
         shot('s7b', 'n23', 'You have almost never paid for energy.', 'medium', [you('surprised', look=ENV)]),
         shot('s7c', 'n24', 'You have only paid for *delivery.*', 'close-up', [you('smug')], move='push-in', strength=0.5),
     ], quiet=True),
     # ------------------------------------------------------------------ part 3
     scene('s8', 3, 'second-part', 'curious', 'living-room', NIGHT, ['n25'], [
         shot('s8a', 'n25', 'And the coal and the oil?', 'wide', [you('thinking', look='coal')],
-             [DOOR] + TABLE + [{'prop': 'coal', 'x': 0.56, 'tag': 'SUNLIGHT'}, {'prop': 'fuel-can', 'x': 0.25, 'tag': 'SUNLIGHT'}],
+             [DOOR] + TABLE + [{'prop': 'coal', 'x': 0.58, 'size': 1.5, 'tag': 'SUNLIGHT'}, {'prop': 'fuel-can', 'x': 0.27, 'size': 1.2, 'tag': 'SUNLIGHT'}],
              fade=True),
         shot('s8b', 'n25', 'That is a *savings* account.', 'close-up', [you('determined')], move='push-in', strength=0.5),
     ], quiet=True),

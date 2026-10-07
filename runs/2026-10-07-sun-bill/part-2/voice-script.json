@@ -1,0 +1,102 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "lines": [
+    {
+      "id": "n13",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "You try the obvious defence. That is not all mine.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n14",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "Fine. Split it between every person alive.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n15",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "Your share is more than three thousand dollars. An hour.",
+      "speed": 0.92,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "n16",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "Thirty *million* dollars a year, delivered to you, for free, since the day you were born.",
+      "speed": 0.92,
+      "pauseAfterMs": 1000
+    },
+    {
+      "id": "n17",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "Then you look at your real bills. Electricity. Fuel. Food.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n18",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "And you notice something.",
+      "speed": 0.92,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "n19",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "Coal is sunlight that plants caught hundreds of millions of years ago.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n20",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "Oil is the same story.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n21",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "Wind is air the Sun warmed. Rain is water the Sun lifted.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n22",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "Your dinner is this summer's light.",
+      "speed": 0.92,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "n23",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "You have almost never paid for energy.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n24",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "You have only paid for *delivery.*",
+      "speed": 0.92,
+      "pauseAfterMs": 1000
+    }
+  ]
+}
