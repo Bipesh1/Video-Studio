@@ -62,6 +62,10 @@ def host(face='neutral', pose='stand', look='camera', x=HX, action=None, facing=
     return a
 
 
+def VAULT_HOST(face, pose='stand'):
+    return host(face, pose, x=0.9, facing='left')
+
+
 # How the host stands in the wide shots of the room, where nothing else is said about her.
 HOST_IN = {
     's1a': host('thinking', 'point', look=ENV),
@@ -230,21 +234,23 @@ SCENES = [
         shot('s8b', 'n25', 'That is a *savings* account.', 'close-up', [you('determined')], move='push-in', strength=0.5),
     ], quiet=True),
     scene('s9', 3, 'second-part', 'curious', 'vault', NIGHT, ['n26', 'n27', 'n28'], [
-        shot('s9a', 'n26', 'Sunlight, deposited a little at a time,', 'wide', [],
-             [{'prop': 'coin-stack', 'x': 0.76, 'size': 0.5}, {'prop': 'coin', 'x': 0.76, 'y': 1.5}], fade=True,
+        shot('s9a', 'n26', 'Sunlight, deposited a little at a time,', 'wide', [VAULT_HOST('happy', 'point')],
+             [{'prop': 'coin-stack', 'x': 0.62, 'size': 0.9}, {'prop': 'coin', 'x': 0.62, 'y': 2.2, 'size': 1.4}], fade=True,
              sfx=[('ding', 'start'), ('ding', 'end')]),
-        shot('s9b', 'n26', 'over hundreds of millions of years.', 'wide', [],
-             [{'prop': 'coin-tower', 'x': x} for x in (0.28, 0.4, 0.52, 0.64, 0.76)],
+        shot('s9b', 'n26', 'over hundreds of millions of years.', 'wide', [VAULT_HOST('happy', 'shrug')],
+             [{'prop': 'coin-tower', 'x': x} for x in (0.14, 0.26, 0.38, 0.5, 0.62)],
              overlay={'kind': 'label', 'text': 'Hundreds of millions of years later'}, fade=True, sfx=[('ding', 'start')]),
         shot('s9c', 'n27', 'We found the account a few hundred years ago.', 'wide',
-             [{'character': 'taker1', 'action': 'walk', 'expression': 'happy', 'facing': 'right', 'x': 0.14, 'holds': 'bag'},
-              {'character': 'taker2', 'action': 'walk', 'expression': 'smug', 'facing': 'right', 'x': 0.34, 'holds': 'bag'}],
-             [{'prop': 'coin-tower', 'x': x} for x in (0.52, 0.64, 0.76)], sfx=[('footsteps', 'start')]),
+             [VAULT_HOST('surprised'),
+              {'character': 'taker1', 'action': 'walk', 'expression': 'happy', 'facing': 'right', 'x': 0.1, 'holds': 'bag'},
+              {'character': 'taker2', 'action': 'walk', 'expression': 'smug', 'facing': 'right', 'x': 0.28, 'holds': 'bag'}],
+             [{'prop': 'coin-tower', 'x': x} for x in (0.38, 0.5, 0.62)], sfx=[('footsteps', 'start')]),
         shot('s9d', 'n28', 'We have been emptying it ever since.', 'wide',
-             [{'character': 'taker1', 'action': 'run', 'expression': 'happy', 'facing': 'right', 'x': 0.14, 'holds': 'bag'},
-              {'character': 'taker2', 'action': 'run', 'expression': 'laughing', 'facing': 'right', 'x': 0.34, 'holds': 'bag'},
-              {'character': 'taker3', 'action': 'run', 'expression': 'smug', 'facing': 'right', 'x': 0.56, 'holds': 'bag'}],
-             [{'prop': 'coin-stack', 'x': 0.76}], sfx=[('footsteps', 'start'), ('whoosh', 'middle')]),
+             [VAULT_HOST('sad', 'shrug'),
+              {'character': 'taker1', 'action': 'run', 'expression': 'happy', 'facing': 'right', 'x': 0.1, 'holds': 'bag'},
+              {'character': 'taker2', 'action': 'run', 'expression': 'laughing', 'facing': 'right', 'x': 0.28, 'holds': 'bag'},
+              {'character': 'taker3', 'action': 'run', 'expression': 'smug', 'facing': 'right', 'x': 0.46, 'holds': 'bag'}],
+             [{'prop': 'coin-stack', 'x': 0.62, 'size': 0.9}], sfx=[('footsteps', 'start'), ('whoosh', 'middle')]),
     ], quiet=True),
     scene('s10', 3, 'surprise', 'tense', 'living-room', NIGHT, ['n29', 'n30'], [
         shot('s10a', 'n29', 'So you turn the bill over, looking for the catch.', 'medium', [you('thinking', look=ENV)], fade=True),
@@ -253,22 +259,23 @@ SCENES = [
     ], treatment='atmospheric'),
     scene('s11', 3, 'surprise', 'tense', 'space', 'deep-space', ['n31', 'n32', 'n33'], [
         shot('s11a', 'n31', 'Every second, the Sun destroys four million *tonnes*', 'wide',
-             [you('surprised', action='float', look='sun', holds=None, x=0.72, facing='left')],
-             [{'prop': 'sun', 'x': 0.26, 'y': 3.0, 'size': 1.3, 'tall': {'x': 0.5, 'y': 6.4, 'size': 1.1}}],
+             [],
+             [{'prop': 'sun', 'x': 0.22, 'y': 2.3, 'size': 1.1, 'tall': {'x': 0.5, 'y': 6.4, 'size': 1.1}}],
              overlay={'kind': 'number', 'text': '4,000,000 tonnes', 'caption': 'every second'}, fade=True),
-        shot('s11b', 'n31', 'of itself to make that light.', 'close-up', [you('horrified', action='float', holds=None, x=0.72, facing='left')]),
+        shot('s11b', 'n31', 'of itself to make that light.', 'close-up', [you('horrified', action='float', holds=None, x=0.6, facing='left')]),
         shot('s11c', 'n32', 'And Earth catches almost none of it.', 'wide', [],
-             [{'prop': 'sun', 'x': 0.26, 'y': 3.0, 'size': 1.3, 'tall': {'x': 0.5, 'y': 6.4, 'size': 1.1}},
-              {'prop': 'earth', 'x': 0.88, 'y': 3.0, 'size': 0.14, 'tall': {'x': 0.5, 'y': 1.6}}],
+             [{'prop': 'sun', 'x': 0.22, 'y': 2.3, 'size': 1.1, 'tall': {'x': 0.5, 'y': 6.4, 'size': 1.1}},
+              {'prop': 'earth', 'x': 0.86, 'y': 2.3, 'size': 0.14, 'tall': {'x': 0.5, 'y': 1.6}}],
              overlay={'kind': 'pointer', 'text': 'Earth', 'to': 'earth'}),
         shot('s11d', 'n32', 'One part in two billion.', 'wide', [],
-             [{'prop': 'sun', 'x': 0.26, 'y': 3.0, 'size': 1.3, 'tall': {'x': 0.5, 'y': 6.4, 'size': 1.1}},
-              {'prop': 'earth', 'x': 0.88, 'y': 3.0, 'size': 0.14, 'tall': {'x': 0.5, 'y': 1.6}}],
-             overlay={'kind': 'number', 'text': '1 in 2,000,000,000'}, move='push-in', strength=0.3),
+             [{'prop': 'sun', 'x': 0.22, 'y': 2.3, 'size': 1.1, 'tall': {'x': 0.5, 'y': 6.4, 'size': 1.1}},
+              {'prop': 'earth', 'x': 0.86, 'y': 2.3, 'size': 0.14, 'tall': {'x': 0.5, 'y': 1.6}}],
+             overlay={'kind': 'number', 'text': '1 in 2,000,000,000'}),
         shot('s11e', 'n33', 'The rest pours into empty space, unbilled,', 'wide',
-             [you('sad', action='float', look='sun', holds=None, x=0.72, facing='left')],
-             [{'prop': 'sun', 'x': 0.26, 'y': 3.0, 'size': 1.3, 'tall': {'x': 0.5, 'y': 6.4, 'size': 1.1}}]),
-        shot('s11f', 'n33', 'unseen, for *nobody.*', 'close-up', [you('sad', action='float', holds=None, x=0.72, facing='left')],
+             [you('sad', action='float', look='sun', holds=None, x=0.6, facing='left'),
+              host('sad', action='float', x=0.87, facing='left')],
+             [{'prop': 'sun', 'x': 0.22, 'y': 2.3, 'size': 1.1, 'tall': {'x': 0.5, 'y': 6.4, 'size': 1.1}}]),
+        shot('s11f', 'n33', 'unseen, for *nobody.*', 'close-up', [you('sad', action='float', holds=None, x=0.6, facing='left')],
              move='push-in', strength=0.5),
     ], treatment='atmospheric'),
     # ------------------------------------------------------------------ part 4

@@ -1,0 +1,78 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "lines": [
+    {
+      "id": "n25",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "And the coal and the oil? That is a *savings* account.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n26",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "Sunlight, deposited a little at a time, over hundreds of millions of years.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n27",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "We found the account a few hundred years ago.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n28",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "We have been emptying it ever since.",
+      "speed": 0.92,
+      "pauseAfterMs": 1000
+    },
+    {
+      "id": "n29",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "So you turn the bill over, looking for the catch.",
+      "speed": 0.86,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n30",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "There is a second page. It shows what this costs the sender.",
+      "speed": 0.86,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "n31",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "Every second, the Sun destroys four million *tonnes* of itself to make that light.",
+      "speed": 0.86,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n32",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "And Earth catches almost none of it. One part in two billion.",
+      "speed": 0.86,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n33",
+      "speaker": "host",
+      "voice": "af_bella",
+      "text": "The rest pours into empty space, unbilled, unseen, for *nobody.*",
+      "speed": 0.86,
+      "pauseAfterMs": 1100
+    }
+  ]
+}

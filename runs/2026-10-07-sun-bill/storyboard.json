@@ -1920,17 +1920,28 @@
             "move": "none",
             "strength": 0.2
           },
-          "actors": [],
+          "actors": [
+            {
+              "character": "host",
+              "expression": "happy",
+              "facing": "left",
+              "x": 0.9,
+              "lookAt": "camera",
+              "headTurn": "three-quarter",
+              "pose": "point"
+            }
+          ],
           "props": [
             {
               "prop": "coin-stack",
-              "x": 0.76,
-              "size": 0.5
+              "x": 0.62,
+              "size": 0.9
             },
             {
               "prop": "coin",
-              "x": 0.76,
-              "y": 1.5
+              "x": 0.62,
+              "y": 2.2,
+              "size": 1.4
             }
           ],
           "effects": [],
@@ -1955,27 +1966,37 @@
             "move": "none",
             "strength": 0.2
           },
-          "actors": [],
+          "actors": [
+            {
+              "character": "host",
+              "expression": "happy",
+              "facing": "left",
+              "x": 0.9,
+              "lookAt": "camera",
+              "headTurn": "three-quarter",
+              "pose": "shrug"
+            }
+          ],
           "props": [
             {
               "prop": "coin-tower",
-              "x": 0.28
+              "x": 0.14
             },
             {
               "prop": "coin-tower",
-              "x": 0.4
+              "x": 0.26
             },
             {
               "prop": "coin-tower",
-              "x": 0.52
+              "x": 0.38
             },
             {
               "prop": "coin-tower",
-              "x": 0.64
+              "x": 0.5
             },
             {
               "prop": "coin-tower",
-              "x": 0.76
+              "x": 0.62
             }
           ],
           "effects": [],
@@ -2002,11 +2023,20 @@
           },
           "actors": [
             {
+              "character": "host",
+              "expression": "surprised",
+              "facing": "left",
+              "x": 0.9,
+              "lookAt": "camera",
+              "headTurn": "three-quarter",
+              "pose": "stand"
+            },
+            {
               "character": "taker1",
               "action": "walk",
               "expression": "happy",
               "facing": "right",
-              "x": 0.14,
+              "x": 0.1,
               "holds": "bag"
             },
             {
@@ -2014,22 +2044,22 @@
               "action": "walk",
               "expression": "smug",
               "facing": "right",
-              "x": 0.34,
+              "x": 0.28,
               "holds": "bag"
             }
           ],
           "props": [
             {
               "prop": "coin-tower",
-              "x": 0.52
+              "x": 0.38
             },
             {
               "prop": "coin-tower",
-              "x": 0.64
+              "x": 0.5
             },
             {
               "prop": "coin-tower",
-              "x": 0.76
+              "x": 0.62
             }
           ],
           "effects": [],
@@ -2052,11 +2082,20 @@
           },
           "actors": [
             {
+              "character": "host",
+              "expression": "sad",
+              "facing": "left",
+              "x": 0.9,
+              "lookAt": "camera",
+              "headTurn": "three-quarter",
+              "pose": "shrug"
+            },
+            {
               "character": "taker1",
               "action": "run",
               "expression": "happy",
               "facing": "right",
-              "x": 0.14,
+              "x": 0.1,
               "holds": "bag"
             },
             {
@@ -2064,7 +2103,7 @@
               "action": "run",
               "expression": "laughing",
               "facing": "right",
-              "x": 0.34,
+              "x": 0.28,
               "holds": "bag"
             },
             {
@@ -2072,14 +2111,15 @@
               "action": "run",
               "expression": "smug",
               "facing": "right",
-              "x": 0.56,
+              "x": 0.46,
               "holds": "bag"
             }
           ],
           "props": [
             {
               "prop": "coin-stack",
-              "x": 0.76
+              "x": 0.62,
+              "size": 0.9
             }
           ],
           "effects": [],
@@ -2239,22 +2279,13 @@
             "move": "none",
             "strength": 0.2
           },
-          "actors": [
-            {
-              "character": "you",
-              "expression": "surprised",
-              "facing": "left",
-              "x": 0.72,
-              "action": "float",
-              "lookAt": "sun"
-            }
-          ],
+          "actors": [],
           "props": [
             {
               "prop": "sun",
-              "x": 0.26,
-              "y": 3.0,
-              "size": 1.3,
+              "x": 0.22,
+              "y": 2.3,
+              "size": 1.1,
               "tall": {
                 "x": 0.5,
                 "y": 6.4,
@@ -2285,7 +2316,7 @@
               "character": "you",
               "expression": "horrified",
               "facing": "left",
-              "x": 0.72,
+              "x": 0.6,
               "action": "float"
             }
           ],
@@ -2307,9 +2338,9 @@
           "props": [
             {
               "prop": "sun",
-              "x": 0.26,
-              "y": 3.0,
-              "size": 1.3,
+              "x": 0.22,
+              "y": 2.3,
+              "size": 1.1,
               "tall": {
                 "x": 0.5,
                 "y": 6.4,
@@ -2318,8 +2349,8 @@
             },
             {
               "prop": "earth",
-              "x": 0.88,
-              "y": 3.0,
+              "x": 0.86,
+              "y": 2.3,
               "size": 0.14,
               "tall": {
                 "x": 0.5,
@@ -2342,16 +2373,16 @@
           "words": "One part in two billion.",
           "camera": {
             "framing": "wide",
-            "move": "push-in",
-            "strength": 0.3
+            "move": "none",
+            "strength": 0.2
           },
           "actors": [],
           "props": [
             {
               "prop": "sun",
-              "x": 0.26,
-              "y": 3.0,
-              "size": 1.3,
+              "x": 0.22,
+              "y": 2.3,
+              "size": 1.1,
               "tall": {
                 "x": 0.5,
                 "y": 6.4,
@@ -2360,8 +2391,8 @@
             },
             {
               "prop": "earth",
-              "x": 0.88,
-              "y": 3.0,
+              "x": 0.86,
+              "y": 2.3,
               "size": 0.14,
               "tall": {
                 "x": 0.5,
@@ -2391,17 +2422,26 @@
               "character": "you",
               "expression": "sad",
               "facing": "left",
-              "x": 0.72,
+              "x": 0.6,
               "action": "float",
               "lookAt": "sun"
+            },
+            {
+              "character": "host",
+              "expression": "sad",
+              "facing": "left",
+              "x": 0.87,
+              "lookAt": "camera",
+              "headTurn": "three-quarter",
+              "action": "float"
             }
           ],
           "props": [
             {
               "prop": "sun",
-              "x": 0.26,
-              "y": 3.0,
-              "size": 1.3,
+              "x": 0.22,
+              "y": 2.3,
+              "size": 1.1,
               "tall": {
                 "x": 0.5,
                 "y": 6.4,
@@ -2427,7 +2467,7 @@
               "character": "you",
               "expression": "sad",
               "facing": "left",
-              "x": 0.72,
+              "x": 0.6,
               "action": "float"
             }
           ],

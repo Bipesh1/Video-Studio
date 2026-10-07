@@ -135,10 +135,16 @@ export function pointerPlace(
   if (overlay.at) return { at: overlay.at, to };
   const half = pointerBox(overlay.text, { x: 0.5, y: 0.5 }, width, height).width / 2 / width;
   const air = Math.min(0.5, half + 0.03);
+  // A video with a counter in its top corner: the label keeps under it.
+  const meter = input.storyboard.meter;
+  const counter = meter
+    ? meterBox(meter.label, meterText(meter.perSecond * 200, meter.prefix).length, width, height)
+    : null;
+  const top = counter ? (counter.y + counter.height) / height + 0.07 : 0.08;
   return {
     at: {
       x: clamp(to.x + (to.x > 0.5 ? -0.1 : 0.1), air, 1 - air),
-      y: clamp(to.y - 0.3, 0.08, 0.6),
+      y: clamp(to.y - 0.3, top, 0.6),
     },
     to,
   };

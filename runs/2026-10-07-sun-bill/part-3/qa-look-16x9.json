@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "video": "sun-bill-part-3-16x9-preview-v1.mp4",
+  "stills": {
+    "s8a": "ok",
+    "s8b": "ok",
+    "s9a": "ok",
+    "s9b": "ok",
+    "s9c": "ok",
+    "s9d": "ok",
+    "s10a": "ok",
+    "s10b": "ok",
+    "s10c": "ok",
+    "s11a": "ok",
+    "s11b": "ok",
+    "s11c": "ok",
+    "s11d": "ok",
+    "s11e": "ok",
+    "s11f": "ok"
+  },
+  "strips": {
+    "cut-s11e-s11f": "ok",
+    "cut-s8a-s8b": "ok",
+    "cut-s9a-s9b": "ok",
+    "cut-s9b-s9c": "ok",
+    "cut-s9c-s9d": "ok"
+  },
+  "playbook": "ok",
+  "fixed": [
+    "The big numbers (4,000,000 tonnes, 1 in 2,000,000,000) lay over the top of the Sun, gold on gold. The Sun hangs lower and a little smaller, clear of them.",
+    "The label that names the Earth was hidden under the counter in the corner. A label now keeps below the counter in any video that has one.",
+    "The two people floating in space lay over each other, and one stood right under the number. They float further apart, and the shot with the number shows the Sun alone.",
+    "The first stack of coins in the vault was too small to see. It is nearly twice the size, with a bigger coin falling to it.",
+    "A slow move toward the Sun cut it off at the edge of the picture. That shot now holds still.",
+    "The vault and the Sun were told with nobody there. The host now stands in the vault and floats in space beside you."
+  ],
+  "notes": [
+    "The vault is a room of its own with a round steel door, not a glass floor under your room as the script has it; no clock is shown, a label says hundreds of millions of years later.",
+    "The people emptying the vault carry sacks; there are no wheelbarrows.",
+    "In space the Sun is shown whole with the Earth as a speck and an arrow naming it. The rays streaming off it and the one thread of light the Earth catches are not drawn.",
+    "You and the host float side by side with hands nearly touching, which reads as holding hands.",
+    "The second page says PAGE 2 and WHAT THIS COSTS THE SENDER; those words are Claude's, taken from the narration, because the script gives none for that page.",
+    "The music comes in at the second page, as the script asks. The mood is the studio's tense one, a low pulse; whether that is the one low, slow note the script wants needs Biku's ears."
+  ]
+}

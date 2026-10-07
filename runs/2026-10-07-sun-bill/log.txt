@@ -282,3 +282,53 @@
 2026-10-07T15:55:03.936Z  part 2    runs\2026-10-07-sun-bill\part-2\out\sun-bill-part-2-16x9-v1.mp4: 42.57 s of video, 1920x1080, in 126.6 s (2.97 s per video second)
 2026-10-07T15:55:03.942Z  part 2    runs\2026-10-07-sun-bill\part-2\out\sun-bill-part-2-16x9-v1.srt
 2026-10-07T15:55:03.963Z  part 2  video: done in 133.2 s
+2026-10-07T16:02:54.621Z  part 3  part 3 of 4, 16:9: 4 scenes, 15 shots
+2026-10-07T16:02:54.623Z  part 3  voice: start
+2026-10-07T16:04:18.896Z  part 3    voice.wav: 38.94 s, 98 words, timings from kokoro, -17.03 LUFS
+2026-10-07T16:04:18.897Z  part 3  voice: done in 84.3 s
+2026-10-07T16:04:18.897Z  part 3  time: start
+2026-10-07T16:04:18.912Z  part 3    15 shots over 38.9 s: shortest 1.7 s, longest 3.8 s
+2026-10-07T16:04:18.912Z  part 3  time: done in 0.0 s
+2026-10-07T16:04:18.912Z  part 3  sound: start
+2026-10-07T16:04:41.669Z  part 3    F:\Video Studio\runs\2026-10-07-sun-bill\part-3\audio\mix.wav: 38.94 s, -14.03 LUFS, true peak -1.22 dB, 1 music moods, 8 effects, music -19.5 dB under the voice
+2026-10-07T16:04:41.670Z  part 3  sound: done in 22.8 s
+2026-10-07T16:04:41.671Z  part 3  stills: start
+2026-10-07T16:04:41.702Z  part 3  bundle: start
+2026-10-07T16:04:57.122Z  part 3  bundle: done in 15.4 s
+2026-10-07T16:05:28.248Z  part 3    15 stills in runs\2026-10-07-sun-bill\part-3\stills\16x9
+2026-10-07T16:05:30.452Z  part 3    runs\2026-10-07-sun-bill\part-3\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-07T16:05:30.647Z  part 3    runs\2026-10-07-sun-bill\part-3\stills\sheet-16x9-2.png (3 shots, 1 rows)
+2026-10-07T16:05:30.647Z  part 3  stills: done in 49.0 s
+2026-10-07T16:06:43.167Z  part 3  part 3 of 4, 16:9: 4 scenes, 15 shots
+2026-10-07T16:06:43.168Z  part 3  time: start
+2026-10-07T16:06:43.175Z  part 3    15 shots over 38.9 s: shortest 1.7 s, longest 3.8 s
+2026-10-07T16:06:43.175Z  part 3  time: done in 0.0 s
+2026-10-07T16:06:43.176Z  part 3  stills: start
+2026-10-07T16:06:43.198Z  part 3  bundle: start
+2026-10-07T16:06:49.797Z  part 3  bundle: done in 6.6 s
+2026-10-07T16:07:07.776Z  part 3    15 stills in runs\2026-10-07-sun-bill\part-3\stills\16x9
+2026-10-07T16:07:08.393Z  part 3    runs\2026-10-07-sun-bill\part-3\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-07T16:07:08.595Z  part 3    runs\2026-10-07-sun-bill\part-3\stills\sheet-16x9-2.png (3 shots, 1 rows)
+2026-10-07T16:07:08.595Z  part 3  stills: done in 25.4 s
+2026-10-07T16:07:30.033Z  part 3  part 3 of 4, 16:9: 4 scenes, 15 shots
+2026-10-07T16:07:30.035Z  part 3  time: start
+2026-10-07T16:07:30.040Z  part 3    15 shots over 38.9 s: shortest 1.7 s, longest 3.8 s
+2026-10-07T16:07:30.041Z  part 3  time: done in 0.0 s
+2026-10-07T16:07:30.041Z  part 3  stills: start
+2026-10-07T16:07:30.061Z  part 3  bundle: start
+2026-10-07T16:07:34.809Z  part 3  bundle: done in 4.7 s
+2026-10-07T16:07:54.557Z  part 3    15 stills in runs\2026-10-07-sun-bill\part-3\stills\16x9
+2026-10-07T16:07:55.195Z  part 3    runs\2026-10-07-sun-bill\part-3\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-07T16:07:55.386Z  part 3    runs\2026-10-07-sun-bill\part-3\stills\sheet-16x9-2.png (3 shots, 1 rows)
+2026-10-07T16:07:55.387Z  part 3  stills: done in 25.3 s
+2026-10-07T16:07:55.387Z  part 3  preview: start
+2026-10-07T16:09:07.166Z  part 3    runs\2026-10-07-sun-bill\part-3\preview\sun-bill-part-3-16x9-preview-v1.mp4: 38.97 s of video, 960x540, in 70.9 s (1.82 s per video second)
+2026-10-07T16:09:07.169Z  part 3    runs\2026-10-07-sun-bill\part-3\preview\sun-bill-part-3-16x9-preview-v1.srt
+2026-10-07T16:09:07.184Z  part 3  preview: done in 71.8 s
+2026-10-07T16:09:51.338Z  part 3  part 3 of 4, 16:9: 4 scenes, 15 shots
+2026-10-07T16:09:51.340Z  part 3  video: start
+2026-10-07T16:09:51.363Z  part 3  bundle: start
+2026-10-07T16:09:54.960Z  part 3  bundle: done in 3.6 s
+2026-10-07T16:11:37.153Z  part 3    runs\2026-10-07-sun-bill\part-3\out\sun-bill-part-3-16x9-v1.mp4: 38.97 s of video, 1920x1080, in 100.1 s (2.57 s per video second)
+2026-10-07T16:11:37.156Z  part 3    runs\2026-10-07-sun-bill\part-3\out\sun-bill-part-3-16x9-v1.srt
+2026-10-07T16:11:37.167Z  part 3  video: done in 105.8 s

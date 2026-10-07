@@ -107,10 +107,10 @@ Place: bank vault, storm slate colors. Music: curious.
 
 | Shot | At | Who speaks | Words | What you see | Sound |
 | --- | --- | --- | --- | --- | --- |
-| s9a | 1:32 | The host | Sunlight, deposited a little at a time, | Fade in. Wide shot. In the scene: stack of coins, coin. | ding, ding |
-| s9b | 1:35 | The host | over hundreds of millions of years. | Fade in. Wide shot. In the scene: tower of coins. Label: "Hundreds of millions of years later". | ding |
-| s9c | 1:37 | The host | We found the account a few hundred years ago. | Wide shot. Someone with a sack walks, holding the bag, happy. Someone with a sack walks, holding the bag, smug. In the scene: tower of coins. | footsteps |
-| s9d | 1:41 | The host | We have been emptying it ever since. | Wide shot. Someone with a sack runs, holding the bag, happy. Someone with a sack runs, holding the bag, laughing. Someone with a sack runs, holding the bag, smug. In the scene: stack of coins. | footsteps, whoosh |
+| s9a | 1:32 | The host | Sunlight, deposited a little at a time, | Fade in. Wide shot. The host points, happy, looking at us. In the scene: stack of coins, coin. | ding, ding |
+| s9b | 1:35 | The host | over hundreds of millions of years. | Fade in. Wide shot. The host shrugs, happy, looking at us. In the scene: tower of coins. Label: "Hundreds of millions of years later". | ding |
+| s9c | 1:37 | The host | We found the account a few hundred years ago. | Wide shot. The host stands, surprised, looking at us. Someone with a sack walks, holding the bag, happy. Someone with a sack walks, holding the bag, smug. In the scene: tower of coins. | footsteps |
+| s9d | 1:41 | The host | We have been emptying it ever since. | Wide shot. The host shrugs, sad, looking at us. Someone with a sack runs, holding the bag, happy. Someone with a sack runs, holding the bag, laughing. Someone with a sack runs, holding the bag, smug. In the scene: stack of coins. | footsteps, whoosh |
 
 ### Scene 10: surprise
 
@@ -128,11 +128,11 @@ Place: outer space, deep space colors. Music: tense.
 
 | Shot | At | Who speaks | Words | What you see | Sound |
 | --- | --- | --- | --- | --- | --- |
-| s11a | 1:53 | The host | Every second, the Sun destroys four million **tonnes** | Fade in. Wide shot. You float, surprised, looking at the sun. In the scene: sun. Big number: "4,000,000 tonnes" (every second). |   |
+| s11a | 1:53 | The host | Every second, the Sun destroys four million **tonnes** | Fade in. Wide shot. In the scene: sun. Big number: "4,000,000 tonnes" (every second). |   |
 | s11b | 1:56 | The host | of itself to make that light. | Close-up. You float, horrified. |   |
 | s11c | 1:58 | The host | And Earth catches almost none of it. | Wide shot. In the scene: sun, earth. An arrow labelled "Earth". |   |
-| s11d | 2:01 | The host | One part in two billion. | Wide shot. In the scene: sun, earth. The camera moves slowly closer. Big number: "1 in 2,000,000,000". |   |
-| s11e | 2:03 | The host | The rest pours into empty space, unbilled, | Wide shot. You float, sad, looking at the sun. In the scene: sun. |   |
+| s11d | 2:01 | The host | One part in two billion. | Wide shot. In the scene: sun, earth. Big number: "1 in 2,000,000,000". |   |
+| s11e | 2:03 | The host | The rest pours into empty space, unbilled, | Wide shot. You float, sad, looking at the sun. The host float, sad, looking at us. In the scene: sun. |   |
 | s11f | 2:05 | The host | unseen, for **nobody.** | Close-up. You float, sad. The camera moves slowly closer. |   |
 
 ## Part 4 (about 0:44)

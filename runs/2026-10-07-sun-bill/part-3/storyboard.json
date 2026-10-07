@@ -1,0 +1,941 @@
+{
+  "version": 1,
+  "title": "What If the Sun Sent You a Bill?",
+  "request": "i have a script of about 3 minute long videos can i send it to you and see the final product",
+  "mode": "as-is",
+  "format": "explainer",
+  "style": "ink-stick",
+  "brand": "my-page",
+  "voice": "narrator",
+  "seed": 67745,
+  "sources": [
+    "Wikipedia, \"Solar energy\": the Earth receives 174 petawatts of sunlight at the top of the atmosphere, about 30 percent of which is reflected back to space. https://en.wikipedia.org/wiki/Solar_energy",
+    "US Energy Information Administration, Short-Term Energy Outlook: average US residential electricity price of 17.3 cents per kilowatt-hour in 2025 and a projected 18.2 cents in 2026. https://www.eia.gov/outlooks/steo/report/elec_coal_renew.php",
+    "Wikipedia, \"List of countries by GDP (nominal)\", IMF 2026 forecasts: United States about 32.4 trillion dollars, world about 126.3 trillion dollars. https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)",
+    "Wikipedia, \"World population\": about 8.3 billion people in 2026. https://en.wikipedia.org/wiki/World_population",
+    "Wikipedia, \"Sun\": luminosity of 3.828 x 10^26 watts, about 4 billion kilograms of matter converted to energy each second. https://en.wikipedia.org/wiki/Sun",
+    "NASA, Sun facts: about 4.5 billion years old, with about 5 billion years left. https://science.nasa.gov/sun/facts/",
+    "US Energy Information Administration, Coal explained: coal holds energy stored by plants that lived hundreds of millions of years ago. https://www.eia.gov/energyexplained/coal/",
+    "US Energy Information Administration, Sources of energy: wind comes from uneven heating by the Sun, and geothermal and nuclear energy do not come from the Sun. https://www.eia.gov/energyexplained/what-is-energy/sources-of-energy.php"
+  ],
+  "appliedLessons": [],
+  "cast": [
+    {
+      "id": "host",
+      "name": "The host",
+      "card": "host",
+      "voice": "woman-calm",
+      "host": true
+    },
+    {
+      "id": "you",
+      "name": "You",
+      "look": {
+        "identity": {
+          "skinTone": 3,
+          "hair": "short-crop",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "hoodie",
+              "cloth": "ocean"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "denim"
+            },
+            "shoes": {
+              "kind": "sneakers",
+              "cloth": "white"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "taker1",
+      "name": "Someone with a sack",
+      "look": {
+        "identity": {
+          "skinTone": 5,
+          "hair": "fade",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "tan"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "taker2",
+      "name": "Someone with a sack",
+      "look": {
+        "identity": {
+          "skinTone": 1,
+          "hair": "bun",
+          "hairColor": "brown"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "cream"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "taker3",
+      "name": "Someone with a sack",
+      "look": {
+        "identity": {
+          "skinTone": 6,
+          "hair": "short-crop",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "brown"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    }
+  ],
+  "meter": {
+    "label": "Sunlight delivered since you pressed play",
+    "perSecond": 8360000000,
+    "prefix": "$"
+  },
+  "scenes": [
+    {
+      "id": "s8",
+      "chapter": 1,
+      "beat": "second-part",
+      "mood": "curious",
+      "quiet": true,
+      "place": "living-room",
+      "treatment": "simple",
+      "palette": "storm-slate",
+      "lines": [
+        {
+          "id": "n25",
+          "speaker": "host",
+          "text": "And the coal and the oil? That is a *savings* account.",
+          "speed": 0.92
+        }
+      ],
+      "shots": [
+        {
+          "id": "s8a",
+          "line": "n25",
+          "words": "And the coal and the oil?",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "host",
+              "pose": "shrug",
+              "expression": "thinking",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.13,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "thinking",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "coal",
+              "holds": "envelope",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "door",
+              "x": 0.97
+            },
+            {
+              "prop": "table",
+              "x": 0.8
+            },
+            {
+              "prop": "bills",
+              "x": 0.85,
+              "y": 1.25
+            },
+            {
+              "prop": "coal",
+              "x": 0.58,
+              "size": 1.5,
+              "tag": "SUNLIGHT"
+            },
+            {
+              "prop": "fuel-can",
+              "x": 0.27,
+              "size": 1.2,
+              "tag": "SUNLIGHT"
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "fade",
+          "startMs": 0,
+          "endMs": 1992
+        },
+        {
+          "id": "s8b",
+          "line": "n25",
+          "words": "That is a *savings* account.",
+          "camera": {
+            "framing": "close-up",
+            "move": "push-in",
+            "strength": 0.5
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "ahead",
+              "holds": "envelope",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 1992,
+          "endMs": 3680
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "chapter": 1,
+      "beat": "second-part",
+      "mood": "curious",
+      "quiet": true,
+      "place": "vault",
+      "treatment": "simple",
+      "palette": "storm-slate",
+      "lines": [
+        {
+          "id": "n26",
+          "speaker": "host",
+          "text": "Sunlight, deposited a little at a time, over hundreds of millions of years.",
+          "speed": 0.92
+        },
+        {
+          "id": "n27",
+          "speaker": "host",
+          "text": "We found the account a few hundred years ago.",
+          "speed": 0.92
+        },
+        {
+          "id": "n28",
+          "speaker": "host",
+          "text": "We have been emptying it ever since.",
+          "speed": 0.92,
+          "pauseAfterMs": 1000
+        }
+      ],
+      "shots": [
+        {
+          "id": "s9a",
+          "line": "n26",
+          "words": "Sunlight, deposited a little at a time,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "host",
+              "pose": "point",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.9,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "coin-stack",
+              "x": 0.62,
+              "size": 0.9
+            },
+            {
+              "prop": "coin",
+              "x": 0.62,
+              "y": 2.2,
+              "size": 1.4
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "start",
+              "gainDb": 0
+            },
+            {
+              "name": "ding",
+              "at": "end",
+              "gainDb": 0
+            }
+          ],
+          "transition": "fade",
+          "startMs": 3680,
+          "endMs": 6575
+        },
+        {
+          "id": "s9b",
+          "line": "n26",
+          "words": "over hundreds of millions of years.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "host",
+              "pose": "shrug",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.9,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "coin-tower",
+              "x": 0.14
+            },
+            {
+              "prop": "coin-tower",
+              "x": 0.26
+            },
+            {
+              "prop": "coin-tower",
+              "x": 0.38
+            },
+            {
+              "prop": "coin-tower",
+              "x": 0.5
+            },
+            {
+              "prop": "coin-tower",
+              "x": 0.62
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "overlay": {
+            "kind": "label",
+            "text": "Hundreds of millions of years later"
+          },
+          "transition": "fade",
+          "startMs": 6575,
+          "endMs": 8810
+        },
+        {
+          "id": "s9c",
+          "line": "n27",
+          "words": "We found the account a few hundred years ago.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "host",
+              "pose": "stand",
+              "expression": "surprised",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.9,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "taker1",
+              "action": "walk",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.1,
+              "lookAt": "ahead",
+              "holds": "bag",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "taker2",
+              "action": "walk",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.28,
+              "lookAt": "ahead",
+              "holds": "bag",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "coin-tower",
+              "x": 0.38
+            },
+            {
+              "prop": "coin-tower",
+              "x": 0.5
+            },
+            {
+              "prop": "coin-tower",
+              "x": 0.62
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "footsteps",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 8810,
+          "endMs": 11610
+        },
+        {
+          "id": "s9d",
+          "line": "n28",
+          "words": "We have been emptying it ever since.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "host",
+              "pose": "shrug",
+              "expression": "sad",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.9,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "taker1",
+              "action": "run",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.1,
+              "lookAt": "ahead",
+              "holds": "bag",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "taker2",
+              "action": "run",
+              "expression": "laughing",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.28,
+              "lookAt": "ahead",
+              "holds": "bag",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "taker3",
+              "action": "run",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.46,
+              "lookAt": "ahead",
+              "holds": "bag",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "coin-stack",
+              "x": 0.62,
+              "size": 0.9
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "footsteps",
+              "at": "start",
+              "gainDb": 0
+            },
+            {
+              "name": "whoosh",
+              "at": "middle",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 11610,
+          "endMs": 14530
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "chapter": 1,
+      "beat": "surprise",
+      "mood": "tense",
+      "place": "living-room",
+      "treatment": "atmospheric",
+      "palette": "storm-slate",
+      "lines": [
+        {
+          "id": "n29",
+          "speaker": "host",
+          "text": "So you turn the bill over, looking for the catch.",
+          "speed": 0.86
+        },
+        {
+          "id": "n30",
+          "speaker": "host",
+          "text": "There is a second page. It shows what this costs the sender.",
+          "speed": 0.86,
+          "pauseAfterMs": 600
+        }
+      ],
+      "shots": [
+        {
+          "id": "s10a",
+          "line": "n29",
+          "words": "So you turn the bill over, looking for the catch.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "hold-object",
+              "expression": "thinking",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.4,
+              "lookAt": "envelope",
+              "holds": "envelope",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "fade",
+          "startMs": 14530,
+          "endMs": 17690
+        },
+        {
+          "id": "s10b",
+          "line": "n30",
+          "words": "There is a second page.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "PAGE 2",
+              "WHAT THIS COSTS THE SENDER"
+            ],
+            "stress": 0
+          },
+          "transition": "cut",
+          "startMs": 17690,
+          "endMs": 19490
+        },
+        {
+          "id": "s10c",
+          "line": "n30",
+          "words": "It shows what this costs the sender.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "PAGE 2",
+              "WHAT THIS COSTS THE SENDER"
+            ],
+            "stress": 1
+          },
+          "transition": "cut",
+          "startMs": 19490,
+          "endMs": 21970
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "chapter": 1,
+      "beat": "surprise",
+      "mood": "tense",
+      "place": "space",
+      "treatment": "atmospheric",
+      "palette": "deep-space",
+      "lines": [
+        {
+          "id": "n31",
+          "speaker": "host",
+          "text": "Every second, the Sun destroys four million *tonnes* of itself to make that light.",
+          "speed": 0.86
+        },
+        {
+          "id": "n32",
+          "speaker": "host",
+          "text": "And Earth catches almost none of it. One part in two billion.",
+          "speed": 0.86
+        },
+        {
+          "id": "n33",
+          "speaker": "host",
+          "text": "The rest pours into empty space, unbilled, unseen, for *nobody.*",
+          "speed": 0.86,
+          "pauseAfterMs": 1100
+        }
+      ],
+      "shots": [
+        {
+          "id": "s11a",
+          "line": "n31",
+          "words": "Every second, the Sun destroys four million *tonnes*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "sun",
+              "x": 0.22,
+              "y": 2.3,
+              "size": 1.1,
+              "tall": {
+                "x": 0.5,
+                "y": 6.4,
+                "size": 1.1
+              }
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "number",
+            "text": "4,000,000 tonnes",
+            "caption": "every second"
+          },
+          "transition": "fade",
+          "startMs": 21970,
+          "endMs": 25568
+        },
+        {
+          "id": "s11b",
+          "line": "n31",
+          "words": "of itself to make that light.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "action": "float",
+              "expression": "horrified",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.6,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 25568,
+          "endMs": 27630
+        },
+        {
+          "id": "s11c",
+          "line": "n32",
+          "words": "And Earth catches almost none of it.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "sun",
+              "x": 0.22,
+              "y": 2.3,
+              "size": 1.1,
+              "tall": {
+                "x": 0.5,
+                "y": 6.4,
+                "size": 1.1
+              }
+            },
+            {
+              "prop": "earth",
+              "x": 0.86,
+              "y": 2.3,
+              "size": 0.14,
+              "tall": {
+                "x": 0.5,
+                "y": 1.6
+              }
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "pointer",
+            "text": "Earth",
+            "to": "earth"
+          },
+          "transition": "cut",
+          "startMs": 27630,
+          "endMs": 29975
+        },
+        {
+          "id": "s11d",
+          "line": "n32",
+          "words": "One part in two billion.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "sun",
+              "x": 0.22,
+              "y": 2.3,
+              "size": 1.1,
+              "tall": {
+                "x": 0.5,
+                "y": 6.4,
+                "size": 1.1
+              }
+            },
+            {
+              "prop": "earth",
+              "x": 0.86,
+              "y": 2.3,
+              "size": 0.14,
+              "tall": {
+                "x": 0.5,
+                "y": 1.6
+              }
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "number",
+            "text": "1 in 2,000,000,000"
+          },
+          "transition": "cut",
+          "startMs": 29975,
+          "endMs": 31930
+        },
+        {
+          "id": "s11e",
+          "line": "n33",
+          "words": "The rest pours into empty space, unbilled,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "action": "float",
+              "expression": "sad",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.6,
+              "lookAt": "sun",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "host",
+              "action": "float",
+              "expression": "sad",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.87,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "sun",
+              "x": 0.22,
+              "y": 2.3,
+              "size": 1.1,
+              "tall": {
+                "x": 0.5,
+                "y": 6.4,
+                "size": 1.1
+              }
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 31930,
+          "endMs": 35170
+        },
+        {
+          "id": "s11f",
+          "line": "n33",
+          "words": "unseen, for *nobody.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "push-in",
+            "strength": 0.5
+          },
+          "actors": [
+            {
+              "character": "you",
+              "action": "float",
+              "expression": "sad",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.6,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 35170,
+          "endMs": 38940
+        }
+      ]
+    }
+  ]
+}
