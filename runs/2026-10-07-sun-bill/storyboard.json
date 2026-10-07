@@ -145,6 +145,11 @@
     "perSecond": 8360000000,
     "prefix": "$"
   },
+  "cover": {
+    "shot": "s2a",
+    "at": 0.8,
+    "framing": "medium"
+  },
   "scenes": [
     {
       "id": "s1",

@@ -386,3 +386,41 @@
 2026-10-07T16:22:08.156Z  part 4    runs\2026-10-07-sun-bill\part-4\out\sun-bill-part-4-16x9-v1.mp4: 42.30 s of video, 1920x1080, in 94.7 s (2.24 s per video second)
 2026-10-07T16:22:08.159Z  part 4    runs\2026-10-07-sun-bill\part-4\out\sun-bill-part-4-16x9-v1.srt
 2026-10-07T16:22:08.170Z  part 4  video: done in 100.4 s
+2026-10-07T16:26:21.305Z  output  16:9 full video:
+2026-10-07T16:27:01.476Z  output      F:\Video Studio\runs\2026-10-07-sun-bill\cuts\full\audio\mix.wav: 170.37 s, -14.05 LUFS, true peak -1.1 dB, 2 music moods, 34 effects, music -21.5 dB under the voice
+2026-10-07T16:29:55.589Z  output    runs\2026-10-07-sun-bill\out\sun-bill-16x9-v1.mp4: 170.37 s, 1920x1080
+2026-10-07T16:29:55.589Z  output      ok   The file plays: 1920x1080, 30 pictures a second, 170.4 s, picture and sound both there; played through from start to finish
+2026-10-07T16:29:55.590Z  output      ok   It is as long as its parts together: 170.4 s; its 4 pieces add up to 170.4 s
+2026-10-07T16:29:55.590Z  output      FIX  Its pictures are the parts that passed: every frame against sun-bill-part-1-16x9-v2.mp4 and sun-bill-part-2-16x9-v1.mp4 and sun-bill-part-3-16x9-v1.mp4 and sun-bill-part-4-16x9-v1.mp4 (the strongest difference is 206 of 255; over 16 would be a different picture)
+2026-10-07T16:29:55.590Z  output            problem: from 2:08 the pictures are not those of sun-bill-part-4-16x9-v1.mp4
+2026-10-07T16:29:55.591Z  output      ok   Its sound is the mix made for the whole video: second for second (what is left over is 32 dB under it at most)
+2026-10-07T16:29:55.591Z  output      ok   There is no dead silence: the sound never drops out; the longest pause between words is 2.3 s
+2026-10-07T16:29:55.591Z  output      ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.2 dB (the limit is -1)
+2026-10-07T16:29:55.592Z  output      ok   Nothing drowns the words: 34 sound effects, the loudest of those over words 9 dB under the voice; the music sits 21.5 dB under the voice while someone speaks
+2026-10-07T16:29:55.592Z  output      FIX  Every join and the cover hold up: a strip of frames across each of the 3 joins between parts, and the cover picture
+2026-10-07T16:29:55.592Z  output            problem: the joins and the cover have not been looked at yet
+2026-10-07T16:29:55.592Z  output      to look at: runs\2026-10-07-sun-bill\out\look\sun-bill-16x9-v1 (each join) and runs\2026-10-07-sun-bill\out\sun-bill-16x9-v1-cover-side.jpg; then write runs\2026-10-07-sun-bill\out\sun-bill-16x9-v1.look.json
+2026-10-07T16:29:55.596Z  output  runs\2026-10-07-sun-bill\delivery.md
+2026-10-07T16:31:49.236Z  output  16:9 full video:
+2026-10-07T16:31:49.755Z  output    runs\2026-10-07-sun-bill\out\sun-bill-16x9-v1.mp4: already made from these parts
+2026-10-07T16:31:56.428Z  output      runs\2026-10-07-sun-bill\out\sun-bill-16x9-v1-cover-side.jpg
+2026-10-07T16:31:56.428Z  output      FIX  Its pictures are the parts that passed: from 2:08 the pictures are not those of sun-bill-part-4-16x9-v1.mp4
+2026-10-07T16:31:56.429Z  output      FIX  Every join and the cover hold up: the joins and the cover have not been looked at yet
+2026-10-07T16:31:56.567Z  output  runs\2026-10-07-sun-bill\delivery.md
+2026-10-07T16:32:55.858Z  output  16:9 full video:
+2026-10-07T16:32:56.363Z  output      mix is already up to date (the plan and the voice have not changed)
+2026-10-07T16:35:45.860Z  output    runs\2026-10-07-sun-bill\out\sun-bill-16x9-v1.mp4: 170.37 s, 1920x1080
+2026-10-07T16:35:45.860Z  output      ok   The file plays: 1920x1080, 30 pictures a second, 170.4 s, picture and sound both there; played through from start to finish
+2026-10-07T16:35:45.861Z  output      ok   It is as long as its parts together: 170.4 s; its 4 pieces add up to 170.4 s
+2026-10-07T16:35:45.861Z  output      ok   Its pictures are the parts that passed: every frame against sun-bill-part-1-16x9-v2.mp4 and sun-bill-part-2-16x9-v1.mp4 and sun-bill-part-3-16x9-v1.mp4 and sun-bill-part-4-16x9-v1.mp4 (the strongest difference is 1 of 255; over 16 would be a different picture)
+2026-10-07T16:35:45.861Z  output      ok   Its sound is the mix made for the whole video: second for second (what is left over is 32 dB under it at most)
+2026-10-07T16:35:45.862Z  output      ok   There is no dead silence: the sound never drops out; the longest pause between words is 2.3 s
+2026-10-07T16:35:45.862Z  output      ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.2 dB (the limit is -1)
+2026-10-07T16:35:45.863Z  output      ok   Nothing drowns the words: 34 sound effects, the loudest of those over words 9 dB under the voice; the music sits 21.5 dB under the voice while someone speaks
+2026-10-07T16:35:45.863Z  output      FIX  Every join and the cover hold up: a strip of frames across each of the 3 joins between parts, and the cover picture
+2026-10-07T16:35:45.863Z  output            problem: the joins and the cover have not been looked at yet
+2026-10-07T16:35:45.864Z  output      to look at: runs\2026-10-07-sun-bill\out\look\sun-bill-16x9-v1 (each join) and runs\2026-10-07-sun-bill\out\sun-bill-16x9-v1-cover-side.jpg; then write runs\2026-10-07-sun-bill\out\sun-bill-16x9-v1.look.json
+2026-10-07T16:35:45.866Z  output  runs\2026-10-07-sun-bill\delivery.md
+2026-10-07T16:36:05.933Z  output  16:9 full video:
+2026-10-07T16:36:06.554Z  output    runs\2026-10-07-sun-bill\out\sun-bill-16x9-v1.mp4: already made from these parts
+2026-10-07T16:36:06.674Z  output  runs\2026-10-07-sun-bill\delivery.md

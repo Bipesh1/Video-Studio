@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "tense",
+      "startMs": 103630
+    },
+    {
+      "mood": "hope",
+      "startMs": 143077
+    }
+  ],
+  "sfx": [
+    {
+      "name": "wind",
+      "atMs": 0,
+      "durationMs": 46520,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "whoosh",
+      "atMs": 60,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "blip",
+      "atMs": 3430,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "pop",
+      "atMs": 8220,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "thud",
+      "atMs": 13618,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "pop",
+      "atMs": 20218,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 5
+    },
+    {
+      "name": "click",
+      "atMs": 23315,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 6
+    },
+    {
+      "name": "click",
+      "atMs": 24760,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 7
+    },
+    {
+      "name": "click",
+      "atMs": 26093,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 8
+    },
+    {
+      "name": "click",
+      "atMs": 29440,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 9
+    },
+    {
+      "name": "ding",
+      "atMs": 32768,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 10
+    },
+    {
+      "name": "pop",
+      "atMs": 37640,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 11
+    },
+    {
+      "name": "wind",
+      "atMs": 46533,
+      "durationMs": 42560,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 12
+    },
+    {
+      "name": "pop",
+      "atMs": 50333,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 13
+    },
+    {
+      "name": "pop",
+      "atMs": 53633,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 14
+    },
+    {
+      "name": "ding",
+      "atMs": 57523,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 15
+    },
+    {
+      "name": "ding",
+      "atMs": 59499,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 16
+    },
+    {
+      "name": "ding",
+      "atMs": 61595,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 17
+    },
+    {
+      "name": "ding",
+      "atMs": 70153,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 18
+    },
+    {
+      "name": "ding",
+      "atMs": 74443,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 19
+    },
+    {
+      "name": "wind",
+      "atMs": 76153,
+      "durationMs": 2020,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 20
+    },
+    {
+      "name": "ding",
+      "atMs": 78383,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 21
+    },
+    {
+      "name": "ding",
+      "atMs": 80553,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 22
+    },
+    {
+      "name": "wind",
+      "atMs": 89100,
+      "durationMs": 14530,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 23
+    },
+    {
+      "name": "ding",
+      "atMs": 92840,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 24
+    },
+    {
+      "name": "ding",
+      "atMs": 95225,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 25
+    },
+    {
+      "name": "ding",
+      "atMs": 95735,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 26
+    },
+    {
+      "name": "footsteps",
+      "atMs": 97970,
+      "durationMs": 2590,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 27
+    },
+    {
+      "name": "footsteps",
+      "atMs": 100770,
+      "durationMs": 2710,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 28
+    },
+    {
+      "name": "whoosh",
+      "atMs": 102170,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 29
+    },
+    {
+      "name": "pop",
+      "atMs": 106850,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 30
+    },
+    {
+      "name": "pop",
+      "atMs": 147497,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 31
+    },
+    {
+      "name": "ding",
+      "atMs": 152717,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 32
+    },
+    {
+      "name": "creak",
+      "atMs": 161737,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 33
+    }
+  ],
+  "musicGainDb": 0
+}

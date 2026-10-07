@@ -7,8 +7,7 @@
   "brand": "my-page",
   "voice": "narrator",
   "sizes": [
-    "16:9",
-    "9:16"
+    "16:9"
   ],
   "vertical": "full",
   "masterPrompt": null

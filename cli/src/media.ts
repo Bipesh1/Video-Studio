@@ -127,7 +127,12 @@ export function pictureDifference(
     [
       '-hide_banner',
       '-nostats',
-      ...(stretch ? ['-ss', stretch.from.toFixed(3), '-t', stretch.seconds.toFixed(3)] : []),
+      // Half a frame early, so the stretch opens on its own first frame: a start rounded up to
+      // the next thousandth of a second begins one frame late, and every cut then shows as a
+      // difference (the fourth part of the Sun's bill, 2026-10-07).
+      ...(stretch
+        ? ['-ss', Math.max(0, stretch.from - 1 / 60).toFixed(3), '-t', stretch.seconds.toFixed(3)]
+        : []),
       '-i',
       first,
       '-i',

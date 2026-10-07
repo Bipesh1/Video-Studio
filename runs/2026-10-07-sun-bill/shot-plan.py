@@ -334,6 +334,8 @@ for sc in SCENES:
 sb = {k: v for k, v in draft.items() if k not in ('scenes', 'cast')}
 sb['cast'] = CAST
 sb['meter'] = {'label': 'Sunlight delivered since you pressed play', 'perSecond': 8360000000, 'prefix': '$'}
+# The cover: you alone with the glowing envelope, the moment you check the sum.
+sb['cover'] = {'shot': 's2a', 'at': 0.8, 'framing': 'medium'}
 sb['scenes'] = SCENES
 io.open(RUN + 'storyboard.json', 'w', encoding='utf8', newline='\n').write(json.dumps(sb, indent=2, ensure_ascii=False) + '\n')
 print('ok', len(SCENES), sum(len(s['shots']) for s in SCENES))
