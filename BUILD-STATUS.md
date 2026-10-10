@@ -28,7 +28,7 @@ Biku's second script: Henry Box Brown, who had himself shipped out of slavery in
 
 ### Open
 
-- **Biku has not seen or heard any of it.** The heartbeat is at the studio's level for a background sound (15 dB under the voice); he may want it louder in the crate scene.
+- **Biku has not seen or heard any of it.** The newest video of part 1 is version 3 (version 1 had the heartbeat louder than a background sound may be by itself, version 2 had it too faint). The heartbeat now sits 13 dB under the voice in the crate scene, as loud as a shot may make it; whether that is loud enough is for his ears.
 - **The page:** the run uses the placeholder brand `my-page`, with only the vertical shape set for this run. A brand file for his Facebook page (name, mark, closing card) is his to give.
 - **The disclosure** his script asks for (synthetic voices: switch on the platform's label) belongs in `delivery.md` when the video is joined.
 - **Rendering was slow in this session:** about 7 seconds for each second of video at full size (it was about 2.3 before). Not looked into.

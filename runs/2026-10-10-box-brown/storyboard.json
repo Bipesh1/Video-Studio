@@ -528,7 +528,8 @@
           "sfx": [
             {
               "name": "heartbeat",
-              "at": "start"
+              "at": "start",
+              "gainDb": 6
             }
           ],
           "transition": "cut",
@@ -596,7 +597,8 @@
           "sfx": [
             {
               "name": "heartbeat",
-              "at": "start"
+              "at": "start",
+              "gainDb": 6
             }
           ],
           "transition": "cut"
@@ -635,7 +637,8 @@
           "sfx": [
             {
               "name": "heartbeat",
-              "at": "start"
+              "at": "start",
+              "gainDb": 6
             }
           ],
           "transition": "cut"
@@ -710,7 +713,8 @@
           "sfx": [
             {
               "name": "heartbeat",
-              "at": "start"
+              "at": "start",
+              "gainDb": 6
             }
           ],
           "transition": "cut"
@@ -769,7 +773,8 @@
           "sfx": [
             {
               "name": "heartbeat",
-              "at": "start"
+              "at": "start",
+              "gainDb": 6
             }
           ],
           "transition": "cut"
@@ -808,7 +813,8 @@
           "sfx": [
             {
               "name": "heartbeat",
-              "at": "start"
+              "at": "start",
+              "gainDb": 6
             }
           ],
           "transition": "cut"
@@ -2012,7 +2018,8 @@
           "sfx": [
             {
               "name": "heartbeat",
-              "at": "start"
+              "at": "start",
+              "gainDb": 6
             }
           ],
           "transition": "cut"
@@ -2051,7 +2058,8 @@
           "sfx": [
             {
               "name": "heartbeat",
-              "at": "start"
+              "at": "start",
+              "gainDb": 6
             }
           ],
           "transition": "cut"
@@ -2085,7 +2093,8 @@
           "sfx": [
             {
               "name": "heartbeat",
-              "at": "start"
+              "at": "start",
+              "gainDb": 6
             }
           ],
           "transition": "cut",

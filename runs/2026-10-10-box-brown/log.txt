@@ -65,3 +65,16 @@
 2026-10-10T12:35:22.523Z  part 1    runs\2026-10-10-box-brown\part-1\out\box-brown-part-1-9x16-v2.mp4: 54.93 s of video, 1080x1920, in 414.8 s (7.55 s per video second)
 2026-10-10T12:35:22.546Z  part 1    runs\2026-10-10-box-brown\part-1\out\box-brown-part-1-9x16-v2.srt
 2026-10-10T12:35:22.827Z  part 1  video: done in 422.8 s
+2026-10-10T12:40:46.463Z  part 1  part 1 of 4, 9:16: 4 scenes, 21 shots
+2026-10-10T12:40:46.464Z  part 1  time: start
+2026-10-10T12:40:46.471Z  part 1    21 shots over 54.9 s: shortest 1.7 s, longest 3.8 s
+2026-10-10T12:40:46.471Z  part 1  time: done in 0.0 s
+2026-10-10T12:40:46.471Z  part 1  sound: start
+2026-10-10T12:41:00.438Z  part 1    F:\Video Studio\runs\2026-10-10-box-brown\part-1\audio\mix.wav: 54.92 s, -14.03 LUFS, true peak -1.1 dB, 1 music moods, 18 effects, music -19.4 dB under the voice
+2026-10-10T12:41:00.439Z  part 1  sound: done in 14.0 s
+2026-10-10T12:41:00.439Z  part 1  video: start
+2026-10-10T12:41:00.477Z  part 1  bundle: start
+2026-10-10T12:41:05.536Z  part 1  bundle: done in 5.1 s
+2026-10-10T12:48:47.475Z  part 1    runs\2026-10-10-box-brown\part-1\out\box-brown-part-1-9x16-v3.mp4: 54.93 s of video, 1080x1920, in 459.1 s (8.36 s per video second)
+2026-10-10T12:48:47.627Z  part 1    runs\2026-10-10-box-brown\part-1\out\box-brown-part-1-9x16-v3.srt
+2026-10-10T12:48:47.979Z  part 1  video: done in 467.5 s

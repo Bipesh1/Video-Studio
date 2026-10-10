@@ -2,7 +2,7 @@
 
 **Ready for you to watch.** Every check passed, with 29 things worth a second look.
 
-Video: `box-brown-part-1-9x16-v2.mp4` (54.9 s). Checked on 2026-10-10.
+Video: `box-brown-part-1-9x16-v3.mp4` (54.9 s). Checked on 2026-10-10.
 
 ## Worth a second look
 

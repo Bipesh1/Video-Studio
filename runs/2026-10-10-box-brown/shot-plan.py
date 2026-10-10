@@ -136,7 +136,7 @@ def scene(sid, chapter, beat, mood, place, palette, lines, shots, treatment='atm
 
 
 label = lambda text: {'kind': 'label', 'text': text}
-BEAT = ('heartbeat', 'start')
+BEAT = ('heartbeat', 'start', 6)  # his script asks for a loud heartbeat; this is as loud as a shot may make it
 
 # ---------------------------------------------------------------- part 1, the crate
 # The crate stands on its lid in the middle; he is folded inside it, his head on the lid. A half

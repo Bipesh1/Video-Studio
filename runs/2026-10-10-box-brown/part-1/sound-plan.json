@@ -19,7 +19,7 @@
       "name": "heartbeat",
       "atMs": 60,
       "durationMs": 3018,
-      "gainDb": 0,
+      "gainDb": 6,
       "pan": 0,
       "seed": 1
     },
@@ -34,7 +34,7 @@
       "name": "heartbeat",
       "atMs": 6080,
       "durationMs": 1730,
-      "gainDb": 0,
+      "gainDb": 6,
       "pan": 0,
       "seed": 3
     },
@@ -42,7 +42,7 @@
       "name": "heartbeat",
       "atMs": 8020,
       "durationMs": 3230,
-      "gainDb": 0,
+      "gainDb": 6,
       "pan": 0,
       "seed": 4
     },
@@ -58,7 +58,7 @@
       "name": "heartbeat",
       "atMs": 13820,
       "durationMs": 2190,
-      "gainDb": 0,
+      "gainDb": 6,
       "pan": 0,
       "seed": 6
     },
@@ -73,7 +73,7 @@
       "name": "heartbeat",
       "atMs": 18040,
       "durationMs": 1490,
-      "gainDb": 0,
+      "gainDb": 6,
       "pan": 0,
       "seed": 8
     },
@@ -81,7 +81,7 @@
       "name": "heartbeat",
       "atMs": 19740,
       "durationMs": 2940,
-      "gainDb": 0,
+      "gainDb": 6,
       "pan": 0,
       "seed": 9
     },

@@ -528,7 +528,7 @@
             {
               "name": "heartbeat",
               "at": "start",
-              "gainDb": 0
+              "gainDb": 6
             }
           ],
           "overlay": {
@@ -605,7 +605,7 @@
             {
               "name": "heartbeat",
               "at": "start",
-              "gainDb": 0
+              "gainDb": 6
             }
           ],
           "transition": "cut",
@@ -650,7 +650,7 @@
             {
               "name": "heartbeat",
               "at": "start",
-              "gainDb": 0
+              "gainDb": 6
             }
           ],
           "transition": "cut",
@@ -736,7 +736,7 @@
             {
               "name": "heartbeat",
               "at": "start",
-              "gainDb": 0
+              "gainDb": 6
             }
           ],
           "transition": "cut",
@@ -804,7 +804,7 @@
             {
               "name": "heartbeat",
               "at": "start",
-              "gainDb": 0
+              "gainDb": 6
             }
           ],
           "transition": "cut",
@@ -849,7 +849,7 @@
             {
               "name": "heartbeat",
               "at": "start",
-              "gainDb": 0
+              "gainDb": 6
             }
           ],
           "transition": "cut",
