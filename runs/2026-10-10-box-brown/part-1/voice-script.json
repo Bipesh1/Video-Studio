@@ -1,0 +1,134 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "lines": [
+    {
+      "id": "n1",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "A man is folded inside a wooden crate, and someone has set it down *upside down.*",
+      "speed": 0.92,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "n2",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Blood pounds in his head.",
+      "speed": 0.92,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "n3",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The veins at his temples swell as thick as a finger.",
+      "speed": 0.92,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "n4",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "*One sound,* and he is caught.",
+      "speed": 0.92,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "n5",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Years from now, he will climb into a box like this again.",
+      "speed": 0.92,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "n6",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "*On purpose.*",
+      "speed": 0.92,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "n7",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "First, he has to survive this one.",
+      "speed": 0.92,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "n8",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Richmond, Virginia, eighteen forty-eight.",
+      "speed": 0.92,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "n9",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Henry Brown is enslaved.",
+      "speed": 0.92,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "n10",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "He has paid his wife's owner to keep his family together.",
+      "speed": 0.92,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "n11",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The owner takes the money and *sells them anyway:* Nancy, pregnant, and their three children, south to North Carolina.",
+      "speed": 0.92,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "n12",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "A line of chained people passes in the street.",
+      "speed": 0.92,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "n13",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "From a wagon, his eldest child sees him.",
+      "speed": 0.92,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "c1",
+      "speaker": "child",
+      "voice": "af_heart",
+      "text": "*Father! Father!*",
+      "speed": 1,
+      "pauseAfterMs": 800
+    },
+    {
+      "id": "n14",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Henry walks beside Nancy as far as he is allowed.",
+      "speed": 0.92,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "n15",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Then the road takes her.",
+      "speed": 0.92,
+      "pauseAfterMs": 1000
+    }
+  ]
+}

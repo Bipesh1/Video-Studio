@@ -1,0 +1,1504 @@
+{
+  "version": 1,
+  "title": "The Man Who Mailed Himself Twice",
+  "request": "this is my script for a black history make a video on it for facebook. should be vertical. now start",
+  "mode": "as-is",
+  "format": "story",
+  "style": "ink-stick",
+  "brand": "my-page",
+  "voice": "narrator",
+  "seed": 75860,
+  "sources": [
+    "Henry Box Brown, Narrative of the Life of Henry Box Brown (Manchester, 1851), Documenting the American South, https://docsouth.unc.edu/neh/brownbox/brownbox.html : the sale of his family in August 1848 and the child's call from the wagon; the acid on his hand; the box's size, the bladder of water, the air holes and This side up; head-down for nearly an hour and a half; twenty-seven hours; the knock, All right, and All right, sir, at about six in the morning.",
+    "Wikipedia, Henry Box Brown, https://en.wikipedia.org/wiki/Henry_Box_Brown : he had paid Nancy's owner; Nancy pregnant, three children, sold to North Carolina; James C. A. Smith and Samuel A. Smith; 86 dollars of 166; down to the bone; the journey of 29 to 30 March 1849 by wagon, railroad, steamboat, ferry and wagon; no recorded reunion.",
+    "World History Encyclopedia, Henry Box Brown, https://www.worldhistory.org/Henry_Box_Brown/ : How do you do, gentlemen? and the song of praise; the family's sale; no recorded reunion.",
+    "Harry Ransom Center Magazine, University of Texas, 2021, https://sites.utexas.edu/ransomcentermagazine/2021/05/06/rare-ephemera-shows-legacy-of-henry-box-brown : the Fugitive Slave Act of 1850, Providence and leaving for England; shipped in a box from Bradford to Leeds; the 1868 playbill, King of all Mesmerisers and Professor of Magic.",
+    "UConn Today, 2019, on Martha Cutter's research, https://today.uconn.edu/2019/02/slave-mailed-freedom : nearly every performance re-enacted his emergence from the box."
+  ],
+  "appliedLessons": [],
+  "cast": [
+    {
+      "id": "henry",
+      "name": "Henry Brown",
+      "voice": "man-steady"
+    },
+    {
+      "id": "child",
+      "name": "The eldest child",
+      "voice": "woman"
+    },
+    {
+      "id": "voice-outside",
+      "name": "A voice outside",
+      "voice": "man"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "hook",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "atmospheric",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n1",
+          "speaker": "narrator",
+          "text": "A man is folded inside a wooden crate, and someone has set it down *upside down.*",
+          "speed": 0.92
+        },
+        {
+          "id": "n2",
+          "speaker": "narrator",
+          "text": "Blood pounds in his head.",
+          "speed": 0.92
+        },
+        {
+          "id": "n3",
+          "speaker": "narrator",
+          "text": "The veins at his temples swell as thick as a finger.",
+          "speed": 0.92
+        },
+        {
+          "id": "n4",
+          "speaker": "narrator",
+          "text": "*One sound,* and he is caught.",
+          "speed": 0.92,
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "n5",
+          "speaker": "narrator",
+          "text": "Years from now, he will climb into a box like this again.",
+          "speed": 0.92
+        },
+        {
+          "id": "n6",
+          "speaker": "narrator",
+          "text": "*On purpose.*",
+          "speed": 0.92,
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "n7",
+          "speaker": "narrator",
+          "text": "First, he has to survive this one.",
+          "speed": 0.92,
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s1a",
+          "line": "n1",
+          "words": "A man is folded inside a wooden crate,",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "title",
+            "text": "The Man Who Mailed Himself Twice"
+          },
+          "transition": "cut"
+        },
+        {
+          "id": "s1b",
+          "line": "n1",
+          "words": "and someone has set it down *upside down.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s1c",
+          "line": "n2",
+          "words": "Blood pounds in his head.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s1d",
+          "line": "n3",
+          "words": "The veins at his temples swell as thick as a finger.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s1e",
+          "line": "n4",
+          "words": "*One sound,* and he is caught.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s1f",
+          "line": "n5",
+          "words": "Years from now, he will climb into",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s1g",
+          "line": "n5",
+          "words": "a box like this again.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s1h",
+          "line": "n6",
+          "words": "*On purpose.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s1i",
+          "line": "n7",
+          "words": "First, he has to survive this one.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "setup",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n8",
+          "speaker": "narrator",
+          "text": "Richmond, Virginia, eighteen forty-eight.",
+          "speed": 0.92
+        },
+        {
+          "id": "n9",
+          "speaker": "narrator",
+          "text": "Henry Brown is enslaved.",
+          "speed": 0.92
+        },
+        {
+          "id": "n10",
+          "speaker": "narrator",
+          "text": "He has paid his wife's owner to keep his family together.",
+          "speed": 0.92
+        },
+        {
+          "id": "n11",
+          "speaker": "narrator",
+          "text": "The owner takes the money and *sells them anyway:* Nancy, pregnant, and their three children, south to North Carolina.",
+          "speed": 0.92
+        },
+        {
+          "id": "n12",
+          "speaker": "narrator",
+          "text": "A line of chained people passes in the street.",
+          "speed": 0.92
+        },
+        {
+          "id": "n13",
+          "speaker": "narrator",
+          "text": "From a wagon, his eldest child sees him.",
+          "speed": 0.92
+        },
+        {
+          "id": "c1",
+          "speaker": "child",
+          "text": "*Father! Father!*",
+          "pauseAfterMs": 800
+        },
+        {
+          "id": "n14",
+          "speaker": "narrator",
+          "text": "Henry walks beside Nancy as far as he is allowed.",
+          "speed": 0.92
+        },
+        {
+          "id": "n15",
+          "speaker": "narrator",
+          "text": "Then the road takes her.",
+          "speed": 0.92,
+          "pauseAfterMs": 1000
+        }
+      ],
+      "shots": [
+        {
+          "id": "s2a",
+          "line": "n8",
+          "words": "Richmond, Virginia, eighteen forty-eight.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2b",
+          "line": "n9",
+          "words": "Henry Brown is enslaved.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2c",
+          "line": "n10",
+          "words": "He has paid his wife's owner to keep his family together.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2d",
+          "line": "n11",
+          "words": "The owner takes the money and *sells them anyway:* Nancy,",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2e",
+          "line": "n11",
+          "words": "pregnant, and their three children, south to North Carolina.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2f",
+          "line": "n12",
+          "words": "A line of chained people passes in the street.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2g",
+          "line": "n13",
+          "words": "From a wagon, his eldest child sees him.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2h",
+          "line": "c1",
+          "words": "*Father! Father!*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "child",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2i",
+          "line": "n14",
+          "words": "Henry walks beside Nancy as far as he is allowed.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2j",
+          "line": "n15",
+          "words": "Then the road takes her.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "chapter": 2,
+      "beat": "rising-trouble",
+      "mood": "tense",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n16",
+          "speaker": "narrator",
+          "text": "Now he has nothing left to lose.",
+          "speed": 0.92
+        },
+        {
+          "id": "n17",
+          "speaker": "narrator",
+          "text": "A free Black friend, James Smith, helps him plan.",
+          "speed": 0.92
+        },
+        {
+          "id": "n18",
+          "speaker": "narrator",
+          "text": "A white shoemaker, Samuel Smith, agrees to ship him north for *eighty-six dollars,* more than half of all Henry has saved.",
+          "speed": 0.92
+        },
+        {
+          "id": "n19",
+          "speaker": "narrator",
+          "text": "To get a day off work, he burns his own hand with acid, *down to the bone.*",
+          "speed": 0.92,
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "n20",
+          "speaker": "narrator",
+          "text": "The box is about three feet across.",
+          "speed": 0.92
+        },
+        {
+          "id": "n21",
+          "speaker": "narrator",
+          "text": "Inside go a bladder of water and three small air holes.",
+          "speed": 0.92
+        },
+        {
+          "id": "n22",
+          "speaker": "narrator",
+          "text": "On the lid: *This side up.*",
+          "speed": 0.92,
+          "pauseAfterMs": 900
+        },
+        {
+          "id": "n23",
+          "speaker": "narrator",
+          "text": "March, eighteen forty-nine.",
+          "speed": 0.92
+        },
+        {
+          "id": "n24",
+          "speaker": "narrator",
+          "text": "A wagon, a train, a steamboat, a ferry, another wagon.",
+          "speed": 0.92
+        },
+        {
+          "id": "n25",
+          "speaker": "narrator",
+          "text": "The express men handle the box *like freight,* because that is what they think it is.",
+          "speed": 0.92
+        },
+        {
+          "id": "n26",
+          "speaker": "narrator",
+          "text": "For nearly an hour and a half, he rides *on his head.*",
+          "speed": 0.92
+        },
+        {
+          "id": "n27",
+          "speaker": "narrator",
+          "text": "*Twenty-seven hours,* and he never cries out.",
+          "speed": 0.92,
+          "pauseAfterMs": 1000
+        }
+      ],
+      "shots": [
+        {
+          "id": "s3a",
+          "line": "n16",
+          "words": "Now he has nothing left to lose.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3b",
+          "line": "n17",
+          "words": "A free Black friend, James Smith, helps him plan.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3c",
+          "line": "n18",
+          "words": "A white shoemaker, Samuel Smith,",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3d",
+          "line": "n18",
+          "words": "agrees to ship him north for *eighty-six dollars,*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3e",
+          "line": "n18",
+          "words": "more than half of all Henry has saved.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3f",
+          "line": "n19",
+          "words": "To get a day off work,",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3g",
+          "line": "n19",
+          "words": "he burns his own hand with acid,",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3h",
+          "line": "n19",
+          "words": "*down to the bone.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3i",
+          "line": "n20",
+          "words": "The box is about three feet across.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3j",
+          "line": "n21",
+          "words": "Inside go a bladder of water",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3k",
+          "line": "n21",
+          "words": "and three small air holes.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3l",
+          "line": "n22",
+          "words": "On the lid: *This side up.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3m",
+          "line": "n23",
+          "words": "March, eighteen forty-nine.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3n",
+          "line": "n24",
+          "words": "A wagon, a train, a steamboat, a ferry, another wagon.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3o",
+          "line": "n25",
+          "words": "The express men handle the box *like freight,*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3p",
+          "line": "n25",
+          "words": "because that is what they think it is.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3q",
+          "line": "n26",
+          "words": "For nearly an hour and a half,",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3r",
+          "line": "n26",
+          "words": "he rides *on his head.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3s",
+          "line": "n27",
+          "words": "*Twenty-seven hours,* and he never cries out.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "chapter": 3,
+      "beat": "turning-point",
+      "mood": "tense",
+      "place": "todo",
+      "treatment": "atmospheric",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n28",
+          "speaker": "narrator",
+          "text": "Philadelphia, about six in the morning.",
+          "speed": 0.92
+        },
+        {
+          "id": "n29",
+          "speaker": "narrator",
+          "text": "A knuckle raps the lid.",
+          "speed": 0.92,
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "v1",
+          "speaker": "voice-outside",
+          "text": "All right?",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "h1",
+          "speaker": "henry",
+          "text": "*All right, sir.*",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "n30",
+          "speaker": "narrator",
+          "text": "They pry it open.",
+          "speed": 0.92
+        },
+        {
+          "id": "n31",
+          "speaker": "narrator",
+          "text": "Henry rises, stiff and dizzy, and greets them.",
+          "speed": 0.92
+        },
+        {
+          "id": "h2",
+          "speaker": "henry",
+          "text": "*How do you do, gentlemen?*",
+          "pauseAfterMs": 900
+        },
+        {
+          "id": "n32",
+          "speaker": "narrator",
+          "text": "Then he sings a hymn of thanks.",
+          "speed": 0.92
+        },
+        {
+          "id": "n33",
+          "speaker": "narrator",
+          "text": "From now on, people call him Henry Box Brown.",
+          "speed": 0.92,
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s4a",
+          "line": "n28",
+          "words": "Philadelphia, about six in the morning.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4b",
+          "line": "n29",
+          "words": "A knuckle raps the lid.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4c",
+          "line": "v1",
+          "words": "All right?",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "voice-outside",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4d",
+          "line": "h1",
+          "words": "*All right, sir.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "henry",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4e",
+          "line": "n30",
+          "words": "They pry it open.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4f",
+          "line": "n31",
+          "words": "Henry rises, stiff and dizzy, and greets them.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4g",
+          "line": "h2",
+          "words": "*How do you do, gentlemen?*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "henry",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4h",
+          "line": "n32",
+          "words": "Then he sings a hymn of thanks.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4i",
+          "line": "n33",
+          "words": "From now on, people call him Henry Box Brown.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chapter": 3,
+      "beat": "payoff",
+      "mood": "triumph",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n34",
+          "speaker": "narrator",
+          "text": "Then he does something stranger.",
+          "speed": 0.92
+        },
+        {
+          "id": "n35",
+          "speaker": "narrator",
+          "text": "In eighteen fifty, a new law lets slave catchers hunt him even in the North.",
+          "speed": 0.92
+        },
+        {
+          "id": "n36",
+          "speaker": "narrator",
+          "text": "He nearly gets caught in Providence, so he sails for England.",
+          "speed": 0.92
+        },
+        {
+          "id": "n37",
+          "speaker": "narrator",
+          "text": "And there, *he mails himself again.*",
+          "speed": 0.92,
+          "pauseAfterMs": 700
+        }
+      ],
+      "shots": [
+        {
+          "id": "s5a",
+          "line": "n34",
+          "words": "Then he does something stranger.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5b",
+          "line": "n35",
+          "words": "In eighteen fifty, a new law lets slave",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5c",
+          "line": "n35",
+          "words": "catchers hunt him even in the North.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5d",
+          "line": "n36",
+          "words": "He nearly gets caught in Providence,",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5e",
+          "line": "n36",
+          "words": "so he sails for England.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5f",
+          "line": "n37",
+          "words": "And there, *he mails himself again.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 4,
+      "beat": "payoff",
+      "mood": "triumph",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n38",
+          "speaker": "narrator",
+          "text": "He is shipped in a box from Bradford to Leeds and opened in front of a crowd.",
+          "speed": 0.92
+        },
+        {
+          "id": "n39",
+          "speaker": "narrator",
+          "text": "A playbill calls him King of all Mesmerisers and *Professor of Magic.*",
+          "speed": 0.92
+        },
+        {
+          "id": "n40",
+          "speaker": "narrator",
+          "text": "Night after night, he climbs out of a box while England watches.",
+          "speed": 0.92,
+          "pauseAfterMs": 1000
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6a",
+          "line": "n38",
+          "words": "He is shipped in a box from Bradford to Leeds",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6b",
+          "line": "n38",
+          "words": "and opened in front of a crowd.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6c",
+          "line": "n39",
+          "words": "A playbill calls him King of all Mesmerisers",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6d",
+          "line": "n39",
+          "words": "and *Professor of Magic.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6e",
+          "line": "n40",
+          "words": "Night after night, he climbs out of a box",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6f",
+          "line": "n40",
+          "words": "while England watches.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "chapter": 4,
+      "beat": "closing-line",
+      "mood": "reflective",
+      "place": "todo",
+      "treatment": "atmospheric",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n41",
+          "speaker": "narrator",
+          "text": "It cost him *almost everything.*",
+          "speed": 0.92
+        },
+        {
+          "id": "n42",
+          "speaker": "narrator",
+          "text": "There is no record that he ever saw Nancy or their children again.",
+          "speed": 0.92,
+          "pauseAfterMs": 900
+        },
+        {
+          "id": "n43",
+          "speaker": "narrator",
+          "text": "But the box that once hid him became the stage that made people look.",
+          "speed": 0.92
+        },
+        {
+          "id": "n44",
+          "speaker": "narrator",
+          "text": "Once, a crate marked This side up was his only way out.",
+          "speed": 0.92
+        },
+        {
+          "id": "n45",
+          "speaker": "narrator",
+          "text": "After that, he made sure the whole world saw *who climbed out.*",
+          "speed": 0.92,
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s7a",
+          "line": "n41",
+          "words": "It cost him *almost everything.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7b",
+          "line": "n42",
+          "words": "There is no record that he ever saw Nancy",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7c",
+          "line": "n42",
+          "words": "or their children again.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7d",
+          "line": "n43",
+          "words": "But the box that once hid him became",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7e",
+          "line": "n43",
+          "words": "the stage that made people look.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7f",
+          "line": "n44",
+          "words": "Once, a crate marked This side up",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7g",
+          "line": "n44",
+          "words": "was his only way out.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7h",
+          "line": "n45",
+          "words": "After that, he made sure the whole world",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7i",
+          "line": "n45",
+          "words": "saw *who climbed out.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    }
+  ]
+}

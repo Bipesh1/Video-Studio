@@ -1,0 +1,152 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "sorrow",
+      "startMs": 22830
+    }
+  ],
+  "sfx": [
+    {
+      "name": "wind",
+      "atMs": 0,
+      "durationMs": 22830,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "heartbeat",
+      "atMs": 60,
+      "durationMs": 3018,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "thud",
+      "atMs": 3288,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "heartbeat",
+      "atMs": 6080,
+      "durationMs": 1730,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "heartbeat",
+      "atMs": 8020,
+      "durationMs": 3230,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "footsteps",
+      "atMs": 11460,
+      "durationMs": 2150,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 5
+    },
+    {
+      "name": "heartbeat",
+      "atMs": 13820,
+      "durationMs": 2190,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 6
+    },
+    {
+      "name": "creak",
+      "atMs": 16220,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 7
+    },
+    {
+      "name": "heartbeat",
+      "atMs": 18040,
+      "durationMs": 1490,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 8
+    },
+    {
+      "name": "heartbeat",
+      "atMs": 19740,
+      "durationMs": 2940,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 9
+    },
+    {
+      "name": "wind",
+      "atMs": 22890,
+      "durationMs": 2910,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 10
+    },
+    {
+      "name": "ding",
+      "atMs": 30954,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 11
+    },
+    {
+      "name": "rain",
+      "atMs": 39950,
+      "durationMs": 2790,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 12
+    },
+    {
+      "name": "footsteps",
+      "atMs": 39950,
+      "durationMs": 2790,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 13
+    },
+    {
+      "name": "creak",
+      "atMs": 42950,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 14
+    },
+    {
+      "name": "rain",
+      "atMs": 47720,
+      "durationMs": 3540,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 15
+    },
+    {
+      "name": "footsteps",
+      "atMs": 47720,
+      "durationMs": 3540,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 16
+    },
+    {
+      "name": "rain",
+      "atMs": 51470,
+      "durationMs": 3300,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 17
+    }
+  ],
+  "musicGainDb": 0
+}

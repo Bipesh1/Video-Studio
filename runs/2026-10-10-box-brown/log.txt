@@ -1,0 +1,67 @@
+2026-10-10T12:00:33.327Z  part 1  part 1 of 4, 9:16: 4 scenes, 21 shots
+2026-10-10T12:00:33.329Z  part 1  voice: start
+2026-10-10T12:04:05.591Z  part 1    voice.wav: 54.92 s, 131 words, timings from kokoro, -17.13 LUFS
+2026-10-10T12:04:05.591Z  part 1  voice: done in 212.3 s
+2026-10-10T12:04:05.592Z  part 1  time: start
+2026-10-10T12:04:05.605Z  part 1    21 shots over 54.9 s: shortest 1.7 s, longest 3.8 s
+2026-10-10T12:04:05.606Z  part 1  time: done in 0.0 s
+2026-10-10T12:04:05.606Z  part 1  sound: start
+2026-10-10T12:04:53.094Z  part 1    F:\Video Studio\runs\2026-10-10-box-brown\part-1\audio\mix.wav: 54.92 s, -14.03 LUFS, true peak -1.1 dB, 1 music moods, 18 effects, music -19.4 dB under the voice
+2026-10-10T12:04:53.095Z  part 1  sound: done in 47.5 s
+2026-10-10T12:04:53.111Z  part 1  stills: start
+2026-10-10T12:04:53.181Z  part 1  bundle: start
+2026-10-10T12:05:07.758Z  part 1  bundle: done in 14.6 s
+2026-10-10T12:06:30.271Z  part 1    21 stills in runs\2026-10-10-box-brown\part-1\stills\9x16
+2026-10-10T12:06:32.561Z  part 1    runs\2026-10-10-box-brown\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-10T12:06:33.048Z  part 1    runs\2026-10-10-box-brown\part-1\stills\sheet-9x16-2.png (9 shots, 3 rows)
+2026-10-10T12:06:33.048Z  part 1  stills: done in 99.9 s
+2026-10-10T12:08:20.051Z  part 1  part 1 of 4, 9:16: 4 scenes, 21 shots
+2026-10-10T12:08:20.053Z  part 1  time: start
+2026-10-10T12:08:20.058Z  part 1    21 shots over 54.9 s: shortest 1.7 s, longest 3.8 s
+2026-10-10T12:08:20.059Z  part 1  time: done in 0.0 s
+2026-10-10T12:08:20.059Z  part 1  sound: start
+2026-10-10T12:08:20.068Z  part 1    mix is already up to date (the plan and the voice have not changed)
+2026-10-10T12:08:20.068Z  part 1  sound: done in 0.0 s
+2026-10-10T12:08:20.069Z  part 1  stills: start
+2026-10-10T12:08:20.098Z  part 1  bundle: start
+2026-10-10T12:08:33.027Z  part 1  bundle: done in 12.9 s
+2026-10-10T12:09:25.052Z  part 1    21 stills in runs\2026-10-10-box-brown\part-1\stills\9x16
+2026-10-10T12:09:25.867Z  part 1    runs\2026-10-10-box-brown\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-10T12:09:26.404Z  part 1    runs\2026-10-10-box-brown\part-1\stills\sheet-9x16-2.png (9 shots, 3 rows)
+2026-10-10T12:09:26.405Z  part 1  stills: done in 66.3 s
+2026-10-10T12:09:43.100Z  part 1  part 1 of 4, 9:16: 4 scenes, 21 shots
+2026-10-10T12:09:43.102Z  part 1  stills: start
+2026-10-10T12:09:43.130Z  part 1  bundle: start
+2026-10-10T12:09:50.252Z  part 1  bundle: done in 7.1 s
+2026-10-10T12:10:19.475Z  part 1    21 stills in runs\2026-10-10-box-brown\part-1\stills\9x16
+2026-10-10T12:10:20.092Z  part 1    runs\2026-10-10-box-brown\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-10T12:10:20.562Z  part 1    runs\2026-10-10-box-brown\part-1\stills\sheet-9x16-2.png (9 shots, 3 rows)
+2026-10-10T12:10:20.562Z  part 1  stills: done in 37.5 s
+2026-10-10T12:10:20.562Z  part 1  preview: start
+2026-10-10T12:16:34.746Z  part 1    runs\2026-10-10-box-brown\part-1\preview\box-brown-part-1-9x16-preview-v1.mp4: 54.93 s of video, 540x960, in 373.3 s (6.80 s per video second)
+2026-10-10T12:16:34.750Z  part 1    runs\2026-10-10-box-brown\part-1\preview\box-brown-part-1-9x16-preview-v1.srt
+2026-10-10T12:16:34.770Z  part 1  preview: done in 374.2 s
+2026-10-10T12:19:06.305Z  part 1  part 1 of 4, 9:16: 4 scenes, 21 shots
+2026-10-10T12:19:06.306Z  part 1  video: start
+2026-10-10T12:19:06.328Z  part 1  bundle: start
+2026-10-10T12:19:19.263Z  part 1  bundle: done in 12.9 s
+2026-10-10T12:26:08.709Z  part 1    runs\2026-10-10-box-brown\part-1\out\box-brown-part-1-9x16-v1.mp4: 54.93 s of video, 1080x1920, in 398.3 s (7.25 s per video second)
+2026-10-10T12:26:08.787Z  part 1    runs\2026-10-10-box-brown\part-1\out\box-brown-part-1-9x16-v1.srt
+2026-10-10T12:26:09.116Z  part 1  video: done in 422.8 s
+2026-10-10T12:27:36.921Z  part 1  part 1 of 4, 9:16: 4 scenes, 21 shots
+2026-10-10T12:27:36.922Z  part 1  sound: start
+2026-10-10T12:27:36.941Z  part 1    mix is already up to date (the plan and the voice have not changed)
+2026-10-10T12:27:36.942Z  part 1  sound: done in 0.0 s
+2026-10-10T12:27:36.942Z  part 1  video: start
+2026-10-10T12:27:36.964Z  part 1  bundle: start
+2026-10-10T12:27:50.389Z  part 1  bundle: done in 13.4 s
+2026-10-10T12:28:06.822Z  part 1  part 1 of 4, 9:16: 4 scenes, 21 shots
+2026-10-10T12:28:06.824Z  part 1  sound: start
+2026-10-10T12:28:20.043Z  part 1    F:\Video Studio\runs\2026-10-10-box-brown\part-1\audio\mix.wav: 54.92 s, -14.03 LUFS, true peak -1.1 dB, 1 music moods, 18 effects, music -19.4 dB under the voice
+2026-10-10T12:28:20.044Z  part 1  sound: done in 13.2 s
+2026-10-10T12:28:20.044Z  part 1  video: start
+2026-10-10T12:28:20.093Z  part 1  bundle: start
+2026-10-10T12:28:24.679Z  part 1  bundle: done in 4.6 s
+2026-10-10T12:35:22.523Z  part 1    runs\2026-10-10-box-brown\part-1\out\box-brown-part-1-9x16-v2.mp4: 54.93 s of video, 1080x1920, in 414.8 s (7.55 s per video second)
+2026-10-10T12:35:22.546Z  part 1    runs\2026-10-10-box-brown\part-1\out\box-brown-part-1-9x16-v2.srt
+2026-10-10T12:35:22.827Z  part 1  video: done in 422.8 s

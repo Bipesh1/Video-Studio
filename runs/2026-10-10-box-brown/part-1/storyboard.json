@@ -1,0 +1,1556 @@
+{
+  "version": 1,
+  "title": "The Man Who Mailed Himself Twice",
+  "request": "this is my script for a black history make a video on it for facebook. should be vertical. now start",
+  "mode": "as-is",
+  "format": "story",
+  "style": "ink-stick",
+  "brand": "my-page",
+  "voice": "narrator",
+  "seed": 75860,
+  "sources": [
+    "Henry Box Brown, Narrative of the Life of Henry Box Brown (Manchester, 1851), Documenting the American South, https://docsouth.unc.edu/neh/brownbox/brownbox.html : the sale of his family in August 1848 and the child's call from the wagon; the acid on his hand; the box's size, the bladder of water, the air holes and This side up; head-down for nearly an hour and a half; twenty-seven hours; the knock, All right, and All right, sir, at about six in the morning.",
+    "Wikipedia, Henry Box Brown, https://en.wikipedia.org/wiki/Henry_Box_Brown : he had paid Nancy's owner; Nancy pregnant, three children, sold to North Carolina; James C. A. Smith and Samuel A. Smith; 86 dollars of 166; down to the bone; the journey of 29 to 30 March 1849 by wagon, railroad, steamboat, ferry and wagon; no recorded reunion.",
+    "World History Encyclopedia, Henry Box Brown, https://www.worldhistory.org/Henry_Box_Brown/ : How do you do, gentlemen? and the song of praise; the family's sale; no recorded reunion.",
+    "Harry Ransom Center Magazine, University of Texas, 2021, https://sites.utexas.edu/ransomcentermagazine/2021/05/06/rare-ephemera-shows-legacy-of-henry-box-brown : the Fugitive Slave Act of 1850, Providence and leaving for England; shipped in a box from Bradford to Leeds; the 1868 playbill, King of all Mesmerisers and Professor of Magic.",
+    "UConn Today, 2019, on Martha Cutter's research, https://today.uconn.edu/2019/02/slave-mailed-freedom : nearly every performance re-enacted his emergence from the box."
+  ],
+  "appliedLessons": [
+    "L-0013",
+    "L-0022",
+    "L-0023",
+    "L-0029",
+    "L-0030",
+    "L-0031",
+    "L-0033",
+    "L-0035"
+  ],
+  "cast": [
+    {
+      "id": "henry",
+      "name": "Henry Brown",
+      "look": {
+        "identity": {
+          "skinTone": 7,
+          "hair": "short-crop",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "forest",
+              "sleeves": "long"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "denim"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      },
+      "voice": "man-steady"
+    },
+    {
+      "id": "nancy",
+      "name": "Nancy, his wife",
+      "look": {
+        "identity": {
+          "skinTone": 6,
+          "hair": "head-wrap",
+          "hairColor": "black",
+          "wrap": "crimson"
+        },
+        "outfit": {
+          "clothes": {
+            "onePiece": {
+              "kind": "dress",
+              "cloth": "cream"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "child",
+      "name": "The eldest child",
+      "look": {
+        "age": "child",
+        "size": 0.82,
+        "identity": {
+          "skinTone": 7,
+          "hair": "short-crop",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "tan",
+              "sleeves": "short"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      },
+      "voice": "woman"
+    },
+    {
+      "id": "child2",
+      "name": "Their second child",
+      "look": {
+        "age": "child",
+        "size": 0.72,
+        "identity": {
+          "skinTone": 6,
+          "hair": "braids",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "cream",
+              "sleeves": "short"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "child3",
+      "name": "Their youngest child",
+      "look": {
+        "age": "child",
+        "size": 0.64,
+        "identity": {
+          "skinTone": 7,
+          "hair": "afro",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "white",
+              "sleeves": "short"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "owner",
+      "name": "Nancy's owner",
+      "look": {
+        "identity": {
+          "skinTone": 1,
+          "hair": "short-crop",
+          "hairColor": "brown",
+          "facialHair": "moustache"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "jacket",
+              "cloth": "steel",
+              "under": "cream"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "tan"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "steel"
+            },
+            "hat": {
+              "kind": "top-hat",
+              "cloth": "steel"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "walker1",
+      "name": "A man in the line",
+      "look": {
+        "identity": {
+          "skinTone": 8,
+          "hair": "fade",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "tan",
+              "sleeves": "short"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "walker2",
+      "name": "A woman in the line",
+      "look": {
+        "identity": {
+          "skinTone": 7,
+          "hair": "braids",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "clothes": {
+            "onePiece": {
+              "kind": "dress",
+              "cloth": "tan"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "porter",
+      "name": "An express man",
+      "look": {
+        "identity": {
+          "skinTone": 2,
+          "hair": "short-crop",
+          "hairColor": "brown"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "tan",
+              "sleeves": "long"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            },
+            "hat": {
+              "kind": "brim-hat",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "james",
+      "name": "James Smith, his friend",
+      "look": {
+        "identity": {
+          "skinTone": 6,
+          "hair": "fade",
+          "hairColor": "black",
+          "facialHair": "beard"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "jacket",
+              "cloth": "brown",
+              "under": "cream"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "samuel",
+      "name": "Samuel Smith, the shoemaker",
+      "look": {
+        "identity": {
+          "skinTone": 1,
+          "hair": "short-crop",
+          "hairColor": "gray"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "cream",
+              "sleeves": "long"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "brown"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "voice-outside",
+      "name": "A man waiting in Philadelphia",
+      "look": {
+        "identity": {
+          "skinTone": 2,
+          "hair": "short-crop",
+          "hairColor": "dark-brown",
+          "facialHair": "beard"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "jacket",
+              "cloth": "denim",
+              "under": "white"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      },
+      "voice": "man"
+    },
+    {
+      "id": "witness",
+      "name": "Another man waiting",
+      "look": {
+        "identity": {
+          "skinTone": 6,
+          "hair": "short-crop",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "jacket",
+              "cloth": "brown",
+              "under": "cream"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "catcher",
+      "name": "A slave catcher",
+      "look": {
+        "identity": {
+          "skinTone": 2,
+          "hair": "short-crop",
+          "hairColor": "dark-brown",
+          "facialHair": "moustache"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "jacket",
+              "cloth": "brown",
+              "under": "tan"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            },
+            "hat": {
+              "kind": "brim-hat",
+              "cloth": "steel"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "hook",
+      "mood": "tense",
+      "quiet": true,
+      "place": "plain",
+      "treatment": "atmospheric",
+      "palette": "danger",
+      "lines": [
+        {
+          "id": "n1",
+          "speaker": "narrator",
+          "text": "A man is folded inside a wooden crate, and someone has set it down *upside down.*",
+          "speed": 0.92
+        },
+        {
+          "id": "n2",
+          "speaker": "narrator",
+          "text": "Blood pounds in his head.",
+          "speed": 0.92
+        },
+        {
+          "id": "n3",
+          "speaker": "narrator",
+          "text": "The veins at his temples swell as thick as a finger.",
+          "speed": 0.92
+        },
+        {
+          "id": "n4",
+          "speaker": "narrator",
+          "text": "*One sound,* and he is caught.",
+          "speed": 0.92,
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "n5",
+          "speaker": "narrator",
+          "text": "Years from now, he will climb into a box like this again.",
+          "speed": 0.92
+        },
+        {
+          "id": "n6",
+          "speaker": "narrator",
+          "text": "*On purpose.*",
+          "speed": 0.92,
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "n7",
+          "speaker": "narrator",
+          "text": "First, he has to survive this one.",
+          "speed": 0.92,
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s1a",
+          "line": "n1",
+          "words": "A man is folded inside a wooden crate,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "henry",
+              "pose": "folded-upside-down",
+              "expression": "afraid",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.589,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "crate-cutaway-upside-down",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "heartbeat",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "overlay": {
+            "kind": "title",
+            "text": "The Man Who Mailed Himself Twice"
+          },
+          "transition": "cut",
+          "startMs": 0,
+          "endMs": 3228
+        },
+        {
+          "id": "s1b",
+          "line": "n1",
+          "words": "and someone has set it down *upside down.*",
+          "camera": {
+            "framing": "wide",
+            "move": "shake",
+            "strength": 0.3
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "crate-upside-down",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "thud",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 3228,
+          "endMs": 6020
+        },
+        {
+          "id": "s1c",
+          "line": "n2",
+          "words": "Blood pounds in his head.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "henry",
+              "pose": "folded-upside-down",
+              "expression": "afraid",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.589,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "crate-cutaway-upside-down",
+              "x": 0.5
+            }
+          ],
+          "effects": [
+            {
+              "effect": "sweat-flying",
+              "on": "henry"
+            }
+          ],
+          "sfx": [
+            {
+              "name": "heartbeat",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 6020,
+          "endMs": 7960
+        },
+        {
+          "id": "s1d",
+          "line": "n3",
+          "words": "The veins at his temples swell as thick as a finger.",
+          "camera": {
+            "framing": "medium",
+            "move": "push-in",
+            "strength": 0.5
+          },
+          "actors": [
+            {
+              "character": "henry",
+              "pose": "folded-upside-down",
+              "expression": "exhausted",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.589,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "crate-cutaway-upside-down",
+              "x": 0.5
+            }
+          ],
+          "effects": [
+            {
+              "effect": "anger-mark",
+              "on": "henry"
+            }
+          ],
+          "sfx": [
+            {
+              "name": "heartbeat",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 7960,
+          "endMs": 11400
+        },
+        {
+          "id": "s1e",
+          "line": "n4",
+          "words": "*One sound,* and he is caught.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "porter",
+              "action": "walk",
+              "expression": "neutral",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.237,
+              "lookAt": "crate-upside-down",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.5,
+                  "pose": "stand",
+                  "expression": "thinking"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "crate-upside-down",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "footsteps",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 11400,
+          "endMs": 13760
+        },
+        {
+          "id": "s1f",
+          "line": "n5",
+          "words": "Years from now, he will climb into",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "henry",
+              "pose": "folded-upside-down",
+              "expression": "afraid",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.589,
+              "lookAt": "up",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "crate-cutaway-upside-down",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "heartbeat",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 13760,
+          "endMs": 16160
+        },
+        {
+          "id": "s1g",
+          "line": "n5",
+          "words": "a box like this again.",
+          "camera": {
+            "framing": "wide",
+            "move": "push-in",
+            "strength": 0.6
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "crate-upside-down",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "creak",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 16160,
+          "endMs": 17980
+        },
+        {
+          "id": "s1h",
+          "line": "n6",
+          "words": "*On purpose.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "henry",
+              "pose": "folded-upside-down",
+              "expression": "determined",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.589,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "crate-cutaway-upside-down",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "heartbeat",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 17980,
+          "endMs": 19680
+        },
+        {
+          "id": "s1i",
+          "line": "n7",
+          "words": "First, he has to survive this one.",
+          "camera": {
+            "framing": "wide",
+            "move": "push-in",
+            "strength": 0.5
+          },
+          "actors": [
+            {
+              "character": "henry",
+              "pose": "folded-upside-down",
+              "expression": "afraid",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.589,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "crate-cutaway-upside-down",
+              "x": 0.5
+            }
+          ],
+          "effects": [
+            {
+              "effect": "sweat-resting",
+              "on": "henry"
+            }
+          ],
+          "sfx": [
+            {
+              "name": "heartbeat",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 19680,
+          "endMs": 22830
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "setup",
+      "mood": "sorrow",
+      "place": "day-street",
+      "treatment": "atmospheric",
+      "palette": "storm-slate",
+      "lines": [
+        {
+          "id": "n8",
+          "speaker": "narrator",
+          "text": "Richmond, Virginia, eighteen forty-eight.",
+          "speed": 0.92
+        },
+        {
+          "id": "n9",
+          "speaker": "narrator",
+          "text": "Henry Brown is enslaved.",
+          "speed": 0.92
+        }
+      ],
+      "shots": [
+        {
+          "id": "s2a",
+          "line": "n8",
+          "words": "Richmond, Virginia, eighteen forty-eight.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "henry",
+              "pose": "stand",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.34,
+              "lookAt": "nancy",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "child",
+              "pose": "wave",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "front",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "nancy",
+              "pose": "stand",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.66,
+              "lookAt": "henry",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "wind",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "overlay": {
+            "kind": "label",
+            "text": "Richmond, Virginia, 1848"
+          },
+          "transition": "fade",
+          "startMs": 22830,
+          "endMs": 25950
+        },
+        {
+          "id": "s2b",
+          "line": "n9",
+          "words": "Henry Brown is enslaved.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "henry",
+              "pose": "stand",
+              "expression": "sad",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.34,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 25950,
+          "endMs": 28240
+        }
+      ]
+    },
+    {
+      "id": "s2deal",
+      "chapter": 1,
+      "beat": "setup",
+      "mood": "sorrow",
+      "place": "day-street",
+      "treatment": "atmospheric",
+      "palette": "storm-slate",
+      "lines": [
+        {
+          "id": "n10",
+          "speaker": "narrator",
+          "text": "He has paid his wife's owner to keep his family together.",
+          "speed": 0.92
+        },
+        {
+          "id": "n11",
+          "speaker": "narrator",
+          "text": "The owner takes the money and *sells them anyway:* Nancy, pregnant, and their three children, south to North Carolina.",
+          "speed": 0.92
+        }
+      ],
+      "shots": [
+        {
+          "id": "s2c",
+          "line": "n10",
+          "words": "He has paid his wife's owner",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "owner",
+              "pose": "stand",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.39,
+              "lookAt": "coin",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "henry",
+              "pose": "hold-object",
+              "expression": "neutral",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.61,
+              "lookAt": "owner",
+              "holds": "coin",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "fade",
+          "startMs": 28240,
+          "endMs": 30017
+        },
+        {
+          "id": "s2c2",
+          "line": "n10",
+          "words": "to keep his family together.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "owner",
+              "pose": "hold-object",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.39,
+              "lookAt": "henry",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.35,
+                  "holds": "coin"
+                }
+              ]
+            },
+            {
+              "character": "henry",
+              "pose": "hold-object",
+              "expression": "neutral",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.61,
+              "lookAt": "owner",
+              "holds": "coin",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.35,
+                  "holds": null
+                },
+                {
+                  "at": 0.6,
+                  "pose": "stand",
+                  "expression": "happy"
+                }
+              ]
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "middle",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 30017,
+          "endMs": 31890
+        },
+        {
+          "id": "s2d",
+          "line": "n11",
+          "words": "The owner takes the money and *sells them anyway:*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "owner",
+              "pose": "hold-object",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.39,
+              "lookAt": "camera",
+              "holds": "coin",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.6,
+                  "holds": null
+                }
+              ]
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 31890,
+          "endMs": 34960
+        },
+        {
+          "id": "s2e",
+          "line": "n11",
+          "words": "Nancy, pregnant, and their three children,",
+          "camera": {
+            "framing": "medium",
+            "move": "punch-in",
+            "strength": 0.4,
+            "focus": "henry"
+          },
+          "actors": [
+            {
+              "character": "henry",
+              "pose": "hands-over-mouth",
+              "expression": "horrified",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.61,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 34960,
+          "endMs": 37960
+        },
+        {
+          "id": "s2e2",
+          "line": "n11",
+          "words": "south to North Carolina.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "owner",
+              "pose": "cross-arms",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.39,
+              "lookAt": "henry",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "henry",
+              "pose": "hands-over-mouth",
+              "expression": "horrified",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.61,
+              "lookAt": "owner",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 37960,
+          "endMs": 39890
+        }
+      ]
+    },
+    {
+      "id": "s2road",
+      "chapter": 1,
+      "beat": "setup",
+      "mood": "sorrow",
+      "place": "day-street",
+      "treatment": "atmospheric",
+      "palette": "storm-slate",
+      "lines": [
+        {
+          "id": "n12",
+          "speaker": "narrator",
+          "text": "A line of chained people passes in the street.",
+          "speed": 0.92
+        },
+        {
+          "id": "n13",
+          "speaker": "narrator",
+          "text": "From a wagon, his eldest child sees him.",
+          "speed": 0.92
+        },
+        {
+          "id": "c1",
+          "speaker": "child",
+          "text": "*Father! Father!*",
+          "pauseAfterMs": 800
+        },
+        {
+          "id": "n14",
+          "speaker": "narrator",
+          "text": "Henry walks beside Nancy as far as he is allowed.",
+          "speed": 0.92
+        },
+        {
+          "id": "n15",
+          "speaker": "narrator",
+          "text": "Then the road takes her.",
+          "speed": 0.92,
+          "pauseAfterMs": 1000
+        }
+      ],
+      "shots": [
+        {
+          "id": "s2f",
+          "line": "n12",
+          "words": "A line of chained people passes in the street.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "walker1",
+              "action": "walk",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.34,
+              "lookAt": "ahead",
+              "holds": "chains",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "nancy",
+              "action": "walk",
+              "expression": "sad",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "ahead",
+              "holds": "chains",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "walker2",
+              "action": "walk",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.66,
+              "lookAt": "ahead",
+              "holds": "chains",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "rain",
+              "at": "start",
+              "gainDb": 0
+            },
+            {
+              "name": "footsteps",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "fade",
+          "startMs": 39890,
+          "endMs": 42890
+        },
+        {
+          "id": "s2g",
+          "line": "n13",
+          "words": "From a wagon, his eldest child sees him.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "child2",
+              "pose": "stand",
+              "expression": "sad",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.36,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "child",
+              "pose": "stand",
+              "expression": "sad",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.49,
+              "lookAt": "ahead",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.45,
+                  "expression": "surprised"
+                }
+              ]
+            },
+            {
+              "character": "child3",
+              "pose": "stand",
+              "expression": "afraid",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.62,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "wagon",
+              "x": 0.5
+            }
+          ],
+          "effects": [
+            {
+              "effect": "symbol-exclaim",
+              "on": "child"
+            }
+          ],
+          "sfx": [
+            {
+              "name": "creak",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 42890,
+          "endMs": 45930
+        },
+        {
+          "id": "s2h",
+          "line": "c1",
+          "words": "*Father! Father!*",
+          "camera": {
+            "framing": "medium",
+            "move": "push-in",
+            "strength": 0.5,
+            "focus": "child"
+          },
+          "actors": [
+            {
+              "character": "child2",
+              "pose": "stand",
+              "expression": "sad",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.36,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "child",
+              "pose": "wave",
+              "expression": "wailing",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.49,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "child3",
+              "pose": "stand",
+              "expression": "afraid",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.62,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "wagon",
+              "x": 0.5
+            }
+          ],
+          "effects": [
+            {
+              "effect": "tear-drops",
+              "on": "child"
+            }
+          ],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 45930,
+          "endMs": 47660
+        },
+        {
+          "id": "s2i",
+          "line": "n14",
+          "words": "Henry walks beside Nancy as far as he is allowed.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "henry",
+              "action": "walk",
+              "expression": "afraid",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.44,
+              "lookAt": "nancy",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.55,
+                  "pose": "hold-object",
+                  "expression": "sad"
+                }
+              ]
+            },
+            {
+              "character": "nancy",
+              "action": "walk",
+              "expression": "sad",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.6,
+              "lookAt": "ahead",
+              "holds": "chains",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "rope-barrier",
+              "x": 0.66
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "rain",
+              "at": "start",
+              "gainDb": 0
+            },
+            {
+              "name": "footsteps",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 47660,
+          "endMs": 51410
+        },
+        {
+          "id": "s2j",
+          "line": "n15",
+          "words": "Then the road takes her.",
+          "camera": {
+            "framing": "close-up",
+            "move": "push-in",
+            "strength": 0.5
+          },
+          "actors": [
+            {
+              "character": "henry",
+              "pose": "stand",
+              "expression": "sad",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.44,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [
+            {
+              "effect": "tear-drops",
+              "on": "henry"
+            }
+          ],
+          "sfx": [
+            {
+              "name": "rain",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 51410,
+          "endMs": 54920
+        }
+      ]
+    }
+  ]
+}

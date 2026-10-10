@@ -195,6 +195,31 @@ export const hug: Pose = {
   legs: feet(0.24),
 };
 
+/**
+ * Folded up inside a crate that has been set down on its lid: the head and one hand on the
+ * boards, the back sloping up, the knees doubled over the chest. It is drawn for the inside of
+ * the crate prop (`CRATE` in props/Crate.tsx), whose lid is this far under the head; stand the
+ * person 0.85 of a head behind the middle of the crate.
+ */
+export const FOLDED_REST = 0.36;
+export const foldedUpsideDown: Pose = {
+  id: 'folded-upside-down',
+  hipHeight: 1.77,
+  torsoLean: 115,
+  headTilt: 35,
+  arms: {
+    front: { reach: vec(-0.42, 0.8), bend: ELBOW_DOWN },
+    back: { reach: vec(-0.78, 0.3), bend: ELBOW_DOWN },
+  },
+  legs: { front: { upper: 104, lower: -150 }, back: { upper: 80, lower: -138 } },
+};
+
+/**
+ * Poses of a body held up by what it is in or on, not by the ground under its feet. The
+ * self-check does not ask where their feet are.
+ */
+export const CARRIED_POSES: readonly string[] = [foldedUpsideDown.id];
+
 /** The Phase 1 set, kept together for its sheet. */
 export const PHASE1_POSES = [
   stand,
@@ -207,8 +232,10 @@ export const PHASE1_POSES = [
 ] as const;
 /** The Phase 2C starter set. */
 export const MORE_POSES = [sit, kneel, lie, crossArms, lookUp, lookDown, cower, hug] as const;
+/** Poses drawn for one story and kept for the next. */
+export const STORY_POSES = [foldedUpsideDown] as const;
 
-export const POSES = [...PHASE1_POSES, ...MORE_POSES] as const;
+export const POSES = [...PHASE1_POSES, ...MORE_POSES, ...STORY_POSES] as const;
 export type PoseId = (typeof POSES)[number]['id'];
 
 export const poseById = (id: string): Pose => {

@@ -1,0 +1,10 @@
+{
+  "id": "man-steady",
+  "name": "Man, steady",
+  "description": "A second man's voice, steadier and deeper than the lively one, for a grown man who speaks little and politely. A placeholder until Biku picks.",
+  "version": 1,
+  "kokoroVoice": "am_fenrir",
+  "speed": 0.95,
+  "pauseScale": 1.0,
+  "pronunciations": {}
+}

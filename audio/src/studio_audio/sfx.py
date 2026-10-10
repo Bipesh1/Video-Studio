@@ -185,6 +185,40 @@ def _wind(rng: np.random.Generator, seconds: float) -> np.ndarray:
     return fade(np.stack(sides, axis=1), 0.4, 0.6)
 
 
+def _heartbeat(rng: np.random.Generator, seconds: float) -> np.ndarray:
+    """A heart pounding in the ears, about 76 beats a minute: a heavy first thump and a lighter
+    second one. A phone plays almost nothing below 200 Hz, so each thump has a soft knock in
+    the middle range as well as its low body."""
+    total = _n(seconds)
+    beat = 60.0 / 76.0
+    pieces = []
+    for i in range(max(1, int(np.ceil(seconds / beat)))):
+        for delay, weight, pitch in ((0.0, 1.0, 1.0), (0.27, 0.62, 1.18)):
+            n = _n(0.24)
+            body = _sine_sweep(118 * pitch, 46 * pitch, n, curve=2.0) * _decay(n, 0.085)
+            knock = _band(rng, n, "bandpass", (170, 520)) * _decay(n, 0.04) * 0.55
+            at = _n(i * beat + delay + rng.uniform(-0.008, 0.008) + 0.05)
+            if at + n <= total:
+                pieces.append((at, _pan((body + knock) * _attack(n, 0.004) * weight, 0.0)))
+    return fade(_place(total, pieces), 0.0, min(0.2, seconds / 6))
+
+
+def _rain(rng: np.random.Generator, seconds: float) -> np.ndarray:
+    """Steady rain on a street: a soft hiss that swells and thins, with a patter of single drops."""
+    n = _n(seconds)
+    sides = []
+    for _ in range(2):
+        swell = 0.75 + 0.25 * _smooth_random(rng, n, 0.3)
+        hiss = _band(rng, n, "bandpass", (1400, 7500)) * swell
+        low = _band(rng, n, "bandpass", (300, 900)) * 0.35
+        patter = np.zeros(n)
+        for at in rng.integers(0, max(1, n - _n(0.02)), size=int(seconds * 26)):
+            m = _n(0.012)
+            patter[at : at + m] += _band(rng, m, "highpass", 2200) * _decay(m, 0.003) * rng.uniform(0.6, 1.6)
+        sides.append(hiss + low + patter)
+    return fade(np.stack(sides, axis=1), 0.4, 0.6)
+
+
 _VOWELS = [(730, 1090), (270, 2290), (570, 840), (300, 870), (530, 1840), (660, 1720), (440, 1020)]
 
 
@@ -282,6 +316,8 @@ EFFECTS: dict[str, Effect] = {
         Effect("blip", "A drop: sweat, a small idea, a tiny surprise", _blip, 0.3, -9.0),
         Effect("hit", "A cartoon blow landing", _hit, 0.32, -4.0),
         Effect("ding", "A coin or a small bell", _ding, 0.9, -8.0),
+        Effect("heartbeat", "A heart pounding in the ears: fear, effort, waiting", _heartbeat, 4.0, -15.0, ambient=True),
+        Effect("rain", "Steady rain on a street or a roof", _rain, 5.0, -20.0, ambient=True),
     )
 }
 

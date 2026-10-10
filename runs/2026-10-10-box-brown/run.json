@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "id": "2026-10-10-box-brown",
+  "created": "2026-10-10",
+  "mode": "as-is",
+  "format": "story",
+  "brand": "my-page",
+  "voice": "narrator",
+  "sizes": [
+    
+    "9:16"
+  ],
+  "vertical": "full",
+  "masterPrompt": null
+}

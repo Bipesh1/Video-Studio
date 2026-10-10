@@ -13,7 +13,9 @@ import {
 } from '../props/Bill';
 import { BOOK, Book } from '../props/Book';
 import { Chair } from '../props/Chair';
+import { WristChains } from '../props/Chains';
 import { COIN_RADIUS, Coin } from '../props/Coin';
+import { Crate } from '../props/Crate';
 import { CUP_REST, Cup } from '../props/Cup';
 import { EXPLOSION_SECONDS, Explosion, Fire, Smoke } from '../effects/Blast';
 import { Door } from '../props/Door';
@@ -25,6 +27,7 @@ import { SHIELD, Shield } from '../props/Shield';
 import { Asteroid, BlackHole, Earth, FullMoon, Planet, Sun } from '../props/Sky';
 import { Sword } from '../props/Sword';
 import { Table } from '../props/Table';
+import { RopeBarrier, Wagon } from '../props/Wagon';
 import { RainCloud, Wind } from '../props/Weather';
 import type { CharacterProps } from '../rig/Character';
 
@@ -110,6 +113,10 @@ const HELD: Record<string, HeldProp> = {
     <InHand frame={hands.front} how="upright" reach={0.26}>
       <Bill uid={`${info.uid}-bill`} shadowSide={info.shadowSide} />
     </InHand>
+  ),
+  // Worn on both wrists, not held: the chain hangs between the two hands.
+  chains: (hands, info) => (
+    <WristChains hands={hands} uid={`${info.uid}-chains`} shadowSide={info.shadowSide} />
   ),
 };
 
@@ -290,6 +297,35 @@ Object.assign(STANDING, {
     eyeHeight: 0.22,
     behindPeople: false,
   },
+  // A closed crate hides whoever stands at its place; the cutaway is drawn behind them, so
+  // the person folded up inside it shows.
+  crate: {
+    draw: (uid) => <Crate uid={uid} shadowSide={1} />,
+    eyeHeight: 1.1,
+    behindPeople: false,
+  },
+  'crate-upside-down': {
+    draw: (uid) => <Crate uid={uid} shadowSide={1} inverted />,
+    eyeHeight: 1.1,
+    behindPeople: false,
+  },
+  'crate-cutaway': {
+    draw: (uid) => <Crate uid={uid} shadowSide={1} cutaway />,
+    eyeHeight: 1.1,
+    behindPeople: true,
+  },
+  'crate-cutaway-upside-down': {
+    draw: (uid) => <Crate uid={uid} shadowSide={1} cutaway inverted />,
+    eyeHeight: 1.1,
+    behindPeople: true,
+  },
+  // In front of the people riding in it: its side hides their legs.
+  wagon: { draw: (uid) => <Wagon uid={uid} shadowSide={1} />, eyeHeight: 1.2, behindPeople: false },
+  'rope-barrier': {
+    draw: (uid) => <RopeBarrier uid={uid} shadowSide={1} />,
+    eyeHeight: 1,
+    behindPeople: false,
+  },
   wind: sky(2.4, (_uid, t) => <Wind t={t} />),
   'rain-cloud': sky(3.6, (uid, t) => <RainCloud uid={uid} shadowSide={1} t={t} />),
   // An explosion goes off as its shot begins. It is in front of people: it is what the shot shows.
@@ -351,6 +387,12 @@ const REACH: Record<string, Reach> = {
   coal: stands(0.46, 0.5),
   'fuel-can': stands(0.38, 0.84),
   bread: stands(0.44, 0.44),
+  crate: stands(1.25, 2.2),
+  'crate-upside-down': stands(1.25, 2.2),
+  'crate-cutaway': stands(1.25, 2.2),
+  'crate-cutaway-upside-down': stands(1.25, 2.2),
+  wagon: stands(1.65, 1.2),
+  'rope-barrier': stands(1.1, 1.3),
   wind: { side: 1.3, up: 0.7, down: 0.6 },
   'rain-cloud': { side: 1.15, up: 1.1, down: 1.3 },
 };

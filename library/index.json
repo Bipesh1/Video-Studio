@@ -5652,6 +5652,281 @@
       "use": "on a prop: { prop: \"coal\", x, tag: \"SUNLIGHT\" }",
       "version": 1,
       "added": "2026-10-07"
+    },
+    {
+      "id": "prop/crate",
+      "kind": "prop",
+      "name": "Shipping crate",
+      "description": "A wooden shipping crate with THIS SIDE UP painted on its front, a lid, two battens and three small air holes. It hides whoever stands at its place.",
+      "tags": [
+        "prop",
+        "crate",
+        "box",
+        "wooden box",
+        "freight",
+        "shipping",
+        "cargo",
+        "parcel",
+        "mail",
+        "this side up",
+        "package"
+      ],
+      "code": {
+        "file": "engine/src/props/Crate.tsx",
+        "export": "Crate"
+      },
+      "use": "props: [{ prop: \"crate\", x }]",
+      "still": "knowledge/golden/assets/prop-crate.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "prop/crate-upside-down",
+      "kind": "prop",
+      "name": "Shipping crate, upside down",
+      "description": "The shipping crate set down on its lid: THIS SIDE UP reads upside down and its arrow points at the ground.",
+      "tags": [
+        "prop",
+        "crate",
+        "box",
+        "upside down",
+        "wrong way up",
+        "freight",
+        "cargo",
+        "careless",
+        "this side up",
+        "on its lid"
+      ],
+      "code": {
+        "file": "engine/src/props/Crate.tsx",
+        "export": "Crate"
+      },
+      "use": "props: [{ prop: \"crate-upside-down\", x }]",
+      "still": "knowledge/golden/assets/prop-crate-upside-down.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "prop/crate-cutaway",
+      "kind": "prop",
+      "name": "Shipping crate, cut open",
+      "description": "The shipping crate with its front taken off to show the dark inside, with thin lines of light coming in through the air holes. Someone at its place is seen inside it.",
+      "tags": [
+        "prop",
+        "crate",
+        "box",
+        "inside",
+        "cutaway",
+        "hiding",
+        "stowaway",
+        "cramped",
+        "dark",
+        "air holes"
+      ],
+      "code": {
+        "file": "engine/src/props/Crate.tsx",
+        "export": "Crate"
+      },
+      "use": "props: [{ prop: \"crate-cutaway\", x }], with the person inside at the same x",
+      "still": "knowledge/golden/assets/prop-crate-cutaway.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "prop/crate-cutaway-upside-down",
+      "kind": "prop",
+      "name": "Shipping crate, cut open and upside down",
+      "description": "The cut-open crate standing on its lid, the words on the lid upside down. For someone folded up inside it on their head.",
+      "tags": [
+        "prop",
+        "crate",
+        "box",
+        "inside",
+        "cutaway",
+        "upside down",
+        "hiding",
+        "stowaway",
+        "cramped",
+        "on his head"
+      ],
+      "code": {
+        "file": "engine/src/props/Crate.tsx",
+        "export": "Crate"
+      },
+      "use": "props: [{ prop: \"crate-cutaway-upside-down\", x }], with the person in the pose folded-upside-down 0.09 behind its x",
+      "still": "knowledge/golden/assets/prop-crate-cutaway-upside-down.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "prop/wagon",
+      "kind": "prop",
+      "name": "Wagon",
+      "description": "An open farm wagon seen from the side: a plank bed, two spoked wheels and the pole a horse is hitched to. People at its place stand in the bed, its side hiding their legs.",
+      "tags": [
+        "prop",
+        "wagon",
+        "cart",
+        "wheels",
+        "farm",
+        "travel",
+        "road",
+        "load",
+        "horse cart",
+        "carriage",
+        "1800s"
+      ],
+      "code": {
+        "file": "engine/src/props/Wagon.tsx",
+        "export": "Wagon"
+      },
+      "use": "props: [{ prop: \"wagon\", x }], with its riders at about the same x",
+      "still": "knowledge/golden/assets/prop-wagon.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "prop/rope-barrier",
+      "kind": "prop",
+      "name": "Rope barrier",
+      "description": "Two wooden posts with a rope hanging between them: this far and no further.",
+      "tags": [
+        "prop",
+        "rope",
+        "barrier",
+        "fence",
+        "posts",
+        "stop",
+        "limit",
+        "boundary",
+        "cordon",
+        "no entry"
+      ],
+      "code": {
+        "file": "engine/src/props/Wagon.tsx",
+        "export": "RopeBarrier"
+      },
+      "use": "props: [{ prop: \"rope-barrier\", x }]",
+      "still": "knowledge/golden/assets/prop-rope-barrier.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "prop/chains",
+      "kind": "prop",
+      "name": "Wrist chains",
+      "description": "An iron cuff on each wrist and a chain hanging between the two hands, which follows the arms through any pose or walk. Worn, not held.",
+      "tags": [
+        "prop",
+        "chains",
+        "shackles",
+        "cuffs",
+        "manacles",
+        "prisoner",
+        "enslaved",
+        "captive",
+        "bound",
+        "irons"
+      ],
+      "code": {
+        "file": "engine/src/props/Chains.tsx",
+        "export": "WristChains"
+      },
+      "use": "holds: \"chains\" on a person",
+      "still": "knowledge/golden/assets/prop-chains.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "clothing/top-hat",
+      "kind": "clothing",
+      "name": "Top hat",
+      "description": "A tall hat with a narrow brim and a band, in any cloth color. It sits just above the brows.",
+      "tags": [
+        "clothing",
+        "clothes",
+        "tier 1",
+        "hat",
+        "top hat",
+        "gentleman",
+        "rich man",
+        "1800s",
+        "showman",
+        "magician",
+        "owner"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/garments.tsx",
+        "export": "outfitFrom"
+      },
+      "use": "outfit={outfitFrom({ ...clothes, hat: { kind: 'top-hat', cloth: 'steel' } })}",
+      "still": "knowledge/golden/assets/clothing-top-hat.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "pose/folded-upside-down",
+      "kind": "pose",
+      "name": "Folded up, upside down",
+      "description": "Folded up inside a crate that stands on its lid: the head and one hand on the boards, the back sloping up, the knees doubled over the chest.",
+      "tags": [
+        "pose",
+        "folded",
+        "curled up",
+        "upside down",
+        "on his head",
+        "cramped",
+        "hiding",
+        "in a box",
+        "stowaway",
+        "crate"
+      ],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "foldedUpsideDown"
+      },
+      "use": "pose: \"folded-upside-down\", inside the prop crate-cutaway-upside-down",
+      "still": "knowledge/golden/assets/pose-folded-upside-down.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "sfx/heartbeat",
+      "kind": "sfx",
+      "name": "Heartbeat",
+      "description": "A heart pounding in the ears, a heavy thump and a lighter one, running under a whole shot. For fear, effort, hiding and waiting.",
+      "tags": [
+        "sound",
+        "heartbeat",
+        "heart",
+        "pulse",
+        "fear",
+        "tension",
+        "hiding",
+        "waiting",
+        "pounding"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a shot's sfx: [{ \"name\": \"heartbeat\", \"at\": \"start\" }]",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "sfx/rain",
+      "kind": "sfx",
+      "name": "Rain",
+      "description": "Steady rain with a patter of single drops, running under a whole shot. For a wet street, a storm, a sad day.",
+      "tags": ["sound", "rain", "storm", "weather", "wet", "street", "sad", "drops", "downpour"],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a shot's sfx: [{ \"name\": \"rain\", \"at\": \"start\" }]",
+      "version": 1,
+      "added": "2026-10-10"
     }
   ]
 }

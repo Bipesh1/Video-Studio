@@ -1,0 +1,441 @@
+{
+  "version": 1,
+  "title": "The Man Who Mailed Himself Twice",
+  "request": "this is my script for a black history make a video on it for facebook. should be vertical. now start",
+  "mode": "as-is",
+  "format": "story",
+  "brand": "my-page",
+  "voice": "narrator",
+  "speakers": [
+    {
+      "id": "henry",
+      "name": "Henry Brown",
+      "voice": "man-steady"
+    },
+    {
+      "id": "child",
+      "name": "The eldest child",
+      "voice": "woman"
+    },
+    {
+      "id": "voice-outside",
+      "name": "A voice outside",
+      "voice": "man"
+    }
+  ],
+  "lines": [
+    {
+      "id": "n1",
+      "speaker": "narrator",
+      "text": "A man is folded inside a wooden crate, and someone has set it down *upside down.*",
+      "beat": "hook",
+      "chapter": 1,
+      "speed": 0.92
+    },
+    {
+      "id": "n2",
+      "speaker": "narrator",
+      "text": "Blood pounds in his head.",
+      "beat": "hook",
+      "chapter": 1,
+      "speed": 0.92
+    },
+    {
+      "id": "n3",
+      "speaker": "narrator",
+      "text": "The veins at his temples swell as thick as a finger.",
+      "beat": "hook",
+      "chapter": 1,
+      "speed": 0.92
+    },
+    {
+      "id": "n4",
+      "speaker": "narrator",
+      "text": "*One sound,* and he is caught.",
+      "beat": "hook",
+      "chapter": 1,
+      "speed": 0.92,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "n5",
+      "speaker": "narrator",
+      "text": "Years from now, he will climb into a box like this again.",
+      "beat": "hook",
+      "chapter": 1,
+      "speed": 0.92
+    },
+    {
+      "id": "n6",
+      "speaker": "narrator",
+      "text": "*On purpose.*",
+      "beat": "hook",
+      "chapter": 1,
+      "speed": 0.92,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "n7",
+      "speaker": "narrator",
+      "text": "First, he has to survive this one.",
+      "beat": "hook",
+      "chapter": 1,
+      "speed": 0.92,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "n8",
+      "speaker": "narrator",
+      "text": "Richmond, Virginia, eighteen forty-eight.",
+      "beat": "setup",
+      "chapter": 1,
+      "speed": 0.92
+    },
+    {
+      "id": "n9",
+      "speaker": "narrator",
+      "text": "Henry Brown is enslaved.",
+      "beat": "setup",
+      "chapter": 1,
+      "speed": 0.92
+    },
+    {
+      "id": "n10",
+      "speaker": "narrator",
+      "text": "He has paid his wife's owner to keep his family together.",
+      "beat": "setup",
+      "chapter": 1,
+      "speed": 0.92
+    },
+    {
+      "id": "n11",
+      "speaker": "narrator",
+      "text": "The owner takes the money and *sells them anyway:* Nancy, pregnant, and their three children, south to North Carolina.",
+      "beat": "setup",
+      "chapter": 1,
+      "speed": 0.92
+    },
+    {
+      "id": "n12",
+      "speaker": "narrator",
+      "text": "A line of chained people passes in the street.",
+      "beat": "setup",
+      "chapter": 1,
+      "speed": 0.92
+    },
+    {
+      "id": "n13",
+      "speaker": "narrator",
+      "text": "From a wagon, his eldest child sees him.",
+      "beat": "setup",
+      "chapter": 1,
+      "speed": 0.92
+    },
+    {
+      "id": "c1",
+      "speaker": "child",
+      "text": "*Father! Father!*",
+      "beat": "setup",
+      "chapter": 1,
+      "pauseAfterMs": 800
+    },
+    {
+      "id": "n14",
+      "speaker": "narrator",
+      "text": "Henry walks beside Nancy as far as he is allowed.",
+      "beat": "setup",
+      "chapter": 1,
+      "speed": 0.92
+    },
+    {
+      "id": "n15",
+      "speaker": "narrator",
+      "text": "Then the road takes her.",
+      "beat": "setup",
+      "chapter": 1,
+      "speed": 0.92,
+      "pauseAfterMs": 1000
+    },
+    {
+      "id": "n16",
+      "speaker": "narrator",
+      "text": "Now he has nothing left to lose.",
+      "beat": "rising-trouble",
+      "chapter": 2,
+      "speed": 0.92
+    },
+    {
+      "id": "n17",
+      "speaker": "narrator",
+      "text": "A free Black friend, James Smith, helps him plan.",
+      "beat": "rising-trouble",
+      "chapter": 2,
+      "speed": 0.92
+    },
+    {
+      "id": "n18",
+      "speaker": "narrator",
+      "text": "A white shoemaker, Samuel Smith, agrees to ship him north for *eighty-six dollars,* more than half of all Henry has saved.",
+      "beat": "rising-trouble",
+      "chapter": 2,
+      "speed": 0.92
+    },
+    {
+      "id": "n19",
+      "speaker": "narrator",
+      "text": "To get a day off work, he burns his own hand with acid, *down to the bone.*",
+      "beat": "rising-trouble",
+      "chapter": 2,
+      "speed": 0.92,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "n20",
+      "speaker": "narrator",
+      "text": "The box is about three feet across.",
+      "beat": "rising-trouble",
+      "chapter": 2,
+      "speed": 0.92
+    },
+    {
+      "id": "n21",
+      "speaker": "narrator",
+      "text": "Inside go a bladder of water and three small air holes.",
+      "beat": "rising-trouble",
+      "chapter": 2,
+      "speed": 0.92
+    },
+    {
+      "id": "n22",
+      "speaker": "narrator",
+      "text": "On the lid: *This side up.*",
+      "beat": "rising-trouble",
+      "chapter": 2,
+      "speed": 0.92,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "n23",
+      "speaker": "narrator",
+      "text": "March, eighteen forty-nine.",
+      "beat": "rising-trouble",
+      "chapter": 2,
+      "speed": 0.92
+    },
+    {
+      "id": "n24",
+      "speaker": "narrator",
+      "text": "A wagon, a train, a steamboat, a ferry, another wagon.",
+      "beat": "rising-trouble",
+      "chapter": 2,
+      "speed": 0.92
+    },
+    {
+      "id": "n25",
+      "speaker": "narrator",
+      "text": "The express men handle the box *like freight,* because that is what they think it is.",
+      "beat": "rising-trouble",
+      "chapter": 2,
+      "speed": 0.92
+    },
+    {
+      "id": "n26",
+      "speaker": "narrator",
+      "text": "For nearly an hour and a half, he rides *on his head.*",
+      "beat": "rising-trouble",
+      "chapter": 2,
+      "speed": 0.92
+    },
+    {
+      "id": "n27",
+      "speaker": "narrator",
+      "text": "*Twenty-seven hours,* and he never cries out.",
+      "beat": "rising-trouble",
+      "chapter": 2,
+      "speed": 0.92,
+      "pauseAfterMs": 1000
+    },
+    {
+      "id": "n28",
+      "speaker": "narrator",
+      "text": "Philadelphia, about six in the morning.",
+      "beat": "turning-point",
+      "chapter": 3,
+      "speed": 0.92
+    },
+    {
+      "id": "n29",
+      "speaker": "narrator",
+      "text": "A knuckle raps the lid.",
+      "beat": "turning-point",
+      "chapter": 3,
+      "speed": 0.92,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "v1",
+      "speaker": "voice-outside",
+      "text": "All right?",
+      "beat": "turning-point",
+      "chapter": 3,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "h1",
+      "speaker": "henry",
+      "text": "*All right, sir.*",
+      "beat": "turning-point",
+      "chapter": 3,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "n30",
+      "speaker": "narrator",
+      "text": "They pry it open.",
+      "beat": "turning-point",
+      "chapter": 3,
+      "speed": 0.92
+    },
+    {
+      "id": "n31",
+      "speaker": "narrator",
+      "text": "Henry rises, stiff and dizzy, and greets them.",
+      "beat": "turning-point",
+      "chapter": 3,
+      "speed": 0.92
+    },
+    {
+      "id": "h2",
+      "speaker": "henry",
+      "text": "*How do you do, gentlemen?*",
+      "beat": "turning-point",
+      "chapter": 3,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "n32",
+      "speaker": "narrator",
+      "text": "Then he sings a hymn of thanks.",
+      "beat": "turning-point",
+      "chapter": 3,
+      "speed": 0.92
+    },
+    {
+      "id": "n33",
+      "speaker": "narrator",
+      "text": "From now on, people call him Henry Box Brown.",
+      "beat": "turning-point",
+      "chapter": 3,
+      "speed": 0.92,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "n34",
+      "speaker": "narrator",
+      "text": "Then he does something stranger.",
+      "beat": "payoff",
+      "chapter": 3,
+      "speed": 0.92
+    },
+    {
+      "id": "n35",
+      "speaker": "narrator",
+      "text": "In eighteen fifty, a new law lets slave catchers hunt him even in the North.",
+      "beat": "payoff",
+      "chapter": 3,
+      "speed": 0.92
+    },
+    {
+      "id": "n36",
+      "speaker": "narrator",
+      "text": "He nearly gets caught in Providence, so he sails for England.",
+      "beat": "payoff",
+      "chapter": 3,
+      "speed": 0.92
+    },
+    {
+      "id": "n37",
+      "speaker": "narrator",
+      "text": "And there, *he mails himself again.*",
+      "beat": "payoff",
+      "chapter": 3,
+      "speed": 0.92,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "n38",
+      "speaker": "narrator",
+      "text": "He is shipped in a box from Bradford to Leeds and opened in front of a crowd.",
+      "beat": "payoff",
+      "chapter": 4,
+      "speed": 0.92
+    },
+    {
+      "id": "n39",
+      "speaker": "narrator",
+      "text": "A playbill calls him King of all Mesmerisers and *Professor of Magic.*",
+      "beat": "payoff",
+      "chapter": 4,
+      "speed": 0.92
+    },
+    {
+      "id": "n40",
+      "speaker": "narrator",
+      "text": "Night after night, he climbs out of a box while England watches.",
+      "beat": "payoff",
+      "chapter": 4,
+      "speed": 0.92,
+      "pauseAfterMs": 1000
+    },
+    {
+      "id": "n41",
+      "speaker": "narrator",
+      "text": "It cost him *almost everything.*",
+      "beat": "closing-line",
+      "chapter": 4,
+      "speed": 0.92
+    },
+    {
+      "id": "n42",
+      "speaker": "narrator",
+      "text": "There is no record that he ever saw Nancy or their children again.",
+      "beat": "closing-line",
+      "chapter": 4,
+      "speed": 0.92,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "n43",
+      "speaker": "narrator",
+      "text": "But the box that once hid him became the stage that made people look.",
+      "beat": "closing-line",
+      "chapter": 4,
+      "speed": 0.92
+    },
+    {
+      "id": "n44",
+      "speaker": "narrator",
+      "text": "Once, a crate marked This side up was his only way out.",
+      "beat": "closing-line",
+      "chapter": 4,
+      "speed": 0.92
+    },
+    {
+      "id": "n45",
+      "speaker": "narrator",
+      "text": "After that, he made sure the whole world saw *who climbed out.*",
+      "beat": "closing-line",
+      "chapter": 4,
+      "speed": 0.92,
+      "pauseAfterMs": 1500
+    }
+  ],
+  "sources": [
+    "Henry Box Brown, Narrative of the Life of Henry Box Brown (Manchester, 1851), Documenting the American South, https://docsouth.unc.edu/neh/brownbox/brownbox.html : the sale of his family in August 1848 and the child's call from the wagon; the acid on his hand; the box's size, the bladder of water, the air holes and This side up; head-down for nearly an hour and a half; twenty-seven hours; the knock, All right, and All right, sir, at about six in the morning.",
+    "Wikipedia, Henry Box Brown, https://en.wikipedia.org/wiki/Henry_Box_Brown : he had paid Nancy's owner; Nancy pregnant, three children, sold to North Carolina; James C. A. Smith and Samuel A. Smith; 86 dollars of 166; down to the bone; the journey of 29 to 30 March 1849 by wagon, railroad, steamboat, ferry and wagon; no recorded reunion.",
+    "World History Encyclopedia, Henry Box Brown, https://www.worldhistory.org/Henry_Box_Brown/ : How do you do, gentlemen? and the song of praise; the family's sale; no recorded reunion.",
+    "Harry Ransom Center Magazine, University of Texas, 2021, https://sites.utexas.edu/ransomcentermagazine/2021/05/06/rare-ephemera-shows-legacy-of-henry-box-brown : the Fugitive Slave Act of 1850, Providence and leaving for England; shipped in a box from Bradford to Leeds; the 1868 playbill, King of all Mesmerisers and Professor of Magic.",
+    "UConn Today, 2019, on Martha Cutter's research, https://today.uconn.edu/2019/02/slave-mailed-freedom : nearly every performance re-enacted his emergence from the box."
+  ],
+  "changes": []
+}

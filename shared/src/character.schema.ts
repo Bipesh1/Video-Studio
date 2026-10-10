@@ -38,7 +38,7 @@ export const clothesSchema = z
       .strict()
       .optional(),
     hat: z
-      .object({ kind: z.enum(['brim-hat']), cloth: name })
+      .object({ kind: z.enum(['brim-hat', 'top-hat']), cloth: name })
       .strict()
       .optional(),
     /** A pair of glasses. */

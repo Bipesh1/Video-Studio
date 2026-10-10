@@ -19,6 +19,7 @@ import { labelBox, titleCardBox } from '../overlays/Titles';
 import { movePose } from '../rig/chain';
 import { CHILD_BODY, toScreen } from '../rig/Character';
 import { clamp, vec } from '../rig/math';
+import { CARRIED_POSES } from '../rig/poses';
 import { computeSkeleton } from '../rig/skeleton';
 import { lookFrom } from '../wardrobe/cast';
 import { stageX, timedShots } from './layout';
@@ -209,7 +210,7 @@ export function measureFrame(
           r: steady.r * zoom,
         },
         lowest: lowest * k,
-        held: !d.momentAt(frame).action,
+        held: !d.momentAt(frame).action && !CARRIED_POSES.includes(d.momentAt(frame).pose ?? ''),
       };
     });
 

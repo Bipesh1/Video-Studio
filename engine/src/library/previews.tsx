@@ -24,6 +24,8 @@ import { Bag } from '../props/Bag';
 import { Bill, Bills, Bread, Coal, CoinStack, Envelope, FuelCan } from '../props/Bill';
 import { Book } from '../props/Book';
 import { Chair } from '../props/Chair';
+import { WristChains } from '../props/Chains';
+import { Crate } from '../props/Crate';
 import { Coin } from '../props/Coin';
 import { Cup } from '../props/Cup';
 import { Door } from '../props/Door';
@@ -35,6 +37,7 @@ import { Shield } from '../props/Shield';
 import { Asteroid, BlackHole, Earth, FullMoon, Planet, Sun } from '../props/Sky';
 import { Sword } from '../props/Sword';
 import { Table } from '../props/Table';
+import { RopeBarrier, Wagon } from '../props/Wagon';
 import { RainCloud, Wind } from '../props/Weather';
 import { ACTIONS } from '../rig/actions';
 import { chainAt } from '../rig/chain';
@@ -144,6 +147,7 @@ const POSE_VIEWS: Record<string, { turn?: number; dx?: number; face?: Expression
   'look-down': { turn: 0.5, face: 'sad' },
   cower: { turn: 0.5, face: 'afraid' },
   hug: { turn: 0.5, dx: -30, face: 'happy' },
+  'folded-upside-down': { turn: 0.5, dx: -75, face: 'afraid' },
 };
 
 /** A moment of each action that shows what it is. */
@@ -216,6 +220,11 @@ const GARMENT_LOOKS: Record<Garment, Clothes> = {
   cloak: { top: { kind: 'shirt', cloth: 'white' }, cloak: { cloth: 'crimson' } },
   hood: { onePiece: { kind: 'robe', cloth: 'denim' }, cloak: { cloth: 'forest', hood: true } },
   'brim-hat': { hat: { kind: 'brim-hat', cloth: 'gold' } },
+  'top-hat': {
+    hat: { kind: 'top-hat', cloth: 'steel' },
+    top: { kind: 'jacket', cloth: 'steel', under: 'cream' },
+    bottom: { kind: 'trousers', cloth: 'brown' },
+  },
   sneakers: { shoes: { kind: 'sneakers', cloth: 'white' } },
   boots: { shoes: { kind: 'boots', cloth: 'steel' } },
   't-shirt': {
@@ -324,10 +333,22 @@ const entries: Array<[string, Preview]> = [
       const extra: Extra = {
         ...(p === holdObject ? { prop: rodProp } : {}),
         ...(view.face ? { face: EXPRESSIONS[view.face] } : {}),
+        // Seen as it is used: a dressed man in the crate, so the folded limbs read.
+        ...(p.id === 'folded-upside-down'
+          ? {
+              identity: identity({ skinTone: 7, hair: 'short-crop', hairColor: 'black' }),
+              outfit: EVERYDAY,
+            }
+          : {}),
       };
       return (
         <>
           {p.id === 'sit' && <Seat x={BOX / 2 + (view.dx ?? 0)} head={POSE_HEAD} />}
+          {p.id === 'folded-upside-down' && (
+            <Placed x={BOX / 2} y={362} head={POSE_HEAD}>
+              <Crate uid="lib-pose-crate" shadowSide={1} cutaway inverted />
+            </Placed>
+          )}
           {figure(o, resolvePose(p), extra, view.turn ?? 0, BOX / 2 + (view.dx ?? 0), POSE_HEAD)}
         </>
       );
@@ -545,6 +566,17 @@ const entries: Array<[string, Preview]> = [
       ['bread', 300, 280, (u) => <Bread uid={u} shadowSide={1} />],
       ['wind', 120, 200, () => <Wind t={0.3} />],
       ['rain-cloud', 130, 190, (u) => <RainCloud uid={u} shadowSide={1} t={0.2} />],
+      ['crate', 130, 340, (u) => <Crate uid={u} shadowSide={1} />],
+      ['crate-upside-down', 130, 340, (u) => <Crate uid={u} shadowSide={1} inverted />],
+      ['crate-cutaway', 130, 340, (u) => <Crate uid={u} shadowSide={1} cutaway />],
+      ['wagon', 96, 300, (u) => <Wagon uid={u} shadowSide={1} />],
+      ['rope-barrier', 110, 300, (u) => <RopeBarrier uid={u} shadowSide={1} />],
+      [
+        'crate-cutaway-upside-down',
+        130,
+        340,
+        (u) => <Crate uid={u} shadowSide={1} cutaway inverted />,
+      ],
     ] as Array<[string, number, number, (uid: string) => ReactNode]>
   ).map(([name, head, y, draw]): [string, Preview] => [
     `prop/${name}`,
@@ -554,6 +586,26 @@ const entries: Array<[string, Preview]> = [
       </Placed>
     ),
   ]),
+  // Wrist chains on someone walking, head up.
+  [
+    'prop/chains',
+    (o) =>
+      figure(
+        o,
+        walkAt(0.3).pose,
+        {
+          face: EXPRESSIONS.determined,
+          identity: identity({ skinTone: 7, hair: 'short-crop', hairColor: 'black' }),
+          outfit: EVERYDAY,
+          prop: (hands, info) => (
+            <WristChains hands={hands} uid={`${info.uid}-ch`} shadowSide={info.shadowSide} />
+          ),
+        },
+        0.5,
+        BOX / 2,
+        88,
+      ),
+  ],
   // A prop in a hand: a sword held out, the fingers wrapped over its grip.
   [
     'prop/in-hand',

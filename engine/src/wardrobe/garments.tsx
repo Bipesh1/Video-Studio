@@ -35,6 +35,7 @@ export const GARMENTS = [
   'cloak',
   'hood',
   'brim-hat',
+  'top-hat',
   'sneakers',
   'boots',
   't-shirt',
@@ -450,6 +451,38 @@ export const hood =
   };
 
 /**
+ * A top hat in head space: a narrow curled brim that crosses the forehead just above the brows
+ * and a tall crown, a little wider at the top than at the band. For a gentleman of the 1800s,
+ * a showman or a magician.
+ */
+export const topHat =
+  (color: string): Piece =>
+  (c) => {
+    const k = cloth(color);
+    const off = lightOffset(c.shadowSide, 0.05);
+    return (
+      <g key="hat" transform="rotate(-4 0 -0.45)">
+        <Shaded
+          id={`${c.uid}-brim`}
+          d="M -0.66 -0.44 A 0.66 0.07 0 1 0 0.66 -0.44 A 0.66 0.07 0 1 0 -0.66 -0.44 Z"
+          fill={k.fill}
+          shadow={k.shadow}
+          offset={off}
+        />
+        <Shaded
+          id={`${c.uid}-crown`}
+          d="M -0.4 -0.45 L -0.44 -1.22 Q 0 -1.3 0.44 -1.22 L 0.4 -0.45 Q 0 -0.39 -0.4 -0.45 Z"
+          fill={k.fill}
+          shadow={k.shadow}
+          offset={off}
+        />
+        {fold('M -0.408 -0.6 Q 0 -0.54 0.408 -0.6', 'band')}
+        {fold('M -0.412 -0.68 Q 0 -0.62 0.412 -0.68', 'band-top')}
+      </g>
+    );
+  };
+
+/**
  * A plain brimmed hat, like a straw hat, in head space. The crown comes down over the top of
  * the head and the flat brim crosses the forehead just above the brows.
  */
@@ -554,7 +587,7 @@ export function outfitFrom(clothes: Clothes, id = 'clothes'): Outfit {
 
   const headwear = pieces([
     cloak?.hood ? hood(cloak.cloth) : undefined,
-    hat ? brimHat(hat.cloth) : undefined,
+    hat ? (hat.kind === 'top-hat' ? topHat(hat.cloth) : brimHat(hat.cloth)) : undefined,
     specs ? glasses : undefined,
   ]);
   if (headwear) outfit.headwear = headwear;

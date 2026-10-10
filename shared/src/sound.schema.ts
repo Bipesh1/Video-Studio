@@ -34,11 +34,13 @@ export const SFX_NAMES = [
   'blip',
   'hit',
   'ding',
+  'heartbeat',
+  'rain',
 ] as const;
 export type SfxName = (typeof SFX_NAMES)[number];
 
 /** Effects that run under a whole shot instead of marking one moment. */
-export const AMBIENT_SFX: readonly SfxName[] = ['wind', 'crowd-murmur'];
+export const AMBIENT_SFX: readonly SfxName[] = ['wind', 'crowd-murmur', 'heartbeat', 'rain'];
 
 /** Loudness every finished sound track is mastered to. Lessons can never loosen these. */
 export const LOUDNESS_TARGET = { lufs: -14, toleranceLu: 0.5, truePeakDb: -1 } as const;
