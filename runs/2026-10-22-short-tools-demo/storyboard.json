@@ -1,0 +1,1276 @@
+{
+  "version": 1,
+  "title": "Where Does Your Fat Go When You Lose Weight?",
+  "request": "Biku's What's the Catch? Short, used as it is: 'this is the script build for this script' (2026-10-21). The first Short in the new look: drawing at the black-hole bar, the mascot (design 1) blended in (look C), narrator voice 4.",
+  "mode": "as-is",
+  "format": "fine-print",
+  "style": "ink-stick",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "seed": 43672,
+  "finish": {
+    "acting": "snappy",
+    "onTwos": false,
+    "shadows": false,
+    "grain": 0.2,
+    "vignette": 0.12,
+    "boil": 0.25
+  },
+  "sources": [
+    "Meerman, R. and Brown, A. J., \"When somebody loses weight, where does the fat go?\", BMJ, 2014, 349: g7257. 10 kg of fat needs 29 kg of oxygen and becomes 28 kg of carbon dioxide and 11 kg of water; 84% leaves through the lungs, 16% as water; a survey of 150 doctors, dietitians and personal trainers, with the common wrong answers (energy, heat, muscle, faeces). https://doi.org/10.1136/bmj.g7257",
+    "UNSW press release, \"When you lose weight, where does the fat go?\", via ScienceDaily, 2014. https://www.sciencedaily.com/releases/2014/12/141216212047.htm",
+    "AsianScientist, \"Where Did The Fat Go?\", 2014. Breathing more on its own does not make you lose weight.",
+    "NPR, \"When You Burn Off That Fat, Where Does It Go?\", 2014. The 84% to 16% split; the water leaves as urine, sweat and other body fluids.",
+    "Checked by Claude on 2026-10-21: of the 150 asked, only 3 gave the right answer, so \"more than half got it wrong\" is true and milder than the source; kept as Biku wrote it."
+  ],
+  "appliedLessons": [],
+  "cast": [],
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "the-question",
+      "mood": "curious",
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l01",
+          "speaker": "narrator",
+          "text": "When your bathroom scale drops by one kilo of fat, where does that fat actually *go*?",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l02",
+          "speaker": "narrator",
+          "text": "When a hundred and fifty doctors, dietitians and trainers were asked, more than half got it *wrong*.",
+          "pauseAfterMs": 700
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s01",
+          "line": "l01",
+          "words": "When your bathroom scale drops by one kilo of fat, where does that fat actually *go*?",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": "middle",
+              "gainDb": -4
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "scale",
+            "fly": "start",
+            "keep": [],
+            "show": [
+              {
+                "item": "readout",
+                "on": "scale"
+              },
+              {
+                "item": "fat-blob",
+                "on": "fat"
+              }
+            ],
+            "title": {
+              "lines": [
+                "WHERE DID",
+                "THE FAT GO?"
+              ],
+              "now": true,
+              "stress": 1
+            }
+          },
+          "ambience": "home"
+        },
+        {
+          "id": "s02",
+          "line": "l02",
+          "words": "When a hundred and fifty doctors, dietitians and trainers were asked, more than half got it *wrong*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "blip",
+              "at": "end",
+              "gainDb": -4
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "doctor",
+            "fly": "start",
+            "keep": [
+              "readout",
+              "fat-blob"
+            ],
+            "show": [
+              {
+                "item": "doctors",
+                "on": "doctors"
+              },
+              {
+                "item": "dietitians",
+                "on": "dietitians",
+                "cam": "dietitian"
+              },
+              {
+                "item": "trainers",
+                "on": "trainers",
+                "cam": "trainer"
+              },
+              {
+                "item": "asked",
+                "on": "asked",
+                "cam": "crowd"
+              },
+              {
+                "item": "wrong",
+                "on": "wrong"
+              }
+            ],
+            "from": "scale",
+            "title": {
+              "lines": [
+                "150 EXPERTS",
+                "ASKED"
+              ],
+              "stress": 0
+            }
+          },
+          "ambience": "crowd-murmur"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "the-moment",
+      "mood": "curious",
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l03",
+          "speaker": "narrator",
+          "text": "Most said it turns into *energy* or heat, and a few said muscle, or the toilet.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l04",
+          "speaker": "narrator",
+          "text": "But fat is made of atoms, and atoms cannot just *vanish*, so let's follow them.",
+          "pauseAfterMs": 700
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s03",
+          "line": "l03",
+          "words": "Most said it turns into *energy* or heat, and a few said muscle, or the toilet.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "signs",
+            "fly": "start",
+            "keep": [
+              "readout",
+              "fat-blob",
+              "asked",
+              "wrong"
+            ],
+            "show": [
+              {
+                "item": "energy",
+                "on": "energy"
+              },
+              {
+                "item": "heat",
+                "on": "heat"
+              },
+              {
+                "item": "muscle",
+                "on": "muscle",
+                "cam": "flex"
+              },
+              {
+                "item": "toilet",
+                "on": "toilet",
+                "cam": "toilet-seat"
+              }
+            ],
+            "from": "crowd"
+          },
+          "ambience": "crowd-murmur"
+        },
+        {
+          "id": "s04",
+          "line": "l04",
+          "words": "But fat is made of atoms, and atoms cannot just *vanish*, so let's follow them.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "atoms",
+            "fly": "start",
+            "keep": [
+              "readout",
+              "fat-blob"
+            ],
+            "show": [
+              {
+                "item": "atoms",
+                "on": "atoms"
+              }
+            ],
+            "from": "toilet-seat"
+          },
+          "ambience": "home"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "chapter": 1,
+      "beat": "follow-the-money",
+      "mood": "upbeat",
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l05",
+          "speaker": "narrator",
+          "text": "Inside your belly, fat sits in tiny fat cells, each one a little bag of *oil*.",
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "l06",
+          "speaker": "narrator",
+          "text": "That oil is built from just three kinds of atoms: carbon, hydrogen and *oxygen*.",
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "l07",
+          "speaker": "narrator",
+          "text": "To burn that oil, your body needs extra oxygen, which you breathe *in*.",
+          "pauseAfterMs": 400
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s05",
+          "line": "l05",
+          "words": "Inside your belly, fat sits in tiny fat cells,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "whoosh",
+              "at": "start",
+              "gainDb": -2
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "belly",
+            "fly": "start",
+            "keep": [
+              "atoms",
+              "fat-blob"
+            ],
+            "show": [
+              {
+                "item": "cells",
+                "on": "cells"
+              }
+            ],
+            "from": "atoms"
+          },
+          "ambience": "underwater"
+        },
+        {
+          "id": "s06",
+          "line": "l05",
+          "words": "each one a little bag of *oil*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "lens",
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "cell",
+            "fly": "start",
+            "keep": [
+              "cells"
+            ],
+            "show": [
+              {
+                "item": "oil",
+                "on": "oil"
+              }
+            ],
+            "from": "cell"
+          },
+          "ambience": "underwater",
+          "diveAt": {
+            "x": 0.635,
+            "y": 0.42
+          }
+        },
+        {
+          "id": "s07",
+          "line": "l06",
+          "words": "That oil is built from just three kinds of atoms: carbon, hydrogen and *oxygen*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "chain",
+            "fly": "start",
+            "keep": [
+              "cells",
+              "oil"
+            ],
+            "show": [
+              {
+                "item": "carbon",
+                "on": "carbon"
+              },
+              {
+                "item": "hydrogen",
+                "on": "hydrogen"
+              },
+              {
+                "item": "oxygen",
+                "on": "oxygen"
+              }
+            ],
+            "from": "cell",
+            "title": {
+              "lines": [
+                "FAT IS MADE OF"
+              ]
+            }
+          },
+          "ambience": "underwater"
+        },
+        {
+          "id": "s08",
+          "line": "l07",
+          "words": "To burn that oil, your body needs extra oxygen, which you breathe *in*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "nose",
+            "fly": "start",
+            "keep": [
+              "cells",
+              "oil"
+            ],
+            "show": [
+              {
+                "item": "inhale",
+                "on": "breathe"
+              }
+            ],
+            "from": "chain"
+          },
+          "ambience": "underwater"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "chapter": 2,
+      "beat": "follow-the-money",
+      "mood": "upbeat",
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l08",
+          "speaker": "narrator",
+          "text": "One kilo of fat needs nearly three kilos of oxygen, so your lungs do the heavy *lifting*.",
+          "pauseAfterMs": 900
+        },
+        {
+          "id": "l09",
+          "speaker": "narrator",
+          "text": "Your body pulls the oil apart and joins each piece to that *oxygen*.",
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "l10",
+          "speaker": "narrator",
+          "text": "Only two leftovers come out: water, and carbon dioxide, the gas that fizzes in *soda*.",
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "l11",
+          "speaker": "narrator",
+          "text": "That gas slips into your blood and rides it all the way up to your *lungs*.",
+          "pauseAfterMs": 600
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s09",
+          "line": "l08",
+          "words": "One kilo of fat needs nearly three kilos of oxygen, so your lungs do the heavy *lifting*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "lungs",
+            "fly": "start",
+            "keep": [
+              "cells",
+              "oil",
+              "inhale"
+            ],
+            "show": [
+              {
+                "item": "barbell",
+                "on": "lifting"
+              }
+            ],
+            "from": "nose",
+            "callout": {
+              "value": "2.9 KG",
+              "caption": "OXYGEN PER / KILO OF FAT",
+              "at": "lungs",
+              "on": "three"
+            }
+          },
+          "ambience": "underwater"
+        },
+        {
+          "id": "s10",
+          "line": "l09",
+          "words": "Your body pulls the oil apart and joins each piece to that *oxygen*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "pieces",
+            "fly": "start",
+            "keep": [
+              "cells",
+              "oil"
+            ],
+            "show": [
+              {
+                "item": "apart",
+                "on": "apart"
+              },
+              {
+                "item": "joins",
+                "on": "joins"
+              }
+            ],
+            "from": "lungs"
+          },
+          "ambience": "underwater"
+        },
+        {
+          "id": "s11",
+          "line": "l10",
+          "words": "Only two leftovers come out: water, and carbon dioxide, the gas that fizzes in *soda*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "bubbles",
+              "at": "end",
+              "gainDb": -4
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "leftovers",
+            "fly": "start",
+            "keep": [
+              "cells",
+              "oil",
+              "apart",
+              "joins"
+            ],
+            "show": [
+              {
+                "item": "water",
+                "on": "water"
+              },
+              {
+                "item": "gas",
+                "on": "carbon"
+              },
+              {
+                "item": "soda",
+                "on": "soda"
+              }
+            ],
+            "from": "pieces"
+          },
+          "ambience": "underwater"
+        },
+        {
+          "id": "s12",
+          "line": "l11",
+          "words": "That gas slips into your blood and rides it all the way up to your *lungs*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "blood",
+            "fly": "whole",
+            "keep": [
+              "cells",
+              "oil",
+              "apart",
+              "joins",
+              "water",
+              "gas",
+              "soda"
+            ],
+            "show": [
+              {
+                "item": "blood",
+                "on": "blood"
+              },
+              {
+                "item": "lungs-in",
+                "on": "lungs"
+              }
+            ],
+            "from": "leftovers"
+          },
+          "ambience": "underwater"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chapter": 2,
+      "beat": "the-trick",
+      "mood": "curious",
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l12",
+          "speaker": "narrator",
+          "text": "And then, with your next breath, it floats right out of your *mouth*.",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l13",
+          "speaker": "narrator",
+          "text": "Out of every kilo you lose, about eight hundred and forty grams leaves as *breath*.",
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "l14",
+          "speaker": "narrator",
+          "text": "The other hundred and sixty grams becomes water, and leaves as *sweat* and pee.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l15",
+          "speaker": "narrator",
+          "text": "So the gym is really where you go to exhale your *burger*.",
+          "pauseAfterMs": 1000
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s13",
+          "line": "l12",
+          "words": "And then, with your next breath, it floats right out of your *mouth*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "whoosh",
+              "at": "start",
+              "gainDb": -2
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "cloud",
+            "fly": "start",
+            "keep": [
+              "cells",
+              "blood",
+              "lungs-in"
+            ],
+            "show": [
+              {
+                "item": "exhale",
+                "on": "mouth"
+              }
+            ],
+            "from": "blood"
+          },
+          "ambience": "home",
+          "drop": true
+        },
+        {
+          "id": "s14",
+          "line": "l13",
+          "words": "Out of every kilo you lose, about eight hundred and forty grams leaves as *breath*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "cloud",
+            "fly": "start",
+            "keep": [
+              "exhale"
+            ],
+            "show": [],
+            "callout": {
+              "value": "840 G",
+              "caption": "BREATHED OUT",
+              "at": "cloud",
+              "on": "eight"
+            }
+          },
+          "ambience": "home"
+        },
+        {
+          "id": "s15",
+          "line": "l14",
+          "words": "The other hundred and sixty grams becomes water, and leaves as *sweat* and pee.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "sweat",
+            "fly": "start",
+            "keep": [
+              "exhale"
+            ],
+            "show": [
+              {
+                "item": "sweat",
+                "on": "sweat"
+              },
+              {
+                "item": "pee",
+                "on": "pee"
+              }
+            ],
+            "from": "cloud",
+            "callout": {
+              "value": "160 G",
+              "caption": "LEAVES AS WATER",
+              "at": "sweat",
+              "on": "hundred"
+            }
+          },
+          "ambience": "home"
+        },
+        {
+          "id": "s16",
+          "line": "l15",
+          "words": "So the gym is really where you go to exhale your *burger*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "gym",
+            "fly": "start",
+            "keep": [],
+            "show": [
+              {
+                "item": "burgers",
+                "on": "burger"
+              }
+            ],
+            "from": "sweat"
+          },
+          "ambience": "home"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 3,
+      "beat": "the-proof",
+      "mood": "reflective",
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l16",
+          "speaker": "narrator",
+          "text": "Two scientists in Australia worked this out by tracking every *atom* in ten kilos of fat.",
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "l17",
+          "speaker": "narrator",
+          "text": "Ten kilos of fat plus twenty nine kilos of oxygen went *in*.",
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "l18",
+          "speaker": "narrator",
+          "text": "Twenty eight kilos of carbon dioxide and eleven kilos of water came *out*.",
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "l19",
+          "speaker": "narrator",
+          "text": "Both sides weigh thirty nine kilos, so not a single atom went *missing*.",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l20",
+          "speaker": "narrator",
+          "text": "And no, panting on the sofa will not burn more fat. You will just get *dizzy*.",
+          "pauseAfterMs": 800
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s17",
+          "line": "l16",
+          "words": "Two scientists in Australia worked this out by tracking every *atom* in ten kilos of fat.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "clunk",
+              "at": "end",
+              "gainDb": -3
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "balance",
+            "fly": "start",
+            "keep": [],
+            "show": [
+              {
+                "item": "scientists",
+                "on": "scientists"
+              },
+              {
+                "item": "fat-block",
+                "on": "ten"
+              }
+            ],
+            "from": "gym"
+          },
+          "ambience": "crowd-murmur"
+        },
+        {
+          "id": "s18",
+          "line": "l17",
+          "words": "Ten kilos of fat plus twenty nine kilos of oxygen went *in*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "clunk",
+              "at": "end",
+              "gainDb": -3
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "left-pan",
+            "fly": "start",
+            "keep": [
+              "fat-block"
+            ],
+            "show": [
+              {
+                "item": "oxygen-block",
+                "on": "oxygen"
+              }
+            ],
+            "from": "balance",
+            "callout": {
+              "value": "29 KG",
+              "caption": "OXYGEN IN",
+              "at": "left-pan",
+              "on": "twenty"
+            }
+          },
+          "ambience": "crowd-murmur"
+        },
+        {
+          "id": "s19",
+          "line": "l18",
+          "words": "Twenty eight kilos of carbon dioxide and eleven kilos of water came *out*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "clunk",
+              "at": "end",
+              "gainDb": -3
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "right-pan",
+            "fly": "start",
+            "keep": [
+              "fat-block",
+              "oxygen-block"
+            ],
+            "show": [
+              {
+                "item": "gas-block",
+                "on": "carbon"
+              },
+              {
+                "item": "water-block",
+                "on": "eleven"
+              }
+            ],
+            "from": "left-pan",
+            "callout": {
+              "value": "28 + 11 KG",
+              "caption": "GAS AND WATER OUT",
+              "at": "right-pan",
+              "on": "twenty"
+            }
+          },
+          "ambience": "crowd-murmur"
+        },
+        {
+          "id": "s20",
+          "line": "l19",
+          "words": "Both sides weigh thirty nine kilos, so not a single atom went *missing*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "end",
+              "gainDb": -3
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "beam",
+            "fly": "start",
+            "keep": [
+              "fat-block",
+              "oxygen-block",
+              "gas-block",
+              "water-block"
+            ],
+            "show": [
+              {
+                "item": "level",
+                "on": "missing"
+              }
+            ],
+            "from": "right-pan",
+            "callout": {
+              "value": "39 = 39",
+              "caption": "NOTHING VANISHED",
+              "at": "beam",
+              "on": "thirty"
+            }
+          },
+          "ambience": "crowd-murmur"
+        },
+        {
+          "id": "s21",
+          "line": "l20",
+          "words": "And no, panting on the sofa will not burn more fat. You will just get *dizzy*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "sofa",
+            "fly": "start",
+            "keep": [
+              "fat-block",
+              "oxygen-block",
+              "gas-block",
+              "water-block"
+            ],
+            "show": [
+              {
+                "item": "panting",
+                "on": "sofa"
+              },
+              {
+                "item": "dizzy",
+                "on": "dizzy"
+              }
+            ],
+            "from": "beam"
+          },
+          "ambience": "home"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "chapter": 3,
+      "beat": "your-move",
+      "mood": "hope",
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l21",
+          "speaker": "narrator",
+          "text": "From now on, every breath out carries a tiny piece of yesterday's *dinner*.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l22",
+          "speaker": "narrator",
+          "text": "So where did that kilo on your scale go? You breathed it *out*.",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s22",
+          "line": "l21",
+          "words": "From now on, every breath out carries a tiny piece of yesterday's *dinner*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "plate",
+            "fly": "start",
+            "keep": [
+              "exhale",
+              "fat-blob"
+            ],
+            "show": [
+              {
+                "item": "plate",
+                "on": "dinner"
+              }
+            ],
+            "from": "sofa"
+          },
+          "ambience": "home"
+        },
+        {
+          "id": "s23",
+          "line": "l22",
+          "words": "So where did that kilo on your scale go? You breathed it *out*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "scale",
+            "fly": "start",
+            "keep": [
+              "exhale",
+              "plate",
+              "fat-blob"
+            ],
+            "show": [
+              {
+                "item": "readout",
+                "on": "scale"
+              }
+            ],
+            "from": "plate",
+            "title": {
+              "lines": [
+                "YOU BREATHED",
+                "IT OUT"
+              ],
+              "stress": 1
+            }
+          },
+          "ambience": "home"
+        }
+      ]
+    }
+  ],
+  "explainerLook": "world",
+  "cover": {
+    "shot": "s13",
+    "at": 0.85
+  },
+  "score": {
+    "palette": "body"
+  },
+  "gauges": [
+    {
+      "label": "EXPERTS ASKED",
+      "kind": "count",
+      "keys": [
+        {
+          "shot": "s02",
+          "on": "hundred",
+          "value": 150
+        }
+      ],
+      "until": "s03"
+    },
+    {
+      "label": "GOT IT WRONG",
+      "kind": "bar",
+      "max": 100,
+      "keys": [
+        {
+          "shot": "s02",
+          "on": "wrong",
+          "value": 55
+        },
+        {
+          "shot": "s03",
+          "on": "energy",
+          "value": 58
+        }
+      ],
+      "until": "s03"
+    },
+    {
+      "label": "FOLLOW THE FAT",
+      "kind": "steps",
+      "of": 3,
+      "keys": [
+        {
+          "shot": "s04",
+          "on": "follow",
+          "value": 0
+        },
+        {
+          "shot": "s05",
+          "on": "cells",
+          "value": 1
+        },
+        {
+          "shot": "s07",
+          "on": "carbon",
+          "value": 2
+        }
+      ]
+    }
+  ]
+}

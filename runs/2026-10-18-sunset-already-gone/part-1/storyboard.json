@@ -1,0 +1,297 @@
+{
+  "version": 1,
+  "title": "Why Is the Sun Already Gone When You Watch It Set?",
+  "request": "Biku's What's the Catch? script, used as it is: 'make a video for this script for whats the catch' (2026-10-18).",
+  "mode": "as-is",
+  "format": "fine-print",
+  "style": "ink-stick",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "seed": 6201,
+  "finish": {
+    "acting": "snappy",
+    "onTwos": false,
+    "shadows": false,
+    "grain": 0.2,
+    "vignette": 0.12,
+    "boil": 0.25
+  },
+  "explainerLook": "world",
+  "sources": [
+    "David Basey, \"Atmospheric Refraction\", British Astronomical Association, 2 March 2019. Near the horizon the air lifts the Sun's image by about half a degree, roughly the Sun's apparent diameter; a Sun that seems to sit on the horizon is really below it; the lower edge is lifted more than the upper, so the disc looks oval. https://britastro.org/2019/atmospheric-refraction",
+    "Tong Yu-fai, \"Effect of atmospheric refraction on the times of sunrise and sunset\", Hong Kong Observatory, August 2017. Refraction makes sunset about 2 minutes later in Hong Kong than with no air (about 34 arcminutes of lift under average conditions); the published times already include it; the Sun truly disappears below the horizon before sunset happens. https://www.hko.gov.hk/en/education/astronomy-and-time/astronomy/00493-effect-of-atmospheric-refraction-on-the-times-of-sunrise-and-sunset.html",
+    "Checked by Claude against both pages on 2026-10-18."
+  ],
+  "appliedLessons": [],
+  "cast": [],
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "the-question",
+      "mood": "curious",
+      "quiet": false,
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l01",
+          "speaker": "narrator",
+          "text": "Where is the Sun really when it touches the sea at sunset?",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l02",
+          "speaker": "narrator",
+          "text": "The answer is in the air around you, and it tricks your *eyes*.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s01",
+          "line": "l01",
+          "words": "Where is the Sun really when it touches the sea at sunset?",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "title": {
+              "lines": [
+                "WHERE IS THE",
+                "SUN REALLY?"
+              ],
+              "stress": 1
+            },
+            "at": "screen",
+            "fly": "whole",
+            "keep": [],
+            "show": [
+              {
+                "item": "sun",
+                "on": "sun"
+              }
+            ]
+          },
+          "transition": "cut",
+          "startMs": 0,
+          "endMs": 3950
+        },
+        {
+          "id": "s02",
+          "line": "l02",
+          "words": "The answer is in the air around you, and it tricks your *eyes*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "from": "screen",
+            "at": "beach",
+            "fly": "start",
+            "keep": [],
+            "show": [
+              {
+                "item": "shimmer",
+                "on": "air"
+              }
+            ]
+          },
+          "transition": "cut",
+          "startMs": 3950,
+          "endMs": 8230
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "the-moment",
+      "mood": "curious",
+      "quiet": false,
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l03",
+          "speaker": "narrator",
+          "text": "You hold up your phone as the bottom of the Sun touches the sea.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l04",
+          "speaker": "narrator",
+          "text": "Everyone filming thinks the Sun is right there, sitting on the water.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l05",
+          "speaker": "narrator",
+          "text": "And they think its light flies to them in a *straight* line.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l06",
+          "speaker": "narrator",
+          "text": "Both of those ideas are *wrong*.",
+          "pauseAfterMs": 1100
+        }
+      ],
+      "shots": [
+        {
+          "id": "s03",
+          "line": "l03",
+          "words": "You hold up your phone as the bottom of the Sun touches the sea.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "at": "beach",
+            "fly": "start",
+            "keep": [
+              "shimmer"
+            ],
+            "show": [
+              {
+                "item": "phone",
+                "on": "phone"
+              },
+              {
+                "item": "sun-on-sea",
+                "on": "bottom"
+              }
+            ]
+          },
+          "transition": "cut",
+          "startMs": 8230,
+          "endMs": 12380
+        },
+        {
+          "id": "s04",
+          "line": "l04",
+          "words": "Everyone filming thinks the Sun is right there, sitting on the water.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "at": "beach",
+            "fly": "start",
+            "keep": [
+              "shimmer",
+              "phone"
+            ],
+            "show": [],
+            "callout": {
+              "value": "HERE?",
+              "caption": "WHERE EVERYONE THINKS IT IS",
+              "at": "sun",
+              "on": "there"
+            }
+          },
+          "transition": "cut",
+          "startMs": 12380,
+          "endMs": 16750
+        },
+        {
+          "id": "s05",
+          "line": "l05",
+          "words": "And they think its light flies to them in a *straight* line.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "from": "beach",
+            "at": "sea",
+            "fly": "start",
+            "keep": [
+              "shimmer"
+            ],
+            "show": [
+              {
+                "item": "straight",
+                "on": "straight"
+              }
+            ]
+          },
+          "transition": "cut",
+          "startMs": 16750,
+          "endMs": 20090
+        },
+        {
+          "id": "s06",
+          "line": "l06",
+          "words": "Both of those ideas are *wrong*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "at": "sea",
+            "fly": "start",
+            "keep": [
+              "shimmer",
+              "straight"
+            ],
+            "show": [
+              {
+                "item": "crack",
+                "on": "both"
+              }
+            ]
+          },
+          "transition": "cut",
+          "startMs": 20090,
+          "endMs": 24000
+        }
+      ]
+    }
+  ]
+}

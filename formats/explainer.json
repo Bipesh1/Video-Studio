@@ -2,7 +2,7 @@
   "id": "explainer",
   "name": "Explainer",
   "description": "How or why something works or happened, made clear step by step. Pick it when the viewer should come away understanding one thing.",
-  "version": 1,
+  "version": 2,
   "structure": [
     {
       "id": "hook",
@@ -88,6 +88,14 @@
     }
   },
   "captionMode": "full",
+  "finish": {
+    "acting": "snappy",
+    "onTwos": true,
+    "shadows": true,
+    "grain": 0.4,
+    "vignette": 0.35,
+    "boil": 0.25
+  },
   "factRules": {
     "sourcesRequired": true,
     "rules": [

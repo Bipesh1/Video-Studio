@@ -1,3 +1,4 @@
+import { accent, pick } from '../tokens';
 import { Shaded, lightOffset } from '../wardrobe/Shaded';
 import { Glint, detail, paintOf } from './Hold';
 import type { PropProps } from './Hold';
@@ -10,9 +11,20 @@ export const TABLE = { top: 1.22, width: 2.4 } as const;
  * width at the origin. Things stand on it at y = -TABLE.top. Stand it with Placed; draw it
  * after a character sitting behind it and before anything on its top.
  */
-export function Table({ uid, shadowSide, width = TABLE.width }: PropProps & { width?: number }) {
-  const wood = paintOf('brown');
-  const top = paintOf('tan');
+/** Bare grey metal, lighter than the black of a limb so a figure reads against it. */
+export const ironPaint = (): { fill: string; shadow: string } => {
+  const steel = accent('steel');
+  return { fill: pick(steel, 2), shadow: pick(steel, 0) };
+};
+
+export function Table({
+  uid,
+  shadowSide,
+  width = TABLE.width,
+  made = 'wood',
+}: PropProps & { width?: number; made?: 'wood' | 'iron' }) {
+  const wood = made === 'iron' ? ironPaint() : paintOf('brown');
+  const top = made === 'iron' ? ironPaint() : paintOf('tan');
   const w = width / 2;
   const t = TABLE.top;
   const off = lightOffset(shadowSide, 0.035);

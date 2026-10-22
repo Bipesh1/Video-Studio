@@ -1,4 +1,4 @@
-import { actorMoments } from '@studio/shared';
+import { PLAIN_FINISH, actorMoments } from '@studio/shared';
 import type { Actor, ActorMoment, CharacterCard, Storyboard, VoiceTrack } from '@studio/shared';
 import type { Focus } from '../camera/Framing';
 import { STAND_HIP_HEIGHT, armReachToHand, body } from '../rig/body';
@@ -7,15 +7,15 @@ import { ELBOW_DOWN } from '../rig/ik';
 import { withLife } from '../rig/life';
 import { length, sub, vec } from '../rig/math';
 import type { Vec2 } from '../rig/math';
-import { moveFrames, poseAt as posedAt, resolvePose } from '../rig/pose';
+import { PACES, moveFrames, poseAt as posedAt, resolvePose } from '../rig/pose';
 import type { Pose, PoseKey } from '../rig/pose';
-import { poseById, stand } from '../rig/poses';
+import { SEATED_POSES, poseById, stand } from '../rig/poses';
 import { seeded } from '../rig/random';
 import { shoulderOf } from '../rig/skeleton';
 import type { ResolvedPose } from '../rig/types';
 import { basePose, castSize, placeActor, shotFocus, shotInShape, stageFor, stageX } from './layout';
 import type { Placement, Size, TimedShot } from './layout';
-import { gripHeight } from './props';
+import { gripPoint } from './props';
 
 /**
  * A shot worked out for one frame, before anything is drawn: where each person stands and how
@@ -26,6 +26,17 @@ import { gripHeight } from './props';
 
 /** Frames a pose takes to change when a cut keeps someone on screen in a new pose. */
 const POSE_FRAMES = 5;
+
+/**
+ * How long someone keeps the face they had after a cut before a new one begins, in frames: about
+ * a third of a second, the time it takes to take in what was just said.
+ */
+const FACE_BEAT_FRAMES = 10;
+
+const sameFace = (
+  a: { expression: string; strength: number },
+  b: { expression: string; strength: number },
+) => a.expression === b.expression && a.strength === b.strength;
 
 /** A small steady number for each person, so their blinks and sway differ. */
 export const seedFor = (seed: number, id: string) => seed + Math.floor(seeded(`cast:${id}`) * 9973);
@@ -44,6 +55,8 @@ export type Drawn = {
   whereAt: (frame: number) => { placement: Placement; pose: ResolvedPose };
   /** Whether they sit at any point in the shot, so a seat stays theirs. */
   sits: boolean;
+  /** Where they are when no action is carrying them, px: where a seat of theirs stands and stays. */
+  spot: number;
   placement: Placement;
   /** The pose for looking and framing: where the body is, without the small moves of life. */
   pose: ResolvedPose;
@@ -54,7 +67,7 @@ export type Drawn = {
   /** True when no action of theirs carries them off their spot in this shot. */
   stays: boolean;
   /** The frame each stretch of the shot starts on, and the face it wears. */
-  faces: Array<{ frame: number; expression: string }>;
+  faces: Array<{ frame: number; expression: string; strength: number }>;
   /** How far the action has carried them, px, when the camera travels along. */
   travel: number;
 };
@@ -165,6 +178,17 @@ function trailing(aimAt: (frame: number) => Focus, frame: number, frames: number
   };
 }
 
+/**
+ * The frame the people and things of a shot are drawn at. On twos they move on every second
+ * frame of the shot, counted from its first, as hand animation does; the camera keeps every
+ * frame.
+ */
+export const actingFrame = (storyboard: Storyboard, startFrame: number, frame: number): number =>
+  storyboard.finish?.onTwos ? frame - ((frame - startFrame) % 2) : frame;
+
+/** How the people of a storyboard move from pose to pose. */
+export const paceOf = (storyboard: Storyboard) => PACES[(storyboard.finish ?? PLAIN_FINISH).acting];
+
 /** Work a shot out for one frame. */
 export function stageShot({
   ts,
@@ -173,7 +197,7 @@ export function stageShot({
   cards,
   track,
   size,
-  frame,
+  frame: shown,
   fps,
 }: {
   ts: TimedShot;
@@ -185,11 +209,14 @@ export function stageShot({
   frame: number;
   fps: number;
 }) {
+  const frame = actingFrame(storyboard, ts.startFrame, shown);
+  const pace = paceOf(storyboard);
   const { scene } = ts;
   const shot = shotInShape(ts.shot, size);
   const stage = stageFor(scene, size, storyboard.seed);
-  const local = frame - ts.startFrame;
-  const t = local / fps;
+  // The camera's own moves keep every frame.
+  const local = shown - ts.startFrame;
+  const t = (frame - ts.startFrame) / fps;
   const duration = ts.endFrame - ts.startFrame;
   const before = shots[ts.index - 1];
   // A plain cut is the same moment seen again, inside a scene or into a new scene in the same
@@ -224,19 +251,21 @@ export function stageShot({
       const from = moments[i - 1];
       if (!from || !m.holds || m.holds === from.holds) return [];
       const spot = shot.props
-        .map((p, index) => ({ index, prop: p.prop, x: stageX(stage, p.x) }))
+        .map((p, index) => ({ index, prop: p.prop, x: stageX(stage, p.x), up: gripPoint(p) }))
         .filter((p) => p.prop === m.holds)
         .sort((a, b) => Math.abs(a.x - placement.x) - Math.abs(b.x - placement.x))[0];
       if (!spot) return [];
       const ahead = ((spot.x - placement.x) * sign) / placement.head;
       const reach = !moving && ahead > 0;
-      const point = vec(ahead, (-gripHeight(spot.prop) * stage.head) / placement.head);
+      const point = vec(ahead, (-spot.up * stage.head) / placement.head);
       // The hand is on it when the body has got there: a deep bow from a kneel to something
       // flat on the floor takes as long as any move of the whole body.
       const base = poseOrStand(from.pose);
-      const reachFrames = Math.max(
-        REACH_FRAMES,
-        moveFrames(resolvePose(base), resolvePose(reachingFor(base, point))).transition + 1,
+      const reachFrames = Math.round(
+        Math.max(
+          REACH_FRAMES,
+          moveFrames(resolvePose(base), resolvePose(reachingFor(base, point))).transition + 1,
+        ) * pace.slower,
       );
       return [
         {
@@ -292,7 +321,7 @@ export function stageShot({
           }
           keys.push({ frame: pick?.grab ?? startOf(m), pose: poseOrStand(m.pose) });
         }
-        return posedAt(f, keys);
+        return posedAt(f, keys, pace);
       }
       const links = moments.map((m) => ({
         from: (m.at * duration) / fps,
@@ -330,7 +359,8 @@ export function stageShot({
         .filter((p) => p.point.x <= 0 || leanToReach(poseOrStand(p.from.pose), p.point) === null)
         .map((p) => p.moment.holds ?? ''),
       whereAt,
-      sits: moments.some((m) => m.pose === 'sit'),
+      sits: moments.some((m) => SEATED_POSES.includes(m.pose ?? '')),
+      spot: placement.x,
       ...whereAt(frame),
       poseAt,
       moving,
@@ -341,8 +371,25 @@ export function stageShot({
           ...[ts.startFrame, onSpot, ts.endFrame - 1].map((f) => Math.abs(bare(f).rootX - anchor)),
         ) < 0.2,
       faces: [
-        ...(was ? [{ frame: previous?.startFrame ?? 0, expression: was.expression }] : []),
-        ...moments.map((m) => ({ frame: startOf(m), expression: m.expression })),
+        ...(was
+          ? [
+              {
+                frame: previous?.startFrame ?? 0,
+                expression: was.expression,
+                strength: was.strength,
+              },
+            ]
+          : []),
+        ...moments.map((m, i) => ({
+          // They come over the cut with the face they had. If the shot gives them another, it
+          // comes a beat in, where it can be watched, and not on the cut itself.
+          frame:
+            i === 0 && was && !sameFace(was, m)
+              ? ts.startFrame + Math.min(FACE_BEAT_FRAMES, Math.floor(duration / 4))
+              : startOf(m),
+          expression: m.expression,
+          strength: m.strength,
+        })),
       ],
       travel: follows && moving ? carried * placement.head * sign : 0,
     };
@@ -373,14 +420,39 @@ export function stageShot({
   // still holds whole figures when a push-in has finished.
   const strength = shot.camera.strength;
   const closer =
-    shot.camera.move === 'push-in'
+    shot.camera.move === 'push-in' || shot.camera.move === 'pull-back'
       ? 1 + 0.32 * strength
       : shot.camera.move === 'punch-in'
         ? 1 + 0.7 * strength
         : 1;
+  // Someone walking out of a wide shot, who does not stop again in it, no longer steers the
+  // camera: aimed at everyone, it pulled back as two guests left a party until every face was
+  // tiny (2026-10-15). Someone walking in still does, so they are in the picture when they stop.
+  const leaving = (f: number): Set<string> =>
+    new Set(
+      shot.camera.framing !== 'wide'
+        ? []
+        : drawn
+            .filter((d) => {
+              const now = d.momentAt(f);
+              if (!now.action || d.stays) return false;
+              const moments = actorMoments(d.actor);
+              const i = moments.findIndex((m) => m.at === now.at);
+              return (
+                moments.slice(0, i).some((m) => !m.action) &&
+                !moments.slice(i + 1).some((m) => !m.action)
+              );
+            })
+            .map((d) => d.actor.character),
+    );
   const aimAt = (f: number): Focus => {
-    const scene = sceneAt(Math.max(ts.startFrame + CUT_SETTLE, f));
-    const aim = shotFocus(scene.shot, stage, scene.placements, scene.held);
+    const at = Math.max(ts.startFrame + CUT_SETTLE, f);
+    const scene = sceneAt(at);
+    const gone = leaving(at);
+    const staying = scene.shot.actors.filter((a) => !gone.has(a.character));
+    const aimed =
+      gone.size > 0 && staying.length > 0 ? { ...scene.shot, actors: staying } : scene.shot;
+    const aim = shotFocus(aimed, stage, scene.placements, scene.held);
     return aim.keep ? { ...aim, keep: { ...aim.keep, zoom: closer } } : aim;
   };
   const overShoulder = shot.camera.framing === 'over-shoulder';

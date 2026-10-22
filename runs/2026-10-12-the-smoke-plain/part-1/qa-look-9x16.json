@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "video": "the-smoke-plain-part-1-9x16-preview-v5.mp4",
+  "stills": {
+    "s1a": "ok",
+    "s1b": "ok",
+    "s2a": "ok",
+    "s2b": "ok",
+    "s2c": "ok",
+    "s2d": "ok",
+    "s2e": "ok",
+    "s2f": "ok",
+    "s2g": "ok",
+    "s3a": "ok",
+    "s3b": "ok",
+    "s3c": "ok",
+    "s3d": "ok",
+    "s3e": "ok",
+    "s3f": "ok"
+  },
+  "strips": {
+    "cut-s1a-s1b": "ok",
+    "cut-s1b-s2a": "ok",
+    "cut-s2a-s2b": "ok",
+    "cut-s2b-s2c": "ok",
+    "cut-s2c-s2d": "ok",
+    "cut-s2d-s2e": "ok",
+    "cut-s2e-s2f": "ok",
+    "cut-s2f-s2g": "ok",
+    "cut-s2g-s3a": "ok",
+    "cut-s3a-s3b": "ok",
+    "cut-s3b-s3c": "ok",
+    "cut-s3c-s3d": "ok",
+    "cut-s3d-s3e": "ok",
+    "cut-s3e-s3f": "ok",
+    "s2a-move-1": "ok",
+    "s2e-move-1": "ok",
+    "s2e-move-2": "ok",
+    "s3a-move-1": "ok",
+    "s3d-move-1": "ok"
+  },
+  "playbook": "ok",
+  "fixed": [
+    "The Trainer's line 'He looked at the people' was first said over a close shot of the Copycat, with the Trainer out of the picture; the self-check refused it. It is said over the room now, with both of them in it.",
+    "The smoke came in with a front like the end of a block. Its front is a low wisp now.",
+    "When the Cheat took his coin he bowed his head down to the table, his hands stayed on his knees, and the coin jumped from the table to the floor behind the caption before it turned up in his hand. Claude had passed that at thumbnail size in the first render. A thing lying on a table was being reached for on the floor under it. Now his arm goes across to the coin where it lies, closes on it and brings it back to his knee; looked at large, eight frames across the move.",
+    "With the slower pace Biku picked, the Trainer's line 'I pay them to do one thing. Stay calm, whatever happens.' stayed on his face for 4.7 seconds. It is two shots now: his face, then the room with the people he pays, the row with its gold and the Cheat with his coin."
+  ],
+  "notes": [
+    "This is the second script for this tape, in plain full sentences, written by Claude and approved by Biku after he found the first 'weird random texts'. The first run (2026-10-12-the-smoke) is kept and not used.",
+    "The Trainer's longer sentences are cut in two: he says the first half to us, close, and the second half is heard over the room he is talking about.",
+    "The Cheat is paid in the picture: he leans over and takes the gold coin from the table on 'everyone else in this room works for me', while the Copycat looks at his twenty.",
+    "'Is that smoke?' is a close shot of a second and a half: short, but it is one quick question.",
+    "Spoken again on 2026-10-13 the way Biku picked by ear: each line at its own pace with breaths inside the sentences, the Trainer's blended voice, and every question lifted at its end. Measured on this part: 'leave?' ends 2.2 semitones above the words of its question, 'here?' 7.9, 'smoke?' 4.6, 'did?' 8.7. The opening question is said in 2.9 seconds.",
+    "Claude cannot hear: the voices, the lifted questions and the music need Biku's ears."
+  ]
+}

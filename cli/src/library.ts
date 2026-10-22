@@ -5,6 +5,9 @@
  *   list [--kind=pose]                every asset, grouped by kind
  *   show <id>                         one asset in full
  *   characters                        every saved character card in characters/
+ *   sheet <character> [<character>]   a saved character's pictures into characters/sheets/: the
+ *                                     character sheet, the faces and the poses
+ *   cast <name> [--order=id,id]       every character of one cast together at the game table
  *   check                             fail if a drawing is missing from the index, or the index
  *                                     points at code or a still that is not there
  *   stills [--only=id,id]             render each asset's golden still into knowledge/golden/assets/
@@ -23,6 +26,7 @@ import {
 } from '@studio/shared';
 import type { AssetKind, CharacterCard, LibraryAsset, LibraryIndex } from '@studio/shared';
 import { catalogPageCount } from '../../engine/src/library/catalog';
+import { SHEET_PAGES } from '../../engine/src/library/sheetPages';
 import { bundle, finishRendering, renderStill, selectComposition } from './render.js';
 import { projectRoot, run } from './system.js';
 
@@ -63,15 +67,23 @@ function describeCard(c: CharacterCard) {
     ? 'a plain stick figure'
     : 'costume' in c.outfit
       ? `the ${c.outfit.costume} costume`
-      : Object.values(c.outfit.clothes)
-          .flatMap((g) => (g === undefined || g === false ? [] : [g]))
-          .map((g) =>
-            g === true ? 'glasses' : 'kind' in g ? `${g.cloth} ${g.kind}` : `${g.cloth} cloak`,
+      : Object.entries(c.outfit.clothes)
+          .flatMap(([piece, g]) => (g === undefined || g === false ? [] : [[piece, g] as const]))
+          .map(([piece, g]) =>
+            g === true ? 'glasses' : 'kind' in g ? `${g.cloth} ${g.kind}` : `${g.cloth} ${piece}`,
           )
           .join(', ');
   console.log(`${c.id}  (${c.name}, ${c.age})`);
   console.log(`  ${c.description}`);
   console.log(`  wears: ${wears}`);
+  if (c.series) console.log(`  cast:  ${c.series} (look and voice are fixed)`);
+  if (c.voice) console.log(`  voice: ${c.voice}`);
+  else if (c.series) console.log('  voice: none, never speaks');
+  if (c.expressions) console.log(`  faces: ${c.expressions.join(', ')}`);
+  if (c.poses) console.log(`  poses: ${c.poses.join(', ')}`);
+  if (c.signature) console.log(`  own:   ${c.signature.join(', ')}`);
+  const sheets = path.join('characters', 'sheets', `${c.id}-sheet.png`);
+  if (existsSync(path.join(projectRoot, sheets))) console.log(`  sheet: ${sheets}`);
   console.log(`  tags:  ${c.tags.join(', ')}`);
   console.log(`  file:  characters/${c.id}.json`);
 }
@@ -253,11 +265,71 @@ async function catalog() {
   }
 }
 
+const sheetsDir = path.join(projectRoot, 'characters', 'sheets');
+
+function cardNamed(id: string | undefined): CharacterCard {
+  const card = loadCards().find((c) => c.id === id);
+  if (!card) {
+    throw new Error(
+      `No saved character "${id ?? ''}". Saved: ${loadCards()
+        .map((c) => c.id)
+        .join(', ')}`,
+    );
+  }
+  return card;
+}
+
+/** A saved character's three pictures: the character sheet, the faces and the poses. */
+async function sheet() {
+  const ids = words.length ? words : [undefined];
+  const cards = ids.map(cardNamed);
+  const url = await bundled();
+  mkdirSync(sheetsDir, { recursive: true });
+  for (const card of cards) {
+    for (const page of SHEET_PAGES) {
+      const inputProps = { card, page };
+      const composition = await selectComposition({
+        serveUrl: url,
+        id: 'CharacterSheet',
+        inputProps,
+      });
+      const output = path.join(sheetsDir, `${card.id}-${page}.png`);
+      await renderStill({ composition, serveUrl: url, output, inputProps });
+      console.log(`  ${path.relative(projectRoot, output)}`);
+    }
+  }
+}
+
+/** A whole cast standing together at the game table: every card of one series. */
+async function cast() {
+  const series = words[0];
+  const members = loadCards().filter((c) => c.series === series);
+  if (!series || !members.length) {
+    const known = [...new Set(loadCards().flatMap((c) => (c.series ? [c.series] : [])))];
+    throw new Error(`Give a cast: npm run library -- cast <name>. Casts: ${known.join(', ')}`);
+  }
+  // Left to right as asked, then anyone not named, by id.
+  const order = flag('order')?.split(',') ?? [];
+  const place = (c: CharacterCard) => (order.includes(c.id) ? order.indexOf(c.id) : order.length);
+  const cards = [...members].sort((a, b) => place(a) - place(b) || a.id.localeCompare(b.id));
+  const url = await bundled();
+  mkdirSync(sheetsDir, { recursive: true });
+  for (const names of [true, false]) {
+    const inputProps = { cards, names };
+    const composition = await selectComposition({ serveUrl: url, id: 'CastLineup', inputProps });
+    const output = path.join(sheetsDir, `cast-${series}${names ? '' : '-no-names'}.png`);
+    await renderStill({ composition, serveUrl: url, output, inputProps });
+    console.log(`  ${path.relative(projectRoot, output)}`);
+  }
+}
+
 const commands: Record<string, () => void | Promise<void>> = {
   search,
   list,
   show,
   characters,
+  sheet,
+  cast,
   check,
   stills,
   look,
@@ -267,7 +339,7 @@ const commands: Record<string, () => void | Promise<void>> = {
 const action = command ? commands[command] : undefined;
 if (!action) {
   console.log(
-    'Commands: search <words>, list, show <id>, characters, check, stills, look <id>, catalog',
+    'Commands: search <words>, list, show <id>, characters, sheet <character>, cast <name>, check, stills, look <id>, catalog',
   );
   process.exitCode = 1;
 } else {

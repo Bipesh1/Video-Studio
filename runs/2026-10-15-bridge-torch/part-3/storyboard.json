@@ -1,0 +1,1739 @@
+{
+  "version": 1,
+  "title": "How to Get Four People Across a Bridge Before the Torch Dies",
+  "request": "this is a thriller script make a video for this one you must use the dark background sounds we created the thriller ones",
+  "mode": "as-is",
+  "format": "dilemma-thriller",
+  "style": "ink-stick",
+  "brand": "dilemma-table",
+  "voice": "leak",
+  "seed": 55713,
+  "finish": {
+    "acting": "gentle",
+    "onTwos": true,
+    "shadows": true,
+    "grain": 0.55,
+    "vignette": 0.4,
+    "boil": 0.25
+  },
+  "sources": [
+    "Saul X. Levmore and Elizabeth Early Cook, Super Strategies for Puzzles and Games, Doubleday, 1981. The earliest known printed version of the bridge puzzle: four people, one light, a bridge that holds two at a time. As given in Biku's script.",
+    "Günter Rote, \"Crossing the Bridge at Night\", Bulletin of the EATCS, No. 78, October 2002, pages 241 to 246. Solves the puzzle for any number of people with any walking times. https://page.mi.fu-berlin.de/rote/Papers/abstract/Crossing+the+bridge+at+night.html",
+    "Checked by Claude on 2026-10-15: with crossing times of 1, 2, 5 and 10 minutes, the fastest walking each one over takes 10 + 1 + 5 + 1 + 2 = 19 minutes; the two fastest over, the fastest back, the two slowest over together, the second fastest back, the two fastest over takes 2 + 1 + 10 + 2 + 2 = 17. What the scene invents: the gorge, the storm, the people."
+  ],
+  "appliedLessons": [],
+  "cast": [
+    {
+      "id": "trainer",
+      "name": "The Trainer",
+      "card": "trainer",
+      "host": true
+    },
+    {
+      "id": "saint",
+      "name": "The Saint",
+      "card": "saint"
+    },
+    {
+      "id": "cheat",
+      "name": "The Cheat",
+      "card": "cheat"
+    },
+    {
+      "id": "old-man",
+      "name": "The old man",
+      "look": {
+        "age": "elder",
+        "identity": {
+          "skinTone": 2,
+          "hair": "short-crop",
+          "hairColor": "white"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "jacket",
+              "cloth": "tan",
+              "under": "cream"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "brown"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "woman",
+      "name": "The woman with the bag",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "cream"
+            },
+            "bottom": {
+              "kind": "skirt",
+              "cloth": "brown"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "series": "game-theory",
+  "scenes": [
+    {
+      "id": "s6",
+      "chapter": 1,
+      "beat": "the-twist",
+      "mood": "tense",
+      "quiet": false,
+      "place": "gorge-bridge",
+      "treatment": "atmospheric",
+      "palette": "storm-slate",
+      "lines": [
+        {
+          "id": "l16",
+          "speaker": "saint",
+          "text": "Put the two slow ones together, and we only wait once.",
+          "pauseAfterMs": 1300,
+          "thought": true
+        },
+        {
+          "id": "l17",
+          "speaker": "trainer",
+          "text": "The two fastest cross in two minutes. The man in the red tie runs back in one.",
+          "pauseAfterMs": 1200
+        },
+        {
+          "id": "l18",
+          "speaker": "trainer",
+          "text": "Then the two slowest cross *together*, in ten.",
+          "pauseAfterMs": 1500
+        },
+        {
+          "id": "l19",
+          "speaker": "trainer",
+          "text": "The woman in the scarf returns in two, and the two fastest cross again in two.",
+          "pauseAfterMs": 1500
+        },
+        {
+          "id": "l20",
+          "speaker": "trainer",
+          "text": "That is exactly *seventeen* minutes.",
+          "pauseAfterMs": 900
+        },
+        {
+          "id": "l21",
+          "speaker": "trainer",
+          "text": "The old man's ten minutes were coming anyway, so the five fit inside them.",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6a",
+          "line": "l16",
+          "words": "Put the two slow ones together, and we only wait once.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "dread",
+              "strength": 0.7,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.27,
+              "lookAt": "ahead",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.4,
+                  "expression": "determined"
+                }
+              ]
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "rain",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "startMs": 0,
+          "endMs": 3803
+        },
+        {
+          "id": "s6b",
+          "line": "l17",
+          "words": "The two fastest cross in two minutes.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "action": "walk",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.83,
+              "lookAt": "ahead",
+              "holds": "torch-low",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.75,
+                  "pose": "stand"
+                }
+              ]
+            },
+            {
+              "character": "saint",
+              "action": "walk",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.95,
+              "lookAt": "ahead",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.8,
+                  "pose": "stand"
+                }
+              ]
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "rain",
+              "at": "start",
+              "gainDb": -6
+            },
+            {
+              "name": "footsteps",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "startMs": 3803,
+          "endMs": 6233
+        },
+        {
+          "id": "s6c",
+          "line": "l17",
+          "words": "The man in the red tie runs back in one.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "action": "run",
+              "expression": "determined",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.39,
+              "lookAt": "ahead",
+              "holds": "torch-low",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "rain",
+              "at": "start",
+              "gainDb": -6
+            },
+            {
+              "name": "footsteps",
+              "at": "start",
+              "gainDb": -4
+            }
+          ],
+          "transition": "cut",
+          "startMs": 6233,
+          "endMs": 8764
+        },
+        {
+          "id": "s6d",
+          "line": "l18",
+          "words": "Then the two slowest cross *together*, in ten.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "old-man",
+              "action": "walk",
+              "expression": "afraid",
+              "strength": 0.5,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.71,
+              "lookAt": "ahead",
+              "holds": "torch-low",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.8,
+                  "pose": "stand"
+                }
+              ]
+            },
+            {
+              "character": "woman",
+              "action": "walk",
+              "expression": "afraid",
+              "strength": 0.5,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.83,
+              "lookAt": "ahead",
+              "holds": "bag",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.75,
+                  "pose": "stand"
+                }
+              ]
+            },
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "happy",
+              "strength": 0.5,
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.95,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "rain",
+              "at": "start",
+              "gainDb": -6
+            },
+            {
+              "name": "creak",
+              "at": "start",
+              "gainDb": -4
+            },
+            {
+              "name": "footsteps",
+              "at": "start",
+              "gainDb": -8
+            }
+          ],
+          "transition": "cut",
+          "startMs": 8764,
+          "endMs": 12308
+        },
+        {
+          "id": "s6e",
+          "line": "l19",
+          "words": "The woman in the scarf returns in two,",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "action": "walk",
+              "expression": "determined",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.27,
+              "lookAt": "ahead",
+              "holds": "torch-dying",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.75,
+                  "pose": "stand"
+                }
+              ]
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "rain",
+              "at": "start",
+              "gainDb": -6
+            },
+            {
+              "name": "footsteps",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "startMs": 12308,
+          "endMs": 14158
+        },
+        {
+          "id": "s6f",
+          "line": "l19",
+          "words": "and the two fastest cross again in two.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "old-man",
+              "pose": "stand",
+              "expression": "happy",
+              "strength": 0.6,
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.85,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "woman",
+              "pose": "stand",
+              "expression": "happy",
+              "strength": 0.6,
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.97,
+              "lookAt": "ahead",
+              "holds": "bag",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "cheat",
+              "action": "walk",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.61,
+              "lookAt": "ahead",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.75,
+                  "pose": "stand"
+                }
+              ]
+            },
+            {
+              "character": "saint",
+              "action": "walk",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.73,
+              "lookAt": "ahead",
+              "holds": "torch-dying",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.8,
+                  "pose": "stand"
+                }
+              ]
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "rain",
+              "at": "start",
+              "gainDb": -6
+            },
+            {
+              "name": "footsteps",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "startMs": 14158,
+          "endMs": 17068
+        },
+        {
+          "id": "s6g",
+          "line": "l20",
+          "words": "That is exactly *seventeen* minutes.",
+          "camera": {
+            "framing": "wide",
+            "move": "push-in",
+            "strength": 0.15
+          },
+          "actors": [
+            {
+              "character": "old-man",
+              "pose": "stand",
+              "expression": "happy",
+              "strength": 0.6,
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.85,
+              "lookAt": "ahead",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.5,
+                  "strength": 1
+                }
+              ]
+            },
+            {
+              "character": "woman",
+              "pose": "stand",
+              "expression": "happy",
+              "strength": 0.6,
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.97,
+              "lookAt": "ahead",
+              "holds": "bag",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.5,
+                  "strength": 1
+                }
+              ]
+            },
+            {
+              "character": "cheat",
+              "pose": "stand",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.61,
+              "lookAt": "ahead",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.45,
+                  "expression": "happy",
+                  "strength": 0.6
+                }
+              ]
+            },
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "determined",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.73,
+              "lookAt": "cheat",
+              "holds": "torch-dying",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.3,
+                  "holds": "torch-out"
+                },
+                {
+                  "at": 0.5,
+                  "expression": "happy"
+                }
+              ]
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "rain",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "startMs": 17068,
+          "endMs": 19464
+        },
+        {
+          "id": "s6h",
+          "line": "l21",
+          "words": "The old man's ten minutes were coming anyway,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "picture": {
+            "layers": [
+              {
+                "kind": "band",
+                "top": 0,
+                "bottom": 1
+              },
+              {
+                "kind": "panel",
+                "top": 0.05,
+                "bottom": 0.33,
+                "place": "gorge-bridge",
+                "palette": "storm-slate",
+                "treatment": "atmospheric"
+              },
+              {
+                "kind": "extra",
+                "x": 0.4,
+                "y": 0.5,
+                "ground": 0.315,
+                "head": 0.062,
+                "pose": "stand",
+                "moment": 0.2,
+                "facing": "right",
+                "turn": 0.3,
+                "expression": "afraid",
+                "look": {
+                  "age": "elder",
+                  "identity": {
+                    "skinTone": 2,
+                    "hair": "short-crop",
+                    "hairColor": "white"
+                  },
+                  "outfit": {
+                    "clothes": {
+                      "top": {
+                        "kind": "jacket",
+                        "cloth": "tan",
+                        "under": "cream"
+                      },
+                      "bottom": {
+                        "kind": "trousers",
+                        "cloth": "brown"
+                      },
+                      "shoes": {
+                        "kind": "boots",
+                        "cloth": "brown"
+                      }
+                    }
+                  }
+                },
+                "effects": [],
+                "badge": false,
+                "light": 1,
+                "outline": 0
+              },
+              {
+                "kind": "person",
+                "character": "cheat",
+                "x": 0.6,
+                "y": 0.5,
+                "ground": 0.315,
+                "head": 0.062,
+                "pose": "stand",
+                "moment": 0.2,
+                "facing": "left",
+                "turn": 0.3,
+                "expression": "determined",
+                "effects": [],
+                "light": 1,
+                "outline": 0
+              },
+              {
+                "kind": "tag",
+                "text": "FASTEST WALKS EVERYONE",
+                "x": 0.5,
+                "y": 0.075,
+                "size": 0.026,
+                "paint": "cream",
+                "tilt": 0
+              },
+              {
+                "kind": "tag",
+                "text": "19 MINUTES, THE TORCH DIES",
+                "x": 0.5,
+                "y": 0.3,
+                "size": 0.026,
+                "paint": "crimson",
+                "tilt": 0
+              },
+              {
+                "kind": "panel",
+                "top": 0.35,
+                "bottom": 0.63,
+                "place": "gorge-bridge",
+                "palette": "storm-slate",
+                "treatment": "atmospheric"
+              },
+              {
+                "kind": "extra",
+                "x": 0.4,
+                "y": 0.5,
+                "ground": 0.615,
+                "head": 0.062,
+                "pose": "stand",
+                "moment": 0.2,
+                "facing": "right",
+                "turn": 0.3,
+                "expression": "neutral",
+                "look": {
+                  "age": "elder",
+                  "identity": {
+                    "skinTone": 2,
+                    "hair": "short-crop",
+                    "hairColor": "white"
+                  },
+                  "outfit": {
+                    "clothes": {
+                      "top": {
+                        "kind": "jacket",
+                        "cloth": "tan",
+                        "under": "cream"
+                      },
+                      "bottom": {
+                        "kind": "trousers",
+                        "cloth": "brown"
+                      },
+                      "shoes": {
+                        "kind": "boots",
+                        "cloth": "brown"
+                      }
+                    }
+                  }
+                },
+                "effects": [],
+                "badge": false,
+                "light": 1,
+                "outline": 0
+              },
+              {
+                "kind": "extra",
+                "x": 0.6,
+                "y": 0.5,
+                "ground": 0.615,
+                "head": 0.062,
+                "pose": "stand",
+                "moment": 0.2,
+                "facing": "left",
+                "turn": 0.3,
+                "expression": "neutral",
+                "look": {
+                  "outfit": {
+                    "clothes": {
+                      "top": {
+                        "kind": "shirt",
+                        "cloth": "cream"
+                      },
+                      "bottom": {
+                        "kind": "skirt",
+                        "cloth": "brown"
+                      },
+                      "shoes": {
+                        "kind": "boots",
+                        "cloth": "brown"
+                      }
+                    }
+                  }
+                },
+                "effects": [],
+                "badge": false,
+                "light": 1,
+                "outline": 0
+              },
+              {
+                "kind": "tag",
+                "text": "SLOWEST WALK TOGETHER",
+                "x": 0.5,
+                "y": 0.375,
+                "size": 0.026,
+                "paint": "cream",
+                "tilt": 0
+              },
+              {
+                "kind": "tag",
+                "text": "17 MINUTES, EVERYONE ACROSS",
+                "x": 0.5,
+                "y": 0.6,
+                "size": 0.026,
+                "paint": "forest",
+                "tilt": 0
+              },
+              {
+                "kind": "band",
+                "top": 0.63,
+                "bottom": 1
+              }
+            ],
+            "from": {
+              "x": 0.5,
+              "y": 0.5,
+              "zoom": 1
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.505,
+              "zoom": 1.03
+            }
+          },
+          "transition": "cut",
+          "startMs": 19464,
+          "endMs": 21514
+        },
+        {
+          "id": "s6i",
+          "line": "l21",
+          "words": "so the five fit inside them.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "picture": {
+            "layers": [
+              {
+                "kind": "band",
+                "top": 0,
+                "bottom": 1
+              },
+              {
+                "kind": "panel",
+                "top": 0.05,
+                "bottom": 0.33,
+                "place": "gorge-bridge",
+                "palette": "storm-slate",
+                "treatment": "atmospheric"
+              },
+              {
+                "kind": "extra",
+                "x": 0.4,
+                "y": 0.5,
+                "ground": 0.315,
+                "head": 0.062,
+                "pose": "stand",
+                "moment": 0.2,
+                "facing": "right",
+                "turn": 0.3,
+                "expression": "afraid",
+                "look": {
+                  "age": "elder",
+                  "identity": {
+                    "skinTone": 2,
+                    "hair": "short-crop",
+                    "hairColor": "white"
+                  },
+                  "outfit": {
+                    "clothes": {
+                      "top": {
+                        "kind": "jacket",
+                        "cloth": "tan",
+                        "under": "cream"
+                      },
+                      "bottom": {
+                        "kind": "trousers",
+                        "cloth": "brown"
+                      },
+                      "shoes": {
+                        "kind": "boots",
+                        "cloth": "brown"
+                      }
+                    }
+                  }
+                },
+                "effects": [],
+                "badge": false,
+                "light": 1,
+                "outline": 0
+              },
+              {
+                "kind": "person",
+                "character": "cheat",
+                "x": 0.6,
+                "y": 0.5,
+                "ground": 0.315,
+                "head": 0.062,
+                "pose": "stand",
+                "moment": 0.2,
+                "facing": "left",
+                "turn": 0.3,
+                "expression": "determined",
+                "effects": [],
+                "light": 1,
+                "outline": 0
+              },
+              {
+                "kind": "tag",
+                "text": "FASTEST WALKS EVERYONE",
+                "x": 0.5,
+                "y": 0.075,
+                "size": 0.026,
+                "paint": "cream",
+                "tilt": 0
+              },
+              {
+                "kind": "tag",
+                "text": "19 MINUTES, THE TORCH DIES",
+                "x": 0.5,
+                "y": 0.3,
+                "size": 0.026,
+                "paint": "crimson",
+                "tilt": 0
+              },
+              {
+                "kind": "panel",
+                "top": 0.35,
+                "bottom": 0.63,
+                "place": "gorge-bridge",
+                "palette": "storm-slate",
+                "treatment": "atmospheric"
+              },
+              {
+                "kind": "extra",
+                "x": 0.4,
+                "y": 0.5,
+                "ground": 0.615,
+                "head": 0.062,
+                "pose": "stand",
+                "moment": 0.2,
+                "facing": "right",
+                "turn": 0.3,
+                "expression": "neutral",
+                "look": {
+                  "age": "elder",
+                  "identity": {
+                    "skinTone": 2,
+                    "hair": "short-crop",
+                    "hairColor": "white"
+                  },
+                  "outfit": {
+                    "clothes": {
+                      "top": {
+                        "kind": "jacket",
+                        "cloth": "tan",
+                        "under": "cream"
+                      },
+                      "bottom": {
+                        "kind": "trousers",
+                        "cloth": "brown"
+                      },
+                      "shoes": {
+                        "kind": "boots",
+                        "cloth": "brown"
+                      }
+                    }
+                  }
+                },
+                "effects": [],
+                "badge": false,
+                "light": 1,
+                "outline": 0
+              },
+              {
+                "kind": "extra",
+                "x": 0.6,
+                "y": 0.5,
+                "ground": 0.615,
+                "head": 0.062,
+                "pose": "stand",
+                "moment": 0.2,
+                "facing": "left",
+                "turn": 0.3,
+                "expression": "neutral",
+                "look": {
+                  "outfit": {
+                    "clothes": {
+                      "top": {
+                        "kind": "shirt",
+                        "cloth": "cream"
+                      },
+                      "bottom": {
+                        "kind": "skirt",
+                        "cloth": "brown"
+                      },
+                      "shoes": {
+                        "kind": "boots",
+                        "cloth": "brown"
+                      }
+                    }
+                  }
+                },
+                "effects": [],
+                "badge": false,
+                "light": 1,
+                "outline": 0
+              },
+              {
+                "kind": "tag",
+                "text": "SLOWEST WALK TOGETHER",
+                "x": 0.5,
+                "y": 0.375,
+                "size": 0.026,
+                "paint": "cream",
+                "tilt": 0
+              },
+              {
+                "kind": "tag",
+                "text": "17 MINUTES, EVERYONE ACROSS",
+                "x": 0.5,
+                "y": 0.6,
+                "size": 0.026,
+                "paint": "forest",
+                "tilt": 0
+              },
+              {
+                "kind": "band",
+                "top": 0.63,
+                "bottom": 1
+              }
+            ],
+            "from": {
+              "x": 0.5,
+              "y": 0.505,
+              "zoom": 1.03
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.51,
+              "zoom": 1.06
+            }
+          },
+          "transition": "cut",
+          "startMs": 21514,
+          "endMs": 23984
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "chapter": 1,
+      "beat": "it-was-real",
+      "mood": "aftermath",
+      "quiet": false,
+      "place": "the-table",
+      "treatment": "atmospheric",
+      "palette": "table-grey",
+      "lines": [
+        {
+          "id": "l22",
+          "speaker": "trainer",
+          "text": "This is a real puzzle. Saul Levmore and Elizabeth Cook printed it in a book in 1981.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l23",
+          "speaker": "trainer",
+          "text": "In 2002, the mathematician Günter Rote proved the fastest way for any group.",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l24",
+          "speaker": "trainer",
+          "text": "You make the first plan every time you spread slow jobs across your day.",
+          "pauseAfterMs": 1200
+        }
+      ],
+      "shots": [
+        {
+          "id": "s7a",
+          "line": "l22",
+          "words": "This is a real puzzle.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "trainer"
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "fix-tie",
+              "expression": "smug",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.4,
+                  "pose": "stand",
+                  "expression": "bored"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "fade",
+          "startMs": 23984,
+          "endMs": 25574
+        },
+        {
+          "id": "s7b",
+          "line": "l22",
+          "words": "Saul Levmore and Elizabeth Cook printed it in a book in 1981.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "number",
+            "text": "1981",
+            "caption": "the first time in print"
+          },
+          "transition": "cut",
+          "startMs": 25574,
+          "endMs": 29547
+        },
+        {
+          "id": "s7c",
+          "line": "l23",
+          "words": "In 2002, the mathematician Günter Rote proved the fastest way for any group.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "trainer"
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "number",
+            "text": "2002",
+            "caption": "proved for any group"
+          },
+          "transition": "cut",
+          "startMs": 29547,
+          "endMs": 34717
+        },
+        {
+          "id": "s7d",
+          "line": "l24",
+          "words": "You make the first plan every time",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "picture": {
+            "layers": [
+              {
+                "kind": "room",
+                "place": "city",
+                "palette": "storm-slate",
+                "treatment": "atmospheric"
+              },
+              {
+                "kind": "crowd",
+                "rows": 7,
+                "cols": 9,
+                "top": 0.3,
+                "bottom": 0.66,
+                "left": 0,
+                "right": 1,
+                "head": 0.055,
+                "back": 0.45,
+                "pose": "look-down",
+                "expression": "exhausted",
+                "light": 0.65,
+                "hole": {
+                  "x": 0.5,
+                  "y": 0.55
+                },
+                "holeRadius": 0.07,
+                "seed": 4
+              },
+              {
+                "kind": "person",
+                "character": "saint",
+                "x": 0.5,
+                "y": 0.55,
+                "head": 0.05,
+                "pose": "look-down",
+                "moment": 0.2,
+                "facing": "right",
+                "turn": 0.3,
+                "expression": "exhausted",
+                "effects": [],
+                "light": 1,
+                "outline": 0
+              }
+            ],
+            "from": {
+              "x": 0.5,
+              "y": 0.56,
+              "zoom": 5
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.54,
+              "zoom": 2.5
+            }
+          },
+          "transition": "cut",
+          "startMs": 34717,
+          "endMs": 36467
+        },
+        {
+          "id": "s7e",
+          "line": "l24",
+          "words": "you spread slow jobs across your day.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "picture": {
+            "layers": [
+              {
+                "kind": "room",
+                "place": "city",
+                "palette": "storm-slate",
+                "treatment": "atmospheric"
+              },
+              {
+                "kind": "crowd",
+                "rows": 7,
+                "cols": 9,
+                "top": 0.3,
+                "bottom": 0.66,
+                "left": 0,
+                "right": 1,
+                "head": 0.055,
+                "back": 0.45,
+                "pose": "look-down",
+                "expression": "exhausted",
+                "light": 0.65,
+                "hole": {
+                  "x": 0.5,
+                  "y": 0.55
+                },
+                "holeRadius": 0.07,
+                "seed": 4
+              },
+              {
+                "kind": "person",
+                "character": "saint",
+                "x": 0.5,
+                "y": 0.55,
+                "head": 0.05,
+                "pose": "look-down",
+                "moment": 0.2,
+                "facing": "right",
+                "turn": 0.3,
+                "expression": "exhausted",
+                "effects": [],
+                "light": 1,
+                "outline": 0
+              }
+            ],
+            "from": {
+              "x": 0.5,
+              "y": 0.54,
+              "zoom": 2.5
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.48,
+              "zoom": 1
+            }
+          },
+          "transition": "cut",
+          "startMs": 36467,
+          "endMs": 39209
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "chapter": 1,
+      "beat": "the-answer",
+      "mood": "aftermath",
+      "quiet": false,
+      "place": "the-table",
+      "treatment": "atmospheric",
+      "palette": "table-grey",
+      "lines": [
+        {
+          "id": "l25",
+          "speaker": "narrator",
+          "text": "Start your slowest jobs at the same time, so you only wait once.",
+          "pauseAfterMs": 1200
+        },
+        {
+          "id": "l26",
+          "speaker": "trainer",
+          "text": "So who should walk with the slowest person? The next slowest *one*.",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s8a",
+          "line": "l25",
+          "words": "Start your slowest jobs at the same time,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "bulb-flicker",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "gloom-flicker",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "Slow jobs?",
+              "Start them together.",
+              "Wait once."
+            ],
+            "stress": 1
+          },
+          "transition": "cut",
+          "startMs": 39209,
+          "endMs": 42099
+        },
+        {
+          "id": "s8b",
+          "line": "l25",
+          "words": "so you only wait once.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "bulb-dim",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "gloom",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "Slow jobs?",
+              "Start them together.",
+              "Wait once."
+            ],
+            "stress": 2
+          },
+          "transition": "cut",
+          "startMs": 42099,
+          "endMs": 44591
+        },
+        {
+          "id": "s8c",
+          "line": "l26",
+          "words": "So who should walk with the slowest person?",
+          "camera": {
+            "framing": "wide",
+            "move": "push-in",
+            "strength": 0.3
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 44591,
+          "endMs": 47061
+        },
+        {
+          "id": "s8d",
+          "line": "l26",
+          "words": "The next slowest *one*.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "trainer"
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.4,
+                  "expression": "smug"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "clunk",
+              "at": "end",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 47061,
+          "endMs": 50173
+        }
+      ]
+    }
+  ]
+}

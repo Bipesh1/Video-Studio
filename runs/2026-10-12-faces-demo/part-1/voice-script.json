@@ -1,0 +1,70 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "lines": [
+    {
+      "id": "l1",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "Twenty dollars. It is *yours.*",
+      "speed": 0.97,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l2",
+      "speaker": "saint",
+      "voice": "af_sarah",
+      "text": "Just like that?",
+      "speed": 0.95,
+      "pauseAfterMs": 990
+    },
+    {
+      "id": "l3",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "Just like that. Sign here.",
+      "speed": 0.97,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l4",
+      "speaker": "saint",
+      "voice": "af_sarah",
+      "text": "Nobody gives money away.",
+      "speed": 0.95,
+      "pauseAfterMs": 990
+    },
+    {
+      "id": "l5",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "She is right. Nobody does.",
+      "speed": 0.97,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l6",
+      "speaker": "saint",
+      "voice": "af_sarah",
+      "text": "What is the catch?",
+      "speed": 0.95,
+      "pauseAfterMs": 990
+    },
+    {
+      "id": "l7",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "You already agreed to it.",
+      "speed": 0.97,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l8",
+      "speaker": "saint",
+      "voice": "af_sarah",
+      "text": "What did I sign?",
+      "speed": 0.95,
+      "pauseAfterMs": 990
+    }
+  ]
+}

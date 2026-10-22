@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "unease",
+      "startMs": 3420
+    },
+    {
+      "mood": "closing-in",
+      "startMs": 7370
+    },
+    {
+      "mood": "aftermath",
+      "startMs": 16630
+    }
+  ],
+  "sfx": [
+    {
+      "name": "wind",
+      "atMs": 0,
+      "durationMs": 3420,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "heartbeat-rising",
+      "atMs": 7430,
+      "durationMs": 3340,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "boom",
+      "atMs": 13990,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "clunk",
+      "atMs": 23200,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 3
+    }
+  ],
+  "musicGainDb": 0
+}

@@ -1,0 +1,568 @@
+{
+  "version": 1,
+  "title": "Why Every Screen Asks You for a Tip Now",
+  "request": "Make a good video on this based on the new update now for What's the Catch (Biku, 2026-10-16). Refined with his OK: the coffee shop experiment line and the last line, which said tips go up when the worker watches; the study found the opposite.",
+  "mode": "refine",
+  "format": "fine-print",
+  "style": "ink-stick",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "seed": 71428,
+  "finish": {
+    "acting": "snappy",
+    "onTwos": false,
+    "shadows": false,
+    "grain": 0.2,
+    "vignette": 0.12,
+    "boil": 0.25
+  },
+  "sources": [
+    "Pew Research Center, \"Tipping Culture in America: Public Sees a Changed Landscape,\" November 2023. Survey of 11,945 US adults in August 2023: 72% say tipping is expected in more places than five years ago; 57% say they tip 15% or less at a sit-down restaurant; more oppose (40%) than favor (24%) suggested tip amounts on screens. https://www.pewresearch.org/2023/11/09/tipping-culture-in-america-public-sees-a-changed-landscape/",
+    "Kareem Haggag and Giovanni Paci, \"Default Tips,\" American Economic Journal: Applied Economics, 2014. Over 13 million New York City taxi rides: screens suggesting 20/25/30% instead of 15/20/25% raised the average tip by about 10%, but rides with the higher suggestions were over 50% more likely to get no card tip at all.",
+    "The New York Times, \"How to Deal With the Many Requests for Tips,\" 2023. Tip prompts with suggested amounts now appear at casual counters, food trucks and even self-service kiosks.",
+    "Bankrate, Annual Tipping Survey, 2025. Notes that 15% was traditionally the average tip, with 20% for excellent service.",
+    "The coffee figures (90¢, $1.20, $1.80, \"a third more\") are plain arithmetic on a $6 coffee, not quoted from a source.",
+    "Francine W. Goh, Alexandria C. Jungck and Jeffrey R. Stevens, \"Pro tip: Screen-based payment methods increase negative feelings in consumers but do not increase tip sizes\", University of Nebraska-Lincoln preprint, 2022. In a simulated coffee shop, people felt negatively about tip screens and did not tip more with them, and did not tip more when a server was visible. https://decisionslab.unl.edu/pubs/goh_etal_2022_preprint.pdf",
+    "Checked by Claude on 2026-10-16: the 72% and 57% against Pew's report; the taxi study's \"more than a 10 percent increase in the average tip\" and \"over 50 percent more likely to receive a zero-valued tip\" in Haggag and Paci (2014); the coffee arithmetic (15% of $6 is 90 cents; 20% $1.20; 30% $1.80; 1.20 is a third more than 0.90)."
+  ],
+  "appliedLessons": [],
+  "cast": [],
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "the-question",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l01",
+          "speaker": "narrator",
+          "text": "Why does every payment screen ask you for a *tip* now?",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l02",
+          "speaker": "narrator",
+          "text": "The answer hides in three little buttons, and it is *smarter* than it looks.",
+          "pauseAfterMs": 700
+        }
+      ],
+      "shots": [
+        {
+          "id": "s1a",
+          "line": "l01",
+          "words": "Why does every payment screen ask you for a *tip* now?",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "title",
+            "text": "Why Every Screen Asks You for a Tip Now"
+          },
+          "transition": "cut"
+        },
+        {
+          "id": "s1b",
+          "line": "l02",
+          "words": "The answer hides in three little buttons, and it is *smarter* than it looks.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "the-moment",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l03",
+          "speaker": "narrator",
+          "text": "In a big 2023 survey, seventy two percent of Americans said tipping is expected in *more* places now.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l04",
+          "speaker": "narrator",
+          "text": "Food trucks ask, coffee counters ask, and even some self-checkout machines *ask*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l05",
+          "speaker": "narrator",
+          "text": "So you order a six dollar coffee, and the screen turns round to *face* you.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l06",
+          "speaker": "narrator",
+          "text": "It offers you a tip of twenty, twenty five or *thirty* percent.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l07",
+          "speaker": "narrator",
+          "text": "Most of us assume those buttons are simply the *normal* amounts.",
+          "pauseAfterMs": 600
+        }
+      ],
+      "shots": [
+        {
+          "id": "s2a",
+          "line": "l03",
+          "words": "In a big 2023 survey, seventy two percent of Americans said tipping is expected in *more* places now.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2b",
+          "line": "l04",
+          "words": "Food trucks ask, coffee counters ask, and even some self-checkout machines *ask*.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2c",
+          "line": "l05",
+          "words": "So you order a six dollar coffee, and the screen turns round to *face* you.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2d",
+          "line": "l06",
+          "words": "It offers you a tip of twenty, twenty five or *thirty* percent.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2e",
+          "line": "l07",
+          "words": "Most of us assume those buttons are simply the *normal* amounts.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "chapter": 2,
+      "beat": "follow-the-money",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l08",
+          "speaker": "narrator",
+          "text": "But for a long time, fifteen percent was the *usual* tip for good service.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l09",
+          "speaker": "narrator",
+          "text": "In that same survey, more than *half* said they tip fifteen percent or less at a sit-down restaurant.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l10",
+          "speaker": "narrator",
+          "text": "On a six dollar coffee, that old usual tip is just ninety *cents*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l11",
+          "speaker": "narrator",
+          "text": "Next to those ninety cents, the smallest button asks for a dollar twenty, and the biggest a dollar *eighty*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l12",
+          "speaker": "narrator",
+          "text": "So the cheapest button is already a *third* more than the old usual tip.",
+          "pauseAfterMs": 700
+        }
+      ],
+      "shots": [
+        {
+          "id": "s3a",
+          "line": "l08",
+          "words": "But for a long time, fifteen percent was the *usual* tip for good service.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3b",
+          "line": "l09",
+          "words": "In that same survey, more than *half* said they tip fifteen percent or less at a sit-down restaurant.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3c",
+          "line": "l10",
+          "words": "On a six dollar coffee, that old usual tip is just ninety *cents*.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3d",
+          "line": "l11",
+          "words": "Next to those ninety cents, the smallest button asks for a dollar twenty, and the biggest a dollar *eighty*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3e",
+          "line": "l12",
+          "words": "So the cheapest button is already a *third* more than the old usual tip.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "chapter": 2,
+      "beat": "the-trick",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l13",
+          "speaker": "narrator",
+          "text": "Here is the trick: the buttons quietly tell you what a *normal* tip is.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l14",
+          "speaker": "narrator",
+          "text": "The shop picks the buttons, the screen shows them, and *your* choices start right there.",
+          "pauseAfterMs": 500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s4a",
+          "line": "l13",
+          "words": "Here is the trick: the buttons quietly tell you what a *normal* tip is.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4b",
+          "line": "l14",
+          "words": "The shop picks the buttons, the screen shows them, and *your* choices start right there.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chapter": 3,
+      "beat": "the-trick",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l15",
+          "speaker": "narrator",
+          "text": "When the buttons start at twenty, twenty starts to feel like the *cheap* choice.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l16",
+          "speaker": "narrator",
+          "text": "Then comes a second push: someone is standing right there, *watching* you choose.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l17",
+          "speaker": "narrator",
+          "text": "In a coffee shop experiment, the tip screen mostly made people feel *worse* about the shop.",
+          "pauseAfterMs": 700
+        }
+      ],
+      "shots": [
+        {
+          "id": "s5a",
+          "line": "l15",
+          "words": "When the buttons start at twenty, twenty starts to feel like the *cheap* choice.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5b",
+          "line": "l16",
+          "words": "Then comes a second push: someone is standing right there, *watching* you choose.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5c",
+          "line": "l17",
+          "words": "In a coffee shop experiment, the tip screen mostly made people feel *worse* about the shop.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 3,
+      "beat": "the-proof",
+      "mood": "reflective",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l18",
+          "speaker": "narrator",
+          "text": "A study of thirteen million New York taxi rides found higher buttons raised tips about ten *percent*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l19",
+          "speaker": "narrator",
+          "text": "But with those higher buttons, more riders gave up and left *no* tip at all.",
+          "pauseAfterMs": 700
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6a",
+          "line": "l18",
+          "words": "A study of thirteen million New York taxi rides found higher buttons raised tips about ten *percent*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6b",
+          "line": "l19",
+          "words": "But with those higher buttons, more riders gave up and left *no* tip at all.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "chapter": 3,
+      "beat": "your-move",
+      "mood": "hope",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l20",
+          "speaker": "narrator",
+          "text": "So decide your tip before you reach the counter, and press *custom* if the buttons are not yours.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l21",
+          "speaker": "narrator",
+          "text": "Every screen asks now because higher buttons really do make people tip *more*.",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s7a",
+          "line": "l20",
+          "words": "So decide your tip before you reach the counter, and press *custom* if the buttons are not yours.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7b",
+          "line": "l21",
+          "words": "Every screen asks now because higher buttons really do make people tip *more*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    }
+  ]
+}

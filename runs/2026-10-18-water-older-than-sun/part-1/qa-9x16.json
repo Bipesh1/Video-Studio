@@ -1,0 +1,313 @@
+{
+  "version": 1,
+  "title": "Why Is the Water in Your Glass Older Than the Sun?",
+  "part": 1,
+  "parts": 3,
+  "size": "9:16",
+  "video": "water-older-than-sun-part-1-9x16-v1.mp4",
+  "seconds": 48.733333,
+  "checkedOn": "2026-10-18",
+  "checks": [
+    {
+      "id": "plays",
+      "title": "The file plays",
+      "by": "measured",
+      "detail": "1080x1920, 30 pictures a second, 48.7 s, picture and sound both there; played through from start to finish",
+      "findings": []
+    },
+    {
+      "id": "made-from",
+      "title": "The video is of this plan and this sound",
+      "by": "measured",
+      "detail": "rendered from the plan as it stands; its sound is the mix as it stands, second for second (what is left over is 38 dB under it at most)",
+      "findings": []
+    },
+    {
+      "id": "length",
+      "title": "The length is right",
+      "by": "measured",
+      "detail": "48.7 s; a part may be up to 60 s",
+      "findings": []
+    },
+    {
+      "id": "in-step",
+      "title": "Picture and voice are in step",
+      "by": "measured",
+      "detail": "9 shots end to end with no gap, each line heard while its own pictures are on screen; picture and voice end together at 48.7 s",
+      "findings": []
+    },
+    {
+      "id": "silence",
+      "title": "There is no dead silence",
+      "by": "measured",
+      "detail": "the sound never drops out; the longest pause between words is 0.9 s",
+      "findings": []
+    },
+    {
+      "id": "loudness",
+      "title": "The sound is at the right level",
+      "by": "measured",
+      "detail": "loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.1 dB (the limit is -1)",
+      "findings": []
+    },
+    {
+      "id": "words-heard",
+      "title": "Nothing drowns the words",
+      "by": "measured",
+      "detail": "12 sound effects, the loudest of those over words 18 dB under the voice; the music sits 16.9 dB under the voice while someone speaks",
+      "findings": []
+    },
+    {
+      "id": "captions",
+      "title": "Captions fit the screen",
+      "by": "measured",
+      "detail": "25 captions of up to 2 lines; the widest takes 74% of the width; the briefest stays up 0.9 s",
+      "findings": []
+    },
+    {
+      "id": "in-frame",
+      "title": "Everyone is inside the picture",
+      "by": "measured",
+      "detail": "where every head lands on screen, on all 1461 frames of the 9 shots",
+      "findings": []
+    },
+    {
+      "id": "things-in-frame",
+      "title": "The things a shot shows are inside the picture",
+      "by": "measured",
+      "detail": "no shot of this part has a thing standing or hanging in it",
+      "findings": []
+    },
+    {
+      "id": "safe-area",
+      "title": "Words over the picture are clear of the apps' own buttons",
+      "by": "measured",
+      "detail": "the captions, the counter and any label against the middle 900 by 1400 of a tall picture, on every frame",
+      "findings": []
+    },
+    {
+      "id": "faces-clear",
+      "title": "No face is under the title or the captions",
+      "by": "measured",
+      "detail": "every face against the title, any label, the captions, on every frame",
+      "findings": []
+    },
+    {
+      "id": "feet",
+      "title": "Feet are on the ground",
+      "by": "measured",
+      "detail": "the lowest foot or knee of every body against the ground line, on every frame",
+      "findings": []
+    },
+    {
+      "id": "smooth",
+      "title": "Nothing jumps",
+      "by": "measured",
+      "detail": "nobody changes pose",
+      "findings": []
+    },
+    {
+      "id": "held",
+      "title": "No picture is held too long",
+      "by": "measured",
+      "detail": "the longest shot is 7.3 s (s09); the longest with nothing moving in it is 7.3 s",
+      "findings": [
+        {
+          "level": "note",
+          "shot": "s02",
+          "atMs": 3766,
+          "text": "one picture is held for 5.6 s with nothing moving in it but breathing and blinking"
+        },
+        {
+          "level": "note",
+          "shot": "s03",
+          "atMs": 9400,
+          "text": "one picture is held for 4.3 s with nothing moving in it but breathing and blinking"
+        },
+        {
+          "level": "note",
+          "shot": "s04",
+          "atMs": 13666,
+          "text": "one picture is held for 4.8 s with nothing moving in it but breathing and blinking"
+        },
+        {
+          "level": "note",
+          "shot": "s05",
+          "atMs": 18466,
+          "text": "one picture is held for 4.0 s with nothing moving in it but breathing and blinking"
+        },
+        {
+          "level": "note",
+          "shot": "s06",
+          "atMs": 22500,
+          "text": "one picture is held for 6.1 s with nothing moving in it but breathing and blinking"
+        },
+        {
+          "level": "note",
+          "shot": "s07",
+          "atMs": 28600,
+          "text": "one picture is held for 6.2 s with nothing moving in it but breathing and blinking"
+        },
+        {
+          "level": "note",
+          "shot": "s08",
+          "atMs": 34766,
+          "text": "one picture is held for 6.6 s with nothing moving in it but breathing and blinking"
+        },
+        {
+          "level": "note",
+          "shot": "s09",
+          "atMs": 41366,
+          "text": "the shot stays for 7.3 s, a little over the 7 s a shot should take"
+        }
+      ]
+    },
+    {
+      "id": "reach",
+      "title": "Whatever is picked up is within reach",
+      "by": "measured",
+      "detail": "nobody takes a thing in their hand inside a shot",
+      "findings": []
+    },
+    {
+      "id": "empty-picture",
+      "title": "The picture is never empty",
+      "by": "measured",
+      "detail": "487 frames measured, 10 a second; the longest nearly empty stretch is 0.1 s (more than 0.5 s is a problem)",
+      "findings": []
+    },
+    {
+      "id": "plan",
+      "title": "The plan's own checks still pass",
+      "by": "measured",
+      "detail": "every name in the library, the staging rules, the format's beats, for all 24 shots of the video",
+      "findings": [
+        {
+          "level": "note",
+          "text": "the first shot \"s01\" holds still; a Short is judged in its first second: give it a camera move (push-in, drift) or someone moving"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s02\" is the same picture as \"s01\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "four wide shots in a row from \"s01\"; vary the shot size"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s04\" is the same picture as \"s03\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s05\" is the same picture as \"s04\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s07\" is the same picture as \"s06\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s08\" is the same picture as \"s07\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s09\" is the same picture as \"s08\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s11\" is the same picture as \"s10\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s12\" is the same picture as \"s11\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s14\" is the same picture as \"s13\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s15\" is the same picture as \"s14\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s16\" is the same picture as \"s15\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s17\" is the same picture as \"s16\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s19\" is the same picture as \"s18\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s21\" is the same picture as \"s20\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s22\" is the same picture as \"s21\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s24\" is the same picture as \"s23\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "the first shot has nobody in it; the first 3 seconds should be the most striking picture"
+        },
+        {
+          "level": "note",
+          "text": "about 0 sound effects a minute; the fine-print format suits 4 to 10. Steps, doors and things landing make the pictures feel real."
+        }
+      ]
+    },
+    {
+      "id": "same-pictures",
+      "title": "The pictures are the ones that were looked at",
+      "by": "measured",
+      "detail": "Claude looked at \"water-older-than-sun-part-1-9x16-preview-v7.mp4\"; every frame of this video was compared with it (the strongest difference is 15 of 255; over 16 would be a different picture)",
+      "findings": []
+    },
+    {
+      "id": "style",
+      "title": "Every still passes the Style Check",
+      "by": "looked",
+      "detail": "9 stills, each against the 11 questions of the style guide",
+      "findings": []
+    },
+    {
+      "id": "story",
+      "title": "Every still tells its part of the story",
+      "by": "looked",
+      "detail": "9 stills, each against 7 questions: in frame, face visible, expression, hands, feet, action, setting",
+      "findings": []
+    },
+    {
+      "id": "motion",
+      "title": "Every move and every cut holds up frame by frame",
+      "by": "looked",
+      "detail": "0 strips of frames, one across each move inside a shot and each cut that keeps someone on screen",
+      "findings": []
+    },
+    {
+      "id": "playbook",
+      "title": "The playbook was followed",
+      "by": "looked",
+      "detail": "the rules of the general, format and style playbooks, read against the finished part",
+      "findings": []
+    }
+  ],
+  "fixed": [
+    "Drawn for this film: the world `water`, nested frames from a ten-billionth of a metre to a light year: the kitchen with its counter, glass, tap and window in a house by the sea; one drop on the glass's rim and the frost creeping over it; the inside of the drop, bubbles streaming past; water molecules and the one that opens out to its oxygen and two hydrogens, one hydrogen growing heavy and gold; and, for parts 2 and 3, the Earth, a comet, the Sun, the dark cloud before the Sun, a speck of dust icing over, the cloud falling into a disk, the young Earth, the shower and the rain.",
+    "The titles were white on the light kitchen wall; they are dark on a dark box now.",
+    "A strip of the glass and its water ran down through the counter from the drop; the close-up glass is drawn only close up now, and only as tall as the glass.",
+    "On the way into the drop the picture was plain blue for 1.7 s; bubbles now stream past and the molecules gather in a growing cluster.",
+    "For single frames, shapes far larger than the frame (the sky and walls from close up, the Sun from the kitchen, the drop from inside it) made the browser draw the picture in tiles with dark gaps; every shape is now cut to just beyond the frame, and every frame of the part was measured: none has a dark edge."
+  ],
+  "notes": [
+    "Every frame measured for dark edges (0 of 1461). The part is one journey with no cuts: glass, drop, tap, house, coast, glass, into the drop, one molecule."
+  ]
+}

@@ -1,0 +1,357 @@
+{
+  "version": 1,
+  "title": "Why Every Screen Asks You for a Tip Now",
+  "request": "Make a good video on this based on the new update now for What's the Catch (Biku, 2026-10-16). Refined with his OK: the coffee shop experiment line and the last line, which said tips go up when the worker watches; the study found the opposite.",
+  "mode": "refine",
+  "format": "fine-print",
+  "style": "ink-stick",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "seed": 71428,
+  "finish": {
+    "acting": "snappy",
+    "onTwos": false,
+    "shadows": false,
+    "grain": 0.2,
+    "vignette": 0.12,
+    "boil": 0.25
+  },
+  "explainerLook": "world",
+  "sources": [
+    "Pew Research Center, \"Tipping Culture in America: Public Sees a Changed Landscape,\" November 2023. Survey of 11,945 US adults in August 2023: 72% say tipping is expected in more places than five years ago; 57% say they tip 15% or less at a sit-down restaurant; more oppose (40%) than favor (24%) suggested tip amounts on screens. https://www.pewresearch.org/2023/11/09/tipping-culture-in-america-public-sees-a-changed-landscape/",
+    "Kareem Haggag and Giovanni Paci, \"Default Tips,\" American Economic Journal: Applied Economics, 2014. Over 13 million New York City taxi rides: screens suggesting 20/25/30% instead of 15/20/25% raised the average tip by about 10%, but rides with the higher suggestions were over 50% more likely to get no card tip at all.",
+    "The New York Times, \"How to Deal With the Many Requests for Tips,\" 2023. Tip prompts with suggested amounts now appear at casual counters, food trucks and even self-service kiosks.",
+    "Bankrate, Annual Tipping Survey, 2025. Notes that 15% was traditionally the average tip, with 20% for excellent service.",
+    "The coffee figures (90¢, $1.20, $1.80, \"a third more\") are plain arithmetic on a $6 coffee, not quoted from a source.",
+    "Francine W. Goh, Alexandria C. Jungck and Jeffrey R. Stevens, \"Pro tip: Screen-based payment methods increase negative feelings in consumers but do not increase tip sizes\", University of Nebraska-Lincoln preprint, 2022. In a simulated coffee shop, people felt negatively about tip screens and did not tip more with them, and did not tip more when a server was visible. https://decisionslab.unl.edu/pubs/goh_etal_2022_preprint.pdf",
+    "Checked by Claude on 2026-10-16: the 72% and 57% against Pew's report; the taxi study's \"more than a 10 percent increase in the average tip\" and \"over 50 percent more likely to receive a zero-valued tip\" in Haggag and Paci (2014); the coffee arithmetic (15% of $6 is 90 cents; 20% $1.20; 30% $1.80; 1.20 is a third more than 0.90)."
+  ],
+  "appliedLessons": [],
+  "cast": [],
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "the-question",
+      "mood": "curious",
+      "quiet": false,
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l01",
+          "speaker": "narrator",
+          "text": "Why does every payment screen ask you for a *tip* now?",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l02",
+          "speaker": "narrator",
+          "text": "The answer hides in three little buttons, and it is *smarter* than it looks.",
+          "pauseAfterMs": 700
+        }
+      ],
+      "shots": [
+        {
+          "id": "s01",
+          "line": "l01",
+          "words": "Why does every payment screen ask you for a *tip* now?",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "scene",
+            "name": "coffee-counter",
+            "title": {
+              "lines": [
+                "WHY DOES EVERY SCREEN",
+                "ASK FOR A TIP?"
+              ],
+              "stress": 1
+            },
+            "show": [
+              {
+                "item": "tablet",
+                "on": "screen"
+              },
+              {
+                "item": "buttons",
+                "on": "tip"
+              }
+            ]
+          },
+          "transition": "cut",
+          "startMs": 0,
+          "endMs": 3620
+        },
+        {
+          "id": "s02",
+          "line": "l02",
+          "words": "The answer hides in three little buttons, and it is *smarter* than it looks.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "scene",
+            "name": "coffee-counter",
+            "show": [
+              {
+                "item": "tablet"
+              },
+              {
+                "item": "buttons"
+              },
+              {
+                "item": "zoom",
+                "on": "buttons"
+              }
+            ]
+          },
+          "transition": "dive",
+          "diveAt": {
+            "x": 0.666,
+            "y": 0.402
+          },
+          "startMs": 3620,
+          "endMs": 8380
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "the-moment",
+      "mood": "curious",
+      "quiet": false,
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l03",
+          "speaker": "narrator",
+          "text": "In a big 2023 survey, seventy two percent of Americans said tipping is expected in *more* places now.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l04",
+          "speaker": "narrator",
+          "text": "Food trucks ask, coffee counters ask, and even some self-checkout machines *ask*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l05",
+          "speaker": "narrator",
+          "text": "So you order a six dollar coffee, and the screen turns round to *face* you.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l06",
+          "speaker": "narrator",
+          "text": "It offers you a tip of twenty, twenty five or *thirty* percent.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l07",
+          "speaker": "narrator",
+          "text": "Most of us assume those buttons are simply the *normal* amounts.",
+          "pauseAfterMs": 600
+        }
+      ],
+      "shots": [
+        {
+          "id": "s03",
+          "line": "l03",
+          "words": "In a big 2023 survey, seventy two percent of Americans said tipping is expected in *more* places now.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "number",
+            "value": "72%",
+            "caption": "TIPS EXPECTED IN MORE PLACES",
+            "picture": "coin",
+            "countUp": true,
+            "on": "seventy"
+          },
+          "transition": "cut",
+          "startMs": 8380,
+          "endMs": 16250
+        },
+        {
+          "id": "s04",
+          "line": "l04",
+          "words": "Food trucks ask, coffee counters ask, and even some self-checkout machines *ask*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "queue",
+            "title": {
+              "lines": [
+                "FOOD TRUCKS, COUNTERS,",
+                "EVEN SELF-CHECKOUT"
+              ],
+              "stress": 1
+            },
+            "people": 4,
+            "sign": "TIP?",
+            "on": "food"
+          },
+          "transition": "cut",
+          "startMs": 16250,
+          "endMs": 21780
+        },
+        {
+          "id": "s05",
+          "line": "l05",
+          "words": "So you order a six dollar coffee, and the screen turns round to *face* you.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "scene",
+            "name": "coffee-counter",
+            "show": [
+              {
+                "item": "sign",
+                "on": "six"
+              },
+              {
+                "item": "cup",
+                "on": "coffee"
+              },
+              {
+                "item": "tablet"
+              },
+              {
+                "item": "turn",
+                "on": "screen"
+              }
+            ]
+          },
+          "transition": "cut",
+          "startMs": 21780,
+          "endMs": 26920
+        },
+        {
+          "id": "s06",
+          "line": "l06",
+          "words": "It offers you a tip of twenty, twenty five or *thirty* percent.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "bars",
+            "title": {
+              "lines": [
+                "WHAT THE SCREEN",
+                "OFFERS"
+              ],
+              "stress": 1
+            },
+            "bars": [
+              {
+                "label": "LOW",
+                "value": 20,
+                "text": "20%",
+                "on": "twenty"
+              },
+              {
+                "label": "MIDDLE",
+                "value": 25,
+                "text": "25%"
+              },
+              {
+                "label": "HIGH",
+                "value": 30,
+                "text": "30%",
+                "on": "thirty"
+              }
+            ]
+          },
+          "transition": "match",
+          "matchFrom": {
+            "x": 0.666,
+            "y": 0.402,
+            "size": 0.18
+          },
+          "matchTo": {
+            "x": 0.5,
+            "y": 0.5,
+            "size": 0.3
+          },
+          "startMs": 26920,
+          "endMs": 31300
+        },
+        {
+          "id": "s07",
+          "line": "l07",
+          "words": "Most of us assume those buttons are simply the *normal* amounts.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "queue",
+            "title": {
+              "lines": [
+                "THAT'S NORMAL,",
+                "RIGHT?"
+              ],
+              "stress": 1
+            },
+            "people": 4,
+            "sign": "20% 25% 30%",
+            "on": "normal"
+          },
+          "transition": "cut",
+          "startMs": 31300,
+          "endMs": 36750
+        }
+      ]
+    }
+  ]
+}

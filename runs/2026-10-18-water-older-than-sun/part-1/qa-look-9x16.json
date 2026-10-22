@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "video": "water-older-than-sun-part-1-9x16-preview-v7.mp4",
+  "stills": {
+    "s01": "ok",
+    "s02": "ok",
+    "s03": "ok",
+    "s04": "ok",
+    "s05": "ok",
+    "s06": "ok",
+    "s07": "ok",
+    "s08": "ok",
+    "s09": "ok"
+  },
+  "strips": {},
+  "playbook": "ok",
+  "fixed": [
+    "Drawn for this film: the world `water`, nested frames from a ten-billionth of a metre to a light year: the kitchen with its counter, glass, tap and window in a house by the sea; one drop on the glass's rim and the frost creeping over it; the inside of the drop, bubbles streaming past; water molecules and the one that opens out to its oxygen and two hydrogens, one hydrogen growing heavy and gold; and, for parts 2 and 3, the Earth, a comet, the Sun, the dark cloud before the Sun, a speck of dust icing over, the cloud falling into a disk, the young Earth, the shower and the rain.",
+    "The titles were white on the light kitchen wall; they are dark on a dark box now.",
+    "A strip of the glass and its water ran down through the counter from the drop; the close-up glass is drawn only close up now, and only as tall as the glass.",
+    "On the way into the drop the picture was plain blue for 1.7 s; bubbles now stream past and the molecules gather in a growing cluster.",
+    "For single frames, shapes far larger than the frame (the sky and walls from close up, the Sun from the kitchen, the drop from inside it) made the browser draw the picture in tiles with dark gaps; every shape is now cut to just beyond the frame, and every frame of the part was measured: none has a dark edge."
+  ],
+  "notes": [
+    "Every frame measured for dark edges (0 of 1461). The part is one journey with no cuts: glass, drop, tap, house, coast, glass, into the drop, one molecule."
+  ]
+}

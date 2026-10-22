@@ -1,0 +1,295 @@
+{
+  "version": 1,
+  "title": "Why a Fine for Being Late Made Parents Even Later",
+  "request": "Biku's game theory story script, used as it is: 'make a video for this' (2026-10-17).",
+  "mode": "as-is",
+  "format": "dilemma-story",
+  "brand": "dilemma-table",
+  "voice": "leak",
+  "speakers": [
+    {
+      "id": "trainer",
+      "name": "The Trainer",
+      "voice": "trainer"
+    },
+    {
+      "id": "saint",
+      "name": "The Saint",
+      "voice": "saint"
+    },
+    {
+      "id": "cheat",
+      "name": "The Cheat",
+      "voice": "cheat"
+    },
+    {
+      "id": "copycat",
+      "name": "The Copycat",
+      "voice": "copycat"
+    }
+  ],
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "trainer",
+      "text": "Why did a fine for being late make parents even *later?*",
+      "beat": "the-strange-ending",
+      "chapter": 1,
+      "pauseAfterMs": 800
+    },
+    {
+      "id": "l02",
+      "speaker": "trainer",
+      "text": "And when this daycare dropped the fine, they *still* came late.",
+      "beat": "the-strange-ending",
+      "chapter": 1,
+      "pauseAfterMs": 1400
+    },
+    {
+      "id": "l03",
+      "speaker": "trainer",
+      "text": "Earlier, there was no fine at *all.*",
+      "beat": "rewind",
+      "chapter": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l04",
+      "speaker": "copycat",
+      "text": "I'm so *sorry!* It won't happen again.",
+      "beat": "rewind",
+      "chapter": 1,
+      "pauseAfterMs": 700,
+      "speed": 1.06,
+      "say": "[gasp] I'm so sorry! It won't happen again."
+    },
+    {
+      "id": "l05",
+      "speaker": "saint",
+      "text": "It's okay. My *last* bus is at four forty.",
+      "beat": "rewind",
+      "chapter": 1,
+      "pauseAfterMs": 900,
+      "speed": 0.97,
+      "say": "[sigh] It's okay. My last bus is at four forty."
+    },
+    {
+      "id": "l06",
+      "speaker": "trainer",
+      "text": "The teacher waited as a favor. Late parents paid only with a *sorry.*",
+      "beat": "rewind",
+      "chapter": 1,
+      "pauseAfterMs": 1300
+    },
+    {
+      "id": "l07",
+      "speaker": "trainer",
+      "text": "Then this daycare made one rule. Pick up your child by *four.*",
+      "beat": "rewind",
+      "chapter": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l08",
+      "speaker": "trainer",
+      "text": "Each time you're more than ten minutes late, you pay three *dollars.*",
+      "beat": "rewind",
+      "chapter": 1,
+      "pauseAfterMs": 1800
+    },
+    {
+      "id": "l09",
+      "speaker": "cheat",
+      "text": "So I can *buy* twenty extra minutes for three dollars. That's cheaper than a babysitter.",
+      "beat": "the-trap-closes",
+      "chapter": 2,
+      "pauseAfterMs": 1200,
+      "thought": true,
+      "speed": 0.98,
+      "say": "[chuckle] So, I can buy twenty extra minutes, for three dollars. That's cheaper than a babysitter."
+    },
+    {
+      "id": "l10",
+      "speaker": "cheat",
+      "text": "Here's my *fee.*",
+      "beat": "the-trap-closes",
+      "chapter": 2,
+      "pauseAfterMs": 700,
+      "say": "[chuckle] Here's my fee."
+    },
+    {
+      "id": "l11",
+      "speaker": "saint",
+      "text": "The fine is meant to make you *hurry.*",
+      "beat": "the-trap-closes",
+      "chapter": 2,
+      "pauseAfterMs": 800,
+      "speed": 0.97
+    },
+    {
+      "id": "l12",
+      "speaker": "cheat",
+      "text": "I'm paying it, so we're *even.*",
+      "beat": "the-trap-closes",
+      "chapter": 2,
+      "pauseAfterMs": 1200,
+      "say": "[sarcastic] I'm paying it, so we're even."
+    },
+    {
+      "id": "l13",
+      "speaker": "copycat",
+      "text": "He didn't even say sorry. He just *paid.* So can I.",
+      "beat": "the-trap-closes",
+      "chapter": 2,
+      "pauseAfterMs": 1100,
+      "thought": true
+    },
+    {
+      "id": "l14",
+      "speaker": "copycat",
+      "text": "Put it on my *bill.*",
+      "beat": "the-trap-closes",
+      "chapter": 2,
+      "pauseAfterMs": 1000
+    },
+    {
+      "id": "l15",
+      "speaker": "trainer",
+      "text": "Soon, more parents paid instead of saying *sorry.*",
+      "beat": "the-trap-closes",
+      "chapter": 2,
+      "pauseAfterMs": 800
+    },
+    {
+      "id": "l16",
+      "speaker": "trainer",
+      "text": "The teacher missed her bus. A little boy waited *alone* at the window.",
+      "beat": "the-trap-closes",
+      "chapter": 2,
+      "pauseAfterMs": 1600,
+      "speed": 0.95,
+      "say": "The teacher missed her bus. A little boy waited alone, at the window."
+    },
+    {
+      "id": "l17",
+      "speaker": "trainer",
+      "text": "Now it's almost four, and *you* are stuck in traffic.",
+      "beat": "the-freeze",
+      "chapter": 2,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l18",
+      "speaker": "trainer",
+      "text": "Being late now just costs three dollars. Do you still *rush?*",
+      "beat": "the-freeze",
+      "chapter": 2,
+      "pauseAfterMs": 3000,
+      "speed": 0.95
+    },
+    {
+      "id": "l19",
+      "speaker": "trainer",
+      "text": "The fine turned the teacher's *favor* into something you could buy.",
+      "beat": "the-reveal",
+      "chapter": 3,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l20",
+      "speaker": "trainer",
+      "text": "And nobody says sorry for *buying* something.",
+      "beat": "the-reveal",
+      "chapter": 3,
+      "pauseAfterMs": 1200
+    },
+    {
+      "id": "l21",
+      "speaker": "trainer",
+      "text": "This is not a story. In 1998, two economists tried this at six *daycares* in Israel.",
+      "beat": "the-reveal",
+      "chapter": 3,
+      "pauseAfterMs": 600,
+      "speed": 0.97
+    },
+    {
+      "id": "l22",
+      "speaker": "trainer",
+      "text": "Within a few weeks, late pickups there nearly *doubled.*",
+      "beat": "the-reveal",
+      "chapter": 3,
+      "pauseAfterMs": 1000
+    },
+    {
+      "id": "l23",
+      "speaker": "trainer",
+      "text": "When the fine was dropped, late pickups stayed just as *high.*",
+      "beat": "the-reveal",
+      "chapter": 3,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l24",
+      "speaker": "trainer",
+      "text": "Now being late cost no money and no *sorry.*",
+      "beat": "the-reveal",
+      "chapter": 3,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l25",
+      "speaker": "trainer",
+      "text": "The fine went to the owner. The teacher who waited got *nothing.*",
+      "beat": "the-reveal",
+      "chapter": 3,
+      "pauseAfterMs": 1400
+    },
+    {
+      "id": "l26",
+      "speaker": "trainer",
+      "text": "You do this too. When a late fee is small, you just *pay* it.",
+      "beat": "the-sting",
+      "chapter": 3,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l27",
+      "speaker": "narrator",
+      "text": "If you make a rule, skip the *small* fine. Ask as a favor, or make the fine big.",
+      "beat": "the-sting",
+      "chapter": 3,
+      "pauseAfterMs": 1200
+    },
+    {
+      "id": "l28",
+      "speaker": "trainer",
+      "text": "So why did the fine make parents *later?*",
+      "beat": "the-sting",
+      "chapter": 3,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l29",
+      "speaker": "trainer",
+      "text": "Because the fine didn't make them *sorry.*",
+      "beat": "the-sting",
+      "chapter": 3,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l30",
+      "speaker": "trainer",
+      "text": "It told them what sorry *costs.*",
+      "beat": "the-sting",
+      "chapter": 3,
+      "pauseAfterMs": 1500,
+      "speed": 0.93
+    }
+  ],
+  "sources": [
+    "Uri Gneezy and Aldo Rustichini, \"A Fine Is a Price\", The Journal of Legal Studies, vol. 29, no. 1, January 2000, pages 1 to 17. Ten private daycares in Haifa, Israel, watched for 20 weeks from January to June 1998. At the start of week 5 a fine of NIS 10 per child for coming more than ten minutes after closing (four in the afternoon) was brought in at six of them, chosen at random; late pickups rose over 3 to 4 weeks and settled at almost twice the starting level, and did not come down when the fine was removed at the start of week 17. Nothing changed at the four daycares without a fine. The fine was paid to the owner, not to the teacher who stayed late, who got no extra money. https://rady.ucsd.edu/_files/faculty-research/uri-gneezy/fine.pdf",
+    "Checked by Claude against the paper on 2026-10-17. What the story invents: the teacher, the fathers, the boy, the bus, and the fine in dollars (NIS 10 was about $2.70 then; Biku's script rounds it to three)."
+  ],
+  "changes": [],
+  "masterPrompt": "prompts/dilemma-story.md"
+}

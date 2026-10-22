@@ -51,6 +51,19 @@ export const calculateCoverMetadata: CalculateMetadataFunction<CoverProps> = ({ 
 
 const font = `${VIEWER_FONT}, sans-serif`;
 
+/**
+ * The whole title in at most `most` lines: lines are let grow longer until it fits, so no word
+ * is ever dropped (a title of nine words lost its last two, 2026-10-15). The size is then
+ * fitted to the width.
+ */
+export function allWords(words: string, perLine: number, most: number): string[] {
+  for (let n = perLine; n < perLine + 40; n++) {
+    const lines = wrapWords(words, n);
+    if (lines.length <= most) return lines;
+  }
+  return [words];
+}
+
 /** The title in big outlined letters, bottom up from `bottom`: centred, or from the left at `left`. */
 function BigWords({
   lines,
@@ -148,7 +161,7 @@ export const Cover = ({
   const words = viewerText(title);
   const basis = textBasis(width, height);
   const wide = width > height;
-  const lines = wrapWords(words, wide ? 18 : 11).slice(0, 3);
+  const lines = allWords(words, wide ? 18 : 11, 3);
   const big = fitSize(lines, basis * (wide ? 0.17 : 0.2), width * 0.9);
   const bandH = lines.length * big * 1.08 + big * 0.7;
   // To the side: the picture slides right as far as the scene reaches, and the title stacks
@@ -157,7 +170,7 @@ export const Cover = ({
   const staged = stageShot({ ts, shots, storyboard: held, cards, track: null, size, frame, fps });
   const framed = shotTransform(staged.shot.camera.framing, staged.focus, size, staged.side);
   const slide = aside ? Math.max(0, Math.min(0.2 * width, -framed.x)) : 0;
-  const stack = wrapWords(words, 9).slice(0, 4);
+  const stack = allWords(words, 9, 4);
   const stackSize = fitSize(stack, basis * 0.22, width * 0.4);
   const stackBottom = height / 2 + ((stack.length - 1) * stackSize * 1.08) / 2 + stackSize * 0.35;
   return (

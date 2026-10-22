@@ -1,0 +1,211 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "reflective",
+      "startMs": 0
+    },
+    {
+      "mood": "hope",
+      "startMs": 21670
+    }
+  ],
+  "sfx": [
+    {
+      "name": "waves",
+      "atMs": 0,
+      "durationMs": 15100,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "whoosh",
+      "atMs": 60,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 8
+    },
+    {
+      "name": "paper",
+      "atMs": 2485,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "pop",
+      "atMs": 2807,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 9
+    },
+    {
+      "name": "whoosh",
+      "atMs": 5030,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 10
+    },
+    {
+      "name": "pop",
+      "atMs": 6007,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 11
+    },
+    {
+      "name": "pop",
+      "atMs": 11973,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 12
+    },
+    {
+      "name": "ding",
+      "atMs": 13107,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 13
+    },
+    {
+      "name": "crowd-murmur",
+      "atMs": 15100,
+      "durationMs": 6570,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "bubbles",
+      "atMs": 15160,
+      "gainDb": -2,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "whoosh",
+      "atMs": 15160,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 14
+    },
+    {
+      "name": "pop",
+      "atMs": 16407,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 15
+    },
+    {
+      "name": "whoosh",
+      "atMs": 18550,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 16
+    },
+    {
+      "name": "pop",
+      "atMs": 20273,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 17
+    },
+    {
+      "name": "home",
+      "atMs": 21670,
+      "durationMs": 4700,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "bubbles",
+      "atMs": 21730,
+      "gainDb": -2,
+      "pan": 0,
+      "seed": 5
+    },
+    {
+      "name": "whoosh",
+      "atMs": 21730,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 18
+    },
+    {
+      "name": "pop",
+      "atMs": 24173,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 19
+    },
+    {
+      "name": "underwater",
+      "atMs": 26370,
+      "durationMs": 4330,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 6
+    },
+    {
+      "name": "whoosh",
+      "atMs": 26430,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 20
+    },
+    {
+      "name": "pop",
+      "atMs": 27807,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 21
+    },
+    {
+      "name": "home",
+      "atMs": 30700,
+      "durationMs": 9730,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 7
+    },
+    {
+      "name": "whoosh",
+      "atMs": 30760,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 22
+    },
+    {
+      "name": "pop",
+      "atMs": 33307,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 23
+    },
+    {
+      "name": "whoosh",
+      "atMs": 34397,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 24
+    },
+    {
+      "name": "pop",
+      "atMs": 35240,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 25
+    },
+    {
+      "name": "pop",
+      "atMs": 37640,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 26
+    }
+  ],
+  "musicGainDb": 0,
+  "hush": []
+}

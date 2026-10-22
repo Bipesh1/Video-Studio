@@ -2,7 +2,7 @@
   "id": "promo",
   "name": "Promo",
   "description": "A short video that gets the viewer to do one thing: follow, visit, buy or come along. Pick it to promote a page, a product or an event.",
-  "version": 1,
+  "version": 2,
   "structure": [
     {
       "id": "hook",
@@ -71,6 +71,14 @@
     }
   },
   "captionMode": "full",
+  "finish": {
+    "acting": "snappy",
+    "onTwos": true,
+    "shadows": true,
+    "grain": 0.4,
+    "vignette": 0.35,
+    "boil": 0.25
+  },
   "factRules": {
     "sourcesRequired": false,
     "rules": [

@@ -1,0 +1,108 @@
+{
+  "id": "dilemma",
+  "name": "Dilemma (game theory)",
+  "description": "A game theory video for The Dilemma Table: one real trap of human behaviour, shown happening to one of the fixed cast in one dark room, while the Trainer tells the viewer in plain words what he is doing and why. Pick it only for game theory scripts.",
+  "version": 3,
+  "structure": [
+    {
+      "id": "the-question",
+      "purpose": "The Trainer, close and to the camera, asks the viewer one plain question in big words, then promises the answer in one short line.",
+      "share": 0.08,
+      "moods": ["unease", "tense"],
+      "preferredShots": ["wide", "close-up"],
+      "backgroundTreatment": "atmospheric"
+    },
+    {
+      "id": "the-rule",
+      "purpose": "In full plain sentences the Trainer says who this person is, what they came for, and the one thing they do not know.",
+      "share": 0.17,
+      "moods": ["unease", "curious"],
+      "preferredShots": ["wide", "medium"],
+      "backgroundTreatment": "atmospheric"
+    },
+    {
+      "id": "the-smart-choice",
+      "purpose": "The Trainer says what he is doing now; the person notices, and talks themselves out of worrying; the Trainer points out what they just did.",
+      "share": 0.25,
+      "moods": ["unease", "closing-in", "tense"],
+      "preferredShots": ["medium", "close-up", "over-shoulder"],
+      "backgroundTreatment": "atmospheric"
+    },
+    {
+      "id": "the-trap",
+      "purpose": "The same thing, stronger: the person says out loud that it is fine, the Trainer asks the viewer what happens next, and we see the choice.",
+      "share": 0.25,
+      "moods": ["closing-in", "tense"],
+      "preferredShots": ["close-up", "eyes", "medium"],
+      "backgroundTreatment": "atmospheric"
+    },
+    {
+      "id": "the-result",
+      "purpose": "This was real: the year, who did it, and its numbers, each in a full plain sentence, then one everyday place the viewer does the same thing.",
+      "share": 0.12,
+      "moods": ["aftermath", "sorrow"],
+      "preferredShots": ["wide", "medium"],
+      "backgroundTreatment": "atmospheric"
+    },
+    {
+      "id": "what-stays",
+      "purpose": "The outside voice gives one thing a person can really do, and the Trainer answers the opening question in one line.",
+      "share": 0.13,
+      "moods": ["aftermath", "reflective"],
+      "preferredShots": ["eyes", "wide", "close-up"],
+      "backgroundTreatment": "atmospheric"
+    }
+  ],
+  "lengthRange": {
+    "min": 60,
+    "max": 130
+  },
+  "shotLength": {
+    "min": 2,
+    "max": 4
+  },
+  "hookRules": [
+    "The first 3 seconds ask one question of at most 12 words about \"you\", spoken and shown as big words. No greeting, no logo, no game theory words.",
+    "It is a real question that the ending answers, and it does not start with \"In this video\", \"Did you know\", \"Have you ever wondered\" or \"Imagine\".",
+    "Between 3 and 10 seconds one line says what the viewer could lose or gain."
+  ],
+  "pacing": {
+    "wordsPerMinute": {
+      "min": 105,
+      "max": 155
+    },
+    "rehookEveryS": {
+      "min": 15,
+      "max": 25
+    },
+    "pauseMs": {
+      "normal": 500,
+      "afterBeat": 1200
+    }
+  },
+  "sfxDensity": {
+    "level": "low",
+    "perMinute": {
+      "min": 3,
+      "max": 8
+    }
+  },
+  "captionMode": "full",
+  "roomTone": "hum",
+  "finish": {
+    "acting": "gentle",
+    "onTwos": true,
+    "shadows": true,
+    "grain": 0.5,
+    "vignette": 0.3,
+    "boil": 0.25
+  },
+  "factRules": {
+    "sourcesRequired": true,
+    "rules": [
+      "The real study, game or event behind the video is named with its year and comes from a saved source.",
+      "Every number is the source's own. A rounded figure is spoken as about, nearly or more than, never as exact.",
+      "What the cast act out is an invented scene and is never passed off as the study itself."
+    ]
+  }
+}

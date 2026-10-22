@@ -11,7 +11,7 @@ import type { Facing, ResolvedPose } from '../rig/types';
  * camera moved in on someone: the place, the light and where people are never change between
  * the shots of a scene, only how much of it the frame shows.
  */
-export const SHOTS = ['wide', 'medium', 'close-up', 'over-shoulder'] as const;
+export const SHOTS = ['wide', 'medium', 'close-up', 'eyes', 'over-shoulder'] as const;
 export type Shot = (typeof SHOTS)[number];
 
 /** What the camera frames: a head's middle and size in the wide layout, in px. */
@@ -36,12 +36,18 @@ type Size = { width: number; height: number };
  * in the upper third, characters big, the bottom quarter left for captions.
  */
 const TARGETS: Record<Shot, { head: number; x: number; y: number; room: number }> = {
-  /** Whole figures with their surroundings. */
-  wide: { head: 0.105, x: 0.5, y: 0.41, room: 1.6 },
+  /**
+   * Whole figures with their surroundings. On a phone, faces hold the eye: people are as big as
+   * the width allows, with less air at the sides and less empty wall above them (2026-10-14,
+   * for the Shorts; it was head 0.105, y 0.41, room 1.6).
+   */
+  wide: { head: 0.125, x: 0.5, y: 0.42, room: 1.0 },
   /** Head and body down to about the hips: the everyday shot for talk and action. */
-  medium: { head: 0.19, x: 0.5, y: 0.3, room: 1.6 },
+  medium: { head: 0.21, x: 0.5, y: 0.31, room: 1.4 },
   /** The head fills about two fifths of the frame: for the feeling on a face. */
   'close-up': { head: 0.4, x: 0.5, y: 0.36, room: 1.3 },
+  /** Only the eyes: the head is bigger than the picture, the eyes fill its width. For the moment of deciding. */
+  eyes: { head: 0.78, x: 0.5, y: 0.39, room: 0.66 },
   /** The one being looked at, past the shoulder of the one looking. */
   'over-shoulder': { head: 0.17, x: 0.66, y: 0.3, room: 1.6 },
 };
@@ -54,6 +60,7 @@ const WIDE_TARGETS: Record<Shot, { head: number; x: number; y: number; room: num
   wide: { head: 0.15, x: 0.5, y: 0.34, room: 1.6 },
   medium: { head: 0.27, x: 0.5, y: 0.33, room: 1.6 },
   'close-up': { head: 0.5, x: 0.5, y: 0.4, room: 1.3 },
+  eyes: { head: 1.35, x: 0.5, y: 0.48, room: 1.2 },
   'over-shoulder': { head: 0.25, x: 0.62, y: 0.33, room: 1.6 },
 };
 
@@ -74,7 +81,15 @@ export const STAGE_SHARE = 0.86;
  * scene out at that size, so its layout is smaller and even a wide shot closes in from it.
  */
 export const layoutHead = (size: Size): number =>
-  Math.min(targetsFor(size).wide.head * size.height, (STAGE_SHARE * size.width) / STAGE_HEADS);
+  Math.min(layoutShare(size) * size.height, (STAGE_SHARE * size.width) / STAGE_HEADS);
+
+/**
+ * The share of the frame's height a head takes in the layout's own wide view. It sets how big
+ * places are drawn beside people, and stays what it was when the tall wide shot moved closer
+ * (2026-10-14): the camera comes in, the bushes do not grow.
+ */
+const layoutShare = (size: Size): number =>
+  size.width > size.height ? WIDE_TARGETS.wide.head : 0.105;
 
 /**
  * How much closer the camera stands, in a wide shot, than the layout is drawn: 1 in a wide
@@ -83,7 +98,7 @@ export const layoutHead = (size: Size): number =>
  * (Biku, 2026-10-07: "everything like bush and grass in vertical is shown too big").
  */
 export const layoutScale = (size: Size): number =>
-  (targetsFor(size).wide.head * size.height) / layoutHead(size);
+  (layoutShare(size) * size.height) / layoutHead(size);
 
 /** A standing head's height above the ground, in head units. */
 const HEAD_HEIGHT = -computeSkeleton(resolvePose(stand)).head.y;
@@ -198,4 +213,14 @@ export function shoulderPlacement(
     head,
     facing: side === 'left' ? 'right' : 'left',
   };
+}
+
+/** How far a tilted frame is tipped, in degrees, for a strength of 0 to 1. */
+export const tiltOf = (strength: number): number => 3 + 6 * Math.min(1, Math.max(0, strength));
+
+/** How much closer a frame tipped by this many degrees has to be so its corners stay filled. */
+export function tiltScale(degrees: number, size: Size): number {
+  const a = (Math.abs(degrees) * Math.PI) / 180;
+  const long = Math.max(size.width / size.height, size.height / size.width);
+  return Math.cos(a) + long * Math.sin(a);
 }

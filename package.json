@@ -22,12 +22,15 @@
     "make": "tsx cli/src/make.ts",
     "qa": "tsx cli/src/qa.ts",
     "output": "tsx cli/src/output.ts",
+    "thumbnail": "tsx cli/src/thumbnail.ts",
+    "film-test": "tsx cli/src/film-test.ts",
     "storyboard": "tsx cli/src/storyboard.ts",
     "test": "vitest run",
     "typecheck": "tsc -p shared/tsconfig.json && tsc -p engine/tsconfig.json && tsc -p cli/tsconfig.json",
     "lint": "eslint .",
     "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
-    "format:check": "prettier --check \"**/*.{ts,tsx,json,md}\""
+    "format:check": "prettier --check \"**/*.{ts,tsx,json,md}\"",
+    "frames": "tsx cli/src/frames.ts"
   },
   "devDependencies": {
     "@eslint/js": "^9.0.0",

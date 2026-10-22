@@ -1,0 +1,207 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l16",
+      "speaker": "saint",
+      "voice": "af_sarah",
+      "text": "Put the two slow ones together, and we only wait once.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/saint.wav",
+      "speed": 0.95,
+      "pauseAfterMs": 962
+    },
+    {
+      "id": "l17",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "The two fastest cross in two minutes. The man in the red tie runs back in one.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 804
+    },
+    {
+      "id": "l18",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "Then the two slowest cross *together*, in ten.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 1005
+    },
+    {
+      "id": "l19",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "The woman in the scarf returns in two, and the two fastest cross again in two.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 1005
+    },
+    {
+      "id": "l20",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "That is exactly *seventeen* minutes.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 603
+    },
+    {
+      "id": "l21",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "The old man's ten minutes were coming anyway, so the five fit inside them.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 1005
+    },
+    {
+      "id": "l22",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "This is a real puzzle. Saul Levmore and Elizabeth Cook printed it in a book in 1981.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 335
+    },
+    {
+      "id": "l23",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "In 2002, the mathematician Günter Rote proved the fastest way for any group.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 469
+    },
+    {
+      "id": "l24",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "You make the first plan every time you spread slow jobs across your day.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 804
+    },
+    {
+      "id": "l25",
+      "speaker": "narrator",
+      "voice": "af_nicole",
+      "text": "Start your slowest jobs at the same time, so you only wait once.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/leak.wav",
+      "speed": 0.95,
+      "pauseAfterMs": 888
+    },
+    {
+      "id": "l26",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "So who should walk with the slowest person? The next slowest *one*.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 1005
+    }
+  ]
+}

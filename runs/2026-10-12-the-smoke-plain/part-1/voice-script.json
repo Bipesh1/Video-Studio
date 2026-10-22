@@ -1,0 +1,173 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "If a room filled with smoke, would you get up and *leave?*",
+      "speed": 0.97,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l02",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "You think you would. Watch this.",
+      "say": "You think you would... Watch this.",
+      "speed": 0.94,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l03",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "This man came here to earn twenty dollars. All he has to do is sit and wait.",
+      "speed": 0.97,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "l04",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "Twenty dollars just to sit here? *Easy.*",
+      "say": "Twenty dollars, just to sit here? Easy.",
+      "speed": 1.01,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l05",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "What he does not know is that everyone else in this room *works for me.*",
+      "say": "What he does not know, is that everyone else in this room... works for me.",
+      "speed": 0.94,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l06",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "I pay them to do one thing. Stay *calm,* whatever happens.",
+      "say": "I pay them to do one thing. Stay calm... whatever happens.",
+      "speed": 0.92,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l07",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "Now I let *smoke* into the room.",
+      "say": "Now... I let smoke into the room.",
+      "speed": 0.92,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l08",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "Is that smoke?",
+      "say": "Is that... smoke?",
+      "speed": 0.94,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l09",
+      "speaker": "cheat",
+      "voice": "am_eric",
+      "text": "It's nothing. Probably the kitchen.",
+      "speed": 1.03,
+      "pauseAfterMs": 540
+    },
+    {
+      "id": "l10",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "Nobody else looks worried. So it must be fine.",
+      "say": "Nobody else looks worried... So, it must be fine.",
+      "speed": 0.9,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l11",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "See what he did? He did not look at the smoke. He looked at *the people.*",
+      "say": "See what he did? He did not look at the smoke. He looked... at the people.",
+      "speed": 0.93,
+      "pauseAfterMs": 1000
+    }
+  ]
+}

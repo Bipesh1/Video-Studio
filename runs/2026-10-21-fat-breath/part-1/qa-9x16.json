@@ -1,0 +1,308 @@
+{
+  "version": 1,
+  "title": "Where Does Your Fat Go When You Lose Weight?",
+  "part": 1,
+  "parts": 3,
+  "size": "9:16",
+  "video": "fat-breath-part-1-9x16-v2.mp4",
+  "seconds": 40.933333,
+  "checkedOn": "2026-10-21",
+  "checks": [
+    {
+      "id": "plays",
+      "title": "The file plays",
+      "by": "measured",
+      "detail": "1080x1920, 30 pictures a second, 40.9 s, picture and sound both there; played through from start to finish",
+      "findings": []
+    },
+    {
+      "id": "made-from",
+      "title": "The video is of this plan and this sound",
+      "by": "measured",
+      "detail": "rendered from the plan as it stands; its sound is the mix as it stands, second for second (what is left over is 40 dB under it at most)",
+      "findings": []
+    },
+    {
+      "id": "length",
+      "title": "The length is right",
+      "by": "measured",
+      "detail": "40.9 s; a part may be up to 60 s",
+      "findings": []
+    },
+    {
+      "id": "in-step",
+      "title": "Picture and voice are in step",
+      "by": "measured",
+      "detail": "8 shots end to end with no gap, each line heard while its own pictures are on screen; picture and voice end together at 40.9 s",
+      "findings": []
+    },
+    {
+      "id": "silence",
+      "title": "There is no dead silence",
+      "by": "measured",
+      "detail": "the sound never drops out; the longest pause between words is 0.7 s",
+      "findings": []
+    },
+    {
+      "id": "loudness",
+      "title": "The sound is at the right level",
+      "by": "measured",
+      "detail": "loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.0 dB (the limit is -1)",
+      "findings": []
+    },
+    {
+      "id": "words-heard",
+      "title": "Nothing drowns the words",
+      "by": "measured",
+      "detail": "31 sound effects, the loudest of those over words 13 dB under the voice; the music sits 17.1 dB under the voice while someone speaks",
+      "findings": []
+    },
+    {
+      "id": "captions",
+      "title": "Captions fit the screen",
+      "by": "measured",
+      "detail": "21 captions of up to 2 lines; the widest takes 74% of the width; the briefest stays up 0.9 s",
+      "findings": []
+    },
+    {
+      "id": "in-frame",
+      "title": "Everyone is inside the picture",
+      "by": "measured",
+      "detail": "where every head lands on screen, on all 1227 frames of the 8 shots",
+      "findings": []
+    },
+    {
+      "id": "things-in-frame",
+      "title": "The things a shot shows are inside the picture",
+      "by": "measured",
+      "detail": "no shot of this part has a thing standing or hanging in it",
+      "findings": []
+    },
+    {
+      "id": "safe-area",
+      "title": "Words over the picture are clear of the apps' own buttons",
+      "by": "measured",
+      "detail": "the captions, the counter and any label against the middle 900 by 1400 of a tall picture, on every frame",
+      "findings": []
+    },
+    {
+      "id": "faces-clear",
+      "title": "No face is under the title or the captions",
+      "by": "measured",
+      "detail": "every face against the title, any label, the captions, on every frame",
+      "findings": []
+    },
+    {
+      "id": "feet",
+      "title": "Feet are on the ground",
+      "by": "measured",
+      "detail": "the lowest foot or knee of every body against the ground line, on every frame",
+      "findings": []
+    },
+    {
+      "id": "smooth",
+      "title": "Nothing jumps",
+      "by": "measured",
+      "detail": "nobody changes pose",
+      "findings": []
+    },
+    {
+      "id": "held",
+      "title": "No picture is held too long",
+      "by": "measured",
+      "detail": "the longest shot is 6.9 s (s02); the longest with nothing moving in it is 6.9 s",
+      "findings": [
+        {
+          "level": "note",
+          "shot": "s01",
+          "atMs": 0,
+          "text": "one picture is held for 5.9 s with nothing moving in it but breathing and blinking"
+        },
+        {
+          "level": "note",
+          "shot": "s02",
+          "atMs": 5900,
+          "text": "one picture is held for 6.9 s with nothing moving in it but breathing and blinking"
+        },
+        {
+          "level": "note",
+          "shot": "s03",
+          "atMs": 12800,
+          "text": "one picture is held for 5.3 s with nothing moving in it but breathing and blinking"
+        },
+        {
+          "level": "note",
+          "shot": "s04",
+          "atMs": 18066,
+          "text": "one picture is held for 5.7 s with nothing moving in it but breathing and blinking"
+        },
+        {
+          "level": "note",
+          "shot": "s07",
+          "atMs": 29400,
+          "text": "one picture is held for 5.6 s with nothing moving in it but breathing and blinking"
+        },
+        {
+          "level": "note",
+          "shot": "s08",
+          "atMs": 35033,
+          "text": "one picture is held for 5.9 s with nothing moving in it but breathing and blinking"
+        }
+      ]
+    },
+    {
+      "id": "reach",
+      "title": "Whatever is picked up is within reach",
+      "by": "measured",
+      "detail": "nobody takes a thing in their hand inside a shot",
+      "findings": []
+    },
+    {
+      "id": "empty-picture",
+      "title": "The picture is never empty",
+      "by": "measured",
+      "detail": "409 frames measured, 10 a second; the longest nearly empty stretch is 0.0 s (more than 0.5 s is a problem)",
+      "findings": []
+    },
+    {
+      "id": "still-picture",
+      "title": "The picture keeps moving",
+      "by": "measured",
+      "detail": "409 frames measured, 10 a second; the longest stretch with the picture nearly still is 0.0 s (more than 3 s is a problem)",
+      "findings": []
+    },
+    {
+      "id": "plan",
+      "title": "The plan's own checks still pass",
+      "by": "measured",
+      "detail": "every name in the library, the staging rules, the format's beats, for all 23 shots of the video",
+      "findings": [
+        {
+          "level": "note",
+          "text": "the first shot \"s01\" holds still; a Short is judged in its first second: give it a camera move (push-in, drift) or someone moving"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s02\" is the same picture as \"s01\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "four wide shots in a row from \"s01\"; vary the shot size"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s04\" is the same picture as \"s03\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s06\" is the same picture as \"s05\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s07\" is the same picture as \"s06\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s08\" is the same picture as \"s07\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s10\" is the same picture as \"s09\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s11\" is the same picture as \"s10\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s12\" is the same picture as \"s11\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s14\" is the same picture as \"s13\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s15\" is the same picture as \"s14\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s16\" is the same picture as \"s15\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s18\" is the same picture as \"s17\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s19\" is the same picture as \"s18\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s20\" is the same picture as \"s19\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s21\" is the same picture as \"s20\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s23\" is the same picture as \"s22\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "the first shot has nobody in it; the first 3 seconds should be the most striking picture"
+        }
+      ]
+    },
+    {
+      "id": "same-pictures",
+      "title": "The pictures are the ones that were looked at",
+      "by": "measured",
+      "detail": "Claude looked at \"fat-breath-part-1-9x16-preview-v4.mp4\"; every frame of this video was compared with it (the strongest difference is 12 of 255; over 16 would be a different picture)",
+      "findings": []
+    },
+    {
+      "id": "style",
+      "title": "Every still passes the Style Check",
+      "by": "looked",
+      "detail": "8 stills, each against the 11 questions of the style guide",
+      "findings": []
+    },
+    {
+      "id": "story",
+      "title": "Every still tells its part of the story",
+      "by": "looked",
+      "detail": "8 stills, each against 7 questions: in frame, face visible, expression, hands, feet, action, setting",
+      "findings": []
+    },
+    {
+      "id": "motion",
+      "title": "Every move and every cut holds up frame by frame",
+      "by": "looked",
+      "detail": "0 strips of frames, one across each move inside a shot and each cut that keeps someone on screen",
+      "findings": []
+    },
+    {
+      "id": "playbook",
+      "title": "The playbook was followed",
+      "by": "looked",
+      "detail": "the rules of the general, format and style playbooks, read against the finished part",
+      "findings": []
+    }
+  ],
+  "fixed": [
+    "The question came up only as the narrator said its words at the end of the line, after 4 s, over a shot of legs; it is up within the first second now, over the whole bathroom, clear of the face.",
+    "The scale's number ran into its KG; the number and the KG have their own places in the bubble.",
+    "Close in on the blob of fat, the room behind vanished into the dark hall; the bathroom wall stays behind it now.",
+    "The blob broke into loose dots that read as nothing; it breaks into small fat molecules, chains of carbon and hydrogen with an oxygen at one end, that stay on screen as the camera dives on.",
+    "The fat cells were drawn outside the skin, a stiff column like a corn cob; they lie under the skin and the hoodie now, a little out of line and of different sizes.",
+    "The single fat cell sat on a muddy olive ground; its neighbours show round it, and the oil fills the screen only once the camera is inside the drop.",
+    "The face from the side was a triangle nose and a dot eye; it has a forehead, nose, lips and chin, the channel's round eye and the mascot's afro.",
+    "The ENERGY sign was cut by the edge; the signs stand over their holders, inside the picture.",
+    "Diving into the belly showed 0.7 s of plain pink, and the camera went in at the trousers; it goes in at the hoodie through a rush of cells and fat, never empty for more than 0.3 s."
+  ],
+  "notes": [
+    "One journey, Biku's script as written: the question over your bathroom, the scale ticking from 72.0 to 71.0 as a blob of fat lifts off and vanishes; back over a hall of experts (doctors, dietitians, trainers, each named), a red cross over most of them and green ticks over three; their signs ENERGY, HEAT, MUSCLE and one pointing at the toilet; back into the blob, which comes apart into fat molecules; into your belly, the fat cells under the skin, one cell and its drop of oil; FAT IS MADE OF with carbon, hydrogen and oxygen named; up to your nose with oxygen streaming in. Measured: never empty, never still."
+  ]
+}

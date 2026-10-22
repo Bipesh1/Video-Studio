@@ -1,0 +1,944 @@
+{
+  "version": 1,
+  "title": "She Wrote Down Every Dish She Washed for a Year",
+  "request": "Biku's game theory story script, used as it is: 'make a story on this script for youtube video 16:9' (2026-10-20).",
+  "mode": "as-is",
+  "format": "dilemma-story",
+  "style": "ink-stick",
+  "brand": "dilemma-table",
+  "voice": "leak",
+  "seed": 72912,
+  "finish": {
+    "acting": "gentle",
+    "onTwos": true,
+    "shadows": true,
+    "grain": 0.5,
+    "vignette": 0.35,
+    "boil": 0.25
+  },
+  "sources": [
+    "Michael Ross and Fiore Sicoly, \"Egocentric Biases in Availability and Attribution\", Journal of Personality and Social Psychology, volume 37, issue 3, pages 322 to 336, 1979. Among five experiments, 37 married couples separately rated each spouse's share of everyday jobs (from making breakfast to causing arguments); each person recalled more of their own contributions and claimed more of the credit than their partner gave them, so the two self-estimates typically added up to more than the whole. In pilot tests with percentages, couples remembered and compared their answers afterwards and it caused friction, so the final study had them mark a line instead. https://doi.org/10.1037/0022-3514.37.3.322",
+    "Daniel Kahneman, Thinking, Fast and Slow, 2011. Retells the study: the self-assessed shares added up to more than 100 percent.",
+    "Checked by Claude on 2026-10-20 against reports of the paper. What the story invents: the couple, the notebooks, the 4,212 dishes, the boiler and the shirts."
+  ],
+  "appliedLessons": [],
+  "cast": [
+    {
+      "id": "trainer",
+      "name": "The Trainer",
+      "card": "trainer",
+      "host": true
+    },
+    {
+      "id": "saint",
+      "name": "The Saint",
+      "card": "saint"
+    },
+    {
+      "id": "copycat",
+      "name": "The Copycat",
+      "card": "copycat"
+    },
+    {
+      "id": "you",
+      "name": "You",
+      "card": "you"
+    }
+  ],
+  "series": "game-theory",
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "the-strange-ending",
+      "mood": "unease",
+      "quiet": false,
+      "ambience": "home",
+      "place": "kitchen",
+      "treatment": "atmospheric",
+      "palette": "dusk-violet",
+      "lines": [
+        {
+          "id": "l01",
+          "speaker": "trainer",
+          "text": "She wrote down every dish she washed, for a whole year.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l02",
+          "speaker": "trainer",
+          "text": "And she was saving every one of them for *one night.*",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s1a",
+          "line": "l01",
+          "words": "She wrote down every dish she washed,",
+          "camera": {
+            "framing": "wide",
+            "move": "push-in",
+            "strength": 0.12
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.15,
+              "lookAt": "down",
+              "holds": "notebook-blue-open",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "kitchen-sink",
+              "x": 0.24
+            },
+            {
+              "prop": "window-night",
+              "x": 0.55,
+              "y": 2.9
+            },
+            {
+              "prop": "wall-clock",
+              "x": 0.42,
+              "y": 3.55,
+              "size": 0.5
+            },
+            {
+              "prop": "drawer-cabinet",
+              "x": 0.95
+            },
+            {
+              "prop": "chair",
+              "x": 0.84
+            },
+            {
+              "prop": "table",
+              "x": 0.72
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "tick",
+              "at": "start",
+              "gainDb": -12
+            }
+          ],
+          "overlay": {
+            "kind": "words",
+            "lines": [
+              "She wrote down",
+              "every dish she washed",
+              "for a whole year"
+            ],
+            "stress": 1
+          },
+          "transition": "cut",
+          "startMs": 0,
+          "endMs": 2100
+        },
+        {
+          "id": "s1b",
+          "line": "l01",
+          "words": "for a whole year.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "kitchen-sink",
+              "x": 0.24
+            },
+            {
+              "prop": "window-night",
+              "x": 0.55,
+              "y": 2.9
+            },
+            {
+              "prop": "wall-clock",
+              "x": 0.42,
+              "y": 3.55,
+              "size": 0.5
+            },
+            {
+              "prop": "drawer-cabinet",
+              "x": 0.95
+            },
+            {
+              "prop": "chair",
+              "x": 0.84
+            },
+            {
+              "prop": "table",
+              "x": 0.72
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "paper",
+              "at": "start",
+              "gainDb": -2
+            }
+          ],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "DISHES I WASHED"
+            ],
+            "tally": 4212,
+            "cover": "blue"
+          },
+          "transition": "cut",
+          "startMs": 2100,
+          "endMs": 3730
+        },
+        {
+          "id": "s1c",
+          "line": "l02",
+          "words": "And she was saving every one of them for *one night.*",
+          "camera": {
+            "framing": "medium",
+            "move": "push-in",
+            "strength": 0.15,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "down",
+              "holds": "notebook-blue-open",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.45,
+                  "expression": "smug",
+                  "strength": 0.6,
+                  "lookAt": "camera",
+                  "holds": "notebook-blue"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "kitchen-sink",
+              "x": 0.24
+            },
+            {
+              "prop": "window-night",
+              "x": 0.55,
+              "y": 2.9
+            },
+            {
+              "prop": "wall-clock",
+              "x": 0.42,
+              "y": 3.55,
+              "size": 0.5
+            },
+            {
+              "prop": "drawer-cabinet",
+              "x": 0.95
+            },
+            {
+              "prop": "chair",
+              "x": 0.84
+            },
+            {
+              "prop": "table",
+              "x": 0.72
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "tick",
+              "at": "start",
+              "gainDb": -12
+            }
+          ],
+          "transition": "cut",
+          "startMs": 3730,
+          "endMs": 7179
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "rewind",
+      "mood": "tense",
+      "quiet": false,
+      "ambience": "home",
+      "place": "kitchen",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l03",
+          "speaker": "trainer",
+          "text": "One year earlier, this married couple had the same fight every week.",
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "l04",
+          "speaker": "saint",
+          "text": "I do *everything* in this house.",
+          "say": "[angry] I do everything in this house.",
+          "pauseAfterMs": 300
+        },
+        {
+          "id": "l05",
+          "speaker": "copycat",
+          "text": "Everything? I do plenty. You just don't see it.",
+          "speed": 1.02,
+          "say": "[sarcastic] Everything? I do plenty. You just don't see it.",
+          "pauseAfterMs": 300
+        },
+        {
+          "id": "l06",
+          "speaker": "saint",
+          "text": "Then show me.",
+          "speed": 0.97,
+          "say": "Then, show me.",
+          "pauseAfterMs": 300
+        },
+        {
+          "id": "l07",
+          "speaker": "copycat",
+          "text": "Show you what? Nobody keeps a *list.*",
+          "say": "[chuckle] Show you what? Nobody keeps a list.",
+          "pauseAfterMs": 900
+        },
+        {
+          "id": "l08",
+          "speaker": "trainer",
+          "text": "It was always her word against *his.*",
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "l09",
+          "speaker": "trainer",
+          "text": "So she made her own rule. Whoever has it in writing *wins.*",
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "l10",
+          "speaker": "trainer",
+          "text": "On their anniversary, she would put the proof on the table.",
+          "pauseAfterMs": 1000
+        }
+      ],
+      "shots": [
+        {
+          "id": "s2a",
+          "line": "l03",
+          "words": "One year earlier, this married couple had the same fight every week.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "angry",
+              "strength": 0.5,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "copycat",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "stand",
+              "expression": "smug",
+              "strength": 0.6,
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.52,
+              "lookAt": "saint",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "kitchen-sink",
+              "x": 0.24
+            },
+            {
+              "prop": "window-winter",
+              "x": 0.55,
+              "y": 2.9
+            },
+            {
+              "prop": "wall-clock",
+              "x": 0.42,
+              "y": 3.55,
+              "size": 0.5
+            },
+            {
+              "prop": "drawer-cabinet",
+              "x": 0.95
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "rewind",
+          "rewind": {
+            "label": "ONE YEAR EARLIER",
+            "style": "film"
+          },
+          "startMs": 7179,
+          "endMs": 10898
+        },
+        {
+          "id": "s2b",
+          "line": "l04",
+          "words": "I do *everything* in this house.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "point",
+              "expression": "angry",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "kitchen-sink",
+              "x": 0.24
+            },
+            {
+              "prop": "window-winter",
+              "x": 0.55,
+              "y": 2.9
+            },
+            {
+              "prop": "wall-clock",
+              "x": 0.42,
+              "y": 3.55,
+              "size": 0.5
+            },
+            {
+              "prop": "drawer-cabinet",
+              "x": 0.95
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 10898,
+          "endMs": 12656
+        },
+        {
+          "id": "s2c",
+          "line": "l05",
+          "words": "Everything? I do plenty. You just don't see it.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "copycat"
+          },
+          "actors": [
+            {
+              "character": "copycat",
+              "pose": "shrug",
+              "expression": "smug",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.52,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "kitchen-sink",
+              "x": 0.24
+            },
+            {
+              "prop": "window-winter",
+              "x": 0.55,
+              "y": 2.9
+            },
+            {
+              "prop": "wall-clock",
+              "x": 0.42,
+              "y": 3.55,
+              "size": 0.5
+            },
+            {
+              "prop": "drawer-cabinet",
+              "x": 0.95
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 12656,
+          "endMs": 16406
+        },
+        {
+          "id": "s2d",
+          "line": "l06",
+          "words": "Then show me.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "cross-arms",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "kitchen-sink",
+              "x": 0.24
+            },
+            {
+              "prop": "window-winter",
+              "x": 0.55,
+              "y": 2.9
+            },
+            {
+              "prop": "wall-clock",
+              "x": 0.42,
+              "y": 3.55,
+              "size": 0.5
+            },
+            {
+              "prop": "drawer-cabinet",
+              "x": 0.95
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 16406,
+          "endMs": 17622
+        },
+        {
+          "id": "s2e",
+          "line": "l07",
+          "words": "Show you what? Nobody keeps a *list.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "copycat"
+          },
+          "actors": [
+            {
+              "character": "copycat",
+              "pose": "shrug",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.52,
+              "lookAt": "ahead",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.7,
+                  "action": "walk",
+                  "lookAt": "ahead"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "kitchen-sink",
+              "x": 0.24
+            },
+            {
+              "prop": "window-winter",
+              "x": 0.55,
+              "y": 2.9
+            },
+            {
+              "prop": "wall-clock",
+              "x": 0.42,
+              "y": 3.55,
+              "size": 0.5
+            },
+            {
+              "prop": "drawer-cabinet",
+              "x": 0.95
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "footsteps",
+              "at": "end",
+              "gainDb": -8
+            }
+          ],
+          "transition": "cut",
+          "startMs": 17622,
+          "endMs": 20987
+        },
+        {
+          "id": "s2f",
+          "line": "l08",
+          "words": "It was always her word",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "cross-arms",
+              "expression": "angry",
+              "strength": 0.6,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "copycat",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "cross-arms",
+              "expression": "smug",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.52,
+              "lookAt": "saint",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "kitchen-sink",
+              "x": 0.24
+            },
+            {
+              "prop": "window-winter",
+              "x": 0.55,
+              "y": 2.9
+            },
+            {
+              "prop": "wall-clock",
+              "x": 0.42,
+              "y": 3.55,
+              "size": 0.5
+            },
+            {
+              "prop": "drawer-cabinet",
+              "x": 0.95
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "bubble",
+            "of": "saint",
+            "shape": "speech",
+            "lines": [
+              "I DO EVERYTHING"
+            ]
+          },
+          "transition": "cut",
+          "startMs": 20987,
+          "endMs": 22117
+        },
+        {
+          "id": "s2g",
+          "line": "l08",
+          "words": "against *his.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "cross-arms",
+              "expression": "angry",
+              "strength": 0.6,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "copycat",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "cross-arms",
+              "expression": "smug",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.52,
+              "lookAt": "saint",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "kitchen-sink",
+              "x": 0.24
+            },
+            {
+              "prop": "window-winter",
+              "x": 0.55,
+              "y": 2.9
+            },
+            {
+              "prop": "wall-clock",
+              "x": 0.42,
+              "y": 3.55,
+              "size": 0.5
+            },
+            {
+              "prop": "drawer-cabinet",
+              "x": 0.95
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "bubble",
+            "of": "copycat",
+            "shape": "speech",
+            "lines": [
+              "I DO PLENTY"
+            ]
+          },
+          "transition": "cut",
+          "startMs": 22117,
+          "endMs": 23233
+        },
+        {
+          "id": "s2h",
+          "line": "l09",
+          "words": "So she made her own rule.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "angry",
+              "strength": 0.5,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "down",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.4,
+                  "expression": "determined",
+                  "strength": 1
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "kitchen-sink",
+              "x": 0.24
+            },
+            {
+              "prop": "window-winter",
+              "x": 0.55,
+              "y": 2.9
+            },
+            {
+              "prop": "wall-clock",
+              "x": 0.42,
+              "y": 3.55,
+              "size": 0.5
+            },
+            {
+              "prop": "drawer-cabinet",
+              "x": 0.95
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 23233,
+          "endMs": 24863
+        },
+        {
+          "id": "s2i",
+          "line": "l09",
+          "words": "Whoever has it in writing *wins.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "kitchen-sink",
+              "x": 0.24
+            },
+            {
+              "prop": "window-winter",
+              "x": 0.55,
+              "y": 2.9
+            },
+            {
+              "prop": "wall-clock",
+              "x": 0.42,
+              "y": 3.55,
+              "size": 0.5
+            },
+            {
+              "prop": "drawer-cabinet",
+              "x": 0.95
+            },
+            {
+              "prop": "notebook-blue-landing",
+              "x": 0.44,
+              "y": 1.75
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "thud",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "startMs": 24863,
+          "endMs": 26884
+        },
+        {
+          "id": "s2j",
+          "line": "l10",
+          "words": "On their anniversary, she would put the proof on the table.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.6,
+              "lookAt": "down",
+              "holds": "notebook-blue",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "kitchen-sink",
+              "x": 0.24
+            },
+            {
+              "prop": "window-winter",
+              "x": 0.55,
+              "y": 2.9
+            },
+            {
+              "prop": "wall-clock",
+              "x": 0.42,
+              "y": 3.55,
+              "size": 0.5
+            },
+            {
+              "prop": "drawer-cabinet",
+              "x": 0.95
+            },
+            {
+              "prop": "chair",
+              "x": 0.84
+            },
+            {
+              "prop": "table",
+              "x": 0.72
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 26884,
+          "endMs": 31165
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "catch-narrator",
+  "name": "What's the Catch? narrator",
+  "description": "The storyteller of What's the Catch?: a calm, clear, unhurried man's voice that explains. Kokoro am_michael, picked by Biku on 2026-10-21 (\"4 is good\"); since 2026-10-22 spoken by Chatterbox from a sample of that voice made at 86% speed, so it is the same man, more alive and calmer (audition runs/2026-10-22-narrator-audition/, his pick 2C: \"2C looks good\", about 91% of the earlier pace). Remake the sample with: uv run python -m studio_audio.voice_sample --voice catch-narrator Its own voice, so the general narrator of the other pages stays as it was.",
+  "version": 1,
+  "kokoroVoice": "am_michael",
+  "speed": 0.86,
+  "pauseScale": 1.0,
+  "pronunciations": {},
+  "engine": "chatterbox",
+  "sample": "voices/samples/catch-narrator.wav"
+}

@@ -1,0 +1,79 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "How can the water in your glass be older than the Sun?",
+      "speed": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l02",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The answer is hiding inside one drop, and it begins somewhere very *cold*.",
+      "speed": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l03",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Most of us think the water in a glass is as fresh as the *tap*.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l04",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "That water goes round and round, from the sea to the clouds to the rain.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l05",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "But nobody asks where that water was before the *sea*.",
+      "speed": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l06",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So let's push into one drop, down to one water molecule, the tiniest bit of water.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l07",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Each water molecule is one oxygen atom holding on to two *hydrogen* atoms.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l08",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "But in about one water molecule in every three thousand, a hydrogen atom carries extra *weight*.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l09",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Scientists call that heavy water, and it is a *fingerprint* of where water was born.",
+      "speed": 1,
+      "pauseAfterMs": 1200
+    }
+  ]
+}

@@ -1,0 +1,295 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "curious",
+      "startMs": 0
+    },
+    {
+      "mood": "upbeat",
+      "startMs": 24000
+    },
+    {
+      "mood": "tense",
+      "startMs": 54067
+    },
+    {
+      "mood": "reflective",
+      "startMs": 76587
+    },
+    {
+      "mood": "hope",
+      "startMs": 94557
+    }
+  ],
+  "sfx": [
+    {
+      "name": "pop",
+      "atMs": 773,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "whoosh",
+      "atMs": 4010,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "pop",
+      "atMs": 5073,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "pop",
+      "atMs": 9107,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "pop",
+      "atMs": 10107,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "ding",
+      "atMs": 14640,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 5
+    },
+    {
+      "name": "whoosh",
+      "atMs": 16810,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 6
+    },
+    {
+      "name": "pop",
+      "atMs": 18807,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 7
+    },
+    {
+      "name": "pop",
+      "atMs": 20273,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 8
+    },
+    {
+      "name": "whoosh",
+      "atMs": 24060,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 9
+    },
+    {
+      "name": "pop",
+      "atMs": 24440,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 10
+    },
+    {
+      "name": "whoosh",
+      "atMs": 27100,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 11
+    },
+    {
+      "name": "ding",
+      "atMs": 29540,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 12
+    },
+    {
+      "name": "whoosh",
+      "atMs": 32710,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 13
+    },
+    {
+      "name": "pop",
+      "atMs": 35407,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 14
+    },
+    {
+      "name": "pop",
+      "atMs": 38340,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 15
+    },
+    {
+      "name": "whoosh",
+      "atMs": 42390,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 16
+    },
+    {
+      "name": "pop",
+      "atMs": 42607,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 17
+    },
+    {
+      "name": "whoosh",
+      "atMs": 46830,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 18
+    },
+    {
+      "name": "pop",
+      "atMs": 47107,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 19
+    },
+    {
+      "name": "pop",
+      "atMs": 48040,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 20
+    },
+    {
+      "name": "whoosh",
+      "atMs": 54127,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 21
+    },
+    {
+      "name": "pop",
+      "atMs": 55040,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 22
+    },
+    {
+      "name": "pop",
+      "atMs": 61740,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 23
+    },
+    {
+      "name": "whoosh",
+      "atMs": 62977,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 24
+    },
+    {
+      "name": "pop",
+      "atMs": 66774,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 25
+    },
+    {
+      "name": "ding",
+      "atMs": 71640,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 26
+    },
+    {
+      "name": "whoosh",
+      "atMs": 72557,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 27
+    },
+    {
+      "name": "pop",
+      "atMs": 73374,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 28
+    },
+    {
+      "name": "ding",
+      "atMs": 80407,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 29
+    },
+    {
+      "name": "ding",
+      "atMs": 87507,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 30
+    },
+    {
+      "name": "whoosh",
+      "atMs": 89897,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 31
+    },
+    {
+      "name": "ding",
+      "atMs": 90140,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 32
+    },
+    {
+      "name": "whoosh",
+      "atMs": 94617,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 33
+    },
+    {
+      "name": "pop",
+      "atMs": 97474,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 34
+    },
+    {
+      "name": "ding",
+      "atMs": 100374,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 35
+    },
+    {
+      "name": "whoosh",
+      "atMs": 102947,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 36
+    },
+    {
+      "name": "pop",
+      "atMs": 106707,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 37
+    }
+  ],
+  "musicGainDb": 0,
+  "hush": []
+}

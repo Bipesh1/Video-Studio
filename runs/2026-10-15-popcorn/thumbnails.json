@@ -1,0 +1,475 @@
+{
+  "version": 1,
+  "thumbnails": [
+    {
+      "id": "why-popcorn-costs-10-tall",
+      "size": "9:16",
+      "why": "The video's own question, in four words: why popcorn costs $10. Tall, for Reels and Shorts.",
+      "layers": [
+        {
+          "kind": "flat",
+          "colour": "yellow"
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "WHY POPCORN",
+              "style": "ink"
+            },
+            {
+              "text": "COSTS $10",
+              "style": "boxed"
+            }
+          ],
+          "x": 0.07,
+          "top": 0.06,
+          "size": 0.105,
+          "width": 0.86
+        },
+        {
+          "kind": "icon",
+          "name": "ticket",
+          "x": 0.2,
+          "y": 0.9,
+          "size": 0.15,
+          "turn": -12,
+          "crossed": true
+        },
+        {
+          "kind": "icon",
+          "name": "shocked",
+          "x": 0.13,
+          "y": 0.6,
+          "size": 0.2,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "icon",
+          "name": "bucket",
+          "x": 0.62,
+          "y": 0.62,
+          "size": 0.36,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.62,
+            "y": 0.61
+          },
+          "rx": 0.36,
+          "ry": 0.22
+        },
+        {
+          "kind": "mark",
+          "shape": "arrow",
+          "at": {
+            "x": 0.3,
+            "y": 0.37
+          },
+          "to": {
+            "x": 0.45,
+            "y": 0.44
+          }
+        }
+      ]
+    },
+    {
+      "id": "the-10-popcorn-tall",
+      "size": "9:16",
+      "why": "The video as a topic: the $10 popcorn, explained. Tall, for Reels and Shorts.",
+      "layers": [
+        {
+          "kind": "flat",
+          "colour": "yellow"
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "THE $10",
+              "style": "boxed"
+            },
+            {
+              "text": "POPCORN",
+              "style": "ink"
+            },
+            {
+              "text": "EXPLAINED",
+              "style": "ink"
+            }
+          ],
+          "x": 0.07,
+          "top": 0.06,
+          "size": 0.085,
+          "width": 0.86
+        },
+        {
+          "kind": "icon",
+          "name": "ticket",
+          "x": 0.2,
+          "y": 0.9,
+          "size": 0.15,
+          "turn": -12,
+          "crossed": true
+        },
+        {
+          "kind": "icon",
+          "name": "shocked",
+          "x": 0.13,
+          "y": 0.6,
+          "size": 0.2,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "icon",
+          "name": "bucket",
+          "x": 0.62,
+          "y": 0.62,
+          "size": 0.36,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.62,
+            "y": 0.61
+          },
+          "rx": 0.36,
+          "ry": 0.22
+        },
+        {
+          "kind": "mark",
+          "shape": "arrow",
+          "at": {
+            "x": 0.3,
+            "y": 0.42
+          },
+          "to": {
+            "x": 0.45,
+            "y": 0.44
+          }
+        }
+      ]
+    },
+    {
+      "id": "why-is-popcorn-10-tall",
+      "size": "9:16",
+      "why": "The question with the price large, on the channel's own warm page. Tall, for Reels and Shorts.",
+      "layers": [
+        {
+          "kind": "flat",
+          "colour": "background"
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "WHY IS POPCORN",
+              "style": "ink"
+            },
+            {
+              "text": "$10?",
+              "style": "boxed"
+            }
+          ],
+          "x": 0.07,
+          "top": 0.06,
+          "size": 0.105,
+          "width": 0.86
+        },
+        {
+          "kind": "icon",
+          "name": "ticket",
+          "x": 0.2,
+          "y": 0.9,
+          "size": 0.15,
+          "turn": -12,
+          "crossed": true
+        },
+        {
+          "kind": "icon",
+          "name": "shocked",
+          "x": 0.13,
+          "y": 0.6,
+          "size": 0.2,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "icon",
+          "name": "bucket",
+          "x": 0.62,
+          "y": 0.62,
+          "size": 0.36,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.62,
+            "y": 0.61
+          },
+          "rx": 0.36,
+          "ry": 0.22
+        },
+        {
+          "kind": "mark",
+          "shape": "arrow",
+          "at": {
+            "x": 0.3,
+            "y": 0.37
+          },
+          "to": {
+            "x": 0.45,
+            "y": 0.44
+          }
+        }
+      ]
+    },
+    {
+      "id": "why-popcorn-costs-10",
+      "size": "16:9",
+      "why": "The video's own question, in four words: why popcorn costs $10.",
+      "layers": [
+        {
+          "kind": "flat",
+          "colour": "yellow"
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "WHY POPCORN",
+              "style": "ink"
+            },
+            {
+              "text": "COSTS $10",
+              "style": "boxed"
+            }
+          ],
+          "x": 0.04,
+          "top": 0.07,
+          "size": 0.22,
+          "width": 0.45
+        },
+        {
+          "kind": "icon",
+          "name": "ticket",
+          "x": 0.15,
+          "y": 0.8,
+          "size": 0.36,
+          "turn": -12,
+          "crossed": true
+        },
+        {
+          "kind": "icon",
+          "name": "shocked",
+          "x": 0.47,
+          "y": 0.75,
+          "size": 0.44,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "icon",
+          "name": "bucket",
+          "x": 0.78,
+          "y": 0.55,
+          "size": 0.74,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.78,
+            "y": 0.54
+          },
+          "rx": 0.215,
+          "ry": 0.45
+        },
+        {
+          "kind": "mark",
+          "shape": "arrow",
+          "at": {
+            "x": 0.535,
+            "y": 0.11
+          },
+          "to": {
+            "x": 0.63,
+            "y": 0.28
+          }
+        }
+      ]
+    },
+    {
+      "id": "the-10-popcorn",
+      "size": "16:9",
+      "why": "The video as a topic: the $10 popcorn, explained.",
+      "layers": [
+        {
+          "kind": "flat",
+          "colour": "yellow"
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "THE $10",
+              "style": "boxed"
+            },
+            {
+              "text": "POPCORN",
+              "style": "ink"
+            },
+            {
+              "text": "EXPLAINED",
+              "style": "ink"
+            }
+          ],
+          "x": 0.04,
+          "top": 0.07,
+          "size": 0.18,
+          "width": 0.5
+        },
+        {
+          "kind": "icon",
+          "name": "ticket",
+          "x": 0.15,
+          "y": 0.8,
+          "size": 0.36,
+          "turn": -12,
+          "crossed": true
+        },
+        {
+          "kind": "icon",
+          "name": "shocked",
+          "x": 0.5,
+          "y": 0.8,
+          "size": 0.34,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "icon",
+          "name": "bucket",
+          "x": 0.78,
+          "y": 0.55,
+          "size": 0.74,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.78,
+            "y": 0.54
+          },
+          "rx": 0.215,
+          "ry": 0.45
+        },
+        {
+          "kind": "mark",
+          "shape": "arrow",
+          "at": {
+            "x": 0.5,
+            "y": 0.17
+          },
+          "to": {
+            "x": 0.63,
+            "y": 0.28
+          }
+        }
+      ]
+    },
+    {
+      "id": "why-is-popcorn-10",
+      "size": "16:9",
+      "why": "The question with the price large, on the channel's own warm page.",
+      "layers": [
+        {
+          "kind": "flat",
+          "colour": "background"
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "WHY IS POPCORN",
+              "style": "ink"
+            },
+            {
+              "text": "$10?",
+              "style": "boxed"
+            }
+          ],
+          "x": 0.04,
+          "top": 0.07,
+          "size": 0.22,
+          "width": 0.45
+        },
+        {
+          "kind": "icon",
+          "name": "ticket",
+          "x": 0.15,
+          "y": 0.8,
+          "size": 0.36,
+          "turn": -12,
+          "crossed": true
+        },
+        {
+          "kind": "icon",
+          "name": "shocked",
+          "x": 0.47,
+          "y": 0.75,
+          "size": 0.44,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "icon",
+          "name": "bucket",
+          "x": 0.78,
+          "y": 0.55,
+          "size": 0.74,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.78,
+            "y": 0.54
+          },
+          "rx": 0.215,
+          "ry": 0.45
+        },
+        {
+          "kind": "mark",
+          "shape": "arrow",
+          "at": {
+            "x": 0.535,
+            "y": 0.11
+          },
+          "to": {
+            "x": 0.63,
+            "y": 0.28
+          }
+        }
+      ]
+    }
+  ]
+}

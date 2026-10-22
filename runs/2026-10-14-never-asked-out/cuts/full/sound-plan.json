@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "unease",
+      "startMs": 0
+    },
+    {
+      "mood": "closing-in",
+      "startMs": 35367
+    },
+    {
+      "mood": "aftermath",
+      "startMs": 57633
+    }
+  ],
+  "sfx": [
+    {
+      "name": "crowd-murmur",
+      "atMs": 6072,
+      "durationMs": 29133,
+      "gainDb": -12,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "ding",
+      "atMs": 15356,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "heartbeat",
+      "atMs": 26780,
+      "durationMs": 1600,
+      "gainDb": -10,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "tick",
+      "atMs": 35427,
+      "durationMs": 3269,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "crowd-murmur",
+      "atMs": 35427,
+      "durationMs": 3269,
+      "gainDb": -18,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "tick",
+      "atMs": 38906,
+      "durationMs": 3068,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 5
+    },
+    {
+      "name": "footsteps",
+      "atMs": 42184,
+      "durationMs": 5492,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 6
+    },
+    {
+      "name": "boom",
+      "atMs": 47886,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 7
+    },
+    {
+      "name": "hum",
+      "atMs": 50827,
+      "durationMs": 6795,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 8
+    },
+    {
+      "name": "clunk",
+      "atMs": 104058,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 9
+    }
+  ],
+  "musicGainDb": 0,
+  "hush": [
+    {
+      "fromMs": 50827,
+      "toMs": 57622
+    }
+  ]
+}

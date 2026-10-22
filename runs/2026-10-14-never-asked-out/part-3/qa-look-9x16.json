@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "video": "never-asked-out-part-3-9x16-v2.mp4",
+  "stills": {
+    "s6a": "ok",
+    "s6b": "ok",
+    "s6c": "ok",
+    "s6d": "ok",
+    "s6e": "ok",
+    "s6f": "ok",
+    "s6g": "ok",
+    "s6h": "ok",
+    "s6i": "ok",
+    "s6j": "ok",
+    "s6k": "ok",
+    "s6l": "ok",
+    "s7a": "ok",
+    "s7b": "ok",
+    "s7c": "ok",
+    "s7d": "ok",
+    "s7e": "ok",
+    "s7f": "ok"
+  },
+  "strips": {
+    "cut-s6a-s6b": "ok",
+    "cut-s6b-s6c": "ok",
+    "cut-s6c-s6d": "ok",
+    "cut-s6d-s6e": "ok",
+    "cut-s6e-s6f": "ok",
+    "cut-s6f-s6g": "ok",
+    "cut-s6g-s6h": "ok",
+    "cut-s6h-s6i": "ok",
+    "cut-s6i-s6j": "ok",
+    "cut-s6j-s6k": "ok",
+    "cut-s6k-s6l": "ok",
+    "cut-s7e-s7f": "ok",
+    "s7e-move-1": "ok",
+    "s7f-move-1": "ok"
+  },
+  "playbook": "ok",
+  "fixed": [
+    "In the room's wide shots the Saint, slumped on her chair, was half out of the tall picture at the left edge. The two of them sit a little closer to the table now (1.5 heads from the middle instead of 1.75), and every wide shot of the room has them whole.",
+    "'In 2012, that work won a Nobel Prize.' was a medium shot with half a face at each edge. It is the Trainer alone now.",
+    "In the picture of what each side gets, the camera eased in about a point above the middle, which moved the lower panel down until the caption covered 'WORST PARTNER WHO STILL STAYS'. It eases in about the middle now, only as far as keeps both labels clear; looked at frame by frame in part-3/clips/never-asked-out-part-3-9x16-7-16s-v1.mp4."
+  ],
+  "notes": [
+    "Back in the room: the Saint slumped, the Copycat sitting up, her cup on the table. The numbers come up over the room as they are said: 1962, 2012, and 38,000 counting up.",
+    "The 'what you get' picture: the Copycat with the woman in red under ASKED, the Saint with a bored man in a grey suit under WAITED. The crowd: the Saint alone, pulled back to a room full of people looking down.",
+    "The card is read by the outside voice, each line lit as it is read; the light fails as the voice comes in.",
+    "Four lines were heard by the listening check with words spelled its own way ('Gail' for Gale, '38,000' in figures, 'U.S.'), so their words were timed by length. One may be a real slip: it heard 'A no cost you one minute'. It needs Biku's ears.",
+    "The first render of this part stalled for half an hour with its browser idle; it was stopped and rendered again.",
+    "Claude cannot hear: the voices and the music need Biku's ears."
+  ]
+}

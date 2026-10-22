@@ -71,8 +71,8 @@ describe('sound plan', () => {
     ).toBe(false);
   });
 
-  it('names nine moods and keeps the ambient effects inside the effect list', () => {
-    expect(MUSIC_MOODS).toHaveLength(9);
+  it('names twelve moods and keeps the ambient effects inside the effect list', () => {
+    expect(MUSIC_MOODS).toHaveLength(12);
     expect(new Set(SFX_NAMES).size).toBe(SFX_NAMES.length);
     for (const name of AMBIENT_SFX) expect(SFX_NAMES).toContain(name);
   });

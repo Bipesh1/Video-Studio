@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "unease",
+      "startMs": 0
+    },
+    {
+      "mood": "closing-in",
+      "startMs": 38700
+    },
+    {
+      "mood": "aftermath",
+      "startMs": 66733
+    }
+  ],
+  "sfx": [
+    {
+      "name": "footsteps",
+      "atMs": 6180,
+      "durationMs": 2282,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "ding",
+      "atMs": 16739,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "creak",
+      "atMs": 53440,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "heartbeat-rising",
+      "atMs": 59690,
+      "durationMs": 2620,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "boom",
+      "atMs": 62520,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "clunk",
+      "atMs": 116083,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 5
+    }
+  ],
+  "musicGainDb": 0
+}

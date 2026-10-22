@@ -1,0 +1,63 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l17",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Then the cloud collapsed into the Sun and planets, and that ice *survived*.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l18",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "That ice rode to Earth on comets and rocks, and melted into the *sea*.",
+      "speed": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l19",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Astronomers at the University of Michigan published this in the journal *Science* in twenty fourteen.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l20",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Their model says as much as thirty to fifty percent of ocean water is older than the *Sun*.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l21",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "That ice formed roughly a *million* years before the Sun and its planets.",
+      "speed": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l22",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So every shower, raindrop and glass is partly ice from before the *Sun*.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l23",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Your water is older than the Sun because it froze before the Sun was *born*.",
+      "speed": 1,
+      "pauseAfterMs": 1500
+    }
+  ]
+}

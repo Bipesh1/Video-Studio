@@ -1,0 +1,204 @@
+{
+  "version": 1,
+  "title": "Why Is the Water in Your Glass Older Than the Sun?",
+  "request": "Biku's What's the Catch? script 03, used as it is: 'make a video for this now. the animation was good for the gps video. use those kinds of animations' (2026-10-18).",
+  "mode": "as-is",
+  "format": "fine-print",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "speakers": [],
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "narrator",
+      "text": "How can the water in your glass be older than the Sun?",
+      "beat": "the-question",
+      "chapter": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l02",
+      "speaker": "narrator",
+      "text": "The answer is hiding inside one drop, and it begins somewhere very *cold*.",
+      "beat": "the-question",
+      "chapter": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l03",
+      "speaker": "narrator",
+      "text": "Most of us think the water in a glass is as fresh as the *tap*.",
+      "beat": "the-moment",
+      "chapter": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l04",
+      "speaker": "narrator",
+      "text": "That water goes round and round, from the sea to the clouds to the rain.",
+      "beat": "the-moment",
+      "chapter": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l05",
+      "speaker": "narrator",
+      "text": "But nobody asks where that water was before the *sea*.",
+      "beat": "the-moment",
+      "chapter": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l06",
+      "speaker": "narrator",
+      "text": "So let's push into one drop, down to one water molecule, the tiniest bit of water.",
+      "beat": "follow-the-money",
+      "chapter": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l07",
+      "speaker": "narrator",
+      "text": "Each water molecule is one oxygen atom holding on to two *hydrogen* atoms.",
+      "beat": "follow-the-money",
+      "chapter": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l08",
+      "speaker": "narrator",
+      "text": "But in about one water molecule in every three thousand, a hydrogen atom carries extra *weight*.",
+      "beat": "follow-the-money",
+      "chapter": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l09",
+      "speaker": "narrator",
+      "text": "Scientists call that heavy water, and it is a *fingerprint* of where water was born.",
+      "beat": "follow-the-money",
+      "chapter": 1,
+      "pauseAfterMs": 1200
+    },
+    {
+      "id": "l10",
+      "speaker": "narrator",
+      "text": "Our oceans carry that heavy fingerprint, and so do the icy *comets*.",
+      "beat": "follow-the-money",
+      "chapter": 2,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l11",
+      "speaker": "narrator",
+      "text": "But the Sun has much less, because heat wipes the fingerprint *away*.",
+      "beat": "follow-the-money",
+      "chapter": 2,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l12",
+      "speaker": "narrator",
+      "text": "So scientists rebuilt the newborn Sun and its planets inside a *computer*.",
+      "beat": "the-trick",
+      "chapter": 2,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l13",
+      "speaker": "narrator",
+      "text": "But the newborn Sun and planets made nowhere near *enough* heavy water.",
+      "beat": "the-trick",
+      "chapter": 2,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l14",
+      "speaker": "narrator",
+      "text": "Heavy water needs deep cold, close to the coldest cold there *is*.",
+      "beat": "the-trick",
+      "chapter": 2,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l15",
+      "speaker": "narrator",
+      "text": "And the only place that cold was the dark cloud that came *before* the Sun.",
+      "beat": "the-trick",
+      "chapter": 2,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l16",
+      "speaker": "narrator",
+      "text": "There, on a speck of dust, our water molecule froze into *ice*.",
+      "beat": "the-trick",
+      "chapter": 2,
+      "pauseAfterMs": 1200
+    },
+    {
+      "id": "l17",
+      "speaker": "narrator",
+      "text": "Then the cloud collapsed into the Sun and planets, and that ice *survived*.",
+      "beat": "the-trick",
+      "chapter": 3,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l18",
+      "speaker": "narrator",
+      "text": "That ice rode to Earth on comets and rocks, and melted into the *sea*.",
+      "beat": "the-trick",
+      "chapter": 3,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l19",
+      "speaker": "narrator",
+      "text": "Astronomers at the University of Michigan published this in the journal *Science* in twenty fourteen.",
+      "beat": "the-proof",
+      "chapter": 3,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l20",
+      "speaker": "narrator",
+      "text": "Their model says as much as thirty to fifty percent of ocean water is older than the *Sun*.",
+      "beat": "the-proof",
+      "chapter": 3,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l21",
+      "speaker": "narrator",
+      "text": "That ice formed roughly a *million* years before the Sun and its planets.",
+      "beat": "the-proof",
+      "chapter": 3,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l22",
+      "speaker": "narrator",
+      "text": "So every shower, raindrop and glass is partly ice from before the *Sun*.",
+      "beat": "your-move",
+      "chapter": 3,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l23",
+      "speaker": "narrator",
+      "text": "Your water is older than the Sun because it froze before the Sun was *born*.",
+      "beat": "your-move",
+      "chapter": 3,
+      "pauseAfterMs": 1500
+    }
+  ],
+  "sources": [
+    "L. Ilsedore Cleeves, Edwin A. Bergin, Conel M. O'D. Alexander and colleagues, \"The ancient heritage of water ice in the solar system\", Science, vol. 345, 26 September 2014, pages 1590 to 1593. A model of the young solar system could not make the heavy water found in the oceans and in comets, so part of that water must be ice inherited from the cold cloud before the Sun; 30 to 50 percent of ocean water at the high end of the estimate.",
+    "University of Michigan news release, \"The water in your bottle might be older than the sun\", 25 September 2014: that water would be roughly a million years older than the solar system. Reported by ScienceDaily, https://www.sciencedaily.com/releases/2014/09/140925141226.htm",
+    "IAEA standard for ocean water (VSMOW): about 156 heavy hydrogen atoms in a million, so about one water molecule in 3,200 carries one. Biku's script rounds it to one in three thousand, said with \"about\".",
+    "Checked by Claude on 2026-10-18. Strictly, a molecule with one heavy hydrogen is \"semi-heavy water\"; the study's own news release says heavy water, as the script does."
+  ],
+  "changes": [],
+  "masterPrompt": "prompts/fine-print.md"
+}

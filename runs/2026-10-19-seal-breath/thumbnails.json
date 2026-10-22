@@ -1,0 +1,189 @@
+{
+  "version": 1,
+  "thumbnails": [
+    {
+      "id": "you-and-the-seal-wide",
+      "size": "16:9",
+      "why": "Cut in two: you under the bathwater, a seal with its spleen glowing. Wide, for YouTube.",
+      "layers": [
+        {
+          "kind": "split",
+          "at": 0.5,
+          "lean": 0.08,
+          "seam": 0.012,
+          "left": [
+            {
+              "kind": "graphic",
+              "graphic": {
+                "kind": "journey",
+                "world": "dive",
+                "at": "rise",
+                "fly": "start",
+                "keep": [],
+                "show": []
+              },
+              "x": 0.26,
+              "y": 0.72,
+              "size": 1.45
+            }
+          ],
+          "right": [
+            {
+              "kind": "graphic",
+              "graphic": {
+                "kind": "journey",
+                "world": "dive",
+                "at": "seal",
+                "fly": "start",
+                "keep": [
+                  "seal-spleen"
+                ],
+                "show": []
+              },
+              "x": 0.75,
+              "y": 0.62,
+              "size": 1.7
+            }
+          ]
+        },
+        {
+          "kind": "shade",
+          "from": "top",
+          "reach": 0.42,
+          "strength": 0.85
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "HOLD YOUR BREATH",
+              "style": "light"
+            },
+            {
+              "text": "LIKE A SEAL?",
+              "style": "gold"
+            }
+          ],
+          "x": 0.04,
+          "top": 0.05,
+          "size": 0.14,
+          "width": 0.9
+        }
+      ]
+    },
+    {
+      "id": "the-diver-wide",
+      "size": "16:9",
+      "why": "A Bajau diver on the reef among the fish, circled. Wide, for YouTube.",
+      "layers": [
+        {
+          "kind": "graphic",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "reef",
+            "fly": "start",
+            "keep": [
+              "diver",
+              "fish"
+            ],
+            "show": []
+          },
+          "x": 0.8,
+          "y": 0.56,
+          "size": 1.9
+        },
+        {
+          "kind": "shade",
+          "from": "left",
+          "reach": 0.5,
+          "strength": 0.85
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "SEA NOMADS",
+              "style": "light"
+            },
+            {
+              "text": "EVOLVED TO DIVE",
+              "style": "gold"
+            }
+          ],
+          "x": 0.04,
+          "top": 0.12,
+          "size": 0.15,
+          "width": 0.55
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.7,
+            "y": 0.48
+          },
+          "rx": 0.11,
+          "ry": 0.17
+        }
+      ]
+    },
+    {
+      "id": "the-scan-wide",
+      "size": "16:9",
+      "why": "The two spleens side by side on the scan, the bigger one circled. Wide, for YouTube.",
+      "layers": [
+        {
+          "kind": "graphic",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "scan-close",
+            "fly": "start",
+            "keep": [
+              "bajau-spleen",
+              "saluan-spleen"
+            ],
+            "show": []
+          },
+          "x": 0.5,
+          "y": 0.74,
+          "size": 1.8
+        },
+        {
+          "kind": "shade",
+          "from": "top",
+          "reach": 0.38,
+          "strength": 0.85
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "SEA NOMADS HAVE",
+              "style": "light"
+            },
+            {
+              "text": "BIGGER SPLEENS",
+              "style": "gold"
+            }
+          ],
+          "x": 0.04,
+          "top": 0.04,
+          "size": 0.12,
+          "width": 0.9
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.31,
+            "y": 0.52
+          },
+          "rx": 0.13,
+          "ry": 0.15
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l16",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Melissa Ilardo's team published this in the journal *Cell* in 2018.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l17",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "They also found a gene, PDE10A, that may make the spleen *bigger*.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l18",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Scientists think it works through a body hormone, but nobody has *proved* that yet.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l19",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The breath hold world record is twenty nine minutes, but only after breathing pure *oxygen*.",
+      "speed": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l20",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Next time you slip under the water, your heart is already *slowing* down.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l21",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Your body is still running a diving program far *older* than you.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l22",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So could humans evolve to hold their breath like seals? Slowly, yes, and one people is already *on the way*.",
+      "speed": 1,
+      "pauseAfterMs": 1500
+    }
+  ]
+}

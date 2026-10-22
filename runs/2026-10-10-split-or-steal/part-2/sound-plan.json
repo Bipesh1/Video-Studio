@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "upbeat",
+      "startMs": 0
+    },
+    {
+      "mood": "curious",
+      "startMs": 16690
+    },
+    {
+      "mood": "tense",
+      "startMs": 25130
+    }
+  ],
+  "sfx": [
+    {
+      "name": "applause",
+      "atMs": 60,
+      "durationMs": 4640,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "ding",
+      "atMs": 10360,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "applause",
+      "atMs": 14428,
+      "durationMs": 2112,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "ding",
+      "atMs": 21015,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "pop",
+      "atMs": 24680,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "drumroll",
+      "atMs": 26910,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 5
+    },
+    {
+      "name": "whoosh",
+      "atMs": 31145,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 6
+    }
+  ],
+  "musicGainDb": 0
+}

@@ -1,0 +1,1500 @@
+{
+  "version": 1,
+  "title": "Why a Fine for Being Late Made Parents Even Later",
+  "request": "Biku's game theory story script, used as it is: 'make a video for this' (2026-10-17).",
+  "mode": "as-is",
+  "format": "dilemma-story",
+  "style": "ink-stick",
+  "brand": "dilemma-table",
+  "voice": "leak",
+  "seed": 73582,
+  "finish": {
+    "acting": "gentle",
+    "onTwos": true,
+    "shadows": true,
+    "grain": 0.5,
+    "vignette": 0.35,
+    "boil": 0.25
+  },
+  "sources": [
+    "Uri Gneezy and Aldo Rustichini, \"A Fine Is a Price\", The Journal of Legal Studies, vol. 29, no. 1, January 2000, pages 1 to 17. Ten private daycares in Haifa, Israel, watched for 20 weeks from January to June 1998. At the start of week 5 a fine of NIS 10 per child for coming more than ten minutes after closing (four in the afternoon) was brought in at six of them, chosen at random; late pickups rose over 3 to 4 weeks and settled at almost twice the starting level, and did not come down when the fine was removed at the start of week 17. Nothing changed at the four daycares without a fine. The fine was paid to the owner, not to the teacher who stayed late, who got no extra money. https://rady.ucsd.edu/_files/faculty-research/uri-gneezy/fine.pdf",
+    "Checked by Claude against the paper on 2026-10-17. What the story invents: the teacher, the fathers, the boy, the bus, and the fine in dollars (NIS 10 was about $2.70 then; Biku's script rounds it to three)."
+  ],
+  "appliedLessons": [],
+  "cast": [
+    {
+      "id": "trainer",
+      "name": "The Trainer",
+      "card": "trainer",
+      "host": true
+    },
+    {
+      "id": "saint",
+      "name": "The Saint",
+      "card": "saint"
+    },
+    {
+      "id": "cheat",
+      "name": "The Cheat",
+      "card": "cheat"
+    },
+    {
+      "id": "copycat",
+      "name": "The Copycat",
+      "card": "copycat"
+    },
+    {
+      "id": "you",
+      "name": "You",
+      "card": "you"
+    },
+    {
+      "id": "boy",
+      "name": "The boy",
+      "look": {
+        "age": "child",
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "t-shirt",
+              "cloth": "glint"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "denim"
+            },
+            "shoes": {
+              "kind": "sneakers",
+              "cloth": "white"
+            },
+            "hat": {
+              "kind": "beanie",
+              "cloth": "orange"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "series": "game-theory",
+  "scenes": [
+    {
+      "id": "s5",
+      "chapter": 1,
+      "beat": "the-reveal",
+      "mood": "aftermath",
+      "quiet": false,
+      "place": "daycare",
+      "treatment": "atmospheric",
+      "palette": "dusk-violet",
+      "lines": [
+        {
+          "id": "l19",
+          "speaker": "trainer",
+          "text": "The fine turned the teacher's *favor* into something you could buy.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l20",
+          "speaker": "trainer",
+          "text": "And nobody says sorry for *buying* something.",
+          "pauseAfterMs": 1200
+        },
+        {
+          "id": "l21",
+          "speaker": "trainer",
+          "text": "This is not a story. In 1998, two economists tried this at six *daycares* in Israel.",
+          "speed": 0.97,
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l22",
+          "speaker": "trainer",
+          "text": "Within a few weeks, late pickups there nearly *doubled.*",
+          "pauseAfterMs": 1000
+        },
+        {
+          "id": "l23",
+          "speaker": "trainer",
+          "text": "When the fine was dropped, late pickups stayed just as *high.*",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l24",
+          "speaker": "trainer",
+          "text": "Now being late cost no money and no *sorry.*",
+          "pauseAfterMs": 900
+        },
+        {
+          "id": "l25",
+          "speaker": "trainer",
+          "text": "The fine went to the owner. The teacher who waited got *nothing.*",
+          "pauseAfterMs": 1400
+        }
+      ],
+      "shots": [
+        {
+          "id": "s5a",
+          "line": "l19",
+          "words": "The fine turned the teacher's *favor*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "picture": {
+            "layers": [
+              {
+                "kind": "band",
+                "top": 0,
+                "bottom": 1
+              },
+              {
+                "kind": "panel",
+                "top": 0.05,
+                "bottom": 0.33,
+                "place": "daycare",
+                "palette": "dusk-violet",
+                "treatment": "atmospheric"
+              },
+              {
+                "kind": "person",
+                "character": "copycat",
+                "x": 0.4,
+                "y": 0.5,
+                "ground": 0.315,
+                "head": 0.062,
+                "pose": "stand",
+                "moment": 0.2,
+                "facing": "right",
+                "turn": 0.3,
+                "expression": "guilty",
+                "effects": [],
+                "light": 1,
+                "outline": 0
+              },
+              {
+                "kind": "person",
+                "character": "saint",
+                "x": 0.62,
+                "y": 0.5,
+                "ground": 0.315,
+                "head": 0.062,
+                "pose": "stand",
+                "moment": 0.2,
+                "facing": "left",
+                "turn": 0.3,
+                "expression": "happy",
+                "effects": [],
+                "light": 1,
+                "outline": 0
+              },
+              {
+                "kind": "tag",
+                "text": "NO FINE",
+                "x": 0.5,
+                "y": 0.075,
+                "size": 0.026,
+                "paint": "cream",
+                "tilt": 0
+              },
+              {
+                "kind": "tag",
+                "text": "SAY SORRY",
+                "x": 0.5,
+                "y": 0.3,
+                "size": 0.026,
+                "paint": "forest",
+                "tilt": 0
+              },
+              {
+                "kind": "panel",
+                "top": 0.35,
+                "bottom": 0.63,
+                "place": "daycare",
+                "palette": "dusk-violet",
+                "treatment": "atmospheric"
+              },
+              {
+                "kind": "person",
+                "character": "cheat",
+                "x": 0.4,
+                "y": 0.5,
+                "ground": 0.615,
+                "head": 0.062,
+                "pose": "hold-object",
+                "moment": 0.2,
+                "facing": "right",
+                "turn": 0.3,
+                "expression": "smug",
+                "effects": [],
+                "light": 1,
+                "outline": 0
+              },
+              {
+                "kind": "thing",
+                "prop": "banknote",
+                "x": 0.525,
+                "y": 0.512,
+                "head": 0.03,
+                "flip": false
+              },
+              {
+                "kind": "person",
+                "character": "saint",
+                "x": 0.62,
+                "y": 0.5,
+                "ground": 0.615,
+                "head": 0.062,
+                "pose": "stand",
+                "moment": 0.2,
+                "facing": "left",
+                "turn": 0.3,
+                "expression": "hollow",
+                "effects": [],
+                "light": 1,
+                "outline": 0
+              },
+              {
+                "kind": "tag",
+                "text": "$3 FINE",
+                "x": 0.5,
+                "y": 0.375,
+                "size": 0.026,
+                "paint": "cream",
+                "tilt": 0
+              },
+              {
+                "kind": "tag",
+                "text": "JUST PAY",
+                "x": 0.5,
+                "y": 0.6,
+                "size": 0.026,
+                "paint": "crimson",
+                "tilt": 0
+              },
+              {
+                "kind": "band",
+                "top": 0.63,
+                "bottom": 1
+              }
+            ],
+            "from": {
+              "x": 0.5,
+              "y": 0.5,
+              "zoom": 1
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.505,
+              "zoom": 1.03
+            }
+          },
+          "transition": "fade",
+          "startMs": 0,
+          "endMs": 1804
+        },
+        {
+          "id": "s5b",
+          "line": "l19",
+          "words": "into something you could buy.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "picture": {
+            "layers": [
+              {
+                "kind": "band",
+                "top": 0,
+                "bottom": 1
+              },
+              {
+                "kind": "panel",
+                "top": 0.05,
+                "bottom": 0.33,
+                "place": "daycare",
+                "palette": "dusk-violet",
+                "treatment": "atmospheric"
+              },
+              {
+                "kind": "person",
+                "character": "copycat",
+                "x": 0.4,
+                "y": 0.5,
+                "ground": 0.315,
+                "head": 0.062,
+                "pose": "stand",
+                "moment": 0.2,
+                "facing": "right",
+                "turn": 0.3,
+                "expression": "guilty",
+                "effects": [],
+                "light": 1,
+                "outline": 0
+              },
+              {
+                "kind": "person",
+                "character": "saint",
+                "x": 0.62,
+                "y": 0.5,
+                "ground": 0.315,
+                "head": 0.062,
+                "pose": "stand",
+                "moment": 0.2,
+                "facing": "left",
+                "turn": 0.3,
+                "expression": "happy",
+                "effects": [],
+                "light": 1,
+                "outline": 0
+              },
+              {
+                "kind": "tag",
+                "text": "NO FINE",
+                "x": 0.5,
+                "y": 0.075,
+                "size": 0.026,
+                "paint": "cream",
+                "tilt": 0
+              },
+              {
+                "kind": "tag",
+                "text": "SAY SORRY",
+                "x": 0.5,
+                "y": 0.3,
+                "size": 0.026,
+                "paint": "forest",
+                "tilt": 0
+              },
+              {
+                "kind": "panel",
+                "top": 0.35,
+                "bottom": 0.63,
+                "place": "daycare",
+                "palette": "dusk-violet",
+                "treatment": "atmospheric"
+              },
+              {
+                "kind": "person",
+                "character": "cheat",
+                "x": 0.4,
+                "y": 0.5,
+                "ground": 0.615,
+                "head": 0.062,
+                "pose": "hold-object",
+                "moment": 0.2,
+                "facing": "right",
+                "turn": 0.3,
+                "expression": "smug",
+                "effects": [],
+                "light": 1,
+                "outline": 0
+              },
+              {
+                "kind": "thing",
+                "prop": "banknote",
+                "x": 0.525,
+                "y": 0.512,
+                "head": 0.03,
+                "flip": false
+              },
+              {
+                "kind": "person",
+                "character": "saint",
+                "x": 0.62,
+                "y": 0.5,
+                "ground": 0.615,
+                "head": 0.062,
+                "pose": "stand",
+                "moment": 0.2,
+                "facing": "left",
+                "turn": 0.3,
+                "expression": "hollow",
+                "effects": [],
+                "light": 1,
+                "outline": 0
+              },
+              {
+                "kind": "tag",
+                "text": "$3 FINE",
+                "x": 0.5,
+                "y": 0.375,
+                "size": 0.026,
+                "paint": "cream",
+                "tilt": 0
+              },
+              {
+                "kind": "tag",
+                "text": "JUST PAY",
+                "x": 0.5,
+                "y": 0.6,
+                "size": 0.026,
+                "paint": "crimson",
+                "tilt": 0
+              },
+              {
+                "kind": "band",
+                "top": 0.63,
+                "bottom": 1
+              }
+            ],
+            "from": {
+              "x": 0.5,
+              "y": 0.505,
+              "zoom": 1.03
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.49,
+              "zoom": 1.7
+            }
+          },
+          "transition": "cut",
+          "startMs": 1804,
+          "endMs": 3347
+        },
+        {
+          "id": "s5c",
+          "line": "l20",
+          "words": "And nobody says sorry for *buying* something.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "cheat"
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "pose": "hold-object",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.16,
+              "lookAt": "camera",
+              "holds": "banknote",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 3347,
+          "endMs": 6130
+        },
+        {
+          "id": "s5d",
+          "line": "l21",
+          "words": "This is not a story.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "hollow",
+              "strength": 0.6,
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.36,
+              "lookAt": "cheat",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "boy",
+              "pose": "stand",
+              "expression": "sad",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.74,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "cheat",
+              "action": "walk",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.18,
+              "lookAt": "saint",
+              "holds": "banknote",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.75,
+                  "pose": "hold-object"
+                }
+              ]
+            },
+            {
+              "character": "copycat",
+              "action": "walk",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.04,
+              "lookAt": "saint",
+              "holds": "banknote",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.8,
+                  "pose": "stand"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-30",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "footsteps",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "transition": "cut",
+          "startMs": 6130,
+          "endMs": 7690
+        },
+        {
+          "id": "s5e",
+          "line": "l21",
+          "words": "In 1998, two economists tried this at six *daycares* in Israel.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "hollow",
+              "strength": 0.6,
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.36,
+              "lookAt": "cheat",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "boy",
+              "pose": "stand",
+              "expression": "sad",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.74,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "cheat",
+              "pose": "hold-object",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.18,
+              "lookAt": "saint",
+              "holds": "banknote",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "stand",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.04,
+              "lookAt": "saint",
+              "holds": "banknote",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-30",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "number",
+            "text": "1998",
+            "caption": "six daycares in Israel"
+          },
+          "transition": "cut",
+          "startMs": 7690,
+          "endMs": 11508
+        },
+        {
+          "id": "s5f",
+          "line": "l22",
+          "words": "Within a few weeks, late pickups there nearly *doubled.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "hollow",
+              "strength": 0.6,
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.36,
+              "lookAt": "cheat",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "boy",
+              "pose": "stand",
+              "expression": "sad",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.74,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "cheat",
+              "pose": "hold-object",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.18,
+              "lookAt": "saint",
+              "holds": "banknote",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "stand",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.04,
+              "lookAt": "saint",
+              "holds": "banknote",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-40",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "boom",
+              "at": "start",
+              "gainDb": -8
+            }
+          ],
+          "overlay": {
+            "kind": "number",
+            "text": "2x",
+            "caption": "late pickups"
+          },
+          "transition": "cut",
+          "startMs": 11508,
+          "endMs": 15002
+        },
+        {
+          "id": "s5g",
+          "line": "l23",
+          "words": "When the fine was dropped,",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "hollow",
+              "strength": 0.6,
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.62,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "fade",
+          "startMs": 15002,
+          "endMs": 16592
+        },
+        {
+          "id": "s5h",
+          "line": "l23",
+          "words": "late pickups stayed just as *high.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "hollow",
+              "strength": 0.6,
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.36,
+              "lookAt": "cheat",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "boy",
+              "pose": "stand",
+              "expression": "sad",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.74,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "cheat",
+              "action": "walk",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.18,
+              "lookAt": "saint",
+              "holds": "cup",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.75,
+                  "pose": "hold-cup"
+                }
+              ]
+            },
+            {
+              "character": "copycat",
+              "action": "walk",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.04,
+              "lookAt": "saint",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.8,
+                  "pose": "stand"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-40",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "footsteps",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "transition": "cut",
+          "startMs": 16592,
+          "endMs": 18693
+        },
+        {
+          "id": "s5i",
+          "line": "l24",
+          "words": "Now being late cost no money and no *sorry.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "pose": "hold-cup",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.18,
+              "lookAt": "camera",
+              "holds": "cup",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "stand",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.04,
+              "lookAt": "cheat",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 18693,
+          "endMs": 21662
+        },
+        {
+          "id": "s5j",
+          "line": "l25",
+          "words": "The fine went to the owner.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "hollow",
+              "strength": 0.6,
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.36,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 21662,
+          "endMs": 23412
+        },
+        {
+          "id": "s5k",
+          "line": "l25",
+          "words": "The teacher who waited got *nothing.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "hollow",
+              "strength": 0.6,
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.36,
+              "lookAt": "camera",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.5,
+                  "expression": "sad",
+                  "strength": 0.7
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 23412,
+          "endMs": 25977
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 1,
+      "beat": "the-sting",
+      "mood": "aftermath",
+      "quiet": false,
+      "place": "daycare",
+      "treatment": "atmospheric",
+      "palette": "dusk-violet",
+      "lines": [
+        {
+          "id": "l26",
+          "speaker": "trainer",
+          "text": "You do this too. When a late fee is small, you just *pay* it.",
+          "pauseAfterMs": 900
+        },
+        {
+          "id": "l27",
+          "speaker": "narrator",
+          "text": "If you make a rule, skip the *small* fine. Ask as a favor, or make the fine big.",
+          "pauseAfterMs": 1200
+        },
+        {
+          "id": "l28",
+          "speaker": "trainer",
+          "text": "So why did the fine make parents *later?*",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l29",
+          "speaker": "trainer",
+          "text": "Because the fine didn't make them *sorry.*",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l30",
+          "speaker": "trainer",
+          "text": "It told them what sorry *costs.*",
+          "speed": 0.93,
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6a",
+          "line": "l26",
+          "words": "You do this too. When a late fee is small,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "picture": {
+            "layers": [
+              {
+                "kind": "room",
+                "place": "city",
+                "palette": "dusk-violet",
+                "treatment": "atmospheric"
+              },
+              {
+                "kind": "crowd",
+                "rows": 7,
+                "cols": 9,
+                "top": 0.3,
+                "bottom": 0.66,
+                "left": 0,
+                "right": 1,
+                "head": 0.055,
+                "back": 0.45,
+                "pose": "stand",
+                "expression": "smug",
+                "light": 0.65,
+                "hole": {
+                  "x": 0.5,
+                  "y": 0.55
+                },
+                "holeRadius": 0.07,
+                "seed": 6
+              },
+              {
+                "kind": "person",
+                "character": "you",
+                "x": 0.5,
+                "y": 0.55,
+                "head": 0.05,
+                "pose": "stand",
+                "moment": 0.2,
+                "facing": "right",
+                "turn": 0.3,
+                "expression": "smug",
+                "effects": [],
+                "light": 1,
+                "outline": 0
+              }
+            ],
+            "from": {
+              "x": 0.5,
+              "y": 0.56,
+              "zoom": 5
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.54,
+              "zoom": 2.5
+            }
+          },
+          "transition": "cut",
+          "startMs": 25977,
+          "endMs": 28647
+        },
+        {
+          "id": "s6b",
+          "line": "l26",
+          "words": "you just *pay* it.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "picture": {
+            "layers": [
+              {
+                "kind": "room",
+                "place": "city",
+                "palette": "dusk-violet",
+                "treatment": "atmospheric"
+              },
+              {
+                "kind": "crowd",
+                "rows": 7,
+                "cols": 9,
+                "top": 0.3,
+                "bottom": 0.66,
+                "left": 0,
+                "right": 1,
+                "head": 0.055,
+                "back": 0.45,
+                "pose": "stand",
+                "expression": "smug",
+                "light": 0.65,
+                "hole": {
+                  "x": 0.5,
+                  "y": 0.55
+                },
+                "holeRadius": 0.07,
+                "seed": 6
+              },
+              {
+                "kind": "person",
+                "character": "you",
+                "x": 0.5,
+                "y": 0.55,
+                "head": 0.05,
+                "pose": "stand",
+                "moment": 0.2,
+                "facing": "right",
+                "turn": 0.3,
+                "expression": "smug",
+                "effects": [],
+                "light": 1,
+                "outline": 0
+              }
+            ],
+            "from": {
+              "x": 0.5,
+              "y": 0.54,
+              "zoom": 2.5
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.48,
+              "zoom": 1
+            }
+          },
+          "transition": "cut",
+          "startMs": 28647,
+          "endMs": 29831
+        },
+        {
+          "id": "s6c",
+          "line": "l27",
+          "words": "If you make a rule, skip the *small* fine.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "Making a rule?",
+              "Skip the small fine.",
+              "Ask as a favor,",
+              "or make it count."
+            ],
+            "stress": 1
+          },
+          "transition": "cut",
+          "startMs": 29831,
+          "endMs": 32949
+        },
+        {
+          "id": "s6d",
+          "line": "l27",
+          "words": "Ask as a favor, or make the fine big.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "Making a rule?",
+              "Skip the small fine.",
+              "Ask as a favor,",
+              "or make it count."
+            ],
+            "stress": 3
+          },
+          "transition": "cut",
+          "startMs": 32949,
+          "endMs": 36487
+        },
+        {
+          "id": "s6e",
+          "line": "l28",
+          "words": "So why did the fine make parents *later?*",
+          "camera": {
+            "framing": "medium",
+            "move": "push-in",
+            "strength": 0.12,
+            "focus": "boy"
+          },
+          "actors": [
+            {
+              "character": "boy",
+              "pose": "stand",
+              "expression": "sad",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.74,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "tick",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "transition": "cut",
+          "startMs": 36487,
+          "endMs": 38795
+        },
+        {
+          "id": "s6f",
+          "line": "l29",
+          "words": "Because the fine didn't make them *sorry.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "cheat"
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "action": "walk",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.16,
+              "lookAt": "ahead",
+              "holds": "cup",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.7,
+                  "pose": "hold-cup"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 38795,
+          "endMs": 41007
+        },
+        {
+          "id": "s6g",
+          "line": "l30",
+          "words": "It told them what sorry *costs.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "sad",
+              "strength": 0.7,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.36,
+              "lookAt": "boy",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "boy",
+              "pose": "stand",
+              "expression": "sad",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.74,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "tick",
+              "at": "start",
+              "gainDb": -10
+            },
+            {
+              "name": "clunk",
+              "at": "end",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 41007,
+          "endMs": 44748
+        }
+      ]
+    }
+  ]
+}

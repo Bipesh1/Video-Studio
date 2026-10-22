@@ -1,0 +1,79 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Could your body ever evolve to hold its breath like a *seal*?",
+      "speed": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l02",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The surprise is that, somewhere on Earth, it has *already* happened.",
+      "speed": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l03",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Most of us come up for air within about a minute, and think that is our *limit*.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l04",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "But your body hides an old diving trick, and it starts in your *chest*.",
+      "speed": 1,
+      "pauseAfterMs": 800
+    },
+    {
+      "id": "l05",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "While you hold your breath, the oxygen in your blood slowly *runs down*.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l06",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So your body switches on its dive reflex: your heart slows, and blood leaves your hands and *feet*.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l07",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Then your spleen, a small organ under your ribs, squeezes like a *sponge*.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l08",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "It pushes spare red blood cells, which carry oxygen, into your blood like a *backup tank*.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l09",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Seals have enormous spleens for exactly this *reason*.",
+      "speed": 1,
+      "pauseAfterMs": 1100
+    }
+  ]
+}

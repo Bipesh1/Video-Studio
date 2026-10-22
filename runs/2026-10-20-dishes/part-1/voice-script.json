@@ -1,0 +1,171 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "She wrote down every dish she washed, for a whole year.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 335
+    },
+    {
+      "id": "l02",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "And she was saving every one of them for *one night.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 1005
+    },
+    {
+      "id": "l03",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "One year earlier, this married couple had the same fight every week.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 268
+    },
+    {
+      "id": "l04",
+      "speaker": "saint",
+      "voice": "af_sarah",
+      "text": "I do *everything* in this house.",
+      "say": "[angry] I do everything in this house.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/saint.wav",
+      "speed": 0.95,
+      "pauseAfterMs": 222
+    },
+    {
+      "id": "l05",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "Everything? I do plenty. You just don't see it.",
+      "say": "[sarcastic] Everything? I do plenty. You just don't see it.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/copycat.wav",
+      "speed": 0.99,
+      "pauseAfterMs": 201
+    },
+    {
+      "id": "l06",
+      "speaker": "saint",
+      "voice": "af_sarah",
+      "text": "Then show me.",
+      "say": "Then, show me.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/saint.wav",
+      "speed": 0.92,
+      "pauseAfterMs": 222
+    },
+    {
+      "id": "l07",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "Show you what? Nobody keeps a *list.*",
+      "say": "[chuckle] Show you what? Nobody keeps a list.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/copycat.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 603
+    },
+    {
+      "id": "l08",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "It was always her word against *his.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 268
+    },
+    {
+      "id": "l09",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "So she made her own rule. Whoever has it in writing *wins.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 268
+    },
+    {
+      "id": "l10",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "On their anniversary, she would put the proof on the table.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 670
+    }
+  ]
+}

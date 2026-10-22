@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { MUSIC_MOODS } from './sound.schema';
+import { AMBIENT_SFX, MUSIC_MOODS, SFX_NAMES } from './sound.schema';
 
 /**
  * The plug-ins a video picks (Part 1, section 6; Part 2, sections 8 and 9): a format (what
@@ -21,12 +21,58 @@ export const SCRIPT_MODES = ['as-is', 'refine', 'original'] as const;
 export type ScriptMode = (typeof SCRIPT_MODES)[number];
 
 /** How close the camera is (engine/src/camera/Framing.tsx). */
-export const FRAMINGS = ['wide', 'medium', 'close-up', 'over-shoulder'] as const;
+export const FRAMINGS = ['wide', 'medium', 'close-up', 'eyes', 'over-shoulder'] as const;
 export type Framing = (typeof FRAMINGS)[number];
 
 /** What the camera does during a shot (engine/src/camera/Camera.tsx). */
-export const CAMERA_MOVES = ['none', 'push-in', 'punch-in', 'pan', 'shake', 'follow'] as const;
+export const CAMERA_MOVES = [
+  'none',
+  'push-in',
+  'punch-in',
+  'pan',
+  'shake',
+  'follow',
+  'tilt',
+  'pull-back',
+  'drift',
+] as const;
 export type CameraMove = (typeof CAMERA_MOVES)[number];
+
+/**
+ * How a video is finished: how its people move, and what lies over its pictures. Step 5 of the
+ * plan Biku agreed on 2026-10-14 to make the animation better in every kind of video, against
+ * the "looks AI" feel of pictures and movement that are too clean and even. A format sets it;
+ * left out, a video looks as it always has.
+ */
+export const finishSchema = z
+  .object({
+    /** snappy: a quick move with a small overshoot. gentle: about half as long again, settling softly. */
+    acting: z.enum(['snappy', 'gentle']).default('snappy'),
+    /** People and things move on every second frame, as hand animation does; the camera on every frame. */
+    onTwos: z.boolean().default(false),
+    /** A soft shadow on the ground under each person. */
+    shadows: z.boolean().default(false),
+    /** A fine moving grain over the picture, 0 for none. */
+    grain: z.number().min(0).max(1).default(0),
+    /** Edges of the picture a little darker, 0 for none. */
+    vignette: z.number().min(0).max(1).default(0),
+    /**
+     * Lines that tremble a little, a few times a second, as lines drawn by hand do from one
+     * drawing to the next; 0 for none, 1 for the most (Biku asked to see it, 2026-10-14).
+     */
+    boil: z.number().min(0).max(1).default(0),
+  })
+  .strict();
+export type Finish = z.infer<typeof finishSchema>;
+/** A video with no finish of its own: exactly as videos were before. */
+export const PLAIN_FINISH: Finish = {
+  acting: 'snappy',
+  onTwos: false,
+  shadows: false,
+  grain: 0,
+  vignette: 0,
+  boil: 0,
+};
 
 /** The vertical shape of a video is the whole of it, or a teaser: its first part alone. */
 export const VERTICAL_CUTS = ['full', 'teaser'] as const;
@@ -110,6 +156,29 @@ export const formatSchema = z
       .strict(),
     /** full: every spoken word on screen. keywords: only the emphasized words. */
     captionMode: z.enum(['full', 'keywords']),
+    /**
+     * The faint sound under a scene with no music, one of the sounds that run under a shot.
+     * Left out, it is the wind; a format that lives indoors names its own (the bulb's hum).
+     */
+    roomTone: z
+      .enum(SFX_NAMES)
+      .refine((name) => AMBIENT_SFX.includes(name), {
+        message: 'the room tone must be a sound that runs under a whole shot',
+      })
+      .optional(),
+    /** How its videos are finished; left out, as they always were. */
+    finish: finishSchema.optional(),
+    /**
+     * True when a video's package (title, thumbnail, promise: packaging.json in its run) must be
+     * decided before its script is checked (knowledge/playbooks/explainers.md, 2026-10-21).
+     */
+    packaging: z.boolean().default(false),
+    /**
+     * True when only the first beat (the hook) and the last (the payoff) hold their places:
+     * the beats between may come in any order, any of them more than once, as the topic needs
+     * (What's the Catch?, Biku 2026-10-21: "don't always follow a rigid structure").
+     */
+    freeOrder: z.boolean().default(false),
     factRules: z
       .object({
         /** True when every claim must be traceable to a saved source. */
@@ -191,6 +260,11 @@ export const brandSchema = z
     defaults: z
       .object({
         format: idSchema,
+        /**
+         * Other formats this page also runs, mixed in with its usual videos (the game theory
+         * thrillers, 2026-10-15: "it mixes into them"). A new run of one of them takes this page.
+         */
+        alsoFormats: z.array(idSchema).default([]),
         /** The narrator: a file name under voices/. */
         voice: idSchema,
         /** The shapes its videos are made in. The first is the one each part is shown in. */
@@ -224,7 +298,32 @@ export const voiceProfileSchema = z
     kokoroVoice: z
       .string()
       .regex(/^[a-z]{2}_[a-z]+$/, 'expected a Kokoro voice id like am_michael'),
+    /**
+     * Other Kokoro voices mixed into this one, each with its share; `kokoroVoice` keeps the
+     * rest. It gives a character a sound that is nobody else's.
+     */
+    blend: z
+      .array(
+        z.object({
+          kokoroVoice: z
+            .string()
+            .regex(/^[a-z]{2}_[a-z]+$/, 'expected a Kokoro voice id like am_michael'),
+          share: z.number().gt(0).lt(1),
+        }),
+      )
+      .min(1)
+      .refine((b) => b.reduce((sum, v) => sum + v.share, 0) < 1, {
+        message: 'the mixed-in voices together take less than the whole voice',
+      })
+      .optional(),
     speed: z.number().min(0.5).max(2),
+    /**
+     * Which engine speaks: Kokoro, or Chatterbox Turbo copying the voice in `sample` (a short
+     * recording of this voice, from the project root). Chatterbox sounds more alive and performs
+     * tags such as [chuckle]; Biku chose it for the game theory voices on 2026-10-14.
+     */
+    engine: z.enum(['kokoro', 'chatterbox']).default('kokoro'),
+    sample: z.string().min(1).optional(),
     /** Multiplies every pause the script asks for: above 1 is slower and weightier. */
     pauseScale: z.number().min(0.5).max(2),
     /**
@@ -233,7 +332,11 @@ export const voiceProfileSchema = z
      */
     pronunciations: z.record(z.string().min(1), z.string().min(1)).default({}),
   })
-  .strict();
+  .strict()
+  .refine((v) => v.engine !== 'chatterbox' || v.sample !== undefined, {
+    message: 'a Chatterbox voice names the recording it copies (sample)',
+    path: ['sample'],
+  });
 
 export type Beat = z.infer<typeof beatSchema>;
 export type Format = z.infer<typeof formatSchema>;

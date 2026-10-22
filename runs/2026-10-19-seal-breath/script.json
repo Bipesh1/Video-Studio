@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "title": "Could Humans Evolve to Hold Their Breath Like Seals?",
+  "request": "Biku's What's the Catch? what-if script, used as it is: 'Make a video on this script for the whats if part. make sure the animations are good like it should not be stuck in one photo for long time. each new info should bring a great animation' (2026-10-19).",
+  "mode": "as-is",
+  "format": "fine-print",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "speakers": [],
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "narrator",
+      "text": "Could your body ever evolve to hold its breath like a *seal*?",
+      "beat": "the-question",
+      "chapter": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l02",
+      "speaker": "narrator",
+      "text": "The surprise is that, somewhere on Earth, it has *already* happened.",
+      "beat": "the-question",
+      "chapter": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l03",
+      "speaker": "narrator",
+      "text": "Most of us come up for air within about a minute, and think that is our *limit*.",
+      "beat": "the-moment",
+      "chapter": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l04",
+      "speaker": "narrator",
+      "text": "But your body hides an old diving trick, and it starts in your *chest*.",
+      "beat": "the-moment",
+      "chapter": 1,
+      "pauseAfterMs": 800
+    },
+    {
+      "id": "l05",
+      "speaker": "narrator",
+      "text": "While you hold your breath, the oxygen in your blood slowly *runs down*.",
+      "beat": "follow-the-money",
+      "chapter": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l06",
+      "speaker": "narrator",
+      "text": "So your body switches on its dive reflex: your heart slows, and blood leaves your hands and *feet*.",
+      "beat": "follow-the-money",
+      "chapter": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l07",
+      "speaker": "narrator",
+      "text": "Then your spleen, a small organ under your ribs, squeezes like a *sponge*.",
+      "beat": "follow-the-money",
+      "chapter": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l08",
+      "speaker": "narrator",
+      "text": "It pushes spare red blood cells, which carry oxygen, into your blood like a *backup tank*.",
+      "beat": "follow-the-money",
+      "chapter": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l09",
+      "speaker": "narrator",
+      "text": "Seals have enormous spleens for exactly this *reason*.",
+      "beat": "follow-the-money",
+      "chapter": 1,
+      "pauseAfterMs": 1100
+    },
+    {
+      "id": "l10",
+      "speaker": "narrator",
+      "text": "And here is the catch: the Bajau, sea nomads of Southeast Asia, have already grown a *bigger* tank.",
+      "beat": "the-trick",
+      "chapter": 2,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l11",
+      "speaker": "narrator",
+      "text": "Their divers spend up to sixty percent of a working day diving for *fish*.",
+      "beat": "the-trick",
+      "chapter": 2,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l12",
+      "speaker": "narrator",
+      "text": "Scientists scanned the spleens of the Bajau and of their farming neighbours, the *Saluan*.",
+      "beat": "the-trick",
+      "chapter": 2,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l13",
+      "speaker": "narrator",
+      "text": "The Bajau spleen was about fifty percent *bigger*, roughly the size of a tennis ball.",
+      "beat": "the-trick",
+      "chapter": 2,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l14",
+      "speaker": "narrator",
+      "text": "It was big even in Bajau who do not dive, so it is in their *genes*.",
+      "beat": "the-trick",
+      "chapter": 2,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l15",
+      "speaker": "narrator",
+      "text": "Scientists think it took only around a thousand years at sea, a *blink* for evolution.",
+      "beat": "the-trick",
+      "chapter": 2,
+      "pauseAfterMs": 1100
+    },
+    {
+      "id": "l16",
+      "speaker": "narrator",
+      "text": "Melissa Ilardo's team published this in the journal *Cell* in 2018.",
+      "beat": "the-proof",
+      "chapter": 3,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l17",
+      "speaker": "narrator",
+      "text": "They also found a gene, PDE10A, that may make the spleen *bigger*.",
+      "beat": "the-proof",
+      "chapter": 3,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l18",
+      "speaker": "narrator",
+      "text": "Scientists think it works through a body hormone, but nobody has *proved* that yet.",
+      "beat": "the-proof",
+      "chapter": 3,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l19",
+      "speaker": "narrator",
+      "text": "The breath hold world record is twenty nine minutes, but only after breathing pure *oxygen*.",
+      "beat": "the-proof",
+      "chapter": 3,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l20",
+      "speaker": "narrator",
+      "text": "Next time you slip under the water, your heart is already *slowing* down.",
+      "beat": "your-move",
+      "chapter": 3,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l21",
+      "speaker": "narrator",
+      "text": "Your body is still running a diving program far *older* than you.",
+      "beat": "your-move",
+      "chapter": 3,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l22",
+      "speaker": "narrator",
+      "text": "So could humans evolve to hold their breath like seals? Slowly, yes, and one people is already *on the way*.",
+      "beat": "your-move",
+      "chapter": 3,
+      "pauseAfterMs": 1500
+    }
+  ],
+  "sources": [
+    "Ilardo, M. et al., \"Physiological and genetic adaptations to diving in sea nomads\", Cell, 2018. Bajau spleens about 50% larger than the neighbouring Saluan, also in Bajau who do not dive; a gene variant near PDE10A linked to spleen size. https://doi.org/10.1016/j.cell.2018.03.054",
+    "NPR (via KPBS), \"The Secret To Deep Diving May Lie In The Spleen\", 2018. Researchers still hope to confirm the thyroid hormone link and that red blood cell levels change during dives. https://www.kpbs.org/news/2018/04/24/the-secret-to-deep-diving-may-lie-in-the-spleen",
+    "AFP report on the Cell study (via Philstar), 2018. Bajau spend up to 60% of their working day diving. https://www.philstar.com/business/science-and-environment/2018/04/20/1807756/scientists-discover-secret-why-bajaus-are-stronger-divers",
+    "The Scientist, \"Free Divers from Southeast Asia Evolved Bigger Spleens\", 2018. A rare example of natural selection in modern humans, over hundreds to thousands of years. https://mobile.the-scientist.com/article/52347/free-divers-from-southeast-asia-evolved-bigger-spleens",
+    "Guinness World Records, \"Longest time breath held voluntarily underwater (male)\". 29 min 3 sec, Vitomir Maričić, Opatija, Croatia, 14 June 2025, after pre-breathing pure oxygen. https://www.guinnessworldrecords.com/world-records/longest-time-breath-held-voluntarily-male",
+    "Checked by Claude on 2026-10-19 against Science News, NPR, The Scientist, Scientific American and reports of the record; no source gives the size of the spleens, so \"roughly the size of a tennis ball\" is unchecked."
+  ],
+  "changes": [],
+  "masterPrompt": "prompts/fine-print.md"
+}

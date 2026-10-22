@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "curious",
+      "startMs": 0
+    },
+    {
+      "mood": "reflective",
+      "startMs": 14380
+    }
+  ],
+  "sfx": [
+    {
+      "name": "click",
+      "atMs": 9705,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "thud",
+      "atMs": 11630,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "ding",
+      "atMs": 13930,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "click",
+      "atMs": 16572,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "blip",
+      "atMs": 18590,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "blip",
+      "atMs": 20350,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 5
+    },
+    {
+      "name": "blip",
+      "atMs": 21835,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 6
+    },
+    {
+      "name": "blip",
+      "atMs": 22930,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 7
+    },
+    {
+      "name": "tick",
+      "atMs": 23440,
+      "durationMs": 2727,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 8
+    },
+    {
+      "name": "blip",
+      "atMs": 24849,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 9
+    }
+  ],
+  "musicGainDb": 0
+}

@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "unease",
+      "startMs": 0
+    },
+    {
+      "mood": "closing-in",
+      "startMs": 14060
+    }
+  ],
+  "sfx": [
+    {
+      "name": "heartbeat-rising",
+      "atMs": 18950,
+      "durationMs": 2890,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 0
+    }
+  ],
+  "musicGainDb": 0
+}

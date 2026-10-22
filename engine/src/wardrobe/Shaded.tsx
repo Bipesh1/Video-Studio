@@ -1,5 +1,6 @@
 import type { Vec2 } from '../rig/math';
-import { ink, lineWeights, tokens } from '../tokens';
+import { TONED_LIGHT, useToned } from '../rig/tone';
+import { ink, lighten, lineWeights, tokens } from '../tokens';
 import type { TubeSpec } from './types';
 
 /** How far toward the light the lit area is shifted, leaving a shadow band on the far side. */
@@ -29,27 +30,42 @@ export const Shaded = ({
   offset: Vec2;
   strokeWidth?: number;
   outline?: boolean;
-}) => (
-  <g>
-    <defs>
-      <clipPath id={id}>
-        <path d={d} transform={`translate(${offset.x} ${offset.y})`} />
-      </clipPath>
-    </defs>
-    <path d={d} fill={shadow} />
-    <path d={d} fill={fill} clipPath={`url(#${id})`} />
-    {outline && (
-      <path
-        d={d}
-        fill="none"
-        stroke={ink}
-        strokeWidth={strokeWidth}
-        strokeLinejoin={tokens.line.join}
-        strokeLinecap={tokens.line.cap}
-      />
-    )}
-  </g>
-);
+}) => {
+  const toned = useToned();
+  return (
+    <g>
+      <defs>
+        <clipPath id={id}>
+          <path d={d} transform={`translate(${offset.x} ${offset.y})`} />
+        </clipPath>
+      </defs>
+      <path d={d} fill={shadow} />
+      {toned ? (
+        // The toned look: the lit area has a lighter edge toward the light, and no outline.
+        <g clipPath={`url(#${id})`}>
+          <path d={d} fill={lighten(fill, TONED_LIGHT)} />
+          <path
+            d={d}
+            fill={fill}
+            transform={`translate(${-offset.x * 0.45} ${-offset.y * 0.45})`}
+          />
+        </g>
+      ) : (
+        <path d={d} fill={fill} clipPath={`url(#${id})`} />
+      )}
+      {outline && !toned && (
+        <path
+          d={d}
+          fill="none"
+          stroke={ink}
+          strokeWidth={strokeWidth}
+          strokeLinejoin={tokens.line.join}
+          strokeLinecap={tokens.line.cap}
+        />
+      )}
+    </g>
+  );
+};
 
 const linePts = (pts: readonly Vec2[]) => pts.map((p) => `${p.x},${p.y}`).join(' ');
 
@@ -66,6 +82,7 @@ export const Tube = ({
   spec: TubeSpec;
   shadowSide: 1 | -1;
 }) => {
+  const toned = useToned();
   const o = lightOffset(shadowSide, 0.028);
   const common = {
     points: linePts(pts),
@@ -75,7 +92,9 @@ export const Tube = ({
   } as const;
   return (
     <g>
-      <polyline {...common} stroke={ink} strokeWidth={spec.width + 2 * lineWeights.outline} />
+      {!toned && (
+        <polyline {...common} stroke={ink} strokeWidth={spec.width + 2 * lineWeights.outline} />
+      )}
       <polyline {...common} stroke={spec.shadow} strokeWidth={spec.width} />
       <polyline
         {...common}
@@ -83,6 +102,14 @@ export const Tube = ({
         stroke={spec.fill}
         strokeWidth={spec.width * 0.62}
       />
+      {toned && (
+        <polyline
+          {...common}
+          transform={`translate(${o.x * 2.2} ${o.y * 2.2})`}
+          stroke={lighten(spec.fill, TONED_LIGHT)}
+          strokeWidth={spec.width * 0.16}
+        />
+      )}
     </g>
   );
 };

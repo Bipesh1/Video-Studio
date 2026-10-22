@@ -1,0 +1,12 @@
+{
+  "id": "copycat",
+  "name": "The Copycat",
+  "description": "The Copycat of the game theory cast: calm and matter of fact. A steady, deeper man's voice. Picked by Biku from three test voices on 2026-10-11 (voice 1). Spoken by Chatterbox from a sample of this Kokoro voice since 2026-10-14, so it is the same person, more alive.",
+  "version": 3,
+  "kokoroVoice": "am_fenrir",
+  "speed": 0.97,
+  "engine": "chatterbox",
+  "sample": "voices/samples/copycat.wav",
+  "pauseScale": 0.67,
+  "pronunciations": {}
+}

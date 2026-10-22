@@ -82,6 +82,9 @@ export function worldProblems(world: World): string[] {
   );
   for (const brand of Object.values(world.brands)) {
     const where = `brands/${brand.id}.json`;
+    for (const also of brand.defaults.alsoFormats) {
+      if (!world.formats[also]) out.push(`${where}: there is no format called "${also}"`);
+    }
     if (!world.formats[brand.defaults.format]) {
       out.push(`${where}: there is no format called "${brand.defaults.format}"`);
     }
@@ -93,9 +96,20 @@ export function worldProblems(world: World): string[] {
         out.push(`${where}: ${use} uses "${color}", which is not a style color`);
     }
   }
+  const ids = new Set(world.library.assets.map((a) => a.id));
   for (const card of Object.values(world.characters)) {
+    const where = `characters/${card.id}.json`;
     if (card.voice && !world.voices[card.voice]) {
-      out.push(`characters/${card.id}.json: there is no voice called "${card.voice}"`);
+      out.push(`${where}: there is no voice called "${card.voice}"`);
+    }
+    // The faces and poses approved for a character must be ones the library can draw.
+    for (const face of card.expressions ?? []) {
+      if (!ids.has(`expression/${face}`))
+        out.push(`${where}: the library has no expression called "${face}"`);
+    }
+    for (const pose of [...(card.poses ?? []), ...(card.signature ?? [])]) {
+      if (!ids.has(`pose/${pose}`) && !ids.has(`action/${pose}`))
+        out.push(`${where}: the library has no pose or action called "${pose}"`);
     }
   }
   return out;

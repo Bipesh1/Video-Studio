@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "id": "2026-10-19-seal-breath",
+  "created": "2026-10-19",
+  "mode": "as-is",
+  "format": "fine-print",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "sizes": [
+    "16:9"
+  ],
+  "vertical": "full",
+  "masterPrompt": "prompts/fine-print.md"
+}

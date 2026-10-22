@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "unease",
+      "startMs": 0
+    },
+    {
+      "mood": "tense",
+      "startMs": 7179
+    }
+  ],
+  "sfx": [
+    {
+      "name": "home",
+      "atMs": 0,
+      "durationMs": 31165,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "tick",
+      "atMs": 60,
+      "durationMs": 1890,
+      "gainDb": -12,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "paper",
+      "atMs": 2160,
+      "gainDb": -2,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "tick",
+      "atMs": 3790,
+      "durationMs": 3239,
+      "gainDb": -12,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "rewind",
+      "atMs": 5779,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 6
+    },
+    {
+      "name": "footsteps",
+      "atMs": 20537,
+      "durationMs": 500,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "thud",
+      "atMs": 24923,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 5
+    }
+  ],
+  "musicGainDb": 0,
+  "hush": []
+}

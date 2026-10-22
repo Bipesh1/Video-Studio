@@ -1,0 +1,63 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l16",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Two scientists in Australia worked this out by tracking every *atom* in ten kilos of fat.",
+      "speed": 1,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "l17",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Ten kilos of fat plus twenty nine kilos of oxygen went *in*.",
+      "speed": 1,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "l18",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Twenty eight kilos of carbon dioxide and eleven kilos of water came *out*.",
+      "speed": 1,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "l19",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Both sides weigh thirty nine kilos, so not a single atom went *missing*.",
+      "speed": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l20",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "And no, panting on the sofa will not burn more fat. You will just get *dizzy*.",
+      "speed": 1,
+      "pauseAfterMs": 800
+    },
+    {
+      "id": "l21",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "From now on, every breath out carries a tiny piece of yesterday's *dinner*.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l22",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So where did that kilo on your scale go? You breathed it *out*.",
+      "speed": 1,
+      "pauseAfterMs": 1500
+    }
+  ]
+}

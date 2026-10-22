@@ -1,0 +1,1 @@
+A test of the Trainer in the builder: he stands in the room, is friendly to the player and tells the camera the truth. Not a video for viewers.

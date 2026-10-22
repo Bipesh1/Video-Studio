@@ -1,0 +1,59 @@
+2026-10-15T13:54:01.414Z  part 1  part 1 of 1, 9:16: 6 scenes, 13 shots
+2026-10-15T13:54:01.416Z  part 1  voice: start
+2026-10-15T13:55:48.799Z  part 1    voice.wav: 59.26 s, 156 words, timings from kokoro, -17.16 LUFS
+2026-10-15T13:55:48.800Z  part 1  voice: done in 107.4 s
+2026-10-15T13:55:48.800Z  part 1  time: start
+2026-10-15T13:55:48.893Z  part 1    13 shots over 59.3 s: shortest 2.6 s, longest 6.4 s
+2026-10-15T13:55:48.894Z  part 1  time: done in 0.1 s
+2026-10-15T13:55:48.894Z  part 1  sound: start
+2026-10-15T13:56:03.890Z  part 1    F:\Video Studio\runs\2026-10-15-fine-print-demo\part-1\audio\mix.wav: 59.26 s, -14.03 LUFS, true peak -1.1 dB, 1 music moods, 0 effects, music -17.0 dB under the voice
+2026-10-15T13:56:03.891Z  part 1  sound: done in 15.0 s
+2026-10-15T13:56:03.892Z  part 1  stills: start
+2026-10-15T13:56:03.920Z  part 1  bundle: start
+2026-10-15T13:56:23.718Z  part 1  bundle: done in 19.8 s
+2026-10-15T13:56:56.700Z  part 1    13 stills in runs\2026-10-15-fine-print-demo\part-1\stills\9x16
+2026-10-15T13:56:58.866Z  part 1    runs\2026-10-15-fine-print-demo\part-1\stills\colours-9x16.png (the first shot of each of 6 scenes)
+2026-10-15T13:56:59.829Z  part 1    runs\2026-10-15-fine-print-demo\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-15T13:57:00.006Z  part 1    runs\2026-10-15-fine-print-demo\part-1\stills\sheet-9x16-2.png (1 shots, 1 rows)
+2026-10-15T13:57:00.006Z  part 1  stills: done in 56.1 s
+2026-10-15T13:58:22.535Z  part 1  part 1 of 1, 9:16: 6 scenes, 13 shots
+2026-10-15T13:58:22.537Z  part 1  stills: start
+2026-10-15T13:58:22.569Z  part 1  bundle: start
+2026-10-15T13:58:34.034Z  part 1  bundle: done in 11.5 s
+2026-10-15T13:58:54.534Z  part 1    13 stills in runs\2026-10-15-fine-print-demo\part-1\stills\9x16
+2026-10-15T13:58:55.086Z  part 1    runs\2026-10-15-fine-print-demo\part-1\stills\colours-9x16.png (the first shot of each of 6 scenes)
+2026-10-15T13:58:56.149Z  part 1    runs\2026-10-15-fine-print-demo\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-15T13:58:56.351Z  part 1    runs\2026-10-15-fine-print-demo\part-1\stills\sheet-9x16-2.png (1 shots, 1 rows)
+2026-10-15T13:58:56.351Z  part 1  stills: done in 33.8 s
+2026-10-15T13:59:51.026Z  part 1  part 1 of 1, 9:16: 6 scenes, 13 shots
+2026-10-15T13:59:51.027Z  part 1  stills: start
+2026-10-15T13:59:51.057Z  part 1  bundle: start
+2026-10-15T14:00:01.948Z  part 1  bundle: done in 10.9 s
+2026-10-15T14:00:21.771Z  part 1    13 stills in runs\2026-10-15-fine-print-demo\part-1\stills\9x16
+2026-10-15T14:00:22.342Z  part 1    runs\2026-10-15-fine-print-demo\part-1\stills\colours-9x16.png (the first shot of each of 6 scenes)
+2026-10-15T14:00:23.927Z  part 1    runs\2026-10-15-fine-print-demo\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-15T14:00:24.272Z  part 1    runs\2026-10-15-fine-print-demo\part-1\stills\sheet-9x16-2.png (1 shots, 1 rows)
+2026-10-15T14:00:24.273Z  part 1  stills: done in 33.2 s
+2026-10-15T14:00:39.284Z  part 1  part 1 of 1, 9:16: 6 scenes, 13 shots
+2026-10-15T14:00:39.287Z  part 1  video: start
+2026-10-15T14:00:39.324Z  part 1  bundle: start
+2026-10-15T14:00:44.065Z  part 1  bundle: done in 4.7 s
+2026-10-15T14:06:13.155Z  part 1    runs\2026-10-15-fine-print-demo\part-1\out\fine-print-demo-part-1-9x16-v1.mp4: 59.27 s of video, 1080x1920, in 326.9 s (5.52 s per video second)
+2026-10-15T14:06:13.160Z  part 1    runs\2026-10-15-fine-print-demo\part-1\out\fine-print-demo-part-1-9x16-v1.srt
+2026-10-15T14:06:13.185Z  part 1  video: done in 333.9 s
+2026-10-15T14:07:09.701Z  part 1  part 1 of 1, 9:16: 6 scenes, 13 shots
+2026-10-15T14:07:09.702Z  part 1  voice: start
+2026-10-15T14:08:24.636Z  part 1    voice.wav: 59.04 s, 156 words, timings from kokoro, -17.15 LUFS
+2026-10-15T14:08:24.637Z  part 1  voice: done in 74.9 s
+2026-10-15T14:08:24.637Z  part 1  time: start
+2026-10-15T14:08:24.668Z  part 1    13 shots over 59.0 s: shortest 2.6 s, longest 6.4 s
+2026-10-15T14:08:24.669Z  part 1  time: done in 0.0 s
+2026-10-15T14:08:24.670Z  part 1  sound: start
+2026-10-15T14:08:41.991Z  part 1    F:\Video Studio\runs\2026-10-15-fine-print-demo\part-1\audio\mix.wav: 59.04 s, -14.04 LUFS, true peak -1.1 dB, 1 music moods, 0 effects, music -17.1 dB under the voice
+2026-10-15T14:08:41.991Z  part 1  sound: done in 17.3 s
+2026-10-15T14:08:41.992Z  part 1  video: start
+2026-10-15T14:08:42.033Z  part 1  bundle: start
+2026-10-15T14:08:50.813Z  part 1  bundle: done in 8.8 s
+2026-10-15T14:14:00.922Z  part 1    runs\2026-10-15-fine-print-demo\part-1\out\fine-print-demo-part-1-9x16-v2.mp4: 59.07 s of video, 1080x1920, in 307.6 s (5.21 s per video second)
+2026-10-15T14:14:00.928Z  part 1    runs\2026-10-15-fine-print-demo\part-1\out\fine-print-demo-part-1-9x16-v2.srt
+2026-10-15T14:14:00.951Z  part 1  video: done in 319.0 s

@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "video": "never-asked-out-part-2-9x16-v3.mp4",
+  "stills": {
+    "s4a": "ok",
+    "s5a": "ok",
+    "s5b": "ok",
+    "s5c": "ok",
+    "s5d": "ok",
+    "s5e": "ok",
+    "s5f": "ok"
+  },
+  "strips": {
+    "cut-s4a-s5a": "ok",
+    "cut-s5a-s5b": "ok",
+    "cut-s5b-s5c": "ok",
+    "cut-s5c-s5d": "ok",
+    "s4a-move-1": "ok",
+    "s4a-move-2": "ok",
+    "s4a-move-3": "ok",
+    "s4a-move-4": "ok",
+    "s4a-move-5": "ok",
+    "s5a-move-1": "ok",
+    "s5a-move-2": "ok",
+    "s5b-move-1": "ok",
+    "s5c-move-1": "ok",
+    "s5c-move-2": "ok",
+    "s5c-move-3": "ok",
+    "s5d-move-1": "ok",
+    "s5f-move-1": "ok",
+    "s5f-move-2": "ok"
+  },
+  "playbook": "ok",
+  "fixed": [
+    "The wall clock hung right behind the Saint's head. It is high on the wall over where the guests stand now.",
+    "'Now the party is ending' had 1.1 seconds of picture for the guests to leave in. It is one shot of 3.5 seconds now: the two guests leave together, she watches them go, he looks round, then at her, and starts her way.",
+    "As the guests walked out, the camera pulled back to keep them in the picture until every face was tiny. A builder fix: someone walking out of a wide shot, who does not stop again in it, no longer steers the camera (engine/src/stage/staging.ts, with a test). Looked at large: the guests go off to the right and the camera eases in on the three who stay.",
+    "On the cut into 'What do you think he does?' the Copycat started inside the Saint, then walked straight through the woman in red and out the other side. He walks from beside the Saint now, past her, and stops beside the woman as she waves. Looked at large, frame by frame, in part-2/clips/.",
+    "After he passed her, the Saint stood so close to the new couple that the three read as a group, and the woman in red was cut in half at the edge. The couple have their own wide shot now, and the Saint is alone in the next.",
+    "'See? Waiting works.' was said with a surprised face. She is pleased with herself now (a smug face), after a happy one on 'He's coming over'.",
+    "Checking her phone, she held it at her side. She holds it up in front of her now and looks down at it."
+  ],
+  "notes": [
+    "The music stops for the last line (the scene s5q is quiet, as his script asks: 'The music stops.'); the bulb's hum of the format's own is under it.",
+    "The shock lines are the one big reaction of the video, on her face as he goes to the other woman.",
+    "Claude cannot hear: the voices, the clock, the footsteps, the boom and the music stopping need Biku's ears."
+  ]
+}

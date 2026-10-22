@@ -44,11 +44,15 @@ export function toCaptions(words: readonly WordTiming[]): CaptionWord[] {
 const lineChars = (line: readonly CaptionWord[]) =>
   line.reduce((n, w, i) => n + w.text.trim().length + (i > 0 ? 1 : 0), 0);
 
+/** A caption of one word spoken in less than this is a flash on the screen, in ms. */
+const FLASH_MS = 600;
+
 const endsSentence = (w: CaptionWord) => /[.!?]["')]?$/.test(w.text.trim());
 
 /**
  * Split captions into pages of at most maxLines lines. A page breaks at a speaker change,
- * after a sentence, at a pause, or when the next word would not fit.
+ * after a sentence (unless the sentence is one quick word), at a pause, or when the next word
+ * would not fit.
  */
 export function buildPages(
   captions: readonly CaptionWord[],
@@ -70,7 +74,12 @@ export function buildPages(
     if (prev) {
       const newSpeaker = prev.lineId !== w.lineId;
       const pause = w.startMs - prev.endMs > opts.maxGapMs;
-      if (newSpeaker || pause || endsSentence(prev)) {
+      // One word and a full stop ("Uh.", "Right.") is gone before it can be read: it stays with
+      // what the same person says next.
+      const first = lines[0]?.[0];
+      const flash =
+        first !== undefined && lines.flat().length === 1 && prev.endMs - first.startMs < FLASH_MS;
+      if (newSpeaker || pause || (endsSentence(prev) && !flash)) {
         flush();
       } else if (lineChars([...current, w]) > opts.maxLineChars) {
         if (lines.length >= opts.maxLines) flush();

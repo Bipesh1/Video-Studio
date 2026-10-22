@@ -1,0 +1,542 @@
+{
+  "version": 1,
+  "title": "Table kit test",
+  "request": "A test of the Table kit in the builder: the room, the eyes shot, a thought, the tilt and the failing light. Not a video for viewers.",
+  "mode": "as-is",
+  "format": "story",
+  "style": "ink-stick",
+  "brand": "my-page",
+  "voice": "narrator",
+  "seed": 59605,
+  "sources": [],
+  "appliedLessons": [],
+  "cast": [
+    {
+      "id": "cheat",
+      "name": "The Cheat",
+      "card": "cheat"
+    },
+    {
+      "id": "saint",
+      "name": "The Saint",
+      "card": "saint"
+    }
+  ],
+  "series": "game-theory",
+  "scenes": [
+    {
+      "id": "t1",
+      "chapter": 1,
+      "beat": "hook",
+      "mood": "unease",
+      "place": "the-table",
+      "treatment": "atmospheric",
+      "palette": "table-grey",
+      "quiet": true,
+      "lines": [
+        {
+          "id": "n1",
+          "speaker": "narrator",
+          "text": "Would you sit down at *this table?*",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "t1a",
+          "line": "n1",
+          "words": "Would you sit down at *this table?*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.0
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "coin-stack",
+              "x": 0.5,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "overlay": {
+            "kind": "words",
+            "lines": [
+              "Would you",
+              "sit down at",
+              "this table?"
+            ],
+            "stress": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "t2",
+      "chapter": 1,
+      "beat": "setup",
+      "mood": "unease",
+      "place": "the-table",
+      "treatment": "atmospheric",
+      "palette": "table-grey",
+      "quiet": false,
+      "lines": [
+        {
+          "id": "n2",
+          "speaker": "narrator",
+          "text": "Two strangers. One pile of gold.",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "t2a",
+          "line": "n2",
+          "words": "Two strangers. One pile of gold.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "expression": "calculating",
+              "pose": "sit",
+              "facing": "right",
+              "x": 0.316,
+              "lookAt": "saint"
+            },
+            {
+              "character": "saint",
+              "expression": "dread",
+              "pose": "sit",
+              "facing": "left",
+              "x": 0.684,
+              "lookAt": "cheat"
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.0
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "coin-stack",
+              "x": 0.5,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "t3",
+      "chapter": 1,
+      "beat": "rising-trouble",
+      "mood": "closing-in",
+      "place": "the-table",
+      "treatment": "atmospheric",
+      "palette": "table-grey",
+      "quiet": false,
+      "lines": [
+        {
+          "id": "s1",
+          "speaker": "saint",
+          "text": "He looks calm. So I am calm.",
+          "pauseAfterMs": 1500,
+          "thought": true
+        },
+        {
+          "id": "n3",
+          "speaker": "narrator",
+          "text": "One of them reaches first.",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "t3a",
+          "line": "s1",
+          "words": "He looks calm. So I am calm.",
+          "camera": {
+            "framing": "eyes",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "expression": "dread",
+              "pose": "sit",
+              "facing": "left",
+              "x": 0.684
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.0
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "coin-stack",
+              "x": 0.5,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "heartbeat-rising",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut"
+        },
+        {
+          "id": "t3b",
+          "line": "n3",
+          "words": "One of them reaches first.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "cheat"
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "expression": "tempted",
+              "pose": "sit",
+              "facing": "right",
+              "x": 0.316,
+              "lookAt": "coin-stack",
+              "then": [
+                {
+                  "at": 0.3,
+                  "pose": "sit-reach"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.0
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "coin-stack",
+              "x": 0.5,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "t4",
+      "chapter": 1,
+      "beat": "turning-point",
+      "mood": "closing-in",
+      "place": "the-table",
+      "treatment": "atmospheric",
+      "palette": "table-grey",
+      "quiet": false,
+      "lines": [
+        {
+          "id": "n4",
+          "speaker": "narrator",
+          "text": "And then it is done.",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "t4a",
+          "line": "n4",
+          "words": "And then it is done.",
+          "camera": {
+            "framing": "wide",
+            "move": "tilt",
+            "strength": 0.7
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "expression": "smug",
+              "pose": "sit-reach",
+              "facing": "right",
+              "x": 0.316,
+              "lookAt": "saint"
+            },
+            {
+              "character": "saint",
+              "expression": "guilty",
+              "pose": "sit-slump",
+              "facing": "left",
+              "x": 0.684,
+              "lookAt": "down"
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.0
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "coin-stack",
+              "x": 0.5,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "boom",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "t5",
+      "chapter": 1,
+      "beat": "payoff",
+      "mood": "aftermath",
+      "place": "the-table",
+      "treatment": "atmospheric",
+      "palette": "table-grey",
+      "quiet": false,
+      "lines": [
+        {
+          "id": "n5",
+          "speaker": "narrator",
+          "text": "The light does not stay on for anyone.",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "t5a",
+          "line": "n5",
+          "words": "The light does not stay on for anyone.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "expression": "hollow",
+              "pose": "sit",
+              "facing": "right",
+              "x": 0.316,
+              "lookAt": "down"
+            },
+            {
+              "character": "saint",
+              "expression": "hollow",
+              "pose": "sit-slump",
+              "facing": "left",
+              "x": 0.684,
+              "lookAt": "down"
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb-flicker",
+              "x": 0.5,
+              "y": 4.0
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "coin-stack",
+              "x": 0.5,
+              "y": 1.22
+            },
+            {
+              "prop": "gloom-flicker",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "t6",
+      "chapter": 1,
+      "beat": "closing-line",
+      "mood": "aftermath",
+      "place": "the-table",
+      "treatment": "atmospheric",
+      "palette": "table-grey",
+      "quiet": false,
+      "lines": [
+        {
+          "id": "n6",
+          "speaker": "narrator",
+          "text": "Would you?",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "t6a",
+          "line": "n6",
+          "words": "Would you?",
+          "camera": {
+            "framing": "eyes",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "cheat"
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "expression": "calculating",
+              "pose": "sit",
+              "facing": "right",
+              "x": 0.316,
+              "lookAt": "camera"
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb-dim",
+              "x": 0.5,
+              "y": 4.0
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "coin-stack",
+              "x": 0.5,
+              "y": 1.22
+            },
+            {
+              "prop": "gloom",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "clunk",
+              "at": "end",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut"
+        }
+      ]
+    }
+  ]
+}

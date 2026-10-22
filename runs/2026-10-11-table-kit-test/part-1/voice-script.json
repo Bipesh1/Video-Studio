@@ -1,0 +1,62 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "lines": [
+    {
+      "id": "n1",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Would you sit down at *this table?*",
+      "speed": 1,
+      "pauseAfterMs": 1500
+    },
+    {
+      "id": "n2",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Two strangers. One pile of gold.",
+      "speed": 1,
+      "pauseAfterMs": 1500
+    },
+    {
+      "id": "s1",
+      "speaker": "saint",
+      "voice": "af_heart",
+      "text": "He looks calm. So I am calm.",
+      "speed": 0.95,
+      "pauseAfterMs": 1650
+    },
+    {
+      "id": "n3",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "One of them reaches first.",
+      "speed": 1,
+      "pauseAfterMs": 1500
+    },
+    {
+      "id": "n4",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "And then it is done.",
+      "speed": 1,
+      "pauseAfterMs": 1500
+    },
+    {
+      "id": "n5",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The light does not stay on for anyone.",
+      "speed": 1,
+      "pauseAfterMs": 1500
+    },
+    {
+      "id": "n6",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Would you?",
+      "speed": 1,
+      "pauseAfterMs": 1500
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import { MOUTH_Y, TURN } from '../face/layout';
 import { body } from '../rig/body';
 import { clamp, lerp, stops } from '../rig/math';
 import type { Vec2 } from '../rig/math';
+import { useToned } from '../rig/tone';
 import { MASK_HIDE, MASK_SHOW, accent, ink, lineWeights, pick, shade, tokens } from '../tokens';
 import { fadeColor } from './identity';
 import type { HairColors } from './identity';
@@ -314,6 +315,7 @@ export const HairFront = ({ style, ctx }: { style: HairStyle; ctx: HairCtx }) =>
   const maskId = `${ctx.uid}-face`;
   const hairClip = `${ctx.uid}-hairclip`;
   const off = lightOffset(ctx.shadowSide, 0.07);
+  const toned = useToned();
   // As the head turns, the hair mass swings down at the back of the head and up at the front.
   const swing = `rotate(${-40 * ctx.turn})`;
   return (
@@ -352,8 +354,8 @@ export const HairFront = ({ style, ctx }: { style: HairStyle; ctx: HairCtx }) =>
             d={`M ${left.x} ${left.y} Q ${ctrl.x} ${ctrl.y} ${right.x} ${right.y}`}
             clipPath={`url(#${hairClip})`}
             fill="none"
-            stroke={ink}
-            strokeWidth={lineWeights.outline * 2}
+            stroke={toned ? (d.front[0]?.shadow ?? ink) : ink}
+            strokeWidth={lineWeights.outline * (toned ? 1.2 : 2)}
             strokeLinecap={tokens.line.cap}
           />
         )}

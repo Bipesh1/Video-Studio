@@ -1,0 +1,75 @@
+2026-10-11T16:29:38.048Z  part 1  part 1 of 1, 9:16: 6 scenes, 9 shots
+2026-10-11T16:29:38.051Z  part 1  voice: start
+2026-10-11T16:30:53.478Z  part 1    voice.wav: 31.48 s, 41 words, timings from kokoro, -17.07 LUFS
+2026-10-11T16:30:53.486Z  part 1  voice: done in 75.4 s
+2026-10-11T16:30:53.486Z  part 1  time: start
+2026-10-11T16:30:53.645Z  part 1    9 shots over 31.5 s: shortest 2.5 s, longest 4.5 s
+2026-10-11T16:30:53.645Z  part 1    note: shot "s5a" is 4.5 s long, a little over the 4 s a shot should take
+2026-10-11T16:30:53.645Z  part 1  time: done in 0.2 s
+2026-10-11T16:30:53.646Z  part 1  sound: start
+2026-10-11T16:31:08.282Z  part 1    F:\Video Studio\runs\2026-10-11-trainer-test\part-1\audio\mix.wav: 31.48 s, -14.02 LUFS, true peak -1.15 dB, 1 music moods, 5 effects, music -22.8 dB under the voice
+2026-10-11T16:31:08.283Z  part 1  sound: done in 14.6 s
+2026-10-11T16:31:08.283Z  part 1  stills: start
+2026-10-11T16:31:08.326Z  part 1  bundle: start
+2026-10-11T16:31:24.382Z  part 1  bundle: done in 16.1 s
+2026-10-11T16:31:58.565Z  part 1    9 stills in runs\2026-10-11-trainer-test\part-1\stills\9x16
+2026-10-11T16:32:01.218Z  part 1    runs\2026-10-11-trainer-test\part-1\stills\sheet-9x16-1.png (9 shots, 3 rows)
+2026-10-11T16:32:01.218Z  part 1  stills: done in 52.9 s
+2026-10-11T16:35:28.855Z  part 1  part 1 of 1, 9:16: 6 scenes, 9 shots
+2026-10-11T16:35:28.856Z  part 1  time: start
+2026-10-11T16:35:28.860Z  part 1    9 shots over 31.5 s: shortest 2.5 s, longest 4.5 s
+2026-10-11T16:35:28.861Z  part 1    note: shot "s5a" is 4.5 s long, a little over the 4 s a shot should take
+2026-10-11T16:35:28.861Z  part 1  time: done in 0.0 s
+2026-10-11T16:35:28.862Z  part 1  sound: start
+2026-10-11T16:35:28.868Z  part 1    mix is already up to date (the plan and the voice have not changed)
+2026-10-11T16:35:28.869Z  part 1  sound: done in 0.0 s
+2026-10-11T16:35:28.869Z  part 1  stills: start
+2026-10-11T16:35:28.883Z  part 1  bundle: start
+2026-10-11T16:35:35.291Z  part 1  bundle: done in 6.4 s
+2026-10-11T16:35:48.397Z  part 1    9 stills in runs\2026-10-11-trainer-test\part-1\stills\9x16
+2026-10-11T16:35:48.986Z  part 1    runs\2026-10-11-trainer-test\part-1\stills\sheet-9x16-1.png (9 shots, 3 rows)
+2026-10-11T16:35:48.986Z  part 1  stills: done in 20.1 s
+2026-10-11T16:35:48.987Z  part 1  preview: start
+2026-10-11T16:36:53.499Z  part 1    runs\2026-10-11-trainer-test\part-1\preview\trainer-test-part-1-9x16-preview-v1.mp4: 31.50 s of video, 540x960, in 63.6 s (2.02 s per video second)
+2026-10-11T16:36:53.502Z  part 1    runs\2026-10-11-trainer-test\part-1\preview\trainer-test-part-1-9x16-preview-v1.srt
+2026-10-11T16:36:53.511Z  part 1  preview: done in 64.5 s
+2026-10-11T16:37:28.559Z  part 1  part 1 of 1, 9:16: 6 scenes, 9 shots
+2026-10-11T16:37:28.560Z  part 1  time: start
+2026-10-11T16:37:28.565Z  part 1    9 shots over 31.5 s: shortest 2.5 s, longest 4.5 s
+2026-10-11T16:37:28.565Z  part 1    note: shot "s5a" is 4.5 s long, a little over the 4 s a shot should take
+2026-10-11T16:37:28.565Z  part 1  time: done in 0.0 s
+2026-10-11T16:37:28.566Z  part 1  sound: start
+2026-10-11T16:37:28.572Z  part 1    mix is already up to date (the plan and the voice have not changed)
+2026-10-11T16:37:28.573Z  part 1  sound: done in 0.0 s
+2026-10-11T16:37:28.573Z  part 1  stills: start
+2026-10-11T16:37:28.589Z  part 1  bundle: start
+2026-10-11T16:37:35.968Z  part 1  bundle: done in 7.4 s
+2026-10-11T16:37:47.752Z  part 1    9 stills in runs\2026-10-11-trainer-test\part-1\stills\9x16
+2026-10-11T16:37:48.274Z  part 1    runs\2026-10-11-trainer-test\part-1\stills\sheet-9x16-1.png (9 shots, 3 rows)
+2026-10-11T16:37:48.275Z  part 1  stills: done in 19.7 s
+2026-10-11T16:37:48.275Z  part 1  preview: start
+2026-10-11T16:38:47.959Z  part 1    runs\2026-10-11-trainer-test\part-1\preview\trainer-test-part-1-9x16-preview-v2.mp4: 31.50 s of video, 540x960, in 58.8 s (1.87 s per video second)
+2026-10-11T16:38:47.963Z  part 1    runs\2026-10-11-trainer-test\part-1\preview\trainer-test-part-1-9x16-preview-v2.srt
+2026-10-11T16:38:47.974Z  part 1  preview: done in 59.7 s
+2026-10-11T16:52:22.885Z  part 1  part 1 of 1, 9:16: 6 scenes, 9 shots
+2026-10-11T16:52:22.887Z  part 1  stills: start
+2026-10-11T16:52:22.906Z  part 1  bundle: start
+2026-10-11T16:52:26.375Z  part 1  bundle: done in 3.5 s
+2026-10-11T16:52:38.099Z  part 1    9 stills in runs\2026-10-11-trainer-test\part-1\stills\9x16
+2026-10-11T16:52:38.647Z  part 1    runs\2026-10-11-trainer-test\part-1\stills\sheet-9x16-1.png (9 shots, 3 rows)
+2026-10-11T16:52:38.648Z  part 1  stills: done in 15.8 s
+2026-10-11T16:52:38.648Z  part 1  preview: start
+2026-10-11T16:53:51.957Z  part 1    runs\2026-10-11-trainer-test\part-1\preview\trainer-test-part-1-9x16-preview-v3.mp4: 31.50 s of video, 540x960, in 72.4 s (2.30 s per video second)
+2026-10-11T16:53:51.963Z  part 1    runs\2026-10-11-trainer-test\part-1\preview\trainer-test-part-1-9x16-preview-v3.srt
+2026-10-11T16:53:51.984Z  part 1  preview: done in 73.3 s
+2026-10-11T17:24:57.570Z  part 1  part 1 of 1, 9:16: 6 scenes, 9 shots
+2026-10-11T17:24:57.571Z  part 1  time: start
+2026-10-11T17:24:57.586Z  part 1    9 shots over 31.5 s: shortest 2.5 s, longest 4.5 s
+2026-10-11T17:24:57.587Z  part 1    note: shot "s5a" is 4.5 s long, a little over the 4 s a shot should take
+2026-10-11T17:24:57.587Z  part 1  time: done in 0.0 s
+2026-10-11T17:24:57.587Z  part 1  stills: start
+2026-10-11T17:24:57.609Z  part 1  bundle: start
+2026-10-11T17:25:12.103Z  part 1  bundle: done in 14.5 s
+2026-10-11T17:25:24.978Z  part 1    9 stills in runs\2026-10-11-trainer-test\part-1\stills\9x16
+2026-10-11T17:25:26.081Z  part 1    runs\2026-10-11-trainer-test\part-1\stills\sheet-9x16-1.png (9 shots, 3 rows)
+2026-10-11T17:25:26.081Z  part 1  stills: done in 28.5 s

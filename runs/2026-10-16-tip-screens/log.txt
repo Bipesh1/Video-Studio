@@ -1,0 +1,108 @@
+2026-10-16T14:29:52.668Z  part 1  part 1 of 3, 9:16: 2 scenes, 7 shots
+2026-10-16T14:29:52.674Z  part 1  voice: start
+2026-10-16T14:33:40.243Z  part 1    voice.wav: 36.75 s, 93 words, timings from kokoro, -17.18 LUFS
+2026-10-16T14:33:40.244Z  part 1  voice: done in 227.6 s
+2026-10-16T14:33:40.245Z  part 1  time: start
+2026-10-16T14:33:40.302Z  part 1    7 shots over 36.8 s: shortest 3.6 s, longest 7.9 s
+2026-10-16T14:33:40.303Z  part 1    note: shot "s03" is 7.9 s long, a little over the 7 s a shot should take
+2026-10-16T14:33:40.304Z  part 1  time: done in 0.1 s
+2026-10-16T14:33:40.305Z  part 1  sound: start
+2026-10-16T14:34:03.700Z  part 1    F:\Video Studio\runs\2026-10-16-tip-screens\part-1\audio\mix.wav: 36.75 s, -14.04 LUFS, true peak -1.1 dB, 1 music moods, 19 effects, music -16.7 dB under the voice
+2026-10-16T14:34:03.938Z  part 1  sound: done in 23.6 s
+2026-10-16T14:34:03.939Z  part 1  stills: start
+2026-10-16T14:34:04.007Z  part 1  bundle: start
+2026-10-16T14:34:33.737Z  part 1  bundle: done in 29.7 s
+2026-10-16T14:35:16.726Z  part 1    7 stills in runs\2026-10-16-tip-screens\part-1\stills\9x16
+2026-10-16T14:35:25.551Z  part 1    runs\2026-10-16-tip-screens\part-1\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-16T14:35:26.685Z  part 1    runs\2026-10-16-tip-screens\part-1\stills\sheet-9x16-1.png (7 shots, 2 rows)
+2026-10-16T14:35:26.686Z  part 1  stills: done in 82.7 s
+2026-10-16T14:37:08.482Z  part 1  part 1 of 3, 9:16: 2 scenes, 7 shots
+2026-10-16T14:37:08.484Z  part 1  time: start
+2026-10-16T14:37:08.490Z  part 1    7 shots over 36.8 s: shortest 3.6 s, longest 7.9 s
+2026-10-16T14:37:08.490Z  part 1    note: shot "s03" is 7.9 s long, a little over the 7 s a shot should take
+2026-10-16T14:37:08.490Z  part 1  time: done in 0.0 s
+2026-10-16T14:37:08.491Z  part 1  sound: start
+2026-10-16T14:37:08.502Z  part 1    mix is already up to date (the plan and the voice have not changed)
+2026-10-16T14:37:08.502Z  part 1  sound: done in 0.0 s
+2026-10-16T14:37:08.503Z  part 1  stills: start
+2026-10-16T14:37:08.529Z  part 1  bundle: start
+2026-10-16T14:37:27.797Z  part 1  bundle: done in 19.3 s
+2026-10-16T14:37:52.395Z  part 1    7 stills in runs\2026-10-16-tip-screens\part-1\stills\9x16
+2026-10-16T14:37:52.949Z  part 1    runs\2026-10-16-tip-screens\part-1\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-16T14:37:54.105Z  part 1    runs\2026-10-16-tip-screens\part-1\stills\sheet-9x16-1.png (7 shots, 2 rows)
+2026-10-16T14:37:54.106Z  part 1  stills: done in 45.6 s
+2026-10-16T14:38:42.639Z  part 1  part 1 of 3, 9:16: 2 scenes, 7 shots
+2026-10-16T14:38:42.641Z  part 1  stills: start
+2026-10-16T14:38:42.658Z  part 1  bundle: start
+2026-10-16T14:38:56.567Z  part 1  bundle: done in 13.9 s
+2026-10-16T14:39:13.188Z  part 1    7 stills in runs\2026-10-16-tip-screens\part-1\stills\9x16
+2026-10-16T14:39:13.642Z  part 1    runs\2026-10-16-tip-screens\part-1\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-16T14:39:14.684Z  part 1    runs\2026-10-16-tip-screens\part-1\stills\sheet-9x16-1.png (7 shots, 2 rows)
+2026-10-16T14:39:14.685Z  part 1  stills: done in 32.0 s
+2026-10-16T14:39:14.686Z  part 1  video: start
+2026-10-16T14:46:17.740Z  part 1    runs\2026-10-16-tip-screens\part-1\out\tip-screens-part-1-9x16-v1.mp4: 36.77 s of video, 1080x1920, in 421.9 s (11.48 s per video second)
+2026-10-16T14:46:17.746Z  part 1    runs\2026-10-16-tip-screens\part-1\out\tip-screens-part-1-9x16-v1.srt
+2026-10-16T14:46:17.759Z  part 1  video: done in 423.1 s
+2026-10-16T15:16:45.082Z  part 2  part 2 of 3, 9:16: 2 scenes, 7 shots
+2026-10-16T15:16:45.084Z  part 2  voice: start
+2026-10-16T15:18:02.126Z  part 2    voice.wav: 39.87 s, 107 words, timings from kokoro, -17.14 LUFS
+2026-10-16T15:18:02.126Z  part 2  voice: done in 77.0 s
+2026-10-16T15:18:02.127Z  part 2  time: start
+2026-10-16T15:18:02.257Z  part 2    7 shots over 39.9 s: shortest 4.6 s, longest 7.0 s
+2026-10-16T15:18:02.257Z  part 2  time: done in 0.1 s
+2026-10-16T15:18:02.258Z  part 2  sound: start
+2026-10-16T15:18:14.184Z  part 2    F:\Video Studio\runs\2026-10-16-tip-screens\part-2\audio\mix.wav: 39.87 s, -14.02 LUFS, true peak -1.1 dB, 1 music moods, 23 effects, music -16.7 dB under the voice
+2026-10-16T15:18:14.184Z  part 2  sound: done in 11.9 s
+2026-10-16T15:18:14.184Z  part 2  stills: start
+2026-10-16T15:18:14.207Z  part 2  bundle: start
+2026-10-16T15:18:31.788Z  part 2  bundle: done in 17.6 s
+2026-10-16T15:19:01.946Z  part 2    7 stills in runs\2026-10-16-tip-screens\part-2\stills\9x16
+2026-10-16T15:19:05.338Z  part 2    runs\2026-10-16-tip-screens\part-2\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-16T15:19:06.072Z  part 2    runs\2026-10-16-tip-screens\part-2\stills\sheet-9x16-1.png (7 shots, 2 rows)
+2026-10-16T15:19:06.073Z  part 2  stills: done in 51.9 s
+2026-10-16T15:19:21.949Z  part 2  part 2 of 3, 9:16: 2 scenes, 7 shots
+2026-10-16T15:19:21.951Z  part 2  video: start
+2026-10-16T15:19:21.970Z  part 2  bundle: start
+2026-10-16T15:19:30.648Z  part 2  bundle: done in 8.7 s
+2026-10-16T15:27:44.648Z  part 2    runs\2026-10-16-tip-screens\part-2\out\tip-screens-part-2-9x16-v1.mp4: 39.90 s of video, 1080x1920, in 491.0 s (12.31 s per video second)
+2026-10-16T15:27:44.654Z  part 2    runs\2026-10-16-tip-screens\part-2\out\tip-screens-part-2-9x16-v1.srt
+2026-10-16T15:27:44.673Z  part 2  video: done in 502.7 s
+2026-10-16T15:48:47.533Z  part 3  part 3 of 3, 9:16: 3 scenes, 7 shots
+2026-10-16T15:48:47.534Z  part 3  voice: start
+2026-10-16T15:49:47.421Z  part 3    voice.wav: 41.24 s, 106 words, timings from kokoro, -17.18 LUFS
+2026-10-16T15:49:47.421Z  part 3  voice: done in 59.9 s
+2026-10-16T15:49:47.421Z  part 3  time: start
+2026-10-16T15:49:47.434Z  part 3    7 shots over 41.2 s: shortest 4.8 s, longest 7.5 s
+2026-10-16T15:49:47.435Z  part 3    note: shot "s21" is 7.5 s long, a little over the 7 s a shot should take
+2026-10-16T15:49:47.435Z  part 3  time: done in 0.0 s
+2026-10-16T15:49:47.435Z  part 3  sound: start
+2026-10-16T15:50:00.704Z  part 3    F:\Video Studio\runs\2026-10-16-tip-screens\part-3\audio\mix.wav: 41.24 s, -14.02 LUFS, true peak -1.1 dB, 2 music moods, 17 effects, music -17.0 dB under the voice
+2026-10-16T15:50:00.704Z  part 3  sound: done in 13.3 s
+2026-10-16T15:50:00.705Z  part 3  stills: start
+2026-10-16T15:50:00.740Z  part 3  bundle: start
+2026-10-16T15:50:22.097Z  part 3  bundle: done in 21.4 s
+2026-10-16T15:50:38.058Z  part 3    7 stills in runs\2026-10-16-tip-screens\part-3\stills\9x16
+2026-10-16T15:50:38.590Z  part 3    runs\2026-10-16-tip-screens\part-3\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-16T15:50:39.409Z  part 3    runs\2026-10-16-tip-screens\part-3\stills\sheet-9x16-1.png (7 shots, 2 rows)
+2026-10-16T15:50:39.409Z  part 3  stills: done in 38.7 s
+2026-10-16T15:50:58.918Z  part 3  part 3 of 3, 9:16: 3 scenes, 7 shots
+2026-10-16T15:50:58.919Z  part 3  video: start
+2026-10-16T15:50:58.938Z  part 3  bundle: start
+2026-10-16T15:51:08.245Z  part 3  bundle: done in 9.3 s
+2026-10-16T15:58:33.600Z  part 3    runs\2026-10-16-tip-screens\part-3\out\tip-screens-part-3-9x16-v1.mp4: 41.27 s of video, 1080x1920, in 441.0 s (10.69 s per video second)
+2026-10-16T15:58:33.603Z  part 3    runs\2026-10-16-tip-screens\part-3\out\tip-screens-part-3-9x16-v1.srt
+2026-10-16T15:58:33.615Z  part 3  video: done in 454.7 s
+2026-10-16T16:21:52.175Z  output  9:16 full video:
+2026-10-16T16:22:40.211Z  output      F:\Video Studio\runs\2026-10-16-tip-screens\cuts\full\audio\mix.wav: 117.93 s, -14.04 LUFS, true peak -1.09 dB, 3 music moods, 59 effects, music -16.8 dB under the voice
+2026-10-16T16:26:38.439Z  output    runs\2026-10-16-tip-screens\out\tip-screens-9x16-v1.mp4: 117.93 s, 1080x1920
+2026-10-16T16:26:38.440Z  output      ok   The file plays: 1080x1920, 30 pictures a second, 117.9 s, picture and sound both there; played through from start to finish
+2026-10-16T16:26:38.441Z  output      ok   It is as long as its parts together: 117.9 s; its 3 pieces add up to 117.9 s
+2026-10-16T16:26:38.441Z  output      ok   Its pictures are the parts that passed: every frame against tip-screens-part-1-9x16-v1.mp4 and tip-screens-part-2-9x16-v1.mp4 and tip-screens-part-3-9x16-v1.mp4 (the strongest difference is 1 of 255; over 16 would be a different picture)
+2026-10-16T16:26:38.441Z  output      ok   Its sound is the mix made for the whole video: second for second (what is left over is 40 dB under it at most)
+2026-10-16T16:26:38.442Z  output      ok   There is no dead silence: the sound never drops out; the longest pause between words is 1.8 s
+2026-10-16T16:26:38.442Z  output      ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.1 dB (the limit is -1)
+2026-10-16T16:26:38.443Z  output      ok   Nothing drowns the words: 59 sound effects, the loudest of those over words 18 dB under the voice; the music sits 16.8 dB under the voice while someone speaks
+2026-10-16T16:26:38.443Z  output      FIX  Every join and the cover hold up: a strip of frames across each of the 2 joins between parts, and the cover picture
+2026-10-16T16:26:38.443Z  output            problem: the joins and the cover have not been looked at yet
+2026-10-16T16:26:38.444Z  output      to look at: runs\2026-10-16-tip-screens\out\look\tip-screens-9x16-v1 (each join) and runs\2026-10-16-tip-screens\out\tip-screens-9x16-v1-cover-side.jpg; then write runs\2026-10-16-tip-screens\out\tip-screens-9x16-v1.look.json
+2026-10-16T16:26:38.446Z  output  runs\2026-10-16-tip-screens\delivery.md

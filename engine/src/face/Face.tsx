@@ -91,10 +91,14 @@ function RoundEye({
   const cy = EYE_Y;
   const top = cy - h / 2;
   const bottom = cy + h / 2;
-  const lid = eyes.upperLid + (1 - eyes.upperLid) * blink;
+  // One eye may be narrowed more than the other (a tell).
+  const rest = Math.min(1, eyes.upperLid + (slot.side === 1 ? (eyes.squint ?? 0) : 0));
+  const lid = rest + (1 - rest) * blink;
 
   if (eyes.squeeze) return <SqueezedEye slot={slot} />;
-  if (eyes.closedArc) {
+  // A wink shuts one eye the way a laugh shuts both.
+  const winking = slot.side === 1 && (eyes.wink ?? 0) > 0.5;
+  if (eyes.closedArc || winking) {
     return (
       <path
         d={`M ${cx - w * 0.42} ${cy + h * 0.1} Q ${cx} ${cy - h * 0.42} ${cx + w * 0.42} ${cy + h * 0.1}`}

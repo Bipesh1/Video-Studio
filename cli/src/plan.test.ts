@@ -459,8 +459,82 @@ describe('things worth a second look', () => {
     expect(found).toContain('the library has no expression called "baffled"');
   });
 
-  it('has nothing to point out in the sample plan', () => {
-    expect(checkPlan(plan(), world).notes).toEqual([]);
+  it('has nothing to point out in the sample plan but its faces, planned before faces were held', () => {
+    const found = checkPlan(plan(), world).notes;
+    const aboutFaces = (note: string) => /changes face|leap of feeling/.test(note);
+    expect(found.filter((note) => !aboutFaces(note))).toEqual([]);
+    expect(found.some(aboutFaces)).toBe(true);
+  });
+});
+
+describe('faces that hold (Biku, 2026-10-12)', () => {
+  /** The sample plan with one person's faces set shot by shot, in the first scene they are in. */
+  const withFaces = (faces: Array<string | [string, number]>) =>
+    plan((sb) => {
+      const scene = sb.scenes[0];
+      const who = scene?.shots[0]?.actors[0]?.character;
+      if (!scene || !who) throw new Error('the sample plan has nobody in its first shot');
+      let i = 0;
+      for (const sc of sb.scenes) {
+        for (const shot of sc.shots) {
+          for (const actor of shot.actors) {
+            actor.then = [];
+            delete actor.strength;
+            if (actor.character !== who) {
+              actor.expression = 'neutral';
+              continue;
+            }
+            const face = faces[Math.min(i, faces.length - 1)] ?? 'neutral';
+            i += 1;
+            if (typeof face === 'string') actor.expression = face;
+            else [actor.expression, actor.strength] = face;
+          }
+        }
+      }
+    });
+  const aboutFaces = (sb: Storyboard) =>
+    checkPlan(sb, world).notes.filter((n) => /changes face|leap of feeling/.test(n));
+
+  it('says nothing of a face that is held', () => {
+    expect(aboutFaces(withFaces(['happy']))).toEqual([]);
+  });
+
+  it('points out a face that changes on the cut, and a leap of feeling', () => {
+    const found = aboutFaces(withFaces(['happy', 'dread'])).join(' | ');
+    expect(found).toContain('changes face on the cut (dread, after happy)');
+    expect(found).toContain('goes from happy straight to dread: a leap of feeling');
+    // A step of feeling is not a leap, and the same feeling growing is a small step too.
+    const stepped = aboutFaces(withFaces(['thinking', ['dread', 0.5]])).join(' | ');
+    expect(stepped).toContain('changes face on the cut (dread at 50%, after thinking)');
+    expect(stepped).not.toContain('leap of feeling');
+  });
+
+  it('points out a face that changes too often', () => {
+    const found = aboutFaces(
+      withFaces(['happy', 'surprised', 'happy', 'suspicious', 'afraid', 'sad', 'happy', 'sad']),
+    ).join(' | ');
+    expect(found).toContain('changes face 3 times in 4 shots by shot');
+    expect(found).toContain('hold a face longer');
+    // Two changes close together are not yet too many.
+    expect(aboutFaces(withFaces(['happy', 'thinking', 'suspicious'])).join(' | ')).not.toContain(
+      'hold a face longer',
+    );
+  });
+});
+
+describe('one story, told in order (a video with a fixed cast)', () => {
+  it('points out a new face after the first half minute, and a visit somewhere else', () => {
+    const found = notes(
+      plan((sb) => {
+        sb.series = 'game-theory';
+      }),
+    );
+    expect(found).toContain('a new face makes a viewer ask where they came from');
+    expect(found).toContain('one story in one place is easier to follow');
+  });
+
+  it('says nothing of it for a story with no fixed cast, which may travel and meet people', () => {
+    expect(notes(plan())).not.toContain('a new face');
   });
 });
 
@@ -508,6 +582,21 @@ describe('the shot list Biku reads', () => {
     );
     expect(describeShot(shotOf(sb, 's2b'), sb, world)).toBe('Close-up. Tomas looks down, sad.');
     expect(describeShot(shotOf(sb, 's4a'), sb, world).startsWith('Fade in. Wide shot.')).toBe(true);
+  });
+
+  it("ends with each person's line of feeling, every change with its shot and its words", () => {
+    const page = storyboardPage(sb, world);
+    const feelings = page.slice(page.indexOf('## How each person feels'));
+    expect(feelings.length).toBeGreaterThan(100);
+    for (const member of sb.cast) {
+      const inIt = sb.scenes.some((s) =>
+        s.shots.some((x) => x.actors.some((a) => a.character === member.id)),
+      );
+      if (inIt) expect(feelings).toContain(`**${member.name}**`);
+    }
+    // A change names its shot and what is said then; the first face of all has no cause.
+    expect(feelings).toMatch(/→ [a-z ,]+ \(s\d+[a-z0-9]*, "[^"]+"\)/);
+    expect(feelings).not.toContain('—');
   });
 
   it('lists every shot under its part and scene, with the words and the sound', () => {

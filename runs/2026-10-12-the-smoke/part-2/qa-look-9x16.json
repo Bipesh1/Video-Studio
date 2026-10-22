@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "video": "the-smoke-part-2-9x16-preview-v2.mp4",
+  "stills": {
+    "s4a": "ok",
+    "s4b": "ok",
+    "s4c": "ok",
+    "s4d": "ok",
+    "s4e": "ok",
+    "s4f": "ok",
+    "s4g": "ok",
+    "s5a": "ok",
+    "s5b": "ok",
+    "s5c": "ok",
+    "s5d": "ok",
+    "s5e": "ok",
+    "s5f": "ok",
+    "s5g": "ok"
+  },
+  "strips": {
+    "cut-s4a-s4b": "ok",
+    "cut-s4b-s4c": "ok",
+    "cut-s4c-s4d": "ok",
+    "cut-s4d-s4e": "ok",
+    "cut-s4e-s4f": "ok",
+    "cut-s4f-s4g": "ok",
+    "cut-s4g-s5a": "ok",
+    "cut-s5a-s5b": "ok",
+    "cut-s5b-s5c": "ok",
+    "cut-s5c-s5d": "ok",
+    "cut-s5d-s5e": "ok",
+    "cut-s5e-s5f": "ok",
+    "cut-s5f-s5g": "ok",
+    "s4a-move-1": "ok",
+    "s4e-move-1": "ok",
+    "s4f-move-1": "ok",
+    "s4g-move-1": "ok",
+    "s5a-move-1": "ok",
+    "s5d-move-1": "ok",
+    "s5f-move-1": "ok",
+    "s5g-move-1": "ok",
+    "s5g-move-2": "ok"
+  },
+  "playbook": "ok",
+  "fixed": [
+    "The smoke at its highest covered the mouth of anyone sitting. Its two upper stages are lower now: just over the table top, and just under the chin.",
+    "Six close shots ran one after another. A wide shot in the middle shows the smoke at the table with nobody but him stirring.",
+    "In the tipped shot the picture closed in so far that half the Copycat's head was off the edge as he sat back down. The tip is gentler and all of him is in."
+  ],
+  "notes": [
+    "The Cheat does not lean back and cross his arms, or tilt his head: there is no seated pose for either. He holds one calm face and the coin throughout.",
+    "The Copycat's fear is the face with clenched teeth and narrowed eyes, from 'My eyes sting' until the choice. It reads as smarting eyes and fright together.",
+    "When the Trainer straightens his tie, his hand comes up under his chin; in a wide shot it can read as a hand on the chin.",
+    "The long quiet after 'What does he do?' is 1.8 seconds with the music still under it, as Biku asked for music through the whole video.",
+    "Claude cannot hear: the boom on the tipped shot, the heartbeat under the eyes and the creak as he stands are placed by measurement and need Biku's ears."
+  ]
+}

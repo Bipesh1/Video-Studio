@@ -1,0 +1,216 @@
+2026-10-18T16:15:30.443Z  part 1  part 1 of 3, 9:16: 2 scenes, 6 shots
+2026-10-18T16:15:30.444Z  part 1  voice: start
+2026-10-18T16:17:09.965Z  part 1    voice.wav: 24.00 s, 69 words, timings from kokoro, -17.16 LUFS
+2026-10-18T16:17:09.966Z  part 1  voice: done in 99.5 s
+2026-10-18T16:17:09.967Z  part 1  time: start
+2026-10-18T16:17:10.001Z  part 1    6 shots over 24.0 s: shortest 3.3 s, longest 4.4 s
+2026-10-18T16:17:10.002Z  part 1  time: done in 0.0 s
+2026-10-18T16:17:10.002Z  part 1  sound: start
+2026-10-18T16:17:25.762Z  part 1    F:\Video Studio\runs\2026-10-18-sunset-already-gone\part-1\audio\mix.wav: 24.00 s, -14.02 LUFS, true peak -1.19 dB, 1 music moods, 9 effects, music -16.8 dB under the voice
+2026-10-18T16:17:25.762Z  part 1  sound: done in 15.8 s
+2026-10-18T16:17:25.768Z  part 1  stills: start
+2026-10-18T16:17:25.786Z  part 1  bundle: start
+2026-10-18T16:18:43.970Z  part 1  bundle: done in 78.1 s
+2026-10-18T16:19:29.573Z  part 1    6 stills in runs\2026-10-18-sunset-already-gone\part-1\stills\9x16
+2026-10-18T16:19:30.192Z  part 1    runs\2026-10-18-sunset-already-gone\part-1\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-18T16:19:30.973Z  part 1    runs\2026-10-18-sunset-already-gone\part-1\stills\sheet-9x16-1.png (6 shots, 2 rows)
+2026-10-18T16:19:30.973Z  part 1  stills: done in 125.2 s
+2026-10-18T16:20:40.162Z  part 1  part 1 of 3, 9:16: 2 scenes, 6 shots
+2026-10-18T16:20:40.166Z  part 1  stills: start
+2026-10-18T16:20:40.183Z  part 1  bundle: start
+2026-10-18T16:20:58.183Z  part 1  bundle: done in 18.0 s
+2026-10-18T16:21:11.434Z  part 1    6 stills in runs\2026-10-18-sunset-already-gone\part-1\stills\9x16
+2026-10-18T16:21:11.875Z  part 1    runs\2026-10-18-sunset-already-gone\part-1\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-18T16:21:12.698Z  part 1    runs\2026-10-18-sunset-already-gone\part-1\stills\sheet-9x16-1.png (6 shots, 2 rows)
+2026-10-18T16:21:12.699Z  part 1  stills: done in 32.5 s
+2026-10-18T16:21:26.652Z  part 1  part 1 of 3, 9:16: 2 scenes, 6 shots
+2026-10-18T16:21:26.653Z  part 1  preview: start
+2026-10-18T16:21:26.669Z  part 1  bundle: start
+2026-10-18T16:21:39.517Z  part 1  bundle: done in 12.8 s
+2026-10-18T16:24:31.695Z  part 1    runs\2026-10-18-sunset-already-gone\part-1\preview\sunset-already-gone-part-1-9x16-preview-v1.mp4: 24.00 s of video, 540x960, in 168.3 s (7.01 s per video second)
+2026-10-18T16:24:31.699Z  part 1    runs\2026-10-18-sunset-already-gone\part-1\preview\sunset-already-gone-part-1-9x16-preview-v1.srt
+2026-10-18T16:24:31.710Z  part 1  preview: done in 185.1 s
+2026-10-18T16:24:59.255Z  part 1  part 1 of 3, 9:16: 2 scenes, 6 shots
+2026-10-18T16:24:59.257Z  part 1  stills: start
+2026-10-18T16:24:59.271Z  part 1  bundle: start
+2026-10-18T16:25:15.686Z  part 1  bundle: done in 16.4 s
+2026-10-18T16:25:28.778Z  part 1    6 stills in runs\2026-10-18-sunset-already-gone\part-1\stills\9x16
+2026-10-18T16:25:29.146Z  part 1    runs\2026-10-18-sunset-already-gone\part-1\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-18T16:25:29.904Z  part 1    runs\2026-10-18-sunset-already-gone\part-1\stills\sheet-9x16-1.png (6 shots, 2 rows)
+2026-10-18T16:25:29.904Z  part 1  stills: done in 30.6 s
+2026-10-18T16:25:29.905Z  part 1  preview: start
+2026-10-18T16:28:11.331Z  part 1    runs\2026-10-18-sunset-already-gone\part-1\preview\sunset-already-gone-part-1-9x16-preview-v2.mp4: 24.00 s of video, 540x960, in 160.4 s (6.69 s per video second)
+2026-10-18T16:28:11.334Z  part 1    runs\2026-10-18-sunset-already-gone\part-1\preview\sunset-already-gone-part-1-9x16-preview-v2.srt
+2026-10-18T16:28:11.343Z  part 1  preview: done in 161.4 s
+2026-10-18T16:28:40.360Z  part 1  part 1 of 3, 9:16: 2 scenes, 6 shots
+2026-10-18T16:28:40.362Z  part 1  video: start
+2026-10-18T16:28:40.378Z  part 1  bundle: start
+2026-10-18T16:28:53.164Z  part 1  bundle: done in 12.8 s
+2026-10-18T16:33:34.370Z  part 1    runs\2026-10-18-sunset-already-gone\part-1\out\sunset-already-gone-part-1-9x16-v1.mp4: 24.00 s of video, 1080x1920, in 277.7 s (11.57 s per video second)
+2026-10-18T16:33:34.385Z  part 1    runs\2026-10-18-sunset-already-gone\part-1\out\sunset-already-gone-part-1-9x16-v1.srt
+2026-10-18T16:33:34.407Z  part 1  video: done in 294.0 s
+2026-10-18T16:38:53.247Z  part 2  part 2 of 3, 9:16: 1 scenes, 6 shots
+2026-10-18T16:38:53.249Z  part 2  voice: start
+2026-10-18T16:40:26.582Z  part 2    voice.wav: 30.04 s, 79 words, timings from kokoro, -17.11 LUFS
+2026-10-18T16:40:26.583Z  part 2  voice: done in 93.3 s
+2026-10-18T16:40:26.583Z  part 2  time: start
+2026-10-18T16:40:26.598Z  part 2    6 shots over 30.0 s: shortest 3.0 s, longest 7.3 s
+2026-10-18T16:40:26.599Z  part 2    note: shot "s12" is 7.3 s long, a little over the 7 s a shot should take
+2026-10-18T16:40:26.599Z  part 2  time: done in 0.0 s
+2026-10-18T16:40:26.599Z  part 2  sound: start
+2026-10-18T16:40:41.039Z  part 2    F:\Video Studio\runs\2026-10-18-sunset-already-gone\part-2\audio\mix.wav: 30.04 s, -14.02 LUFS, true peak -1.35 dB, 1 music moods, 12 effects, music -16.7 dB under the voice
+2026-10-18T16:40:41.040Z  part 2  sound: done in 14.4 s
+2026-10-18T16:40:41.040Z  part 2  stills: start
+2026-10-18T16:40:41.058Z  part 2  bundle: start
+2026-10-18T16:41:07.869Z  part 2  bundle: done in 26.8 s
+2026-10-18T16:41:22.868Z  part 2    6 stills in runs\2026-10-18-sunset-already-gone\part-2\stills\9x16
+2026-10-18T16:41:23.065Z  part 2    runs\2026-10-18-sunset-already-gone\part-2\stills\colours-9x16.png (the first shot of each of 1 scenes)
+2026-10-18T16:41:23.718Z  part 2    runs\2026-10-18-sunset-already-gone\part-2\stills\sheet-9x16-1.png (6 shots, 2 rows)
+2026-10-18T16:41:23.718Z  part 2  stills: done in 42.7 s
+2026-10-18T16:42:05.931Z  part 2  part 2 of 3, 9:16: 1 scenes, 6 shots
+2026-10-18T16:42:05.934Z  part 2  stills: start
+2026-10-18T16:42:05.950Z  part 2  bundle: start
+2026-10-18T16:42:25.486Z  part 2  bundle: done in 19.5 s
+2026-10-18T16:42:38.531Z  part 2    6 stills in runs\2026-10-18-sunset-already-gone\part-2\stills\9x16
+2026-10-18T16:42:38.804Z  part 2    runs\2026-10-18-sunset-already-gone\part-2\stills\colours-9x16.png (the first shot of each of 1 scenes)
+2026-10-18T16:42:39.577Z  part 2    runs\2026-10-18-sunset-already-gone\part-2\stills\sheet-9x16-1.png (6 shots, 2 rows)
+2026-10-18T16:42:39.578Z  part 2  stills: done in 33.6 s
+2026-10-18T16:42:51.631Z  part 2  part 2 of 3, 9:16: 1 scenes, 6 shots
+2026-10-18T16:42:51.633Z  part 2  preview: start
+2026-10-18T16:42:51.652Z  part 2  bundle: start
+2026-10-18T16:43:01.881Z  part 2  bundle: done in 10.2 s
+2026-10-18T16:46:20.174Z  part 2    runs\2026-10-18-sunset-already-gone\part-2\preview\sunset-already-gone-part-2-9x16-preview-v1.mp4: 30.07 s of video, 540x960, in 194.5 s (6.47 s per video second)
+2026-10-18T16:46:20.182Z  part 2    runs\2026-10-18-sunset-already-gone\part-2\preview\sunset-already-gone-part-2-9x16-preview-v1.srt
+2026-10-18T16:46:20.199Z  part 2  preview: done in 208.6 s
+2026-10-19T05:31:32.148Z  part 1  part 1 of 3, 9:16: 2 scenes, 6 shots
+2026-10-19T05:31:32.169Z  part 1  stills: start
+2026-10-19T05:31:32.360Z  part 1  bundle: start
+2026-10-19T05:31:51.978Z  part 1  bundle: done in 19.6 s
+2026-10-19T05:33:09.212Z  part 1    6 stills in runs\2026-10-18-sunset-already-gone\part-1\stills\9x16
+2026-10-19T05:33:09.687Z  part 1    runs\2026-10-18-sunset-already-gone\part-1\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-19T05:33:10.626Z  part 1    runs\2026-10-18-sunset-already-gone\part-1\stills\sheet-9x16-1.png (6 shots, 2 rows)
+2026-10-19T05:33:10.626Z  part 1  stills: done in 98.5 s
+2026-10-19T05:33:10.627Z  part 1  preview: start
+2026-10-19T05:37:57.700Z  part 1    runs\2026-10-18-sunset-already-gone\part-1\preview\sunset-already-gone-part-1-9x16-preview-v3.mp4: 24.00 s of video, 540x960, in 285.7 s (11.90 s per video second)
+2026-10-19T05:37:57.791Z  part 1    runs\2026-10-18-sunset-already-gone\part-1\preview\sunset-already-gone-part-1-9x16-preview-v3.srt
+2026-10-19T05:37:58.106Z  part 1  preview: done in 287.5 s
+2026-10-19T05:39:13.012Z  part 1  part 1 of 3, 9:16: 2 scenes, 6 shots
+2026-10-19T05:39:13.014Z  part 1  video: start
+2026-10-19T05:39:13.025Z  part 1  bundle: start
+2026-10-19T05:39:47.787Z  part 1  bundle: done in 34.8 s
+2026-10-19T05:46:01.640Z  part 1    runs\2026-10-18-sunset-already-gone\part-1\out\sunset-already-gone-part-1-9x16-v2.mp4: 24.00 s of video, 1080x1920, in 366.8 s (15.28 s per video second)
+2026-10-19T05:46:01.645Z  part 1    runs\2026-10-18-sunset-already-gone\part-1\out\sunset-already-gone-part-1-9x16-v2.srt
+2026-10-19T05:46:01.841Z  part 1  video: done in 408.8 s
+2026-10-19T05:46:47.167Z  part 2  part 2 of 3, 9:16: 1 scenes, 6 shots
+2026-10-19T05:46:47.168Z  part 2  stills: start
+2026-10-19T05:46:47.372Z  part 2  bundle: start
+2026-10-19T05:47:08.538Z  part 2  bundle: done in 21.2 s
+2026-10-19T05:47:20.787Z  part 2    6 stills in runs\2026-10-18-sunset-already-gone\part-2\stills\9x16
+2026-10-19T05:47:21.049Z  part 2    runs\2026-10-18-sunset-already-gone\part-2\stills\colours-9x16.png (the first shot of each of 1 scenes)
+2026-10-19T05:47:21.971Z  part 2    runs\2026-10-18-sunset-already-gone\part-2\stills\sheet-9x16-1.png (6 shots, 2 rows)
+2026-10-19T05:47:21.971Z  part 2  stills: done in 34.8 s
+2026-10-19T05:47:21.971Z  part 2  preview: start
+2026-10-19T05:51:45.869Z  part 2    runs\2026-10-18-sunset-already-gone\part-2\preview\sunset-already-gone-part-2-9x16-preview-v2.mp4: 30.07 s of video, 540x960, in 262.9 s (8.74 s per video second)
+2026-10-19T05:51:46.465Z  part 2    runs\2026-10-18-sunset-already-gone\part-2\preview\sunset-already-gone-part-2-9x16-preview-v2.srt
+2026-10-19T05:51:46.877Z  part 2  preview: done in 264.9 s
+2026-10-19T05:53:29.655Z  part 2  part 2 of 3, 9:16: 1 scenes, 6 shots
+2026-10-19T05:53:29.657Z  part 2  stills: start
+2026-10-19T05:53:29.723Z  part 2  bundle: start
+2026-10-19T05:53:54.690Z  part 2  bundle: done in 25.0 s
+2026-10-19T05:54:24.091Z  part 2    6 stills in runs\2026-10-18-sunset-already-gone\part-2\stills\9x16
+2026-10-19T05:54:24.526Z  part 2    runs\2026-10-18-sunset-already-gone\part-2\stills\colours-9x16.png (the first shot of each of 1 scenes)
+2026-10-19T05:54:25.342Z  part 2    runs\2026-10-18-sunset-already-gone\part-2\stills\sheet-9x16-1.png (6 shots, 2 rows)
+2026-10-19T05:54:25.343Z  part 2  stills: done in 55.7 s
+2026-10-19T05:54:25.343Z  part 2  preview: start
+2026-10-19T05:58:47.060Z  part 2    runs\2026-10-18-sunset-already-gone\part-2\preview\sunset-already-gone-part-2-9x16-preview-v3.mp4: 30.07 s of video, 540x960, in 260.7 s (8.67 s per video second)
+2026-10-19T05:58:47.065Z  part 2    runs\2026-10-18-sunset-already-gone\part-2\preview\sunset-already-gone-part-2-9x16-preview-v3.srt
+2026-10-19T05:58:47.118Z  part 2  preview: done in 261.8 s
+2026-10-19T05:59:42.947Z  part 2  part 2 of 3, 9:16: 1 scenes, 6 shots
+2026-10-19T05:59:42.948Z  part 2  video: start
+2026-10-19T05:59:42.974Z  part 2  bundle: start
+2026-10-19T06:00:02.461Z  part 2  bundle: done in 19.5 s
+2026-10-19T06:06:16.425Z  part 2    runs\2026-10-18-sunset-already-gone\part-2\out\sunset-already-gone-part-2-9x16-v1.mp4: 30.07 s of video, 1080x1920, in 371.0 s (12.34 s per video second)
+2026-10-19T06:06:16.430Z  part 2    runs\2026-10-18-sunset-already-gone\part-2\out\sunset-already-gone-part-2-9x16-v1.srt
+2026-10-19T06:06:16.706Z  part 2  video: done in 393.8 s
+2026-10-19T07:26:10.678Z  part 3  part 3 of 3, 9:16: 3 scenes, 11 shots
+2026-10-19T07:26:10.680Z  part 3  voice: start
+2026-10-19T07:29:09.878Z  part 3    voice.wav: 55.63 s, 148 words, timings from kokoro, -17.12 LUFS
+2026-10-19T07:29:09.884Z  part 3  voice: done in 179.2 s
+2026-10-19T07:29:09.884Z  part 3  time: start
+2026-10-19T07:29:09.898Z  part 3    11 shots over 55.6 s: shortest 4.1 s, longest 6.8 s
+2026-10-19T07:29:09.913Z  part 3  time: done in 0.0 s
+2026-10-19T07:29:09.913Z  part 3  sound: start
+2026-10-19T07:29:29.045Z  part 3    F:\Video Studio\runs\2026-10-18-sunset-already-gone\part-3\audio\mix.wav: 55.63 s, -14.02 LUFS, true peak -1.1 dB, 3 music moods, 17 effects, music -16.8 dB under the voice
+2026-10-19T07:29:29.045Z  part 3  sound: done in 19.1 s
+2026-10-19T07:29:29.045Z  part 3  stills: start
+2026-10-19T07:29:29.093Z  part 3  bundle: start
+2026-10-19T07:29:51.421Z  part 3  bundle: done in 22.3 s
+2026-10-19T07:30:27.364Z  part 3    11 stills in runs\2026-10-18-sunset-already-gone\part-3\stills\9x16
+2026-10-19T07:30:27.954Z  part 3    runs\2026-10-18-sunset-already-gone\part-3\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-19T07:30:29.322Z  part 3    runs\2026-10-18-sunset-already-gone\part-3\stills\sheet-9x16-1.png (11 shots, 3 rows)
+2026-10-19T07:30:29.323Z  part 3  stills: done in 60.3 s
+2026-10-19T07:31:17.798Z  part 3  part 3 of 3, 9:16: 3 scenes, 11 shots
+2026-10-19T07:31:17.800Z  part 3  stills: start
+2026-10-19T07:31:17.822Z  part 3  bundle: start
+2026-10-19T07:31:35.556Z  part 3  bundle: done in 17.7 s
+2026-10-19T07:31:55.820Z  part 3    11 stills in runs\2026-10-18-sunset-already-gone\part-3\stills\9x16
+2026-10-19T07:31:56.211Z  part 3    runs\2026-10-18-sunset-already-gone\part-3\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-19T07:31:57.707Z  part 3    runs\2026-10-18-sunset-already-gone\part-3\stills\sheet-9x16-1.png (11 shots, 3 rows)
+2026-10-19T07:31:57.707Z  part 3  stills: done in 39.9 s
+2026-10-19T07:31:57.708Z  part 3  preview: start
+2026-10-19T07:40:01.174Z  part 3    runs\2026-10-18-sunset-already-gone\part-3\preview\sunset-already-gone-part-3-9x16-preview-v1.mp4: 55.63 s of video, 540x960, in 482.3 s (8.67 s per video second)
+2026-10-19T07:40:01.178Z  part 3    runs\2026-10-18-sunset-already-gone\part-3\preview\sunset-already-gone-part-3-9x16-preview-v1.srt
+2026-10-19T07:40:01.238Z  part 3  preview: done in 483.5 s
+2026-10-19T07:43:20.422Z  part 3  part 3 of 3, 9:16: 3 scenes, 11 shots
+2026-10-19T07:43:20.424Z  part 3  stills: start
+2026-10-19T07:43:20.449Z  part 3  bundle: start
+2026-10-19T07:43:37.166Z  part 3  bundle: done in 16.7 s
+2026-10-19T07:44:00.303Z  part 3    11 stills in runs\2026-10-18-sunset-already-gone\part-3\stills\9x16
+2026-10-19T07:44:00.781Z  part 3    runs\2026-10-18-sunset-already-gone\part-3\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-19T07:44:02.265Z  part 3    runs\2026-10-18-sunset-already-gone\part-3\stills\sheet-9x16-1.png (11 shots, 3 rows)
+2026-10-19T07:44:02.266Z  part 3  stills: done in 41.8 s
+2026-10-19T07:44:02.266Z  part 3  preview: start
+2026-10-19T07:52:19.861Z  part 3    runs\2026-10-18-sunset-already-gone\part-3\preview\sunset-already-gone-part-3-9x16-preview-v2.mp4: 55.63 s of video, 540x960, in 496.6 s (8.93 s per video second)
+2026-10-19T07:52:19.866Z  part 3    runs\2026-10-18-sunset-already-gone\part-3\preview\sunset-already-gone-part-3-9x16-preview-v2.srt
+2026-10-19T07:52:19.923Z  part 3  preview: done in 497.7 s
+2026-10-19T07:53:47.833Z  part 3  part 3 of 3, 9:16: 3 scenes, 11 shots
+2026-10-19T07:53:47.834Z  part 3  clip: start
+2026-10-19T07:53:47.861Z  part 3  bundle: start
+2026-10-19T07:54:03.695Z  part 3  bundle: done in 15.8 s
+2026-10-19T07:54:51.699Z  part 3    runs\2026-10-18-sunset-already-gone\part-3\clips\sunset-already-gone-part-3-9x16-2-5s-v1.mp4: seconds 2 to 5, in 45.6 s
+2026-10-19T07:54:51.701Z  part 3  clip: done in 63.9 s
+2026-10-19T07:55:37.431Z  part 3  part 3 of 3, 9:16: 3 scenes, 11 shots
+2026-10-19T07:55:37.433Z  part 3  clip: start
+2026-10-19T07:55:37.461Z  part 3  bundle: start
+2026-10-19T07:55:54.531Z  part 3  bundle: done in 17.1 s
+2026-10-19T07:56:56.723Z  part 3    runs\2026-10-18-sunset-already-gone\part-3\clips\sunset-already-gone-part-3-9x16-1-5s-v1.mp4: seconds 1 to 5, in 58.1 s
+2026-10-19T07:56:56.725Z  part 3  clip: done in 79.3 s
+2026-10-19T07:57:19.807Z  part 3  part 3 of 3, 9:16: 3 scenes, 11 shots
+2026-10-19T07:57:19.810Z  part 3  stills: start
+2026-10-19T07:57:19.836Z  part 3  bundle: start
+2026-10-19T07:57:36.862Z  part 3  bundle: done in 17.0 s
+2026-10-19T07:58:01.235Z  part 3    11 stills in runs\2026-10-18-sunset-already-gone\part-3\stills\9x16
+2026-10-19T07:58:01.695Z  part 3    runs\2026-10-18-sunset-already-gone\part-3\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-19T07:58:02.988Z  part 3    runs\2026-10-18-sunset-already-gone\part-3\stills\sheet-9x16-1.png (11 shots, 3 rows)
+2026-10-19T07:58:02.989Z  part 3  stills: done in 43.2 s
+2026-10-19T07:58:02.989Z  part 3  video: start
+2026-10-19T08:12:31.223Z  part 3    runs\2026-10-18-sunset-already-gone\part-3\out\sunset-already-gone-part-3-9x16-v1.mp4: 55.63 s of video, 1080x1920, in 867.3 s (15.59 s per video second)
+2026-10-19T08:12:31.250Z  part 3    runs\2026-10-18-sunset-already-gone\part-3\out\sunset-already-gone-part-3-9x16-v1.srt
+2026-10-19T08:12:31.529Z  part 3  video: done in 868.5 s
+2026-10-19T09:26:49.388Z  output  9:16 full video:
+2026-10-19T09:27:53.279Z  output      F:\Video Studio\runs\2026-10-18-sunset-already-gone\cuts\full\audio\mix.wav: 109.70 s, -14.04 LUFS, true peak -1.1 dB, 5 music moods, 38 effects, music -16.8 dB under the voice
+2026-10-19T09:33:14.694Z  output    runs\2026-10-18-sunset-already-gone\out\sunset-already-gone-9x16-v1.mp4: 109.70 s, 1080x1920
+2026-10-19T09:33:14.739Z  output      ok   The file plays: 1080x1920, 30 pictures a second, 109.7 s, picture and sound both there; played through from start to finish
+2026-10-19T09:33:14.739Z  output      ok   It is as long as its parts together: 109.7 s; its 3 pieces add up to 109.7 s
+2026-10-19T09:33:14.739Z  output      ok   Its pictures are the parts that passed: every frame against sunset-already-gone-part-1-9x16-v2.mp4 and sunset-already-gone-part-2-9x16-v1.mp4 and sunset-already-gone-part-3-9x16-v1.mp4 (the strongest difference is 1 of 255; over 16 would be a different picture)
+2026-10-19T09:33:14.787Z  output      ok   Its sound is the mix made for the whole video: second for second (what is left over is 38 dB under it at most)
+2026-10-19T09:33:14.788Z  output      ok   There is no dead silence: the sound never drops out; the longest pause between words is 2.3 s
+2026-10-19T09:33:14.788Z  output      ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.1 dB (the limit is -1)
+2026-10-19T09:33:14.788Z  output      ok   Nothing drowns the words: 38 sound effects, the loudest of those over words 18 dB under the voice; the music sits 16.8 dB under the voice while someone speaks
+2026-10-19T09:33:14.789Z  output      FIX  Every join and the cover hold up: a strip of frames across each of the 2 joins between parts, and the cover picture
+2026-10-19T09:33:14.789Z  output            problem: the joins and the cover have not been looked at yet
+2026-10-19T09:33:14.789Z  output      to look at: runs\2026-10-18-sunset-already-gone\out\look\sunset-already-gone-9x16-v1 (each join) and runs\2026-10-18-sunset-already-gone\out\sunset-already-gone-9x16-v1-cover-side.jpg; then write runs\2026-10-18-sunset-already-gone\out\sunset-already-gone-9x16-v1.look.json
+2026-10-19T09:33:14.792Z  output  runs\2026-10-18-sunset-already-gone\delivery.md
+2026-10-19T09:33:56.556Z  output  9:16 full video:
+2026-10-19T09:33:57.322Z  output    runs\2026-10-18-sunset-already-gone\out\sunset-already-gone-9x16-v1.mp4: already made from these parts
+2026-10-19T09:33:57.454Z  output  runs\2026-10-18-sunset-already-gone\delivery.md

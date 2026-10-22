@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "id": "2026-10-14-asked-out",
+  "created": "2026-10-14",
+  "mode": "as-is",
+  "format": "dilemma",
+  "brand": "dilemma-table",
+  "voice": "leak",
+  "sizes": [
+    "9:16"
+  ],
+  "vertical": "full",
+  "masterPrompt": "prompts/dilemma.md"
+}

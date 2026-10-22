@@ -1,0 +1,801 @@
+{
+  "version": 1,
+  "thumbnails": [
+    {
+      "id": "ask-or-wait-party-tall",
+      "size": "9:16",
+      "why": "The house party from the video, at night: a warm light on the couple, the one who waited in the dark. Tall, for Reels and Shorts.",
+      "layers": [
+        {
+          "kind": "room",
+          "place": "living-room",
+          "palette": "dusk-violet",
+          "treatment": "atmospheric"
+        },
+        {
+          "kind": "glow",
+          "at": {
+            "x": 0.6,
+            "y": 0.55
+          },
+          "radius": 0.3,
+          "paint": "gold",
+          "strength": 0.75
+        },
+        {
+          "kind": "shade",
+          "from": "top",
+          "reach": 0.45,
+          "strength": 0.75
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "ASK OR",
+              "style": "light"
+            },
+            {
+              "text": "WAIT?",
+              "style": "gold"
+            }
+          ],
+          "x": 0.07,
+          "top": 0.06,
+          "size": 0.105,
+          "width": 0.86
+        },
+        {
+          "kind": "extra",
+          "x": 0.44999999999999996,
+          "y": 0.5,
+          "ground": 0.76,
+          "head": 0.095,
+          "pose": "stand",
+          "facing": "right",
+          "turn": 0.4,
+          "expression": "happy",
+          "look": {
+            "outfit": {
+              "clothes": {
+                "onePiece": {
+                  "kind": "dress",
+                  "cloth": "crimson"
+                },
+                "shoes": {
+                  "kind": "boots",
+                  "cloth": "brown"
+                }
+              }
+            }
+          },
+          "light": 1
+        },
+        {
+          "kind": "person",
+          "character": "copycat",
+          "x": 0.75,
+          "y": 0.5,
+          "ground": 0.76,
+          "head": 0.095,
+          "pose": "stand",
+          "expression": "happy",
+          "facing": "left",
+          "turn": 0.4,
+          "effects": []
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.6,
+            "y": 0.57
+          },
+          "rx": 0.39,
+          "ry": 0.23
+        },
+        {
+          "kind": "person",
+          "character": "saint",
+          "x": 0.2,
+          "y": 0.5,
+          "ground": 0.99,
+          "head": 0.08,
+          "pose": "stand",
+          "expression": "sad",
+          "facing": "right",
+          "turn": 0.3,
+          "effects": [],
+          "looksAt": {
+            "x": 0.6,
+            "y": 0.5
+          },
+          "light": 0.75
+        },
+        {
+          "kind": "mark",
+          "shape": "arrow",
+          "at": {
+            "x": 0.2,
+            "y": 0.37
+          },
+          "to": {
+            "x": 0.33,
+            "y": 0.41
+          }
+        }
+      ]
+    },
+    {
+      "id": "ask-or-wait-table-tall",
+      "size": "9:16",
+      "why": "The game theory room: one bulb over the couple, the rest in shadow. Tall, for Reels and Shorts.",
+      "layers": [
+        {
+          "kind": "room",
+          "place": "the-table",
+          "palette": "table-grey",
+          "treatment": "atmospheric"
+        },
+        {
+          "kind": "thing",
+          "prop": "bulb",
+          "x": 0.6,
+          "y": 0.56,
+          "head": 0.06
+        },
+        {
+          "kind": "glow",
+          "at": {
+            "x": 0.6,
+            "y": 0.55
+          },
+          "radius": 0.28,
+          "paint": "cream",
+          "strength": 0.8
+        },
+        {
+          "kind": "shade",
+          "from": "top",
+          "reach": 0.45,
+          "strength": 0.8
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "ASK OR",
+              "style": "light"
+            },
+            {
+              "text": "WAIT?",
+              "style": "gold"
+            }
+          ],
+          "x": 0.07,
+          "top": 0.06,
+          "size": 0.105,
+          "width": 0.86
+        },
+        {
+          "kind": "extra",
+          "x": 0.44999999999999996,
+          "y": 0.5,
+          "ground": 0.76,
+          "head": 0.095,
+          "pose": "stand",
+          "facing": "right",
+          "turn": 0.4,
+          "expression": "happy",
+          "look": {
+            "outfit": {
+              "clothes": {
+                "onePiece": {
+                  "kind": "dress",
+                  "cloth": "crimson"
+                },
+                "shoes": {
+                  "kind": "boots",
+                  "cloth": "brown"
+                }
+              }
+            }
+          },
+          "light": 1
+        },
+        {
+          "kind": "person",
+          "character": "copycat",
+          "x": 0.75,
+          "y": 0.5,
+          "ground": 0.76,
+          "head": 0.095,
+          "pose": "stand",
+          "expression": "happy",
+          "facing": "left",
+          "turn": 0.4,
+          "effects": []
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.6,
+            "y": 0.57
+          },
+          "rx": 0.39,
+          "ry": 0.23
+        },
+        {
+          "kind": "person",
+          "character": "saint",
+          "x": 0.2,
+          "y": 0.5,
+          "ground": 0.99,
+          "head": 0.08,
+          "pose": "stand",
+          "expression": "sad",
+          "facing": "right",
+          "turn": 0.3,
+          "effects": [],
+          "looksAt": {
+            "x": 0.6,
+            "y": 0.5
+          },
+          "light": 0.7
+        },
+        {
+          "kind": "mark",
+          "shape": "arrow",
+          "at": {
+            "x": 0.2,
+            "y": 0.37
+          },
+          "to": {
+            "x": 0.33,
+            "y": 0.41
+          }
+        }
+      ]
+    },
+    {
+      "id": "ask-or-wait-split-tall",
+      "size": "9:16",
+      "why": "Two sides of one choice: cold rain where she waits, warm rays where they went. Tall, for Reels and Shorts.",
+      "layers": [
+        {
+          "kind": "split",
+          "at": 0.36,
+          "lean": -0.25,
+          "left": [
+            {
+              "kind": "backdrop",
+              "inner": "steel",
+              "outer": "ocean",
+              "at": {
+                "x": 0.2,
+                "y": 0.8
+              },
+              "rays": 0,
+              "deep": 0.75
+            },
+            {
+              "kind": "rain",
+              "count": 90,
+              "slant": 0.25,
+              "light": 0.45,
+              "seed": 3
+            }
+          ],
+          "right": [
+            {
+              "kind": "backdrop",
+              "inner": "gold",
+              "outer": "crimson",
+              "at": {
+                "x": 0.6,
+                "y": 0.55
+              },
+              "rays": 18,
+              "deep": 0.55
+            }
+          ]
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "ASK OR",
+              "style": "light"
+            },
+            {
+              "text": "WAIT?",
+              "style": "gold"
+            }
+          ],
+          "x": 0.07,
+          "top": 0.06,
+          "size": 0.105,
+          "width": 0.86
+        },
+        {
+          "kind": "extra",
+          "x": 0.44999999999999996,
+          "y": 0.5,
+          "ground": 0.76,
+          "head": 0.095,
+          "pose": "stand",
+          "facing": "right",
+          "turn": 0.4,
+          "expression": "happy",
+          "look": {
+            "outfit": {
+              "clothes": {
+                "onePiece": {
+                  "kind": "dress",
+                  "cloth": "crimson"
+                },
+                "shoes": {
+                  "kind": "boots",
+                  "cloth": "brown"
+                }
+              }
+            }
+          },
+          "light": 1
+        },
+        {
+          "kind": "person",
+          "character": "copycat",
+          "x": 0.75,
+          "y": 0.5,
+          "ground": 0.76,
+          "head": 0.095,
+          "pose": "stand",
+          "expression": "happy",
+          "facing": "left",
+          "turn": 0.4,
+          "effects": []
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.6,
+            "y": 0.57
+          },
+          "rx": 0.39,
+          "ry": 0.23
+        },
+        {
+          "kind": "person",
+          "character": "saint",
+          "x": 0.2,
+          "y": 0.5,
+          "ground": 0.99,
+          "head": 0.08,
+          "pose": "stand",
+          "expression": "sad",
+          "facing": "right",
+          "turn": 0.3,
+          "effects": [],
+          "looksAt": {
+            "x": 0.6,
+            "y": 0.5
+          },
+          "light": 0.85
+        },
+        {
+          "kind": "mark",
+          "shape": "arrow",
+          "at": {
+            "x": 0.2,
+            "y": 0.37
+          },
+          "to": {
+            "x": 0.33,
+            "y": 0.41
+          }
+        }
+      ]
+    },
+    {
+      "id": "ask-or-wait-party",
+      "size": "16:9",
+      "why": "The house party from the video, at night: a warm light on the couple, the one who waited in the dark.",
+      "layers": [
+        {
+          "kind": "room",
+          "place": "living-room",
+          "palette": "dusk-violet",
+          "treatment": "atmospheric"
+        },
+        {
+          "kind": "glow",
+          "at": {
+            "x": 0.76,
+            "y": 0.5
+          },
+          "radius": 0.5,
+          "paint": "gold",
+          "strength": 0.75
+        },
+        {
+          "kind": "shade",
+          "from": "left",
+          "reach": 0.55,
+          "strength": 0.75
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "ASK OR",
+              "style": "light"
+            },
+            {
+              "text": "WAIT?",
+              "style": "gold"
+            }
+          ],
+          "x": 0.04,
+          "top": 0.07,
+          "size": 0.22,
+          "width": 0.45
+        },
+        {
+          "kind": "person",
+          "character": "saint",
+          "x": 0.42,
+          "y": 0.5,
+          "ground": 0.98,
+          "head": 0.14,
+          "pose": "stand",
+          "expression": "sad",
+          "facing": "right",
+          "turn": 0.3,
+          "effects": [],
+          "looksAt": {
+            "x": 0.75,
+            "y": 0.4
+          },
+          "light": 0.75
+        },
+        {
+          "kind": "extra",
+          "x": 0.685,
+          "y": 0.5,
+          "ground": 0.92,
+          "head": 0.19,
+          "pose": "stand",
+          "facing": "right",
+          "turn": 0.4,
+          "expression": "happy",
+          "look": {
+            "outfit": {
+              "clothes": {
+                "onePiece": {
+                  "kind": "dress",
+                  "cloth": "crimson"
+                },
+                "shoes": {
+                  "kind": "boots",
+                  "cloth": "brown"
+                }
+              }
+            }
+          },
+          "light": 1
+        },
+        {
+          "kind": "person",
+          "character": "copycat",
+          "x": 0.835,
+          "y": 0.5,
+          "ground": 0.92,
+          "head": 0.19,
+          "pose": "stand",
+          "expression": "happy",
+          "facing": "left",
+          "turn": 0.4,
+          "effects": []
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.76,
+            "y": 0.53
+          },
+          "rx": 0.215,
+          "ry": 0.45
+        },
+        {
+          "kind": "mark",
+          "shape": "arrow",
+          "at": {
+            "x": 0.42,
+            "y": 0.13
+          },
+          "to": {
+            "x": 0.58,
+            "y": 0.24
+          }
+        }
+      ]
+    },
+    {
+      "id": "ask-or-wait-table",
+      "size": "16:9",
+      "why": "The game theory room: one bulb over the couple, the rest in shadow.",
+      "layers": [
+        {
+          "kind": "room",
+          "place": "the-table",
+          "palette": "table-grey",
+          "treatment": "atmospheric"
+        },
+        {
+          "kind": "thing",
+          "prop": "bulb",
+          "x": 0.76,
+          "y": 0.6,
+          "head": 0.12
+        },
+        {
+          "kind": "glow",
+          "at": {
+            "x": 0.76,
+            "y": 0.5
+          },
+          "radius": 0.48,
+          "paint": "cream",
+          "strength": 0.8
+        },
+        {
+          "kind": "shade",
+          "from": "left",
+          "reach": 0.5,
+          "strength": 0.8
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "ASK OR",
+              "style": "light"
+            },
+            {
+              "text": "WAIT?",
+              "style": "gold"
+            }
+          ],
+          "x": 0.04,
+          "top": 0.07,
+          "size": 0.22,
+          "width": 0.45
+        },
+        {
+          "kind": "person",
+          "character": "saint",
+          "x": 0.42,
+          "y": 0.5,
+          "ground": 0.98,
+          "head": 0.14,
+          "pose": "stand",
+          "expression": "sad",
+          "facing": "right",
+          "turn": 0.3,
+          "effects": [],
+          "looksAt": {
+            "x": 0.75,
+            "y": 0.4
+          },
+          "light": 0.7
+        },
+        {
+          "kind": "extra",
+          "x": 0.685,
+          "y": 0.5,
+          "ground": 0.92,
+          "head": 0.19,
+          "pose": "stand",
+          "facing": "right",
+          "turn": 0.4,
+          "expression": "happy",
+          "look": {
+            "outfit": {
+              "clothes": {
+                "onePiece": {
+                  "kind": "dress",
+                  "cloth": "crimson"
+                },
+                "shoes": {
+                  "kind": "boots",
+                  "cloth": "brown"
+                }
+              }
+            }
+          },
+          "light": 1
+        },
+        {
+          "kind": "person",
+          "character": "copycat",
+          "x": 0.835,
+          "y": 0.5,
+          "ground": 0.92,
+          "head": 0.19,
+          "pose": "stand",
+          "expression": "happy",
+          "facing": "left",
+          "turn": 0.4,
+          "effects": []
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.76,
+            "y": 0.53
+          },
+          "rx": 0.215,
+          "ry": 0.45
+        },
+        {
+          "kind": "mark",
+          "shape": "arrow",
+          "at": {
+            "x": 0.42,
+            "y": 0.13
+          },
+          "to": {
+            "x": 0.58,
+            "y": 0.24
+          }
+        }
+      ]
+    },
+    {
+      "id": "ask-or-wait-split",
+      "size": "16:9",
+      "why": "Two sides of one choice: cold rain where she waits, warm rays where they went.",
+      "layers": [
+        {
+          "kind": "split",
+          "at": 0.54,
+          "lean": 0.08,
+          "left": [
+            {
+              "kind": "backdrop",
+              "inner": "steel",
+              "outer": "ocean",
+              "at": {
+                "x": 0.2,
+                "y": 0.8
+              },
+              "rays": 0,
+              "deep": 0.75
+            },
+            {
+              "kind": "rain",
+              "count": 90,
+              "slant": 0.25,
+              "light": 0.45,
+              "seed": 3
+            }
+          ],
+          "right": [
+            {
+              "kind": "backdrop",
+              "inner": "gold",
+              "outer": "crimson",
+              "at": {
+                "x": 0.76,
+                "y": 0.5
+              },
+              "rays": 18,
+              "deep": 0.55
+            }
+          ]
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "ASK OR",
+              "style": "light"
+            },
+            {
+              "text": "WAIT?",
+              "style": "gold"
+            }
+          ],
+          "x": 0.04,
+          "top": 0.07,
+          "size": 0.22,
+          "width": 0.45
+        },
+        {
+          "kind": "person",
+          "character": "saint",
+          "x": 0.42,
+          "y": 0.5,
+          "ground": 0.98,
+          "head": 0.14,
+          "pose": "stand",
+          "expression": "sad",
+          "facing": "right",
+          "turn": 0.3,
+          "effects": [],
+          "looksAt": {
+            "x": 0.75,
+            "y": 0.4
+          },
+          "light": 0.85
+        },
+        {
+          "kind": "extra",
+          "x": 0.685,
+          "y": 0.5,
+          "ground": 0.92,
+          "head": 0.19,
+          "pose": "stand",
+          "facing": "right",
+          "turn": 0.4,
+          "expression": "happy",
+          "look": {
+            "outfit": {
+              "clothes": {
+                "onePiece": {
+                  "kind": "dress",
+                  "cloth": "crimson"
+                },
+                "shoes": {
+                  "kind": "boots",
+                  "cloth": "brown"
+                }
+              }
+            }
+          },
+          "light": 1
+        },
+        {
+          "kind": "person",
+          "character": "copycat",
+          "x": 0.835,
+          "y": 0.5,
+          "ground": 0.92,
+          "head": 0.19,
+          "pose": "stand",
+          "expression": "happy",
+          "facing": "left",
+          "turn": 0.4,
+          "effects": []
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.76,
+            "y": 0.53
+          },
+          "rx": 0.215,
+          "ry": 0.45
+        },
+        {
+          "kind": "mark",
+          "shape": "arrow",
+          "at": {
+            "x": 0.42,
+            "y": 0.13
+          },
+          "to": {
+            "x": 0.58,
+            "y": 0.24
+          }
+        }
+      ]
+    }
+  ]
+}

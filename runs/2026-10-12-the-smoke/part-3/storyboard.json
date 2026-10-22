@@ -1,0 +1,1042 @@
+{
+  "version": 1,
+  "title": "How to Make Someone Sit in Smoke",
+  "request": "Tape 01 of The House: Orientation Tapes, for The Dilemma Table. Biku's script, How to Make Someone Sit in Smoke, used word for word. Vertical.",
+  "mode": "as-is",
+  "format": "dilemma",
+  "style": "ink-stick",
+  "brand": "dilemma-table",
+  "voice": "leak",
+  "seed": 75176,
+  "sources": [
+    "Bibb Latané and John M. Darley, Group inhibition of bystander intervention in emergencies, Journal of Personality and Social Psychology, 1968, volume 10, number 3, pages 215 to 221, https://doi.org/10.1037/h0026570 : people filling in a questionnaire while smoke came into the room. Alone, 75% reported the smoke within the six minutes; with two others who had been told to stay passive, 10% did (1 of 10); in groups of three real participants, someone reported it in 38% of groups. Fairly sure: the figures were checked on 2026-10-12 against several summaries of the paper that agree with each other and with the citation (a NIST record gives the same journal, volume and pages); the paper itself was not opened."
+  ],
+  "appliedLessons": [],
+  "cast": [
+    {
+      "id": "trainer",
+      "name": "The Trainer",
+      "card": "trainer"
+    },
+    {
+      "id": "copycat",
+      "name": "The Copycat",
+      "card": "copycat"
+    },
+    {
+      "id": "cheat",
+      "name": "The Cheat",
+      "card": "cheat"
+    }
+  ],
+  "series": "game-theory",
+  "meter": {
+    "label": "SECONDS IN SMOKE",
+    "perSecond": 1,
+    "from": "s3a"
+  },
+  "scenes": [
+    {
+      "id": "s6",
+      "chapter": 1,
+      "beat": "the-result",
+      "mood": "aftermath",
+      "quiet": false,
+      "place": "the-table",
+      "treatment": "atmospheric",
+      "palette": "table-grey",
+      "lines": [
+        {
+          "id": "l31",
+          "speaker": "trainer",
+          "text": "Latané and Darley. 1968.",
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "l32",
+          "speaker": "trainer",
+          "text": "Alone, seventy-five percent reported it.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l33",
+          "speaker": "trainer",
+          "text": "Two calm strangers? Ten *percent.*",
+          "pauseAfterMs": 800
+        },
+        {
+          "id": "l34",
+          "speaker": "trainer",
+          "text": "People trust calm faces over their own *eyes.*",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l35",
+          "speaker": "trainer",
+          "text": "You've seen it.",
+          "pauseAfterMs": 2300
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6a",
+          "line": "l31",
+          "words": "Latané and Darley. 1968.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "trainer"
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "fix-tie",
+              "expression": "smug",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.2,
+                  "pose": "stand",
+                  "expression": "bored"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "smoke-high",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "click",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "overlay": {
+            "kind": "words",
+            "lines": [
+              "Latané and Darley",
+              "1968"
+            ],
+            "stress": 1,
+            "low": true
+          },
+          "transition": "cut",
+          "startMs": 0,
+          "endMs": 3490
+        },
+        {
+          "id": "s6b",
+          "line": "l32",
+          "words": "Alone, seventy-five percent reported it.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "sit-slump",
+              "expression": "hollow",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.316,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "smug",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.684,
+              "lookAt": "copycat",
+              "holds": "coin",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "house-row",
+              "x": 0.5
+            },
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote-20",
+              "x": 0.447,
+              "y": 1.22
+            },
+            {
+              "prop": "smoke-high",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "number",
+            "text": "75%",
+            "caption": "alone",
+            "countUp": true
+          },
+          "transition": "cut",
+          "startMs": 3490,
+          "endMs": 7080
+        },
+        {
+          "id": "s6c",
+          "line": "l33",
+          "words": "Two calm strangers? Ten *percent.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "sit-slump",
+              "expression": "hollow",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.316,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "smug",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.684,
+              "lookAt": "copycat",
+              "holds": "coin",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "house-row",
+              "x": 0.5
+            },
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote-20",
+              "x": 0.447,
+              "y": 1.22
+            },
+            {
+              "prop": "smoke-high",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "number",
+            "text": "10%",
+            "caption": "with two calm strangers"
+          },
+          "transition": "cut",
+          "startMs": 7080,
+          "endMs": 10420
+        },
+        {
+          "id": "s6d",
+          "line": "l34",
+          "words": "People trust calm faces over their own *eyes.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "trainer"
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "smoke-high",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 10420,
+          "endMs": 13810
+        },
+        {
+          "id": "s6e",
+          "line": "l35",
+          "words": "You've seen it.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "sit-slump",
+              "expression": "hollow",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.316,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "smug",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.684,
+              "lookAt": "copycat",
+              "holds": "coin",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "house-row",
+              "x": 0.5
+            },
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote-20",
+              "x": 0.447,
+              "y": 1.22
+            },
+            {
+              "prop": "smoke-high",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "words",
+            "lines": [
+              "A fire alarm rings.",
+              "Everyone looks around.",
+              "Nobody moves first."
+            ],
+            "stress": 2
+          },
+          "transition": "cut",
+          "startMs": 13810,
+          "endMs": 17160
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "chapter": 1,
+      "beat": "what-stays",
+      "mood": "aftermath",
+      "quiet": false,
+      "place": "the-table",
+      "treatment": "atmospheric",
+      "palette": "table-grey",
+      "lines": [
+        {
+          "id": "l36",
+          "speaker": "narrator",
+          "text": "Calm faces are guessing too.",
+          "pauseAfterMs": 350
+        },
+        {
+          "id": "l37",
+          "speaker": "narrator",
+          "text": "They are reading your face as well.",
+          "pauseAfterMs": 350
+        },
+        {
+          "id": "l38",
+          "speaker": "narrator",
+          "text": "So trust what you see. Say it out loud.",
+          "pauseAfterMs": 350
+        },
+        {
+          "id": "l39",
+          "speaker": "narrator",
+          "text": "Then be the first to *stand up.*",
+          "pauseAfterMs": 1300
+        },
+        {
+          "id": "l40",
+          "speaker": "trainer",
+          "text": "One person standing. Bad for *business.*",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l41",
+          "speaker": "trainer",
+          "text": "How long do you sit in smoke? As long as *they* do.",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l42",
+          "speaker": "trainer",
+          "text": "Tape ends.",
+          "pauseAfterMs": 1200
+        }
+      ],
+      "shots": [
+        {
+          "id": "s7a",
+          "line": "l36",
+          "words": "Calm faces are guessing too.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "house-row",
+              "x": 0.5
+            },
+            {
+              "prop": "bulb-flicker",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote-20",
+              "x": 0.447,
+              "y": 1.22
+            },
+            {
+              "prop": "smoke-high",
+              "x": 0.5
+            },
+            {
+              "prop": "gloom-flicker",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "Calm faces are guessing too.",
+              "Trust what you see.",
+              "Say it out loud.",
+              "Stand up first."
+            ],
+            "stress": 0
+          },
+          "transition": "cut",
+          "startMs": 17160,
+          "endMs": 20105
+        },
+        {
+          "id": "s7b",
+          "line": "l37",
+          "words": "They are reading your face as well.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "house-row",
+              "x": 0.5
+            },
+            {
+              "prop": "bulb-dim",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote-20",
+              "x": 0.447,
+              "y": 1.22
+            },
+            {
+              "prop": "smoke-high",
+              "x": 0.5
+            },
+            {
+              "prop": "gloom",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "Calm faces are guessing too.",
+              "Trust what you see.",
+              "Say it out loud.",
+              "Stand up first."
+            ],
+            "stress": 0
+          },
+          "transition": "cut",
+          "startMs": 20105,
+          "endMs": 22910
+        },
+        {
+          "id": "s7c",
+          "line": "l38",
+          "words": "So trust what you see. Say it out loud.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "house-row",
+              "x": 0.5
+            },
+            {
+              "prop": "bulb-dim",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote-20",
+              "x": 0.447,
+              "y": 1.22
+            },
+            {
+              "prop": "smoke-high",
+              "x": 0.5
+            },
+            {
+              "prop": "gloom",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "Calm faces are guessing too.",
+              "Trust what you see.",
+              "Say it out loud.",
+              "Stand up first."
+            ],
+            "stress": 1
+          },
+          "transition": "cut",
+          "startMs": 22910,
+          "endMs": 26905
+        },
+        {
+          "id": "s7d",
+          "line": "l39",
+          "words": "Then be the first to *stand up.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "house-row",
+              "x": 0.5
+            },
+            {
+              "prop": "bulb-dim",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote-20",
+              "x": 0.447,
+              "y": 1.22
+            },
+            {
+              "prop": "smoke-high",
+              "x": 0.5
+            },
+            {
+              "prop": "gloom",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "Calm faces are guessing too.",
+              "Trust what you see.",
+              "Say it out loud.",
+              "Stand up first."
+            ],
+            "stress": 3
+          },
+          "transition": "cut",
+          "startMs": 26905,
+          "endMs": 30635
+        },
+        {
+          "id": "s7e",
+          "line": "l40",
+          "words": "One person standing. Bad for *business.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "trainer"
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "up",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.3,
+                  "expression": "smug",
+                  "lookAt": "camera"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "smoke-high",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 30635,
+          "endMs": 34005
+        },
+        {
+          "id": "s7f",
+          "line": "l41",
+          "words": "How long do you sit in smoke?",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "trainer"
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "smug",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "smoke-high",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 34005,
+          "endMs": 35725
+        },
+        {
+          "id": "s7g",
+          "line": "l41",
+          "words": "As long as *they* do.",
+          "camera": {
+            "framing": "wide",
+            "move": "push-in",
+            "strength": 0.3
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "smug",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "sit-slump",
+              "expression": "hollow",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.316,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "smug",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.684,
+              "lookAt": "copycat",
+              "holds": "coin",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "house-row",
+              "x": 0.5
+            },
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote-20",
+              "x": 0.447,
+              "y": 1.22
+            },
+            {
+              "prop": "smoke-high",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 35725,
+          "endMs": 38155
+        },
+        {
+          "id": "s7h",
+          "line": "l42",
+          "words": "Tape ends.",
+          "camera": {
+            "framing": "eyes",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "trainer"
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "smug",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.3,
+                  "expression": "bored"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb-dim",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "smoke-high",
+              "x": 0.5
+            },
+            {
+              "prop": "gloom",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "clunk",
+              "at": "end",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 38155,
+          "endMs": 41455
+        }
+      ]
+    }
+  ]
+}

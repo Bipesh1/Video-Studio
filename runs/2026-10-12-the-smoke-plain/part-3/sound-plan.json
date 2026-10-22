@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "aftermath",
+      "startMs": 0
+    }
+  ],
+  "sfx": [
+    {
+      "name": "clunk",
+      "atMs": 49350,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 0
+    }
+  ],
+  "musicGainDb": 0
+}

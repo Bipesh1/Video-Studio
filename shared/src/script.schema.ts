@@ -3,6 +3,7 @@ import { CHAPTER_MAX_S, SCRIPT_MODES, idSchema, viewerTextSchema } from './plugi
 import type { Format } from './plugins.schema';
 import type { World } from './storyboard.check';
 import { NARRATOR, SPEAKING_WPM, plainWords } from './storyboard.schema';
+import { SAY_MESSAGE, sameWords } from './voice.schema';
 
 /**
  * The script (Part 2, sections 4.1 and 4.2; stage 2 of a run): `runs/<run>/script.json`, the
@@ -24,10 +25,21 @@ export const spokenLineSchema = z
     /** Which chapter it is in, counting from 1. */
     chapter: z.number().int().min(1).default(1),
     speed: z.number().min(0.5).max(2).optional(),
+    /**
+     * The line as the voice reads it: the very same words, with commas and "..." where the voice
+     * should breathe or hold. The captions and the checks keep `text`.
+     */
+    say: z.string().min(1).optional(),
     /** Silence after the line, in ms. Left out: the format's usual pause. */
     pauseAfterMs: z.number().int().min(0).max(5000).optional(),
+    /**
+     * True for a thought: the line is heard in the speaker's own voice while their mouth stays
+     * shut. For what someone tells themselves, which nobody else in the room hears.
+     */
+    thought: z.boolean().optional(),
   })
-  .strict();
+  .strict()
+  .refine((l) => !l.say || sameWords(l.text, l.say), { message: SAY_MESSAGE, path: ['say'] });
 
 export const scriptSchema = z
   .object({
@@ -180,19 +192,38 @@ export function spokenWords(text: string): string[] {
     .filter(Boolean);
 }
 
+/** A speaker's name as a script may write it: "THE TRAINER", "Trainer" and "trainer" are one. */
+const speakerKey = (name: string) =>
+  name
+    .trim()
+    .toLowerCase()
+    .replace(/^the\s+/, '');
+
+/** A step heading of the script guide's layout: "1. THE QUESTION". */
+const STEP_HEADING = /^(#{1,6}\s+)?\d+\.\s+[A-Z][A-Z .'-]*$/;
+/** Where the spoken script ends in the guide's layout: "SOURCES:", or a heading "## SOURCES". */
+const AFTER_SCRIPT = /^(#{1,6}\s+)?\**(SOURCES|YOUTUBE|FACEBOOK CAPTION)\**\s*(:|$)/i;
+
 /**
  * Biku's script as he gave it, reduced to the words to speak: headings and blank lines go, and
- * a name before a colon at the start of a line ("MIRA: ...") is who speaks, not a word.
+ * a name before a colon at the start of a line ("MIRA: ...", "SAINT (thinks): ...") is who
+ * speaks, not a word. In the script guide's layout (steps headed "1. THE QUESTION") the notes
+ * above the first step, the actions in round brackets, the [requests] for the picture and
+ * everything from SOURCES on are not spoken either.
  */
 export function originalWords(original: string, speakerNames: readonly string[] = []): string[] {
-  const names = new Set([NARRATOR, 'narration', ...speakerNames].map((n) => n.toLowerCase()));
+  const names = new Set([NARRATOR, 'narration', 'outside voice', ...speakerNames].map(speakerKey));
+  const rows = original.split(/\r?\n/).map((r) => r.trim());
+  const firstStep = rows.findIndex((r) => STEP_HEADING.test(r));
   const out: string[] = [];
-  for (const raw of original.split(/\r?\n/)) {
-    const line = raw.trim();
+  for (const [i, line] of rows.entries()) {
+    if (firstStep >= 0 && AFTER_SCRIPT.test(line)) break;
+    if (firstStep >= 0 && (i <= firstStep || STEP_HEADING.test(line))) continue;
     if (!line || /^#{1,6}\s/.test(line) || /^[-=*_]{3,}$/.test(line)) continue;
-    const label = /^\**([A-Za-z][A-Za-z .'-]{0,30}?)\**\s*:\s*(.*)$/.exec(line);
-    const spoken = label && names.has((label[1] ?? '').toLowerCase()) ? (label[2] ?? '') : line;
-    out.push(...spokenWords(spoken));
+    if (firstStep >= 0 && /^\(.*\)(\s*\[[^\]]*\])*$/.test(line)) continue;
+    const label = /^\**([A-Za-z][A-Za-z .'-]{0,30}?)\**(\s*\(thinks\))?\s*:\s*(.*)$/.exec(line);
+    const spoken = label && names.has(speakerKey(label[1] ?? '')) ? (label[3] ?? '') : line;
+    out.push(...spokenWords(firstStep >= 0 ? spoken.replace(/\[[^\]]*\]/g, ' ') : spoken));
   }
   return out;
 }

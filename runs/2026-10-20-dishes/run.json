@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "id": "2026-10-20-dishes",
+  "created": "2026-10-20",
+  "mode": "as-is",
+  "format": "dilemma-story",
+  "brand": "dilemma-table",
+  "voice": "leak",
+  "sizes": [
+    "16:9"
+  ],
+  "vertical": "full",
+  "masterPrompt": "prompts/dilemma-story.md"
+}

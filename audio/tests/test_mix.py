@@ -46,11 +46,29 @@ def test_the_music_goes_down_fast_and_comes_back_slowly():
     assert np.all(curve <= 0.01) and np.all(curve >= -10.01)
 
 
+def test_the_music_fades_away_for_a_quiet_stretch_and_comes_back_after_it():
+    gain = mix.hush_gain([{"fromMs": 2000, "toMs": 4000}], 7 * SR)
+    at = lambda s: float(gain[int(s * SR)])  # noqa: E731
+    assert at(1.0) == 1.0
+    assert at(2.0 + mix.HUSH_OUT_S + 0.1) == 0.0
+    assert at(3.9) == 0.0
+    assert 0.0 < at(4.0 + mix.HUSH_IN_S / 2) < 1.0
+    assert at(6.0) == 1.0
+
+
+def test_a_drop_cuts_the_music_at_once_and_brings_it_back_quickly():
+    gain = mix.hush_gain([{"fromMs": 2000, "toMs": 2700, "sharp": True}], 5 * SR)
+    at = lambda s: float(gain[int(s * SR)])  # noqa: E731
+    assert at(1.9) == 1.0
+    assert at(2.0 + mix.HUSH_SHARP_S + 0.02) == 0.0
+    assert at(2.7 + mix.HUSH_SHARP_IN_S + 0.05) == 1.0
+
+
 def test_a_bad_plan_is_refused_in_plain_words(fake_voice):
     with pytest.raises(ValueError) as err:
-        mix.build({"music": [{"mood": "spooky", "startMs": 0}], "sfx": [{"name": "boom", "atMs": -5}]}, fake_voice)
+        mix.build({"music": [{"mood": "spooky", "startMs": 0}], "sfx": [{"name": "kaboom", "atMs": -5}]}, fake_voice)
     text = str(err.value)
-    assert "spooky" in text and "boom" in text and "atMs" in text
+    assert "spooky" in text and "kaboom" in text and "atMs" in text
     with pytest.raises(ValueError, match="how long the video is"):
         mix.build({"sfx": [{"name": "pop", "atMs": 0}]}, None)
     with pytest.raises(ValueError, match="silent"):

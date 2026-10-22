@@ -1,0 +1,129 @@
+{
+  "version": 1,
+  "thumbnails": [
+    {
+      "id": "burger-breath-tall",
+      "size": "9:16",
+      "why": "He breathes out a cloud full of burgers, fries, pizza and a doughnut, on dark blue. Tall, a Short cover.",
+      "layers": [
+        {
+          "kind": "backdrop",
+          "inner": "gold",
+          "outer": "denim",
+          "at": {
+            "x": 0.68,
+            "y": 0.58
+          },
+          "rays": 18,
+          "deep": 0.85
+        },
+        {
+          "kind": "extra",
+          "x": 0.24,
+          "y": 0.5,
+          "ground": 1.42,
+          "head": 0.26,
+          "pose": "stand",
+          "facing": "right",
+          "turn": 0.75,
+          "expression": "jaw-drop",
+          "look": {
+            "identity": {
+              "skinTone": 4,
+              "hair": "afro",
+              "hairColor": "black"
+            },
+            "outfit": {
+              "clothes": {
+                "top": {
+                  "kind": "hoodie",
+                  "cloth": "ocean"
+                },
+                "bottom": {
+                  "kind": "trousers",
+                  "cloth": "tan"
+                },
+                "shoes": {
+                  "kind": "sneakers",
+                  "cloth": "white"
+                }
+              }
+            }
+          },
+          "light": 1,
+          "outline": 0.07
+        },
+        {
+          "kind": "thing",
+          "prop": "food-breath-cloud",
+          "x": 0.74,
+          "y": 0.6,
+          "head": 0.36
+        },
+        {
+          "kind": "words",
+          "lines": [
+            "YOU BREATHE",
+            "IT OUT"
+          ],
+          "gold": [
+            1
+          ],
+          "bottom": 0.25,
+          "size": 0.11,
+          "width": 0.9,
+          "justify": true
+        }
+      ]
+    },
+    {
+      "id": "xray-tall",
+      "size": "9:16",
+      "why": "See through him: the yellow fat in his belly rises up and out of his mouth, circled. Tall, a Short cover.",
+      "layers": [
+        {
+          "kind": "backdrop",
+          "inner": "cream",
+          "outer": "denim",
+          "at": {
+            "x": 0.52,
+            "y": 0.47
+          },
+          "rays": 14,
+          "deep": 0.9
+        },
+        {
+          "kind": "thing",
+          "prop": "xray-fat",
+          "x": 0.4,
+          "y": 0.7,
+          "head": 0.62
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.585,
+            "y": 0.505
+          },
+          "rx": 0.1,
+          "ry": 0.055
+        },
+        {
+          "kind": "words",
+          "lines": [
+            "IT LEAVES",
+            "THROUGH HERE"
+          ],
+          "gold": [
+            1
+          ],
+          "bottom": 0.25,
+          "size": 0.11,
+          "width": 0.9,
+          "justify": true
+        }
+      ]
+    }
+  ]
+}

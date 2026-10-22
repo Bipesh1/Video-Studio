@@ -1,0 +1,794 @@
+{
+  "version": 1,
+  "title": "She Wrote Down Every Dish She Washed for a Year",
+  "request": "Biku's game theory story script, used as it is: 'make a story on this script for youtube video 16:9' (2026-10-20).",
+  "mode": "as-is",
+  "format": "dilemma-story",
+  "style": "ink-stick",
+  "brand": "dilemma-table",
+  "voice": "leak",
+  "seed": 72912,
+  "finish": {
+    "acting": "gentle",
+    "onTwos": true,
+    "shadows": true,
+    "grain": 0.5,
+    "vignette": 0.35,
+    "boil": 0.25
+  },
+  "sources": [
+    "Michael Ross and Fiore Sicoly, \"Egocentric Biases in Availability and Attribution\", Journal of Personality and Social Psychology, volume 37, issue 3, pages 322 to 336, 1979. Among five experiments, 37 married couples separately rated each spouse's share of everyday jobs (from making breakfast to causing arguments); each person recalled more of their own contributions and claimed more of the credit than their partner gave them, so the two self-estimates typically added up to more than the whole. In pilot tests with percentages, couples remembered and compared their answers afterwards and it caused friction, so the final study had them mark a line instead. https://doi.org/10.1037/0022-3514.37.3.322",
+    "Daniel Kahneman, Thinking, Fast and Slow, 2011. Retells the study: the self-assessed shares added up to more than 100 percent.",
+    "Checked by Claude on 2026-10-20 against reports of the paper. What the story invents: the couple, the notebooks, the 4,212 dishes, the boiler and the shirts."
+  ],
+  "appliedLessons": [],
+  "cast": [
+    {
+      "id": "trainer",
+      "name": "The Trainer",
+      "card": "trainer",
+      "host": true
+    },
+    {
+      "id": "saint",
+      "name": "The Saint",
+      "card": "saint"
+    },
+    {
+      "id": "copycat",
+      "name": "The Copycat",
+      "card": "copycat"
+    },
+    {
+      "id": "you",
+      "name": "You",
+      "card": "you"
+    }
+  ],
+  "series": "game-theory",
+  "scenes": [
+    {
+      "id": "s3",
+      "chapter": 1,
+      "beat": "the-trap-closes",
+      "mood": "closing-in",
+      "quiet": false,
+      "ambience": "home",
+      "place": "kitchen",
+      "treatment": "atmospheric",
+      "palette": "dusk-violet",
+      "lines": [
+        {
+          "id": "l11",
+          "speaker": "saint",
+          "text": "He can argue with me. He can't argue with a year of *proof.*",
+          "pauseAfterMs": 700,
+          "thought": true
+        },
+        {
+          "id": "l12",
+          "speaker": "trainer",
+          "text": "Every night the number got *bigger.*",
+          "pauseAfterMs": 1000
+        },
+        {
+          "id": "l13",
+          "speaker": "copycat",
+          "text": "It's nothing. Go back to bed.",
+          "speed": 1.02,
+          "say": "[surprised] It's nothing. Go back to bed.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l14",
+          "speaker": "saint",
+          "text": "Nothing? He's hiding *something.*",
+          "pauseAfterMs": 1000,
+          "thought": true
+        },
+        {
+          "id": "l15",
+          "speaker": "saint",
+          "text": "Four thousand two hundred and twelve dishes. Every one of them was *me.*",
+          "speed": 0.96,
+          "say": "[dramatic] Four thousand two hundred and twelve dishes. Every one of them was me.",
+          "pauseAfterMs": 1200
+        }
+      ],
+      "shots": [
+        {
+          "id": "s3a",
+          "line": "l11",
+          "words": "He can argue with me.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "down",
+              "holds": "notebook-blue-open",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "kitchen-sink",
+              "x": 0.24
+            },
+            {
+              "prop": "window-seasons",
+              "x": 0.55,
+              "y": 2.9
+            },
+            {
+              "prop": "wall-clock-spinning",
+              "x": 0.42,
+              "y": 3.55,
+              "size": 0.5
+            },
+            {
+              "prop": "drawer-cabinet",
+              "x": 0.95
+            },
+            {
+              "prop": "chair",
+              "x": 0.84
+            },
+            {
+              "prop": "table",
+              "x": 0.72
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "fade",
+          "startMs": 0,
+          "endMs": 1970
+        },
+        {
+          "id": "s3a2",
+          "line": "l11",
+          "words": "He can't argue with a year of *proof.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "down",
+              "holds": "notebook-blue-open",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.5,
+                  "expression": "smug",
+                  "strength": 0.5
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "kitchen-sink",
+              "x": 0.24
+            },
+            {
+              "prop": "window-autumn",
+              "x": 0.55,
+              "y": 2.9
+            },
+            {
+              "prop": "wall-clock-spinning",
+              "x": 0.42,
+              "y": 3.55,
+              "size": 0.5
+            },
+            {
+              "prop": "drawer-cabinet",
+              "x": 0.95
+            },
+            {
+              "prop": "chair",
+              "x": 0.84
+            },
+            {
+              "prop": "table",
+              "x": 0.72
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 1970,
+          "endMs": 4350
+        },
+        {
+          "id": "s3b",
+          "line": "l12",
+          "words": "Every night the number got *bigger.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "kitchen-sink-done",
+              "x": 0.24
+            },
+            {
+              "prop": "window-autumn",
+              "x": 0.55,
+              "y": 2.9
+            },
+            {
+              "prop": "wall-clock",
+              "x": 0.42,
+              "y": 3.55,
+              "size": 0.5
+            },
+            {
+              "prop": "drawer-cabinet",
+              "x": 0.95
+            },
+            {
+              "prop": "chair",
+              "x": 0.84
+            },
+            {
+              "prop": "table",
+              "x": 0.72
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "paper",
+              "at": "start",
+              "gainDb": -2
+            }
+          ],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "DISHES I WASHED"
+            ],
+            "tally": 4212,
+            "cover": "blue"
+          },
+          "transition": "cut",
+          "startMs": 4350,
+          "endMs": 6516
+        },
+        {
+          "id": "s3c",
+          "line": "l13",
+          "words": "It's nothing. Go back to bed.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "surprised",
+              "strength": 0.6,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.42,
+              "lookAt": "copycat",
+              "holds": "cup",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "sit",
+              "expression": "surprised",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.84,
+              "lookAt": "saint",
+              "holds": "notebook-orange",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.3,
+                  "expression": "lying",
+                  "lookAt": "saint"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "kitchen-sink-done",
+              "x": 0.24
+            },
+            {
+              "prop": "window-night",
+              "x": 0.55,
+              "y": 2.9
+            },
+            {
+              "prop": "wall-clock",
+              "x": 0.42,
+              "y": 3.55,
+              "size": 0.5
+            },
+            {
+              "prop": "drawer-cabinet",
+              "x": 0.95
+            },
+            {
+              "prop": "chair",
+              "x": 0.84
+            },
+            {
+              "prop": "table",
+              "x": 0.72
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "fade",
+          "startMs": 6516,
+          "endMs": 8851
+        },
+        {
+          "id": "s3d",
+          "line": "l14",
+          "words": "Nothing? He's hiding *something.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "suspicious",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.42,
+              "lookAt": "ahead",
+              "holds": "cup",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "kitchen-sink-done",
+              "x": 0.24
+            },
+            {
+              "prop": "window-night",
+              "x": 0.55,
+              "y": 2.9
+            },
+            {
+              "prop": "wall-clock",
+              "x": 0.42,
+              "y": 3.55,
+              "size": 0.5
+            },
+            {
+              "prop": "drawer-cabinet",
+              "x": 0.95
+            },
+            {
+              "prop": "chair",
+              "x": 0.84
+            },
+            {
+              "prop": "table",
+              "x": 0.72
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 8851,
+          "endMs": 11560
+        },
+        {
+          "id": "s3e",
+          "line": "l15",
+          "words": "Four thousand two hundred and twelve dishes.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.6,
+              "lookAt": "copycat",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "sit",
+              "expression": "guilty",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.84,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "kitchen-sink-done",
+              "x": 0.24
+            },
+            {
+              "prop": "window-night",
+              "x": 0.55,
+              "y": 2.9
+            },
+            {
+              "prop": "wall-clock",
+              "x": 0.42,
+              "y": 3.55,
+              "size": 0.5
+            },
+            {
+              "prop": "drawer-cabinet",
+              "x": 0.95
+            },
+            {
+              "prop": "chair",
+              "x": 0.84
+            },
+            {
+              "prop": "table",
+              "x": 0.72
+            },
+            {
+              "prop": "plate-salad",
+              "x": 0.66,
+              "y": 1.22
+            },
+            {
+              "prop": "notebook-blue-landing",
+              "x": 0.72,
+              "y": 1.22
+            },
+            {
+              "prop": "plate-salad",
+              "x": 0.78,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "thud",
+              "at": "start",
+              "gainDb": -4
+            }
+          ],
+          "transition": "fade",
+          "startMs": 11560,
+          "endMs": 14476
+        },
+        {
+          "id": "s3f",
+          "line": "l15",
+          "words": "Every one of them was *me.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "cross-arms",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.6,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "kitchen-sink-done",
+              "x": 0.24
+            },
+            {
+              "prop": "window-night",
+              "x": 0.55,
+              "y": 2.9
+            },
+            {
+              "prop": "wall-clock",
+              "x": 0.42,
+              "y": 3.55,
+              "size": 0.5
+            },
+            {
+              "prop": "drawer-cabinet",
+              "x": 0.95
+            },
+            {
+              "prop": "chair",
+              "x": 0.84
+            },
+            {
+              "prop": "table",
+              "x": 0.72
+            },
+            {
+              "prop": "plate-salad",
+              "x": 0.66,
+              "y": 1.22
+            },
+            {
+              "prop": "notebook-blue",
+              "x": 0.72,
+              "y": 1.22
+            },
+            {
+              "prop": "plate-salad",
+              "x": 0.78,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "overlay": {
+            "kind": "number",
+            "text": "4,212",
+            "caption": "dishes, all hers"
+          },
+          "transition": "cut",
+          "startMs": 14476,
+          "endMs": 16559
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "chapter": 1,
+      "beat": "the-freeze",
+      "mood": "tense",
+      "quiet": false,
+      "ambience": "home",
+      "place": "kitchen",
+      "treatment": "atmospheric",
+      "palette": "dusk-violet",
+      "lines": [
+        {
+          "id": "l16",
+          "speaker": "trainer",
+          "text": "A year of proof, in her own handwriting. So who really did more?",
+          "speed": 0.95,
+          "say": "A year of proof, in her own handwriting. So, who really did more?",
+          "pauseAfterMs": 2200
+        }
+      ],
+      "shots": [
+        {
+          "id": "s4a",
+          "line": "l16",
+          "words": "A year of proof, in her own handwriting.",
+          "camera": {
+            "framing": "wide",
+            "move": "push-in",
+            "strength": 0.12
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "cross-arms",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.6,
+              "lookAt": "copycat",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "sit",
+              "expression": "guilty",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.84,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "kitchen-sink-done",
+              "x": 0.24
+            },
+            {
+              "prop": "window-night",
+              "x": 0.55,
+              "y": 2.9
+            },
+            {
+              "prop": "wall-clock",
+              "x": 0.42,
+              "y": 3.55,
+              "size": 0.5
+            },
+            {
+              "prop": "drawer-cabinet",
+              "x": 0.95
+            },
+            {
+              "prop": "chair",
+              "x": 0.84
+            },
+            {
+              "prop": "table",
+              "x": 0.72
+            },
+            {
+              "prop": "plate-salad",
+              "x": 0.66,
+              "y": 1.22
+            },
+            {
+              "prop": "notebook-blue",
+              "x": 0.72,
+              "y": 1.22
+            },
+            {
+              "prop": "plate-salad",
+              "x": 0.78,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "tick",
+              "at": "start",
+              "gainDb": -12
+            }
+          ],
+          "transition": "cut",
+          "startMs": 16559,
+          "endMs": 19899
+        },
+        {
+          "id": "s4b",
+          "line": "l16",
+          "words": "So who really did more?",
+          "camera": {
+            "framing": "medium",
+            "move": "push-in",
+            "strength": 0.15
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "cross-arms",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.6,
+              "lookAt": "copycat",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "sit",
+              "expression": "guilty",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.84,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "kitchen-sink-done",
+              "x": 0.24
+            },
+            {
+              "prop": "window-night",
+              "x": 0.55,
+              "y": 2.9
+            },
+            {
+              "prop": "wall-clock",
+              "x": 0.42,
+              "y": 3.55,
+              "size": 0.5
+            },
+            {
+              "prop": "drawer-cabinet",
+              "x": 0.95
+            },
+            {
+              "prop": "chair",
+              "x": 0.84
+            },
+            {
+              "prop": "table",
+              "x": 0.72
+            },
+            {
+              "prop": "plate-salad",
+              "x": 0.66,
+              "y": 1.22
+            },
+            {
+              "prop": "notebook-blue",
+              "x": 0.72,
+              "y": 1.22
+            },
+            {
+              "prop": "plate-salad",
+              "x": 0.78,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "tick",
+              "at": "start",
+              "gainDb": -12
+            }
+          ],
+          "transition": "cut",
+          "startMs": 19899,
+          "endMs": 23740
+        }
+      ]
+    }
+  ]
+}

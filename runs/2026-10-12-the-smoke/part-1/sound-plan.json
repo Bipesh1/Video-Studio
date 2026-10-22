@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "unease",
+      "startMs": 0
+    }
+  ],
+  "sfx": [
+    {
+      "name": "footsteps",
+      "atMs": 9190,
+      "durationMs": 3640,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "ding",
+      "atMs": 25780,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "click",
+      "atMs": 30590,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 2
+    }
+  ],
+  "musicGainDb": 0
+}

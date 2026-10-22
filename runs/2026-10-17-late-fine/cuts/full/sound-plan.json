@@ -1,0 +1,152 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "unease",
+      "startMs": 0
+    },
+    {
+      "mood": "curious",
+      "startMs": 7172
+    },
+    {
+      "mood": "closing-in",
+      "startMs": 29433
+    },
+    {
+      "mood": "tense",
+      "startMs": 54933
+    },
+    {
+      "mood": "aftermath",
+      "startMs": 64033
+    }
+  ],
+  "sfx": [
+    {
+      "name": "tick",
+      "atMs": 60,
+      "durationMs": 6962,
+      "gainDb": -10,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "footsteps",
+      "atMs": 5478,
+      "durationMs": 1544,
+      "gainDb": -10,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "footsteps",
+      "atMs": 7232,
+      "durationMs": 2174,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "click",
+      "atMs": 20807,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "ding",
+      "atMs": 26383,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "ding",
+      "atMs": 33333,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 5
+    },
+    {
+      "name": "tick",
+      "atMs": 35558,
+      "durationMs": 1618,
+      "gainDb": -10,
+      "pan": 0,
+      "seed": 6
+    },
+    {
+      "name": "tick",
+      "atMs": 45651,
+      "durationMs": 1453,
+      "gainDb": -10,
+      "pan": 0,
+      "seed": 7
+    },
+    {
+      "name": "tick",
+      "atMs": 50309,
+      "durationMs": 4474,
+      "gainDb": -10,
+      "pan": 0,
+      "seed": 8
+    },
+    {
+      "name": "heartbeat-rising",
+      "atMs": 60198,
+      "durationMs": 3652,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 9
+    },
+    {
+      "name": "footsteps",
+      "atMs": 70223,
+      "durationMs": 1350,
+      "gainDb": -10,
+      "pan": 0,
+      "seed": 10
+    },
+    {
+      "name": "boom",
+      "atMs": 75601,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 11
+    },
+    {
+      "name": "footsteps",
+      "atMs": 80685,
+      "durationMs": 1891,
+      "gainDb": -10,
+      "pan": 0,
+      "seed": 12
+    },
+    {
+      "name": "tick",
+      "atMs": 100580,
+      "durationMs": 2098,
+      "gainDb": -10,
+      "pan": 0,
+      "seed": 13
+    },
+    {
+      "name": "tick",
+      "atMs": 105100,
+      "durationMs": 3531,
+      "gainDb": -10,
+      "pan": 0,
+      "seed": 14
+    },
+    {
+      "name": "clunk",
+      "atMs": 108331,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 15
+    }
+  ],
+  "musicGainDb": 0,
+  "hush": []
+}

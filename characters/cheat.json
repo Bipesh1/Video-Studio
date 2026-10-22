@@ -1,0 +1,67 @@
+{
+  "id": "cheat",
+  "name": "The Cheat",
+  "description": "The Cheat of the game theory cast: he always takes the selfish option. A white-headed figure in a navy suit and a red striped tie, with a sly half grin. He leans in, rubs his hands, winks, smirks when he wins and shrugs when he is caught. He began as the Stranger in Split or Steal. Clothes picked by Biku from three looks on 2026-10-14 (look 3).",
+  "tags": [
+    "game theory",
+    "cast",
+    "cheat",
+    "selfish",
+    "defector",
+    "steal",
+    "sly",
+    "striped tie",
+    "villain",
+    "player"
+  ],
+  "age": "adult",
+  "size": 1,
+  "outfit": {
+    "clothes": {
+      "top": {
+        "kind": "jacket",
+        "cloth": "denim",
+        "under": "white"
+      },
+      "bottom": {
+        "kind": "trousers",
+        "cloth": "denim"
+      },
+      "shoes": {
+        "kind": "boots",
+        "cloth": "brown"
+      },
+      "tie": {
+        "cloth": "crimson",
+        "stripe": "gold"
+      }
+    }
+  },
+  "eyeStyle": "round",
+  "expression": "smug",
+  "voice": "cheat",
+  "series": "game-theory",
+  "expressions": [
+    "neutral",
+    "happy",
+    "suspicious",
+    "surprised",
+    "sad",
+    "smug",
+    "thinking",
+    "wink",
+    "dread",
+    "calculating",
+    "tempted",
+    "lying",
+    "guilty",
+    "hollow",
+    "jaw-drop",
+    "sly-grin",
+    "fuming"
+  ],
+  "poses": ["stand", "sit", "point", "cross-arms", "hands-up", "sit-reach", "walk"],
+  "signature": ["rub-hands", "shrug", "sit-reach"],
+  "version": 4,
+  "added": "2026-10-11"
+}

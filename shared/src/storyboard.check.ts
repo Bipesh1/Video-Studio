@@ -20,6 +20,8 @@ const OVERLAY_ASSETS = {
   number: 'big-number',
   pointer: 'pointer',
   page: 'page',
+  words: 'big-words',
+  bubble: 'bubble',
   orbit: 'orbit-diagram',
 } as const;
 
@@ -118,9 +120,14 @@ export function checkStoryboard(sb: Storyboard, world: World): StoryboardReport 
         }
         if ('under' in piece && piece.under) cloth(piece.under, where);
         if ('kind' in piece) need('clothing', piece.kind, where);
-        else {
+        else if (piece === l.outfit.clothes.tie) {
+          need('clothing', 'tie', where);
+          if ('stripe' in piece && piece.stripe) cloth(piece.stripe, where);
+        } else if (piece === l.outfit.clothes.scarf) {
+          need('clothing', 'scarf', where);
+        } else {
           need('clothing', 'cloak', where);
-          if (piece.hood) need('clothing', 'hood', where);
+          if ('hood' in piece && piece.hood) need('clothing', 'hood', where);
         }
         cloth(piece.cloth, where);
       }
@@ -145,6 +152,12 @@ export function checkStoryboard(sb: Storyboard, world: World): StoryboardReport 
         look(card, where);
         need('expression', card.expression, where);
         cardVoice = card.voice;
+        // A member of a fixed cast sounds the same in every video.
+        if (card.series && member.voice && member.voice !== card.voice) {
+          problems.push(
+            `${where}: "${member.card}" belongs to the ${card.series} cast and keeps its own voice${card.voice ? ` ("${card.voice}")` : ' (it never speaks)'}; take the voice "${member.voice}" off`,
+          );
+        }
       }
     }
     if (member.look) look(member.look, where);
@@ -153,6 +166,27 @@ export function checkStoryboard(sb: Storyboard, world: World): StoryboardReport 
     else if (speakers.has(member.id)) problems.push(`${where} speaks but has no voice`);
     if (!seenOnScreen.has(member.id) && !speakers.has(member.id)) {
       notes.push(`${where} is never seen or heard`);
+    }
+  }
+
+  // ---- a series and its fixed cast
+  if (sb.series) {
+    // The speaking players are the cast; a silent one (the viewer's own figure) does not count,
+    // and neither does the one who runs the game.
+    const fixed = Object.values(world.characters).filter(
+      (c) => c.series === sb.series && c.voice && !c.host,
+    );
+    if (!fixed.length) {
+      problems.push(`there is no cast called "${sb.series}" among the saved characters`);
+    } else {
+      const shown = fixed.filter((c) =>
+        sb.cast.some((m) => m.card === c.id && seenOnScreen.has(m.id)),
+      );
+      if (shown.length < Math.min(2, fixed.length)) {
+        problems.push(
+          `a ${sb.series} video shows at least two of its cast (${fixed.map((c) => c.id).join(', ')}); this one shows ${shown.length ? shown.map((c) => c.id).join(', ') : 'none'}. Cast them with card: "<id>"`,
+        );
+      }
     }
   }
 
@@ -173,7 +207,17 @@ export function checkStoryboard(sb: Storyboard, world: World): StoryboardReport 
           `${where}: the ${format.id} format has no beat called "${scene.beat}" (its beats: ${beatOrder.join(', ')})`,
         );
       } else {
-        if (index < beatAt)
+        const first = beatOrder[0];
+        const last = beatOrder[beatOrder.length - 1];
+        if (format.freeOrder) {
+          // Only the hook and the payoff hold their places: the hook opens, the payoff closes.
+          if (sb.scenes[0] === scene && scene.beat !== first)
+            problems.push(
+              `${where}: the video opens on "${scene.beat}"; it must open on "${first}"`,
+            );
+          if (last && usedBeats.has(last) && scene.beat !== last)
+            problems.push(`${where}: "${scene.beat}" comes after the closing "${last}"`);
+        } else if (index < beatAt)
           problems.push(
             `${where}: the beat "${scene.beat}" comes after a later beat; the ${format.id} format goes ${beatOrder.join(', ')}`,
           );

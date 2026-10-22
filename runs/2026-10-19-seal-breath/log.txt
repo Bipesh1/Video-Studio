@@ -1,0 +1,235 @@
+2026-10-19T11:59:14.363Z  part 1  part 1 of 3, 9:16: 3 scenes, 11 shots
+2026-10-19T11:59:14.364Z  part 1  voice: start
+2026-10-19T12:00:36.762Z  part 1    voice.wav: 46.31 s, 122 words, timings from kokoro, -17.14 LUFS
+2026-10-19T12:00:36.762Z  part 1  voice: done in 82.4 s
+2026-10-19T12:00:36.763Z  part 1  time: start
+2026-10-19T12:00:36.850Z  part 1    11 shots over 46.3 s: shortest 1.9 s, longest 6.5 s
+2026-10-19T12:00:36.851Z  part 1  time: done in 0.1 s
+2026-10-19T12:00:36.851Z  part 1  sound: start
+2026-10-19T12:01:02.801Z  part 1    F:\Video Studio\runs\2026-10-19-seal-breath\part-1\audio\mix.wav: 46.31 s, -14.05 LUFS, true peak -1.1 dB, 2 music moods, 23 effects, music -16.8 dB under the voice
+2026-10-19T12:01:02.802Z  part 1  sound: done in 26.0 s
+2026-10-19T12:08:42.380Z  part 1  part 1 of 3, 16:9: 3 scenes, 11 shots
+2026-10-19T12:08:42.383Z  part 1  stills: start
+2026-10-19T12:08:42.413Z  part 1  bundle: start
+2026-10-19T12:09:20.405Z  part 1  bundle: done in 37.8 s
+2026-10-19T12:10:10.009Z  part 1    11 stills in runs\2026-10-19-seal-breath\part-1\stills\16x9
+2026-10-19T12:10:16.859Z  part 1    runs\2026-10-19-seal-breath\part-1\stills\colours-16x9.png (the first shot of each of 3 scenes)
+2026-10-19T12:10:18.426Z  part 1    runs\2026-10-19-seal-breath\part-1\stills\sheet-16x9-1.png (11 shots, 4 rows)
+2026-10-19T12:10:18.426Z  part 1  stills: done in 96.0 s
+2026-10-19T12:15:44.884Z  part 1  part 1 of 3, 16:9: 3 scenes, 11 shots
+2026-10-19T12:15:44.971Z  part 1  preview: start
+2026-10-19T12:15:45.229Z  part 1  bundle: start
+2026-10-19T12:16:35.223Z  part 1  bundle: done in 50.0 s
+2026-10-19T12:28:31.300Z  part 1    runs\2026-10-19-seal-breath\part-1\preview\seal-breath-part-1-16x9-preview-v1.mp4: 46.33 s of video, 960x540, in 680.7 s (14.69 s per video second)
+2026-10-19T12:28:32.204Z  part 1    runs\2026-10-19-seal-breath\part-1\preview\seal-breath-part-1-16x9-preview-v1.srt
+2026-10-19T12:28:33.939Z  part 1  preview: done in 769.0 s
+2026-10-19T12:33:15.933Z  part 1  part 1 of 3, 16:9: 3 scenes, 11 shots
+2026-10-19T12:33:15.934Z  part 1  time: start
+2026-10-19T12:33:15.953Z  part 1    11 shots over 46.3 s: shortest 1.9 s, longest 6.5 s
+2026-10-19T12:33:15.954Z  part 1  time: done in 0.0 s
+2026-10-19T12:33:15.954Z  part 1  sound: start
+2026-10-19T12:33:35.631Z  part 1    F:\Video Studio\runs\2026-10-19-seal-breath\part-1\audio\mix.wav: 46.31 s, -14.05 LUFS, true peak -1.1 dB, 2 music moods, 24 effects, music -16.8 dB under the voice
+2026-10-19T12:33:35.631Z  part 1  sound: done in 19.7 s
+2026-10-19T12:33:35.631Z  part 1  preview: start
+2026-10-19T12:33:35.656Z  part 1  bundle: start
+2026-10-19T12:34:02.373Z  part 1  bundle: done in 26.7 s
+2026-10-19T15:54:55.358Z  part 1  part 1 of 3, 16:9: 3 scenes, 11 shots
+2026-10-19T15:54:55.380Z  part 1  time: start
+2026-10-19T15:54:55.418Z  part 1    11 shots over 46.3 s: shortest 1.9 s, longest 6.5 s
+2026-10-19T15:54:55.419Z  part 1  time: done in 0.0 s
+2026-10-19T15:54:55.421Z  part 1  sound: start
+2026-10-19T15:54:55.493Z  part 1    mix is already up to date (the plan and the voice have not changed)
+2026-10-19T15:54:55.494Z  part 1  sound: done in 0.1 s
+2026-10-19T15:54:55.494Z  part 1  preview: start
+2026-10-19T15:54:55.990Z  part 1  bundle: start
+2026-10-19T15:55:43.788Z  part 1  bundle: done in 47.8 s
+2026-10-19T18:58:57.916Z  part 1    runs\2026-10-19-seal-breath\part-1\preview\seal-breath-part-1-16x9-preview-v2.mp4: 46.33 s of video, 960x540, in 10849.0 s (234.15 s per video second)
+2026-10-19T18:59:01.090Z  part 1    runs\2026-10-19-seal-breath\part-1\preview\seal-breath-part-1-16x9-preview-v2.srt
+2026-10-19T18:59:05.464Z  part 1  preview: done in 11050.0 s
+2026-10-19T19:22:05.798Z  part 1  part 1 of 3, 16:9: 3 scenes, 11 shots
+2026-10-19T19:22:05.829Z  part 1  stills: start
+2026-10-19T19:22:06.267Z  part 1  bundle: start
+2026-10-19T19:22:48.232Z  part 1  bundle: done in 42.0 s
+2026-10-19T19:23:22.911Z  part 1    11 stills in runs\2026-10-19-seal-breath\part-1\stills\16x9
+2026-10-19T19:23:23.312Z  part 1    runs\2026-10-19-seal-breath\part-1\stills\colours-16x9.png (the first shot of each of 3 scenes)
+2026-10-19T19:23:24.304Z  part 1    runs\2026-10-19-seal-breath\part-1\stills\sheet-16x9-1.png (11 shots, 4 rows)
+2026-10-19T19:23:24.304Z  part 1  stills: done in 78.5 s
+2026-10-19T19:23:24.304Z  part 1  video: start
+2026-10-19T19:31:06.999Z  part 1    runs\2026-10-19-seal-breath\part-1\out\seal-breath-part-1-16x9-v1.mp4: 46.33 s of video, 1920x1080, in 461.7 s (9.97 s per video second)
+2026-10-19T19:31:07.051Z  part 1    runs\2026-10-19-seal-breath\part-1\out\seal-breath-part-1-16x9-v1.srt
+2026-10-19T19:31:07.598Z  part 1  video: done in 463.3 s
+2026-10-19T19:33:02.543Z  part 1  part 1 of 3, 16:9: 3 scenes, 11 shots
+2026-10-19T19:33:02.544Z  part 1  video: start
+2026-10-19T19:33:02.562Z  part 1  bundle: start
+2026-10-19T19:33:35.337Z  part 1  part 1 of 3, 16:9: 3 scenes, 11 shots
+2026-10-19T19:33:35.338Z  part 1  stills: start
+2026-10-19T19:33:35.360Z  part 1  bundle: start
+2026-10-19T19:33:51.407Z  part 1  bundle: done in 16.0 s
+2026-10-19T19:34:14.067Z  part 1    11 stills in runs\2026-10-19-seal-breath\part-1\stills\16x9
+2026-10-19T19:34:14.394Z  part 1    runs\2026-10-19-seal-breath\part-1\stills\colours-16x9.png (the first shot of each of 3 scenes)
+2026-10-19T19:34:15.324Z  part 1    runs\2026-10-19-seal-breath\part-1\stills\sheet-16x9-1.png (11 shots, 4 rows)
+2026-10-19T19:34:15.324Z  part 1  stills: done in 40.0 s
+2026-10-19T19:34:15.325Z  part 1  video: start
+2026-10-19T19:41:39.615Z  part 1    runs\2026-10-19-seal-breath\part-1\out\seal-breath-part-1-16x9-v2.mp4: 46.33 s of video, 1920x1080, in 443.3 s (9.57 s per video second)
+2026-10-19T19:41:39.658Z  part 1    runs\2026-10-19-seal-breath\part-1\out\seal-breath-part-1-16x9-v2.srt
+2026-10-19T19:41:40.039Z  part 1  video: done in 444.7 s
+2026-10-19T19:43:53.194Z  part 1  part 1 of 3, 16:9: 3 scenes, 11 shots
+2026-10-19T19:43:53.195Z  part 1  time: start
+2026-10-19T19:43:53.232Z  part 1    11 shots over 46.3 s: shortest 1.9 s, longest 6.5 s
+2026-10-19T19:43:53.233Z  part 1  time: done in 0.0 s
+2026-10-19T19:43:53.233Z  part 1  stills: start
+2026-10-19T19:43:53.253Z  part 1  bundle: start
+2026-10-19T19:44:21.594Z  part 1  bundle: done in 28.3 s
+2026-10-19T19:44:41.573Z  part 1    11 stills in runs\2026-10-19-seal-breath\part-1\stills\16x9
+2026-10-19T19:44:41.897Z  part 1    runs\2026-10-19-seal-breath\part-1\stills\colours-16x9.png (the first shot of each of 3 scenes)
+2026-10-19T19:44:42.824Z  part 1    runs\2026-10-19-seal-breath\part-1\stills\sheet-16x9-1.png (11 shots, 4 rows)
+2026-10-19T19:44:42.824Z  part 1  stills: done in 49.6 s
+2026-10-19T19:44:42.825Z  part 1  video: start
+2026-10-19T19:51:04.693Z  part 1    runs\2026-10-19-seal-breath\part-1\out\seal-breath-part-1-16x9-v3.mp4: 46.33 s of video, 1920x1080, in 380.8 s (8.22 s per video second)
+2026-10-19T19:51:04.832Z  part 1    runs\2026-10-19-seal-breath\part-1\out\seal-breath-part-1-16x9-v3.srt
+2026-10-19T19:51:05.251Z  part 1  video: done in 382.4 s
+2026-10-19T19:53:06.781Z  part 1  part 1 of 3, 16:9: 3 scenes, 11 shots
+2026-10-19T19:53:06.782Z  part 1  stills: start
+2026-10-19T19:53:06.805Z  part 1  bundle: start
+2026-10-19T19:53:43.264Z  part 1  bundle: done in 36.5 s
+2026-10-19T19:54:19.249Z  part 1    11 stills in runs\2026-10-19-seal-breath\part-1\stills\16x9
+2026-10-19T19:54:19.575Z  part 1    runs\2026-10-19-seal-breath\part-1\stills\colours-16x9.png (the first shot of each of 3 scenes)
+2026-10-19T19:54:20.492Z  part 1    runs\2026-10-19-seal-breath\part-1\stills\sheet-16x9-1.png (11 shots, 4 rows)
+2026-10-19T19:54:20.492Z  part 1  stills: done in 73.7 s
+2026-10-19T19:54:20.493Z  part 1  video: start
+2026-10-19T19:59:38.105Z  part 1    runs\2026-10-19-seal-breath\part-1\out\seal-breath-part-1-16x9-v4.mp4: 46.33 s of video, 1920x1080, in 316.6 s (6.83 s per video second)
+2026-10-19T19:59:38.109Z  part 1    runs\2026-10-19-seal-breath\part-1\out\seal-breath-part-1-16x9-v4.srt
+2026-10-19T19:59:38.132Z  part 1  video: done in 317.6 s
+2026-10-20T05:49:09.179Z  part 2  part 2 of 3, 16:9: 1 scenes, 7 shots
+2026-10-20T05:49:09.204Z  part 2  voice: start
+2026-10-20T05:52:07.208Z  part 2    voice.wav: 35.03 s, 92 words, timings from kokoro, -17.17 LUFS
+2026-10-20T05:52:07.209Z  part 2  voice: done in 178.0 s
+2026-10-20T05:52:07.210Z  part 2  time: start
+2026-10-20T05:52:07.533Z  part 2    7 shots over 35.0 s: shortest 2.3 s, longest 7.3 s
+2026-10-20T05:52:07.534Z  part 2    note: shot "s18" is 7.3 s long, a little over the 7 s a shot should take
+2026-10-20T05:52:07.535Z  part 2  time: done in 0.3 s
+2026-10-20T05:52:07.535Z  part 2  sound: start
+2026-10-20T05:52:25.965Z  part 2    F:\Video Studio\runs\2026-10-19-seal-breath\part-2\audio\mix.wav: 35.03 s, -14.01 LUFS, true peak -1.03 dB, 1 music moods, 23 effects, music -16.9 dB under the voice
+2026-10-20T05:52:25.965Z  part 2  sound: done in 18.4 s
+2026-10-20T05:52:25.966Z  part 2  stills: start
+2026-10-20T05:52:25.989Z  part 2  bundle: start
+2026-10-20T05:52:54.957Z  part 2  bundle: done in 29.0 s
+2026-10-20T05:53:30.480Z  part 2    7 stills in runs\2026-10-19-seal-breath\part-2\stills\16x9
+2026-10-20T05:53:30.975Z  part 2    runs\2026-10-19-seal-breath\part-2\stills\colours-16x9.png (the first shot of each of 1 scenes)
+2026-10-20T05:53:31.849Z  part 2    runs\2026-10-19-seal-breath\part-2\stills\sheet-16x9-1.png (7 shots, 3 rows)
+2026-10-20T05:53:31.850Z  part 2  stills: done in 65.9 s
+2026-10-20T05:54:56.638Z  part 2  part 2 of 3, 16:9: 1 scenes, 8 shots
+2026-10-20T05:54:56.639Z  part 2  time: start
+2026-10-20T05:54:56.646Z  part 2    8 shots over 35.0 s: shortest 2.3 s, longest 7.3 s
+2026-10-20T05:54:56.647Z  part 2    note: shot "s19" is 7.3 s long, a little over the 7 s a shot should take
+2026-10-20T05:54:56.647Z  part 2  time: done in 0.0 s
+2026-10-20T05:54:56.648Z  part 2  sound: start
+2026-10-20T05:55:05.088Z  part 2    F:\Video Studio\runs\2026-10-19-seal-breath\part-2\audio\mix.wav: 35.03 s, -14.01 LUFS, true peak -1.03 dB, 1 music moods, 24 effects, music -16.9 dB under the voice
+2026-10-20T05:55:05.088Z  part 2  sound: done in 8.4 s
+2026-10-20T05:55:05.089Z  part 2  stills: start
+2026-10-20T05:55:05.114Z  part 2  bundle: start
+2026-10-20T05:55:22.252Z  part 2  bundle: done in 17.1 s
+2026-10-20T05:55:41.636Z  part 2    8 stills in runs\2026-10-19-seal-breath\part-2\stills\16x9
+2026-10-20T05:55:42.104Z  part 2    runs\2026-10-19-seal-breath\part-2\stills\colours-16x9.png (the first shot of each of 1 scenes)
+2026-10-20T05:55:43.048Z  part 2    runs\2026-10-19-seal-breath\part-2\stills\sheet-16x9-1.png (8 shots, 3 rows)
+2026-10-20T05:55:43.048Z  part 2  stills: done in 38.0 s
+2026-10-20T05:55:43.049Z  part 2  video: start
+2026-10-20T07:05:37.936Z  part 2  part 2 of 3, 16:9: 1 scenes, 8 shots
+2026-10-20T07:05:37.938Z  part 2  video: start
+2026-10-20T07:05:38.456Z  part 2  bundle: start
+2026-10-20T07:08:18.075Z  part 2  bundle: done in 159.4 s
+2026-10-20T07:18:07.332Z  part 2    runs\2026-10-19-seal-breath\part-2\out\seal-breath-part-2-16x9-v1.mp4: 35.03 s of video, 1920x1080, in 513.5 s (14.66 s per video second)
+2026-10-20T07:18:08.130Z  part 2    runs\2026-10-19-seal-breath\part-2\out\seal-breath-part-2-16x9-v1.srt
+2026-10-20T07:18:08.679Z  part 2  video: done in 750.7 s
+2026-10-20T07:21:50.209Z  part 2  part 2 of 3, 16:9: 1 scenes, 8 shots
+2026-10-20T07:21:50.210Z  part 2  stills: start
+2026-10-20T07:21:50.250Z  part 2  bundle: start
+2026-10-20T07:22:27.078Z  part 2  bundle: done in 36.8 s
+2026-10-20T07:22:49.038Z  part 2    8 stills in runs\2026-10-19-seal-breath\part-2\stills\16x9
+2026-10-20T07:22:49.279Z  part 2    runs\2026-10-19-seal-breath\part-2\stills\colours-16x9.png (the first shot of each of 1 scenes)
+2026-10-20T07:22:50.082Z  part 2    runs\2026-10-19-seal-breath\part-2\stills\sheet-16x9-1.png (8 shots, 3 rows)
+2026-10-20T07:22:50.083Z  part 2  stills: done in 59.9 s
+2026-10-20T07:22:50.083Z  part 2  video: start
+2026-10-20T07:30:14.689Z  part 2    runs\2026-10-19-seal-breath\part-2\out\seal-breath-part-2-16x9-v2.mp4: 35.03 s of video, 1920x1080, in 443.7 s (12.66 s per video second)
+2026-10-20T07:30:14.747Z  part 2    runs\2026-10-19-seal-breath\part-2\out\seal-breath-part-2-16x9-v2.srt
+2026-10-20T07:30:15.043Z  part 2  video: done in 445.0 s
+2026-10-20T07:32:08.048Z  part 1  part 1 of 3, 16:9: 3 scenes, 11 shots
+2026-10-20T07:32:08.050Z  part 1  time: start
+2026-10-20T07:32:08.249Z  part 1    11 shots over 46.3 s: shortest 1.9 s, longest 6.5 s
+2026-10-20T07:32:08.249Z  part 1  time: done in 0.2 s
+2026-10-20T07:32:08.249Z  part 1  sound: start
+2026-10-20T07:33:15.419Z  part 1    F:\Video Studio\runs\2026-10-19-seal-breath\part-1\audio\mix.wav: 46.31 s, -14.05 LUFS, true peak -1.1 dB, 2 music moods, 30 effects, music -16.8 dB under the voice
+2026-10-20T07:33:15.420Z  part 1  sound: done in 67.2 s
+2026-10-20T07:33:15.420Z  part 1  video: start
+2026-10-20T07:33:15.464Z  part 1  bundle: start
+2026-10-20T07:33:39.946Z  part 1  bundle: done in 24.5 s
+2026-10-20T07:39:29.765Z  part 1    runs\2026-10-19-seal-breath\part-1\out\seal-breath-part-1-16x9-v5.mp4: 46.33 s of video, 1920x1080, in 331.7 s (7.16 s per video second)
+2026-10-20T07:39:29.794Z  part 1    runs\2026-10-19-seal-breath\part-1\out\seal-breath-part-1-16x9-v5.srt
+2026-10-20T07:39:30.238Z  part 1  video: done in 374.8 s
+2026-10-20T08:42:01.538Z  part 3  part 3 of 3, 16:9: 2 scenes, 9 shots
+2026-10-20T08:42:01.539Z  part 3  voice: start
+2026-10-20T08:44:56.285Z  part 3    voice.wav: 40.43 s, 97 words, timings from kokoro, -17.17 LUFS
+2026-10-20T08:44:56.286Z  part 3  voice: done in 174.7 s
+2026-10-20T08:44:56.286Z  part 3  time: start
+2026-10-20T08:44:56.398Z  part 3    9 shots over 40.4 s: shortest 3.2 s, longest 6.1 s
+2026-10-20T08:44:56.399Z  part 3  time: done in 0.1 s
+2026-10-20T08:44:56.399Z  part 3  sound: start
+2026-10-20T08:45:20.149Z  part 3    F:\Video Studio\runs\2026-10-19-seal-breath\part-3\audio\mix.wav: 40.43 s, -14.04 LUFS, true peak -1.04 dB, 2 music moods, 27 effects, music -17.2 dB under the voice
+2026-10-20T08:45:20.150Z  part 3  sound: done in 23.8 s
+2026-10-20T08:45:20.150Z  part 3  stills: start
+2026-10-20T08:45:20.176Z  part 3  bundle: start
+2026-10-20T08:46:10.133Z  part 3  bundle: done in 50.0 s
+2026-10-20T08:46:58.238Z  part 3    9 stills in runs\2026-10-19-seal-breath\part-3\stills\16x9
+2026-10-20T08:47:00.986Z  part 3    runs\2026-10-19-seal-breath\part-3\stills\colours-16x9.png (the first shot of each of 2 scenes)
+2026-10-20T08:47:02.168Z  part 3    runs\2026-10-19-seal-breath\part-3\stills\sheet-16x9-1.png (9 shots, 3 rows)
+2026-10-20T08:47:02.168Z  part 3  stills: done in 102.0 s
+2026-10-20T08:49:02.247Z  part 3  part 3 of 3, 16:9: 2 scenes, 9 shots
+2026-10-20T08:49:02.251Z  part 3  stills: start
+2026-10-20T08:49:02.310Z  part 3  bundle: start
+2026-10-20T08:49:24.263Z  part 3  bundle: done in 22.0 s
+2026-10-20T08:49:40.939Z  part 3    9 stills in runs\2026-10-19-seal-breath\part-3\stills\16x9
+2026-10-20T08:49:41.216Z  part 3    runs\2026-10-19-seal-breath\part-3\stills\colours-16x9.png (the first shot of each of 2 scenes)
+2026-10-20T08:49:41.946Z  part 3    runs\2026-10-19-seal-breath\part-3\stills\sheet-16x9-1.png (9 shots, 3 rows)
+2026-10-20T08:49:41.947Z  part 3  stills: done in 39.7 s
+2026-10-20T08:49:41.947Z  part 3  video: start
+2026-10-20T09:02:11.286Z  part 3    runs\2026-10-19-seal-breath\part-3\out\seal-breath-part-3-16x9-v1.mp4: 40.43 s of video, 1920x1080, in 748.3 s (18.51 s per video second)
+2026-10-20T09:02:11.365Z  part 3    runs\2026-10-19-seal-breath\part-3\out\seal-breath-part-3-16x9-v1.srt
+2026-10-20T09:02:11.923Z  part 3  video: done in 750.0 s
+2026-10-20T09:04:38.581Z  part 3  part 3 of 3, 16:9: 2 scenes, 9 shots
+2026-10-20T09:04:38.582Z  part 3  stills: start
+2026-10-20T09:04:38.598Z  part 3  bundle: start
+2026-10-20T09:05:03.101Z  part 3  bundle: done in 24.5 s
+2026-10-20T09:05:19.832Z  part 3    9 stills in runs\2026-10-19-seal-breath\part-3\stills\16x9
+2026-10-20T09:05:20.145Z  part 3    runs\2026-10-19-seal-breath\part-3\stills\colours-16x9.png (the first shot of each of 2 scenes)
+2026-10-20T09:05:20.854Z  part 3    runs\2026-10-19-seal-breath\part-3\stills\sheet-16x9-1.png (9 shots, 3 rows)
+2026-10-20T09:05:20.854Z  part 3  stills: done in 42.3 s
+2026-10-20T09:05:20.855Z  part 3  video: start
+2026-10-20T09:10:47.000Z  part 3    runs\2026-10-19-seal-breath\part-3\out\seal-breath-part-3-16x9-v2.mp4: 40.43 s of video, 1920x1080, in 325.2 s (8.04 s per video second)
+2026-10-20T09:10:47.336Z  part 3    runs\2026-10-19-seal-breath\part-3\out\seal-breath-part-3-16x9-v2.srt
+2026-10-20T09:10:47.826Z  part 3  video: done in 327.0 s
+2026-10-20T09:42:18.103Z  output  16:9 full video:
+2026-10-20T09:43:14.433Z  output      F:\Video Studio\runs\2026-10-19-seal-breath\cuts\full\audio\mix.wav: 121.80 s, -14.02 LUFS, true peak -1.1 dB, 5 music moods, 81 effects, music -17.0 dB under the voice
+2026-10-20T09:47:59.608Z  output    runs\2026-10-19-seal-breath\out\seal-breath-16x9-v1.mp4: 121.80 s, 1920x1080
+2026-10-20T09:47:59.608Z  output      ok   The file plays: 1920x1080, 30 pictures a second, 121.8 s, picture and sound both there; played through from start to finish
+2026-10-20T09:47:59.609Z  output      ok   It is as long as its parts together: 121.8 s; its 3 pieces add up to 121.8 s
+2026-10-20T09:47:59.609Z  output      ok   Its pictures are the parts that passed: every frame against seal-breath-part-1-16x9-v5.mp4 and seal-breath-part-2-16x9-v2.mp4 and seal-breath-part-3-16x9-v2.mp4 (the strongest difference is 1 of 255; over 16 would be a different picture)
+2026-10-20T09:47:59.658Z  output      ok   Its sound is the mix made for the whole video: second for second (what is left over is 36 dB under it at most)
+2026-10-20T09:47:59.658Z  output      ok   There is no dead silence: the sound never drops out; the longest pause between words is 2.3 s
+2026-10-20T09:47:59.658Z  output      ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.1 dB (the limit is -1)
+2026-10-20T09:47:59.659Z  output      ok   Nothing drowns the words: 81 sound effects, the loudest of those over words 14 dB under the voice; the music sits 17 dB under the voice while someone speaks
+2026-10-20T09:47:59.659Z  output      FIX  Every join and the cover hold up: a strip of frames across each of the 2 joins between parts, and the cover picture
+2026-10-20T09:47:59.659Z  output            problem: the joins and the cover have not been looked at yet
+2026-10-20T09:47:59.659Z  output      to look at: runs\2026-10-19-seal-breath\out\look\seal-breath-16x9-v1 (each join) and runs\2026-10-19-seal-breath\out\seal-breath-16x9-v1-cover-side.jpg; then write runs\2026-10-19-seal-breath\out\seal-breath-16x9-v1.look.json
+2026-10-20T09:47:59.661Z  output  runs\2026-10-19-seal-breath\delivery.md
+2026-10-20T09:48:24.434Z  output  16:9 full video:
+2026-10-20T09:48:24.859Z  output    runs\2026-10-19-seal-breath\out\seal-breath-16x9-v1.mp4: already made from these parts
+2026-10-20T09:48:24.860Z  output      FIX  Every join and the cover hold up: the joins and the cover have not been looked at yet
+2026-10-20T09:48:24.990Z  output  runs\2026-10-19-seal-breath\delivery.md
+2026-10-20T09:48:45.890Z  output  16:9 full video:
+2026-10-20T09:48:46.266Z  output    runs\2026-10-19-seal-breath\out\seal-breath-16x9-v1.mp4: already made from these parts
+2026-10-20T09:49:11.678Z  output      runs\2026-10-19-seal-breath\out\seal-breath-16x9-v1-cover-side.jpg
+2026-10-20T09:49:11.678Z  output      FIX  Every join and the cover hold up: the joins and the cover have not been looked at yet
+2026-10-20T09:49:11.810Z  output  runs\2026-10-19-seal-breath\delivery.md
+2026-10-20T09:49:35.980Z  output  16:9 full video:
+2026-10-20T09:49:36.456Z  output    runs\2026-10-19-seal-breath\out\seal-breath-16x9-v1.mp4: already made from these parts
+2026-10-20T09:49:36.608Z  output  runs\2026-10-19-seal-breath\delivery.md

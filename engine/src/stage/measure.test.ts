@@ -300,7 +300,8 @@ describe('captions', () => {
   });
 
   it('are pointed out when one is gone before it can be read', () => {
-    const quick = [word('Stop.', 300, 380), word('Now.', 400, 2000)];
+    // Two people, so the quick word is a caption of its own.
+    const quick = [word('Stop.', 300, 380), word('Now.', 400, 2000, 'n2')];
     const check = captionCheck(track(quick), WIDE);
     expect(
       check.findings
@@ -350,5 +351,51 @@ describe('a caption and its pictures', () => {
     // The last caption has its pictures to the end, so it keeps its moment after the last word.
     expect(pages[1]?.endMs).toBe(4200);
     expect(captionPagesFor(one, null, WIDE)).toEqual([]);
+  });
+
+  it('goes as the big words of its own line come on, and is not drawn under them', () => {
+    // One line over two shots; the second shows its words large. A caption that began in the
+    // first shot and runs on into the second ("rings, everyone") must be gone when they arrive.
+    const sb = structuredClone(farmer);
+    const [first, second] = sb.scenes[0]?.shots ?? [];
+    if (!first || !second) throw new Error('no shots');
+    second.line = first.line;
+    Object.assign(first, { startMs: 0, endMs: 2000, words: 'A fire alarm rings,' });
+    Object.assign(second, {
+      startMs: 2000,
+      endMs: 6000,
+      words: 'everyone looks around, and nobody moves first.',
+      overlay: { kind: 'words', lines: ['Everyone looks around,', 'and nobody moves first.'] },
+    });
+    const said = 'A fire alarm rings, everyone looks around, and nobody moves first.'.split(' ');
+    const starts = [200, 400, 700, 1100, 2050, 2500, 2900, 3400, 3700, 4100, 4500];
+    const track: VoiceTrack = {
+      version: 1,
+      audioFile: 'voice.wav',
+      sampleRate: 48000,
+      durationMs: 6000,
+      timingSource: 'kokoro',
+      loudnessLufs: -14,
+      lines: [],
+      words: said.map((text, i) => ({
+        text,
+        startMs: starts[i] ?? 0,
+        endMs: (starts[i] ?? 0) + 300,
+        lineId: first.line,
+        emphasis: false,
+      })),
+    };
+    const one = {
+      ...sb,
+      scenes: [{ ...(sb.scenes[0] as (typeof sb.scenes)[number]), shots: [first, second] }],
+    };
+    const pages = captionPagesFor(one, track, TALL);
+    expect(pages.length).toBeGreaterThan(0);
+    for (const page of pages) expect(page.endMs).toBeLessThanOrEqual(2000);
+    // Without the big words the same captions run on through the second shot.
+    delete second.overlay;
+    expect(Math.max(...captionPagesFor(one, track, TALL).map((p) => p.endMs))).toBeGreaterThan(
+      4000,
+    );
   });
 });

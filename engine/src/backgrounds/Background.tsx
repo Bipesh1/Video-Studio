@@ -1,5 +1,6 @@
 import { useId } from 'react';
 import type { ReactNode } from 'react';
+import { VIEWER_FONT } from '../overlays/text';
 import { Asteroid, BlackHole, Earth, FullMoon, Planet, Sun } from '../props/Sky';
 import { DEG, lerp } from '../rig/math';
 import { seeded } from '../rig/random';
@@ -54,9 +55,16 @@ export type Silhouette = {
 
 /**
  * What the ground is: grass with tufts, a paved street, the floor of a room, the gray dust of
- * the Moon with its craters, or none at all, out in space.
+ * the Moon with its craters, a gorge crossed by a rope bridge, or none at all, out in space.
  */
-export type GroundKind = 'grass' | 'road' | 'floor' | 'dust' | 'water' | 'rock' | 'none';
+export type GroundKind = 'grass' | 'road' | 'floor' | 'dust' | 'water' | 'rock' | 'gorge' | 'none';
+
+/**
+ * Where the two cliff edges of a gorge stand, as shares of the scene's width: the near cliff
+ * on the left, the far one on the right, and the rope bridge between them. People stand on the
+ * near cliff left of `near`, on the bridge between, and on the far cliff right of `far`.
+ */
+export const GORGE = { near: 0.4, far: 0.72 } as const;
 
 /** Something far off in the sky of a place: part of the background, so it has no outline. */
 export const SKY_BODIES = [
@@ -92,6 +100,16 @@ export const FITTINGS = [
   'board',
   'vault-door',
   'vault-boxes',
+  'curtain',
+  'spotlight',
+  'lamp-glow',
+  'pendant',
+  'diner-table',
+  'daycare-door',
+  'daycare-window',
+  'daycare-sign',
+  'kitchen-cupboards',
+  'fridge',
 ] as const;
 export type Fitting = { kind: (typeof FITTINGS)[number]; x: number };
 
@@ -137,6 +155,7 @@ export const NIGHT_PALETTES: readonly string[] = [
   'danger',
   'deep-space',
   'moon-dust',
+  'table-grey',
 ];
 
 /** Sensible defaults per treatment. Override any field. */
@@ -480,10 +499,151 @@ function Craters({ c }: { c: Ctx }) {
 const waterOf = (c: Ctx) => mix(pick(accent('ocean'), 0), c.roles.skyTop, 0.35);
 const rockOf = (c: Ctx) => mix(pick(accent('steel'), 2), c.roles.skyBottom, 0.45);
 
+/**
+ * A gorge at night (drawn for the bridge and torch thriller, 2026-10-15): two cliff tops at
+ * the ground line with a deep drop between them, the far walls of the gorge paler with
+ * distance, and a rope bridge of planks across the gap, its hand rope sagging between two
+ * posts. Background, so no outlines: dark shapes with pale rope lines, like the bush of
+ * Reference B. The bridge deck is the ground line, so people walk across it.
+ */
+function Gorge({ c }: { c: Ctx }) {
+  const y = c.spec.horizon * c.h;
+  const bottom = c.h + (c.world?.bottom ?? 0) + 2;
+  const left = GORGE.near * c.w;
+  const right = GORGE.far * c.w;
+  // A head of the scene's layout, so the bridge is built to the size of the people on it.
+  const head = c.h * (c.w > c.h ? 0.15 : 0.105);
+  const rock = rockOf(c);
+  const cliff = mix(rock, ink, 0.45);
+  const lip = mix(rock, c.roles.skyBottom, 0.2);
+  const deep = mix(c.roles.skyBottom, ink, 0.8);
+  const far = mix(c.roles.skyBottom, ink, 0.35);
+  const wood = mix(pick(accent('brown'), 1), ink, 0.4);
+  const rope = mix(pick(accent('tan'), 0), c.roles.skyBottom, 0.3);
+  const gid = `${c.id}-gorge`;
+  const span = right - left;
+  // The far walls of the gorge, narrowing as they go down into the dark.
+  const walls = `M ${left} ${y} L ${left + span * 0.3} ${bottom} L ${right - span * 0.3} ${bottom} L ${right} ${y} Z`;
+  const edge = (x: number, dir: 1 | -1, key: string) => {
+    const j = (k: string) => (rnd(c, `${key}-${k}`) - 0.5) * c.w * 0.03;
+    const out = dir * c.w * 2;
+    return `M ${x - out} ${y} L ${x} ${y} L ${x + dir * c.w * 0.015 + j('a')} ${y + (bottom - y) * 0.25} L ${x - dir * c.w * 0.01 + j('b')} ${y + (bottom - y) * 0.55} L ${x + dir * c.w * 0.02 + j('c')} ${bottom} L ${x - out} ${bottom} Z`;
+  };
+  const plankW = head * 0.28;
+  const plankCount = Math.max(2, Math.floor(span / (head * 0.34)));
+  const planks = Array.from({ length: plankCount }, (_, i) => ({
+    key: i,
+    x: left + (i + 0.5) * (span / plankCount) - plankW / 2,
+  }));
+  const postH = head * 1.35;
+  const ropeY = (x: number) => {
+    const t = (x - left) / span;
+    return y - postH + head * 0.08 + 4 * t * (1 - t) * head * 0.3;
+  };
+  const rails = Array.from({ length: 9 }, (_, i) => left + ((i + 1) * span) / 10);
+  const farWall = mix(rock, c.roles.skyBottom, 0.55);
+  const ledge = mix(farWall, c.roles.skyBottom, 0.35);
+  const ledges = Array.from({ length: 5 }, (_, i) => ({
+    key: i,
+    x: left + span * (0.05 + rnd(c, `ledge-x-${i}`) * 0.5),
+    y: y + (bottom - y) * (0.12 + i * 0.16),
+    w: span * (0.2 + rnd(c, `ledge-w-${i}`) * 0.25),
+  }));
+  const mid = (left + right) / 2;
+  const crack = `M ${mid - span * 0.18} ${y} L ${mid - span * 0.04} ${y + (bottom - y) * 0.45} L ${mid - span * 0.07} ${bottom} L ${mid + span * 0.07} ${bottom} L ${mid + span * 0.05} ${y + (bottom - y) * 0.45} L ${mid + span * 0.18} ${y} Z`;
+  const stones = Array.from({ length: 8 }, (_, i) => {
+    const onLeft = i % 2 === 0;
+    const from = onLeft ? -0.2 * c.w : right + 0.02 * c.w;
+    const to = onLeft ? left - 0.04 * c.w : 1.2 * c.w;
+    return {
+      key: i,
+      x: from + rnd(c, `stone-x-${i}`) * (to - from),
+      y: y + (0.08 + rnd(c, `stone-y-${i}`) * 0.7) * (c.h - y),
+      r: head * (0.15 + rnd(c, `stone-r-${i}`) * 0.25),
+    };
+  });
+  return (
+    <>
+      <defs>
+        <linearGradient id={gid} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor={far} />
+          <stop offset="0.6" stopColor={deep} />
+        </linearGradient>
+      </defs>
+      {/* Through the gap, the other side of the gorge far off: its wall pale with distance,
+          ledges across it, and a dark crack running down into the depths (depth by value). */}
+      <rect x={left} y={y} width={span} height={bottom - y} fill={farWall} />
+      {ledges.map((l) => (
+        <rect key={l.key} x={l.x} y={l.y} width={l.w} height={c.h * 0.006} fill={ledge} />
+      ))}
+      <path d={crack} fill={deep} />
+      <path d={walls} fill={`url(#${gid})`} opacity={0.6} />
+      {/* The two cliffs close by, darkest: their tops, their broken faces down into the drop,
+          and rocks lying on them. */}
+      <path d={edge(left, 1, 'near')} fill={cliff} />
+      <path d={edge(right, -1, 'far')} fill={cliff} />
+      {stones.map((st) => (
+        <ellipse
+          key={st.key}
+          cx={st.x}
+          cy={st.y}
+          rx={st.r}
+          ry={st.r * 0.45}
+          fill={mix(cliff, ink, 0.35)}
+        />
+      ))}
+      {/* The paler lip of each cliff top, where the light catches it. */}
+      <rect x={-c.w} y={y} width={left + c.w} height={c.h * 0.01} fill={lip} />
+      <rect x={right} y={y} width={c.w * 2} height={c.h * 0.01} fill={lip} />
+      {/* The bridge: a rope under the planks, the planks with the dark between, two posts, and
+          the hand rope sagging between them with its ties down to the planks. */}
+      <path
+        d={`M ${left} ${y + head * 0.1} Q ${(left + right) / 2} ${y + head * 0.18} ${right} ${y + head * 0.1}`}
+        fill="none"
+        stroke={rope}
+        strokeWidth={head * 0.04}
+      />
+      {planks.map((p) => (
+        <rect
+          key={p.key}
+          x={p.x}
+          y={y}
+          width={plankW}
+          height={head * 0.1}
+          rx={head * 0.02}
+          fill={wood}
+        />
+      ))}
+      {rails.map((x) => (
+        <line key={x} x1={x} y1={ropeY(x)} x2={x} y2={y} stroke={rope} strokeWidth={head * 0.022} />
+      ))}
+      <path
+        d={`M ${left} ${y - postH + head * 0.08} Q ${(left + right) / 2} ${y - postH + head * 0.08 + 2 * head * 0.3} ${right} ${y - postH + head * 0.08}`}
+        fill="none"
+        stroke={rope}
+        strokeWidth={head * 0.045}
+        strokeLinecap="round"
+      />
+      {[left, right].map((x) => (
+        <rect
+          key={x}
+          x={x - head * 0.07}
+          y={y - postH}
+          width={head * 0.14}
+          height={postH + head * 0.1}
+          rx={head * 0.03}
+          fill={wood}
+        />
+      ))}
+    </>
+  );
+}
+
 function Ground({ c }: { c: Ctx }) {
   const y = c.spec.horizon * c.h;
   const gid = `${c.id}-ground`;
   if (c.spec.ground === 'none') return null;
+  if (c.spec.ground === 'gorge') return <Gorge c={c} />;
   if (c.spec.ground === 'water' || c.spec.ground === 'rock') {
     const water = c.spec.ground === 'water';
     const fill = water ? waterOf(c) : rockOf(c);
@@ -1073,6 +1233,403 @@ function Fittings({ c, room }: { c: Ctx; room: Interior }) {
             })}
           </g>
         );
+      case 'curtain': {
+        // A stage curtain across the whole back wall: soft folds, each a little darker on one
+        // side, and a heavy band along the top.
+        const folds = 14;
+        const each = (c.w * 1.4) / folds;
+        const deep = mix(c.roles.wall, c.roles.ground, 0.55);
+        return (
+          <g key={i}>
+            {Array.from({ length: folds }, (_, k) => (
+              <rect
+                key={k}
+                x={-c.w * 0.2 + k * each + each * 0.56}
+                y={-(c.world?.top ?? 0)}
+                width={each * 0.44}
+                height={floor - c.h * 0.02 + (c.world?.top ?? 0)}
+                fill={deep}
+                opacity={0.5}
+              />
+            ))}
+            <rect
+              x={-c.w}
+              y={-(c.world?.top ?? 0)}
+              width={c.w * 3}
+              height={u * 7 + (c.world?.top ?? 0)}
+              fill={dark}
+            />
+          </g>
+        );
+      }
+      case 'spotlight': {
+        // One lamp over the table: a soft beam that widens on its way down and a pool of light
+        // where it lands. Light is not a thing, so it has no edge to speak of.
+        const [lo, hi] = tokens.background.lightRayOpacity;
+        const top = u * 7;
+        return (
+          <g key={i}>
+            <path
+              d={`M ${x - u * 7} ${top} L ${x + u * 7} ${top} L ${x + u * 62} ${floor + u * 9} L ${x - u * 62} ${floor + u * 9} Z`}
+              fill={pale}
+              opacity={lo}
+            />
+            <path
+              d={`M ${x - u * 4} ${top} L ${x + u * 4} ${top} L ${x + u * 40} ${floor + u * 9} L ${x - u * 40} ${floor + u * 9} Z`}
+              fill={pale}
+              opacity={lo}
+            />
+            <ellipse cx={x} cy={floor + u * 9} rx={u * 62} ry={u * 7} fill={pale} opacity={hi} />
+            <rect x={x - u * 9} y={top - u * 2.4} width={u * 18} height={u * 3.6} fill={dark} />
+          </g>
+        );
+      }
+      case 'pendant': {
+        // A restaurant's hanging lamp: a cord from the ceiling, a dark shade, a warm round of
+        // light round it on the wall. Light has no edge.
+        const gid = `${c.id}-pendant-${i}`;
+        const y = floor - u * 46;
+        return (
+          <g key={i}>
+            <defs>
+              <radialGradient id={gid}>
+                <stop offset="0" stopColor={pale} stopOpacity={0.5} />
+                <stop offset="1" stopColor={pale} stopOpacity={0} />
+              </radialGradient>
+            </defs>
+            <ellipse cx={x} cy={y + u * 6} rx={u * 20} ry={u * 16} fill={`url(#${gid})`} />
+            <rect x={x - u * 0.3} y={0} width={u * 0.6} height={y} fill={dark} />
+            <path
+              d={`M ${x - u * 2} ${y} L ${x + u * 2} ${y} L ${x + u * 5} ${y + u * 4.5} L ${x - u * 5} ${y + u * 4.5} Z`}
+              fill={dark}
+            />
+            <ellipse cx={x} cy={y + u * 4.6} rx={u * 3.6} ry={u * 1.2} fill={pale} />
+          </g>
+        );
+      }
+      case 'diner-table': {
+        // Other diners further back: a small table under a cloth, two people sitting at it,
+        // one either side, in the room's own tones. Background, so flat and without lines.
+        const top = floor - u * 6;
+        const person = (px: number, k: number) => (
+          <g key={k}>
+            <circle cx={px} cy={top - u * 9} r={u * 3} fill={dark} />
+            <rect
+              x={px - u * 2.2}
+              y={top - u * 6}
+              width={u * 4.4}
+              height={u * 9}
+              rx={u * 2}
+              fill={dark}
+            />
+          </g>
+        );
+        return (
+          <g key={i}>
+            {person(x - u * 9, 0)}
+            {person(x + u * 9, 1)}
+            <path
+              d={`M ${x - u * 7} ${top} L ${x + u * 7} ${top} L ${x + u * 8} ${floor} L ${x - u * 8} ${floor} Z`}
+              fill={pale}
+              opacity={0.75}
+            />
+            <rect x={x - u * 7.5} y={top - u * 1} width={u * 15} height={u * 1.2} fill={pale} />
+          </g>
+        );
+      }
+      case 'lamp-glow': {
+        // What a bare bulb throws: a soft round of light on the wall behind the table, fading
+        // to nothing, and a pool on the floor. Black limbs stand out against it. Light is not
+        // a thing, so it has no edge.
+        const gid = `${c.id}-glow-${i}`;
+        const [lo] = tokens.background.lightRayOpacity;
+        return (
+          <g key={i}>
+            <defs>
+              <radialGradient id={gid}>
+                <stop offset="0" stopColor={pale} stopOpacity={0.62} />
+                <stop offset="0.55" stopColor={pale} stopOpacity={0.3} />
+                <stop offset="1" stopColor={pale} stopOpacity={0} />
+              </radialGradient>
+            </defs>
+            <ellipse cx={x} cy={floor - u * 14} rx={u * 46} ry={u * 38} fill={`url(#${gid})`} />
+            <ellipse
+              cx={x}
+              cy={floor + u * 3.4}
+              rx={u * 30}
+              ry={u * 4.4}
+              fill={pale}
+              opacity={lo * 1.4}
+            />
+          </g>
+        );
+      }
+      case 'daycare-door': {
+        // The front door of a small daycare, seen from the street: a frame, a door with two
+        // tall panes lit from inside, a push bar, a step, and a small lamp on the wall beside.
+        const top = floor - u * 33;
+        const lit = mix(c.roles.ray, c.roles.light, 0.35);
+        return (
+          <g key={i}>
+            <rect
+              x={x - u * 9}
+              y={top - u * 1.4}
+              width={u * 18}
+              height={floor - top + u * 1.4}
+              fill={dark}
+            />
+            <rect x={x - u * 7.6} y={top} width={u * 15.2} height={floor - top} fill={wood} />
+            {[-1, 1].map((side) => (
+              <rect
+                key={side}
+                x={x + side * u * 0.7 + (side < 0 ? -u * 5.6 : 0)}
+                y={top + u * 2.2}
+                width={u * 5.6}
+                height={u * 17}
+                rx={u * 0.6}
+                fill={lit}
+                opacity={0.85}
+              />
+            ))}
+            <rect
+              x={x - u * 6.3}
+              y={floor - u * 13.2}
+              width={u * 12.6}
+              height={u * 1.1}
+              fill={dark}
+            />
+            <rect
+              x={x - u * 10.5}
+              y={floor - u * 0.6}
+              width={u * 21}
+              height={u * 2.2}
+              fill={soft}
+            />
+            <rect
+              x={x + u * 11.2}
+              y={top + u * 4}
+              width={u * 2.4}
+              height={u * 3.2}
+              rx={u * 0.8}
+              fill={dark}
+            />
+            <circle cx={x + u * 12.4} cy={top + u * 8.2} r={u * 1.4} fill={lit} />
+          </g>
+        );
+      }
+      case 'kitchen-cupboards': {
+        // A kitchen wall (2026-10-20): a row of cupboards high on the wall with their handles,
+        // and tiles below them where the counter stands. The counter itself is the prop
+        // `kitchen-sink`, in front. Background, so flat and in the room's own tones.
+        const top = floor - u * 64;
+        const bottom = floor - u * 47;
+        const tiles = floor - u * 30;
+        const doors = 4;
+        const width = u * 64;
+        return (
+          <g key={i}>
+            <rect
+              x={x - width / 2}
+              y={bottom}
+              width={width}
+              height={tiles - bottom}
+              fill={pale}
+              opacity={0.45}
+            />
+            {Array.from({ length: 9 }, (_, k) => (
+              <rect
+                key={`v${k}`}
+                x={x - width / 2 + (k * width) / 8}
+                y={bottom}
+                width={u * 0.25}
+                height={tiles - bottom}
+                fill={soft}
+              />
+            ))}
+            {Array.from({ length: 3 }, (_, k) => (
+              <rect
+                key={`h${k}`}
+                x={x - width / 2}
+                y={bottom + ((k + 1) * (tiles - bottom)) / 4}
+                width={width}
+                height={u * 0.25}
+                fill={soft}
+              />
+            ))}
+            <rect x={x - width / 2} y={top} width={width} height={bottom - top} fill={wood} />
+            {Array.from({ length: doors }, (_, k) => (
+              <g key={`d${k}`}>
+                <rect
+                  x={x - width / 2 + (k * width) / doors + u * 0.8}
+                  y={top + u * 0.8}
+                  width={width / doors - u * 1.6}
+                  height={bottom - top - u * 1.6}
+                  fill={soft}
+                />
+                <rect
+                  x={x - width / 2 + ((k + (k % 2 ? 0.12 : 0.88)) * width) / doors - u * 0.4}
+                  y={bottom - u * 5}
+                  width={u * 0.8}
+                  height={u * 3}
+                  fill={dark}
+                />
+              </g>
+            ))}
+          </g>
+        );
+      }
+      case 'fridge': {
+        // A tall fridge against the wall: two doors, two handles, a note held by a magnet.
+        const top = floor - u * 56;
+        return (
+          <g key={i}>
+            <rect
+              x={x - u * 9}
+              y={top}
+              width={u * 18}
+              height={floor - top}
+              rx={u * 1.5}
+              fill={pale}
+              opacity={0.85}
+            />
+            <rect x={x - u * 9} y={top + u * 18} width={u * 18} height={u * 0.5} fill={soft} />
+            <rect x={x + u * 6} y={top + u * 6} width={u * 1} height={u * 8} fill={dark} />
+            <rect x={x + u * 6} y={top + u * 22} width={u * 1} height={u * 10} fill={dark} />
+            <rect x={x - u * 5} y={top + u * 24} width={u * 6} height={u * 7} fill={soft} />
+            <circle cx={x - u * 2} cy={top + u * 24} r={u * 0.9} fill={dark} />
+          </g>
+        );
+      }
+      case 'daycare-window': {
+        // A wide low window of the playroom, lit warm from inside, with children's paper
+        // pictures stuck to the glass: a sun, a flower and a house. Background, so the paper is
+        // the wall's colours with a little crayon in them.
+        const top = floor - u * 31;
+        const bottom = floor - u * 9;
+        const lit = mix(c.roles.ray, c.roles.light, 0.35);
+        const paper = (colour: string) => mix(accent(colour)[0] ?? lit, lit, 0.45);
+        return (
+          <g key={i}>
+            <rect
+              x={x - u * 15}
+              y={top - u * 1.2}
+              width={u * 30}
+              height={bottom - top + u * 2.4}
+              fill={dark}
+            />
+            <rect
+              x={x - u * 14}
+              y={top}
+              width={u * 28}
+              height={bottom - top}
+              fill={lit}
+              opacity={0.8}
+            />
+            <rect x={x - u * 0.5} y={top} width={u * 1} height={bottom - top} fill={dark} />
+            <rect x={x - u * 16} y={bottom + u * 1.2} width={u * 32} height={u * 1.4} fill={soft} />
+            {/* The sun, top left. */}
+            <circle cx={x - u * 9} cy={top + u * 6} r={u * 2.8} fill={paper('gold')} />
+            {Array.from({ length: 8 }, (_, k) => (
+              <rect
+                key={k}
+                x={x - u * 9 - u * 0.35}
+                y={top + u * 6 - u * 5}
+                width={u * 0.7}
+                height={u * 1.5}
+                fill={paper('gold')}
+                transform={`rotate(${k * 45} ${x - u * 9} ${top + u * 6})`}
+              />
+            ))}
+            {/* A flower on its stalk. */}
+            <rect
+              x={x - u * 5.4}
+              y={bottom - u * 9}
+              width={u * 0.6}
+              height={u * 8}
+              fill={paper('forest')}
+            />
+            {[0, 72, 144, 216, 288].map((turn) => (
+              <circle
+                key={turn}
+                cx={x - u * 5.1 + Math.cos(turn * DEG) * u * 1.7}
+                cy={bottom - u * 10 + Math.sin(turn * DEG) * u * 1.7}
+                r={u * 1.3}
+                fill={paper('crimson')}
+              />
+            ))}
+            <circle cx={x - u * 5.1} cy={bottom - u * 10} r={u * 1} fill={paper('gold')} />
+            {/* A house with a red roof. */}
+            <rect
+              x={x + u * 4.5}
+              y={top + u * 9}
+              width={u * 7}
+              height={u * 6}
+              fill={paper('ocean')}
+            />
+            <path
+              d={`M ${x + u * 3.6} ${top + u * 9} L ${x + u * 8} ${top + u * 5} L ${x + u * 12.4} ${top + u * 9} Z`}
+              fill={paper('crimson')}
+            />
+            <rect x={x + u * 7.2} y={top + u * 11.6} width={u * 1.8} height={u * 3.4} fill={lit} />
+            {/* A rainbow of three bands, bottom right. */}
+            {['crimson', 'gold', 'ocean'].map((colour, k) => (
+              <path
+                key={colour}
+                d={`M ${x + u * (4 + k)} ${bottom - u * 1.5} A ${u * (5 - k)} ${u * (4.4 - k)} 0 0 1 ${x + u * (14 - k)} ${bottom - u * 1.5}`}
+                stroke={paper(colour)}
+                strokeWidth={u * 0.9}
+                fill="none"
+              />
+            ))}
+          </g>
+        );
+      }
+      case 'daycare-sign': {
+        // The name board over the door: a plain board with DAYCARE on it, each letter on its own
+        // coloured block like a child's toy, so the place reads in one look.
+        const y = floor - u * 41.5;
+        const word = 'DAYCARE';
+        const step = u * 3.4;
+        const blocks = ['crimson', 'gold', 'ocean', 'forest', 'orange', 'crimson', 'gold'];
+        return (
+          <g key={i}>
+            <rect
+              x={x - u * 13.6}
+              y={y - u * 3}
+              width={u * 27.2}
+              height={u * 6}
+              rx={u * 0.6}
+              fill={dark}
+            />
+            {[...word].map((letter, k) => {
+              const bx = x + (k - (word.length - 1) / 2) * step;
+              return (
+                <g key={k}>
+                  <rect
+                    x={bx - u * 1.5}
+                    y={y - u * 1.9}
+                    width={u * 3}
+                    height={u * 3.8}
+                    rx={u * 0.4}
+                    fill={mix(accent(blocks[k] ?? 'gold')[0] ?? pale, pale, 0.3)}
+                  />
+                  <text
+                    x={bx}
+                    y={y + u * 1.2}
+                    textAnchor="middle"
+                    fontFamily={`${VIEWER_FONT}, sans-serif`}
+                    fontWeight={800}
+                    fontSize={u * 3}
+                    fill={dark}
+                  >
+                    {letter}
+                  </text>
+                </g>
+              );
+            })}
+          </g>
+        );
+      }
       default:
         return null;
     }

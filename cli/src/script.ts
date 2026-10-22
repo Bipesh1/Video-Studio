@@ -42,13 +42,27 @@ const today = () => {
   return `${d.getFullYear()}-${two(d.getMonth() + 1)}-${two(d.getDate())}`;
 };
 
+/** The page a video is for when nothing says otherwise. */
+const HOME_BRAND = 'my-page';
+
 function create() {
   const world = loadWorld();
   const mode = value('mode');
   if (!mode || !(SCRIPT_MODES as readonly string[]).includes(mode)) {
     throw new Error(`Give the mode: --mode=${SCRIPT_MODES.join(' or ')}`);
   }
-  const brand = value('brand') ?? Object.keys(world.brands)[0] ?? '';
+  // The page a video is for: the one asked for, the one page made for its format (a niche has
+  // its own), or the studio's own page.
+  const asked = value('format');
+  const madeFor = Object.values(world.brands).filter(
+    (b) =>
+      b.defaults.format === asked || (asked !== null && b.defaults.alsoFormats.includes(asked)),
+  );
+  const brand =
+    value('brand') ??
+    (madeFor.length === 1 ? madeFor[0]?.id : undefined) ??
+    (world.brands[HOME_BRAND] ? HOME_BRAND : Object.keys(world.brands)[0]) ??
+    '';
   const format = value('format') ?? world.brands[brand]?.defaults.format ?? 'story';
   const from = value('from');
   const made = newRun(

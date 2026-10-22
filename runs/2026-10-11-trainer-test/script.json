@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "title": "Trainer test",
+  "request": "A test of the Trainer in the builder: he stands in the room, is friendly to the player and tells the camera the truth. Not a video for viewers.",
+  "mode": "as-is",
+  "format": "story",
+  "brand": "my-page",
+  "voice": "leak",
+  "speakers": [
+    {
+      "id": "trainer",
+      "name": "The Trainer",
+      "voice": "trainer"
+    },
+    {
+      "id": "saint",
+      "name": "The Saint",
+      "voice": "saint"
+    }
+  ],
+  "lines": [
+    {
+      "id": "l1",
+      "speaker": "trainer",
+      "text": "Would you sit down at *this table?*",
+      "beat": "hook",
+      "chapter": 1,
+      "pauseAfterMs": 1300
+    },
+    {
+      "id": "l2",
+      "speaker": "trainer",
+      "text": "Welcome back, trainees.",
+      "beat": "setup",
+      "chapter": 1,
+      "pauseAfterMs": 1300
+    },
+    {
+      "id": "l3",
+      "speaker": "trainer",
+      "text": "Take your time. No pressure at all.",
+      "beat": "setup",
+      "chapter": 1,
+      "pauseAfterMs": 1300
+    },
+    {
+      "id": "l4",
+      "speaker": "saint",
+      "text": "Thank you. That is kind.",
+      "beat": "rising-trouble",
+      "chapter": 1,
+      "pauseAfterMs": 1300
+    },
+    {
+      "id": "l5",
+      "speaker": "trainer",
+      "text": "There is *pressure.*",
+      "beat": "rising-trouble",
+      "chapter": 1,
+      "pauseAfterMs": 1300
+    },
+    {
+      "id": "l6",
+      "speaker": "saint",
+      "text": "He seems honest.",
+      "beat": "rising-trouble",
+      "chapter": 1,
+      "pauseAfterMs": 1300,
+      "thought": true
+    },
+    {
+      "id": "l7",
+      "speaker": "trainer",
+      "text": "And there it is.",
+      "beat": "turning-point",
+      "chapter": 1,
+      "pauseAfterMs": 1300
+    },
+    {
+      "id": "l8",
+      "speaker": "narrator",
+      "text": "Next time, ask who set the table.",
+      "beat": "payoff",
+      "chapter": 1,
+      "pauseAfterMs": 1300
+    },
+    {
+      "id": "l9",
+      "speaker": "trainer",
+      "text": "Tape ends.",
+      "beat": "closing-line",
+      "chapter": 1,
+      "pauseAfterMs": 1300
+    }
+  ],
+  "sources": [],
+  "changes": []
+}

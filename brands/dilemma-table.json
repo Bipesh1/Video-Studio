@@ -1,0 +1,25 @@
+{
+  "id": "dilemma-table",
+  "pageName": "The Dilemma Table",
+  "version": 1,
+  "colors": {
+    "captionEmphasis": "gold",
+    "titleRibbon": "steel",
+    "label": "cream"
+  },
+  "font": "Fredoka",
+  "captions": {
+    "maxLines": 2,
+    "maxWordsPerPage": 5
+  },
+  "watermark": null,
+  "closingCard": null,
+  "defaults": {
+    "format": "dilemma",
+    "alsoFormats": ["dilemma-story", "dilemma-thriller", "dilemma-comedy", "dilemma-explainer"],
+    "voice": "leak",
+    "sizes": ["9:16"],
+    "vertical": "full"
+  },
+  "identityMode": "auto"
+}

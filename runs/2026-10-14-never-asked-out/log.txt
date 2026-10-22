@@ -1,0 +1,317 @@
+2026-10-14T17:12:03.727Z  part 1  part 1 of 3, 9:16: 3 scenes, 14 shots
+2026-10-14T17:12:03.729Z  part 1  voice: start
+2026-10-14T17:19:10.468Z  part 1    voice.wav: 35.35 s, 105 words, timings from estimated, -17.06 LUFS
+2026-10-14T17:19:10.488Z  part 1  voice: done in 426.7 s
+2026-10-14T17:19:10.489Z  part 1  time: start
+2026-10-14T17:19:10.597Z  part 1    14 shots over 35.4 s: shortest 1.7 s, longest 5.2 s
+2026-10-14T17:19:10.598Z  part 1    note: shot "s3e" is 5.2 s long, a little over the 4 s a shot should take
+2026-10-14T17:19:10.598Z  part 1  time: done in 0.1 s
+2026-10-14T17:19:10.598Z  part 1  sound: start
+2026-10-14T17:19:34.250Z  part 1    F:\Video Studio\runs\2026-10-14-never-asked-out\part-1\audio\mix.wav: 35.35 s, -14.03 LUFS, true peak -1.28 dB, 1 music moods, 3 effects, music -17.7 dB under the voice
+2026-10-14T17:19:34.250Z  part 1  sound: done in 23.7 s
+2026-10-14T17:19:34.251Z  part 1  stills: start
+2026-10-14T17:19:34.308Z  part 1  bundle: start
+2026-10-14T17:19:58.209Z  part 1  bundle: done in 23.9 s
+2026-10-14T17:20:46.718Z  part 1    14 stills in runs\2026-10-14-never-asked-out\part-1\stills\9x16
+2026-10-14T17:20:47.218Z  part 1    runs\2026-10-14-never-asked-out\part-1\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-14T17:20:48.642Z  part 1    runs\2026-10-14-never-asked-out\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-14T17:20:49.154Z  part 1    runs\2026-10-14-never-asked-out\part-1\stills\sheet-9x16-2.png (2 shots, 1 rows)
+2026-10-14T17:20:49.164Z  part 1  stills: done in 74.9 s
+2026-10-14T17:22:44.090Z  part 1  part 1 of 3, 9:16: 3 scenes, 14 shots
+2026-10-14T17:22:44.092Z  part 1  time: start
+2026-10-14T17:22:44.097Z  part 1    14 shots over 35.4 s: shortest 1.7 s, longest 5.2 s
+2026-10-14T17:22:44.097Z  part 1    note: shot "s3e" is 5.2 s long, a little over the 4 s a shot should take
+2026-10-14T17:22:44.097Z  part 1  time: done in 0.0 s
+2026-10-14T17:22:44.098Z  part 1  stills: start
+2026-10-14T17:22:44.116Z  part 1  bundle: start
+2026-10-14T17:22:48.515Z  part 1  bundle: done in 4.4 s
+2026-10-14T17:23:13.944Z  part 1    14 stills in runs\2026-10-14-never-asked-out\part-1\stills\9x16
+2026-10-14T17:23:14.416Z  part 1    runs\2026-10-14-never-asked-out\part-1\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-14T17:23:16.021Z  part 1    runs\2026-10-14-never-asked-out\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-14T17:23:16.400Z  part 1    runs\2026-10-14-never-asked-out\part-1\stills\sheet-9x16-2.png (2 shots, 1 rows)
+2026-10-14T17:23:16.400Z  part 1  stills: done in 32.3 s
+2026-10-14T17:23:38.911Z  part 1  part 1 of 3, 9:16: 3 scenes, 14 shots
+2026-10-14T17:23:38.913Z  part 1  preview: start
+2026-10-14T17:23:38.942Z  part 1  bundle: start
+2026-10-14T17:23:43.474Z  part 1  bundle: done in 4.5 s
+2026-10-14T17:28:40.394Z  part 1    runs\2026-10-14-never-asked-out\part-1\preview\never-asked-out-part-1-9x16-preview-v1.mp4: 35.37 s of video, 540x960, in 293.5 s (8.30 s per video second)
+2026-10-14T17:28:40.398Z  part 1    runs\2026-10-14-never-asked-out\part-1\preview\never-asked-out-part-1-9x16-preview-v1.srt
+2026-10-14T17:28:40.409Z  part 1  preview: done in 301.5 s
+2026-10-14T17:30:13.368Z  part 1  part 1 of 3, 9:16: 3 scenes, 14 shots
+2026-10-14T17:30:13.370Z  part 1  time: start
+2026-10-14T17:30:13.376Z  part 1    14 shots over 35.4 s: shortest 1.7 s, longest 5.2 s
+2026-10-14T17:30:13.377Z  part 1    note: shot "s3e" is 5.2 s long, a little over the 4 s a shot should take
+2026-10-14T17:30:13.377Z  part 1  time: done in 0.0 s
+2026-10-14T17:30:13.377Z  part 1  stills: start
+2026-10-14T17:30:13.393Z  part 1  bundle: start
+2026-10-14T17:30:20.873Z  part 1  bundle: done in 7.5 s
+2026-10-14T17:30:46.432Z  part 1    14 stills in runs\2026-10-14-never-asked-out\part-1\stills\9x16
+2026-10-14T17:30:46.861Z  part 1    runs\2026-10-14-never-asked-out\part-1\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-14T17:30:48.734Z  part 1    runs\2026-10-14-never-asked-out\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-14T17:30:49.119Z  part 1    runs\2026-10-14-never-asked-out\part-1\stills\sheet-9x16-2.png (2 shots, 1 rows)
+2026-10-14T17:30:49.119Z  part 1  stills: done in 35.7 s
+2026-10-14T17:30:49.119Z  part 1  video: start
+2026-10-14T17:37:12.825Z  part 1    runs\2026-10-14-never-asked-out\part-1\out\never-asked-out-part-1-9x16-v1.mp4: 35.37 s of video, 1080x1920, in 382.7 s (10.82 s per video second)
+2026-10-14T17:37:12.828Z  part 1    runs\2026-10-14-never-asked-out\part-1\out\never-asked-out-part-1-9x16-v1.srt
+2026-10-14T17:37:12.838Z  part 1  video: done in 383.7 s
+2026-10-14T17:38:53.393Z  part 1  part 1 of 3, 9:16: 3 scenes, 14 shots
+2026-10-14T17:38:53.395Z  part 1  time: start
+2026-10-14T17:38:53.399Z  part 1    14 shots over 35.4 s: shortest 1.7 s, longest 5.2 s
+2026-10-14T17:38:53.399Z  part 1    note: shot "s3e" is 5.2 s long, a little over the 4 s a shot should take
+2026-10-14T17:38:53.399Z  part 1  time: done in 0.0 s
+2026-10-14T17:38:53.400Z  part 1  stills: start
+2026-10-14T17:38:53.413Z  part 1  bundle: start
+2026-10-14T17:39:00.178Z  part 1  bundle: done in 6.8 s
+2026-10-14T17:39:23.096Z  part 1    14 stills in runs\2026-10-14-never-asked-out\part-1\stills\9x16
+2026-10-14T17:39:23.472Z  part 1    runs\2026-10-14-never-asked-out\part-1\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-14T17:39:24.888Z  part 1    runs\2026-10-14-never-asked-out\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-14T17:39:25.325Z  part 1    runs\2026-10-14-never-asked-out\part-1\stills\sheet-9x16-2.png (2 shots, 1 rows)
+2026-10-14T17:39:25.326Z  part 1  stills: done in 31.9 s
+2026-10-14T17:39:25.326Z  part 1  video: start
+2026-10-14T17:45:41.755Z  part 1    runs\2026-10-14-never-asked-out\part-1\out\never-asked-out-part-1-9x16-v2.mp4: 35.37 s of video, 1080x1920, in 375.5 s (10.62 s per video second)
+2026-10-14T17:45:41.759Z  part 1    runs\2026-10-14-never-asked-out\part-1\out\never-asked-out-part-1-9x16-v2.srt
+2026-10-14T17:45:41.771Z  part 1  video: done in 376.4 s
+2026-10-14T17:47:12.317Z  part 1  part 1 of 3, 9:16: 3 scenes, 14 shots
+2026-10-14T17:47:12.319Z  part 1  time: start
+2026-10-14T17:47:12.322Z  part 1    14 shots over 35.4 s: shortest 1.7 s, longest 5.2 s
+2026-10-14T17:47:12.323Z  part 1    note: shot "s3e" is 5.2 s long, a little over the 4 s a shot should take
+2026-10-14T17:47:12.323Z  part 1  time: done in 0.0 s
+2026-10-14T17:47:12.323Z  part 1  clip: start
+2026-10-14T17:47:12.336Z  part 1  bundle: start
+2026-10-14T17:47:18.485Z  part 1  bundle: done in 6.1 s
+2026-10-14T17:49:08.297Z  part 1    runs\2026-10-14-never-asked-out\part-1\clips\never-asked-out-part-1-9x16-17-26s-v1.mp4: seconds 17 to 26, in 106.5 s
+2026-10-14T17:49:08.298Z  part 1  clip: done in 116.0 s
+2026-10-14T17:49:37.701Z  part 1  part 1 of 3, 9:16: 3 scenes, 14 shots
+2026-10-14T17:49:37.703Z  part 1  time: start
+2026-10-14T17:49:37.708Z  part 1    14 shots over 35.4 s: shortest 1.7 s, longest 5.2 s
+2026-10-14T17:49:37.708Z  part 1    note: shot "s3e" is 5.2 s long, a little over the 4 s a shot should take
+2026-10-14T17:49:37.708Z  part 1  time: done in 0.0 s
+2026-10-14T17:49:37.709Z  part 1  clip: start
+2026-10-14T17:49:37.726Z  part 1  bundle: start
+2026-10-14T17:49:43.746Z  part 1  bundle: done in 6.0 s
+2026-10-14T17:51:30.685Z  part 1    runs\2026-10-14-never-asked-out\part-1\clips\never-asked-out-part-1-9x16-17-26s-v2.mp4: seconds 17 to 26, in 104.4 s
+2026-10-14T17:51:30.686Z  part 1  clip: done in 113.0 s
+2026-10-14T17:51:47.435Z  part 1  part 1 of 3, 9:16: 3 scenes, 14 shots
+2026-10-14T17:51:47.437Z  part 1  stills: start
+2026-10-14T17:51:47.453Z  part 1  bundle: start
+2026-10-14T17:51:52.639Z  part 1  bundle: done in 5.2 s
+2026-10-14T17:52:15.214Z  part 1    14 stills in runs\2026-10-14-never-asked-out\part-1\stills\9x16
+2026-10-14T17:52:15.567Z  part 1    runs\2026-10-14-never-asked-out\part-1\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-14T17:52:16.923Z  part 1    runs\2026-10-14-never-asked-out\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-14T17:52:17.285Z  part 1    runs\2026-10-14-never-asked-out\part-1\stills\sheet-9x16-2.png (2 shots, 1 rows)
+2026-10-14T17:52:17.285Z  part 1  stills: done in 29.8 s
+2026-10-14T17:52:17.285Z  part 1  video: start
+2026-10-14T17:58:44.367Z  part 1    runs\2026-10-14-never-asked-out\part-1\out\never-asked-out-part-1-9x16-v3.mp4: 35.37 s of video, 1080x1920, in 386.2 s (10.92 s per video second)
+2026-10-14T17:58:44.371Z  part 1    runs\2026-10-14-never-asked-out\part-1\out\never-asked-out-part-1-9x16-v3.srt
+2026-10-14T17:58:44.384Z  part 1  video: done in 387.1 s
+2026-10-14T18:05:58.255Z  part 2  part 2 of 3, 9:16: 3 scenes, 8 shots
+2026-10-14T18:05:58.256Z  part 2  voice: start
+2026-10-14T18:11:33.589Z  part 2    voice.wav: 22.25 s, 59 words, timings from heard, -17.1 LUFS
+2026-10-14T18:11:33.608Z  part 2  voice: done in 335.3 s
+2026-10-14T18:11:33.609Z  part 2  time: start
+2026-10-14T18:11:33.661Z  part 2    8 shots over 22.3 s: shortest 1.1 s, longest 3.6 s
+2026-10-14T18:11:33.663Z  part 2    note: shot "s4a" is only 1.1 s long
+2026-10-14T18:11:33.664Z  part 2  time: done in 0.1 s
+2026-10-14T18:11:33.664Z  part 2  sound: start
+2026-10-14T18:11:52.776Z  part 2    F:\Video Studio\runs\2026-10-14-never-asked-out\part-2\audio\mix.wav: 22.25 s, -14.04 LUFS, true peak -1.25 dB, 1 music moods, 5 effects, music -17.3 dB under the voice
+2026-10-14T18:11:52.778Z  part 2  sound: done in 19.1 s
+2026-10-14T18:11:52.779Z  part 2  stills: start
+2026-10-14T18:11:52.870Z  part 2  bundle: start
+2026-10-14T18:12:48.334Z  part 2  bundle: done in 55.5 s
+2026-10-14T18:13:25.480Z  part 2    8 stills in runs\2026-10-14-never-asked-out\part-2\stills\9x16
+2026-10-14T18:13:26.061Z  part 2    runs\2026-10-14-never-asked-out\part-2\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-14T18:13:27.328Z  part 2    runs\2026-10-14-never-asked-out\part-2\stills\sheet-9x16-1.png (8 shots, 2 rows)
+2026-10-14T18:13:27.329Z  part 2  stills: done in 94.5 s
+2026-10-14T18:14:53.949Z  part 2  part 2 of 3, 9:16: 3 scenes, 7 shots
+2026-10-14T18:14:53.951Z  part 2  time: start
+2026-10-14T18:14:53.956Z  part 2    7 shots over 22.3 s: shortest 2.8 s, longest 3.6 s
+2026-10-14T18:14:53.957Z  part 2  time: done in 0.0 s
+2026-10-14T18:14:53.957Z  part 2  sound: start
+2026-10-14T18:15:01.809Z  part 2    F:\Video Studio\runs\2026-10-14-never-asked-out\part-2\audio\mix.wav: 22.25 s, -14.04 LUFS, true peak -1.25 dB, 1 music moods, 5 effects, music -17.3 dB under the voice
+2026-10-14T18:15:01.810Z  part 2  sound: done in 7.9 s
+2026-10-14T18:15:01.810Z  part 2  stills: start
+2026-10-14T18:15:01.834Z  part 2  bundle: start
+2026-10-14T18:15:06.810Z  part 2  bundle: done in 5.0 s
+2026-10-14T18:15:23.817Z  part 2    7 stills in runs\2026-10-14-never-asked-out\part-2\stills\9x16
+2026-10-14T18:15:24.318Z  part 2    runs\2026-10-14-never-asked-out\part-2\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-14T18:15:25.466Z  part 2    runs\2026-10-14-never-asked-out\part-2\stills\sheet-9x16-1.png (7 shots, 2 rows)
+2026-10-14T18:15:25.467Z  part 2  stills: done in 23.7 s
+2026-10-14T18:15:56.057Z  part 2  part 2 of 3, 9:16: 3 scenes, 7 shots
+2026-10-14T18:15:56.058Z  part 2  time: start
+2026-10-14T18:15:56.063Z  part 2    7 shots over 22.3 s: shortest 2.8 s, longest 3.6 s
+2026-10-14T18:15:56.064Z  part 2  time: done in 0.0 s
+2026-10-14T18:15:56.064Z  part 2  sound: start
+2026-10-14T18:15:56.078Z  part 2    mix is already up to date (the plan and the voice have not changed)
+2026-10-14T18:15:56.079Z  part 2  sound: done in 0.0 s
+2026-10-14T18:15:56.079Z  part 2  stills: start
+2026-10-14T18:15:56.091Z  part 2  bundle: start
+2026-10-14T18:16:00.593Z  part 2  bundle: done in 4.5 s
+2026-10-14T18:16:16.598Z  part 2    7 stills in runs\2026-10-14-never-asked-out\part-2\stills\9x16
+2026-10-14T18:16:17.082Z  part 2    runs\2026-10-14-never-asked-out\part-2\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-14T18:16:18.312Z  part 2    runs\2026-10-14-never-asked-out\part-2\stills\sheet-9x16-1.png (7 shots, 2 rows)
+2026-10-14T18:16:18.312Z  part 2  stills: done in 22.2 s
+2026-10-14T18:16:18.313Z  part 2  video: start
+2026-10-14T18:20:54.769Z  part 2    runs\2026-10-14-never-asked-out\part-2\out\never-asked-out-part-2-9x16-v1.mp4: 22.27 s of video, 1080x1920, in 275.3 s (12.36 s per video second)
+2026-10-14T18:20:54.773Z  part 2    runs\2026-10-14-never-asked-out\part-2\out\never-asked-out-part-2-9x16-v1.srt
+2026-10-14T18:20:54.781Z  part 2  video: done in 276.5 s
+2026-10-14T18:22:12.064Z  part 2  part 2 of 3, 9:16: 3 scenes, 7 shots
+2026-10-14T18:22:12.066Z  part 2  time: start
+2026-10-14T18:22:12.070Z  part 2    7 shots over 22.3 s: shortest 2.8 s, longest 3.6 s
+2026-10-14T18:22:12.071Z  part 2  time: done in 0.0 s
+2026-10-14T18:22:12.071Z  part 2  clip: start
+2026-10-14T18:22:12.087Z  part 2  bundle: start
+2026-10-14T18:22:16.950Z  part 2  bundle: done in 4.9 s
+2026-10-14T18:23:51.518Z  part 2    runs\2026-10-14-never-asked-out\part-2\clips\never-asked-out-part-2-9x16-6-13s-v1.mp4: seconds 6 to 13, in 92.1 s
+2026-10-14T18:23:51.519Z  part 2  clip: done in 99.4 s
+2026-10-14T18:24:12.700Z  part 2  part 2 of 3, 9:16: 3 scenes, 7 shots
+2026-10-14T18:24:12.701Z  part 2  stills: start
+2026-10-14T18:24:12.714Z  part 2  bundle: start
+2026-10-14T18:24:17.115Z  part 2  bundle: done in 4.4 s
+2026-10-14T18:24:32.447Z  part 2    7 stills in runs\2026-10-14-never-asked-out\part-2\stills\9x16
+2026-10-14T18:24:33.168Z  part 2    runs\2026-10-14-never-asked-out\part-2\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-14T18:24:34.337Z  part 2    runs\2026-10-14-never-asked-out\part-2\stills\sheet-9x16-1.png (7 shots, 2 rows)
+2026-10-14T18:24:34.338Z  part 2  stills: done in 21.6 s
+2026-10-14T18:24:34.339Z  part 2  video: start
+2026-10-14T18:29:05.755Z  part 2    runs\2026-10-14-never-asked-out\part-2\out\never-asked-out-part-2-9x16-v2.mp4: 22.27 s of video, 1080x1920, in 270.3 s (12.14 s per video second)
+2026-10-14T18:29:05.760Z  part 2    runs\2026-10-14-never-asked-out\part-2\out\never-asked-out-part-2-9x16-v2.srt
+2026-10-14T18:29:05.770Z  part 2  video: done in 271.4 s
+2026-10-14T18:35:33.003Z  part 2  part 2 of 3, 9:16: 3 scenes, 7 shots
+2026-10-14T18:35:33.005Z  part 2  stills: start
+2026-10-14T18:35:33.019Z  part 2  bundle: start
+2026-10-14T18:35:39.720Z  part 2  bundle: done in 6.7 s
+2026-10-14T18:35:55.238Z  part 2    7 stills in runs\2026-10-14-never-asked-out\part-2\stills\9x16
+2026-10-14T18:35:55.748Z  part 2    runs\2026-10-14-never-asked-out\part-2\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-14T18:35:57.021Z  part 2    runs\2026-10-14-never-asked-out\part-2\stills\sheet-9x16-1.png (7 shots, 2 rows)
+2026-10-14T18:35:57.022Z  part 2  stills: done in 24.0 s
+2026-10-14T18:35:57.022Z  part 2  video: start
+2026-10-14T18:40:40.128Z  part 2    runs\2026-10-14-never-asked-out\part-2\out\never-asked-out-part-2-9x16-v3.mp4: 22.27 s of video, 1080x1920, in 281.8 s (12.66 s per video second)
+2026-10-14T18:40:40.132Z  part 2    runs\2026-10-14-never-asked-out\part-2\out\never-asked-out-part-2-9x16-v3.srt
+2026-10-14T18:40:40.140Z  part 2  video: done in 283.1 s
+2026-10-14T18:53:05.350Z  part 2  part 2 of 3, 9:16: 3 scenes, 7 shots
+2026-10-14T18:53:05.352Z  part 2  time: start
+2026-10-14T18:53:05.358Z  part 2    7 shots over 22.3 s: shortest 2.8 s, longest 3.6 s
+2026-10-14T18:53:05.359Z  part 2  time: done in 0.0 s
+2026-10-14T18:53:05.359Z  part 2  sound: start
+2026-10-14T18:53:11.746Z  part 2    F:\Video Studio\runs\2026-10-14-never-asked-out\part-2\audio\mix.wav: 22.25 s, -14.02 LUFS, true peak -1.25 dB, 1 music moods, 6 effects, music -18.8 dB under the voice
+2026-10-14T18:53:11.747Z  part 2  sound: done in 6.4 s
+2026-10-14T18:53:11.747Z  part 2  video: start
+2026-10-14T18:53:11.766Z  part 2  bundle: start
+2026-10-14T18:53:21.624Z  part 2  bundle: done in 9.9 s
+2026-10-14T18:57:54.359Z  part 2    runs\2026-10-14-never-asked-out\part-2\out\never-asked-out-part-2-9x16-v4.mp4: 22.27 s of video, 1080x1920, in 268.4 s (12.05 s per video second)
+2026-10-14T18:57:54.363Z  part 2    runs\2026-10-14-never-asked-out\part-2\out\never-asked-out-part-2-9x16-v4.srt
+2026-10-14T18:57:54.452Z  part 2  video: done in 282.7 s
+2026-10-14T19:00:37.597Z  part 3  part 3 of 3, 9:16: 2 scenes, 18 shots
+2026-10-14T19:00:37.598Z  part 3  voice: start
+2026-10-15T03:39:52.605Z  part 3  part 3 of 3, 9:16: 2 scenes, 18 shots
+2026-10-15T03:39:52.606Z  part 3  voice: start
+2026-10-15T03:50:09.530Z  part 3    voice.wav: 46.88 s, 127 words, timings from estimated, -17.12 LUFS
+2026-10-15T03:50:09.544Z  part 3  voice: done in 616.9 s
+2026-10-15T03:50:09.544Z  part 3  time: start
+2026-10-15T03:50:09.588Z  part 3    18 shots over 46.9 s: shortest 1.8 s, longest 4.2 s
+2026-10-15T03:50:09.588Z  part 3  time: done in 0.0 s
+2026-10-15T03:50:09.589Z  part 3  sound: start
+2026-10-15T03:50:45.724Z  part 3    F:\Video Studio\runs\2026-10-14-never-asked-out\part-3\audio\mix.wav: 46.88 s, -14.04 LUFS, true peak -1.24 dB, 1 music moods, 1 effects, music -17.3 dB under the voice
+2026-10-15T03:50:45.725Z  part 3  sound: done in 36.1 s
+2026-10-15T03:50:45.725Z  part 3  stills: start
+2026-10-15T03:50:45.773Z  part 3  bundle: start
+2026-10-15T03:51:13.872Z  part 3  bundle: done in 28.1 s
+2026-10-15T03:51:54.730Z  part 3    18 stills in runs\2026-10-14-never-asked-out\part-3\stills\9x16
+2026-10-15T03:51:55.522Z  part 3    runs\2026-10-14-never-asked-out\part-3\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-15T03:51:56.756Z  part 3    runs\2026-10-14-never-asked-out\part-3\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-15T03:51:57.397Z  part 3    runs\2026-10-14-never-asked-out\part-3\stills\sheet-9x16-2.png (6 shots, 2 rows)
+2026-10-15T03:51:57.397Z  part 3  stills: done in 71.7 s
+2026-10-15T03:53:39.194Z  part 3  part 3 of 3, 9:16: 2 scenes, 18 shots
+2026-10-15T03:53:39.195Z  part 3  time: start
+2026-10-15T03:53:39.214Z  part 3    18 shots over 46.9 s: shortest 1.8 s, longest 4.2 s
+2026-10-15T03:53:39.214Z  part 3  time: done in 0.0 s
+2026-10-15T03:53:39.214Z  part 3  stills: start
+2026-10-15T03:53:39.236Z  part 3  bundle: start
+2026-10-15T03:53:43.573Z  part 3  bundle: done in 4.3 s
+2026-10-15T03:54:11.033Z  part 3    18 stills in runs\2026-10-14-never-asked-out\part-3\stills\9x16
+2026-10-15T03:54:11.308Z  part 3    runs\2026-10-14-never-asked-out\part-3\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-15T03:54:12.635Z  part 3    runs\2026-10-14-never-asked-out\part-3\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-15T03:54:13.287Z  part 3    runs\2026-10-14-never-asked-out\part-3\stills\sheet-9x16-2.png (6 shots, 2 rows)
+2026-10-15T03:54:13.287Z  part 3  stills: done in 34.1 s
+2026-10-15T03:54:38.273Z  part 3  part 3 of 3, 9:16: 2 scenes, 18 shots
+2026-10-15T03:54:38.276Z  part 3  video: start
+2026-10-15T03:54:38.321Z  part 3  bundle: start
+2026-10-15T03:54:44.426Z  part 3  bundle: done in 6.1 s
+2026-10-15T04:27:49.810Z  part 3  part 3 of 3, 9:16: 2 scenes, 18 shots
+2026-10-15T04:27:49.811Z  part 3  video: start
+2026-10-15T04:27:50.022Z  part 3  bundle: start
+2026-10-15T04:28:07.212Z  part 3  bundle: done in 17.2 s
+2026-10-15T04:34:17.096Z  part 3    runs\2026-10-14-never-asked-out\part-3\out\never-asked-out-part-3-9x16-v1.mp4: 46.90 s of video, 1080x1920, in 366.5 s (7.81 s per video second)
+2026-10-15T04:34:17.103Z  part 3    runs\2026-10-14-never-asked-out\part-3\out\never-asked-out-part-3-9x16-v1.srt
+2026-10-15T04:34:17.124Z  part 3  video: done in 387.3 s
+2026-10-15T04:35:42.117Z  part 3  part 3 of 3, 9:16: 2 scenes, 18 shots
+2026-10-15T04:35:42.118Z  part 3  time: start
+2026-10-15T04:35:42.125Z  part 3    18 shots over 46.9 s: shortest 1.8 s, longest 4.2 s
+2026-10-15T04:35:42.126Z  part 3  time: done in 0.0 s
+2026-10-15T04:35:42.126Z  part 3  clip: start
+2026-10-15T04:35:42.151Z  part 3  bundle: start
+2026-10-15T04:35:51.598Z  part 3  bundle: done in 9.4 s
+2026-10-15T04:37:09.552Z  part 3    runs\2026-10-14-never-asked-out\part-3\clips\never-asked-out-part-3-9x16-7-16s-v1.mp4: seconds 7 to 16, in 75.3 s
+2026-10-15T04:37:09.555Z  part 3  clip: done in 87.4 s
+2026-10-15T04:37:31.632Z  part 3  part 3 of 3, 9:16: 2 scenes, 18 shots
+2026-10-15T04:37:31.634Z  part 3  stills: start
+2026-10-15T04:37:31.664Z  part 3  bundle: start
+2026-10-15T04:37:41.828Z  part 3  bundle: done in 10.2 s
+2026-10-15T04:38:17.270Z  part 3    18 stills in runs\2026-10-14-never-asked-out\part-3\stills\9x16
+2026-10-15T04:38:17.614Z  part 3    runs\2026-10-14-never-asked-out\part-3\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-15T04:38:19.450Z  part 3    runs\2026-10-14-never-asked-out\part-3\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-15T04:38:20.398Z  part 3    runs\2026-10-14-never-asked-out\part-3\stills\sheet-9x16-2.png (6 shots, 2 rows)
+2026-10-15T04:38:20.399Z  part 3  stills: done in 48.8 s
+2026-10-15T04:38:20.399Z  part 3  video: start
+2026-10-15T04:46:28.020Z  part 3    runs\2026-10-14-never-asked-out\part-3\out\never-asked-out-part-3-9x16-v2.mp4: 46.90 s of video, 1080x1920, in 486.6 s (10.38 s per video second)
+2026-10-15T04:46:28.153Z  part 3    runs\2026-10-14-never-asked-out\part-3\out\never-asked-out-part-3-9x16-v2.srt
+2026-10-15T04:46:28.571Z  part 3  video: done in 488.2 s
+2026-10-15T04:51:43.913Z  output  9:16 full video:
+2026-10-15T04:53:26.627Z  output      F:\Video Studio\runs\2026-10-14-never-asked-out\cuts\full\audio\mix.wav: 104.53 s, -14.02 LUFS, true peak -1.24 dB, 3 music moods, 10 effects, music -17.7 dB under the voice
+2026-10-15T04:58:49.505Z  output    runs\2026-10-14-never-asked-out\out\never-asked-out-9x16-v1.mp4: 104.53 s, 1080x1920
+2026-10-15T04:58:49.507Z  output      ok   The file plays: 1080x1920, 30 pictures a second, 104.5 s, picture and sound both there; played through from start to finish
+2026-10-15T04:58:49.507Z  output      ok   It is as long as its parts together: 104.5 s; its 3 pieces add up to 104.5 s
+2026-10-15T04:58:49.508Z  output      FIX  Its pictures are the parts that passed: every frame against never-asked-out-part-1-9x16-v3.mp4 and never-asked-out-part-2-9x16-v4.mp4 and never-asked-out-part-3-9x16-v2.mp4 (the strongest difference is 159 of 255; over 16 would be a different picture)
+2026-10-15T04:58:49.582Z  output            problem: from 0:00 the pictures are not those of never-asked-out-part-1-9x16-v3.mp4
+2026-10-15T04:58:49.583Z  output      ok   Its sound is the mix made for the whole video: second for second (what is left over is 37 dB under it at most)
+2026-10-15T04:58:49.584Z  output      ok   There is no dead silence: the sound never drops out; the longest pause between words is 2.9 s
+2026-10-15T04:58:49.585Z  output      ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.2 dB (the limit is -1)
+2026-10-15T04:58:49.586Z  output      ok   Nothing drowns the words: 10 sound effects, the loudest of those over words 12 dB under the voice; the music sits 17.7 dB under the voice while someone speaks
+2026-10-15T04:58:49.587Z  output      FIX  Every join and the cover hold up: a strip of frames across each of the 2 joins between parts, and the cover picture
+2026-10-15T04:58:49.588Z  output            problem: the joins and the cover have not been looked at yet
+2026-10-15T04:58:49.589Z  output      to look at: runs\2026-10-14-never-asked-out\out\look\never-asked-out-9x16-v1 (each join) and runs\2026-10-14-never-asked-out\out\never-asked-out-9x16-v1-cover-side.jpg; then write runs\2026-10-14-never-asked-out\out\never-asked-out-9x16-v1.look.json
+2026-10-15T04:58:49.594Z  output  runs\2026-10-14-never-asked-out\delivery.md
+2026-10-15T05:01:08.990Z  output  9:16 full video:
+2026-10-15T05:01:10.100Z  output      mix is already up to date (the plan and the voice have not changed)
+2026-10-15T05:05:13.467Z  output    runs\2026-10-14-never-asked-out\out\never-asked-out-9x16-v2.mp4: 104.53 s, 1080x1920
+2026-10-15T05:05:13.468Z  output      ok   The file plays: 1080x1920, 30 pictures a second, 104.5 s, picture and sound both there; played through from start to finish
+2026-10-15T05:05:13.468Z  output      ok   It is as long as its parts together: 104.5 s; its 3 pieces add up to 104.5 s
+2026-10-15T05:05:13.468Z  output      ok   Its pictures are the parts that passed: every frame against never-asked-out-part-1-9x16-v3.mp4 and never-asked-out-part-2-9x16-v4.mp4 and never-asked-out-part-3-9x16-v2.mp4 (the strongest difference is 1 of 255; over 16 would be a different picture)
+2026-10-15T05:05:13.493Z  output      ok   Its sound is the mix made for the whole video: second for second (what is left over is 37 dB under it at most)
+2026-10-15T05:05:13.494Z  output      ok   There is no dead silence: the sound never drops out; the longest pause between words is 2.9 s
+2026-10-15T05:05:13.494Z  output      ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.2 dB (the limit is -1)
+2026-10-15T05:05:13.494Z  output      ok   Nothing drowns the words: 10 sound effects, the loudest of those over words 12 dB under the voice; the music sits 17.7 dB under the voice while someone speaks
+2026-10-15T05:05:13.495Z  output      FIX  Every join and the cover hold up: a strip of frames across each of the 2 joins between parts, and the cover picture
+2026-10-15T05:05:13.496Z  output            problem: the joins and the cover have not been looked at yet
+2026-10-15T05:05:13.497Z  output      to look at: runs\2026-10-14-never-asked-out\out\look\never-asked-out-9x16-v2 (each join) and runs\2026-10-14-never-asked-out\out\never-asked-out-9x16-v2-cover-side.jpg; then write runs\2026-10-14-never-asked-out\out\never-asked-out-9x16-v2.look.json
+2026-10-15T05:05:13.499Z  output  runs\2026-10-14-never-asked-out\delivery.md
+2026-10-15T05:08:18.972Z  output  9:16 full video:
+2026-10-15T05:08:19.709Z  output    runs\2026-10-14-never-asked-out\out\never-asked-out-9x16-v2.mp4: already made from these parts
+2026-10-15T05:08:19.710Z  output      FIX  Every join and the cover hold up: the joins and the cover have not been looked at yet
+2026-10-15T05:08:19.895Z  output  runs\2026-10-14-never-asked-out\delivery.md
+2026-10-15T05:08:38.054Z  output  9:16 full video:
+2026-10-15T05:08:38.684Z  output    runs\2026-10-14-never-asked-out\out\never-asked-out-9x16-v2.mp4: already made from these parts
+2026-10-15T05:08:59.414Z  output      runs\2026-10-14-never-asked-out\out\never-asked-out-9x16-v2-cover-words.jpg
+2026-10-15T05:08:59.415Z  output      FIX  Every join and the cover hold up: the joins and the cover have not been looked at yet
+2026-10-15T05:08:59.775Z  output  runs\2026-10-14-never-asked-out\delivery.md
+2026-10-15T05:09:27.986Z  output  9:16 full video:
+2026-10-15T05:09:28.565Z  output    runs\2026-10-14-never-asked-out\out\never-asked-out-9x16-v2.mp4: already made from these parts
+2026-10-15T05:09:28.756Z  output  runs\2026-10-14-never-asked-out\delivery.md
+2026-10-15T05:25:18.029Z  output  9:16 full video:
+2026-10-15T05:25:19.958Z  output    runs\2026-10-14-never-asked-out\out\never-asked-out-9x16-v2.mp4: already made from these parts
+2026-10-15T05:25:20.079Z  output  runs\2026-10-14-never-asked-out\delivery.md
+2026-10-15T16:03:32.471Z  output  9:16 full video:
+2026-10-15T16:03:33.128Z  output    runs\2026-10-14-never-asked-out\out\never-asked-out-9x16-v2.mp4: already made from these parts
+2026-10-15T16:03:33.157Z  output  runs\2026-10-14-never-asked-out\delivery.md
+2026-10-15T16:25:54.179Z  output  9:16 full video:
+2026-10-15T16:25:55.251Z  output    runs\2026-10-14-never-asked-out\out\never-asked-out-9x16-v2.mp4: already made from these parts
+2026-10-15T16:25:55.583Z  output  runs\2026-10-14-never-asked-out\delivery.md

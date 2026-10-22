@@ -1,0 +1,454 @@
+{
+  "version": 1,
+  "title": "Could Humans Evolve to Hold Their Breath Like Seals?",
+  "request": "Biku's What's the Catch? what-if script, used as it is: 'Make a video on this script for the whats if part. make sure the animations are good like it should not be stuck in one photo for long time. each new info should bring a great animation' (2026-10-19).",
+  "mode": "as-is",
+  "format": "fine-print",
+  "style": "ink-stick",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "seed": 11811,
+  "finish": {
+    "acting": "snappy",
+    "onTwos": false,
+    "shadows": false,
+    "grain": 0.2,
+    "vignette": 0.12,
+    "boil": 0.25
+  },
+  "explainerLook": "world",
+  "sources": [
+    "Ilardo, M. et al., \"Physiological and genetic adaptations to diving in sea nomads\", Cell, 2018. Bajau spleens about 50% larger than the neighbouring Saluan, also in Bajau who do not dive; a gene variant near PDE10A linked to spleen size. https://doi.org/10.1016/j.cell.2018.03.054",
+    "NPR (via KPBS), \"The Secret To Deep Diving May Lie In The Spleen\", 2018. Researchers still hope to confirm the thyroid hormone link and that red blood cell levels change during dives. https://www.kpbs.org/news/2018/04/24/the-secret-to-deep-diving-may-lie-in-the-spleen",
+    "AFP report on the Cell study (via Philstar), 2018. Bajau spend up to 60% of their working day diving. https://www.philstar.com/business/science-and-environment/2018/04/20/1807756/scientists-discover-secret-why-bajaus-are-stronger-divers",
+    "The Scientist, \"Free Divers from Southeast Asia Evolved Bigger Spleens\", 2018. A rare example of natural selection in modern humans, over hundreds to thousands of years. https://mobile.the-scientist.com/article/52347/free-divers-from-southeast-asia-evolved-bigger-spleens",
+    "Guinness World Records, \"Longest time breath held voluntarily underwater (male)\". 29 min 3 sec, Vitomir Maričić, Opatija, Croatia, 14 June 2025, after pre-breathing pure oxygen. https://www.guinnessworldrecords.com/world-records/longest-time-breath-held-voluntarily-male",
+    "Checked by Claude on 2026-10-19 against Science News, NPR, The Scientist, Scientific American and reports of the record; no source gives the size of the spleens, so \"roughly the size of a tennis ball\" is unchecked."
+  ],
+  "appliedLessons": [],
+  "cast": [],
+  "scenes": [
+    {
+      "id": "s5",
+      "chapter": 1,
+      "beat": "the-proof",
+      "mood": "reflective",
+      "quiet": false,
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l16",
+          "speaker": "narrator",
+          "text": "Melissa Ilardo's team published this in the journal *Cell* in 2018.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l17",
+          "speaker": "narrator",
+          "text": "They also found a gene, PDE10A, that may make the spleen *bigger*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l18",
+          "speaker": "narrator",
+          "text": "Scientists think it works through a body hormone, but nobody has *proved* that yet.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l19",
+          "speaker": "narrator",
+          "text": "The breath hold world record is twenty nine minutes, but only after breathing pure *oxygen*.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s20",
+          "line": "l16",
+          "words": "Melissa Ilardo's team published this in the journal *Cell* in 2018.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "paper",
+              "at": "middle",
+              "gainDb": 0
+            }
+          ],
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "title": {
+              "lines": [
+                "CELL",
+                "2018"
+              ],
+              "stress": 1
+            },
+            "from": "boats",
+            "at": "page",
+            "fly": "start",
+            "keep": [
+              "houseboats"
+            ],
+            "show": [
+              {
+                "item": "journal",
+                "on": "journal"
+              }
+            ]
+          },
+          "ambience": "waves",
+          "transition": "cut",
+          "startMs": 0,
+          "endMs": 4970
+        },
+        {
+          "id": "s21",
+          "line": "l17",
+          "words": "They also found a gene, PDE10A, that may make the spleen *bigger*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "from": "page",
+            "at": "page-figure",
+            "fly": "start",
+            "keep": [
+              "houseboats",
+              "journal"
+            ],
+            "show": [
+              {
+                "item": "gene",
+                "on": "gene"
+              }
+            ]
+          },
+          "ambience": "waves",
+          "transition": "cut",
+          "startMs": 4970,
+          "endMs": 9940
+        },
+        {
+          "id": "s22",
+          "line": "l18",
+          "words": "Scientists think it works through a body hormone, but nobody has *proved* that yet.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "page-figure",
+            "fly": "start",
+            "keep": [
+              "houseboats",
+              "journal",
+              "gene"
+            ],
+            "show": [
+              {
+                "item": "hormone",
+                "on": "hormone"
+              }
+            ],
+            "callout": {
+              "value": "?",
+              "caption": "NOBODY KNOWS YET",
+              "at": "gene",
+              "on": "nobody"
+            }
+          },
+          "ambience": "waves",
+          "transition": "cut",
+          "startMs": 9940,
+          "endMs": 15100
+        },
+        {
+          "id": "s23",
+          "line": "l19",
+          "words": "The breath hold world record is twenty nine minutes,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "bubbles",
+              "at": "start",
+              "gainDb": -2
+            }
+          ],
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "title": {
+              "lines": [
+                "29 MINUTES",
+                "WITH HELP"
+              ],
+              "stress": 0
+            },
+            "from": "page-figure",
+            "at": "pool",
+            "fly": "start",
+            "keep": [],
+            "show": [
+              {
+                "item": "record",
+                "on": "record"
+              }
+            ]
+          },
+          "ambience": "crowd-murmur",
+          "transition": "cut",
+          "startMs": 15100,
+          "endMs": 18490
+        },
+        {
+          "id": "s24",
+          "line": "l19",
+          "words": "but only after breathing pure *oxygen*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "from": "pool",
+            "at": "tank",
+            "fly": "start",
+            "keep": [
+              "record"
+            ],
+            "show": [
+              {
+                "item": "oxygen-tank",
+                "on": "oxygen"
+              }
+            ]
+          },
+          "ambience": "crowd-murmur",
+          "transition": "cut",
+          "startMs": 18490,
+          "endMs": 21670
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 1,
+      "beat": "your-move",
+      "mood": "hope",
+      "quiet": false,
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l20",
+          "speaker": "narrator",
+          "text": "Next time you slip under the water, your heart is already *slowing* down.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l21",
+          "speaker": "narrator",
+          "text": "Your body is still running a diving program far *older* than you.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l22",
+          "speaker": "narrator",
+          "text": "So could humans evolve to hold their breath like seals? Slowly, yes, and one people is already *on the way*.",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s25",
+          "line": "l20",
+          "words": "Next time you slip under the water, your heart is already *slowing* down.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "bubbles",
+              "at": "start",
+              "gainDb": -2
+            }
+          ],
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "from": "tank",
+            "at": "figure",
+            "fly": "start",
+            "keep": [],
+            "show": [
+              {
+                "item": "heart-glow",
+                "on": "heart"
+              }
+            ]
+          },
+          "ambience": "home",
+          "transition": "cut",
+          "startMs": 21670,
+          "endMs": 26370
+        },
+        {
+          "id": "s26",
+          "line": "l21",
+          "words": "Your body is still running a diving program far *older* than you.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "from": "figure",
+            "at": "chest",
+            "fly": "start",
+            "keep": [
+              "lungs",
+              "heart-glow"
+            ],
+            "show": [
+              {
+                "item": "spleen-squeeze",
+                "on": "diving"
+              }
+            ]
+          },
+          "ambience": "underwater",
+          "transition": "cut",
+          "startMs": 26370,
+          "endMs": 30700
+        },
+        {
+          "id": "s27",
+          "line": "l22",
+          "words": "So could humans evolve to hold their breath like seals?",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "from": "chest",
+            "at": "bath",
+            "fly": "start",
+            "keep": [],
+            "show": [
+              {
+                "item": "ripple-seal",
+                "on": "seals"
+              }
+            ]
+          },
+          "ambience": "home",
+          "transition": "cut",
+          "startMs": 30700,
+          "endMs": 34337
+        },
+        {
+          "id": "s28",
+          "line": "l22",
+          "words": "Slowly, yes, and one people is already *on the way*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "title": {
+              "lines": [
+                "IT'S ALREADY",
+                "HAPPENING"
+              ],
+              "stress": 1
+            },
+            "from": "bath",
+            "at": "rise",
+            "fly": "start",
+            "keep": [
+              "ripple-seal"
+            ],
+            "show": [
+              {
+                "item": "surface",
+                "on": "yes"
+              },
+              {
+                "item": "stop",
+                "on": "way"
+              }
+            ]
+          },
+          "ambience": "home",
+          "transition": "cut",
+          "startMs": 34337,
+          "endMs": 40430
+        }
+      ]
+    }
+  ]
+}

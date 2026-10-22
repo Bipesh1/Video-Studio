@@ -1,0 +1,66 @@
+{
+  "id": "copycat",
+  "name": "The Copycat",
+  "description": "The Copycat of the game theory cast: copies whatever the other player did last time. A white-headed figure in an orange beanie, a tan jacket and brown trousers. Watches the other player first with the head tilted, then takes their exact pose, and often says their words back to them. Clothes picked by Biku from three looks on 2026-10-14 (look 3).",
+  "tags": [
+    "game theory",
+    "cast",
+    "copycat",
+    "tit for tat",
+    "mirror",
+    "copies",
+    "watchful",
+    "beanie",
+    "orange hat",
+    "player"
+  ],
+  "age": "adult",
+  "size": 1,
+  "outfit": {
+    "clothes": {
+      "top": {
+        "kind": "jacket",
+        "cloth": "tan",
+        "under": "white"
+      },
+      "bottom": {
+        "kind": "trousers",
+        "cloth": "brown"
+      },
+      "shoes": {
+        "kind": "boots",
+        "cloth": "brown"
+      },
+      "hat": {
+        "kind": "beanie",
+        "cloth": "orange"
+      }
+    }
+  },
+  "eyeStyle": "round",
+  "expression": "neutral",
+  "voice": "copycat",
+  "series": "game-theory",
+  "expressions": [
+    "neutral",
+    "happy",
+    "suspicious",
+    "surprised",
+    "sad",
+    "smug",
+    "thinking",
+    "dread",
+    "calculating",
+    "tempted",
+    "lying",
+    "guilty",
+    "hollow",
+    "jaw-drop",
+    "sly-grin",
+    "fuming"
+  ],
+  "poses": ["stand", "sit", "point", "cross-arms", "hands-up", "sit-reach", "walk"],
+  "signature": ["head-tilt"],
+  "version": 4,
+  "added": "2026-10-11"
+}

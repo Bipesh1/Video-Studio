@@ -118,6 +118,17 @@ describe('as-is mode', () => {
     );
     expect(spokenWords('the  *moon*\n_belonged_')).toEqual(['the', 'moon', 'belonged']);
   });
+
+  it('stops at the sources, given as a line or as a heading', () => {
+    for (const end of [
+      'SOURCES: one paper.',
+      '## SOURCES\n\n- One paper.',
+      '**YOUTUBE**\n\nTitle',
+    ]) {
+      const text = `# Title\n\nNotes above.\n\n## 1. THE HOOK\n\nNARRATOR: Where does it *go*?\n[FLY: a scale]\n\n---\n\n${end}`;
+      expect(originalWords(text)).toEqual(['Where', 'does', 'it', 'go', '?']);
+    }
+  });
 });
 
 describe('refine mode', () => {

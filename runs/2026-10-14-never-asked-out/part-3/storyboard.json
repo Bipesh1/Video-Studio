@@ -1,0 +1,1654 @@
+{
+  "version": 1,
+  "title": "How to Make Sure You Never Get Asked Out",
+  "request": "make video for this script now (How to Make Sure You Never Get Asked Out, second version of the script)",
+  "mode": "as-is",
+  "format": "dilemma",
+  "style": "ink-stick",
+  "brand": "dilemma-table",
+  "voice": "leak",
+  "seed": 416,
+  "finish": {
+    "acting": "gentle",
+    "onTwos": true,
+    "shadows": true,
+    "grain": 0.5,
+    "vignette": 0.3,
+    "boil": 0.25
+  },
+  "sources": [
+    "David Gale and Lloyd S. Shapley, \"College Admissions and the Stability of Marriage\", The American Mathematical Monthly, vol. 69, 1962. Showed that when one side does the asking, everyone ends up in pairs nobody wants to break, and every member of the asking side gets the best partner they could have in any such pairing. That the waiting side gets its worst such partner was shown soon after (D. G. McVitie and L. B. Wilson, \"The Stable Marriage Problem\", Communications of the ACM, 1971). As given in Biku's script.",
+    "The Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel 2012, awarded to Alvin E. Roth and Lloyd S. Shapley for the theory of stable allocations and the practice of market design. https://www.nobelprize.org/prizes/economic-sciences/2012/summary/",
+    "Alvin E. Roth and Elliott Peranson, \"The Effects of the Change in the NRMP Matching Algorithm\", JAMA, 1997. The US residency match switched to an applicant-proposing version, where the doctors do the asking, starting with the 1998 match.",
+    "National Resident Matching Program, \"2026 Main Residency Match By the Numbers\": 38,354 active applicants matched to a first-year position. Checked by Claude on 2026-10-14 against the NRMP news release \"NRMP Releases Results of the 2026 Main Residency Match for More Than 38,000 Future Residents\" (https://www.nrmp.org/about/news/2026/03/nrmp-releases-results-of-the-2026-main-residency-match-for-more-than-38000-future-residents/), which agrees. What the scene invents: the party, the Trainer, the woman who waves."
+  ],
+  "appliedLessons": [],
+  "cast": [
+    {
+      "id": "trainer",
+      "name": "The Trainer",
+      "card": "trainer",
+      "host": true
+    },
+    {
+      "id": "saint",
+      "name": "The Saint",
+      "card": "saint"
+    },
+    {
+      "id": "copycat",
+      "name": "The Copycat",
+      "card": "copycat"
+    },
+    {
+      "id": "red-dress",
+      "name": "The woman in the red dress",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "onePiece": {
+              "kind": "dress",
+              "cloth": "crimson"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "guest",
+      "name": "A guest",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "steel"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "denim"
+            },
+            "shoes": {
+              "kind": "sneakers",
+              "cloth": "brown"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "guest-two",
+      "name": "Another guest",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "onePiece": {
+              "kind": "dress",
+              "cloth": "forest"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "series": "game-theory",
+  "scenes": [
+    {
+      "id": "s6",
+      "chapter": 1,
+      "beat": "the-result",
+      "mood": "aftermath",
+      "quiet": false,
+      "place": "the-table",
+      "treatment": "atmospheric",
+      "palette": "table-grey",
+      "lines": [
+        {
+          "id": "l17",
+          "speaker": "trainer",
+          "text": "This is not a story. In 1962, two mathematicians, David Gale and Lloyd Shapley, worked out how people pair up.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l18",
+          "speaker": "trainer",
+          "text": "They proved the side that asks gets the best partner it could *keep.*",
+          "say": "They proved, the side that asks gets the best partner it could keep.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l19",
+          "speaker": "trainer",
+          "text": "The side that waits gets the *worst* partner who would still stay.",
+          "say": "The side that waits, gets the worst partner who would still stay.",
+          "pauseAfterMs": 900
+        },
+        {
+          "id": "l20",
+          "speaker": "trainer",
+          "text": "In 2012, that work won a *Nobel Prize.*",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l21",
+          "speaker": "trainer",
+          "text": "This year, that same method placed more than thirty-eight thousand young doctors in US hospitals.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l22",
+          "speaker": "trainer",
+          "text": "There, the *doctors* do the asking.",
+          "pauseAfterMs": 800
+        },
+        {
+          "id": "l23",
+          "speaker": "trainer",
+          "text": "You do this too, waiting for the text, the call, the *first move.*",
+          "pauseAfterMs": 1200
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6a",
+          "line": "l17",
+          "words": "This is not a story. In 1962, two mathematicians,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "saint",
+              "pose": "sit-slump",
+              "expression": "hollow",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.342,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "sit",
+              "expression": "neutral",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.658,
+              "lookAt": "trainer",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cup",
+              "x": 0.447,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "number",
+            "text": "1962",
+            "caption": "two mathematicians"
+          },
+          "transition": "fade",
+          "startMs": 0,
+          "endMs": 3577
+        },
+        {
+          "id": "s6b",
+          "line": "l17",
+          "words": "David Gale and Lloyd Shapley, worked out how people pair up.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "trainer"
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 3577,
+          "endMs": 7793
+        },
+        {
+          "id": "s6c",
+          "line": "l18",
+          "words": "They proved the side that asks gets",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "trainer"
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cup",
+              "x": 0.447,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 7793,
+          "endMs": 9863
+        },
+        {
+          "id": "s6d",
+          "line": "l18",
+          "words": "the best partner it could *keep.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "saint",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "saint",
+              "pose": "sit-slump",
+              "expression": "hollow",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.342,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "sit",
+              "expression": "neutral",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.658,
+              "lookAt": "trainer",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cup",
+              "x": 0.447,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 9863,
+          "endMs": 11806
+        },
+        {
+          "id": "s6e",
+          "line": "l19",
+          "words": "The side that waits gets the *worst*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cup",
+              "x": 0.447,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "picture": {
+            "layers": [
+              {
+                "kind": "band",
+                "top": 0,
+                "bottom": 1
+              },
+              {
+                "kind": "panel",
+                "top": 0.05,
+                "bottom": 0.33,
+                "place": "living-room",
+                "palette": "dusk-violet",
+                "treatment": "atmospheric"
+              },
+              {
+                "kind": "extra",
+                "x": 0.42,
+                "y": 0.2,
+                "head": 0.05,
+                "pose": "stand",
+                "moment": 0.2,
+                "facing": "right",
+                "turn": 0.3,
+                "expression": "happy",
+                "look": {
+                  "outfit": {
+                    "clothes": {
+                      "onePiece": {
+                        "kind": "dress",
+                        "cloth": "crimson"
+                      },
+                      "shoes": {
+                        "kind": "boots",
+                        "cloth": "brown"
+                      }
+                    }
+                  }
+                },
+                "effects": [],
+                "badge": false,
+                "light": 1,
+                "outline": 0
+              },
+              {
+                "kind": "person",
+                "character": "copycat",
+                "x": 0.58,
+                "y": 0.2,
+                "head": 0.05,
+                "pose": "stand",
+                "moment": 0.2,
+                "facing": "left",
+                "turn": 0.3,
+                "expression": "happy",
+                "effects": [],
+                "light": 1,
+                "outline": 0
+              },
+              {
+                "kind": "tag",
+                "text": "ASKED",
+                "x": 0.14,
+                "y": 0.08,
+                "size": 0.03,
+                "paint": "cream",
+                "tilt": 0
+              },
+              {
+                "kind": "tag",
+                "text": "BEST PARTNER YOU COULD KEEP",
+                "x": 0.5,
+                "y": 0.3,
+                "size": 0.026,
+                "paint": "forest",
+                "tilt": 0
+              },
+              {
+                "kind": "panel",
+                "top": 0.35,
+                "bottom": 0.63,
+                "place": "living-room",
+                "palette": "dusk-violet",
+                "treatment": "atmospheric"
+              },
+              {
+                "kind": "person",
+                "character": "saint",
+                "x": 0.42,
+                "y": 0.5,
+                "head": 0.05,
+                "pose": "stand",
+                "moment": 0.2,
+                "facing": "right",
+                "turn": 0.3,
+                "expression": "hollow",
+                "effects": [],
+                "light": 1,
+                "outline": 0
+              },
+              {
+                "kind": "extra",
+                "x": 0.6,
+                "y": 0.5,
+                "head": 0.05,
+                "pose": "cross-arms",
+                "moment": 0.2,
+                "facing": "left",
+                "turn": 0.3,
+                "expression": "bored",
+                "effects": [],
+                "badge": false,
+                "light": 0.8,
+                "outline": 0
+              },
+              {
+                "kind": "tag",
+                "text": "WAITED",
+                "x": 0.15,
+                "y": 0.38,
+                "size": 0.03,
+                "paint": "cream",
+                "tilt": 0
+              },
+              {
+                "kind": "tag",
+                "text": "WORST PARTNER WHO STILL STAYS",
+                "x": 0.5,
+                "y": 0.6,
+                "size": 0.026,
+                "paint": "crimson",
+                "tilt": 0
+              },
+              {
+                "kind": "band",
+                "top": 0.63,
+                "bottom": 1
+              }
+            ],
+            "from": {
+              "x": 0.5,
+              "y": 0.5,
+              "zoom": 1
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.505,
+              "zoom": 1.03
+            }
+          },
+          "transition": "cut",
+          "startMs": 11806,
+          "endMs": 13576
+        },
+        {
+          "id": "s6f",
+          "line": "l19",
+          "words": "partner who would still stay.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cup",
+              "x": 0.447,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "picture": {
+            "layers": [
+              {
+                "kind": "band",
+                "top": 0,
+                "bottom": 1
+              },
+              {
+                "kind": "panel",
+                "top": 0.05,
+                "bottom": 0.33,
+                "place": "living-room",
+                "palette": "dusk-violet",
+                "treatment": "atmospheric"
+              },
+              {
+                "kind": "extra",
+                "x": 0.42,
+                "y": 0.2,
+                "head": 0.05,
+                "pose": "stand",
+                "moment": 0.2,
+                "facing": "right",
+                "turn": 0.3,
+                "expression": "happy",
+                "look": {
+                  "outfit": {
+                    "clothes": {
+                      "onePiece": {
+                        "kind": "dress",
+                        "cloth": "crimson"
+                      },
+                      "shoes": {
+                        "kind": "boots",
+                        "cloth": "brown"
+                      }
+                    }
+                  }
+                },
+                "effects": [],
+                "badge": false,
+                "light": 1,
+                "outline": 0
+              },
+              {
+                "kind": "person",
+                "character": "copycat",
+                "x": 0.58,
+                "y": 0.2,
+                "head": 0.05,
+                "pose": "stand",
+                "moment": 0.2,
+                "facing": "left",
+                "turn": 0.3,
+                "expression": "happy",
+                "effects": [],
+                "light": 1,
+                "outline": 0
+              },
+              {
+                "kind": "tag",
+                "text": "ASKED",
+                "x": 0.14,
+                "y": 0.08,
+                "size": 0.03,
+                "paint": "cream",
+                "tilt": 0
+              },
+              {
+                "kind": "tag",
+                "text": "BEST PARTNER YOU COULD KEEP",
+                "x": 0.5,
+                "y": 0.3,
+                "size": 0.026,
+                "paint": "forest",
+                "tilt": 0
+              },
+              {
+                "kind": "panel",
+                "top": 0.35,
+                "bottom": 0.63,
+                "place": "living-room",
+                "palette": "dusk-violet",
+                "treatment": "atmospheric"
+              },
+              {
+                "kind": "person",
+                "character": "saint",
+                "x": 0.42,
+                "y": 0.5,
+                "head": 0.05,
+                "pose": "stand",
+                "moment": 0.2,
+                "facing": "right",
+                "turn": 0.3,
+                "expression": "hollow",
+                "effects": [],
+                "light": 1,
+                "outline": 0
+              },
+              {
+                "kind": "extra",
+                "x": 0.6,
+                "y": 0.5,
+                "head": 0.05,
+                "pose": "cross-arms",
+                "moment": 0.2,
+                "facing": "left",
+                "turn": 0.3,
+                "expression": "bored",
+                "effects": [],
+                "badge": false,
+                "light": 0.8,
+                "outline": 0
+              },
+              {
+                "kind": "tag",
+                "text": "WAITED",
+                "x": 0.15,
+                "y": 0.38,
+                "size": 0.03,
+                "paint": "cream",
+                "tilt": 0
+              },
+              {
+                "kind": "tag",
+                "text": "WORST PARTNER WHO STILL STAYS",
+                "x": 0.5,
+                "y": 0.6,
+                "size": 0.026,
+                "paint": "crimson",
+                "tilt": 0
+              },
+              {
+                "kind": "band",
+                "top": 0.63,
+                "bottom": 1
+              }
+            ],
+            "from": {
+              "x": 0.5,
+              "y": 0.505,
+              "zoom": 1.03
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.51,
+              "zoom": 1.06
+            }
+          },
+          "transition": "cut",
+          "startMs": 13576,
+          "endMs": 15543
+        },
+        {
+          "id": "s6g",
+          "line": "l20",
+          "words": "In 2012, that work won a *Nobel Prize.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "trainer"
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cup",
+              "x": 0.447,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "number",
+            "text": "2012",
+            "caption": "Nobel Prize"
+          },
+          "transition": "cut",
+          "startMs": 15543,
+          "endMs": 18585
+        },
+        {
+          "id": "s6h",
+          "line": "l21",
+          "words": "This year, that same method placed more than",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "trainer"
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 18585,
+          "endMs": 21064
+        },
+        {
+          "id": "s6i",
+          "line": "l21",
+          "words": "thirty-eight thousand young doctors in US hospitals.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "saint",
+              "pose": "sit-slump",
+              "expression": "hollow",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.342,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "sit",
+              "expression": "neutral",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.658,
+              "lookAt": "trainer",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cup",
+              "x": 0.447,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "number",
+            "text": "38,000",
+            "caption": "young doctors",
+            "countUp": true
+          },
+          "transition": "cut",
+          "startMs": 21064,
+          "endMs": 24038
+        },
+        {
+          "id": "s6j",
+          "line": "l22",
+          "words": "There, the *doctors* do the asking.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "trainer"
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 24038,
+          "endMs": 26164
+        },
+        {
+          "id": "s6k",
+          "line": "l23",
+          "words": "You do this too, waiting for the text,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cup",
+              "x": 0.447,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "picture": {
+            "layers": [
+              {
+                "kind": "room",
+                "place": "living-room",
+                "palette": "dusk-violet",
+                "treatment": "atmospheric"
+              },
+              {
+                "kind": "crowd",
+                "rows": 7,
+                "cols": 9,
+                "top": 0.3,
+                "bottom": 0.66,
+                "left": 0,
+                "right": 1,
+                "head": 0.055,
+                "back": 0.45,
+                "pose": "look-down",
+                "expression": "neutral",
+                "light": 0.65,
+                "hole": {
+                  "x": 0.5,
+                  "y": 0.55
+                },
+                "holeRadius": 0.07,
+                "seed": 3
+              },
+              {
+                "kind": "person",
+                "character": "saint",
+                "x": 0.5,
+                "y": 0.55,
+                "head": 0.05,
+                "pose": "look-down",
+                "moment": 0.2,
+                "facing": "right",
+                "turn": 0.3,
+                "expression": "hollow",
+                "effects": [],
+                "light": 1,
+                "outline": 0
+              }
+            ],
+            "from": {
+              "x": 0.5,
+              "y": 0.56,
+              "zoom": 5
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.54,
+              "zoom": 2.5
+            }
+          },
+          "transition": "cut",
+          "startMs": 26164,
+          "endMs": 28594
+        },
+        {
+          "id": "s6l",
+          "line": "l23",
+          "words": "the call, the *first move.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cup",
+              "x": 0.447,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "picture": {
+            "layers": [
+              {
+                "kind": "room",
+                "place": "living-room",
+                "palette": "dusk-violet",
+                "treatment": "atmospheric"
+              },
+              {
+                "kind": "crowd",
+                "rows": 7,
+                "cols": 9,
+                "top": 0.3,
+                "bottom": 0.66,
+                "left": 0,
+                "right": 1,
+                "head": 0.055,
+                "back": 0.45,
+                "pose": "look-down",
+                "expression": "neutral",
+                "light": 0.65,
+                "hole": {
+                  "x": 0.5,
+                  "y": 0.55
+                },
+                "holeRadius": 0.07,
+                "seed": 3
+              },
+              {
+                "kind": "person",
+                "character": "saint",
+                "x": 0.5,
+                "y": 0.55,
+                "head": 0.05,
+                "pose": "look-down",
+                "moment": 0.2,
+                "facing": "right",
+                "turn": 0.3,
+                "expression": "hollow",
+                "effects": [],
+                "light": 1,
+                "outline": 0
+              }
+            ],
+            "from": {
+              "x": 0.5,
+              "y": 0.54,
+              "zoom": 2.5
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.48,
+              "zoom": 1
+            }
+          },
+          "transition": "cut",
+          "startMs": 28594,
+          "endMs": 30725
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "chapter": 1,
+      "beat": "what-stays",
+      "mood": "aftermath",
+      "quiet": false,
+      "place": "the-table",
+      "treatment": "atmospheric",
+      "palette": "table-grey",
+      "lines": [
+        {
+          "id": "l24",
+          "speaker": "narrator",
+          "text": "Here is how you beat it. If you like someone, ask *first.*",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l25",
+          "speaker": "narrator",
+          "text": "Ask once, kindly, and accept a no. A no costs you one *minute.*",
+          "pauseAfterMs": 1200
+        },
+        {
+          "id": "l26",
+          "speaker": "trainer",
+          "text": "So would you wait for them to ask? Only if you want *what is left.*",
+          "pauseAfterMs": 1400
+        }
+      ],
+      "shots": [
+        {
+          "id": "s7a",
+          "line": "l24",
+          "words": "Here is how you beat it.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "bulb-flicker",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cup",
+              "x": 0.447,
+              "y": 1.22
+            },
+            {
+              "prop": "gloom-flicker",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "Like someone?",
+              "Ask first.",
+              "Ask once, kindly.",
+              "Take no for an answer."
+            ]
+          },
+          "transition": "cut",
+          "startMs": 30725,
+          "endMs": 33305
+        },
+        {
+          "id": "s7b",
+          "line": "l24",
+          "words": "If you like someone, ask *first.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "bulb-dim",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cup",
+              "x": 0.447,
+              "y": 1.22
+            },
+            {
+              "prop": "gloom",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "Like someone?",
+              "Ask first.",
+              "Ask once, kindly.",
+              "Take no for an answer."
+            ],
+            "stress": 1
+          },
+          "transition": "cut",
+          "startMs": 33305,
+          "endMs": 35709
+        },
+        {
+          "id": "s7c",
+          "line": "l25",
+          "words": "Ask once, kindly, and accept a no.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "bulb-dim",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cup",
+              "x": 0.447,
+              "y": 1.22
+            },
+            {
+              "prop": "gloom",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "Like someone?",
+              "Ask first.",
+              "Ask once, kindly.",
+              "Take no for an answer."
+            ],
+            "stress": 2
+          },
+          "transition": "cut",
+          "startMs": 35709,
+          "endMs": 38544
+        },
+        {
+          "id": "s7d",
+          "line": "l25",
+          "words": "A no costs you one *minute.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "bulb-dim",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cup",
+              "x": 0.447,
+              "y": 1.22
+            },
+            {
+              "prop": "gloom",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "Like someone?",
+              "Ask first.",
+              "Ask once, kindly.",
+              "Take no for an answer."
+            ],
+            "stress": 3
+          },
+          "transition": "cut",
+          "startMs": 38544,
+          "endMs": 41398
+        },
+        {
+          "id": "s7e",
+          "line": "l26",
+          "words": "So would you wait for them to ask?",
+          "camera": {
+            "framing": "wide",
+            "move": "push-in",
+            "strength": 0.3
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.5,
+                  "expression": "smug"
+                }
+              ]
+            },
+            {
+              "character": "saint",
+              "pose": "sit-slump",
+              "expression": "hollow",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.342,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "sit",
+              "expression": "neutral",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.658,
+              "lookAt": "trainer",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cup",
+              "x": 0.447,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 41398,
+          "endMs": 43368
+        },
+        {
+          "id": "s7f",
+          "line": "l26",
+          "words": "Only if you want *what is left.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "trainer"
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "smug",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.6,
+                  "expression": "bored"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.342
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.658
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "clunk",
+              "at": "end",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 43368,
+          "endMs": 46875
+        }
+      ]
+    }
+  ]
+}

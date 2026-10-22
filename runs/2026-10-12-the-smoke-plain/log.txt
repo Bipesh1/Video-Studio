@@ -1,0 +1,291 @@
+2026-10-12T17:52:48.464Z  part 1  part 1 of 3, 9:16: 3 scenes, 14 shots
+2026-10-12T17:52:48.466Z  part 1  voice: start
+2026-10-12T17:53:31.418Z  part 1    voice.wav: 39.61 s, 108 words, timings from kokoro, -17.18 LUFS
+2026-10-12T17:53:31.418Z  part 1  voice: done in 43.0 s
+2026-10-12T17:53:31.419Z  part 1  time: start
+2026-10-12T17:53:31.432Z  part 1    14 shots over 39.6 s: shortest 1.5 s, longest 4.2 s
+2026-10-12T17:53:31.433Z  part 1  time: done in 0.0 s
+2026-10-12T17:53:31.433Z  part 1  sound: start
+2026-10-12T17:53:43.982Z  part 1    F:\Video Studio\runs\2026-10-12-the-smoke-plain\part-1\audio\mix.wav: 39.61 s, -14.04 LUFS, true peak -1.25 dB, 1 music moods, 2 effects, music -17.3 dB under the voice
+2026-10-12T17:53:43.983Z  part 1  sound: done in 12.6 s
+2026-10-12T17:53:43.984Z  part 1  stills: start
+2026-10-12T17:53:44.005Z  part 1  bundle: start
+2026-10-12T17:53:55.803Z  part 1  bundle: done in 11.8 s
+2026-10-12T17:54:14.585Z  part 1    14 stills in runs\2026-10-12-the-smoke-plain\part-1\stills\9x16
+2026-10-12T17:54:15.390Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-12T17:54:15.596Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\stills\sheet-9x16-2.png (2 shots, 1 rows)
+2026-10-12T17:54:15.596Z  part 1  stills: done in 31.6 s
+2026-10-12T17:54:30.379Z  part 1  part 1 of 3, 9:16: 3 scenes, 14 shots
+2026-10-12T17:54:30.381Z  part 1  preview: start
+2026-10-12T17:54:30.405Z  part 1  bundle: start
+2026-10-12T17:54:36.876Z  part 1  bundle: done in 6.5 s
+2026-10-12T17:56:09.966Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\preview\the-smoke-plain-part-1-9x16-preview-v1.mp4: 39.63 s of video, 540x960, in 90.6 s (2.29 s per video second)
+2026-10-12T17:56:09.969Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\preview\the-smoke-plain-part-1-9x16-preview-v1.srt
+2026-10-12T17:56:09.983Z  part 1  preview: done in 99.6 s
+2026-10-12T17:56:52.514Z  part 1  part 1 of 3, 9:16: 3 scenes, 14 shots
+2026-10-12T17:56:52.515Z  part 1  time: start
+2026-10-12T17:56:52.520Z  part 1    14 shots over 39.6 s: shortest 1.5 s, longest 4.2 s
+2026-10-12T17:56:52.520Z  part 1  time: done in 0.0 s
+2026-10-12T17:56:52.520Z  part 1  sound: start
+2026-10-12T17:56:52.525Z  part 1    mix is already up to date (the plan and the voice have not changed)
+2026-10-12T17:56:52.526Z  part 1  sound: done in 0.0 s
+2026-10-12T17:56:52.526Z  part 1  stills: start
+2026-10-12T17:56:52.545Z  part 1  bundle: start
+2026-10-12T17:56:58.803Z  part 1  bundle: done in 6.3 s
+2026-10-12T17:57:15.800Z  part 1    14 stills in runs\2026-10-12-the-smoke-plain\part-1\stills\9x16
+2026-10-12T17:57:16.582Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-12T17:57:16.799Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\stills\sheet-9x16-2.png (2 shots, 1 rows)
+2026-10-12T17:57:16.800Z  part 1  stills: done in 24.3 s
+2026-10-12T17:57:16.800Z  part 1  preview: start
+2026-10-12T17:58:43.087Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\preview\the-smoke-plain-part-1-9x16-preview-v2.mp4: 39.63 s of video, 540x960, in 85.4 s (2.16 s per video second)
+2026-10-12T17:58:43.090Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\preview\the-smoke-plain-part-1-9x16-preview-v2.srt
+2026-10-12T17:58:43.101Z  part 1  preview: done in 86.3 s
+2026-10-12T17:59:44.650Z  part 1  part 1 of 3, 9:16: 3 scenes, 14 shots
+2026-10-12T17:59:44.652Z  part 1  stills: start
+2026-10-12T17:59:44.671Z  part 1  bundle: start
+2026-10-12T17:59:52.958Z  part 1  bundle: done in 8.3 s
+2026-10-12T18:00:10.588Z  part 1    14 stills in runs\2026-10-12-the-smoke-plain\part-1\stills\9x16
+2026-10-12T18:00:11.300Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-12T18:00:11.526Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\stills\sheet-9x16-2.png (2 shots, 1 rows)
+2026-10-12T18:00:11.526Z  part 1  stills: done in 26.9 s
+2026-10-12T18:00:11.527Z  part 1  preview: start
+2026-10-12T18:01:34.665Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\preview\the-smoke-plain-part-1-9x16-preview-v3.mp4: 39.63 s of video, 540x960, in 82.3 s (2.08 s per video second)
+2026-10-12T18:01:34.668Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\preview\the-smoke-plain-part-1-9x16-preview-v3.srt
+2026-10-12T18:01:34.679Z  part 1  preview: done in 83.2 s
+2026-10-12T18:02:11.210Z  part 1  part 1 of 3, 9:16: 3 scenes, 14 shots
+2026-10-12T18:02:11.211Z  part 1  video: start
+2026-10-12T18:02:11.228Z  part 1  bundle: start
+2026-10-12T18:02:17.783Z  part 1  bundle: done in 6.6 s
+2026-10-12T18:04:10.428Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\out\the-smoke-plain-part-1-9x16-v1.mp4: 39.63 s of video, 1080x1920, in 110.8 s (2.79 s per video second)
+2026-10-12T18:04:10.433Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\out\the-smoke-plain-part-1-9x16-v1.srt
+2026-10-12T18:04:10.448Z  part 1  video: done in 119.2 s
+2026-10-13T08:53:16.566Z  part 1  part 1 of 3, 9:16: 3 scenes, 15 shots
+2026-10-13T08:53:16.595Z  part 1  voice: start
+2026-10-13T08:57:01.671Z  part 1    voice.wav: 38.70 s, 108 words, timings from kokoro, -17.18 LUFS
+2026-10-13T08:57:01.983Z  part 1  voice: done in 225.4 s
+2026-10-13T08:57:01.991Z  part 1  time: start
+2026-10-13T08:57:02.020Z  part 1    15 shots over 38.7 s: shortest 1.5 s, longest 3.6 s
+2026-10-13T08:57:02.020Z  part 1  time: done in 0.0 s
+2026-10-13T08:57:02.021Z  part 1  sound: start
+2026-10-13T08:57:34.477Z  part 1    F:\Video Studio\runs\2026-10-12-the-smoke-plain\part-1\audio\mix.wav: 38.70 s, -14.02 LUFS, true peak -1.24 dB, 1 music moods, 2 effects, music -17.1 dB under the voice
+2026-10-13T08:57:34.482Z  part 1  sound: done in 32.5 s
+2026-10-13T08:57:34.483Z  part 1  stills: start
+2026-10-13T08:57:34.594Z  part 1  bundle: start
+2026-10-13T08:58:35.723Z  part 1  bundle: done in 61.1 s
+2026-10-13T08:59:23.987Z  part 1    15 stills in runs\2026-10-12-the-smoke-plain\part-1\stills\9x16
+2026-10-13T08:59:26.962Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-13T08:59:27.341Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\stills\sheet-9x16-2.png (3 shots, 1 rows)
+2026-10-13T08:59:27.342Z  part 1  stills: done in 112.9 s
+2026-10-13T08:59:27.342Z  part 1  preview: start
+2026-10-13T09:02:03.849Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\preview\the-smoke-plain-part-1-9x16-preview-v4.mp4: 38.70 s of video, 540x960, in 155.2 s (4.01 s per video second)
+2026-10-13T09:02:03.862Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\preview\the-smoke-plain-part-1-9x16-preview-v4.srt
+2026-10-13T09:02:03.923Z  part 1  preview: done in 156.6 s
+2026-10-13T09:06:25.666Z  part 1  part 1 of 3, 9:16: 3 scenes, 15 shots
+2026-10-13T09:06:25.671Z  part 1  stills: start
+2026-10-13T09:06:25.722Z  part 1  bundle: start
+2026-10-13T09:06:45.722Z  part 1  bundle: done in 20.0 s
+2026-10-13T09:07:30.013Z  part 1    15 stills in runs\2026-10-12-the-smoke-plain\part-1\stills\9x16
+2026-10-13T09:07:31.299Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-13T09:07:31.736Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\stills\sheet-9x16-2.png (3 shots, 1 rows)
+2026-10-13T09:07:31.737Z  part 1  stills: done in 66.1 s
+2026-10-13T09:07:31.738Z  part 1  preview: start
+2026-10-13T09:09:13.919Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\preview\the-smoke-plain-part-1-9x16-preview-v5.mp4: 38.70 s of video, 540x960, in 100.8 s (2.60 s per video second)
+2026-10-13T09:09:13.925Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\preview\the-smoke-plain-part-1-9x16-preview-v5.srt
+2026-10-13T09:09:13.970Z  part 1  preview: done in 102.2 s
+2026-10-13T09:10:46.311Z  part 1  part 1 of 3, 9:16: 3 scenes, 15 shots
+2026-10-13T09:10:46.313Z  part 1  video: start
+2026-10-13T09:10:46.340Z  part 1  bundle: start
+2026-10-13T09:10:54.777Z  part 1  bundle: done in 8.4 s
+2026-10-13T09:13:05.396Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\out\the-smoke-plain-part-1-9x16-v2.mp4: 38.70 s of video, 1080x1920, in 127.0 s (3.28 s per video second)
+2026-10-13T09:13:05.405Z  part 1    runs\2026-10-12-the-smoke-plain\part-1\out\the-smoke-plain-part-1-9x16-v2.srt
+2026-10-13T09:13:05.460Z  part 1  video: done in 139.1 s
+2026-10-13T09:26:36.331Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-13T09:26:36.335Z  part 2  voice: start
+2026-10-13T09:27:33.903Z  part 2    voice.wav: 28.37 s, 66 words, timings from kokoro, -17.18 LUFS
+2026-10-13T09:27:33.903Z  part 2  voice: done in 57.6 s
+2026-10-13T09:27:33.903Z  part 2  time: start
+2026-10-13T09:27:33.916Z  part 2    11 shots over 28.4 s: shortest 1.2 s, longest 4.6 s
+2026-10-13T09:27:33.928Z  part 2    note: shot "s5d" is only 1.2 s long
+2026-10-13T09:27:33.928Z  part 2    note: shot "s5f" is 4.6 s long, a little over the 4 s a shot should take
+2026-10-13T09:27:33.929Z  part 2  time: done in 0.0 s
+2026-10-13T09:27:33.929Z  part 2  sound: start
+2026-10-13T09:27:44.912Z  part 2    F:\Video Studio\runs\2026-10-12-the-smoke-plain\part-2\audio\mix.wav: 28.37 s, -14.04 LUFS, true peak -1.21 dB, 1 music moods, 3 effects, music -16.6 dB under the voice
+2026-10-13T09:27:44.912Z  part 2  sound: done in 11.0 s
+2026-10-13T09:27:44.912Z  part 2  stills: start
+2026-10-13T09:27:44.940Z  part 2  bundle: start
+2026-10-13T09:27:59.781Z  part 2  bundle: done in 14.8 s
+2026-10-13T09:28:29.637Z  part 2    11 stills in runs\2026-10-12-the-smoke-plain\part-2\stills\9x16
+2026-10-13T09:28:30.567Z  part 2    runs\2026-10-12-the-smoke-plain\part-2\stills\sheet-9x16-1.png (11 shots, 3 rows)
+2026-10-13T09:28:30.568Z  part 2  stills: done in 45.7 s
+2026-10-13T09:28:30.568Z  part 2  preview: start
+2026-10-13T09:29:50.858Z  part 2    runs\2026-10-12-the-smoke-plain\part-2\preview\the-smoke-plain-part-2-9x16-preview-v1.mp4: 28.40 s of video, 540x960, in 79.2 s (2.79 s per video second)
+2026-10-13T09:29:50.862Z  part 2    runs\2026-10-12-the-smoke-plain\part-2\preview\the-smoke-plain-part-2-9x16-preview-v1.srt
+2026-10-13T09:29:50.875Z  part 2  preview: done in 80.3 s
+2026-10-13T09:31:58.351Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-13T09:31:58.352Z  part 2  voice: start
+2026-10-13T09:31:58.355Z  part 2    the voice is already made for these lines
+2026-10-13T09:31:58.355Z  part 2  voice: done in 0.0 s
+2026-10-13T09:31:58.356Z  part 2  time: start
+2026-10-13T09:31:58.359Z  part 2    11 shots over 28.4 s: shortest 1.2 s, longest 4.6 s
+2026-10-13T09:31:58.359Z  part 2    note: shot "s5d" is only 1.2 s long
+2026-10-13T09:31:58.360Z  part 2    note: shot "s5f" is 4.6 s long, a little over the 4 s a shot should take
+2026-10-13T09:31:58.360Z  part 2  time: done in 0.0 s
+2026-10-13T09:31:58.360Z  part 2  sound: start
+2026-10-13T09:31:58.365Z  part 2    mix is already up to date (the plan and the voice have not changed)
+2026-10-13T09:31:58.366Z  part 2  sound: done in 0.0 s
+2026-10-13T09:31:58.366Z  part 2  stills: start
+2026-10-13T09:31:58.378Z  part 2  bundle: start
+2026-10-13T09:32:01.970Z  part 2  bundle: done in 3.6 s
+2026-10-13T09:32:16.586Z  part 2    11 stills in runs\2026-10-12-the-smoke-plain\part-2\stills\9x16
+2026-10-13T09:32:17.274Z  part 2    runs\2026-10-12-the-smoke-plain\part-2\stills\sheet-9x16-1.png (11 shots, 3 rows)
+2026-10-13T09:32:17.274Z  part 2  stills: done in 18.9 s
+2026-10-13T09:32:17.275Z  part 2  preview: start
+2026-10-13T09:33:29.680Z  part 2    runs\2026-10-12-the-smoke-plain\part-2\preview\the-smoke-plain-part-2-9x16-preview-v2.mp4: 28.40 s of video, 540x960, in 71.5 s (2.52 s per video second)
+2026-10-13T09:33:29.685Z  part 2    runs\2026-10-12-the-smoke-plain\part-2\preview\the-smoke-plain-part-2-9x16-preview-v2.srt
+2026-10-13T09:33:29.738Z  part 2  preview: done in 72.5 s
+2026-10-13T09:34:24.743Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-13T09:34:24.744Z  part 2  video: start
+2026-10-13T09:34:24.764Z  part 2  bundle: start
+2026-10-13T09:34:30.785Z  part 2  bundle: done in 6.0 s
+2026-10-13T09:36:07.255Z  part 2    runs\2026-10-12-the-smoke-plain\part-2\out\the-smoke-plain-part-2-9x16-v1.mp4: 28.40 s of video, 1080x1920, in 93.7 s (3.30 s per video second)
+2026-10-13T09:36:07.258Z  part 2    runs\2026-10-12-the-smoke-plain\part-2\out\the-smoke-plain-part-2-9x16-v1.srt
+2026-10-13T09:36:07.297Z  part 2  video: done in 102.6 s
+2026-10-13T09:47:13.810Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-13T09:47:13.822Z  part 2  voice: start
+2026-10-13T09:48:11.668Z  part 2    voice.wav: 28.02 s, 66 words, timings from kokoro, -17.18 LUFS
+2026-10-13T09:48:11.688Z  part 2  voice: done in 57.9 s
+2026-10-13T09:48:11.689Z  part 2  time: start
+2026-10-13T09:48:11.702Z  part 2    11 shots over 28.0 s: shortest 1.2 s, longest 4.3 s
+2026-10-13T09:48:11.739Z  part 2    note: shot "s5d" is only 1.2 s long
+2026-10-13T09:48:11.739Z  part 2    note: shot "s5f" is 4.3 s long, a little over the 4 s a shot should take
+2026-10-13T09:48:11.740Z  part 2  time: done in 0.1 s
+2026-10-13T09:48:11.740Z  part 2  sound: start
+2026-10-13T09:48:24.713Z  part 2    F:\Video Studio\runs\2026-10-12-the-smoke-plain\part-2\audio\mix.wav: 28.02 s, -14.02 LUFS, true peak -1.23 dB, 1 music moods, 3 effects, music -16.7 dB under the voice
+2026-10-13T09:48:24.714Z  part 2  sound: done in 13.0 s
+2026-10-13T09:48:24.714Z  part 2  stills: start
+2026-10-13T09:48:24.748Z  part 2  bundle: start
+2026-10-13T09:48:42.491Z  part 2  bundle: done in 17.7 s
+2026-10-13T09:49:23.569Z  part 2    11 stills in runs\2026-10-12-the-smoke-plain\part-2\stills\9x16
+2026-10-13T09:49:27.721Z  part 2    runs\2026-10-12-the-smoke-plain\part-2\stills\sheet-9x16-1.png (11 shots, 3 rows)
+2026-10-13T09:49:27.722Z  part 2  stills: done in 63.0 s
+2026-10-13T09:49:27.722Z  part 2  preview: start
+2026-10-13T09:50:43.805Z  part 2    runs\2026-10-12-the-smoke-plain\part-2\preview\the-smoke-plain-part-2-9x16-preview-v3.mp4: 28.03 s of video, 540x960, in 75.2 s (2.68 s per video second)
+2026-10-13T09:50:43.810Z  part 2    runs\2026-10-12-the-smoke-plain\part-2\preview\the-smoke-plain-part-2-9x16-preview-v3.srt
+2026-10-13T09:50:43.821Z  part 2  preview: done in 76.1 s
+2026-10-13T09:51:45.085Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-13T09:51:45.086Z  part 2  video: start
+2026-10-13T09:51:45.100Z  part 2  bundle: start
+2026-10-13T09:51:50.993Z  part 2  bundle: done in 5.9 s
+2026-10-13T09:53:30.624Z  part 2    runs\2026-10-12-the-smoke-plain\part-2\out\the-smoke-plain-part-2-9x16-v2.mp4: 28.03 s of video, 1080x1920, in 95.5 s (3.41 s per video second)
+2026-10-13T09:53:30.627Z  part 2    runs\2026-10-12-the-smoke-plain\part-2\out\the-smoke-plain-part-2-9x16-v2.srt
+2026-10-13T09:53:30.701Z  part 2  video: done in 105.6 s
+2026-10-13T15:26:09.747Z  part 3  part 3 of 3, 9:16: 2 scenes, 16 shots
+2026-10-13T15:26:09.757Z  part 3  voice: start
+2026-10-13T15:28:30.954Z  part 3    voice.wav: 49.80 s, 113 words, timings from kokoro, -17.17 LUFS
+2026-10-13T15:28:30.965Z  part 3  voice: done in 141.2 s
+2026-10-13T15:28:30.966Z  part 3  time: start
+2026-10-13T15:28:31.647Z  part 3    16 shots over 49.8 s: shortest 1.6 s, longest 4.9 s
+2026-10-13T15:28:31.648Z  part 3    note: shot "s7b" is 4.9 s long, a little over the 4 s a shot should take
+2026-10-13T15:28:31.649Z  part 3    note: shot "s7d" is 4.6 s long, a little over the 4 s a shot should take
+2026-10-13T15:28:31.650Z  part 3    note: shot "s7g" is 4.6 s long, a little over the 4 s a shot should take
+2026-10-13T15:28:31.651Z  part 3  time: done in 0.7 s
+2026-10-13T15:28:31.653Z  part 3  sound: start
+2026-10-13T15:28:50.794Z  part 3    F:\Video Studio\runs\2026-10-12-the-smoke-plain\part-3\audio\mix.wav: 49.80 s, -14.02 LUFS, true peak -1.1 dB, 1 music moods, 1 effects, music -17.4 dB under the voice
+2026-10-13T15:28:50.794Z  part 3  sound: done in 19.1 s
+2026-10-13T15:28:50.795Z  part 3  stills: start
+2026-10-13T15:28:50.860Z  part 3  bundle: start
+2026-10-13T15:29:16.623Z  part 3  bundle: done in 25.7 s
+2026-10-13T15:30:21.868Z  part 3    16 stills in runs\2026-10-12-the-smoke-plain\part-3\stills\9x16
+2026-10-13T15:30:25.199Z  part 3    runs\2026-10-12-the-smoke-plain\part-3\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-13T15:30:25.732Z  part 3    runs\2026-10-12-the-smoke-plain\part-3\stills\sheet-9x16-2.png (4 shots, 1 rows)
+2026-10-13T15:30:25.733Z  part 3  stills: done in 94.9 s
+2026-10-13T15:30:25.733Z  part 3  preview: start
+2026-10-13T15:32:03.715Z  part 3    runs\2026-10-12-the-smoke-plain\part-3\preview\the-smoke-plain-part-3-9x16-preview-v1.mp4: 49.80 s of video, 540x960, in 96.8 s (1.94 s per video second)
+2026-10-13T15:32:03.722Z  part 3    runs\2026-10-12-the-smoke-plain\part-3\preview\the-smoke-plain-part-3-9x16-preview-v1.srt
+2026-10-13T15:32:03.819Z  part 3  preview: done in 98.1 s
+2026-10-13T15:33:43.048Z  part 3  part 3 of 3, 9:16: 2 scenes, 16 shots
+2026-10-13T15:33:43.051Z  part 3  voice: start
+2026-10-13T15:33:43.056Z  part 3    the voice is already made for these lines
+2026-10-13T15:33:43.057Z  part 3  voice: done in 0.0 s
+2026-10-13T15:33:43.057Z  part 3  time: start
+2026-10-13T15:33:43.065Z  part 3    16 shots over 49.8 s: shortest 1.6 s, longest 4.9 s
+2026-10-13T15:33:43.066Z  part 3    note: shot "s7b" is 4.9 s long, a little over the 4 s a shot should take
+2026-10-13T15:33:43.067Z  part 3    note: shot "s7d" is 4.6 s long, a little over the 4 s a shot should take
+2026-10-13T15:33:43.067Z  part 3    note: shot "s7g" is 4.6 s long, a little over the 4 s a shot should take
+2026-10-13T15:33:43.068Z  part 3  time: done in 0.0 s
+2026-10-13T15:33:43.068Z  part 3  sound: start
+2026-10-13T15:33:43.077Z  part 3    mix is already up to date (the plan and the voice have not changed)
+2026-10-13T15:33:43.077Z  part 3  sound: done in 0.0 s
+2026-10-13T15:33:43.078Z  part 3  stills: start
+2026-10-13T15:33:43.103Z  part 3  bundle: start
+2026-10-13T15:33:51.213Z  part 3  bundle: done in 8.1 s
+2026-10-13T15:34:21.240Z  part 3    16 stills in runs\2026-10-12-the-smoke-plain\part-3\stills\9x16
+2026-10-13T15:34:22.406Z  part 3    runs\2026-10-12-the-smoke-plain\part-3\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-13T15:34:22.854Z  part 3    runs\2026-10-12-the-smoke-plain\part-3\stills\sheet-9x16-2.png (4 shots, 1 rows)
+2026-10-13T15:34:22.855Z  part 3  stills: done in 39.8 s
+2026-10-13T15:34:22.855Z  part 3  preview: start
+2026-10-13T15:37:53.315Z  part 3    runs\2026-10-12-the-smoke-plain\part-3\preview\the-smoke-plain-part-3-9x16-preview-v2.mp4: 49.80 s of video, 540x960, in 209.2 s (4.20 s per video second)
+2026-10-13T15:37:53.330Z  part 3    runs\2026-10-12-the-smoke-plain\part-3\preview\the-smoke-plain-part-3-9x16-preview-v2.srt
+2026-10-13T15:37:53.424Z  part 3  preview: done in 210.6 s
+2026-10-13T15:39:18.727Z  part 3  part 3 of 3, 9:16: 2 scenes, 18 shots
+2026-10-13T15:39:18.732Z  part 3  voice: start
+2026-10-13T15:39:18.748Z  part 3    the voice is already made for these lines
+2026-10-13T15:39:18.749Z  part 3  voice: done in 0.0 s
+2026-10-13T15:39:18.750Z  part 3  time: start
+2026-10-13T15:39:18.767Z  part 3    18 shots over 49.8 s: shortest 1.6 s, longest 4.6 s
+2026-10-13T15:39:18.769Z  part 3    note: shot "s7g" is 4.6 s long, a little over the 4 s a shot should take
+2026-10-13T15:39:18.770Z  part 3  time: done in 0.0 s
+2026-10-13T15:39:18.771Z  part 3  sound: start
+2026-10-13T15:39:18.788Z  part 3    mix is already up to date (the plan and the voice have not changed)
+2026-10-13T15:39:18.789Z  part 3  sound: done in 0.0 s
+2026-10-13T15:39:18.790Z  part 3  stills: start
+2026-10-13T15:39:18.849Z  part 3  bundle: start
+2026-10-13T15:39:33.087Z  part 3  bundle: done in 14.2 s
+2026-10-13T15:40:08.495Z  part 3    18 stills in runs\2026-10-12-the-smoke-plain\part-3\stills\9x16
+2026-10-13T15:40:09.640Z  part 3    runs\2026-10-12-the-smoke-plain\part-3\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-13T15:40:10.239Z  part 3    runs\2026-10-12-the-smoke-plain\part-3\stills\sheet-9x16-2.png (6 shots, 2 rows)
+2026-10-13T15:40:10.240Z  part 3  stills: done in 51.5 s
+2026-10-13T15:40:10.241Z  part 3  preview: start
+2026-10-13T15:43:35.264Z  part 3    runs\2026-10-12-the-smoke-plain\part-3\preview\the-smoke-plain-part-3-9x16-preview-v3.mp4: 49.80 s of video, 540x960, in 203.7 s (4.09 s per video second)
+2026-10-13T15:43:35.277Z  part 3    runs\2026-10-12-the-smoke-plain\part-3\preview\the-smoke-plain-part-3-9x16-preview-v3.srt
+2026-10-13T15:43:35.360Z  part 3  preview: done in 205.1 s
+2026-10-13T16:12:07.945Z  part 3  part 3 of 3, 9:16: 2 scenes, 18 shots
+2026-10-13T16:12:07.989Z  part 3  stills: start
+2026-10-13T16:12:08.295Z  part 3  bundle: start
+2026-10-13T16:12:27.954Z  part 3  bundle: done in 19.7 s
+2026-10-13T16:13:21.089Z  part 3    18 stills in runs\2026-10-12-the-smoke-plain\part-3\stills\9x16
+2026-10-13T16:13:27.326Z  part 3    runs\2026-10-12-the-smoke-plain\part-3\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-13T16:13:27.923Z  part 3    runs\2026-10-12-the-smoke-plain\part-3\stills\sheet-9x16-2.png (6 shots, 2 rows)
+2026-10-13T16:13:27.923Z  part 3  stills: done in 79.9 s
+2026-10-13T16:13:27.923Z  part 3  preview: start
+2026-10-13T16:15:05.866Z  part 3    runs\2026-10-12-the-smoke-plain\part-3\preview\the-smoke-plain-part-3-9x16-preview-v4.mp4: 49.80 s of video, 540x960, in 96.8 s (1.94 s per video second)
+2026-10-13T16:15:05.874Z  part 3    runs\2026-10-12-the-smoke-plain\part-3\preview\the-smoke-plain-part-3-9x16-preview-v4.srt
+2026-10-13T16:15:05.903Z  part 3  preview: done in 98.0 s
+2026-10-13T16:16:51.246Z  part 3  part 3 of 3, 9:16: 2 scenes, 18 shots
+2026-10-13T16:16:51.249Z  part 3  video: start
+2026-10-13T16:16:51.284Z  part 3  bundle: start
+2026-10-13T16:17:19.274Z  part 3  bundle: done in 28.0 s
+2026-10-13T16:22:19.684Z  part 3    runs\2026-10-12-the-smoke-plain\part-3\out\the-smoke-plain-part-3-9x16-v1.mp4: 49.80 s of video, 1080x1920, in 284.0 s (5.70 s per video second)
+2026-10-13T16:22:19.832Z  part 3    runs\2026-10-12-the-smoke-plain\part-3\out\the-smoke-plain-part-3-9x16-v1.srt
+2026-10-13T16:22:20.221Z  part 3  video: done in 329.0 s
+2026-10-13T16:30:55.321Z  output  9:16 full video:
+2026-10-13T16:32:13.452Z  output      F:\Video Studio\runs\2026-10-12-the-smoke-plain\cuts\full\audio\mix.wav: 116.53 s, -14.02 LUFS, true peak -1.1 dB, 3 music moods, 6 effects, music -17.1 dB under the voice
+2026-10-13T16:35:59.208Z  output    runs\2026-10-12-the-smoke-plain\out\the-smoke-plain-9x16-v1.mp4: 116.53 s, 1080x1920
+2026-10-13T16:35:59.254Z  output      ok   The file plays: 1080x1920, 30 pictures a second, 116.5 s, picture and sound both there; played through from start to finish
+2026-10-13T16:35:59.254Z  output      ok   It is as long as its parts together: 116.5 s; its 3 pieces add up to 116.5 s
+2026-10-13T16:35:59.255Z  output      ok   Its pictures are the parts that passed: every frame against the-smoke-plain-part-1-9x16-v2.mp4 and the-smoke-plain-part-2-9x16-v2.mp4 and the-smoke-plain-part-3-9x16-v1.mp4 (the strongest difference is 1 of 255; over 16 would be a different picture)
+2026-10-13T16:35:59.306Z  output      ok   Its sound is the mix made for the whole video: second for second (what is left over is 39 dB under it at most)
+2026-10-13T16:35:59.307Z  output      ok   There is no dead silence: the sound never drops out; the longest pause between words is 3.5 s
+2026-10-13T16:35:59.308Z  output            note: nobody speaks for 3.5 s from 1:04
+2026-10-13T16:35:59.308Z  output      ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.1 dB (the limit is -1)
+2026-10-13T16:35:59.309Z  output      ok   Nothing drowns the words: 6 sound effects, the loudest of those over words 12 dB under the voice; the music sits 17.1 dB under the voice while someone speaks
+2026-10-13T16:35:59.310Z  output      FIX  Every join and the cover hold up: a strip of frames across each of the 2 joins between parts, and the cover picture
+2026-10-13T16:35:59.310Z  output            problem: the joins and the cover have not been looked at yet
+2026-10-13T16:35:59.311Z  output      to look at: runs\2026-10-12-the-smoke-plain\out\look\the-smoke-plain-9x16-v1 (each join) and runs\2026-10-12-the-smoke-plain\out\the-smoke-plain-9x16-v1-cover-side.jpg; then write runs\2026-10-12-the-smoke-plain\out\the-smoke-plain-9x16-v1.look.json
+2026-10-13T16:35:59.313Z  output  runs\2026-10-12-the-smoke-plain\delivery.md
+2026-10-13T16:36:48.003Z  output  9:16 full video:
+2026-10-13T16:36:51.714Z  output    runs\2026-10-12-the-smoke-plain\out\the-smoke-plain-9x16-v1.mp4: already made from these parts
+2026-10-13T16:36:51.893Z  output  runs\2026-10-12-the-smoke-plain\delivery.md
+2026-10-13T17:53:45.616Z  output  9:16 full video:
+2026-10-13T17:53:50.774Z  output    runs\2026-10-12-the-smoke-plain\out\the-smoke-plain-9x16-v1.mp4: already made from these parts
+2026-10-13T17:53:51.331Z  output  runs\2026-10-12-the-smoke-plain\delivery.md

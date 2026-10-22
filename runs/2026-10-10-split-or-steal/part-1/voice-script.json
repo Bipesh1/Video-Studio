@@ -1,0 +1,142 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "lines": [
+    {
+      "id": "n1",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Two strangers. One table. A pile of cash.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n2",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Each holds two golden balls: *split, or steal.*",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n3",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "They choose at the same moment, in secret.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n4",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Take a seat.",
+      "speed": 0.92,
+      "pauseAfterMs": 650
+    },
+    {
+      "id": "n5",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "*You are one of them.*",
+      "speed": 0.92,
+      "pauseAfterMs": 800
+    },
+    {
+      "id": "n6",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "If you both split, you share.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n7",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "If one splits and one steals, *the thief takes it all.*",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n8",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "If you both steal, nobody gets a penny.",
+      "speed": 0.92,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "s1",
+      "speaker": "stranger",
+      "voice": "am_puck",
+      "text": "I'm splitting. *I promise.*",
+      "speed": 1.05,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "n9",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "*Now choose.*",
+      "speed": 0.92,
+      "pauseAfterMs": 2400
+    },
+    {
+      "id": "n10",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Here is the cold logic.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n11",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "If the stranger splits, stealing gets you double.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n12",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "If the stranger steals, you get nothing either way.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n13",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So stealing is *never worse.*",
+      "speed": 0.92,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "n14",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The stranger thinks the same.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n15",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Two steals.",
+      "speed": 0.92,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "n16",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "*Nobody wins.*",
+      "speed": 0.92,
+      "pauseAfterMs": 1200
+    }
+  ]
+}

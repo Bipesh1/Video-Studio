@@ -1,0 +1,188 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "If you liked someone, would you wait for *them* to ask?",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 402
+    },
+    {
+      "id": "l02",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "You think waiting is safer. Watch this.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 804
+    },
+    {
+      "id": "l03",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "This is a house party on a Saturday night.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 469
+    },
+    {
+      "id": "l04",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "This woman came tonight for one man, the one in the *orange hat.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 1005
+    },
+    {
+      "id": "l05",
+      "speaker": "saint",
+      "voice": "af_sarah",
+      "text": "If he likes me, he'll come *over.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/saint.wav",
+      "speed": 0.95,
+      "pauseAfterMs": 1110
+    },
+    {
+      "id": "l06",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "What she does not know is this. The one who asks gets to *choose.*",
+      "say": "What she does not know is this. The one who asks, gets to choose.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 335
+    },
+    {
+      "id": "l07",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "The one who waits only gets *chosen.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 670
+    },
+    {
+      "id": "l08",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "So I give her a choice. Walk over, or stay where it feels *safe.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 1005
+    },
+    {
+      "id": "l09",
+      "speaker": "saint",
+      "voice": "af_sarah",
+      "text": "What if he says no in front of everyone? Better to *wait.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/saint.wav",
+      "speed": 0.95,
+      "pauseAfterMs": 1110
+    },
+    {
+      "id": "l10",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "See what she did? She chose to *wait* to be chosen.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 804
+    }
+  ]
+}

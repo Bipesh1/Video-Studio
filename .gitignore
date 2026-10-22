@@ -35,3 +35,5 @@ Thumbs.db
 # copied into the engine's public folder at render time
 engine/public/runs/
 engine/public/reference/
+scheduled/logs/
+references/

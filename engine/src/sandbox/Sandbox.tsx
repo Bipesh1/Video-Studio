@@ -1,3 +1,12 @@
+import { DilemmaArenaVideo, DilemmaWorldVideo } from './part-v';
+import { DrawingLookSheet, DrawingPeopleSheet } from './part-w';
+import { FinePrintLooksBSheet, FinePrintLooksSheet } from './part-o';
+import { MotionLooksSheet } from './part-p';
+import { IsoMotionVideo, IsoPalettesSheet } from './part-q';
+import { JourneyTestVideo } from './part-r';
+import { CatchLookThumb, CatchLookVideo } from './part-t';
+import { MascotSheetVideo } from './part-u';
+import { SunsetLookVideo } from './part-s';
 import type { ReactNode } from 'react';
 import { AbsoluteFill, useCurrentFrame, useVideoConfig } from 'remotion';
 import { EXPRESSIONS, EXPRESSION_NAMES, faceAt } from '../face/expressions';
@@ -32,6 +41,8 @@ import { PropsInUseSheet, PropsSheet } from './part-i';
 import { PlacesSheet } from './part-j';
 import { BackViewsSheet, FramingSheet } from './part-k';
 import { StoryVideo, TitlesSheet } from './part-l';
+import { TableLooksBSheet, TableLooksSheet } from './part-m';
+import { TableFacesSheet, TableRowsSheet, TableShotsSheet, TrainerLooksSheet } from './part-n';
 import type { SandboxBg, SheetName } from './sheets';
 
 export type SandboxProps = { sheet: SheetName; bg: SandboxBg };
@@ -457,12 +468,42 @@ export const Sandbox = ({ sheet, bg }: SandboxProps) => {
     framing: <FramingSheet c={c} />,
     'back-views': <BackViewsSheet c={c} />,
     titles: <TitlesSheet />,
+    'table-looks': <TableLooksSheet />,
+    'table-looks-b': <TableLooksBSheet />,
+    'table-faces': <TableFacesSheet />,
+    'table-shots': <TableShotsSheet />,
+    'trainer-looks': <TrainerLooksSheet />,
+    'table-rows': <TableRowsSheet />,
+    'fine-print-looks': <FinePrintLooksSheet />,
+    'fine-print-looks-b': <FinePrintLooksBSheet />,
+    'motion-looks': <MotionLooksSheet />,
+    'iso-palettes': <IsoPalettesSheet />,
     walk: <WalkVideo c={c} />,
     motion: <MotionVideo c={c} />,
     polish: <PolishVideo c={c} />,
     moods: <MoodsVideo c={c} />,
     action: <ActionVideo />,
     story: <StoryVideo />,
+    'iso-motion': <IsoMotionVideo palette="ocean" />,
+    journey: <JourneyTestVideo />,
+    'sunset-look-0': <SunsetLookVideo polish={0} />,
+    'sunset-look-1': <SunsetLookVideo polish={1} />,
+    'sunset-look-2': <SunsetLookVideo polish={2} />,
+    'sunset-look-3': <SunsetLookVideo polish={3} />,
+    'catch-look-a': <CatchLookVideo look="a" />,
+    'catch-look-b': <CatchLookVideo look="b" />,
+    'catch-look-c': <CatchLookVideo look="c" />,
+    'catch-thumb-a': <CatchLookThumb look="a" />,
+    'catch-thumb-b': <CatchLookThumb look="b" />,
+    'catch-thumb-c': <CatchLookThumb look="c" />,
+    'catch-mascots': <MascotSheetVideo />,
+    'dilemma-look-world': <DilemmaWorldVideo />,
+    'dilemma-look-arena': <DilemmaArenaVideo />,
+    'drawing-look-1': <DrawingLookSheet look={1} />,
+    'drawing-look-2': <DrawingLookSheet look={2} />,
+    'drawing-look-3': <DrawingLookSheet look={3} />,
+    'drawing-people-1': <DrawingPeopleSheet look={1} />,
+    'drawing-people-2': <DrawingPeopleSheet look={2} />,
   };
   return (
     <AbsoluteFill style={{ backgroundColor: c.base }}>

@@ -1,8 +1,11 @@
-import type { SfxCue, SoundPlan } from './sound.schema';
+import type { Score, SfxCue, SfxName, SoundPlan, SoundProfile } from './sound.schema';
 import { AMBIENT_SFX } from './sound.schema';
 import type { World } from './storyboard.check';
-import { NARRATOR, plainWords } from './storyboard.schema';
-import type { Storyboard } from './storyboard.schema';
+import { graphicSteps, stepFrames } from './graphic.schema';
+import type { Graphic } from './graphic.schema';
+import { NARRATOR, TRAVELS, arrivalOf, plainWords } from './storyboard.schema';
+import type { Storyboard, Travel } from './storyboard.schema';
+import { QUESTION_LIFT } from './voice.schema';
 import type { VoiceScript, VoiceTrack } from './voice.schema';
 
 /**
@@ -39,6 +42,9 @@ export function partStoryboard(sb: Storyboard, part: number): Storyboard {
   // make a part's plan look changed.
   const rest = { ...sb };
   delete rest.cover;
+  const gauges = partGauges(sb, scenes);
+  if (gauges) rest.gauges = gauges;
+  else delete rest.gauges;
   return {
     ...rest,
     scenes: scenes.map((scene) => ({
@@ -54,8 +60,37 @@ export function partStoryboard(sb: Storyboard, part: number): Storyboard {
   };
 }
 
+/**
+ * A part's gauges: one that changed in an earlier part starts here already at its last value,
+ * its changes in later parts wait for them, and one put away before this part is left out.
+ */
+function partGauges(sb: Storyboard, scenes: Storyboard['scenes']): Storyboard['gauges'] {
+  if (!sb.gauges) return undefined;
+  const order = sb.scenes.flatMap((s) => s.shots.map((t) => t.id));
+  const here = scenes.flatMap((s) => s.shots.map((t) => t.id));
+  const first = here[0];
+  if (first === undefined) return undefined;
+  const from = order.indexOf(first);
+  const to = order.indexOf(here[here.length - 1] ?? first);
+  const out = sb.gauges.flatMap((g) => {
+    const until = g.until ? order.indexOf(g.until) : Infinity;
+    if (until < from) return [];
+    const carried = g.keys.filter((k) => order.indexOf(k.shot) < from).at(-1);
+    const keys = [
+      ...(carried ? [{ shot: first, value: carried.value, now: true }] : []),
+      ...g.keys.filter((k) => here.includes(k.shot)),
+    ];
+    if (keys.length === 0) return [];
+    const kept = { ...g, keys };
+    if (until > to) delete kept.until;
+    return [kept];
+  });
+  return out.length ? out : undefined;
+}
+
 /** The voice of whoever speaks a line: the narrator's, a cast member's, or their card's. */
-function voiceOf(sb: Storyboard, speaker: string, world: World) {
+/** The voice a speaker of a storyboard is heard in. */
+export function voiceOf(sb: Storyboard, speaker: string, world: World) {
   if (speaker === NARRATOR) return world.voices[sb.voice];
   const member = sb.cast.find((m) => m.id === speaker);
   const id = member?.voice ?? (member?.card ? world.characters[member.card]?.voice : undefined);
@@ -69,14 +104,29 @@ export function voiceScriptFor(part: Storyboard, world: World): VoiceScript {
   return {
     leadInMs: LEAD_IN_MS,
     tailMs: TAIL_MS,
+    questionLift: QUESTION_LIFT,
     lines: lines.map((line) => {
       const voice = voiceOf(part, line.speaker, world);
       if (!voice) throw new Error(`"${line.speaker}" speaks line "${line.id}" and has no voice.`);
+      const mixed = voice.blend ?? [];
+      const rest = 1 - mixed.reduce((sum, v) => sum + v.share, 0);
       return {
         id: line.id,
         speaker: line.speaker,
         voice: voice.kokoroVoice,
+        ...(mixed.length
+          ? {
+              blend: [
+                { voice: voice.kokoroVoice, weight: Math.round(rest * 100) / 100 },
+                ...mixed.map((v) => ({ voice: v.kokoroVoice, weight: v.share })),
+              ],
+            }
+          : {}),
         text: line.text,
+        ...(line.say ? { say: line.say } : {}),
+        ...(voice.engine === 'chatterbox' && voice.sample
+          ? { engine: 'chatterbox' as const, sample: voice.sample }
+          : {}),
         speed: Math.round((line.speed ?? 1) * voice.speed * 100) / 100,
         pauseAfterMs: Math.round((line.pauseAfterMs ?? pause) * voice.pauseScale),
       };
@@ -137,25 +187,213 @@ export function timeShots(part: Storyboard, track: VoiceTrack): Storyboard {
 /**
  * The part's sound as a plan for the mix: the mood from the start of each scene (a mood that
  * carries on is not started again), and each shot's effects at their moment in the shot.
- * Footsteps and the ambient effects run for the length of their shot.
+ * Footsteps and the ambient effects run for the length of their shot. `roomTone` is the sound
+ * under a scene with no music: the format's own, or the wind.
  */
 /** How loud the breath of the room is under a scene with no music, against an effect's usual level. */
 const ROOM_TONE_DB = -6;
 
-export function soundPlanFor(timed: Storyboard): SoundPlan {
+/**
+ * The sound of each named place, under any scene set there that does not choose its own
+ * (`ambience` on the scene or the shot). Biku, 2026-10-20: "we need more background sounds
+ * that's according to the story and whatever these story needs". A place with no sound of its
+ * own (space, the bare room of the game theory videos) is left to the music and the room tone.
+ */
+export const PLACE_AMBIENCE: Readonly<Record<string, SfxName>> = {
+  'night-street': 'night',
+  'day-street': 'traffic',
+  city: 'traffic',
+  field: 'birds',
+  forest: 'birds',
+  plain: 'wind',
+  'bare-rock': 'wind',
+  castle: 'wind',
+  'gorge-bridge': 'river',
+  sea: 'waves',
+  'home-interior': 'home',
+  'living-room': 'home',
+  kitchen: 'home',
+  lab: 'office',
+  restaurant: 'cafe',
+  daycare: 'home',
+  classroom: 'office',
+  'game-show': 'crowd-murmur',
+  'auction-room': 'crowd-murmur',
+};
+/** How loud a place's sound is: softer under music, fuller where there is none. */
+const AMBIENCE_DB = { music: -3, quiet: 0 } as const;
+
+/**
+ * The sound of an explainer graphic building up (What's the Catch?, 2026-10-16: make the videos
+ * "very immersive and attractive with the animations"): every piece that lands gets its own
+ * small sound on the frame it lands, a pop for a box, a click for a receipt line, a coin's ding
+ * for a number landing or a total, a soft whoosh for an arrow drawing itself and for the camera
+ * travelling to the next picture. Sparing: never two within a fifth of a second, and quiet
+ * under the voice.
+ */
+export const ARRIVAL_SOUNDS = {
+  pop: { name: 'pop', gainDb: -6 },
+  blip: { name: 'blip', gainDb: -9 },
+  click: { name: 'click', gainDb: -4 },
+  ding: { name: 'ding', gainDb: -7 },
+  whoosh: { name: 'whoosh', gainDb: -8 },
+  thud: { name: 'thud', gainDb: -10 },
+} as const satisfies Record<string, { name: SfxName; gainDb: number }>;
+const ARRIVAL_GAP_MS = 200;
+
+const JOURNEY_ARRIVALS = ['pop', 'blip', 'click', 'pop'] as const;
+
+/** Which sound each piece of a graphic makes as it lands, in graphicSteps order. */
+function arrivalSounds(g: Graphic): (keyof typeof ARRIVAL_SOUNDS)[] {
+  switch (g.kind) {
+    case 'flow':
+      return graphicSteps(g).map((_, i) => (i % 2 === 0 ? 'pop' : 'whoosh'));
+    case 'receipt':
+      return graphicSteps(g).map((_, i, all) =>
+        g.total && i === all.length - 1 ? 'ding' : 'click',
+      );
+    case 'number':
+      return [g.countUp ? 'ding' : 'pop'];
+    case 'tag':
+      return g.was ? ['thud', 'click'] : ['thud'];
+    case 'journey':
+      // Not the same pop for every thing that lands: a few sounds in turn, so the ear does not
+      // tire of one (each also comes in a slightly different take).
+      return [
+        ...g.show.map((_, i) => JOURNEY_ARRIVALS[i % JOURNEY_ARRIVALS.length] ?? 'pop'),
+        ...(g.callout ? ['ding' as const] : []),
+      ];
+    default:
+      return graphicSteps(g).map(() => 'pop');
+  }
+}
+
+/** Every sound of the graphics of a timed storyboard, from the words its pieces land on. */
+export function graphicSoundCues(
+  timed: Storyboard,
+  words: readonly { lineId: string; text: string; startMs: number }[],
+  fps = 30,
+): SfxCue[] {
+  const cues: SfxCue[] = [];
+  const add = (sound: keyof typeof ARRIVAL_SOUNDS, atMs: number) => {
+    if (cues.some((c) => Math.abs(c.atMs - atMs) < ARRIVAL_GAP_MS)) return;
+    const { name, gainDb } = ARRIVAL_SOUNDS[sound];
+    cues.push({ name, atMs: Math.max(0, Math.round(atMs)), gainDb, pan: 0, seed: cues.length });
+  };
+  const all = timed.scenes.flatMap((s) => s.shots);
+  for (const scene of timed.scenes) {
+    for (const shot of scene.shots) {
+      const startMs = shot.startMs ?? 0;
+      const endMs = shot.endMs ?? startMs;
+      const index = all.indexOf(shot);
+      const arrives = arrivalOf(shot, all[index - 1], index);
+      if (TRAVELS.includes(arrives as Travel)) add('whoosh', startMs - 120);
+      // A rewind: the tape whirring back over the last moments of the shot before, and its click.
+      if (shot.transition === 'rewind') {
+        const { gainDb } = ARRIVAL_SOUNDS.whoosh;
+        cues.push({
+          name: 'rewind',
+          atMs: Math.max(0, Math.round(startMs - 1400)),
+          gainDb,
+          pan: 0,
+          seed: cues.length,
+        });
+      }
+      if (!shot.graphic) continue;
+      // A journey's camera flying to a new place: the rush of it as it sets off.
+      if (
+        shot.graphic.kind === 'journey' &&
+        shot.graphic.from &&
+        shot.graphic.from !== shot.graphic.at
+      ) {
+        add('whoosh', startMs + 60);
+      }
+      const startFrame = Math.round((startMs / 1000) * fps);
+      const duration = Math.max(1, Math.round((endMs / 1000) * fps) - startFrame);
+      const mine = words.filter((w) => w.lineId === shot.line);
+      const frames = stepFrames(
+        graphicSteps(shot.graphic),
+        mine,
+        startFrame,
+        duration,
+        fps,
+        shot.graphic.kind !== 'journey',
+      );
+      const sounds = arrivalSounds(shot.graphic);
+      frames.forEach((f, i) => {
+        const sound = sounds[i];
+        if (sound) add(sound, ((startFrame + f) / fps) * 1000 + 40);
+      });
+    }
+  }
+  return cues.sort((a, b) => a.atMs - b.atMs);
+}
+
+/** How far a Short's music is quickened against a long video's. */
+const SHORT_TEMPO = 1.05;
+/** The hush before a reveal, and how loud the hit that ends it is. */
+const DROP_HUSH_MS = 700;
+const DROP_HIT_DB = -7;
+/** The hit a Short opens on, so the first second is heard as well as seen. */
+const OPENING_HIT_DB = -9;
+
+/**
+ * The video's own music, from its seed (2026-10-21, Biku: every Short had "the same background
+ * sounds"): each video moves the moods to a key and a speed of its own, the Short a little
+ * quicker, on the instruments of the palette the plan chose for its topic.
+ */
+export function scoreFor(timed: Storyboard, profile: SoundProfile): Score {
+  const seed = timed.seed;
+  const shift = (seed % 7) - 3;
+  const tempo =
+    (0.94 + (Math.floor(seed / 7) % 5) * 0.03) * (profile === 'short' ? SHORT_TEMPO : 1);
+  return {
+    seed,
+    shift,
+    tempo: Math.round(Math.min(1.25, Math.max(0.8, tempo)) * 1000) / 1000,
+    palette: timed.score?.palette ?? 'own',
+    profile: timed.score?.profile ?? profile,
+  };
+}
+
+export function soundPlanFor(
+  timed: Storyboard,
+  roomTone: SfxName = 'wind',
+  words: readonly { lineId: string; text: string; startMs: number }[] = [],
+  options: {
+    /** A Short or a long video; the storyboard's own choice wins. */
+    profile?: SoundProfile;
+    /** True for the part the video opens with: a Short opens on a hit. */
+    opens?: boolean;
+  } = {},
+): SoundPlan {
+  const score = scoreFor(timed, options.profile ?? 'long');
   const music: SoundPlan['music'] = [];
   const sfx: SfxCue[] = [];
+  const hush: SoundPlan['hush'] = [];
   let quietSoFar = false;
   let room: SfxCue | null = null;
   for (const scene of timed.scenes) {
     const first = scene.shots[0];
     if (first?.startMs === undefined)
       throw new Error('The shots have no times yet. Make the voice first.');
-    // A quiet scene has no music, as long as none has begun. Music that comes in after a
-    // quiet opening comes in where its scene starts.
-    const quiet = scene.quiet === true && music.length === 0;
-    if (quiet) {
-      quietSoFar = true;
+    // A quiet scene has no music. Before any has begun, the music simply starts later, where
+    // its scene starts; once it has begun, it stops for the scene (a hush) and the mood goes on
+    // after it.
+    const quiet = scene.quiet === true;
+    // The sound of the place under each shot: the shot's own, the scene's, or the place's.
+    const placeSound = (shot: (typeof scene.shots)[number]): SfxName | undefined =>
+      shot.ambience ?? scene.ambience ?? (shot.graphic ? undefined : PLACE_AMBIENCE[scene.place]);
+    const placed = scene.shots.every((shot) => placeSound(shot) !== undefined);
+    if (quiet && music.length > 0) {
+      const last = scene.shots[scene.shots.length - 1];
+      const to = last?.endMs ?? first.startMs;
+      const going = hush[hush.length - 1];
+      if (going && Math.abs(going.toMs - first.startMs) < 400) going.toMs = to;
+      else hush.push({ fromMs: first.startMs, toMs: to });
+    }
+    if (quiet) quietSoFar = true;
+    if (quiet && !placed) {
       // A scene with no music is not dead air: a faint breath of the room runs under it, one
       // long stretch for as long as the quiet lasts.
       const last = scene.shots[scene.shots.length - 1];
@@ -165,7 +403,7 @@ export function soundPlanFor(timed: Storyboard): SoundPlan {
         room.durationMs = to - room.atMs;
       } else {
         room = {
-          name: 'wind',
+          name: roomTone,
           atMs: from,
           durationMs: to - from,
           gainDb: ROOM_TONE_DB,
@@ -185,6 +423,30 @@ export function soundPlanFor(timed: Storyboard): SoundPlan {
       const start = shot.startMs ?? 0;
       const end = shot.endMs ?? start;
       const length = end - start;
+      const place = placeSound(shot);
+      if (place) {
+        // One sound across shot after shot of the same place, not one that restarts at every cut.
+        const gainDb = quiet ? AMBIENCE_DB.quiet : AMBIENCE_DB.music;
+        const going = [...sfx]
+          .reverse()
+          .find(
+            (c) =>
+              c.name === place &&
+              c.gainDb === gainDb &&
+              c.durationMs !== undefined &&
+              c.atMs + c.durationMs >= start - 400,
+          );
+        if (going) going.durationMs = Math.max(500, Math.round(end - going.atMs));
+        else
+          sfx.push({
+            name: place,
+            atMs: Math.round(start),
+            durationMs: Math.max(500, Math.round(end - start)),
+            gainDb,
+            pan: 0,
+            seed: sfx.length,
+          });
+      }
       for (const sound of shot.sfx) {
         const runs = sound.name === 'footsteps' || AMBIENT_SFX.includes(sound.name);
         const atMs =
@@ -193,6 +455,23 @@ export function soundPlanFor(timed: Storyboard): SoundPlan {
             : sound.at === 'end'
               ? Math.max(start, end - 450)
               : start + 60;
+        // A sound that runs on (a room's murmur, a clock) asked for by shot after shot is one
+        // sound across them, not one that stops and starts again at every cut.
+        const going = runs
+          ? [...sfx]
+              .reverse()
+              .find(
+                (c) =>
+                  c.name === sound.name &&
+                  c.gainDb === sound.gainDb &&
+                  c.durationMs !== undefined &&
+                  c.atMs + c.durationMs >= atMs - 400,
+              )
+          : undefined;
+        if (going) {
+          going.durationMs = Math.max(500, Math.round(end - going.atMs - 150));
+          continue;
+        }
         sfx.push({
           name: sound.name,
           atMs: Math.round(atMs),
@@ -204,7 +483,29 @@ export function soundPlanFor(timed: Storyboard): SoundPlan {
       }
     }
   }
-  return { version: 1, music, sfx, musicGainDb: 0 };
+  // The arrivals of the explainer graphics, unless the plan already has that sound there.
+  for (const cue of graphicSoundCues(timed, words)) {
+    if (sfx.some((c) => c.name === cue.name && Math.abs(c.atMs - cue.atMs) < 300)) continue;
+    sfx.push({ ...cue, seed: sfx.length });
+  }
+  // A reveal: the music stops just before it and comes back with a hit as it lands.
+  for (const shot of timed.scenes.flatMap((scene) => scene.shots)) {
+    if (!shot.drop || shot.startMs === undefined) continue;
+    const at = Math.round(shot.startMs);
+    hush.push({ fromMs: Math.max(0, at - DROP_HUSH_MS), toMs: at + 20, sharp: true });
+    sfx.push({ name: 'hit', atMs: at, gainDb: DROP_HIT_DB, pan: 0, seed: sfx.length });
+  }
+  hush.sort((a, b) => a.fromMs - b.fromMs);
+  // A Short opens on a hit: viewers decide in the first second, by ear as well as by eye.
+  if (
+    score.profile === 'short' &&
+    options.opens &&
+    !sfx.some((c) => c.atMs < 150 && c.durationMs === undefined)
+  ) {
+    sfx.push({ name: 'hit', atMs: 0, gainDb: OPENING_HIT_DB, pan: 0, seed: sfx.length });
+  }
+  sfx.sort((a, b) => a.atMs - b.atMs);
+  return { version: 1, score, music, sfx, musicGainDb: 0, hush };
 }
 
 // ------------------------------------------------------------------ joining the parts

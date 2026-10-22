@@ -1,0 +1,620 @@
+{
+  "version": 1,
+  "title": "Why Is the Water in Your Glass Older Than the Sun?",
+  "request": "Biku's What's the Catch? script 03, used as it is: 'make a video for this now. the animation was good for the gps video. use those kinds of animations' (2026-10-18).",
+  "mode": "as-is",
+  "format": "fine-print",
+  "style": "ink-stick",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "seed": 64976,
+  "finish": {
+    "acting": "snappy",
+    "onTwos": false,
+    "shadows": false,
+    "grain": 0.2,
+    "vignette": 0.12,
+    "boil": 0.25
+  },
+  "sources": [
+    "L. Ilsedore Cleeves, Edwin A. Bergin, Conel M. O'D. Alexander and colleagues, \"The ancient heritage of water ice in the solar system\", Science, vol. 345, 26 September 2014, pages 1590 to 1593. A model of the young solar system could not make the heavy water found in the oceans and in comets, so part of that water must be ice inherited from the cold cloud before the Sun; 30 to 50 percent of ocean water at the high end of the estimate.",
+    "University of Michigan news release, \"The water in your bottle might be older than the sun\", 25 September 2014: that water would be roughly a million years older than the solar system. Reported by ScienceDaily, https://www.sciencedaily.com/releases/2014/09/140925141226.htm",
+    "IAEA standard for ocean water (VSMOW): about 156 heavy hydrogen atoms in a million, so about one water molecule in 3,200 carries one. Biku's script rounds it to one in three thousand, said with \"about\".",
+    "Checked by Claude on 2026-10-18. Strictly, a molecule with one heavy hydrogen is \"semi-heavy water\"; the study's own news release says heavy water, as the script does."
+  ],
+  "appliedLessons": [],
+  "cast": [],
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "the-question",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l01",
+          "speaker": "narrator",
+          "text": "How can the water in your glass be older than the Sun?",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l02",
+          "speaker": "narrator",
+          "text": "The answer is hiding inside one drop, and it begins somewhere very *cold*.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s1a",
+          "line": "l01",
+          "words": "How can the water in your glass be older than the Sun?",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "title",
+            "text": "Why Is the Water in Your Glass Older Than the Sun?"
+          },
+          "transition": "cut"
+        },
+        {
+          "id": "s1b",
+          "line": "l02",
+          "words": "The answer is hiding inside one drop, and it begins somewhere very *cold*.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "the-moment",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l03",
+          "speaker": "narrator",
+          "text": "Most of us think the water in a glass is as fresh as the *tap*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l04",
+          "speaker": "narrator",
+          "text": "That water goes round and round, from the sea to the clouds to the rain.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l05",
+          "speaker": "narrator",
+          "text": "But nobody asks where that water was before the *sea*.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s2a",
+          "line": "l03",
+          "words": "Most of us think the water in a glass is as fresh as the *tap*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2b",
+          "line": "l04",
+          "words": "That water goes round and round, from the sea to the clouds to the rain.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2c",
+          "line": "l05",
+          "words": "But nobody asks where that water was before the *sea*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "chapter": 1,
+      "beat": "follow-the-money",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l06",
+          "speaker": "narrator",
+          "text": "So let's push into one drop, down to one water molecule, the tiniest bit of water.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l07",
+          "speaker": "narrator",
+          "text": "Each water molecule is one oxygen atom holding on to two *hydrogen* atoms.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l08",
+          "speaker": "narrator",
+          "text": "But in about one water molecule in every three thousand, a hydrogen atom carries extra *weight*.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l09",
+          "speaker": "narrator",
+          "text": "Scientists call that heavy water, and it is a *fingerprint* of where water was born.",
+          "pauseAfterMs": 1200
+        }
+      ],
+      "shots": [
+        {
+          "id": "s3a",
+          "line": "l06",
+          "words": "So let's push into one drop, down to one water molecule, the tiniest bit of water.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3b",
+          "line": "l07",
+          "words": "Each water molecule is one oxygen atom holding on to two *hydrogen* atoms.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3c",
+          "line": "l08",
+          "words": "But in about one water molecule in every three thousand, a hydrogen atom carries extra *weight*.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3d",
+          "line": "l09",
+          "words": "Scientists call that heavy water, and it is a *fingerprint* of where water was born.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "chapter": 2,
+      "beat": "follow-the-money",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l10",
+          "speaker": "narrator",
+          "text": "Our oceans carry that heavy fingerprint, and so do the icy *comets*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l11",
+          "speaker": "narrator",
+          "text": "But the Sun has much less, because heat wipes the fingerprint *away*.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s4a",
+          "line": "l10",
+          "words": "Our oceans carry that heavy fingerprint, and so do the icy *comets*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4b",
+          "line": "l11",
+          "words": "But the Sun has much less, because heat wipes the fingerprint *away*.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chapter": 2,
+      "beat": "the-trick",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l12",
+          "speaker": "narrator",
+          "text": "So scientists rebuilt the newborn Sun and its planets inside a *computer*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l13",
+          "speaker": "narrator",
+          "text": "But the newborn Sun and planets made nowhere near *enough* heavy water.",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l14",
+          "speaker": "narrator",
+          "text": "Heavy water needs deep cold, close to the coldest cold there *is*.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l15",
+          "speaker": "narrator",
+          "text": "And the only place that cold was the dark cloud that came *before* the Sun.",
+          "pauseAfterMs": 900
+        },
+        {
+          "id": "l16",
+          "speaker": "narrator",
+          "text": "There, on a speck of dust, our water molecule froze into *ice*.",
+          "pauseAfterMs": 1200
+        }
+      ],
+      "shots": [
+        {
+          "id": "s5a",
+          "line": "l12",
+          "words": "So scientists rebuilt the newborn Sun and its planets inside a *computer*.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5b",
+          "line": "l13",
+          "words": "But the newborn Sun and planets made nowhere near *enough* heavy water.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5c",
+          "line": "l14",
+          "words": "Heavy water needs deep cold, close to the coldest cold there *is*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5d",
+          "line": "l15",
+          "words": "And the only place that cold was the dark cloud that came *before* the Sun.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5e",
+          "line": "l16",
+          "words": "There, on a speck of dust, our water molecule froze into *ice*.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 3,
+      "beat": "the-trick",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l17",
+          "speaker": "narrator",
+          "text": "Then the cloud collapsed into the Sun and planets, and that ice *survived*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l18",
+          "speaker": "narrator",
+          "text": "That ice rode to Earth on comets and rocks, and melted into the *sea*.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6a",
+          "line": "l17",
+          "words": "Then the cloud collapsed into the Sun and planets, and that ice *survived*.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6b",
+          "line": "l18",
+          "words": "That ice rode to Earth on comets and rocks, and melted into the *sea*.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "chapter": 3,
+      "beat": "the-proof",
+      "mood": "reflective",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l19",
+          "speaker": "narrator",
+          "text": "Astronomers at the University of Michigan published this in the journal *Science* in twenty fourteen.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l20",
+          "speaker": "narrator",
+          "text": "Their model says as much as thirty to fifty percent of ocean water is older than the *Sun*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l21",
+          "speaker": "narrator",
+          "text": "That ice formed roughly a *million* years before the Sun and its planets.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s7a",
+          "line": "l19",
+          "words": "Astronomers at the University of Michigan published this in the journal *Science* in twenty fourteen.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7b",
+          "line": "l20",
+          "words": "Their model says as much as thirty to fifty percent of ocean water is older than the *Sun*.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7c",
+          "line": "l21",
+          "words": "That ice formed roughly a *million* years before the Sun and its planets.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "chapter": 3,
+      "beat": "your-move",
+      "mood": "hope",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l22",
+          "speaker": "narrator",
+          "text": "So every shower, raindrop and glass is partly ice from before the *Sun*.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l23",
+          "speaker": "narrator",
+          "text": "Your water is older than the Sun because it froze before the Sun was *born*.",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s8a",
+          "line": "l22",
+          "words": "So every shower, raindrop and glass is partly ice from before the *Sun*.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s8b",
+          "line": "l23",
+          "words": "Your water is older than the Sun because it froze before the Sun was *born*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    }
+  ]
+}

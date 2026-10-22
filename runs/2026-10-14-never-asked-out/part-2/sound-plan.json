@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "closing-in",
+      "startMs": 0
+    }
+  ],
+  "sfx": [
+    {
+      "name": "tick",
+      "atMs": 60,
+      "durationMs": 3269,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "crowd-murmur",
+      "atMs": 60,
+      "durationMs": 3269,
+      "gainDb": -18,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "tick",
+      "atMs": 3539,
+      "durationMs": 3068,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "footsteps",
+      "atMs": 6817,
+      "durationMs": 5492,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "boom",
+      "atMs": 12519,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "hum",
+      "atMs": 15460,
+      "durationMs": 6795,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 0
+    }
+  ],
+  "musicGainDb": 0,
+  "hush": [
+    {
+      "fromMs": 15460,
+      "toMs": 22255
+    }
+  ]
+}

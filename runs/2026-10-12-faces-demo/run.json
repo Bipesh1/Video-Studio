@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "id": "2026-10-12-faces-demo",
+  "created": "2026-10-12",
+  "mode": "as-is",
+  "format": "story",
+  "brand": "my-page",
+  "voice": "narrator",
+  "sizes": [
+    "16:9",
+    "9:16"
+  ],
+  "vertical": "full",
+  "masterPrompt": null
+}

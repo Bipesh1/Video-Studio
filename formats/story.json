@@ -2,7 +2,7 @@
   "id": "story",
   "name": "Story",
   "description": "A tale with characters who want something: a folktale, a true episode told as a story, a fable. Pick it when the video follows people through events to an ending.",
-  "version": 1,
+  "version": 2,
   "structure": [
     {
       "id": "hook",
@@ -87,6 +87,14 @@
     }
   },
   "captionMode": "full",
+  "finish": {
+    "acting": "gentle",
+    "onTwos": true,
+    "shadows": true,
+    "grain": 0.4,
+    "vignette": 0.35,
+    "boil": 0.25
+  },
   "factRules": {
     "sourcesRequired": false,
     "rules": [

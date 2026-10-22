@@ -1,0 +1,78 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "lines": [
+    {
+      "id": "l1",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "Would you sit down at *this table?*",
+      "speed": 0.9,
+      "pauseAfterMs": 1495
+    },
+    {
+      "id": "l2",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "Welcome back, trainees.",
+      "speed": 0.9,
+      "pauseAfterMs": 1495
+    },
+    {
+      "id": "l3",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "Take your time. No pressure at all.",
+      "speed": 0.9,
+      "pauseAfterMs": 1495
+    },
+    {
+      "id": "l4",
+      "speaker": "saint",
+      "voice": "af_heart",
+      "text": "Thank you. That is kind.",
+      "speed": 0.95,
+      "pauseAfterMs": 1430
+    },
+    {
+      "id": "l5",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "There is *pressure.*",
+      "speed": 0.9,
+      "pauseAfterMs": 1495
+    },
+    {
+      "id": "l6",
+      "speaker": "saint",
+      "voice": "af_heart",
+      "text": "He seems honest.",
+      "speed": 0.95,
+      "pauseAfterMs": 1430
+    },
+    {
+      "id": "l7",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "And there it is.",
+      "speed": 0.9,
+      "pauseAfterMs": 1495
+    },
+    {
+      "id": "l8",
+      "speaker": "narrator",
+      "voice": "af_nicole",
+      "text": "Next time, ask who set the table.",
+      "speed": 0.95,
+      "pauseAfterMs": 1430
+    },
+    {
+      "id": "l9",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "Tape ends.",
+      "speed": 0.9,
+      "pauseAfterMs": 1495
+    }
+  ]
+}

@@ -1,0 +1,713 @@
+{
+  "version": 1,
+  "thumbnails": [
+    {
+      "id": "look-1",
+      "size": "16:9",
+      "why": "The Cheat, the Saint, the Trainer, the Copycat, You and one of the row at the back, dressed.",
+      "layers": [
+        {
+          "kind": "room",
+          "place": "the-table",
+          "palette": "table-grey"
+        },
+        {
+          "kind": "extra",
+          "look": {
+            "outfit": {
+              "clothes": {
+                "tie": {
+                  "cloth": "crimson",
+                  "stripe": "gold"
+                },
+                "top": {
+                  "kind": "shirt",
+                  "cloth": "white"
+                },
+                "bottom": {
+                  "kind": "trousers",
+                  "cloth": "steel"
+                },
+                "shoes": {
+                  "kind": "boots",
+                  "cloth": "brown"
+                }
+              }
+            }
+          },
+          "x": 0.1,
+          "y": 0.5,
+          "ground": 0.93,
+          "head": 0.17,
+          "pose": "stand",
+          "expression": "smug",
+          "facing": "right",
+          "turn": 0.3,
+          "light": 1.0,
+          "badge": false
+        },
+        {
+          "kind": "extra",
+          "look": {
+            "outfit": {
+              "clothes": {
+                "glasses": true,
+                "scarf": {
+                  "cloth": "glint"
+                },
+                "top": {
+                  "kind": "shirt",
+                  "cloth": "white"
+                },
+                "bottom": {
+                  "kind": "skirt",
+                  "cloth": "steel"
+                },
+                "shoes": {
+                  "kind": "boots",
+                  "cloth": "brown"
+                }
+              }
+            }
+          },
+          "x": 0.26,
+          "y": 0.5,
+          "ground": 0.93,
+          "head": 0.17,
+          "pose": "stand",
+          "expression": "happy",
+          "facing": "right",
+          "turn": 0.3,
+          "light": 1.0,
+          "badge": false
+        },
+        {
+          "kind": "extra",
+          "look": {
+            "identity": {
+              "skinTone": 1,
+              "hair": "short-crop",
+              "hairColor": "black"
+            },
+            "outfit": {
+              "clothes": {
+                "tie": {
+                  "cloth": "gold"
+                },
+                "top": {
+                  "kind": "jacket",
+                  "cloth": "steel",
+                  "under": "white"
+                },
+                "bottom": {
+                  "kind": "trousers",
+                  "cloth": "steel"
+                },
+                "shoes": {
+                  "kind": "boots",
+                  "cloth": "brown"
+                }
+              }
+            }
+          },
+          "x": 0.42000000000000004,
+          "y": 0.5,
+          "ground": 0.93,
+          "head": 0.18020000000000003,
+          "pose": "stand",
+          "expression": "bored",
+          "facing": "right",
+          "turn": 0.3,
+          "light": 1.0,
+          "badge": false
+        },
+        {
+          "kind": "extra",
+          "look": {
+            "outfit": {
+              "clothes": {
+                "hat": {
+                  "kind": "beanie",
+                  "cloth": "orange"
+                },
+                "top": {
+                  "kind": "t-shirt",
+                  "cloth": "white"
+                },
+                "bottom": {
+                  "kind": "trousers",
+                  "cloth": "denim"
+                },
+                "shoes": {
+                  "kind": "sneakers",
+                  "cloth": "steel"
+                }
+              }
+            }
+          },
+          "x": 0.58,
+          "y": 0.5,
+          "ground": 0.93,
+          "head": 0.17,
+          "pose": "stand",
+          "expression": "neutral",
+          "facing": "left",
+          "turn": 0.3,
+          "light": 1.0,
+          "badge": false
+        },
+        {
+          "kind": "extra",
+          "look": {
+            "outfit": {
+              "clothes": {
+                "hat": {
+                  "kind": "cap",
+                  "cloth": "forest"
+                },
+                "top": {
+                  "kind": "t-shirt",
+                  "cloth": "white"
+                },
+                "bottom": {
+                  "kind": "trousers",
+                  "cloth": "denim"
+                },
+                "shoes": {
+                  "kind": "sneakers",
+                  "cloth": "steel"
+                }
+              }
+            }
+          },
+          "x": 0.74,
+          "y": 0.5,
+          "ground": 0.93,
+          "head": 0.17,
+          "pose": "stand",
+          "expression": "neutral",
+          "facing": "left",
+          "turn": 0.3,
+          "light": 1.0,
+          "badge": false
+        },
+        {
+          "kind": "extra",
+          "look": {
+            "outfit": {
+              "clothes": {
+                "top": {
+                  "kind": "shirt",
+                  "cloth": "white"
+                },
+                "bottom": {
+                  "kind": "trousers",
+                  "cloth": "steel"
+                },
+                "shoes": {
+                  "kind": "boots",
+                  "cloth": "steel"
+                }
+              }
+            }
+          },
+          "x": 0.9,
+          "y": 0.5,
+          "ground": 0.93,
+          "head": 0.17,
+          "pose": "stand",
+          "expression": "neutral",
+          "facing": "left",
+          "turn": 0.3,
+          "light": 0.62,
+          "badge": true
+        },
+        {
+          "kind": "words",
+          "lines": [
+            "LOOK 1"
+          ],
+          "gold": [
+            0
+          ],
+          "x": 0.5,
+          "bottom": 0.16,
+          "size": 0.11,
+          "width": 0.5
+        }
+      ]
+    },
+    {
+      "id": "look-2",
+      "size": "16:9",
+      "why": "The Cheat, the Saint, the Trainer, the Copycat, You and one of the row at the back, dressed.",
+      "layers": [
+        {
+          "kind": "room",
+          "place": "the-table",
+          "palette": "table-grey"
+        },
+        {
+          "kind": "extra",
+          "look": {
+            "outfit": {
+              "clothes": {
+                "tie": {
+                  "cloth": "crimson",
+                  "stripe": "gold"
+                },
+                "top": {
+                  "kind": "jacket",
+                  "cloth": "brown",
+                  "under": "white"
+                },
+                "bottom": {
+                  "kind": "trousers",
+                  "cloth": "steel"
+                },
+                "shoes": {
+                  "kind": "boots",
+                  "cloth": "brown"
+                }
+              }
+            }
+          },
+          "x": 0.1,
+          "y": 0.5,
+          "ground": 0.93,
+          "head": 0.17,
+          "pose": "stand",
+          "expression": "smug",
+          "facing": "right",
+          "turn": 0.3,
+          "light": 1.0,
+          "badge": false
+        },
+        {
+          "kind": "extra",
+          "look": {
+            "outfit": {
+              "clothes": {
+                "glasses": true,
+                "scarf": {
+                  "cloth": "glint"
+                },
+                "onePiece": {
+                  "kind": "dress",
+                  "cloth": "cream"
+                },
+                "shoes": {
+                  "kind": "boots",
+                  "cloth": "tan"
+                }
+              }
+            }
+          },
+          "x": 0.26,
+          "y": 0.5,
+          "ground": 0.93,
+          "head": 0.17,
+          "pose": "stand",
+          "expression": "happy",
+          "facing": "right",
+          "turn": 0.3,
+          "light": 1.0,
+          "badge": false
+        },
+        {
+          "kind": "extra",
+          "look": {
+            "identity": {
+              "skinTone": 1,
+              "hair": "short-crop",
+              "hairColor": "black"
+            },
+            "outfit": {
+              "clothes": {
+                "tie": {
+                  "cloth": "gold"
+                },
+                "top": {
+                  "kind": "jacket",
+                  "cloth": "steel",
+                  "under": "white"
+                },
+                "bottom": {
+                  "kind": "trousers",
+                  "cloth": "steel"
+                },
+                "shoes": {
+                  "kind": "boots",
+                  "cloth": "brown"
+                }
+              }
+            }
+          },
+          "x": 0.42000000000000004,
+          "y": 0.5,
+          "ground": 0.93,
+          "head": 0.18020000000000003,
+          "pose": "stand",
+          "expression": "bored",
+          "facing": "right",
+          "turn": 0.3,
+          "light": 1.0,
+          "badge": false
+        },
+        {
+          "kind": "extra",
+          "look": {
+            "outfit": {
+              "clothes": {
+                "hat": {
+                  "kind": "beanie",
+                  "cloth": "orange"
+                },
+                "top": {
+                  "kind": "hoodie",
+                  "cloth": "orange"
+                },
+                "bottom": {
+                  "kind": "trousers",
+                  "cloth": "denim"
+                },
+                "shoes": {
+                  "kind": "sneakers",
+                  "cloth": "steel"
+                }
+              }
+            }
+          },
+          "x": 0.58,
+          "y": 0.5,
+          "ground": 0.93,
+          "head": 0.17,
+          "pose": "stand",
+          "expression": "neutral",
+          "facing": "left",
+          "turn": 0.3,
+          "light": 1.0,
+          "badge": false
+        },
+        {
+          "kind": "extra",
+          "look": {
+            "outfit": {
+              "clothes": {
+                "hat": {
+                  "kind": "cap",
+                  "cloth": "forest"
+                },
+                "top": {
+                  "kind": "hoodie",
+                  "cloth": "forest"
+                },
+                "bottom": {
+                  "kind": "trousers",
+                  "cloth": "denim"
+                },
+                "shoes": {
+                  "kind": "sneakers",
+                  "cloth": "steel"
+                }
+              }
+            }
+          },
+          "x": 0.74,
+          "y": 0.5,
+          "ground": 0.93,
+          "head": 0.17,
+          "pose": "stand",
+          "expression": "neutral",
+          "facing": "left",
+          "turn": 0.3,
+          "light": 1.0,
+          "badge": false
+        },
+        {
+          "kind": "extra",
+          "look": {
+            "outfit": {
+              "clothes": {
+                "top": {
+                  "kind": "hoodie",
+                  "cloth": "steel"
+                },
+                "bottom": {
+                  "kind": "trousers",
+                  "cloth": "steel"
+                },
+                "shoes": {
+                  "kind": "sneakers",
+                  "cloth": "steel"
+                }
+              }
+            }
+          },
+          "x": 0.9,
+          "y": 0.5,
+          "ground": 0.93,
+          "head": 0.17,
+          "pose": "stand",
+          "expression": "neutral",
+          "facing": "left",
+          "turn": 0.3,
+          "light": 0.62,
+          "badge": true
+        },
+        {
+          "kind": "words",
+          "lines": [
+            "LOOK 2"
+          ],
+          "gold": [
+            0
+          ],
+          "x": 0.5,
+          "bottom": 0.16,
+          "size": 0.11,
+          "width": 0.5
+        }
+      ]
+    },
+    {
+      "id": "look-3",
+      "size": "16:9",
+      "why": "The Cheat, the Saint, the Trainer, the Copycat, You and one of the row at the back, dressed.",
+      "layers": [
+        {
+          "kind": "room",
+          "place": "the-table",
+          "palette": "table-grey"
+        },
+        {
+          "kind": "extra",
+          "look": {
+            "outfit": {
+              "clothes": {
+                "tie": {
+                  "cloth": "crimson",
+                  "stripe": "gold"
+                },
+                "top": {
+                  "kind": "jacket",
+                  "cloth": "denim",
+                  "under": "white"
+                },
+                "bottom": {
+                  "kind": "trousers",
+                  "cloth": "denim"
+                },
+                "shoes": {
+                  "kind": "boots",
+                  "cloth": "brown"
+                }
+              }
+            }
+          },
+          "x": 0.1,
+          "y": 0.5,
+          "ground": 0.93,
+          "head": 0.17,
+          "pose": "stand",
+          "expression": "smug",
+          "facing": "right",
+          "turn": 0.3,
+          "light": 1.0,
+          "badge": false
+        },
+        {
+          "kind": "extra",
+          "look": {
+            "outfit": {
+              "clothes": {
+                "glasses": true,
+                "scarf": {
+                  "cloth": "glint"
+                },
+                "top": {
+                  "kind": "shirt",
+                  "cloth": "cream"
+                },
+                "bottom": {
+                  "kind": "skirt",
+                  "cloth": "ocean"
+                },
+                "shoes": {
+                  "kind": "boots",
+                  "cloth": "brown"
+                }
+              }
+            }
+          },
+          "x": 0.26,
+          "y": 0.5,
+          "ground": 0.93,
+          "head": 0.17,
+          "pose": "stand",
+          "expression": "happy",
+          "facing": "right",
+          "turn": 0.3,
+          "light": 1.0,
+          "badge": false
+        },
+        {
+          "kind": "extra",
+          "look": {
+            "identity": {
+              "skinTone": 1,
+              "hair": "short-crop",
+              "hairColor": "black"
+            },
+            "outfit": {
+              "clothes": {
+                "tie": {
+                  "cloth": "gold"
+                },
+                "top": {
+                  "kind": "jacket",
+                  "cloth": "steel",
+                  "under": "white"
+                },
+                "bottom": {
+                  "kind": "trousers",
+                  "cloth": "steel"
+                },
+                "shoes": {
+                  "kind": "boots",
+                  "cloth": "brown"
+                }
+              }
+            }
+          },
+          "x": 0.42000000000000004,
+          "y": 0.5,
+          "ground": 0.93,
+          "head": 0.18020000000000003,
+          "pose": "stand",
+          "expression": "bored",
+          "facing": "right",
+          "turn": 0.3,
+          "light": 1.0,
+          "badge": false
+        },
+        {
+          "kind": "extra",
+          "look": {
+            "outfit": {
+              "clothes": {
+                "hat": {
+                  "kind": "beanie",
+                  "cloth": "orange"
+                },
+                "top": {
+                  "kind": "jacket",
+                  "cloth": "tan",
+                  "under": "white"
+                },
+                "bottom": {
+                  "kind": "trousers",
+                  "cloth": "brown"
+                },
+                "shoes": {
+                  "kind": "boots",
+                  "cloth": "brown"
+                }
+              }
+            }
+          },
+          "x": 0.58,
+          "y": 0.5,
+          "ground": 0.93,
+          "head": 0.17,
+          "pose": "stand",
+          "expression": "neutral",
+          "facing": "left",
+          "turn": 0.3,
+          "light": 1.0,
+          "badge": false
+        },
+        {
+          "kind": "extra",
+          "look": {
+            "outfit": {
+              "clothes": {
+                "hat": {
+                  "kind": "cap",
+                  "cloth": "forest"
+                },
+                "top": {
+                  "kind": "shirt",
+                  "cloth": "forest"
+                },
+                "bottom": {
+                  "kind": "trousers",
+                  "cloth": "steel"
+                },
+                "shoes": {
+                  "kind": "sneakers",
+                  "cloth": "steel"
+                }
+              }
+            }
+          },
+          "x": 0.74,
+          "y": 0.5,
+          "ground": 0.93,
+          "head": 0.17,
+          "pose": "stand",
+          "expression": "neutral",
+          "facing": "left",
+          "turn": 0.3,
+          "light": 1.0,
+          "badge": false
+        },
+        {
+          "kind": "extra",
+          "look": {
+            "outfit": {
+              "clothes": {
+                "top": {
+                  "kind": "jacket",
+                  "cloth": "steel",
+                  "under": "white"
+                },
+                "bottom": {
+                  "kind": "trousers",
+                  "cloth": "steel"
+                },
+                "shoes": {
+                  "kind": "boots",
+                  "cloth": "steel"
+                }
+              }
+            }
+          },
+          "x": 0.9,
+          "y": 0.5,
+          "ground": 0.93,
+          "head": 0.17,
+          "pose": "stand",
+          "expression": "neutral",
+          "facing": "left",
+          "turn": 0.3,
+          "light": 0.62,
+          "badge": true
+        },
+        {
+          "kind": "words",
+          "lines": [
+            "LOOK 3"
+          ],
+          "gold": [
+            0
+          ],
+          "x": 0.5,
+          "bottom": 0.16,
+          "size": 0.11,
+          "width": 0.5
+        }
+      ]
+    }
+  ]
+}

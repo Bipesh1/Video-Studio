@@ -2,7 +2,8 @@ import { body } from './body';
 import { DEG, dot, fromDown } from './math';
 import type { Vec2 } from './math';
 import type { HandPose, HandShape } from './types';
-import { ink, lineWeights, tokens, white } from '../tokens';
+import { ink, lineWeights, shade, tokens, white } from '../tokens';
+import { useToned } from './tone';
 
 /**
  * bare: filled black, the default stick hand. glove: white with black outlines, for costumes
@@ -276,7 +277,13 @@ export const Hand = ({
   transform: string;
   skin?: string;
 }) => {
-  const p = paintFor(style, skin);
+  const toned = useToned();
+  const painted = paintFor(style, skin);
+  // The toned look: a hand drawn in parts has a thin edge in a darker tone of its own colour.
+  const p =
+    toned && painted.outlined
+      ? { ...painted, stroke: shade(painted.fill, 0.3), strokeWidth: painted.strokeWidth * 0.6 }
+      : painted;
   return (
     <g transform={`${transform} scale(${S})`}>
       {shape === 'grip' ? (

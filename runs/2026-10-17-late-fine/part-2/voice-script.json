@@ -1,0 +1,151 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l09",
+      "speaker": "cheat",
+      "voice": "am_eric",
+      "text": "So I can *buy* twenty extra minutes for three dollars. That's cheaper than a babysitter.",
+      "say": "[chuckle] So, I can buy twenty extra minutes, for three dollars. That's cheaper than a babysitter.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/cheat.wav",
+      "speed": 1.06,
+      "pauseAfterMs": 720
+    },
+    {
+      "id": "l10",
+      "speaker": "cheat",
+      "voice": "am_eric",
+      "text": "Here's my *fee.*",
+      "say": "[chuckle] Here's my fee.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/cheat.wav",
+      "speed": 1.08,
+      "pauseAfterMs": 420
+    },
+    {
+      "id": "l11",
+      "speaker": "saint",
+      "voice": "af_sarah",
+      "text": "The fine is meant to make you *hurry.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/saint.wav",
+      "speed": 0.92,
+      "pauseAfterMs": 592
+    },
+    {
+      "id": "l12",
+      "speaker": "cheat",
+      "voice": "am_eric",
+      "text": "I'm paying it, so we're *even.*",
+      "say": "[sarcastic] I'm paying it, so we're even.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/cheat.wav",
+      "speed": 1.08,
+      "pauseAfterMs": 720
+    },
+    {
+      "id": "l13",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "He didn't even say sorry. He just *paid.* So can I.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/copycat.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 737
+    },
+    {
+      "id": "l14",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "Put it on my *bill.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/copycat.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 670
+    },
+    {
+      "id": "l15",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "Soon, more parents paid instead of saying *sorry.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 536
+    },
+    {
+      "id": "l16",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "The teacher missed her bus. A little boy waited *alone* at the window.",
+      "say": "The teacher missed her bus. A little boy waited alone, at the window.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.92,
+      "pauseAfterMs": 1072
+    },
+    {
+      "id": "l17",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "Now it's almost four, and *you* are stuck in traffic.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 469
+    },
+    {
+      "id": "l18",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "Being late now just costs three dollars. Do you still *rush?*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.92,
+      "pauseAfterMs": 2010
+    }
+  ]
+}

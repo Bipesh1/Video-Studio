@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "id": "2026-10-17-gps-einstein",
+  "created": "2026-10-17",
+  "mode": "original",
+  "format": "fine-print",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "sizes": [
+    "9:16"
+  ],
+  "vertical": "full",
+  "masterPrompt": "prompts/fine-print.md"
+}

@@ -1,0 +1,118 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "lines": [
+    {
+      "id": "l17",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "It's getting kind of thick in here.",
+      "speed": 0.97,
+      "pauseAfterMs": 350
+    },
+    {
+      "id": "l18",
+      "speaker": "cheat",
+      "voice": "am_eric",
+      "text": "Relax, man. If it was bad, they'd tell us.",
+      "speed": 1.08,
+      "pauseAfterMs": 360
+    },
+    {
+      "id": "l19",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "Should we... tell someone?",
+      "speed": 0.97,
+      "pauseAfterMs": 300
+    },
+    {
+      "id": "l20",
+      "speaker": "cheat",
+      "voice": "am_eric",
+      "text": "And lose the twenty? Sit down.",
+      "speed": 1.08,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "l21",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "Nearly done, one one two.",
+      "speed": 0.97,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l22",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "Yeah. Ha. Totally *fine.*",
+      "speed": 0.97,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l23",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "He said *fine.* Now he's stuck.",
+      "speed": 0.97,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l24",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "My eyes sting. Does nobody else see this?",
+      "speed": 0.97,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "l25",
+      "speaker": "cheat",
+      "voice": "am_eric",
+      "text": "See what, man?",
+      "speed": 1.08,
+      "pauseAfterMs": 540
+    },
+    {
+      "id": "l26",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "Okay. Okay. Just me, then.",
+      "speed": 0.97,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l27",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "Nobody else is getting up.",
+      "speed": 0.97,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l28",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "Your turn, trainees. What does he *do?*",
+      "speed": 0.97,
+      "pauseAfterMs": 1800
+    },
+    {
+      "id": "l29",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "If they're calm, I must be *wrong.*",
+      "speed": 0.97,
+      "pauseAfterMs": 1200
+    },
+    {
+      "id": "l30",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "He stays. A very reliable *customer.*",
+      "speed": 0.97,
+      "pauseAfterMs": 1200
+    }
+  ]
+}

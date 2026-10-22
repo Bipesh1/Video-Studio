@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "aftermath",
+      "startMs": 0
+    }
+  ],
+  "sfx": [
+    {
+      "name": "click",
+      "atMs": 60,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "clunk",
+      "atMs": 41005,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 1
+    }
+  ],
+  "musicGainDb": 0
+}

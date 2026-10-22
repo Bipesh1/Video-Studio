@@ -1,0 +1,21 @@
+2026-10-22T15:56:00.536Z  part 1  part 1 of 3, 9:16: 3 scenes, 8 shots
+2026-10-22T15:56:00.540Z  part 1  time: start
+2026-10-22T15:56:00.576Z  part 1    8 shots over 40.9 s: shortest 2.1 s, longest 6.9 s
+2026-10-22T15:56:00.576Z  part 1  time: done in 0.0 s
+2026-10-22T15:56:00.576Z  part 1  clip: start
+2026-10-22T15:56:00.616Z  part 1  bundle: start
+2026-10-22T15:56:35.267Z  part 1  bundle: done in 34.7 s
+2026-10-22T16:04:58.583Z  part 1    runs\2026-10-22-short-tools-demo\part-1\clips\short-tools-demo-part-1-9x16-9-31s-v1.mp4: seconds 9 to 31, in 480.2 s
+2026-10-22T16:04:58.593Z  part 1  clip: done in 538.0 s
+2026-10-22T16:10:06.624Z  part 1  part 1 of 3, 9:16: 3 scenes, 8 shots
+2026-10-22T16:10:06.629Z  part 1  clip: start
+2026-10-22T16:10:06.910Z  part 1  bundle: start
+2026-10-22T16:11:30.026Z  part 1  bundle: done in 83.1 s
+2026-10-22T16:16:28.083Z  part 1    runs\2026-10-22-short-tools-demo\part-1\clips\short-tools-demo-part-1-9x16-9-14s-v1.mp4: seconds 9 to 14, in 292.4 s
+2026-10-22T16:16:28.087Z  part 1  clip: done in 381.5 s
+2026-10-22T16:16:37.502Z  part 1  part 1 of 3, 9:16: 3 scenes, 8 shots
+2026-10-22T16:16:37.508Z  part 1  clip: start
+2026-10-22T16:16:37.568Z  part 1  bundle: start
+2026-10-22T16:17:05.055Z  part 1  bundle: done in 27.5 s
+2026-10-22T16:20:36.004Z  part 1    runs\2026-10-22-short-tools-demo\part-1\clips\short-tools-demo-part-1-9x16-24-29s-v1.mp4: seconds 24 to 29, in 205.4 s
+2026-10-22T16:20:36.007Z  part 1  clip: done in 238.5 s

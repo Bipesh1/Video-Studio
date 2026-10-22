@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "video": "tip-screens-part-1-9x16-v1.mp4",
+  "stills": {
+    "s01": "ok",
+    "s02": "ok",
+    "s03": "ok",
+    "s04": "ok",
+    "s05": "ok",
+    "s06": "ok",
+    "s07": "ok"
+  },
+  "strips": {},
+  "playbook": "ok",
+  "fixed": [
+    "The coffee counter was drawn too small and its price sign ran off the left edge: the counter is a third larger and the sign moved in; the three bars said 20% twice each, so they are labelled LOW, MIDDLE, HIGH."
+  ],
+  "notes": [
+    "The first video in the new look Biku picked (the 2.5D world, deep ocean colours). Looked at three frames a second across the whole part: the question builds word by word over the counter; the camera dives into the tablet and closes in on the buttons on 'buttons'; 72% counts up on the coin; the queue walks in under TIP?; the tablet turns from its back to face you on 'screen'; the three buttons become the 20, 25 and 30 percent blocks, rising on their words. Nothing appears or vanishes without a move.",
+    "Refined with his OK in two lines of part 3 (the coffee shop study found the opposite of the old line); part 1 is his words.",
+    "The queue is still drawn flat, in front of the 2.5D floor; the people could be drawn in the world later.",
+    "The narrator is the studio's placeholder voice. Claude cannot hear: the voice, music and sounds need Biku's ears."
+  ]
+}

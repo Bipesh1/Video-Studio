@@ -1,0 +1,189 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l17",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "This is not a story. In 1962, two mathematicians, David Gale and Lloyd Shapley, worked out how people pair up.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 335
+    },
+    {
+      "id": "l18",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "They proved the side that asks gets the best partner it could *keep.*",
+      "say": "They proved, the side that asks gets the best partner it could keep.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 335
+    },
+    {
+      "id": "l19",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "The side that waits gets the *worst* partner who would still stay.",
+      "say": "The side that waits, gets the worst partner who would still stay.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 603
+    },
+    {
+      "id": "l20",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "In 2012, that work won a *Nobel Prize.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 402
+    },
+    {
+      "id": "l21",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "This year, that same method placed more than thirty-eight thousand young doctors in US hospitals.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 335
+    },
+    {
+      "id": "l22",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "There, the *doctors* do the asking.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 536
+    },
+    {
+      "id": "l23",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "You do this too, waiting for the text, the call, the *first move.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 804
+    },
+    {
+      "id": "l24",
+      "speaker": "narrator",
+      "voice": "af_nicole",
+      "text": "Here is how you beat it. If you like someone, ask *first.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/leak.wav",
+      "speed": 0.95,
+      "pauseAfterMs": 370
+    },
+    {
+      "id": "l25",
+      "speaker": "narrator",
+      "voice": "af_nicole",
+      "text": "Ask once, kindly, and accept a no. A no costs you one *minute.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/leak.wav",
+      "speed": 0.95,
+      "pauseAfterMs": 888
+    },
+    {
+      "id": "l26",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "So would you wait for them to ask? Only if you want *what is left.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 938
+    }
+  ]
+}

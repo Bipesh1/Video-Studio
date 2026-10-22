@@ -1,0 +1,217 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "If the slowest person holds everyone back, who should walk with them?",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 469
+    },
+    {
+      "id": "l02",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "The smart plan fails. Watch.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 938
+    },
+    {
+      "id": "l03",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "Four people must cross this rope bridge before the storm breaks it.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 469
+    },
+    {
+      "id": "l04",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "Two fit at a time, and someone must carry the torch back each time.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 603
+    },
+    {
+      "id": "l05",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "The man in the red tie crosses in one minute, and the woman in the scarf in two.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 335
+    },
+    {
+      "id": "l06",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "The woman with the bag needs five, the old man ten.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 402
+    },
+    {
+      "id": "l07",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "Two together walk at the slower pace.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 737
+    },
+    {
+      "id": "l08",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "And the torch will last *seventeen* minutes.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 1005
+    },
+    {
+      "id": "l09",
+      "speaker": "saint",
+      "voice": "af_sarah",
+      "text": "You're fastest. Walk us over one at a time.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/saint.wav",
+      "speed": 0.95,
+      "pauseAfterMs": 962
+    },
+    {
+      "id": "l10",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "Ten, five and two minutes, plus two runs back, makes *nineteen* minutes.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 469
+    },
+    {
+      "id": "l11",
+      "speaker": "cheat",
+      "voice": "am_eric",
+      "text": "The torch only lasts seventeen minutes.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/cheat.wav",
+      "speed": 1.08,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l12",
+      "speaker": "cheat",
+      "voice": "am_eric",
+      "text": "So we leave the old man. Without him, we make it easily.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/cheat.wav",
+      "speed": 1.08,
+      "pauseAfterMs": 1080
+    }
+  ]
+}

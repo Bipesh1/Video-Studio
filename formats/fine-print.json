@@ -1,0 +1,114 @@
+{
+  "id": "fine-print",
+  "name": "What's the Catch? (the hidden money in everyday things)",
+  "description": "A What's the Catch? video: an animated explainer of an interesting topic (an everyday surprise, a big \"what if\" about you, or a big question everyone has: space, the body, how things really work), with good drawings and animation, in the channel's own illustrated style. The idea, title and thumbnail are decided first (packaging.json); the camera travels through one drawn world and the narrator explains in loops that open and close. Its shape follows the topic: only the hook (first) and the payoff (last) hold their places; the beats between are a menu, in any order, used as the topic needs. Mostly vertical Shorts of about 1 minute (a little longer is fine) (from 2026-10-22); a long YouTube video (4 to 6 minutes) only when Biku asks. Writing rules in prompts/fine-print.md (v4.0); research in knowledge/playbooks/explainers.md. The beat ids are the money names of v2; the guide calls them the hook, the moment, the loops, the catch, the proof, the payoff.",
+  "version": 3,
+  "structure": [
+    {
+      "id": "the-question",
+      "purpose": "One question about something the viewer uses, sees or believes, over the thing itself; then a line that promises a surprise.",
+      "share": 0.08,
+      "moods": ["curious", "upbeat"],
+      "preferredShots": ["wide", "close-up"],
+      "backgroundTreatment": "simple"
+    },
+    {
+      "id": "the-moment",
+      "purpose": "The everyday moment, and what everyone assumes about it.",
+      "share": 0.17,
+      "moods": ["curious", "comic", "upbeat"],
+      "preferredShots": ["wide", "medium"],
+      "backgroundTreatment": "simple",
+      "optional": true
+    },
+    {
+      "id": "follow-the-money",
+      "purpose": "Follow the clue: how it really works, step by step (in a money video, where each part of the money goes).",
+      "share": 0.3,
+      "moods": ["curious", "upbeat"],
+      "preferredShots": ["wide", "medium", "close-up"],
+      "backgroundTreatment": "simple",
+      "optional": true
+    },
+    {
+      "id": "the-trick",
+      "purpose": "The catch: the surprise that answers the question, a business's clever trick or a part of nature stranger than anyone thought.",
+      "share": 0.25,
+      "moods": ["curious", "tense", "comic"],
+      "preferredShots": ["medium", "close-up", "wide"],
+      "backgroundTreatment": "simple",
+      "optional": true
+    },
+    {
+      "id": "the-proof",
+      "purpose": "The real numbers with where they come from: who found, measured or published it, and when.",
+      "share": 0.12,
+      "moods": ["reflective", "curious"],
+      "preferredShots": ["wide", "medium"],
+      "backgroundTreatment": "simple",
+      "optional": true
+    },
+    {
+      "id": "your-move",
+      "purpose": "Now you'll notice: what the viewer will see differently from now on (or one thing to do), then the line that answers the first.",
+      "share": 0.08,
+      "moods": ["hope", "upbeat"],
+      "preferredShots": ["close-up", "wide"],
+      "backgroundTreatment": "simple"
+    }
+  ],
+  "lengthRange": {
+    "min": 45,
+    "max": 360
+  },
+  "shotLength": {
+    "min": 2,
+    "max": 7
+  },
+  "hookRules": [
+    "In the first 3 seconds the viewer knows what the video is about: the picture shows the thing the title is about, and the first line states the question or the wild fact in plain words a stranger understands, spoken and shown as big words. No greeting, no logo, no preamble.",
+    "By 10 seconds the title's promise is proved. The question is the real one the video answers, and the last line answers it. It does not start with \"In this video\", \"Did you know\", \"Have you ever wondered\" or \"Imagine\".",
+    "Seconds 10 to 20 say why it matters to the viewer, or promise an answer they do not expect."
+  ],
+  "pacing": {
+    "wordsPerMinute": {
+      "min": 120,
+      "max": 165
+    },
+    "rehookEveryS": {
+      "min": 15,
+      "max": 25
+    },
+    "pauseMs": {
+      "normal": 450,
+      "afterBeat": 1000
+    }
+  },
+  "sfxDensity": {
+    "level": "medium",
+    "perMinute": {
+      "min": 4,
+      "max": 10
+    }
+  },
+  "captionMode": "full",
+  "roomTone": "crowd-murmur",
+  "finish": {
+    "acting": "snappy",
+    "onTwos": false,
+    "shadows": false,
+    "grain": 0.2,
+    "vignette": 0.12,
+    "boil": 0.25
+  },
+  "factRules": {
+    "sourcesRequired": true,
+    "rules": [
+      "Every price, share and margin comes from a saved source and is said with its year or its country when it changes with them.",
+      "A rounded figure is spoken as about, nearly or more than, never as exact. An average is called an average.",
+      "The story acted out is an invented scene; what a named company does is only said when a source says it."
+    ]
+  },
+  "packaging": true,
+  "freeOrder": true
+}

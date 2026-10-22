@@ -1,0 +1,44 @@
+[
+  {
+    "number": 1,
+    "voice": "af_heart",
+    "who": "woman, warm",
+    "grade": "A",
+    "startsAtSec": 0.0
+  },
+  {
+    "number": 2,
+    "voice": "af_bella",
+    "who": "woman, bright",
+    "grade": "A-",
+    "startsAtSec": 12.8
+  },
+  {
+    "number": 3,
+    "voice": "af_nicole",
+    "who": "woman, soft and close",
+    "grade": "B-",
+    "startsAtSec": 26.1
+  },
+  {
+    "number": 4,
+    "voice": "am_michael",
+    "who": "man, steady (the placeholder now)",
+    "grade": "C+",
+    "startsAtSec": 43.2
+  },
+  {
+    "number": 5,
+    "voice": "am_fenrir",
+    "who": "man, deeper",
+    "grade": "C+",
+    "startsAtSec": 57.3
+  },
+  {
+    "number": 6,
+    "voice": "am_puck",
+    "who": "man, lively",
+    "grade": "C+",
+    "startsAtSec": 70.0
+  }
+]

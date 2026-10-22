@@ -1,0 +1,261 @@
+2026-10-17T11:13:18.896Z  part 1  part 1 of 3, 9:16: 2 scenes, 12 shots
+2026-10-17T11:13:18.898Z  part 1  voice: start
+2026-10-17T11:47:27.224Z  part 1    voice.wav: 29.43 s, 82 words, timings from estimated, -17.21 LUFS
+2026-10-17T11:47:27.230Z  part 1  voice: done in 2048.3 s
+2026-10-17T11:47:27.232Z  part 1  time: start
+2026-10-17T11:47:27.396Z  part 1    12 shots over 29.4 s: shortest 1.7 s, longest 3.8 s
+2026-10-17T11:47:27.399Z  part 1  time: done in 0.2 s
+2026-10-17T11:49:08.657Z  part 1  part 1 of 3, 9:16: 2 scenes, 12 shots
+2026-10-17T11:49:08.662Z  part 1  sound: start
+2026-10-17T11:49:42.750Z  part 1    F:\Video Studio\runs\2026-10-17-late-fine\part-1\audio\mix.wav: 29.43 s, -14.03 LUFS, true peak -1.24 dB, 2 music moods, 5 effects, music -17.6 dB under the voice
+2026-10-17T11:49:42.761Z  part 1  sound: done in 34.1 s
+2026-10-17T11:49:54.417Z  part 1  part 1 of 3, 9:16: 2 scenes, 12 shots
+2026-10-17T11:49:54.424Z  part 1  stills: start
+2026-10-17T11:49:54.497Z  part 1  bundle: start
+2026-10-17T11:50:51.819Z  part 1  bundle: done in 57.3 s
+2026-10-17T11:51:51.000Z  part 1    12 stills in runs\2026-10-17-late-fine\part-1\stills\9x16
+2026-10-17T11:51:53.795Z  part 1    runs\2026-10-17-late-fine\part-1\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-17T11:51:55.704Z  part 1    runs\2026-10-17-late-fine\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-17T11:51:55.705Z  part 1  stills: done in 121.3 s
+2026-10-17T11:53:03.148Z  part 1  part 1 of 3, 9:16: 2 scenes, 12 shots
+2026-10-17T11:53:03.154Z  part 1  time: start
+2026-10-17T11:53:03.168Z  part 1    12 shots over 29.4 s: shortest 1.7 s, longest 3.8 s
+2026-10-17T11:53:03.169Z  part 1  time: done in 0.0 s
+2026-10-17T11:53:03.170Z  part 1  stills: start
+2026-10-17T11:53:03.209Z  part 1  bundle: start
+2026-10-17T11:53:14.399Z  part 1  bundle: done in 11.2 s
+2026-10-17T11:53:44.775Z  part 1    12 stills in runs\2026-10-17-late-fine\part-1\stills\9x16
+2026-10-17T11:53:45.600Z  part 1    runs\2026-10-17-late-fine\part-1\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-17T11:53:48.500Z  part 1    runs\2026-10-17-late-fine\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-17T11:53:48.501Z  part 1  stills: done in 45.3 s
+2026-10-17T11:55:06.060Z  part 1  part 1 of 3, 9:16: 2 scenes, 12 shots
+2026-10-17T11:55:06.065Z  part 1  time: start
+2026-10-17T11:55:06.081Z  part 1    12 shots over 29.4 s: shortest 1.7 s, longest 3.8 s
+2026-10-17T11:55:06.083Z  part 1  time: done in 0.0 s
+2026-10-17T11:55:06.084Z  part 1  stills: start
+2026-10-17T11:55:06.128Z  part 1  bundle: start
+2026-10-17T11:55:22.930Z  part 1  bundle: done in 16.8 s
+2026-10-17T11:55:58.200Z  part 1    12 stills in runs\2026-10-17-late-fine\part-1\stills\9x16
+2026-10-17T11:55:58.801Z  part 1    runs\2026-10-17-late-fine\part-1\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-17T11:56:00.886Z  part 1    runs\2026-10-17-late-fine\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-17T11:56:00.887Z  part 1  stills: done in 54.8 s
+2026-10-17T11:56:40.546Z  part 1  part 1 of 3, 9:16: 2 scenes, 12 shots
+2026-10-17T11:56:40.549Z  part 1  time: start
+2026-10-17T11:56:40.556Z  part 1    12 shots over 29.4 s: shortest 1.7 s, longest 3.8 s
+2026-10-17T11:56:40.557Z  part 1  time: done in 0.0 s
+2026-10-17T11:56:40.557Z  part 1  stills: start
+2026-10-17T11:56:40.575Z  part 1  bundle: start
+2026-10-17T11:56:52.521Z  part 1  bundle: done in 11.9 s
+2026-10-17T11:57:15.224Z  part 1    12 stills in runs\2026-10-17-late-fine\part-1\stills\9x16
+2026-10-17T11:57:15.583Z  part 1    runs\2026-10-17-late-fine\part-1\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-17T11:57:17.814Z  part 1    runs\2026-10-17-late-fine\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-17T11:57:17.814Z  part 1  stills: done in 37.3 s
+2026-10-17T11:57:38.733Z  part 1  part 1 of 3, 9:16: 2 scenes, 12 shots
+2026-10-17T11:57:38.738Z  part 1  time: start
+2026-10-17T11:57:38.757Z  part 1    12 shots over 29.4 s: shortest 1.7 s, longest 3.8 s
+2026-10-17T11:57:38.759Z  part 1  time: done in 0.0 s
+2026-10-17T11:57:38.761Z  part 1  stills: start
+2026-10-17T11:57:38.802Z  part 1  bundle: start
+2026-10-17T11:57:57.107Z  part 1  bundle: done in 18.3 s
+2026-10-17T11:58:27.415Z  part 1    12 stills in runs\2026-10-17-late-fine\part-1\stills\9x16
+2026-10-17T11:58:27.943Z  part 1    runs\2026-10-17-late-fine\part-1\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-17T11:58:29.841Z  part 1    runs\2026-10-17-late-fine\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-17T11:58:29.842Z  part 1  stills: done in 51.1 s
+2026-10-17T11:58:29.843Z  part 1  preview: start
+2026-10-17T12:02:52.147Z  part 1    runs\2026-10-17-late-fine\part-1\preview\late-fine-part-1-9x16-preview-v1.mp4: 29.43 s of video, 540x960, in 260.8 s (8.86 s per video second)
+2026-10-17T12:02:52.162Z  part 1    runs\2026-10-17-late-fine\part-1\preview\late-fine-part-1-9x16-preview-v1.srt
+2026-10-17T12:02:52.241Z  part 1  preview: done in 262.4 s
+2026-10-17T12:04:16.211Z  part 1  part 1 of 3, 9:16: 2 scenes, 12 shots
+2026-10-17T12:04:16.213Z  part 1  video: start
+2026-10-17T12:04:16.229Z  part 1  bundle: start
+2026-10-17T12:04:30.671Z  part 1  bundle: done in 14.4 s
+2026-10-17T12:07:32.604Z  part 1    runs\2026-10-17-late-fine\part-1\out\late-fine-part-1-9x16-v1.mp4: 29.43 s of video, 1080x1920, in 179.3 s (6.09 s per video second)
+2026-10-17T12:07:32.613Z  part 1    runs\2026-10-17-late-fine\part-1\out\late-fine-part-1-9x16-v1.srt
+2026-10-17T12:07:32.637Z  part 1  video: done in 196.4 s
+2026-10-17T12:12:04.062Z  part 2  part 2 of 3, 9:16: 2 scenes, 14 shots
+2026-10-17T12:12:04.064Z  part 2  voice: start
+2026-10-17T12:23:41.216Z  part 2    voice.wav: 34.57 s, 90 words, timings from estimated, -17.04 LUFS
+2026-10-17T12:23:41.249Z  part 2  voice: done in 697.2 s
+2026-10-17T12:23:41.250Z  part 2  time: start
+2026-10-17T12:23:41.325Z  part 2    14 shots over 34.6 s: shortest 1.2 s, longest 3.9 s
+2026-10-17T12:23:41.326Z  part 2    note: shot "s3g" is only 1.2 s long
+2026-10-17T12:23:41.327Z  part 2  time: done in 0.1 s
+2026-10-17T12:24:28.954Z  part 2  part 2 of 3, 9:16: 2 scenes, 14 shots
+2026-10-17T12:24:28.960Z  part 2  sound: start
+2026-10-17T12:25:05.896Z  part 2    F:\Video Studio\runs\2026-10-17-late-fine\part-2\audio\mix.wav: 34.57 s, -14.02 LUFS, true peak -1.26 dB, 2 music moods, 5 effects, music -17.3 dB under the voice
+2026-10-17T12:25:05.897Z  part 2  sound: done in 36.9 s
+2026-10-17T12:25:16.712Z  part 2  part 2 of 3, 9:16: 2 scenes, 14 shots
+2026-10-17T12:25:16.715Z  part 2  stills: start
+2026-10-17T12:25:16.780Z  part 2  bundle: start
+2026-10-17T12:25:43.253Z  part 2  bundle: done in 26.5 s
+2026-10-17T12:26:59.103Z  part 2    14 stills in runs\2026-10-17-late-fine\part-2\stills\9x16
+2026-10-17T12:27:00.417Z  part 2    runs\2026-10-17-late-fine\part-2\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-17T12:27:04.843Z  part 2    runs\2026-10-17-late-fine\part-2\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-17T12:27:05.720Z  part 2    runs\2026-10-17-late-fine\part-2\stills\sheet-9x16-2.png (2 shots, 1 rows)
+2026-10-17T12:27:05.721Z  part 2  stills: done in 109.0 s
+2026-10-17T12:28:00.544Z  part 2  part 2 of 3, 9:16: 2 scenes, 14 shots
+2026-10-17T12:28:00.547Z  part 2  time: start
+2026-10-17T12:28:00.557Z  part 2    14 shots over 34.6 s: shortest 1.2 s, longest 3.9 s
+2026-10-17T12:28:00.558Z  part 2    note: shot "s3g" is only 1.2 s long
+2026-10-17T12:28:00.632Z  part 2  time: done in 0.1 s
+2026-10-17T12:28:00.634Z  part 2  stills: start
+2026-10-17T12:28:00.685Z  part 2  bundle: start
+2026-10-17T12:28:17.555Z  part 2  bundle: done in 16.9 s
+2026-10-17T12:29:19.055Z  part 2    14 stills in runs\2026-10-17-late-fine\part-2\stills\9x16
+2026-10-17T12:29:19.956Z  part 2    runs\2026-10-17-late-fine\part-2\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-17T12:29:23.667Z  part 2    runs\2026-10-17-late-fine\part-2\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-17T12:29:24.765Z  part 2    runs\2026-10-17-late-fine\part-2\stills\sheet-9x16-2.png (2 shots, 1 rows)
+2026-10-17T12:29:24.768Z  part 2  stills: done in 84.1 s
+2026-10-17T12:30:10.369Z  part 2  part 2 of 3, 9:16: 2 scenes, 14 shots
+2026-10-17T12:30:10.372Z  part 2  stills: start
+2026-10-17T12:30:10.415Z  part 2  bundle: start
+2026-10-17T12:30:24.283Z  part 2  bundle: done in 13.9 s
+2026-10-17T12:31:23.103Z  part 2    14 stills in runs\2026-10-17-late-fine\part-2\stills\9x16
+2026-10-17T12:31:23.987Z  part 2    runs\2026-10-17-late-fine\part-2\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-17T12:31:28.099Z  part 2    runs\2026-10-17-late-fine\part-2\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-17T12:31:29.160Z  part 2    runs\2026-10-17-late-fine\part-2\stills\sheet-9x16-2.png (2 shots, 1 rows)
+2026-10-17T12:31:29.161Z  part 2  stills: done in 78.8 s
+2026-10-17T12:32:22.182Z  part 2  part 2 of 3, 9:16: 2 scenes, 14 shots
+2026-10-17T12:32:22.188Z  part 2  stills: start
+2026-10-17T12:32:22.253Z  part 2  bundle: start
+2026-10-17T12:32:38.104Z  part 2  bundle: done in 15.9 s
+2026-10-17T12:33:45.529Z  part 2    14 stills in runs\2026-10-17-late-fine\part-2\stills\9x16
+2026-10-17T12:33:46.273Z  part 2    runs\2026-10-17-late-fine\part-2\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-17T12:33:51.500Z  part 2    runs\2026-10-17-late-fine\part-2\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-17T12:33:53.052Z  part 2    runs\2026-10-17-late-fine\part-2\stills\sheet-9x16-2.png (2 shots, 1 rows)
+2026-10-17T12:33:53.054Z  part 2  stills: done in 90.9 s
+2026-10-17T12:34:15.443Z  part 2  part 2 of 3, 9:16: 2 scenes, 14 shots
+2026-10-17T12:34:15.452Z  part 2  preview: start
+2026-10-17T12:34:15.594Z  part 2  bundle: start
+2026-10-17T12:34:27.590Z  part 2  bundle: done in 12.0 s
+2026-10-17T12:39:56.840Z  part 2    runs\2026-10-17-late-fine\part-2\preview\late-fine-part-2-9x16-preview-v1.mp4: 34.60 s of video, 540x960, in 325.1 s (9.40 s per video second)
+2026-10-17T12:39:56.847Z  part 2    runs\2026-10-17-late-fine\part-2\preview\late-fine-part-2-9x16-preview-v1.srt
+2026-10-17T12:39:56.868Z  part 2  preview: done in 341.4 s
+2026-10-17T12:41:17.563Z  part 2  part 2 of 3, 9:16: 2 scenes, 14 shots
+2026-10-17T12:41:17.565Z  part 2  time: start
+2026-10-17T12:41:17.587Z  part 2    14 shots over 34.6 s: shortest 1.2 s, longest 3.9 s
+2026-10-17T12:41:17.588Z  part 2    note: shot "s3g" is only 1.2 s long
+2026-10-17T12:41:17.588Z  part 2  time: done in 0.0 s
+2026-10-17T12:41:17.589Z  part 2  stills: start
+2026-10-17T12:41:17.620Z  part 2  bundle: start
+2026-10-17T12:41:38.881Z  part 2  bundle: done in 21.3 s
+2026-10-17T12:42:03.823Z  part 2    14 stills in runs\2026-10-17-late-fine\part-2\stills\9x16
+2026-10-17T12:42:04.732Z  part 2    runs\2026-10-17-late-fine\part-2\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-17T12:42:06.542Z  part 2    runs\2026-10-17-late-fine\part-2\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-17T12:42:06.963Z  part 2    runs\2026-10-17-late-fine\part-2\stills\sheet-9x16-2.png (2 shots, 1 rows)
+2026-10-17T12:42:06.964Z  part 2  stills: done in 49.4 s
+2026-10-17T12:42:26.192Z  part 2  part 2 of 3, 9:16: 2 scenes, 14 shots
+2026-10-17T12:42:26.194Z  part 2  time: start
+2026-10-17T12:42:26.201Z  part 2    14 shots over 34.6 s: shortest 1.2 s, longest 3.9 s
+2026-10-17T12:42:26.202Z  part 2    note: shot "s3g" is only 1.2 s long
+2026-10-17T12:42:26.203Z  part 2  time: done in 0.0 s
+2026-10-17T12:42:26.203Z  part 2  stills: start
+2026-10-17T12:42:26.224Z  part 2  bundle: start
+2026-10-17T12:42:37.120Z  part 2  bundle: done in 10.9 s
+2026-10-17T12:43:05.815Z  part 2    14 stills in runs\2026-10-17-late-fine\part-2\stills\9x16
+2026-10-17T12:43:06.220Z  part 2    runs\2026-10-17-late-fine\part-2\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-17T12:43:08.546Z  part 2    runs\2026-10-17-late-fine\part-2\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-17T12:43:09.054Z  part 2    runs\2026-10-17-late-fine\part-2\stills\sheet-9x16-2.png (2 shots, 1 rows)
+2026-10-17T12:43:09.055Z  part 2  stills: done in 42.9 s
+2026-10-17T12:43:22.880Z  part 2  part 2 of 3, 9:16: 2 scenes, 14 shots
+2026-10-17T12:43:22.882Z  part 2  preview: start
+2026-10-17T12:43:22.900Z  part 2  bundle: start
+2026-10-17T12:43:33.046Z  part 2  bundle: done in 10.1 s
+2026-10-17T12:49:02.506Z  part 2    runs\2026-10-17-late-fine\part-2\preview\late-fine-part-2-9x16-preview-v2.mp4: 34.60 s of video, 540x960, in 326.8 s (9.44 s per video second)
+2026-10-17T12:49:02.515Z  part 2    runs\2026-10-17-late-fine\part-2\preview\late-fine-part-2-9x16-preview-v2.srt
+2026-10-17T12:49:02.536Z  part 2  preview: done in 339.7 s
+2026-10-17T12:50:06.507Z  part 2  part 2 of 3, 9:16: 2 scenes, 14 shots
+2026-10-17T12:50:06.509Z  part 2  video: start
+2026-10-17T12:50:06.527Z  part 2  bundle: start
+2026-10-17T12:50:17.070Z  part 2  bundle: done in 10.5 s
+2026-10-17T12:55:58.379Z  part 2    runs\2026-10-17-late-fine\part-2\out\late-fine-part-2-9x16-v1.mp4: 34.60 s of video, 1080x1920, in 336.8 s (9.74 s per video second)
+2026-10-17T12:55:58.386Z  part 2    runs\2026-10-17-late-fine\part-2\out\late-fine-part-2-9x16-v1.srt
+2026-10-17T12:55:58.408Z  part 2  video: done in 351.9 s
+2026-10-17T13:25:18.071Z  part 3  part 3 of 3, 9:16: 2 scenes, 18 shots
+2026-10-17T13:25:18.073Z  part 3  voice: start
+2026-10-17T13:41:12.252Z  part 3    voice.wav: 44.75 s, 128 words, timings from estimated, -17.3 LUFS
+2026-10-17T13:41:12.324Z  part 3  voice: done in 954.3 s
+2026-10-17T13:41:12.324Z  part 3  time: start
+2026-10-17T13:41:12.418Z  part 3    18 shots over 44.7 s: shortest 1.2 s, longest 3.8 s
+2026-10-17T13:41:12.418Z  part 3    note: shot "s6b" is only 1.2 s long
+2026-10-17T13:41:12.419Z  part 3  time: done in 0.1 s
+2026-10-17T13:41:54.091Z  part 3  part 3 of 3, 9:16: 2 scenes, 18 shots
+2026-10-17T13:41:54.093Z  part 3  sound: start
+2026-10-17T13:42:20.352Z  part 3    F:\Video Studio\runs\2026-10-17-late-fine\part-3\audio\mix.wav: 44.75 s, -14.02 LUFS, true peak -1.22 dB, 1 music moods, 6 effects, music -17.4 dB under the voice
+2026-10-17T13:42:20.352Z  part 3  sound: done in 26.3 s
+2026-10-17T13:42:25.126Z  part 3  part 3 of 3, 9:16: 2 scenes, 18 shots
+2026-10-17T13:42:25.127Z  part 3  stills: start
+2026-10-17T13:42:25.161Z  part 3  bundle: start
+2026-10-17T13:42:51.584Z  part 3  bundle: done in 26.4 s
+2026-10-17T13:43:44.593Z  part 3    18 stills in runs\2026-10-17-late-fine\part-3\stills\9x16
+2026-10-17T13:43:45.178Z  part 3    runs\2026-10-17-late-fine\part-3\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-17T13:43:46.949Z  part 3    runs\2026-10-17-late-fine\part-3\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-17T13:43:47.861Z  part 3    runs\2026-10-17-late-fine\part-3\stills\sheet-9x16-2.png (6 shots, 2 rows)
+2026-10-17T13:43:47.861Z  part 3  stills: done in 82.7 s
+2026-10-17T13:44:16.565Z  part 3  part 3 of 3, 9:16: 2 scenes, 18 shots
+2026-10-17T13:44:16.568Z  part 3  time: start
+2026-10-17T13:44:16.576Z  part 3    18 shots over 44.7 s: shortest 1.2 s, longest 3.8 s
+2026-10-17T13:44:16.577Z  part 3    note: shot "s6b" is only 1.2 s long
+2026-10-17T13:44:16.578Z  part 3  time: done in 0.0 s
+2026-10-17T13:44:16.578Z  part 3  stills: start
+2026-10-17T13:44:16.605Z  part 3  bundle: start
+2026-10-17T13:44:21.534Z  part 3  bundle: done in 4.9 s
+2026-10-17T13:45:07.101Z  part 3    18 stills in runs\2026-10-17-late-fine\part-3\stills\9x16
+2026-10-17T13:45:07.498Z  part 3    runs\2026-10-17-late-fine\part-3\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-17T13:45:09.404Z  part 3    runs\2026-10-17-late-fine\part-3\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-17T13:45:10.558Z  part 3    runs\2026-10-17-late-fine\part-3\stills\sheet-9x16-2.png (6 shots, 2 rows)
+2026-10-17T13:45:10.559Z  part 3  stills: done in 54.0 s
+2026-10-17T13:45:28.310Z  part 3  part 3 of 3, 9:16: 2 scenes, 18 shots
+2026-10-17T13:45:28.312Z  part 3  preview: start
+2026-10-17T13:45:28.349Z  part 3  bundle: start
+2026-10-17T13:45:34.702Z  part 3  bundle: done in 6.4 s
+2026-10-17T13:52:56.196Z  part 3    runs\2026-10-17-late-fine\part-3\preview\late-fine-part-3-9x16-preview-v1.mp4: 44.77 s of video, 540x960, in 438.2 s (9.79 s per video second)
+2026-10-17T13:52:56.204Z  part 3    runs\2026-10-17-late-fine\part-3\preview\late-fine-part-3-9x16-preview-v1.srt
+2026-10-17T13:52:56.230Z  part 3  preview: done in 447.9 s
+2026-10-17T13:53:52.605Z  part 3  part 3 of 3, 9:16: 2 scenes, 18 shots
+2026-10-17T13:53:52.607Z  part 3  time: start
+2026-10-17T13:53:52.615Z  part 3    18 shots over 44.7 s: shortest 1.2 s, longest 3.8 s
+2026-10-17T13:53:52.616Z  part 3    note: shot "s6b" is only 1.2 s long
+2026-10-17T13:53:52.616Z  part 3  time: done in 0.0 s
+2026-10-17T13:53:52.617Z  part 3  stills: start
+2026-10-17T13:53:52.646Z  part 3  bundle: start
+2026-10-17T13:54:05.319Z  part 3  bundle: done in 12.7 s
+2026-10-17T13:54:45.648Z  part 3    18 stills in runs\2026-10-17-late-fine\part-3\stills\9x16
+2026-10-17T13:54:46.040Z  part 3    runs\2026-10-17-late-fine\part-3\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-17T13:54:48.734Z  part 3    runs\2026-10-17-late-fine\part-3\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-17T13:54:50.301Z  part 3    runs\2026-10-17-late-fine\part-3\stills\sheet-9x16-2.png (6 shots, 2 rows)
+2026-10-17T13:54:50.302Z  part 3  stills: done in 57.7 s
+2026-10-17T13:55:05.485Z  part 3  part 3 of 3, 9:16: 2 scenes, 18 shots
+2026-10-17T13:55:05.487Z  part 3  preview: start
+2026-10-17T13:55:05.518Z  part 3  bundle: start
+2026-10-17T13:55:16.720Z  part 3  bundle: done in 11.2 s
+2026-10-17T14:03:06.576Z  part 3    runs\2026-10-17-late-fine\part-3\preview\late-fine-part-3-9x16-preview-v2.mp4: 44.77 s of video, 540x960, in 465.4 s (10.40 s per video second)
+2026-10-17T14:03:06.632Z  part 3    runs\2026-10-17-late-fine\part-3\preview\late-fine-part-3-9x16-preview-v2.srt
+2026-10-17T14:03:06.813Z  part 3  preview: done in 481.3 s
+2026-10-17T14:04:26.701Z  part 3  part 3 of 3, 9:16: 2 scenes, 18 shots
+2026-10-17T14:04:26.704Z  part 3  video: start
+2026-10-17T14:04:26.735Z  part 3  bundle: start
+2026-10-17T14:04:42.118Z  part 3  bundle: done in 15.4 s
+2026-10-17T14:12:48.327Z  part 3    runs\2026-10-17-late-fine\part-3\out\late-fine-part-3-9x16-v1.mp4: 44.77 s of video, 1080x1920, in 482.8 s (10.79 s per video second)
+2026-10-17T14:12:48.353Z  part 3    runs\2026-10-17-late-fine\part-3\out\late-fine-part-3-9x16-v1.srt
+2026-10-17T14:12:48.378Z  part 3  video: done in 501.7 s
+2026-10-17T14:31:35.935Z  output  9:16 full video:
+2026-10-17T14:32:19.360Z  output      F:\Video Studio\runs\2026-10-17-late-fine\cuts\full\audio\mix.wav: 108.80 s, -14.04 LUFS, true peak -1.21 dB, 5 music moods, 16 effects, music -17.4 dB under the voice
+2026-10-17T14:37:11.377Z  output    runs\2026-10-17-late-fine\out\late-fine-9x16-v1.mp4: 108.80 s, 1080x1920
+2026-10-17T14:37:11.378Z  output      ok   The file plays: 1080x1920, 30 pictures a second, 108.8 s, picture and sound both there; played through from start to finish
+2026-10-17T14:37:11.378Z  output      ok   It is as long as its parts together: 108.8 s; its 3 pieces add up to 108.8 s
+2026-10-17T14:37:11.379Z  output      ok   Its pictures are the parts that passed: every frame against late-fine-part-1-9x16-v1.mp4 and late-fine-part-2-9x16-v1.mp4 and late-fine-part-3-9x16-v1.mp4 (the strongest difference is 1 of 255; over 16 would be a different picture)
+2026-10-17T14:37:11.379Z  output      ok   Its sound is the mix made for the whole video: second for second (what is left over is 35 dB under it at most)
+2026-10-17T14:37:11.380Z  output      ok   There is no dead silence: the sound never drops out; the longest pause between words is 3.3 s
+2026-10-17T14:37:11.381Z  output            note: nobody speaks for 3.3 s from 1:01
+2026-10-17T14:37:11.381Z  output      ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.2 dB (the limit is -1)
+2026-10-17T14:37:11.382Z  output      ok   Nothing drowns the words: 16 sound effects, the loudest of those over words 16 dB under the voice; the music sits 17.4 dB under the voice while someone speaks
+2026-10-17T14:37:11.383Z  output      FIX  Every join and the cover hold up: a strip of frames across each of the 2 joins between parts, and the cover picture
+2026-10-17T14:37:11.384Z  output            problem: the joins and the cover have not been looked at yet
+2026-10-17T14:37:11.384Z  output      to look at: runs\2026-10-17-late-fine\out\look\late-fine-9x16-v1 (each join) and runs\2026-10-17-late-fine\out\late-fine-9x16-v1-cover-side.jpg; then write runs\2026-10-17-late-fine\out\late-fine-9x16-v1.look.json
+2026-10-17T14:37:11.387Z  output  runs\2026-10-17-late-fine\delivery.md
+2026-10-17T14:37:41.157Z  output  9:16 full video:
+2026-10-17T14:37:55.797Z  output  9:16 full video:
+2026-10-17T14:38:09.760Z  output  9:16 full video:
+2026-10-17T14:38:10.167Z  output    runs\2026-10-17-late-fine\out\late-fine-9x16-v1.mp4: already made from these parts
+2026-10-17T14:38:10.298Z  output  runs\2026-10-17-late-fine\delivery.md

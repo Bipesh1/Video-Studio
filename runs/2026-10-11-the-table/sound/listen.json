@@ -1,0 +1,128 @@
+{
+  "music": [
+    {
+      "mood": "unease",
+      "file": "music-unease.mp3",
+      "seconds": 30,
+      "lufs": -14.0,
+      "truePeakDb": -2.62,
+      "clipped": false,
+      "onTarget": true,
+      "silent": false
+    },
+    {
+      "mood": "closing-in",
+      "file": "music-closing-in.mp3",
+      "seconds": 30,
+      "lufs": -14.03,
+      "truePeakDb": -1.28,
+      "clipped": false,
+      "onTarget": true,
+      "silent": false
+    },
+    {
+      "mood": "aftermath",
+      "file": "music-aftermath.mp3",
+      "seconds": 30,
+      "lufs": -14.01,
+      "truePeakDb": -1.29,
+      "clipped": false,
+      "onTarget": true,
+      "silent": false
+    }
+  ],
+  "sounds": [
+    {
+      "name": "heartbeat-rising",
+      "file": "sound-heartbeat-rising.mp3",
+      "seconds": 8.0,
+      "lufs": -18.37,
+      "truePeakDb": -1.29,
+      "clipped": false,
+      "onTarget": false,
+      "silent": false
+    },
+    {
+      "name": "clunk",
+      "file": "sound-clunk.mp3",
+      "seconds": 0.6,
+      "lufs": -15.4,
+      "truePeakDb": -1.26,
+      "clipped": false,
+      "onTarget": false,
+      "silent": false
+    },
+    {
+      "name": "boom",
+      "file": "sound-boom.mp3",
+      "seconds": 2.4,
+      "lufs": -14.05,
+      "truePeakDb": -1.29,
+      "clipped": false,
+      "onTarget": true,
+      "silent": false
+    },
+    {
+      "name": "hum",
+      "file": "sound-hum.mp3",
+      "seconds": 6.0,
+      "lufs": -14.0,
+      "truePeakDb": -6.67,
+      "clipped": false,
+      "onTarget": true,
+      "silent": false
+    }
+  ],
+  "voices": {
+    "line": "Would you sit down at this table? Most people do. That is the first thing we learned about you.",
+    "options": [
+      {
+        "option": 1,
+        "kokoroVoice": "am_onyx",
+        "speed": 0.9,
+        "like": "a low, flat man's voice, slowed: cold and sure",
+        "file": "voice-1.mp3",
+        "seconds": 4.94,
+        "lufs": -17.3
+      },
+      {
+        "option": 2,
+        "kokoroVoice": "am_michael",
+        "speed": 0.92,
+        "like": "the studio's usual narrator, slowed: calm and clear",
+        "file": "voice-2.mp3",
+        "seconds": 5.73,
+        "lufs": -17.1
+      },
+      {
+        "option": 3,
+        "kokoroVoice": "af_nicole",
+        "speed": 0.95,
+        "like": "a soft, close woman's voice, almost a whisper",
+        "file": "voice-3.mp3",
+        "seconds": 8.3,
+        "lufs": -17.1
+      }
+    ]
+  },
+  "trainerSpeeds": [
+    {
+      "option": 1,
+      "speed": 0.9,
+      "file": "trainer-speed-1.mp3",
+      "seconds": 9.79
+    },
+    {
+      "option": 2,
+      "speed": 0.97,
+      "file": "trainer-speed-2.mp3",
+      "seconds": 9.32
+    },
+    {
+      "option": 3,
+      "speed": 1.04,
+      "file": "trainer-speed-3.mp3",
+      "seconds": 8.88
+    }
+  ]
+}

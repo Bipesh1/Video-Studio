@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "video": "late-fine-part-1-9x16-preview-v1.mp4",
+  "stills": {
+    "s1a": "ok",
+    "s1b": "ok",
+    "s1c": "ok",
+    "s2a": "ok",
+    "s2b": "ok",
+    "s2c": "ok",
+    "s2d": "ok",
+    "s2e": "ok",
+    "s2f": "ok",
+    "s2g": "ok",
+    "s2h": "ok",
+    "s2i": "ok"
+  },
+  "strips": {
+    "cut-s1a-s1b": "ok",
+    "cut-s1b-s1c": "ok",
+    "cut-s1c-s2a": "ok",
+    "cut-s2c-s2d": "ok",
+    "cut-s2d-s2e": "ok",
+    "cut-s2f-s2g": "ok",
+    "cut-s2g-s2h": "ok",
+    "cut-s2h-s2i": "ok",
+    "s1c-move-1": "ok",
+    "s2c-move-1": "ok",
+    "s2d-move-1": "ok",
+    "s2f-move-1": "ok"
+  },
+  "playbook": "ok",
+  "fixed": [
+    "Drawn for this film: the front of a daycare at closing time (`daycare`: a door with lit panes, DAYCARE over it in toy blocks, a playroom window with children's paper pictures), a notice board (empty, the fine pinned up half a second into its shot, LATE FINE $3, NO MORE LATE FINE), the wall clock at set times (3:55 to 4:40, and one that creeps to 4:40), and a car for the traffic in part 2.",
+    "The clock first hung over the door, as big as a head: it covered the DAYCARE sign and the teacher's head in her medium shots. It is smaller now and hangs over the notice board.",
+    "The Copycat's hand on his heart left his other arm sticking out sideways like a wing in his medium and close shots. He stands plainly now, out of breath.",
+    "The fathers came in from the right and walked through the boy at the window. They come in from the left now and stop facing the teacher, so nobody crosses anybody.",
+    "The Copycat running in made the camera pull far back to fit his run, and every figure was tiny. The rewind holds on the teacher and the boy with footsteps coming, and he is there in the next shot.",
+    "The teacher pointing at the notice put her arm over its $3. She stands beside it and looks at it as it is pinned up."
+  ],
+  "notes": [
+    "Every shot checked large: in s2d the Copycat, the teacher and the boy are in every frame; the boy brightens when his father arrives (one change of face, the one leap of feeling, on purpose).",
+    "The voices took 34 minutes for 29 seconds of speech: the laptop was busy with other programs (the processor at 60% with nothing of the studio running)."
+  ]
+}

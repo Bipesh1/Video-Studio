@@ -6,6 +6,7 @@ import json
 import numpy as np
 import pyloudnorm as pyln
 
+from studio_audio import chatterbox
 from studio_audio.voice import (
     PEAK_LIMIT,
     TARGET_LUFS,
@@ -79,6 +80,55 @@ class FakeProvider:
         return Synthesis(np.concatenate(chunks), words, "kokoro")
 
 
+class Listener(FakeProvider):
+    """Keeps what it was asked to say, and in which voice."""
+
+    def __init__(self):
+        self.heard = []
+
+    def synthesize(self, text, voice, speed):
+        self.heard.append((text, voice, speed))
+        return super().synthesize(text.replace("...", ""), voice, speed)
+
+
+def test_a_line_is_said_its_own_way_and_shown_as_written(tmp_path):
+    script = {
+        "questionLift": 0,
+        "lines": [
+            {"id": "l1", "speaker": "trainer", "voice": "am_onyx", "text": "He *stays.*", "say": "He... stays.",
+             "speed": 0.8, "blend": [{"voice": "am_onyx", "weight": 0.7}, {"voice": "am_michael", "weight": 0.3}]},
+            {"id": "l2", "speaker": "cheat", "voice": "am_eric", "text": "Relax."},
+        ],
+    }
+    path = tmp_path / "voice-script.json"
+    path.write_text(json.dumps(script))
+    listener = Listener()
+    track = synth(path, tmp_path / "audio", listener)
+    assert listener.heard == [
+        ("He... stays.", (("am_onyx", 0.7), ("am_michael", 0.3)), 0.8),
+        ("Relax.", "am_eric", 1.0),
+    ]
+    assert [w["text"] for w in track["words"]] == ["He", "stays.", "Relax."]
+    assert track["words"][1]["emphasis"] is True
+    assert track["lines"][0]["text"] == "He stays." and track["lines"][0]["voice"] == "am_onyx"
+
+
+def test_synth_lifts_the_questions_when_the_script_asks(tmp_path, monkeypatch):
+    seen = []
+
+    def lifted(audio, sr, words, strength):
+        seen.append(([w for w, _, _ in words], strength))
+        return audio
+
+    monkeypatch.setattr("studio_audio.voice.lift_questions", lifted)
+    line = {"id": "l1", "speaker": "copycat", "voice": "am_fenrir", "text": "Is that *smoke?*"}
+    for lift in (1.5, 0):
+        path = tmp_path / f"voice-script-{lift}.json"
+        path.write_text(json.dumps({"questionLift": lift, "lines": [line]}))
+        synth(path, tmp_path / "audio", FakeProvider())
+    assert seen == [(["Is", "that", "smoke?"], 1.5)]
+
+
 def test_synth_writes_a_track_that_matches_the_contract(tmp_path):
     script = {
         "leadInMs": 400,
@@ -101,3 +151,55 @@ def test_synth_writes_a_track_that_matches_the_contract(tmp_path):
     assert starts == sorted(starts)
     assert track["words"][-1]["endMs"] <= track["durationMs"]
     assert all(w["lineId"] in ("n1", "d1") for w in track["words"])
+
+
+class SoundingProvider(FakeProvider):
+    """Like the fake provider, and says which speech sounds it made for each word."""
+
+    def synthesize(self, text, voice, speed):
+        s = super().synthesize(text, voice, speed)
+        for w in s.words:
+            w.sounds = {"Is": "ˌɪz", "that": "ðˈæt", "smoke": "smˈOk"}.get(w.text, "")
+        return s
+
+
+def test_the_sounds_of_each_word_go_into_the_timings(tmp_path):
+    path = tmp_path / "voice-script.json"
+    path.write_text(json.dumps({"questionLift": 0, "lines": [
+        {"id": "l1", "speaker": "copycat", "voice": "am_fenrir", "text": "Is that *smoke?*"}]}))
+    track = synth(path, tmp_path / "audio", SoundingProvider())
+    assert [w.get("sounds") for w in track["words"]] == ["ˌɪz", "ðˈæt", "smˈOk"]
+    plain = synth(path, tmp_path / "plain", FakeProvider())
+    assert all("sounds" not in w for w in plain["words"])
+
+
+def test_lines_in_a_chatterbox_voice_are_spoken_by_it_and_timed_by_listening(tmp_path):
+    asked = []
+
+    def fake_chatterbox(lines, sr):
+        asked.extend(lines)
+        out = {}
+        for line in lines:
+            n = len(line["text"].split())
+            audio = (0.2 * np.sin(np.linspace(0, 400 * n, int(0.3 * SR * n)))).astype(np.float32)
+            words = [(w, 0.3 * i, 0.3 * i + 0.28) for i, w in enumerate(line["text"].split())]
+            out[line["id"]] = chatterbox.Spoken(audio, words, 0, 1)
+        return out
+
+    script = {
+        "questionLift": 0,
+        "lines": [
+            {"id": "l1", "speaker": "copycat", "voice": "am_fenrir", "text": "Is that *smoke?*",
+             "say": "[surprised] Is that smoke?", "engine": "chatterbox", "sample": "voices/samples/copycat.wav"},
+            {"id": "l2", "speaker": "cheat", "voice": "am_eric", "text": "Relax."},
+        ],
+    }
+    path = tmp_path / "voice-script.json"
+    path.write_text(json.dumps(script))
+    track = synth(path, tmp_path / "audio", FakeProvider(), fake_chatterbox)
+    assert [a["id"] for a in asked] == ["l1"]
+    assert asked[0]["say"] == "[surprised] Is that smoke?"
+    assert asked[0]["sample"].endswith("copycat.wav")
+    assert [w["text"] for w in track["words"]] == ["Is", "that", "smoke?", "Relax."]
+    assert track["words"][2]["emphasis"] is True
+    assert track["timingSource"] == "heard"

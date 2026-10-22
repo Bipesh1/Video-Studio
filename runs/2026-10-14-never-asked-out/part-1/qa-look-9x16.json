@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "video": "never-asked-out-part-1-9x16-v3.mp4",
+  "stills": {
+    "s1a": "ok",
+    "s1b": "ok",
+    "s2a": "ok",
+    "s2b": "ok",
+    "s2c": "ok",
+    "s2d": "ok",
+    "s2e": "ok",
+    "s2f": "ok",
+    "s2g": "ok",
+    "s3a": "ok",
+    "s3b": "ok",
+    "s3c": "ok",
+    "s3d": "ok",
+    "s3e": "ok"
+  },
+  "strips": {
+    "cut-s1a-s1b": "ok",
+    "cut-s2a-s2b": "ok",
+    "cut-s2f-s2g": "ok",
+    "cut-s2g-s3a": "ok",
+    "cut-s3a-s3b": "ok",
+    "cut-s3b-s3c": "ok",
+    "cut-s3c-s3d": "ok",
+    "cut-s3d-s3e": "ok",
+    "s2c-move-1": "ok",
+    "s2c-move-2": "ok",
+    "s2d-move-1": "ok",
+    "s3b-move-1": "ok",
+    "s3b-move-2": "ok",
+    "s3b-move-3": "ok",
+    "s3c-move-1": "ok",
+    "s3d-move-1": "ok",
+    "s3d-move-2": "ok",
+    "s3d-move-3": "ok"
+  },
+  "playbook": "ok",
+  "fixed": [
+    "In the first stills the five people at the party stood across the whole room, so every wide shot pulled back until they were tiny, in a row like a line-up. They stand closer now, and the second guest is only in the first wide and when the guests leave: the faces in a wide shot are about twice the size.",
+    "The cup on the table in the room hung in the air beside it. It stands on the table now.",
+    "The Saint held her cup out in front of her, and at every cut to her face her arm swung the cup down out of the picture. It hangs at her side all night now and comes up only for the sip.",
+    "Thinking 'What if he says no in front of everyone?' her face was still an open smile with a little worry in it. It is plainly scared now, and more so as the thought goes on.",
+    "Her one step toward him began from behind the woman in red, and then went on until she was against his shoulder. She steps from where she stands now, one step, and stops. Looked at large, frame by frame, in part-1/clips/never-asked-out-part-1-9x16-17-26s-v2.mp4."
+  ],
+  "notes": [
+    "Biku's script, used word for word (as-is). The question opens the video, close on the Trainer in the room, in big words under his face.",
+    "The party is a living room at night in muted violet. The Trainer is heard over the party and stands at its edge once, close, to say 'What she does not know is this.'",
+    "Her phone going in her bag is heard (a small bell at the end of her thought) and not seen: a phone cannot stand in a bag or on a table yet, only in a hand.",
+    "The first line's words were timed by sharing them out by length: the listening heard 'If you like someone' for 'liked'. It needs Biku's ears.",
+    "Claude cannot hear: the voices, the party murmur and the music need Biku's ears."
+  ]
+}

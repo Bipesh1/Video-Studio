@@ -1,0 +1,63 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l10",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Our oceans carry that heavy fingerprint, and so do the icy *comets*.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l11",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "But the Sun has much less, because heat wipes the fingerprint *away*.",
+      "speed": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l12",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So scientists rebuilt the newborn Sun and its planets inside a *computer*.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l13",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "But the newborn Sun and planets made nowhere near *enough* heavy water.",
+      "speed": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l14",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Heavy water needs deep cold, close to the coldest cold there *is*.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l15",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "And the only place that cold was the dark cloud that came *before* the Sun.",
+      "speed": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l16",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "There, on a speck of dust, our water molecule froze into *ice*.",
+      "speed": 1,
+      "pauseAfterMs": 1200
+    }
+  ]
+}

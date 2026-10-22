@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "video": "bridge-torch-part-3-9x16-v2.mp4",
+  "stills": {
+    "s6a": "ok",
+    "s6b": "ok",
+    "s6c": "ok",
+    "s6d": "ok",
+    "s6e": "ok",
+    "s6f": "ok",
+    "s6g": "ok",
+    "s6h": "ok",
+    "s6i": "ok",
+    "s7a": "ok",
+    "s7b": "ok",
+    "s7c": "ok",
+    "s7d": "ok",
+    "s7e": "ok",
+    "s8a": "ok",
+    "s8b": "ok",
+    "s8c": "ok",
+    "s8d": "ok"
+  },
+  "strips": {
+    "cut-s6a-s6b": "ok",
+    "cut-s6b-s6c": "ok",
+    "cut-s6d-s6e": "ok",
+    "cut-s6e-s6f": "ok",
+    "cut-s6f-s6g": "ok",
+    "cut-s6h-s6i": "ok",
+    "cut-s6i-s7a": "ok",
+    "cut-s7a-s7b": "ok",
+    "cut-s7b-s7c": "ok",
+    "cut-s7c-s7d": "ok",
+    "cut-s7d-s7e": "ok",
+    "cut-s8c-s8d": "ok",
+    "s6a-move-1": "ok",
+    "s6b-move-1": "ok",
+    "s6b-move-2": "ok",
+    "s6d-move-1": "ok",
+    "s6d-move-2": "ok",
+    "s6e-move-1": "ok",
+    "s6f-move-1": "ok",
+    "s6f-move-2": "ok",
+    "s6g-move-1": "ok",
+    "s6g-move-2": "ok",
+    "s6g-move-3": "ok",
+    "s7a-move-1": "ok",
+    "s8d-move-1": "ok"
+  },
+  "playbook": "ok",
+  "fixed": [
+    "The picture of what each plan gets you showed the wrong people: 'slowest walk together' had the Saint and the Cheat, the two fastest. Now the Cheat walks the frightened old man over under 'fastest walks everyone', and the old man and the woman with the bag walk together under 'slowest walk together'; the people are bigger and the labels no longer run off the left edge.",
+    "The Cheat running back with the torch was a close shot that lost half of him at the edge and hid the torch; it is wide now, and he runs to the end of the shot: stopping from a run snapped him from a stride to standing in one frame (the self-check's 'nothing jumps', v1)."
+  ],
+  "notes": [
+    "His script, word for word. Looked at large: her face sets as she sees it; the two fastest cross; the Cheat runs back with the torch; the two slowest cross together, the torch held low; the Saint brings back what is left of it; the two fastest cross again; as the last two arrive the torch goes out in a wisp of smoke and the faces turn glad; the picture of the two plans; the fade to the Trainer's room; 1981 and 2002; the crowd of tired people; the card read by the Leak; his last line and a knowing smile.",
+    "One line's word times are shared out by length, not heard: \"In 2002, the mathematician Günter Rote proved...\". Listening back, the voice's check heard \"Grinter wrote\". The name may be said wrongly; it needs Biku's ear. The captions of that line may lead or trail the voice a little.",
+    "Claude cannot hear: the voices (Chatterbox), the rain, the footsteps, the creak and the music need Biku's ears."
+  ]
+}

@@ -54,7 +54,7 @@ def test_another_seed_gives_another_take(name):
     assert not np.array_equal(sfx.make(name, seed=0, overrides=None), sfx.make(name, seed=1, overrides=None))
 
 
-@pytest.mark.parametrize("name", ["thud", "hit", "footsteps"])
+@pytest.mark.parametrize("name", ["thud", "hit", "footsteps", "drumroll", "clunk", "boom", "heartbeat-rising", "hum"])
 def test_low_sounds_can_still_be_heard_on_a_phone(name):
     # A phone speaker plays almost nothing below 200 Hz.
     assert share_above(sfx.make(name, overrides=None), 200) > 0.2
@@ -63,6 +63,8 @@ def test_low_sounds_can_still_be_heard_on_a_phone(name):
 def test_beds_and_footsteps_run_as_long_as_asked():
     assert len(sfx.make("wind", seconds=2.5, overrides=None)) == int(2.5 * SR)
     assert len(sfx.make("crowd-murmur", seconds=1.5, overrides=None)) == int(1.5 * SR)
+    assert len(sfx.make("tick", seconds=2.5, overrides=None)) == int(2.5 * SR)
+    assert len(sfx.make("applause", seconds=1.5, overrides=None)) == int(1.5 * SR)
     steps = sfx.make("footsteps", seconds=3.0, overrides=None)
     assert len(steps) == 3 * SR
     # A one-shot keeps its own length whatever is asked.
@@ -76,6 +78,87 @@ def test_footsteps_come_two_a_second():
     loud = level > level.max() * 0.3
     onsets = int(np.sum(loud[1:] & ~loud[:-1]) + loud[0])
     assert onsets == 6
+
+
+def rms(audio: np.ndarray, start: float, end: float) -> float:
+    """The level of a stretch of a sound, given as shares of its length."""
+    mono = audio.mean(axis=1)
+    return float(np.sqrt(np.mean(mono[int(start * len(mono)) : int(end * len(mono))] ** 2)))
+
+
+def test_the_clock_ticks_twice_a_second_and_the_tock_is_lower():
+    ticks = sfx.make("tick", seconds=3.0, overrides=None).mean(axis=1)
+    win = SR // 100
+    level = np.sqrt(np.mean(ticks[: len(ticks) // win * win].reshape(-1, win) ** 2, axis=1))
+    loud = level > level.max() * 0.3
+    starts = np.flatnonzero(loud[1:] & ~loud[:-1]) + 1
+    assert len(starts) == 6
+    assert np.allclose(np.diff(starts) * win / SR, 0.5, atol=0.011)
+    # Dry: nothing left of a tick a tenth of a second after it starts.
+    assert level[starts[0] + 10 : starts[1] - 1].max() < level.max() * 0.01
+
+    def pitch(i: int) -> float:
+        piece = ticks[starts[i] * win - win : starts[i] * win + SR // 10]
+        return float(np.fft.rfftfreq(len(piece), 1 / SR)[np.argmax(np.abs(np.fft.rfft(piece)))])
+
+    assert pitch(1) == pytest.approx(0.8 * pitch(0), rel=0.03)
+    assert pitch(2) == pytest.approx(pitch(0), rel=0.03)
+
+
+def test_applause_swells_in_and_thins_out():
+    for seconds in (3.0, 8.0):
+        claps = sfx.make("applause", seconds=seconds, overrides=None)
+        middle = rms(claps, 0.3, 0.6)
+        assert rms(claps, 0.0, 0.08) < middle / 2
+        assert rms(claps, 0.6, 0.8) < middle
+        assert rms(claps, 0.88, 1.0) < middle / 2
+    # Clapping hands, not a rumble: nearly all of it is where a phone plays.
+    assert share_above(claps, 500) > 0.9
+
+
+def test_the_drumroll_builds_and_stops_dead():
+    roll = sfx.make("drumroll", overrides=None)
+    assert len(roll) == pytest.approx(1.8 * SR, abs=2)
+    quarters = [rms(roll, i / 4, (i + 1) / 4) for i in range(4)]
+    assert quarters == sorted(quarters) and quarters[3] > 2.5 * quarters[0]
+    # No tail and no crash: a tenth of a second before the end it is still at its loudest,
+    # and in its last fiftieth of a second there is a tenth of that or less.
+    level = lambda a, b: float(np.sqrt(np.mean(roll[len(roll) - int(a * SR) : len(roll) - int(b * SR)] ** 2)))  # noqa: E731
+    assert level(0.16, 0.08) > 0.7 * db_to_gain(sfx.loudest_window_db(roll))
+    assert level(0.02, 0.0) < 0.1 * level(0.16, 0.08)
+    assert rms(roll, 0.9, 1.0) <= rms(roll, 0.8, 0.9) * 1.2
+
+
+def onsets_in(audio: np.ndarray, start: float, end: float) -> int:
+    """How many separate sounds start in a stretch of a sound, given as shares of its length."""
+    mono = audio.mean(axis=1)
+    win = SR // 100
+    level = np.sqrt(np.mean(mono[: len(mono) // win * win].reshape(-1, win) ** 2, axis=1))
+    loud = level > level.max() * 0.25
+    starts = np.flatnonzero(loud[1:] & ~loud[:-1]) + 1
+    return int(np.sum((starts >= start * len(level)) & (starts < end * len(level))))
+
+
+def test_the_rising_heartbeat_speeds_up_and_gets_harder():
+    for seconds in (6.0, 10.0):
+        heart = sfx.make("heartbeat-rising", seconds=seconds, overrides=None)
+        assert len(heart) == int(seconds * SR)
+        assert onsets_in(heart, 0.66, 1.0) >= 1.3 * onsets_in(heart, 0.0, 0.34)
+        assert rms(heart, 0.75, 1.0) > 1.5 * rms(heart, 0.0, 0.25)
+
+
+def test_the_boom_rings_on_and_the_clunk_does_not():
+    boom = sfx.make("boom", overrides=None)
+    assert rms(boom, 0.0, 0.15) > 3 * rms(boom, 0.5, 0.8) > 0
+    clunk = sfx.make("clunk", overrides=None)
+    assert rms(clunk, 0.0, 0.4) > 20 * rms(clunk, 0.8, 1.0)
+
+
+def test_the_hum_is_steady_from_end_to_end():
+    hum = sfx.make("hum", seconds=4.0, overrides=None)
+    assert len(hum) == 4 * SR
+    quarters = [rms(hum, 0.15 + i * 0.2, 0.35 + i * 0.2) for i in range(4)]
+    assert max(quarters) < 1.6 * min(quarters)
 
 
 def test_other_names_for_an_effect_and_a_plain_error_for_none():

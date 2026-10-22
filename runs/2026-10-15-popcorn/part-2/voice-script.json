@@ -1,0 +1,79 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l10",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So the cinema makes its real money where the studio gets *nothing*: the snack counter.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l11",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "One cinema owner said the corn costs about eight cents and the tub ninety two, so a dollar in all.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l12",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Of every snack dollar, the food and cups cost about eighteen cents, and the cinema *keeps* eighty two.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l13",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "That same owner even pipes the popcorn *smell* into the room where the film plays.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l14",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "In opening week, the cinema keeps about eight dollars twenty from a bucket, but three forty from a ticket.",
+      "speed": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l15",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "In 2025, the average visitor to America's biggest chain spent about eight dollars and fifty seven cents on snacks.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l16",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "You meet the same trick at home, where the printer is cheap and the ink is not.",
+      "speed": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l17",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So *share* one bucket between two, and it costs you five dollars each.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l18",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Because the ticket pays for the movie, but the popcorn pays for the cinema.",
+      "speed": 1,
+      "pauseAfterMs": 1500
+    }
+  ]
+}

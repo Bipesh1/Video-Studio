@@ -1,0 +1,530 @@
+{
+  "version": 1,
+  "thumbnails": [
+    {
+      "id": "one-letter",
+      "size": "16:9",
+      "why": "Sample 1. Night and rain against a gold morning, a letter on the cut: someone who was alone gets one letter and everything changes.",
+      "layers": [
+        {
+          "kind": "split",
+          "at": 0.5,
+          "lean": 0.13,
+          "seam": 0.008,
+          "left": [
+            {
+              "kind": "backdrop",
+              "inner": "denim",
+              "outer": "steel",
+              "at": {
+                "x": 0.25,
+                "y": 0.55
+              },
+              "rays": 0,
+              "deep": 0.75
+            },
+            {
+              "kind": "floor",
+              "y": 0.91,
+              "paint": "steel",
+              "deep": 0.6
+            },
+            {
+              "kind": "rain",
+              "count": 150,
+              "slant": 0.25,
+              "light": 0.45,
+              "seed": 3
+            },
+            {
+              "kind": "extra",
+              "look": {
+                "identity": {
+                  "skinTone": 3,
+                  "hair": "short-crop",
+                  "hairColor": "black"
+                },
+                "outfit": {
+                  "clothes": {
+                    "top": {
+                      "kind": "hoodie",
+                      "cloth": "forest"
+                    },
+                    "bottom": {
+                      "kind": "trousers",
+                      "cloth": "denim"
+                    },
+                    "shoes": {
+                      "kind": "sneakers",
+                      "cloth": "steel"
+                    }
+                  }
+                }
+              },
+              "x": 0.25,
+              "y": 0.5,
+              "ground": 0.91,
+              "head": 0.18,
+              "pose": "kneel",
+              "expression": "sad",
+              "facing": "right",
+              "turn": 0.3,
+              "light": 0.72,
+              "outline": 0.0,
+              "effects": ["tear-streams"],
+              "badge": false
+            },
+            {
+              "kind": "shade",
+              "from": "left",
+              "reach": 0.2,
+              "strength": 0.6
+            }
+          ],
+          "right": [
+            {
+              "kind": "backdrop",
+              "inner": "gold",
+              "outer": "orange",
+              "at": {
+                "x": 0.75,
+                "y": 0.58
+              },
+              "rays": 20,
+              "deep": 0.35
+            },
+            {
+              "kind": "glow",
+              "at": {
+                "x": 0.75,
+                "y": 0.58
+              },
+              "radius": 0.42,
+              "paint": "cream",
+              "strength": 0.8
+            },
+            {
+              "kind": "floor",
+              "y": 0.91,
+              "paint": "orange",
+              "deep": 0.35
+            },
+            {
+              "kind": "extra",
+              "look": {
+                "identity": {
+                  "skinTone": 3,
+                  "hair": "short-crop",
+                  "hairColor": "black"
+                },
+                "outfit": {
+                  "clothes": {
+                    "top": {
+                      "kind": "hoodie",
+                      "cloth": "forest"
+                    },
+                    "bottom": {
+                      "kind": "trousers",
+                      "cloth": "denim"
+                    },
+                    "shoes": {
+                      "kind": "sneakers",
+                      "cloth": "steel"
+                    }
+                  }
+                }
+              },
+              "x": 0.75,
+              "y": 0.5,
+              "ground": 0.91,
+              "head": 0.18,
+              "pose": "hands-up",
+              "expression": "laughing",
+              "facing": "left",
+              "turn": 0.15,
+              "light": 1.0,
+              "outline": 0.035,
+              "effects": [],
+              "badge": false
+            }
+          ]
+        },
+        {
+          "kind": "shade",
+          "from": "top",
+          "reach": 0.32,
+          "strength": 0.75
+        },
+        {
+          "kind": "paper",
+          "lines": ["DEAR", "ME"],
+          "x": 0.5,
+          "y": 0.56,
+          "size": 0.075,
+          "paint": "crimson",
+          "tilt": -7
+        },
+        {
+          "kind": "words",
+          "lines": ["*ONE* LETTER"],
+          "gold": [],
+          "x": 0.5,
+          "bottom": 0.21,
+          "size": 0.17,
+          "width": 0.9,
+          "justify": false
+        }
+      ]
+    },
+    {
+      "id": "last-place",
+      "size": "16:9",
+      "why": "Sample 2. The same design in other colours and other feelings: a cold grey loss against a bright blue win, a race number on the cut.",
+      "layers": [
+        {
+          "kind": "split",
+          "at": 0.5,
+          "lean": -0.13,
+          "seam": 0.008,
+          "left": [
+            {
+              "kind": "backdrop",
+              "inner": "steel",
+              "outer": "steel",
+              "at": {
+                "x": 0.25,
+                "y": 0.55
+              },
+              "rays": 0,
+              "deep": 0.75
+            },
+            {
+              "kind": "floor",
+              "y": 0.91,
+              "paint": "steel",
+              "deep": 0.6
+            },
+            {
+              "kind": "rain",
+              "count": 150,
+              "slant": 0.25,
+              "light": 0.45,
+              "seed": 3
+            },
+            {
+              "kind": "extra",
+              "look": {
+                "identity": {
+                  "skinTone": 6,
+                  "hair": "afro",
+                  "hairColor": "black"
+                },
+                "outfit": {
+                  "clothes": {
+                    "top": {
+                      "kind": "t-shirt",
+                      "cloth": "crimson"
+                    },
+                    "bottom": {
+                      "kind": "trousers",
+                      "cloth": "steel"
+                    },
+                    "shoes": {
+                      "kind": "sneakers",
+                      "cloth": "steel"
+                    }
+                  }
+                }
+              },
+              "x": 0.25,
+              "y": 0.5,
+              "ground": 0.91,
+              "head": 0.18,
+              "pose": "look-down",
+              "expression": "exhausted",
+              "facing": "right",
+              "turn": 0.3,
+              "light": 0.72,
+              "outline": 0.0,
+              "effects": ["tear-streams"],
+              "badge": false
+            },
+            {
+              "kind": "shade",
+              "from": "left",
+              "reach": 0.2,
+              "strength": 0.6
+            }
+          ],
+          "right": [
+            {
+              "kind": "backdrop",
+              "inner": "glint",
+              "outer": "ocean",
+              "at": {
+                "x": 0.75,
+                "y": 0.58
+              },
+              "rays": 20,
+              "deep": 0.35
+            },
+            {
+              "kind": "glow",
+              "at": {
+                "x": 0.75,
+                "y": 0.58
+              },
+              "radius": 0.42,
+              "paint": "cream",
+              "strength": 0.8
+            },
+            {
+              "kind": "floor",
+              "y": 0.91,
+              "paint": "ocean",
+              "deep": 0.35
+            },
+            {
+              "kind": "extra",
+              "look": {
+                "identity": {
+                  "skinTone": 6,
+                  "hair": "afro",
+                  "hairColor": "black"
+                },
+                "outfit": {
+                  "clothes": {
+                    "top": {
+                      "kind": "t-shirt",
+                      "cloth": "crimson"
+                    },
+                    "bottom": {
+                      "kind": "trousers",
+                      "cloth": "steel"
+                    },
+                    "shoes": {
+                      "kind": "sneakers",
+                      "cloth": "steel"
+                    }
+                  }
+                }
+              },
+              "x": 0.75,
+              "y": 0.5,
+              "ground": 0.91,
+              "head": 0.18,
+              "pose": "wave",
+              "expression": "happy",
+              "facing": "left",
+              "turn": 0.15,
+              "light": 1.0,
+              "outline": 0.035,
+              "effects": [],
+              "badge": false
+            }
+          ]
+        },
+        {
+          "kind": "shade",
+          "from": "top",
+          "reach": 0.32,
+          "strength": 0.75
+        },
+        {
+          "kind": "paper",
+          "lines": ["No. 47"],
+          "x": 0.5,
+          "y": 0.56,
+          "size": 0.075,
+          "paint": "ocean",
+          "tilt": -7
+        },
+        {
+          "kind": "words",
+          "lines": ["LAST *PLACE*"],
+          "gold": [],
+          "x": 0.5,
+          "bottom": 0.21,
+          "size": 0.17,
+          "width": 0.9,
+          "justify": false
+        }
+      ]
+    },
+    {
+      "id": "the-day-after",
+      "size": "16:9",
+      "why": "Sample 3. Warm against cool the other way round: a red dusk on the dark side, a green morning on the bright one, a ticket on the cut.",
+      "layers": [
+        {
+          "kind": "split",
+          "at": 0.5,
+          "lean": 0.13,
+          "seam": 0.008,
+          "left": [
+            {
+              "kind": "backdrop",
+              "inner": "crimson",
+              "outer": "crimson",
+              "at": {
+                "x": 0.25,
+                "y": 0.55
+              },
+              "rays": 0,
+              "deep": 0.75
+            },
+            {
+              "kind": "floor",
+              "y": 0.91,
+              "paint": "crimson",
+              "deep": 0.6
+            },
+            {
+              "kind": "rain",
+              "count": 150,
+              "slant": 0.25,
+              "light": 0.45,
+              "seed": 3
+            },
+            {
+              "kind": "extra",
+              "look": {
+                "identity": {
+                  "skinTone": 2,
+                  "hair": "ponytail",
+                  "hairColor": "auburn"
+                },
+                "outfit": {
+                  "clothes": {
+                    "top": {
+                      "kind": "jacket",
+                      "cloth": "ocean"
+                    },
+                    "bottom": {
+                      "kind": "trousers",
+                      "cloth": "brown"
+                    },
+                    "shoes": {
+                      "kind": "sneakers",
+                      "cloth": "steel"
+                    }
+                  }
+                }
+              },
+              "x": 0.25,
+              "y": 0.5,
+              "ground": 0.91,
+              "head": 0.18,
+              "pose": "look-down",
+              "expression": "sad",
+              "facing": "right",
+              "turn": 0.3,
+              "light": 0.72,
+              "outline": 0.0,
+              "effects": ["tear-streams"],
+              "badge": false
+            },
+            {
+              "kind": "shade",
+              "from": "left",
+              "reach": 0.2,
+              "strength": 0.6
+            }
+          ],
+          "right": [
+            {
+              "kind": "backdrop",
+              "inner": "cream",
+              "outer": "forest",
+              "at": {
+                "x": 0.75,
+                "y": 0.58
+              },
+              "rays": 20,
+              "deep": 0.35
+            },
+            {
+              "kind": "glow",
+              "at": {
+                "x": 0.75,
+                "y": 0.58
+              },
+              "radius": 0.42,
+              "paint": "cream",
+              "strength": 0.8
+            },
+            {
+              "kind": "floor",
+              "y": 0.91,
+              "paint": "forest",
+              "deep": 0.35
+            },
+            {
+              "kind": "extra",
+              "look": {
+                "identity": {
+                  "skinTone": 2,
+                  "hair": "ponytail",
+                  "hairColor": "auburn"
+                },
+                "outfit": {
+                  "clothes": {
+                    "top": {
+                      "kind": "jacket",
+                      "cloth": "ocean"
+                    },
+                    "bottom": {
+                      "kind": "trousers",
+                      "cloth": "brown"
+                    },
+                    "shoes": {
+                      "kind": "sneakers",
+                      "cloth": "steel"
+                    }
+                  }
+                }
+              },
+              "x": 0.75,
+              "y": 0.5,
+              "ground": 0.91,
+              "head": 0.18,
+              "pose": "open-arms",
+              "expression": "happy",
+              "facing": "left",
+              "turn": 0.15,
+              "light": 1.0,
+              "outline": 0.035,
+              "effects": [],
+              "badge": false
+            }
+          ]
+        },
+        {
+          "kind": "shade",
+          "from": "top",
+          "reach": 0.32,
+          "strength": 0.75
+        },
+        {
+          "kind": "paper",
+          "lines": ["ONE", "WAY"],
+          "x": 0.5,
+          "y": 0.56,
+          "size": 0.075,
+          "paint": "forest",
+          "tilt": -7
+        },
+        {
+          "kind": "words",
+          "lines": ["THE DAY *AFTER*"],
+          "gold": [],
+          "x": 0.5,
+          "bottom": 0.21,
+          "size": 0.17,
+          "width": 0.9,
+          "justify": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "note": "Three candidate looks for The Fine Print (Biku, 2026-10-15: Vox-style illustrations of the businesses instead of stick figures). A test only: the look he picks becomes this style's guide and tokens.",
+  "looks": [
+    {
+      "id": 1,
+      "name": "Flat and bold",
+      "background": "#F4EFE6",
+      "floor": "#E3D9C9",
+      "dark": "#1E2A38",
+      "red": "#E4572E",
+      "yellow": "#F3B61F",
+      "teal": "#2A9D8F",
+      "light": "#FFFFFF",
+      "mid": "#CFC6B8",
+      "green": "#7BB662",
+      "outline": null,
+      "paper": false,
+      "shadow": null,
+      "outlineCharts": false
+    },
+    {
+      "id": 2,
+      "name": "Paper cutout",
+      "background": "#E9DFCC",
+      "floor": "#D8CBB2",
+      "dark": "#3B3B4F",
+      "red": "#C8553D",
+      "yellow": "#E8B04B",
+      "teal": "#4F8A8B",
+      "light": "#FBF6EC",
+      "mid": "#BFB29A",
+      "green": "#8AA86B",
+      "outline": null,
+      "paper": true,
+      "shadow": {
+        "dx": 7,
+        "dy": 10,
+        "blur": 6,
+        "opacity": 0.28
+      },
+      "outlineCharts": false
+    },
+    {
+      "id": 3,
+      "name": "Line and colour",
+      "background": "#DCE7EE",
+      "floor": "#C3D3DE",
+      "dark": "#16161A",
+      "red": "#E2453C",
+      "yellow": "#F2C230",
+      "teal": "#2E8FA6",
+      "light": "#F7F7F5",
+      "mid": "#A9BCC8",
+      "green": "#6DB36A",
+      "outline": {
+        "color": "#16161A",
+        "width": 6
+      },
+      "paper": false,
+      "shadow": null,
+      "outlineCharts": true
+    },
+    {
+      "id": 4,
+      "name": "Flat with a fine line",
+      "background": "#F4EFE6",
+      "floor": "#E3D9C9",
+      "dark": "#1E2A38",
+      "red": "#E4572E",
+      "yellow": "#F3B61F",
+      "teal": "#2A9D8F",
+      "light": "#FFFFFF",
+      "mid": "#CFC6B8",
+      "green": "#7BB662",
+      "outline": {
+        "color": "#1E2A38",
+        "width": 3.5
+      },
+      "paper": false,
+      "shadow": null,
+      "outlineCharts": false
+    }
+  ]
+}

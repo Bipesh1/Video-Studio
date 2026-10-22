@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "id": "2026-10-15-bridge-torch",
+  "created": "2026-10-15",
+  "mode": "as-is",
+  "format": "dilemma-thriller",
+  "brand": "dilemma-table",
+  "voice": "leak",
+  "sizes": [
+    "9:16"
+  ],
+  "vertical": "full",
+  "masterPrompt": "prompts/dilemma-thriller.md"
+}

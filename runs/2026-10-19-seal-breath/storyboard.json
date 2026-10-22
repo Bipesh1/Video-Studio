@@ -1,0 +1,1253 @@
+{
+  "version": 1,
+  "title": "Could Humans Evolve to Hold Their Breath Like Seals?",
+  "request": "Biku's What's the Catch? what-if script, used as it is: 'Make a video on this script for the whats if part. make sure the animations are good like it should not be stuck in one photo for long time. each new info should bring a great animation' (2026-10-19).",
+  "mode": "as-is",
+  "format": "fine-print",
+  "style": "ink-stick",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "seed": 11811,
+  "finish": {
+    "acting": "snappy",
+    "onTwos": false,
+    "shadows": false,
+    "grain": 0.2,
+    "vignette": 0.12,
+    "boil": 0.25
+  },
+  "sources": [
+    "Ilardo, M. et al., \"Physiological and genetic adaptations to diving in sea nomads\", Cell, 2018. Bajau spleens about 50% larger than the neighbouring Saluan, also in Bajau who do not dive; a gene variant near PDE10A linked to spleen size. https://doi.org/10.1016/j.cell.2018.03.054",
+    "NPR (via KPBS), \"The Secret To Deep Diving May Lie In The Spleen\", 2018. Researchers still hope to confirm the thyroid hormone link and that red blood cell levels change during dives. https://www.kpbs.org/news/2018/04/24/the-secret-to-deep-diving-may-lie-in-the-spleen",
+    "AFP report on the Cell study (via Philstar), 2018. Bajau spend up to 60% of their working day diving. https://www.philstar.com/business/science-and-environment/2018/04/20/1807756/scientists-discover-secret-why-bajaus-are-stronger-divers",
+    "The Scientist, \"Free Divers from Southeast Asia Evolved Bigger Spleens\", 2018. A rare example of natural selection in modern humans, over hundreds to thousands of years. https://mobile.the-scientist.com/article/52347/free-divers-from-southeast-asia-evolved-bigger-spleens",
+    "Guinness World Records, \"Longest time breath held voluntarily underwater (male)\". 29 min 3 sec, Vitomir Maričić, Opatija, Croatia, 14 June 2025, after pre-breathing pure oxygen. https://www.guinnessworldrecords.com/world-records/longest-time-breath-held-voluntarily-male",
+    "Checked by Claude on 2026-10-19 against Science News, NPR, The Scientist, Scientific American and reports of the record; no source gives the size of the spleens, so \"roughly the size of a tennis ball\" is unchecked."
+  ],
+  "appliedLessons": [],
+  "cast": [],
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "the-question",
+      "mood": "curious",
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l01",
+          "speaker": "narrator",
+          "text": "Could your body ever evolve to hold its breath like a *seal*?",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l02",
+          "speaker": "narrator",
+          "text": "The surprise is that, somewhere on Earth, it has *already* happened.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s01",
+          "line": "l01",
+          "words": "Could your body ever evolve to hold its breath like a *seal*?",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "bath",
+            "fly": "whole",
+            "keep": [],
+            "show": [
+              {
+                "item": "ripple-seal",
+                "on": "seal"
+              }
+            ],
+            "from": "rise",
+            "title": {
+              "lines": [
+                "COULD YOU HOLD IT",
+                "LIKE A SEAL?"
+              ],
+              "stress": 1
+            }
+          },
+          "ambience": "home"
+        },
+        {
+          "id": "s02",
+          "line": "l02",
+          "words": "The surprise is that, somewhere on Earth, it has *already* happened.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "bubbles",
+              "at": "start",
+              "gainDb": -2
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "globe",
+            "fly": "start",
+            "keep": [],
+            "show": [
+              {
+                "item": "halo",
+                "on": "Earth"
+              }
+            ],
+            "from": "bath"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "the-moment",
+      "mood": "curious",
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l03",
+          "speaker": "narrator",
+          "text": "Most of us come up for air within about a minute, and think that is our *limit*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l04",
+          "speaker": "narrator",
+          "text": "But your body hides an old diving trick, and it starts in your *chest*.",
+          "pauseAfterMs": 800
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s03",
+          "line": "l03",
+          "words": "Most of us come up for air within about a minute, and think that is our *limit*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "bubbles",
+              "at": "start",
+              "gainDb": -2
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "counter",
+            "fly": "start",
+            "keep": [],
+            "show": [],
+            "from": "globe",
+            "callout": {
+              "value": "1 MIN",
+              "caption": "WHEN MOST OF US COME UP",
+              "at": "counter",
+              "on": "minute"
+            }
+          },
+          "ambience": "home"
+        },
+        {
+          "id": "s04",
+          "line": "l04",
+          "words": "But your body hides an old diving trick, and it starts in your *chest*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "chest",
+            "fly": "whole",
+            "keep": [],
+            "show": [
+              {
+                "item": "lungs",
+                "on": "chest"
+              }
+            ],
+            "from": "counter"
+          },
+          "ambience": "underwater"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "chapter": 1,
+      "beat": "follow-the-money",
+      "mood": "upbeat",
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l05",
+          "speaker": "narrator",
+          "text": "While you hold your breath, the oxygen in your blood slowly *runs down*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l06",
+          "speaker": "narrator",
+          "text": "So your body switches on its dive reflex: your heart slows, and blood leaves your hands and *feet*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l07",
+          "speaker": "narrator",
+          "text": "Then your spleen, a small organ under your ribs, squeezes like a *sponge*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l08",
+          "speaker": "narrator",
+          "text": "It pushes spare red blood cells, which carry oxygen, into your blood like a *backup tank*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l09",
+          "speaker": "narrator",
+          "text": "Seals have enormous spleens for exactly this *reason*.",
+          "pauseAfterMs": 1100
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s05",
+          "line": "l05",
+          "words": "While you hold your breath, the oxygen in your blood slowly *runs down*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "lungs",
+            "fly": "start",
+            "keep": [
+              "lungs"
+            ],
+            "show": [
+              {
+                "item": "fading",
+                "on": "oxygen"
+              }
+            ],
+            "from": "chest"
+          },
+          "ambience": "underwater"
+        },
+        {
+          "id": "s06",
+          "line": "l06",
+          "words": "So your body switches on its dive reflex: your heart slows,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "heart",
+            "fly": "start",
+            "keep": [
+              "lungs",
+              "fading"
+            ],
+            "show": [
+              {
+                "item": "heart",
+                "on": "heart"
+              }
+            ],
+            "from": "lungs"
+          },
+          "ambience": "underwater"
+        },
+        {
+          "id": "s07",
+          "line": "l06",
+          "words": "and blood leaves your hands and *feet*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "limbs",
+            "fly": "start",
+            "keep": [
+              "lungs",
+              "fading",
+              "heart"
+            ],
+            "show": [
+              {
+                "item": "hands",
+                "on": "hands"
+              },
+              {
+                "item": "feet",
+                "on": "feet"
+              }
+            ],
+            "from": "heart"
+          },
+          "ambience": "underwater"
+        },
+        {
+          "id": "s08",
+          "line": "l07",
+          "words": "Then your spleen, a small organ under your ribs,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "spleen",
+            "fly": "start",
+            "keep": [
+              "lungs",
+              "heart",
+              "hands",
+              "feet"
+            ],
+            "show": [
+              {
+                "item": "spleen",
+                "on": "spleen"
+              }
+            ],
+            "from": "limbs"
+          },
+          "ambience": "underwater"
+        },
+        {
+          "id": "s09",
+          "line": "l07",
+          "words": "squeezes like a *sponge*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "cells",
+            "fly": "start",
+            "keep": [
+              "lungs",
+              "heart",
+              "spleen"
+            ],
+            "show": [
+              {
+                "item": "squeeze",
+                "on": "sponge"
+              }
+            ],
+            "from": "spleen"
+          },
+          "ambience": "underwater"
+        },
+        {
+          "id": "s10",
+          "line": "l08",
+          "words": "It pushes spare red blood cells, which carry oxygen, into your blood like a *backup tank*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "stream",
+            "fly": "start",
+            "keep": [
+              "squeeze"
+            ],
+            "show": [
+              {
+                "item": "pour",
+                "on": "pushes"
+              },
+              {
+                "item": "tank",
+                "on": "tank"
+              }
+            ],
+            "from": "cells"
+          },
+          "ambience": "underwater"
+        },
+        {
+          "id": "s11",
+          "line": "l09",
+          "words": "Seals have enormous spleens for exactly this *reason*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "bubbles",
+              "at": "start",
+              "gainDb": -2
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "seal",
+            "fly": "start",
+            "keep": [],
+            "show": [
+              {
+                "item": "seal-spleen",
+                "on": "spleens"
+              }
+            ],
+            "from": "stream"
+          },
+          "ambience": "underwater"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "chapter": 2,
+      "beat": "the-trick",
+      "mood": "tense",
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l10",
+          "speaker": "narrator",
+          "text": "And here is the catch: the Bajau, sea nomads of Southeast Asia, have already grown a *bigger* tank.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l11",
+          "speaker": "narrator",
+          "text": "Their divers spend up to sixty percent of a working day diving for *fish*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l12",
+          "speaker": "narrator",
+          "text": "Scientists scanned the spleens of the Bajau and of their farming neighbours, the *Saluan*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l13",
+          "speaker": "narrator",
+          "text": "The Bajau spleen was about fifty percent *bigger*, roughly the size of a tennis ball.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l14",
+          "speaker": "narrator",
+          "text": "It was big even in Bajau who do not dive, so it is in their *genes*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l15",
+          "speaker": "narrator",
+          "text": "Scientists think it took only around a thousand years at sea, a *blink* for evolution.",
+          "pauseAfterMs": 1100
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s12",
+          "line": "l10",
+          "words": "And here is the catch: the Bajau, sea nomads of Southeast Asia,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "bubbles",
+              "at": "start",
+              "gainDb": -2
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "village",
+            "fly": "start",
+            "keep": [],
+            "show": [
+              {
+                "item": "houseboats",
+                "on": "Bajau"
+              }
+            ],
+            "from": "seal",
+            "title": {
+              "lines": [
+                "THE BAJAU",
+                "SEA NOMADS"
+              ],
+              "stress": 0
+            }
+          },
+          "ambience": "waves"
+        },
+        {
+          "id": "s13",
+          "line": "l10",
+          "words": "have already grown a *bigger* tank.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "family",
+            "fly": "start",
+            "keep": [
+              "houseboats"
+            ],
+            "show": [
+              {
+                "item": "big-tank",
+                "on": "bigger"
+              }
+            ],
+            "from": "village"
+          },
+          "ambience": "waves"
+        },
+        {
+          "id": "s14",
+          "line": "l11",
+          "words": "Their divers spend up to sixty percent of a working day diving for *fish*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "reef",
+            "fly": "start",
+            "keep": [
+              "houseboats"
+            ],
+            "show": [
+              {
+                "item": "diver",
+                "on": "divers"
+              },
+              {
+                "item": "fish",
+                "on": "fish"
+              }
+            ],
+            "from": "family"
+          },
+          "ambience": "underwater"
+        },
+        {
+          "id": "s15",
+          "line": "l12",
+          "words": "Scientists scanned the spleens of the Bajau and of their farming neighbours, the *Saluan*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "scan",
+            "fly": "start",
+            "keep": [
+              "houseboats"
+            ],
+            "show": [
+              {
+                "item": "bajau-spleen",
+                "on": "Bajau"
+              },
+              {
+                "item": "saluan-spleen",
+                "on": "Saluan"
+              }
+            ],
+            "from": "reef"
+          },
+          "ambience": "waves"
+        },
+        {
+          "id": "s16",
+          "line": "l13",
+          "words": "The Bajau spleen was about fifty percent *bigger*,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "scan-close",
+            "fly": "start",
+            "keep": [
+              "bajau-spleen",
+              "saluan-spleen"
+            ],
+            "show": [],
+            "from": "scan",
+            "callout": {
+              "value": "+50%",
+              "caption": "BIGGER THAN THE NEIGHBOURS",
+              "at": "spleen",
+              "on": "fifty"
+            }
+          },
+          "ambience": "waves"
+        },
+        {
+          "id": "s17",
+          "line": "l13",
+          "words": "roughly the size of a tennis ball.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "scan",
+            "fly": "start",
+            "keep": [
+              "bajau-spleen",
+              "saluan-spleen"
+            ],
+            "show": [
+              {
+                "item": "tennis",
+                "on": "tennis"
+              }
+            ],
+            "from": "scan-close"
+          },
+          "ambience": "waves"
+        },
+        {
+          "id": "s18",
+          "line": "l14",
+          "words": "It was big even in Bajau who do not dive, so it is in their *genes*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "dna",
+            "fly": "whole",
+            "keep": [
+              "bajau-spleen",
+              "saluan-spleen"
+            ],
+            "show": [
+              {
+                "item": "genes",
+                "on": "genes"
+              }
+            ],
+            "from": "scan-close"
+          }
+        },
+        {
+          "id": "s19",
+          "line": "l15",
+          "words": "Scientists think it took only around a thousand years at sea, a *blink* for evolution.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "boats",
+            "fly": "start",
+            "keep": [
+              "houseboats"
+            ],
+            "show": [
+              {
+                "item": "years",
+                "on": "thousand"
+              }
+            ],
+            "from": "dna",
+            "callout": {
+              "value": "1,000",
+              "caption": "YEARS, SCIENTISTS THINK",
+              "at": "boats",
+              "on": "thousand"
+            }
+          },
+          "ambience": "waves"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chapter": 3,
+      "beat": "the-proof",
+      "mood": "reflective",
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l16",
+          "speaker": "narrator",
+          "text": "Melissa Ilardo's team published this in the journal *Cell* in 2018.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l17",
+          "speaker": "narrator",
+          "text": "They also found a gene, PDE10A, that may make the spleen *bigger*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l18",
+          "speaker": "narrator",
+          "text": "Scientists think it works through a body hormone, but nobody has *proved* that yet.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l19",
+          "speaker": "narrator",
+          "text": "The breath hold world record is twenty nine minutes, but only after breathing pure *oxygen*.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s20",
+          "line": "l16",
+          "words": "Melissa Ilardo's team published this in the journal *Cell* in 2018.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "paper",
+              "at": "middle",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "page",
+            "fly": "start",
+            "keep": [
+              "houseboats"
+            ],
+            "show": [
+              {
+                "item": "journal",
+                "on": "journal"
+              }
+            ],
+            "from": "boats",
+            "title": {
+              "lines": [
+                "CELL",
+                "2018"
+              ],
+              "stress": 1
+            }
+          },
+          "ambience": "waves"
+        },
+        {
+          "id": "s21",
+          "line": "l17",
+          "words": "They also found a gene, PDE10A, that may make the spleen *bigger*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "page-figure",
+            "fly": "start",
+            "keep": [
+              "houseboats",
+              "journal"
+            ],
+            "show": [
+              {
+                "item": "gene",
+                "on": "gene"
+              }
+            ],
+            "from": "page"
+          },
+          "ambience": "waves"
+        },
+        {
+          "id": "s22",
+          "line": "l18",
+          "words": "Scientists think it works through a body hormone, but nobody has *proved* that yet.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "page-figure",
+            "fly": "start",
+            "keep": [
+              "houseboats",
+              "journal",
+              "gene"
+            ],
+            "show": [
+              {
+                "item": "hormone",
+                "on": "hormone"
+              }
+            ],
+            "callout": {
+              "value": "?",
+              "caption": "NOBODY KNOWS YET",
+              "at": "gene",
+              "on": "nobody"
+            }
+          },
+          "ambience": "waves"
+        },
+        {
+          "id": "s23",
+          "line": "l19",
+          "words": "The breath hold world record is twenty nine minutes,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "bubbles",
+              "at": "start",
+              "gainDb": -2
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "pool",
+            "fly": "start",
+            "keep": [],
+            "show": [
+              {
+                "item": "record",
+                "on": "record"
+              }
+            ],
+            "from": "page-figure",
+            "title": {
+              "lines": [
+                "29 MINUTES",
+                "WITH HELP"
+              ],
+              "stress": 0
+            }
+          },
+          "ambience": "crowd-murmur"
+        },
+        {
+          "id": "s24",
+          "line": "l19",
+          "words": "but only after breathing pure *oxygen*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "tank",
+            "fly": "start",
+            "keep": [
+              "record"
+            ],
+            "show": [
+              {
+                "item": "oxygen-tank",
+                "on": "oxygen"
+              }
+            ],
+            "from": "pool"
+          },
+          "ambience": "crowd-murmur"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 3,
+      "beat": "your-move",
+      "mood": "hope",
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l20",
+          "speaker": "narrator",
+          "text": "Next time you slip under the water, your heart is already *slowing* down.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l21",
+          "speaker": "narrator",
+          "text": "Your body is still running a diving program far *older* than you.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l22",
+          "speaker": "narrator",
+          "text": "So could humans evolve to hold their breath like seals? Slowly, yes, and one people is already *on the way*.",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s25",
+          "line": "l20",
+          "words": "Next time you slip under the water, your heart is already *slowing* down.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "bubbles",
+              "at": "start",
+              "gainDb": -2
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "figure",
+            "fly": "start",
+            "keep": [],
+            "show": [
+              {
+                "item": "heart-glow",
+                "on": "heart"
+              }
+            ],
+            "from": "tank"
+          },
+          "ambience": "home"
+        },
+        {
+          "id": "s26",
+          "line": "l21",
+          "words": "Your body is still running a diving program far *older* than you.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "chest",
+            "fly": "start",
+            "keep": [
+              "lungs",
+              "heart-glow"
+            ],
+            "show": [
+              {
+                "item": "spleen-squeeze",
+                "on": "diving"
+              }
+            ],
+            "from": "figure"
+          },
+          "ambience": "underwater"
+        },
+        {
+          "id": "s27",
+          "line": "l22",
+          "words": "So could humans evolve to hold their breath like seals?",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "bath",
+            "fly": "start",
+            "keep": [],
+            "show": [
+              {
+                "item": "ripple-seal",
+                "on": "seals"
+              }
+            ],
+            "from": "chest"
+          },
+          "ambience": "home"
+        },
+        {
+          "id": "s28",
+          "line": "l22",
+          "words": "Slowly, yes, and one people is already *on the way*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "at": "rise",
+            "fly": "start",
+            "keep": [
+              "ripple-seal"
+            ],
+            "show": [
+              {
+                "item": "surface",
+                "on": "yes"
+              },
+              {
+                "item": "stop",
+                "on": "way"
+              }
+            ],
+            "from": "bath",
+            "title": {
+              "lines": [
+                "IT'S ALREADY",
+                "HAPPENING"
+              ],
+              "stress": 1
+            }
+          },
+          "ambience": "home"
+        }
+      ]
+    }
+  ],
+  "explainerLook": "world",
+  "cover": {
+    "shot": "s14",
+    "at": 0.85
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "lines": [
+    {
+      "id": "n17",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The economist who published this game, in *nineteen seventy-one,* said to play it at a party, when spirits are high.",
+      "speed": 0.95,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n18",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "He wrote that three to five dollars for one dollar was not unusual.",
+      "speed": 0.95,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "n19",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "In one business school class, a twenty-dollar bill went for *two thousand dollars.*",
+      "speed": 0.95,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n20",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "A hundred times its worth.",
+      "speed": 0.95,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "s1",
+      "speaker": "saint",
+      "voice": "af_heart",
+      "text": "Sorry. Where does all that money go?",
+      "speed": 0.95,
+      "pauseAfterMs": 660
+    },
+    {
+      "id": "n21",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "*To me.*",
+      "speed": 0.95,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "n22",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "I'm the one selling the dollar.",
+      "speed": 0.95,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "n23",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "A real website ran a close cousin of this game.",
+      "speed": 0.95,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n24",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "One study counted *twenty-six million dollars* in profit.",
+      "speed": 0.95,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "n25",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "It even auctioned cash, and took in about two dollars for every dollar it gave away.",
+      "speed": 0.95,
+      "pauseAfterMs": 1100
+    }
+  ]
+}

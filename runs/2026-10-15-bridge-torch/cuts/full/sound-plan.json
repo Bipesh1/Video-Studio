@@ -1,0 +1,158 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "tense",
+      "startMs": 0
+    },
+    {
+      "mood": "unease",
+      "startMs": 6501
+    },
+    {
+      "mood": "closing-in",
+      "startMs": 27606
+    },
+    {
+      "mood": "tense",
+      "startMs": 56167
+    },
+    {
+      "mood": "aftermath",
+      "startMs": 80151
+    }
+  ],
+  "sfx": [
+    {
+      "name": "wind",
+      "atMs": 60,
+      "durationMs": 44039,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "thunder",
+      "atMs": 3534,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "tick",
+      "atMs": 24507,
+      "durationMs": 2949,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "boom",
+      "atMs": 34662,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "thunder",
+      "atMs": 39092,
+      "gainDb": -2,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "creak",
+      "atMs": 39827,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 5
+    },
+    {
+      "name": "wind",
+      "atMs": 44327,
+      "durationMs": 6676,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 6
+    },
+    {
+      "name": "rain",
+      "atMs": 51213,
+      "durationMs": 4773,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 7
+    },
+    {
+      "name": "thunder",
+      "atMs": 51213,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 8
+    },
+    {
+      "name": "heartbeat-rising",
+      "atMs": 51213,
+      "durationMs": 4773,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 9
+    },
+    {
+      "name": "rain",
+      "atMs": 56227,
+      "durationMs": 19254,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 10
+    },
+    {
+      "name": "footsteps",
+      "atMs": 60030,
+      "durationMs": 2220,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 11
+    },
+    {
+      "name": "footsteps",
+      "atMs": 62460,
+      "durationMs": 2321,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 12
+    },
+    {
+      "name": "creak",
+      "atMs": 64991,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 13
+    },
+    {
+      "name": "footsteps",
+      "atMs": 64991,
+      "durationMs": 3334,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 14
+    },
+    {
+      "name": "footsteps",
+      "atMs": 68535,
+      "durationMs": 4550,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 15
+    },
+    {
+      "name": "clunk",
+      "atMs": 105890,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 16
+    }
+  ],
+  "musicGainDb": 0,
+  "hush": []
+}

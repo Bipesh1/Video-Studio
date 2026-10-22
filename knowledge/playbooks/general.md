@@ -18,7 +18,7 @@ If `prompts/<format>.md` or `prompts/master.md` exists, it is Biku's master prom
 
 Apply these in refine and original modes, and to shot planning in every mode.
 
-1. **The first 3 seconds** are the most striking image or line. No greeting, no "in this video", no logo.
+1. **The first 3 seconds** ask the question the video answers, out loud and as big words over the scene (`overlay` of kind `words`); seconds 3 to 10 are one line of stakes or a promised surprise. The rule in full is in CLAUDE.md, "The opening of every video" (Biku, 2026-10-11). No greeting, no "in this video", no logo.
 2. **Stakes early:** within 10 seconds it is clear what someone could lose or gain.
 3. **Specific beats general:** a name, a number, an object.
 4. **Re-hook every 20 to 30 seconds:** a question, a turn or a new danger.
@@ -34,7 +34,10 @@ Also: no em dashes in anything a viewer reads or hears written down (ground rule
 
 - The script is `script.json` (`shared/src/script.schema.ts`): each line has a speaker, its words, the beat of the format it plays and its chapter. Beats run in the format's order and every beat that is not optional is used.
 - A line is one breath: usually one or two sentences. Give the big moments a longer `pauseAfterMs` so the picture can land.
-- Everyone who speaks besides the narrator is listed with a voice. How they look is decided in the shot plan.
+- How a line is said can be set without touching its words: `speed` is its pace against the voice's own, and `say` is the same words with commas and "..." where the voice should breathe (the captions keep `text`; other words are refused). Every question is made to rise at its end by the voice step itself (L-0043). In a Chatterbox voice a "..." can become a long gap, and inside a question it split "What do you think... he does?" into two halves that did not sound asked; Biku heard the pause and no question (L-0047).
+- Everyone who speaks besides the narrator is listed with a voice.
+- **Before anything moves (step 5, 2026-10-14):** read the feeling plan at the end of `storyboard.md` (`plan page`): one line of feeling for each person, every change with its cause. Then `make --stills --sound --animatic` gives the rough timed storyboard in seconds, and `colours-<shape>.png` the colour of each scene in order. Show those to Biku before a preview is drawn when a video is new to him or a kind of video is.
+- **Depth:** a thing `near: true` at an edge of the picture (a chair back, a plant, a doorframe) gives a shot a foreground. Check it in the still: in a tall picture the edges of the wide layout are cut off. **Drift** slides the picture sideways: give it a shot with room at both sides, or someone at an edge is cut. How they look is decided in the shot plan.
 - Lengths are estimates until the voice exists: the Kokoro voices speak about 195 words a minute, pauses not counted, and a guess can be an eighth out.
 
 ## Chapters
@@ -63,7 +66,8 @@ Run `npm run script -- check`. It refuses: an as-is script that is not word for 
 - **A cut inside a scene keeps everyone as they were:** same place, same way round, same posture. Kneeling, getting up, turning round or picking a thing up happens inside a shot, as a step, never between two shots. To have someone pick a thing up, stand it in the shot just in front of them (about 0.13 along) and give them a step that holds it; the hand goes to it first. (L-0030)
 - **A thing follows the same rule as a person.** What is in a hand at the end of a shot is in it the next time that person is seen, even a few shots later; a thing is taken inside a shot, never between two. A thing standing in a room stays where it stands from shot to shot. Leave a thing on the ground out of a medium or closer shot: its top pokes up behind the caption. The builder cannot show a thing being put down yet, so plan round it: leave it where it stands and bring the person to it. A travelling shot cut against a still one of the same size makes the place jump: change the size. When the story goes to another time in the same place, fade in. (L-0031)
 - **Recut the words when a cut falls badly.** A shot needs at least about a second and a half of words; move words between the shots of a line, never between lines.
-- **Faces carry the feeling:** pick the expression for what the character feels at those words, and change it when the feeling changes.
+- **Faces carry the feeling, and a face holds** (L-0040; Biku, 2026-10-12: the changes felt "unnatural and random ... one second its one expression and another second its another"). Give each person one line of feeling through the video, three or four steps, each a neighbour of the last (hopeful, doubtful, suspicious, afraid). A face changes only when something happens to its owner, and one person changes at a time; the listener keeps their face while another speaks. Do not name a new face for every line.
+- **A face changes inside a shot, never on the cut.** Start a person with the face the last shot left them and place the change with a step (`then`, `expression`), a beat after the line or the move that causes it. `strength` (0.2 to 1) wears a face in part, so a feeling can grow over two or three shots (`dread` at 0.6, then full). The plan check points out a face that changes on a cut, a leap between far-apart feelings, and a face that changes three times in four shots.
 - **Sound:** one music mood per scene from the beat's list; steps, doors, things landing and coins as effects, within the format's count.
 - Reuse the library. If the plan needs something it lacks, `npm run plan -- needs` names it; draw it with `/draw` before going on.
 
@@ -99,6 +103,10 @@ A part is shown to Biku in the page's first shape. When every part is approved, 
 - **Give a thing its own place in the tall picture** with `tall` on the prop (`x`, `y`, `size`; what is left out stays). A tall picture is about five heads wide and nine tall: put a thing of the sky above the people instead of beside them, and bring a thing on the ground to within about three heads of them. The self-check says when the camera has had to stand far back, and when a thing is cut off.
 - Look at the stills of a science shot in both shapes before building either video.
 
+## Game theory videos (The Dilemma Table)
+
+They have their own format, `dilemma`, and everything about them (the cast, the dark room, the camera, the music, how the story is told, lessons L-0038 and L-0039) is in `knowledge/playbooks/formats/dilemma.md`. None of it applies to any other kind of video (Biku, 2026-10-11).
+
 ## A script that comes with its own directions
 
 Learned on "What If the Sun Sent You a Bill?" (2026-10-07), a script with narration, on-screen notes, sound notes and sources.
@@ -109,6 +117,7 @@ Learned on "What If the Sun Sent You a Bill?" (2026-10-07), a script with narrat
 - **A word on a thing** is the prop's `tag` ("SUNLIGHT"). A thing on the ground wears it on top, a thing that hangs has it underneath. Keep tagged things about two and a half heads apart.
 - **A counter through the whole video** is the storyboard's `meter`. Keep tags, small suns and tall stacks out of the top right corner, where it sits.
 - **No music** where the script asks for none: `quiet` on the scene. A faint room tone runs under it, and music can come in later.
+- **The sound of the place** under every scene (Biku, 2026-10-20: "we need more background sounds that's according to the story and whatever these story needs"): a river by a river, the sea on a beach, a café, a quiet house with its clock. A named place picks its own; set `ambience` on the scene where the story needs another (a house at night: `night`), and on a shot where a journey changes place within a scene. Small sounds the story names go on their shot as `sfx`: a phone ringing, a knock, a splash, a page, coins. Claude cannot hear them: tell Biku which were used and ask him to listen.
 - **Someone carrying a small thing holds it out** (`hold-object`), or a medium shot hides it under the captions.
 - **Picking up something flat on the floor:** kneel first, then a step that holds it (the body bows to it), and stand up in the next shot. One short shot has no room for all three.
 

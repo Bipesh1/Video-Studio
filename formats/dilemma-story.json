@@ -1,0 +1,109 @@
+{
+  "id": "dilemma-story",
+  "name": "Dilemma story (game theory)",
+  "description": "The one kind of game theory video (Biku, 2026-10-17, story edition v4.0 on 2026-10-18): a short story about ordinary people with a mystery at its heart. It opens on its strangest moment, shown with one line that states it (no question), rewinds to who these people are and what is at stake, the trap closes with a turn, stops for the viewer's choice, answers the mystery, and ends on a truth about people with the real game or experiment in one or two lines. Writing rules in prompts/dilemma-story.md.",
+  "version": 1,
+  "structure": [
+    {
+      "id": "the-strange-ending",
+      "purpose": "The story's strangest moment on screen with one line that states it, in big words; then one line that makes it stranger.",
+      "share": 0.08,
+      "moods": ["unease", "tense"],
+      "preferredShots": ["wide", "close-up"],
+      "backgroundTreatment": "atmospheric"
+    },
+    {
+      "id": "rewind",
+      "purpose": "Earlier: who these people are, what each wants, what is at stake, and the one rule of their situation.",
+      "share": 0.17,
+      "moods": ["unease", "curious"],
+      "preferredShots": ["wide", "medium"],
+      "backgroundTreatment": "either"
+    },
+    {
+      "id": "the-trap-closes",
+      "purpose": "The characters talk and choose, each choice making it worse, the pressure rising, and a turn nobody saw coming.",
+      "share": 0.32,
+      "moods": ["closing-in", "tense"],
+      "preferredShots": ["medium", "close-up", "eyes", "over-shoulder"],
+      "backgroundTreatment": "atmospheric"
+    },
+    {
+      "id": "the-freeze",
+      "purpose": "The story stops just before the decision; the Trainer asks the viewer what they would do, and the picture holds in silence.",
+      "share": 0.06,
+      "moods": ["closing-in", "tense"],
+      "preferredShots": ["close-up", "eyes"],
+      "backgroundTreatment": "atmospheric"
+    },
+    {
+      "id": "the-reveal",
+      "purpose": "What the person did and why, answering the opening mystery; then the real game or experiment in one or two lines.",
+      "share": 0.22,
+      "moods": ["aftermath", "reflective"],
+      "preferredShots": ["wide", "medium", "close-up"],
+      "backgroundTreatment": "atmospheric"
+    },
+    {
+      "id": "the-sting",
+      "purpose": "Where the viewer does the same in their own life, and one last dry line that leaves them thinking.",
+      "share": 0.15,
+      "moods": ["aftermath", "reflective"],
+      "preferredShots": ["eyes", "close-up", "wide"],
+      "backgroundTreatment": "atmospheric"
+    }
+  ],
+  "lengthRange": {
+    "min": 60,
+    "max": 140
+  },
+  "shotLength": {
+    "min": 2,
+    "max": 4
+  },
+  "hookRules": [
+    "The first 3 seconds show the story's strangest moment, with one line of at most 12 words that states it plainly, shown as big words over the scene. No question, no greeting, no logo, no game theory words.",
+    "It is the mystery the video answers: the reveal explains it exactly. It does not start with \"In this video\", \"Did you know\", \"Have you ever wondered\" or \"Imagine\".",
+    "Between 3 and 10 seconds one line makes it stranger or promises more."
+  ],
+  "pacing": {
+    "wordsPerMinute": {
+      "min": 110,
+      "max": 160
+    },
+    "rehookEveryS": {
+      "min": 10,
+      "max": 20
+    },
+    "pauseMs": {
+      "normal": 500,
+      "afterBeat": 1200
+    }
+  },
+  "sfxDensity": {
+    "level": "medium",
+    "perMinute": {
+      "min": 4,
+      "max": 12
+    }
+  },
+  "captionMode": "full",
+  "roomTone": "hum",
+  "finish": {
+    "acting": "gentle",
+    "onTwos": true,
+    "shadows": true,
+    "grain": 0.5,
+    "vignette": 0.35,
+    "boil": 0.25
+  },
+  "factRules": {
+    "sourcesRequired": true,
+    "rules": [
+      "The reveal is the real result of the study, game or experiment named, checked against a saved source.",
+      "Every number is the source's own. A rounded figure is spoken as about, nearly or more than, never as exact.",
+      "The story is invented to show the idea and is never passed off as a real event.",
+      "Only dilemmas where people want different things: never a puzzle with one right answer."
+    ]
+  }
+}

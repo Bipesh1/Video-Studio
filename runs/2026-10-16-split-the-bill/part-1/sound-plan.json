@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "comic",
+      "startMs": 0
+    },
+    {
+      "mood": "curious",
+      "startMs": 21429
+    },
+    {
+      "mood": "comic",
+      "startMs": 34592
+    }
+  ],
+  "sfx": [
+    {
+      "name": "crowd-murmur",
+      "atMs": 60,
+      "durationMs": 38210,
+      "gainDb": -10,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "blip",
+      "atMs": 8268,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "ding",
+      "atMs": 8778,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "thud",
+      "atMs": 14521,
+      "gainDb": -2,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "whoosh",
+      "atMs": 18009,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "drumroll",
+      "atMs": 19689,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 5
+    }
+  ],
+  "musicGainDb": 0,
+  "hush": []
+}

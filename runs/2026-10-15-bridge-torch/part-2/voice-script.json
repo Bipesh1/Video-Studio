@@ -1,0 +1,47 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l13",
+      "speaker": "saint",
+      "voice": "af_sarah",
+      "text": "Nobody stays behind.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/saint.wav",
+      "speed": 0.95,
+      "pauseAfterMs": 666
+    },
+    {
+      "id": "l14",
+      "speaker": "saint",
+      "voice": "af_sarah",
+      "text": "Every trip with the old man takes ten minutes, whoever walks beside him.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/saint.wav",
+      "speed": 0.95,
+      "pauseAfterMs": 962
+    },
+    {
+      "id": "l15",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "So who should walk beside the old man?",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 2010
+    }
+  ]
+}

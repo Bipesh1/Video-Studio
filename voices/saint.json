@@ -1,0 +1,12 @@
+{
+  "id": "saint",
+  "name": "The Saint",
+  "description": "The Saint of the game theory cast: warm and gentle, a little naive. A softer woman's voice. Picked by Biku from three test voices on 2026-10-11 (voice 2). Spoken by Chatterbox from a sample of this Kokoro voice since 2026-10-14, so it is the same person, more alive.",
+  "version": 4,
+  "kokoroVoice": "af_sarah",
+  "speed": 0.95,
+  "engine": "chatterbox",
+  "sample": "voices/samples/saint.wav",
+  "pauseScale": 0.74,
+  "pronunciations": {}
+}

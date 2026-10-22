@@ -23,6 +23,7 @@ import {
   parseOrExplain,
   scriptSchema,
 } from '@studio/shared';
+import { packagingSchema } from '@studio/shared';
 import type { Script, ScriptMode, ScriptReport, World } from '@studio/shared';
 
 export type NewRun = {
@@ -136,6 +137,26 @@ export function loadOriginal(dir: string): string | undefined {
 export function checkRunScript(dir: string, world: World, root: string): ScriptReport {
   const script = loadScript(dir);
   const report = checkScript(script, world, loadOriginal(dir));
+  // The package comes first: a format that asks for it refuses a script without it.
+  if (world.formats[script.format]?.packaging) {
+    const file = path.join(dir, 'packaging.json');
+    if (!existsSync(file)) {
+      report.problems.push(
+        'there is no packaging.json: decide the title, the thumbnail and the promise before the script (knowledge/playbooks/explainers.md)',
+      );
+    } else {
+      const found = packagingSchema.safeParse(JSON.parse(readFileSync(file, 'utf8')));
+      if (!found.success) {
+        report.problems.push(
+          `packaging.json is not right: ${found.error.issues.map((i) => `${i.path.join('.') || 'it'}: ${i.message}`).join('; ')}`,
+        );
+      } else if (found.data.title !== script.title) {
+        report.problems.push(
+          `the script's title "${script.title}" is not the package's title "${found.data.title}"`,
+        );
+      }
+    }
+  }
   const prompt = findMasterPrompt(root, script.format);
   if (prompt && script.masterPrompt !== prompt) {
     report.problems.push(

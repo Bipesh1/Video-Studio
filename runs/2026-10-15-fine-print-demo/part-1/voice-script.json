@@ -1,0 +1,111 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Why does a bucket of cinema popcorn cost nine dollars?",
+      "speed": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l02",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Almost everyone has paid it, and almost nobody asks why.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l03",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The corn costs about thirty five cents, the bucket forty five, and the butter fifty five.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l04",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "That is one dollar and thirty five cents of real cost.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l05",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So the cinema keeps the rest, seven dollars and sixty five cents.",
+      "speed": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l06",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Your ticket money goes the other way, mostly to the film studio.",
+      "speed": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l07",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The studio can take more than half of every ticket in the first weeks of a new film.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l08",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So the cinema earns more from one bucket than from one ticket.",
+      "speed": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l09",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "That is why you walk past the snack counter before you reach your seat.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l10",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "And every one of us in the queue pays it.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l11",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "It is the same at airports, stadiums and theme parks.",
+      "speed": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l12",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Next time, share one bucket, and it costs you four fifty.",
+      "speed": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l13",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Or eat before you go, and it costs you nothing.",
+      "speed": 1,
+      "pauseAfterMs": 1400
+    }
+  ]
+}

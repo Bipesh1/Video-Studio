@@ -134,6 +134,7 @@ const NAMES: Record<Shot, string> = {
   wide: 'wide',
   medium: 'medium',
   'close-up': 'close-up',
+  eyes: 'only the eyes',
   'over-shoulder': 'over the shoulder',
 };
 

@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "curious",
+      "startMs": 0
+    }
+  ],
+  "sfx": [],
+  "musicGainDb": 0,
+  "hush": []
+}

@@ -4,7 +4,7 @@ import { tokens } from '../tokens';
  * One spoken word's timing, as the voice stage provides it. With the word's text the mouth
  * forms the word; without it the mouth just opens and closes in time.
  */
-export type WordTiming = { startMs: number; endMs: number; text?: string };
+export type WordTiming = { startMs: number; endMs: number; text?: string; sounds?: string };
 
 export type MouthShape = 'closed' | 'half' | 'open' | 'wide' | 'round';
 
@@ -88,6 +88,51 @@ export function shapesOfWord(text: string): MouthShape[] {
   return shapes;
 }
 
+/**
+ * The speech sounds Kokoro writes for a word (misaki's phoneme letters), as mouth shapes. Lips
+ * meet on m, b and p; round on oo, oh, ow, w and r; spread on ee, ih, ay, eh; open on the
+ * other vowels. Stress marks and length marks are not sounds.
+ */
+const SOUND_SHAPES: Record<string, MouthShape> = {
+  m: 'closed',
+  b: 'closed',
+  p: 'closed',
+  u: 'round',
+  ʊ: 'round',
+  O: 'round',
+  W: 'round',
+  w: 'round',
+  ɔ: 'round',
+  o: 'round',
+  ɹ: 'round',
+  i: 'wide',
+  ɪ: 'wide',
+  A: 'wide',
+  ɛ: 'wide',
+  e: 'wide',
+  j: 'wide',
+  æ: 'open',
+  ɑ: 'open',
+  ʌ: 'open',
+  ə: 'open',
+  ᵊ: 'half',
+  a: 'open',
+  I: 'open',
+  Y: 'open',
+  ɜ: 'open',
+  ɐ: 'open',
+};
+
+/** The mouth shapes of a word from the sounds the voice made for it, in order. */
+export function shapesOfSounds(sounds: string): MouthShape[] {
+  const shapes: MouthShape[] = [];
+  for (const sound of sounds.replace(/[ˈˌː.,?!;:'"\s]/g, '')) {
+    const shape = SOUND_SHAPES[sound] ?? 'half';
+    if (shapes[shapes.length - 1] !== shape) shapes.push(shape);
+  }
+  return shapes;
+}
+
 /** Fewer shapes for a short word: the plain consonants go first, from the end of the word. */
 function fit(shapes: readonly MouthShape[], slots: number): MouthShape[] {
   const kept = [...shapes];
@@ -118,7 +163,12 @@ export function mouthShapeAt(frame: number, fps: number, words: readonly WordTim
   }
   const startFrame = Math.floor((word.startMs / 1000) * fps);
   const step = Math.floor((frame - startFrame) / STEP_FRAMES);
-  const spelled = word.text ? shapesOfWord(word.text) : [];
+  // What the voice actually said when it says; otherwise a reading of the spelling.
+  const spelled = word.sounds
+    ? shapesOfSounds(word.sounds)
+    : word.text
+      ? shapesOfWord(word.text)
+      : [];
   if (spelled.length === 0) return PATTERN[step % PATTERN.length] ?? 'closed';
 
   const frames = Math.max(1, Math.round(((word.endMs - word.startMs) / 1000) * fps));

@@ -1,0 +1,214 @@
+{
+  "version": 1,
+  "score": {
+    "seed": 43672,
+    "shift": 3,
+    "tempo": 1.082,
+    "palette": "body",
+    "profile": "short"
+  },
+  "music": [
+    {
+      "mood": "upbeat",
+      "startMs": 0
+    },
+    {
+      "mood": "curious",
+      "startMs": 23090
+    }
+  ],
+  "sfx": [
+    {
+      "name": "underwater",
+      "atMs": 0,
+      "durationMs": 23090,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "whoosh",
+      "atMs": 60,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "ding",
+      "atMs": 2240,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 5
+    },
+    {
+      "name": "pop",
+      "atMs": 5773,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 6
+    },
+    {
+      "name": "whoosh",
+      "atMs": 7040,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 7
+    },
+    {
+      "name": "pop",
+      "atMs": 8407,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 8
+    },
+    {
+      "name": "blip",
+      "atMs": 9240,
+      "gainDb": -9,
+      "pan": 0,
+      "seed": 9
+    },
+    {
+      "name": "whoosh",
+      "atMs": 11800,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 10
+    },
+    {
+      "name": "pop",
+      "atMs": 13940,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 11
+    },
+    {
+      "name": "blip",
+      "atMs": 14540,
+      "gainDb": -9,
+      "pan": 0,
+      "seed": 12
+    },
+    {
+      "name": "click",
+      "atMs": 17407,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 13
+    },
+    {
+      "name": "bubbles",
+      "atMs": 17720,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "whoosh",
+      "atMs": 18230,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 14
+    },
+    {
+      "name": "pop",
+      "atMs": 19640,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 15
+    },
+    {
+      "name": "blip",
+      "atMs": 22040,
+      "gainDb": -9,
+      "pan": 0,
+      "seed": 16
+    },
+    {
+      "name": "home",
+      "atMs": 23090,
+      "durationMs": 20290,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "hit",
+      "atMs": 23090,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 25
+    },
+    {
+      "name": "whoosh",
+      "atMs": 23150,
+      "gainDb": -2,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "pop",
+      "atMs": 26273,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 17
+    },
+    {
+      "name": "ding",
+      "atMs": 29807,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 18
+    },
+    {
+      "name": "whoosh",
+      "atMs": 32830,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 19
+    },
+    {
+      "name": "ding",
+      "atMs": 33373,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 20
+    },
+    {
+      "name": "pop",
+      "atMs": 36740,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 21
+    },
+    {
+      "name": "blip",
+      "atMs": 37273,
+      "gainDb": -9,
+      "pan": 0,
+      "seed": 22
+    },
+    {
+      "name": "whoosh",
+      "atMs": 38070,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 23
+    },
+    {
+      "name": "pop",
+      "atMs": 40973,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 24
+    }
+  ],
+  "musicGainDb": 0,
+  "hush": [
+    {
+      "fromMs": 22390,
+      "toMs": 23110,
+      "sharp": true
+    }
+  ]
+}

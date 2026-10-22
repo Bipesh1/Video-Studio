@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "id": "2026-10-11-trainer-test",
+  "created": "2026-10-11",
+  "mode": "as-is",
+  "format": "story",
+  "brand": "my-page",
+  "voice": "narrator",
+  "sizes": [
+    "16:9",
+    "9:16"
+  ],
+  "vertical": "full",
+  "masterPrompt": null
+}

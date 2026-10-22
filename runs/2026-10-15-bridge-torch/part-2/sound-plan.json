@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "closing-in",
+      "startMs": 0
+    }
+  ],
+  "sfx": [
+    {
+      "name": "wind",
+      "atMs": 60,
+      "durationMs": 6676,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "rain",
+      "atMs": 6946,
+      "durationMs": 4773,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "thunder",
+      "atMs": 6946,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "heartbeat-rising",
+      "atMs": 6946,
+      "durationMs": 4773,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 3
+    }
+  ],
+  "musicGainDb": 0,
+  "hush": []
+}

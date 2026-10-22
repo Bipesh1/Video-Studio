@@ -1,0 +1,1188 @@
+{
+  "version": 1,
+  "title": "The Dollar Auction",
+  "request": "now make a video on this script",
+  "mode": "as-is",
+  "format": "explainer",
+  "style": "ink-stick",
+  "brand": "my-page",
+  "voice": "narrator",
+  "seed": 5109,
+  "sources": [
+    "Martin Shubik, The Dollar Auction Game: A Paradox in Noncooperative Behavior and Escalation, Journal of Conflict Resolution, March 1971, pages 109 to 111, as quoted word for word by Timothy Taylor, https://conversableeconomist.com/2011/11/15/martin-shubiks-dollar-auction-game/ : the rule (the highest and the second-highest bidder both pay, only the highest gets the dollar); published in 1971; best played during a party when spirits are high; a total of payments between three and five dollars is not uncommon; once two bids are in, the escalation is real. Sure: read through Taylor's quotations; the scan of the paper itself could not be read.",
+    "J. Keith Murnighan, A Very Extreme Case of the Dollar Auction, Journal of Management Education, 2002, volume 26, pages 56 to 69, https://www.kellogg.northwestern.edu/faculty/research/detail/2002/a-very-extreme-case-of-the-dollar-auction ; figure as reported by Gillian Ku, https://www.kellogg.northwestern.edu/research/ktag/resources/papers/ku.pdf : a 20 dollar bill sold for 2,000 dollars in an executive MBA class (a hundred times its worth is 2,000 divided by 20). Fairly sure: three academic summaries agree; the article itself was not opened.",
+    "Ned Augenblick, The Sunk-Cost Fallacy in Penny Auctions, Review of Economic Studies, 2016, volume 83, pages 58 to 86, https://kylewoodward.com/blog-data/pdfs/references/augenblick-the-review-of-economic-studies-2015A.pdf : a real penny auction website made about 26 million dollars in profit across 166,000 auctions, September 2005 to June 2009; when it auctioned cash, average revenue was 204% of face value across more than 2,000 cash auctions (about two dollars for every dollar); the paper says the penny auction shares many characteristics with the dollar auction (a close cousin). Sure: the full paper was read.",
+    "Barry O'Neill, International Escalation and the Dollar Auction, Journal of Conflict Resolution, 1986, volume 30, pages 33 to 50, https://ideas.repec.org/a/sae/jocore/v30y1986i1p33-50.html : with 2 dollars 50 each, the first bidder should open at 60 cents and the other should stay silent. Sure of the figures, which are in the paper's own abstract; the full article was not opened.",
+    "Wikipedia, Dollar auction, https://en.wikipedia.org/wiki/Dollar_auction : bids start at a nickel and rise in nickels. Fairly sure: not checked against the original paper; it matches O'Neill's 60 cent answer.",
+    "Biku's accuracy notes (script-brief.md): the opening sale (1.85 and 1.80) and every bid the cast makes are an invented scene."
+  ],
+  "appliedLessons": [
+    "L-0013",
+    "L-0023",
+    "L-0029",
+    "L-0030",
+    "L-0031",
+    "L-0033"
+  ],
+  "cast": [
+    {
+      "id": "cheat",
+      "name": "The Cheat",
+      "card": "cheat"
+    },
+    {
+      "id": "copycat",
+      "name": "The Copycat",
+      "card": "copycat"
+    },
+    {
+      "id": "saint",
+      "name": "The Saint",
+      "card": "saint"
+    },
+    {
+      "id": "you",
+      "name": "You, in the green cap",
+      "card": "you"
+    },
+    {
+      "id": "guest-a",
+      "name": "A party guest",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "t-shirt",
+              "cloth": "orange"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "denim"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "guest-b",
+      "name": "Another party guest",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "onePiece": {
+              "kind": "dress",
+              "cloth": "crimson"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "guest-c",
+      "name": "A third party guest",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "hoodie",
+              "cloth": "ocean"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "student-a",
+      "name": "A business student",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "white",
+              "sleeves": "long"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            },
+            "tie": {
+              "cloth": "denim",
+              "stripe": "glint"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "student-b",
+      "name": "Another business student",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "cream",
+              "sleeves": "long"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "brown"
+            },
+            "tie": {
+              "cloth": "forest",
+              "stripe": "gold"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    }
+  ],
+  "series": "game-theory",
+  "scenes": [
+    {
+      "id": "s4",
+      "chapter": 1,
+      "beat": "second-part",
+      "mood": "upbeat",
+      "place": "living-room",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "n17",
+          "speaker": "narrator",
+          "text": "The economist who published this game, in *nineteen seventy-one,* said to play it at a party, when spirits are high.",
+          "speed": 0.95
+        },
+        {
+          "id": "n18",
+          "speaker": "narrator",
+          "text": "He wrote that three to five dollars for one dollar was not unusual.",
+          "speed": 0.95,
+          "pauseAfterMs": 500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s4a",
+          "line": "n17",
+          "words": "The economist who published this game,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "table",
+              "x": 0.463
+            },
+            {
+              "prop": "banknote",
+              "x": 0.463,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "crowd-murmur",
+              "at": "start",
+              "gainDb": -4
+            }
+          ],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "THE DOLLAR",
+              "AUCTION GAME",
+              "PUBLISHED 1971"
+            ],
+            "stress": 0
+          },
+          "transition": "fade",
+          "startMs": 0,
+          "endMs": 2320
+        },
+        {
+          "id": "s4b",
+          "line": "n17",
+          "words": "in *nineteen seventy-one,*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "table",
+              "x": 0.463
+            },
+            {
+              "prop": "banknote",
+              "x": 0.463,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "THE DOLLAR",
+              "AUCTION GAME",
+              "PUBLISHED 1971"
+            ],
+            "stress": 2
+          },
+          "transition": "cut",
+          "startMs": 2320,
+          "endMs": 4082
+        },
+        {
+          "id": "s4c",
+          "line": "n17",
+          "words": "said to play it at a party, when spirits are high.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "guest-a",
+              "pose": "stand",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.263,
+              "lookAt": "guest-b",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.15,
+                  "pose": "wave",
+                  "expression": "laughing"
+                }
+              ]
+            },
+            {
+              "character": "guest-b",
+              "pose": "stand",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.595,
+              "lookAt": "guest-a",
+              "holds": "paddle",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.28,
+                  "pose": "wave",
+                  "expression": "laughing"
+                }
+              ]
+            },
+            {
+              "character": "guest-c",
+              "pose": "stand",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.726,
+              "lookAt": "guest-b",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.4,
+                  "expression": "laughing"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "table",
+              "x": 0.463
+            },
+            {
+              "prop": "banknote",
+              "x": 0.463,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "crowd-murmur",
+              "at": "start",
+              "gainDb": -4
+            }
+          ],
+          "transition": "cut",
+          "startMs": 4082,
+          "endMs": 7650
+        },
+        {
+          "id": "s4d",
+          "line": "n18",
+          "words": "He wrote that three to five dollars",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "guest-b"
+          },
+          "actors": [
+            {
+              "character": "guest-b",
+              "pose": "wave",
+              "expression": "laughing",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.595,
+              "lookAt": "camera",
+              "holds": "paddle",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "table",
+              "x": 0.463
+            },
+            {
+              "prop": "banknote",
+              "x": 0.463,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 7650,
+          "endMs": 9610
+        },
+        {
+          "id": "s4e",
+          "line": "n18",
+          "words": "for one dollar was not unusual.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "guest-a",
+              "pose": "wave",
+              "expression": "laughing",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.263,
+              "lookAt": "banknote",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.3,
+                  "pose": "stand",
+                  "expression": "surprised"
+                }
+              ]
+            },
+            {
+              "character": "guest-b",
+              "pose": "wave",
+              "expression": "laughing",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.595,
+              "lookAt": "guest-a",
+              "holds": "paddle",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "guest-c",
+              "pose": "stand",
+              "expression": "laughing",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.726,
+              "lookAt": "banknote",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.45,
+                  "expression": "surprised"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "table",
+              "x": 0.463
+            },
+            {
+              "prop": "banknote",
+              "x": 0.463,
+              "y": 1.22,
+              "tag": "$3 TO $5"
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 9610,
+          "endMs": 12440
+        }
+      ]
+    },
+    {
+      "id": "s4class",
+      "chapter": 1,
+      "beat": "second-part",
+      "mood": "curious",
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "cold-dawn",
+      "lines": [
+        {
+          "id": "n19",
+          "speaker": "narrator",
+          "text": "In one business school class, a twenty-dollar bill went for *two thousand dollars.*",
+          "speed": 0.95,
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "n20",
+          "speaker": "narrator",
+          "text": "A hundred times its worth.",
+          "speed": 0.95,
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s4f",
+          "line": "n19",
+          "words": "In one business school class,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "student-a",
+              "pose": "sit",
+              "expression": "neutral",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.316,
+              "lookAt": "banknote-20",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "student-b",
+              "pose": "sit",
+              "expression": "neutral",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.684,
+              "lookAt": "banknote-20",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.316
+            },
+            {
+              "prop": "chair",
+              "x": 0.684
+            },
+            {
+              "prop": "table",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote-20",
+              "x": 0.5,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "overlay": {
+            "kind": "label",
+            "text": "A business school class"
+          },
+          "transition": "fade",
+          "startMs": 12440,
+          "endMs": 14568
+        },
+        {
+          "id": "s4g",
+          "line": "n19",
+          "words": "a twenty-dollar bill went for *two thousand dollars.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "student-a",
+              "pose": "sit",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.316,
+              "lookAt": "student-b",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.15,
+                  "pose": "sit-hands-up"
+                }
+              ]
+            },
+            {
+              "character": "student-b",
+              "pose": "sit",
+              "expression": "determined",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.684,
+              "lookAt": "student-a",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.32,
+                  "pose": "sit-hands-up"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.316
+            },
+            {
+              "prop": "chair",
+              "x": 0.684
+            },
+            {
+              "prop": "table",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote-20",
+              "x": 0.5,
+              "y": 1.22,
+              "tag": "$2,000"
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "click",
+              "at": "start",
+              "gainDb": 0
+            },
+            {
+              "name": "click",
+              "at": "middle",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 14568,
+          "endMs": 17870
+        },
+        {
+          "id": "s4h",
+          "line": "n20",
+          "words": "A hundred times its worth.",
+          "camera": {
+            "framing": "wide",
+            "move": "push-in",
+            "strength": 0.4
+          },
+          "actors": [
+            {
+              "character": "student-a",
+              "pose": "sit-hands-up",
+              "expression": "horrified",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.316,
+              "lookAt": "banknote-20",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.3,
+                  "pose": "sit-slump",
+                  "expression": "sad"
+                }
+              ]
+            },
+            {
+              "character": "student-b",
+              "pose": "sit-hands-up",
+              "expression": "horrified",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.684,
+              "lookAt": "banknote-20",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.45,
+                  "pose": "sit-slump",
+                  "expression": "sad"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.316
+            },
+            {
+              "prop": "chair",
+              "x": 0.684
+            },
+            {
+              "prop": "table",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote-20",
+              "x": 0.5,
+              "y": 1.22,
+              "tag": "$2,000"
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "number",
+            "text": "100 x",
+            "caption": "what it was worth"
+          },
+          "transition": "cut",
+          "startMs": 17870,
+          "endMs": 20520
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chapter": 1,
+      "beat": "surprise",
+      "mood": "tense",
+      "place": "auction-room",
+      "treatment": "atmospheric",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "s1",
+          "speaker": "saint",
+          "text": "Sorry. Where does all that money go?",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "n21",
+          "speaker": "narrator",
+          "text": "*To me.*",
+          "speed": 0.95,
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "n22",
+          "speaker": "narrator",
+          "text": "I'm the one selling the dollar.",
+          "speed": 0.95,
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "n23",
+          "speaker": "narrator",
+          "text": "A real website ran a close cousin of this game.",
+          "speed": 0.95
+        },
+        {
+          "id": "n24",
+          "speaker": "narrator",
+          "text": "One study counted *twenty-six million dollars* in profit.",
+          "speed": 0.95,
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "n25",
+          "speaker": "narrator",
+          "text": "It even auctioned cash, and took in about two dollars for every dollar it gave away.",
+          "speed": 0.95,
+          "pauseAfterMs": 1100
+        }
+      ],
+      "shots": [
+        {
+          "id": "s5a",
+          "line": "s1",
+          "words": "Sorry. Where does all that money go?",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "wave",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.889,
+              "lookAt": "camera",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.55,
+                  "pose": "stand",
+                  "expression": "thinking"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "gavel",
+              "x": 0.523,
+              "y": 1.5
+            },
+            {
+              "prop": "podium",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote",
+              "x": 0.441,
+              "y": 1.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "fade",
+          "startMs": 20520,
+          "endMs": 23010
+        },
+        {
+          "id": "s5b",
+          "line": "n21",
+          "words": "*To me.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "cash-jar",
+              "x": 0.598,
+              "size": 1.55,
+              "from": 1.1
+            },
+            {
+              "prop": "gavel",
+              "x": 0.536,
+              "y": 2.325,
+              "size": 1.55
+            },
+            {
+              "prop": "podium",
+              "x": 0.5,
+              "size": 1.55
+            },
+            {
+              "prop": "banknote",
+              "x": 0.409,
+              "y": 2.325,
+              "size": 1.55
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "whoosh",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 23010,
+          "endMs": 24230
+        },
+        {
+          "id": "s5c",
+          "line": "n22",
+          "words": "I'm the one selling the dollar.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "pose": "stand",
+              "expression": "horrified",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "cash-jar",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "stand",
+              "expression": "horrified",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.7,
+              "lookAt": "cash-jar",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "cash-jar",
+              "x": 0.563
+            },
+            {
+              "prop": "gavel",
+              "x": 0.523,
+              "y": 1.5
+            },
+            {
+              "prop": "podium",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote",
+              "x": 0.441,
+              "y": 1.5,
+              "tag": "$1.10"
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 24230,
+          "endMs": 26530
+        },
+        {
+          "id": "s5d",
+          "line": "n23",
+          "words": "A real website ran a close cousin of this game.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "cash-jar",
+              "x": 0.598,
+              "size": 1.55
+            },
+            {
+              "prop": "gavel",
+              "x": 0.536,
+              "y": 2.325,
+              "size": 1.55
+            },
+            {
+              "prop": "podium",
+              "x": 0.5,
+              "size": 1.55
+            },
+            {
+              "prop": "banknote",
+              "x": 0.409,
+              "y": 2.325,
+              "size": 1.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "label",
+            "text": "A penny auction website"
+          },
+          "transition": "cut",
+          "startMs": 26530,
+          "endMs": 30010
+        },
+        {
+          "id": "s5e",
+          "line": "n24",
+          "words": "One study counted *twenty-six million dollars* in profit.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "cash-jar",
+              "x": 0.598,
+              "size": 1.55
+            },
+            {
+              "prop": "gavel",
+              "x": 0.536,
+              "y": 2.325,
+              "size": 1.55
+            },
+            {
+              "prop": "podium",
+              "x": 0.5,
+              "size": 1.55
+            },
+            {
+              "prop": "banknote",
+              "x": 0.409,
+              "y": 2.325,
+              "size": 1.55
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "start",
+              "gainDb": 0
+            },
+            {
+              "name": "ding",
+              "at": "middle",
+              "gainDb": 0
+            }
+          ],
+          "overlay": {
+            "kind": "number",
+            "text": "$26,000,000",
+            "caption": "profit, by one study",
+            "countUp": true
+          },
+          "transition": "cut",
+          "startMs": 30010,
+          "endMs": 34050
+        },
+        {
+          "id": "s5f",
+          "line": "n25",
+          "words": "It even auctioned cash,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "pose": "stand",
+              "expression": "surprised",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "cash-jar",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "stand",
+              "expression": "surprised",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.7,
+              "lookAt": "cash-jar",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "cash-jar",
+              "x": 0.563
+            },
+            {
+              "prop": "gavel",
+              "x": 0.523,
+              "y": 1.5
+            },
+            {
+              "prop": "podium",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote",
+              "x": 0.441,
+              "y": 1.5,
+              "tag": "$1.10"
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 34050,
+          "endMs": 36062
+        },
+        {
+          "id": "s5g",
+          "line": "n25",
+          "words": "and took in about two dollars",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "cash-jar",
+              "x": 0.598,
+              "size": 1.55
+            },
+            {
+              "prop": "gavel",
+              "x": 0.536,
+              "y": 2.325,
+              "size": 1.55
+            },
+            {
+              "prop": "podium",
+              "x": 0.5,
+              "size": 1.55
+            },
+            {
+              "prop": "banknote",
+              "x": 0.409,
+              "y": 2.325,
+              "size": 1.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "number",
+            "text": "$2 IN",
+            "caption": "for every $1 of cash sold"
+          },
+          "transition": "cut",
+          "startMs": 36062,
+          "endMs": 37650
+        },
+        {
+          "id": "s5h",
+          "line": "n25",
+          "words": "for every dollar it gave away.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "sad",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.889,
+              "lookAt": "camera",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.35,
+                  "pose": "look-down",
+                  "lookAt": "down"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "gavel",
+              "x": 0.523,
+              "y": 1.5
+            },
+            {
+              "prop": "podium",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote",
+              "x": 0.441,
+              "y": 1.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 37650,
+          "endMs": 41430
+        }
+      ]
+    }
+  ]
+}

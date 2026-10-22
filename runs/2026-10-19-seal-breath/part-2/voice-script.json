@@ -1,0 +1,55 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l10",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "And here is the catch: the Bajau, sea nomads of Southeast Asia, have already grown a *bigger* tank.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l11",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Their divers spend up to sixty percent of a working day diving for *fish*.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l12",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Scientists scanned the spleens of the Bajau and of their farming neighbours, the *Saluan*.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l13",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The Bajau spleen was about fifty percent *bigger*, roughly the size of a tennis ball.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l14",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "It was big even in Bajau who do not dive, so it is in their *genes*.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l15",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Scientists think it took only around a thousand years at sea, a *blink* for evolution.",
+      "speed": 1,
+      "pauseAfterMs": 1100
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l15",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "When the buttons start at twenty, twenty starts to feel like the *cheap* choice.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l16",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Then comes a second push: someone is standing right there, *watching* you choose.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l17",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "In a coffee shop experiment, the tip screen mostly made people feel *worse* about the shop.",
+      "speed": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l18",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "A study of thirteen million New York taxi rides found higher buttons raised tips about ten *percent*.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l19",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "But with those higher buttons, more riders gave up and left *no* tip at all.",
+      "speed": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l20",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So decide your tip before you reach the counter, and press *custom* if the buttons are not yours.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l21",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Every screen asks now because higher buttons really do make people tip *more*.",
+      "speed": 1,
+      "pauseAfterMs": 1500
+    }
+  ]
+}

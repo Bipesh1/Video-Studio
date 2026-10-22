@@ -1,0 +1,63 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Why does every payment screen ask you for a *tip* now?",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l02",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The answer hides in three little buttons, and it is *smarter* than it looks.",
+      "speed": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l03",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "In a big 2023 survey, seventy two percent of Americans said tipping is expected in *more* places now.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l04",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Food trucks ask, coffee counters ask, and even some self-checkout machines *ask*.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l05",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So you order a six dollar coffee, and the screen turns round to *face* you.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l06",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "It offers you a tip of twenty, twenty five or *thirty* percent.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l07",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Most of us assume those buttons are simply the *normal* amounts.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    }
+  ]
+}

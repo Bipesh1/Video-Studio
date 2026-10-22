@@ -1,0 +1,1075 @@
+{
+  "version": 1,
+  "title": "How to Get Four People Across a Bridge Before the Torch Dies",
+  "request": "this is a thriller script make a video for this one you must use the dark background sounds we created the thriller ones",
+  "mode": "as-is",
+  "format": "dilemma-thriller",
+  "style": "ink-stick",
+  "brand": "dilemma-table",
+  "voice": "leak",
+  "seed": 55713,
+  "finish": {
+    "acting": "gentle",
+    "onTwos": true,
+    "shadows": true,
+    "grain": 0.55,
+    "vignette": 0.4,
+    "boil": 0.25
+  },
+  "sources": [
+    "Saul X. Levmore and Elizabeth Early Cook, Super Strategies for Puzzles and Games, Doubleday, 1981. The earliest known printed version of the bridge puzzle: four people, one light, a bridge that holds two at a time. As given in Biku's script.",
+    "Günter Rote, \"Crossing the Bridge at Night\", Bulletin of the EATCS, No. 78, October 2002, pages 241 to 246. Solves the puzzle for any number of people with any walking times. https://page.mi.fu-berlin.de/rote/Papers/abstract/Crossing+the+bridge+at+night.html",
+    "Checked by Claude on 2026-10-15: with crossing times of 1, 2, 5 and 10 minutes, the fastest walking each one over takes 10 + 1 + 5 + 1 + 2 = 19 minutes; the two fastest over, the fastest back, the two slowest over together, the second fastest back, the two fastest over takes 2 + 1 + 10 + 2 + 2 = 17. What the scene invents: the gorge, the storm, the people."
+  ],
+  "appliedLessons": [],
+  "cast": [
+    {
+      "id": "trainer",
+      "name": "The Trainer",
+      "card": "trainer",
+      "host": true
+    },
+    {
+      "id": "saint",
+      "name": "The Saint",
+      "card": "saint"
+    },
+    {
+      "id": "cheat",
+      "name": "The Cheat",
+      "card": "cheat"
+    },
+    {
+      "id": "old-man",
+      "name": "The old man",
+      "look": {
+        "age": "elder",
+        "identity": {
+          "skinTone": 2,
+          "hair": "short-crop",
+          "hairColor": "white"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "jacket",
+              "cloth": "tan",
+              "under": "cream"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "brown"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "woman",
+      "name": "The woman with the bag",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "cream"
+            },
+            "bottom": {
+              "kind": "skirt",
+              "cloth": "brown"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "series": "game-theory",
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "the-question",
+      "mood": "tense",
+      "quiet": false,
+      "place": "gorge-bridge",
+      "treatment": "atmospheric",
+      "palette": "storm-slate",
+      "lines": [
+        {
+          "id": "l01",
+          "speaker": "trainer",
+          "text": "If the slowest person holds everyone back, who should walk with them?",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l02",
+          "speaker": "trainer",
+          "text": "The smart plan fails. Watch.",
+          "pauseAfterMs": 1400
+        }
+      ],
+      "shots": [
+        {
+          "id": "s1a",
+          "line": "l01",
+          "words": "If the slowest person holds everyone back, who should walk with them?",
+          "camera": {
+            "framing": "wide",
+            "move": "push-in",
+            "strength": 0.15
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "wind",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "overlay": {
+            "kind": "words",
+            "lines": [
+              "If the slowest person",
+              "holds everyone back,",
+              "who should walk with them?"
+            ],
+            "stress": 2
+          },
+          "transition": "cut",
+          "startMs": 0,
+          "endMs": 3474
+        },
+        {
+          "id": "s1b",
+          "line": "l02",
+          "words": "The smart plan fails. Watch.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "afraid",
+              "strength": 0.5,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.27,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "wind",
+              "at": "start",
+              "gainDb": -6
+            },
+            {
+              "name": "thunder",
+              "at": "start",
+              "gainDb": -4
+            }
+          ],
+          "transition": "cut",
+          "startMs": 3474,
+          "endMs": 6501
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "the-rules",
+      "mood": "unease",
+      "quiet": false,
+      "place": "gorge-bridge",
+      "treatment": "atmospheric",
+      "palette": "storm-slate",
+      "lines": [
+        {
+          "id": "l03",
+          "speaker": "trainer",
+          "text": "Four people must cross this rope bridge before the storm breaks it.",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l04",
+          "speaker": "trainer",
+          "text": "Two fit at a time, and someone must carry the torch back each time.",
+          "pauseAfterMs": 900
+        },
+        {
+          "id": "l05",
+          "speaker": "trainer",
+          "text": "The man in the red tie crosses in one minute, and the woman in the scarf in two.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l06",
+          "speaker": "trainer",
+          "text": "The woman with the bag needs five, the old man ten.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l07",
+          "speaker": "trainer",
+          "text": "Two together walk at the slower pace.",
+          "pauseAfterMs": 1100
+        },
+        {
+          "id": "l08",
+          "speaker": "trainer",
+          "text": "And the torch will last *seventeen* minutes.",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s2a",
+          "line": "l03",
+          "words": "Four people must cross this rope bridge before the storm breaks it.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "old-man",
+              "pose": "stand",
+              "expression": "afraid",
+              "strength": 0.5,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.03,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "woman",
+              "pose": "stand",
+              "expression": "afraid",
+              "strength": 0.5,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.15,
+              "lookAt": "ahead",
+              "holds": "bag",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "afraid",
+              "strength": 0.5,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.27,
+              "lookAt": "cheat",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "cheat",
+              "pose": "stand",
+              "expression": "calculating",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.39,
+              "lookAt": "ahead",
+              "holds": "torch",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "wind",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "startMs": 6501,
+          "endMs": 10313
+        },
+        {
+          "id": "s2b",
+          "line": "l04",
+          "words": "Two fit at a time,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "old-man",
+              "pose": "stand",
+              "expression": "afraid",
+              "strength": 0.5,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.03,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "woman",
+              "pose": "stand",
+              "expression": "afraid",
+              "strength": 0.5,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.15,
+              "lookAt": "ahead",
+              "holds": "bag",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "afraid",
+              "strength": 0.5,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.27,
+              "lookAt": "cheat",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "cheat",
+              "pose": "stand",
+              "expression": "calculating",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.39,
+              "lookAt": "ahead",
+              "holds": "torch",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "wind",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "startMs": 10313,
+          "endMs": 11523
+        },
+        {
+          "id": "s2b2",
+          "line": "l04",
+          "words": "and someone must carry the torch back each time.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "cheat"
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "pose": "wave",
+              "expression": "calculating",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.39,
+              "lookAt": "ahead",
+              "holds": "torch",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "wind",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "startMs": 11523,
+          "endMs": 14438
+        },
+        {
+          "id": "s2c",
+          "line": "l05",
+          "words": "The man in the red tie crosses in one minute,",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "cheat"
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "pose": "wave",
+              "expression": "calculating",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.39,
+              "lookAt": "ahead",
+              "holds": "torch",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "wind",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "overlay": {
+            "kind": "number",
+            "text": "1",
+            "caption": "minute"
+          },
+          "transition": "cut",
+          "startMs": 14438,
+          "endMs": 16608
+        },
+        {
+          "id": "s2d",
+          "line": "l05",
+          "words": "and the woman in the scarf in two.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "afraid",
+              "strength": 0.5,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.27,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "wind",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "overlay": {
+            "kind": "number",
+            "text": "2",
+            "caption": "minutes"
+          },
+          "transition": "cut",
+          "startMs": 16608,
+          "endMs": 18588
+        },
+        {
+          "id": "s2e",
+          "line": "l06",
+          "words": "The woman with the bag needs five,",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "woman"
+          },
+          "actors": [
+            {
+              "character": "woman",
+              "pose": "stand",
+              "expression": "afraid",
+              "strength": 0.5,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.15,
+              "lookAt": "ahead",
+              "holds": "bag",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "wind",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "overlay": {
+            "kind": "number",
+            "text": "5",
+            "caption": "minutes"
+          },
+          "transition": "cut",
+          "startMs": 18588,
+          "endMs": 20658
+        },
+        {
+          "id": "s2f",
+          "line": "l06",
+          "words": "the old man ten.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "old-man"
+          },
+          "actors": [
+            {
+              "character": "old-man",
+              "pose": "stand",
+              "expression": "afraid",
+              "strength": 0.5,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.03,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "wind",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "overlay": {
+            "kind": "number",
+            "text": "10",
+            "caption": "minutes"
+          },
+          "transition": "cut",
+          "startMs": 20658,
+          "endMs": 21839
+        },
+        {
+          "id": "s2g",
+          "line": "l07",
+          "words": "Two together walk at the slower pace.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "old-man",
+              "pose": "stand",
+              "expression": "afraid",
+              "strength": 0.5,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.03,
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "woman",
+              "pose": "stand",
+              "expression": "afraid",
+              "strength": 0.5,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.15,
+              "lookAt": "ahead",
+              "holds": "bag",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "afraid",
+              "strength": 0.5,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.27,
+              "lookAt": "cheat",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "cheat",
+              "pose": "stand",
+              "expression": "calculating",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.39,
+              "lookAt": "ahead",
+              "holds": "torch",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "wind",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "startMs": 21839,
+          "endMs": 24447
+        },
+        {
+          "id": "s2h",
+          "line": "l08",
+          "words": "And the torch will last *seventeen* minutes.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "cheat"
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "pose": "wave",
+              "expression": "calculating",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.39,
+              "lookAt": "ahead",
+              "holds": "torch",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.75,
+                  "pose": "stand"
+                }
+              ]
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "wind",
+              "at": "start",
+              "gainDb": -6
+            },
+            {
+              "name": "tick",
+              "at": "start",
+              "gainDb": -4
+            }
+          ],
+          "overlay": {
+            "kind": "number",
+            "text": "17",
+            "caption": "minutes of fire"
+          },
+          "transition": "cut",
+          "startMs": 24447,
+          "endMs": 27606
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "chapter": 1,
+      "beat": "the-squeeze",
+      "mood": "closing-in",
+      "quiet": false,
+      "place": "gorge-bridge",
+      "treatment": "atmospheric",
+      "palette": "storm-slate",
+      "lines": [
+        {
+          "id": "l09",
+          "speaker": "saint",
+          "text": "You're fastest. Walk us over one at a time.",
+          "pauseAfterMs": 1300
+        },
+        {
+          "id": "l10",
+          "speaker": "trainer",
+          "text": "Ten, five and two minutes, plus two runs back, makes *nineteen* minutes.",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l11",
+          "speaker": "cheat",
+          "text": "The torch only lasts seventeen minutes.",
+          "pauseAfterMs": 1500
+        },
+        {
+          "id": "l12",
+          "speaker": "cheat",
+          "text": "So we leave the old man. Without him, we make it easily.",
+          "pauseAfterMs": 1800
+        }
+      ],
+      "shots": [
+        {
+          "id": "s3a",
+          "line": "l09",
+          "words": "You're fastest. Walk us over one at a time.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "happy",
+              "strength": 0.5,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.27,
+              "lookAt": "cheat",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.15,
+                  "lookAt": "cheat"
+                }
+              ]
+            },
+            {
+              "character": "cheat",
+              "pose": "stand",
+              "expression": "calculating",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.39,
+              "lookAt": "saint",
+              "holds": "torch",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "wind",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "startMs": 27606,
+          "endMs": 31372
+        },
+        {
+          "id": "s3b",
+          "line": "l10",
+          "words": "Ten, five and two minutes, plus two runs back,",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "cheat"
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "pose": "stand",
+              "expression": "thinking",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.39,
+              "lookAt": "up",
+              "holds": "torch",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "wind",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "startMs": 31372,
+          "endMs": 34602
+        },
+        {
+          "id": "s3c",
+          "line": "l10",
+          "words": "makes *nineteen* minutes.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "cheat"
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "pose": "stand",
+              "expression": "thinking",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.39,
+              "lookAt": "ahead",
+              "holds": "torch",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.2,
+                  "expression": "horrified"
+                }
+              ]
+            }
+          ],
+          "props": [],
+          "effects": [
+            {
+              "effect": "shock-lines",
+              "on": "cheat"
+            }
+          ],
+          "sfx": [
+            {
+              "name": "wind",
+              "at": "start",
+              "gainDb": -6
+            },
+            {
+              "name": "boom",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "overlay": {
+            "kind": "number",
+            "text": "19",
+            "caption": "minutes"
+          },
+          "transition": "cut",
+          "startMs": 34602,
+          "endMs": 36264
+        },
+        {
+          "id": "s3d",
+          "line": "l11",
+          "words": "The torch only lasts seventeen minutes.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "cheat"
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "pose": "stand",
+              "expression": "horrified",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.39,
+              "lookAt": "ahead",
+              "holds": "torch-low",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.3,
+                  "expression": "afraid"
+                }
+              ]
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "wind",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "startMs": 36264,
+          "endMs": 39032
+        },
+        {
+          "id": "s3e",
+          "line": "l12",
+          "words": "So we leave the old man.",
+          "camera": {
+            "framing": "wide",
+            "move": "push-in",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "old-man",
+              "pose": "stand",
+              "expression": "afraid",
+              "strength": 0.5,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.03,
+              "lookAt": "cheat",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "woman",
+              "pose": "stand",
+              "expression": "afraid",
+              "strength": 0.5,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.15,
+              "lookAt": "cheat",
+              "holds": "bag",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "afraid",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.27,
+              "lookAt": "cheat",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "cheat",
+              "pose": "stand",
+              "expression": "afraid",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.39,
+              "lookAt": "old-man",
+              "holds": "torch-low",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.25,
+                  "expression": "calculating"
+                }
+              ]
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "wind",
+              "at": "start",
+              "gainDb": -6
+            },
+            {
+              "name": "thunder",
+              "at": "start",
+              "gainDb": -2
+            },
+            {
+              "name": "creak",
+              "at": "middle",
+              "gainDb": -4
+            }
+          ],
+          "transition": "cut",
+          "startMs": 39032,
+          "endMs": 40622
+        },
+        {
+          "id": "s3f",
+          "line": "l12",
+          "words": "Without him, we make it easily.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "cheat"
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "pose": "stand",
+              "expression": "calculating",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.39,
+              "lookAt": "ahead",
+              "holds": "torch-low",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "wind",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "startMs": 40622,
+          "endMs": 44249
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Why does a bucket of cinema popcorn cost ten dollars?",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l02",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The surprising answer has almost nothing to do with the corn.",
+      "speed": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l03",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Everyone in the queue pays the ten dollars, because the film is about to start.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l04",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Most of us assume the cinema makes its money from our *tickets*.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l05",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "In the US and Canada, the average ticket in 2025 cost about eleven dollars and thirty cents.",
+      "speed": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l06",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Your ticket goes to the cinema, and about half of that money goes on to the studio.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l07",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Of every ticket dollar last year, the world's biggest cinema chain paid studios about forty eight cents.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l08",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The studio's cut can be *seventy* percent in the opening week, and about thirty five by week six.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l09",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Most tickets sell in those first weeks, when the cinema may keep just thirty cents of each dollar.",
+      "speed": 1,
+      "pauseAfterMs": 1200
+    }
+  ]
+}

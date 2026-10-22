@@ -1,0 +1,292 @@
+{
+  "version": 1,
+  "thumbnails": [
+    {
+      "id": "fine-that-backfired-tall",
+      "size": "9:16",
+      "why": "The notice itself is the subject: the $3 that turned a favor into a price. Tall, for Reels and Shorts.",
+      "layers": [
+        {
+          "kind": "backdrop",
+          "inner": "orange",
+          "outer": "crimson",
+          "at": {
+            "x": 0.5,
+            "y": 0.42
+          },
+          "rays": 18,
+          "deep": 0.6
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "THE FINE THAT",
+              "style": "light"
+            },
+            {
+              "text": "BACKFIRED",
+              "style": "gold"
+            }
+          ],
+          "x": 0.06,
+          "top": 0.05,
+          "size": 0.085,
+          "width": 0.88
+        },
+        {
+          "kind": "thing",
+          "prop": "notice-board-fine",
+          "x": 0.5,
+          "y": 0.93,
+          "head": 0.2
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.5,
+            "y": 0.472
+          },
+          "rx": 0.11,
+          "ry": 0.042
+        },
+        {
+          "kind": "person",
+          "character": "cheat",
+          "x": 0.66,
+          "y": 0.5,
+          "ground": 1.08,
+          "head": 0.15,
+          "pose": "stand",
+          "facing": "left",
+          "turn": 0.3,
+          "expression": "sly-grin",
+          "effects": [
+            "dollar-eyes"
+          ],
+          "outline": 0.04,
+          "looksAt": {
+            "x": 0.45,
+            "y": 0.45
+          }
+        }
+      ]
+    },
+    {
+      "id": "sorry-or-pay-tall",
+      "size": "9:16",
+      "why": "Before and after side by side: the same father sorry, then just paying. Tall, for Reels and Shorts.",
+      "layers": [
+        {
+          "kind": "split",
+          "at": 0.5,
+          "lean": 0.08,
+          "seam": 0.01,
+          "left": [
+            {
+              "kind": "backdrop",
+              "inner": "steel",
+              "outer": "denim",
+              "at": {
+                "x": 0.25,
+                "y": 0.6
+              },
+              "rays": 0,
+              "deep": 0.5
+            },
+            {
+              "kind": "person",
+              "character": "copycat",
+              "x": 0.25,
+              "y": 0.5,
+              "ground": 1.0,
+              "head": 0.12,
+              "pose": "stand",
+              "facing": "right",
+              "turn": 0.3,
+              "expression": "guilty",
+              "effects": [
+                "sweat-resting"
+              ],
+              "outline": 0.04
+            },
+            {
+              "kind": "tag",
+              "text": "NO FINE",
+              "x": 0.25,
+              "y": 0.9,
+              "size": 0.04,
+              "paint": "glint",
+              "tilt": -4
+            }
+          ],
+          "right": [
+            {
+              "kind": "backdrop",
+              "inner": "gold",
+              "outer": "orange",
+              "at": {
+                "x": 0.75,
+                "y": 0.6
+              },
+              "rays": 14,
+              "deep": 0.45
+            },
+            {
+              "kind": "person",
+              "character": "copycat",
+              "x": 0.75,
+              "y": 0.5,
+              "ground": 1.0,
+              "head": 0.12,
+              "pose": "hold-object",
+              "facing": "left",
+              "turn": 0.3,
+              "expression": "smug",
+              "effects": [],
+              "outline": 0.04
+            },
+            {
+              "kind": "thing",
+              "prop": "banknote",
+              "x": 0.545,
+              "y": 0.79,
+              "head": 0.06
+            },
+            {
+              "kind": "tag",
+              "text": "$3",
+              "x": 0.75,
+              "y": 0.9,
+              "size": 0.05,
+              "paint": "crimson",
+              "tilt": 4
+            }
+          ]
+        },
+        {
+          "kind": "band",
+          "top": 0,
+          "bottom": 0.29
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "SORRY",
+              "style": "light"
+            },
+            {
+              "text": "OR PAY?",
+              "style": "gold"
+            }
+          ],
+          "x": 0.06,
+          "top": 0.04,
+          "size": 0.1,
+          "width": 0.88
+        }
+      ]
+    },
+    {
+      "id": "paying-to-be-late-tall",
+      "size": "9:16",
+      "why": "The cost of it: the clock past the hour and the boy left waiting. Tall, for Reels and Shorts.",
+      "layers": [
+        {
+          "kind": "room",
+          "place": "daycare",
+          "palette": "dusk-violet",
+          "treatment": "atmospheric"
+        },
+        {
+          "kind": "shade",
+          "from": "top",
+          "reach": 0.4,
+          "strength": 0.8
+        },
+        {
+          "kind": "glow",
+          "at": {
+            "x": 0.5,
+            "y": 0.8
+          },
+          "radius": 0.22,
+          "paint": "gold",
+          "strength": 0.6
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "PAYING TO",
+              "style": "light"
+            },
+            {
+              "text": "BE LATE",
+              "style": "gold"
+            }
+          ],
+          "x": 0.06,
+          "top": 0.05,
+          "size": 0.1,
+          "width": 0.88
+        },
+        {
+          "kind": "thing",
+          "prop": "wall-clock-4-40",
+          "x": 0.5,
+          "y": 1.224,
+          "head": 0.24
+        },
+        {
+          "kind": "extra",
+          "x": 0.55,
+          "y": 0.5,
+          "ground": 0.97,
+          "head": 0.075,
+          "pose": "stand",
+          "facing": "left",
+          "turn": 0.3,
+          "expression": "sad",
+          "look": {
+            "age": "child",
+            "outfit": {
+              "clothes": {
+                "top": {
+                  "kind": "t-shirt",
+                  "cloth": "glint"
+                },
+                "bottom": {
+                  "kind": "trousers",
+                  "cloth": "denim"
+                },
+                "shoes": {
+                  "kind": "sneakers",
+                  "cloth": "white"
+                },
+                "hat": {
+                  "kind": "beanie",
+                  "cloth": "orange"
+                }
+              }
+            }
+          },
+          "light": 1,
+          "outline": 0.04,
+          "effects": []
+        },
+        {
+          "kind": "tag",
+          "text": "STILL WAITING",
+          "x": 0.5,
+          "y": 0.665,
+          "size": 0.034,
+          "paint": "cream",
+          "tilt": -4
+        }
+      ]
+    }
+  ]
+}

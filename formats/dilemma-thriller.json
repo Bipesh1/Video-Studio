@@ -1,0 +1,108 @@
+{
+  "id": "dilemma-thriller",
+  "name": "Dilemma thriller (game theory)",
+  "description": "A game theory thriller for The Dilemma Table, mixed in with its usual videos: a few of the fixed cast trapped in a high-stakes game in one place, told from inside the danger by the Trainer's voice, with a twist that is a real result of game theory. Pick it only for game theory thriller scripts (prompts/dilemma-thriller.md).",
+  "version": 1,
+  "structure": [
+    {
+      "id": "the-question",
+      "purpose": "One question to the viewer in big words over the dangerous place, already tense, then one short line promising an answer.",
+      "share": 0.05,
+      "moods": ["tense", "unease"],
+      "preferredShots": ["wide", "close-up"],
+      "backgroundTreatment": "atmospheric"
+    },
+    {
+      "id": "the-rules",
+      "purpose": "Where we are, who is here, what each wants, the one rule nobody can break; the clock starts.",
+      "share": 0.17,
+      "moods": ["unease", "tense"],
+      "preferredShots": ["wide", "medium"],
+      "backgroundTreatment": "atmospheric"
+    },
+    {
+      "id": "the-squeeze",
+      "purpose": "Each choice makes it worse: an offer, a lie, a threat, a betrayal, with thoughts at the decisions and a cliffhanger.",
+      "share": 0.33,
+      "moods": ["closing-in", "tense"],
+      "preferredShots": ["medium", "close-up", "eyes", "over-shoulder"],
+      "backgroundTreatment": "atmospheric"
+    },
+    {
+      "id": "the-twist",
+      "purpose": "The viewer is asked what happens next, a silence, then the surprising result shown happening and why it had to happen.",
+      "share": 0.2,
+      "moods": ["closing-in", "tense"],
+      "preferredShots": ["close-up", "eyes", "wide"],
+      "backgroundTreatment": "atmospheric"
+    },
+    {
+      "id": "it-was-real",
+      "purpose": "In the Trainer's dark room: it is a real puzzle or study, who found it and the year, and where the viewer meets the same thing.",
+      "share": 0.13,
+      "moods": ["aftermath", "reflective"],
+      "preferredShots": ["wide", "medium", "close-up"],
+      "backgroundTreatment": "atmospheric"
+    },
+    {
+      "id": "the-answer",
+      "purpose": "The outside voice gives one thing a person can do, and the Trainer answers the opening question in one line.",
+      "share": 0.12,
+      "moods": ["aftermath", "reflective"],
+      "preferredShots": ["eyes", "close-up", "wide"],
+      "backgroundTreatment": "atmospheric"
+    }
+  ],
+  "lengthRange": {
+    "min": 60,
+    "max": 130
+  },
+  "shotLength": {
+    "min": 2,
+    "max": 4
+  },
+  "hookRules": [
+    "The first 3 seconds ask one question of at most 12 words about \"you\", spoken and shown as big words over a scene that is already tense. No greeting, no logo, no game theory words.",
+    "It is a real question that the ending answers, and it does not start with \"In this video\", \"Did you know\", \"Have you ever wondered\" or \"Imagine\".",
+    "Between 3 and 10 seconds one line promises the answer will surprise."
+  ],
+  "pacing": {
+    "wordsPerMinute": {
+      "min": 105,
+      "max": 155
+    },
+    "rehookEveryS": {
+      "min": 12,
+      "max": 20
+    },
+    "pauseMs": {
+      "normal": 500,
+      "afterBeat": 1300
+    }
+  },
+  "sfxDensity": {
+    "level": "medium",
+    "perMinute": {
+      "min": 4,
+      "max": 10
+    }
+  },
+  "captionMode": "full",
+  "roomTone": "wind",
+  "finish": {
+    "acting": "gentle",
+    "onTwos": true,
+    "shadows": true,
+    "grain": 0.55,
+    "vignette": 0.4,
+    "boil": 0.25
+  },
+  "factRules": {
+    "sourcesRequired": true,
+    "rules": [
+      "The twist is the real result of the puzzle, game or study named at the end, worked out step by step and checked against a saved source.",
+      "Every number is the source's own. A rounded figure is spoken as about, nearly or more than, never as exact.",
+      "The story is invented to show the idea and is never passed off as a real event."
+    ]
+  }
+}

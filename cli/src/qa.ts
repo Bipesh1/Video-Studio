@@ -13,6 +13,7 @@
  * It ends with an error while anything is left to fix, or while the stills and strips of this
  * very video have not been looked at.
  */
+import { picturesSha } from './pictures.js';
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import os from 'node:os';
@@ -23,6 +24,8 @@ import {
   SIZE_NAMES,
   checkPlan,
   checkStoryboard,
+  emptyPictureCheck,
+  stillPictureCheck,
   fileCheck,
   lengthCheck,
   lookChecks,
@@ -48,7 +51,7 @@ import {
 } from '@studio/shared';
 import type { MadeFrom, QaCheck, QaLook, QaReport, QaStrip, SizeName } from '@studio/shared';
 import { captionCheck, pictureChecks } from '../../engine/src/stage/measure';
-import { pictureDifference } from './media.js';
+import { pictureChange, pictureDifference, pictureFill } from './media.js';
 import { projectRoot, run } from './system.js';
 import { loadStoryboard, loadWorld } from './world.js';
 
@@ -100,6 +103,8 @@ function newestVideo(): { file: string; size: SizeName } {
 
 /** A file's sound as mono samples at a low rate, enough to tell one mix from another. */
 const COMPARE_RATE = 8000;
+/** How many pictures a second are measured for an empty page. */
+const FILL_RATE = 10;
 function samplesOf(file: string): Int16Array | null {
   const raw = path.join(
     os.tmpdir(),
@@ -303,6 +308,16 @@ function main(): void {
     }
   }
   const carried = same !== null && same.findings.length === 0;
+
+  // ---- an explainer page is never left nearly empty (What's the Catch?, 2026-10-16)
+  const explains = part.scenes.some((scene) => scene.shots.some((s) => s.graphic));
+  const filled = explains
+    ? pictureFill(video, FILL_RATE, path.join(projectRoot, '.cache', 'qa'))
+    : null;
+  // ---- and never stands still for long (What's the Catch?, 2026-10-19)
+  const changed = explains
+    ? pictureChange(video, FILL_RATE, path.join(projectRoot, '.cache', 'qa'))
+    : null;
   const looked = look && (look.video === videoName || carried) ? look : null;
 
   const input = {
@@ -324,7 +339,12 @@ function main(): void {
     checkedOn: today(),
     checks: [
       fileCheck({ probe, decodeErrors: `${played.stderr ?? ''}`, size: fileSize, fps: FPS }),
-      madeFromCheck({ record, storyboard: shaOfFile(timedFile), sound }),
+      madeFromCheck({
+        record,
+        storyboard: shaOfFile(timedFile),
+        pictures: picturesSha(timedFile),
+        sound,
+      }),
       lengthCheck({ seconds, parts, format }),
       stepCheck({ storyboard: part, track, videoSeconds: seconds }),
       silenceCheck({ silences: parseSilences(`${quiet.stderr ?? ''}`, seconds * 1000), track }),
@@ -332,6 +352,8 @@ function main(): void {
       wordsHeardCheck({ mix, track }),
       captionCheck(track, size),
       ...pictureChecks(input, format ? { maxShotS: format.shotLength.max } : {}),
+      ...(filled ? [emptyPictureCheck({ filled, rate: FILL_RATE })] : []),
+      ...(changed ? [stillPictureCheck({ changed, rate: FILL_RATE })] : []),
       plan,
       ...(same ? [same] : []),
       ...lookChecks({

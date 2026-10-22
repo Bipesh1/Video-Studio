@@ -1,7 +1,7 @@
 ## Part 3. The Ink Stick art style
 
 **Style id:** `ink-stick`
-**Guide version:** 14 (2026-10-07). See the version history at the end.
+**Guide version:** 15 (2026-10-11). See the version history at the end.
 **Built from:** two reference images supplied by Biku
 - **Reference A:** a stern king in a crown, red cape and armor, under a stormy night sky with light rays
 - **Reference B:** two stick figures in a night scene under a crescent moon, one threatening and one frightened
@@ -189,6 +189,7 @@ Use the **lowest tier** that makes the character instantly recognizable.
 | **Cold dawn** | `#AFC3D6` `#D7E1EA` `#F1E3C8` | |
 | **Deep space** (outer space) | sky `#0D1020` to `#171C33`, far glow `#262D4B` | |
 | **Moon dust** (the Moon, bare worlds) | the deep space sky, ground `#9A9FA8`, shadow `#757B86` | |
+| **Table grey** (the dark room of the game theory videos) | `#222222` `#313131` `#4B4B4B` `#747474` `#A2A2A2` | Storm slate with its colour taken out |
 
 ### Style 6. Color rules
 
@@ -282,7 +283,7 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
 ```json
 {
   "id": "ink-stick",
-  "version": 14,
+  "version": 15,
   "line": {
     "color": "#16161A",
     "outlinePctOfHead": [0.011, 0.013],
@@ -355,7 +356,8 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
     "danger": ["#4A1A1E", "#6E2328", "#8A2A2E"],
     "cold-dawn": ["#AFC3D6", "#D7E1EA", "#F1E3C8"],
     "deep-space": ["#0D1020", "#171C33", "#262D4B"],
-    "moon-dust": ["#0D1020", "#171C33", "#9A9FA8", "#757B86"]
+    "moon-dust": ["#0D1020", "#171C33", "#9A9FA8", "#757B86"],
+    "table-grey": ["#222222", "#313131", "#4B4B4B", "#747474", "#A2A2A2"]
   },
   "background": {
     "outlines": false,
@@ -409,3 +411,4 @@ Save this as `styles/ink-stick/tokens.json`. The engine reads these values. The 
 | 12 | 2026-10-06 | Fine outlines, bold limbs. Biku compared five thicknesses and three mixes side by side and chose mix B: the outline of heads, costumes and props is a fine pen line (1.1 to 1.3% of head width), inner details 0.8 to 1%, face lines about 1.2% and face creases about 0.7%, while stick limbs and the torso line stay bold (5.4 to 6.2%) so plain stick figures read on a phone. The main rule and Style Check question 1 now say "clean black outline" instead of "thick". This moves away from the heavy outlines of the two reference pictures on purpose. | Biku |
 | 13 | 2026-10-06 | A move of the whole body (kneeling, sitting down, getting up, lying down, picking something up) takes 10 to 16 frames and is seen to happen, instead of snapping in 3 to 6 frames like an arm or a head. Biku, on a kneel that took two frames in the first automatic video: "looks like the posture didn't change in continuous frames". | Biku |
 | 14 | 2026-10-07 | Colors for the "what if" science videos: two background palettes, deep space (a near-black blue sky) and Moon dust (that sky over gray ground), and one accent, ocean blue, for the Earth seen from space. In space a planet, the Sun or the Moon that a shot is about is drawn as a prop, outlined and bright; far off in the sky of a place it is a background shape with no outline. | Biku (asked for the science figures) |
+| 15 | 2026-10-11 | One background palette for the game theory videos (The Dilemma Table): Table grey, the storm slate night with its colour taken out, for a dark room lit by one bare bulb. The room and its furniture are grey; the cast keep their colours and the gold is the brightest thing in the picture. Biku picked it by eye from numbered looks side by side ("2"). It belongs to that niche: no other video is asked to use it. | Biku |

@@ -5,6 +5,8 @@ import { describe, expect, it } from 'vitest';
 import { timeShots } from './assembly';
 import fixture from './fixtures/moon-tax.storyboard.json';
 import {
+  emptyPictureCheck,
+  stillPictureCheck,
   checkResult,
   clock,
   fileCheck,
@@ -448,6 +450,25 @@ describe('the video is of this plan and this sound', () => {
       'could not be compared',
     );
   });
+
+  it('passes a video whose plan changed only in its sound, when the sound is the new mix', () => {
+    // Biku, 2026-10-21: "its only changing sounds why take that much time?"
+    const record = {
+      video: 'a-v3.mp4',
+      storyboard: 'abc',
+      pictures: 'pic',
+      mix: 'new',
+      madeAt: '2026-10-21T00:00:00Z',
+      soundOn: 'a-v2.mp4',
+    };
+    const sound = { worstDb: -40, atMs: 0 };
+    expect(madeFromCheck({ record, storyboard: 'xyz', pictures: 'pic', sound }).findings).toEqual(
+      [],
+    );
+    expect(texts(madeFromCheck({ record, storyboard: 'xyz', pictures: 'other', sound }))).toContain(
+      'the plan has changed since this video was made',
+    );
+  });
 });
 
 describe('what Claude saw', () => {
@@ -646,5 +667,45 @@ describe('the report', () => {
     expect(clock(0)).toBe('0:00');
     expect(clock(8180)).toBe('0:08');
     expect(clock(83400)).toBe('1:23');
+  });
+});
+
+describe('the picture is never empty', () => {
+  it('passes a page that always has something on it', () => {
+    const check = emptyPictureCheck({ filled: Array(30).fill(0.2), rate: 10 });
+    expect(check.findings).toEqual([]);
+  });
+  it('lets a moment of empty page by, at a cut', () => {
+    const filled = [...Array(10).fill(0.2), 0, 0, 0, ...Array(10).fill(0.2)];
+    expect(emptyPictureCheck({ filled, rate: 10 }).findings).toEqual([]);
+  });
+  it('finds a stretch of nearly empty page, and when it starts', () => {
+    const filled = [...Array(20).fill(0.2), ...Array(12).fill(0.01), ...Array(5).fill(0.3)];
+    const [finding] = emptyPictureCheck({ filled, rate: 10 }).findings;
+    expect(finding?.level).toBe('problem');
+    expect(finding?.atMs).toBe(2000);
+    expect(finding?.text).toContain('1.2 s');
+  });
+  it('finds an empty page that runs to the end', () => {
+    const filled = [...Array(5).fill(0.2), ...Array(8).fill(0)];
+    expect(emptyPictureCheck({ filled, rate: 10 }).findings).toHaveLength(1);
+  });
+});
+
+describe('the picture keeps moving', () => {
+  it('passes a picture where something new happens every second or two', () => {
+    const changed = Array.from({ length: 60 }, (_, i) => (i % 15 < 5 ? 12 : 1.2));
+    expect(stillPictureCheck({ changed, rate: 10 }).findings).toEqual([]);
+  });
+  it('lets a short hold by', () => {
+    const changed = [...Array(10).fill(10), ...Array(19).fill(1), ...Array(10).fill(10)];
+    expect(stillPictureCheck({ changed, rate: 10 }).findings).toEqual([]);
+  });
+  it('finds a picture stuck for more than three seconds, and when it starts', () => {
+    const changed = [...Array(10).fill(10), ...Array(30).fill(1), ...Array(10).fill(10)];
+    const [finding] = stillPictureCheck({ changed, rate: 10 }).findings;
+    expect(finding?.level).toBe('problem');
+    expect(finding?.atMs).toBe(1000);
+    expect(finding?.text).toContain('4.0 s');
   });
 });

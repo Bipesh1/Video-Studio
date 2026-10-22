@@ -201,6 +201,22 @@ export const PLACES = {
         ],
       },
     }),
+  /**
+   * A gorge at night in a coming storm: a near cliff on the left, a far cliff on the right, a
+   * deep drop between, and an old rope bridge across it (`GORGE` says where the edges stand).
+   */
+  'gorge-bridge': (seed: number) =>
+    backgroundSpec('atmospheric', 'storm-slate', seed, {
+      horizon: 0.72,
+      ground: 'gorge',
+      // Far ridges along the skyline, so the bridge is high up in open country.
+      hills: true,
+      tufts: 0,
+      rays: false,
+      stars: 10,
+      clouds: 7,
+      silhouettes: [],
+    }),
   /** Open sea to the horizon, with nothing on it. */
   sea: (seed: number) =>
     backgroundSpec('simple', 'clear-day', seed, {
@@ -245,6 +261,155 @@ export const PLACES = {
         ],
       },
     }),
+  /** A game-show stage: a curtain across the back and one spotlight on the middle of the floor. */
+  'game-show': (seed: number) =>
+    backgroundSpec('atmospheric', 'warm-interior', seed, {
+      horizon: 0.72,
+      ground: 'floor',
+      tufts: 0,
+      silhouettes: [],
+      interior: {
+        windows: [],
+        columns: 0,
+        banners: 0,
+        shelf: false,
+        fittings: [
+          { kind: 'curtain', x: 0.5 },
+          { kind: 'spotlight', x: 0.5 },
+        ],
+      },
+    }),
+  /** An auction room late at night: a bare wall with two pictures and one lamp over the middle. */
+  'auction-room': (seed: number) =>
+    backgroundSpec('atmospheric', 'warm-interior', seed, {
+      horizon: 0.72,
+      ground: 'floor',
+      tufts: 0,
+      silhouettes: [],
+      interior: {
+        windows: [],
+        columns: 0,
+        banners: 0,
+        shelf: false,
+        fittings: [
+          { kind: 'picture', x: 0.16 },
+          { kind: 'picture', x: 0.84 },
+          { kind: 'spotlight', x: 0.5 },
+        ],
+      },
+    }),
+  /**
+   * A restaurant in the evening: warm walls, two windows on the dark street, hanging lamps,
+   * pictures, a plant, and other diners at small tables further back. The table the story sits
+   * at is the prop `dining-table` (the comedy short of the split bill, 2026-10-16).
+   */
+  restaurant: (seed: number) =>
+    backgroundSpec('simple', 'warm-interior', seed, {
+      horizon: 0.72,
+      ground: 'floor',
+      tufts: 0,
+      silhouettes: [],
+      interior: {
+        windows: [
+          { x: 0.1, y: 0.16, w: 0.12, h: 0.24 },
+          { x: 0.9, y: 0.16, w: 0.12, h: 0.24 },
+        ],
+        columns: 0,
+        banners: 0,
+        shelf: false,
+        fittings: [
+          { kind: 'picture', x: 0.3 },
+          { kind: 'picture', x: 0.7 },
+          { kind: 'pendant', x: 0.22 },
+          { kind: 'pendant', x: 0.5 },
+          { kind: 'pendant', x: 0.78 },
+          { kind: 'diner-table', x: 0.18 },
+          { kind: 'diner-table', x: 0.84 },
+          { kind: 'plant', x: 0.99 },
+        ],
+      },
+    }),
+  /**
+   * The front of a small daycare at closing time, seen from the pavement: a door with lit panes,
+   * the name DAYCARE over it in toy blocks, and a wide playroom window lit warm from inside with
+   * children's paper pictures on the glass. In the dusk colours by default. Its notice board and
+   * clock are props (`notice-board`, `wall-clock-4-15` and the rest), hung beside the door
+   * (the late fine, 2026-10-17).
+   */
+  daycare: (seed: number) =>
+    backgroundSpec('atmospheric', 'dusk-violet', seed, {
+      horizon: 0.72,
+      ground: 'floor',
+      tufts: 0,
+      silhouettes: [],
+      interior: {
+        windows: [],
+        columns: 0,
+        banners: 0,
+        shelf: false,
+        fittings: [
+          { kind: 'daycare-door', x: 0.3 },
+          { kind: 'daycare-sign', x: 0.3 },
+          { kind: 'daycare-window', x: 0.74 },
+        ],
+      },
+    }),
+  /**
+   * A kitchen at home (2026-10-20, "She Wrote Down Every Dish She Washed for a Year"): a row of
+   * cupboards high on the wall over tiles, and a tall fridge at the end. The counter with its
+   * sink and dishes is the prop `kitchen-sink`, the window the prop `window-night` (or
+   * `window-seasons`), and the table and chairs are props too.
+   */
+  kitchen: (seed: number) =>
+    backgroundSpec('simple', 'warm-interior', seed, {
+      horizon: 0.72,
+      ground: 'floor',
+      tufts: 0,
+      silhouettes: [],
+      interior: {
+        windows: [],
+        columns: 0,
+        banners: 0,
+        shelf: false,
+        fittings: [
+          { kind: 'kitchen-cupboards', x: 0.36 },
+          { kind: 'fridge', x: 0.92 },
+        ],
+      },
+    }),
+  /** A classroom: a board with a chart on a plain wall and one window. */
+  classroom: (seed: number) =>
+    backgroundSpec('simple', 'cold-dawn', seed, {
+      horizon: 0.72,
+      ground: 'floor',
+      tufts: 0,
+      silhouettes: [],
+      interior: {
+        windows: [{ x: 0.82, y: 0.14, w: 0.14, h: 0.2 }],
+        columns: 0,
+        banners: 0,
+        shelf: false,
+        fittings: [{ kind: 'board', x: 0.4 }],
+      },
+    }),
+  /**
+   * The Table: the dark room of the game theory videos. Bare grey walls and floor, and the
+   * light of one bulb on the wall behind the table. Hang the `bulb` prop over the table.
+   */
+  'the-table': (seed: number) =>
+    backgroundSpec('atmospheric', 'table-grey', seed, {
+      horizon: 0.7,
+      ground: 'floor',
+      tufts: 0,
+      silhouettes: [],
+      interior: {
+        windows: [],
+        columns: 0,
+        banners: 0,
+        shelf: false,
+        fittings: [{ kind: 'lamp-glow', x: 0.5 }],
+      },
+    }),
 } as const satisfies Record<string, (seed: number) => BackgroundSpec>;
 
 export type PlaceName = keyof typeof PLACES;
@@ -270,8 +435,10 @@ export function sceneBackground(
   seed: number,
 ): BackgroundSpec {
   const place = PLACES[name](seed);
-  // Space is always dark: a place with no ground, or the Moon's dust, keeps its own sky.
+  // Space is always dark: a place with no ground, or the Moon's dust, keeps its own sky. So
+  // does the gorge in its storm: no moon and no light beams, whatever the scene's colours.
   if (place.ground === 'none' || place.ground === 'dust') return place;
+  if (place.ground === 'gorge') return { ...place, treatment, palette };
   const light = backgroundSpec(treatment, palette, seed);
   const night = NIGHT_PALETTES.includes(palette) && !place.interior;
   return {

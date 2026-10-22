@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "id": "2026-10-22-short-tools-demo",
+  "created": "2026-10-21",
+  "mode": "as-is",
+  "format": "fine-print",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "sizes": [
+    "9:16"
+  ],
+  "vertical": "full",
+  "masterPrompt": "prompts/fine-print.md"
+}

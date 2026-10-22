@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "title": "Table kit test",
+  "request": "A test of the Table kit in the builder: the room, the eyes shot, a thought, the tilt and the failing light. Not a video for viewers.",
+  "mode": "as-is",
+  "format": "story",
+  "brand": "my-page",
+  "voice": "narrator",
+  "speakers": [
+    {
+      "id": "saint",
+      "name": "The Saint",
+      "voice": "saint"
+    }
+  ],
+  "lines": [
+    {
+      "id": "n1",
+      "speaker": "narrator",
+      "text": "Would you sit down at *this table?*",
+      "beat": "hook",
+      "chapter": 1,
+      "pauseAfterMs": 1500
+    },
+    {
+      "id": "n2",
+      "speaker": "narrator",
+      "text": "Two strangers. One pile of gold.",
+      "beat": "setup",
+      "chapter": 1,
+      "pauseAfterMs": 1500
+    },
+    {
+      "id": "s1",
+      "speaker": "saint",
+      "text": "He looks calm. So I am calm.",
+      "beat": "rising-trouble",
+      "chapter": 1,
+      "pauseAfterMs": 1500,
+      "thought": true
+    },
+    {
+      "id": "n3",
+      "speaker": "narrator",
+      "text": "One of them reaches first.",
+      "beat": "rising-trouble",
+      "chapter": 1,
+      "pauseAfterMs": 1500
+    },
+    {
+      "id": "n4",
+      "speaker": "narrator",
+      "text": "And then it is done.",
+      "beat": "turning-point",
+      "chapter": 1,
+      "pauseAfterMs": 1500
+    },
+    {
+      "id": "n5",
+      "speaker": "narrator",
+      "text": "The light does not stay on for anyone.",
+      "beat": "payoff",
+      "chapter": 1,
+      "pauseAfterMs": 1500
+    },
+    {
+      "id": "n6",
+      "speaker": "narrator",
+      "text": "Would you?",
+      "beat": "closing-line",
+      "chapter": 1,
+      "pauseAfterMs": 1500
+    }
+  ],
+  "sources": [],
+  "changes": []
+}

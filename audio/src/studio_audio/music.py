@@ -23,7 +23,7 @@ import shutil
 import subprocess
 import sys
 import zlib
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from pathlib import Path
 
 import numpy as np
@@ -38,7 +38,7 @@ SR = SAMPLE_RATE
 STEM_LUFS = -18.0
 """Every mood comes out at this loudness, so a change of mood is not a change of volume."""
 CROSSFADE_S = 1.5
-MUSIC_VERSION = 1
+MUSIC_VERSION = 2
 """Raise when the writing changes, so saved renders are made again."""
 BEATS = 4
 
@@ -54,6 +54,7 @@ KICK, RIM, SNARE, CLAP, HAT, OPEN_HAT, CRASH, TAMB, SHAKER, BLOCK_HI, BLOCK_LO =
 MAJOR = (0, 2, 4, 5, 7, 9, 11)
 MINOR = (0, 2, 3, 5, 7, 8, 10)
 LYDIAN = (0, 2, 4, 6, 7, 9, 11)
+PHRYGIAN = (0, 1, 3, 5, 7, 8, 10)
 
 QUALITIES = {
     "maj": (0, 4, 7),
@@ -109,6 +110,45 @@ class Mood:
     drone: Drone | None = None
     reverb: float = 0.6
     extra: dict = field(default_factory=dict)
+
+
+# ------------------------------------------------------------------ a video's own music
+
+PALETTES: dict[str, dict[str, int]] = {
+    # Each mood's own instruments.
+    "own": {},
+    # The body: soft bells and a warm pad, a round bass, like something living.
+    "body": {"melody": VIBES, "arp": MARIMBA, "stabs": EPIANO, "pad": WARM_PAD, "bass": FINGER_BASS},
+    # Space: a flute over a harp, slow strings, wide and floating.
+    "space": {"melody": FLUTE, "arp": HARP, "stabs": GLOCK, "pad": SLOW_STRINGS, "bass": BASS},
+    # Water and the sea: harp and flute, flowing.
+    "water": {"melody": FLUTE, "arp": HARP, "stabs": VIBES, "pad": SLOW_STRINGS, "bass": FINGER_BASS},
+    # Food and fun: plucked strings, a xylophone, a tuba bass.
+    "food": {"melody": XYLO, "arp": PIZZ, "stabs": PIZZ, "pad": STRINGS, "bass": TUBA},
+    # A mystery: a clarinet, trembling strings, a cello under.
+    "mystery": {"melody": CLARINET, "arp": TREMOLO, "stabs": PIZZ, "pad": CELLO, "bass": BASS},
+    # Bright everyday: piano and nylon guitar.
+    "bright": {"melody": PIANO, "arp": NYLON, "stabs": PIANO, "pad": STRINGS, "bass": FINGER_BASS},
+}
+"""The instruments a video's music is played on, by role, chosen for its topic (2026-10-21, Biku:
+every Short "has the same background sounds"). Drums keep their kit."""
+
+
+def coloured(mood: Mood, score: dict | None) -> Mood:
+    """The mood moved to the video's own key and speed, on its palette's instruments."""
+    if not score:
+        return mood
+    palette = PALETTES.get(str(score.get("palette", "own")), {})
+    layers = tuple(
+        replace(layer, program=palette.get(layer.role, layer.program)) if layer.role != "drums" else layer
+        for layer in mood.layers
+    )
+    return replace(
+        mood,
+        key=mood.key + int(score.get("shift", 0)),
+        tempo=max(40, int(round(mood.tempo * float(score.get("tempo", 1.0))))),
+        layers=layers,
+    )
 
 
 MOODS: dict[str, Mood] = {
@@ -242,6 +282,48 @@ MOODS: dict[str, Mood] = {
             None,
             0.4,
         ),
+        # Three darker moods, written for the game theory videos: the room, the trap, what stays.
+        Mood(
+            "unease",
+            "Something is wrong and nobody says so: a low held note, far strings, a few lonely piano notes",
+            54, 62, PHRYGIAN,
+            ((0, "min"), (0, "min"), (1, "maj"), (0, "min")),
+            (
+                Layer("pad", SLOW_STRINGS, "", 38, 50),
+                Layer("bass", CELLO, "whole", 56, 38),
+                Layer("melody", PIANO, "", 60, 74, 1.0, 0.5, "long"),
+            ),
+            Drone(-5.0, -2, "dark"),
+            0.9,
+        ),
+        Mood(
+            "closing-in",
+            "The trap shuts: a tight plucked figure that will not stop, a drum like a pulse, low strings pressing",
+            112, 57, MINOR,
+            ((0, "min"), (0, "min"), (8, "maj"), (0, "min"), (0, "min"), (5, "min"), (8, "maj"), (7, "maj")),
+            (
+                Layer("arp", PIZZ, "skip8", 62, 57, 0.4),
+                Layer("bass", CELLO, "pulse8", 94, 33, 0.5),
+                Layer("pad", TREMOLO, "", 48, 57),
+                Layer("melody", CLARINET, "", 54, 57, 0.95, 0.45, "long"),
+                Layer("drums", 0, "heart", 78),
+            ),
+            Drone(-10.0, -2, "dark"),
+            0.6,
+        ),
+        Mood(
+            "aftermath",
+            "What is left when it is over: one slow low chord at a time and a cold, high bell line",
+            46, 64, MINOR,
+            ((0, "min"), (0, "min"), (5, "min"), (0, "min")),
+            (
+                Layer("stabs", PIANO, "toll", 54, 48, 1.0),
+                Layer("bass", CELLO, "whole", 44, 40),
+                Layer("melody", GLOCK, "", 44, 79, 1.0, 0.5, "long"),
+            ),
+            Drone(-8.0, -2, "dark"),
+            0.95,
+        ),
     )
 }
 
@@ -265,6 +347,7 @@ STABS: dict[str, list[tuple[float, float, float]]] = {
     "offbeat": [(1, 0.5, 1.0), (3, 0.5, 1.0)],
     "strum": [(0, 1, 1.0), (1, 0.5, 0.7), (1.5, 1, 0.9), (2.5, 0.5, 0.7), (3, 0.5, 0.95), (3.5, 0.5, 0.7)],
     "fanfare": [(0, 1.5, 1.0), (1.5, 0.5, 0.8), (2, 1, 0.95), (3, 1, 0.85)],
+    "toll": [(0, 4, 1.0)],
 }
 BASS_LINES: dict[str, list[tuple[float, float, int, float]]] = {
     # start, length, which chord note (0 root, 2 fifth), strength
@@ -281,6 +364,8 @@ DRUMS: dict[str, list[tuple[float, int, float]]] = {
     "march": [(0, KICK, 1.0), (2, KICK, 0.9), (0, SNARE, 0.8), (0.75, SNARE, 0.5), (1, SNARE, 0.9), (2, SNARE, 0.8), (2.5, SNARE, 0.6), (3, SNARE, 0.9), (3.5, SNARE, 0.55), (3.75, SNARE, 0.6)],
     "tick": [(i * 0.5, SHAKER, 0.55 if i % 2 == 0 else 0.4) for i in range(8)] + [(1, RIM, 0.7), (3, RIM, 0.7), (2.5, BLOCK_HI, 0.6)],
     "comic": [(0, KICK, 0.9), (2, KICK, 0.85), (1, HAT, 0.7), (3, HAT, 0.7), (1.5, BLOCK_LO, 0.6), (3.5, BLOCK_HI, 0.75)],
+    # A pulse, two close blows and a wait, with a dry tap marking the time between.
+    "heart": [(0, KICK, 1.0), (0.5, KICK, 0.7), (2, KICK, 0.95), (2.5, KICK, 0.65), (1, RIM, 0.5), (3, RIM, 0.55), (3.5, RIM, 0.35)],
 }
 
 
@@ -549,9 +634,11 @@ def render(
     seed: int = 0,
     overrides: Path | None = MUSIC_OVERRIDES,
     use_cache: bool = True,
+    score: dict | None = None,
 ) -> np.ndarray:
-    """One mood at the given length: 48 kHz stereo at the stem loudness, faded in and out."""
-    mood = resolve(name)
+    """One mood at the given length: 48 kHz stereo at the stem loudness, faded in and out. With
+    a video's score, in its own key, speed and instruments."""
+    mood = coloured(resolve(name), score)
     n = int(round(seconds * SR))
     found = find_override(overrides, mood.name) if overrides else None
     if found:
@@ -601,9 +688,9 @@ def crossfade(a: np.ndarray, b: np.ndarray, seconds: float = CROSSFADE_S) -> np.
     return np.concatenate([a[: len(a) - k], blend, b[k:]])
 
 
-def arc(segments: list[dict], total_s: float, seed: int = 0) -> np.ndarray:
+def arc(segments: list[dict], total_s: float, seed: int = 0, score: dict | None = None) -> np.ndarray:
     """Music for a whole video: each segment names a mood and when it starts (ms). Moods blend
-    into each other over a second and a half."""
+    into each other over a second and a half. A score gives the video its own music."""
     if not segments:
         return np.zeros((int(total_s * SR), 2))
     ordered = sorted(segments, key=lambda s: s["startMs"])
@@ -613,7 +700,7 @@ def arc(segments: list[dict], total_s: float, seed: int = 0) -> np.ndarray:
         end = ordered[i + 1]["startMs"] / 1000 if i + 1 < len(ordered) else total_s
         last = i + 1 == len(ordered)
         length = max(0.5, end - start + (0 if last else CROSSFADE_S))
-        piece = render(seg["mood"], length, seed + i)
+        piece = render(seg["mood"], length, seed + i, score=score)
         if out is None:
             lead = np.zeros((int(start * SR), 2))
             out = np.concatenate([lead, piece])

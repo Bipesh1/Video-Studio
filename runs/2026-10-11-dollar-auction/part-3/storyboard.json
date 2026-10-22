@@ -1,0 +1,979 @@
+{
+  "version": 1,
+  "title": "The Dollar Auction",
+  "request": "now make a video on this script",
+  "mode": "as-is",
+  "format": "explainer",
+  "style": "ink-stick",
+  "brand": "my-page",
+  "voice": "narrator",
+  "seed": 5109,
+  "sources": [
+    "Martin Shubik, The Dollar Auction Game: A Paradox in Noncooperative Behavior and Escalation, Journal of Conflict Resolution, March 1971, pages 109 to 111, as quoted word for word by Timothy Taylor, https://conversableeconomist.com/2011/11/15/martin-shubiks-dollar-auction-game/ : the rule (the highest and the second-highest bidder both pay, only the highest gets the dollar); published in 1971; best played during a party when spirits are high; a total of payments between three and five dollars is not uncommon; once two bids are in, the escalation is real. Sure: read through Taylor's quotations; the scan of the paper itself could not be read.",
+    "J. Keith Murnighan, A Very Extreme Case of the Dollar Auction, Journal of Management Education, 2002, volume 26, pages 56 to 69, https://www.kellogg.northwestern.edu/faculty/research/detail/2002/a-very-extreme-case-of-the-dollar-auction ; figure as reported by Gillian Ku, https://www.kellogg.northwestern.edu/research/ktag/resources/papers/ku.pdf : a 20 dollar bill sold for 2,000 dollars in an executive MBA class (a hundred times its worth is 2,000 divided by 20). Fairly sure: three academic summaries agree; the article itself was not opened.",
+    "Ned Augenblick, The Sunk-Cost Fallacy in Penny Auctions, Review of Economic Studies, 2016, volume 83, pages 58 to 86, https://kylewoodward.com/blog-data/pdfs/references/augenblick-the-review-of-economic-studies-2015A.pdf : a real penny auction website made about 26 million dollars in profit across 166,000 auctions, September 2005 to June 2009; when it auctioned cash, average revenue was 204% of face value across more than 2,000 cash auctions (about two dollars for every dollar); the paper says the penny auction shares many characteristics with the dollar auction (a close cousin). Sure: the full paper was read.",
+    "Barry O'Neill, International Escalation and the Dollar Auction, Journal of Conflict Resolution, 1986, volume 30, pages 33 to 50, https://ideas.repec.org/a/sae/jocore/v30y1986i1p33-50.html : with 2 dollars 50 each, the first bidder should open at 60 cents and the other should stay silent. Sure of the figures, which are in the paper's own abstract; the full article was not opened.",
+    "Wikipedia, Dollar auction, https://en.wikipedia.org/wiki/Dollar_auction : bids start at a nickel and rise in nickels. Fairly sure: not checked against the original paper; it matches O'Neill's 60 cent answer.",
+    "Biku's accuracy notes (script-brief.md): the opening sale (1.85 and 1.80) and every bid the cast makes are an invented scene."
+  ],
+  "appliedLessons": [
+    "L-0013",
+    "L-0023",
+    "L-0029",
+    "L-0030",
+    "L-0031",
+    "L-0033"
+  ],
+  "cast": [
+    {
+      "id": "cheat",
+      "name": "The Cheat",
+      "card": "cheat"
+    },
+    {
+      "id": "copycat",
+      "name": "The Copycat",
+      "card": "copycat"
+    },
+    {
+      "id": "saint",
+      "name": "The Saint",
+      "card": "saint"
+    },
+    {
+      "id": "you",
+      "name": "You, in the green cap",
+      "card": "you"
+    },
+    {
+      "id": "guest-a",
+      "name": "A party guest",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "t-shirt",
+              "cloth": "orange"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "denim"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "guest-b",
+      "name": "Another party guest",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "onePiece": {
+              "kind": "dress",
+              "cloth": "crimson"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "guest-c",
+      "name": "A third party guest",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "hoodie",
+              "cloth": "ocean"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "student-a",
+      "name": "A business student",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "white",
+              "sleeves": "long"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            },
+            "tie": {
+              "cloth": "denim",
+              "stripe": "glint"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "student-b",
+      "name": "Another business student",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "cream",
+              "sleeves": "long"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "brown"
+            },
+            "tie": {
+              "cloth": "forest",
+              "stripe": "gold"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    }
+  ],
+  "series": "game-theory",
+  "scenes": [
+    {
+      "id": "s6",
+      "chapter": 1,
+      "beat": "surprise",
+      "mood": "curious",
+      "place": "auction-room",
+      "treatment": "atmospheric",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "n26",
+          "speaker": "narrator",
+          "text": "I'd rather you missed this part.",
+          "speed": 0.95,
+          "pauseAfterMs": 350
+        },
+        {
+          "id": "n27",
+          "speaker": "narrator",
+          "text": "A game theorist solved my auction.",
+          "speed": 0.95,
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "n28",
+          "speaker": "narrator",
+          "text": "Give both players two dollars and fifty cents.",
+          "speed": 0.95
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6a",
+          "line": "n26",
+          "words": "I'd rather you missed this part.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "cash-jar",
+              "x": 0.598,
+              "size": 1.55
+            },
+            {
+              "prop": "gavel",
+              "x": 0.536,
+              "y": 2.325,
+              "size": 1.55
+            },
+            {
+              "prop": "podium",
+              "x": 0.5,
+              "size": 1.55
+            },
+            {
+              "prop": "banknote",
+              "x": 0.409,
+              "y": 2.325,
+              "size": 1.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "fade",
+          "startMs": 0,
+          "endMs": 2180
+        },
+        {
+          "id": "s6b",
+          "line": "n27",
+          "words": "A game theorist solved my auction.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "pose": "stand",
+              "expression": "thinking",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "banknote",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "head-tilt",
+              "expression": "thinking",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.7,
+              "lookAt": "banknote",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "cash-jar",
+              "x": 0.563
+            },
+            {
+              "prop": "gavel",
+              "x": 0.523,
+              "y": 1.5
+            },
+            {
+              "prop": "podium",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote",
+              "x": 0.441,
+              "y": 1.5
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "label",
+            "text": "Solved in 1986"
+          },
+          "transition": "cut",
+          "startMs": 2180,
+          "endMs": 4720
+        },
+        {
+          "id": "s6c",
+          "line": "n28",
+          "words": "Give both players two dollars and fifty cents.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "cash-jar",
+              "x": 0.598,
+              "size": 1.55
+            },
+            {
+              "prop": "gavel",
+              "x": 0.536,
+              "y": 2.325,
+              "size": 1.55
+            },
+            {
+              "prop": "podium",
+              "x": 0.5,
+              "size": 1.55
+            },
+            {
+              "prop": "banknote",
+              "x": 0.409,
+              "y": 2.325,
+              "size": 1.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "EACH PLAYER HAS",
+              "$2.50"
+            ],
+            "stress": 1
+          },
+          "transition": "cut",
+          "startMs": 4720,
+          "endMs": 7840
+        }
+      ]
+    },
+    {
+      "id": "s6replay",
+      "chapter": 1,
+      "beat": "surprise",
+      "mood": "curious",
+      "place": "auction-room",
+      "treatment": "atmospheric",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "n29",
+          "speaker": "narrator",
+          "text": "Perfect logic says one opening bid of *sixty cents.*",
+          "speed": 0.95,
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "n30",
+          "speaker": "narrator",
+          "text": "The other player *stays silent.*",
+          "speed": 0.95,
+          "pauseAfterMs": 1000
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6d",
+          "line": "n29",
+          "words": "Perfect logic says one opening bid of *sixty cents.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "cheat"
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "pose": "stand",
+              "expression": "thinking",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "up",
+              "holds": "paddle-60c",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.45,
+                  "pose": "wave",
+                  "expression": "smug",
+                  "lookAt": "camera"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "cash-jar-low",
+              "x": 0.563
+            },
+            {
+              "prop": "gavel",
+              "x": 0.523,
+              "y": 1.5
+            },
+            {
+              "prop": "podium",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote",
+              "x": 0.441,
+              "y": 1.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "click",
+              "at": "middle",
+              "gainDb": 0
+            }
+          ],
+          "transition": "fade",
+          "startMs": 7840,
+          "endMs": 11570
+        },
+        {
+          "id": "s6e",
+          "line": "n30",
+          "words": "The other player *stays silent.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "pose": "wave",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "copycat",
+              "holds": "paddle-60c",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "cross-arms",
+              "expression": "neutral",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.7,
+              "lookAt": "cheat",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "cash-jar-low",
+              "x": 0.563
+            },
+            {
+              "prop": "gavel-knock",
+              "x": 0.523,
+              "y": 1.5
+            },
+            {
+              "prop": "podium",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote",
+              "x": 0.441,
+              "y": 1.5,
+              "tag": "60¢"
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "thud",
+              "at": "start",
+              "gainDb": 0
+            },
+            {
+              "name": "ding",
+              "at": "end",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 11570,
+          "endMs": 14380
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "chapter": 1,
+      "beat": "takeaway",
+      "mood": "reflective",
+      "place": "auction-room",
+      "treatment": "atmospheric",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "n31",
+          "speaker": "narrator",
+          "text": "The trap was never the dollar, it was *the second bid.*",
+          "speed": 0.95,
+          "pauseAfterMs": 700
+        }
+      ],
+      "shots": [
+        {
+          "id": "s7a",
+          "line": "n31",
+          "words": "The trap was never the dollar,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "cash-jar-low",
+              "x": 0.598,
+              "size": 1.55
+            },
+            {
+              "prop": "gavel",
+              "x": 0.536,
+              "y": 2.325,
+              "size": 1.55
+            },
+            {
+              "prop": "podium",
+              "x": 0.5,
+              "size": 1.55
+            },
+            {
+              "prop": "banknote",
+              "x": 0.409,
+              "y": 2.325,
+              "size": 1.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 14380,
+          "endMs": 16512
+        },
+        {
+          "id": "s7b",
+          "line": "n31",
+          "words": "it was *the second bid.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "pose": "wave",
+              "expression": "smug",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "copycat",
+              "holds": "paddle-5c",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "stand",
+              "expression": "neutral",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.7,
+              "lookAt": "cheat",
+              "holds": "paddle-10c",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.15,
+                  "pose": "wave"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "cash-jar-low",
+              "x": 0.563
+            },
+            {
+              "prop": "gavel",
+              "x": 0.523,
+              "y": 1.5
+            },
+            {
+              "prop": "podium",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote",
+              "x": 0.441,
+              "y": 1.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "click",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "overlay": {
+            "kind": "number",
+            "text": "THE SECOND BID"
+          },
+          "transition": "cut",
+          "startMs": 16512,
+          "endMs": 18530
+        }
+      ]
+    },
+    {
+      "id": "s7home",
+      "chapter": 1,
+      "beat": "takeaway",
+      "mood": "reflective",
+      "place": "home-interior",
+      "treatment": "simple",
+      "palette": "cold-dawn",
+      "lines": [
+        {
+          "id": "n32",
+          "speaker": "narrator",
+          "text": "*You played this today.*",
+          "speed": 0.95,
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "n33",
+          "speaker": "narrator",
+          "text": "That group chat argument nobody would drop.",
+          "speed": 0.95
+        },
+        {
+          "id": "n34",
+          "speaker": "narrator",
+          "text": "Every reply cost you more of your evening, and neither side could afford to come second.",
+          "speed": 0.95,
+          "pauseAfterMs": 800
+        }
+      ],
+      "shots": [
+        {
+          "id": "s7c",
+          "line": "n32",
+          "words": "*You played this today.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "sit-phone",
+              "expression": "neutral",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.442,
+              "lookAt": "phone",
+              "holds": "phone",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "sofa",
+              "x": 0.442
+            },
+            {
+              "prop": "wall-clock",
+              "x": 0.316,
+              "y": 3.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "blip",
+              "at": "start",
+              "gainDb": -4
+            }
+          ],
+          "transition": "fade",
+          "startMs": 18530,
+          "endMs": 20290
+        },
+        {
+          "id": "s7d",
+          "line": "n33",
+          "words": "That group chat argument nobody would drop.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "sit-phone",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.442,
+              "lookAt": "phone",
+              "holds": "phone",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.5,
+                  "expression": "angry"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "sofa",
+              "x": 0.442
+            },
+            {
+              "prop": "wall-clock",
+              "x": 0.316,
+              "y": 3.5
+            },
+            {
+              "prop": "chat-bubbles",
+              "x": 0.653,
+              "y": 2.75
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "blip",
+              "at": "start",
+              "gainDb": -4
+            },
+            {
+              "name": "blip",
+              "at": "middle",
+              "gainDb": -4
+            },
+            {
+              "name": "blip",
+              "at": "end",
+              "gainDb": -4
+            }
+          ],
+          "transition": "cut",
+          "startMs": 20290,
+          "endMs": 23380
+        },
+        {
+          "id": "s7e",
+          "line": "n34",
+          "words": "Every reply cost you more of your evening,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "sit-phone",
+              "expression": "angry",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.442,
+              "lookAt": "phone",
+              "holds": "phone",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.5,
+                  "expression": "sad"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "sofa",
+              "x": 0.442
+            },
+            {
+              "prop": "wall-clock-spinning",
+              "x": 0.316,
+              "y": 3.5
+            },
+            {
+              "prop": "chat-full",
+              "x": 0.653,
+              "y": 2.75
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "tick",
+              "at": "start",
+              "gainDb": 0
+            },
+            {
+              "name": "blip",
+              "at": "middle",
+              "gainDb": -4
+            }
+          ],
+          "transition": "cut",
+          "startMs": 23380,
+          "endMs": 26317
+        },
+        {
+          "id": "s7f",
+          "line": "n34",
+          "words": "and neither side could afford to come second.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "you"
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "sit-phone",
+              "expression": "sad",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.442,
+              "lookAt": "phone",
+              "holds": "phone",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.35,
+                  "pose": "sit-slump"
+                },
+                {
+                  "at": 0.7,
+                  "lookAt": "camera"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "sofa",
+              "x": 0.442
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 26317,
+          "endMs": 29560
+        }
+      ]
+    },
+    {
+      "id": "s7end",
+      "chapter": 1,
+      "beat": "takeaway",
+      "mood": "reflective",
+      "place": "auction-room",
+      "treatment": "atmospheric",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "n35",
+          "speaker": "narrator",
+          "text": "So.",
+          "speed": 0.95,
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "n36",
+          "speaker": "narrator",
+          "text": "Who'll start me at a nickel?",
+          "speed": 0.95,
+          "pauseAfterMs": 1300
+        }
+      ],
+      "shots": [
+        {
+          "id": "s7g",
+          "line": "n35",
+          "words": "So.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "gavel",
+              "x": 0.549,
+              "y": 3.1500000000000004,
+              "size": 2.1
+            },
+            {
+              "prop": "podium",
+              "x": 0.5,
+              "size": 2.1
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "fade",
+          "startMs": 29560,
+          "endMs": 30660
+        },
+        {
+          "id": "s7h",
+          "line": "n36",
+          "words": "Who'll start me at a nickel?",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "gavel-rise",
+              "x": 0.549,
+              "y": 3.1500000000000004,
+              "size": 2.1
+            },
+            {
+              "prop": "podium",
+              "x": 0.5,
+              "size": 2.1
+            },
+            {
+              "prop": "banknote",
+              "x": 0.376,
+              "y": 3.1500000000000004,
+              "size": 2.1,
+              "tag": "5¢ ?",
+              "from": 0.014
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 30660,
+          "endMs": 34590
+        }
+      ]
+    }
+  ]
+}

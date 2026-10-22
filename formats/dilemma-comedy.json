@@ -1,0 +1,108 @@
+{
+  "id": "dilemma-comedy",
+  "name": "Dilemma comedy short (game theory)",
+  "description": "A short, funny game theory video for The Dilemma Table, mixed in with its usual videos: an everyday moment everyone has lived (splitting the bill, a group project, the last slice), played for laughs by the fixed cast with big faces and few words, the game theory name and the real study arriving only at the end. Made on 2026-10-16 after Biku compared our videos with relatable stick-figure comedy shorts with far more views. Pick it only for game theory comedy scripts.",
+  "version": 1,
+  "structure": [
+    {
+      "id": "the-question",
+      "purpose": "One question about something everyone has seen, in big words over the place where it happens, the people already there.",
+      "share": 0.1,
+      "moods": ["comic", "upbeat"],
+      "preferredShots": ["wide"],
+      "backgroundTreatment": "simple"
+    },
+    {
+      "id": "the-setup",
+      "purpose": "The one rule that sets the trap, said by one of the cast as if it were nothing.",
+      "share": 0.1,
+      "moods": ["comic"],
+      "preferredShots": ["medium", "wide"],
+      "backgroundTreatment": "simple"
+    },
+    {
+      "id": "the-escalation",
+      "purpose": "Each of them sees the trap and gives in to it, one after another, each step bigger and funnier, told mostly by faces and actions.",
+      "share": 0.35,
+      "moods": ["comic", "upbeat"],
+      "preferredShots": ["close-up", "medium", "wide"],
+      "backgroundTreatment": "simple"
+    },
+    {
+      "id": "the-payoff",
+      "purpose": "The price arrives: the visual punchline, with no words or very few.",
+      "share": 0.15,
+      "moods": ["comic"],
+      "preferredShots": ["wide", "close-up"],
+      "backgroundTreatment": "simple"
+    },
+    {
+      "id": "the-why",
+      "purpose": "The Trainer's voice says in one or two plain sentences why it happens, and that it is real: who tested it.",
+      "share": 0.22,
+      "moods": ["curious", "comic"],
+      "preferredShots": ["wide", "medium"],
+      "backgroundTreatment": "simple"
+    },
+    {
+      "id": "the-punchline",
+      "purpose": "One last laugh on the person who lost most, and a question to the viewer on screen to answer in the comments.",
+      "share": 0.08,
+      "moods": ["comic"],
+      "preferredShots": ["close-up", "wide"],
+      "backgroundTreatment": "simple"
+    }
+  ],
+  "lengthRange": {
+    "min": 20,
+    "max": 60
+  },
+  "shotLength": {
+    "min": 2,
+    "max": 4
+  },
+  "hookRules": [
+    "The first 3 seconds ask one question of at most 12 words about something everyone has seen, spoken and shown as big words over the place where it happens. No greeting, no logo, no game theory words.",
+    "It is a real question that the ending answers, and it does not start with \"In this video\", \"Did you know\", \"Have you ever wondered\" or \"Imagine\".",
+    "Between 3 and 10 seconds the trap is set by one of the cast."
+  ],
+  "pacing": {
+    "wordsPerMinute": {
+      "min": 90,
+      "max": 160
+    },
+    "rehookEveryS": {
+      "min": 4,
+      "max": 8
+    },
+    "pauseMs": {
+      "normal": 400,
+      "afterBeat": 900
+    }
+  },
+  "sfxDensity": {
+    "level": "high",
+    "perMinute": {
+      "min": 10,
+      "max": 30
+    }
+  },
+  "captionMode": "full",
+  "roomTone": "crowd-murmur",
+  "finish": {
+    "acting": "snappy",
+    "onTwos": false,
+    "shadows": true,
+    "grain": 0.2,
+    "vignette": 0.15,
+    "boil": 0.25
+  },
+  "factRules": {
+    "sourcesRequired": true,
+    "rules": [
+      "The game theory point at the end is the real finding of the study named, checked against a saved source.",
+      "Every number is the source's own, or a price in the story that is plainly made up for the story.",
+      "The story is invented to show the idea and is never passed off as a real event."
+    ]
+  }
+}

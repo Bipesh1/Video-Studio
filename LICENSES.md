@@ -33,9 +33,10 @@ Every third-party tool, library, font and sound asset used by Video Studio, with
 
 ## Fonts
 
-| Font                                   | License                   | Where                                                                         | Notes                                                                                                   |
-| -------------------------------------- | ------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| Fredoka (variable, weights 300 to 700) | SIL Open Font License 1.1 | `engine/public/fonts/Fredoka-Variable.ttf`, license text in `Fredoka-OFL.txt` | Caption and label font (Style 9: heavy rounded sans-serif). Downloaded from the google/fonts repository |
+| Font                                   | License                   | Where                                                                         | Notes                                                                                                                                |
+| -------------------------------------- | ------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Fredoka (variable, weights 300 to 700) | SIL Open Font License 1.1 | `engine/public/fonts/Fredoka-Variable.ttf`, license text in `Fredoka-OFL.txt` | Caption and label font (Style 9: heavy rounded sans-serif). Downloaded from the google/fonts repository                              |
+| Anton (regular)                        | SIL Open Font License 1.1 | `engine/public/fonts/Anton-Regular.ttf`, license text in `Anton-OFL.txt`      | The tall heavy lettering of What's the Catch? thumbnails (Biku's reference, 2026-10-15). Downloaded from the google/fonts repository |
 
 ## Voice
 

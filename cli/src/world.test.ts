@@ -21,9 +21,15 @@ const example = (edit: (sb: Storyboard) => void = () => {}): Storyboard => {
 const problems = (sb: Storyboard, w: World = world) => checkStoryboard(sb, w).problems.join('\n');
 
 describe('the plug-in files', () => {
-  it('has the six starter formats of the plan', () => {
+  it('has the six starter formats of the plan, and the two niches of his own', () => {
     expect(Object.keys(world.formats).sort()).toEqual([
+      'dilemma',
+      'dilemma-comedy',
+      'dilemma-explainer',
+      'dilemma-story',
+      'dilemma-thriller',
       'explainer',
+      'fine-print',
       'news-short',
       'promo',
       'quote',
@@ -36,7 +42,9 @@ describe('the plug-in files', () => {
     for (const f of Object.values(world.formats)) {
       expect(f.hookRules.join(' ')).toContain('first 3 seconds');
       expect(f.shotLength.min).toBe(2);
-      expect(f.shotLength.max).toBeLessThanOrEqual(5);
+      // An explainer graphic is held while it builds piece by piece (The Fine Print), so its
+      // shots may run longer; a shot of people changes within about four seconds.
+      expect(f.shotLength.max).toBeLessThanOrEqual(f.id === 'fine-print' ? 7 : 5);
       for (const beat of f.structure) {
         for (const mood of beat.moods) expect(MUSIC_MOODS).toContain(mood);
       }
@@ -54,7 +62,18 @@ describe('the plug-in files', () => {
       .filter((f) => f.factRules.sourcesRequired)
       .map((f) => f.id)
       .sort();
-    expect(factual).toEqual(['explainer', 'news-short', 'quote', 'top-list']);
+    expect(factual).toEqual([
+      'dilemma',
+      'dilemma-comedy',
+      'dilemma-explainer',
+      'dilemma-story',
+      'dilemma-thriller',
+      'explainer',
+      'fine-print',
+      'news-short',
+      'quote',
+      'top-list',
+    ]);
   });
 
   it('has a brand whose defaults and colors exist, and voices for it', () => {
@@ -146,6 +165,83 @@ describe('what the check catches', () => {
     expect(report.needs).toContain('costume/queen');
   });
 
+  it('has the game theory cast saved: three who speak, and you, who never does', () => {
+    const all = Object.values(world.characters).filter((c) => c.series === 'game-theory');
+    // The Trainer runs the games: in the cast, with a voice of his own, and not a player.
+    expect(all.filter((c) => c.host).map((c) => c.id)).toEqual(['trainer']);
+    expect(world.voices[world.characters.trainer?.voice ?? '']).toBeDefined();
+    const cast = all.filter((c) => !c.host);
+    expect(cast.map((c) => c.id).sort()).toEqual(['cheat', 'copycat', 'saint', 'you']);
+    expect(cast.filter((c) => !c.voice).map((c) => c.id)).toEqual(['you']);
+    // Each has the seven faces and the seven poses Biku asked for.
+    for (const c of cast) {
+      expect(c.expressions, c.id).toEqual(
+        expect.arrayContaining([
+          'neutral',
+          'happy',
+          'suspicious',
+          'surprised',
+          'sad',
+          'smug',
+          'thinking',
+        ]),
+      );
+      expect(c.poses, c.id).toEqual([
+        'stand',
+        'sit',
+        'point',
+        'cross-arms',
+        'hands-up',
+        'sit-reach',
+        'walk',
+      ]);
+    }
+  });
+
+  /** The moon tax example with its first two people on screen played by two of a fixed cast. */
+  const withCast = (first: string, second: string, edit: (sb: Storyboard) => void = () => {}) =>
+    example((s) => {
+      s.series = 'game-theory';
+      const seen = new Set(
+        s.scenes.flatMap((sc) => sc.shots.flatMap((sh) => sh.actors)).map((a) => a.character),
+      );
+      const [a, b] = s.cast.filter((m) => seen.has(m.id));
+      if (!a || !b) throw new Error('the example needs two people on screen');
+      for (const [member, card] of [
+        [a, first],
+        [b, second],
+      ] as const) {
+        delete member.look;
+        delete member.voice;
+        member.card = card;
+      }
+      edit(s);
+    });
+
+  it('holds a game theory video to at least two of its fixed cast', () => {
+    const none = example((s) => {
+      s.series = 'game-theory';
+    });
+    expect(problems(none)).toContain('shows at least two of its cast');
+    // You are in the cast but do not count: the three who speak do.
+    expect(problems(withCast('cheat', 'you'))).toContain('this one shows cheat');
+    // Neither does the Trainer, who runs the game: he is not one of its two players.
+    expect(problems(withCast('cheat', 'trainer'))).toContain('this one shows cheat');
+    expect(checkStoryboard(withCast('cheat', 'saint'), world).problems).toEqual([]);
+    const unknown = example((s) => {
+      s.series = 'cooking';
+    });
+    expect(problems(unknown)).toContain('no cast called "cooking"');
+  });
+
+  it('does not let a video give one of a fixed cast another voice', () => {
+    const sb = withCast('cheat', 'copycat', (s) => {
+      const cheat = s.cast.find((m) => m.card === 'cheat');
+      if (cheat) cheat.voice = 'narrator';
+    });
+    expect(problems(sb)).toContain('keeps its own voice ("cheat")');
+  });
+
   it('wants a voice for anyone who speaks', () => {
     const sb = example((s) => {
       const mira = s.cast[1];
@@ -166,6 +262,28 @@ describe('what the check catches', () => {
     });
     expect(problems(order)).toContain('comes after a later beat');
     expect(problems(order)).toContain('no scene plays the "turning-point" beat');
+  });
+
+  // What's the Catch?, Biku 2026-10-21: "don't always follow a rigid structure".
+  it('lets a free-order format take its middle beats in any order, the hook first and the payoff last', () => {
+    const w = structuredClone(world);
+    const story = w.formats.story;
+    if (!story) throw new Error('no story format');
+    story.freeOrder = true;
+    const beats = story.structure.map((b) => b.id);
+    const first = beats[0] ?? '';
+    for (const b of story.structure.slice(1, -1)) b.optional = true;
+    const swapped = example((s) => {
+      const a = s.scenes[1];
+      const b = s.scenes[2];
+      if (a && b && beats.length > 3) [a.beat, b.beat] = [beats[2] ?? a.beat, beats[1] ?? b.beat];
+    });
+    expect(problems(swapped, w)).not.toContain('comes after a later beat');
+    const late = example((s) => {
+      const scene = s.scenes[0];
+      if (scene) scene.beat = beats[1] ?? scene.beat;
+    });
+    expect(problems(late, w)).toContain(`it must open on "${first}"`);
   });
 
   it('wants sources for a factual format', () => {

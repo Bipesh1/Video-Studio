@@ -331,6 +331,19 @@ async function cover(cut: Cut, pieces: readonly Piece[], out: string): Promise<v
   });
 }
 
+/** The thumbnails picked for this video: the newest version of each shape in the out folder. */
+function pickedThumbnails(): string[] {
+  if (!existsSync(outDir)) return [];
+  const newest = new Map<string, { v: number; file: string }>();
+  for (const file of readdirSync(outDir)) {
+    const m = /-(\d+x\d+)-thumbnail-v(\d+)\.jpg$/.exec(file);
+    if (!m?.[1]) continue;
+    const v = Number(m[2]);
+    if (v > (newest.get(m[1])?.v ?? 0)) newest.set(m[1], { v, file });
+  }
+  return [...newest.entries()].sort(([a], [b]) => b.localeCompare(a)).map(([, t]) => t.file);
+}
+
 function nextVersion(base: string): number {
   let v = 1;
   while (existsSync(path.join(outDir, `${base}-v${v}.mp4`))) v++;
@@ -371,7 +384,9 @@ async function deliver(cut: Cut, pieces: readonly Piece[]): Promise<Delivered> {
       ...['-c:v', 'libx264', '-profile:v', 'high', '-preset', 'slow', '-crf', '14'],
       // The colours every player and video site expects (BT.709, standard range).
       ...['-colorspace', 'bt709', '-color_primaries', 'bt709', '-color_trc', 'bt709'],
-      ...['-color_range', 'tv', '-c:a', 'aac', '-b:a', '256k', '-ar', '48000'],
+      // The sound is packed as finely as the parts' own (about 320k), so the finished file stays
+      // as close to its mix as they do; at 256k busy music left a little too much behind.
+      ...['-color_range', 'tv', '-c:a', 'aac', '-b:a', '320k', '-ar', '48000'],
       ...['-movflags', '+faststart'],
       out,
     ],
@@ -423,7 +438,10 @@ async function deliver(cut: Cut, pieces: readonly Piece[]): Promise<Delivered> {
   const strayed: QaCheck['findings'] = [];
   pictures.forEach((p, i) => {
     const values = pictureDifference(out, p.file, { from, seconds: p.seconds });
-    const judged = values?.slice(0, pictures[i + 1]?.fadesIn ? -dip : undefined) ?? [];
+    // The last frame is left out too: a part's length rounds up past its last frame, so the
+    // stretch can end on the first frame of the next part (2026-10-15: a join failed on that
+    // one frame alone, where the next part opened on a different picture).
+    const judged = values?.slice(0, pictures[i + 1]?.fadesIn ? -dip : -1) ?? [];
     const top = Math.max(0, ...judged);
     worst = Math.max(worst, top);
     if (!values)
@@ -527,6 +545,7 @@ async function deliver(cut: Cut, pieces: readonly Piece[]): Promise<Delivered> {
     video: `${name}.mp4`,
     captions: `${name}.srt`,
     cover: path.basename(coverFile),
+    thumbnails: pickedThumbnails(),
     seconds,
     checks,
     from: from_,
@@ -547,6 +566,12 @@ async function alreadyDelivered(cut: Cut, pieces: readonly Piece[]): Promise<Del
     existsSync(path.join(runDir, 'cuts', cut.kind, 'audio', 'mix.wav')) &&
     record.mix === shaOfFile(path.join(runDir, 'cuts', cut.kind, 'audio', 'mix.wav'));
   if (!same) return null;
+  // A file that failed a measured check is not one to stand on: it is made again, as the next
+  // version, and the failed one is kept beside it.
+  const failed = record.checks.some(
+    (c) => c.id !== 'output-look' && c.findings.some((f) => f.level === 'problem'),
+  );
+  if (failed) return null;
   // The look may have been written since: read it afresh.
   const lookFile = path.join(outDir, `${name}.look.json`);
   const look = existsSync(lookFile)
@@ -579,6 +604,7 @@ async function alreadyDelivered(cut: Cut, pieces: readonly Piece[]): Promise<Del
     video: `${name}.mp4`,
     captions: `${name}.srt`,
     cover: path.basename(coverFile),
+    thumbnails: pickedThumbnails(),
     seconds: probeFile(path.join(outDir, `${name}.mp4`))?.seconds ?? 0,
     checks,
     from: record.from,

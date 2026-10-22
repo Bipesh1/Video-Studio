@@ -1,0 +1,593 @@
+{
+  "version": 1,
+  "title": "Why Is the Sun Already Gone When You Watch It Set?",
+  "request": "Biku's What's the Catch? script, used as it is: 'make a video for this script for whats the catch' (2026-10-18).",
+  "mode": "as-is",
+  "format": "fine-print",
+  "style": "ink-stick",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "seed": 6201,
+  "finish": {
+    "acting": "snappy",
+    "onTwos": false,
+    "shadows": false,
+    "grain": 0.2,
+    "vignette": 0.12,
+    "boil": 0.25
+  },
+  "sources": [
+    "David Basey, \"Atmospheric Refraction\", British Astronomical Association, 2 March 2019. Near the horizon the air lifts the Sun's image by about half a degree, roughly the Sun's apparent diameter; a Sun that seems to sit on the horizon is really below it; the lower edge is lifted more than the upper, so the disc looks oval. https://britastro.org/2019/atmospheric-refraction",
+    "Tong Yu-fai, \"Effect of atmospheric refraction on the times of sunrise and sunset\", Hong Kong Observatory, August 2017. Refraction makes sunset about 2 minutes later in Hong Kong than with no air (about 34 arcminutes of lift under average conditions); the published times already include it; the Sun truly disappears below the horizon before sunset happens. https://www.hko.gov.hk/en/education/astronomy-and-time/astronomy/00493-effect-of-atmospheric-refraction-on-the-times-of-sunrise-and-sunset.html",
+    "Checked by Claude against both pages on 2026-10-18."
+  ],
+  "appliedLessons": [],
+  "cast": [],
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "the-question",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l01",
+          "speaker": "narrator",
+          "text": "Where is the Sun really when it touches the sea at sunset?",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l02",
+          "speaker": "narrator",
+          "text": "The answer is in the air around you, and it tricks your *eyes*.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s1a",
+          "line": "l01",
+          "words": "Where is the Sun really when it touches the sea at sunset?",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "title",
+            "text": "Why Is the Sun Already Gone When You Watch It Set?"
+          },
+          "transition": "cut"
+        },
+        {
+          "id": "s1b",
+          "line": "l02",
+          "words": "The answer is in the air around you, and it tricks your *eyes*.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "the-moment",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l03",
+          "speaker": "narrator",
+          "text": "You hold up your phone as the bottom of the Sun touches the sea.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l04",
+          "speaker": "narrator",
+          "text": "Everyone filming thinks the Sun is right there, sitting on the water.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l05",
+          "speaker": "narrator",
+          "text": "And they think its light flies to them in a *straight* line.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l06",
+          "speaker": "narrator",
+          "text": "Both of those ideas are *wrong*.",
+          "pauseAfterMs": 1100
+        }
+      ],
+      "shots": [
+        {
+          "id": "s2a",
+          "line": "l03",
+          "words": "You hold up your phone as the bottom of the Sun touches the sea.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2b",
+          "line": "l04",
+          "words": "Everyone filming thinks the Sun is right there, sitting on the water.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2c",
+          "line": "l05",
+          "words": "And they think its light flies to them in a *straight* line.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2d",
+          "line": "l06",
+          "words": "Both of those ideas are *wrong*.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "chapter": 2,
+      "beat": "follow-the-money",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l07",
+          "speaker": "narrator",
+          "text": "The straw in the drink beside you shows why.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l08",
+          "speaker": "narrator",
+          "text": "The straw looks snapped because light changes direction when it crosses from water into air.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l09",
+          "speaker": "narrator",
+          "text": "Air bends light too, because air gets *thicker* the closer it is to the ground.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l10",
+          "speaker": "narrator",
+          "text": "So sunlight curves a little as it passes down through each layer.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l11",
+          "speaker": "narrator",
+          "text": "A high Sun's light comes almost straight down, so it barely bends.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l12",
+          "speaker": "narrator",
+          "text": "But a low Sun's light skims sideways through the thickest air, so it bends the *most*.",
+          "pauseAfterMs": 1100
+        }
+      ],
+      "shots": [
+        {
+          "id": "s3a",
+          "line": "l07",
+          "words": "The straw in the drink beside you shows why.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3b",
+          "line": "l08",
+          "words": "The straw looks snapped because light changes direction when it crosses from water into air.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3c",
+          "line": "l09",
+          "words": "Air bends light too, because air gets *thicker* the closer it is to the ground.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3d",
+          "line": "l10",
+          "words": "So sunlight curves a little as it passes down through each layer.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3e",
+          "line": "l11",
+          "words": "A high Sun's light comes almost straight down, so it barely bends.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3f",
+          "line": "l12",
+          "words": "But a low Sun's light skims sideways through the thickest air, so it bends the *most*.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "chapter": 3,
+      "beat": "the-trick",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l13",
+          "speaker": "narrator",
+          "text": "Follow one beam from that low Sun as it curves down into your phone.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l14",
+          "speaker": "narrator",
+          "text": "Your eyes and your camera assume that light came in a *straight* line.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l15",
+          "speaker": "narrator",
+          "text": "But trace the curved beam back, and the real Sun is already *below* the horizon.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l16",
+          "speaker": "narrator",
+          "text": "The air lifts the picture of the Sun by about its own *width*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l17",
+          "speaker": "narrator",
+          "text": "So the Sun on your screen has, in a way, already *set*.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s4a",
+          "line": "l13",
+          "words": "Follow one beam from that low Sun as it curves down into your phone.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4b",
+          "line": "l14",
+          "words": "Your eyes and your camera assume that light came in a *straight* line.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4c",
+          "line": "l15",
+          "words": "But trace the curved beam back, and the real Sun is already *below* the horizon.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4d",
+          "line": "l16",
+          "words": "The air lifts the picture of the Sun by about its own *width*.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4e",
+          "line": "l17",
+          "words": "So the Sun on your screen has, in a way, already *set*.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chapter": 3,
+      "beat": "the-proof",
+      "mood": "reflective",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l18",
+          "speaker": "narrator",
+          "text": "The British Astronomical Association puts that lift at about half a degree, roughly one whole Sun.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l19",
+          "speaker": "narrator",
+          "text": "The Hong Kong Observatory says this makes sunset there about two minutes *later* than with no air.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l20",
+          "speaker": "narrator",
+          "text": "And official sunset times already include those extra minutes.",
+          "pauseAfterMs": 800
+        }
+      ],
+      "shots": [
+        {
+          "id": "s5a",
+          "line": "l18",
+          "words": "The British Astronomical Association puts that lift at about half a degree, roughly one whole Sun.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5b",
+          "line": "l19",
+          "words": "The Hong Kong Observatory says this makes sunset there about two minutes *later* than with no air.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5c",
+          "line": "l20",
+          "words": "And official sunset times already include those extra minutes.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 3,
+      "beat": "your-move",
+      "mood": "hope",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l21",
+          "speaker": "narrator",
+          "text": "You'll also notice a low Sun looks squashed, flat at the bottom.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l22",
+          "speaker": "narrator",
+          "text": "That is the air lifting its bottom edge more than its top.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l23",
+          "speaker": "narrator",
+          "text": "So when the Sun touches the sea, the real Sun is already just *below* it.",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6a",
+          "line": "l21",
+          "words": "You'll also notice a low Sun looks squashed, flat at the bottom.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6b",
+          "line": "l22",
+          "words": "That is the air lifting its bottom edge more than its top.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6c",
+          "line": "l23",
+          "words": "So when the Sun touches the sea, the real Sun is already just *below* it.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    }
+  ]
+}

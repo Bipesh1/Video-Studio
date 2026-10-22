@@ -1,0 +1,14 @@
+{
+    "version":  1,
+    "id":  "2026-10-11-table-kit-test",
+    "created":  "2026-10-11",
+    "mode":  "as-is",
+    "format":  "story",
+    "brand":  "my-page",
+    "voice":  "narrator",
+    "sizes":  [
+                  "9:16"
+              ],
+    "vertical":  "full",
+    "masterPrompt":  null
+}

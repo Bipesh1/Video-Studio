@@ -1,0 +1,139 @@
+{
+  "version": 1,
+  "title": "Why Splitting the Bill Makes Everyone Order More",
+  "request": "A game theory comedy short: splitting the bill equally makes everyone order more (the diner's dilemma). Script written by Claude, approved by Biku 2026-10-16.",
+  "mode": "original",
+  "format": "dilemma-comedy",
+  "brand": "dilemma-table",
+  "voice": "leak",
+  "speakers": [
+    {
+      "id": "trainer",
+      "name": "The Trainer",
+      "voice": "trainer"
+    },
+    {
+      "id": "saint",
+      "name": "The Saint",
+      "voice": "saint"
+    },
+    {
+      "id": "cheat",
+      "name": "The Cheat",
+      "voice": "cheat"
+    },
+    {
+      "id": "copycat",
+      "name": "The Copycat",
+      "voice": "copycat"
+    },
+    {
+      "id": "waiter",
+      "name": "The waiter",
+      "voice": "man"
+    }
+  ],
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "trainer",
+      "text": "Why does splitting the bill make everyone order more?",
+      "beat": "the-question",
+      "chapter": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l02",
+      "speaker": "copycat",
+      "text": "Let's just split it four ways. Easier.",
+      "beat": "the-setup",
+      "chapter": 1,
+      "pauseAfterMs": 1000
+    },
+    {
+      "id": "l03",
+      "speaker": "saint",
+      "text": "A small salad for me, please.",
+      "beat": "the-escalation",
+      "chapter": 1,
+      "pauseAfterMs": 1600
+    },
+    {
+      "id": "l04",
+      "speaker": "cheat",
+      "text": "The lobster. The big one.",
+      "beat": "the-escalation",
+      "chapter": 1,
+      "pauseAfterMs": 1300
+    },
+    {
+      "id": "l05",
+      "speaker": "copycat",
+      "text": "Then I'll have the lobster too.",
+      "beat": "the-escalation",
+      "chapter": 1,
+      "pauseAfterMs": 1300
+    },
+    {
+      "id": "l06",
+      "speaker": "saint",
+      "text": "Make it three lobsters.",
+      "beat": "the-escalation",
+      "chapter": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l07",
+      "speaker": "waiter",
+      "text": "And for you?",
+      "beat": "the-escalation",
+      "chapter": 1,
+      "pauseAfterMs": 1600
+    },
+    {
+      "id": "l08",
+      "speaker": "waiter",
+      "text": "Your bill.",
+      "beat": "the-payoff",
+      "chapter": 1,
+      "pauseAfterMs": 2800
+    },
+    {
+      "id": "l09",
+      "speaker": "trainer",
+      "text": "When you split the bill, every extra dish costs you only a quarter of its price.",
+      "beat": "the-why",
+      "chapter": 1,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "l10",
+      "speaker": "trainer",
+      "text": "So everyone orders more, and everyone pays more.",
+      "beat": "the-why",
+      "chapter": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l11",
+      "speaker": "trainer",
+      "text": "Economists tested this in a real restaurant. When the bill was split, people ate more.",
+      "beat": "the-why",
+      "chapter": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l12",
+      "speaker": "trainer",
+      "text": "Even the one who only had water.",
+      "beat": "the-punchline",
+      "chapter": 1,
+      "pauseAfterMs": 1800
+    }
+  ],
+  "sources": [
+    "Uri Gneezy, Ernan Haruvy and Hadas Yafe, \"The Inefficiency of Splitting the Bill\", The Economic Journal, vol. 114, no. 495, April 2004, pages 265 to 280. A field experiment in a restaurant: diners who split the bill equally ate more than diners who each paid for their own, and they said they preferred paying for their own. https://ideas.repec.org/a/ecj/econjl/v114y2004i495p265-280.html",
+    "What the story invents: the four friends, the restaurant and the prices. Three lobsters at $60 is $180, split four ways $45 each, the glass of water included."
+  ],
+  "changes": []
+}

@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "unease",
+      "startMs": 0
+    }
+  ],
+  "sfx": [
+    {
+      "name": "footsteps",
+      "atMs": 6180,
+      "durationMs": 2282,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "ding",
+      "atMs": 16739,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 1
+    }
+  ],
+  "musicGainDb": 0
+}

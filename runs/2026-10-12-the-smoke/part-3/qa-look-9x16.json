@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "video": "the-smoke-part-3-9x16-preview-v3.mp4",
+  "stills": {
+    "s6a": "ok",
+    "s6b": "ok",
+    "s6c": "ok",
+    "s6d": "ok",
+    "s6e": "ok",
+    "s7a": "ok",
+    "s7b": "ok",
+    "s7c": "ok",
+    "s7d": "ok",
+    "s7e": "ok",
+    "s7f": "ok",
+    "s7g": "ok",
+    "s7h": "ok"
+  },
+  "strips": {
+    "cut-s6a-s6b": "ok",
+    "cut-s6b-s6c": "ok",
+    "cut-s6c-s6d": "ok",
+    "cut-s6d-s6e": "ok",
+    "cut-s7e-s7f": "ok",
+    "cut-s7f-s7g": "ok",
+    "cut-s7g-s7h": "ok",
+    "s6a-move-1": "ok",
+    "s7e-move-1": "ok",
+    "s7h-move-1": "ok"
+  },
+  "playbook": "ok",
+  "fixed": [
+    "The two cards covered every face in the room, and the self-check refused them. The fire alarm example is three lines of big words over the room now, with the Trainer still seen saying 'You've seen it.'; the Leak's card is shown over the smoke with nobody under it.",
+    "The Copycat, slumped toward the table, poked the edge of his orange beanie into the Trainer's close shots. Those shots are of the Trainer alone.",
+    "The example had two seconds on screen for nine words. It has three.",
+    "The study's name and year were going to be a number over the room, the fourth wide shot in a row. They stand under the Trainer's face instead, as the opening question did."
+  ],
+  "notes": [
+    "His script has two cards in the results (the study's name, and the fire alarm). Neither is a card here: a card fills the middle of the picture and hides whoever is speaking. Both are big words.",
+    "The Leak's card is one card that stays up for its four lines, with the line being read marked in gold. The second spoken line, 'They are reading your face as well.', is not on his card, so the first line stays marked while it is read.",
+    "The script has the Trainer find the card and read it. He cannot pick up a thing that is a page on the screen: when the light steadies he is looking up at where it was, and turns to us with the smile back.",
+    "In the fire alarm shot the bulb shows as a white round behind the middle line of the words.",
+    "The voice reads 'Latane' as lat-uh-NAY and '1968' as nineteen sixty-eight (read from the sounds Kokoro makes, not heard).",
+    "Claude cannot hear: the Leak's voice against the Trainer's, the pen click and the last clunk need Biku's ears."
+  ]
+}

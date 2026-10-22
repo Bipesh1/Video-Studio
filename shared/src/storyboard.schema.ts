@@ -7,8 +7,18 @@ import {
   TREATMENTS,
   idSchema,
   viewerTextSchema,
+  finishSchema,
 } from './plugins.schema';
-import { MUSIC_MOODS, SFX_NAMES } from './sound.schema';
+import {
+  AMBIENT_SFX,
+  MUSIC_MOODS,
+  MUSIC_PALETTES,
+  SFX_NAMES,
+  SOUND_PROFILES,
+} from './sound.schema';
+import { SAY_MESSAGE, sameWords } from './voice.schema';
+import { graphicSchema } from './graphic.schema';
+import { posterLayerSchema } from './thumbnail.schema';
 
 /**
  * The storyboard (Part 2, section 10): `runs/<run>/storyboard.json`, the single source of
@@ -61,10 +71,21 @@ export const storyLineSchema = z
     /** The words. *Asterisks* mark a word the captions emphasize. */
     text: z.string().min(1),
     speed: z.number().min(0.5).max(2).optional(),
+    /**
+     * The line as the voice reads it: the very same words, with commas and "..." where the voice
+     * should breathe or hold. The captions and the checks keep `text`.
+     */
+    say: z.string().min(1).optional(),
     /** Silence after the line, in ms. Left out: the format's usual pause. */
     pauseAfterMs: z.number().int().min(0).max(5000).optional(),
+    /**
+     * True for a thought: the line is heard in the speaker's own voice while their mouth stays
+     * shut. For what someone tells themselves, which nobody else in the room hears.
+     */
+    thought: z.boolean().optional(),
   })
-  .strict();
+  .strict()
+  .refine((l) => !l.say || sameWords(l.text, l.say), { message: SAY_MESSAGE, path: ['say'] });
 
 const lookAtSchema = z.union([z.enum(['camera', 'up', 'down', 'ahead']), idSchema]);
 
@@ -81,6 +102,8 @@ export const actorStepSchema = z
     pose: idSchema.optional(),
     action: idSchema.optional(),
     expression: idSchema.optional(),
+    /** How strongly the face is worn from here on, 0.2 to 1: a feeling that builds. Left out, fully. */
+    strength: z.number().min(0.2).max(1).optional(),
     lookAt: lookAtSchema.optional(),
     /** A prop to take in the hand, or null to let go of what is held. */
     holds: idSchema.nullable().optional(),
@@ -94,6 +117,7 @@ export const actorStepSchema = z
       step.pose !== undefined ||
       step.action !== undefined ||
       step.expression !== undefined ||
+      step.strength !== undefined ||
       step.lookAt !== undefined ||
       step.holds !== undefined,
     { message: 'a step has to change something' },
@@ -108,6 +132,8 @@ export const actorSchema = z
     action: idSchema.optional(),
     /** The face it needs. Every shot with a character names one (writing rule 7). */
     expression: idSchema,
+    /** How strongly the face is worn, 0.2 to 1: half a feeling, on its way to the whole. Left out, fully. */
+    strength: z.number().min(0.2).max(1).optional(),
     facing: z.enum(['left', 'right']),
     headTurn: z.enum(['front', 'three-quarter', 'profile']).default('three-quarter'),
     /** Where they stand across the wide layout: 0 is the left edge, 1 the right. */
@@ -139,10 +165,21 @@ export const placedPropSchema = z
     y: z.number().min(0).max(14).optional(),
     /** Bigger or smaller than usual: 1 is as drawn. */
     size: z.number().min(0.1).max(6).optional(),
+    /**
+     * Close to the camera: drawn in front of everyone, bigger, darker and a little soft, its
+     * foot below the bottom of the picture, so the shot has depth (step 5, 2026-10-14). Best at
+     * an edge of the picture, where it frames the scene and hides nobody.
+     */
+    near: z.boolean().optional(),
     /** A few words on a tag tied to it ("SUNLIGHT"), which pops up a moment into the shot. */
     tag: viewerTextSchema.optional(),
     /** Where it starts, when it slides to its place as the shot opens: an envelope under a door. */
     from: z.number().min(-0.2).max(1.2).optional(),
+    /**
+     * When in the shot it sets off, for a thing that slides: 0 is as the shot opens (the usual),
+     * 0.4 lets something else happen first, such as a ball opening.
+     */
+    slideAt: z.number().min(0).max(0.9).optional(),
     /**
      * Its own place in a picture taller than it is wide, where it differs: a tall picture is
      * narrow and has a great deal of sky, so a thing beside someone in the wide picture is
@@ -178,6 +215,25 @@ export const overlaySchema = z.discriminatedUnion('kind', [
       text: viewerTextSchema,
       /** A few words under the number. */
       caption: viewerTextSchema.optional(),
+      /** True for a number that runs up from nothing to its figure over the shot, like a counter. */
+      countUp: z.boolean().optional(),
+    })
+    .strict(),
+  z
+    .object({
+      /**
+       * A few big words over the scene, in up to three short lines: the question a video opens
+       * on, shown while it is asked. The scene stays in view behind them.
+       */
+      kind: z.literal('words'),
+      lines: z.array(viewerTextSchema).min(1).max(3),
+      /** Which line is in gold, counting from 0. */
+      stress: z.number().int().min(0).max(2).optional(),
+      /**
+       * Low in the picture, where the captions would be, when the one who asks is seen close
+       * and their face fills the top.
+       */
+      low: z.boolean().optional(),
     })
     .strict(),
   z
@@ -200,6 +256,32 @@ export const overlaySchema = z.discriminatedUnion('kind', [
       lines: z.array(viewerTextSchema).min(1).max(5),
       /** Which line is marked in gold, counting from 0. */
       stress: z.number().int().min(0).max(4).optional(),
+      /**
+       * A page of a notebook kept as a tally (2026-10-20, "She Wrote Down Every Dish She Washed
+       * for a Year"): under the lines, tally marks fill in group by group and a count runs up
+       * to this number over the shot.
+       */
+      tally: z.number().int().min(1).max(99999).optional(),
+      /** The notebook's cover down the page's left edge: hers blue, his orange. */
+      cover: z.enum(['blue', 'orange']).optional(),
+    })
+    .strict(),
+  z
+    .object({
+      /**
+       * A bubble over someone's head: what they think (a cloud) or say (a balloon), in a few
+       * short lines. It is for words the picture shows and nobody speaks; a spoken line is a
+       * line of the script.
+       */
+      kind: z.literal('bubble'),
+      /** Whose bubble it is: a person in the shot. */
+      of: idSchema,
+      shape: z.enum(['thought', 'speech']).default('thought'),
+      lines: z.array(viewerTextSchema).min(1).max(3),
+      /** Which line is marked in gold, counting from 0. */
+      stress: z.number().int().min(0).max(2).optional(),
+      /** A balloon that drifts across to this person in the shot and bursts on them. */
+      to: idSchema.optional(),
     })
     .strict(),
   z
@@ -218,6 +300,49 @@ export type Overlay = z.infer<typeof overlaySchema>;
 export const shotEffectSchema = z.object({ effect: idSchema, on: idSchema }).strict();
 
 /** A sound effect in a shot. The mix turns these into the sound plan. */
+/** The ways the camera can travel from one picture to the next. */
+export const TRAVELS = [
+  'travel-left',
+  'travel-right',
+  'travel-up',
+  'travel-down',
+  'dive',
+  'match',
+  'wipe',
+  'iris',
+  'lens',
+] as const;
+export type Travel = (typeof TRAVELS)[number];
+/** The directions the camera takes in turn when a shot asks for none (`arrivalOf`). */
+const AUTO_TRAVEL: readonly Travel[] = ['travel-right', 'travel-up', 'travel-left', 'travel-down'];
+/**
+ * How a shot arrives: as it asks, or, between two explainer graphics where it asks for a plain
+ * cut, the camera travels from one picture to the next, in each direction in turn (2026-10-16:
+ * What's the Catch? never falls back to cutting between pages).
+ */
+export function arrivalOf(
+  shot: { transition: string; graphic?: unknown },
+  before: { graphic?: unknown } | undefined,
+  index: number,
+): string {
+  // Two shots of one journey: the camera flies on from where it was, so nothing travels.
+  const kindOf = (g: unknown) => (g as { kind?: string } | undefined)?.kind;
+  if (kindOf(shot.graphic) === 'journey' && kindOf(before?.graphic) === 'journey')
+    return shot.transition;
+  if (shot.transition === 'cut' && shot.graphic && before?.graphic) {
+    return AUTO_TRAVEL[index % AUTO_TRAVEL.length] ?? 'travel-right';
+  }
+  return shot.transition;
+}
+/** A thing in a picture, for a match: its middle and its height, as shares of the frame. */
+const spotSchema = z
+  .object({
+    x: z.number().min(0).max(1),
+    y: z.number().min(0).max(1),
+    size: z.number().min(0.01).max(1),
+  })
+  .strict();
+
 export const shotSoundSchema = z
   .object({
     name: z.enum(SFX_NAMES),
@@ -238,6 +363,30 @@ export const cameraSchema = z
   })
   .strict();
 
+/** Where a picture shot's camera is: a point of the picture (shares) and how close it is (1: all of it). */
+const pictureCameraSchema = z
+  .object({
+    x: z.number().min(0).max(1),
+    y: z.number().min(0).max(1),
+    zoom: z.number().min(1).max(12),
+  })
+  .strict();
+
+/**
+ * A picture made for the moment, drawn instead of the scene (2026-10-14): what each choice gets
+ * you, side by side; one person among thousands. It is built from the same layers as a
+ * thumbnail (shared/src/thumbnail.schema.ts), and its camera moves from `from` to `to` over the
+ * shot, so it can pull back from one face to the whole crowd. Nobody in it speaks: it is said
+ * over by the host or the narrator.
+ */
+export const pictureSchema = z
+  .object({
+    layers: z.array(posterLayerSchema).min(1).max(40),
+    from: pictureCameraSchema.optional(),
+    to: pictureCameraSchema.optional(),
+  })
+  .strict();
+
 export const shotSchema = z
   .object({
     id: idSchema,
@@ -252,8 +401,67 @@ export const shotSchema = z
     sfx: z.array(shotSoundSchema).default([]),
     /** Text over the picture: the video's title, or a label for a place, date or name. */
     overlay: overlaySchema.optional(),
+    /** A picture made for the moment, in place of the scene. */
+    picture: pictureSchema.optional(),
+    /**
+     * An explainer graphic of What's the Catch?'s own style, in place of the scene: its pieces
+     * arrive one at a time as the words name them (shared/src/graphic.schema.ts).
+     */
+    graphic: graphicSchema.optional(),
+    /** The sound of the place under this shot, when it differs from its scene's (a journey
+     * that travels from a bath to the sea). */
+    ambience: z
+      .enum(SFX_NAMES)
+      .refine((n) => AMBIENT_SFX.includes(n), {
+        message: 'an ambience is a sound that runs on (a bed)',
+      })
+      .optional(),
+    /**
+     * The reveal lands here: the music stops just before the shot and comes back with a hit as
+     * it begins, so the surprise is heard as well as seen. Once or twice a video.
+     */
+    drop: z.boolean().optional(),
     /** How this shot arrives. A fade is for a change of time or place (lesson L-0013). */
-    transition: z.enum(['cut', 'fade']).default('cut'),
+    /**
+     * whip: a quick sideways swing of the camera into the shot, with a blur (2026-10-14): for
+     * the energy of a Short, between two moments of the same scene. Use it a few times a video.
+     */
+    /**
+     * The camera travelling from the last picture to this one, as if both were places in one
+     * world (What's the Catch?, 2026-10-16: "very immersive"): travel-left, -right, -up and
+     * -down slide the old picture away and this one in; dive zooms into a point of the old
+     * picture (`diveAt`, shares of the frame) and this one grows out of it; match turns a thing
+     * of the old picture into a thing of this one (`matchFrom` becomes `matchTo`: the camera
+     * holds on it while the picture around it changes); wipe sweeps the next picture in from
+     * the left behind a slanted dark edge; iris opens it in a growing circle from a point of the
+     * last picture (`diveAt`). Wipe and iris are the motion-graphics moves (2026-10-16).
+     * lens: a magnifying glass on a point of the last picture (`diveAt`): a ringed circle pops
+     * open there with this picture inside, holds a moment, then grows to fill the frame
+     * (2026-10-22, from the Kurzgesagt Shorts: into the ovary, into a cell).
+     */
+    transition: z.enum(['cut', 'fade', 'whip', 'rewind', ...TRAVELS]).default('cut'),
+    /**
+     * A rewind into this shot (Biku, 2026-10-18: "a proper rewind animation"): over the last
+     * moments of the shot before, everything since the start of the last scene plays backwards,
+     * fast, and stops on this shot with `label` stamped on it ("10 MINUTES EARLIER"), in one of
+     * three looks: an old video tape, a clean cartoon, a film reel.
+     */
+    rewind: z
+      .object({
+        label: z.string().min(1).max(28),
+        // Biku picked the film reel on 2026-10-18 ("3 is alright").
+        style: z.enum(['tape', 'cartoon', 'film']).default('film'),
+      })
+      .strict()
+      .optional(),
+    /** For a match: the thing in the last picture, and the thing in this one it becomes. */
+    matchFrom: spotSchema.optional(),
+    matchTo: spotSchema.optional(),
+    /** Where in the last picture a dive goes in: the thing the next picture grows out of. */
+    diveAt: z
+      .object({ x: z.number().min(0).max(1), y: z.number().min(0).max(1) })
+      .strict()
+      .optional(),
     /** Filled in by the voice stage: shot length is always driven by the audio. */
     startMs: z.number().min(0).optional(),
     endMs: z.number().min(0).optional(),
@@ -292,6 +500,17 @@ export const sceneSchema = z
      * video: once music has begun it plays on.
      */
     quiet: z.boolean().optional(),
+    /**
+     * The sound of the place, under the whole scene, music or not (Biku, 2026-10-20: "we need
+     * more background sounds that's according to the story"): a river, a café, the sea. Left
+     * out, the place picks its own (PLACE_AMBIENCE in shared/src/assembly.ts).
+     */
+    ambience: z
+      .enum(SFX_NAMES)
+      .refine((n) => AMBIENT_SFX.includes(n), {
+        message: 'an ambience is a sound that runs on (a bed)',
+      })
+      .optional(),
     /** The place (the plan calls it the set), its treatment and its colors. */
     place: idSchema,
     treatment: z.enum(TREATMENTS),
@@ -304,6 +523,35 @@ export const sceneSchema = z
 /** Words with emphasis marks and spacing taken out, for comparing a line with its shots. */
 export const plainWords = (text: string): string =>
   text.replace(/\*/g, '').split(/\s+/).filter(Boolean).join(' ');
+
+/** A gauge's change: on a word of a shot (left out, as the shot begins), to a value. */
+export const gaugeKeySchema = z
+  .object({
+    shot: idSchema,
+    on: z.string().min(1).max(40).optional(),
+    value: z.number(),
+    /** Already at this value as the shot begins (a part carrying on from the one before). */
+    now: z.boolean().optional(),
+  })
+  .strict();
+/** A gauge over the picture that carries the story; see `gauges` on the storyboard. */
+export const gaugeSchema = z
+  .object({
+    label: viewerTextSchema,
+    /** bar: fills from 0 to `max`; count: a number that rolls to each value; steps: "2/3". */
+    kind: z.enum(['bar', 'count', 'steps']),
+    max: z.number().positive().optional(),
+    /** For steps: how many there are. */
+    of: z.number().int().min(2).max(9).optional(),
+    /** For a count: written before and after the number ("$", " kg"). */
+    prefix: z.string().max(3).optional(),
+    suffix: z.string().max(6).optional(),
+    keys: z.array(gaugeKeySchema).min(1).max(12),
+    /** The last shot it is on screen in; left out, to the end of the video. */
+    until: idSchema.optional(),
+  })
+  .strict();
+export type Gauge = z.infer<typeof gaugeSchema>;
 
 export const storyboardSchema = z
   .object({
@@ -320,6 +568,27 @@ export const storyboardSchema = z
     voice: idSchema,
     /** Every bit of chance in the video (blinks, stars, tune) starts from this number. */
     seed: z.number().int().min(0),
+    /** How it is finished (the format's, copied in by the draft); left out, plain. */
+    finish: finishSchema.optional(),
+    /**
+     * How a What's the Catch? video's explainer graphics are drawn: `flat`, the bold pages of the
+     * first videos, or `world`, the small 2.5D world in deep ocean colours Biku picked on
+     * 2026-10-16 ("3 may be", then "last one looks good"). Left out, flat.
+     */
+    explainerLook: z.enum(['flat', 'world']).optional(),
+    /**
+     * The video's own music (2026-10-21, Biku: every Short had "the same background sounds"):
+     * the instruments for its topic, and whether it is a Short or a long video. Left out: the
+     * palette is the moods' own and the shape of the run decides the profile; the tune always
+     * comes from the storyboard's seed.
+     */
+    score: z
+      .object({
+        palette: z.enum(MUSIC_PALETTES).optional(),
+        profile: z.enum(SOUND_PROFILES).optional(),
+      })
+      .strict()
+      .optional(),
     /** Where the facts come from. Needed by factual formats. */
     sources: z.array(z.string().min(1)).default([]),
     /** The lessons this storyboard was written under (knowledge/lessons-log.md). */
@@ -327,6 +596,11 @@ export const storyboardSchema = z
       .array(z.string().regex(/^L-\d{4}$/, 'a lesson id looks like L-0007'))
       .default([]),
     cast: z.array(castMemberSchema).default([]),
+    /**
+     * The series the video belongs to, when it has a fixed cast of saved characters (for a game
+     * theory video, "game-theory"). At least two of that cast's speaking members must be in it.
+     */
+    series: idSchema.optional(),
     /**
      * The cover picture: which shot it shows, how far into it, and in what size of shot. Left
      * out, the cover is the opening shot.
@@ -349,14 +623,45 @@ export const storyboardSchema = z
         perSecond: z.number().positive(),
         /** A sign before the number, such as "$". */
         prefix: z.string().max(3).optional(),
+        /**
+         * The shot the counter starts on: it is not shown before that shot, and counts from
+         * nothing there (seconds since the smoke came in). Left out, it runs from the first frame.
+         * A part of a video keeps the name of a shot in an earlier part, so that it is a shot of
+         * the video is checked on the whole plan (plan.ts), not here.
+         */
+        from: idSchema.optional(),
       })
       .strict()
       .optional(),
+    /**
+     * Gauges at the top of the picture that carry the story (2026-10-22, after two Kurzgesagt
+     * Shorts, knowledge/playbooks/kurzgesagt-study.md): a bar that fills and drains, a number
+     * that counts up or down, or steps ("2/3"). Each changes on its keys, each key on a word of
+     * its shot, and stays up until its `until` shot ends. At most two at once.
+     */
+    gauges: z.array(gaugeSchema).max(3).optional(),
     scenes: z.array(sceneSchema).min(1),
   })
   .strict()
   .superRefine((sb, ctx) => {
     const issue = (message: string) => ctx.addIssue({ code: 'custom', message });
+    const shotIds = sb.scenes.flatMap((s) => s.shots.map((t) => t.id));
+    for (const g of sb.gauges ?? []) {
+      const at = g.keys.map((k) => shotIds.indexOf(k.shot));
+      g.keys.forEach((k, i) => {
+        if ((at[i] ?? -1) < 0)
+          issue(`the gauge "${g.label}" changes on shot "${k.shot}", which is not in the plan`);
+        if (
+          g.kind === 'steps' &&
+          (!Number.isInteger(k.value) || k.value < 0 || k.value > (g.of ?? 3))
+        )
+          issue(`the gauge "${g.label}" counts whole steps from 0 to ${g.of ?? 3}`);
+      });
+      if (at.some((x, i) => i > 0 && x < (at[i - 1] ?? 0)))
+        issue(`the keys of the gauge "${g.label}" are not in the order of the shots`);
+      if (g.until && !shotIds.includes(g.until))
+        issue(`the gauge "${g.label}" stays up until shot "${g.until}", which is not in the plan`);
+    }
     const once = (ids: string[], what: string) => {
       const seen = new Set<string>();
       for (const id of ids) {
@@ -455,6 +760,12 @@ export const storyboardSchema = z
         if (shot.camera.focus && !inShot.has(shot.camera.focus)) {
           issue(`shot "${shot.id}" focuses on "${shot.camera.focus}", who is not in the shot`);
         }
+        if (shot.overlay?.kind === 'bubble') {
+          for (const who of [shot.overlay.of, shot.overlay.to]) {
+            if (who !== undefined && !inShot.has(who))
+              issue(`shot "${shot.id}" has a bubble for "${who}", who is not in the shot`);
+          }
+        }
         if (shot.camera.framing === 'over-shoulder' && shot.actors.length < 2) {
           issue(`shot "${shot.id}" is over the shoulder, which needs two people`);
         }
@@ -516,6 +827,8 @@ export type ActorMoment = {
   pose?: string;
   action?: string;
   expression: string;
+  /** How strongly the face is worn, 0.2 to 1. */
+  strength: number;
   lookAt: string;
   holds?: string;
 };
@@ -529,6 +842,7 @@ export function actorMoments(actor: Actor): ActorMoment[] {
     at: 0,
     ...(actor.action ? { action: actor.action } : { pose: actor.pose ?? 'stand' }),
     expression: actor.expression,
+    strength: actor.strength ?? 1,
     lookAt: actor.lookAt,
     ...(actor.holds ? { holds: actor.holds } : {}),
   };
@@ -547,6 +861,8 @@ export function actorMoments(actor: Actor): ActorMoment[] {
           ? { action: before.action }
           : { pose: before.pose ?? 'stand' }),
       expression: step.expression ?? before.expression,
+      // A new face comes on fully unless the step says how strongly; the same face keeps its strength.
+      strength: step.strength ?? (step.expression === undefined ? before.strength : 1),
       lookAt: step.lookAt ?? before.lookAt,
       ...(holds ? { holds } : {}),
     });

@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "video": "split-or-steal-part-2-9x16-preview-v1.mp4",
+  "stills": {
+    "s4a": "ok",
+    "s4c": "ok",
+    "s4d": "ok",
+    "s4e": "ok",
+    "s4f": "ok",
+    "s4g": "ok",
+    "s4h": "ok",
+    "s4i": "ok",
+    "s4j": "ok",
+    "s4j2": "ok",
+    "s4k": "ok"
+  },
+  "strips": {
+    "cut-s4a-s4c": "ok",
+    "cut-s4c-s4d": "ok",
+    "cut-s4e-s4f": "ok",
+    "cut-s4g-s4h": "ok",
+    "cut-s4h-s4i": "ok",
+    "cut-s4j-s4j2": "ok",
+    "cut-s4j2-s4k": "ok",
+    "s4a-move-1": "ok",
+    "s4a-move-2": "ok",
+    "s4d-move-1": "ok",
+    "s4f-move-1": "ok",
+    "s4f-move-2": "ok",
+    "s4g-move-1": "ok",
+    "s4k-move-1": "ok",
+    "s4k-move-2": "ok"
+  },
+  "playbook": "ok",
+  "fixed": [],
+  "notes": [
+    "This is the tall picture laid out on its own from the same plan, not cut out of the wide one: the two players and the desk fill the width of the phone, the big words and the bubbles sit above the heads, and the captions are two short lines low in the frame.",
+    "Two people and a desk are wide, so in the tall picture they are in the upper half with the floor under them; the shots of one person (the Stranger, you thinking, Ibrahim thinking) are much bigger.",
+    "The numbers 287, 53% and 3 in 4 sit high above the players, with room between.",
+    "Everything else is as in the wide cut of this part; its notes are in the wide report."
+  ]
+}

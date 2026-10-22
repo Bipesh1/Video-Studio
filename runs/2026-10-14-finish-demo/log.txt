@@ -1,0 +1,295 @@
+2026-10-14T07:05:00.841Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T07:05:00.843Z  part 2  voice: start
+2026-10-14T07:05:00.848Z  part 2    the voice is already made for these lines
+2026-10-14T07:05:00.848Z  part 2  voice: done in 0.0 s
+2026-10-14T07:05:00.849Z  part 2  time: start
+2026-10-14T07:05:00.857Z  part 2    11 shots over 28.0 s: shortest 1.2 s, longest 4.3 s
+2026-10-14T07:05:00.858Z  part 2    note: shot "s5d" is only 1.2 s long
+2026-10-14T07:05:00.858Z  part 2    note: shot "s5f" is 4.3 s long, a little over the 4 s a shot should take
+2026-10-14T07:05:00.859Z  part 2  time: done in 0.0 s
+2026-10-14T07:05:00.859Z  part 2  sound: start
+2026-10-14T07:05:41.449Z  part 2    F:\Video Studio\runs\2026-10-14-finish-demo\part-2\audio\mix.wav: 28.02 s, -14.02 LUFS, true peak -1.23 dB, 1 music moods, 3 effects, music -16.7 dB under the voice
+2026-10-14T07:05:41.451Z  part 2  sound: done in 40.6 s
+2026-10-14T07:05:41.451Z  part 2  stills: start
+2026-10-14T07:05:41.508Z  part 2  bundle: start
+2026-10-14T07:06:45.128Z  part 2  bundle: done in 63.6 s
+2026-10-14T07:07:04.209Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T07:07:04.214Z  part 2  stills: start
+2026-10-14T07:07:04.259Z  part 2  bundle: start
+2026-10-14T07:07:20.235Z  part 2  bundle: done in 16.0 s
+2026-10-14T07:07:34.496Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T07:07:34.498Z  part 2  stills: start
+2026-10-14T07:07:34.515Z  part 2  bundle: start
+2026-10-14T07:07:39.954Z  part 2  bundle: done in 5.4 s
+2026-10-14T07:08:17.248Z  part 2    11 stills in runs\2026-10-14-finish-demo\part-2\stills\9x16
+2026-10-14T07:08:19.149Z  part 2    runs\2026-10-14-finish-demo\part-2\stills\sheet-9x16-1.png (11 shots, 3 rows)
+2026-10-14T07:08:19.149Z  part 2  stills: done in 44.7 s
+2026-10-14T07:08:19.150Z  part 2  preview: start
+2026-10-14T07:10:34.941Z  part 2    runs\2026-10-14-finish-demo\part-2\preview\finish-demo-part-2-9x16-preview-v1.mp4: 28.03 s of video, 540x960, in 134.6 s (4.80 s per video second)
+2026-10-14T07:10:34.967Z  part 2    runs\2026-10-14-finish-demo\part-2\preview\finish-demo-part-2-9x16-preview-v1.srt
+2026-10-14T07:10:35.006Z  part 2  preview: done in 135.9 s
+2026-10-14T07:38:44.119Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T07:38:44.131Z  part 2  stills: start
+2026-10-14T07:38:44.305Z  part 2  bundle: start
+2026-10-14T07:39:14.066Z  part 2  bundle: done in 29.8 s
+2026-10-14T07:40:10.124Z  part 2    11 stills in runs\2026-10-14-finish-demo\part-2\stills\9x16
+2026-10-14T07:40:12.965Z  part 2    runs\2026-10-14-finish-demo\part-2\stills\sheet-9x16-1.png (11 shots, 3 rows)
+2026-10-14T07:40:12.965Z  part 2  stills: done in 88.8 s
+2026-10-14T07:40:12.966Z  part 2  preview: start
+2026-10-14T07:43:03.336Z  part 2    runs\2026-10-14-finish-demo\part-2\preview\finish-demo-part-2-9x16-preview-v2.mp4: 28.03 s of video, 540x960, in 169.4 s (6.04 s per video second)
+2026-10-14T07:43:03.345Z  part 2    runs\2026-10-14-finish-demo\part-2\preview\finish-demo-part-2-9x16-preview-v2.srt
+2026-10-14T07:43:03.376Z  part 2  preview: done in 170.4 s
+2026-10-14T07:51:06.449Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T07:51:06.451Z  part 2  stills: start
+2026-10-14T07:51:06.487Z  part 2  bundle: start
+2026-10-14T07:51:36.366Z  part 2  bundle: done in 29.9 s
+2026-10-14T07:51:56.008Z  part 2    11 stills in runs\2026-10-14-finish-demo\part-2\stills\9x16
+2026-10-14T07:51:56.766Z  part 2    runs\2026-10-14-finish-demo\part-2\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-14T07:51:58.037Z  part 2    runs\2026-10-14-finish-demo\part-2\stills\sheet-9x16-1.png (11 shots, 3 rows)
+2026-10-14T07:51:58.038Z  part 2  stills: done in 51.6 s
+2026-10-14T07:51:58.038Z  part 2  animatic: start
+2026-10-14T07:52:02.368Z  part 2    runs\2026-10-14-finish-demo\part-2\animatic\finish-demo-part-2-9x16-animatic-v1.mp4: 11 pictures over 28.0 s, with the sound
+2026-10-14T07:52:02.368Z  part 2  animatic: done in 4.3 s
+2026-10-14T07:52:18.475Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T07:52:18.477Z  part 2  stills: start
+2026-10-14T07:52:18.500Z  part 2  bundle: start
+2026-10-14T07:52:25.605Z  part 2  bundle: done in 7.1 s
+2026-10-14T07:52:43.524Z  part 2    11 stills in runs\2026-10-14-finish-demo\part-2\stills\9x16
+2026-10-14T07:52:43.829Z  part 2    runs\2026-10-14-finish-demo\part-2\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-14T07:52:45.141Z  part 2    runs\2026-10-14-finish-demo\part-2\stills\sheet-9x16-1.png (11 shots, 3 rows)
+2026-10-14T07:52:45.142Z  part 2  stills: done in 26.7 s
+2026-10-14T07:53:06.625Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T07:53:06.626Z  part 2  time: start
+2026-10-14T07:53:06.630Z  part 2    11 shots over 28.0 s: shortest 1.2 s, longest 4.3 s
+2026-10-14T07:53:06.631Z  part 2    note: shot "s5d" is only 1.2 s long
+2026-10-14T07:53:06.631Z  part 2    note: shot "s5f" is 4.3 s long, a little over the 4 s a shot should take
+2026-10-14T07:53:06.632Z  part 2  time: done in 0.0 s
+2026-10-14T07:53:06.632Z  part 2  stills: start
+2026-10-14T07:53:06.647Z  part 2  bundle: start
+2026-10-14T07:53:13.511Z  part 2  bundle: done in 6.9 s
+2026-10-14T07:53:31.567Z  part 2    11 stills in runs\2026-10-14-finish-demo\part-2\stills\9x16
+2026-10-14T07:53:31.866Z  part 2    runs\2026-10-14-finish-demo\part-2\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-14T07:53:33.215Z  part 2    runs\2026-10-14-finish-demo\part-2\stills\sheet-9x16-1.png (11 shots, 3 rows)
+2026-10-14T07:53:33.215Z  part 2  stills: done in 26.6 s
+2026-10-14T07:53:33.216Z  part 2  animatic: start
+2026-10-14T07:53:38.620Z  part 2    runs\2026-10-14-finish-demo\part-2\animatic\finish-demo-part-2-9x16-animatic-v2.mp4: 11 pictures over 28.0 s, with the sound
+2026-10-14T07:53:38.620Z  part 2  animatic: done in 5.4 s
+2026-10-14T10:10:24.774Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T10:10:24.776Z  part 2  stills: start
+2026-10-14T10:10:24.937Z  part 2  bundle: start
+2026-10-14T10:10:54.716Z  part 2  bundle: done in 29.8 s
+2026-10-14T10:11:41.545Z  part 2    11 stills in runs\2026-10-14-finish-demo\part-2\stills\9x16
+2026-10-14T10:11:45.501Z  part 2    runs\2026-10-14-finish-demo\part-2\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-14T10:11:47.815Z  part 2    runs\2026-10-14-finish-demo\part-2\stills\sheet-9x16-1.png (11 shots, 3 rows)
+2026-10-14T10:11:47.816Z  part 2  stills: done in 83.0 s
+2026-10-14T10:21:48.758Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T10:21:48.763Z  part 2  voice: start
+2026-10-14T10:23:30.814Z  part 2    voice.wav: 28.01 s, 66 words, timings from kokoro, -17.18 LUFS
+2026-10-14T10:23:30.833Z  part 2  voice: done in 102.1 s
+2026-10-14T10:23:30.833Z  part 2  time: start
+2026-10-14T10:23:30.856Z  part 2    11 shots over 28.0 s: shortest 1.2 s, longest 4.3 s
+2026-10-14T10:23:30.856Z  part 2    note: shot "s5d" is only 1.2 s long
+2026-10-14T10:23:30.857Z  part 2    note: shot "s5f" is 4.3 s long, a little over the 4 s a shot should take
+2026-10-14T10:23:30.857Z  part 2  time: done in 0.0 s
+2026-10-14T10:23:30.857Z  part 2  sound: start
+2026-10-14T10:23:54.153Z  part 2    F:\Video Studio\runs\2026-10-14-finish-demo\part-2\audio\mix.wav: 28.01 s, -14.05 LUFS, true peak -1.24 dB, 1 music moods, 3 effects, music -16.7 dB under the voice
+2026-10-14T10:23:54.153Z  part 2  sound: done in 23.3 s
+2026-10-14T10:23:54.154Z  part 2  stills: start
+2026-10-14T10:23:54.173Z  part 2  bundle: start
+2026-10-14T10:24:15.475Z  part 2  bundle: done in 21.3 s
+2026-10-14T10:25:18.294Z  part 2    11 stills in runs\2026-10-14-finish-demo\part-2\stills\9x16
+2026-10-14T10:25:21.320Z  part 2    runs\2026-10-14-finish-demo\part-2\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-14T10:25:23.362Z  part 2    runs\2026-10-14-finish-demo\part-2\stills\sheet-9x16-1.png (11 shots, 3 rows)
+2026-10-14T10:25:23.363Z  part 2  stills: done in 89.2 s
+2026-10-14T10:25:23.364Z  part 2  preview: start
+2026-10-14T10:29:09.983Z  part 2    runs\2026-10-14-finish-demo\part-2\preview\finish-demo-part-2-9x16-preview-v3.mp4: 28.03 s of video, 540x960, in 225.0 s (8.03 s per video second)
+2026-10-14T10:29:09.988Z  part 2    runs\2026-10-14-finish-demo\part-2\preview\finish-demo-part-2-9x16-preview-v3.srt
+2026-10-14T10:29:10.068Z  part 2  preview: done in 226.7 s
+2026-10-14T10:36:27.372Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T10:36:27.374Z  part 2  preview: start
+2026-10-14T10:36:27.391Z  part 2  bundle: start
+2026-10-14T10:36:39.330Z  part 2  bundle: done in 11.9 s
+2026-10-14T10:40:12.202Z  part 2    runs\2026-10-14-finish-demo\part-2\preview\finish-demo-part-2-9x16-preview-v4.mp4: 28.03 s of video, 540x960, in 209.7 s (7.48 s per video second)
+2026-10-14T10:40:12.215Z  part 2    runs\2026-10-14-finish-demo\part-2\preview\finish-demo-part-2-9x16-preview-v4.srt
+2026-10-14T10:40:12.240Z  part 2  preview: done in 224.9 s
+2026-10-14T14:13:02.060Z  part 3  part 3 of 3, 9:16: 2 scenes, 18 shots
+2026-10-14T14:13:02.089Z  part 3  time: start
+2026-10-14T14:13:02.103Z  part 3    18 shots over 49.8 s: shortest 1.6 s, longest 4.6 s
+2026-10-14T14:13:02.104Z  part 3    note: shot "s7g" is 4.6 s long, a little over the 4 s a shot should take
+2026-10-14T14:13:02.105Z  part 3  time: done in 0.0 s
+2026-10-14T14:13:02.105Z  part 3  stills: start
+2026-10-14T14:13:02.107Z  part 3  bundle: start
+2026-10-14T14:13:47.082Z  part 3  bundle: done in 45.0 s
+2026-10-14T14:14:34.948Z  part 3    18 stills in runs\2026-10-14-finish-demo\part-3\stills\9x16
+2026-10-14T14:14:39.020Z  part 3    runs\2026-10-14-finish-demo\part-3\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-14T14:14:41.465Z  part 3    runs\2026-10-14-finish-demo\part-3\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-14T14:14:42.495Z  part 3    runs\2026-10-14-finish-demo\part-3\stills\sheet-9x16-2.png (6 shots, 2 rows)
+2026-10-14T14:14:42.495Z  part 3  stills: done in 100.4 s
+2026-10-14T14:16:27.530Z  part 3  part 3 of 3, 9:16: 2 scenes, 18 shots
+2026-10-14T14:16:27.536Z  part 3  time: start
+2026-10-14T14:16:27.555Z  part 3    18 shots over 49.8 s: shortest 1.6 s, longest 4.6 s
+2026-10-14T14:16:27.557Z  part 3    note: shot "s7g" is 4.6 s long, a little over the 4 s a shot should take
+2026-10-14T14:16:27.558Z  part 3  time: done in 0.0 s
+2026-10-14T14:16:27.559Z  part 3  stills: start
+2026-10-14T14:16:27.562Z  part 3  bundle: start
+2026-10-14T14:16:49.509Z  part 3  bundle: done in 21.9 s
+2026-10-14T14:17:31.031Z  part 3    18 stills in runs\2026-10-14-finish-demo\part-3\stills\9x16
+2026-10-14T14:17:31.472Z  part 3    runs\2026-10-14-finish-demo\part-3\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-14T14:17:33.381Z  part 3    runs\2026-10-14-finish-demo\part-3\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-14T14:17:34.266Z  part 3    runs\2026-10-14-finish-demo\part-3\stills\sheet-9x16-2.png (6 shots, 2 rows)
+2026-10-14T14:17:34.266Z  part 3  stills: done in 66.7 s
+2026-10-14T14:18:56.497Z  part 3  part 3 of 3, 9:16: 2 scenes, 18 shots
+2026-10-14T14:18:56.502Z  part 3  time: start
+2026-10-14T14:18:56.518Z  part 3    18 shots over 49.8 s: shortest 1.6 s, longest 4.6 s
+2026-10-14T14:18:56.519Z  part 3    note: shot "s7g" is 4.6 s long, a little over the 4 s a shot should take
+2026-10-14T14:18:56.520Z  part 3  time: done in 0.0 s
+2026-10-14T14:18:56.521Z  part 3  stills: start
+2026-10-14T14:18:56.524Z  part 3  bundle: start
+2026-10-14T14:19:16.117Z  part 3  bundle: done in 19.6 s
+2026-10-14T14:19:55.692Z  part 3    18 stills in runs\2026-10-14-finish-demo\part-3\stills\9x16
+2026-10-14T14:19:56.112Z  part 3    runs\2026-10-14-finish-demo\part-3\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-14T14:19:58.017Z  part 3    runs\2026-10-14-finish-demo\part-3\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-14T14:19:58.976Z  part 3    runs\2026-10-14-finish-demo\part-3\stills\sheet-9x16-2.png (6 shots, 2 rows)
+2026-10-14T14:19:58.978Z  part 3  stills: done in 62.5 s
+2026-10-14T14:19:58.978Z  part 3  preview: start
+2026-10-14T14:20:17.160Z  part 3  part 3 of 3, 9:16: 2 scenes, 18 shots
+2026-10-14T14:20:17.164Z  part 3  preview: start
+2026-10-14T14:20:30.023Z  part 3  part 3 of 3, 9:16: 2 scenes, 18 shots
+2026-10-14T14:20:30.028Z  part 3  sound: start
+2026-10-14T14:21:21.083Z  part 3    F:\Video Studio\runs\2026-10-14-finish-demo\part-3\audio\mix.wav: 49.80 s, -14.02 LUFS, true peak -1.1 dB, 1 music moods, 1 effects, music -17.4 dB under the voice
+2026-10-14T14:21:21.084Z  part 3  sound: done in 51.1 s
+2026-10-14T14:21:21.085Z  part 3  preview: start
+2026-10-14T14:21:21.165Z  part 3  bundle: start
+2026-10-14T14:21:35.272Z  part 3  bundle: done in 14.1 s
+2026-10-14T14:29:04.154Z  part 3    runs\2026-10-14-finish-demo\part-3\preview\finish-demo-part-3-9x16-preview-v1.mp4: 49.80 s of video, 540x960, in 445.1 s (8.94 s per video second)
+2026-10-14T14:29:04.198Z  part 3    runs\2026-10-14-finish-demo\part-3\preview\finish-demo-part-3-9x16-preview-v1.srt
+2026-10-14T14:29:04.774Z  part 3  preview: done in 463.7 s
+2026-10-14T15:09:56.587Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T15:09:56.604Z  part 2  time: start
+2026-10-14T15:09:56.661Z  part 2    11 shots over 28.0 s: shortest 1.2 s, longest 4.3 s
+2026-10-14T15:09:56.662Z  part 2    note: shot "s5d" is only 1.2 s long
+2026-10-14T15:09:56.662Z  part 2    note: shot "s5f" is 4.3 s long, a little over the 4 s a shot should take
+2026-10-14T15:09:56.662Z  part 2  time: done in 0.1 s
+2026-10-14T15:09:56.663Z  part 2  preview: start
+2026-10-14T15:09:56.914Z  part 2  bundle: start
+2026-10-14T15:10:17.984Z  part 2  bundle: done in 21.1 s
+2026-10-14T15:12:50.134Z  part 2    runs\2026-10-14-finish-demo\part-2\preview\finish-demo-part-2-9x16-preview-v5.mp4: 28.03 s of video, 540x960, in 138.3 s (4.93 s per video second)
+2026-10-14T15:12:50.137Z  part 2    runs\2026-10-14-finish-demo\part-2\preview\finish-demo-part-2-9x16-preview-v5.srt
+2026-10-14T15:12:50.186Z  part 2  preview: done in 173.5 s
+2026-10-14T15:33:59.593Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T15:33:59.613Z  part 2  voice: start
+2026-10-14T15:43:11.680Z  part 2    voice.wav: 30.14 s, 66 words, timings from heard, -17.14 LUFS
+2026-10-14T15:43:11.697Z  part 2  voice: done in 552.1 s
+2026-10-14T15:43:11.697Z  part 2  time: start
+2026-10-14T15:43:11.710Z  part 2    11 shots over 30.1 s: shortest 1.5 s, longest 4.0 s
+2026-10-14T15:43:11.741Z  part 2  time: done in 0.0 s
+2026-10-14T15:43:11.741Z  part 2  sound: start
+2026-10-14T15:43:27.931Z  part 2    F:\Video Studio\runs\2026-10-14-finish-demo\part-2\audio\mix.wav: 30.14 s, -14.04 LUFS, true peak -1.25 dB, 1 music moods, 3 effects, music -17.1 dB under the voice
+2026-10-14T15:43:27.931Z  part 2  sound: done in 16.2 s
+2026-10-14T15:43:27.931Z  part 2  preview: start
+2026-10-14T15:43:27.965Z  part 2  bundle: start
+2026-10-14T15:43:52.751Z  part 2  bundle: done in 24.7 s
+2026-10-14T15:47:07.681Z  part 2    runs\2026-10-14-finish-demo\part-2\preview\finish-demo-part-2-9x16-preview-v6.mp4: 30.17 s of video, 540x960, in 174.1 s (5.77 s per video second)
+2026-10-14T15:47:07.690Z  part 2    runs\2026-10-14-finish-demo\part-2\preview\finish-demo-part-2-9x16-preview-v6.srt
+2026-10-14T15:47:07.710Z  part 2  preview: done in 219.8 s
+2026-10-14T15:54:47.130Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T15:54:47.131Z  part 2  time: start
+2026-10-14T15:54:47.135Z  part 2    11 shots over 30.1 s: shortest 1.5 s, longest 4.0 s
+2026-10-14T15:54:47.135Z  part 2  time: done in 0.0 s
+2026-10-14T15:54:47.135Z  part 2  preview: start
+2026-10-14T15:54:47.148Z  part 2  bundle: start
+2026-10-14T15:54:52.409Z  part 2  bundle: done in 5.3 s
+2026-10-14T15:58:38.196Z  part 2    runs\2026-10-14-finish-demo\part-2\preview\finish-demo-part-2-9x16-preview-v7.mp4: 30.17 s of video, 540x960, in 223.4 s (7.40 s per video second)
+2026-10-14T15:58:38.200Z  part 2    runs\2026-10-14-finish-demo\part-2\preview\finish-demo-part-2-9x16-preview-v7.srt
+2026-10-14T15:58:38.210Z  part 2  preview: done in 231.1 s
+2026-10-14T15:59:20.653Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T15:59:20.654Z  part 2  stills: start
+2026-10-14T15:59:20.673Z  part 2  bundle: start
+2026-10-14T15:59:25.852Z  part 2  bundle: done in 5.2 s
+2026-10-14T15:59:42.902Z  part 2    11 stills in runs\2026-10-14-finish-demo\part-2\stills\9x16
+2026-10-14T15:59:43.223Z  part 2    runs\2026-10-14-finish-demo\part-2\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-14T15:59:44.477Z  part 2    runs\2026-10-14-finish-demo\part-2\stills\sheet-9x16-1.png (11 shots, 3 rows)
+2026-10-14T15:59:44.477Z  part 2  stills: done in 23.8 s
+2026-10-14T16:00:17.220Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T16:00:17.221Z  part 2  stills: start
+2026-10-14T16:00:17.241Z  part 2  bundle: start
+2026-10-14T16:00:28.029Z  part 2  bundle: done in 10.8 s
+2026-10-14T16:00:47.125Z  part 2    11 stills in runs\2026-10-14-finish-demo\part-2\stills\9x16
+2026-10-14T16:00:47.572Z  part 2    runs\2026-10-14-finish-demo\part-2\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-14T16:00:48.894Z  part 2    runs\2026-10-14-finish-demo\part-2\stills\sheet-9x16-1.png (11 shots, 3 rows)
+2026-10-14T16:00:48.894Z  part 2  stills: done in 31.7 s
+2026-10-14T16:02:47.025Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T16:02:47.026Z  part 2  time: start
+2026-10-14T16:02:47.031Z  part 2    11 shots over 30.1 s: shortest 1.5 s, longest 4.0 s
+2026-10-14T16:02:47.031Z  part 2  time: done in 0.0 s
+2026-10-14T16:02:47.032Z  part 2  clip: start
+2026-10-14T16:02:47.045Z  part 2  bundle: start
+2026-10-14T16:02:54.079Z  part 2  bundle: done in 7.0 s
+2026-10-14T16:03:31.399Z  part 2    runs\2026-10-14-finish-demo\part-2\clips\finish-demo-part-2-9x16-5-11s-v1.mp4: seconds 5 to 11, in 34.2 s
+2026-10-14T16:03:31.402Z  part 2  clip: done in 44.4 s
+2026-10-14T16:03:37.573Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T16:03:37.574Z  part 2  time: start
+2026-10-14T16:03:37.579Z  part 2    11 shots over 30.1 s: shortest 1.5 s, longest 4.0 s
+2026-10-14T16:03:37.579Z  part 2  time: done in 0.0 s
+2026-10-14T16:03:37.580Z  part 2  clip: start
+2026-10-14T16:03:37.597Z  part 2  bundle: start
+2026-10-14T16:03:46.122Z  part 2  bundle: done in 8.5 s
+2026-10-14T16:04:33.903Z  part 2    runs\2026-10-14-finish-demo\part-2\clips\finish-demo-part-2-9x16-5-11s-v2.mp4: seconds 5 to 11, in 45.0 s
+2026-10-14T16:04:33.904Z  part 2  clip: done in 56.3 s
+2026-10-14T16:04:39.040Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T16:04:39.041Z  part 2  time: start
+2026-10-14T16:04:39.045Z  part 2    11 shots over 30.1 s: shortest 1.5 s, longest 4.0 s
+2026-10-14T16:04:39.045Z  part 2  time: done in 0.0 s
+2026-10-14T16:04:39.046Z  part 2  clip: start
+2026-10-14T16:04:39.060Z  part 2  bundle: start
+2026-10-14T16:04:45.361Z  part 2  bundle: done in 6.3 s
+2026-10-14T16:05:36.284Z  part 2    runs\2026-10-14-finish-demo\part-2\clips\finish-demo-part-2-9x16-5-11s-v3.mp4: seconds 5 to 11, in 47.9 s
+2026-10-14T16:05:36.287Z  part 2  clip: done in 57.2 s
+2026-10-14T16:14:45.873Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T16:14:45.875Z  part 2  voice: start
+2026-10-14T16:20:11.877Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T16:20:11.879Z  part 2  voice: start
+2026-10-14T16:25:50.801Z  part 2    voice.wav: 28.61 s, 66 words, timings from heard, -17.14 LUFS
+2026-10-14T16:25:50.812Z  part 2  voice: done in 338.9 s
+2026-10-14T16:25:50.813Z  part 2  time: start
+2026-10-14T16:25:50.858Z  part 2    11 shots over 28.6 s: shortest 1.5 s, longest 4.0 s
+2026-10-14T16:25:50.858Z  part 2  time: done in 0.0 s
+2026-10-14T16:25:50.859Z  part 2  sound: start
+2026-10-14T16:26:14.832Z  part 2    F:\Video Studio\runs\2026-10-14-finish-demo\part-2\audio\mix.wav: 28.61 s, -14.03 LUFS, true peak -1.25 dB, 1 music moods, 3 effects, music -17.2 dB under the voice
+2026-10-14T16:26:14.832Z  part 2  sound: done in 24.0 s
+2026-10-14T16:26:14.833Z  part 2  clip: start
+2026-10-14T16:26:14.909Z  part 2  bundle: start
+2026-10-14T16:26:33.182Z  part 2  bundle: done in 18.3 s
+2026-10-14T16:28:19.264Z  part 2    runs\2026-10-14-finish-demo\part-2\clips\finish-demo-part-2-9x16-13-25s-v1.mp4: seconds 13 to 25, in 88.3 s
+2026-10-14T16:28:19.265Z  part 2  clip: done in 124.4 s
+2026-10-14T16:28:54.693Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T16:28:54.695Z  part 2  time: start
+2026-10-14T16:28:54.700Z  part 2    11 shots over 28.6 s: shortest 1.5 s, longest 4.0 s
+2026-10-14T16:28:54.700Z  part 2  time: done in 0.0 s
+2026-10-14T16:28:54.701Z  part 2  clip: start
+2026-10-14T16:28:54.713Z  part 2  bundle: start
+2026-10-14T16:28:58.524Z  part 2  bundle: done in 3.8 s
+2026-10-14T16:30:28.989Z  part 2    runs\2026-10-14-finish-demo\part-2\clips\finish-demo-part-2-9x16-13-25s-v2.mp4: seconds 13 to 25, in 88.2 s
+2026-10-14T16:30:28.992Z  part 2  clip: done in 94.3 s
+2026-10-14T16:36:44.853Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T16:36:44.854Z  part 2  time: start
+2026-10-14T16:36:44.858Z  part 2    11 shots over 28.6 s: shortest 1.5 s, longest 4.0 s
+2026-10-14T16:36:44.859Z  part 2  time: done in 0.0 s
+2026-10-14T16:37:00.034Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T16:37:00.038Z  part 2  voice: start
+2026-10-14T16:38:07.474Z  part 2  part 2 of 3, 9:16: 2 scenes, 11 shots
+2026-10-14T16:38:07.477Z  part 2  voice: start
+2026-10-14T16:43:04.980Z  part 2    voice.wav: 26.58 s, 66 words, timings from heard, -17.12 LUFS
+2026-10-14T16:43:04.990Z  part 2  voice: done in 297.5 s
+2026-10-14T16:43:04.990Z  part 2  time: start
+2026-10-14T16:43:05.042Z  part 2    11 shots over 26.6 s: shortest 1.3 s, longest 3.2 s
+2026-10-14T16:43:05.046Z  part 2    note: shot "s4b" is only 1.3 s long
+2026-10-14T16:43:05.046Z  part 2  time: done in 0.1 s
+2026-10-14T16:43:05.046Z  part 2  sound: start
+2026-10-14T16:43:19.042Z  part 2    F:\Video Studio\runs\2026-10-14-finish-demo\part-2\audio\mix.wav: 26.58 s, -14.02 LUFS, true peak -1.26 dB, 1 music moods, 3 effects, music -17.0 dB under the voice
+2026-10-14T16:43:19.043Z  part 2  sound: done in 14.0 s
+2026-10-14T16:43:19.043Z  part 2  clip: start
+2026-10-14T16:43:19.077Z  part 2  bundle: start
+2026-10-14T16:43:41.722Z  part 2  bundle: done in 22.6 s
+2026-10-14T16:45:18.994Z  part 2    runs\2026-10-14-finish-demo\part-2\clips\finish-demo-part-2-9x16-13-23s-v1.mp4: seconds 13 to 23, in 74.8 s
+2026-10-14T16:45:18.995Z  part 2  clip: done in 120.0 s

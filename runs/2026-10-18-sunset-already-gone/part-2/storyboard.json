@@ -1,0 +1,275 @@
+{
+  "version": 1,
+  "title": "Why Is the Sun Already Gone When You Watch It Set?",
+  "request": "Biku's What's the Catch? script, used as it is: 'make a video for this script for whats the catch' (2026-10-18).",
+  "mode": "as-is",
+  "format": "fine-print",
+  "style": "ink-stick",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "seed": 6201,
+  "finish": {
+    "acting": "snappy",
+    "onTwos": false,
+    "shadows": false,
+    "grain": 0.2,
+    "vignette": 0.12,
+    "boil": 0.25
+  },
+  "explainerLook": "world",
+  "sources": [
+    "David Basey, \"Atmospheric Refraction\", British Astronomical Association, 2 March 2019. Near the horizon the air lifts the Sun's image by about half a degree, roughly the Sun's apparent diameter; a Sun that seems to sit on the horizon is really below it; the lower edge is lifted more than the upper, so the disc looks oval. https://britastro.org/2019/atmospheric-refraction",
+    "Tong Yu-fai, \"Effect of atmospheric refraction on the times of sunrise and sunset\", Hong Kong Observatory, August 2017. Refraction makes sunset about 2 minutes later in Hong Kong than with no air (about 34 arcminutes of lift under average conditions); the published times already include it; the Sun truly disappears below the horizon before sunset happens. https://www.hko.gov.hk/en/education/astronomy-and-time/astronomy/00493-effect-of-atmospheric-refraction-on-the-times-of-sunrise-and-sunset.html",
+    "Checked by Claude against both pages on 2026-10-18."
+  ],
+  "appliedLessons": [],
+  "cast": [],
+  "scenes": [
+    {
+      "id": "s3",
+      "chapter": 1,
+      "beat": "follow-the-money",
+      "mood": "upbeat",
+      "quiet": false,
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l07",
+          "speaker": "narrator",
+          "text": "The straw in the drink beside you shows why.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l08",
+          "speaker": "narrator",
+          "text": "The straw looks snapped because light changes direction when it crosses from water into air.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l09",
+          "speaker": "narrator",
+          "text": "Air bends light too, because air gets *thicker* the closer it is to the ground.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l10",
+          "speaker": "narrator",
+          "text": "So sunlight curves a little as it passes down through each layer.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l11",
+          "speaker": "narrator",
+          "text": "A high Sun's light comes almost straight down, so it barely bends.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l12",
+          "speaker": "narrator",
+          "text": "But a low Sun's light skims sideways through the thickest air, so it bends the *most*.",
+          "pauseAfterMs": 1100
+        }
+      ],
+      "shots": [
+        {
+          "id": "s07",
+          "line": "l07",
+          "words": "The straw in the drink beside you shows why.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "from": "sea",
+            "at": "glass",
+            "fly": "start",
+            "keep": [],
+            "show": [
+              {
+                "item": "straw",
+                "on": "straw"
+              }
+            ]
+          },
+          "transition": "cut",
+          "startMs": 0,
+          "endMs": 3040
+        },
+        {
+          "id": "s08",
+          "line": "l08",
+          "words": "The straw looks snapped because light changes direction when it crosses from water into air.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "from": "glass",
+            "at": "straw",
+            "fly": "start",
+            "keep": [
+              "straw"
+            ],
+            "show": [],
+            "callout": {
+              "value": "BENT HERE",
+              "caption": "LIGHT CHANGES DIRECTION",
+              "at": "straw",
+              "on": "direction"
+            }
+          },
+          "transition": "cut",
+          "startMs": 3040,
+          "endMs": 8650
+        },
+        {
+          "id": "s09",
+          "line": "l09",
+          "words": "Air bends light too, because air gets *thicker* the closer it is to the ground.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "from": "straw",
+            "at": "sky",
+            "fly": "start",
+            "keep": [],
+            "show": [
+              {
+                "item": "layers",
+                "on": "thicker"
+              }
+            ]
+          },
+          "transition": "cut",
+          "startMs": 8650,
+          "endMs": 13930
+        },
+        {
+          "id": "s10",
+          "line": "l10",
+          "words": "So sunlight curves a little as it passes down through each layer.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "at": "sky",
+            "fly": "start",
+            "keep": [
+              "layers"
+            ],
+            "show": [
+              {
+                "item": "beam",
+                "on": "sunlight"
+              }
+            ]
+          },
+          "transition": "cut",
+          "startMs": 13930,
+          "endMs": 18330
+        },
+        {
+          "id": "s11",
+          "line": "l11",
+          "words": "A high Sun's light comes almost straight down, so it barely bends.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "from": "sky",
+            "at": "high",
+            "fly": "start",
+            "keep": [
+              "layers"
+            ],
+            "show": [
+              {
+                "item": "high-sun",
+                "on": "high"
+              }
+            ]
+          },
+          "transition": "cut",
+          "startMs": 18330,
+          "endMs": 22770
+        },
+        {
+          "id": "s12",
+          "line": "l12",
+          "words": "But a low Sun's light skims sideways through the thickest air, so it bends the *most*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "from": "high",
+            "at": "curve",
+            "fly": "start",
+            "keep": [],
+            "show": [
+              {
+                "item": "low-sun",
+                "on": "low"
+              },
+              {
+                "item": "skim",
+                "on": "skims"
+              }
+            ]
+          },
+          "transition": "cut",
+          "startMs": 22770,
+          "endMs": 30040
+        }
+      ]
+    }
+  ]
+}

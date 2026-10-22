@@ -1,0 +1,263 @@
+{
+  "version": 1,
+  "title": "Table kit test",
+  "request": "A test of the Table kit in the builder: the room, the eyes shot, a thought, the tilt and the failing light. Not a video for viewers.",
+  "mode": "as-is",
+  "format": "story",
+  "style": "ink-stick",
+  "brand": "my-page",
+  "voice": "narrator",
+  "seed": 59605,
+  "sources": [],
+  "appliedLessons": [],
+  "cast": [
+    {
+      "id": "saint",
+      "name": "The Saint",
+      "voice": "saint"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "hook",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "atmospheric",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n1",
+          "speaker": "narrator",
+          "text": "Would you sit down at *this table?*",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s1a",
+          "line": "n1",
+          "words": "Would you sit down at *this table?*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "title",
+            "text": "Table kit test"
+          },
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "setup",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n2",
+          "speaker": "narrator",
+          "text": "Two strangers. One pile of gold.",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s2a",
+          "line": "n2",
+          "words": "Two strangers. One pile of gold.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "chapter": 1,
+      "beat": "rising-trouble",
+      "mood": "tense",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "s1",
+          "speaker": "saint",
+          "text": "He looks calm. So I am calm.",
+          "pauseAfterMs": 1500,
+          "thought": true
+        },
+        {
+          "id": "n3",
+          "speaker": "narrator",
+          "text": "One of them reaches first.",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s3a",
+          "line": "s1",
+          "words": "He looks calm. So I am calm.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3b",
+          "line": "n3",
+          "words": "One of them reaches first.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "chapter": 1,
+      "beat": "turning-point",
+      "mood": "tense",
+      "place": "todo",
+      "treatment": "atmospheric",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n4",
+          "speaker": "narrator",
+          "text": "And then it is done.",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s4a",
+          "line": "n4",
+          "words": "And then it is done.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chapter": 1,
+      "beat": "payoff",
+      "mood": "triumph",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n5",
+          "speaker": "narrator",
+          "text": "The light does not stay on for anyone.",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s5a",
+          "line": "n5",
+          "words": "The light does not stay on for anyone.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 1,
+      "beat": "closing-line",
+      "mood": "reflective",
+      "place": "todo",
+      "treatment": "atmospheric",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n6",
+          "speaker": "narrator",
+          "text": "Would you?",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6a",
+          "line": "n6",
+          "words": "Would you?",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    }
+  ]
+}

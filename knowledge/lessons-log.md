@@ -679,3 +679,275 @@ Note (Claude's reading): I listed "things far apart fall outside the tall pictur
   fix.
 Status: active
 ```
+
+```
+L-0038 | 2026-10-11 | run: 2026-10-11-dollar-auction (the joined video, 2 min 12)
+Area: script and shot plan | Scope: videos with a fixed cast (game theory) | Source: Biku
+Lesson: One story, told in order. The cast plays the game in one scene and the whole video
+  follows them; real research comes in through that story and goes straight back to the same
+  characters. Beats follow from one another ("so", "but", "that's when", never "and then").
+  Three surprises in two minutes, not five. No new characters after the first 30 seconds.
+  The narrator says where we are. Before delivering, the story is retold in five plain
+  sentences; if they do not follow one another, it is rewritten.
+Evidence: A review Biku got on The Dollar Auction and passed on ("i got this review and i
+  made some change in the prompt as well. dont rebuild the video but make sure these falls
+  into place for the next video"). It names what a viewer feels: "Wait, who are these people
+  now?", "Where did he come from?", "Slow down, I missed that.", separate clips and not one
+  story. In the video as built: three party guests first seen at 0:58 and two students at
+  1:06, the Saint first seen at 1:14, three visits away from the auction room, five turns.
+Applied: knowledge/playbooks/general.md ("One story, told in order"); shared/src/plan.ts
+  (for a video with a series, the plan check points out a face first seen after 30 seconds
+  and a scene away from where the video began); CLAUDE.md (a pointer). The Dollar Auction
+  was not rebuilt, at his word.
+Note (Claude's reading): the review is about his script prompt, which he has changed himself.
+  The studio's share was the pictures: the script asked for "a small party crowd" and "two
+  figures in ties", and I drew them as five new people in two new rooms, and kept the Saint
+  out of sight until the question at 1:14. Applying the review to how shots are planned, and reading a
+  new script against it before building, is my reading of "fall into place". Whether these
+  hold for videos outside the game theory series he has not said.
+Status: active
+```
+
+```
+L-0039 | 2026-10-11 | run: 2026-10-11-dollar-auction (after the review of L-0038)
+Area: script and shot plan | Scope: videos with a fixed cast (game theory) | Source: Biku
+Lesson: A story is told in time order and it is alive. In order: one game from first move to
+  last, no opening on the ending and rewinding, one thing that only moves one way to carry
+  it, a fact only when it answers what the viewer is asking, about four beats, at most one
+  "what if". Alive: the cast argues in their own voices and the narrator does not explain;
+  the viewer bets and is proved wrong; real figures are acted out and exaggerated in the same
+  room; something visibly gets worse; one device a video; the ending calls back to the
+  opening.
+Evidence: Biku: "i mean the stories feel out of sequence so i made this change do you have
+  better suggestions?", then "and its less interesting too how do you make it creative", then
+  "dont rebuild the video but ake sure these rules are followed on the next video". The
+  Dollar Auction as built has about nine jumps in time or place in 2 min 12: it opens on the
+  question, cuts to the end ("Sold"), rewinds to the start, leaves for 1971, a classroom and
+  a website, plays an imagined second auction, and goes to a home. The cast speaks 43 of its
+  311 words, mostly sums.
+Applied: knowledge/playbooks/general.md ("One story, told in order" and "Alive, not only in
+  order"); CLAUDE.md (the pointer); BUILD-STATUS.md. No video was rebuilt, at his word.
+Note (Claude's reading): the rules are Claude's suggestions, given when he asked for better
+  ones, and adopted by him in one sentence; none is his own wording. One of them goes against
+  the review he passed on: "every beat starts with So, But or That's when" was answered with
+  "ask for the link in the content", since the words can be pasted onto beats that still do
+  not connect. Most of these are about the words, which in as-is mode are his and are not
+  changed: the studio's part is to read a script against them and tell him before building,
+  and to do the pictures' share. Nothing checks them mechanically except new faces and
+  visits elsewhere (L-0038).
+Status: active
+```
+
+Moved 2026-10-11: the playbook text of L-0038 and L-0039 now lives in
+knowledge/playbooks/formats/dilemma.md, the game theory format's own page, and no longer in the
+general playbook (Biku: "whatevr changes are they should be tied to this niche"). The dark
+direction he set the same day replaces "exaggerate, it is a cartoon" for that niche; that it
+does is Claude's reading of his go-ahead.
+
+```
+L-0040 | 2026-10-12 | run: 2026-10-11-trainer-test and 2026-10-11-table-kit-test (the previews)
+Area: shot plan and faces | Scope: every video | Source: Biku
+Lesson: A face holds, and changes inside a shot after what causes it. Each person has one
+  line of feeling through a video, three or four steps, each a neighbour of the last; a face
+  changes only when something happens to its owner; it comes over a cut as it was and
+  changes a beat into a shot, eyes first, then a blink, the brows, the mouth last, over about
+  half a second; a feeling can be worn in part and grow.
+Evidence: Biku: "the change of expressions feel unantural and random like there is no
+  connection one second its one expressiona nd another second its another."
+Applied: engine/src/face/expressions.ts (`changeFace`, 14 frames in place of the plan's 3 to
+  4; `faceAtStrength`); engine/src/stage/staging.ts (a face carries over a cut and a new one
+  begins a beat in); shared/src/storyboard.schema.ts (`strength` on a person and a step);
+  shared/src/plan.ts (notes: a face that changes on the cut, a leap of feeling, three
+  changes in four shots); knowledge/playbooks/general.md (the shot plan). Not the script guide: a line
+  added to it was taken out again on his word; planning faces is the studio's job. Shown to him side by side:
+  runs/2026-10-12-faces-demo/faces-before-and-after.mp4.
+Note (Claude's reading): the two causes are mine to name, not his. He described what he saw;
+  I found that plans named a new face for almost every shot, and that the builder changed a
+  face in the first four frames of a shot. The plan's own rule ("expressions blend over 3 to
+  4 frames", Part 2, section 7.2) is replaced by this on his feedback. Delivered videos are
+  not rebuilt; a rebuild of one would now draw its changes of face the new way.
+Status: active, waiting for his eye on the side-by-side
+```
+
+```
+L-0041 | 2026-10-12 | run: 2026-10-12-the-smoke (part 1, v2)
+Area: builder, and how a part is looked at | Scope: every video | Source: Biku
+Lesson: A seat stays where it stands while its sitter walks to it, and an arrow goes with what
+  it points at. And a move is looked at large: both faults were in the strips Claude had
+  passed as "ok", looked at as a sheet of thumbnails too small to show a chair sliding.
+Evidence: Biku, of part 1: "the chait moves with teh copy cat adn teh arrrow pointed to copy
+  cat doesnt move with copy cat in part 1".
+Applied: engine/src/stage/staging.ts (`spot`: where someone is when nothing is carrying them)
+  and ShotPicture.tsx (the seat stands there); engine/src/stage/measure.ts (`pointerPlace`
+  takes the frame: the label keeps its place, the tip follows, and there is no label until
+  the person is in the picture); a test in stage.test.tsx. Part 1 remade as v3.
+Note (Claude's reading): the second half of the lesson is mine. He named two faults; that
+  they got past the look because the strips were viewed too small is my own finding. From
+  now on a strip that crosses a move of the body is opened at a size where a chair, a hand
+  or a foot can be seen, one or two strips to a picture, before it is marked "ok".
+Seen again (2026-10-13, Claude's own catch): in runs/2026-10-12-the-smoke-plain part 1 the
+  Cheat took his coin by bowing to the table while the coin jumped to the floor; passed in the
+  first render on a strip of twelve small frames. A thing lying on a table was reached for on
+  the ground under it: fixed in engine/src/stage/staging.ts (`gripPoint` in props.tsx), with a
+  test. From now on a strip named "-move-" is cut again from the preview, cropped to the
+  person and enlarged, before it is marked "ok".
+Status: active
+```
+
+```
+L-0042 | 2026-10-12 | run: 2026-10-12-the-smoke (all three parts, built from guide v1.4)
+Area: script | Scope: the game theory videos (the guide and how a script is read) | Source: Biku
+Lesson: A stranger who knows nothing must follow every sentence the first time. The script is
+  full plain sentences, and the Trainer says what is happening: who this is, what they want,
+  what he is doing, what they just did, why. No fragments, no insider words, no clipped
+  cleverness. And Claude reads a script as that stranger before building it and before saying
+  it makes sense.
+Evidence: Biku: "its so obvious the texts are so random. you understand it doesnt mean viewrs
+  understand it. you give this for a story? this weird random texts?" and, of the first
+  script, "that was so werd form before like i had absolutely no idea even if i knew something
+  aboyut the story. broken englishes like things". He said "yes do it" to the plain rewrite.
+Applied: prompts/dilemma.md v2.0 (one rule, the stranger test, the plain script as its worked
+  example; the House, the tape, the asides, the 12-word limit and the bracket notes are
+  gone); knowledge/playbooks/formats/dilemma.md ("Plain words first"); formats/dilemma.json
+  (what each beat is for); a new run in plain words, runs/2026-10-12-the-smoke-plain.
+Note (Claude's reading): the cause is mine in two ways. The guide I wrote asked for lines of
+  12 words or fewer, asides of two sentences, and nothing said that the picture shows, which
+  is what produced the fragments. And when he first asked whether the dialogue made sense, I
+  answered that it did, with four small faults: I knew the study, so the lines read as
+  complete to me. He had to say it twice. The first run is kept and not used.
+Status: active
+```
+
+```
+L-0043 | 2026-10-13 | run: 2026-10-12-the-smoke-plain (two listening tests in voice-test/)
+Area: voice | Scope: every video (questions); the game theory videos (pace, pauses, the blend)
+  | Source: Biku
+Lesson: A question has to sound asked. And the voice should not read every line the same way:
+  a line has its own pace, and it breathes inside the sentence.
+Evidence: Biku: "when it asks a question i want it o be more like a question i odn feel
+  question vibe from a question". Of three versions by ear: "question 3 is good and for pace
+  and pause think for that again 3 is good i guess". Measured: Kokoro ends every question 4
+  to 13 semitones below the words before it, and no way of writing the question changes that.
+Applied: audio/src/studio_audio/intonation.py lifts the last word of every question after the
+  voice has spoken (strength 1.5, QUESTION_LIFT in shared/src/voice.schema.ts; in every voice
+  script the builder writes). A line can carry `speed` and `say` (script, storyboard and voice
+  contracts); a voice file can carry a `blend`; voices/trainer.json v3 is seven parts am_onyx
+  to three am_michael. The Smoke script has a pace and a `say` for 24 of its 28 lines.
+Note (Claude's reading): he heard the question lift on two voices of this niche and it is
+  applied to every voice of every video, because a falling question is a fault of the voice
+  and not a matter of tone. The pace, the pauses and the blend he picked on this niche's
+  lines: they are tools any script may use, and nothing obliges another niche to. Claude
+  cannot hear whether a lifted ending sounds natural on a voice he has not listened to.
+Corrected (2026-10-13, Biku on part 2): "at last whe the trainer says he stays it soudn weird
+  why". Claude had slowed "He... stays." to 0.84 with dots after "He". Measured: "He" went up
+  six semitones and stopped, "stays" was dragged to 1.1 s (0.66 s plain) and sank into a
+  croak. Said plainly now. Of the 24 shaped lines it was the only one with both faults; three
+  short openings ("Now...", "Is that...", "Yeah...") rise a little before their pause and were
+  left as they are, and he was told. The two limits are in the format playbook.
+Status: active
+```
+
+```
+L-0044 | 2026-10-13 | run: 2026-10-12-the-smoke-plain (the joined video and its cover)
+Area: thumbnail | Scope: every video | Source: Biku
+Lesson: A thumbnail is its own designed picture, not a frame of the video. Its words are a
+  great, general title for the story that says what the video is. Its picture portrays what
+  the video is about.
+Evidence: Biku: "the cover image shouldnt be a frame of the actual video ... its a thumbnail
+  right?"; of three close shots with a line of dialogue on them, "not one of them is goof for
+  a thumbnail it should portray what the vdeo is about it should be designed properly"; and
+  of a poster with a question on it, showing a comparison thumbnail (a man holding two
+  cameras tagged $30 and $369), "it should be a greta nd general title related to this story
+  on text what is this thumbnail??? it doesnt eve say what the vide ois".
+Applied: `npm run thumbnail` (cli/src/thumbnail.ts), posters built in layers
+  (shared/src/thumbnail.schema.ts, engine/src/stage/Poster.tsx, posterCheck.ts, tests). Three
+  for The Smoke: two set "alone" against "in a group" with coloured labels, one of the room.
+Note (Claude's reading): Claude first told him the words should not repeat the title and
+  should raise a question without answering it; he rejected the result twice. That advice is
+  withdrawn. The comparison layout is the example he showed for this story, not a rule he
+  gave for every video. The cover that `npm run output` draws is still a frame with the
+  title; it stays as the fallback until he says which he wants delivered.
+Corrected again (2026-10-13): of the two-panel comparison posters he said "it still not good
+  first resarch how a youtibe thumail is amde and then do it. resarch properly first". Claude
+  had designed three rounds from its own ideas. The research and the rules drawn from it are
+  knowledge/playbooks/thumbnails.md: wide (1280 by 720), one face about a third of the frame,
+  three or four words that name the video, light on dark with one bright colour, the lower
+  right corner free, and checked at the size of a phone's feed. The posters were redone to it,
+  wide and tall. Research first, before designing a kind of thing for the first time.
+And once more (2026-10-13), of the researched layout drawn in the video's grey room: "still
+  not good it should be a little bit diffrent that what actual video looks like should be
+  attractive and good". A thumbnail gets a look of its own: a colour backdrop with rays of
+  light, the subject cut out with a pale edge, the others in solid grey. Built into the
+  poster (backdrop, glow, outline) and written into the thumbnails playbook.
+Status: active
+```
+
+```
+L-0045 | 2026-10-14 | run: none (library/thumbnail-designs/short-film-split)
+Area: thumbnail | Scope: animated short films | Source: Biku
+Lesson: Short films get a thumbnail design of their own, kept and reused: the picture cut in
+  two moods, with one thing from the story on the cut and the title across the top.
+Evidence: Biku, showing a short film's thumbnail (a slanted cut, a dark figure sitting alone,
+  a bright one with raised arms, a note on the cut, the title "1 MINUTE" across the top):
+  "can you make thumbnails like these for short ilms. save the design. not exaclty this but
+  use your creativity to work on these and refine them".
+Applied: the poster learned a split picture, rain, a ground line, a paper note, dressed
+  figures placed by their feet, and single gold words; the design is the function `two_moods`
+  in library/thumbnail-designs/short-film-split.py with three samples on invented films;
+  knowledge/playbooks/thumbnails.md, "Saved designs".
+Note (Claude's reading): the layout is what he asked to keep; the example's own character and
+  title are not copied (ground rule 13). He has not yet said the samples are right.
+Status: active
+```
+
+```
+L-0046 | 2026-10-14 | run: 2026-10-12-the-smoke-plain (after the first video)
+Area: setting | Scope: the game theory videos | Source: Biku
+Lesson: Every game theory video must not look like the same room again. The room opens and
+  ends a video; the test plays in the real place the trap happens.
+Evidence: Biku: "wouldnt it be the same setting for every game theory videos? how do we fix
+  it?" Of three ways offered (the room dressed differently; the room as the frame and the
+  middle out in the world; no fixed room) he said "yes 2 looks better".
+Applied: prompts/dilemma.md v2.1 ("The room, and the place it really happens");
+  knowledge/playbooks/formats/dilemma.md ("Two places a video"). Not yet tried on a video.
+Note (Claude's reading): which beats sit in the room and which outside is Claude's split of
+  his choice; he chose the idea. The first video is not rebuilt.
+Status: active
+```
+
+```
+L-0047 | 2026-10-14 | run: 2026-10-14-finish-demo (part 2, spoken by Chatterbox)
+Area: voice | Scope: every video | Source: Biku
+Lesson: A question has to sound like a question. The Trainer's "What do you think he does?"
+  did not, and there was "a big pause" in it.
+Evidence: Biku: "when the trainer asks what do you think he does, it doesnt feel like a
+  question there is a big pause there why". Measured: the line was written to be said as
+  "What do you think... he does?" at 0.92 pace with 1.8 s of silence after it. Chatterbox
+  held "think" for 0.76 s, then ran "he does?" together in half a second, and the silence
+  followed. The "..." came from writing for Kokoro.
+Applied: the line is said plainly at the voice's own pace with 0.9 s after it. The general
+  playbook says the "..." of `say` can make a long gap in a Chatterbox voice and break a
+  question in two. The Chatterbox worker now also takes a line again when a word is
+  swallowed (under 0.06 s) or a gap over 0.3 s falls where the line has no comma or stop;
+  the listening alone had passed "he oes". After it: no gap, "does?" rises 3.6 semitones.
+Status: active
+
+L-0048 | 2026-10-16 | run: 2026-10-15-popcorn
+Area: pictures | Scope: What's the Catch? (explainer graphics) | Source: Biku
+Lesson: The page is never left empty, or nearly empty, while the narrator talks.
+Evidence: Biku: "in between videos there are multiple frames where there is no information
+  or little information shown. doesnt look good". Measured at one frame a second: about 25 of
+  the popcorn video's 111 seconds showed only a title, a bare chart line or plain page, up to
+  5 s at a time, because every piece waited for the word that names it and nothing stood
+  there before it.
+Applied: in the engine, so every video gets it. The first piece of every graphic comes in as
+  its shot begins (`stepFrames`); everything still to come stands from the first frame as a
+  pale outline of itself and fills in with colour on its word (`Ghost` in
+  `engine/src/explainer/Graphic.tsx`); a big number can carry a picture of what it counts
+  (`picture`: ticket, coin, bucket); the page creeps closer a little more (5%). The self-check
+  measures the middle of every picture ten times a second and fails a part where it stands
+  nearly empty for more than half a second (`emptyPictureCheck`). It cannot tell a picture of
+  scenery alone from one that explains something; the first-piece rule is what keeps those
+  away.
+Status: active
+```

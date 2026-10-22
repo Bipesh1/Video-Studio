@@ -1,0 +1,199 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l17",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "I saw you writing, so I started one too. The same *week.*",
+      "say": "[sigh] I saw you writing, so I started one too. The same week.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/copycat.wav",
+      "speed": 0.94,
+      "pauseAfterMs": 469
+    },
+    {
+      "id": "l18",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "His notebook said that *he* did most of the work.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 335
+    },
+    {
+      "id": "l19",
+      "speaker": "saint",
+      "voice": "af_sarah",
+      "text": "You fixed the boiler at two in the morning? I never *knew.*",
+      "say": "[surprised] You fixed the boiler at two in the morning? I never knew.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/saint.wav",
+      "speed": 0.93,
+      "pauseAfterMs": 296
+    },
+    {
+      "id": "l20",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "You washed my work shirts by hand? I never *saw.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/copycat.wav",
+      "speed": 0.95,
+      "pauseAfterMs": 469
+    },
+    {
+      "id": "l21",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "Neither of them was lying. Each one only saw their *own* half.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 603
+    },
+    {
+      "id": "l22",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "This is not just a story. In 1979, two Canadian psychologists asked thirty seven married couples who did each job at home.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 268
+    },
+    {
+      "id": "l23",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "The jobs went from making breakfast to starting the *arguments.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 268
+    },
+    {
+      "id": "l24",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "Each spouse answered alone. Added together, their two shares usually came to more than the whole *job.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 335
+    },
+    {
+      "id": "l25",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "In early tests, couples compared their answers at home and *fought.* So the researchers changed the questions.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 603
+    },
+    {
+      "id": "l26",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "You do this too, at work and with roommates. You remember what you did, because you were *there.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 402
+    },
+    {
+      "id": "l27",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "Both notebooks were honest. It just took two of them to see the whole *house.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.91,
+      "pauseAfterMs": 1005
+    }
+  ]
+}

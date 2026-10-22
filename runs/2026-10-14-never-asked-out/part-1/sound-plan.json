@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "unease",
+      "startMs": 0
+    }
+  ],
+  "sfx": [
+    {
+      "name": "crowd-murmur",
+      "atMs": 6072,
+      "durationMs": 29133,
+      "gainDb": -12,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "ding",
+      "atMs": 15356,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "heartbeat",
+      "atMs": 26780,
+      "durationMs": 1600,
+      "gainDb": -10,
+      "pan": 0,
+      "seed": 2
+    }
+  ],
+  "musicGainDb": 0
+}

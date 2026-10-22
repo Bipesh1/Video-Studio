@@ -73,11 +73,34 @@ describe('captions (Style 9)', () => {
   });
 
   it('show a page from its first word until the next page starts, never overlapping', () => {
-    const pages = buildPages(toCaptions([...sentence(['One.'], 0), ...sentence(['Two.'], 600)]));
-    expect(pageAt(pages, 100)?.lines[0]?.[0]?.text.trim()).toBe('One.');
-    expect(pageAt(pages, 700)?.lines[0]?.[0]?.text.trim()).toBe('Two.');
+    const pages = buildPages(
+      toCaptions([...sentence(['One', 'more.'], 0), ...sentence(['Two', 'more.'], 700)]),
+    );
+    expect(pageAt(pages, 100)?.lines[0]?.[0]?.text.trim()).toBe('One');
+    expect(pageAt(pages, 800)?.lines[0]?.[0]?.text.trim()).toBe('Two');
     for (let i = 1; i < pages.length; i++) {
       expect(pages[i]?.startMs ?? 0).toBeGreaterThanOrEqual(pages[i - 1]?.endMs ?? 0);
     }
+  });
+
+  it('keep one quick word with what the same person says next, so it does not flash', () => {
+    const text = (page: (typeof pages)[number] | undefined) =>
+      page?.lines
+        .flat()
+        .map((w) => w.text.trim())
+        .join(' ');
+    // "Uh." and then the question, in one breath: one page.
+    const pages = buildPages(toCaptions(sentence(['Uh.', 'Is', 'that', 'smoke?'], 0)));
+    expect(pages).toHaveLength(1);
+    expect(text(pages[0])).toBe('Uh. Is that smoke?');
+    // A one-word line of its own still stands alone, and so does one followed by a pause.
+    const apart = buildPages(
+      toCaptions([...sentence(['Sold.'], 0, 'n1'), ...sentence(['One', 'dollar.'], 400, 'n2')]),
+    );
+    expect(text(apart[0])).toBe('Sold.');
+    const paused = buildPages(
+      toCaptions([...sentence(['So.'], 0), ...sentence(['Who', 'won?'], 1500)]),
+    );
+    expect(text(paused[0])).toBe('So.');
   });
 });

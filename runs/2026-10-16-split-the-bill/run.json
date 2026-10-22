@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "id": "2026-10-16-split-the-bill",
+  "created": "2026-10-16",
+  "mode": "original",
+  "format": "dilemma-comedy",
+  "brand": "dilemma-table",
+  "voice": "leak",
+  "sizes": [
+    "9:16"
+  ],
+  "vertical": "full",
+  "masterPrompt": null
+}

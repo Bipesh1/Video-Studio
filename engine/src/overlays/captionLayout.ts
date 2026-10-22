@@ -11,6 +11,13 @@ import { textBasis, textWidth } from './text';
 export const CAPTION_SIZE = 78;
 /** The share of a wide frame's height kept for captions, at the bottom. */
 export const WIDE_SAFE_BOTTOM = 0.2;
+/**
+ * The share of a tall frame's height, at the bottom, that a phone app draws its own things
+ * over: the channel's picture and handle, the title, the buttons (Biku, 2026-10-11: "the
+ * captions get hidden beside the logos and the handle in youtube"). Captions end above it.
+ * YouTube publishes no figure; guides put what Shorts covers at 300 to 380 px of 1920.
+ */
+export const TALL_APP_BOTTOM = 0.235;
 /** The caption outline, as a share of the font size. */
 export const CAPTION_STROKE = 0.2;
 
@@ -24,7 +31,12 @@ export function captionLayout(lines: number, width: number, height: number, size
   const safeShare = width > height ? WIDE_SAFE_BOTTOM : tokens.captions.safeBottomPct916;
   const safeTop = height * (1 - safeShare);
   const blockHeight = lineHeight * lines;
-  const firstBaseline = safeTop + (height - safeTop - blockHeight) * 0.42 + fontSize;
+  // In a tall frame the last line ends just above what the app covers, so a block of two
+  // lines grows upward from there. In a wide frame nothing is drawn over the picture.
+  const firstBaseline =
+    width > height
+      ? safeTop + (height - safeTop - blockHeight) * 0.42 + fontSize
+      : height * (1 - TALL_APP_BOTTOM) - blockHeight + fontSize * 0.76;
   return { fontSize, lineHeight, safeTop, blockHeight, firstBaseline };
 }
 

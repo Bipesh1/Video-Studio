@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "upbeat",
+      "startMs": 0
+    },
+    {
+      "mood": "curious",
+      "startMs": 12440
+    },
+    {
+      "mood": "tense",
+      "startMs": 20520
+    }
+  ],
+  "sfx": [
+    {
+      "name": "crowd-murmur",
+      "atMs": 60,
+      "durationMs": 2110,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "crowd-murmur",
+      "atMs": 4142,
+      "durationMs": 3358,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "ding",
+      "atMs": 9670,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "ding",
+      "atMs": 12500,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "click",
+      "atMs": 14628,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "click",
+      "atMs": 16219,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 5
+    },
+    {
+      "name": "whoosh",
+      "atMs": 23070,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 6
+    },
+    {
+      "name": "ding",
+      "atMs": 24290,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 7
+    },
+    {
+      "name": "ding",
+      "atMs": 30070,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 8
+    },
+    {
+      "name": "ding",
+      "atMs": 32030,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 9
+    }
+  ],
+  "musicGainDb": 0
+}

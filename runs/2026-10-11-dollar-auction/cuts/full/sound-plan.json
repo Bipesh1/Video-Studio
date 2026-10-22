@@ -1,0 +1,324 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "tense",
+      "startMs": 42715
+    },
+    {
+      "mood": "upbeat",
+      "startMs": 56167
+    },
+    {
+      "mood": "curious",
+      "startMs": 68607
+    },
+    {
+      "mood": "tense",
+      "startMs": 76687
+    },
+    {
+      "mood": "curious",
+      "startMs": 97600
+    },
+    {
+      "mood": "reflective",
+      "startMs": 111980
+    }
+  ],
+  "sfx": [
+    {
+      "name": "wind",
+      "atMs": 0,
+      "durationMs": 42715,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "crowd-murmur",
+      "atMs": 2910,
+      "durationMs": 3340,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "click",
+      "atMs": 2910,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "click",
+      "atMs": 4625,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "thud",
+      "atMs": 6460,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "crowd-murmur",
+      "atMs": 7670,
+      "durationMs": 3570,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 5
+    },
+    {
+      "name": "ding",
+      "atMs": 17650,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 6
+    },
+    {
+      "name": "whoosh",
+      "atMs": 18550,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 7
+    },
+    {
+      "name": "pop",
+      "atMs": 21110,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 8
+    },
+    {
+      "name": "click",
+      "atMs": 34135,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 9
+    },
+    {
+      "name": "click",
+      "atMs": 35430,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 10
+    },
+    {
+      "name": "click",
+      "atMs": 39455,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 11
+    },
+    {
+      "name": "tick",
+      "atMs": 42775,
+      "durationMs": 1425,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 12
+    },
+    {
+      "name": "tick",
+      "atMs": 44410,
+      "durationMs": 1455,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 13
+    },
+    {
+      "name": "click",
+      "atMs": 45183,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 14
+    },
+    {
+      "name": "tick",
+      "atMs": 46075,
+      "durationMs": 1620,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 15
+    },
+    {
+      "name": "tick",
+      "atMs": 47905,
+      "durationMs": 1410,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 16
+    },
+    {
+      "name": "click",
+      "atMs": 48655,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 17
+    },
+    {
+      "name": "tick",
+      "atMs": 49525,
+      "durationMs": 2260,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 18
+    },
+    {
+      "name": "tick",
+      "atMs": 51995,
+      "durationMs": 4010,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 19
+    },
+    {
+      "name": "crowd-murmur",
+      "atMs": 56227,
+      "durationMs": 2110,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 20
+    },
+    {
+      "name": "crowd-murmur",
+      "atMs": 60309,
+      "durationMs": 3358,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 21
+    },
+    {
+      "name": "ding",
+      "atMs": 65837,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 22
+    },
+    {
+      "name": "ding",
+      "atMs": 68667,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 23
+    },
+    {
+      "name": "click",
+      "atMs": 70795,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 24
+    },
+    {
+      "name": "click",
+      "atMs": 72386,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 25
+    },
+    {
+      "name": "whoosh",
+      "atMs": 79237,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 26
+    },
+    {
+      "name": "ding",
+      "atMs": 80457,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 27
+    },
+    {
+      "name": "ding",
+      "atMs": 86237,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 28
+    },
+    {
+      "name": "ding",
+      "atMs": 88197,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 29
+    },
+    {
+      "name": "click",
+      "atMs": 107305,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 30
+    },
+    {
+      "name": "thud",
+      "atMs": 109230,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 31
+    },
+    {
+      "name": "ding",
+      "atMs": 111530,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 32
+    },
+    {
+      "name": "click",
+      "atMs": 114172,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 33
+    },
+    {
+      "name": "blip",
+      "atMs": 116190,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 34
+    },
+    {
+      "name": "blip",
+      "atMs": 117950,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 35
+    },
+    {
+      "name": "blip",
+      "atMs": 119435,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 36
+    },
+    {
+      "name": "blip",
+      "atMs": 120530,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 37
+    },
+    {
+      "name": "tick",
+      "atMs": 121040,
+      "durationMs": 2727,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 38
+    },
+    {
+      "name": "blip",
+      "atMs": 122449,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 39
+    }
+  ],
+  "musicGainDb": 0
+}

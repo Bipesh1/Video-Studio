@@ -1,0 +1,65 @@
+{
+  "id": "saint",
+  "name": "The Saint",
+  "description": "The Saint of the game theory cast: always trusts and always cooperates. A white-headed figure in round glasses and a sky-blue scarf, a cream shirt and a blue skirt, with a hopeful smile. Open arms, a hand on the heart, and a sad slump when betrayed. Clothes picked by Biku from three looks on 2026-10-14 (look 3).",
+  "tags": [
+    "game theory",
+    "cast",
+    "saint",
+    "trusting",
+    "cooperator",
+    "split",
+    "kind",
+    "scarf",
+    "glasses",
+    "player"
+  ],
+  "age": "adult",
+  "size": 1,
+  "outfit": {
+    "clothes": {
+      "top": {
+        "kind": "shirt",
+        "cloth": "cream"
+      },
+      "bottom": {
+        "kind": "skirt",
+        "cloth": "ocean"
+      },
+      "shoes": {
+        "kind": "boots",
+        "cloth": "brown"
+      },
+      "glasses": true,
+      "scarf": {
+        "cloth": "glint"
+      }
+    }
+  },
+  "eyeStyle": "round",
+  "expression": "happy",
+  "voice": "saint",
+  "series": "game-theory",
+  "expressions": [
+    "neutral",
+    "happy",
+    "suspicious",
+    "surprised",
+    "sad",
+    "smug",
+    "thinking",
+    "dread",
+    "calculating",
+    "tempted",
+    "lying",
+    "guilty",
+    "hollow",
+    "jaw-drop",
+    "sly-grin",
+    "fuming"
+  ],
+  "poses": ["stand", "sit", "point", "cross-arms", "hands-up", "sit-reach", "walk"],
+  "signature": ["open-arms", "hand-on-heart", "sit-promise", "sit-slump"],
+  "version": 4,
+  "added": "2026-10-11"
+}

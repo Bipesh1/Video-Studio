@@ -125,7 +125,7 @@ describe('character cards', () => {
     expect(() => castFromCard({ ...base, outfit: { costume: 'pirate' } })).toThrow(
       /unknown costume "pirate"/,
     );
-    expect(() => castFromCard({ ...base, expression: 'bored' })).toThrow(/unknown expression/);
+    expect(() => castFromCard({ ...base, expression: 'sleepy' })).toThrow(/unknown expression/);
     expect(() =>
       castFromCard({ ...base, identity: { skinTone: 3, hair: 'mohawk', hairColor: 'black' } }),
     ).toThrow(/unknown hair style "mohawk"/);

@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "tense",
+      "startMs": 0
+    },
+    {
+      "mood": "aftermath",
+      "startMs": 23984
+    }
+  ],
+  "sfx": [
+    {
+      "name": "rain",
+      "atMs": 60,
+      "durationMs": 19254,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "footsteps",
+      "atMs": 3863,
+      "durationMs": 2220,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "footsteps",
+      "atMs": 6293,
+      "durationMs": 2321,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "creak",
+      "atMs": 8824,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "footsteps",
+      "atMs": 8824,
+      "durationMs": 3334,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "footsteps",
+      "atMs": 12368,
+      "durationMs": 4550,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 5
+    },
+    {
+      "name": "clunk",
+      "atMs": 49723,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 6
+    }
+  ],
+  "musicGainDb": 0,
+  "hush": []
+}

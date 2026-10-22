@@ -1,0 +1,808 @@
+{
+  "version": 1,
+  "title": "The form",
+  "request": "One short scene, built twice, to compare how faces change: the old way (a new face at every cut) and the new way (a face holds, and changes inside a shot after what causes it). For Biku to judge by eye.",
+  "mode": "as-is",
+  "format": "story",
+  "style": "ink-stick",
+  "brand": "my-page",
+  "voice": "narrator",
+  "seed": 76154,
+  "sources": [],
+  "appliedLessons": [],
+  "cast": [
+    {
+      "id": "trainer",
+      "name": "The Trainer",
+      "card": "trainer"
+    },
+    {
+      "id": "saint",
+      "name": "The Saint",
+      "card": "saint"
+    },
+    {
+      "id": "cheat",
+      "name": "The Cheat",
+      "card": "cheat"
+    }
+  ],
+  "series": "game-theory",
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "hook",
+      "mood": "unease",
+      "quiet": false,
+      "place": "the-table",
+      "treatment": "atmospheric",
+      "palette": "table-grey",
+      "lines": [
+        {
+          "id": "l1",
+          "speaker": "trainer",
+          "text": "Twenty dollars. It is *yours.*",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s1a",
+          "line": "l1",
+          "words": "Twenty dollars. It is *yours.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "saint",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "saint",
+              "pose": "sit",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.316,
+              "lookAt": "banknote-20",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "calculating",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.684,
+              "lookAt": "saint",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote-20",
+              "x": 0.447,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 0,
+          "endMs": 3380
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "setup",
+      "mood": "unease",
+      "quiet": false,
+      "place": "the-table",
+      "treatment": "atmospheric",
+      "palette": "table-grey",
+      "lines": [
+        {
+          "id": "l2",
+          "speaker": "saint",
+          "text": "Just like that?",
+          "pauseAfterMs": 900
+        },
+        {
+          "id": "l3",
+          "speaker": "trainer",
+          "text": "Just like that. Sign here.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s2a",
+          "line": "l2",
+          "words": "Just like that?",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "saint",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "saint",
+              "pose": "sit",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.316,
+              "lookAt": "trainer",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.45,
+                  "expression": "thinking",
+                  "strength": 0.5
+                }
+              ]
+            },
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "calculating",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.684,
+              "lookAt": "saint",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote-20",
+              "x": 0.447,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 3380,
+          "endMs": 5420
+        },
+        {
+          "id": "s2b",
+          "line": "l3",
+          "words": "Just like that. Sign here.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "trainer"
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "saint",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "saint",
+              "pose": "sit",
+              "expression": "thinking",
+              "strength": 0.5,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.316,
+              "lookAt": "trainer",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "calculating",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.684,
+              "lookAt": "saint",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote-20",
+              "x": 0.447,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 5420,
+          "endMs": 8460
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "chapter": 1,
+      "beat": "rising-trouble",
+      "mood": "unease",
+      "quiet": false,
+      "place": "the-table",
+      "treatment": "atmospheric",
+      "palette": "table-grey",
+      "lines": [
+        {
+          "id": "l4",
+          "speaker": "saint",
+          "text": "Nobody gives money away.",
+          "pauseAfterMs": 900,
+          "thought": true
+        },
+        {
+          "id": "l5",
+          "speaker": "trainer",
+          "text": "She is right. Nobody does.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s3a",
+          "line": "l4",
+          "words": "Nobody gives money away.",
+          "camera": {
+            "framing": "eyes",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "saint",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "saint",
+              "pose": "sit",
+              "expression": "thinking",
+              "strength": 0.5,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.316,
+              "lookAt": "banknote-20",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.3,
+                  "expression": "suspicious"
+                }
+              ]
+            },
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "calculating",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.684,
+              "lookAt": "saint",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote-20",
+              "x": 0.447,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 8460,
+          "endMs": 10880
+        },
+        {
+          "id": "s3b",
+          "line": "l5",
+          "words": "She is right. Nobody does.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "trainer"
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "saint",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.12,
+                  "expression": "bored",
+                  "lookAt": "camera"
+                }
+              ]
+            },
+            {
+              "character": "saint",
+              "pose": "sit",
+              "expression": "suspicious",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.316,
+              "lookAt": "trainer",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "calculating",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.684,
+              "lookAt": "saint",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote-20",
+              "x": 0.447,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 10880,
+          "endMs": 14060
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "chapter": 1,
+      "beat": "turning-point",
+      "mood": "closing-in",
+      "quiet": false,
+      "place": "the-table",
+      "treatment": "atmospheric",
+      "palette": "table-grey",
+      "lines": [
+        {
+          "id": "l6",
+          "speaker": "saint",
+          "text": "What is the catch?",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s4a",
+          "line": "l6",
+          "words": "What is the catch?",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "bored",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "camera",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.3,
+                  "expression": "happy",
+                  "lookAt": "saint"
+                }
+              ]
+            },
+            {
+              "character": "saint",
+              "pose": "sit",
+              "expression": "suspicious",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.316,
+              "lookAt": "trainer",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "calculating",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.684,
+              "lookAt": "saint",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote-20",
+              "x": 0.447,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 14060,
+          "endMs": 16120
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chapter": 1,
+      "beat": "payoff",
+      "mood": "closing-in",
+      "quiet": false,
+      "place": "the-table",
+      "treatment": "atmospheric",
+      "palette": "table-grey",
+      "lines": [
+        {
+          "id": "l7",
+          "speaker": "trainer",
+          "text": "You already agreed to it.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s5a",
+          "line": "l7",
+          "words": "You already agreed to it.",
+          "camera": {
+            "framing": "wide",
+            "move": "push-in",
+            "strength": 0.4
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "saint",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "saint",
+              "pose": "sit",
+              "expression": "suspicious",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.316,
+              "lookAt": "trainer",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.7,
+                  "expression": "dread",
+                  "strength": 0.6
+                }
+              ]
+            },
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "calculating",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.684,
+              "lookAt": "saint",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote-20",
+              "x": 0.447,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 16120,
+          "endMs": 18890
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 1,
+      "beat": "closing-line",
+      "mood": "closing-in",
+      "quiet": false,
+      "place": "the-table",
+      "treatment": "atmospheric",
+      "palette": "table-grey",
+      "lines": [
+        {
+          "id": "l8",
+          "speaker": "saint",
+          "text": "What did I sign?",
+          "pauseAfterMs": 900,
+          "thought": true
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6a",
+          "line": "l8",
+          "words": "What did I sign?",
+          "camera": {
+            "framing": "eyes",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "saint",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "saint",
+              "pose": "sit",
+              "expression": "dread",
+              "strength": 0.6,
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.316,
+              "lookAt": "banknote-20",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.35,
+                  "expression": "dread"
+                }
+              ]
+            },
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "calculating",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.684,
+              "lookAt": "saint",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "bulb",
+              "x": 0.5,
+              "y": 4.7
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.316
+            },
+            {
+              "prop": "iron-chair",
+              "x": 0.684
+            },
+            {
+              "prop": "iron-table",
+              "x": 0.5
+            },
+            {
+              "prop": "banknote-20",
+              "x": 0.447,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "heartbeat-rising",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 18890,
+          "endMs": 21990
+        }
+      ]
+    }
+  ]
+}

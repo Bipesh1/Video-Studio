@@ -21,7 +21,8 @@ import { MirrorContext } from './mirror';
 import type { Vec2 } from './math';
 import { computeSkeleton } from './skeleton';
 import type { ArmJoints, Facing, HandPose, LegJoints, ResolvedPose } from './types';
-import { ink, lineWeights, tokens } from '../tokens';
+import { ink, lighten, lineWeights, tokens } from '../tokens';
+import { TONED_LIGHT, useToned } from './tone';
 
 /** Where a hand is, for drawing a held prop. All in the character's local head units. */
 export type HandFrame = { center: Vec2; forearm: number; hand: HandPose };
@@ -32,6 +33,8 @@ export type PropInfo = {
   shadowSide: 1 | -1;
   /** How far the loose end of a held thing trails the hand, in head units. Zero at rest. */
   sway: Vec2;
+  /** Seconds since the scene began, for a held thing that moves by itself (a flame). */
+  t?: number;
 };
 
 export type CharacterProps = {
@@ -140,6 +143,7 @@ export const Character = ({
   headEffects,
   back = false,
 }: CharacterProps) => {
+  const toned = useToned();
   const uid = `c${useId().replace(/[^A-Za-z0-9_-]/g, '')}`;
   const sign = facing === 'left' ? -1 : 1;
   const t = clamp(turn, 0, 1);
@@ -313,6 +317,8 @@ export const Character = ({
   const hairBehind = Boolean(identity && HAIR_BEHIND_BODY.includes(identity.hair));
   // Seen from behind, a head with hair is all hair: it is filled with the hair color.
   const backOfHead = back && identity && identity.hair !== 'bald' ? identityHair(identity) : null;
+  // The toned look: no outline round the head, and a lit edge on the skin toward the light.
+  const headLine = toned ? 0 : outline;
 
   return (
     <g transform={`translate(${x} ${groundY}) scale(${sign * head} ${head})`}>
@@ -338,7 +344,7 @@ export const Character = ({
       <g transform={headTransform}>
         <defs>
           <clipPath id={`${uid}-head`}>
-            <ellipse rx={rx - outline / 2} ry={ry - outline / 2} />
+            <ellipse rx={rx - headLine / 2} ry={ry - headLine / 2} />
           </clipPath>
         </defs>
         {hairCtx && identity && !hairBehind && <HairBack style={identity.hair} ctx={hairCtx} />}
@@ -355,6 +361,19 @@ export const Character = ({
             ry={ry}
             fill={backOfHead ? backOfHead.fill : skin}
           />
+          {toned && !backOfHead && (
+            <g>
+              <defs>
+                <clipPath id={`${uid}-lit`}>
+                  <ellipse cx={-0.075 * shadowSide} cy={-0.06} rx={rx} ry={ry} />
+                </clipPath>
+              </defs>
+              <g clipPath={`url(#${uid}-lit)`}>
+                <ellipse rx={rx * 1.2} ry={ry * 1.2} fill={lighten(skin, TONED_LIGHT * 0.6)} />
+                <ellipse cx={-0.04 * shadowSide} cy={-0.03} rx={rx} ry={ry} fill={skin} />
+              </g>
+            </g>
+          )}
           {!back && (
             <Face
               params={face}
@@ -370,7 +389,7 @@ export const Character = ({
             />
           )}
         </g>
-        <ellipse rx={rx} ry={ry} fill="none" stroke={ink} strokeWidth={outline} />
+        {!toned && <ellipse rx={rx} ry={ry} fill="none" stroke={ink} strokeWidth={outline} />}
         {hairCtx && identity && (
           <>
             {!back && <FacialHairShape kind={identity.facialHair ?? 'none'} ctx={hairCtx} />}

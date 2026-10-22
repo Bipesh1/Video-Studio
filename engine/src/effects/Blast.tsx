@@ -165,6 +165,116 @@ export function Smoke({ t, size = 1, seed = 1 }: { t: number; size?: number; see
   );
 }
 
+/** How far a bank of smoke reaches to each side of where it is placed, in heads: past the edge of any frame. */
+export const BANK_HALF = 3.6;
+/** How far back from its front smoke that is coming in reaches its full height, in heads. */
+const BANK_FRONT = 1.5;
+/** How far the smoke spills toward us across the floor before it has thinned to nothing, in heads. */
+const BANK_SPILL = 1.1;
+/** How see-through a bank of smoke is: what stands in it shows as a shape, and is still there. */
+const BANK_OPACITY = 0.8;
+
+/**
+ * Smoke filling a room from the floor up: a bank of it across the whole picture, its top a row
+ * of slow rolling puffs outlined like any cloud, standing on the ground at y = 0. `height` is
+ * how high it has risen, in heads; `reach` is how far across the room it has come from the
+ * left, 0 to 1, for smoke creeping in. It is drawn in front of whoever stands in it.
+ */
+export function SmokeBank({
+  t,
+  height,
+  reach = 1,
+  seed = 1,
+}: {
+  t: number;
+  height: number;
+  reach?: number;
+  seed?: number;
+}) {
+  if (height <= 0 || reach <= 0) return null;
+  const front = lerp(-BANK_HALF, BANK_HALF, clamp(reach, 0, 1));
+  const step = 0.42;
+  const count = Math.ceil((2 * BANK_HALF) / step) + 2;
+  // The puffs along the top drift slowly to the right and bob, each in its own time. Smoke
+  // that is still coming in is lower toward its front, down to a wisp along the floor.
+  const drift = (t * 0.16) % step;
+  const puffs = Array.from({ length: count }, (_, i) => {
+    const k = seeded(`bank${seed}:${i}`);
+    const x = -BANK_HALF - step + i * step + drift;
+    const full = reach >= 1 ? 1 : clamp((front - x) / BANK_FRONT, 0, 1);
+    const tall = height * (0.22 + 0.78 * full * (2 - full));
+    return {
+      x,
+      y: -tall + 0.06 * Math.sin(t * (0.7 + 0.5 * k) + i * 1.9),
+      r: (0.25 + 0.12 * k) * (0.55 + 0.45 * full),
+    };
+  }).filter((b) => b.x <= front);
+  const fill = mix(smokeDark, smokeLight, 0.55);
+  const fade = `smoke-bank-fade-${seed}`;
+  return (
+    <g opacity={BANK_OPACITY}>
+      <defs>
+        {/* It hugs the floor and thins toward us: no edge where it ends. */}
+        <linearGradient id={fade} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor={fill} stopOpacity={1} />
+          <stop offset="1" stopColor={fill} stopOpacity={0} />
+        </linearGradient>
+      </defs>
+      {puffs.map((b, i) => (
+        <circle key={`e${i}`} cx={b.x} cy={b.y} r={b.r + lineWeights.outline} fill={ink} />
+      ))}
+      {/* Under each puff, the body of the smoke down to the floor. */}
+      {puffs.map((b, i) => (
+        <rect
+          key={`c${i}`}
+          x={b.x - step * 0.56}
+          y={b.y}
+          width={step * 1.12}
+          height={-b.y}
+          fill={fill}
+        />
+      ))}
+      {puffs.map((b, i) => (
+        <circle key={`b${i}`} cx={b.x} cy={b.y} r={b.r} fill={fill} />
+      ))}
+      {/* What spills toward us across the floor, shorter under the low front of smoke coming in,
+          so its leading edge is a wisp and not a wall. */}
+      {puffs.map((b, i) => (
+        <rect
+          key={`s${i}`}
+          x={b.x - step * 0.56}
+          y={0}
+          width={step * 1.12}
+          height={BANK_SPILL * Math.min(1, -b.y / height)}
+          fill={`url(#${fade})`}
+        />
+      ))}
+      {/* A paler roll inside each puff, so the top reads as smoke and not as a wall. */}
+      {puffs.map((b, i) => (
+        <circle
+          key={`l${i}`}
+          cx={b.x - b.r * 0.2}
+          cy={b.y - b.r * 0.15}
+          r={b.r * 0.55}
+          fill={smokeLight}
+          opacity={0.5}
+        />
+      ))}
+    </g>
+  );
+}
+
+/** How high a bank of smoke stands at each of its stages, in heads: along the floor, at the top of a table, at the shoulders of someone sitting. */
+// The puffs along its top stand a third of a head higher still: these keep them just over the
+// top of a table, and just under the chin of someone sitting.
+export const SMOKE_LEVELS = { low: 0.45, table: 0.95, high: 1.35 } as const;
+
+/** A level on its way to the next over the first seconds of a shot, eased. */
+export const smokeRise = (from: number, to: number, shotT: number, seconds = 2.6): number => {
+  const k = clamp(shotT / seconds, 0, 1);
+  return lerp(from, to, k * k * (3 - 2 * k));
+};
+
 /**
  * A fire burning on the ground at y = 0: three tongues of flame that lick and sway, orange
  * outside and gold within. `smoke` adds the smoke rising off it. `size` is its height in head

@@ -1,0 +1,206 @@
+{
+  "version": 1,
+  "thumbnails": [
+    {
+      "id": "in-front-of-the-sun-tall",
+      "size": "9:16",
+      "why": "The glass of water standing in front of the blazing Sun. Tall, for Reels and Shorts.",
+      "layers": [
+        {
+          "kind": "backdrop",
+          "inner": "orange",
+          "outer": "denim",
+          "at": {
+            "x": 0.5,
+            "y": 0.52
+          },
+          "rays": 20,
+          "deep": 0.65
+        },
+        {
+          "kind": "icon",
+          "name": "sun-blaze",
+          "x": 0.5,
+          "y": 0.54,
+          "size": 0.62
+        },
+        {
+          "kind": "icon",
+          "name": "water-glass",
+          "x": 0.5,
+          "y": 0.76,
+          "size": 0.42
+        },
+        {
+          "kind": "shade",
+          "from": "top",
+          "reach": 0.34,
+          "strength": 0.75
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "YOUR WATER'S",
+              "style": "light"
+            },
+            {
+              "text": "OLDER THAN",
+              "style": "light"
+            },
+            {
+              "text": "THE SUN",
+              "style": "gold"
+            }
+          ],
+          "x": 0.06,
+          "top": 0.04,
+          "size": 0.1,
+          "width": 0.88
+        }
+      ]
+    },
+    {
+      "id": "side-by-side-tall",
+      "size": "9:16",
+      "why": "The glass and the Sun side by side, the glass circled as the older one. Tall, for Reels and Shorts.",
+      "layers": [
+        {
+          "kind": "flat",
+          "colour": "dark"
+        },
+        {
+          "kind": "icon",
+          "name": "water-glass",
+          "x": 0.27,
+          "y": 0.36,
+          "size": 0.3
+        },
+        {
+          "kind": "icon",
+          "name": "sun-blaze",
+          "x": 0.72,
+          "y": 0.35,
+          "size": 0.44
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.27,
+            "y": 0.36
+          },
+          "rx": 0.2,
+          "ry": 0.19
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "YOUR WATER'S",
+              "style": "light"
+            },
+            {
+              "text": "OLDER THAN",
+              "style": "light"
+            },
+            {
+              "text": "THE SUN",
+              "style": "gold"
+            }
+          ],
+          "x": 0.06,
+          "top": 0.6,
+          "size": 0.1,
+          "width": 0.88
+        }
+      ]
+    },
+    {
+      "id": "kitchen-and-space-tall",
+      "size": "9:16",
+      "why": "The video's own world cut in two: your glass in the kitchen, the Sun in space. Tall, for Reels and Shorts.",
+      "layers": [
+        {
+          "kind": "split",
+          "at": 0.5,
+          "lean": 0.12,
+          "seam": 0.012,
+          "left": [
+            {
+              "kind": "graphic",
+              "graphic": {
+                "kind": "journey",
+                "world": "water",
+                "at": "glass",
+                "fly": "start",
+                "keep": [
+                  "drop"
+                ],
+                "show": []
+              },
+              "x": 0.3,
+              "y": 0.62,
+              "size": 1.25
+            }
+          ],
+          "right": [
+            {
+              "kind": "graphic",
+              "graphic": {
+                "kind": "journey",
+                "world": "water",
+                "at": "sun",
+                "fly": "start",
+                "keep": [
+                  "sun"
+                ],
+                "show": []
+              },
+              "x": 0.78,
+              "y": 0.6,
+              "size": 1.0
+            }
+          ]
+        },
+        {
+          "kind": "shade",
+          "from": "top",
+          "reach": 0.42,
+          "strength": 0.85
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "YOUR WATER'S",
+              "style": "light"
+            },
+            {
+              "text": "OLDER THAN",
+              "style": "light"
+            },
+            {
+              "text": "THE SUN",
+              "style": "gold"
+            }
+          ],
+          "x": 0.06,
+          "top": 0.05,
+          "size": 0.095,
+          "width": 0.88
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.3,
+            "y": 0.6
+          },
+          "rx": 0.19,
+          "ry": 0.15
+        }
+      ]
+    }
+  ]
+}

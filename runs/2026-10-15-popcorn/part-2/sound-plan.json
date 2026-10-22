@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "upbeat",
+      "startMs": 0
+    },
+    {
+      "mood": "hope",
+      "startMs": 32300
+    }
+  ],
+  "sfx": [
+    {
+      "name": "pop",
+      "atMs": 11860,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "ding",
+      "atMs": 43790,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "ding",
+      "atMs": 50690,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "pop",
+      "atMs": 54605,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 3
+    }
+  ],
+  "musicGainDb": 0,
+  "hush": []
+}

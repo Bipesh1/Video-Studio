@@ -1,0 +1,165 @@
+{
+  "files": [
+    {
+      "option": 1,
+      "file": "questions-1-now.mp3",
+      "seconds": 30.8
+    },
+    {
+      "option": 2,
+      "file": "questions-2-lifted.mp3",
+      "seconds": 30.8
+    },
+    {
+      "option": 3,
+      "file": "questions-3-lifted-further.mp3",
+      "seconds": 30.8
+    }
+  ],
+  "questions": [
+    {
+      "option": 1,
+      "who": "trainer",
+      "ends on": "leave?",
+      "rise in semitones": -6.4
+    },
+    {
+      "option": 1,
+      "who": "copycat",
+      "ends on": "here?",
+      "rise in semitones": -8.3
+    },
+    {
+      "option": 1,
+      "who": "copycat",
+      "ends on": "smoke?",
+      "rise in semitones": -12.8
+    },
+    {
+      "option": 1,
+      "who": "trainer",
+      "ends on": "did?",
+      "rise in semitones": -6.3
+    },
+    {
+      "option": 1,
+      "who": "copycat",
+      "ends on": "someone?",
+      "rise in semitones": -10.2
+    },
+    {
+      "option": 1,
+      "who": "copycat",
+      "ends on": "move?",
+      "rise in semitones": -10.0
+    },
+    {
+      "option": 1,
+      "who": "trainer",
+      "ends on": "does?",
+      "rise in semitones": -6.0
+    },
+    {
+      "option": 1,
+      "who": "trainer",
+      "ends on": "smoke?",
+      "rise in semitones": -4.0
+    },
+    {
+      "option": 2,
+      "who": "trainer",
+      "ends on": "leave?",
+      "rise in semitones": 1.7
+    },
+    {
+      "option": 2,
+      "who": "copycat",
+      "ends on": "here?",
+      "rise in semitones": 4.6
+    },
+    {
+      "option": 2,
+      "who": "copycat",
+      "ends on": "smoke?",
+      "rise in semitones": 3.5
+    },
+    {
+      "option": 2,
+      "who": "trainer",
+      "ends on": "did?",
+      "rise in semitones": 5.8
+    },
+    {
+      "option": 2,
+      "who": "copycat",
+      "ends on": "someone?",
+      "rise in semitones": 1.0
+    },
+    {
+      "option": 2,
+      "who": "copycat",
+      "ends on": "move?",
+      "rise in semitones": 0.7
+    },
+    {
+      "option": 2,
+      "who": "trainer",
+      "ends on": "does?",
+      "rise in semitones": 0.8
+    },
+    {
+      "option": 2,
+      "who": "trainer",
+      "ends on": "smoke?",
+      "rise in semitones": 3.1
+    },
+    {
+      "option": 3,
+      "who": "trainer",
+      "ends on": "leave?",
+      "rise in semitones": 3.1
+    },
+    {
+      "option": 3,
+      "who": "copycat",
+      "ends on": "here?",
+      "rise in semitones": 7.2
+    },
+    {
+      "option": 3,
+      "who": "copycat",
+      "ends on": "smoke?",
+      "rise in semitones": 5.3
+    },
+    {
+      "option": 3,
+      "who": "trainer",
+      "ends on": "did?",
+      "rise in semitones": 8.7
+    },
+    {
+      "option": 3,
+      "who": "copycat",
+      "ends on": "someone?",
+      "rise in semitones": 2.9
+    },
+    {
+      "option": 3,
+      "who": "copycat",
+      "ends on": "move?",
+      "rise in semitones": 2.3
+    },
+    {
+      "option": 3,
+      "who": "trainer",
+      "ends on": "does?",
+      "rise in semitones": 1.9
+    },
+    {
+      "option": 3,
+      "who": "trainer",
+      "ends on": "smoke?",
+      "rise in semitones": 5.3
+    }
+  ]
+}

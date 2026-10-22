@@ -1,0 +1,33 @@
+2026-10-12T15:22:26.964Z  part 1  part 1 of 1, 9:16: 6 scenes, 8 shots
+2026-10-12T15:22:26.968Z  part 1  voice: start
+2026-10-12T15:26:23.180Z  part 1    voice.wav: 21.99 s, 35 words, timings from kokoro, -17.14 LUFS
+2026-10-12T15:26:23.193Z  part 1  voice: done in 236.2 s
+2026-10-12T15:26:23.194Z  part 1  time: start
+2026-10-12T15:26:23.245Z  part 1    8 shots over 22.0 s: shortest 2.0 s, longest 3.4 s
+2026-10-12T15:26:23.246Z  part 1  time: done in 0.1 s
+2026-10-12T15:26:23.247Z  part 1  sound: start
+2026-10-12T15:26:37.938Z  part 1    F:\Video Studio\runs\2026-10-12-faces-demo\part-1\audio\mix.wav: 21.99 s, -14.11 LUFS, true peak -1.19 dB, 2 music moods, 1 effects, music -17.1 dB under the voice
+2026-10-12T15:26:37.939Z  part 1  sound: done in 14.7 s
+2026-10-12T15:26:37.940Z  part 1  preview: start
+2026-10-12T15:26:37.995Z  part 1  bundle: start
+2026-10-12T15:27:31.770Z  part 1  bundle: done in 53.7 s
+2026-10-12T15:28:46.294Z  part 1    runs\2026-10-12-faces-demo\part-1\preview\faces-demo-part-1-9x16-preview-v1.mp4: 22.00 s of video, 540x960, in 52.3 s (2.38 s per video second)
+2026-10-12T15:28:46.302Z  part 1    runs\2026-10-12-faces-demo\part-1\preview\faces-demo-part-1-9x16-preview-v1.srt
+2026-10-12T15:28:46.322Z  part 1  preview: done in 128.4 s
+2026-10-12T15:41:18.813Z  part 1  part 1 of 1, 9:16: 6 scenes, 8 shots
+2026-10-12T15:41:18.815Z  part 1  time: start
+2026-10-12T15:41:18.822Z  part 1    8 shots over 22.0 s: shortest 2.0 s, longest 3.4 s
+2026-10-12T15:41:18.823Z  part 1  time: done in 0.0 s
+2026-10-12T15:41:18.823Z  part 1  sound: start
+2026-10-12T15:41:18.834Z  part 1    mix is already up to date (the plan and the voice have not changed)
+2026-10-12T15:41:18.834Z  part 1  sound: done in 0.0 s
+2026-10-12T15:41:18.835Z  part 1  stills: start
+2026-10-12T15:41:18.845Z  part 1  bundle: start
+2026-10-12T15:41:31.041Z  part 1  bundle: done in 12.2 s
+2026-10-12T15:41:47.238Z  part 1    8 stills in runs\2026-10-12-faces-demo\part-1\stills\9x16
+2026-10-12T15:41:51.157Z  part 1    runs\2026-10-12-faces-demo\part-1\stills\sheet-9x16-1.png (8 shots, 2 rows)
+2026-10-12T15:41:51.157Z  part 1  stills: done in 32.3 s
+2026-10-12T15:41:51.158Z  part 1  preview: start
+2026-10-12T15:42:40.802Z  part 1    runs\2026-10-12-faces-demo\part-1\preview\faces-demo-part-1-9x16-preview-v2.mp4: 22.00 s of video, 540x960, in 48.7 s (2.21 s per video second)
+2026-10-12T15:42:40.807Z  part 1    runs\2026-10-12-faces-demo\part-1\preview\faces-demo-part-1-9x16-preview-v2.srt
+2026-10-12T15:42:40.821Z  part 1  preview: done in 49.7 s

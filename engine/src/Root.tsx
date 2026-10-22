@@ -20,6 +20,14 @@ import {
   LibraryCatalog,
   LibraryLook,
 } from './library/Library';
+import {
+  CastLineup,
+  CharacterSheet,
+  LINEUP_SIZE,
+  SHEET_PLACEHOLDER,
+  SHEET_WIDTH,
+  calculateSheetMetadata,
+} from './library/CharacterSheet';
 import { PREVIEW_SIZE } from './library/previews';
 import { Sandbox } from './sandbox/Sandbox';
 import {
@@ -28,6 +36,8 @@ import {
   calculateClosingMetadata,
   calculateCoverMetadata,
 } from './stage/Cover';
+import { Poster, calculatePosterMetadata } from './stage/Poster';
+import { ERASED_TEST_SECONDS, ErasedTest } from './compositions/ErasedTest';
 import { StoryboardVideo, calculateStoryboardMetadata } from './stage/StoryboardVideo';
 import { STORYBOARD_PLACEHOLDER } from './stage/placeholder';
 import { BACKGROUNDS, STILL_SHEETS, VIDEO_SHEETS, stillId, videoId } from './sandbox/sheets';
@@ -121,6 +131,36 @@ export const RemotionRoot = () => {
         }}
         calculateMetadata={calculateCoverMetadata}
       />
+      {/* A test for the short films: a line that draws itself, a fading hand, slow acting. */}
+      <Composition
+        id="ErasedTest"
+        component={ErasedTest}
+        durationInFrames={ERASED_TEST_SECONDS * fps}
+        fps={fps}
+        width={1920}
+        height={1080}
+      />
+      {/* A thumbnail: a poster built in layers, not a frame of the video. */}
+      <Composition
+        id="Poster"
+        component={Poster}
+        durationInFrames={1}
+        fps={fps}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          size: '9:16',
+          thumbnail: {
+            id: 'placeholder',
+            why: 'A placeholder.',
+            layers: [],
+          },
+          cast: [],
+          cards: {},
+          seed: 1,
+        }}
+        calculateMetadata={calculatePosterMetadata}
+      />
       {/* A page's closing card, as the short clip that ends its videos. */}
       <Composition
         id="ClosingCard"
@@ -175,6 +215,24 @@ export const RemotionRoot = () => {
         width={1080}
         height={1920}
         defaultProps={{ page: 1 }}
+      />
+      <Composition
+        id="CharacterSheet"
+        component={CharacterSheet}
+        durationInFrames={1}
+        fps={fps}
+        width={SHEET_WIDTH}
+        height={1080}
+        defaultProps={SHEET_PLACEHOLDER}
+        calculateMetadata={calculateSheetMetadata}
+      />
+      <Composition
+        id="CastLineup"
+        component={CastLineup}
+        durationInFrames={1}
+        fps={fps}
+        {...LINEUP_SIZE}
+        defaultProps={{ cards: [SHEET_PLACEHOLDER.card], names: true }}
       />
       {STILL_SHEETS.flatMap((sheet) =>
         BACKGROUNDS.map((bg) => (

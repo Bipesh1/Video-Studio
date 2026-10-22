@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "curious",
+      "startMs": 0
+    },
+    {
+      "mood": "upbeat",
+      "startMs": 25520
+    },
+    {
+      "mood": "hope",
+      "startMs": 85133
+    }
+  ],
+  "sfx": [
+    {
+      "name": "pop",
+      "atMs": 3840,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "footsteps",
+      "atMs": 8160,
+      "durationMs": 5100,
+      "gainDb": -10,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "ding",
+      "atMs": 17280,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "whoosh",
+      "atMs": 25580,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "pop",
+      "atMs": 64693,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "ding",
+      "atMs": 96623,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 5
+    },
+    {
+      "name": "ding",
+      "atMs": 103523,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 6
+    },
+    {
+      "name": "pop",
+      "atMs": 107438,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 7
+    }
+  ],
+  "musicGainDb": 0,
+  "hush": []
+}

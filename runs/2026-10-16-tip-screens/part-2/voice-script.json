@@ -1,0 +1,63 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l08",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "But for a long time, fifteen percent was the *usual* tip for good service.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l09",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "In that same survey, more than *half* said they tip fifteen percent or less at a sit-down restaurant.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l10",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "On a six dollar coffee, that old usual tip is just ninety *cents*.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l11",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Next to those ninety cents, the smallest button asks for a dollar twenty, and the biggest a dollar *eighty*.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l12",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So the cheapest button is already a *third* more than the old usual tip.",
+      "speed": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l13",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Here is the trick: the buttons quietly tell you what a *normal* tip is.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l14",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The shop picks the buttons, the screen shows them, and *your* choices start right there.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    }
+  ]
+}

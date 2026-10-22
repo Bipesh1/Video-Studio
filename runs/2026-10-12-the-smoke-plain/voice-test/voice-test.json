@@ -1,0 +1,99 @@
+{
+  "lines": [
+    {
+      "who": "copycat",
+      "written": "It's getting hard to breathe. Shouldn't we tell someone?",
+      "said": "It's getting hard to breathe... Shouldn't we tell someone?",
+      "pace": 1.04
+    },
+    {
+      "who": "cheat",
+      "written": "Relax. If it was dangerous, somebody would say so.",
+      "said": "Relax. If it was dangerous, somebody would say so.",
+      "pace": 0.92
+    },
+    {
+      "who": "copycat",
+      "written": "Yeah. You're right. It's fine.",
+      "said": "Yeah... You're right. It's fine.",
+      "pace": 0.93
+    },
+    {
+      "who": "trainer",
+      "written": "Now he has said it is fine. Leaving would mean admitting he was wrong.",
+      "said": "Now, he has said it is fine. Leaving would mean admitting... he was wrong.",
+      "pace": 0.98
+    },
+    {
+      "who": "copycat",
+      "written": "My eyes are burning. Is nobody going to move?",
+      "said": "My eyes are burning! Is nobody going to move?",
+      "pace": 1.1
+    },
+    {
+      "who": "trainer",
+      "written": "What do you think he does?",
+      "said": "What do you think... he does?",
+      "pace": 0.92
+    },
+    {
+      "who": "copycat",
+      "written": "They are all calm. I must be the one who is wrong.",
+      "said": "They are all calm... I must be the one, who is wrong.",
+      "pace": 0.9
+    },
+    {
+      "who": "trainer",
+      "written": "He stays.",
+      "said": "He... stays.",
+      "pace": 0.84
+    }
+  ],
+  "files": [
+    {
+      "option": 1,
+      "file": "1-now.mp3",
+      "seconds": 23.1,
+      "lineSeconds": [
+        2.6,
+        2.35,
+        1.21,
+        3.74,
+        2.44,
+        1.5,
+        2.35,
+        0.85
+      ]
+    },
+    {
+      "option": 2,
+      "file": "2-pace-and-pauses.mp3",
+      "seconds": 25.1,
+      "lineSeconds": [
+        2.58,
+        2.48,
+        1.31,
+        4.33,
+        2.16,
+        1.98,
+        2.72,
+        1.42
+      ]
+    },
+    {
+      "option": 3,
+      "file": "3-pace-pauses-and-blended-trainer.mp3",
+      "seconds": 24.3,
+      "lineSeconds": [
+        2.58,
+        2.48,
+        1.31,
+        3.93,
+        2.17,
+        1.59,
+        2.72,
+        1.46
+      ]
+    }
+  ]
+}

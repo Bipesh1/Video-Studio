@@ -1,0 +1,136 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "upbeat",
+      "startMs": 0
+    },
+    {
+      "mood": "hope",
+      "startMs": 15680
+    }
+  ],
+  "sfx": [
+    {
+      "name": "pop",
+      "atMs": 173,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "whoosh",
+      "atMs": 4770,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "pop",
+      "atMs": 5073,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "pop",
+      "atMs": 6840,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "pop",
+      "atMs": 8173,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "whoosh",
+      "atMs": 9570,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 5
+    },
+    {
+      "name": "thud",
+      "atMs": 9873,
+      "gainDb": -10,
+      "pan": 0,
+      "seed": 6
+    },
+    {
+      "name": "whoosh",
+      "atMs": 15560,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 7
+    },
+    {
+      "name": "ding",
+      "atMs": 15840,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 8
+    },
+    {
+      "name": "whoosh",
+      "atMs": 22380,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 9
+    },
+    {
+      "name": "pop",
+      "atMs": 22673,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 10
+    },
+    {
+      "name": "whoosh",
+      "atMs": 27300,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 11
+    },
+    {
+      "name": "pop",
+      "atMs": 27607,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 12
+    },
+    {
+      "name": "pop",
+      "atMs": 30807,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 13
+    },
+    {
+      "name": "pop",
+      "atMs": 31107,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 14
+    },
+    {
+      "name": "whoosh",
+      "atMs": 33650,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 15
+    },
+    {
+      "name": "pop",
+      "atMs": 33940,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 16
+    }
+  ],
+  "musicGainDb": 0,
+  "hush": []
+}

@@ -1,0 +1,58 @@
+{
+    "version":  1,
+    "video":  "dollar-auction-part-2-9x16-preview-v3.mp4",
+    "stills":  {
+                   "s4a":  "ok",
+                   "s4b":  "ok",
+                   "s4c":  "ok",
+                   "s4d":  "ok",
+                   "s4e":  "ok",
+                   "s4f":  "ok",
+                   "s4g":  "ok",
+                   "s4h":  "ok",
+                   "s5a":  "ok",
+                   "s5b":  "ok",
+                   "s5c":  "ok",
+                   "s5d":  "ok",
+                   "s5e":  "ok",
+                   "s5f":  "ok",
+                   "s5g":  "ok",
+                   "s5h":  "ok"
+               },
+    "strips":  {
+                   "cut-s4c-s4d":  "ok",
+                   "cut-s4d-s4e":  "ok",
+                   "cut-s4f-s4g":  "ok",
+                   "cut-s4g-s4h":  "ok",
+                   "s4c-move-1":  "ok",
+                   "s4c-move-2":  "ok",
+                   "s4c-move-3":  "ok",
+                   "s4e-move-1":  "ok",
+                   "s4e-move-2":  "ok",
+                   "s4g-move-1":  "ok",
+                   "s4g-move-2":  "ok",
+                   "s4h-move-1":  "ok",
+                   "s4h-move-2":  "ok",
+                   "s5a-move-1":  "ok",
+                   "s5h-move-1":  "ok"
+               },
+    "playbook":  "ok",
+    "fixed":  [
+                  "The printed page was held up over the party guests and covered their faces. The page is now shown alone, with the party heard behind it, and the guests are seen when it comes down.",
+                  "A cheering guest at the edge of the party threw a hand out of the narrow picture, and so did another with both hands up. One waves an arm on the side of the others now and one laughs with the arms down.",
+                  "Two party guests stood on the same spot. They stand apart.",
+                  "The big number over the jar sat on the gloved hand on its lid. The podium and the jar are drawn a little smaller in those shots, so the number has clear room above."
+              ],
+    "notes":  [
+                  "The jar of notes slides in from the right behind the podium as he says \u0027To me.\u0027, with the auctioneer\u0027s other gloved hand resting on its lid.",
+                  "The counter runs up to $26,000,000 over the first two thirds of its shot and then stands; the still of that shot catches it on the way, at about $25.9 million.",
+                  "The 1971 page says THE DOLLAR AUCTION GAME, PUBLISHED 1971: his own wording, with no author\u0027s name on it.",
+                  "The label for the website says \u0027A penny auction website\u0027; the site is not named, as in his spoken lines.",
+                  "In the classroom the big \u0027100 x\u0027 sits over the board on the wall. It reads, but the board\u0027s chart shows behind it.",
+                  "The classroom is two students at one table, in ties, with a twenty between them; they throw their hands up to outbid each other and then slump.",
+                  "The Saint is seen alone for his question and again at the end, where his head drops. His scarf does not droop: it is drawn one way.",
+                  "In the wide shots the people and the podium are in the upper half of the tall picture with the floor under them. No caption is over a face.",
+                  "The part opens on a fade from part 1. Music: bright at the party, curious in the classroom, tense from the Saint\u0027s question on. Party chatter runs under the party; there is no school bell and no sound of coins pouring. Sound is for Biku\u0027s ears.",
+                  "The Saint\u0027s voice is option 1 of the three test voices; Biku has not picked yet."
+              ]
+}

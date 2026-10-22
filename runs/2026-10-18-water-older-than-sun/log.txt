@@ -1,0 +1,302 @@
+2026-10-18T06:28:00.695Z  part 1  part 1 of 3, 9:16: 3 scenes, 9 shots
+2026-10-18T06:28:00.713Z  part 1  voice: start
+2026-10-18T07:09:25.550Z  part 1    voice.wav: 48.71 s, 125 words, timings from kokoro, -17.12 LUFS
+2026-10-18T07:09:25.557Z  part 1  voice: done in 2484.8 s
+2026-10-18T07:09:25.558Z  part 1  time: start
+2026-10-18T07:09:25.604Z  part 1    9 shots over 48.7 s: shortest 3.8 s, longest 7.3 s
+2026-10-18T07:09:25.606Z  part 1    note: shot "s09" is 7.3 s long, a little over the 7 s a shot should take
+2026-10-18T07:09:25.607Z  part 1  time: done in 0.1 s
+2026-10-18T07:09:25.608Z  part 1  sound: start
+2026-10-18T07:10:44.228Z  part 1    F:\Video Studio\runs\2026-10-18-water-older-than-sun\part-1\audio\mix.wav: 48.71 s, -14.02 LUFS, true peak -1.1 dB, 2 music moods, 12 effects, music -16.9 dB under the voice
+2026-10-18T07:10:44.230Z  part 1  sound: done in 78.6 s
+2026-10-18T07:13:14.823Z  part 1  part 1 of 3, 9:16: 3 scenes, 9 shots
+2026-10-18T07:13:14.827Z  part 1  stills: start
+2026-10-18T07:13:14.903Z  part 1  bundle: start
+2026-10-18T07:14:31.944Z  part 1  bundle: done in 77.0 s
+2026-10-18T07:15:31.056Z  part 1    9 stills in runs\2026-10-18-water-older-than-sun\part-1\stills\9x16
+2026-10-18T07:15:36.783Z  part 1    runs\2026-10-18-water-older-than-sun\part-1\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-18T08:03:32.142Z  part 1    could not make the sheet: 
+2026-10-18T08:03:32.552Z  part 1  stills: done in 3017.7 s
+2026-10-18T08:03:32.552Z  part 1  preview: start
+2026-10-18T08:36:19.869Z  part 1  part 1 of 3, 9:16: 3 scenes, 9 shots
+2026-10-18T08:36:19.880Z  part 1  stills: start
+2026-10-18T08:36:20.072Z  part 1  bundle: start
+2026-10-18T08:36:47.457Z  part 1  bundle: done in 27.4 s
+2026-10-18T08:37:23.895Z  part 1    9 stills in runs\2026-10-18-water-older-than-sun\part-1\stills\9x16
+2026-10-18T08:37:26.133Z  part 1    runs\2026-10-18-water-older-than-sun\part-1\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-18T08:37:26.942Z  part 1    runs\2026-10-18-water-older-than-sun\part-1\stills\sheet-9x16-1.png (9 shots, 3 rows)
+2026-10-18T08:37:26.943Z  part 1  stills: done in 67.1 s
+2026-10-18T08:37:26.943Z  part 1  preview: start
+2026-10-18T08:42:44.921Z  part 1    runs\2026-10-18-water-older-than-sun\part-1\preview\water-older-than-sun-part-1-9x16-preview-v1.mp4: 48.73 s of video, 540x960, in 316.8 s (6.50 s per video second)
+2026-10-18T08:42:44.925Z  part 1    runs\2026-10-18-water-older-than-sun\part-1\preview\water-older-than-sun-part-1-9x16-preview-v1.srt
+2026-10-18T08:42:44.942Z  part 1  preview: done in 318.0 s
+2026-10-18T08:43:59.813Z  part 1  part 1 of 3, 9:16: 3 scenes, 9 shots
+2026-10-18T08:43:59.814Z  part 1  stills: start
+2026-10-18T08:43:59.833Z  part 1  bundle: start
+2026-10-18T08:44:18.228Z  part 1  bundle: done in 18.4 s
+2026-10-18T08:44:36.449Z  part 1    9 stills in runs\2026-10-18-water-older-than-sun\part-1\stills\9x16
+2026-10-18T08:44:36.803Z  part 1    runs\2026-10-18-water-older-than-sun\part-1\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-18T08:44:37.676Z  part 1    runs\2026-10-18-water-older-than-sun\part-1\stills\sheet-9x16-1.png (9 shots, 3 rows)
+2026-10-18T08:44:37.677Z  part 1  stills: done in 37.9 s
+2026-10-18T08:44:37.677Z  part 1  preview: start
+2026-10-18T08:49:58.306Z  part 1    runs\2026-10-18-water-older-than-sun\part-1\preview\water-older-than-sun-part-1-9x16-preview-v2.mp4: 48.73 s of video, 540x960, in 319.6 s (6.56 s per video second)
+2026-10-18T08:49:58.314Z  part 1    runs\2026-10-18-water-older-than-sun\part-1\preview\water-older-than-sun-part-1-9x16-preview-v2.srt
+2026-10-18T08:49:58.343Z  part 1  preview: done in 320.7 s
+2026-10-18T08:50:58.966Z  part 1  part 1 of 3, 9:16: 3 scenes, 9 shots
+2026-10-18T08:50:58.968Z  part 1  preview: start
+2026-10-18T08:50:58.992Z  part 1  bundle: start
+2026-10-18T08:51:11.834Z  part 1  bundle: done in 12.8 s
+2026-10-18T08:56:02.211Z  part 1    runs\2026-10-18-water-older-than-sun\part-1\preview\water-older-than-sun-part-1-9x16-preview-v3.mp4: 48.73 s of video, 540x960, in 286.9 s (5.89 s per video second)
+2026-10-18T08:56:02.218Z  part 1    runs\2026-10-18-water-older-than-sun\part-1\preview\water-older-than-sun-part-1-9x16-preview-v3.srt
+2026-10-18T08:56:02.235Z  part 1  preview: done in 303.3 s
+2026-10-18T08:56:55.013Z  part 1  part 1 of 3, 9:16: 3 scenes, 9 shots
+2026-10-18T08:56:55.015Z  part 1  preview: start
+2026-10-18T08:56:55.038Z  part 1  bundle: start
+2026-10-18T08:57:09.514Z  part 1  bundle: done in 14.5 s
+2026-10-18T09:02:45.126Z  part 1    runs\2026-10-18-water-older-than-sun\part-1\preview\water-older-than-sun-part-1-9x16-preview-v4.mp4: 48.73 s of video, 540x960, in 333.2 s (6.84 s per video second)
+2026-10-18T09:02:45.135Z  part 1    runs\2026-10-18-water-older-than-sun\part-1\preview\water-older-than-sun-part-1-9x16-preview-v4.srt
+2026-10-18T09:02:45.161Z  part 1  preview: done in 350.1 s
+2026-10-18T09:04:39.113Z  part 1  part 1 of 3, 9:16: 3 scenes, 9 shots
+2026-10-18T09:04:39.115Z  part 1  preview: start
+2026-10-18T09:04:39.143Z  part 1  bundle: start
+2026-10-18T09:04:54.560Z  part 1  bundle: done in 15.4 s
+2026-10-18T09:09:58.178Z  part 1    runs\2026-10-18-water-older-than-sun\part-1\preview\water-older-than-sun-part-1-9x16-preview-v5.mp4: 48.73 s of video, 540x960, in 300.2 s (6.16 s per video second)
+2026-10-18T09:09:58.181Z  part 1    runs\2026-10-18-water-older-than-sun\part-1\preview\water-older-than-sun-part-1-9x16-preview-v5.srt
+2026-10-18T09:09:58.195Z  part 1  preview: done in 319.1 s
+2026-10-18T09:12:19.474Z  part 1  part 1 of 3, 9:16: 3 scenes, 9 shots
+2026-10-18T09:12:19.476Z  part 1  stills: start
+2026-10-18T09:12:19.497Z  part 1  bundle: start
+2026-10-18T09:12:36.576Z  part 1  bundle: done in 17.1 s
+2026-10-18T09:12:51.878Z  part 1    9 stills in runs\2026-10-18-water-older-than-sun\part-1\stills\9x16
+2026-10-18T09:12:52.194Z  part 1    runs\2026-10-18-water-older-than-sun\part-1\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-18T09:12:53.002Z  part 1    runs\2026-10-18-water-older-than-sun\part-1\stills\sheet-9x16-1.png (9 shots, 3 rows)
+2026-10-18T09:12:53.002Z  part 1  stills: done in 33.5 s
+2026-10-18T09:12:53.002Z  part 1  preview: start
+2026-10-18T09:17:45.667Z  part 1    runs\2026-10-18-water-older-than-sun\part-1\preview\water-older-than-sun-part-1-9x16-preview-v6.mp4: 48.73 s of video, 540x960, in 291.7 s (5.99 s per video second)
+2026-10-18T09:17:45.671Z  part 1    runs\2026-10-18-water-older-than-sun\part-1\preview\water-older-than-sun-part-1-9x16-preview-v6.srt
+2026-10-18T09:17:45.691Z  part 1  preview: done in 292.7 s
+2026-10-18T09:19:56.677Z  part 1  part 1 of 3, 9:16: 3 scenes, 9 shots
+2026-10-18T09:19:56.679Z  part 1  preview: start
+2026-10-18T09:19:56.710Z  part 1  bundle: start
+2026-10-18T09:20:12.724Z  part 1  bundle: done in 16.0 s
+2026-10-18T09:25:39.767Z  part 1    runs\2026-10-18-water-older-than-sun\part-1\preview\water-older-than-sun-part-1-9x16-preview-v7.mp4: 48.73 s of video, 540x960, in 324.0 s (6.65 s per video second)
+2026-10-18T09:25:39.774Z  part 1    runs\2026-10-18-water-older-than-sun\part-1\preview\water-older-than-sun-part-1-9x16-preview-v7.srt
+2026-10-18T09:25:39.793Z  part 1  preview: done in 343.1 s
+2026-10-18T09:26:31.151Z  part 1  part 1 of 3, 9:16: 3 scenes, 9 shots
+2026-10-18T09:26:31.153Z  part 1  video: start
+2026-10-18T09:26:31.179Z  part 1  bundle: start
+2026-10-18T09:26:43.281Z  part 1  bundle: done in 12.1 s
+2026-10-18T09:33:51.823Z  part 1    runs\2026-10-18-water-older-than-sun\part-1\out\water-older-than-sun-part-1-9x16-v1.mp4: 48.73 s of video, 1080x1920, in 425.4 s (8.73 s per video second)
+2026-10-18T09:33:51.826Z  part 1    runs\2026-10-18-water-older-than-sun\part-1\out\water-older-than-sun-part-1-9x16-v1.srt
+2026-10-18T09:33:51.842Z  part 1  video: done in 440.7 s
+2026-10-18T09:38:02.139Z  part 2  part 2 of 3, 9:16: 2 scenes, 8 shots
+2026-10-18T09:38:02.141Z  part 2  voice: start
+2026-10-18T09:39:52.283Z  part 2    voice.wav: 36.63 s, 87 words, timings from kokoro, -17.12 LUFS
+2026-10-18T09:39:52.283Z  part 2  voice: done in 110.1 s
+2026-10-18T09:39:52.283Z  part 2  time: start
+2026-10-18T09:39:52.296Z  part 2    8 shots over 36.6 s: shortest 2.3 s, longest 6.2 s
+2026-10-18T09:39:52.296Z  part 2  time: done in 0.0 s
+2026-10-18T09:39:52.296Z  part 2  sound: start
+2026-10-18T09:40:08.541Z  part 2    F:\Video Studio\runs\2026-10-18-water-older-than-sun\part-2\audio\mix.wav: 36.63 s, -14.03 LUFS, true peak -1.1 dB, 2 music moods, 11 effects, music -17.2 dB under the voice
+2026-10-18T09:40:08.541Z  part 2  sound: done in 16.2 s
+2026-10-18T09:40:16.629Z  part 2  part 2 of 3, 9:16: 2 scenes, 8 shots
+2026-10-18T09:40:16.630Z  part 2  stills: start
+2026-10-18T09:40:16.657Z  part 2  bundle: start
+2026-10-18T09:40:26.429Z  part 2  bundle: done in 9.8 s
+2026-10-18T09:40:41.656Z  part 2    8 stills in runs\2026-10-18-water-older-than-sun\part-2\stills\9x16
+2026-10-18T09:40:41.926Z  part 2    runs\2026-10-18-water-older-than-sun\part-2\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-18T09:40:42.664Z  part 2    runs\2026-10-18-water-older-than-sun\part-2\stills\sheet-9x16-1.png (8 shots, 2 rows)
+2026-10-18T09:40:42.665Z  part 2  stills: done in 26.0 s
+2026-10-18T09:41:00.616Z  part 2  part 2 of 3, 9:16: 2 scenes, 8 shots
+2026-10-18T09:41:00.618Z  part 2  preview: start
+2026-10-18T09:41:00.636Z  part 2  bundle: start
+2026-10-18T09:41:04.999Z  part 2  bundle: done in 4.4 s
+2026-10-18T09:44:32.567Z  part 2    runs\2026-10-18-water-older-than-sun\part-2\preview\water-older-than-sun-part-2-9x16-preview-v1.mp4: 36.63 s of video, 540x960, in 203.2 s (5.55 s per video second)
+2026-10-18T09:44:32.570Z  part 2    runs\2026-10-18-water-older-than-sun\part-2\preview\water-older-than-sun-part-2-9x16-preview-v1.srt
+2026-10-18T09:44:32.581Z  part 2  preview: done in 212.0 s
+2026-10-18T09:46:28.205Z  part 2  part 2 of 3, 9:16: 2 scenes, 8 shots
+2026-10-18T09:46:28.207Z  part 2  time: start
+2026-10-18T09:46:28.210Z  part 2    8 shots over 36.6 s: shortest 2.3 s, longest 6.2 s
+2026-10-18T09:46:28.211Z  part 2  time: done in 0.0 s
+2026-10-18T09:46:28.211Z  part 2  sound: start
+2026-10-18T09:46:28.218Z  part 2    mix is already up to date (the plan and the voice have not changed)
+2026-10-18T09:46:28.218Z  part 2  sound: done in 0.0 s
+2026-10-18T09:46:28.218Z  part 2  preview: start
+2026-10-18T09:46:28.233Z  part 2  bundle: start
+2026-10-18T09:46:41.769Z  part 2  bundle: done in 13.5 s
+2026-10-18T09:50:46.399Z  part 2    runs\2026-10-18-water-older-than-sun\part-2\preview\water-older-than-sun-part-2-9x16-preview-v2.mp4: 36.63 s of video, 540x960, in 242.0 s (6.61 s per video second)
+2026-10-18T09:50:46.403Z  part 2    runs\2026-10-18-water-older-than-sun\part-2\preview\water-older-than-sun-part-2-9x16-preview-v2.srt
+2026-10-18T09:50:46.417Z  part 2  preview: done in 258.2 s
+2026-10-18T09:52:15.716Z  part 2  part 2 of 3, 9:16: 2 scenes, 8 shots
+2026-10-18T09:52:15.717Z  part 2  time: start
+2026-10-18T09:52:15.721Z  part 2    8 shots over 36.6 s: shortest 2.3 s, longest 6.2 s
+2026-10-18T09:52:15.721Z  part 2  time: done in 0.0 s
+2026-10-18T09:52:15.721Z  part 2  sound: start
+2026-10-18T09:52:15.730Z  part 2    mix is already up to date (the plan and the voice have not changed)
+2026-10-18T09:52:15.731Z  part 2  sound: done in 0.0 s
+2026-10-18T09:52:15.731Z  part 2  stills: start
+2026-10-18T09:52:15.748Z  part 2  bundle: start
+2026-10-18T09:52:29.203Z  part 2  bundle: done in 13.5 s
+2026-10-18T09:52:43.163Z  part 2    8 stills in runs\2026-10-18-water-older-than-sun\part-2\stills\9x16
+2026-10-18T09:52:43.459Z  part 2    runs\2026-10-18-water-older-than-sun\part-2\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-18T09:52:44.340Z  part 2    runs\2026-10-18-water-older-than-sun\part-2\stills\sheet-9x16-1.png (8 shots, 2 rows)
+2026-10-18T09:52:44.340Z  part 2  stills: done in 28.6 s
+2026-10-18T09:52:44.340Z  part 2  preview: start
+2026-10-18T09:56:51.705Z  part 2    runs\2026-10-18-water-older-than-sun\part-2\preview\water-older-than-sun-part-2-9x16-preview-v3.mp4: 36.63 s of video, 540x960, in 246.4 s (6.73 s per video second)
+2026-10-18T09:56:51.708Z  part 2    runs\2026-10-18-water-older-than-sun\part-2\preview\water-older-than-sun-part-2-9x16-preview-v3.srt
+2026-10-18T09:56:51.718Z  part 2  preview: done in 247.4 s
+2026-10-18T09:57:45.724Z  part 2  part 2 of 3, 9:16: 2 scenes, 8 shots
+2026-10-18T09:57:45.726Z  part 2  preview: start
+2026-10-18T09:57:45.746Z  part 2  bundle: start
+2026-10-18T09:57:59.139Z  part 2  bundle: done in 13.4 s
+2026-10-18T10:02:17.238Z  part 2    runs\2026-10-18-water-older-than-sun\part-2\preview\water-older-than-sun-part-2-9x16-preview-v4.mp4: 36.63 s of video, 540x960, in 254.8 s (6.96 s per video second)
+2026-10-18T10:02:17.241Z  part 2    runs\2026-10-18-water-older-than-sun\part-2\preview\water-older-than-sun-part-2-9x16-preview-v4.srt
+2026-10-18T10:02:17.251Z  part 2  preview: done in 271.5 s
+2026-10-18T10:03:14.774Z  part 2  part 2 of 3, 9:16: 2 scenes, 8 shots
+2026-10-18T10:03:14.776Z  part 2  stills: start
+2026-10-18T10:03:14.798Z  part 2  bundle: start
+2026-10-18T10:03:26.813Z  part 2  bundle: done in 12.0 s
+2026-10-18T10:03:42.840Z  part 2    8 stills in runs\2026-10-18-water-older-than-sun\part-2\stills\9x16
+2026-10-18T10:03:43.148Z  part 2    runs\2026-10-18-water-older-than-sun\part-2\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-18T10:03:44.013Z  part 2    runs\2026-10-18-water-older-than-sun\part-2\stills\sheet-9x16-1.png (8 shots, 2 rows)
+2026-10-18T10:03:44.014Z  part 2  stills: done in 29.2 s
+2026-10-18T10:03:44.014Z  part 2  preview: start
+2026-10-18T10:08:02.364Z  part 2    runs\2026-10-18-water-older-than-sun\part-2\preview\water-older-than-sun-part-2-9x16-preview-v5.mp4: 36.63 s of video, 540x960, in 257.4 s (7.03 s per video second)
+2026-10-18T10:08:02.369Z  part 2    runs\2026-10-18-water-older-than-sun\part-2\preview\water-older-than-sun-part-2-9x16-preview-v5.srt
+2026-10-18T10:08:02.383Z  part 2  preview: done in 258.4 s
+2026-10-18T10:08:53.062Z  part 2  part 2 of 3, 9:16: 2 scenes, 8 shots
+2026-10-18T10:08:53.063Z  part 2  video: start
+2026-10-18T10:08:53.082Z  part 2  bundle: start
+2026-10-18T10:09:08.987Z  part 2  bundle: done in 15.9 s
+2026-10-18T10:15:36.109Z  part 2    runs\2026-10-18-water-older-than-sun\part-2\out\water-older-than-sun-part-2-9x16-v1.mp4: 36.63 s of video, 1080x1920, in 383.0 s (10.46 s per video second)
+2026-10-18T10:15:36.177Z  part 2    runs\2026-10-18-water-older-than-sun\part-2\out\water-older-than-sun-part-2-9x16-v1.srt
+2026-10-18T10:15:36.427Z  part 2  video: done in 403.4 s
+2026-10-18T10:18:27.818Z  part 3  part 3 of 3, 9:16: 3 scenes, 7 shots
+2026-10-18T10:18:27.820Z  part 3  voice: start
+2026-10-18T10:20:40.189Z  part 3    voice.wav: 40.82 s, 101 words, timings from kokoro, -17.13 LUFS
+2026-10-18T10:20:40.189Z  part 3  voice: done in 132.4 s
+2026-10-18T10:20:40.190Z  part 3  time: start
+2026-10-18T10:20:40.203Z  part 3    7 shots over 40.8 s: shortest 4.9 s, longest 7.3 s
+2026-10-18T10:20:40.249Z  part 3    note: shot "s24" is 7.3 s long, a little over the 7 s a shot should take
+2026-10-18T10:20:40.250Z  part 3  time: done in 0.1 s
+2026-10-18T10:20:40.250Z  part 3  sound: start
+2026-10-18T10:20:52.840Z  part 3    F:\Video Studio\runs\2026-10-18-water-older-than-sun\part-3\audio\mix.wav: 40.82 s, -14.02 LUFS, true peak -1.13 dB, 3 music moods, 12 effects, music -17.3 dB under the voice
+2026-10-18T10:20:52.841Z  part 3  sound: done in 12.6 s
+2026-10-18T10:20:52.841Z  part 3  stills: start
+2026-10-18T10:20:52.862Z  part 3  bundle: start
+2026-10-18T10:21:15.469Z  part 3  bundle: done in 22.6 s
+2026-10-18T10:21:38.571Z  part 3    7 stills in runs\2026-10-18-water-older-than-sun\part-3\stills\9x16
+2026-10-18T10:21:38.924Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-18T10:21:39.577Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\stills\sheet-9x16-1.png (7 shots, 2 rows)
+2026-10-18T10:21:39.578Z  part 3  stills: done in 46.7 s
+2026-10-18T10:22:03.562Z  part 3  part 3 of 3, 9:16: 3 scenes, 7 shots
+2026-10-18T10:22:03.563Z  part 3  preview: start
+2026-10-18T10:22:03.582Z  part 3  bundle: start
+2026-10-18T10:22:18.511Z  part 3  bundle: done in 14.9 s
+2026-10-18T10:26:46.831Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\preview\water-older-than-sun-part-3-9x16-preview-v1.mp4: 40.83 s of video, 540x960, in 264.6 s (6.48 s per video second)
+2026-10-18T10:26:46.836Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\preview\water-older-than-sun-part-3-9x16-preview-v1.srt
+2026-10-18T10:26:46.903Z  part 3  preview: done in 283.3 s
+2026-10-18T10:28:02.547Z  part 3  part 3 of 3, 9:16: 3 scenes, 8 shots
+2026-10-18T10:28:02.548Z  part 3  time: start
+2026-10-18T10:28:02.552Z  part 3    8 shots over 40.8 s: shortest 1.9 s, longest 7.3 s
+2026-10-18T10:28:02.552Z  part 3    note: shot "s25" is 7.3 s long, a little over the 7 s a shot should take
+2026-10-18T10:28:02.552Z  part 3  time: done in 0.0 s
+2026-10-18T10:28:02.553Z  part 3  sound: start
+2026-10-18T10:28:13.624Z  part 3    F:\Video Studio\runs\2026-10-18-water-older-than-sun\part-3\audio\mix.wav: 40.82 s, -14.02 LUFS, true peak -1.13 dB, 3 music moods, 12 effects, music -17.3 dB under the voice
+2026-10-18T10:28:13.625Z  part 3  sound: done in 11.1 s
+2026-10-18T10:28:13.625Z  part 3  stills: start
+2026-10-18T10:28:13.647Z  part 3  bundle: start
+2026-10-18T10:28:28.880Z  part 3  bundle: done in 15.2 s
+2026-10-18T10:28:42.734Z  part 3    8 stills in runs\2026-10-18-water-older-than-sun\part-3\stills\9x16
+2026-10-18T10:28:43.045Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-18T10:28:43.738Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\stills\sheet-9x16-1.png (8 shots, 2 rows)
+2026-10-18T10:28:43.738Z  part 3  stills: done in 30.1 s
+2026-10-18T10:28:43.739Z  part 3  preview: start
+2026-10-18T10:32:52.063Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\preview\water-older-than-sun-part-3-9x16-preview-v2.mp4: 40.83 s of video, 540x960, in 247.4 s (6.06 s per video second)
+2026-10-18T10:32:52.066Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\preview\water-older-than-sun-part-3-9x16-preview-v2.srt
+2026-10-18T10:32:52.126Z  part 3  preview: done in 248.4 s
+2026-10-18T10:34:07.863Z  part 3  part 3 of 3, 9:16: 3 scenes, 8 shots
+2026-10-18T10:34:07.865Z  part 3  time: start
+2026-10-18T10:34:07.869Z  part 3    8 shots over 40.8 s: shortest 1.9 s, longest 7.3 s
+2026-10-18T10:34:07.869Z  part 3    note: shot "s25" is 7.3 s long, a little over the 7 s a shot should take
+2026-10-18T10:34:07.870Z  part 3  time: done in 0.0 s
+2026-10-18T10:34:07.870Z  part 3  sound: start
+2026-10-18T10:34:07.878Z  part 3    mix is already up to date (the plan and the voice have not changed)
+2026-10-18T10:34:07.878Z  part 3  sound: done in 0.0 s
+2026-10-18T10:34:07.879Z  part 3  stills: start
+2026-10-18T10:34:07.897Z  part 3  bundle: start
+2026-10-18T10:34:21.262Z  part 3  bundle: done in 13.4 s
+2026-10-18T10:34:36.036Z  part 3    8 stills in runs\2026-10-18-water-older-than-sun\part-3\stills\9x16
+2026-10-18T10:34:36.409Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-18T10:34:37.143Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\stills\sheet-9x16-1.png (8 shots, 2 rows)
+2026-10-18T10:34:37.143Z  part 3  stills: done in 29.3 s
+2026-10-18T10:34:37.144Z  part 3  preview: start
+2026-10-18T10:51:28.187Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\preview\water-older-than-sun-part-3-9x16-preview-v3.mp4: 40.83 s of video, 540x960, in 1010.0 s (24.73 s per video second)
+2026-10-18T10:51:28.191Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\preview\water-older-than-sun-part-3-9x16-preview-v3.srt
+2026-10-18T10:51:28.307Z  part 3  preview: done in 1011.2 s
+2026-10-18T10:52:56.115Z  part 3  part 3 of 3, 9:16: 3 scenes, 8 shots
+2026-10-18T10:52:56.117Z  part 3  sound: start
+2026-10-18T10:53:02.192Z  part 3    F:\Video Studio\runs\2026-10-18-water-older-than-sun\part-3\audio\mix.wav: 40.82 s, -14.02 LUFS, true peak -1.13 dB, 3 music moods, 18 effects, music -17.3 dB under the voice
+2026-10-18T10:53:02.192Z  part 3  sound: done in 6.1 s
+2026-10-18T10:53:02.193Z  part 3  stills: start
+2026-10-18T10:53:02.219Z  part 3  bundle: start
+2026-10-18T10:53:13.842Z  part 3  bundle: done in 11.6 s
+2026-10-18T10:53:27.330Z  part 3    8 stills in runs\2026-10-18-water-older-than-sun\part-3\stills\9x16
+2026-10-18T10:53:27.652Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-18T10:53:28.388Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\stills\sheet-9x16-1.png (8 shots, 2 rows)
+2026-10-18T10:53:28.388Z  part 3  stills: done in 26.2 s
+2026-10-18T10:53:28.388Z  part 3  preview: start
+2026-10-18T10:57:44.496Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\preview\water-older-than-sun-part-3-9x16-preview-v4.mp4: 40.83 s of video, 540x960, in 255.2 s (6.25 s per video second)
+2026-10-18T10:57:44.500Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\preview\water-older-than-sun-part-3-9x16-preview-v4.srt
+2026-10-18T10:57:44.590Z  part 3  preview: done in 256.2 s
+2026-10-18T10:58:12.233Z  part 3  part 3 of 3, 9:16: 3 scenes, 8 shots
+2026-10-18T10:58:12.235Z  part 3  stills: start
+2026-10-18T10:58:12.253Z  part 3  bundle: start
+2026-10-18T10:58:25.490Z  part 3  bundle: done in 13.2 s
+2026-10-18T10:58:40.491Z  part 3    8 stills in runs\2026-10-18-water-older-than-sun\part-3\stills\9x16
+2026-10-18T10:58:40.816Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-18T10:58:41.578Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\stills\sheet-9x16-1.png (8 shots, 2 rows)
+2026-10-18T10:58:41.578Z  part 3  stills: done in 29.3 s
+2026-10-18T10:58:41.578Z  part 3  preview: start
+2026-10-18T11:03:00.298Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\preview\water-older-than-sun-part-3-9x16-preview-v5.mp4: 40.83 s of video, 540x960, in 257.8 s (6.31 s per video second)
+2026-10-18T11:03:00.301Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\preview\water-older-than-sun-part-3-9x16-preview-v5.srt
+2026-10-18T11:03:00.370Z  part 3  preview: done in 258.8 s
+2026-10-18T11:03:40.662Z  part 3  part 3 of 3, 9:16: 3 scenes, 8 shots
+2026-10-18T11:03:40.663Z  part 3  stills: start
+2026-10-18T11:03:40.680Z  part 3  bundle: start
+2026-10-18T11:03:54.781Z  part 3  bundle: done in 14.1 s
+2026-10-18T11:04:10.860Z  part 3    8 stills in runs\2026-10-18-water-older-than-sun\part-3\stills\9x16
+2026-10-18T11:04:11.164Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-18T11:04:11.901Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\stills\sheet-9x16-1.png (8 shots, 2 rows)
+2026-10-18T11:04:11.901Z  part 3  stills: done in 31.2 s
+2026-10-18T11:04:11.901Z  part 3  preview: start
+2026-10-18T11:08:30.221Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\preview\water-older-than-sun-part-3-9x16-preview-v6.mp4: 40.83 s of video, 540x960, in 257.4 s (6.30 s per video second)
+2026-10-18T11:08:30.224Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\preview\water-older-than-sun-part-3-9x16-preview-v6.srt
+2026-10-18T11:08:30.288Z  part 3  preview: done in 258.4 s
+2026-10-18T11:09:15.224Z  part 3  part 3 of 3, 9:16: 3 scenes, 8 shots
+2026-10-18T11:09:15.225Z  part 3  video: start
+2026-10-18T11:09:15.241Z  part 3  bundle: start
+2026-10-18T11:09:25.774Z  part 3  bundle: done in 10.5 s
+2026-10-18T11:16:48.612Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\out\water-older-than-sun-part-3-9x16-v1.mp4: 40.83 s of video, 1080x1920, in 439.3 s (10.76 s per video second)
+2026-10-18T11:16:48.617Z  part 3    runs\2026-10-18-water-older-than-sun\part-3\out\water-older-than-sun-part-3-9x16-v1.srt
+2026-10-18T11:16:48.713Z  part 3  video: done in 453.5 s
+2026-10-18T11:27:19.554Z  output  9:16 full video:
+2026-10-18T11:27:55.568Z  output      F:\Video Studio\runs\2026-10-18-water-older-than-sun\cuts\full\audio\mix.wav: 126.20 s, -14.04 LUFS, true peak -1.08 dB, 5 music moods, 41 effects, music -17.0 dB under the voice
+2026-10-18T11:30:58.066Z  output    runs\2026-10-18-water-older-than-sun\out\water-older-than-sun-9x16-v1.mp4: 126.20 s, 1080x1920
+2026-10-18T11:30:58.066Z  output      ok   The file plays: 1080x1920, 30 pictures a second, 126.2 s, picture and sound both there; played through from start to finish
+2026-10-18T11:30:58.066Z  output      ok   It is as long as its parts together: 126.2 s; its 3 pieces add up to 126.2 s
+2026-10-18T11:30:58.067Z  output      ok   Its pictures are the parts that passed: every frame against water-older-than-sun-part-1-9x16-v1.mp4 and water-older-than-sun-part-2-9x16-v1.mp4 and water-older-than-sun-part-3-9x16-v1.mp4 (the strongest difference is 1 of 255; over 16 would be a different picture)
+2026-10-18T11:30:58.067Z  output      ok   Its sound is the mix made for the whole video: second for second (what is left over is 41 dB under it at most)
+2026-10-18T11:30:58.067Z  output      ok   There is no dead silence: the sound never drops out; the longest pause between words is 2.4 s
+2026-10-18T11:30:58.067Z  output      ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.1 dB (the limit is -1)
+2026-10-18T11:30:58.068Z  output      ok   Nothing drowns the words: 41 sound effects, the loudest of those over words 18 dB under the voice; the music sits 17 dB under the voice while someone speaks
+2026-10-18T11:30:58.068Z  output      FIX  Every join and the cover hold up: a strip of frames across each of the 2 joins between parts, and the cover picture
+2026-10-18T11:30:58.068Z  output            problem: the joins and the cover have not been looked at yet
+2026-10-18T11:30:58.068Z  output      to look at: runs\2026-10-18-water-older-than-sun\out\look\water-older-than-sun-9x16-v1 (each join) and runs\2026-10-18-water-older-than-sun\out\water-older-than-sun-9x16-v1-cover-side.jpg; then write runs\2026-10-18-water-older-than-sun\out\water-older-than-sun-9x16-v1.look.json
+2026-10-18T11:30:58.070Z  output  runs\2026-10-18-water-older-than-sun\delivery.md
+2026-10-18T11:31:13.487Z  output  9:16 full video:
+2026-10-18T11:31:13.862Z  output    runs\2026-10-18-water-older-than-sun\out\water-older-than-sun-9x16-v1.mp4: already made from these parts
+2026-10-18T11:31:13.974Z  output  runs\2026-10-18-water-older-than-sun\delivery.md
+2026-10-18T11:46:14.902Z  output  9:16 full video:
+2026-10-18T11:46:15.455Z  output    runs\2026-10-18-water-older-than-sun\out\water-older-than-sun-9x16-v1.mp4: already made from these parts
+2026-10-18T11:46:15.567Z  output  runs\2026-10-18-water-older-than-sun\delivery.md

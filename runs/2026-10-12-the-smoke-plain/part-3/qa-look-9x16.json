@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "video": "the-smoke-plain-part-3-9x16-preview-v4.mp4",
+  "stills": {
+    "s6a": "ok",
+    "s6b": "ok",
+    "s6c": "ok",
+    "s6d": "ok",
+    "s6e": "ok",
+    "s6e2": "ok",
+    "s6f": "ok",
+    "s6g": "ok",
+    "s6h": "ok",
+    "s7a": "ok",
+    "s7b": "ok",
+    "s7b2": "ok",
+    "s7c": "ok",
+    "s7d": "ok",
+    "s7d2": "ok",
+    "s7e": "ok",
+    "s7f": "ok",
+    "s7g": "ok"
+  },
+  "strips": {
+    "cut-s6a-s6b": "ok",
+    "cut-s6b-s6c": "ok",
+    "cut-s6c-s6d": "ok",
+    "cut-s6d-s6e": "ok",
+    "cut-s6e-s6e2": "ok",
+    "cut-s6e2-s6f": "ok",
+    "cut-s6f-s6g": "ok",
+    "cut-s6g-s6h": "ok",
+    "cut-s7e-s7f": "ok",
+    "cut-s7f-s7g": "ok",
+    "s6a-move-1": "ok",
+    "s7e-move-1": "ok",
+    "s7g-move-1": "ok"
+  },
+  "playbook": "ok",
+  "fixed": [
+    "The big words 'Everyone looks around, and nobody moves first.' stood at the top of the picture, on the bulb and running into the counter. They stand low now, where the captions are.",
+    "Standing low, they had the caption of the words before them ('A fire alarm rings, everyone') drawn across them for a moment. The builder now takes a caption away when the big words of its own line arrive.",
+    "The card did not follow the voice: 'Stand up first.' was lit while the voice was still saying 'Say it out loud', and 'Something feels wrong?' was never lit. Each of its four lines lights as it is read; that also ended two card pictures held for nearly five seconds.",
+    "In 'One person standing up breaks the whole trick' the Trainer was to glance up at where the card had been; his heavy lids hid his pupils and he had two blank eyes for a second. He looks at us throughout."
+  ],
+  "notes": [
+    "The moves were looked at large, cut from the preview: the Trainer's hand comes down from his tie as he says 'This is not a story'; his face turns pleased on 'breaks the whole trick'; in the last shot, his eyes, the light drops and his face goes flat again after the last word.",
+    "The big numbers (1968, 75%, 10%) stand over the bulb, above the Trainer's head and clear of every face. The 75% counts up from nothing; the 10% arrives on the words 'only one in ten did'.",
+    "The room behind the card is dark and thick with smoke; nobody is in those shots, by the format's rule that a card is a shot of nobody. The voice there is the Leak's, not the Trainer's.",
+    "A caption breaks as 'When something feels wrong, do / not check the faces around you': the captions are cut by length, not by sense. Left as it is.",
+    "The last shot holds 4.6 seconds and the Trainer's close shot on 'Only the faces changed' 4.1: both a little over the usual four, both with the face moving in them.",
+    "Spoken the way Biku picked on 2026-10-13. The one question, 'So how long would you sit in smoke?', ends 5.3 semitones above its own words. No short line is slowed or broken after its first word.",
+    "Claude cannot hear: the voices, the Leak's reading of the card, the music and the closing clunk need Biku's ears. How the voice says the year 1968 was not checked by ear either."
+  ]
+}

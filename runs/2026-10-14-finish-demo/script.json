@@ -1,0 +1,303 @@
+{
+  "version": 1,
+  "title": "How to Make Someone Sit in Smoke",
+  "request": "Tape 01 again, in plain words. Biku found the first script weird and random, like broken English; Claude rewrote the same story in full plain sentences and he said yes, do it. Vertical.",
+  "mode": "as-is",
+  "format": "dilemma",
+  "brand": "dilemma-table",
+  "voice": "leak",
+  "speakers": [
+    {
+      "id": "trainer",
+      "name": "The Trainer",
+      "voice": "trainer"
+    },
+    {
+      "id": "copycat",
+      "name": "The Copycat",
+      "voice": "copycat"
+    },
+    {
+      "id": "cheat",
+      "name": "The Cheat",
+      "voice": "cheat"
+    }
+  ],
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "trainer",
+      "text": "If a room filled with smoke, would you get up and *leave?*",
+      "beat": "the-question",
+      "chapter": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l02",
+      "speaker": "trainer",
+      "text": "You think you would. Watch this.",
+      "beat": "the-question",
+      "chapter": 1,
+      "pauseAfterMs": 700,
+      "speed": 0.97,
+      "say": "You think you would... Watch this."
+    },
+    {
+      "id": "l03",
+      "speaker": "trainer",
+      "text": "This man came here to earn twenty dollars. All he has to do is sit and wait.",
+      "beat": "the-rule",
+      "chapter": 1,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "l04",
+      "speaker": "copycat",
+      "text": "Twenty dollars just to sit here? *Easy.*",
+      "beat": "the-rule",
+      "chapter": 1,
+      "pauseAfterMs": 600,
+      "speed": 1.04,
+      "say": "Twenty dollars, just to sit here? Easy."
+    },
+    {
+      "id": "l05",
+      "speaker": "trainer",
+      "text": "What he does not know is that everyone else in this room *works for me.*",
+      "beat": "the-rule",
+      "chapter": 1,
+      "pauseAfterMs": 500,
+      "speed": 0.97,
+      "say": "What he does not know, is that everyone else in this room... works for me."
+    },
+    {
+      "id": "l06",
+      "speaker": "trainer",
+      "text": "I pay them to do one thing. Stay *calm,* whatever happens.",
+      "beat": "the-rule",
+      "chapter": 1,
+      "pauseAfterMs": 900,
+      "speed": 0.95,
+      "say": "I pay them to do one thing. Stay calm... whatever happens."
+    },
+    {
+      "id": "l07",
+      "speaker": "trainer",
+      "text": "Now I let *smoke* into the room.",
+      "beat": "the-smart-choice",
+      "chapter": 1,
+      "pauseAfterMs": 600,
+      "speed": 0.95,
+      "say": "Now... I let smoke into the room."
+    },
+    {
+      "id": "l08",
+      "speaker": "copycat",
+      "text": "Is that smoke?",
+      "beat": "the-smart-choice",
+      "chapter": 1,
+      "pauseAfterMs": 500,
+      "speed": 0.97,
+      "say": "Is that... smoke?"
+    },
+    {
+      "id": "l09",
+      "speaker": "cheat",
+      "text": "It's nothing. Probably the kitchen.",
+      "beat": "the-smart-choice",
+      "chapter": 1,
+      "pauseAfterMs": 600,
+      "speed": 0.95
+    },
+    {
+      "id": "l10",
+      "speaker": "copycat",
+      "text": "Nobody else looks worried. So it must be fine.",
+      "beat": "the-smart-choice",
+      "chapter": 1,
+      "pauseAfterMs": 600,
+      "thought": true,
+      "speed": 0.93,
+      "say": "Nobody else looks worried... So, it must be fine."
+    },
+    {
+      "id": "l11",
+      "speaker": "trainer",
+      "text": "See what he did? He did not look at the smoke. He looked at *the people.*",
+      "beat": "the-smart-choice",
+      "chapter": 1,
+      "pauseAfterMs": 1000,
+      "speed": 0.96,
+      "say": "See what he did? He did not look at the smoke. He looked... at the people."
+    },
+    {
+      "id": "l12",
+      "speaker": "copycat",
+      "text": "It's getting hard to breathe. Shouldn't we tell someone?",
+      "beat": "the-smart-choice",
+      "chapter": 2,
+      "pauseAfterMs": 400,
+      "speed": 1.04,
+      "say": "It's getting hard to breathe... Shouldn't we tell someone?"
+    },
+    {
+      "id": "l13",
+      "speaker": "cheat",
+      "text": "Relax. If it was dangerous, somebody would say so.",
+      "beat": "the-smart-choice",
+      "chapter": 2,
+      "pauseAfterMs": 500,
+      "speed": 0.92
+    },
+    {
+      "id": "l14",
+      "speaker": "copycat",
+      "text": "Yeah. You're right. It's *fine.*",
+      "beat": "the-smart-choice",
+      "chapter": 2,
+      "pauseAfterMs": 600,
+      "speed": 0.93,
+      "say": "Yeah... You're right. It's fine."
+    },
+    {
+      "id": "l15",
+      "speaker": "trainer",
+      "text": "Now he has said it is fine. Leaving would mean admitting he was *wrong.*",
+      "beat": "the-smart-choice",
+      "chapter": 2,
+      "pauseAfterMs": 900,
+      "speed": 0.98,
+      "say": "Now, he has said it is fine. Leaving would mean admitting... he was wrong."
+    },
+    {
+      "id": "l16",
+      "speaker": "copycat",
+      "text": "My eyes are burning. Is nobody going to move?",
+      "beat": "the-trap",
+      "chapter": 2,
+      "pauseAfterMs": 700,
+      "speed": 1.1,
+      "say": "My eyes are burning! Is nobody going to move?"
+    },
+    {
+      "id": "l17",
+      "speaker": "trainer",
+      "text": "What do you think he *does?*",
+      "beat": "the-trap",
+      "chapter": 2,
+      "pauseAfterMs": 900,
+      "speed": 1.0
+    },
+    {
+      "id": "l18",
+      "speaker": "copycat",
+      "text": "They are all calm. I must be the one who is *wrong.*",
+      "beat": "the-trap",
+      "chapter": 2,
+      "pauseAfterMs": 1800,
+      "thought": true,
+      "speed": 0.9,
+      "say": "They are all calm... I must be the one, who is wrong."
+    },
+    {
+      "id": "l19",
+      "speaker": "trainer",
+      "text": "He *stays.*",
+      "beat": "the-trap",
+      "chapter": 2,
+      "pauseAfterMs": 2200,
+      "speed": 0.95
+    },
+    {
+      "id": "l20",
+      "speaker": "trainer",
+      "text": "This is not a story. In 1968, two scientists did this *for real.*",
+      "beat": "the-result",
+      "chapter": 3,
+      "pauseAfterMs": 500,
+      "speed": 0.96,
+      "say": "This is not a story. In 1968, two scientists did this... for real."
+    },
+    {
+      "id": "l21",
+      "speaker": "trainer",
+      "text": "Alone in the smoke, three people out of four got up and reported it.",
+      "beat": "the-result",
+      "chapter": 3,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l22",
+      "speaker": "trainer",
+      "text": "With two calm strangers beside them, only *one in ten* did.",
+      "beat": "the-result",
+      "chapter": 3,
+      "pauseAfterMs": 800,
+      "speed": 0.93,
+      "say": "With two calm strangers beside them... only one in ten did."
+    },
+    {
+      "id": "l23",
+      "speaker": "trainer",
+      "text": "The smoke was the same. Only the faces changed.",
+      "beat": "the-result",
+      "chapter": 3,
+      "pauseAfterMs": 800,
+      "speed": 0.94,
+      "say": "The smoke was the same. Only the faces... changed."
+    },
+    {
+      "id": "l24",
+      "speaker": "trainer",
+      "text": "You do this too. A fire alarm rings, everyone looks around, and nobody moves first.",
+      "beat": "the-result",
+      "chapter": 3,
+      "pauseAfterMs": 1200,
+      "speed": 0.98,
+      "say": "You do this too. A fire alarm rings, everyone looks around... and nobody moves first."
+    },
+    {
+      "id": "l25",
+      "speaker": "narrator",
+      "text": "Here is how you beat it. When something feels wrong, do not check the faces around you.",
+      "beat": "what-stays",
+      "chapter": 3,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "l26",
+      "speaker": "narrator",
+      "text": "They are checking yours. Say it out loud, and *stand up first.*",
+      "beat": "what-stays",
+      "chapter": 3,
+      "pauseAfterMs": 1200,
+      "speed": 0.95,
+      "say": "They are checking yours. Say it out loud... and stand up first."
+    },
+    {
+      "id": "l27",
+      "speaker": "trainer",
+      "text": "One person standing up breaks the whole trick.",
+      "beat": "what-stays",
+      "chapter": 3,
+      "pauseAfterMs": 600,
+      "speed": 0.96,
+      "say": "One person standing up, breaks the whole trick."
+    },
+    {
+      "id": "l28",
+      "speaker": "trainer",
+      "text": "So how long would you sit in smoke? As long as everyone else does.",
+      "beat": "what-stays",
+      "chapter": 3,
+      "pauseAfterMs": 1400,
+      "speed": 0.93,
+      "say": "So, how long would you sit in smoke? As long... as everyone else does."
+    }
+  ],
+  "sources": [
+    "Bibb Latané and John M. Darley, Group inhibition of bystander intervention in emergencies, Journal of Personality and Social Psychology, 1968, volume 10, number 3, pages 215 to 221, https://doi.org/10.1037/h0026570 : people filling in a questionnaire while smoke came into the room. Alone, 75% reported the smoke within the six minutes (three out of four); with two others who had been told to stay passive, 10% did (1 of 10); in groups of three real participants, someone reported it in 38% of groups. Fairly sure: the figures were checked on 2026-10-12 against several summaries of the paper that agree with each other and with the citation (a NIST record gives the same journal, volume and pages); the paper itself was not opened. What the scene invents: the twenty dollars, the Trainer, the room, the Cheat and the row of four. The study had a questionnaire, a vent and two calm actors."
+  ],
+  "changes": [],
+  "masterPrompt": "prompts/dilemma.md"
+}

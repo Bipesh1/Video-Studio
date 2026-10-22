@@ -1,0 +1,173 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "Why does splitting the bill make everyone order more?",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 603
+    },
+    {
+      "id": "l02",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "Let's just split it four ways. Easier.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/copycat.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 670
+    },
+    {
+      "id": "l03",
+      "speaker": "saint",
+      "voice": "af_sarah",
+      "text": "A small salad for me, please.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/saint.wav",
+      "speed": 0.95,
+      "pauseAfterMs": 1184
+    },
+    {
+      "id": "l04",
+      "speaker": "cheat",
+      "voice": "am_eric",
+      "text": "The lobster. The big one.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/cheat.wav",
+      "speed": 1.08,
+      "pauseAfterMs": 780
+    },
+    {
+      "id": "l05",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "Then I'll have the lobster too.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/copycat.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 871
+    },
+    {
+      "id": "l06",
+      "speaker": "saint",
+      "voice": "af_sarah",
+      "text": "Make it three lobsters.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/saint.wav",
+      "speed": 0.95,
+      "pauseAfterMs": 666
+    },
+    {
+      "id": "l07",
+      "speaker": "waiter",
+      "voice": "am_puck",
+      "text": "And for you?",
+      "speed": 1,
+      "pauseAfterMs": 1600
+    },
+    {
+      "id": "l08",
+      "speaker": "waiter",
+      "voice": "am_puck",
+      "text": "Your bill.",
+      "speed": 1,
+      "pauseAfterMs": 2800
+    },
+    {
+      "id": "l09",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "When you split the bill, every extra dish costs you only a quarter of its price.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 268
+    },
+    {
+      "id": "l10",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "So everyone orders more, and everyone pays more.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 469
+    },
+    {
+      "id": "l11",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "Economists tested this in a real restaurant. When the bill was split, people ate more.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 603
+    },
+    {
+      "id": "l12",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "Even the one who only had water.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 1206
+    }
+  ]
+}

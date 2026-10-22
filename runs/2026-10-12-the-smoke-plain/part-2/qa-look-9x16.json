@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "video": "the-smoke-plain-part-2-9x16-preview-v3.mp4",
+  "stills": {
+    "s4a": "ok",
+    "s4b": "ok",
+    "s4c": "ok",
+    "s4d": "ok",
+    "s4e": "ok",
+    "s4f": "ok",
+    "s5a": "ok",
+    "s5c": "ok",
+    "s5d": "ok",
+    "s5e": "ok",
+    "s5f": "ok"
+  },
+  "strips": {
+    "cut-s4a-s4b": "ok",
+    "cut-s4b-s4c": "ok",
+    "cut-s4c-s4d": "ok",
+    "cut-s4d-s4e": "ok",
+    "cut-s4e-s4f": "ok",
+    "cut-s4f-s5a": "ok",
+    "cut-s5a-s5c": "ok",
+    "cut-s5c-s5d": "ok",
+    "cut-s5d-s5e": "ok",
+    "cut-s5e-s5f": "ok",
+    "s4a-move-1": "ok",
+    "s4d-move-1": "ok",
+    "s4f-move-1": "ok",
+    "s5a-move-1": "ok",
+    "s5f-move-1": "ok",
+    "s5f-move-2": "ok"
+  },
+  "playbook": "ok",
+  "fixed": [
+    "In the first preview the Copycat was still smiling as he said 'It's getting hard to breathe', and again as he said 'My eyes are burning': the change of face came a moment after the words began. Now his smile goes as the first shot opens, and the false smile of 'It's fine' gives way at the end of the Trainer's line before it, so he says both lines with the worry already on his face.",
+    "Biku, on the first render: 'when the trainer says he stays it sounds weird why'. Measured: slowed to 0.84 of his pace with dots after 'He', the voice sent 'He' up six semitones like a question, stopped, and dragged 'stays' out to 1.1 seconds (0.66 said plainly), down into a croak. The line is said plainly now, at 0.95 of his pace: 'He' 0.21 s and level, 'stays' 0.71 s and falling. The whole shot was looked at again, large: he says it, the Copycat sinks into the chair, the Trainer straightens his tie."
+  ],
+  "notes": [
+    "The three moves of the body were looked at large, cut from the preview and cropped to the person: he stands up from his chair and the chair stays; he sinks back into it with his head down; the Trainer brings a hand up to the knot of his tie.",
+    "'They are all calm.' is on screen for 1.2 seconds: short, but it is the room he was already looking at, and the next picture is his eyes.",
+    "'He stays.' holds for 4.3 seconds, a little over the usual four: he sinks into the chair, the frame tips, the Trainer straightens his tie, and then there is the quiet before part 3.",
+    "The thick smoke covers the table, the twenty and the Cheat's coin by the end; they show through it faintly. The faces stay clear of it.",
+    "Spoken the way Biku picked on 2026-10-13. Measured: 'someone?' ends 5.2 semitones above the words of its question, 'move?' 3.3, 'does?' 1.2 (a question that opens on 'what' gets the smaller lift).",
+    "Claude cannot hear: the voices, the lifted questions, the heartbeat, the boom and the music need Biku's ears.",
+    "The boom still lands on the words 'He stays.', 12 dB under the voice. Left where it was so that only the voice changed; if the line still sounds wrong to Biku it is the next thing to move."
+  ]
+}

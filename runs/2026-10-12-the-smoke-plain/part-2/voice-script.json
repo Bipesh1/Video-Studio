@@ -1,0 +1,107 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l12",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "It's getting hard to breathe. Shouldn't we tell someone?",
+      "say": "It's getting hard to breathe... Shouldn't we tell someone?",
+      "speed": 1.01,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "l13",
+      "speaker": "cheat",
+      "voice": "am_eric",
+      "text": "Relax. If it was dangerous, somebody would say so.",
+      "speed": 0.99,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "l14",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "Yeah. You're right. It's *fine.*",
+      "say": "Yeah... You're right. It's fine.",
+      "speed": 0.9,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l15",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "Now he has said it is fine. Leaving would mean admitting he was *wrong.*",
+      "say": "Now, he has said it is fine. Leaving would mean admitting... he was wrong.",
+      "speed": 0.95,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l16",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "My eyes are burning. Is nobody going to move?",
+      "say": "My eyes are burning! Is nobody going to move?",
+      "speed": 1.07,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l17",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "What do you think he *does?*",
+      "say": "What do you think... he does?",
+      "speed": 0.89,
+      "pauseAfterMs": 1800
+    },
+    {
+      "id": "l18",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "They are all calm. I must be the one who is *wrong.*",
+      "say": "They are all calm... I must be the one, who is wrong.",
+      "speed": 0.87,
+      "pauseAfterMs": 1200
+    },
+    {
+      "id": "l19",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "He *stays.*",
+      "speed": 0.92,
+      "pauseAfterMs": 2200
+    }
+  ]
+}

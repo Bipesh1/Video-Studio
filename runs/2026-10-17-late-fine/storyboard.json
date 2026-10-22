@@ -1,0 +1,2737 @@
+{
+  "version": 1,
+  "title": "Why a Fine for Being Late Made Parents Even Later",
+  "request": "Biku's game theory story script, used as it is: 'make a video for this' (2026-10-17).",
+  "mode": "as-is",
+  "format": "dilemma-story",
+  "style": "ink-stick",
+  "brand": "dilemma-table",
+  "voice": "leak",
+  "seed": 73582,
+  "finish": {
+    "acting": "gentle",
+    "onTwos": true,
+    "shadows": true,
+    "grain": 0.5,
+    "vignette": 0.35,
+    "boil": 0.25
+  },
+  "sources": [
+    "Uri Gneezy and Aldo Rustichini, \"A Fine Is a Price\", The Journal of Legal Studies, vol. 29, no. 1, January 2000, pages 1 to 17. Ten private daycares in Haifa, Israel, watched for 20 weeks from January to June 1998. At the start of week 5 a fine of NIS 10 per child for coming more than ten minutes after closing (four in the afternoon) was brought in at six of them, chosen at random; late pickups rose over 3 to 4 weeks and settled at almost twice the starting level, and did not come down when the fine was removed at the start of week 17. Nothing changed at the four daycares without a fine. The fine was paid to the owner, not to the teacher who stayed late, who got no extra money. https://rady.ucsd.edu/_files/faculty-research/uri-gneezy/fine.pdf",
+    "Checked by Claude against the paper on 2026-10-17. What the story invents: the teacher, the fathers, the boy, the bus, and the fine in dollars (NIS 10 was about $2.70 then; Biku's script rounds it to three)."
+  ],
+  "appliedLessons": [],
+  "cast": [
+    {
+      "id": "trainer",
+      "name": "The Trainer",
+      "card": "trainer",
+      "host": true
+    },
+    {
+      "id": "saint",
+      "name": "The Saint",
+      "card": "saint"
+    },
+    {
+      "id": "cheat",
+      "name": "The Cheat",
+      "card": "cheat"
+    },
+    {
+      "id": "copycat",
+      "name": "The Copycat",
+      "card": "copycat"
+    },
+    {
+      "id": "you",
+      "name": "You",
+      "card": "you"
+    },
+    {
+      "id": "boy",
+      "name": "The boy",
+      "look": {
+        "age": "child",
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "t-shirt",
+              "cloth": "glint"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "denim"
+            },
+            "shoes": {
+              "kind": "sneakers",
+              "cloth": "white"
+            },
+            "hat": {
+              "kind": "beanie",
+              "cloth": "orange"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "series": "game-theory",
+  "cover": {
+    "shot": "s3b",
+    "at": 0.7
+  },
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "the-strange-ending",
+      "mood": "unease",
+      "place": "daycare",
+      "treatment": "atmospheric",
+      "palette": "dusk-violet",
+      "lines": [
+        {
+          "id": "l01",
+          "speaker": "trainer",
+          "text": "Why did a fine for being late make parents even *later?*",
+          "pauseAfterMs": 800
+        },
+        {
+          "id": "l02",
+          "speaker": "trainer",
+          "text": "And when this daycare dropped the fine, they *still* came late.",
+          "pauseAfterMs": 1400
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s1a",
+          "line": "l01",
+          "words": "Why did a fine for being late make parents even *later?*",
+          "camera": {
+            "framing": "wide",
+            "move": "push-in",
+            "strength": 0.12
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "expression": "exhausted",
+              "facing": "right",
+              "x": 0.36,
+              "lookAt": "boy",
+              "pose": "stand",
+              "strength": 0.6
+            },
+            {
+              "character": "boy",
+              "expression": "sad",
+              "facing": "left",
+              "x": 0.74,
+              "lookAt": "ahead",
+              "pose": "stand"
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "tick",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "transition": "cut",
+          "overlay": {
+            "kind": "words",
+            "lines": [
+              "Why did a fine",
+              "for being late make",
+              "parents even later?"
+            ],
+            "stress": 2
+          }
+        },
+        {
+          "id": "s1b",
+          "line": "l02",
+          "words": "And when this daycare dropped the fine,",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "expression": "exhausted",
+              "facing": "right",
+              "x": 0.36,
+              "lookAt": "ahead",
+              "pose": "stand",
+              "strength": 0.6
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "tick",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "transition": "cut"
+        },
+        {
+          "id": "s1c",
+          "line": "l02",
+          "words": "they *still* came late.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "expression": "exhausted",
+              "facing": "right",
+              "x": 0.36,
+              "lookAt": "boy",
+              "pose": "stand",
+              "strength": 0.6
+            },
+            {
+              "character": "boy",
+              "expression": "sad",
+              "facing": "left",
+              "x": 0.74,
+              "lookAt": "ahead",
+              "pose": "stand"
+            },
+            {
+              "character": "cheat",
+              "expression": "smug",
+              "facing": "right",
+              "x": 0.16,
+              "lookAt": "saint",
+              "action": "walk",
+              "holds": "cup",
+              "then": [
+                {
+                  "at": 0.7,
+                  "pose": "hold-cup"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "tick",
+              "at": "start",
+              "gainDb": -10
+            },
+            {
+              "name": "footsteps",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "rewind",
+      "mood": "curious",
+      "place": "daycare",
+      "treatment": "atmospheric",
+      "palette": "dusk-violet",
+      "lines": [
+        {
+          "id": "l03",
+          "speaker": "trainer",
+          "text": "Earlier, there was no fine at *all.*",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l04",
+          "speaker": "copycat",
+          "text": "I'm so *sorry!* It won't happen again.",
+          "speed": 1.06,
+          "say": "[gasp] I'm so sorry! It won't happen again.",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l05",
+          "speaker": "saint",
+          "text": "It's okay. My *last* bus is at four forty.",
+          "speed": 0.97,
+          "say": "[sigh] It's okay. My last bus is at four forty.",
+          "pauseAfterMs": 900
+        },
+        {
+          "id": "l06",
+          "speaker": "trainer",
+          "text": "The teacher waited as a favor. Late parents paid only with a *sorry.*",
+          "pauseAfterMs": 1300
+        },
+        {
+          "id": "l07",
+          "speaker": "trainer",
+          "text": "Then this daycare made one rule. Pick up your child by *four.*",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l08",
+          "speaker": "trainer",
+          "text": "Each time you're more than ten minutes late, you pay three *dollars.*",
+          "pauseAfterMs": 1800
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s2a",
+          "line": "l03",
+          "words": "Earlier, there was no fine at *all.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "expression": "neutral",
+              "facing": "left",
+              "x": 0.36,
+              "lookAt": "ahead",
+              "pose": "stand"
+            },
+            {
+              "character": "boy",
+              "expression": "sad",
+              "facing": "left",
+              "x": 0.74,
+              "lookAt": "ahead",
+              "pose": "stand"
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "footsteps",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "transition": "fade"
+        },
+        {
+          "id": "s2b",
+          "line": "l04",
+          "words": "I'm so *sorry!* It won't happen again.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "copycat"
+          },
+          "actors": [
+            {
+              "character": "copycat",
+              "expression": "guilty",
+              "facing": "right",
+              "x": 0.16,
+              "lookAt": "ahead",
+              "pose": "stand"
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [
+            {
+              "effect": "sweat-flying",
+              "on": "copycat"
+            }
+          ],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2c",
+          "line": "l05",
+          "words": "It's okay. My *last* bus is at four forty.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "expression": "neutral",
+              "facing": "left",
+              "x": 0.36,
+              "lookAt": "ahead",
+              "pose": "stand",
+              "then": [
+                {
+                  "at": 0.25,
+                  "expression": "happy",
+                  "strength": 0.5
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "overlay": {
+            "kind": "number",
+            "text": "4:40",
+            "caption": "her last bus"
+          }
+        },
+        {
+          "id": "s2d",
+          "line": "l06",
+          "words": "The teacher waited as a favor.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "expression": "happy",
+              "facing": "left",
+              "x": 0.36,
+              "lookAt": "copycat",
+              "pose": "stand",
+              "strength": 0.5
+            },
+            {
+              "character": "copycat",
+              "expression": "guilty",
+              "facing": "right",
+              "x": 0.16,
+              "lookAt": "saint",
+              "pose": "stand"
+            },
+            {
+              "character": "boy",
+              "expression": "sad",
+              "facing": "left",
+              "x": 0.74,
+              "lookAt": "ahead",
+              "pose": "stand",
+              "then": [
+                {
+                  "at": 0.2,
+                  "expression": "happy",
+                  "lookAt": "copycat"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2e",
+          "line": "l06",
+          "words": "Late parents paid only with a *sorry.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "copycat"
+          },
+          "actors": [
+            {
+              "character": "copycat",
+              "expression": "guilty",
+              "facing": "right",
+              "x": 0.16,
+              "lookAt": "ahead",
+              "pose": "stand"
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2f",
+          "line": "l07",
+          "words": "Then this daycare made one rule.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "expression": "happy",
+              "facing": "right",
+              "x": 0.38,
+              "lookAt": "ahead",
+              "pose": "stand",
+              "strength": 0.5,
+              "then": [
+                {
+                  "at": 0.3,
+                  "expression": "determined",
+                  "strength": 1
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-fine-pinning",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-00",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "click",
+              "at": "start",
+              "gainDb": -4
+            }
+          ],
+          "transition": "fade"
+        },
+        {
+          "id": "s2g",
+          "line": "l07",
+          "words": "Pick up your child by *four.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "expression": "determined",
+              "facing": "right",
+              "x": 0.44,
+              "lookAt": "camera",
+              "pose": "stand"
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-00",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "overlay": {
+            "kind": "number",
+            "text": "4:00",
+            "caption": "pick-up time"
+          }
+        },
+        {
+          "id": "s2h",
+          "line": "l08",
+          "words": "Each time you're more than ten minutes late,",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "expression": "determined",
+              "facing": "right",
+              "x": 0.44,
+              "lookAt": "camera",
+              "pose": "stand"
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2i",
+          "line": "l08",
+          "words": "you pay three *dollars.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "expression": "determined",
+              "facing": "right",
+              "x": 0.44,
+              "lookAt": "camera",
+              "pose": "stand"
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "overlay": {
+            "kind": "number",
+            "text": "$3",
+            "caption": "each time"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "chapter": 2,
+      "beat": "the-trap-closes",
+      "mood": "closing-in",
+      "place": "daycare",
+      "treatment": "atmospheric",
+      "palette": "dusk-violet",
+      "lines": [
+        {
+          "id": "l09",
+          "speaker": "cheat",
+          "text": "So I can *buy* twenty extra minutes for three dollars. That's cheaper than a babysitter.",
+          "speed": 0.98,
+          "say": "[chuckle] So, I can buy twenty extra minutes, for three dollars. That's cheaper than a babysitter.",
+          "pauseAfterMs": 1200,
+          "thought": true
+        },
+        {
+          "id": "l10",
+          "speaker": "cheat",
+          "text": "Here's my *fee.*",
+          "say": "[chuckle] Here's my fee.",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l11",
+          "speaker": "saint",
+          "text": "The fine is meant to make you *hurry.*",
+          "speed": 0.97,
+          "pauseAfterMs": 800
+        },
+        {
+          "id": "l12",
+          "speaker": "cheat",
+          "text": "I'm paying it, so we're *even.*",
+          "say": "[sarcastic] I'm paying it, so we're even.",
+          "pauseAfterMs": 1200
+        },
+        {
+          "id": "l13",
+          "speaker": "copycat",
+          "text": "He didn't even say sorry. He just *paid.* So can I.",
+          "pauseAfterMs": 1100,
+          "thought": true
+        },
+        {
+          "id": "l14",
+          "speaker": "copycat",
+          "text": "Put it on my *bill.*",
+          "pauseAfterMs": 1000
+        },
+        {
+          "id": "l15",
+          "speaker": "trainer",
+          "text": "Soon, more parents paid instead of saying *sorry.*",
+          "pauseAfterMs": 800
+        },
+        {
+          "id": "l16",
+          "speaker": "trainer",
+          "text": "The teacher missed her bus. A little boy waited *alone* at the window.",
+          "speed": 0.95,
+          "say": "The teacher missed her bus. A little boy waited alone, at the window.",
+          "pauseAfterMs": 1600
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s3a",
+          "line": "l09",
+          "words": "So I can *buy* twenty extra minutes for three dollars.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "cheat"
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "expression": "calculating",
+              "facing": "left",
+              "x": 0.6,
+              "lookAt": "ahead",
+              "pose": "stand",
+              "then": [
+                {
+                  "at": 0.55,
+                  "expression": "sly-grin"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3b",
+          "line": "l09",
+          "words": "That's cheaper than a babysitter.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "cheat"
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "expression": "sly-grin",
+              "facing": "left",
+              "x": 0.6,
+              "lookAt": "camera",
+              "pose": "stand"
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            }
+          ],
+          "effects": [
+            {
+              "effect": "dollar-eyes",
+              "on": "cheat"
+            }
+          ],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "start",
+              "gainDb": -4
+            }
+          ],
+          "transition": "cut"
+        },
+        {
+          "id": "s3c",
+          "line": "l10",
+          "words": "Here's my *fee.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "expression": "determined",
+              "facing": "left",
+              "x": 0.36,
+              "lookAt": "cheat",
+              "pose": "stand",
+              "then": [
+                {
+                  "at": 0.45,
+                  "expression": "surprised"
+                }
+              ]
+            },
+            {
+              "character": "boy",
+              "expression": "sad",
+              "facing": "left",
+              "x": 0.74,
+              "lookAt": "ahead",
+              "pose": "stand"
+            },
+            {
+              "character": "cheat",
+              "expression": "sly-grin",
+              "facing": "right",
+              "x": 0.16,
+              "lookAt": "saint",
+              "pose": "hold-object",
+              "holds": "banknote"
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-20",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "tick",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "transition": "fade",
+          "overlay": {
+            "kind": "number",
+            "text": "4:20",
+            "caption": "the next day"
+          }
+        },
+        {
+          "id": "s3d",
+          "line": "l11",
+          "words": "The fine is meant to make you *hurry.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "expression": "surprised",
+              "facing": "left",
+              "x": 0.36,
+              "lookAt": "ahead",
+              "pose": "stand",
+              "then": [
+                {
+                  "at": 0.3,
+                  "expression": "angry",
+                  "strength": 0.5
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3e",
+          "line": "l12",
+          "words": "I'm paying it, so we're *even.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "cheat"
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "expression": "sly-grin",
+              "facing": "right",
+              "x": 0.16,
+              "lookAt": "ahead",
+              "pose": "shrug",
+              "holds": "banknote"
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3f",
+          "line": "l13",
+          "words": "He didn't even say sorry. He just *paid.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "copycat"
+          },
+          "actors": [
+            {
+              "character": "copycat",
+              "expression": "guilty",
+              "facing": "right",
+              "x": 0.1,
+              "lookAt": "ahead",
+              "pose": "head-tilt",
+              "then": [
+                {
+                  "at": 0.35,
+                  "expression": "thinking"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3g",
+          "line": "l13",
+          "words": "So can I.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "copycat"
+          },
+          "actors": [
+            {
+              "character": "copycat",
+              "expression": "thinking",
+              "facing": "right",
+              "x": 0.1,
+              "lookAt": "camera",
+              "pose": "stand",
+              "then": [
+                {
+                  "at": 0.3,
+                  "expression": "smug"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3h",
+          "line": "l14",
+          "words": "Put it on my *bill.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "expression": "angry",
+              "facing": "left",
+              "x": 0.36,
+              "lookAt": "copycat",
+              "pose": "stand",
+              "strength": 0.5
+            },
+            {
+              "character": "boy",
+              "expression": "sad",
+              "facing": "left",
+              "x": 0.74,
+              "lookAt": "ahead",
+              "pose": "stand"
+            },
+            {
+              "character": "copycat",
+              "expression": "smug",
+              "facing": "right",
+              "x": 0.16,
+              "lookAt": "saint",
+              "pose": "hold-object",
+              "holds": "banknote"
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-30",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "tick",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "transition": "fade",
+          "overlay": {
+            "kind": "number",
+            "text": "4:30",
+            "caption": "the next week"
+          }
+        },
+        {
+          "id": "s3i",
+          "line": "l15",
+          "words": "Soon, more parents paid instead of saying *sorry.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "expression": "sly-grin",
+              "facing": "right",
+              "x": 0.08,
+              "lookAt": "ahead",
+              "pose": "stand",
+              "holds": "banknote"
+            },
+            {
+              "character": "copycat",
+              "expression": "smug",
+              "facing": "right",
+              "x": 0.24,
+              "lookAt": "ahead",
+              "pose": "hold-object",
+              "holds": "banknote"
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3j",
+          "line": "l16",
+          "words": "The teacher missed her bus.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "expression": "angry",
+              "facing": "left",
+              "x": 0.36,
+              "lookAt": "ahead",
+              "pose": "stand",
+              "strength": 0.5,
+              "then": [
+                {
+                  "at": 0.2,
+                  "pose": "hold-object",
+                  "holds": "phone",
+                  "expression": "exhausted",
+                  "lookAt": "down"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-to-4-40",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "tick",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "transition": "cut",
+          "overlay": {
+            "kind": "number",
+            "text": "4:40",
+            "caption": "her last bus is gone"
+          }
+        },
+        {
+          "id": "s3k",
+          "line": "l16",
+          "words": "A little boy waited *alone* at the window.",
+          "camera": {
+            "framing": "medium",
+            "move": "push-in",
+            "strength": 0.15,
+            "focus": "boy"
+          },
+          "actors": [
+            {
+              "character": "boy",
+              "expression": "sad",
+              "facing": "left",
+              "x": 0.74,
+              "lookAt": "ahead",
+              "pose": "stand"
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "tick",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "chapter": 2,
+      "beat": "the-freeze",
+      "mood": "tense",
+      "place": "city",
+      "treatment": "atmospheric",
+      "palette": "cold-dawn",
+      "lines": [
+        {
+          "id": "l17",
+          "speaker": "trainer",
+          "text": "Now it's almost four, and *you* are stuck in traffic.",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l18",
+          "speaker": "trainer",
+          "text": "Being late now just costs three dollars. Do you still *rush?*",
+          "speed": 0.95,
+          "pauseAfterMs": 3000
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s4a",
+          "line": "l17",
+          "words": "Now it's almost four, and *you* are stuck in traffic.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "expression": "neutral",
+              "facing": "right",
+              "x": 0.5,
+              "lookAt": "down",
+              "pose": "sit-phone",
+              "holds": "phone",
+              "then": [
+                {
+                  "at": 0.5,
+                  "expression": "afraid",
+                  "strength": 0.5
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "car-crimson",
+              "x": 0.04
+            },
+            {
+              "prop": "car",
+              "x": 0.5
+            },
+            {
+              "prop": "car-gold",
+              "x": 0.96
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "fade",
+          "overlay": {
+            "kind": "number",
+            "text": "3:55",
+            "caption": "and you are still in traffic"
+          }
+        },
+        {
+          "id": "s4b",
+          "line": "l18",
+          "words": "Being late now just costs three dollars.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "you"
+          },
+          "actors": [
+            {
+              "character": "you",
+              "expression": "afraid",
+              "facing": "right",
+              "x": 0.5,
+              "lookAt": "down",
+              "pose": "sit-phone",
+              "strength": 0.5,
+              "holds": "phone",
+              "then": [
+                {
+                  "at": 0.5,
+                  "expression": "thinking",
+                  "lookAt": "camera"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "car-crimson",
+              "x": 0.04
+            },
+            {
+              "prop": "car",
+              "x": 0.5
+            },
+            {
+              "prop": "car-gold",
+              "x": 0.96
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4c",
+          "line": "l18",
+          "words": "Do you still *rush?*",
+          "camera": {
+            "framing": "eyes",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "you"
+          },
+          "actors": [
+            {
+              "character": "you",
+              "expression": "thinking",
+              "facing": "right",
+              "x": 0.5,
+              "lookAt": "camera",
+              "pose": "sit-phone",
+              "holds": "phone"
+            }
+          ],
+          "props": [
+            {
+              "prop": "car-crimson",
+              "x": 0.04
+            },
+            {
+              "prop": "car",
+              "x": 0.5
+            },
+            {
+              "prop": "car-gold",
+              "x": 0.96
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "heartbeat-rising",
+              "at": "start",
+              "gainDb": -4
+            }
+          ],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chapter": 3,
+      "beat": "the-reveal",
+      "mood": "aftermath",
+      "place": "daycare",
+      "treatment": "atmospheric",
+      "palette": "dusk-violet",
+      "lines": [
+        {
+          "id": "l19",
+          "speaker": "trainer",
+          "text": "The fine turned the teacher's *favor* into something you could buy.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l20",
+          "speaker": "trainer",
+          "text": "And nobody says sorry for *buying* something.",
+          "pauseAfterMs": 1200
+        },
+        {
+          "id": "l21",
+          "speaker": "trainer",
+          "text": "This is not a story. In 1998, two economists tried this at six *daycares* in Israel.",
+          "speed": 0.97,
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l22",
+          "speaker": "trainer",
+          "text": "Within a few weeks, late pickups there nearly *doubled.*",
+          "pauseAfterMs": 1000
+        },
+        {
+          "id": "l23",
+          "speaker": "trainer",
+          "text": "When the fine was dropped, late pickups stayed just as *high.*",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l24",
+          "speaker": "trainer",
+          "text": "Now being late cost no money and no *sorry.*",
+          "pauseAfterMs": 900
+        },
+        {
+          "id": "l25",
+          "speaker": "trainer",
+          "text": "The fine went to the owner. The teacher who waited got *nothing.*",
+          "pauseAfterMs": 1400
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s5a",
+          "line": "l19",
+          "words": "The fine turned the teacher's *favor*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "fade",
+          "picture": {
+            "layers": [
+              {
+                "kind": "band",
+                "top": 0,
+                "bottom": 1
+              },
+              {
+                "kind": "panel",
+                "top": 0.05,
+                "bottom": 0.33,
+                "place": "daycare",
+                "palette": "dusk-violet"
+              },
+              {
+                "kind": "person",
+                "character": "copycat",
+                "x": 0.4,
+                "y": 0.5,
+                "ground": 0.315,
+                "head": 0.062,
+                "pose": "stand",
+                "facing": "right",
+                "expression": "guilty",
+                "turn": 0.3,
+                "effects": []
+              },
+              {
+                "kind": "person",
+                "character": "saint",
+                "x": 0.62,
+                "y": 0.5,
+                "ground": 0.315,
+                "head": 0.062,
+                "pose": "stand",
+                "facing": "left",
+                "expression": "happy",
+                "turn": 0.3,
+                "effects": []
+              },
+              {
+                "kind": "tag",
+                "text": "NO FINE",
+                "x": 0.5,
+                "y": 0.075,
+                "size": 0.026,
+                "paint": "cream"
+              },
+              {
+                "kind": "tag",
+                "text": "SAY SORRY",
+                "x": 0.5,
+                "y": 0.3,
+                "size": 0.026,
+                "paint": "forest"
+              },
+              {
+                "kind": "panel",
+                "top": 0.35,
+                "bottom": 0.63,
+                "place": "daycare",
+                "palette": "dusk-violet"
+              },
+              {
+                "kind": "person",
+                "character": "cheat",
+                "x": 0.4,
+                "y": 0.5,
+                "ground": 0.615,
+                "head": 0.062,
+                "pose": "hold-object",
+                "facing": "right",
+                "expression": "smug",
+                "turn": 0.3,
+                "effects": []
+              },
+              {
+                "kind": "thing",
+                "prop": "banknote",
+                "x": 0.525,
+                "y": 0.512,
+                "head": 0.03
+              },
+              {
+                "kind": "person",
+                "character": "saint",
+                "x": 0.62,
+                "y": 0.5,
+                "ground": 0.615,
+                "head": 0.062,
+                "pose": "stand",
+                "facing": "left",
+                "expression": "hollow",
+                "turn": 0.3,
+                "effects": []
+              },
+              {
+                "kind": "tag",
+                "text": "$3 FINE",
+                "x": 0.5,
+                "y": 0.375,
+                "size": 0.026,
+                "paint": "cream"
+              },
+              {
+                "kind": "tag",
+                "text": "JUST PAY",
+                "x": 0.5,
+                "y": 0.6,
+                "size": 0.026,
+                "paint": "crimson"
+              },
+              {
+                "kind": "band",
+                "top": 0.63,
+                "bottom": 1
+              }
+            ],
+            "from": {
+              "x": 0.5,
+              "y": 0.5,
+              "zoom": 1
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.505,
+              "zoom": 1.03
+            }
+          }
+        },
+        {
+          "id": "s5b",
+          "line": "l19",
+          "words": "into something you could buy.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "picture": {
+            "layers": [
+              {
+                "kind": "band",
+                "top": 0,
+                "bottom": 1
+              },
+              {
+                "kind": "panel",
+                "top": 0.05,
+                "bottom": 0.33,
+                "place": "daycare",
+                "palette": "dusk-violet"
+              },
+              {
+                "kind": "person",
+                "character": "copycat",
+                "x": 0.4,
+                "y": 0.5,
+                "ground": 0.315,
+                "head": 0.062,
+                "pose": "stand",
+                "facing": "right",
+                "expression": "guilty",
+                "turn": 0.3,
+                "effects": []
+              },
+              {
+                "kind": "person",
+                "character": "saint",
+                "x": 0.62,
+                "y": 0.5,
+                "ground": 0.315,
+                "head": 0.062,
+                "pose": "stand",
+                "facing": "left",
+                "expression": "happy",
+                "turn": 0.3,
+                "effects": []
+              },
+              {
+                "kind": "tag",
+                "text": "NO FINE",
+                "x": 0.5,
+                "y": 0.075,
+                "size": 0.026,
+                "paint": "cream"
+              },
+              {
+                "kind": "tag",
+                "text": "SAY SORRY",
+                "x": 0.5,
+                "y": 0.3,
+                "size": 0.026,
+                "paint": "forest"
+              },
+              {
+                "kind": "panel",
+                "top": 0.35,
+                "bottom": 0.63,
+                "place": "daycare",
+                "palette": "dusk-violet"
+              },
+              {
+                "kind": "person",
+                "character": "cheat",
+                "x": 0.4,
+                "y": 0.5,
+                "ground": 0.615,
+                "head": 0.062,
+                "pose": "hold-object",
+                "facing": "right",
+                "expression": "smug",
+                "turn": 0.3,
+                "effects": []
+              },
+              {
+                "kind": "thing",
+                "prop": "banknote",
+                "x": 0.525,
+                "y": 0.512,
+                "head": 0.03
+              },
+              {
+                "kind": "person",
+                "character": "saint",
+                "x": 0.62,
+                "y": 0.5,
+                "ground": 0.615,
+                "head": 0.062,
+                "pose": "stand",
+                "facing": "left",
+                "expression": "hollow",
+                "turn": 0.3,
+                "effects": []
+              },
+              {
+                "kind": "tag",
+                "text": "$3 FINE",
+                "x": 0.5,
+                "y": 0.375,
+                "size": 0.026,
+                "paint": "cream"
+              },
+              {
+                "kind": "tag",
+                "text": "JUST PAY",
+                "x": 0.5,
+                "y": 0.6,
+                "size": 0.026,
+                "paint": "crimson"
+              },
+              {
+                "kind": "band",
+                "top": 0.63,
+                "bottom": 1
+              }
+            ],
+            "from": {
+              "x": 0.5,
+              "y": 0.505,
+              "zoom": 1.03
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.49,
+              "zoom": 1.7
+            }
+          }
+        },
+        {
+          "id": "s5c",
+          "line": "l20",
+          "words": "And nobody says sorry for *buying* something.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "cheat"
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "expression": "smug",
+              "facing": "right",
+              "x": 0.16,
+              "lookAt": "camera",
+              "pose": "hold-object",
+              "holds": "banknote"
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5d",
+          "line": "l21",
+          "words": "This is not a story.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "expression": "hollow",
+              "facing": "left",
+              "x": 0.36,
+              "lookAt": "cheat",
+              "pose": "stand",
+              "strength": 0.6
+            },
+            {
+              "character": "boy",
+              "expression": "sad",
+              "facing": "left",
+              "x": 0.74,
+              "lookAt": "ahead",
+              "pose": "stand"
+            },
+            {
+              "character": "cheat",
+              "expression": "smug",
+              "facing": "right",
+              "x": 0.18,
+              "lookAt": "saint",
+              "action": "walk",
+              "holds": "banknote",
+              "then": [
+                {
+                  "at": 0.75,
+                  "pose": "hold-object"
+                }
+              ]
+            },
+            {
+              "character": "copycat",
+              "expression": "smug",
+              "facing": "right",
+              "x": 0.04,
+              "lookAt": "saint",
+              "action": "walk",
+              "holds": "banknote",
+              "then": [
+                {
+                  "at": 0.8,
+                  "pose": "stand"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-30",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "footsteps",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "transition": "cut"
+        },
+        {
+          "id": "s5e",
+          "line": "l21",
+          "words": "In 1998, two economists tried this at six *daycares* in Israel.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "expression": "hollow",
+              "facing": "left",
+              "x": 0.36,
+              "lookAt": "cheat",
+              "pose": "stand",
+              "strength": 0.6
+            },
+            {
+              "character": "boy",
+              "expression": "sad",
+              "facing": "left",
+              "x": 0.74,
+              "lookAt": "ahead",
+              "pose": "stand"
+            },
+            {
+              "character": "cheat",
+              "expression": "smug",
+              "facing": "right",
+              "x": 0.18,
+              "lookAt": "saint",
+              "pose": "hold-object",
+              "holds": "banknote"
+            },
+            {
+              "character": "copycat",
+              "expression": "smug",
+              "facing": "right",
+              "x": 0.04,
+              "lookAt": "saint",
+              "pose": "stand",
+              "holds": "banknote"
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-30",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "overlay": {
+            "kind": "number",
+            "text": "1998",
+            "caption": "six daycares in Israel"
+          }
+        },
+        {
+          "id": "s5f",
+          "line": "l22",
+          "words": "Within a few weeks, late pickups there nearly *doubled.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "expression": "hollow",
+              "facing": "left",
+              "x": 0.36,
+              "lookAt": "cheat",
+              "pose": "stand",
+              "strength": 0.6
+            },
+            {
+              "character": "boy",
+              "expression": "sad",
+              "facing": "left",
+              "x": 0.74,
+              "lookAt": "ahead",
+              "pose": "stand"
+            },
+            {
+              "character": "cheat",
+              "expression": "smug",
+              "facing": "right",
+              "x": 0.18,
+              "lookAt": "saint",
+              "pose": "hold-object",
+              "holds": "banknote"
+            },
+            {
+              "character": "copycat",
+              "expression": "smug",
+              "facing": "right",
+              "x": 0.04,
+              "lookAt": "saint",
+              "pose": "stand",
+              "holds": "banknote"
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-40",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "boom",
+              "at": "start",
+              "gainDb": -8
+            }
+          ],
+          "transition": "cut",
+          "overlay": {
+            "kind": "number",
+            "text": "2x",
+            "caption": "late pickups"
+          }
+        },
+        {
+          "id": "s5g",
+          "line": "l23",
+          "words": "When the fine was dropped,",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "expression": "hollow",
+              "facing": "left",
+              "x": 0.62,
+              "lookAt": "ahead",
+              "pose": "stand",
+              "strength": 0.6
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "fade"
+        },
+        {
+          "id": "s5h",
+          "line": "l23",
+          "words": "late pickups stayed just as *high.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "expression": "hollow",
+              "facing": "left",
+              "x": 0.36,
+              "lookAt": "cheat",
+              "pose": "stand",
+              "strength": 0.6
+            },
+            {
+              "character": "boy",
+              "expression": "sad",
+              "facing": "left",
+              "x": 0.74,
+              "lookAt": "ahead",
+              "pose": "stand"
+            },
+            {
+              "character": "cheat",
+              "expression": "smug",
+              "facing": "right",
+              "x": 0.18,
+              "lookAt": "saint",
+              "action": "walk",
+              "holds": "cup",
+              "then": [
+                {
+                  "at": 0.75,
+                  "pose": "hold-cup"
+                }
+              ]
+            },
+            {
+              "character": "copycat",
+              "expression": "smug",
+              "facing": "right",
+              "x": 0.04,
+              "lookAt": "saint",
+              "action": "walk",
+              "then": [
+                {
+                  "at": 0.8,
+                  "pose": "stand"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-40",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "footsteps",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "transition": "cut"
+        },
+        {
+          "id": "s5i",
+          "line": "l24",
+          "words": "Now being late cost no money and no *sorry.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "expression": "smug",
+              "facing": "right",
+              "x": 0.18,
+              "lookAt": "camera",
+              "pose": "hold-cup",
+              "holds": "cup"
+            },
+            {
+              "character": "copycat",
+              "expression": "smug",
+              "facing": "right",
+              "x": 0.04,
+              "lookAt": "cheat",
+              "pose": "stand"
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5j",
+          "line": "l25",
+          "words": "The fine went to the owner.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "expression": "hollow",
+              "facing": "left",
+              "x": 0.36,
+              "lookAt": "down",
+              "pose": "stand",
+              "strength": 0.6
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5k",
+          "line": "l25",
+          "words": "The teacher who waited got *nothing.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "expression": "hollow",
+              "facing": "left",
+              "x": 0.36,
+              "lookAt": "camera",
+              "pose": "stand",
+              "strength": 0.6,
+              "then": [
+                {
+                  "at": 0.5,
+                  "expression": "sad",
+                  "strength": 0.7
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 3,
+      "beat": "the-sting",
+      "mood": "aftermath",
+      "place": "daycare",
+      "treatment": "atmospheric",
+      "palette": "dusk-violet",
+      "lines": [
+        {
+          "id": "l26",
+          "speaker": "trainer",
+          "text": "You do this too. When a late fee is small, you just *pay* it.",
+          "pauseAfterMs": 900
+        },
+        {
+          "id": "l27",
+          "speaker": "narrator",
+          "text": "If you make a rule, skip the *small* fine. Ask as a favor, or make the fine big.",
+          "pauseAfterMs": 1200
+        },
+        {
+          "id": "l28",
+          "speaker": "trainer",
+          "text": "So why did the fine make parents *later?*",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l29",
+          "speaker": "trainer",
+          "text": "Because the fine didn't make them *sorry.*",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l30",
+          "speaker": "trainer",
+          "text": "It told them what sorry *costs.*",
+          "speed": 0.93,
+          "pauseAfterMs": 1500
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s6a",
+          "line": "l26",
+          "words": "You do this too. When a late fee is small,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "picture": {
+            "layers": [
+              {
+                "kind": "room",
+                "place": "city",
+                "palette": "dusk-violet"
+              },
+              {
+                "kind": "crowd",
+                "rows": 7,
+                "cols": 9,
+                "top": 0.3,
+                "bottom": 0.66,
+                "head": 0.055,
+                "back": 0.45,
+                "pose": "stand",
+                "expression": "smug",
+                "light": 0.65,
+                "hole": {
+                  "x": 0.5,
+                  "y": 0.55
+                },
+                "holeRadius": 0.07,
+                "seed": 6
+              },
+              {
+                "kind": "person",
+                "character": "you",
+                "x": 0.5,
+                "y": 0.55,
+                "head": 0.05,
+                "pose": "stand",
+                "expression": "smug",
+                "facing": "right",
+                "turn": 0.3,
+                "effects": []
+              }
+            ],
+            "from": {
+              "x": 0.5,
+              "y": 0.56,
+              "zoom": 5
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.54,
+              "zoom": 2.5
+            }
+          }
+        },
+        {
+          "id": "s6b",
+          "line": "l26",
+          "words": "you just *pay* it.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "picture": {
+            "layers": [
+              {
+                "kind": "room",
+                "place": "city",
+                "palette": "dusk-violet"
+              },
+              {
+                "kind": "crowd",
+                "rows": 7,
+                "cols": 9,
+                "top": 0.3,
+                "bottom": 0.66,
+                "head": 0.055,
+                "back": 0.45,
+                "pose": "stand",
+                "expression": "smug",
+                "light": 0.65,
+                "hole": {
+                  "x": 0.5,
+                  "y": 0.55
+                },
+                "holeRadius": 0.07,
+                "seed": 6
+              },
+              {
+                "kind": "person",
+                "character": "you",
+                "x": 0.5,
+                "y": 0.55,
+                "head": 0.05,
+                "pose": "stand",
+                "expression": "smug",
+                "facing": "right",
+                "turn": 0.3,
+                "effects": []
+              }
+            ],
+            "from": {
+              "x": 0.5,
+              "y": 0.54,
+              "zoom": 2.5
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.48,
+              "zoom": 1
+            }
+          }
+        },
+        {
+          "id": "s6c",
+          "line": "l27",
+          "words": "If you make a rule, skip the *small* fine.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "Making a rule?",
+              "Skip the small fine.",
+              "Ask as a favor,",
+              "or make it count."
+            ],
+            "stress": 1
+          }
+        },
+        {
+          "id": "s6d",
+          "line": "l27",
+          "words": "Ask as a favor, or make the fine big.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "overlay": {
+            "kind": "page",
+            "lines": [
+              "Making a rule?",
+              "Skip the small fine.",
+              "Ask as a favor,",
+              "or make it count."
+            ],
+            "stress": 3
+          }
+        },
+        {
+          "id": "s6e",
+          "line": "l28",
+          "words": "So why did the fine make parents *later?*",
+          "camera": {
+            "framing": "medium",
+            "move": "push-in",
+            "strength": 0.12,
+            "focus": "boy"
+          },
+          "actors": [
+            {
+              "character": "boy",
+              "expression": "sad",
+              "facing": "left",
+              "x": 0.74,
+              "lookAt": "ahead",
+              "pose": "stand"
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "tick",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "transition": "cut"
+        },
+        {
+          "id": "s6f",
+          "line": "l29",
+          "words": "Because the fine didn't make them *sorry.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "cheat"
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "expression": "smug",
+              "facing": "right",
+              "x": 0.16,
+              "lookAt": "ahead",
+              "action": "walk",
+              "holds": "cup",
+              "then": [
+                {
+                  "at": 0.7,
+                  "pose": "hold-cup"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6g",
+          "line": "l30",
+          "words": "It told them what sorry *costs.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "expression": "sad",
+              "facing": "right",
+              "x": 0.36,
+              "lookAt": "boy",
+              "pose": "stand",
+              "strength": 0.7
+            },
+            {
+              "character": "boy",
+              "expression": "sad",
+              "facing": "left",
+              "x": 0.74,
+              "lookAt": "ahead",
+              "pose": "stand"
+            }
+          ],
+          "props": [
+            {
+              "prop": "notice-board-no-fine",
+              "x": 0.52,
+              "y": 2.4
+            },
+            {
+              "prop": "wall-clock-4-15",
+              "x": 0.52,
+              "y": 3.55,
+              "size": 0.55
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "tick",
+              "at": "start",
+              "gainDb": -10
+            },
+            {
+              "name": "clunk",
+              "at": "end",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut"
+        }
+      ]
+    }
+  ]
+}

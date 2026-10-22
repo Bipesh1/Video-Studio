@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "upbeat",
+      "startMs": 0
+    }
+  ],
+  "sfx": [
+    {
+      "name": "whoosh",
+      "atMs": 60,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "pop",
+      "atMs": 440,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "whoosh",
+      "atMs": 3100,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "ding",
+      "atMs": 5540,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "whoosh",
+      "atMs": 8710,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "pop",
+      "atMs": 11407,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 5
+    },
+    {
+      "name": "pop",
+      "atMs": 14340,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 6
+    },
+    {
+      "name": "whoosh",
+      "atMs": 18390,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 7
+    },
+    {
+      "name": "pop",
+      "atMs": 18607,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 8
+    },
+    {
+      "name": "whoosh",
+      "atMs": 22830,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 9
+    },
+    {
+      "name": "pop",
+      "atMs": 23107,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 10
+    },
+    {
+      "name": "pop",
+      "atMs": 24040,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 11
+    }
+  ],
+  "musicGainDb": 0,
+  "hush": []
+}

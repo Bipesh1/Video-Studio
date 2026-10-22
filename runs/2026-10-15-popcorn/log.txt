@@ -1,0 +1,218 @@
+2026-10-15T14:32:19.866Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-15T14:32:19.868Z  part 1  voice: start
+2026-10-15T14:33:47.605Z  part 1    voice.wav: 52.82 s, 135 words, timings from kokoro, -17.17 LUFS
+2026-10-15T14:33:47.606Z  part 1  voice: done in 87.7 s
+2026-10-15T14:33:47.606Z  part 1  time: start
+2026-10-15T14:33:47.617Z  part 1    9 shots over 52.8 s: shortest 3.8 s, longest 8.0 s
+2026-10-15T14:33:47.618Z  part 1    note: shot "s05" is 7.8 s long, a little over the 7 s a shot should take
+2026-10-15T14:33:47.618Z  part 1    note: shot "s09" is 8.0 s long, a little over the 7 s a shot should take
+2026-10-15T14:33:47.618Z  part 1  time: done in 0.0 s
+2026-10-15T14:33:47.618Z  part 1  sound: start
+2026-10-15T14:34:01.104Z  part 1    F:\Video Studio\runs\2026-10-15-popcorn\part-1\audio\mix.wav: 52.82 s, -14.04 LUFS, true peak -1.1 dB, 2 music moods, 4 effects, music -16.9 dB under the voice
+2026-10-15T14:34:01.105Z  part 1  sound: done in 13.5 s
+2026-10-15T14:34:01.105Z  part 1  stills: start
+2026-10-15T14:34:01.132Z  part 1  bundle: start
+2026-10-15T14:34:22.717Z  part 1  bundle: done in 21.6 s
+2026-10-15T14:34:50.422Z  part 1    9 stills in runs\2026-10-15-popcorn\part-1\stills\9x16
+2026-10-15T14:34:50.893Z  part 1    runs\2026-10-15-popcorn\part-1\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-15T14:34:51.673Z  part 1    runs\2026-10-15-popcorn\part-1\stills\sheet-9x16-1.png (9 shots, 3 rows)
+2026-10-15T14:34:51.673Z  part 1  stills: done in 50.6 s
+2026-10-15T14:35:06.180Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-15T14:35:06.182Z  part 1  video: start
+2026-10-15T14:35:06.205Z  part 1  bundle: start
+2026-10-15T14:35:09.681Z  part 1  bundle: done in 3.5 s
+2026-10-15T14:39:25.101Z  part 1    runs\2026-10-15-popcorn\part-1\out\popcorn-part-1-9x16-v1.mp4: 52.83 s of video, 1080x1920, in 253.5 s (4.80 s per video second)
+2026-10-15T14:39:25.106Z  part 1    runs\2026-10-15-popcorn\part-1\out\popcorn-part-1-9x16-v1.srt
+2026-10-15T14:39:25.216Z  part 1  video: done in 259.0 s
+2026-10-15T15:21:14.343Z  part 2  part 2 of 2, 9:16: 3 scenes, 9 shots
+2026-10-15T15:21:14.366Z  part 2  voice: start
+2026-10-15T15:22:51.192Z  part 2    voice.wav: 58.07 s, 150 words, timings from kokoro, -17.16 LUFS
+2026-10-15T15:22:51.205Z  part 2  voice: done in 96.8 s
+2026-10-15T15:22:51.205Z  part 2  time: start
+2026-10-15T15:22:51.219Z  part 2    9 shots over 58.1 s: shortest 4.9 s, longest 9.0 s
+2026-10-15T15:22:51.219Z  part 2    PROBLEM: shot "s15" stays on screen 9.0 s; split its words into two shots
+2026-10-15T15:23:15.879Z  part 2  part 2 of 2, 9:16: 3 scenes, 10 shots
+2026-10-15T15:23:15.881Z  part 2  time: start
+2026-10-15T15:23:15.886Z  part 2    10 shots over 58.1 s: shortest 4.4 s, longest 7.2 s
+2026-10-15T15:23:15.887Z  part 2  time: done in 0.0 s
+2026-10-15T15:23:15.887Z  part 2  sound: start
+2026-10-15T15:23:28.507Z  part 2    F:\Video Studio\runs\2026-10-15-popcorn\part-2\audio\mix.wav: 58.07 s, -14.02 LUFS, true peak -1.2 dB, 2 music moods, 4 effects, music -16.9 dB under the voice
+2026-10-15T15:23:28.508Z  part 2  sound: done in 12.6 s
+2026-10-15T15:23:28.508Z  part 2  stills: start
+2026-10-15T15:23:28.535Z  part 2  bundle: start
+2026-10-15T15:23:44.865Z  part 2  bundle: done in 16.3 s
+2026-10-15T15:24:23.019Z  part 2    10 stills in runs\2026-10-15-popcorn\part-2\stills\9x16
+2026-10-15T15:24:23.440Z  part 2    runs\2026-10-15-popcorn\part-2\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-15T15:24:24.275Z  part 2    runs\2026-10-15-popcorn\part-2\stills\sheet-9x16-1.png (10 shots, 3 rows)
+2026-10-15T15:24:24.276Z  part 2  stills: done in 55.8 s
+2026-10-15T15:24:46.923Z  part 2  part 2 of 2, 9:16: 3 scenes, 10 shots
+2026-10-15T15:24:46.924Z  part 2  time: start
+2026-10-15T15:24:46.929Z  part 2    10 shots over 58.1 s: shortest 4.4 s, longest 7.2 s
+2026-10-15T15:24:46.929Z  part 2  time: done in 0.0 s
+2026-10-15T15:24:46.929Z  part 2  stills: start
+2026-10-15T15:24:46.953Z  part 2  bundle: start
+2026-10-15T15:24:54.568Z  part 2  bundle: done in 7.6 s
+2026-10-15T15:25:09.480Z  part 2    10 stills in runs\2026-10-15-popcorn\part-2\stills\9x16
+2026-10-15T15:25:09.768Z  part 2    runs\2026-10-15-popcorn\part-2\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-15T15:25:10.570Z  part 2    runs\2026-10-15-popcorn\part-2\stills\sheet-9x16-1.png (10 shots, 3 rows)
+2026-10-15T15:25:10.570Z  part 2  stills: done in 23.6 s
+2026-10-15T15:25:10.571Z  part 2  video: start
+2026-10-15T15:29:30.608Z  part 2    runs\2026-10-15-popcorn\part-2\out\popcorn-part-2-9x16-v1.mp4: 58.10 s of video, 1080x1920, in 259.0 s (4.46 s per video second)
+2026-10-15T15:29:30.612Z  part 2    runs\2026-10-15-popcorn\part-2\out\popcorn-part-2-9x16-v1.srt
+2026-10-15T15:29:30.631Z  part 2  video: done in 260.1 s
+2026-10-15T15:34:20.839Z  output  9:16 full video:
+2026-10-15T15:34:40.557Z  output      F:\Video Studio\runs\2026-10-15-popcorn\cuts\full\audio\mix.wav: 110.93 s, -14.04 LUFS, true peak -1.1 dB, 3 music moods, 8 effects, music -17.0 dB under the voice
+2026-10-15T15:36:16.248Z  output    runs\2026-10-15-popcorn\out\popcorn-9x16-v1.mp4: 110.93 s, 1080x1920
+2026-10-15T15:36:16.249Z  output      ok   The file plays: 1080x1920, 30 pictures a second, 110.9 s, picture and sound both there; played through from start to finish
+2026-10-15T15:36:16.249Z  output      ok   It is as long as its parts together: 110.9 s; its 2 pieces add up to 110.9 s
+2026-10-15T15:36:16.250Z  output      ok   Its pictures are the parts that passed: every frame against popcorn-part-1-9x16-v1.mp4 and popcorn-part-2-9x16-v1.mp4 (the strongest difference is 1 of 255; over 16 would be a different picture)
+2026-10-15T15:36:16.250Z  output      ok   Its sound is the mix made for the whole video: second for second (what is left over is 41 dB under it at most)
+2026-10-15T15:36:16.250Z  output      ok   There is no dead silence: the sound never drops out; the longest pause between words is 2.4 s
+2026-10-15T15:36:16.251Z  output      ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.1 dB (the limit is -1)
+2026-10-15T15:36:16.251Z  output      ok   Nothing drowns the words: 8 sound effects, the loudest of those over words 16 dB under the voice; the music sits 17 dB under the voice while someone speaks
+2026-10-15T15:36:16.251Z  output      FIX  Every join and the cover hold up: a strip of frames across the join between parts, and the cover picture
+2026-10-15T15:36:16.252Z  output            problem: the joins and the cover have not been looked at yet
+2026-10-15T15:36:16.252Z  output      to look at: runs\2026-10-15-popcorn\out\look\popcorn-9x16-v1 (each join) and runs\2026-10-15-popcorn\out\popcorn-9x16-v1-cover-side.jpg; then write runs\2026-10-15-popcorn\out\popcorn-9x16-v1.look.json
+2026-10-15T15:36:16.255Z  output  runs\2026-10-15-popcorn\delivery.md
+2026-10-15T15:40:37.891Z  output  9:16 full video:
+2026-10-15T15:40:38.244Z  output    runs\2026-10-15-popcorn\out\popcorn-9x16-v1.mp4: already made from these parts
+2026-10-15T15:40:38.368Z  output  runs\2026-10-15-popcorn\delivery.md
+2026-10-15T15:57:21.351Z  output  9:16 full video:
+2026-10-15T15:57:21.750Z  output    runs\2026-10-15-popcorn\out\popcorn-9x16-v1.mp4: already made from these parts
+2026-10-15T15:57:21.970Z  output  runs\2026-10-15-popcorn\delivery.md
+2026-10-16T04:36:33.398Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-16T04:36:33.486Z  part 1  time: start
+2026-10-16T04:36:33.525Z  part 1    9 shots over 52.8 s: shortest 3.8 s, longest 8.0 s
+2026-10-16T04:36:33.526Z  part 1    note: shot "s05" is 7.8 s long, a little over the 7 s a shot should take
+2026-10-16T04:36:33.526Z  part 1    note: shot "s09" is 8.0 s long, a little over the 7 s a shot should take
+2026-10-16T04:36:33.526Z  part 1  time: done in 0.0 s
+2026-10-16T04:36:33.526Z  part 1  clip: start
+2026-10-16T04:36:33.719Z  part 1  bundle: start
+2026-10-16T04:37:08.260Z  part 1  bundle: done in 34.5 s
+2026-10-16T04:39:51.123Z  part 1    runs\2026-10-15-popcorn\part-1\clips\popcorn-part-1-9x16-0-16s-v1.mp4: seconds 0 to 16, in 143.5 s
+2026-10-16T04:39:51.124Z  part 1  clip: done in 197.6 s
+2026-10-16T04:43:47.042Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-16T04:43:47.044Z  part 1  time: start
+2026-10-16T04:43:47.048Z  part 1    9 shots over 52.8 s: shortest 3.8 s, longest 8.0 s
+2026-10-16T04:43:47.093Z  part 1    note: shot "s05" is 7.8 s long, a little over the 7 s a shot should take
+2026-10-16T04:43:47.094Z  part 1    note: shot "s09" is 8.0 s long, a little over the 7 s a shot should take
+2026-10-16T04:43:47.094Z  part 1  time: done in 0.1 s
+2026-10-16T04:43:47.094Z  part 1  stills: start
+2026-10-16T04:43:47.292Z  part 1  bundle: start
+2026-10-16T04:44:12.043Z  part 1  bundle: done in 24.7 s
+2026-10-16T04:44:49.684Z  part 1    9 stills in runs\2026-10-15-popcorn\part-1\stills\9x16
+2026-10-16T04:44:52.772Z  part 1    runs\2026-10-15-popcorn\part-1\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-16T04:44:53.722Z  part 1    runs\2026-10-15-popcorn\part-1\stills\sheet-9x16-1.png (9 shots, 3 rows)
+2026-10-16T04:44:53.723Z  part 1  stills: done in 66.6 s
+2026-10-16T04:44:53.723Z  part 1  video: start
+2026-10-16T04:51:05.685Z  part 1    runs\2026-10-15-popcorn\part-1\out\popcorn-part-1-9x16-v2.mp4: 52.83 s of video, 1080x1920, in 370.7 s (7.02 s per video second)
+2026-10-16T04:51:05.734Z  part 1    runs\2026-10-15-popcorn\part-1\out\popcorn-part-1-9x16-v2.srt
+2026-10-16T04:51:05.963Z  part 1  video: done in 372.2 s
+2026-10-16T04:51:19.275Z  part 2  part 2 of 2, 9:16: 3 scenes, 10 shots
+2026-10-16T04:51:19.277Z  part 2  time: start
+2026-10-16T04:51:19.304Z  part 2    10 shots over 58.1 s: shortest 4.4 s, longest 7.2 s
+2026-10-16T04:51:19.305Z  part 2  time: done in 0.0 s
+2026-10-16T04:51:19.305Z  part 2  stills: start
+2026-10-16T04:51:19.741Z  part 2  bundle: start
+2026-10-16T04:51:48.933Z  part 2  bundle: done in 29.2 s
+2026-10-16T04:52:08.218Z  part 2    10 stills in runs\2026-10-15-popcorn\part-2\stills\9x16
+2026-10-16T04:52:08.650Z  part 2    runs\2026-10-15-popcorn\part-2\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-16T04:52:09.913Z  part 2    runs\2026-10-15-popcorn\part-2\stills\sheet-9x16-1.png (10 shots, 3 rows)
+2026-10-16T04:52:09.914Z  part 2  stills: done in 50.6 s
+2026-10-16T04:52:09.914Z  part 2  video: start
+2026-10-16T08:10:23.189Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-16T08:10:23.283Z  part 1  time: start
+2026-10-16T08:10:23.343Z  part 1    9 shots over 52.8 s: shortest 3.8 s, longest 8.0 s
+2026-10-16T08:10:23.344Z  part 1    note: shot "s05" is 7.8 s long, a little over the 7 s a shot should take
+2026-10-16T08:10:23.344Z  part 1    note: shot "s09" is 8.0 s long, a little over the 7 s a shot should take
+2026-10-16T08:10:23.345Z  part 1  time: done in 0.1 s
+2026-10-16T08:10:23.345Z  part 1  sound: start
+2026-10-16T08:10:32.546Z  part 1    F:\Video Studio\runs\2026-10-15-popcorn\part-1\audio\mix.wav: 52.82 s, -14.04 LUFS, true peak -1.1 dB, 2 music moods, 21 effects, music -16.9 dB under the voice
+2026-10-16T08:10:32.547Z  part 1  sound: done in 9.2 s
+2026-10-16T08:10:44.054Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-16T08:10:44.056Z  part 1  clip: start
+2026-10-16T08:10:44.087Z  part 1  bundle: start
+2026-10-16T08:10:55.896Z  part 1  bundle: done in 11.8 s
+2026-10-16T08:14:57.561Z  part 1    runs\2026-10-15-popcorn\part-1\clips\popcorn-part-1-9x16-0-22s-v1.mp4: seconds 0 to 22, in 238.7 s
+2026-10-16T08:14:57.575Z  part 1  clip: done in 253.5 s
+2026-10-16T08:16:01.672Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-16T08:16:01.674Z  part 1  clip: start
+2026-10-16T08:16:01.997Z  part 1  bundle: start
+2026-10-16T08:16:23.543Z  part 1  bundle: done in 21.5 s
+2026-10-16T08:20:05.173Z  part 1    runs\2026-10-15-popcorn\part-1\clips\popcorn-part-1-9x16-0-22s-v2.mp4: seconds 0 to 22, in 216.5 s
+2026-10-16T08:20:05.176Z  part 1  clip: done in 243.5 s
+2026-10-16T08:31:42.931Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-16T08:31:42.938Z  part 1  stills: start
+2026-10-16T08:31:43.013Z  part 1  bundle: start
+2026-10-16T08:32:06.481Z  part 1  bundle: done in 23.5 s
+2026-10-16T08:32:35.015Z  part 1    9 stills in runs\2026-10-15-popcorn\part-1\stills\9x16
+2026-10-16T08:32:35.643Z  part 1    runs\2026-10-15-popcorn\part-1\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-16T08:32:36.930Z  part 1    runs\2026-10-15-popcorn\part-1\stills\sheet-9x16-1.png (9 shots, 3 rows)
+2026-10-16T08:32:36.930Z  part 1  stills: done in 54.0 s
+2026-10-16T08:33:43.702Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-16T08:33:43.705Z  part 1  stills: start
+2026-10-16T08:33:43.736Z  part 1  bundle: start
+2026-10-16T08:33:58.333Z  part 1  bundle: done in 14.6 s
+2026-10-16T08:34:21.704Z  part 1    9 stills in runs\2026-10-15-popcorn\part-1\stills\9x16
+2026-10-16T08:34:22.398Z  part 1    runs\2026-10-15-popcorn\part-1\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-16T08:34:24.285Z  part 1    runs\2026-10-15-popcorn\part-1\stills\sheet-9x16-1.png (9 shots, 3 rows)
+2026-10-16T08:34:24.286Z  part 1  stills: done in 40.6 s
+2026-10-16T08:34:42.117Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-16T08:34:42.122Z  part 1  clip: start
+2026-10-16T08:34:42.190Z  part 1  bundle: start
+2026-10-16T08:34:59.923Z  part 1  bundle: done in 17.7 s
+2026-10-16T08:41:34.261Z  part 1    runs\2026-10-15-popcorn\part-1\clips\popcorn-part-1-9x16-0-22s-v3.mp4: seconds 0 to 22, in 389.3 s
+2026-10-16T08:41:34.266Z  part 1  clip: done in 412.1 s
+2026-10-16T08:49:50.346Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-16T08:49:50.348Z  part 1  time: start
+2026-10-16T08:49:50.392Z  part 1    9 shots over 52.8 s: shortest 3.8 s, longest 8.0 s
+2026-10-16T08:49:50.449Z  part 1    note: shot "s05" is 7.8 s long, a little over the 7 s a shot should take
+2026-10-16T08:49:50.450Z  part 1    note: shot "s09" is 8.0 s long, a little over the 7 s a shot should take
+2026-10-16T08:49:50.451Z  part 1  time: done in 0.1 s
+2026-10-16T08:49:50.453Z  part 1  sound: start
+2026-10-16T08:50:30.841Z  part 1    F:\Video Studio\runs\2026-10-15-popcorn\part-1\audio\mix.wav: 52.82 s, -14.04 LUFS, true peak -1.1 dB, 2 music moods, 24 effects, music -16.9 dB under the voice
+2026-10-16T08:50:30.842Z  part 1  sound: done in 40.4 s
+2026-10-16T08:50:30.843Z  part 1  clip: start
+2026-10-16T08:50:30.957Z  part 1  bundle: start
+2026-10-16T08:50:53.077Z  part 1  bundle: done in 22.1 s
+2026-10-16T08:58:01.263Z  part 1    runs\2026-10-15-popcorn\part-1\clips\popcorn-part-1-9x16-0-22s-v4.mp4: seconds 0 to 22, in 415.4 s
+2026-10-16T08:58:01.287Z  part 1  clip: done in 450.4 s
+2026-10-16T09:00:14.485Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-16T09:00:14.489Z  part 1  clip: start
+2026-10-16T09:00:14.882Z  part 1  bundle: start
+2026-10-16T09:00:43.096Z  part 1  bundle: done in 28.2 s
+2026-10-16T09:01:43.846Z  part 1    runs\2026-10-15-popcorn\part-1\clips\popcorn-part-1-9x16-3-6s-v1.mp4: seconds 3 to 6, in 57.5 s
+2026-10-16T09:01:43.849Z  part 1  clip: done in 89.4 s
+2026-10-16T09:02:18.759Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-16T09:02:18.764Z  part 1  clip: start
+2026-10-16T09:02:18.833Z  part 1  bundle: start
+2026-10-16T09:02:36.639Z  part 1  bundle: done in 17.8 s
+2026-10-16T09:09:12.653Z  part 1    runs\2026-10-15-popcorn\part-1\clips\popcorn-part-1-9x16-0-22s-v5.mp4: seconds 0 to 22, in 390.8 s
+2026-10-16T09:09:12.657Z  part 1  clip: done in 413.9 s
+2026-10-16T12:31:31.398Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-16T12:31:31.416Z  part 1  time: start
+2026-10-16T12:31:31.490Z  part 1    9 shots over 52.8 s: shortest 3.8 s, longest 8.0 s
+2026-10-16T12:31:31.491Z  part 1    note: shot "s05" is 7.8 s long, a little over the 7 s a shot should take
+2026-10-16T12:31:31.491Z  part 1    note: shot "s09" is 8.0 s long, a little over the 7 s a shot should take
+2026-10-16T12:31:31.491Z  part 1  time: done in 0.1 s
+2026-10-16T12:31:31.492Z  part 1  sound: start
+2026-10-16T12:31:31.561Z  part 1    mix is already up to date (the plan and the voice have not changed)
+2026-10-16T12:31:31.561Z  part 1  sound: done in 0.1 s
+2026-10-16T12:31:42.908Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-16T12:31:42.910Z  part 1  clip: start
+2026-10-16T12:31:43.319Z  part 1  bundle: start
+2026-10-16T12:32:06.442Z  part 1  bundle: done in 23.1 s
+2026-10-16T12:35:39.049Z  part 1    runs\2026-10-15-popcorn\part-1\clips\popcorn-part-1-9x16-0-22s-v6.mp4: seconds 0 to 22, in 193.5 s
+2026-10-16T12:35:39.051Z  part 1  clip: done in 236.1 s
+2026-10-16T12:36:46.822Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-16T12:36:46.823Z  part 1  clip: start
+2026-10-16T12:36:47.224Z  part 1  bundle: start
+2026-10-16T12:37:02.692Z  part 1  bundle: done in 15.5 s
+2026-10-16T12:40:23.665Z  part 1    runs\2026-10-15-popcorn\part-1\clips\popcorn-part-1-9x16-0-22s-v7.mp4: seconds 0 to 22, in 195.5 s
+2026-10-16T12:40:23.674Z  part 1  clip: done in 216.9 s
+2026-10-16T12:41:21.702Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-16T12:41:21.704Z  part 1  clip: start
+2026-10-16T12:41:21.734Z  part 1  bundle: start
+2026-10-16T12:41:34.191Z  part 1  bundle: done in 12.5 s
+2026-10-16T12:44:42.765Z  part 1    runs\2026-10-15-popcorn\part-1\clips\popcorn-part-1-9x16-0-22s-v8.mp4: seconds 0 to 22, in 184.5 s
+2026-10-16T12:44:42.766Z  part 1  clip: done in 201.1 s

@@ -14,13 +14,14 @@ import type { Focus } from '../camera/Framing';
 import { ACTIONS } from '../rig/actions';
 import type { ActionName } from '../rig/actions';
 import { toScreen } from '../rig/Character';
-import { vec } from '../rig/math';
+import { stops, vec } from '../rig/math';
+import { TURN } from '../face/layout';
 import type { Vec2 } from '../rig/math';
 import { resolvePose } from '../rig/pose';
 import { poseById } from '../rig/poses';
 import { computeSkeleton } from '../rig/skeleton';
 import type { Facing, ResolvedPose } from '../rig/types';
-import { SCENERY, propHeight, propReach, standingProp } from './props';
+import { SCENERY, SEATS, propHeight, propReach, standingProp } from './props';
 
 /**
  * Where everything in a storyboard shot goes, with no drawing in it (so it can be tested and
@@ -185,8 +186,12 @@ export function shotFocus(
   // A tall picture is narrow: without this the rocket beside an astronaut, or the rock falling
   // on a city, is outside it (Biku, 2026-10-07: wide or vertical, "it must be good"). Furniture
   // is part of the room and is not kept.
+  // An empty seat is not just furniture: a chair nobody is at is something the shot shows
+  // (the place waiting for you at the table), so it is kept in the picture like a thing.
+  const emptySeat = (p: { prop: string; x: number }) =>
+    SEATS.includes(p.prop) && !shot.actors.some((a) => Math.abs((a.x ?? 0.5) - p.x) < 0.04);
   const things = shot.props
-    .filter((p) => !SCENERY.includes(p.prop))
+    .filter((p) => !SCENERY.includes(p.prop) || emptySeat(p))
     .flatMap((p) => {
       const x = stageX(stage, p.x);
       const side = propReach(p).side * stage.head;
@@ -224,7 +229,14 @@ function aimOf(
   const seen = shot.actors.filter((a) => !(a.back && shot.camera.framing === 'over-shoulder'));
   const focusOf = (id: string): Focus | null => {
     const p = placements.get(id);
-    return p ? focusOn(p.placement, p.pose) : null;
+    if (!p) return null;
+    const focus = focusOn(p.placement, p.pose);
+    if (shot.camera.framing !== 'eyes') return focus;
+    // A shot of the eyes is centred on the eyes: a turned head carries them to one side of it.
+    const actor = shot.actors.find((a) => a.character === id);
+    const toward = p.placement.facing === 'left' ? -1 : 1;
+    const carried = stops(actor ? turnOf(actor) : 0, TURN.shift) * p.placement.head;
+    return { ...focus, x: focus.x + toward * carried };
   };
   const favoured = shot.camera.focus ? focusOf(shot.camera.focus) : null;
   if (favoured) return favoured;
@@ -233,7 +245,7 @@ function aimOf(
   // the shot is a close-up.
   const named = shot.overlay?.kind === 'pointer' ? shot.overlay.to : null;
   const lookedAt =
-    shot.camera.framing === 'close-up'
+    shot.camera.framing === 'close-up' || shot.camera.framing === 'eyes'
       ? []
       : shot.props
           .filter((p) => p.prop === named || seen.some((a) => a.lookAt === p.prop))

@@ -2,7 +2,7 @@
   "id": "news-short",
   "name": "News short",
   "description": "What happened, why it matters and what comes next, told plainly. Pick it for a recent event.",
-  "version": 1,
+  "version": 2,
   "structure": [
     {
       "id": "headline",
@@ -68,6 +68,14 @@
     }
   },
   "captionMode": "full",
+  "finish": {
+    "acting": "snappy",
+    "onTwos": true,
+    "shadows": true,
+    "grain": 0.4,
+    "vignette": 0.35,
+    "boil": 0.25
+  },
   "factRules": {
     "sourcesRequired": true,
     "rules": [

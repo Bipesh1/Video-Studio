@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "video": "late-fine-part-2-9x16-preview-v2.mp4",
+  "stills": {
+    "s3a": "ok",
+    "s3b": "ok",
+    "s3c": "ok",
+    "s3d": "ok",
+    "s3e": "ok",
+    "s3f": "ok",
+    "s3g": "ok",
+    "s3h": "ok",
+    "s3i": "ok",
+    "s3j": "ok",
+    "s3k": "ok",
+    "s4a": "ok",
+    "s4b": "ok",
+    "s4c": "ok"
+  },
+  "strips": {
+    "cut-s3a-s3b": "ok",
+    "cut-s3b-s3c": "ok",
+    "cut-s3c-s3d": "ok",
+    "cut-s3f-s3g": "ok",
+    "cut-s3g-s3h": "ok",
+    "cut-s3h-s3i": "ok",
+    "cut-s4a-s4b": "ok",
+    "cut-s4b-s4c": "ok",
+    "s3a-move-1": "ok",
+    "s3c-move-1": "ok",
+    "s3d-move-1": "ok",
+    "s3f-move-1": "ok",
+    "s3g-move-1": "ok",
+    "s3j-move-1": "ok",
+    "s4a-move-1": "ok",
+    "s4b-move-1": "ok"
+  },
+  "playbook": "ok",
+  "fixed": [
+    "The street of the freeze was at night, with a moon and lit windows, at five to four in the afternoon. It is a grey day now.",
+    "Your shoes showed under the car while you sat inside it. The car has a dark underside and dark wheel wells now, as cars do, and nothing shows under it.",
+    "In 'Soon, more parents paid', the Copycat held his money out into the Cheat's chest, as if paying him; then the Cheat's raised money sat behind the Copycat's head. The Cheat now stands with his money by his side and the Copycat holds his out to the teacher, off to the right.",
+    "The days are told in big numbers as they change (4:20 the next day, 4:30 the next week, 4:40 her last bus is gone), so the short shot of 'Here's my fee' reads at once."
+  ],
+  "notes": [
+    "Every cut looked at large: nobody vanishes; the teacher, the boy and the father are in every frame of each wide shot.",
+    "The voices of part 2 took 12 minutes."
+  ]
+}

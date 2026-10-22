@@ -1,0 +1,552 @@
+2026-10-10T13:46:21.225Z  part 1  part 1 of 3, 16:9: 7 scenes, 22 shots
+2026-10-10T13:46:21.226Z  part 1  stills: start
+2026-10-10T13:46:30.643Z  part 1  part 1 of 3, 16:9: 7 scenes, 22 shots
+2026-10-10T13:46:30.644Z  part 1  voice: start
+2026-10-10T13:48:07.282Z  part 1    voice.wav: 46.90 s, 99 words, timings from kokoro, -17.22 LUFS
+2026-10-10T13:48:07.283Z  part 1  voice: done in 96.6 s
+2026-10-10T13:48:07.283Z  part 1  time: start
+2026-10-10T13:48:07.314Z  part 1    22 shots over 46.9 s: shortest 0.6 s, longest 3.7 s
+2026-10-10T13:48:07.315Z  part 1    note: shot "s1f" is only 1.2 s long
+2026-10-10T13:48:07.315Z  part 1    note: shot "s2f" is only 0.6 s long
+2026-10-10T13:48:07.315Z  part 1    note: shot "s2g" is only 1.3 s long
+2026-10-10T13:48:07.316Z  part 1  time: done in 0.0 s
+2026-10-10T13:48:07.316Z  part 1  sound: start
+2026-10-10T13:48:34.662Z  part 1    F:\Video Studio\runs\2026-10-10-split-or-steal\part-1\audio\mix.wav: 46.90 s, -14.03 LUFS, true peak -1.14 dB, 1 music moods, 18 effects, music -20.9 dB under the voice
+2026-10-10T13:48:34.663Z  part 1  sound: done in 27.3 s
+2026-10-10T13:48:34.663Z  part 1  stills: start
+2026-10-10T13:48:34.708Z  part 1  bundle: start
+2026-10-10T13:48:56.374Z  part 1  bundle: done in 21.5 s
+2026-10-10T13:49:44.210Z  part 1    22 stills in runs\2026-10-10-split-or-steal\part-1\stills\16x9
+2026-10-10T13:49:46.331Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-10T13:49:46.941Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-16x9-2.png (10 shots, 4 rows)
+2026-10-10T13:49:46.941Z  part 1  stills: done in 72.3 s
+2026-10-10T13:51:47.252Z  part 1  part 1 of 3, 16:9: 7 scenes, 21 shots
+2026-10-10T13:51:47.254Z  part 1  voice: start
+2026-10-10T13:53:55.492Z  part 1    voice.wav: 47.24 s, 99 words, timings from kokoro, -17.23 LUFS
+2026-10-10T13:53:55.504Z  part 1  voice: done in 128.3 s
+2026-10-10T13:53:55.505Z  part 1  time: start
+2026-10-10T13:53:55.731Z  part 1    21 shots over 47.2 s: shortest 1.5 s, longest 3.7 s
+2026-10-10T13:53:55.731Z  part 1  time: done in 0.2 s
+2026-10-10T13:53:55.731Z  part 1  sound: start
+2026-10-10T13:54:09.200Z  part 1    F:\Video Studio\runs\2026-10-10-split-or-steal\part-1\audio\mix.wav: 47.24 s, -14.03 LUFS, true peak -1.2 dB, 1 music moods, 17 effects, music -21.0 dB under the voice
+2026-10-10T13:54:09.201Z  part 1  sound: done in 13.5 s
+2026-10-10T13:54:09.201Z  part 1  stills: start
+2026-10-10T13:54:09.237Z  part 1  bundle: start
+2026-10-10T13:54:27.433Z  part 1  bundle: done in 18.0 s
+2026-10-10T13:55:06.273Z  part 1    21 stills in runs\2026-10-10-split-or-steal\part-1\stills\16x9
+2026-10-10T13:55:09.036Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-10T13:55:09.567Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-16x9-2.png (9 shots, 3 rows)
+2026-10-10T13:55:09.567Z  part 1  stills: done in 60.4 s
+2026-10-10T13:55:48.337Z  part 1  part 1 of 3, 16:9: 7 scenes, 21 shots
+2026-10-10T13:55:48.338Z  part 1  time: start
+2026-10-10T13:55:48.342Z  part 1    21 shots over 47.2 s: shortest 1.5 s, longest 3.7 s
+2026-10-10T13:55:48.342Z  part 1  time: done in 0.0 s
+2026-10-10T13:55:48.343Z  part 1  sound: start
+2026-10-10T13:55:48.349Z  part 1    mix is already up to date (the plan and the voice have not changed)
+2026-10-10T13:55:48.350Z  part 1  sound: done in 0.0 s
+2026-10-10T13:55:48.350Z  part 1  stills: start
+2026-10-10T13:55:48.368Z  part 1  bundle: start
+2026-10-10T13:55:51.687Z  part 1  bundle: done in 3.3 s
+2026-10-10T13:56:14.290Z  part 1    21 stills in runs\2026-10-10-split-or-steal\part-1\stills\16x9
+2026-10-10T13:56:14.931Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-10T13:56:15.401Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-16x9-2.png (9 shots, 3 rows)
+2026-10-10T13:56:15.401Z  part 1  stills: done in 27.1 s
+2026-10-10T13:56:43.656Z  part 1  part 1 of 3, 16:9: 7 scenes, 21 shots
+2026-10-10T13:56:43.657Z  part 1  time: start
+2026-10-10T13:56:43.663Z  part 1    21 shots over 47.2 s: shortest 1.5 s, longest 3.7 s
+2026-10-10T13:56:43.664Z  part 1  time: done in 0.0 s
+2026-10-10T13:56:43.664Z  part 1  sound: start
+2026-10-10T13:56:43.673Z  part 1    mix is already up to date (the plan and the voice have not changed)
+2026-10-10T13:56:43.674Z  part 1  sound: done in 0.0 s
+2026-10-10T13:56:43.674Z  part 1  stills: start
+2026-10-10T13:56:43.699Z  part 1  bundle: start
+2026-10-10T13:56:46.838Z  part 1  bundle: done in 3.1 s
+2026-10-10T13:57:09.434Z  part 1    21 stills in runs\2026-10-10-split-or-steal\part-1\stills\16x9
+2026-10-10T13:57:10.083Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-10T13:57:10.610Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-16x9-2.png (9 shots, 3 rows)
+2026-10-10T13:57:10.610Z  part 1  stills: done in 26.9 s
+2026-10-10T13:57:33.108Z  part 1  part 1 of 3, 16:9: 7 scenes, 21 shots
+2026-10-10T13:57:33.109Z  part 1  stills: start
+2026-10-10T13:57:33.133Z  part 1  bundle: start
+2026-10-10T13:57:40.732Z  part 1  bundle: done in 7.6 s
+2026-10-10T13:58:59.543Z  part 1    21 stills in runs\2026-10-10-split-or-steal\part-1\stills\16x9
+2026-10-10T13:59:21.153Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-10T13:59:21.836Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-16x9-2.png (9 shots, 3 rows)
+2026-10-10T13:59:21.837Z  part 1  stills: done in 108.7 s
+2026-10-10T13:59:53.596Z  part 1  part 1 of 3, 9:16: 7 scenes, 21 shots
+2026-10-10T13:59:53.598Z  part 1  stills: start
+2026-10-10T13:59:53.842Z  part 1  bundle: start
+2026-10-10T14:00:08.491Z  part 1  bundle: done in 14.6 s
+2026-10-10T14:00:48.905Z  part 1    21 stills in runs\2026-10-10-split-or-steal\part-1\stills\9x16
+2026-10-10T14:00:49.632Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-10T14:00:50.156Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-9x16-2.png (9 shots, 3 rows)
+2026-10-10T14:00:50.156Z  part 1  stills: done in 56.6 s
+2026-10-10T14:02:02.524Z  part 1  part 1 of 3, 16:9: 7 scenes, 21 shots
+2026-10-10T14:02:02.540Z  part 1  time: start
+2026-10-10T14:02:02.565Z  part 1    21 shots over 47.2 s: shortest 1.5 s, longest 3.7 s
+2026-10-10T14:02:02.566Z  part 1  time: done in 0.0 s
+2026-10-10T14:02:02.566Z  part 1  sound: start
+2026-10-10T14:02:02.627Z  part 1    mix is already up to date (the plan and the voice have not changed)
+2026-10-10T14:02:02.628Z  part 1  sound: done in 0.1 s
+2026-10-10T14:02:02.628Z  part 1  stills: start
+2026-10-10T14:02:02.763Z  part 1  bundle: start
+2026-10-10T14:02:14.698Z  part 1  bundle: done in 11.9 s
+2026-10-10T14:03:04.243Z  part 1    21 stills in runs\2026-10-10-split-or-steal\part-1\stills\16x9
+2026-10-10T14:03:07.620Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-10T14:03:08.220Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-16x9-2.png (9 shots, 3 rows)
+2026-10-10T14:03:08.221Z  part 1  stills: done in 65.6 s
+2026-10-10T14:03:08.221Z  part 1  preview: start
+2026-10-10T14:04:19.579Z  part 1    runs\2026-10-10-split-or-steal\part-1\preview\split-or-steal-part-1-16x9-preview-v1.mp4: 47.27 s of video, 960x540, in 70.4 s (1.49 s per video second)
+2026-10-10T14:04:19.583Z  part 1    runs\2026-10-10-split-or-steal\part-1\preview\split-or-steal-part-1-16x9-preview-v1.srt
+2026-10-10T14:04:19.636Z  part 1  preview: done in 71.4 s
+2026-10-10T14:06:42.219Z  part 1  part 1 of 3, 16:9: 7 scenes, 20 shots
+2026-10-10T14:06:42.220Z  part 1  time: start
+2026-10-10T14:06:42.223Z  part 1    20 shots over 47.2 s: shortest 1.5 s, longest 3.7 s
+2026-10-10T14:06:42.224Z  part 1  time: done in 0.0 s
+2026-10-10T14:06:42.224Z  part 1  sound: start
+2026-10-10T14:06:59.381Z  part 1    F:\Video Studio\runs\2026-10-10-split-or-steal\part-1\audio\mix.wav: 47.24 s, -14.03 LUFS, true peak -1.2 dB, 1 music moods, 17 effects, music -21.0 dB under the voice
+2026-10-10T14:06:59.382Z  part 1  sound: done in 17.2 s
+2026-10-10T14:06:59.392Z  part 1  stills: start
+2026-10-10T14:06:59.432Z  part 1  bundle: start
+2026-10-10T14:07:13.727Z  part 1  bundle: done in 14.3 s
+2026-10-10T14:07:50.768Z  part 1    20 stills in runs\2026-10-10-split-or-steal\part-1\stills\16x9
+2026-10-10T14:07:51.462Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-10T14:07:51.916Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-16x9-2.png (8 shots, 3 rows)
+2026-10-10T14:07:51.916Z  part 1  stills: done in 52.5 s
+2026-10-10T14:07:51.916Z  part 1  preview: start
+2026-10-10T14:08:56.340Z  part 1    runs\2026-10-10-split-or-steal\part-1\preview\split-or-steal-part-1-16x9-preview-v2.mp4: 47.27 s of video, 960x540, in 63.5 s (1.34 s per video second)
+2026-10-10T14:08:56.343Z  part 1    runs\2026-10-10-split-or-steal\part-1\preview\split-or-steal-part-1-16x9-preview-v2.srt
+2026-10-10T14:08:56.398Z  part 1  preview: done in 64.5 s
+2026-10-10T14:10:03.020Z  part 1  part 1 of 3, 16:9: 7 scenes, 20 shots
+2026-10-10T14:10:03.021Z  part 1  video: start
+2026-10-10T14:10:03.040Z  part 1  bundle: start
+2026-10-10T14:10:07.599Z  part 1  bundle: done in 4.6 s
+2026-10-10T14:12:04.946Z  part 1    runs\2026-10-10-split-or-steal\part-1\out\split-or-steal-part-1-16x9-v1.mp4: 47.27 s of video, 1920x1080, in 114.7 s (2.43 s per video second)
+2026-10-10T14:12:04.949Z  part 1    runs\2026-10-10-split-or-steal\part-1\out\split-or-steal-part-1-16x9-v1.srt
+2026-10-10T14:12:04.984Z  part 1  video: done in 122.0 s
+2026-10-10T15:14:43.413Z  part 2  part 2 of 3, 16:9: 4 scenes, 11 shots
+2026-10-10T15:14:43.446Z  part 2  voice: start
+2026-10-10T15:17:00.527Z  part 2    voice.wav: 32.85 s, 71 words, timings from kokoro, -17.12 LUFS
+2026-10-10T15:17:00.537Z  part 2  voice: done in 137.1 s
+2026-10-10T15:17:00.537Z  part 2  time: start
+2026-10-10T15:17:00.554Z  part 2    11 shots over 32.9 s: shortest 1.7 s, longest 4.8 s
+2026-10-10T15:17:00.554Z  part 2    note: shot "s4a" is 4.8 s long, a little over the 4 s a shot should take
+2026-10-10T15:17:00.555Z  part 2    note: shot "s4c" is 4.3 s long, a little over the 4 s a shot should take
+2026-10-10T15:17:00.555Z  part 2  time: done in 0.0 s
+2026-10-10T15:17:00.555Z  part 2  sound: start
+2026-10-10T15:17:24.452Z  part 2    F:\Video Studio\runs\2026-10-10-split-or-steal\part-2\audio\mix.wav: 32.85 s, -14.02 LUFS, true peak -1.1 dB, 3 music moods, 7 effects, music -17.0 dB under the voice
+2026-10-10T15:17:24.454Z  part 2  sound: done in 23.9 s
+2026-10-10T15:17:24.456Z  part 2  stills: start
+2026-10-10T15:17:24.521Z  part 2  bundle: start
+2026-10-10T15:17:47.379Z  part 2  bundle: done in 22.8 s
+2026-10-10T15:18:18.580Z  part 2    11 stills in runs\2026-10-10-split-or-steal\part-2\stills\16x9
+2026-10-10T15:18:21.288Z  part 2    runs\2026-10-10-split-or-steal\part-2\stills\sheet-16x9-1.png (11 shots, 4 rows)
+2026-10-10T15:18:21.289Z  part 2  stills: done in 56.8 s
+2026-10-10T15:18:48.986Z  part 2  part 2 of 3, 16:9: 4 scenes, 11 shots
+2026-10-10T15:18:48.987Z  part 2  time: start
+2026-10-10T15:18:48.991Z  part 2    11 shots over 32.9 s: shortest 1.7 s, longest 4.8 s
+2026-10-10T15:18:48.991Z  part 2    note: shot "s4a" is 4.8 s long, a little over the 4 s a shot should take
+2026-10-10T15:18:48.991Z  part 2    note: shot "s4c" is 4.3 s long, a little over the 4 s a shot should take
+2026-10-10T15:18:48.991Z  part 2  time: done in 0.0 s
+2026-10-10T15:18:48.992Z  part 2  sound: start
+2026-10-10T15:18:48.996Z  part 2    mix is already up to date (the plan and the voice have not changed)
+2026-10-10T15:18:48.996Z  part 2  sound: done in 0.0 s
+2026-10-10T15:18:48.997Z  part 2  stills: start
+2026-10-10T15:18:49.010Z  part 2  bundle: start
+2026-10-10T15:18:53.925Z  part 2  bundle: done in 4.9 s
+2026-10-10T15:19:07.393Z  part 2    11 stills in runs\2026-10-10-split-or-steal\part-2\stills\16x9
+2026-10-10T15:19:07.994Z  part 2    runs\2026-10-10-split-or-steal\part-2\stills\sheet-16x9-1.png (11 shots, 4 rows)
+2026-10-10T15:19:07.994Z  part 2  stills: done in 19.0 s
+2026-10-10T15:19:07.994Z  part 2  preview: start
+2026-10-10T15:19:59.809Z  part 2    runs\2026-10-10-split-or-steal\part-2\preview\split-or-steal-part-2-16x9-preview-v1.mp4: 32.87 s of video, 960x540, in 50.9 s (1.55 s per video second)
+2026-10-10T15:19:59.875Z  part 2    runs\2026-10-10-split-or-steal\part-2\preview\split-or-steal-part-2-16x9-preview-v1.srt
+2026-10-10T15:19:59.939Z  part 2  preview: done in 51.9 s
+2026-10-10T15:20:37.220Z  part 2  part 2 of 3, 16:9: 4 scenes, 11 shots
+2026-10-10T15:20:37.222Z  part 2  time: start
+2026-10-10T15:20:37.228Z  part 2    11 shots over 32.9 s: shortest 1.7 s, longest 4.8 s
+2026-10-10T15:20:37.229Z  part 2    note: shot "s4a" is 4.8 s long, a little over the 4 s a shot should take
+2026-10-10T15:20:37.230Z  part 2    note: shot "s4c" is 4.3 s long, a little over the 4 s a shot should take
+2026-10-10T15:20:37.230Z  part 2  time: done in 0.0 s
+2026-10-10T15:20:37.230Z  part 2  sound: start
+2026-10-10T15:20:37.238Z  part 2    mix is already up to date (the plan and the voice have not changed)
+2026-10-10T15:20:37.238Z  part 2  sound: done in 0.0 s
+2026-10-10T15:20:37.239Z  part 2  stills: start
+2026-10-10T15:20:37.261Z  part 2  bundle: start
+2026-10-10T15:20:42.698Z  part 2  bundle: done in 5.4 s
+2026-10-10T15:21:03.793Z  part 2    11 stills in runs\2026-10-10-split-or-steal\part-2\stills\16x9
+2026-10-10T15:21:04.538Z  part 2    runs\2026-10-10-split-or-steal\part-2\stills\sheet-16x9-1.png (11 shots, 4 rows)
+2026-10-10T15:21:04.539Z  part 2  stills: done in 27.3 s
+2026-10-10T15:21:04.539Z  part 2  preview: start
+2026-10-10T15:21:56.253Z  part 2    runs\2026-10-10-split-or-steal\part-2\preview\split-or-steal-part-2-16x9-preview-v2.mp4: 32.87 s of video, 960x540, in 50.7 s (1.54 s per video second)
+2026-10-10T15:21:56.257Z  part 2    runs\2026-10-10-split-or-steal\part-2\preview\split-or-steal-part-2-16x9-preview-v2.srt
+2026-10-10T15:21:56.292Z  part 2  preview: done in 51.8 s
+2026-10-10T15:23:11.870Z  part 2  part 2 of 3, 16:9: 4 scenes, 11 shots
+2026-10-10T15:23:11.872Z  part 2  video: start
+2026-10-10T15:23:11.888Z  part 2  bundle: start
+2026-10-10T15:23:18.085Z  part 2  bundle: done in 6.2 s
+2026-10-10T15:24:50.683Z  part 2    runs\2026-10-10-split-or-steal\part-2\out\split-or-steal-part-2-16x9-v1.mp4: 32.87 s of video, 1920x1080, in 84.0 s (2.55 s per video second)
+2026-10-10T15:24:50.687Z  part 2    runs\2026-10-10-split-or-steal\part-2\out\split-or-steal-part-2-16x9-v1.srt
+2026-10-10T15:24:50.734Z  part 2  video: done in 98.9 s
+2026-10-10T15:34:47.674Z  part 3  part 3 of 3, 16:9: 8 scenes, 19 shots
+2026-10-10T15:34:47.676Z  part 3  voice: start
+2026-10-10T15:36:25.309Z  part 3    voice.wav: 47.37 s, 110 words, timings from kokoro, -17.11 LUFS
+2026-10-10T15:36:25.310Z  part 3  voice: done in 97.6 s
+2026-10-10T15:36:25.310Z  part 3  time: start
+2026-10-10T15:36:25.364Z  part 3    19 shots over 47.4 s: shortest 1.4 s, longest 4.4 s
+2026-10-10T15:36:25.365Z  part 3    note: shot "s5b" is 4.4 s long, a little over the 4 s a shot should take
+2026-10-10T15:36:25.365Z  part 3    note: shot "s5e" is 4.4 s long, a little over the 4 s a shot should take
+2026-10-10T15:36:25.365Z  part 3    note: shot "s5f" is only 1.4 s long
+2026-10-10T15:36:25.365Z  part 3  time: done in 0.1 s
+2026-10-10T15:36:25.366Z  part 3  sound: start
+2026-10-10T15:36:39.773Z  part 3    F:\Video Studio\runs\2026-10-10-split-or-steal\part-3\audio\mix.wav: 47.37 s, -14.03 LUFS, true peak -1.18 dB, 2 music moods, 5 effects, music -17.0 dB under the voice
+2026-10-10T15:36:39.773Z  part 3  sound: done in 14.4 s
+2026-10-10T15:36:39.773Z  part 3  stills: start
+2026-10-10T15:36:39.798Z  part 3  bundle: start
+2026-10-10T15:36:52.688Z  part 3  bundle: done in 12.9 s
+2026-10-10T15:37:31.444Z  part 3    19 stills in runs\2026-10-10-split-or-steal\part-3\stills\16x9
+2026-10-10T15:37:33.721Z  part 3    runs\2026-10-10-split-or-steal\part-3\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-10T15:37:34.157Z  part 3    runs\2026-10-10-split-or-steal\part-3\stills\sheet-16x9-2.png (7 shots, 3 rows)
+2026-10-10T15:37:34.157Z  part 3  stills: done in 54.4 s
+2026-10-10T15:38:41.050Z  part 3  part 3 of 3, 16:9: 8 scenes, 19 shots
+2026-10-10T15:38:41.051Z  part 3  voice: start
+2026-10-10T15:39:40.621Z  part 3    voice.wav: 46.79 s, 110 words, timings from kokoro, -17.11 LUFS
+2026-10-10T15:39:40.631Z  part 3  voice: done in 59.6 s
+2026-10-10T15:39:40.631Z  part 3  time: start
+2026-10-10T15:39:40.681Z  part 3    19 shots over 46.8 s: shortest 1.4 s, longest 4.4 s
+2026-10-10T15:39:40.681Z  part 3    note: shot "s5b" is 4.4 s long, a little over the 4 s a shot should take
+2026-10-10T15:39:40.682Z  part 3    note: shot "s5e" is 4.3 s long, a little over the 4 s a shot should take
+2026-10-10T15:39:40.682Z  part 3    note: shot "s5f" is only 1.4 s long
+2026-10-10T15:39:40.682Z  part 3  time: done in 0.1 s
+2026-10-10T15:39:40.682Z  part 3  sound: start
+2026-10-10T15:39:53.030Z  part 3    F:\Video Studio\runs\2026-10-10-split-or-steal\part-3\audio\mix.wav: 46.79 s, -14.01 LUFS, true peak -1.24 dB, 2 music moods, 5 effects, music -16.9 dB under the voice
+2026-10-10T15:39:53.031Z  part 3  sound: done in 12.3 s
+2026-10-10T15:39:53.031Z  part 3  stills: start
+2026-10-10T15:39:53.087Z  part 3  bundle: start
+2026-10-10T15:40:09.216Z  part 3  bundle: done in 16.1 s
+2026-10-10T15:40:53.775Z  part 3    19 stills in runs\2026-10-10-split-or-steal\part-3\stills\16x9
+2026-10-10T15:40:56.730Z  part 3    runs\2026-10-10-split-or-steal\part-3\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-10T15:40:57.234Z  part 3    runs\2026-10-10-split-or-steal\part-3\stills\sheet-16x9-2.png (7 shots, 3 rows)
+2026-10-10T15:40:57.235Z  part 3  stills: done in 64.2 s
+2026-10-10T15:40:57.235Z  part 3  preview: start
+2026-10-10T15:42:08.193Z  part 3    runs\2026-10-10-split-or-steal\part-3\preview\split-or-steal-part-3-16x9-preview-v1.mp4: 46.80 s of video, 960x540, in 70.0 s (1.50 s per video second)
+2026-10-10T15:42:08.196Z  part 3    runs\2026-10-10-split-or-steal\part-3\preview\split-or-steal-part-3-16x9-preview-v1.srt
+2026-10-10T15:42:08.211Z  part 3  preview: done in 71.0 s
+2026-10-10T15:43:22.236Z  part 3  part 3 of 3, 16:9: 8 scenes, 19 shots
+2026-10-10T15:43:22.237Z  part 3  time: start
+2026-10-10T15:43:22.242Z  part 3    19 shots over 46.8 s: shortest 1.4 s, longest 4.4 s
+2026-10-10T15:43:22.242Z  part 3    note: shot "s5b" is 4.4 s long, a little over the 4 s a shot should take
+2026-10-10T15:43:22.243Z  part 3    note: shot "s5e" is 4.3 s long, a little over the 4 s a shot should take
+2026-10-10T15:43:22.243Z  part 3    note: shot "s5f" is only 1.4 s long
+2026-10-10T15:43:22.243Z  part 3  time: done in 0.0 s
+2026-10-10T15:43:22.244Z  part 3  sound: start
+2026-10-10T15:43:22.249Z  part 3    mix is already up to date (the plan and the voice have not changed)
+2026-10-10T15:43:22.249Z  part 3  sound: done in 0.0 s
+2026-10-10T15:43:22.250Z  part 3  stills: start
+2026-10-10T15:43:22.267Z  part 3  bundle: start
+2026-10-10T15:43:27.371Z  part 3  bundle: done in 5.1 s
+2026-10-10T15:43:48.884Z  part 3    19 stills in runs\2026-10-10-split-or-steal\part-3\stills\16x9
+2026-10-10T15:43:49.567Z  part 3    runs\2026-10-10-split-or-steal\part-3\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-10T15:43:50.027Z  part 3    runs\2026-10-10-split-or-steal\part-3\stills\sheet-16x9-2.png (7 shots, 3 rows)
+2026-10-10T15:43:50.027Z  part 3  stills: done in 27.8 s
+2026-10-10T15:43:50.027Z  part 3  preview: start
+2026-10-10T15:45:01.139Z  part 3    runs\2026-10-10-split-or-steal\part-3\preview\split-or-steal-part-3-16x9-preview-v2.mp4: 46.80 s of video, 960x540, in 70.2 s (1.50 s per video second)
+2026-10-10T15:45:01.143Z  part 3    runs\2026-10-10-split-or-steal\part-3\preview\split-or-steal-part-3-16x9-preview-v2.srt
+2026-10-10T15:45:01.186Z  part 3  preview: done in 71.2 s
+2026-10-10T15:45:28.002Z  part 3  part 3 of 3, 16:9: 8 scenes, 19 shots
+2026-10-10T15:45:28.003Z  part 3  time: start
+2026-10-10T15:45:28.007Z  part 3    19 shots over 46.8 s: shortest 1.4 s, longest 4.4 s
+2026-10-10T15:45:28.007Z  part 3    note: shot "s5b" is 4.4 s long, a little over the 4 s a shot should take
+2026-10-10T15:45:28.008Z  part 3    note: shot "s5e" is 4.3 s long, a little over the 4 s a shot should take
+2026-10-10T15:45:28.008Z  part 3    note: shot "s5f" is only 1.4 s long
+2026-10-10T15:45:28.008Z  part 3  time: done in 0.0 s
+2026-10-10T15:45:28.008Z  part 3  sound: start
+2026-10-10T15:45:28.014Z  part 3    mix is already up to date (the plan and the voice have not changed)
+2026-10-10T15:45:28.014Z  part 3  sound: done in 0.0 s
+2026-10-10T15:45:28.014Z  part 3  stills: start
+2026-10-10T15:45:28.033Z  part 3  bundle: start
+2026-10-10T15:45:32.263Z  part 3  bundle: done in 4.2 s
+2026-10-10T15:45:53.407Z  part 3    19 stills in runs\2026-10-10-split-or-steal\part-3\stills\16x9
+2026-10-10T15:45:54.019Z  part 3    runs\2026-10-10-split-or-steal\part-3\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-10T15:45:54.454Z  part 3    runs\2026-10-10-split-or-steal\part-3\stills\sheet-16x9-2.png (7 shots, 3 rows)
+2026-10-10T15:45:54.455Z  part 3  stills: done in 26.4 s
+2026-10-10T15:45:54.455Z  part 3  preview: start
+2026-10-10T15:46:58.848Z  part 3    runs\2026-10-10-split-or-steal\part-3\preview\split-or-steal-part-3-16x9-preview-v3.mp4: 46.80 s of video, 960x540, in 63.5 s (1.36 s per video second)
+2026-10-10T15:46:58.852Z  part 3    runs\2026-10-10-split-or-steal\part-3\preview\split-or-steal-part-3-16x9-preview-v3.srt
+2026-10-10T15:46:58.865Z  part 3  preview: done in 64.4 s
+2026-10-10T15:48:00.063Z  part 3  part 3 of 3, 16:9: 8 scenes, 19 shots
+2026-10-10T15:48:00.066Z  part 3  video: start
+2026-10-10T15:48:00.103Z  part 3  bundle: start
+2026-10-10T15:48:03.824Z  part 3  bundle: done in 3.7 s
+2026-10-10T15:49:56.585Z  part 3    runs\2026-10-10-split-or-steal\part-3\out\split-or-steal-part-3-16x9-v1.mp4: 46.80 s of video, 1920x1080, in 110.7 s (2.37 s per video second)
+2026-10-10T15:49:56.588Z  part 3    runs\2026-10-10-split-or-steal\part-3\out\split-or-steal-part-3-16x9-v1.srt
+2026-10-10T15:49:56.646Z  part 3  video: done in 116.6 s
+2026-10-10T15:51:22.512Z  output  16:9 full video:
+2026-10-10T15:52:01.576Z  output      F:\Video Studio\runs\2026-10-10-split-or-steal\cuts\full\audio\mix.wav: 126.93 s, -14.03 LUFS, true peak -1.1 dB, 5 music moods, 29 effects, music -18.1 dB under the voice
+2026-10-10T15:54:17.773Z  output    runs\2026-10-10-split-or-steal\out\split-or-steal-16x9-v1.mp4: 126.93 s, 1920x1080
+2026-10-10T15:54:17.773Z  output      ok   The file plays: 1920x1080, 30 pictures a second, 126.9 s, picture and sound both there; played through from start to finish
+2026-10-10T15:54:17.774Z  output      ok   It is as long as its parts together: 126.9 s; its 3 pieces add up to 126.9 s
+2026-10-10T15:54:17.774Z  output      ok   Its pictures are the parts that passed: every frame against split-or-steal-part-1-16x9-v1.mp4 and split-or-steal-part-2-16x9-v1.mp4 and split-or-steal-part-3-16x9-v1.mp4 (the strongest difference is 1 of 255; over 16 would be a different picture)
+2026-10-10T15:54:17.774Z  output      ok   Its sound is the mix made for the whole video: second for second (what is left over is 32 dB under it at most)
+2026-10-10T15:54:17.774Z  output      ok   There is no dead silence: the sound never drops out; the longest pause between words is 2.5 s
+2026-10-10T15:54:17.774Z  output      ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.1 dB (the limit is -1)
+2026-10-10T15:54:17.775Z  output      ok   Nothing drowns the words: 29 sound effects, the loudest of those over words 11 dB under the voice; the music sits 18.1 dB under the voice while someone speaks
+2026-10-10T15:54:17.775Z  output      FIX  Every join and the cover hold up: a strip of frames across each of the 2 joins between parts, and the cover picture
+2026-10-10T15:54:17.775Z  output            problem: the joins and the cover have not been looked at yet
+2026-10-10T15:54:17.775Z  output      to look at: runs\2026-10-10-split-or-steal\out\look\split-or-steal-16x9-v1 (each join) and runs\2026-10-10-split-or-steal\out\split-or-steal-16x9-v1-cover-side.jpg; then write runs\2026-10-10-split-or-steal\out\split-or-steal-16x9-v1.look.json
+2026-10-10T15:54:17.776Z  output  runs\2026-10-10-split-or-steal\delivery.md
+2026-10-10T15:54:55.273Z  output  16:9 full video:
+2026-10-10T15:54:55.698Z  output    runs\2026-10-10-split-or-steal\out\split-or-steal-16x9-v1.mp4: already made from these parts
+2026-10-10T15:55:01.213Z  output      runs\2026-10-10-split-or-steal\out\split-or-steal-16x9-v1-cover-band.jpg
+2026-10-10T15:55:01.214Z  output      FIX  Every join and the cover hold up: the joins and the cover have not been looked at yet
+2026-10-10T15:55:01.337Z  output  runs\2026-10-10-split-or-steal\delivery.md
+2026-10-10T15:55:18.123Z  output  16:9 full video:
+2026-10-10T15:55:18.494Z  output    runs\2026-10-10-split-or-steal\out\split-or-steal-16x9-v1.mp4: already made from these parts
+2026-10-10T15:55:18.615Z  output  runs\2026-10-10-split-or-steal\delivery.md
+2026-10-10T15:59:35.829Z  part 1  part 1 of 3, 9:16: 7 scenes, 20 shots
+2026-10-10T15:59:35.831Z  part 1  stills: start
+2026-10-10T15:59:35.856Z  part 1  bundle: start
+2026-10-10T15:59:40.107Z  part 1  bundle: done in 4.3 s
+2026-10-10T16:00:02.274Z  part 1    20 stills in runs\2026-10-10-split-or-steal\part-1\stills\9x16
+2026-10-10T16:00:02.875Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-10T16:00:03.310Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-9x16-2.png (8 shots, 2 rows)
+2026-10-10T16:00:03.310Z  part 1  stills: done in 27.5 s
+2026-10-10T16:00:06.438Z  part 2  part 2 of 3, 9:16: 4 scenes, 11 shots
+2026-10-10T16:00:06.439Z  part 2  stills: start
+2026-10-10T16:00:06.456Z  part 2  bundle: start
+2026-10-10T16:00:10.801Z  part 2  bundle: done in 4.3 s
+2026-10-10T16:00:24.954Z  part 2    11 stills in runs\2026-10-10-split-or-steal\part-2\stills\9x16
+2026-10-10T16:00:25.643Z  part 2    runs\2026-10-10-split-or-steal\part-2\stills\sheet-9x16-1.png (11 shots, 3 rows)
+2026-10-10T16:00:25.644Z  part 2  stills: done in 19.2 s
+2026-10-10T16:00:28.939Z  part 3  part 3 of 3, 9:16: 8 scenes, 19 shots
+2026-10-10T16:00:28.941Z  part 3  stills: start
+2026-10-10T16:00:28.965Z  part 3  bundle: start
+2026-10-10T16:00:33.289Z  part 3  bundle: done in 4.3 s
+2026-10-10T16:00:54.262Z  part 3    19 stills in runs\2026-10-10-split-or-steal\part-3\stills\9x16
+2026-10-10T16:00:54.928Z  part 3    runs\2026-10-10-split-or-steal\part-3\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-10T16:00:55.338Z  part 3    runs\2026-10-10-split-or-steal\part-3\stills\sheet-9x16-2.png (7 shots, 2 rows)
+2026-10-10T16:00:55.338Z  part 3  stills: done in 26.4 s
+2026-10-10T16:02:33.041Z  part 1  part 1 of 3, 16:9: 7 scenes, 20 shots
+2026-10-10T16:02:33.042Z  part 1  stills: start
+2026-10-10T16:02:33.063Z  part 1  bundle: start
+2026-10-10T16:02:41.835Z  part 1  bundle: done in 8.8 s
+2026-10-10T16:03:03.617Z  part 1    20 stills in runs\2026-10-10-split-or-steal\part-1\stills\16x9
+2026-10-10T16:03:04.234Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-10T16:03:04.681Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-16x9-2.png (8 shots, 3 rows)
+2026-10-10T16:03:04.682Z  part 1  stills: done in 31.6 s
+2026-10-10T16:03:07.904Z  part 3  part 3 of 3, 16:9: 8 scenes, 19 shots
+2026-10-10T16:03:07.906Z  part 3  stills: start
+2026-10-10T16:03:07.929Z  part 3  bundle: start
+2026-10-10T16:03:12.409Z  part 3  bundle: done in 4.5 s
+2026-10-10T16:03:33.431Z  part 3    19 stills in runs\2026-10-10-split-or-steal\part-3\stills\16x9
+2026-10-10T16:03:34.012Z  part 3    runs\2026-10-10-split-or-steal\part-3\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-10T16:03:34.443Z  part 3    runs\2026-10-10-split-or-steal\part-3\stills\sheet-16x9-2.png (7 shots, 3 rows)
+2026-10-10T16:03:34.443Z  part 3  stills: done in 26.5 s
+2026-10-10T16:03:37.782Z  part 1  part 1 of 3, 9:16: 7 scenes, 20 shots
+2026-10-10T16:03:37.784Z  part 1  stills: start
+2026-10-10T16:03:37.810Z  part 1  bundle: start
+2026-10-10T16:03:42.305Z  part 1  bundle: done in 4.5 s
+2026-10-10T16:04:04.659Z  part 1    20 stills in runs\2026-10-10-split-or-steal\part-1\stills\9x16
+2026-10-10T16:04:05.297Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-10T16:04:05.754Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-9x16-2.png (8 shots, 2 rows)
+2026-10-10T16:04:05.754Z  part 1  stills: done in 28.0 s
+2026-10-10T16:04:09.040Z  part 3  part 3 of 3, 9:16: 8 scenes, 19 shots
+2026-10-10T16:04:09.041Z  part 3  stills: start
+2026-10-10T16:04:09.065Z  part 3  bundle: start
+2026-10-10T16:04:12.914Z  part 3  bundle: done in 3.8 s
+2026-10-10T16:04:34.059Z  part 3    19 stills in runs\2026-10-10-split-or-steal\part-3\stills\9x16
+2026-10-10T16:04:34.736Z  part 3    runs\2026-10-10-split-or-steal\part-3\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-10T16:04:35.145Z  part 3    runs\2026-10-10-split-or-steal\part-3\stills\sheet-9x16-2.png (7 shots, 2 rows)
+2026-10-10T16:04:35.145Z  part 3  stills: done in 26.1 s
+2026-10-10T16:05:50.837Z  part 1  part 1 of 3, 9:16: 7 scenes, 20 shots
+2026-10-10T16:05:50.839Z  part 1  time: start
+2026-10-10T16:05:50.844Z  part 1    20 shots over 47.2 s: shortest 1.5 s, longest 3.7 s
+2026-10-10T16:05:50.845Z  part 1  time: done in 0.0 s
+2026-10-10T16:05:50.845Z  part 1  sound: start
+2026-10-10T16:05:50.852Z  part 1    mix is already up to date (the plan and the voice have not changed)
+2026-10-10T16:05:50.852Z  part 1  sound: done in 0.0 s
+2026-10-10T16:05:50.852Z  part 1  stills: start
+2026-10-10T16:05:50.872Z  part 1  bundle: start
+2026-10-10T16:05:55.410Z  part 1  bundle: done in 4.5 s
+2026-10-10T16:06:16.856Z  part 1    20 stills in runs\2026-10-10-split-or-steal\part-1\stills\9x16
+2026-10-10T16:06:17.502Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-10T16:06:17.942Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-9x16-2.png (8 shots, 2 rows)
+2026-10-10T16:06:17.943Z  part 1  stills: done in 27.1 s
+2026-10-10T16:06:17.943Z  part 1  preview: start
+2026-10-10T16:07:20.680Z  part 1    runs\2026-10-10-split-or-steal\part-1\preview\split-or-steal-part-1-9x16-preview-v1.mp4: 47.27 s of video, 540x960, in 61.8 s (1.31 s per video second)
+2026-10-10T16:07:20.683Z  part 1    runs\2026-10-10-split-or-steal\part-1\preview\split-or-steal-part-1-9x16-preview-v1.srt
+2026-10-10T16:07:20.784Z  part 1  preview: done in 62.8 s
+2026-10-10T16:07:39.654Z  part 2  part 2 of 3, 9:16: 4 scenes, 11 shots
+2026-10-10T16:07:39.655Z  part 2  time: start
+2026-10-10T16:07:39.659Z  part 2    11 shots over 32.9 s: shortest 1.7 s, longest 4.8 s
+2026-10-10T16:07:39.659Z  part 2    note: shot "s4a" is 4.8 s long, a little over the 4 s a shot should take
+2026-10-10T16:07:39.660Z  part 2    note: shot "s4c" is 4.3 s long, a little over the 4 s a shot should take
+2026-10-10T16:07:39.660Z  part 2  time: done in 0.0 s
+2026-10-10T16:07:39.660Z  part 2  sound: start
+2026-10-10T16:07:39.666Z  part 2    mix is already up to date (the plan and the voice have not changed)
+2026-10-10T16:07:39.666Z  part 2  sound: done in 0.0 s
+2026-10-10T16:07:39.667Z  part 2  stills: start
+2026-10-10T16:07:39.684Z  part 2  bundle: start
+2026-10-10T16:07:44.727Z  part 2  bundle: done in 5.0 s
+2026-10-10T16:07:57.817Z  part 2    11 stills in runs\2026-10-10-split-or-steal\part-2\stills\9x16
+2026-10-10T16:07:58.585Z  part 2    runs\2026-10-10-split-or-steal\part-2\stills\sheet-9x16-1.png (11 shots, 3 rows)
+2026-10-10T16:07:58.585Z  part 2  stills: done in 18.9 s
+2026-10-10T16:07:58.586Z  part 2  preview: start
+2026-10-10T16:08:41.305Z  part 2    runs\2026-10-10-split-or-steal\part-2\preview\split-or-steal-part-2-9x16-preview-v1.mp4: 32.87 s of video, 540x960, in 41.9 s (1.27 s per video second)
+2026-10-10T16:08:41.308Z  part 2    runs\2026-10-10-split-or-steal\part-2\preview\split-or-steal-part-2-9x16-preview-v1.srt
+2026-10-10T16:08:41.341Z  part 2  preview: done in 42.8 s
+2026-10-10T16:08:54.610Z  part 3  part 3 of 3, 9:16: 8 scenes, 19 shots
+2026-10-10T16:08:54.611Z  part 3  time: start
+2026-10-10T16:08:54.616Z  part 3    19 shots over 46.8 s: shortest 1.4 s, longest 4.4 s
+2026-10-10T16:08:54.616Z  part 3    note: shot "s5b" is 4.4 s long, a little over the 4 s a shot should take
+2026-10-10T16:08:54.616Z  part 3    note: shot "s5e" is 4.3 s long, a little over the 4 s a shot should take
+2026-10-10T16:08:54.617Z  part 3    note: shot "s5f" is only 1.4 s long
+2026-10-10T16:08:54.617Z  part 3  time: done in 0.0 s
+2026-10-10T16:08:54.617Z  part 3  sound: start
+2026-10-10T16:08:54.624Z  part 3    mix is already up to date (the plan and the voice have not changed)
+2026-10-10T16:08:54.624Z  part 3  sound: done in 0.0 s
+2026-10-10T16:08:54.625Z  part 3  stills: start
+2026-10-10T16:08:54.644Z  part 3  bundle: start
+2026-10-10T16:08:59.239Z  part 3  bundle: done in 4.6 s
+2026-10-10T16:09:20.137Z  part 3    19 stills in runs\2026-10-10-split-or-steal\part-3\stills\9x16
+2026-10-10T16:09:20.795Z  part 3    runs\2026-10-10-split-or-steal\part-3\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-10T16:09:21.206Z  part 3    runs\2026-10-10-split-or-steal\part-3\stills\sheet-9x16-2.png (7 shots, 2 rows)
+2026-10-10T16:09:21.206Z  part 3  stills: done in 26.6 s
+2026-10-10T16:09:21.206Z  part 3  preview: start
+2026-10-10T16:10:24.599Z  part 3    runs\2026-10-10-split-or-steal\part-3\preview\split-or-steal-part-3-9x16-preview-v1.mp4: 46.80 s of video, 540x960, in 62.5 s (1.34 s per video second)
+2026-10-10T16:10:24.603Z  part 3    runs\2026-10-10-split-or-steal\part-3\preview\split-or-steal-part-3-9x16-preview-v1.srt
+2026-10-10T16:10:24.730Z  part 3  preview: done in 63.5 s
+2026-10-10T16:12:27.144Z  part 3  part 3 of 3, 9:16: 8 scenes, 19 shots
+2026-10-10T16:12:27.145Z  part 3  time: start
+2026-10-10T16:12:27.150Z  part 3    19 shots over 46.8 s: shortest 1.4 s, longest 4.4 s
+2026-10-10T16:12:27.150Z  part 3    note: shot "s5b" is 4.4 s long, a little over the 4 s a shot should take
+2026-10-10T16:12:27.150Z  part 3    note: shot "s5e" is 4.3 s long, a little over the 4 s a shot should take
+2026-10-10T16:12:27.151Z  part 3    note: shot "s5f" is only 1.4 s long
+2026-10-10T16:12:27.151Z  part 3  time: done in 0.0 s
+2026-10-10T16:12:27.151Z  part 3  sound: start
+2026-10-10T16:12:27.158Z  part 3    mix is already up to date (the plan and the voice have not changed)
+2026-10-10T16:12:27.159Z  part 3  sound: done in 0.0 s
+2026-10-10T16:12:27.159Z  part 3  stills: start
+2026-10-10T16:12:27.180Z  part 3  bundle: start
+2026-10-10T16:12:31.879Z  part 3  bundle: done in 4.7 s
+2026-10-10T16:12:52.527Z  part 3    19 stills in runs\2026-10-10-split-or-steal\part-3\stills\9x16
+2026-10-10T16:12:53.189Z  part 3    runs\2026-10-10-split-or-steal\part-3\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-10T16:12:53.609Z  part 3    runs\2026-10-10-split-or-steal\part-3\stills\sheet-9x16-2.png (7 shots, 2 rows)
+2026-10-10T16:12:53.609Z  part 3  stills: done in 26.4 s
+2026-10-10T16:12:53.610Z  part 3  preview: start
+2026-10-10T16:13:58.580Z  part 3    runs\2026-10-10-split-or-steal\part-3\preview\split-or-steal-part-3-9x16-preview-v2.mp4: 46.80 s of video, 540x960, in 64.1 s (1.37 s per video second)
+2026-10-10T16:13:58.586Z  part 3    runs\2026-10-10-split-or-steal\part-3\preview\split-or-steal-part-3-9x16-preview-v2.srt
+2026-10-10T16:13:58.630Z  part 3  preview: done in 65.0 s
+2026-10-10T16:14:43.988Z  part 1  part 1 of 3, 9:16: 7 scenes, 20 shots
+2026-10-10T16:14:43.989Z  part 1  video: start
+2026-10-10T16:14:44.011Z  part 1  bundle: start
+2026-10-10T16:14:49.278Z  part 1  bundle: done in 5.3 s
+2026-10-10T16:16:33.700Z  part 1    runs\2026-10-10-split-or-steal\part-1\out\split-or-steal-part-1-9x16-v1.mp4: 47.27 s of video, 1080x1920, in 102.6 s (2.17 s per video second)
+2026-10-10T16:16:33.703Z  part 1    runs\2026-10-10-split-or-steal\part-1\out\split-or-steal-part-1-9x16-v1.srt
+2026-10-10T16:16:33.835Z  part 1  video: done in 109.8 s
+2026-10-10T16:17:10.985Z  part 2  part 2 of 3, 9:16: 4 scenes, 11 shots
+2026-10-10T16:17:10.986Z  part 2  video: start
+2026-10-10T16:17:11.002Z  part 2  bundle: start
+2026-10-10T16:17:16.052Z  part 2  bundle: done in 5.0 s
+2026-10-10T16:18:30.283Z  part 2    runs\2026-10-10-split-or-steal\part-2\out\split-or-steal-part-2-9x16-v1.mp4: 32.87 s of video, 1080x1920, in 72.1 s (2.19 s per video second)
+2026-10-10T16:18:30.287Z  part 2    runs\2026-10-10-split-or-steal\part-2\out\split-or-steal-part-2-9x16-v1.srt
+2026-10-10T16:18:30.393Z  part 2  video: done in 79.4 s
+2026-10-10T16:18:58.549Z  part 3  part 3 of 3, 9:16: 8 scenes, 19 shots
+2026-10-10T16:18:58.550Z  part 3  video: start
+2026-10-10T16:18:58.570Z  part 3  bundle: start
+2026-10-10T16:19:03.014Z  part 3  bundle: done in 4.4 s
+2026-10-10T16:20:50.647Z  part 3    runs\2026-10-10-split-or-steal\part-3\out\split-or-steal-part-3-9x16-v1.mp4: 46.80 s of video, 1080x1920, in 105.0 s (2.24 s per video second)
+2026-10-10T16:20:50.651Z  part 3    runs\2026-10-10-split-or-steal\part-3\out\split-or-steal-part-3-9x16-v1.srt
+2026-10-10T16:20:50.781Z  part 3  video: done in 112.2 s
+2026-10-10T16:24:18.509Z  output  9:16 full video:
+2026-10-10T16:24:18.903Z  output      mix is already up to date (the plan and the voice have not changed)
+2026-10-10T16:26:31.441Z  output    runs\2026-10-10-split-or-steal\out\split-or-steal-9x16-v1.mp4: 126.93 s, 1080x1920
+2026-10-10T16:26:31.441Z  output      ok   The file plays: 1080x1920, 30 pictures a second, 126.9 s, picture and sound both there; played through from start to finish
+2026-10-10T16:26:31.442Z  output      ok   It is as long as its parts together: 126.9 s; its 3 pieces add up to 126.9 s
+2026-10-10T16:26:31.442Z  output      ok   Its pictures are the parts that passed: every frame against split-or-steal-part-1-9x16-v1.mp4 and split-or-steal-part-2-9x16-v1.mp4 and split-or-steal-part-3-9x16-v1.mp4 (the strongest difference is 1 of 255; over 16 would be a different picture)
+2026-10-10T16:26:31.442Z  output      ok   Its sound is the mix made for the whole video: second for second (what is left over is 32 dB under it at most)
+2026-10-10T16:26:31.548Z  output      ok   There is no dead silence: the sound never drops out; the longest pause between words is 2.5 s
+2026-10-10T16:26:31.549Z  output      ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.1 dB (the limit is -1)
+2026-10-10T16:26:31.549Z  output      ok   Nothing drowns the words: 29 sound effects, the loudest of those over words 11 dB under the voice; the music sits 18.1 dB under the voice while someone speaks
+2026-10-10T16:26:31.549Z  output      FIX  Every join and the cover hold up: a strip of frames across each of the 2 joins between parts, and the cover picture
+2026-10-10T16:26:31.550Z  output            problem: the joins and the cover have not been looked at yet
+2026-10-10T16:26:31.550Z  output      to look at: runs\2026-10-10-split-or-steal\out\look\split-or-steal-9x16-v1 (each join) and runs\2026-10-10-split-or-steal\out\split-or-steal-9x16-v1-cover-band.jpg; then write runs\2026-10-10-split-or-steal\out\split-or-steal-9x16-v1.look.json
+2026-10-10T16:26:31.551Z  output  runs\2026-10-10-split-or-steal\delivery.md
+2026-10-10T16:26:55.341Z  output  9:16 full video:
+2026-10-10T16:26:55.709Z  output    runs\2026-10-10-split-or-steal\out\split-or-steal-9x16-v1.mp4: already made from these parts
+2026-10-10T16:26:55.825Z  output  runs\2026-10-10-split-or-steal\delivery.md
+2026-10-10T16:26:58.560Z  part 1  part 1 of 3, 16:9: 7 scenes, 20 shots
+2026-10-10T16:26:58.561Z  part 1  video: start
+2026-10-10T16:26:58.583Z  part 1  bundle: start
+2026-10-10T16:27:01.911Z  part 1  bundle: done in 3.3 s
+2026-10-10T16:28:50.347Z  part 1    runs\2026-10-10-split-or-steal\part-1\out\split-or-steal-part-1-16x9-v2.mp4: 47.27 s of video, 1920x1080, in 106.8 s (2.26 s per video second)
+2026-10-10T16:28:50.351Z  part 1    runs\2026-10-10-split-or-steal\part-1\out\split-or-steal-part-1-16x9-v2.srt
+2026-10-10T16:28:50.449Z  part 1  video: done in 111.9 s
+2026-10-10T16:29:19.273Z  part 2  part 2 of 3, 16:9: 4 scenes, 11 shots
+2026-10-10T16:29:19.275Z  part 2  video: start
+2026-10-10T16:29:19.297Z  part 2  bundle: start
+2026-10-10T16:29:24.078Z  part 2  bundle: done in 4.8 s
+2026-10-10T16:30:41.466Z  part 2    runs\2026-10-10-split-or-steal\part-2\out\split-or-steal-part-2-16x9-v2.mp4: 32.87 s of video, 1920x1080, in 75.6 s (2.30 s per video second)
+2026-10-10T16:30:41.472Z  part 2    runs\2026-10-10-split-or-steal\part-2\out\split-or-steal-part-2-16x9-v2.srt
+2026-10-10T16:30:42.088Z  part 2  video: done in 82.8 s
+2026-10-10T16:31:02.883Z  part 3  part 3 of 3, 16:9: 8 scenes, 19 shots
+2026-10-10T16:31:02.885Z  part 3  stills: start
+2026-10-10T16:31:02.911Z  part 3  bundle: start
+2026-10-10T16:31:07.902Z  part 3  bundle: done in 5.0 s
+2026-10-10T16:31:28.714Z  part 3    19 stills in runs\2026-10-10-split-or-steal\part-3\stills\16x9
+2026-10-10T16:31:29.303Z  part 3    runs\2026-10-10-split-or-steal\part-3\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-10T16:31:29.744Z  part 3    runs\2026-10-10-split-or-steal\part-3\stills\sheet-16x9-2.png (7 shots, 3 rows)
+2026-10-10T16:31:29.745Z  part 3  stills: done in 26.9 s
+2026-10-10T16:31:29.745Z  part 3  preview: start
+2026-10-10T16:32:35.391Z  part 3    runs\2026-10-10-split-or-steal\part-3\preview\split-or-steal-part-3-16x9-preview-v4.mp4: 46.80 s of video, 960x540, in 64.8 s (1.38 s per video second)
+2026-10-10T16:32:35.395Z  part 3    runs\2026-10-10-split-or-steal\part-3\preview\split-or-steal-part-3-16x9-preview-v4.srt
+2026-10-10T16:32:35.544Z  part 3  preview: done in 65.8 s
+2026-10-10T16:34:45.408Z  part 3  part 3 of 3, 16:9: 8 scenes, 19 shots
+2026-10-10T16:34:45.409Z  part 3  video: start
+2026-10-10T16:34:45.432Z  part 3  bundle: start
+2026-10-10T16:34:49.217Z  part 3  bundle: done in 3.8 s
+2026-10-10T16:36:39.538Z  part 3    runs\2026-10-10-split-or-steal\part-3\out\split-or-steal-part-3-16x9-v2.mp4: 46.80 s of video, 1920x1080, in 108.6 s (2.32 s per video second)
+2026-10-10T16:36:39.541Z  part 3    runs\2026-10-10-split-or-steal\part-3\out\split-or-steal-part-3-16x9-v2.srt
+2026-10-10T16:36:39.644Z  part 3  video: done in 114.2 s
+2026-10-10T16:37:12.047Z  output  16:9 full video:
+2026-10-10T16:37:12.426Z  output      mix is already up to date (the plan and the voice have not changed)
+2026-10-10T16:40:08.080Z  output    runs\2026-10-10-split-or-steal\out\split-or-steal-16x9-v2.mp4: 126.93 s, 1920x1080
+2026-10-10T16:40:08.081Z  output      ok   The file plays: 1920x1080, 30 pictures a second, 126.9 s, picture and sound both there; played through from start to finish
+2026-10-10T16:40:08.081Z  output      ok   It is as long as its parts together: 126.9 s; its 3 pieces add up to 126.9 s
+2026-10-10T16:40:08.082Z  output      ok   Its pictures are the parts that passed: every frame against split-or-steal-part-1-16x9-v2.mp4 and split-or-steal-part-2-16x9-v2.mp4 and split-or-steal-part-3-16x9-v2.mp4 (the strongest difference is 1 of 255; over 16 would be a different picture)
+2026-10-10T16:40:08.082Z  output      ok   Its sound is the mix made for the whole video: second for second (what is left over is 32 dB under it at most)
+2026-10-10T16:40:08.190Z  output      ok   There is no dead silence: the sound never drops out; the longest pause between words is 2.5 s
+2026-10-10T16:40:08.191Z  output      ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.1 dB (the limit is -1)
+2026-10-10T16:40:08.191Z  output      ok   Nothing drowns the words: 29 sound effects, the loudest of those over words 11 dB under the voice; the music sits 18.1 dB under the voice while someone speaks
+2026-10-10T16:40:08.192Z  output      FIX  Every join and the cover hold up: a strip of frames across each of the 2 joins between parts, and the cover picture
+2026-10-10T16:40:08.192Z  output            problem: the joins and the cover have not been looked at yet
+2026-10-10T16:40:08.192Z  output      to look at: runs\2026-10-10-split-or-steal\out\look\split-or-steal-16x9-v2 (each join) and runs\2026-10-10-split-or-steal\out\split-or-steal-16x9-v2-cover-band.jpg; then write runs\2026-10-10-split-or-steal\out\split-or-steal-16x9-v2.look.json
+2026-10-10T16:40:08.193Z  output  9:16 full video:
+2026-10-10T16:40:08.985Z  output    runs\2026-10-10-split-or-steal\out\split-or-steal-9x16-v1.mp4: already made from these parts
+2026-10-10T16:40:09.150Z  output  runs\2026-10-10-split-or-steal\delivery.md
+2026-10-10T16:41:24.889Z  output  16:9 full video:
+2026-10-10T16:41:25.264Z  output    runs\2026-10-10-split-or-steal\out\split-or-steal-16x9-v2.mp4: already made from these parts
+2026-10-10T16:41:25.396Z  output  9:16 full video:
+2026-10-10T16:41:25.780Z  output    runs\2026-10-10-split-or-steal\out\split-or-steal-9x16-v1.mp4: already made from these parts
+2026-10-10T16:41:25.911Z  output  runs\2026-10-10-split-or-steal\delivery.md
+2026-10-11T03:55:43.212Z  part 1  part 1 of 3, 9:16: 7 scenes, 20 shots
+2026-10-11T03:55:43.227Z  part 1  stills: start
+2026-10-11T03:55:43.592Z  part 1  bundle: start
+2026-10-11T03:56:46.122Z  part 1  bundle: done in 62.5 s
+2026-10-11T03:58:02.084Z  part 1    20 stills in runs\2026-10-10-split-or-steal\part-1\stills\9x16
+2026-10-11T03:58:07.943Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-11T03:58:09.607Z  part 1    runs\2026-10-10-split-or-steal\part-1\stills\sheet-9x16-2.png (8 shots, 2 rows)
+2026-10-11T03:58:09.609Z  part 1  stills: done in 146.4 s
+2026-10-11T03:59:27.656Z  part 1  part 1 of 3, 9:16: 7 scenes, 20 shots
+2026-10-11T03:59:27.663Z  part 1  preview: start
+2026-10-11T03:59:28.087Z  part 1  bundle: start
+2026-10-11T03:59:47.015Z  part 1  bundle: done in 18.9 s
+2026-10-11T04:02:19.454Z  part 1    runs\2026-10-10-split-or-steal\part-1\preview\split-or-steal-part-1-9x16-preview-v2.mp4: 47.27 s of video, 540x960, in 135.9 s (2.87 s per video second)
+2026-10-11T04:02:19.519Z  part 1    runs\2026-10-10-split-or-steal\part-1\preview\split-or-steal-part-1-9x16-preview-v2.srt
+2026-10-11T04:02:19.805Z  part 1  preview: done in 172.1 s
+2026-10-11T04:18:34.122Z  part 1  part 1 of 3, 9:16: 7 scenes, 20 shots
+2026-10-11T04:18:34.142Z  part 1  video: start
+2026-10-11T04:18:34.197Z  part 1  bundle: start
+2026-10-11T04:18:49.833Z  part 1  bundle: done in 15.6 s
+2026-10-11T04:20:54.276Z  part 1    runs\2026-10-10-split-or-steal\part-1\out\split-or-steal-part-1-9x16-v2.mp4: 47.27 s of video, 1080x1920, in 110.8 s (2.34 s per video second)
+2026-10-11T04:20:54.282Z  part 1    runs\2026-10-10-split-or-steal\part-1\out\split-or-steal-part-1-9x16-v2.srt
+2026-10-11T04:20:54.605Z  part 1  video: done in 140.5 s

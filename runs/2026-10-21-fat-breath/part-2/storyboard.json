@@ -1,0 +1,439 @@
+{
+  "version": 1,
+  "title": "Where Does Your Fat Go When You Lose Weight?",
+  "request": "Biku's What's the Catch? Short, used as it is: 'this is the script build for this script' (2026-10-21). The first Short in the new look: drawing at the black-hole bar, the mascot (design 1) blended in (look C), narrator voice 4.",
+  "mode": "as-is",
+  "format": "fine-print",
+  "style": "ink-stick",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "seed": 43672,
+  "finish": {
+    "acting": "snappy",
+    "onTwos": false,
+    "shadows": false,
+    "grain": 0.2,
+    "vignette": 0.12,
+    "boil": 0.25
+  },
+  "explainerLook": "world",
+  "score": {
+    "palette": "body"
+  },
+  "sources": [
+    "Meerman, R. and Brown, A. J., \"When somebody loses weight, where does the fat go?\", BMJ, 2014, 349: g7257. 10 kg of fat needs 29 kg of oxygen and becomes 28 kg of carbon dioxide and 11 kg of water; 84% leaves through the lungs, 16% as water; a survey of 150 doctors, dietitians and personal trainers, with the common wrong answers (energy, heat, muscle, faeces). https://doi.org/10.1136/bmj.g7257",
+    "UNSW press release, \"When you lose weight, where does the fat go?\", via ScienceDaily, 2014. https://www.sciencedaily.com/releases/2014/12/141216212047.htm",
+    "AsianScientist, \"Where Did The Fat Go?\", 2014. Breathing more on its own does not make you lose weight.",
+    "NPR, \"When You Burn Off That Fat, Where Does It Go?\", 2014. The 84% to 16% split; the water leaves as urine, sweat and other body fluids.",
+    "Checked by Claude on 2026-10-21: of the 150 asked, only 3 gave the right answer, so \"more than half got it wrong\" is true and milder than the source; kept as Biku wrote it."
+  ],
+  "appliedLessons": [],
+  "cast": [],
+  "scenes": [
+    {
+      "id": "s4",
+      "chapter": 1,
+      "beat": "follow-the-money",
+      "mood": "upbeat",
+      "quiet": false,
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l08",
+          "speaker": "narrator",
+          "text": "One kilo of fat needs nearly three kilos of oxygen, so your lungs do the heavy *lifting*.",
+          "pauseAfterMs": 900
+        },
+        {
+          "id": "l09",
+          "speaker": "narrator",
+          "text": "Your body pulls the oil apart and joins each piece to that *oxygen*.",
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "l10",
+          "speaker": "narrator",
+          "text": "Only two leftovers come out: water, and carbon dioxide, the gas that fizzes in *soda*.",
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "l11",
+          "speaker": "narrator",
+          "text": "That gas slips into your blood and rides it all the way up to your *lungs*.",
+          "pauseAfterMs": 600
+        }
+      ],
+      "shots": [
+        {
+          "id": "s09",
+          "line": "l08",
+          "words": "One kilo of fat needs nearly three kilos of oxygen, so your lungs do the heavy *lifting*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "from": "nose",
+            "at": "lungs",
+            "fly": "start",
+            "keep": [
+              "cells",
+              "oil",
+              "inhale"
+            ],
+            "show": [
+              {
+                "item": "barbell",
+                "on": "lifting"
+              }
+            ],
+            "callout": {
+              "value": "2.9 KG",
+              "caption": "OXYGEN PER / KILO OF FAT",
+              "at": "lungs",
+              "on": "three"
+            }
+          },
+          "ambience": "underwater",
+          "transition": "cut",
+          "startMs": 0,
+          "endMs": 6980
+        },
+        {
+          "id": "s10",
+          "line": "l09",
+          "words": "Your body pulls the oil apart and joins each piece to that *oxygen*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "from": "lungs",
+            "at": "pieces",
+            "fly": "start",
+            "keep": [
+              "cells",
+              "oil"
+            ],
+            "show": [
+              {
+                "item": "apart",
+                "on": "apart"
+              },
+              {
+                "item": "joins",
+                "on": "joins"
+              }
+            ]
+          },
+          "ambience": "underwater",
+          "transition": "cut",
+          "startMs": 6980,
+          "endMs": 11740
+        },
+        {
+          "id": "s11",
+          "line": "l10",
+          "words": "Only two leftovers come out: water, and carbon dioxide, the gas that fizzes in *soda*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "bubbles",
+              "at": "end",
+              "gainDb": -4
+            }
+          ],
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "from": "pieces",
+            "at": "leftovers",
+            "fly": "start",
+            "keep": [
+              "cells",
+              "oil",
+              "apart",
+              "joins"
+            ],
+            "show": [
+              {
+                "item": "water",
+                "on": "water"
+              },
+              {
+                "item": "gas",
+                "on": "carbon"
+              },
+              {
+                "item": "soda",
+                "on": "soda"
+              }
+            ]
+          },
+          "ambience": "underwater",
+          "transition": "cut",
+          "startMs": 11740,
+          "endMs": 18170
+        },
+        {
+          "id": "s12",
+          "line": "l11",
+          "words": "That gas slips into your blood and rides it all the way up to your *lungs*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "from": "leftovers",
+            "at": "blood",
+            "fly": "whole",
+            "keep": [
+              "cells",
+              "oil",
+              "apart",
+              "joins",
+              "water",
+              "gas",
+              "soda"
+            ],
+            "show": [
+              {
+                "item": "blood",
+                "on": "blood"
+              },
+              {
+                "item": "lungs-in",
+                "on": "lungs"
+              }
+            ]
+          },
+          "ambience": "underwater",
+          "transition": "cut",
+          "startMs": 18170,
+          "endMs": 23090
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chapter": 1,
+      "beat": "the-trick",
+      "mood": "curious",
+      "quiet": false,
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l12",
+          "speaker": "narrator",
+          "text": "And then, with your next breath, it floats right out of your *mouth*.",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l13",
+          "speaker": "narrator",
+          "text": "Out of every kilo you lose, about eight hundred and forty grams leaves as *breath*.",
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "l14",
+          "speaker": "narrator",
+          "text": "The other hundred and sixty grams becomes water, and leaves as *sweat* and pee.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l15",
+          "speaker": "narrator",
+          "text": "So the gym is really where you go to exhale your *burger*.",
+          "pauseAfterMs": 1000
+        }
+      ],
+      "shots": [
+        {
+          "id": "s13",
+          "line": "l12",
+          "words": "And then, with your next breath, it floats right out of your *mouth*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "whoosh",
+              "at": "start",
+              "gainDb": -2
+            }
+          ],
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "from": "blood",
+            "at": "cloud",
+            "fly": "start",
+            "keep": [
+              "cells",
+              "blood",
+              "lungs-in"
+            ],
+            "show": [
+              {
+                "item": "exhale",
+                "on": "mouth"
+              }
+            ]
+          },
+          "ambience": "home",
+          "drop": true,
+          "transition": "cut",
+          "startMs": 23090,
+          "endMs": 27310
+        },
+        {
+          "id": "s14",
+          "line": "l13",
+          "words": "Out of every kilo you lose, about eight hundred and forty grams leaves as *breath*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "at": "cloud",
+            "fly": "start",
+            "keep": [
+              "exhale"
+            ],
+            "show": [],
+            "callout": {
+              "value": "840 G",
+              "caption": "BREATHED OUT",
+              "at": "cloud",
+              "on": "eight"
+            }
+          },
+          "ambience": "home",
+          "transition": "cut",
+          "startMs": 27310,
+          "endMs": 32770
+        },
+        {
+          "id": "s15",
+          "line": "l14",
+          "words": "The other hundred and sixty grams becomes water, and leaves as *sweat* and pee.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "from": "cloud",
+            "at": "sweat",
+            "fly": "start",
+            "keep": [
+              "exhale"
+            ],
+            "show": [
+              {
+                "item": "sweat",
+                "on": "sweat"
+              },
+              {
+                "item": "pee",
+                "on": "pee"
+              }
+            ],
+            "callout": {
+              "value": "160 G",
+              "caption": "LEAVES AS WATER",
+              "at": "sweat",
+              "on": "hundred"
+            }
+          },
+          "ambience": "home",
+          "transition": "cut",
+          "startMs": 32770,
+          "endMs": 38010
+        },
+        {
+          "id": "s16",
+          "line": "l15",
+          "words": "So the gym is really where you go to exhale your *burger*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "body",
+            "from": "sweat",
+            "at": "gym",
+            "fly": "start",
+            "keep": [],
+            "show": [
+              {
+                "item": "burgers",
+                "on": "burger"
+              }
+            ]
+          },
+          "ambience": "home",
+          "transition": "cut",
+          "startMs": 38010,
+          "endMs": 43380
+        }
+      ]
+    }
+  ]
+}

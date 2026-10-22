@@ -1,0 +1,307 @@
+{
+  "version": 1,
+  "title": "Could Humans Evolve to Hold Their Breath Like Seals?",
+  "part": 2,
+  "parts": 3,
+  "size": "16:9",
+  "video": "seal-breath-part-2-16x9-v2.mp4",
+  "seconds": 35.033333,
+  "checkedOn": "2026-10-20",
+  "checks": [
+    {
+      "id": "plays",
+      "title": "The file plays",
+      "by": "measured",
+      "detail": "1920x1080, 30 pictures a second, 35.0 s, picture and sound both there; played through from start to finish",
+      "findings": []
+    },
+    {
+      "id": "made-from",
+      "title": "The video is of this plan and this sound",
+      "by": "measured",
+      "detail": "rendered from the plan as it stands; its sound is the mix as it stands, second for second (what is left over is 37 dB under it at most)",
+      "findings": []
+    },
+    {
+      "id": "length",
+      "title": "The length is right",
+      "by": "measured",
+      "detail": "35.0 s; a part may be up to 60 s",
+      "findings": []
+    },
+    {
+      "id": "in-step",
+      "title": "Picture and voice are in step",
+      "by": "measured",
+      "detail": "8 shots end to end with no gap, each line heard while its own pictures are on screen; picture and voice end together at 35.0 s",
+      "findings": []
+    },
+    {
+      "id": "silence",
+      "title": "There is no dead silence",
+      "by": "measured",
+      "detail": "the sound never drops out; the longest pause between words is 0.6 s",
+      "findings": []
+    },
+    {
+      "id": "loudness",
+      "title": "The sound is at the right level",
+      "by": "measured",
+      "detail": "loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.1 dB (the limit is -1)",
+      "findings": []
+    },
+    {
+      "id": "words-heard",
+      "title": "Nothing drowns the words",
+      "by": "measured",
+      "detail": "24 sound effects, the loudest of those over words 15 dB under the voice; the music sits 16.9 dB under the voice while someone speaks",
+      "findings": []
+    },
+    {
+      "id": "captions",
+      "title": "Captions fit the screen",
+      "by": "measured",
+      "detail": "17 captions of one line; the widest takes 70% of the width; the briefest stays up 1.2 s",
+      "findings": []
+    },
+    {
+      "id": "in-frame",
+      "title": "Everyone is inside the picture",
+      "by": "measured",
+      "detail": "where every head lands on screen, on all 1051 frames of the 8 shots",
+      "findings": []
+    },
+    {
+      "id": "things-in-frame",
+      "title": "The things a shot shows are inside the picture",
+      "by": "measured",
+      "detail": "no shot of this part has a thing standing or hanging in it",
+      "findings": []
+    },
+    {
+      "id": "faces-clear",
+      "title": "No face is under the title or the captions",
+      "by": "measured",
+      "detail": "every face against the title, any label, the captions, on every frame",
+      "findings": []
+    },
+    {
+      "id": "feet",
+      "title": "Feet are on the ground",
+      "by": "measured",
+      "detail": "the lowest foot or knee of every body against the ground line, on every frame",
+      "findings": []
+    },
+    {
+      "id": "smooth",
+      "title": "Nothing jumps",
+      "by": "measured",
+      "detail": "nobody changes pose",
+      "findings": []
+    },
+    {
+      "id": "held",
+      "title": "No picture is held too long",
+      "by": "measured",
+      "detail": "the longest shot is 7.3 s (s19); the longest with nothing moving in it is 7.3 s",
+      "findings": [
+        {
+          "level": "note",
+          "shot": "s12",
+          "atMs": 0,
+          "text": "one picture is held for 4.8 s with nothing moving in it but breathing and blinking"
+        },
+        {
+          "level": "note",
+          "shot": "s14",
+          "atMs": 7066,
+          "text": "one picture is held for 5.0 s with nothing moving in it but breathing and blinking"
+        },
+        {
+          "level": "note",
+          "shot": "s15",
+          "atMs": 12100,
+          "text": "one picture is held for 5.3 s with nothing moving in it but breathing and blinking"
+        },
+        {
+          "level": "note",
+          "shot": "s18",
+          "atMs": 23000,
+          "text": "one picture is held for 4.8 s with nothing moving in it but breathing and blinking"
+        },
+        {
+          "level": "note",
+          "shot": "s19",
+          "atMs": 27766,
+          "text": "the shot stays for 7.3 s, a little over the 7 s a shot should take"
+        }
+      ]
+    },
+    {
+      "id": "reach",
+      "title": "Whatever is picked up is within reach",
+      "by": "measured",
+      "detail": "nobody takes a thing in their hand inside a shot",
+      "findings": []
+    },
+    {
+      "id": "empty-picture",
+      "title": "The picture is never empty",
+      "by": "measured",
+      "detail": "350 frames measured, 10 a second; the longest nearly empty stretch is 0.4 s (more than 0.5 s is a problem)",
+      "findings": []
+    },
+    {
+      "id": "still-picture",
+      "title": "The picture keeps moving",
+      "by": "measured",
+      "detail": "350 frames measured, 10 a second; the longest stretch with the picture nearly still is 0.0 s (more than 3 s is a problem)",
+      "findings": []
+    },
+    {
+      "id": "plan",
+      "title": "The plan's own checks still pass",
+      "by": "measured",
+      "detail": "every name in the library, the staging rules, the format's beats, for all 28 shots of the video",
+      "findings": [
+        {
+          "level": "note",
+          "text": "the first shot \"s01\" holds still; a Short is judged in its first second: give it a camera move (push-in, drift) or someone moving"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s02\" is the same picture as \"s01\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "four wide shots in a row from \"s01\"; vary the shot size"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s04\" is the same picture as \"s03\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s06\" is the same picture as \"s05\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s07\" is the same picture as \"s06\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s08\" is the same picture as \"s07\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s09\" is the same picture as \"s08\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s10\" is the same picture as \"s09\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s11\" is the same picture as \"s10\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s13\" is the same picture as \"s12\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s14\" is the same picture as \"s13\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s15\" is the same picture as \"s14\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s16\" is the same picture as \"s15\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s17\" is the same picture as \"s16\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s18\" is the same picture as \"s17\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s19\" is the same picture as \"s18\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s21\" is the same picture as \"s20\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s22\" is the same picture as \"s21\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s23\" is the same picture as \"s22\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s24\" is the same picture as \"s23\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s26\" is the same picture as \"s25\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s27\" is the same picture as \"s26\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s28\" is the same picture as \"s27\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "the first shot has nobody in it; the first 3 seconds should be the most striking picture"
+        }
+      ]
+    },
+    {
+      "id": "style",
+      "title": "Every still passes the Style Check",
+      "by": "looked",
+      "detail": "8 stills, each against the 11 questions of the style guide",
+      "findings": []
+    },
+    {
+      "id": "story",
+      "title": "Every still tells its part of the story",
+      "by": "looked",
+      "detail": "8 stills, each against 7 questions: in frame, face visible, expression, hands, feet, action, setting",
+      "findings": []
+    },
+    {
+      "id": "motion",
+      "title": "Every move and every cut holds up frame by frame",
+      "by": "looked",
+      "detail": "0 strips of frames, one across each move inside a shot and each cut that keeps someone on screen",
+      "findings": []
+    },
+    {
+      "id": "playbook",
+      "title": "The playbook was followed",
+      "by": "looked",
+      "detail": "the rules of the general, format and style playbooks, read against the finished part",
+      "findings": []
+    }
+  ],
+  "fixed": [
+    "The diver's line stood nearly empty blue for about three seconds: the camera was above the reef and the diver tiny. It looks down on the reef now, the diver dives from beside the houseboats to the corals, and a few fish are always about.",
+    "The sand under the village looked like a dry beach; it is seen through the water now.",
+    "The bigger tank in the Bajau grown-up was a small gold mark on an orange shirt; it is larger, outlined, glowing, and pops in on its word.",
+    "+50% came only after the tennis ball: the line is cut in two, the number landing on 'fifty' and the camera pulling back to the tennis ball on its own word."
+  ],
+  "notes": [
+    "Through the water from the seal up to the Bajau village on stilts (THE BAJAU / SEA NOMADS), the houseboats sailing in; a family on its platform, a gold tank glowing in the grown-up; a diver diving to the reef among fish; the scan on the shore, the two spleens arriving on their names, +50%, a tennis ball beside the screen; into the Bajau spleen to a turning strand of DNA, one piece glowing (IN THEIR GENES); out to the houseboats, 1,000 YEARS, days and nights flickering past. Measured: never empty for more than 0.4 s, never still."
+  ]
+}

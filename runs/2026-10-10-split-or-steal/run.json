@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "id": "2026-10-10-split-or-steal",
+  "created": "2026-10-10",
+  "mode": "as-is",
+  "format": "explainer",
+  "brand": "my-page",
+  "voice": "narrator",
+  "sizes": [
+    "16:9",
+    "9:16"
+  ],
+  "vertical": "full",
+  "masterPrompt": null
+}

@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "video": "tip-screens-part-2-9x16-v1.mp4",
+  "stills": {
+    "s08": "ok",
+    "s09": "ok",
+    "s10": "ok",
+    "s11": "ok",
+    "s12": "ok",
+    "s13": "ok",
+    "s14": "ok"
+  },
+  "strips": {},
+  "playbook": "ok",
+  "fixed": [],
+  "notes": [
+    "Looked at three frames a second across the whole part: the 15% tag drops and swings; 57% counts up on the coin; the receipt prints COFFEE then OLD USUAL TIP 90 cents on 'ninety' and the total; the three blocks rise on 'ninety', 'smallest' and 'biggest', the smallest button in red; the cheap button's tag, the old 90 cents crossed out on 'old'; the counter with the buttons popping on 'buttons'; the wipe into the flow, each box and arrow on its word. Nothing appears or vanishes without a move.",
+    "Titles build word by word as they are said, so a title whose words come late in its line (THE OLD USUAL TIP) fills in over the first seconds.",
+    "The narrator is the studio's placeholder voice. Claude cannot hear: the voice, music and sounds need Biku's ears."
+  ]
+}

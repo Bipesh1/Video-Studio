@@ -1,0 +1,624 @@
+{
+  "version": 1,
+  "score": {
+    "seed": 43672,
+    "shift": 3,
+    "tempo": 1.082,
+    "palette": "body",
+    "profile": "short"
+  },
+  "music": [
+    {
+      "mood": "curious",
+      "startMs": 0
+    },
+    {
+      "mood": "upbeat",
+      "startMs": 23790
+    },
+    {
+      "mood": "curious",
+      "startMs": 64023
+    },
+    {
+      "mood": "reflective",
+      "startMs": 84333
+    },
+    {
+      "mood": "hope",
+      "startMs": 111133
+    }
+  ],
+  "sfx": [
+    {
+      "name": "home",
+      "atMs": 0,
+      "durationMs": 5890,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "hit",
+      "atMs": 0,
+      "gainDb": -9,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "pop",
+      "atMs": 1107,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "blip",
+      "atMs": 2940,
+      "gainDb": -9,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "pop",
+      "atMs": 2945,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "crowd-murmur",
+      "atMs": 5890,
+      "durationMs": 12170,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 5
+    },
+    {
+      "name": "whoosh",
+      "atMs": 5950,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 6
+    },
+    {
+      "name": "pop",
+      "atMs": 7207,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 7
+    },
+    {
+      "name": "blip",
+      "atMs": 8173,
+      "gainDb": -9,
+      "pan": 0,
+      "seed": 8
+    },
+    {
+      "name": "click",
+      "atMs": 9107,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 9
+    },
+    {
+      "name": "pop",
+      "atMs": 11773,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 10
+    },
+    {
+      "name": "blip",
+      "atMs": 12340,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 11
+    },
+    {
+      "name": "whoosh",
+      "atMs": 12850,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 12
+    },
+    {
+      "name": "pop",
+      "atMs": 14140,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 13
+    },
+    {
+      "name": "blip",
+      "atMs": 14773,
+      "gainDb": -9,
+      "pan": 0,
+      "seed": 14
+    },
+    {
+      "name": "click",
+      "atMs": 16240,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 15
+    },
+    {
+      "name": "pop",
+      "atMs": 17173,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 16
+    },
+    {
+      "name": "home",
+      "atMs": 18060,
+      "durationMs": 5730,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 17
+    },
+    {
+      "name": "whoosh",
+      "atMs": 18120,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 18
+    },
+    {
+      "name": "pop",
+      "atMs": 19207,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 19
+    },
+    {
+      "name": "underwater",
+      "atMs": 23790,
+      "durationMs": 17120,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 20
+    },
+    {
+      "name": "whoosh",
+      "atMs": 23850,
+      "gainDb": -2,
+      "pan": 0,
+      "seed": 21
+    },
+    {
+      "name": "pop",
+      "atMs": 26573,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 22
+    },
+    {
+      "name": "whoosh",
+      "atMs": 27382,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 23
+    },
+    {
+      "name": "pop",
+      "atMs": 28673,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 24
+    },
+    {
+      "name": "whoosh",
+      "atMs": 29450,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 25
+    },
+    {
+      "name": "pop",
+      "atMs": 32473,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 26
+    },
+    {
+      "name": "blip",
+      "atMs": 33273,
+      "gainDb": -9,
+      "pan": 0,
+      "seed": 27
+    },
+    {
+      "name": "click",
+      "atMs": 34073,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 28
+    },
+    {
+      "name": "whoosh",
+      "atMs": 35090,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 29
+    },
+    {
+      "name": "pop",
+      "atMs": 38907,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 30
+    },
+    {
+      "name": "underwater",
+      "atMs": 40933,
+      "durationMs": 23090,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 31
+    },
+    {
+      "name": "whoosh",
+      "atMs": 40993,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 32
+    },
+    {
+      "name": "ding",
+      "atMs": 43173,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 33
+    },
+    {
+      "name": "pop",
+      "atMs": 46706,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 34
+    },
+    {
+      "name": "whoosh",
+      "atMs": 47973,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 35
+    },
+    {
+      "name": "pop",
+      "atMs": 49340,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 36
+    },
+    {
+      "name": "blip",
+      "atMs": 50173,
+      "gainDb": -9,
+      "pan": 0,
+      "seed": 37
+    },
+    {
+      "name": "whoosh",
+      "atMs": 52733,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 38
+    },
+    {
+      "name": "pop",
+      "atMs": 54873,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 39
+    },
+    {
+      "name": "blip",
+      "atMs": 55473,
+      "gainDb": -9,
+      "pan": 0,
+      "seed": 40
+    },
+    {
+      "name": "click",
+      "atMs": 58340,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 41
+    },
+    {
+      "name": "bubbles",
+      "atMs": 58653,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 42
+    },
+    {
+      "name": "whoosh",
+      "atMs": 59163,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 43
+    },
+    {
+      "name": "pop",
+      "atMs": 60573,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 44
+    },
+    {
+      "name": "blip",
+      "atMs": 62973,
+      "gainDb": -9,
+      "pan": 0,
+      "seed": 45
+    },
+    {
+      "name": "home",
+      "atMs": 64023,
+      "durationMs": 20290,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 46
+    },
+    {
+      "name": "hit",
+      "atMs": 64023,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 47
+    },
+    {
+      "name": "whoosh",
+      "atMs": 64083,
+      "gainDb": -2,
+      "pan": 0,
+      "seed": 48
+    },
+    {
+      "name": "pop",
+      "atMs": 67206,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 49
+    },
+    {
+      "name": "ding",
+      "atMs": 70740,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 50
+    },
+    {
+      "name": "whoosh",
+      "atMs": 73763,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 51
+    },
+    {
+      "name": "ding",
+      "atMs": 74306,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 52
+    },
+    {
+      "name": "pop",
+      "atMs": 77673,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 53
+    },
+    {
+      "name": "blip",
+      "atMs": 78206,
+      "gainDb": -9,
+      "pan": 0,
+      "seed": 54
+    },
+    {
+      "name": "whoosh",
+      "atMs": 79003,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 55
+    },
+    {
+      "name": "pop",
+      "atMs": 81906,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 56
+    },
+    {
+      "name": "crowd-murmur",
+      "atMs": 84333,
+      "durationMs": 21390,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 57
+    },
+    {
+      "name": "whoosh",
+      "atMs": 84393,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 58
+    },
+    {
+      "name": "pop",
+      "atMs": 84940,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 59
+    },
+    {
+      "name": "blip",
+      "atMs": 88873,
+      "gainDb": -9,
+      "pan": 0,
+      "seed": 60
+    },
+    {
+      "name": "clunk",
+      "atMs": 89943,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 61
+    },
+    {
+      "name": "whoosh",
+      "atMs": 90453,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 62
+    },
+    {
+      "name": "ding",
+      "atMs": 92240,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 63
+    },
+    {
+      "name": "pop",
+      "atMs": 93506,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 64
+    },
+    {
+      "name": "clunk",
+      "atMs": 94453,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 65
+    },
+    {
+      "name": "whoosh",
+      "atMs": 94963,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 66
+    },
+    {
+      "name": "pop",
+      "atMs": 96273,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 67
+    },
+    {
+      "name": "blip",
+      "atMs": 98040,
+      "gainDb": -9,
+      "pan": 0,
+      "seed": 68
+    },
+    {
+      "name": "clunk",
+      "atMs": 99853,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 69
+    },
+    {
+      "name": "whoosh",
+      "atMs": 100363,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 70
+    },
+    {
+      "name": "ding",
+      "atMs": 101473,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 71
+    },
+    {
+      "name": "pop",
+      "atMs": 104673,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 72
+    },
+    {
+      "name": "ding",
+      "atMs": 105273,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 73
+    },
+    {
+      "name": "home",
+      "atMs": 105723,
+      "durationMs": 16340,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 74
+    },
+    {
+      "name": "whoosh",
+      "atMs": 105783,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 75
+    },
+    {
+      "name": "pop",
+      "atMs": 107106,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 76
+    },
+    {
+      "name": "blip",
+      "atMs": 110006,
+      "gainDb": -9,
+      "pan": 0,
+      "seed": 77
+    },
+    {
+      "name": "whoosh",
+      "atMs": 111193,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 78
+    },
+    {
+      "name": "pop",
+      "atMs": 115440,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 79
+    },
+    {
+      "name": "whoosh",
+      "atMs": 116343,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 80
+    },
+    {
+      "name": "pop",
+      "atMs": 117873,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 81
+    }
+  ],
+  "musicGainDb": 0,
+  "hush": [
+    {
+      "fromMs": 63323,
+      "toMs": 64043,
+      "sharp": true
+    }
+  ]
+}

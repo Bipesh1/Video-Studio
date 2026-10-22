@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "video": "bridge-torch-part-2-9x16-v1.mp4",
+  "stills": {
+    "s4a": "ok",
+    "s4b": "ok",
+    "s4c": "ok",
+    "s5a": "ok"
+  },
+  "strips": {
+    "cut-s4a-s4b": "ok",
+    "cut-s4b-s4c": "ok",
+    "cut-s4c-s5a": "ok",
+    "s4a-move-1": "ok",
+    "s4a-move-2": "ok",
+    "s4b-move-1": "ok",
+    "s5a-move-1": "ok"
+  },
+  "playbook": "ok",
+  "fixed": [
+    "The first render stalled after the drawing code was packed (no work for minutes); it was stopped and rendered again, whole, in under 3 minutes."
+  ],
+  "notes": [
+    "His script, word for word: the Saint's \"Nobody stays behind\", her thought, and the Trainer's second cliffhanger, \"So who should walk beside the old man?\", over her eyes as the rain starts.",
+    "Looked at large: on \"Nobody stays behind\" the woman with the bag pulls it to her chest and folds her arms, the old man looks down, the Saint's face sets firm; in her close-up she looks down and starts working it out; on the question her eyes turn to dread. Faces change once each, after their cause (L-0040).",
+    "The question's caption breaks as \"So who should walk / beside the old\" then \"man?\" on its own: readable, the last word left alone.",
+    "Claude cannot hear: the voices (Chatterbox), the rain, the thunder and the rising heartbeat need Biku's ears."
+  ]
+}

@@ -66,15 +66,25 @@ export function mergeSoundPlans(
 ): SoundPlan {
   const music: SoundPlan['music'] = [];
   const sfx: SoundPlan['sfx'] = [];
+  const hush: SoundPlan['hush'] = [];
   plans.forEach((plan, i) => {
     const by = startsMs[i] ?? 0;
+    for (const h of plan.hush ?? []) hush.push({ ...h, fromMs: h.fromMs + by, toMs: h.toMs + by });
     for (const segment of plan.music) {
       if (music[music.length - 1]?.mood === segment.mood) continue;
       music.push({ ...segment, startMs: segment.startMs + by });
     }
     for (const cue of plan.sfx) sfx.push({ ...cue, atMs: cue.atMs + by, seed: sfx.length });
   });
-  return { version: 1, music, sfx, musicGainDb: plans[0]?.musicGainDb ?? 0 };
+  const score = plans[0]?.score;
+  return {
+    version: 1,
+    ...(score ? { score } : {}),
+    music,
+    sfx,
+    musicGainDb: plans[0]?.musicGainDb ?? 0,
+    hush,
+  };
 }
 
 // ------------------------------------------------------------------ the same pictures
@@ -234,6 +244,8 @@ export type Delivered = {
   video: string;
   captions: string;
   cover: string;
+  /** Thumbnails picked for this video (`npm run thumbnail -- --pick`), newest of each shape. */
+  thumbnails?: string[];
   seconds: number;
   checks: QaCheck[];
   /** The part videos it is made of. */
@@ -266,7 +278,11 @@ export function deliveryPage(input: {
       c.findings.filter((f) => f.level === 'problem').map((f) => `${d.video}: ${f.text}`),
     ),
   );
-  const ready = delivered.length > 0 && !problems.length && !waiting.length;
+  // A video is not finished without its thumbnail: a designed poster, never a frame of the
+  // video (Biku, 2026-10-13; and 2026-10-15, when a frame was handed over again: "i talked about
+  // the thumbnail design right before? why is it again like this?").
+  const unthumbed = delivered.filter((d) => !d.thumbnails?.length);
+  const ready = delivered.length > 0 && !problems.length && !waiting.length && !unthumbed.length;
   const out: string[] = [
     `# ${title}: what to upload`,
     '',
@@ -287,7 +303,15 @@ export function deliveryPage(input: {
       `For ${cutUse(d.cut, d.seconds)}.`,
       '',
       `- Video: \`${d.video}\``,
-      `- Cover picture: \`${d.cover}\``,
+      ...(d.thumbnails?.length
+        ? [
+            `- Thumbnail: ${d.thumbnails.map((t) => `\`${t}\``).join(' and ')} (the wide one is YouTube's size, the tall one is for the cover of a Short or a Reel)`,
+            `- A frame of the video with the title on it, if a site wants one: \`${d.cover}\``,
+          ]
+        : [
+            '- Thumbnail: **none yet.** A frame of the video is not a thumbnail.',
+            `- A frame of the video with the title on it, not for the thumbnail: \`${d.cover}\``,
+          ]),
       `- Captions file: \`${d.captions}\``,
       `- Title to type in: ${title}`,
       '',
@@ -300,9 +324,13 @@ export function deliveryPage(input: {
       '',
     );
   }
-  if (problems.length || waiting.length) {
+  if (problems.length || waiting.length || unthumbed.length) {
     out.push('## Still to do', '');
     for (const p of problems) out.push(`- ${p}`);
+    for (const d of unthumbed)
+      out.push(
+        `- ${d.video}: its thumbnail. Draw the designed options (\`npm run thumbnail\`, the rules in knowledge/playbooks/thumbnails.md), let Biku pick one by eye, then \`--pick\` it and make this page again.`,
+      );
     for (const w of waiting) {
       const name = `${SHAPES[w.cut.size] ?? w.cut.size} ${w.cut.kind === 'teaser' ? 'teaser' : 'full video'}`;
       for (const why of w.why) out.push(`- ${name}: ${why}`);

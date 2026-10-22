@@ -1,3 +1,6 @@
+import { voiceOf } from './assembly';
+import { AMBIENT_SFX } from './sound.schema';
+import { flatLayers } from './thumbnail.schema';
 import type { LibraryIndex } from './library.schema';
 import type { Format } from './plugins.schema';
 import type { Script } from './script.schema';
@@ -100,19 +103,24 @@ export function shotSeconds(
   scene: Scene,
   format: Format | undefined,
   voiceSpeed = 1,
+  /** Each speaker's own voice, when known: its pace and how it scales pauses. */
+  voiceFor?: (speaker: string) => { speed: number; pauseScale: number } | undefined,
 ): Map<string, number> {
   const out = new Map<string, number>();
   const pause = format?.pacing.pauseMs.normal ?? 500;
   for (const line of scene.lines) {
     const shots = scene.shots.filter((s) => s.line === line.id);
+    const own = voiceFor?.(line.speaker);
+    const speed = own?.speed ?? voiceSpeed;
+    const pauseScale = own?.pauseScale ?? 1;
     shots.forEach((shot, i) => {
       if (shot.startMs !== undefined && shot.endMs !== undefined) {
         out.set(shot.id, (shot.endMs - shot.startMs) / 1000);
         return;
       }
       const count = plainWords(shot.words).split(' ').filter(Boolean).length;
-      const speech = (count * SECONDS_PER_WORD) / ((line.speed ?? 1) * voiceSpeed);
-      const tail = i === shots.length - 1 ? (line.pauseAfterMs ?? pause) / 1000 : 0;
+      const speech = (count * SECONDS_PER_WORD) / ((line.speed ?? 1) * speed);
+      const tail = i === shots.length - 1 ? ((line.pauseAfterMs ?? pause) * pauseScale) / 1000 : 0;
       out.set(shot.id, speech + tail);
     });
   }
@@ -178,12 +186,14 @@ export function draftStoryboard(script: Script, world: World, seed: number): unk
       place: TODO,
       treatment: beat?.backgroundTreatment === 'atmospheric' ? 'atmospheric' : 'simple',
       palette: TODO,
-      lines: lines.map(({ id: lineId, speaker, text, speed, pauseAfterMs }) => ({
+      lines: lines.map(({ id: lineId, speaker, text, say, speed, pauseAfterMs, thought }) => ({
         id: lineId,
         speaker,
         text,
+        ...(say ? { say } : {}),
         ...(speed ? { speed } : {}),
         ...(pauseAfterMs !== undefined ? { pauseAfterMs } : {}),
+        ...(thought ? { thought } : {}),
       })),
       shots,
     });
@@ -199,6 +209,9 @@ export function draftStoryboard(script: Script, world: World, seed: number): unk
     brand: script.brand,
     voice: script.voice,
     seed,
+    ...(world.formats[script.format]?.finish
+      ? { finish: world.formats[script.format]?.finish }
+      : {}),
     sources: script.sources,
     appliedLessons: [],
     cast: script.speakers.map((p) => ({ id: p.id, name: p.name, voice: p.voice })),
@@ -224,6 +237,8 @@ export function scriptMismatch(sb: Storyboard, script: Script): string[] {
       out.push(`line ${i + 1} is "${line.id}" in the script and "${p.id}" in the storyboard`);
     else {
       if (p.text !== line.text) out.push(`line "${line.id}" does not have the script's words`);
+      if ((p.say ?? '') !== (line.say ?? '') || (p.speed ?? 1) !== (line.speed ?? 1))
+        out.push(`line "${line.id}" is not said the way the script has it (its pace or pauses)`);
       if (p.speaker !== line.speaker)
         out.push(
           `line "${line.id}" is spoken by "${line.speaker}" in the script and "${p.speaker}" in the storyboard`,
@@ -271,6 +286,66 @@ const sameActors = (a: Shot, b: Shot): boolean => actorsKey(a) === actorsKey(b);
  * Staging rules, on top of `checkStoryboard`: is every shot a picture, and do the pictures
  * make sense one after another? Problems must be fixed; notes are worth a second look.
  */
+
+/**
+ * Where each face sits: from unhappy to glad, and from still to stirred, each -1 to 1. It is
+ * for telling a step of feeling (hopeful to doubtful) from a leap (glad to terrified).
+ */
+const FEELING: Record<string, readonly [number, number]> = {
+  neutral: [0, 0],
+  happy: [0.8, 0.3],
+  laughing: [1, 0.8],
+  sad: [-0.7, -0.5],
+  angry: [-0.8, 0.8],
+  shouting: [-0.9, 1],
+  afraid: [-0.8, 0.7],
+  surprised: [0.1, 0.9],
+  determined: [0.2, 0.5],
+  thinking: [0, -0.1],
+  smug: [0.5, 0],
+  exhausted: [-0.4, -0.9],
+  wailing: [-1, 1],
+  horrified: [-1, 0.9],
+  asleep: [0, -1],
+  suspicious: [-0.3, 0.1],
+  wink: [0.6, 0.2],
+  dread: [-0.8, 0.4],
+  calculating: [-0.1, 0],
+  tempted: [0.4, 0.5],
+  lying: [0.3, 0.1],
+  guilty: [-0.6, -0.3],
+  hollow: [-0.6, -0.8],
+  bored: [0, -0.5],
+};
+/** How far apart two feelings are before going from one to the other is a leap. */
+const FEELING_LEAP = 1.3;
+/** A face that changes this many times within this many of its owner's shots changes too often: it reads as random. */
+const FACE_CHANGES_RUN = 3;
+const FACE_CHANGES_SPAN = 4;
+
+type Feeling = { expression: string; strength: number };
+const sameFeeling = (a: Feeling, b: Feeling) =>
+  a.expression === b.expression && a.strength === b.strength;
+const faceName = (f: Feeling) =>
+  f.strength < 1 ? `${f.expression} at ${Math.round(f.strength * 100)}%` : f.expression;
+const isLeap = (a: Feeling, b: Feeling): boolean => {
+  const from = FEELING[a.expression];
+  const to = FEELING[b.expression];
+  if (!from || !to) return false;
+  return (
+    Math.hypot(
+      to[0] * b.strength - from[0] * a.strength,
+      to[1] * b.strength - from[1] * a.strength,
+    ) > FEELING_LEAP
+  );
+};
+
+/**
+ * In a video with a fixed cast, everyone the viewer needs is met in the first half minute
+ * (Biku, 2026-10-11, from a review of the Dollar Auction: "Where did he come from?").
+ */
+export const NEW_FACE_AFTER_S = 30;
+
 export function checkPlan(sb: Storyboard, world: World): PlanReport {
   const problems: string[] = [];
   const notes: string[] = [];
@@ -282,11 +357,60 @@ export function checkPlan(sb: Storyboard, world: World): PlanReport {
   let run: { framing: string; count: number; from: string } | null = null;
   let previous: { shot: Shot; scene: Scene } | null = null;
   const lastSeen = new Map<string, { actor: Actor; shot: string }>();
+  // A Short plays again as soon as it ends: one whose last picture is where its first was
+  // replays without a jump (2026-10-14).
+  const lastScene = sb.scenes[sb.scenes.length - 1];
+  const lastShot = lastScene?.shots[lastScene.shots.length - 1];
+  const firstScene = sb.scenes[0];
+  if (
+    world.brands[sb.brand]?.defaults.sizes[0] === '9:16' &&
+    lastShot &&
+    firstScene &&
+    lastScene &&
+    (lastScene.place !== firstScene.place ||
+      lastShot.camera.framing !== firstScene.shots[0]?.camera.framing)
+  ) {
+    notes.push(
+      `the last shot "${lastShot.id}" is not where the first one is; a Short loops straight back to its start, so ending in the same place and shot size as the opening makes the replay seamless`,
+    );
+  }
+  // A Short is judged in its first second (2026-10-14): a vertical video does not open on a
+  // picture that holds still.
+  const firstShot = sb.scenes[0]?.shots[0];
+  const vertical = world.brands[sb.brand]?.defaults.sizes[0] === '9:16';
+  if (
+    vertical &&
+    firstShot &&
+    firstShot.camera.move === 'none' &&
+    !firstShot.actors.some((a) => a.action || (a.then ?? []).length > 0)
+  ) {
+    notes.push(
+      `the first shot "${firstShot.id}" holds still; a Short is judged in its first second: give it a camera move (push-in, drift) or someone moving`,
+    );
+  }
+  // Which of their shots each person's face changes in, counting their shots from 1, and who
+  // has already been told their face changes too often.
+  const faceChanges = new Map<string, number[]>();
+  const shotsWith = new Map<string, number>();
+  const restless = new Set<string>();
+  /** A change of face in someone's nth shot: true when it is one too many, too close together. */
+  const changed = (who: string, nth: number): boolean => {
+    const at = [...(faceChanges.get(who) ?? []), nth];
+    faceChanges.set(who, at);
+    const first = at[at.length - FACE_CHANGES_RUN];
+    if (first === undefined || nth - first + 1 > FACE_CHANGES_SPAN || restless.has(who))
+      return false;
+    restless.add(who);
+    return true;
+  };
+  const tooOften = (who: string, at: string) =>
+    `"${who}" changes face ${FACE_CHANGES_RUN} times in ${FACE_CHANGES_SPAN} shots by ${at}; hold a face longer, and change it only when something happens to them`;
+  const firstSeen = new Map<string, { at: number; shot: string }>();
   const lastStood = new Map<string, { x: number; shot: string }>();
   const all = sb.scenes.flatMap((scene) => scene.shots.map((shot) => ({ shot, scene })));
 
   for (const scene of sb.scenes) {
-    const seconds = shotSeconds(scene, format, voiceSpeed);
+    const seconds = shotSeconds(scene, format, voiceSpeed, (sp) => voiceOf(sb, sp, world));
     const beat = format?.structure.find((b) => b.id === scene.beat);
     if (beat && !beat.moods.includes(scene.mood)) {
       notes.push(
@@ -323,8 +447,14 @@ export function checkPlan(sb: Storyboard, world: World): PlanReport {
     for (const shot of scene.shots) {
       const at = `shot "${shot.id}"`;
       const length = seconds.get(shot.id) ?? 0;
+      for (const a of shot.actors) {
+        if (!firstSeen.has(a.character)) {
+          firstSeen.set(a.character, { at: totalSeconds, shot: shot.id });
+        }
+      }
       totalSeconds += length;
-      soundEffects += shot.sfx.length;
+      // A sound under the scene (a murmur, rain, a clock) is the place, not an effect.
+      soundEffects += shot.sfx.filter((x) => !AMBIENT_SFX.includes(x.name)).length;
       const timed = shot.startMs !== undefined;
       if (!timed && format && length > format.shotLength.max + 0.6) {
         problems.push(
@@ -336,7 +466,13 @@ export function checkPlan(sb: Storyboard, world: World): PlanReport {
           `${at} would be on screen only about ${length.toFixed(1)} s, too quick to take in; give it more of the line's words`,
         );
       }
-      if (shot.actors.length === 0 && shot.props.length === 0 && !shot.overlay) {
+      if (
+        shot.actors.length === 0 &&
+        shot.props.length === 0 &&
+        !shot.overlay &&
+        !shot.picture &&
+        !shot.graphic
+      ) {
         problems.push(`${at} shows nobody and nothing. Put someone in it, or a thing, or a title.`);
       }
       if (shot.actors.length >= 2 && shot.actors.some((a) => a.x === undefined)) {
@@ -373,7 +509,7 @@ export function checkPlan(sb: Storyboard, world: World): PlanReport {
         if (!notes.includes(text)) notes.push(text);
       };
       const isLow = (pose: string | undefined) =>
-        pose === 'sit' || pose === 'kneel' || pose === 'lie';
+        pose === 'sit' || pose?.startsWith('sit-') || pose === 'kneel' || pose === 'lie';
       for (const actor of shot.actors) {
         for (const moment of actorMoments(actor)) {
           if (isLow(moment.pose) && moment.holds && HANGING_PROPS.includes(moment.holds)) {
@@ -383,7 +519,7 @@ export function checkPlan(sb: Storyboard, world: World): PlanReport {
           }
         }
       }
-      if (shot.camera.framing === 'close-up') {
+      if (shot.camera.framing === 'close-up' || shot.camera.framing === 'eyes') {
         for (const actor of shot.actors) {
           if (actor.then.some((step) => step.pose !== undefined || step.action !== undefined)) {
             notes.push(
@@ -403,7 +539,7 @@ export function checkPlan(sb: Storyboard, world: World): PlanReport {
               );
             }
             const inHand = moment.holds !== undefined && moment.lookAt === moment.holds;
-            if (shot.camera.framing === 'close-up' && inHand) {
+            if ((shot.camera.framing === 'close-up' || shot.camera.framing === 'eyes') && inHand) {
               note(
                 `in ${at}, "${actor.character}" looks at the ${moment.holds} in their hand, which a close-up cuts off; make it a medium shot`,
               );
@@ -466,6 +602,21 @@ export function checkPlan(sb: Storyboard, world: World): PlanReport {
           if (!was || !is) continue;
           const who = `"${actor.character}"`;
           const after = justBefore ? `the cut from "${seen.shot}"` : `"${seen.shot}"`;
+          // A face does not change between two frames either (Biku, 2026-10-12: "one second its
+          // one expression and another second its another"). It comes over the cut as it was and
+          // changes inside a shot, after what causes it.
+          if (!sameFeeling(was, is)) {
+            if (changed(actor.character, (shotsWith.get(actor.character) ?? 0) + 1))
+              note(tooOften(actor.character, at));
+            note(
+              `in ${at}, ${who} changes face on the cut (${faceName(is)}, after ${faceName(was)}); start them with the face they had and change it inside the shot (a step), a beat after what causes it`,
+            );
+            if (isLeap(was, is)) {
+              note(
+                `in ${at}, ${who} goes from ${faceName(was)} straight to ${faceName(is)}: a leap of feeling. Right for a shock the viewer watches happen; otherwise go through a face between them`,
+              );
+            }
+          }
           if (earlier.facing !== actor.facing) {
             note(
               `in ${at}, ${who} faces the other way after ${after}; keep them facing the same way`,
@@ -509,7 +660,30 @@ export function checkPlan(sb: Storyboard, world: World): PlanReport {
         }
         lastStood.set(prop.prop, { x: prop.x, shot: shot.id });
       }
-      for (const actor of shot.actors) lastSeen.set(actor.character, { actor, shot: shot.id });
+      for (const actor of shot.actors) {
+        lastSeen.set(actor.character, { actor, shot: shot.id });
+        if (actor.back) continue;
+        const nth = (shotsWith.get(actor.character) ?? 0) + 1;
+        shotsWith.set(actor.character, nth);
+        const moments = actorMoments(actor);
+        let changes = 0;
+        moments.forEach((moment, i) => {
+          const before = moments[i - 1];
+          if (!before || sameFeeling(before, moment)) return;
+          changes += 1;
+          if (changed(actor.character, nth)) note(tooOften(actor.character, at));
+          if (isLeap(before, moment)) {
+            note(
+              `in ${at}, "${actor.character}" goes from ${faceName(before)} straight to ${faceName(moment)}: a leap of feeling. Right for a shock the viewer watches happen; otherwise go through a face between them`,
+            );
+          }
+        });
+        if (changes > 1) {
+          note(
+            `in ${at}, "${actor.character}" changes face ${changes} times; one change of feeling is all a shot of a few seconds can show`,
+          );
+        }
+      }
       // The picture changes: not the same size of shot again and again, not the same picture twice.
       if (run && run.framing === shot.camera.framing) run.count += 1;
       else run = { framing: shot.camera.framing, count: 1, from: shot.id };
@@ -525,13 +699,17 @@ export function checkPlan(sb: Storyboard, world: World): PlanReport {
         shot.effects.length === previous.shot.effects.length
       ) {
         notes.push(
-          `${at} is the same picture as "${previous.shot.id}"; change the size, the pose or the face`,
+          `${at} is the same picture as "${previous.shot.id}"; change the size or the pose, or let a face change inside it (a step)`,
         );
       }
       previous = { shot, scene };
     }
   }
   if (titles > 1) problems.push(`the title is shown ${titles} times; once is enough`);
+  if (sb.meter?.from && !all.some((x) => x.shot.id === sb.meter?.from)) {
+    problems.push(`the counter starts on shot "${sb.meter.from}", which is not in the video`);
+  }
+
   const opening = all[0]?.shot;
   if (opening && opening.actors.length === 0) {
     notes.push(
@@ -550,6 +728,24 @@ export function checkPlan(sb: Storyboard, world: World): PlanReport {
         `about ${perMinute.toFixed(0)} sound effects a minute; the ${format.id} format suits ${min} to ${max}. Steps, doors and things landing make the pictures feel real.`,
       );
   }
+  // One story, told in one place by the people met at its start: pointed out for a video with
+  // a fixed cast, where the cast plays the whole thing.
+  if (sb.series) {
+    for (const [id, seen] of firstSeen) {
+      if (seen.at <= NEW_FACE_AFTER_S) continue;
+      const name = sb.cast.find((m) => m.id === id)?.name ?? id;
+      notes.push(
+        `"${name}" is first seen about ${clock(seen.at)} in (shot "${seen.shot}"); after the first ${NEW_FACE_AFTER_S} seconds a new face makes a viewer ask where they came from. Let someone already in the story do it, or bring them in at the start`,
+      );
+    }
+    const home = sb.scenes[0]?.place;
+    const away = [...new Set(sb.scenes.map((sc) => sc.place).filter((p) => p !== home))];
+    if (away.length) {
+      notes.push(
+        `the story leaves the ${home} for ${away.join(', ')}; one story in one place is easier to follow. Show it where the cast already is, if the words allow`,
+      );
+    }
+  }
   return { problems, notes, shots: all.length, soundEffects };
 }
 
@@ -559,14 +755,19 @@ const FRAMING_WORDS: Record<string, string> = {
   wide: 'Wide shot',
   medium: 'Medium shot',
   'close-up': 'Close-up',
+  eyes: 'Only the eyes',
   'over-shoulder': 'Over the shoulder',
 };
 const MOVE_WORDS: Record<string, string> = {
   'push-in': 'the camera moves slowly closer',
   'punch-in': 'the camera jumps closer',
   pan: 'the camera slides across',
+  whip: 'the camera swings in',
   shake: 'the picture jolts',
   follow: 'the camera travels along',
+  tilt: 'the picture is tipped to one side',
+  'pull-back': 'the camera moves slowly back',
+  drift: 'the camera drifts slowly across',
 };
 const LOOK_WORDS: Record<string, string> = {
   camera: 'looking at us',
@@ -583,6 +784,11 @@ const DOING_WORDS: Record<string, string> = {
   'pose/hold-object': 'holds out a hand',
   'pose/hands-over-mouth': 'covers the mouth with both hands',
   'pose/sit': 'sits',
+  'pose/sit-reach': 'sits and reaches across the table',
+  'pose/sit-promise': 'sits with a hand on the heart',
+  'pose/sit-hands-up': 'sits and throws both hands up',
+  'pose/sit-slump': 'sits slumped',
+  'pose/sit-phone': 'sits bowed over a phone',
   'pose/kneel': 'kneels',
   'pose/lie': 'lies down',
   'pose/cross-arms': 'stands with arms crossed',
@@ -590,6 +796,11 @@ const DOING_WORDS: Record<string, string> = {
   'pose/look-down': 'looks down',
   'pose/cower': 'cowers',
   'pose/hug': 'hugs',
+  'pose/open-arms': 'opens both arms wide',
+  'pose/hand-on-heart': 'stands with a hand on the heart',
+  'pose/rub-hands': 'leans in, rubbing both hands',
+  'pose/head-tilt': 'tilts the head, watching',
+  'pose/fix-tie': 'straightens the tie',
   'action/walk': 'walks',
   'action/walk-proud': 'struts',
   'action/walk-tired': 'trudges',
@@ -627,6 +838,21 @@ export function describeShot(shot: Shot, sb: Storyboard, world: World): string {
   const thing = (id: string) => `the ${nameOf(world.library, `prop/${id}`)}`;
   const parts: string[] = [];
   if (shot.transition === 'fade') parts.push('Fade in');
+  if (shot.transition === 'whip') parts.push('The camera swings in');
+  if (shot.graphic) {
+    const g = shot.graphic;
+    const title = g.title ? ` "${g.title.lines.join(' ')}"` : '';
+    return `An explainer graphic, ${GRAPHIC_WORDS[g.kind]}${title}, its pieces arriving as they are named.`;
+  }
+  if (shot.picture) {
+    const words = flatLayers(shot.picture.layers)
+      .flatMap((l) => (l.kind === 'tag' ? [l.text] : l.kind === 'words' ? l.lines : []))
+      .join(', ');
+    const crowd = flatLayers(shot.picture.layers).some((l) => l.kind === 'crowd');
+    const moves =
+      shot.picture.from && shot.picture.to && shot.picture.from.zoom > shot.picture.to.zoom;
+    return `A picture made for the moment${crowd ? ', a crowd' : ''}${moves ? ', the camera pulling back' : ''}${words ? ` (${words})` : ''}.`;
+  }
   const focus = shot.camera.focus ? ` on ${person(shot.camera.focus)}` : '';
   parts.push(`${FRAMING_WORDS[shot.camera.framing] ?? shot.camera.framing}${focus}`);
   for (const actor of shot.actors) {
@@ -692,11 +918,27 @@ export function describeShot(shot: Shot, sb: Storyboard, world: World): string {
               ? `An arrow labelled "${o.text}"`
               : o.kind === 'page'
                 ? `A page held up to the camera: "${o.lines.join(' / ')}"`
-                : `A diagram: the ${o.around} going round the ${o.center}`,
+                : o.kind === 'words'
+                  ? `Big words over the picture: "${o.lines.join(' ')}"`
+                  : o.kind === 'bubble'
+                    ? `${o.shape === 'speech' ? 'A speech balloon' : 'A thought bubble'} over ${person(o.of)}: "${o.lines.join(' / ')}"${o.to ? `, which drifts across to ${person(o.to)} and bursts` : ''}`
+                    : `A diagram: the ${o.around} going round the ${o.center}`,
     );
   }
   return `${parts.map(sentence).join('. ')}.`;
 }
+
+/** What each explainer graphic is, in a word or two, for the shot list. */
+const GRAPHIC_WORDS: Record<string, string> = {
+  flow: 'the money flowing from box to box',
+  split: 'where the money goes, share by share',
+  bars: 'bars growing side by side',
+  tag: 'a price tag dropping in',
+  receipt: 'a receipt printing line by line',
+  number: 'one big number',
+  queue: 'people walking into a queue',
+  scene: 'an illustrated place',
+};
 
 const clock = (seconds: number) =>
   `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
@@ -709,7 +951,10 @@ export function storyboardPage(sb: Storyboard, world: World): string {
   const out: string[] = [`# ${sb.title}: shot list`, ''];
   const shotCount = sb.scenes.reduce((n, s) => n + s.shots.length, 0);
   const lengths = sb.scenes.map((s) =>
-    [...shotSeconds(s, format, voiceSpeed).values()].reduce((a, b) => a + b, 0),
+    [...shotSeconds(s, format, voiceSpeed, (sp) => voiceOf(sb, sp, world)).values()].reduce(
+      (a, b) => a + b,
+      0,
+    ),
   );
   const total = lengths.reduce((a, b) => a + b, 0);
   const parts = Math.max(...sb.scenes.map((s) => s.chapter));
@@ -740,7 +985,7 @@ export function storyboardPage(sb: Storyboard, world: World): string {
       '| Shot | At | Who speaks | Words | What you see | Sound |',
       '| --- | --- | --- | --- | --- | --- |',
     );
-    const seconds = shotSeconds(scene, format, voiceSpeed);
+    const seconds = shotSeconds(scene, format, voiceSpeed, (sp) => voiceOf(sb, sp, world));
     for (const shot of scene.shots) {
       const line = scene.lines.find((l) => l.id === shot.line);
       const speaker =
@@ -754,5 +999,49 @@ export function storyboardPage(sb: Storyboard, world: World): string {
     }
     out.push('');
   });
+  out.push(...feelingPlan(sb, world));
   return `${out.join('\n').trimEnd()}\n`;
+}
+
+/**
+ * The feeling plan (step 5, 2026-10-14): each person's line of feeling, scene by scene, with
+ * every change and what is said when it happens, so a face that changes without a cause is
+ * seen before anything is drawn (L-0040: one line of feeling, each change after its cause).
+ */
+export function feelingPlan(sb: Storyboard, world: World): string[] {
+  const out = [
+    '## How each person feels',
+    '',
+    'One line of feeling for each person, scene by scene. A face changes only where something causes it: each change shows the shot and what is said then.',
+    '',
+  ];
+  const feel = (expression: string, strength?: number) =>
+    `${nameOf(world.library, `expression/${expression}`).toLowerCase()}${strength !== undefined && strength < 0.7 ? ', a little' : ''}`;
+  for (const member of sb.cast) {
+    const rows: string[] = [];
+    sb.scenes.forEach((scene, i) => {
+      const steps: string[] = [];
+      let last = '';
+      for (const shot of scene.shots) {
+        const actor = shot.actors.find((a) => a.character === member.id);
+        if (!actor) continue;
+        const faces = [
+          { face: feel(actor.expression, actor.strength), at: 0 },
+          ...(actor.then ?? [])
+            .filter((s) => s.expression)
+            .map((s) => ({ face: feel(s.expression ?? '', s.strength), at: s.at })),
+        ];
+        for (const { face } of faces) {
+          if (face === last) continue;
+          const cause = shot.words.replace(/\*/g, '');
+          steps.push(last === '' ? face : `${face} (${shot.id}, "${cause}")`);
+          last = face;
+        }
+      }
+      if (steps.length)
+        rows.push(`- Scene ${i + 1}, ${scene.beat.replace(/-/g, ' ')}: ${steps.join(' → ')}`);
+    });
+    if (rows.length) out.push(`**${member.name}**`, '', ...rows, '');
+  }
+  return out;
 }

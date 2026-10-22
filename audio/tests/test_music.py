@@ -20,7 +20,7 @@ def layers_of(name: str, seed: int = 0, bars: int = BARS):
 
 def test_the_engine_and_the_worker_name_the_same_moods():
     assert NAMES == names_in_shared("MUSIC_MOODS")
-    assert len(NAMES) == 9
+    assert len(NAMES) == 12
 
 
 @pytest.mark.parametrize("name", NAMES)
@@ -171,3 +171,20 @@ def test_a_track_in_the_music_folder_replaces_the_written_one(tmp_path):
     assert loudness(audio) == pytest.approx(music.STEM_LUFS, abs=0.5)
     spectrum = np.abs(np.fft.rfft(audio.mean(axis=1)))
     assert np.fft.rfftfreq(len(audio), 1 / SR)[np.argmax(spectrum)] == pytest.approx(330, abs=2)
+
+
+def test_a_video_gets_its_own_key_speed_and_instruments():
+    mood = music.resolve("curious")
+    score = {"seed": 7, "shift": 2, "tempo": 1.1, "palette": "body"}
+    own = music.coloured(mood, score)
+    assert own.key == mood.key + 2
+    assert own.tempo == round(mood.tempo * 1.1)
+    melody = [layer for layer in own.layers if layer.role == "melody"]
+    assert melody and all(layer.program == music.PALETTES["body"]["melody"] for layer in melody)
+    drums = [(a, b) for a, b in zip(mood.layers, own.layers) if a.role == "drums"]
+    assert all(a == b for a, b in drums)
+    assert music.coloured(mood, None) is mood
+
+
+def test_every_palette_is_named_in_the_shared_contract():
+    assert sorted(music.PALETTES) == sorted(names_in_shared("MUSIC_PALETTES"))

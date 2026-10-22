@@ -1,0 +1,94 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "lines": [
+    {
+      "id": "n26",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "I'd rather you missed this part.",
+      "speed": 0.95,
+      "pauseAfterMs": 350
+    },
+    {
+      "id": "n27",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "A game theorist solved my auction.",
+      "speed": 0.95,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "n28",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Give both players two dollars and fifty cents.",
+      "speed": 0.95,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n29",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Perfect logic says one opening bid of *sixty cents.*",
+      "speed": 0.95,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n30",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The other player *stays silent.*",
+      "speed": 0.95,
+      "pauseAfterMs": 1000
+    },
+    {
+      "id": "n31",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The trap was never the dollar, it was *the second bid.*",
+      "speed": 0.95,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "n32",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "*You played this today.*",
+      "speed": 0.95,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n33",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "That group chat argument nobody would drop.",
+      "speed": 0.95,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n34",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Every reply cost you more of your evening, and neither side could afford to come second.",
+      "speed": 0.95,
+      "pauseAfterMs": 800
+    },
+    {
+      "id": "n35",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So.",
+      "speed": 0.95,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "n36",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Who'll start me at a nickel?",
+      "speed": 0.95,
+      "pauseAfterMs": 1300
+    }
+  ]
+}

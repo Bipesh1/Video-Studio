@@ -142,8 +142,9 @@ describe('shot sizes by framing (Style 7)', () => {
     };
   };
 
-  it('leaves a scene that is already wide as it is', () => {
-    expect(shotTransform('wide', one, size).scale).toBeCloseTo(1, 1);
+  it('comes a little closer in a tall wide shot than the scene is laid out, so people are bigger', () => {
+    // 2026-10-14, for the Shorts: faces hold the eye on a phone.
+    expect(shotTransform('wide', one, size).scale).toBeCloseTo(0.125 / 0.105, 1);
   });
 
   it('makes the head bigger from wide to medium to close-up', () => {
@@ -160,9 +161,16 @@ describe('shot sizes by framing (Style 7)', () => {
   it('keeps the framed face in the upper part of the frame, clear of the captions', () => {
     for (const shot of SHOTS) {
       const h = headAfter(shot, one);
-      expect(h.y + h.size / 2).toBeLessThan(size.height * 0.75);
+      // A shot of the eyes is the one where the head is meant to be bigger than the picture.
+      if (shot !== 'eyes') expect(h.y + h.size / 2).toBeLessThan(size.height * 0.75);
       expect(h.y).toBeLessThan(size.height * 0.45);
     }
+  });
+
+  it('fills the picture with the head in a shot of the eyes', () => {
+    const eyes = headAfter('eyes', one);
+    expect(eyes.size).toBeGreaterThan(headAfter('close-up', one).size * 1.5);
+    expect(eyes.size).toBeGreaterThan(size.width);
   });
 
   it('never moves back from the layout or shows past the edge of the scene', () => {

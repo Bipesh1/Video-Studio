@@ -23,6 +23,9 @@ import numpy as np
 import pyloudnorm as pyln
 import soundfile as sf
 
+from studio_audio import chatterbox
+from studio_audio.intonation import end_rise, lift, lift_questions, questions_in
+
 TARGET_LUFS = -17.0
 """Mono voice stem loudness. Played on both stereo channels it measures about 3 LU louder,
 so a video with only the voice lands near -14 LUFS. Phase 3 masters the full mix."""
@@ -44,6 +47,7 @@ class TimedWord:
     text: str
     start: float  # seconds, relative to the start of this synthesis
     end: float
+    sounds: str = ""  # the speech sounds the voice made for it, when the voice says (Kokoro does)
 
 
 @dataclass
@@ -53,12 +57,16 @@ class Synthesis:
     timing_source: str = "kokoro"  # or "estimated"
 
 
+Blend = tuple[tuple[str, float], ...]
+"""A voice of its own: several voices by name, each with its weight."""
+
+
 class VoiceProvider(Protocol):
     """Anything that turns text into speech with word timings."""
 
     sample_rate: int
 
-    def synthesize(self, text: str, voice: str, speed: float) -> Synthesis: ...
+    def synthesize(self, text: str, voice: str | Blend, speed: float) -> Synthesis: ...
 
 
 WORD_RE = re.compile(r"[A-Za-z0-9']")
@@ -77,13 +85,23 @@ class KokoroProvider:
         from kokoro import KPipeline  # imported here so --help works without loading torch
 
         self._pipe = KPipeline(lang_code="a", repo_id="hexgrad/Kokoro-82M")
+        self._blends: dict[Blend, object] = {}
 
-    def synthesize(self, text: str, voice: str, speed: float) -> Synthesis:
+    def _voice(self, voice: str | Blend):
+        """A named voice as it is; a blend as one voice made of its parts by weight."""
+        if isinstance(voice, str):
+            return voice
+        if voice not in self._blends:
+            load = getattr(self._pipe, "load_single_voice", None) or self._pipe.load_voice
+            self._blends[voice] = sum(load(name) * weight for name, weight in voice)
+        return self._blends[voice]
+
+    def synthesize(self, text: str, voice: str | Blend, speed: float) -> Synthesis:
         chunks: list[np.ndarray] = []
         words: list[TimedWord] = []
         offset = 0.0
         has_timestamps = True
-        for result in self._pipe(text, voice=voice, speed=speed):
+        for result in self._pipe(text, voice=self._voice(voice), speed=speed):
             if result.audio is None:
                 continue
             audio = result.audio.detach().cpu().numpy() if hasattr(result.audio, "detach") else np.asarray(result.audio)
@@ -97,7 +115,8 @@ class KokoroProvider:
                     has_timestamps = False
                     words.append(TimedWord(tok.text, offset, offset))
                 else:
-                    words.append(TimedWord(tok.text, offset + float(start), offset + float(end)))
+                    sounds = getattr(tok, "phonemes", "") or ""
+                    words.append(TimedWord(tok.text, offset + float(start), offset + float(end), sounds))
             chunks.append(audio)
             offset += len(audio) / self.sample_rate
         audio = np.concatenate(chunks) if chunks else np.zeros(0, dtype=np.float32)
@@ -177,6 +196,24 @@ def align(display: list[tuple[str, bool]], timed: list[TimedWord]) -> list[tuple
     return out
 
 
+def align_sounds(display: list[tuple[str, bool]], timed: list[TimedWord]) -> list[str]:
+    """The speech sounds of each display word, in the same order as `align` gives the words:
+    the sounds of the model tokens that spell it, joined. Empty where the voice gave none."""
+    out: list[str] = []
+    j = 0
+    for word, _ in display:
+        target = _norm(word)
+        if not target:
+            continue
+        acc, sounds = "", ""
+        while j < len(timed) and len(acc) < len(target):
+            acc += _norm(timed[j].text)
+            sounds += timed[j].sounds
+            j += 1
+        out.append(sounds)
+    return out
+
+
 def limit(audio: np.ndarray, sr: int, ceiling: float = PEAK_LIMIT) -> np.ndarray:
     """Peak limiter: turns down only the moments that would pass the ceiling, with a fast
     attack (2 ms look-ahead) and a 60 ms release, so speech keeps its loudness."""
@@ -212,28 +249,83 @@ def normalize(audio: np.ndarray, sr: int) -> tuple[np.ndarray, float]:
     return out.astype(np.float32), float(final) if np.isfinite(final) else TARGET_LUFS
 
 
-def synth(script_path: Path, out_dir: Path, provider: VoiceProvider | None = None) -> dict:
+def _lift_falling(audio: np.ndarray, sr: int, words: list[tuple[str, float, float]], strength: float) -> np.ndarray:
+    """Lift only the questions that fall at their end: Chatterbox asks most of its own."""
+    for question in questions_in(words, strength):
+        rise = end_rise(audio, sr, question.start, question.end)
+        if rise is not None and rise < 1.0:
+            audio = lift(audio, sr, question)
+    return audio
+
+
+def synth(
+    script_path: Path,
+    out_dir: Path,
+    provider: VoiceProvider | None = None,
+    chatterbox_speak=None,
+) -> dict:
     script = json.loads(script_path.read_text(encoding="utf-8"))
-    provider = provider or KokoroProvider()
-    sr = provider.sample_rate
+    # Lines in a Chatterbox voice are spoken first, all together (its model loads once); the
+    # others by Kokoro, which is only loaded when some line needs it.
+    copied = [line for line in script["lines"] if line.get("engine") == "chatterbox"]
+    if provider is None and len(copied) < len(script["lines"]):
+        provider = KokoroProvider()
+    sr = provider.sample_rate if provider else KokoroProvider.sample_rate
+    speak = chatterbox_speak or chatterbox.speak
+    spoken = speak(
+        [
+            {
+                "id": line["id"],
+                "say": strip_markup(line.get("say") or line["text"]),
+                "text": strip_markup(line["text"]),
+                "sample": str((chatterbox.ROOT / line["sample"]).resolve()),
+            }
+            for line in copied
+        ],
+        sr,
+    )
     lead = int(script.get("leadInMs", 300))
     tail = int(script.get("tailMs", 800))
+    question_lift = float(script.get("questionLift", 0.0))
     pieces = [np.zeros(int(sr * lead / 1000), dtype=np.float32)]
     cursor = lead / 1000
     lines_out, words_out, sources = [], [], set()
     for line in script["lines"]:
-        s = provider.synthesize(strip_markup(line["text"]), line["voice"], float(line.get("speed", 1.0)))
+        # What is said may carry commas and "..." the captions never show: the words are the same.
+        said = strip_markup(line.get("say") or line["text"])
+        blend = line.get("blend")
+        voice = tuple((b["voice"], float(b["weight"])) for b in blend) if blend else line["voice"]
+        if line.get("engine") == "chatterbox":
+            got = spoken[line["id"]]
+            timed = [TimedWord(w, a, b) for w, a, b in got.words]
+            # The words were written down by listening; when the take had a word wrong the times
+            # are not trusted, and the speech is shared out among the words by their length.
+            s = (
+                Synthesis(got.audio, timed, "heard")
+                if got.wrong == 0 and timed
+                else Synthesis(got.audio, estimate_words(said, got.audio, sr), "estimated")
+            )
+        else:
+            assert provider is not None
+            s = provider.synthesize(said, voice, float(line.get("speed", 1.0)))
         sources.add(s.timing_source)
+        aligned = align(script_words(line["text"]), s.words)
+        sounds = align_sounds(script_words(line["text"]), s.words)
+        if question_lift > 0 and s.timing_source == "heard":
+            s.audio = _lift_falling(s.audio, sr, [(w, ws, we) for w, _, ws, we in aligned], question_lift)
+        elif question_lift > 0 and s.timing_source == "kokoro":
+            # Kokoro lets a question fall like a statement: its last word is made to climb.
+            s.audio = lift_questions(s.audio, sr, [(w, ws, we) for w, _, ws, we in aligned], question_lift)
         # Trim the model's leading and trailing silence so pauses are exactly what the script asks.
         a, b = speech_bounds(s.audio, sr)
         a = max(0.0, a - 0.03)
         b = min(len(s.audio) / sr, b + 0.08)
         clip = s.audio[int(a * sr) : int(b * sr)]
-        aligned = align(script_words(line["text"]), s.words)
         line_start = cursor
-        for word, emph, ws, we in aligned:
+        for k, (word, emph, ws, we) in enumerate(aligned):
             ws_abs = line_start + max(0.0, ws - a)
             we_abs = line_start + min(max(0.0, we - a), len(clip) / sr)
+            said = sounds[k] if k < len(sounds) else ""
             words_out.append(
                 {
                     "text": word,
@@ -241,6 +333,7 @@ def synth(script_path: Path, out_dir: Path, provider: VoiceProvider | None = Non
                     "endMs": round(max(we_abs, ws_abs) * 1000),
                     "lineId": line["id"],
                     "emphasis": emph,
+                    **({"sounds": said} if said else {}),
                 }
             )
         cursor += len(clip) / sr
@@ -268,7 +361,7 @@ def synth(script_path: Path, out_dir: Path, provider: VoiceProvider | None = Non
         "audioFile": wav.name,
         "sampleRate": sr,
         "durationMs": round(len(audio) / sr * 1000),
-        "timingSource": "kokoro" if sources == {"kokoro"} else "estimated",
+        "timingSource": "estimated" if "estimated" in sources else "kokoro" if sources == {"kokoro"} else "heard",
         "loudnessLufs": round(lufs, 2),
         "lines": lines_out,
         "words": words_out,

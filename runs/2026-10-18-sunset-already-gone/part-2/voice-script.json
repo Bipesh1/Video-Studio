@@ -1,0 +1,55 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l07",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The straw in the drink beside you shows why.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l08",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The straw looks snapped because light changes direction when it crosses from water into air.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l09",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Air bends light too, because air gets *thicker* the closer it is to the ground.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l10",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So sunlight curves a little as it passes down through each layer.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l11",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "A high Sun's light comes almost straight down, so it barely bends.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l12",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "But a low Sun's light skims sideways through the thickest air, so it bends the *most*.",
+      "speed": 1,
+      "pauseAfterMs": 1100
+    }
+  ]
+}

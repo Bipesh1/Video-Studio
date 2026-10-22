@@ -1,0 +1,387 @@
+{
+  "version": 1,
+  "title": "Trainer test",
+  "request": "A test of the Trainer in the builder: he stands in the room, is friendly to the player and tells the camera the truth. Not a video for viewers.",
+  "mode": "as-is",
+  "format": "story",
+  "style": "ink-stick",
+  "brand": "my-page",
+  "voice": "leak",
+  "seed": 38212,
+  "sources": [],
+  "appliedLessons": [],
+  "cast": [
+    {
+      "id": "trainer",
+      "name": "The Trainer",
+      "voice": "trainer"
+    },
+    {
+      "id": "saint",
+      "name": "The Saint",
+      "voice": "saint"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "hook",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "atmospheric",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l1",
+          "speaker": "trainer",
+          "text": "Would you sit down at *this table?*",
+          "pauseAfterMs": 1300
+        }
+      ],
+      "shots": [
+        {
+          "id": "s1a",
+          "line": "l1",
+          "words": "Would you sit down at *this table?*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "title",
+            "text": "Trainer test"
+          },
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "setup",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l2",
+          "speaker": "trainer",
+          "text": "Welcome back, trainees.",
+          "pauseAfterMs": 1300
+        },
+        {
+          "id": "l3",
+          "speaker": "trainer",
+          "text": "Take your time. No pressure at all.",
+          "pauseAfterMs": 1300
+        }
+      ],
+      "shots": [
+        {
+          "id": "s2a",
+          "line": "l2",
+          "words": "Welcome back, trainees.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2b",
+          "line": "l3",
+          "words": "Take your time. No pressure at all.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "chapter": 1,
+      "beat": "rising-trouble",
+      "mood": "tense",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l4",
+          "speaker": "saint",
+          "text": "Thank you. That is kind.",
+          "pauseAfterMs": 1300
+        },
+        {
+          "id": "l5",
+          "speaker": "trainer",
+          "text": "There is *pressure.*",
+          "pauseAfterMs": 1300
+        },
+        {
+          "id": "l6",
+          "speaker": "saint",
+          "text": "He seems honest.",
+          "pauseAfterMs": 1300,
+          "thought": true
+        }
+      ],
+      "shots": [
+        {
+          "id": "s3a",
+          "line": "l4",
+          "words": "Thank you. That is kind.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3b",
+          "line": "l5",
+          "words": "There is *pressure.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3c",
+          "line": "l6",
+          "words": "He seems honest.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "chapter": 1,
+      "beat": "turning-point",
+      "mood": "tense",
+      "place": "todo",
+      "treatment": "atmospheric",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l7",
+          "speaker": "trainer",
+          "text": "And there it is.",
+          "pauseAfterMs": 1300
+        }
+      ],
+      "shots": [
+        {
+          "id": "s4a",
+          "line": "l7",
+          "words": "And there it is.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chapter": 1,
+      "beat": "payoff",
+      "mood": "triumph",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l8",
+          "speaker": "narrator",
+          "text": "Next time, ask who set the table.",
+          "pauseAfterMs": 1300
+        }
+      ],
+      "shots": [
+        {
+          "id": "s5a",
+          "line": "l8",
+          "words": "Next time, ask who set the table.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 1,
+      "beat": "closing-line",
+      "mood": "reflective",
+      "place": "todo",
+      "treatment": "atmospheric",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l9",
+          "speaker": "trainer",
+          "text": "Tape ends.",
+          "pauseAfterMs": 1300
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6a",
+          "line": "l9",
+          "words": "Tape ends.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    }
+  ]
+}

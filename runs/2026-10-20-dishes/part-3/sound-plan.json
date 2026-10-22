@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "reflective",
+      "startMs": 0
+    },
+    {
+      "mood": "hope",
+      "startMs": 40230
+    }
+  ],
+  "sfx": [
+    {
+      "name": "home",
+      "atMs": 0,
+      "durationMs": 51736,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "creak",
+      "atMs": 994,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "paper",
+      "atMs": 2048,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "paper",
+      "atMs": 4832,
+      "gainDb": -2,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "paper",
+      "atMs": 25345,
+      "gainDb": -2,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "pop",
+      "atMs": 31039,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 5
+    },
+    {
+      "name": "ding",
+      "atMs": 32761,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 6
+    },
+    {
+      "name": "paper",
+      "atMs": 37913,
+      "gainDb": -2,
+      "pan": 0,
+      "seed": 7
+    },
+    {
+      "name": "tick",
+      "atMs": 48641,
+      "durationMs": 2945,
+      "gainDb": -12,
+      "pan": 0,
+      "seed": 8
+    }
+  ],
+  "musicGainDb": 0,
+  "hush": []
+}

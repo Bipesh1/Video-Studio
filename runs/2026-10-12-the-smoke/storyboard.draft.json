@@ -1,0 +1,1457 @@
+{
+  "version": 1,
+  "title": "How to Make Someone Sit in Smoke",
+  "request": "Tape 01 of The House: Orientation Tapes, for The Dilemma Table. Biku's script, How to Make Someone Sit in Smoke, used word for word. Vertical.",
+  "mode": "as-is",
+  "format": "dilemma",
+  "style": "ink-stick",
+  "brand": "dilemma-table",
+  "voice": "leak",
+  "seed": 75176,
+  "sources": [
+    "Bibb Latané and John M. Darley, Group inhibition of bystander intervention in emergencies, Journal of Personality and Social Psychology, 1968, volume 10, number 3, pages 215 to 221, https://doi.org/10.1037/h0026570 : people filling in a questionnaire while smoke came into the room. Alone, 75% reported the smoke within the six minutes; with two others who had been told to stay passive, 10% did (1 of 10); in groups of three real participants, someone reported it in 38% of groups. Fairly sure: the figures were checked on 2026-10-12 against several summaries of the paper that agree with each other and with the citation (a NIST record gives the same journal, volume and pages); the paper itself was not opened."
+  ],
+  "appliedLessons": [],
+  "cast": [
+    {
+      "id": "trainer",
+      "name": "The Trainer",
+      "voice": "trainer"
+    },
+    {
+      "id": "copycat",
+      "name": "The Copycat",
+      "voice": "copycat"
+    },
+    {
+      "id": "cheat",
+      "name": "The Cheat",
+      "voice": "cheat"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "the-question",
+      "mood": "unease",
+      "place": "todo",
+      "treatment": "atmospheric",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l01",
+          "speaker": "trainer",
+          "text": "How long would you sit in *smoke?*",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l02",
+          "speaker": "trainer",
+          "text": "Welcome back, trainees.",
+          "pauseAfterMs": 350
+        },
+        {
+          "id": "l03",
+          "speaker": "trainer",
+          "text": "Today: how to keep someone sitting in *smoke.*",
+          "pauseAfterMs": 700
+        }
+      ],
+      "shots": [
+        {
+          "id": "s1a",
+          "line": "l01",
+          "words": "How long would you sit in *smoke?*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "title",
+            "text": "How to Make Someone Sit in Smoke"
+          },
+          "transition": "cut"
+        },
+        {
+          "id": "s1b",
+          "line": "l02",
+          "words": "Welcome back, trainees.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s1c",
+          "line": "l03",
+          "words": "Today: how to keep someone sitting in *smoke.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "the-rule",
+      "mood": "unease",
+      "place": "todo",
+      "treatment": "atmospheric",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l04",
+          "speaker": "trainer",
+          "text": "This one is a Copycat. He does what the room does.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l05",
+          "speaker": "copycat",
+          "text": "Is this the waiting room? For the *twenty?*",
+          "pauseAfterMs": 350
+        },
+        {
+          "id": "l06",
+          "speaker": "trainer",
+          "text": "Ten minutes, one one two. Then it's yours.",
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "l07",
+          "speaker": "copycat",
+          "text": "Twenty bucks to sit still? Best job I ever had.",
+          "pauseAfterMs": 300
+        },
+        {
+          "id": "l08",
+          "speaker": "cheat",
+          "text": "Easiest twenty in town.",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l09",
+          "speaker": "trainer",
+          "text": "He's ours. So is the back row.",
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "l10",
+          "speaker": "trainer",
+          "text": "Smoke is coming. They're paid to stay *calm.*",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s2a",
+          "line": "l04",
+          "words": "This one is a Copycat. He does what the room does.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2b",
+          "line": "l05",
+          "words": "Is this the waiting room? For the *twenty?*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "copycat",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2c",
+          "line": "l06",
+          "words": "Ten minutes, one one two. Then it's yours.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2d",
+          "line": "l07",
+          "words": "Twenty bucks to sit still? Best job I ever had.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "copycat",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2e",
+          "line": "l08",
+          "words": "Easiest twenty in town.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2f",
+          "line": "l09",
+          "words": "He's ours. So is the back row.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2g",
+          "line": "l10",
+          "words": "Smoke is coming. They're paid to stay *calm.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "chapter": 1,
+      "beat": "the-smart-choice",
+      "mood": "unease",
+      "place": "todo",
+      "treatment": "atmospheric",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l11",
+          "speaker": "copycat",
+          "text": "Uh. Is that *smoke?*",
+          "pauseAfterMs": 450
+        },
+        {
+          "id": "l12",
+          "speaker": "cheat",
+          "text": "Kitchen, probably. Happens all the time.",
+          "pauseAfterMs": 350
+        },
+        {
+          "id": "l13",
+          "speaker": "copycat",
+          "text": "Right. Somebody burned the *toast.*",
+          "pauseAfterMs": 300
+        },
+        {
+          "id": "l14",
+          "speaker": "cheat",
+          "text": "Ha. Somebody always does.",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l15",
+          "speaker": "copycat",
+          "text": "Nobody's moving. So it's nothing.",
+          "pauseAfterMs": 500,
+          "thought": true
+        },
+        {
+          "id": "l16",
+          "speaker": "trainer",
+          "text": "He reads *faces,* not smoke.",
+          "pauseAfterMs": 1000
+        }
+      ],
+      "shots": [
+        {
+          "id": "s3a",
+          "line": "l11",
+          "words": "Uh. Is that *smoke?*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "copycat",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3b",
+          "line": "l12",
+          "words": "Kitchen, probably. Happens all the time.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3c",
+          "line": "l13",
+          "words": "Right. Somebody burned the *toast.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "copycat",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3d",
+          "line": "l14",
+          "words": "Ha. Somebody always does.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3e",
+          "line": "l15",
+          "words": "Nobody's moving. So it's nothing.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "copycat",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3f",
+          "line": "l16",
+          "words": "He reads *faces,* not smoke.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "chapter": 2,
+      "beat": "the-smart-choice",
+      "mood": "unease",
+      "place": "todo",
+      "treatment": "atmospheric",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l17",
+          "speaker": "copycat",
+          "text": "It's getting kind of thick in here.",
+          "pauseAfterMs": 350
+        },
+        {
+          "id": "l18",
+          "speaker": "cheat",
+          "text": "Relax, man. If it was bad, they'd tell us.",
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "l19",
+          "speaker": "copycat",
+          "text": "Should we... tell someone?",
+          "pauseAfterMs": 300
+        },
+        {
+          "id": "l20",
+          "speaker": "cheat",
+          "text": "And lose the twenty? Sit down.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l21",
+          "speaker": "trainer",
+          "text": "Nearly done, one one two.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l22",
+          "speaker": "copycat",
+          "text": "Yeah. Ha. Totally *fine.*",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l23",
+          "speaker": "trainer",
+          "text": "He said *fine.* Now he's stuck.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s4a",
+          "line": "l17",
+          "words": "It's getting kind of thick in here.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "copycat",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4b",
+          "line": "l18",
+          "words": "Relax, man. If it was bad, they'd tell us.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4c",
+          "line": "l19",
+          "words": "Should we... tell someone?",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "copycat",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4d",
+          "line": "l20",
+          "words": "And lose the twenty? Sit down.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4e",
+          "line": "l21",
+          "words": "Nearly done, one one two.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4f",
+          "line": "l22",
+          "words": "Yeah. Ha. Totally *fine.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "copycat",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4g",
+          "line": "l23",
+          "words": "He said *fine.* Now he's stuck.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chapter": 2,
+      "beat": "the-trap",
+      "mood": "closing-in",
+      "place": "todo",
+      "treatment": "atmospheric",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l24",
+          "speaker": "copycat",
+          "text": "My eyes sting. Does nobody else see this?",
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "l25",
+          "speaker": "cheat",
+          "text": "See what, man?",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l26",
+          "speaker": "copycat",
+          "text": "Okay. Okay. Just me, then.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l27",
+          "speaker": "copycat",
+          "text": "Nobody else is getting up.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l28",
+          "speaker": "trainer",
+          "text": "Your turn, trainees. What does he *do?*",
+          "pauseAfterMs": 1800
+        },
+        {
+          "id": "l29",
+          "speaker": "copycat",
+          "text": "If they're calm, I must be *wrong.*",
+          "pauseAfterMs": 1200,
+          "thought": true
+        },
+        {
+          "id": "l30",
+          "speaker": "trainer",
+          "text": "He stays. A very reliable *customer.*",
+          "pauseAfterMs": 1200
+        }
+      ],
+      "shots": [
+        {
+          "id": "s5a",
+          "line": "l24",
+          "words": "My eyes sting. Does nobody else see this?",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "copycat",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5b",
+          "line": "l25",
+          "words": "See what, man?",
+          "camera": {
+            "framing": "eyes",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5c",
+          "line": "l26",
+          "words": "Okay. Okay. Just me, then.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "copycat",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5d",
+          "line": "l27",
+          "words": "Nobody else is getting up.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "copycat",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5e",
+          "line": "l28",
+          "words": "Your turn, trainees. What does he *do?*",
+          "camera": {
+            "framing": "eyes",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5f",
+          "line": "l29",
+          "words": "If they're calm, I must be *wrong.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "copycat",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5g",
+          "line": "l30",
+          "words": "He stays. A very reliable *customer.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 3,
+      "beat": "the-result",
+      "mood": "aftermath",
+      "place": "todo",
+      "treatment": "atmospheric",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l31",
+          "speaker": "trainer",
+          "text": "Latané and Darley. 1968.",
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "l32",
+          "speaker": "trainer",
+          "text": "Alone, seventy-five percent reported it.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l33",
+          "speaker": "trainer",
+          "text": "Two calm strangers? Ten *percent.*",
+          "pauseAfterMs": 800
+        },
+        {
+          "id": "l34",
+          "speaker": "trainer",
+          "text": "People trust calm faces over their own *eyes.*",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l35",
+          "speaker": "trainer",
+          "text": "You've seen it.",
+          "pauseAfterMs": 2300
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6a",
+          "line": "l31",
+          "words": "Latané and Darley. 1968.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6b",
+          "line": "l32",
+          "words": "Alone, seventy-five percent reported it.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6c",
+          "line": "l33",
+          "words": "Two calm strangers? Ten *percent.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6d",
+          "line": "l34",
+          "words": "People trust calm faces over their own *eyes.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6e",
+          "line": "l35",
+          "words": "You've seen it.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "chapter": 3,
+      "beat": "what-stays",
+      "mood": "aftermath",
+      "place": "todo",
+      "treatment": "atmospheric",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l36",
+          "speaker": "narrator",
+          "text": "Calm faces are guessing too.",
+          "pauseAfterMs": 350
+        },
+        {
+          "id": "l37",
+          "speaker": "narrator",
+          "text": "They are reading your face as well.",
+          "pauseAfterMs": 350
+        },
+        {
+          "id": "l38",
+          "speaker": "narrator",
+          "text": "So trust what you see. Say it out loud.",
+          "pauseAfterMs": 350
+        },
+        {
+          "id": "l39",
+          "speaker": "narrator",
+          "text": "Then be the first to *stand up.*",
+          "pauseAfterMs": 1300
+        },
+        {
+          "id": "l40",
+          "speaker": "trainer",
+          "text": "One person standing. Bad for *business.*",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l41",
+          "speaker": "trainer",
+          "text": "How long do you sit in smoke? As long as *they* do.",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l42",
+          "speaker": "trainer",
+          "text": "Tape ends.",
+          "pauseAfterMs": 1200
+        }
+      ],
+      "shots": [
+        {
+          "id": "s7a",
+          "line": "l36",
+          "words": "Calm faces are guessing too.",
+          "camera": {
+            "framing": "eyes",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7b",
+          "line": "l37",
+          "words": "They are reading your face as well.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7c",
+          "line": "l38",
+          "words": "So trust what you see. Say it out loud.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7d",
+          "line": "l39",
+          "words": "Then be the first to *stand up.*",
+          "camera": {
+            "framing": "eyes",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7e",
+          "line": "l40",
+          "words": "One person standing. Bad for *business.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7f",
+          "line": "l41",
+          "words": "How long do you sit in smoke?",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7g",
+          "line": "l41",
+          "words": "As long as *they* do.",
+          "camera": {
+            "framing": "eyes",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s7h",
+          "line": "l42",
+          "words": "Tape ends.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "trainer",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    }
+  ]
+}

@@ -1,12 +1,37 @@
 export { styleTokensSchema, parseStyleTokens, hexColor } from './tokens.schema';
 export type { StyleTokens } from './tokens.schema';
 export {
+  flatLayers,
+  posterLayerSchema,
+  thumbnailSchema,
+  thumbnailsSchema,
+} from './thumbnail.schema';
+export type { FlatPosterLayer, PosterLayer, Thumbnail, Thumbnails } from './thumbnail.schema';
+export {
+  GRAPHIC_KINDS,
+  GRAPHIC_SCENES,
+  SCENE_ITEMS,
+  FIRST_PIECE_BY,
+  JOURNEY_ANCHORS,
+  JOURNEY_STOPS,
+  JOURNEY_THINGS,
+  JOURNEY_WORLDS,
+  graphicSchema,
+  graphicSteps,
+  stepFrames,
+} from './graphic.schema';
+export type { Graphic, JourneyStop, JourneyThing } from './graphic.schema';
+export { packagingSchema } from './packaging.schema';
+export type { Packaging } from './packaging.schema';
+export {
   scriptLineSchema,
   voiceScriptSchema,
   wordTimingSchema,
   voiceLineSchema,
   voiceTrackSchema,
   parseOrExplain,
+  sameWords,
+  QUESTION_LIFT,
 } from './voice.schema';
 export type { ScriptLine, VoiceScript, WordTiming, VoiceLine, VoiceTrack } from './voice.schema';
 export {
@@ -25,20 +50,26 @@ export {
   AMBIENT_SFX,
   LOUDNESS_TARGET,
   MUSIC_MOODS,
+  MUSIC_PALETTES,
   SFX_NAMES,
+  SOUND_PROFILES,
   mixProblems,
   mixReportSchema,
   musicSegmentSchema,
+  scoreSchema,
   sfxCueSchema,
   soundPlanSchema,
 } from './sound.schema';
 export type {
   MixReport,
   MusicMood,
+  MusicPalette,
   MusicSegment,
+  Score,
   SfxCue,
   SfxName,
   SoundPlan,
+  SoundProfile,
 } from './sound.schema';
 export {
   CAMERA_MOVES,
@@ -52,6 +83,8 @@ export {
   beatSchema,
   brandSchema,
   formatSchema,
+  finishSchema,
+  PLAIN_FINISH,
   idSchema,
   viewerTextSchema,
   voiceProfileSchema,
@@ -60,6 +93,7 @@ export type {
   Beat,
   Brand,
   CameraMove,
+  Finish,
   Format,
   Framing,
   ScriptMode,
@@ -70,6 +104,8 @@ export type {
 export {
   NARRATOR,
   SPEAKING_WPM,
+  TRAVELS,
+  arrivalOf,
   ORBIT_BODIES,
   actorMoments,
   actorSchema,
@@ -83,10 +119,12 @@ export {
   shotSchema,
   storyLineSchema,
   storyboardSchema,
+  gaugeSchema,
 } from './storyboard.schema';
 export type {
   Actor,
   ActorMoment,
+  Travel,
   ActorStep,
   Overlay,
   CastMember,
@@ -95,6 +133,7 @@ export type {
   Shot,
   StoryLine,
   Storyboard,
+  Gauge,
 } from './storyboard.schema';
 export { checkStoryboard } from './storyboard.check';
 export type { StoryboardReport, World } from './storyboard.check';
@@ -128,6 +167,8 @@ export {
   joinTracks,
   partCount,
   partStoryboard,
+  graphicSoundCues,
+  scoreFor,
   soundPlanFor,
   timeShots,
   voiceScriptFor,
@@ -147,15 +188,22 @@ export {
 export type { QaAnswer, QaCheck, QaFinding, QaLook, QaQuestion, QaReport } from './qa.schema';
 export {
   EFFECT_UNDER_VOICE_DB,
+  EMPTY_PICTURE_S,
+  EMPTY_PICTURE_SHARE,
+  STILL_PICTURE_CHANGE,
+  STILL_PICTURE_S,
   MUSIC_UNDER_VOICE_DB,
   SOUND_MATCH_DB,
   checkResult,
   clock,
+  emptyPictureCheck,
+  stillPictureCheck,
   fileCheck,
   lengthCheck,
   lookChecks,
   loudnessCheck,
   madeFromCheck,
+  picturesOnly,
   parseLoudness,
   parseProbe,
   parseSilences,

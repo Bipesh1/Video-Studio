@@ -1,0 +1,104 @@
+{
+  "line": "Every choice is a game. Pull up a chair.",
+  "options": [
+    {
+      "character": "cheat",
+      "option": 1,
+      "kokoroVoice": "am_puck",
+      "speed": 1.08,
+      "like": "lively and quick; the voice the Stranger had in Split or Steal",
+      "file": "cheat-1.mp3",
+      "seconds": 1.82,
+      "lufs": -17.1,
+      "startsAtSecInAll": 0.0
+    },
+    {
+      "character": "cheat",
+      "option": 2,
+      "kokoroVoice": "am_eric",
+      "speed": 1.08,
+      "like": "lighter and brisk",
+      "file": "cheat-2.mp3",
+      "seconds": 1.88,
+      "lufs": -17.0,
+      "startsAtSecInAll": 2.8
+    },
+    {
+      "character": "cheat",
+      "option": 3,
+      "kokoroVoice": "am_liam",
+      "speed": 1.1,
+      "like": "young and fast",
+      "file": "cheat-3.mp3",
+      "seconds": 1.97,
+      "lufs": -17.0,
+      "startsAtSecInAll": 5.7
+    },
+    {
+      "character": "saint",
+      "option": 1,
+      "kokoroVoice": "af_heart",
+      "speed": 0.95,
+      "like": "a warm, bright woman's voice, a little slower",
+      "file": "saint-1.mp3",
+      "seconds": 2.29,
+      "lufs": -17.0,
+      "startsAtSecInAll": 8.7
+    },
+    {
+      "character": "saint",
+      "option": 2,
+      "kokoroVoice": "af_sarah",
+      "speed": 0.95,
+      "like": "a softer woman's voice",
+      "file": "saint-2.mp3",
+      "seconds": 2.21,
+      "lufs": -17.0,
+      "startsAtSecInAll": 12.0
+    },
+    {
+      "character": "saint",
+      "option": 3,
+      "kokoroVoice": "am_echo",
+      "speed": 0.95,
+      "like": "a gentle man's voice",
+      "file": "saint-3.mp3",
+      "seconds": 2.58,
+      "lufs": -17.1,
+      "startsAtSecInAll": 15.2
+    },
+    {
+      "character": "copycat",
+      "option": 1,
+      "kokoroVoice": "am_fenrir",
+      "speed": 0.97,
+      "like": "a steady, deeper man's voice",
+      "file": "copycat-1.mp3",
+      "seconds": 2.02,
+      "lufs": -17.0,
+      "startsAtSecInAll": 18.8
+    },
+    {
+      "character": "copycat",
+      "option": 2,
+      "kokoroVoice": "af_kore",
+      "speed": 0.97,
+      "like": "a level, plain woman's voice",
+      "file": "copycat-2.mp3",
+      "seconds": 2.03,
+      "lufs": -17.0,
+      "startsAtSecInAll": 21.8
+    },
+    {
+      "character": "copycat",
+      "option": 3,
+      "kokoroVoice": "am_onyx",
+      "speed": 0.97,
+      "like": "a low, flat man's voice",
+      "file": "copycat-3.mp3",
+      "seconds": 2.73,
+      "lufs": -17.3,
+      "startsAtSecInAll": 24.8
+    }
+  ]
+}

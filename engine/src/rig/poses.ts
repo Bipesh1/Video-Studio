@@ -214,6 +214,178 @@ export const foldedUpsideDown: Pose = {
   legs: { front: { upper: 104, lower: -150 }, back: { upper: 80, lower: -138 } },
 };
 
+// ---------------------------------------------------------------------------------------------
+// Sitting at a table. Each is the seat of `sit` with the arms and the back doing something
+// else, so a seated person can act without getting up. The desk they sit at (`GAME_TABLE` in
+// props/Game.tsx) has its top 1.22 heads up and its middle about two heads in front of them.
+
+/** Sitting, one arm stretched out over the table to something lying on it, the body leaning in. */
+export const sitReach: Pose = {
+  ...sit,
+  id: 'sit-reach',
+  torsoLean: 7,
+  headTilt: 6,
+  arms: {
+    front: { reach: vec(0.95, 0.04), bend: ELBOW_DOWN },
+    back: sit.arms.back,
+  },
+};
+
+/** Sitting with one hand flat on the chest: a promise, or "who, me?". */
+export const sitPromise: Pose = {
+  ...sit,
+  id: 'sit-promise',
+  torsoLean: 2,
+  headTilt: -3,
+  arms: {
+    front: { reach: vec(0.12, 0.34), bend: -1, over: true },
+    back: sit.arms.back,
+  },
+};
+
+/** Sitting with both hands thrown up: giving up on someone, or a win. */
+export const sitHandsUp: Pose = {
+  ...sit,
+  id: 'sit-hands-up',
+  torsoLean: -6,
+  headTilt: -5,
+  arms: { front: { upper: 118, lower: 44 }, back: { upper: -118, lower: -44 } },
+};
+
+/** Sitting slumped: the back bent forward, the head hanging, the hands dropped in the lap. */
+export const sitSlump: Pose = {
+  ...sit,
+  id: 'sit-slump',
+  torsoLean: 8,
+  headTilt: 18,
+  arms: {
+    front: { reach: vec(0.3, 0.98), bend: ELBOW_DOWN },
+    back: { reach: vec(0.2, 1.0), bend: ELBOW_DOWN },
+  },
+};
+
+/**
+ * Sitting with a phone held up in front of the chest and the head bowed over it: reading,
+ * scrolling, arguing in a chat. The phone is the held prop `phone`.
+ */
+export const sitPhone: Pose = {
+  ...sit,
+  id: 'sit-phone',
+  torsoLean: 5,
+  headTilt: 15,
+  arms: {
+    front: { reach: vec(0.5, 0.3), bend: ELBOW_DOWN, hand: 'grip', gripAxis: -90, thumb: 1 },
+    back: sit.arms.back,
+  },
+};
+
+/**
+ * Standing with a cup held in front of the chest in the near hand: at a party, waiting.
+ * Drawn for "How to Make Sure You Never Get Asked Out" (2026-10-14).
+ */
+export const holdCup: Pose = {
+  id: 'hold-cup',
+  arms: {
+    front: { reach: vec(0.62, 0.5), bend: ELBOW_DOWN, hand: 'grip', gripAxis: -90, thumb: 1 },
+    back: stand.arms.back,
+  },
+  legs: feet(),
+};
+
+/** The cup raised to the mouth and the chin up a little: a sip, to have something to do. */
+export const sip: Pose = {
+  id: 'sip',
+  headTilt: -8,
+  arms: {
+    front: {
+      reach: vec(0.4, -0.22),
+      bend: ELBOW_DOWN,
+      hand: 'grip',
+      gripAxis: -90,
+      thumb: 1,
+      over: true,
+    },
+    back: stand.arms.back,
+  },
+  legs: feet(),
+};
+
+/** Every pose that sits on a seat: a chair stays theirs through any of them. */
+export const SEATED_POSES: readonly string[] = [
+  sit.id,
+  sitReach.id,
+  sitPromise.id,
+  sitHandsUp.id,
+  sitSlump.id,
+  sitPhone.id,
+];
+
+// ---------------------------------------------------------------------------------------------
+// Poses that show who someone is: drawn for the game theory cast, free for anyone.
+
+/** Both arms held wide open, the chest lifted: a welcome, trust, "come here". */
+export const openArms: Pose = {
+  id: 'open-arms',
+  torsoLean: -2,
+  headTilt: -3,
+  // The upper arms come down and out, the forearms turn up: open hands, not a scarecrow.
+  arms: { front: { upper: 50, lower: 44 }, back: { upper: -50, lower: -44 } },
+  legs: feet(0.22),
+};
+
+/** Standing with one hand flat on the chest: a promise, sincerity, "you have my word". */
+export const handOnHeart: Pose = {
+  id: 'hand-on-heart',
+  headTilt: -3,
+  // The far arm crosses the chest with its elbow down and out, so the hand lies on the heart
+  // and the near arm hangs free.
+  arms: {
+    front: stand.arms.front,
+    back: { reach: vec(0.1, 0.37), bend: 1, over: true },
+  },
+  legs: feet(),
+};
+
+/**
+ * Standing straight with one hand up at the knot of the tie and the chin a little lifted:
+ * straightening it, pleased with how that went.
+ */
+export const fixTie: Pose = {
+  id: 'fix-tie',
+  headTilt: -5,
+  // The near arm folds shut in front of the chest, elbow down, so the hand comes back up to the
+  // knot. A hand reached to the collar any other way throws the elbow out to the side.
+  arms: {
+    front: { upper: 18, lower: 175 },
+    back: stand.arms.back,
+  },
+  legs: feet(),
+};
+
+/**
+ * Leaning in with both hands together in front of the chest, one over the other: rubbing the
+ * hands at a deal about to go his way. The chin stays up, the eyes on the other person.
+ */
+export const rubHands: Pose = {
+  id: 'rub-hands',
+  torsoLean: 9,
+  headTilt: -5,
+  arms: {
+    front: { reach: vec(0.44, 0.34), bend: ELBOW_DOWN, over: true },
+    back: { reach: vec(0.37, 0.45), bend: ELBOW_DOWN, over: true },
+  },
+  legs: feet(0.24),
+};
+
+/** Standing still with the head tipped to one side: watching, weighing someone up. */
+export const headTilt: Pose = {
+  id: 'head-tilt',
+  torsoLean: -1,
+  headTilt: 14,
+  arms: stand.arms,
+  legs: feet(),
+};
+
 /**
  * Poses of a body held up by what it is in or on, not by the ground under its feet. The
  * self-check does not ask where their feet are.
@@ -233,9 +405,21 @@ export const PHASE1_POSES = [
 /** The Phase 2C starter set. */
 export const MORE_POSES = [sit, kneel, lie, crossArms, lookUp, lookDown, cower, hug] as const;
 /** Poses drawn for one story and kept for the next. */
-export const STORY_POSES = [foldedUpsideDown] as const;
+export const STORY_POSES = [
+  foldedUpsideDown,
+  sitReach,
+  sitPromise,
+  sitHandsUp,
+  sitSlump,
+  sitPhone,
+  holdCup,
+  sip,
+] as const;
 
-export const POSES = [...PHASE1_POSES, ...MORE_POSES, ...STORY_POSES] as const;
+/** Poses that carry a character: the signature moves of a recurring cast. */
+export const CAST_POSES = [openArms, handOnHeart, rubHands, headTilt, fixTie] as const;
+
+export const POSES = [...PHASE1_POSES, ...MORE_POSES, ...STORY_POSES, ...CAST_POSES] as const;
 export type PoseId = (typeof POSES)[number]['id'];
 
 export const poseById = (id: string): Pose => {

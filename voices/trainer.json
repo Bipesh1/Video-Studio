@@ -1,0 +1,18 @@
+{
+  "id": "trainer",
+  "name": "The Trainer",
+  "description": "The Trainer of the game theory videos: low, flat and unhurried, never surprised. Voice 1 of three and pace 2 of three, picked by Biku on 2026-10-11; on 2026-10-13 he picked the blend, seven parts of that voice to three of the plain narrator, so the Trainer sounds like nobody else. Spoken by Chatterbox from a sample of this Kokoro voice since 2026-10-14, so it is the same person, more alive.",
+  "version": 5,
+  "kokoroVoice": "am_onyx",
+  "blend": [
+    {
+      "kokoroVoice": "am_michael",
+      "share": 0.3
+    }
+  ],
+  "speed": 0.97,
+  "engine": "chatterbox",
+  "sample": "voices/samples/trainer.wav",
+  "pauseScale": 0.67,
+  "pronunciations": {}
+}

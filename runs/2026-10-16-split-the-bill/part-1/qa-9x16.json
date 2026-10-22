@@ -1,0 +1,401 @@
+{
+  "version": 1,
+  "title": "Why Splitting the Bill Makes Everyone Order More",
+  "part": 1,
+  "parts": 1,
+  "size": "9:16",
+  "video": "split-the-bill-part-1-9x16-v2.mp4",
+  "seconds": 38.433333,
+  "checkedOn": "2026-10-16",
+  "checks": [
+    {
+      "id": "plays",
+      "title": "The file plays",
+      "by": "measured",
+      "detail": "1080x1920, 30 pictures a second, 38.4 s, picture and sound both there; played through from start to finish",
+      "findings": []
+    },
+    {
+      "id": "made-from",
+      "title": "The video is of this plan and this sound",
+      "by": "measured",
+      "detail": "rendered from the plan as it stands; its sound is the mix as it stands, second for second (what is left over is 36 dB under it at most)",
+      "findings": []
+    },
+    {
+      "id": "length",
+      "title": "The length is right",
+      "by": "measured",
+      "detail": "38.4 s; a part may be up to 60 s",
+      "findings": []
+    },
+    {
+      "id": "in-step",
+      "title": "Picture and voice are in step",
+      "by": "measured",
+      "detail": "16 shots end to end with no gap, each line heard while its own pictures are on screen; picture and voice end together at 38.4 s",
+      "findings": []
+    },
+    {
+      "id": "silence",
+      "title": "There is no dead silence",
+      "by": "measured",
+      "detail": "the sound never drops out; the longest pause between words is 2.8 s",
+      "findings": []
+    },
+    {
+      "id": "loudness",
+      "title": "The sound is at the right level",
+      "by": "measured",
+      "detail": "loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.2 dB (the limit is -1)",
+      "findings": []
+    },
+    {
+      "id": "words-heard",
+      "title": "Nothing drowns the words",
+      "by": "measured",
+      "detail": "6 sound effects, the loudest of those over words 11 dB under the voice; the music sits 17.9 dB under the voice while someone speaks",
+      "findings": []
+    },
+    {
+      "id": "captions",
+      "title": "Captions fit the screen",
+      "by": "measured",
+      "detail": "21 captions of up to 2 lines; the widest takes 74% of the width; the briefest stays up 0.8 s",
+      "findings": []
+    },
+    {
+      "id": "in-frame",
+      "title": "Everyone is inside the picture",
+      "by": "measured",
+      "detail": "where every head lands on screen, on all 1153 frames of the 16 shots",
+      "findings": [
+        {
+          "level": "note",
+          "shot": "s2a",
+          "atMs": 5966.666666666667,
+          "text": "You is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s2a",
+          "atMs": 5966.666666666667,
+          "text": "The Saint is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s2a",
+          "atMs": 4066.6666666666665,
+          "text": "The Cheat is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s3a",
+          "atMs": 6733.333333333333,
+          "text": "the edge of the picture cuts off 41% of You's head"
+        },
+        {
+          "level": "note",
+          "shot": "s3a",
+          "atMs": 6033.333333333333,
+          "text": "The Cheat is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s3a",
+          "atMs": 6200,
+          "text": "The Copycat is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s3c1",
+          "atMs": 11233.333333333332,
+          "text": "You is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s3d",
+          "atMs": 14466.666666666666,
+          "text": "You is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s3d",
+          "atMs": 14933.333333333334,
+          "text": "The Cheat is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s3d",
+          "atMs": 14966.666666666666,
+          "text": "The Copycat is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s5b",
+          "atMs": 24466.666666666664,
+          "text": "You is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s5b",
+          "atMs": 23733.333333333336,
+          "text": "The Saint is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s5b",
+          "atMs": 23200,
+          "text": "the edge of the picture cuts off 41% of The Copycat's head"
+        },
+        {
+          "level": "note",
+          "shot": "s5d",
+          "atMs": 32066.66666666667,
+          "text": "You is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s5d",
+          "atMs": 31966.666666666664,
+          "text": "The Saint is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s5d",
+          "atMs": 29766.666666666664,
+          "text": "the edge of the picture cuts off 42% of The Cheat's head"
+        },
+        {
+          "level": "note",
+          "shot": "s5e",
+          "atMs": 32600,
+          "text": "You is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s5e",
+          "atMs": 32100,
+          "text": "The Saint is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s5e",
+          "atMs": 32100,
+          "text": "the edge of the picture cuts off 39% of The Copycat's head"
+        },
+        {
+          "level": "note",
+          "shot": "s6a",
+          "atMs": 37800,
+          "text": "The Saint is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s6a",
+          "atMs": 35800,
+          "text": "The Cheat is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s6a",
+          "atMs": 37633.333333333336,
+          "text": "The Copycat is in this shot's plan but falls outside the picture"
+        }
+      ]
+    },
+    {
+      "id": "things-in-frame",
+      "title": "The things a shot shows are inside the picture",
+      "by": "measured",
+      "detail": "the body of every thing standing or hanging in a shot against the edges of the picture, on every frame (16 checked)",
+      "findings": [
+        {
+          "level": "note",
+          "shot": "s1a",
+          "text": "the camera stands back to fit everyone and everything in, so people are 63% of their usual size; in this shape, put people and things nearer each other, or a thing above them"
+        },
+        {
+          "level": "note",
+          "shot": "s3e",
+          "text": "the camera stands back to fit everyone and everything in, so people are 66% of their usual size; in this shape, put people and things nearer each other, or a thing above them"
+        },
+        {
+          "level": "note",
+          "shot": "s4a",
+          "text": "the camera stands back to fit everyone and everything in, so people are 66% of their usual size; in this shape, put people and things nearer each other, or a thing above them"
+        },
+        {
+          "level": "note",
+          "shot": "s5a",
+          "text": "the camera stands back to fit everyone and everything in, so people are 66% of their usual size; in this shape, put people and things nearer each other, or a thing above them"
+        },
+        {
+          "level": "note",
+          "shot": "s5c",
+          "text": "the camera stands back to fit everyone and everything in, so people are 62% of their usual size; in this shape, put people and things nearer each other, or a thing above them"
+        }
+      ]
+    },
+    {
+      "id": "safe-area",
+      "title": "Words over the picture are clear of the apps' own buttons",
+      "by": "measured",
+      "detail": "the captions, the counter and any label against the middle 900 by 1400 of a tall picture, on every frame",
+      "findings": [
+        {
+          "level": "note",
+          "shot": "s1a",
+          "text": "the label or number reach 97 px outside the part of a tall picture the apps keep clear of their buttons"
+        },
+        {
+          "level": "note",
+          "shot": "s5b",
+          "text": "the label or number reach 81 px outside the part of a tall picture the apps keep clear of their buttons"
+        },
+        {
+          "level": "note",
+          "shot": "s5d",
+          "text": "the label or number reach 81 px outside the part of a tall picture the apps keep clear of their buttons"
+        },
+        {
+          "level": "note",
+          "shot": "s6a",
+          "text": "the label or number reach 81 px outside the part of a tall picture the apps keep clear of their buttons"
+        }
+      ]
+    },
+    {
+      "id": "faces-clear",
+      "title": "No face is under the title or the captions",
+      "by": "measured",
+      "detail": "every face against the title, any label, the captions, on every frame",
+      "findings": []
+    },
+    {
+      "id": "feet",
+      "title": "Feet are on the ground",
+      "by": "measured",
+      "detail": "the lowest foot or knee of every body against the ground line, on every frame",
+      "findings": []
+    },
+    {
+      "id": "smooth",
+      "title": "Nothing jumps",
+      "by": "measured",
+      "detail": "the furthest anyone moves in one frame on the way into a pose is 0.22 of a head (The Cheat, shot s5a); a jump would be over 0.3",
+      "findings": []
+    },
+    {
+      "id": "held",
+      "title": "No picture is held too long",
+      "by": "measured",
+      "detail": "the longest shot is 3.8 s (s6a); the longest with nothing moving in it is 3.2 s",
+      "findings": []
+    },
+    {
+      "id": "reach",
+      "title": "Whatever is picked up is within reach",
+      "by": "measured",
+      "detail": "nobody takes a thing in their hand inside a shot",
+      "findings": []
+    },
+    {
+      "id": "plan",
+      "title": "The plan's own checks still pass",
+      "by": "measured",
+      "detail": "every name in the library, the staging rules, the format's beats, for all 16 shots of the video",
+      "findings": [
+        {
+          "level": "note",
+          "text": "the last shot \"s6a\" is not where the first one is; a Short loops straight back to its start, so ending in the same place and shot size as the opening makes the replay seamless"
+        },
+        {
+          "level": "note",
+          "text": "\"saint\" speaks line \"l03\" and is not on screen for all of it"
+        },
+        {
+          "level": "note",
+          "text": "\"copycat\" speaks line \"l05\" and is not on screen for all of it"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s3c2\" would be on screen only about 1.2 s, too quick to take in; give it more of the line's words"
+        },
+        {
+          "level": "note",
+          "text": "in shot \"s3c2\", \"copycat\" changes face 2 times; one change of feeling is all a shot of a few seconds can show"
+        },
+        {
+          "level": "note",
+          "text": "\"saint\" changes face 3 times in 4 shots by shot \"s3d\"; hold a face longer, and change it only when something happens to them"
+        },
+        {
+          "level": "note",
+          "text": "in shot \"s3d\", \"saint\" changes face 2 times; one change of feeling is all a shot of a few seconds can show"
+        },
+        {
+          "level": "note",
+          "text": "\"you\" changes face 3 times in 4 shots by shot \"s4a\"; hold a face longer, and change it only when something happens to them"
+        },
+        {
+          "level": "note",
+          "text": "\"copycat\" changes face 3 times in 4 shots by shot \"s4a\"; hold a face longer, and change it only when something happens to them"
+        },
+        {
+          "level": "note",
+          "text": "\"cheat\" changes face 3 times in 4 shots by shot \"s5b\"; hold a face longer, and change it only when something happens to them"
+        },
+        {
+          "level": "note",
+          "text": "in shot \"s5b\", \"cheat\" goes from shouting straight to smug: a leap of feeling. Right for a shock the viewer watches happen; otherwise go through a face between them"
+        },
+        {
+          "level": "note",
+          "text": "in shot \"s5c\", \"copycat\" goes from angry straight to exhausted: a leap of feeling. Right for a shock the viewer watches happen; otherwise go through a face between them"
+        },
+        {
+          "level": "note",
+          "text": "in shot \"s5e\", \"cheat\" goes from exhausted straight to happy: a leap of feeling. Right for a shock the viewer watches happen; otherwise go through a face between them"
+        }
+      ]
+    },
+    {
+      "id": "style",
+      "title": "Every still passes the Style Check",
+      "by": "looked",
+      "detail": "16 stills, each against the 11 questions of the style guide",
+      "findings": []
+    },
+    {
+      "id": "story",
+      "title": "Every still tells its part of the story",
+      "by": "looked",
+      "detail": "16 stills, each against 7 questions: in frame, face visible, expression, hands, feet, action, setting",
+      "findings": []
+    },
+    {
+      "id": "motion",
+      "title": "Every move and every cut holds up frame by frame",
+      "by": "looked",
+      "detail": "47 strips of frames, one across each move inside a shot and each cut that keeps someone on screen",
+      "findings": []
+    },
+    {
+      "id": "playbook",
+      "title": "The playbook was followed",
+      "by": "looked",
+      "detail": "the rules of the general, format and style playbooks, read against the finished part",
+      "findings": []
+    }
+  ],
+  "fixed": [
+    "v1: three heads were cut by the frame edge (the Saint in the Cheat's close-up, the Copycat in the Saint's medium, the standing waiter): the close shots now hold only the people they are about, and the waiter's line is framed on him, You and the Saint, whole."
+  ],
+  "notes": [
+    "The first game theory comedy short (format dilemma-comedy), Claude's script approved by Biku; one change, the waiter's two short lines, so the silent jokes have their moment.",
+    "Looked at large: the Cheat looks down at the menu, at the Saint, and the sly grin spreads, then dollar eyes on 'The lobster'; the Saint's jaw drops with shock lines; the Copycat's grin builds on 'too'; the Saint goes sad at her salad, then fuming with the menu up and an anger mark; the bill runs out across the floor as the jaw drops come one by one; the blame; the why with $15 and 2004; You sad under falling coins with $45 for a glass of water.",
+    "The wide shots of the whole table keep four people small in a tall frame; the bill is read there by its length across the floor.",
+    "The waiter speaks in the studio's plain voice (Kokoro 'man'). Claude cannot hear: the cast's voices, the comic music and the effects need Biku's ears."
+  ]
+}

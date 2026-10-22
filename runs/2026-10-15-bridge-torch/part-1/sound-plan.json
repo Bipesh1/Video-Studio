@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "tense",
+      "startMs": 0
+    },
+    {
+      "mood": "unease",
+      "startMs": 6501
+    },
+    {
+      "mood": "closing-in",
+      "startMs": 27606
+    }
+  ],
+  "sfx": [
+    {
+      "name": "wind",
+      "atMs": 60,
+      "durationMs": 44039,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "thunder",
+      "atMs": 3534,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "tick",
+      "atMs": 24507,
+      "durationMs": 2949,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "boom",
+      "atMs": 34662,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "thunder",
+      "atMs": 39092,
+      "gainDb": -2,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "creak",
+      "atMs": 39827,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 5
+    }
+  ],
+  "musicGainDb": 0,
+  "hush": []
+}

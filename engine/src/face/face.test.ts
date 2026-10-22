@@ -1,13 +1,22 @@
 import { describe, expect, it } from 'vitest';
 import {
   EXPRESSIONS,
-  EXPRESSION_BLEND_FRAMES,
+  EXPRESSION_CHANGE_FRAMES,
+  changeFace,
+  faceAtStrength,
   GUIDE_EMOTIONS,
   blendFace,
   faceAt,
 } from './expressions';
 import { EYE_W, eyeSlots } from './layout';
-import { MOUTH_FORMS, MOUTH_SHAPES, mouthShapeAt, shapesOfWord, talkAt } from './talk';
+import {
+  MOUTH_FORMS,
+  MOUTH_SHAPES,
+  mouthShapeAt,
+  shapesOfSounds,
+  shapesOfWord,
+  talkAt,
+} from './talk';
 import { tokens } from '../tokens';
 
 describe('expressions', () => {
@@ -102,9 +111,9 @@ describe('expressions', () => {
     expect(mid.browLeft.tilt).toBeLessThan(EXPRESSIONS.angry.browLeft.tilt);
   });
 
-  it('change over 3 to 4 frames and never pop', () => {
-    expect(EXPRESSION_BLEND_FRAMES).toBeGreaterThanOrEqual(3);
-    expect(EXPRESSION_BLEND_FRAMES).toBeLessThanOrEqual(4);
+  it('change over about half a second and never pop', () => {
+    expect(EXPRESSION_CHANGE_FRAMES).toBeGreaterThanOrEqual(10);
+    expect(EXPRESSION_CHANGE_FRAMES).toBeLessThanOrEqual(18);
     const keys = [
       { frame: 0, expression: 'neutral' as const },
       { frame: 10, expression: 'angry' as const },
@@ -113,7 +122,46 @@ describe('expressions', () => {
     const between = faceAt(12, keys);
     expect(between).not.toEqual(EXPRESSIONS.neutral);
     expect(between).not.toEqual(EXPRESSIONS.angry);
-    expect(faceAt(10 + EXPRESSION_BLEND_FRAMES, keys)).toEqual(EXPRESSIONS.angry);
+    expect(faceAt(10 + EXPRESSION_CHANGE_FRAMES, keys)).toEqual(EXPRESSIONS.angry);
+  });
+
+  it('change in order: the eyes first, a blink, the brows, the mouth last', () => {
+    const from = EXPRESSIONS.happy;
+    const to = EXPRESSIONS.suspicious;
+    // Early on only the eyes have begun: the brows and the mouth are still the old face's.
+    const early = changeFace(from, to, 0.2);
+    expect(early.browLeft).toEqual(from.browLeft);
+    expect(early.mouth).toEqual(from.mouth);
+    expect(early.eyes.lookX).toBeGreaterThan(from.eyes.lookX);
+    // A third of the way through the lids are down.
+    expect(changeFace(from, to, 0.36).eyes.upperLid).toBeCloseTo(1, 5);
+    // Late on the eyes and brows have arrived and the mouth is still on its way.
+    const late = changeFace(from, to, 0.8);
+    expect(late.browLeft).toEqual(to.browLeft);
+    expect(late.eyes).toEqual(to.eyes);
+    expect(late.mouth).not.toEqual(to.mouth);
+    expect(late.mouth).not.toEqual(from.mouth);
+    expect(changeFace(from, to, 0)).toBe(from);
+    expect(changeFace(from, to, 1)).toBe(to);
+  });
+
+  it('hold when the next key is the same face, and wear a face at part strength', () => {
+    const half = faceAtStrength(EXPRESSIONS.dread, 0.5);
+    expect(half.browLeft.raise).toBeCloseTo(
+      (EXPRESSIONS.neutral.browLeft.raise + EXPRESSIONS.dread.browLeft.raise) / 2,
+      6,
+    );
+    expect(faceAtStrength(EXPRESSIONS.dread)).toBe(EXPRESSIONS.dread);
+    const keys = [
+      { frame: 0, expression: half, id: 'dread@0.5' },
+      { frame: 10, expression: faceAtStrength(EXPRESSIONS.dread, 0.5), id: 'dread@0.5' },
+      { frame: 20, expression: EXPRESSIONS.dread, id: 'dread@1' },
+    ];
+    // The same face again is a hold: no blink, nothing moves.
+    expect(faceAt(15, keys).eyes.upperLid).toBeCloseTo(half.eyes.upperLid, 6);
+    // The same feeling growing is a change.
+    expect(faceAt(25, keys)).not.toEqual(EXPRESSIONS.dread);
+    expect(faceAt(20 + EXPRESSION_CHANGE_FRAMES, keys)).toEqual(EXPRESSIONS.dread);
   });
 });
 
@@ -266,5 +314,25 @@ describe('eyes as the head turns', () => {
       expect(Math.abs(x - last)).toBeLessThan(0.01);
       last = x;
     }
+  });
+});
+
+describe('a mouth that follows what the voice said', () => {
+  it('reads the sounds when the voice gives them: lips meet on m and b, round on oo, wide on ee', () => {
+    expect(shapesOfSounds('bˈuts')).toEqual(['closed', 'round', 'half']);
+    expect(shapesOfSounds('smˈOk')).toEqual(['half', 'closed', 'round', 'half']);
+    expect(shapesOfSounds('ðˈæt')).toEqual(['half', 'open', 'half']);
+    expect(shapesOfSounds('ˌɪz')).toEqual(['wide', 'half']);
+  });
+
+  it('uses the sounds over the spelling, and the spelling when there are none', () => {
+    // "one" is spelled with an o and an e, and said "wʌn".
+    const said = { startMs: 0, endMs: 400, text: 'one', sounds: 'wˈʌn' };
+    const spelled = { startMs: 0, endMs: 400, text: 'one' };
+    const at = (w: typeof said | typeof spelled) =>
+      Array.from({ length: 12 }, (_, f) => mouthShapeAt(f, 30, [w]));
+    expect(at(said)[0]).toBe('round');
+    expect(at(said)).toContain('open');
+    expect(at(spelled)).not.toEqual(at(said));
   });
 });

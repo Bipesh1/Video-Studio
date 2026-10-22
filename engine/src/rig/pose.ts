@@ -303,7 +303,23 @@ export function moveFrames(
  * holds. Hands and heads travel on arcs, because joints turn rather than slide. A move of the
  * whole body (kneeling, sitting, getting up) is not a snap: it takes longer and is smooth.
  */
-export function poseAt(frame: number, keys: readonly PoseKey[]): ResolvedPose {
+/**
+ * How people move from pose to pose: `slower` stretches the move, `overshoot` scales its
+ * wind-up and its overshoot. Snappy is the cartoon snap; gentle takes about half as long again and settles
+ * softly, for scenes that need to feel (the short films, the quiet of the game theory room).
+ */
+export type Pace = { slower: number; overshoot: number };
+export const PACES: Readonly<Record<'snappy' | 'gentle', Pace>> = {
+  snappy: { slower: 1, overshoot: 1 },
+  // Biku, 2026-10-14, of the first try at 2.6: "a little bit slow, not too slow".
+  gentle: { slower: 2, overshoot: 0.35 },
+};
+
+export function poseAt(
+  frame: number,
+  keys: readonly PoseKey[],
+  pace: Pace = PACES.snappy,
+): ResolvedPose {
   const firstKey = keys[0];
   if (!firstKey) throw new Error('poseAt needs at least one key');
   let index = 0;
@@ -316,22 +332,26 @@ export function poseAt(frame: number, keys: readonly PoseKey[]): ResolvedPose {
   const prev = keys[index - 1];
   if (!prev || frame < key.frame) return target;
   const from = resolvePose(prev.pose);
-  const { windup, transition, big, whole } = moveFrames(from, target, key);
+  const moved = moveFrames(from, target, key);
+  const { big, whole } = moved;
+  const windup = Math.round(moved.windup * Math.min(1, pace.overshoot + 0.3));
+  const transition = Math.max(1, Math.round(moved.transition * pace.slower));
   const f = frame - key.frame;
   if (f >= windup + transition) return target;
   if (f < windup) {
     // Pull back the other way, easing into the deepest point as the snap begins.
-    const back = -WINDUP_DEPTH * Math.sin(((f / windup) * Math.PI) / 2);
+    const back = -WINDUP_DEPTH * pace.overshoot * Math.sin(((f / windup) * Math.PI) / 2);
     return whole ? mixBodies(from, target, back, 0) : mixPoses(from, target, back, 0);
   }
   const t = (f - windup) / transition;
-  const depth = windup > 0 ? WINDUP_DEPTH : 0;
+  const depth = windup > 0 ? WINDUP_DEPTH * pace.overshoot : 0;
   if (whole) {
     // A body has weight: it starts and stops smoothly, and the arms and head go with it.
     const along = smoothstep(t);
     return mixBodies(from, target, -depth + (1 + depth) * along, along);
   }
-  const e = -depth + (1 + depth) * easeOutBack(t, POSE_OVERSHOOT);
-  const ec = clamp(easeOutBack(t, POSE_OVERSHOOT), 0, 1);
+  const overshoot = POSE_OVERSHOOT * pace.overshoot;
+  const e = -depth + (1 + depth) * easeOutBack(t, overshoot);
+  const ec = clamp(easeOutBack(t, overshoot), 0, 1);
   return mixPoses(from, target, e, ec, big ? WEIGHT_DIP * Math.sin(Math.PI * t) : 0);
 }

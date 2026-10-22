@@ -1,0 +1,2030 @@
+{
+  "version": 1,
+  "title": "Why Splitting the Bill Makes Everyone Order More",
+  "request": "A game theory comedy short: splitting the bill equally makes everyone order more (the diner's dilemma). Script written by Claude, approved by Biku 2026-10-16.",
+  "mode": "original",
+  "format": "dilemma-comedy",
+  "style": "ink-stick",
+  "brand": "dilemma-table",
+  "voice": "leak",
+  "seed": 59342,
+  "finish": {
+    "acting": "snappy",
+    "onTwos": false,
+    "shadows": true,
+    "grain": 0.2,
+    "vignette": 0.15,
+    "boil": 0.25
+  },
+  "sources": [
+    "Uri Gneezy, Ernan Haruvy and Hadas Yafe, \"The Inefficiency of Splitting the Bill\", The Economic Journal, vol. 114, no. 495, April 2004, pages 265 to 280. A field experiment in a restaurant: diners who split the bill equally ate more than diners who each paid for their own, and they said they preferred paying for their own. https://ideas.repec.org/a/ecj/econjl/v114y2004i495p265-280.html",
+    "What the story invents: the four friends, the restaurant and the prices. Three lobsters at $60 is $180, split four ways $45 each, the glass of water included."
+  ],
+  "appliedLessons": [],
+  "cast": [
+    {
+      "id": "trainer",
+      "name": "The Trainer",
+      "card": "trainer",
+      "host": true
+    },
+    {
+      "id": "saint",
+      "name": "The Saint",
+      "card": "saint"
+    },
+    {
+      "id": "cheat",
+      "name": "The Cheat",
+      "card": "cheat"
+    },
+    {
+      "id": "copycat",
+      "name": "The Copycat",
+      "card": "copycat"
+    },
+    {
+      "id": "you",
+      "name": "You",
+      "card": "you"
+    },
+    {
+      "id": "waiter",
+      "name": "The waiter",
+      "look": {
+        "identity": {
+          "skinTone": 3,
+          "hair": "short-crop",
+          "hairColor": "black"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "jacket",
+              "cloth": "steel",
+              "under": "cream"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "steel"
+            }
+          }
+        }
+      },
+      "voice": "man"
+    }
+  ],
+  "series": "game-theory",
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "the-question",
+      "mood": "comic",
+      "quiet": false,
+      "place": "restaurant",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l01",
+          "speaker": "trainer",
+          "text": "Why does splitting the bill make everyone order more?",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s1a",
+          "line": "l01",
+          "words": "Why does splitting the bill make everyone order more?",
+          "camera": {
+            "framing": "wide",
+            "move": "push-in",
+            "strength": 0.15
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "sit",
+              "expression": "neutral",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.155,
+              "lookAt": "ahead",
+              "holds": "menu",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "saint",
+              "pose": "sit",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "cheat",
+              "holds": "menu",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "neutral",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "saint",
+              "holds": "menu",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "sit",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.845,
+              "lookAt": "saint",
+              "holds": "menu",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.155
+            },
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "chair",
+              "x": 0.845
+            },
+            {
+              "prop": "dining-table",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "crowd-murmur",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "overlay": {
+            "kind": "words",
+            "lines": [
+              "Why does splitting",
+              "the bill make",
+              "everyone order more?"
+            ],
+            "stress": 2
+          },
+          "transition": "cut",
+          "startMs": 0,
+          "endMs": 2982
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "the-setup",
+      "mood": "comic",
+      "quiet": false,
+      "place": "restaurant",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l02",
+          "speaker": "copycat",
+          "text": "Let's just split it four ways. Easier.",
+          "pauseAfterMs": 1000
+        }
+      ],
+      "shots": [
+        {
+          "id": "s2a",
+          "line": "l02",
+          "words": "Let's just split it four ways. Easier.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "copycat"
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "sit",
+              "expression": "neutral",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.155,
+              "lookAt": "ahead",
+              "holds": "menu",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.15,
+                  "lookAt": "copycat"
+                }
+              ]
+            },
+            {
+              "character": "saint",
+              "pose": "sit",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "cheat",
+              "holds": "menu",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.1,
+                  "lookAt": "copycat"
+                }
+              ]
+            },
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "neutral",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "saint",
+              "holds": "menu",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.55,
+                  "expression": "tempted",
+                  "lookAt": "camera"
+                }
+              ]
+            },
+            {
+              "character": "copycat",
+              "pose": "sit",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.845,
+              "lookAt": "saint",
+              "holds": "menu",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.15,
+                  "pose": "sit-hands-up",
+                  "lookAt": "camera"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.155
+            },
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "chair",
+              "x": 0.845
+            },
+            {
+              "prop": "dining-table",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "crowd-murmur",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "transition": "cut",
+          "startMs": 2982,
+          "endMs": 6012
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "chapter": 1,
+      "beat": "the-escalation",
+      "mood": "comic",
+      "quiet": false,
+      "place": "restaurant",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l03",
+          "speaker": "saint",
+          "text": "A small salad for me, please.",
+          "pauseAfterMs": 1600
+        },
+        {
+          "id": "l04",
+          "speaker": "cheat",
+          "text": "The lobster. The big one.",
+          "pauseAfterMs": 1300
+        },
+        {
+          "id": "l05",
+          "speaker": "copycat",
+          "text": "Then I'll have the lobster too.",
+          "pauseAfterMs": 1300
+        },
+        {
+          "id": "l06",
+          "speaker": "saint",
+          "text": "Make it three lobsters.",
+          "pauseAfterMs": 900
+        },
+        {
+          "id": "l07",
+          "speaker": "waiter",
+          "text": "And for you?",
+          "pauseAfterMs": 1600
+        }
+      ],
+      "shots": [
+        {
+          "id": "s3a",
+          "line": "l03",
+          "words": "A small salad for me,",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "sit",
+              "expression": "neutral",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.155,
+              "lookAt": "copycat",
+              "holds": "menu",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.2,
+                  "lookAt": "saint"
+                }
+              ]
+            },
+            {
+              "character": "saint",
+              "pose": "sit",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "copycat",
+              "holds": "menu",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.05,
+                  "lookAt": "ahead"
+                }
+              ]
+            },
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "tempted",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "camera",
+              "holds": "menu",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "sit-hands-up",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.845,
+              "lookAt": "camera",
+              "holds": "menu",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.1,
+                  "pose": "sit",
+                  "lookAt": "saint"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.155
+            },
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "chair",
+              "x": 0.845
+            },
+            {
+              "prop": "dining-table",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "crowd-murmur",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "transition": "cut",
+          "startMs": 6012,
+          "endMs": 7142
+        },
+        {
+          "id": "s3a2",
+          "line": "l03",
+          "words": "please.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "cheat"
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "tempted",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "camera",
+              "holds": "menu",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.05,
+                  "lookAt": "down"
+                },
+                {
+                  "at": 0.35,
+                  "lookAt": "ahead"
+                },
+                {
+                  "at": 0.65,
+                  "expression": "sly-grin",
+                  "lookAt": "camera"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.155
+            },
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "chair",
+              "x": 0.845
+            },
+            {
+              "prop": "dining-table",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "crowd-murmur",
+              "at": "start",
+              "gainDb": -10
+            },
+            {
+              "name": "blip",
+              "at": "end",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "startMs": 7142,
+          "endMs": 8718
+        },
+        {
+          "id": "s3b",
+          "line": "l04",
+          "words": "The lobster. The big one.",
+          "camera": {
+            "framing": "close-up",
+            "move": "push-in",
+            "strength": 0.25,
+            "focus": "cheat"
+          },
+          "actors": [
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "sly-grin",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "camera",
+              "holds": "menu",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.155
+            },
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "chair",
+              "x": 0.845
+            },
+            {
+              "prop": "dining-table",
+              "x": 0.5
+            }
+          ],
+          "effects": [
+            {
+              "effect": "dollar-eyes",
+              "on": "cheat"
+            }
+          ],
+          "sfx": [
+            {
+              "name": "crowd-murmur",
+              "at": "start",
+              "gainDb": -10
+            },
+            {
+              "name": "ding",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "startMs": 8718,
+          "endMs": 11058
+        },
+        {
+          "id": "s3c1",
+          "line": "l05",
+          "words": "Then I'll have the lobster",
+          "camera": {
+            "framing": "medium",
+            "move": "punch-in",
+            "strength": 0.3,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "sit",
+              "expression": "neutral",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.155,
+              "lookAt": "saint",
+              "holds": "menu",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.2,
+                  "expression": "surprised",
+                  "lookAt": "ahead"
+                }
+              ]
+            },
+            {
+              "character": "saint",
+              "pose": "sit",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "ahead",
+              "holds": "menu",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.08,
+                  "expression": "jaw-drop",
+                  "lookAt": "ahead"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.155
+            },
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "chair",
+              "x": 0.845
+            },
+            {
+              "prop": "dining-table",
+              "x": 0.5
+            }
+          ],
+          "effects": [
+            {
+              "effect": "shock-lines",
+              "on": "saint"
+            }
+          ],
+          "sfx": [
+            {
+              "name": "crowd-murmur",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "transition": "cut",
+          "startMs": 11058,
+          "endMs": 12048
+        },
+        {
+          "id": "s3c2",
+          "line": "l05",
+          "words": "too.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "copycat"
+          },
+          "actors": [
+            {
+              "character": "copycat",
+              "pose": "sit",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.845,
+              "lookAt": "ahead",
+              "holds": "menu",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.05,
+                  "expression": "tempted",
+                  "lookAt": "ahead"
+                },
+                {
+                  "at": 0.5,
+                  "expression": "sly-grin",
+                  "lookAt": "camera"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.155
+            },
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "chair",
+              "x": 0.845
+            },
+            {
+              "prop": "dining-table",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "crowd-murmur",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "transition": "cut",
+          "startMs": 12048,
+          "endMs": 13473
+        },
+        {
+          "id": "s3d",
+          "line": "l06",
+          "words": "Make it three lobsters.",
+          "camera": {
+            "framing": "medium",
+            "move": "punch-in",
+            "strength": 0.25,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "sit",
+              "expression": "surprised",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.155,
+              "lookAt": "ahead",
+              "holds": "menu",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.5,
+                  "lookAt": "saint"
+                }
+              ]
+            },
+            {
+              "character": "saint",
+              "pose": "sit",
+              "expression": "jaw-drop",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "ahead",
+              "holds": "menu",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.08,
+                  "expression": "sad",
+                  "lookAt": "down"
+                },
+                {
+                  "at": 0.42,
+                  "pose": "sit-hands-up",
+                  "expression": "fuming",
+                  "lookAt": "camera"
+                }
+              ]
+            },
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "sly-grin",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "camera",
+              "holds": "menu",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "sit",
+              "expression": "sly-grin",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.845,
+              "lookAt": "camera",
+              "holds": "menu",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.155
+            },
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "chair",
+              "x": 0.845
+            },
+            {
+              "prop": "dining-table",
+              "x": 0.5
+            },
+            {
+              "prop": "plate-salad",
+              "x": 0.4,
+              "y": 1.22
+            }
+          ],
+          "effects": [
+            {
+              "effect": "anger-mark",
+              "on": "saint"
+            }
+          ],
+          "sfx": [
+            {
+              "name": "crowd-murmur",
+              "at": "start",
+              "gainDb": -10
+            },
+            {
+              "name": "thud",
+              "at": "middle",
+              "gainDb": -2
+            }
+          ],
+          "transition": "cut",
+          "startMs": 13473,
+          "endMs": 15569
+        },
+        {
+          "id": "s3e",
+          "line": "l07",
+          "words": "And for you?",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "waiter",
+              "pose": "stand",
+              "expression": "neutral",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.44,
+              "lookAt": "you",
+              "holds": "water-jug",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "you",
+              "pose": "sit",
+              "expression": "surprised",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.155,
+              "lookAt": "saint",
+              "holds": "menu",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.15,
+                  "expression": "neutral",
+                  "lookAt": "waiter"
+                },
+                {
+                  "at": 0.6,
+                  "pose": "sit-reach"
+                }
+              ]
+            },
+            {
+              "character": "saint",
+              "pose": "sit-hands-up",
+              "expression": "fuming",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "camera",
+              "holds": "menu",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.1,
+                  "pose": "sit",
+                  "lookAt": "ahead"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.155
+            },
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "chair",
+              "x": 0.845
+            },
+            {
+              "prop": "dining-table",
+              "x": 0.5
+            },
+            {
+              "prop": "plate-salad",
+              "x": 0.4,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "crowd-murmur",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "transition": "cut",
+          "startMs": 15569,
+          "endMs": 17949
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "chapter": 1,
+      "beat": "the-payoff",
+      "mood": "comic",
+      "quiet": false,
+      "place": "restaurant",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l08",
+          "speaker": "waiter",
+          "text": "Your bill.",
+          "pauseAfterMs": 2800
+        }
+      ],
+      "shots": [
+        {
+          "id": "s4a",
+          "line": "l08",
+          "words": "Your bill.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "waiter",
+              "pose": "stand",
+              "expression": "neutral",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.44,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "you",
+              "pose": "sit",
+              "expression": "neutral",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.155,
+              "lookAt": "water-glass",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.35,
+                  "expression": "jaw-drop",
+                  "lookAt": "down"
+                }
+              ]
+            },
+            {
+              "character": "saint",
+              "pose": "sit",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "down",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.3,
+                  "expression": "jaw-drop"
+                }
+              ]
+            },
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "down",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.4,
+                  "expression": "jaw-drop"
+                }
+              ]
+            },
+            {
+              "character": "copycat",
+              "pose": "sit",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.845,
+              "lookAt": "down",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.45,
+                  "expression": "jaw-drop"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.155
+            },
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "chair",
+              "x": 0.845
+            },
+            {
+              "prop": "dining-table",
+              "x": 0.5
+            },
+            {
+              "prop": "plate-lobster",
+              "x": 0.415,
+              "y": 1.22
+            },
+            {
+              "prop": "plate-lobster",
+              "x": 0.53,
+              "y": 1.22
+            },
+            {
+              "prop": "plate-lobster",
+              "x": 0.625,
+              "y": 1.22
+            },
+            {
+              "prop": "water-glass",
+              "x": 0.355,
+              "y": 1.22
+            },
+            {
+              "prop": "bill-long",
+              "x": 0.5
+            }
+          ],
+          "effects": [
+            {
+              "effect": "sweat-flying",
+              "on": "copycat"
+            }
+          ],
+          "sfx": [
+            {
+              "name": "crowd-murmur",
+              "at": "start",
+              "gainDb": -10
+            },
+            {
+              "name": "whoosh",
+              "at": "start",
+              "gainDb": -4
+            },
+            {
+              "name": "drumroll",
+              "at": "middle",
+              "gainDb": -6
+            }
+          ],
+          "transition": "fade",
+          "startMs": 17949,
+          "endMs": 21429
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chapter": 1,
+      "beat": "the-why",
+      "mood": "curious",
+      "quiet": false,
+      "place": "restaurant",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l09",
+          "speaker": "trainer",
+          "text": "When you split the bill, every extra dish costs you only a quarter of its price.",
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "l10",
+          "speaker": "trainer",
+          "text": "So everyone orders more, and everyone pays more.",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l11",
+          "speaker": "trainer",
+          "text": "Economists tested this in a real restaurant. When the bill was split, people ate more.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s5a",
+          "line": "l09",
+          "words": "When you split the bill,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "sit",
+              "expression": "jaw-drop",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.155,
+              "lookAt": "down",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.5,
+                  "lookAt": "saint"
+                }
+              ]
+            },
+            {
+              "character": "saint",
+              "pose": "sit",
+              "expression": "jaw-drop",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "down",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.1,
+                  "pose": "sit-reach",
+                  "expression": "fuming",
+                  "lookAt": "cheat"
+                }
+              ]
+            },
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "jaw-drop",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "down",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.25,
+                  "pose": "sit-reach",
+                  "expression": "shouting",
+                  "lookAt": "saint"
+                }
+              ]
+            },
+            {
+              "character": "copycat",
+              "pose": "sit",
+              "expression": "jaw-drop",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.845,
+              "lookAt": "down",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.35,
+                  "pose": "sit-reach",
+                  "expression": "angry",
+                  "lookAt": "saint"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.155
+            },
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "chair",
+              "x": 0.845
+            },
+            {
+              "prop": "dining-table",
+              "x": 0.5
+            },
+            {
+              "prop": "plate-lobster",
+              "x": 0.415,
+              "y": 1.22
+            },
+            {
+              "prop": "plate-lobster",
+              "x": 0.53,
+              "y": 1.22
+            },
+            {
+              "prop": "plate-lobster",
+              "x": 0.625,
+              "y": 1.22
+            },
+            {
+              "prop": "water-glass",
+              "x": 0.355,
+              "y": 1.22
+            },
+            {
+              "prop": "bill-long-out",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "crowd-murmur",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "transition": "cut",
+          "startMs": 21429,
+          "endMs": 22639
+        },
+        {
+          "id": "s5b",
+          "line": "l09",
+          "words": "every extra dish costs you only a quarter of its price.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "cheat"
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "sit",
+              "expression": "jaw-drop",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.155,
+              "lookAt": "saint",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "saint",
+              "pose": "sit-reach",
+              "expression": "fuming",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "cheat",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "cheat",
+              "pose": "sit-reach",
+              "expression": "shouting",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "saint",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.15,
+                  "pose": "sit",
+                  "expression": "smug",
+                  "lookAt": "camera"
+                }
+              ]
+            },
+            {
+              "character": "copycat",
+              "pose": "sit-reach",
+              "expression": "angry",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.845,
+              "lookAt": "saint",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.155
+            },
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "chair",
+              "x": 0.845
+            },
+            {
+              "prop": "dining-table",
+              "x": 0.5
+            },
+            {
+              "prop": "plate-lobster",
+              "x": 0.415,
+              "y": 1.22
+            },
+            {
+              "prop": "plate-lobster",
+              "x": 0.53,
+              "y": 1.22
+            },
+            {
+              "prop": "plate-lobster",
+              "x": 0.625,
+              "y": 1.22
+            },
+            {
+              "prop": "water-glass",
+              "x": 0.355,
+              "y": 1.22
+            },
+            {
+              "prop": "bill-long-out",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "crowd-murmur",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "overlay": {
+            "kind": "number",
+            "text": "$15",
+            "caption": "your share of a $60 lobster"
+          },
+          "transition": "cut",
+          "startMs": 22639,
+          "endMs": 25796
+        },
+        {
+          "id": "s5c",
+          "line": "l10",
+          "words": "So everyone orders more, and everyone pays more.",
+          "camera": {
+            "framing": "wide",
+            "move": "pull-back",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "sit",
+              "expression": "jaw-drop",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.155,
+              "lookAt": "saint",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.4,
+                  "expression": "hollow",
+                  "lookAt": "down"
+                }
+              ]
+            },
+            {
+              "character": "saint",
+              "pose": "sit-reach",
+              "expression": "fuming",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "cheat",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.15,
+                  "pose": "sit",
+                  "expression": "exhausted",
+                  "lookAt": "down"
+                }
+              ]
+            },
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "smug",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "camera",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.25,
+                  "expression": "exhausted",
+                  "lookAt": "down"
+                }
+              ]
+            },
+            {
+              "character": "copycat",
+              "pose": "sit-reach",
+              "expression": "angry",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.845,
+              "lookAt": "saint",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.3,
+                  "pose": "sit",
+                  "expression": "exhausted",
+                  "lookAt": "down"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.155
+            },
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "chair",
+              "x": 0.845
+            },
+            {
+              "prop": "dining-table",
+              "x": 0.5
+            },
+            {
+              "prop": "plate-lobster",
+              "x": 0.415,
+              "y": 1.22
+            },
+            {
+              "prop": "plate-lobster",
+              "x": 0.53,
+              "y": 1.22
+            },
+            {
+              "prop": "plate-lobster",
+              "x": 0.625,
+              "y": 1.22
+            },
+            {
+              "prop": "water-glass",
+              "x": 0.355,
+              "y": 1.22
+            },
+            {
+              "prop": "bill-long-out",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "crowd-murmur",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "transition": "cut",
+          "startMs": 25796,
+          "endMs": 28931
+        },
+        {
+          "id": "s5d",
+          "line": "l11",
+          "words": "Economists tested this in a real restaurant.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "copycat"
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "sit",
+              "expression": "hollow",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.155,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "saint",
+              "pose": "sit",
+              "expression": "exhausted",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "exhausted",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "sit",
+              "expression": "exhausted",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.845,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.155
+            },
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "chair",
+              "x": 0.845
+            },
+            {
+              "prop": "dining-table",
+              "x": 0.5
+            },
+            {
+              "prop": "plate-lobster",
+              "x": 0.415,
+              "y": 1.22
+            },
+            {
+              "prop": "plate-lobster",
+              "x": 0.53,
+              "y": 1.22
+            },
+            {
+              "prop": "plate-lobster",
+              "x": 0.625,
+              "y": 1.22
+            },
+            {
+              "prop": "water-glass",
+              "x": 0.355,
+              "y": 1.22
+            },
+            {
+              "prop": "bill-long-out",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "crowd-murmur",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "overlay": {
+            "kind": "number",
+            "text": "2004",
+            "caption": "tested in a real restaurant"
+          },
+          "transition": "cut",
+          "startMs": 28931,
+          "endMs": 32111
+        },
+        {
+          "id": "s5e",
+          "line": "l11",
+          "words": "When the bill was split, people ate more.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "cheat"
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "sit",
+              "expression": "hollow",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.155,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "saint",
+              "pose": "sit",
+              "expression": "exhausted",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "exhausted",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "down",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.35,
+                  "expression": "happy",
+                  "lookAt": "camera"
+                }
+              ]
+            },
+            {
+              "character": "copycat",
+              "pose": "sit",
+              "expression": "exhausted",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.845,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.155
+            },
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "chair",
+              "x": 0.845
+            },
+            {
+              "prop": "dining-table",
+              "x": 0.5
+            },
+            {
+              "prop": "plate-lobster",
+              "x": 0.415,
+              "y": 1.22
+            },
+            {
+              "prop": "plate-lobster",
+              "x": 0.53,
+              "y": 1.22
+            },
+            {
+              "prop": "plate-lobster",
+              "x": 0.625,
+              "y": 1.22
+            },
+            {
+              "prop": "water-glass",
+              "x": 0.355,
+              "y": 1.22
+            },
+            {
+              "prop": "bill-long-out",
+              "x": 0.5
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "crowd-murmur",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "transition": "cut",
+          "startMs": 32111,
+          "endMs": 34592
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 1,
+      "beat": "the-punchline",
+      "mood": "comic",
+      "quiet": false,
+      "place": "restaurant",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l12",
+          "speaker": "trainer",
+          "text": "Even the one who only had water.",
+          "pauseAfterMs": 1800
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6a",
+          "line": "l12",
+          "words": "Even the one who only had water.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "you"
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "sit",
+              "expression": "hollow",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.155,
+              "lookAt": "down",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.45,
+                  "expression": "sad",
+                  "lookAt": "water-glass"
+                }
+              ]
+            },
+            {
+              "character": "saint",
+              "pose": "sit",
+              "expression": "exhausted",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "cheat",
+              "pose": "sit",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "copycat",
+              "pose": "sit",
+              "expression": "exhausted",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.845,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.155
+            },
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "chair",
+              "x": 0.845
+            },
+            {
+              "prop": "dining-table",
+              "x": 0.5
+            },
+            {
+              "prop": "plate-lobster",
+              "x": 0.415,
+              "y": 1.22
+            },
+            {
+              "prop": "plate-lobster",
+              "x": 0.53,
+              "y": 1.22
+            },
+            {
+              "prop": "plate-lobster",
+              "x": 0.625,
+              "y": 1.22
+            },
+            {
+              "prop": "water-glass",
+              "x": 0.355,
+              "y": 1.22
+            },
+            {
+              "prop": "bill-long-out",
+              "x": 0.5
+            }
+          ],
+          "effects": [
+            {
+              "effect": "coin-rain",
+              "on": "you"
+            }
+          ],
+          "sfx": [
+            {
+              "name": "crowd-murmur",
+              "at": "start",
+              "gainDb": -10
+            }
+          ],
+          "overlay": {
+            "kind": "number",
+            "text": "$45",
+            "caption": "for a glass of water"
+          },
+          "transition": "cut",
+          "startMs": 34592,
+          "endMs": 38420
+        }
+      ]
+    }
+  ]
+}

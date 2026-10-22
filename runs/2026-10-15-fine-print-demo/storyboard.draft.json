@@ -1,0 +1,381 @@
+{
+  "version": 1,
+  "title": "Why Cinema Popcorn Costs $9 (look demo)",
+  "request": "Demo of The Fine Print's explainer look (look 4): every graphic building up step by step, sample numbers",
+  "mode": "original",
+  "format": "fine-print",
+  "style": "ink-stick",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "seed": 42163,
+  "finish": {
+    "acting": "snappy",
+    "onTwos": false,
+    "shadows": false,
+    "grain": 0.2,
+    "vignette": 0.12,
+    "boil": 0.25
+  },
+  "sources": [
+    "Sample numbers for a look demo of The Fine Print, made on 2026-10-15. Not a video to post: a real video takes every price and share from a saved source."
+  ],
+  "appliedLessons": [],
+  "cast": [],
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "the-question",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l01",
+          "speaker": "narrator",
+          "text": "Why does a bucket of cinema popcorn cost nine dollars?",
+          "pauseAfterMs": 700
+        }
+      ],
+      "shots": [
+        {
+          "id": "s1a",
+          "line": "l01",
+          "words": "Why does a bucket of cinema popcorn cost nine dollars?",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "title",
+            "text": "Why Cinema Popcorn Costs $9 (look demo)"
+          },
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "the-moment",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l02",
+          "speaker": "narrator",
+          "text": "Almost everyone has paid it, and almost nobody asks why.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l03",
+          "speaker": "narrator",
+          "text": "The corn costs about thirty five cents, the bucket forty five, and the butter fifty five.",
+          "pauseAfterMs": 600
+        }
+      ],
+      "shots": [
+        {
+          "id": "s2a",
+          "line": "l02",
+          "words": "Almost everyone has paid it, and almost nobody asks why.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2b",
+          "line": "l03",
+          "words": "The corn costs about thirty five cents, the bucket forty five, and the butter fifty five.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "chapter": 1,
+      "beat": "follow-the-money",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l04",
+          "speaker": "narrator",
+          "text": "That is one dollar and thirty five cents of real cost.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l05",
+          "speaker": "narrator",
+          "text": "So the cinema keeps the rest, seven dollars and sixty five cents.",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l06",
+          "speaker": "narrator",
+          "text": "Your ticket money goes the other way, mostly to the film studio.",
+          "pauseAfterMs": 700
+        }
+      ],
+      "shots": [
+        {
+          "id": "s3a",
+          "line": "l04",
+          "words": "That is one dollar and thirty five cents of real cost.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3b",
+          "line": "l05",
+          "words": "So the cinema keeps the rest, seven dollars and sixty five cents.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3c",
+          "line": "l06",
+          "words": "Your ticket money goes the other way, mostly to the film studio.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "chapter": 1,
+      "beat": "the-trick",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l07",
+          "speaker": "narrator",
+          "text": "The studio can take more than half of every ticket in the first weeks of a new film.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l08",
+          "speaker": "narrator",
+          "text": "So the cinema earns more from one bucket than from one ticket.",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l09",
+          "speaker": "narrator",
+          "text": "That is why you walk past the snack counter before you reach your seat.",
+          "pauseAfterMs": 600
+        }
+      ],
+      "shots": [
+        {
+          "id": "s4a",
+          "line": "l07",
+          "words": "The studio can take more than half of every ticket in the first weeks of a new film.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4b",
+          "line": "l08",
+          "words": "So the cinema earns more from one bucket than from one ticket.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4c",
+          "line": "l09",
+          "words": "That is why you walk past the snack counter before you reach your seat.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chapter": 1,
+      "beat": "the-proof",
+      "mood": "reflective",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l10",
+          "speaker": "narrator",
+          "text": "And every one of us in the queue pays it.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l11",
+          "speaker": "narrator",
+          "text": "It is the same at airports, stadiums and theme parks.",
+          "pauseAfterMs": 700
+        }
+      ],
+      "shots": [
+        {
+          "id": "s5a",
+          "line": "l10",
+          "words": "And every one of us in the queue pays it.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5b",
+          "line": "l11",
+          "words": "It is the same at airports, stadiums and theme parks.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 1,
+      "beat": "your-move",
+      "mood": "hope",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l12",
+          "speaker": "narrator",
+          "text": "Next time, share one bucket, and it costs you four fifty.",
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "l13",
+          "speaker": "narrator",
+          "text": "Or eat before you go, and it costs you nothing.",
+          "pauseAfterMs": 1400
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6a",
+          "line": "l12",
+          "words": "Next time, share one bucket, and it costs you four fifty.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6b",
+          "line": "l13",
+          "words": "Or eat before you go, and it costs you nothing.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    }
+  ]
+}

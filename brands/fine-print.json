@@ -1,0 +1,24 @@
+{
+  "id": "fine-print",
+  "pageName": "What's the Catch?",
+  "version": 2,
+  "colors": {
+    "captionEmphasis": "gold",
+    "titleRibbon": "forest",
+    "label": "cream"
+  },
+  "font": "Fredoka",
+  "captions": {
+    "maxLines": 2,
+    "maxWordsPerPage": 5
+  },
+  "watermark": null,
+  "closingCard": null,
+  "defaults": {
+    "format": "fine-print",
+    "voice": "catch-narrator",
+    "sizes": ["9:16"],
+    "vertical": "full"
+  },
+  "identityMode": "auto"
+}

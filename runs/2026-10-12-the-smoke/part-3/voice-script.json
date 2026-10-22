@@ -1,0 +1,102 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "lines": [
+    {
+      "id": "l31",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "Latané and Darley. 1968.",
+      "speed": 0.97,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "l32",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "Alone, seventy-five percent reported it.",
+      "speed": 0.97,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l33",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "Two calm strangers? Ten *percent.*",
+      "speed": 0.97,
+      "pauseAfterMs": 800
+    },
+    {
+      "id": "l34",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "People trust calm faces over their own *eyes.*",
+      "speed": 0.97,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l35",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "You've seen it.",
+      "speed": 0.97,
+      "pauseAfterMs": 2300
+    },
+    {
+      "id": "l36",
+      "speaker": "narrator",
+      "voice": "af_nicole",
+      "text": "Calm faces are guessing too.",
+      "speed": 0.95,
+      "pauseAfterMs": 385
+    },
+    {
+      "id": "l37",
+      "speaker": "narrator",
+      "voice": "af_nicole",
+      "text": "They are reading your face as well.",
+      "speed": 0.95,
+      "pauseAfterMs": 385
+    },
+    {
+      "id": "l38",
+      "speaker": "narrator",
+      "voice": "af_nicole",
+      "text": "So trust what you see. Say it out loud.",
+      "speed": 0.95,
+      "pauseAfterMs": 385
+    },
+    {
+      "id": "l39",
+      "speaker": "narrator",
+      "voice": "af_nicole",
+      "text": "Then be the first to *stand up.*",
+      "speed": 0.95,
+      "pauseAfterMs": 1430
+    },
+    {
+      "id": "l40",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "One person standing. Bad for *business.*",
+      "speed": 0.97,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l41",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "How long do you sit in smoke? As long as *they* do.",
+      "speed": 0.97,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l42",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "Tape ends.",
+      "speed": 0.97,
+      "pauseAfterMs": 1200
+    }
+  ]
+}

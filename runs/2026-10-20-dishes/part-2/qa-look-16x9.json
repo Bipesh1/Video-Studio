@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "video": "dishes-part-2-16x9-v1.mp4",
+  "stills": {
+    "s3a": "ok",
+    "s3a2": "ok",
+    "s3b": "ok",
+    "s3c": "ok",
+    "s3d": "ok",
+    "s3e": "ok",
+    "s3f": "ok",
+    "s4a": "ok",
+    "s4b": "ok"
+  },
+  "strips": {
+    "cut-s3a-s3a2": "ok",
+    "s3a2-move-1": "ok",
+    "s3c-move-1": "ok",
+    "cut-s3c-s3d": "ok",
+    "cut-s3d-s3e": "ok",
+    "cut-s3e-s3f": "ok",
+    "cut-s3f-s4a": "ok",
+    "cut-s4a-s4b": "ok"
+  },
+  "playbook": "ok",
+  "fixed": [],
+  "notes": [
+    "A year of writing: snow, then blossom, then autumn in the window while she writes at the sink and the clock's hands run; the tally page counting up. One night: she comes down with a mug, he is at the table with something small and turns from surprise to a lie; her close look, He's hiding something. The anniversary through a dip to dark: the notebook drops between the plates, 4,212 / dishes, all hers, she stands with arms crossed and smug, he looks down guilty; the push in and the ticking clock on So who really did more?"
+  ]
+}

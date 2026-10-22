@@ -1,0 +1,12 @@
+{
+  "id": "leak",
+  "name": "The Leak",
+  "description": "The one voice from outside the room in the game theory videos: whoever leaks the tapes, reading the card at the end. A soft, close woman's voice (voice 3 of the test). Kept by Biku on 2026-10-11. Spoken by Chatterbox from a sample of this Kokoro voice since 2026-10-14, so it is the same person, more alive.",
+  "version": 3,
+  "kokoroVoice": "af_nicole",
+  "speed": 0.95,
+  "engine": "chatterbox",
+  "sample": "voices/samples/leak.wav",
+  "pauseScale": 0.74,
+  "pronunciations": {}
+}

@@ -44,6 +44,16 @@ export type Eyes = {
   /** Pupil direction bias, -1 to 1 on each axis. */
   lookX: number;
   lookY: number;
+  /**
+   * A wink, 0 to 1: the eye on the +x side (the side the face turns toward) shuts in a happy
+   * arc while the other stays open. Left out, no wink.
+   */
+  wink?: number;
+  /**
+   * The eye on the +x side narrowed a little more than the other, 0 to about 0.5: the small
+   * tell of someone lying. Left out, both eyes are alike.
+   */
+  squint?: number;
 };
 
 export type TeethMode = 'none' | 'top' | 'gritted';

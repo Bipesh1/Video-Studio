@@ -40,6 +40,9 @@ from .levels import (
 SR = SAMPLE_RATE
 
 MUSIC_UNDER_VOICE_DB = -17.0
+MUSIC_UNDER_VOICE_LONG_DB = -19.0
+"""A long video's music sits further under the voice: calmer, for listening longer (the
+clear-speech guideline is about 20 dB; a Short keeps its music a little nearer)."""
 """Music loudness against the voice while someone speaks."""
 MUSIC_IN_PAUSES_DB = -9.0
 """Music loudness against the voice when nobody speaks."""
@@ -143,6 +146,28 @@ def _balance(audio: np.ndarray, pan: float) -> np.ndarray:
     return audio * np.array([min(1.0, 1 - pan), min(1.0, 1 + pan)])
 
 
+HUSH_OUT_S = 0.6
+"""How long the music takes to fade away when a quiet stretch begins."""
+HUSH_IN_S = 1.5
+HUSH_SHARP_S = 0.12
+HUSH_SHARP_IN_S = 0.3
+"""A drop before a reveal: the music cut quickly, and back almost at once with the hit."""
+"""How long it takes to come back in after one."""
+
+
+def hush_gain(hush: list[dict], n: int) -> np.ndarray:
+    """The music's gain, 0 to 1, with every quiet stretch faded out and back in."""
+    gain = np.ones(n)
+    t = np.arange(n) / SR
+    for h in hush:
+        start, end = h["fromMs"] / 1000, h["toMs"] / 1000
+        fade_out, fade_in = (HUSH_SHARP_S, HUSH_SHARP_IN_S) if h.get("sharp") else (HUSH_OUT_S, HUSH_IN_S)
+        out = np.clip((start + fade_out - t) / fade_out, 0, 1)
+        back = np.clip((t - end) / fade_in, 0, 1)
+        gain = np.minimum(gain, np.where(t < start, 1.0, np.where(t <= end, out, np.maximum(out, back))))
+    return gain
+
+
 def validate_plan(plan: dict) -> dict:
     """Plain-language checks, so a bad plan fails before any sound is made."""
     problems = []
@@ -190,14 +215,17 @@ def build(plan: dict, voice: np.ndarray | None, out_dir: Path | None = None, see
     trim = float(plan.get("musicGainDb", 0.0))
     music_track = np.zeros((n, 2))
     if plan.get("music"):
-        stem = _fit(music.arc(plan["music"], n / SR, seed), n)
+        score = plan.get("score")
+        # The video's own music: its seed, key, speed and instruments (2026-10-21).
+        stem = _fit(music.arc(plan["music"], n / SR, int(score["seed"]) if score else seed, score), n)
+        under_db = MUSIC_UNDER_VOICE_LONG_DB if score and score.get("profile") == "long" else MUSIC_UNDER_VOICE_DB
         if has_voice:
-            under = voice_lufs + MUSIC_UNDER_VOICE_DB - music.STEM_LUFS + trim
+            under = voice_lufs + under_db - music.STEM_LUFS + trim
             opened = voice_lufs + MUSIC_IN_PAUSES_DB - music.STEM_LUFS + trim
             curve = duck_curve(active, n, under, opened)
         else:
             curve = np.full(n, MUSIC_ALONE_LUFS - music.STEM_LUFS + trim)
-        music_track = stem * (10 ** (curve / 20))[:, None]
+        music_track = stem * (10 ** (curve / 20))[:, None] * hush_gain(plan.get("hush", []), n)[:, None]
 
     # Effects: each one is placed against the level of the speech.
     sfx_track = np.zeros((n, 2))

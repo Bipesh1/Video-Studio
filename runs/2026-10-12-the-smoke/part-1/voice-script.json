@@ -1,0 +1,134 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "How long would you sit in *smoke?*",
+      "speed": 0.97,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l02",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "Welcome back, trainees.",
+      "speed": 0.97,
+      "pauseAfterMs": 350
+    },
+    {
+      "id": "l03",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "Today: how to keep someone sitting in *smoke.*",
+      "speed": 0.97,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l04",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "This one is a Copycat. He does what the room does.",
+      "speed": 0.97,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l05",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "Is this the waiting room? For the *twenty?*",
+      "speed": 0.97,
+      "pauseAfterMs": 350
+    },
+    {
+      "id": "l06",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "Ten minutes, one one two. Then it's yours.",
+      "speed": 0.97,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "l07",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "Twenty bucks to sit still? Best job I ever had.",
+      "speed": 0.97,
+      "pauseAfterMs": 300
+    },
+    {
+      "id": "l08",
+      "speaker": "cheat",
+      "voice": "am_eric",
+      "text": "Easiest twenty in town.",
+      "speed": 1.08,
+      "pauseAfterMs": 630
+    },
+    {
+      "id": "l09",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "He's ours. So is the back row.",
+      "speed": 0.97,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "l10",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "Smoke is coming. They're paid to stay *calm.*",
+      "speed": 0.97,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l11",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "Uh. Is that *smoke?*",
+      "speed": 0.97,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "l12",
+      "speaker": "cheat",
+      "voice": "am_eric",
+      "text": "Kitchen, probably. Happens all the time.",
+      "speed": 1.08,
+      "pauseAfterMs": 315
+    },
+    {
+      "id": "l13",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "Right. Somebody burned the *toast.*",
+      "speed": 0.97,
+      "pauseAfterMs": 300
+    },
+    {
+      "id": "l14",
+      "speaker": "cheat",
+      "voice": "am_eric",
+      "text": "Ha. Somebody always does.",
+      "speed": 1.08,
+      "pauseAfterMs": 630
+    },
+    {
+      "id": "l15",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "Nobody's moving. So it's nothing.",
+      "speed": 0.97,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l16",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "text": "He reads *faces,* not smoke.",
+      "speed": 0.97,
+      "pauseAfterMs": 1000
+    }
+  ]
+}

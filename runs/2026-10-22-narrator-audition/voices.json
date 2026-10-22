@@ -1,0 +1,44 @@
+[
+  {
+    "number": 1,
+    "voice": "am_michael",
+    "who": "the narrator as it is now (plain)",
+    "chatterbox": false,
+    "startsAtSec": 0.0
+  },
+  {
+    "number": 2,
+    "voice": "am_michael",
+    "who": "the same voice, more alive",
+    "chatterbox": true,
+    "startsAtSec": 23.2
+  },
+  {
+    "number": 3,
+    "voice": "am_onyx",
+    "who": "a deeper, slower American man",
+    "chatterbox": true,
+    "startsAtSec": 44.5
+  },
+  {
+    "number": 4,
+    "voice": "bm_george",
+    "who": "a British storyteller",
+    "chatterbox": true,
+    "startsAtSec": 64.4
+  },
+  {
+    "number": 5,
+    "voice": "bm_fable",
+    "who": "a warm British man",
+    "chatterbox": true,
+    "startsAtSec": 86.7
+  },
+  {
+    "number": 6,
+    "voice": "af_heart",
+    "who": "a calm, warm woman",
+    "chatterbox": true,
+    "startsAtSec": 107.9
+  }
+]

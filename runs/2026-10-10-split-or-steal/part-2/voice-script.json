@@ -1,0 +1,78 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "lines": [
+    {
+      "id": "n17",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "This game was real: a British TV show called Golden Balls.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n18",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Economists studied two hundred and eighty-seven of its finals.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n19",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "*About half* the players split anyway.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n20",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "With only a few hundred pounds on the table, nearly three in four shared.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n21",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "And promises did something strange.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n22",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Making one made a player far more likely to split.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n23",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "*Hearing one changed nothing.*",
+      "speed": 0.92,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "n24",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The biggest prize ever, over a hundred thousand pounds?",
+      "speed": 0.92,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "n25",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "*Sarah stole it.*",
+      "speed": 0.92,
+      "pauseAfterMs": 1200
+    }
+  ]
+}

@@ -2,7 +2,7 @@
   "id": "top-list",
   "name": "Top list",
   "description": "A countdown or a list of things, each with its own short scene. Pick it for rankings, records and collections of facts.",
-  "version": 1,
+  "version": 2,
   "structure": [
     {
       "id": "hook",
@@ -71,6 +71,14 @@
     }
   },
   "captionMode": "full",
+  "finish": {
+    "acting": "snappy",
+    "onTwos": true,
+    "shadows": true,
+    "grain": 0.4,
+    "vignette": 0.35,
+    "boil": 0.25
+  },
   "factRules": {
     "sourcesRequired": true,
     "rules": [

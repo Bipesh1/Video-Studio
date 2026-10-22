@@ -1,0 +1,12 @@
+{
+  "id": "cheat",
+  "name": "The Cheat",
+  "description": "The Cheat of the game theory cast: smooth and quick, always sure of himself. A lighter, brisk man's voice. Picked by Biku from three test voices on 2026-10-11 (voice 2). Spoken by Chatterbox from a sample of this Kokoro voice since 2026-10-14, so it is the same person, more alive.",
+  "version": 4,
+  "kokoroVoice": "am_eric",
+  "speed": 1.08,
+  "engine": "chatterbox",
+  "sample": "voices/samples/cheat.wav",
+  "pauseScale": 0.6,
+  "pronunciations": {}
+}

@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { blinkAt, blinkStarts, withLife } from './life';
 import {
+  PACES,
   BIG_MOVE,
   BODY_MOVE,
   DEFAULT_TRANSITION,
@@ -119,6 +120,43 @@ describe('pose library', () => {
 
 /** A small move: standing, with the head a little down. */
 const lookDownLike = { ...stand, id: 'nod', headTilt: 8 };
+
+describe('a gentle pace', () => {
+  const keys = [
+    { frame: 0, pose: stand },
+    { frame: 30, pose: handsUp },
+  ];
+  const target = resolvePose(handsUp);
+  const arrived = (pace = PACES.snappy) => {
+    for (let f = 30; f < 200; f++) {
+      if (JSON.stringify(poseAt(f, keys, pace)) === JSON.stringify(target)) return f - 30;
+    }
+    return Infinity;
+  };
+
+  it('takes about half as long again to arrive, and arrives exactly', () => {
+    const snappy = arrived();
+    const gentle = arrived(PACES.gentle);
+    expect(gentle).toBeGreaterThanOrEqual(snappy * 1.3);
+    expect(gentle).toBeLessThanOrEqual(snappy * 2);
+  });
+
+  it('overshoots far less on the way', () => {
+    const past = (pace = PACES.snappy) => {
+      let most = 0;
+      for (let f = 30; f < 120; f++) {
+        most = Math.max(most, poseAt(f, keys, pace).arms.front.upper - target.arms.front.upper);
+      }
+      return most;
+    };
+    expect(past(PACES.gentle)).toBeLessThan(past() * 0.6);
+  });
+
+  it('is the snappy pace when none is given, so older videos move as they did', () => {
+    for (const f of [30, 33, 36, 40, 60])
+      expect(poseAt(f, keys)).toEqual(poseAt(f, keys, PACES.snappy));
+  });
+});
 
 describe('pose to pose', () => {
   const keys = [

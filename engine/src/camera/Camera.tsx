@@ -17,6 +17,44 @@ export const pushInZoom = (frame: number, durationInFrames: number, strength: nu
     easing: Easing.inOut(Easing.quad),
   });
 
+/** How much closer a slow pull-back is at a frame: it starts close and eases back to where a shot sits. */
+export const pullBackZoom = (frame: number, durationInFrames: number, strength: number): number =>
+  1 + strength - (pushInZoom(frame, durationInFrames, strength) - 1);
+
+/**
+ * How far a slow drift has slid the picture at a frame, as a share of `dx`, from -0.5 to 0.5:
+ * the camera floats across, never stopping and never hurrying.
+ */
+export const driftShare = (frame: number, durationInFrames: number): number =>
+  frame / Math.max(1, durationInFrames) - 0.5;
+
+/** A slow drift across: the picture slides `dx` over the shot, a little closer so its sides stay filled. */
+export const Drift = ({
+  frame,
+  durationInFrames,
+  dx,
+  width,
+  height,
+  children,
+}: {
+  frame: number;
+  durationInFrames: number;
+  dx: number;
+  width: number;
+  height: number;
+  children: ReactNode;
+}) => {
+  const zoom = 1 + (2 * Math.abs(dx)) / width;
+  const x = dx * driftShare(frame, durationInFrames);
+  return (
+    <g
+      transform={`translate(${width / 2 + x} ${height / 2}) scale(${zoom}) translate(${-width / 2} ${-height / 2})`}
+    >
+      {children}
+    </g>
+  );
+};
+
 /** How much closer a fast push-in is at a frame: it lands in a few frames with a small overshoot. */
 export const punchInZoom = (frame: number, at: number, strength: number, frames: number): number =>
   1 + strength * easeOutBack(clamp((frame - at) / Math.max(1, frames), 0, 1), 1.4);

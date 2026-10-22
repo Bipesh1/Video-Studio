@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "video": "bridge-torch-part-1-9x16-v2.mp4",
+  "stills": {
+    "s1a": "ok",
+    "s1b": "ok",
+    "s2a": "ok",
+    "s2b": "ok",
+    "s2b2": "ok",
+    "s2c": "ok",
+    "s2d": "ok",
+    "s2e": "ok",
+    "s2f": "ok",
+    "s2g": "ok",
+    "s2h": "ok",
+    "s3a": "ok",
+    "s3b": "ok",
+    "s3c": "ok",
+    "s3d": "ok",
+    "s3e": "ok",
+    "s3f": "ok"
+  },
+  "strips": {
+    "cut-s1b-s2a": "ok",
+    "cut-s2a-s2b": "ok",
+    "cut-s2b-s2b2": "ok",
+    "cut-s2b2-s2c": "ok",
+    "cut-s2f-s2g": "ok",
+    "cut-s2g-s2h": "ok",
+    "cut-s2h-s3a": "ok",
+    "cut-s3a-s3b": "ok",
+    "cut-s3b-s3c": "ok",
+    "cut-s3c-s3d": "ok",
+    "cut-s3d-s3e": "ok",
+    "cut-s3e-s3f": "ok",
+    "s2h-move-1": "ok",
+    "s3a-move-1": "ok",
+    "s3c-move-1": "ok",
+    "s3d-move-1": "ok",
+    "s3e-move-1": "ok"
+  },
+  "playbook": "ok",
+  "fixed": [
+    "Drawn for this film: the gorge at night (`gorge-bridge`: a near cliff, a deep drop with the far wall of the gorge pale in the dark, an old rope bridge, the far cliff, ridges on the skyline) and a torch that burns down in four steps (torch, torch-low, torch-dying, torch-out). A thunder sound was made (`thunder`): the studio had none.",
+    "The gorge was first drawn with a crescent moon and beams of moonlight from the scene's night colours: a storm sky has neither, so the gorge keeps its own sky now.",
+    "The torch's light was a round with a hard edge, like a lamp shade, behind the Cheat's head. It fades softly to nothing now.",
+    "The opening question stood over the four faces, under the big words. It stands over the gorge and its bridge alone now; the people come in the next shot.",
+    "The Cheat pointed at the old man with the hand that held the torch, so the torch was thrust across the Saint's face. He turns to look at the old man instead.",
+    "As 'You're fastest' began, the Cheat lowered his raised torch and it swung across the Saint's face. He lowers it in his own shot now; looked at large in part-1/clips.",
+    "Every line was timed by length at first: the listening check wrote numbers as figures ('19', '17') and counted each as a wrong word, and each wrong take was spoken again: the voices took 48 minutes. A builder fix: numbers are read as words when a take is checked (audio/src/studio_audio/chatterbox.py and the worker), and the lines already spoken were kept. Every line of this part is now timed by listening.",
+    "'So we leave the old man. Without him, we make it easily.' stayed on one picture 5.2 s. It is two shots: the four of them, then the Cheat close."
+  ],
+  "notes": [
+    "Biku's thriller script, used word for word (as-is). The part ends on his first cliffhanger, 'Without him, we make it easily.'",
+    "The music: tense under the question, unease through the rules, closing-in from the obvious plan. Wind under the whole part, thunder on 'The smart plan fails' and on 'So we leave the old man', a ticking clock from 'the torch will last seventeen minutes', a boom on 'nineteen'.",
+    "The old man and the woman with the bag are new to this film (not cast cards); the old man has white hair and a lined face.",
+    "The one big reaction of the film is on 'nineteen': shock lines round the Cheat's head as he works it out.",
+    "Claude cannot hear: the voices, the thunder, the wind and the music need Biku's ears."
+  ]
+}

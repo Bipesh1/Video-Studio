@@ -3093,6 +3093,45 @@
       "added": "2026-10-05"
     },
     {
+      "id": "effect/dollar-eyes",
+      "kind": "effect",
+      "name": "Dollar eyes",
+      "description": "Gold coins with a dollar sign pop up over both eyes: greed taking over. For the one turning point of a video, not as decoration.",
+      "tags": ["greed", "money", "dollar", "eyes", "tempted", "cheat", "reaction", "cartoon"],
+      "code": {
+        "file": "engine/src/effects/Reaction.tsx",
+        "export": "DollarEyes"
+      },
+      "use": "on a person in a shot: effects: [{ effect: \"dollar-eyes\", on: \"<id>\" }]",
+      "still": "knowledge/golden/assets/effect-dollar-eyes.png",
+      "version": 1,
+      "added": "2026-10-14"
+    },
+    {
+      "id": "effect/shock-lines",
+      "kind": "effect",
+      "name": "Shock lines",
+      "description": "Short lines burst out round the head: the moment something lands. For the one turning point of a video.",
+      "tags": [
+        "shock",
+        "realise",
+        "surprise",
+        "reaction",
+        "jolt",
+        "cartoon",
+        "big moment",
+        "lines"
+      ],
+      "code": {
+        "file": "engine/src/effects/Reaction.tsx",
+        "export": "ShockLines"
+      },
+      "use": "on a person in a shot: effects: [{ effect: \"shock-lines\", on: \"<id>\" }]",
+      "still": "knowledge/golden/assets/effect-shock-lines.png",
+      "version": 1,
+      "added": "2026-10-14"
+    },
+    {
       "id": "effect/tear-streams",
       "kind": "effect",
       "name": "Streams of tears",
@@ -3359,6 +3398,58 @@
       "still": "knowledge/golden/assets/effect-fire.png",
       "version": 1,
       "added": "2026-10-07"
+    },
+    {
+      "id": "effect/pencil-line",
+      "kind": "effect",
+      "name": "Pencil line",
+      "description": "A line that draws itself on a sheet of paper, as if by a pencil: a hill, a sun, a face. With the paper it is drawn on.",
+      "tags": [
+        "pencil",
+        "drawing",
+        "sketch",
+        "line",
+        "paper",
+        "draw",
+        "sun",
+        "short film",
+        "handmade",
+        "page"
+      ],
+      "code": {
+        "file": "engine/src/effects/Pencil.tsx",
+        "export": "PencilLine"
+      },
+      "use": "<Paper width height /> under <PencilLine d={path} progress={0 to 1} />; circlePath(cx, cy, r, progress) is a circle as a hand draws it",
+      "still": "knowledge/golden/assets/effect-pencil-line.png",
+      "version": 1,
+      "added": "2026-10-14"
+    },
+    {
+      "id": "effect/erased",
+      "kind": "effect",
+      "name": "Rubbed out",
+      "description": "Part of a person or a thing fades to a faint grey outline, as if an eraser had gone over it, and crumbs of the rubbing fall away.",
+      "tags": [
+        "erase",
+        "eraser",
+        "fade",
+        "disappear",
+        "forget",
+        "memory",
+        "vanish",
+        "crumbs",
+        "short film",
+        "loss"
+      ],
+      "code": {
+        "file": "engine/src/effects/Erase.tsx",
+        "export": "Erased"
+      },
+      "use": "<Erased at={{x, y}} radius amount={0 to 1} width height>{what fades}</Erased>; <Crumbs crumbs t groundY /> for the crumbs",
+      "still": "knowledge/golden/assets/effect-erased.png",
+      "version": 1,
+      "added": "2026-10-14"
     },
     {
       "id": "effect/smoke",
@@ -4513,6 +4604,48 @@
       "added": "2026-10-05"
     },
     {
+      "id": "camera/pull-back",
+      "kind": "camera",
+      "name": "Slow pull-back",
+      "description": "The camera starts close and moves slowly back over a shot, to show where someone is, or to leave them behind at the end.",
+      "tags": ["camera", "pull back", "zoom out", "reveal", "ending", "lonely", "slow"],
+      "code": {
+        "file": "engine/src/camera/Camera.tsx",
+        "export": "pullBackZoom"
+      },
+      "use": "in a shot: camera: { framing, move: \"pull-back\", strength: 0.3 }",
+      "version": 1,
+      "added": "2026-10-14"
+    },
+    {
+      "id": "camera/drift",
+      "kind": "camera",
+      "name": "Slow drift",
+      "description": "The camera floats slowly sideways across a shot, never stopping and never hurrying, so a held picture still breathes.",
+      "tags": ["camera", "drift", "float", "slide", "calm", "quiet", "slow", "held"],
+      "code": {
+        "file": "engine/src/camera/Camera.tsx",
+        "export": "Drift"
+      },
+      "use": "in a shot: camera: { framing, move: \"drift\", strength: 0.4 }",
+      "version": 1,
+      "added": "2026-10-14"
+    },
+    {
+      "id": "camera/finish",
+      "kind": "camera",
+      "name": "Finish: grain and darker edges",
+      "description": "A fine moving grain over the picture and edges a little darker, so it stops looking machine-clean. Set with soft shadows, gentle acting and moving on twos in a video's finish.",
+      "tags": ["finish", "grain", "film", "vignette", "texture", "hand made", "shadows", "on twos"],
+      "code": {
+        "file": "engine/src/camera/Finish.tsx",
+        "export": "Finish"
+      },
+      "use": "a format's or storyboard's finish: { acting: \"gentle\", onTwos: true, shadows: true, grain: 0.5, vignette: 0.5 }",
+      "version": 1,
+      "added": "2026-10-14"
+    },
+    {
       "id": "camera/punch-in",
       "kind": "camera",
       "name": "Fast push-in",
@@ -4855,6 +4988,31 @@
       "added": "2026-10-07"
     },
     {
+      "id": "overlay/gauge",
+      "kind": "overlay",
+      "name": "Story gauge",
+      "description": "A small plate at the top of the picture that carries the story: a number that counts up or down, a bar that fills or drains, or steps such as 2/3, each changing on a spoken word.",
+      "tags": [
+        "gauge",
+        "counter",
+        "meter",
+        "bar",
+        "progress",
+        "steps",
+        "countdown",
+        "explainer",
+        "short",
+        "hud"
+      ],
+      "code": {
+        "file": "engine/src/overlays/Gauge.tsx",
+        "export": "Gauges"
+      },
+      "use": "gauges: [{ label: \"REPAIRS LEFT\", kind: \"count\", keys: [{ shot: \"s3\", on: \"damage\", value: 2936 }, { shot: \"s4\", on: \"repair\", value: 42 }] }]",
+      "version": 1,
+      "added": "2026-10-22"
+    },
+    {
       "id": "overlay/orbit-diagram",
       "kind": "overlay",
       "name": "Orbit diagram",
@@ -5033,6 +5191,84 @@
       "use": "sound-plan.json: \"music\": [{ \"mood\": \"comic\", \"startMs\": 0 }]",
       "version": 1,
       "added": "2026-10-06"
+    },
+    {
+      "id": "music/unease",
+      "kind": "music",
+      "name": "Uneasy music",
+      "description": "Something is wrong and nobody says so: one low held note, far strings and a few lonely piano notes with a lot of room between them. For a dark room before anything happens, a test nobody was told about, a calm that should not be trusted.",
+      "tags": [
+        "music",
+        "unease",
+        "uneasy",
+        "dark",
+        "room",
+        "psychological",
+        "waiting",
+        "suspicion",
+        "eerie",
+        "quiet",
+        "game theory"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/music.py",
+        "export": "MOODS"
+      },
+      "use": "a scene's mood: \"unease\"",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "music/closing-in",
+      "kind": "music",
+      "name": "Closing-in music",
+      "description": "The trap shuts: a tight plucked figure that will not stop, a drum like a pulse and low strings pressing in. For the middle of a dilemma, when every way out costs something and the price keeps rising.",
+      "tags": [
+        "music",
+        "closing-in",
+        "trap",
+        "dark",
+        "pressure",
+        "psychological",
+        "dilemma",
+        "pulse",
+        "escalation",
+        "no way out",
+        "game theory"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/music.py",
+        "export": "MOODS"
+      },
+      "use": "a scene's mood: \"closing-in\"",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "music/aftermath",
+      "kind": "music",
+      "name": "Aftermath music",
+      "description": "What is left when it is over: one slow low chord at a time and a cold, high bell line. For the result, the bill, the empty chair, the last look at the viewer.",
+      "tags": [
+        "music",
+        "aftermath",
+        "after",
+        "dark",
+        "cold",
+        "empty",
+        "psychological",
+        "result",
+        "regret",
+        "ending",
+        "game theory"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/music.py",
+        "export": "MOODS"
+      },
+      "use": "a scene's mood: \"aftermath\"",
+      "version": 1,
+      "added": "2026-10-11"
     },
     {
       "id": "sfx/whoosh",
@@ -5927,6 +6163,4065 @@
       "use": "a shot's sfx: [{ \"name\": \"rain\", \"at\": \"start\" }]",
       "version": 1,
       "added": "2026-10-10"
+    },
+    {
+      "id": "sfx/tick",
+      "kind": "sfx",
+      "name": "Clock tick",
+      "description": "A clock ticking twice a second, a tick and then a lower tock, dry and small, running under a whole shot. For a countdown, a deadline, a choice that has to be made now.",
+      "tags": [
+        "sound",
+        "tick",
+        "tock",
+        "clock",
+        "ticking",
+        "countdown",
+        "timer",
+        "deadline",
+        "time running out",
+        "choose",
+        "waiting",
+        "suspense"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a shot's sfx: [{ \"name\": \"tick\", \"at\": \"start\" }]",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "sfx/applause",
+      "kind": "sfx",
+      "name": "Applause",
+      "description": "A studio audience clapping with no voices, a wash of many hands that swells in and thins out, running under a whole shot. For a game show, a stage, a win.",
+      "tags": [
+        "sound",
+        "applause",
+        "clapping",
+        "claps",
+        "audience",
+        "crowd",
+        "ovation",
+        "game show",
+        "studio",
+        "stage",
+        "win"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a shot's sfx: [{ \"name\": \"applause\", \"at\": \"start\" }]",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "sfx/drumroll",
+      "kind": "sfx",
+      "name": "Drum roll",
+      "description": "A snare drum roll of 1.8 seconds that builds and then stops dead, with no crash after it. For the moment before a reveal, a result, a winner.",
+      "tags": [
+        "sound",
+        "drumroll",
+        "drum roll",
+        "drum",
+        "snare",
+        "suspense",
+        "reveal",
+        "build-up",
+        "announcement",
+        "winner",
+        "game show"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a shot's sfx: [{ \"name\": \"drumroll\", \"at\": \"start\" }]",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "sfx/heartbeat-rising",
+      "kind": "sfx",
+      "name": "Heartbeat that speeds up",
+      "description": "A heart that starts slow and is beating more than twice as fast by the end of the shot, each thump harder than the last. For the moment of deciding: a hand over a button, eyes on the gold.",
+      "tags": [
+        "sound",
+        "heartbeat",
+        "heart",
+        "rising",
+        "faster",
+        "speeds up",
+        "deciding",
+        "pressure",
+        "fear",
+        "tension",
+        "pulse"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a shot's sfx: [{ \"name\": \"heartbeat-rising\", \"at\": \"start\" }]; it runs for the whole shot",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "sfx/clunk",
+      "kind": "sfx",
+      "name": "Clunk",
+      "description": "A heavy metal latch going home: the bolt slides, stops hard and rings for a moment. For a door locked, a switch thrown, a lid shut, a choice that cannot be taken back.",
+      "tags": [
+        "sound",
+        "clunk",
+        "latch",
+        "lock",
+        "bolt",
+        "door",
+        "switch",
+        "metal",
+        "final",
+        "shut"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a shot's sfx: [{ \"name\": \"clunk\", \"at\": \"start\" }]",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "sfx/boom",
+      "kind": "sfx",
+      "name": "Boom",
+      "description": "A deep blow with a long dark tail. For the moment everything turns: the reveal, the betrayal, the number on the screen.",
+      "tags": [
+        "sound",
+        "boom",
+        "impact",
+        "deep",
+        "low",
+        "reveal",
+        "turn",
+        "betrayal",
+        "dark",
+        "cinematic"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a shot's sfx: [{ \"name\": \"boom\", \"at\": \"start\" }]",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "sfx/hum",
+      "kind": "sfx",
+      "name": "Bulb hum",
+      "description": "One bare bulb humming in an empty room, never quite steady, running under a whole shot. What silence sounds like indoors: for a scene with no music at The Table.",
+      "tags": [
+        "sound",
+        "hum",
+        "buzz",
+        "bulb",
+        "light",
+        "electric",
+        "room",
+        "silence",
+        "empty",
+        "indoors"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a shot's sfx: [{ \"name\": \"hum\", \"at\": \"start\" }]; it runs for the whole shot",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/game-table",
+      "kind": "prop",
+      "name": "Game desk",
+      "description": "A game-show desk seen from the side: a gold top and a solid crimson front down to the floor. Two players sit facing each other across it.",
+      "tags": [
+        "prop",
+        "table",
+        "desk",
+        "game show",
+        "quiz",
+        "contest",
+        "studio",
+        "negotiation",
+        "deal",
+        "poker"
+      ],
+      "code": {
+        "file": "engine/src/props/Game.tsx",
+        "export": "GameTable"
+      },
+      "use": "props: [{ prop: \"game-table\", x: 0.5 }]; sitters about two heads from its middle, things on it at y 1.22",
+      "still": "knowledge/golden/assets/prop-game-table.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "prop/golden-ball",
+      "kind": "prop",
+      "name": "Golden ball",
+      "description": "A plain gold ball a little bigger than a fist, with a seam round its middle. Shut, nobody can tell two of them apart.",
+      "tags": [
+        "prop",
+        "ball",
+        "gold",
+        "golden ball",
+        "choice",
+        "secret",
+        "game show",
+        "mystery",
+        "sphere",
+        "lot"
+      ],
+      "code": {
+        "file": "engine/src/props/Game.tsx",
+        "export": "GoldenBall"
+      },
+      "use": "props: [{ prop: \"golden-ball\", x, y: 1.22 }] (y 1.22 stands it on a table top)",
+      "still": "knowledge/golden/assets/prop-golden-ball.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "prop/ball-split",
+      "kind": "prop",
+      "name": "Golden ball, open on SPLIT",
+      "description": "The golden ball with its top swung back and a green disc lifted out of it that reads SPLIT.",
+      "tags": [
+        "prop",
+        "ball",
+        "gold",
+        "split",
+        "share",
+        "cooperate",
+        "trust",
+        "choice",
+        "reveal",
+        "game show"
+      ],
+      "code": {
+        "file": "engine/src/props/Game.tsx",
+        "export": "GoldenBall"
+      },
+      "use": "props: [{ prop: \"ball-split\", x, y: 1.22 }] (y 1.22 stands it on a table top)",
+      "still": "knowledge/golden/assets/prop-ball-split.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "prop/ball-steal",
+      "kind": "prop",
+      "name": "Golden ball, open on STEAL",
+      "description": "The golden ball with its top swung back and a red disc lifted out of it that reads STEAL.",
+      "tags": [
+        "prop",
+        "ball",
+        "gold",
+        "steal",
+        "betray",
+        "cheat",
+        "greed",
+        "choice",
+        "reveal",
+        "game show"
+      ],
+      "code": {
+        "file": "engine/src/props/Game.tsx",
+        "export": "GoldenBall"
+      },
+      "use": "props: [{ prop: \"ball-steal\", x, y: 1.22 }] (y 1.22 stands it on a table top)",
+      "still": "knowledge/golden/assets/prop-ball-steal.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "prop/ball-split-opening",
+      "kind": "prop",
+      "name": "Golden ball that opens on SPLIT",
+      "description": "The golden ball shut as its shot begins; half a second in, its top swings back and the green SPLIT disc lifts out.",
+      "tags": [
+        "prop",
+        "ball",
+        "gold",
+        "split",
+        "share",
+        "opens",
+        "reveal",
+        "moment of truth",
+        "game show",
+        "choice"
+      ],
+      "code": {
+        "file": "engine/src/props/Game.tsx",
+        "export": "GoldenBall"
+      },
+      "use": "props: [{ prop: \"ball-split-opening\", x, y: 1.22 }] (y 1.22 stands it on a table top)",
+      "still": "knowledge/golden/assets/prop-ball-split-opening.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "prop/ball-steal-opening",
+      "kind": "prop",
+      "name": "Golden ball that opens on STEAL",
+      "description": "The golden ball shut as its shot begins; half a second in, its top swings back and the red STEAL disc lifts out.",
+      "tags": [
+        "prop",
+        "ball",
+        "gold",
+        "steal",
+        "betray",
+        "opens",
+        "reveal",
+        "moment of truth",
+        "game show",
+        "choice"
+      ],
+      "code": {
+        "file": "engine/src/props/Game.tsx",
+        "export": "GoldenBall"
+      },
+      "use": "props: [{ prop: \"ball-steal-opening\", x, y: 1.22 }] (y 1.22 stands it on a table top)",
+      "still": "knowledge/golden/assets/prop-ball-steal-opening.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "prop/cash-pile",
+      "kind": "prop",
+      "name": "Pile of cash",
+      "description": "A pile of banknotes in green bundles with paper bands, two to a row and six rows high: the prize on the table.",
+      "tags": [
+        "prop",
+        "cash",
+        "money",
+        "banknotes",
+        "prize",
+        "jackpot",
+        "bundles",
+        "fortune",
+        "pot",
+        "winnings",
+        "dollars",
+        "pounds"
+      ],
+      "code": {
+        "file": "engine/src/props/Game.tsx",
+        "export": "CashPile"
+      },
+      "use": "props: [{ prop: \"cash-pile\", x, y: 1.22 }] (y 1.22 stands it on a table top)",
+      "still": "knowledge/golden/assets/prop-cash-pile.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "prop/cash-half",
+      "kind": "prop",
+      "name": "Half the cash",
+      "description": "Three rows of banknote bundles: half of the pile of cash, for a prize that has been shared.",
+      "tags": [
+        "prop",
+        "cash",
+        "money",
+        "banknotes",
+        "half",
+        "share",
+        "split",
+        "bundles",
+        "winnings",
+        "small prize"
+      ],
+      "code": {
+        "file": "engine/src/props/Game.tsx",
+        "export": "CashPile"
+      },
+      "use": "props: [{ prop: \"cash-half\", x, y: 1.22 }] (y 1.22 stands it on a table top)",
+      "still": "knowledge/golden/assets/prop-cash-half.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "pose/sit-reach",
+      "kind": "pose",
+      "name": "Sitting, reaching across the table",
+      "description": "Sitting and leaning in, one arm stretched out over the table to something lying on it.",
+      "tags": [
+        "pose",
+        "sitting",
+        "seated",
+        "at a table",
+        "reach",
+        "choose",
+        "take",
+        "touch",
+        "tap",
+        "push forward",
+        "pick"
+      ],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "sitReach"
+      },
+      "use": "pose: \"sit-reach\", with a chair at the same x",
+      "still": "knowledge/golden/assets/pose-sit-reach.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "pose/sit-promise",
+      "kind": "pose",
+      "name": "Sitting, hand on heart",
+      "description": "Sitting with one hand flat on the chest: a promise, an oath, or \"who, me?\".",
+      "tags": [
+        "pose",
+        "sitting",
+        "seated",
+        "at a table",
+        "promise",
+        "hand on heart",
+        "swear",
+        "honest",
+        "sincere",
+        "trust me",
+        "oath"
+      ],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "sitPromise"
+      },
+      "use": "pose: \"sit-promise\", with a chair at the same x",
+      "still": "knowledge/golden/assets/pose-sit-promise.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "pose/sit-hands-up",
+      "kind": "pose",
+      "name": "Sitting, hands thrown up",
+      "description": "Sitting with both hands thrown up in the air: giving up on someone, disbelief, or a win.",
+      "tags": [
+        "pose",
+        "sitting",
+        "seated",
+        "at a table",
+        "hands up",
+        "exasperated",
+        "disbelief",
+        "give up",
+        "celebrate",
+        "protest",
+        "shock"
+      ],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "sitHandsUp"
+      },
+      "use": "pose: \"sit-hands-up\", with a chair at the same x",
+      "still": "knowledge/golden/assets/pose-sit-hands-up.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "pose/sit-slump",
+      "kind": "pose",
+      "name": "Sitting slumped",
+      "description": "Sitting with the back bent forward, the head hanging and the hands dropped in the lap.",
+      "tags": [
+        "pose",
+        "sitting",
+        "seated",
+        "at a table",
+        "slumped",
+        "defeated",
+        "lost",
+        "beaten",
+        "dejected",
+        "tired",
+        "ashamed"
+      ],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "sitSlump"
+      },
+      "use": "pose: \"sit-slump\", with a chair at the same x",
+      "still": "knowledge/golden/assets/pose-sit-slump.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "clothing/cap",
+      "kind": "clothing",
+      "name": "Peaked cap",
+      "description": "A cap with a round crown, a button on top and a stiff peak that sticks out the way the face is turned, in any cloth color.",
+      "tags": [
+        "clothing",
+        "clothes",
+        "tier 1",
+        "hat",
+        "cap",
+        "baseball cap",
+        "peak",
+        "everyday",
+        "modern",
+        "young",
+        "player",
+        "viewer"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/garments.tsx",
+        "export": "outfitFrom"
+      },
+      "use": "outfit={outfitFrom({ ...clothes, hat: { kind: 'cap', cloth: 'forest' } })}",
+      "still": "knowledge/golden/assets/clothing-cap.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "clothing/tie",
+      "kind": "clothing",
+      "name": "Striped tie",
+      "description": "A necktie with a small knot and slanted stripes in a second cloth color, over a shirt or over the bare torso line of a plain stick figure.",
+      "tags": [
+        "clothing",
+        "clothes",
+        "tier 1",
+        "tie",
+        "necktie",
+        "striped",
+        "salesman",
+        "office",
+        "banker",
+        "smooth talker",
+        "businessman",
+        "host"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/garments.tsx",
+        "export": "outfitFrom"
+      },
+      "use": "outfit={outfitFrom({ ...clothes, tie: { cloth: 'crimson', stripe: 'gold' } })}",
+      "still": "knowledge/golden/assets/clothing-tie.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "place/game-show",
+      "kind": "place",
+      "name": "Game-show stage",
+      "description": "A game-show stage: a curtain across the back wall and one spotlight falling on the middle of the floor.",
+      "tags": [
+        "game show",
+        "stage",
+        "studio",
+        "spotlight",
+        "curtain",
+        "quiz",
+        "contest",
+        "television",
+        "indoors",
+        "theatre",
+        "show"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "placeSpec"
+      },
+      "use": "placeSpec('game-show', seed); in a scene: place \"game-show\" with palette \"warm-interior\", \"danger\" or \"cold-dawn\"",
+      "still": "knowledge/golden/assets/place-game-show.png",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "overlay/bubble",
+      "kind": "overlay",
+      "name": "Thought or speech bubble",
+      "description": "A bubble over someone's head with up to three short lines: a cloud for what they think, a balloon with a tail for what they say. A balloon can drift across to someone else and burst on them.",
+      "tags": [
+        "bubble",
+        "thought",
+        "thinking",
+        "speech",
+        "balloon",
+        "idea",
+        "reasoning",
+        "says",
+        "promise",
+        "cloud",
+        "comic"
+      ],
+      "code": {
+        "file": "engine/src/overlays/Bubble.tsx",
+        "export": "Bubble"
+      },
+      "use": "overlay: { kind: \"bubble\", of: \"you\", shape: \"thought\", lines: [\"HE SPLITS: I DOUBLE\"], stress: 0 }; add to: \"them\" to a speech balloon to float it across and burst it",
+      "version": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "clothing/beanie",
+      "kind": "clothing",
+      "name": "Beanie",
+      "description": "A knitted hat pulled down over the head, with a turned-up ribbed cuff just above the brows and a bobble on top, in any cloth color.",
+      "tags": [
+        "clothing",
+        "clothes",
+        "tier 1",
+        "hat",
+        "beanie",
+        "woolly hat",
+        "knitted",
+        "bobble",
+        "winter",
+        "everyday",
+        "modern",
+        "copycat",
+        "player"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/garments.tsx",
+        "export": "outfitFrom"
+      },
+      "use": "outfit={outfitFrom({ ...clothes, hat: { kind: 'beanie', cloth: 'orange' } })}",
+      "still": "knowledge/golden/assets/clothing-beanie.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "clothing/scarf",
+      "kind": "clothing",
+      "name": "Scarf",
+      "description": "A scarf wound once round the neck with one fringed tail hanging down the front, over a top or over the bare torso line of a plain stick figure.",
+      "tags": [
+        "clothing",
+        "clothes",
+        "tier 1",
+        "scarf",
+        "neck",
+        "wrap",
+        "wool",
+        "winter",
+        "cold",
+        "gentle",
+        "kind",
+        "saint",
+        "player"
+      ],
+      "code": {
+        "file": "engine/src/wardrobe/garments.tsx",
+        "export": "outfitFrom"
+      },
+      "use": "outfit={outfitFrom({ ...clothes, scarf: { cloth: 'glint' } })}",
+      "still": "knowledge/golden/assets/clothing-scarf.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "expression/suspicious",
+      "kind": "expression",
+      "name": "Suspicious",
+      "description": "Both brows pressed low and uneven, narrowed eyes with the pupils slid to the side, and a flat mouth pulled off centre.",
+      "tags": [
+        "face",
+        "expression",
+        "suspicious",
+        "doubt",
+        "distrust",
+        "wary",
+        "squint",
+        "side eye",
+        "not buying it",
+        "sceptical",
+        "watching"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.suspicious}",
+      "still": "knowledge/golden/assets/expression-suspicious.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "expression/wink",
+      "kind": "expression",
+      "name": "Wink",
+      "description": "One eye shut in an arc under a lowered brow, the other open under a raised brow, and a lopsided grin.",
+      "tags": [
+        "face",
+        "expression",
+        "wink",
+        "winking",
+        "sly",
+        "cheeky",
+        "trick",
+        "secret",
+        "cheat",
+        "charm",
+        "knowing"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.wink}",
+      "still": "knowledge/golden/assets/expression-wink.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "pose/open-arms",
+      "kind": "pose",
+      "name": "Open arms",
+      "description": "Standing with both arms held wide open and the chest lifted: a welcome, trust, \"come here\".",
+      "tags": [
+        "pose",
+        "standing",
+        "open arms",
+        "welcome",
+        "trust",
+        "friendly",
+        "offer",
+        "embrace",
+        "generous",
+        "cooperate",
+        "saint"
+      ],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "openArms"
+      },
+      "use": "pose: \"open-arms\"",
+      "still": "knowledge/golden/assets/pose-open-arms.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "pose/hand-on-heart",
+      "kind": "pose",
+      "name": "Hand on heart",
+      "description": "Standing with one hand flat on the chest: a promise, sincerity, \"you have my word\".",
+      "tags": [
+        "pose",
+        "standing",
+        "hand on heart",
+        "promise",
+        "swear",
+        "sincere",
+        "honest",
+        "oath",
+        "trust me",
+        "pledge",
+        "saint"
+      ],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "handOnHeart"
+      },
+      "use": "pose: \"hand-on-heart\"",
+      "still": "knowledge/golden/assets/pose-hand-on-heart.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "pose/rub-hands",
+      "kind": "pose",
+      "name": "Rubbing hands",
+      "description": "Leaning in with both hands together in front of the chest, one over the other: rubbing the hands at a deal about to go his way.",
+      "tags": [
+        "pose",
+        "standing",
+        "rub hands",
+        "scheming",
+        "greedy",
+        "lean in",
+        "plotting",
+        "deal",
+        "eager",
+        "villain",
+        "cheat"
+      ],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "rubHands"
+      },
+      "use": "pose: \"rub-hands\", turned toward the person being worked on",
+      "still": "knowledge/golden/assets/pose-rub-hands.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "pose/head-tilt",
+      "kind": "pose",
+      "name": "Head tilted",
+      "description": "Standing still with the head tipped to one side: watching someone, weighing them up.",
+      "tags": [
+        "pose",
+        "standing",
+        "head tilt",
+        "watching",
+        "curious",
+        "studying",
+        "observe",
+        "wondering",
+        "puzzled",
+        "waiting",
+        "copycat"
+      ],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "headTilt"
+      },
+      "use": "pose: \"head-tilt\", with lookAt set to the person watched",
+      "still": "knowledge/golden/assets/pose-head-tilt.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/podium",
+      "kind": "prop",
+      "name": "Auction podium",
+      "description": "An auctioneer's podium: a wooden front with one panel, a foot and a gold top, chest high to someone standing beside it.",
+      "tags": [
+        "prop",
+        "podium",
+        "lectern",
+        "auction",
+        "auctioneer",
+        "stand",
+        "desk",
+        "speech",
+        "sale",
+        "furniture"
+      ],
+      "code": {
+        "file": "engine/src/props/Auction.tsx",
+        "export": "Podium"
+      },
+      "use": "props: [{ prop: \"podium\", x: 0.5 }]; things stand on its top at y: 1.5",
+      "still": "knowledge/golden/assets/prop-podium.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/gavel",
+      "kind": "prop",
+      "name": "Gavel in a gloved hand",
+      "description": "A white-gloved fist and a dark cuff that come up from behind a podium, holding a wooden gavel with its head resting on its block: all that is ever seen of the auctioneer.",
+      "tags": [
+        "prop",
+        "gavel",
+        "hammer",
+        "auction",
+        "auctioneer",
+        "gloved hand",
+        "judge",
+        "sold",
+        "court",
+        "narrator"
+      ],
+      "code": {
+        "file": "engine/src/props/Auction.tsx",
+        "export": "GavelHand"
+      },
+      "use": "props: [{ prop: \"gavel\", x, y: 1.5 }, { prop: \"podium\", x: 0.5 }]: list it before the podium, at the podium top",
+      "still": "knowledge/golden/assets/prop-gavel.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/gavel-raised",
+      "kind": "prop",
+      "name": "Gavel raised",
+      "description": "The gloved hand with the gavel lifted off its block and tipped back, about to come down.",
+      "tags": [
+        "prop",
+        "gavel",
+        "hammer",
+        "auction",
+        "raised",
+        "waiting",
+        "going once",
+        "auctioneer",
+        "suspense",
+        "bid"
+      ],
+      "code": {
+        "file": "engine/src/props/Auction.tsx",
+        "export": "GavelHand"
+      },
+      "use": "props: [{ prop: \"gavel-raised\", x, y: 1.5 }, { prop: \"podium\", x: 0.5 }]",
+      "still": "knowledge/golden/assets/prop-gavel-raised.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/gavel-knock",
+      "kind": "prop",
+      "name": "Gavel knocking",
+      "description": "The gloved hand with the gavel raised as its shot begins; a fifth of a second in it comes down on the block, jumps once and rests.",
+      "tags": [
+        "prop",
+        "gavel",
+        "hammer",
+        "auction",
+        "knock",
+        "sold",
+        "bang",
+        "strike",
+        "verdict",
+        "auctioneer"
+      ],
+      "code": {
+        "file": "engine/src/props/Auction.tsx",
+        "export": "gavelLiftAt"
+      },
+      "use": "props: [{ prop: \"gavel-knock\", x, y: 1.5 }, { prop: \"podium\", x: 0.5 }], with a thud as the shot starts",
+      "still": "knowledge/golden/assets/prop-gavel-knock.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/banknote",
+      "kind": "prop",
+      "name": "Banknote",
+      "description": "A plain green banknote facing us with a 1 in an oval in its middle: one dollar, drawn simply and copying no real note.",
+      "tags": [
+        "prop",
+        "banknote",
+        "note",
+        "dollar",
+        "bill",
+        "money",
+        "cash",
+        "one dollar",
+        "prize",
+        "auction"
+      ],
+      "code": {
+        "file": "engine/src/props/Auction.tsx",
+        "export": "Banknote"
+      },
+      "use": "holds: \"banknote\" with pose \"hold-object\", or props: [{ prop: \"banknote\", x, y: 1.5, tag: \"$1.05\" }] on a podium",
+      "still": "knowledge/golden/assets/prop-banknote.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/banknote-20",
+      "kind": "prop",
+      "name": "Twenty banknote",
+      "description": "The plain green banknote with a 20 in its middle.",
+      "tags": [
+        "prop",
+        "banknote",
+        "note",
+        "twenty",
+        "dollars",
+        "money",
+        "cash",
+        "bill",
+        "prize",
+        "classroom"
+      ],
+      "code": {
+        "file": "engine/src/props/Auction.tsx",
+        "export": "Banknote"
+      },
+      "use": "props: [{ prop: \"banknote-20\", x, y, tag: \"$2,000\" }]",
+      "still": "knowledge/golden/assets/prop-banknote-20.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/paddle",
+      "kind": "prop",
+      "name": "Bidding paddle",
+      "description": "A bidding paddle with BID written on it: a round cream face with a gold rim on a short wooden handle, held up in a fist, face to us whatever the arm does.",
+      "tags": [
+        "prop",
+        "paddle",
+        "bid",
+        "bidding",
+        "auction",
+        "sign",
+        "raise",
+        "bidder",
+        "offer",
+        "vote"
+      ],
+      "code": {
+        "file": "engine/src/props/Auction.tsx",
+        "export": "Paddle"
+      },
+      "use": "holds: \"paddle\" with pose \"wave\" to bid, or \"stand\" to keep it down",
+      "still": "knowledge/golden/assets/prop-paddle.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "place/auction-room",
+      "kind": "place",
+      "name": "Auction room",
+      "description": "An auction room late at night: a bare wall with two pictures and one lamp over the middle of the floor.",
+      "tags": [
+        "place",
+        "set",
+        "auction",
+        "auction room",
+        "sale room",
+        "night",
+        "lamp",
+        "spotlight",
+        "indoors",
+        "hall",
+        "bidding"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "PLACES"
+      },
+      "use": "place: \"auction-room\", palette \"warm-interior\" (or \"danger\" when it turns)",
+      "still": "knowledge/golden/assets/place-auction-room.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/paddle-5c",
+      "kind": "prop",
+      "name": "Paddle, 5¢",
+      "description": "The bidding paddle with a bid of 5 cents written on it (5¢).",
+      "tags": [
+        "prop",
+        "paddle",
+        "bid",
+        "bidding",
+        "auction",
+        "sign",
+        "raise",
+        "bidder",
+        "5 cents",
+        "dollar auction"
+      ],
+      "code": {
+        "file": "engine/src/props/Auction.tsx",
+        "export": "PADDLE_MARKS"
+      },
+      "use": "holds: \"paddle-5c\" with pose \"wave\" to bid",
+      "still": "knowledge/golden/assets/prop-paddle-5c.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/paddle-10c",
+      "kind": "prop",
+      "name": "Paddle, 10¢",
+      "description": "The bidding paddle with a bid of 10 cents written on it (10¢).",
+      "tags": [
+        "prop",
+        "paddle",
+        "bid",
+        "bidding",
+        "auction",
+        "sign",
+        "raise",
+        "bidder",
+        "10 cents",
+        "dollar auction"
+      ],
+      "code": {
+        "file": "engine/src/props/Auction.tsx",
+        "export": "PADDLE_MARKS"
+      },
+      "use": "holds: \"paddle-10c\" with pose \"wave\" to bid",
+      "still": "knowledge/golden/assets/prop-paddle-10c.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/paddle-60c",
+      "kind": "prop",
+      "name": "Paddle, 60¢",
+      "description": "The bidding paddle with a bid of 60 cents written on it (60¢).",
+      "tags": [
+        "prop",
+        "paddle",
+        "bid",
+        "bidding",
+        "auction",
+        "sign",
+        "raise",
+        "bidder",
+        "60 cents",
+        "dollar auction"
+      ],
+      "code": {
+        "file": "engine/src/props/Auction.tsx",
+        "export": "PADDLE_MARKS"
+      },
+      "use": "holds: \"paddle-60c\" with pose \"wave\" to bid",
+      "still": "knowledge/golden/assets/prop-paddle-60c.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/cash-jar",
+      "kind": "prop",
+      "name": "Jar of cash",
+      "description": "A huge glass jar with a gold lid, stuffed to the neck with bundles of banknotes, and a white-gloved hand resting on its lid.",
+      "tags": [
+        "prop",
+        "jar",
+        "cash",
+        "money",
+        "savings",
+        "profit",
+        "takings",
+        "banknotes",
+        "auctioneer",
+        "glass jar",
+        "hoard"
+      ],
+      "code": {
+        "file": "engine/src/props/Auction.tsx",
+        "export": "CashJar"
+      },
+      "use": "props: [{ prop: \"cash-jar\", x }]: it stands behind people and behind a podium",
+      "still": "knowledge/golden/assets/prop-cash-jar.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/cash-jar-low",
+      "kind": "prop",
+      "name": "Jar, nearly empty",
+      "description": "The huge glass jar with only a few gold coins on its bottom.",
+      "tags": [
+        "prop",
+        "jar",
+        "empty",
+        "coins",
+        "money",
+        "little",
+        "poor takings",
+        "glass jar",
+        "savings",
+        "almost nothing"
+      ],
+      "code": {
+        "file": "engine/src/props/Auction.tsx",
+        "export": "CashJar"
+      },
+      "use": "props: [{ prop: \"cash-jar-low\", x }]",
+      "still": "knowledge/golden/assets/prop-cash-jar-low.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "place/classroom",
+      "kind": "place",
+      "name": "Classroom",
+      "description": "A classroom: a board with a chart on a plain pale wall, and one window.",
+      "tags": [
+        "place",
+        "set",
+        "classroom",
+        "school",
+        "class",
+        "lecture",
+        "business school",
+        "university",
+        "lesson",
+        "indoors",
+        "students"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "PLACES"
+      },
+      "use": "place: \"classroom\", palette \"cold-dawn\"",
+      "still": "knowledge/golden/assets/place-classroom.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "overlay/big-words",
+      "kind": "overlay",
+      "name": "Big words over the scene",
+      "description": "A few big words in up to three short lines over the scene, in the captions' letters with one line in gold: the question a video opens on, shown while it is asked.",
+      "tags": [
+        "words",
+        "question",
+        "opening",
+        "hook",
+        "big text",
+        "headline",
+        "title",
+        "on screen",
+        "first seconds",
+        "text"
+      ],
+      "code": {
+        "file": "engine/src/overlays/Explain.tsx",
+        "export": "BigWords"
+      },
+      "use": "overlay: { kind: \"words\", lines: [\"Would you bid\", \"a nickel for\", \"a dollar bill?\"], stress: 2 }; keep faces out from under them",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/sofa",
+      "kind": "prop",
+      "name": "Sofa",
+      "description": "A padded blue sofa with a pale cushion, seen from its end: something soft to sit or slump on at home.",
+      "tags": [
+        "prop",
+        "sofa",
+        "couch",
+        "armchair",
+        "seat",
+        "home",
+        "living room",
+        "evening",
+        "relax",
+        "furniture",
+        "slump"
+      ],
+      "code": {
+        "file": "engine/src/props/Chair.tsx",
+        "export": "Chair"
+      },
+      "use": "props: [{ prop: \"sofa\", x }] at the same x as whoever sits on it",
+      "still": "knowledge/golden/assets/prop-sofa.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/phone",
+      "kind": "prop",
+      "name": "Phone",
+      "description": "A phone held up in a fist with its lit screen toward us.",
+      "tags": [
+        "prop",
+        "phone",
+        "mobile",
+        "smartphone",
+        "screen",
+        "texting",
+        "chat",
+        "scrolling",
+        "message",
+        "modern",
+        "everyday"
+      ],
+      "code": {
+        "file": "engine/src/props/Home.tsx",
+        "export": "Phone"
+      },
+      "use": "holds: \"phone\" with the pose \"sit-phone\" (or \"hold-object\" standing)",
+      "still": "knowledge/golden/assets/prop-phone.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/chat-bubbles",
+      "kind": "prop",
+      "name": "Chat filling up",
+      "description": "Message bubbles one under another, theirs in cream on the left and yours in blue on the right, arriving one at a time over the shot; the writing in them cannot be read.",
+      "tags": [
+        "prop",
+        "chat",
+        "messages",
+        "group chat",
+        "texting",
+        "argument",
+        "replies",
+        "bubbles",
+        "phone",
+        "online",
+        "thread"
+      ],
+      "code": {
+        "file": "engine/src/props/Home.tsx",
+        "export": "ChatBubbles"
+      },
+      "use": "props: [{ prop: \"chat-bubbles\", x, y: 2.9 }] beside or above whoever is on the phone",
+      "still": "knowledge/golden/assets/prop-chat-bubbles.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/wall-clock",
+      "kind": "prop",
+      "name": "Wall clock",
+      "description": "A round wall clock with a gold rim, standing at nine.",
+      "tags": [
+        "prop",
+        "clock",
+        "wall clock",
+        "time",
+        "evening",
+        "late",
+        "hour",
+        "home",
+        "waiting",
+        "night"
+      ],
+      "code": {
+        "file": "engine/src/props/Home.tsx",
+        "export": "WallClock"
+      },
+      "use": "props: [{ prop: \"wall-clock\", x, y: 3.1 }]",
+      "still": "knowledge/golden/assets/prop-wall-clock.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/wall-clock-spinning",
+      "kind": "prop",
+      "name": "Wall clock, hands running",
+      "description": "The wall clock with its hands running away: it starts at nine in the evening and is past midnight two seconds into its shot.",
+      "tags": [
+        "prop",
+        "clock",
+        "time passing",
+        "hours",
+        "midnight",
+        "late",
+        "evening gone",
+        "wasted time",
+        "spinning",
+        "night"
+      ],
+      "code": {
+        "file": "engine/src/props/Home.tsx",
+        "export": "WallClock"
+      },
+      "use": "props: [{ prop: \"wall-clock-spinning\", x, y: 3.1 }], with a tick under the shot",
+      "still": "knowledge/golden/assets/prop-wall-clock-spinning.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/gavel-rise",
+      "kind": "prop",
+      "name": "Gavel being raised",
+      "description": "The gloved hand with the gavel resting on its block as the shot begins; a moment in, it lifts it and holds it up.",
+      "tags": [
+        "prop",
+        "gavel",
+        "hammer",
+        "auction",
+        "raise",
+        "about to",
+        "going once",
+        "auctioneer",
+        "suspense",
+        "ending"
+      ],
+      "code": {
+        "file": "engine/src/props/Auction.tsx",
+        "export": "gavelRiseAt"
+      },
+      "use": "props: [{ prop: \"gavel-rise\", x, y: 1.5 }, { prop: \"podium\", x: 0.5 }]",
+      "still": "knowledge/golden/assets/prop-gavel-rise.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "pose/sit-phone",
+      "kind": "pose",
+      "name": "Sitting, on the phone",
+      "description": "Sitting with a phone held up in front of the chest and the head bowed over it: reading, scrolling, arguing in a chat.",
+      "tags": [
+        "pose",
+        "sitting",
+        "seated",
+        "phone",
+        "texting",
+        "scrolling",
+        "chat",
+        "reading",
+        "online",
+        "evening",
+        "sofa"
+      ],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "sitPhone"
+      },
+      "use": "pose: \"sit-phone\", holds: \"phone\", with a sofa or chair at the same x",
+      "still": "knowledge/golden/assets/pose-sit-phone.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "pose/fix-tie",
+      "kind": "pose",
+      "name": "Straightening the tie",
+      "description": "Standing straight with one hand up at the knot of the tie and the chin a little lifted: pleased with how that went.",
+      "tags": [
+        "pose",
+        "standing",
+        "tie",
+        "straighten",
+        "adjust",
+        "pleased",
+        "smug",
+        "satisfied",
+        "it worked",
+        "trainer"
+      ],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "fixTie"
+      },
+      "use": "pose: \"fix-tie\"",
+      "still": "knowledge/golden/assets/pose-fix-tie.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/chat-full",
+      "kind": "prop",
+      "name": "Chat, full",
+      "description": "The chat with all five message bubbles already up: for the shot after the one they arrived in.",
+      "tags": [
+        "prop",
+        "chat",
+        "messages",
+        "group chat",
+        "texting",
+        "argument",
+        "replies",
+        "bubbles",
+        "phone",
+        "thread",
+        "full"
+      ],
+      "code": {
+        "file": "engine/src/props/Home.tsx",
+        "export": "ChatBubbles"
+      },
+      "use": "props: [{ prop: \"chat-full\", x, y: 2.9 }] at the same place as the chat-bubbles of the shot before",
+      "still": "knowledge/golden/assets/prop-chat-full.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/bulb",
+      "kind": "prop",
+      "name": "Hanging bulb",
+      "description": "A bare bulb hanging on its cord with a soft round of light about it: the one light of a dark room.",
+      "tags": [
+        "prop",
+        "bulb",
+        "light",
+        "lamp",
+        "hanging",
+        "dark room",
+        "interrogation",
+        "the table",
+        "night",
+        "tension",
+        "one light"
+      ],
+      "code": {
+        "file": "engine/src/props/Room.tsx",
+        "export": "Bulb"
+      },
+      "use": "props: [{ prop: \"bulb\", x, y: 4.3 }] over a table, in a dark room",
+      "still": "knowledge/golden/assets/prop-bulb.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "palette/table-grey",
+      "kind": "palette",
+      "name": "Table grey",
+      "description": "Storm slate with its colour taken out: the grey of a dark room lit by one bare bulb.",
+      "tags": [
+        "palette",
+        "colors",
+        "background",
+        "grey",
+        "gray",
+        "dark",
+        "black and white",
+        "noir",
+        "room",
+        "night",
+        "game theory"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/roles.ts",
+        "export": "bgRoles"
+      },
+      "use": "palette: \"table-grey\"",
+      "still": "knowledge/golden/assets/palette-table-grey.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "place/the-table",
+      "kind": "place",
+      "name": "The Table",
+      "description": "The dark room of the game theory videos: bare grey walls and floor, and the light of one bulb on the wall behind the table.",
+      "tags": [
+        "place",
+        "set",
+        "the table",
+        "dark room",
+        "interrogation",
+        "bare room",
+        "grey",
+        "night",
+        "game theory",
+        "dilemma",
+        "indoors"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "PLACES"
+      },
+      "use": "place: \"the-table\", palette \"table-grey\", with the props bulb, iron-table and iron-chair",
+      "still": "knowledge/golden/assets/place-the-table.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/iron-chair",
+      "kind": "prop",
+      "name": "Grey metal chair",
+      "description": "The plain chair in bare grey metal, for a cold room.",
+      "tags": [
+        "prop",
+        "chair",
+        "seat",
+        "metal",
+        "grey",
+        "iron",
+        "cold",
+        "bare",
+        "interrogation",
+        "the table"
+      ],
+      "code": {
+        "file": "engine/src/props/Chair.tsx",
+        "export": "Chair"
+      },
+      "use": "props: [{ prop: \"iron-chair\", x }] at the same x as whoever sits on it",
+      "still": "knowledge/golden/assets/prop-iron-chair.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/iron-table",
+      "kind": "prop",
+      "name": "Grey metal table",
+      "description": "The plain table in bare grey metal, so that what lies on it is the only colour.",
+      "tags": [
+        "prop",
+        "table",
+        "desk",
+        "metal",
+        "grey",
+        "iron",
+        "cold",
+        "bare",
+        "interrogation",
+        "the table"
+      ],
+      "code": {
+        "file": "engine/src/props/Table.tsx",
+        "export": "Table"
+      },
+      "use": "props: [{ prop: \"iron-table\", x }]; things stand on it at y: 1.22",
+      "still": "knowledge/golden/assets/prop-iron-table.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "expression/dread",
+      "kind": "expression",
+      "name": "Dread",
+      "description": "Silent fear: eyes wide with pinpoint pupils, light worried brows, and the mouth a thin unsteady line.",
+      "tags": [
+        "face",
+        "expression",
+        "dread",
+        "frozen",
+        "terror",
+        "panic",
+        "paralysed",
+        "cornered",
+        "trapped",
+        "tension",
+        "psychological"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.dread}",
+      "still": "knowledge/golden/assets/expression-dread.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "expression/calculating",
+      "kind": "expression",
+      "name": "Calculating",
+      "description": "Working it out, coldly: level low brows, eyes narrowed from above and below, small steady pupils and a flat mouth.",
+      "tags": [
+        "face",
+        "expression",
+        "calculating",
+        "cold",
+        "weighing",
+        "deciding",
+        "logic",
+        "rational",
+        "plotting",
+        "unreadable",
+        "psychological"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.calculating}",
+      "still": "knowledge/golden/assets/expression-calculating.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "expression/tempted",
+      "kind": "expression",
+      "name": "Tempted",
+      "description": "Wanting it: brows lifted, eyes wide with big pupils fixed a little low, and lips just parted in a half smile.",
+      "tags": [
+        "face",
+        "expression",
+        "tempted",
+        "greed",
+        "wanting",
+        "desire",
+        "lure",
+        "prize",
+        "craving",
+        "hungry",
+        "psychological"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.tempted}",
+      "still": "knowledge/golden/assets/expression-tempted.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "expression/lying",
+      "kind": "expression",
+      "name": "Lying",
+      "description": "A smile that is not meant: the mouth smiles, one eye narrows, the eyes slide away and the brows do not agree.",
+      "tags": [
+        "face",
+        "expression",
+        "lying",
+        "liar",
+        "false smile",
+        "deceit",
+        "bluff",
+        "tell",
+        "twitch",
+        "insincere",
+        "psychological"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.lying}",
+      "still": "knowledge/golden/assets/expression-lying.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "expression/guilty",
+      "kind": "expression",
+      "name": "Guilty",
+      "description": "After doing it: eyes down and away under heavy lids, inner brows lifted, and a small mouth pulled to one side.",
+      "tags": [
+        "face",
+        "expression",
+        "guilty",
+        "guilt",
+        "shame",
+        "regret",
+        "betrayer",
+        "avoiding",
+        "remorse",
+        "ashamed",
+        "psychological"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.guilty}",
+      "still": "knowledge/golden/assets/expression-guilty.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "expression/hollow",
+      "kind": "expression",
+      "name": "Hollow",
+      "description": "Nothing left: light brows a little raised, heavy lids, small pupils looking at nothing, a crease under each eye and a level mouth.",
+      "tags": [
+        "face",
+        "expression",
+        "hollow",
+        "numb",
+        "empty",
+        "defeated",
+        "blank",
+        "aftermath",
+        "drained",
+        "stare",
+        "psychological"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.hollow}",
+      "still": "knowledge/golden/assets/expression-hollow.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "expression/bored",
+      "kind": "expression",
+      "name": "Bored",
+      "description": "Seen it all before: level brows at rest, the lids half down, steady eyes and a small flat mouth with one corner barely up. The Trainer telling the camera the truth.",
+      "tags": [
+        "face",
+        "expression",
+        "bored",
+        "flat",
+        "unimpressed",
+        "cold",
+        "calm",
+        "cynical",
+        "deadpan",
+        "trainer",
+        "psychological"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "face={EXPRESSIONS.bored}",
+      "still": "knowledge/golden/assets/expression-bored.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/bulb-flicker",
+      "kind": "prop",
+      "name": "Bulb, flickering",
+      "description": "The hanging bulb failing: through its shot it holds, stutters low in short uneven bursts and comes back.",
+      "tags": [
+        "prop",
+        "bulb",
+        "light",
+        "flicker",
+        "failing",
+        "stutter",
+        "dark room",
+        "tension",
+        "trust breaks",
+        "the table"
+      ],
+      "code": {
+        "file": "engine/src/props/Room.tsx",
+        "export": "flickerAt"
+      },
+      "use": "props: [{ prop: \"bulb-flicker\", x, y: 4.3 }, ..., { prop: \"gloom-flicker\", x }] with the gloom listed last",
+      "still": "knowledge/golden/assets/prop-bulb-flicker.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/bulb-dim",
+      "kind": "prop",
+      "name": "Bulb, burning low",
+      "description": "The hanging bulb burning low, with almost no light about it.",
+      "tags": [
+        "prop",
+        "bulb",
+        "light",
+        "dim",
+        "low",
+        "dying",
+        "dark room",
+        "aftermath",
+        "night",
+        "the table"
+      ],
+      "code": {
+        "file": "engine/src/props/Room.tsx",
+        "export": "Bulb"
+      },
+      "use": "props: [{ prop: \"bulb-dim\", x, y: 4.3 }, ..., { prop: \"gloom\", x }] with the gloom listed last",
+      "still": "knowledge/golden/assets/prop-bulb-dim.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/gloom",
+      "kind": "prop",
+      "name": "Gloom",
+      "description": "The dark closing in: a veil over everything listed before it in the shot, for a room whose light has failed.",
+      "tags": [
+        "prop",
+        "gloom",
+        "darkness",
+        "dark",
+        "shadow",
+        "light fails",
+        "dim",
+        "night",
+        "ending",
+        "the table"
+      ],
+      "code": {
+        "file": "engine/src/props/Room.tsx",
+        "export": "Gloom"
+      },
+      "use": "props: [..., { prop: \"gloom\", x: 0.5 }] as the last thing in the shot",
+      "still": "knowledge/golden/assets/prop-gloom.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/gloom-flicker",
+      "kind": "prop",
+      "name": "Gloom, flickering",
+      "description": "The dark that comes and goes with a flickering bulb: the room dims each time the light stutters.",
+      "tags": [
+        "prop",
+        "gloom",
+        "darkness",
+        "flicker",
+        "stutter",
+        "light fails",
+        "tension",
+        "dark room",
+        "night",
+        "the table"
+      ],
+      "code": {
+        "file": "engine/src/props/Room.tsx",
+        "export": "Gloom"
+      },
+      "use": "props: [{ prop: \"bulb-flicker\", x, y: 4.3 }, ..., { prop: \"gloom-flicker\", x: 0.5 }]",
+      "still": "knowledge/golden/assets/prop-gloom-flicker.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/back-row",
+      "kind": "prop",
+      "name": "Back row",
+      "description": "The others in the room, the public: four plain stick figures in a gallery along the back wall, above and behind the table, smaller and dimmer than the people in front. They stand and watch and do nothing. They are not characters: no names, no colours, no lines.",
+      "tags": [
+        "prop",
+        "crowd",
+        "people",
+        "others",
+        "the public",
+        "bystanders",
+        "onlookers",
+        "group",
+        "extras",
+        "back row",
+        "everyone",
+        "watching",
+        "waiting",
+        "doing nothing",
+        "calm"
+      ],
+      "code": {
+        "file": "engine/src/props/Crowd.tsx",
+        "export": "BackRow"
+      },
+      "use": "a shot's props: [{ \"prop\": \"back-row\", \"x\": 0.5 }], listed first; someone standing at the same x stands in the gap in its middle",
+      "still": "knowledge/golden/assets/prop-back-row.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/back-row-raising",
+      "kind": "prop",
+      "name": "Back row, raising hands",
+      "description": "The others in the room, the public: four plain stick figures in a gallery along the back wall, above and behind the table, smaller and dimmer than the people in front. Their hands go up one after another over the shot, each following the one before. They are not characters: no names, no colours, no lines.",
+      "tags": [
+        "prop",
+        "crowd",
+        "people",
+        "others",
+        "the public",
+        "bystanders",
+        "onlookers",
+        "group",
+        "extras",
+        "back row",
+        "everyone",
+        "vote",
+        "hands up",
+        "one by one",
+        "agree",
+        "conform",
+        "follow"
+      ],
+      "code": {
+        "file": "engine/src/props/Crowd.tsx",
+        "export": "BackRow"
+      },
+      "use": "a shot's props: [{ \"prop\": \"back-row-raising\", \"x\": 0.5 }], listed first; someone standing at the same x stands in the gap in its middle",
+      "still": "knowledge/golden/assets/prop-back-row-raising.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/back-row-raised",
+      "kind": "prop",
+      "name": "Back row, hands raised",
+      "description": "The others in the room, the public: four plain stick figures in a gallery along the back wall, above and behind the table, smaller and dimmer than the people in front. All four hold a hand up: the shot after the hands went up. They are not characters: no names, no colours, no lines.",
+      "tags": [
+        "prop",
+        "crowd",
+        "people",
+        "others",
+        "the public",
+        "bystanders",
+        "onlookers",
+        "group",
+        "extras",
+        "back row",
+        "everyone",
+        "vote",
+        "hands up",
+        "agree",
+        "all of them"
+      ],
+      "code": {
+        "file": "engine/src/props/Crowd.tsx",
+        "export": "BackRow"
+      },
+      "use": "a shot's props: [{ \"prop\": \"back-row-raised\", \"x\": 0.5 }], listed first; someone standing at the same x stands in the gap in its middle",
+      "still": "knowledge/golden/assets/prop-back-row-raised.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/back-row-turned",
+      "kind": "prop",
+      "name": "Back row, turned away",
+      "description": "The others in the room, the public: four plain stick figures in a gallery along the back wall, above and behind the table, smaller and dimmer than the people in front. All four have turned their backs. They are not characters: no names, no colours, no lines.",
+      "tags": [
+        "prop",
+        "crowd",
+        "people",
+        "others",
+        "the public",
+        "bystanders",
+        "onlookers",
+        "group",
+        "extras",
+        "back row",
+        "everyone",
+        "turned away",
+        "ignore",
+        "backs",
+        "look away",
+        "nobody helps"
+      ],
+      "code": {
+        "file": "engine/src/props/Crowd.tsx",
+        "export": "BackRow"
+      },
+      "use": "a shot's props: [{ \"prop\": \"back-row-turned\", \"x\": 0.5 }], listed first; someone standing at the same x stands in the gap in its middle",
+      "still": "knowledge/golden/assets/prop-back-row-turned.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/house-row",
+      "kind": "prop",
+      "name": "House row",
+      "description": "The others in the room, people working for the House: the same four plain figures along the back wall, each with a small gold badge the viewer can spot. They stand and watch and do nothing. They are not characters: no names, no colours, no lines.",
+      "tags": [
+        "prop",
+        "crowd",
+        "people",
+        "house actors",
+        "actors",
+        "planted",
+        "badge",
+        "gold badge",
+        "group",
+        "extras",
+        "in on it",
+        "watching",
+        "waiting",
+        "doing nothing",
+        "calm"
+      ],
+      "code": {
+        "file": "engine/src/props/Crowd.tsx",
+        "export": "BackRow"
+      },
+      "use": "a shot's props: [{ \"prop\": \"house-row\", \"x\": 0.5 }], listed first; someone standing at the same x stands in the gap in its middle",
+      "still": "knowledge/golden/assets/prop-house-row.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/house-row-raising",
+      "kind": "prop",
+      "name": "House row, raising hands",
+      "description": "The others in the room, people working for the House: the same four plain figures along the back wall, each with a small gold badge the viewer can spot. Their hands go up one after another over the shot, each following the one before. They are not characters: no names, no colours, no lines.",
+      "tags": [
+        "prop",
+        "crowd",
+        "people",
+        "house actors",
+        "actors",
+        "planted",
+        "badge",
+        "gold badge",
+        "group",
+        "extras",
+        "in on it",
+        "vote",
+        "hands up",
+        "one by one",
+        "agree",
+        "conform",
+        "follow"
+      ],
+      "code": {
+        "file": "engine/src/props/Crowd.tsx",
+        "export": "BackRow"
+      },
+      "use": "a shot's props: [{ \"prop\": \"house-row-raising\", \"x\": 0.5 }], listed first; someone standing at the same x stands in the gap in its middle",
+      "still": "knowledge/golden/assets/prop-house-row-raising.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/house-row-raised",
+      "kind": "prop",
+      "name": "House row, hands raised",
+      "description": "The others in the room, people working for the House: the same four plain figures along the back wall, each with a small gold badge the viewer can spot. All four hold a hand up: the shot after the hands went up. They are not characters: no names, no colours, no lines.",
+      "tags": [
+        "prop",
+        "crowd",
+        "people",
+        "house actors",
+        "actors",
+        "planted",
+        "badge",
+        "gold badge",
+        "group",
+        "extras",
+        "in on it",
+        "vote",
+        "hands up",
+        "agree",
+        "all of them"
+      ],
+      "code": {
+        "file": "engine/src/props/Crowd.tsx",
+        "export": "BackRow"
+      },
+      "use": "a shot's props: [{ \"prop\": \"house-row-raised\", \"x\": 0.5 }], listed first; someone standing at the same x stands in the gap in its middle",
+      "still": "knowledge/golden/assets/prop-house-row-raised.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/house-row-turned",
+      "kind": "prop",
+      "name": "House row, turned away",
+      "description": "The others in the room, people working for the House: the same four plain figures along the back wall, each with a small gold badge the viewer can spot. All four have turned their backs. They are not characters: no names, no colours, no lines.",
+      "tags": [
+        "prop",
+        "crowd",
+        "people",
+        "house actors",
+        "actors",
+        "planted",
+        "badge",
+        "gold badge",
+        "group",
+        "extras",
+        "in on it",
+        "turned away",
+        "ignore",
+        "backs",
+        "look away",
+        "nobody helps"
+      ],
+      "code": {
+        "file": "engine/src/props/Crowd.tsx",
+        "export": "BackRow"
+      },
+      "use": "a shot's props: [{ \"prop\": \"house-row-turned\", \"x\": 0.5 }], listed first; someone standing at the same x stands in the gap in its middle",
+      "still": "knowledge/golden/assets/prop-house-row-turned.png",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "prop/smoke-creeping",
+      "kind": "prop",
+      "name": "Smoke creeping in",
+      "description": "Smoke filling a room from the floor up, coming in along the floor from the left over its shot: a bank of gray smoke across the whole picture with slow rolling puffs along its top, in front of whoever stands in it.",
+      "tags": [
+        "prop",
+        "smoke",
+        "room",
+        "fire",
+        "danger",
+        "bystander",
+        "emergency",
+        "creeping",
+        "coming in",
+        "under the door",
+        "first smoke"
+      ],
+      "code": {
+        "file": "engine/src/effects/Blast.tsx",
+        "export": "SmokeBank"
+      },
+      "use": "a shot's props: [{ \"prop\": \"smoke-creeping\", \"x\": 0.5 }], listed after the table and the things on it",
+      "still": "knowledge/golden/assets/prop-smoke-creeping.png",
+      "version": 1,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "prop/smoke-low",
+      "kind": "prop",
+      "name": "Smoke along the floor",
+      "description": "Smoke filling a room from the floor up, lying along the floor: a bank of gray smoke across the whole picture with slow rolling puffs along its top, in front of whoever stands in it.",
+      "tags": [
+        "prop",
+        "smoke",
+        "room",
+        "fire",
+        "danger",
+        "bystander",
+        "emergency",
+        "floor",
+        "low",
+        "thin"
+      ],
+      "code": {
+        "file": "engine/src/effects/Blast.tsx",
+        "export": "SmokeBank"
+      },
+      "use": "a shot's props: [{ \"prop\": \"smoke-low\", \"x\": 0.5 }], listed after the table and the things on it",
+      "still": "knowledge/golden/assets/prop-smoke-low.png",
+      "version": 1,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "prop/smoke-rising",
+      "kind": "prop",
+      "name": "Smoke rising to the table",
+      "description": "Smoke filling a room from the floor up, rising from the floor to the top of a table over its shot: a bank of gray smoke across the whole picture with slow rolling puffs along its top, in front of whoever stands in it.",
+      "tags": [
+        "prop",
+        "smoke",
+        "room",
+        "fire",
+        "danger",
+        "bystander",
+        "emergency",
+        "rising",
+        "thicker",
+        "getting worse"
+      ],
+      "code": {
+        "file": "engine/src/effects/Blast.tsx",
+        "export": "SmokeBank"
+      },
+      "use": "a shot's props: [{ \"prop\": \"smoke-rising\", \"x\": 0.5 }], listed after the table and the things on it",
+      "still": "knowledge/golden/assets/prop-smoke-rising.png",
+      "version": 1,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "prop/smoke-table",
+      "kind": "prop",
+      "name": "Smoke at the table",
+      "description": "Smoke filling a room from the floor up, up to the top of a table: a bank of gray smoke across the whole picture with slow rolling puffs along its top, in front of whoever stands in it.",
+      "tags": [
+        "prop",
+        "smoke",
+        "room",
+        "fire",
+        "danger",
+        "bystander",
+        "emergency",
+        "table",
+        "thick",
+        "half full"
+      ],
+      "code": {
+        "file": "engine/src/effects/Blast.tsx",
+        "export": "SmokeBank"
+      },
+      "use": "a shot's props: [{ \"prop\": \"smoke-table\", \"x\": 0.5 }], listed after the table and the things on it",
+      "still": "knowledge/golden/assets/prop-smoke-table.png",
+      "version": 1,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "prop/smoke-filling",
+      "kind": "prop",
+      "name": "Smoke filling the room",
+      "description": "Smoke filling a room from the floor up, rising from the table to the shoulders of someone sitting over its shot: a bank of gray smoke across the whole picture with slow rolling puffs along its top, in front of whoever stands in it.",
+      "tags": [
+        "prop",
+        "smoke",
+        "room",
+        "fire",
+        "danger",
+        "bystander",
+        "emergency",
+        "filling",
+        "rising",
+        "worse"
+      ],
+      "code": {
+        "file": "engine/src/effects/Blast.tsx",
+        "export": "SmokeBank"
+      },
+      "use": "a shot's props: [{ \"prop\": \"smoke-filling\", \"x\": 0.5 }], listed after the table and the things on it",
+      "still": "knowledge/golden/assets/prop-smoke-filling.png",
+      "version": 1,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "prop/smoke-high",
+      "kind": "prop",
+      "name": "Smoke to the shoulders",
+      "description": "Smoke filling a room from the floor up, up to the shoulders of someone sitting: a bank of gray smoke across the whole picture with slow rolling puffs along its top, in front of whoever stands in it.",
+      "tags": [
+        "prop",
+        "smoke",
+        "room",
+        "fire",
+        "danger",
+        "bystander",
+        "emergency",
+        "shoulders",
+        "full",
+        "choking",
+        "cannot see"
+      ],
+      "code": {
+        "file": "engine/src/effects/Blast.tsx",
+        "export": "SmokeBank"
+      },
+      "use": "a shot's props: [{ \"prop\": \"smoke-high\", \"x\": 0.5 }], listed after the table and the things on it",
+      "still": "knowledge/golden/assets/prop-smoke-high.png",
+      "version": 1,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "camera/eyes",
+      "kind": "camera",
+      "name": "Only the eyes",
+      "description": "The head bigger than the picture, so the eyes fill its width. For the moment someone decides.",
+      "tags": [
+        "camera",
+        "shot",
+        "framing",
+        "eyes",
+        "extreme close-up",
+        "deciding",
+        "pupils",
+        "tension",
+        "stare"
+      ],
+      "code": {
+        "file": "engine/src/camera/Framing.tsx",
+        "export": "Framed"
+      },
+      "use": "camera: { framing: \"eyes\", focus: \"<who>\" }",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "camera/tilt",
+      "kind": "camera",
+      "name": "Tilted frame",
+      "description": "The whole picture held tipped a few degrees to one side: the moment something has gone wrong.",
+      "tags": [
+        "camera",
+        "move",
+        "tilt",
+        "dutch angle",
+        "tipped",
+        "wrong",
+        "betrayal",
+        "unease",
+        "off balance"
+      ],
+      "code": {
+        "file": "engine/src/camera/Framing.tsx",
+        "export": "tiltOf"
+      },
+      "use": "camera: { framing: \"wide\", move: \"tilt\", strength: 0.6 }",
+      "version": 1,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "pose/hold-cup",
+      "kind": "pose",
+      "name": "Holding a cup",
+      "description": "Standing with a cup held in front of the chest in the near hand: at a party, waiting.",
+      "tags": ["pose", "standing", "cup", "drink", "glass", "party", "waiting", "holding"],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "holdCup"
+      },
+      "use": "pose: \"hold-cup\", holds: \"cup\"",
+      "still": "knowledge/golden/assets/pose-hold-cup.png",
+      "version": 1,
+      "added": "2026-10-14"
+    },
+    {
+      "id": "pose/sip",
+      "kind": "pose",
+      "name": "Taking a sip",
+      "description": "The cup raised to the mouth and the chin up a little: a sip, to have something to do.",
+      "tags": ["pose", "standing", "cup", "drink", "sip", "party", "nervous", "waiting"],
+      "code": {
+        "file": "engine/src/rig/poses.ts",
+        "export": "sip"
+      },
+      "use": "pose: \"sip\", holds: \"cup\"",
+      "still": "knowledge/golden/assets/pose-sip.png",
+      "version": 1,
+      "added": "2026-10-14"
+    },
+    {
+      "id": "sfx/thunder",
+      "kind": "sfx",
+      "name": "Thunder",
+      "description": "Thunder in a storm: a sharp crack, then a rumble that rolls in waves and dies away. For a storm closing in, a moment of danger, the clock running out.",
+      "tags": [
+        "sound",
+        "thunder",
+        "storm",
+        "weather",
+        "night",
+        "danger",
+        "thriller",
+        "rumble",
+        "lightning"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a shot's sfx: [{ \"name\": \"thunder\", \"at\": \"start\" }]",
+      "version": 1,
+      "added": "2026-10-15"
+    },
+    {
+      "id": "place/gorge-bridge",
+      "kind": "place",
+      "name": "Gorge with a rope bridge",
+      "description": "A gorge at night in a coming storm: a near cliff, a deep drop, an old rope bridge of planks across it, and the far cliff.",
+      "tags": [
+        "gorge",
+        "bridge",
+        "rope bridge",
+        "cliff",
+        "canyon",
+        "night",
+        "storm",
+        "danger",
+        "crossing",
+        "thriller",
+        "drop"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "placeSpec"
+      },
+      "use": "in a scene: place \"gorge-bridge\" with palette \"storm-slate\"; the near cliff is left of GORGE.near, the far cliff right of GORGE.far",
+      "still": "knowledge/golden/assets/place-gorge-bridge.png",
+      "version": 1,
+      "added": "2026-10-15"
+    },
+    {
+      "id": "prop/torch",
+      "kind": "prop",
+      "name": "Burning torch",
+      "description": "A burning torch held upright: a wooden stick, a wrapped head and a full flickering flame.",
+      "tags": [
+        "prop",
+        "torch",
+        "fire",
+        "flame",
+        "light",
+        "night",
+        "held",
+        "burning",
+        "time running out"
+      ],
+      "code": {
+        "file": "engine/src/props/Torch.tsx",
+        "export": "Torch"
+      },
+      "use": "holds: \"torch\" on a person (the flame burns down: torch, torch-low, torch-dying, torch-out); the thing \"torch-planted\" stands it upright in the ground, larger, where nobody holds it (a thumbnail)",
+      "still": "knowledge/golden/assets/prop-torch.png",
+      "version": 1,
+      "added": "2026-10-15"
+    },
+    {
+      "id": "prop/torch-low",
+      "kind": "prop",
+      "name": "Torch, burning low",
+      "description": "The torch with its flame burnt down to about two thirds.",
+      "tags": [
+        "prop",
+        "torch",
+        "fire",
+        "flame",
+        "light",
+        "night",
+        "held",
+        "burning",
+        "time running out"
+      ],
+      "code": {
+        "file": "engine/src/props/Torch.tsx",
+        "export": "Torch"
+      },
+      "use": "holds: \"torch-low\" on a person (the flame burns down: torch, torch-low, torch-dying, torch-out)",
+      "still": "knowledge/golden/assets/prop-torch-low.png",
+      "version": 1,
+      "added": "2026-10-15"
+    },
+    {
+      "id": "prop/torch-dying",
+      "kind": "prop",
+      "name": "Torch, dying",
+      "description": "The torch with only a small flame left.",
+      "tags": [
+        "prop",
+        "torch",
+        "fire",
+        "flame",
+        "light",
+        "night",
+        "held",
+        "burning",
+        "time running out"
+      ],
+      "code": {
+        "file": "engine/src/props/Torch.tsx",
+        "export": "Torch"
+      },
+      "use": "holds: \"torch-dying\" on a person (the flame burns down: torch, torch-low, torch-dying, torch-out)",
+      "still": "knowledge/golden/assets/prop-torch-dying.png",
+      "version": 1,
+      "added": "2026-10-15"
+    },
+    {
+      "id": "prop/torch-out",
+      "kind": "prop",
+      "name": "Torch, burnt out",
+      "description": "The torch burnt out: a black wrap and a thin wisp of smoke.",
+      "tags": [
+        "prop",
+        "torch",
+        "fire",
+        "flame",
+        "light",
+        "night",
+        "held",
+        "burning",
+        "time running out"
+      ],
+      "code": {
+        "file": "engine/src/props/Torch.tsx",
+        "export": "Torch"
+      },
+      "use": "holds: \"torch-out\" on a person (the flame burns down: torch, torch-low, torch-dying, torch-out)",
+      "still": "knowledge/golden/assets/prop-torch-out.png",
+      "version": 1,
+      "added": "2026-10-15"
+    },
+    {
+      "id": "expression/jaw-drop",
+      "kind": "expression",
+      "name": "Jaw drop",
+      "description": "Jaw on the floor: brows flown up, huge eyes with pinpoint pupils, the mouth hanging wide open. A big comedy reaction.",
+      "tags": [
+        "face",
+        "expression",
+        "jaw drop",
+        "shocked",
+        "stunned",
+        "gasp",
+        "disbelief",
+        "comedy",
+        "reaction",
+        "speechless"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "expression: \"jaw-drop\"",
+      "still": "knowledge/golden/assets/expression-jaw-drop.png",
+      "version": 1,
+      "added": "2026-10-16"
+    },
+    {
+      "id": "expression/sly-grin",
+      "kind": "expression",
+      "name": "Sly grin",
+      "description": "Up to something: one brow low and one shot up, lids half down, eyes slid aside, a wide toothy grin.",
+      "tags": [
+        "face",
+        "expression",
+        "sly",
+        "grin",
+        "scheming",
+        "sneaky",
+        "cheeky",
+        "mischief",
+        "comedy",
+        "plotting"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "expression: \"sly-grin\"",
+      "still": "knowledge/golden/assets/expression-sly-grin.png",
+      "version": 1,
+      "added": "2026-10-16"
+    },
+    {
+      "id": "expression/fuming",
+      "kind": "expression",
+      "name": "Fuming",
+      "description": "Had enough: a deep V of brows, eyes narrowed hard, every tooth gritted in a wide grimace.",
+      "tags": [
+        "face",
+        "expression",
+        "fuming",
+        "furious",
+        "angry",
+        "gritted teeth",
+        "rage",
+        "fed up",
+        "comedy",
+        "outburst"
+      ],
+      "code": {
+        "file": "engine/src/face/expressions.ts",
+        "export": "EXPRESSIONS"
+      },
+      "use": "expression: \"fuming\"",
+      "still": "knowledge/golden/assets/expression-fuming.png",
+      "version": 1,
+      "added": "2026-10-16"
+    },
+    {
+      "id": "place/restaurant",
+      "kind": "place",
+      "name": "Restaurant",
+      "description": "A restaurant in the evening: warm walls, two windows on the dark street, hanging lamps, pictures, a plant, and other diners at small tables further back.",
+      "tags": [
+        "place",
+        "set",
+        "restaurant",
+        "dinner",
+        "evening",
+        "diner",
+        "eating out",
+        "friends",
+        "meal",
+        "indoors"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "PLACES"
+      },
+      "use": "place: \"restaurant\", palette \"warm-interior\", with the prop dining-table",
+      "still": "knowledge/golden/assets/place-restaurant.png",
+      "version": 1,
+      "added": "2026-10-16"
+    },
+    {
+      "id": "prop/dining-table",
+      "kind": "prop",
+      "name": "Restaurant table",
+      "description": "A restaurant table seen from the side under a white cloth that falls in soft folds to a wavy hem, two dark legs below. As wide and high as the game table.",
+      "tags": [
+        "prop",
+        "table",
+        "restaurant",
+        "dinner",
+        "tablecloth",
+        "meal",
+        "eating out",
+        "friends",
+        "dining",
+        "furniture"
+      ],
+      "code": {
+        "file": "engine/src/props/Dinner.tsx",
+        "export": "DiningTable"
+      },
+      "use": "props: [{ prop: \"dining-table\", x: 0.5 }] after the sitters; sitters about two heads from its middle, things on it at y 1.22",
+      "still": "knowledge/golden/assets/prop-dining-table.png",
+      "version": 1,
+      "added": "2026-10-16"
+    },
+    {
+      "id": "prop/plate-salad",
+      "kind": "prop",
+      "name": "Small salad",
+      "description": "A small salad on a white plate: a few green leaves and two slices of tomato. The cheap, modest order.",
+      "tags": [
+        "prop",
+        "salad",
+        "plate",
+        "food",
+        "cheap",
+        "modest",
+        "healthy",
+        "dinner",
+        "restaurant",
+        "meal"
+      ],
+      "code": {
+        "file": "engine/src/props/Dinner.tsx",
+        "export": "SaladPlate"
+      },
+      "use": "props: [{ prop: \"plate-salad\", x, y: 1.22 }] on a table",
+      "still": "knowledge/golden/assets/prop-plate-salad.png",
+      "version": 1,
+      "added": "2026-10-16"
+    },
+    {
+      "id": "prop/plate-lobster",
+      "kind": "prop",
+      "name": "Lobster",
+      "description": "A whole cooked lobster on a big white plate, claws up, feelers out. The most expensive thing on the menu.",
+      "tags": [
+        "prop",
+        "lobster",
+        "plate",
+        "food",
+        "expensive",
+        "luxury",
+        "seafood",
+        "dinner",
+        "restaurant",
+        "treat"
+      ],
+      "code": {
+        "file": "engine/src/props/Dinner.tsx",
+        "export": "LobsterPlate"
+      },
+      "use": "props: [{ prop: \"plate-lobster\", x, y: 1.22 }] on a table",
+      "still": "knowledge/golden/assets/prop-plate-lobster.png",
+      "version": 1,
+      "added": "2026-10-16"
+    },
+    {
+      "id": "prop/water-glass",
+      "kind": "prop",
+      "name": "Glass of water",
+      "description": "A tall glass of water standing on a table: clear glass, blue water, one glint.",
+      "tags": [
+        "prop",
+        "glass",
+        "water",
+        "drink",
+        "free",
+        "cheap",
+        "tap water",
+        "restaurant",
+        "table",
+        "dinner"
+      ],
+      "code": {
+        "file": "engine/src/props/Dinner.tsx",
+        "export": "WaterGlass"
+      },
+      "use": "props: [{ prop: \"water-glass\", x, y: 1.22 }] on a table",
+      "still": "knowledge/golden/assets/prop-water-glass.png",
+      "version": 1,
+      "added": "2026-10-16"
+    },
+    {
+      "id": "prop/menu",
+      "kind": "prop",
+      "name": "Menu",
+      "description": "A restaurant menu held up in a fist: a tall card in a crimson cover with a gold border and a small gold fork and knife.",
+      "tags": [
+        "prop",
+        "menu",
+        "restaurant",
+        "ordering",
+        "choosing",
+        "dinner",
+        "held",
+        "card",
+        "eating out",
+        "food"
+      ],
+      "code": {
+        "file": "engine/src/props/Dinner.tsx",
+        "export": "Menu"
+      },
+      "use": "holds: \"menu\"",
+      "still": "knowledge/golden/assets/prop-menu.png",
+      "version": 1,
+      "added": "2026-10-16"
+    },
+    {
+      "id": "prop/water-jug",
+      "kind": "prop",
+      "name": "Water jug",
+      "description": "A waiter's glass jug of water held by its handle.",
+      "tags": [
+        "prop",
+        "jug",
+        "pitcher",
+        "water",
+        "waiter",
+        "pouring",
+        "restaurant",
+        "held",
+        "glass",
+        "service"
+      ],
+      "code": {
+        "file": "engine/src/props/Dinner.tsx",
+        "export": "WaterJug"
+      },
+      "use": "holds: \"water-jug\"",
+      "still": "knowledge/golden/assets/prop-water-jug.png",
+      "version": 1,
+      "added": "2026-10-16"
+    },
+    {
+      "id": "prop/bill-long",
+      "kind": "prop",
+      "name": "The bill that never ends",
+      "description": "A restaurant bill that runs out over its shot: across the table, over the edge, down to the floor and away along it, covered in small print.",
+      "tags": [
+        "prop",
+        "bill",
+        "receipt",
+        "check",
+        "expensive",
+        "paying",
+        "restaurant",
+        "comedy",
+        "shock",
+        "long"
+      ],
+      "code": {
+        "file": "engine/src/props/Dinner.tsx",
+        "export": "LongBill"
+      },
+      "use": "props: [{ prop: \"bill-long\", x: <the table's x> }] after the table; bill-long-out is the same bill already out",
+      "still": "knowledge/golden/assets/prop-bill-long.png",
+      "version": 1,
+      "added": "2026-10-16"
+    },
+    {
+      "id": "prop/bill-long-out",
+      "kind": "prop",
+      "name": "The bill, all the way out",
+      "description": "The restaurant bill already run all the way out across the table and the floor, for the shots after it arrives.",
+      "tags": [
+        "prop",
+        "bill",
+        "receipt",
+        "check",
+        "expensive",
+        "paying",
+        "restaurant",
+        "comedy",
+        "aftermath",
+        "long"
+      ],
+      "code": {
+        "file": "engine/src/props/Dinner.tsx",
+        "export": "LongBill"
+      },
+      "use": "props: [{ prop: \"bill-long-out\", x: <the table's x> }] after the table",
+      "still": "knowledge/golden/assets/prop-bill-long-out.png",
+      "version": 1,
+      "added": "2026-10-16"
+    },
+    {
+      "id": "place/daycare",
+      "kind": "place",
+      "name": "Daycare front",
+      "description": "The front of a small daycare at closing time, seen from the pavement: a door with lit panes, DAYCARE over it in toy blocks, and a wide playroom window lit warm from inside with children's paper pictures on the glass.",
+      "tags": [
+        "place",
+        "set",
+        "daycare",
+        "nursery",
+        "preschool",
+        "school",
+        "pickup",
+        "closing time",
+        "parents",
+        "children",
+        "street",
+        "door"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "PLACES"
+      },
+      "use": "place: \"daycare\", palette \"dusk-violet\", with notice-board and a wall clock hung beside the door",
+      "still": "knowledge/golden/assets/place-daycare.png",
+      "version": 1,
+      "added": "2026-10-17"
+    },
+    {
+      "id": "prop/wall-clock-3-55",
+      "kind": "prop",
+      "name": "Wall clock at 3:55",
+      "description": "The round wall clock with a gold rim, its hands at five to four.",
+      "tags": ["prop", "clock", "time", "late", "waiting", "pickup", "afternoon", "3 55"],
+      "code": {
+        "file": "engine/src/props/Home.tsx",
+        "export": "WallClock"
+      },
+      "use": "props: [{ prop: \"wall-clock-3-55\", x, y: 3.1 }]",
+      "still": "knowledge/golden/assets/prop-wall-clock-3-55.png",
+      "version": 1,
+      "added": "2026-10-17"
+    },
+    {
+      "id": "prop/wall-clock-4-00",
+      "kind": "prop",
+      "name": "Wall clock at 4:00",
+      "description": "The round wall clock with a gold rim, its hands at four o'clock.",
+      "tags": ["prop", "clock", "time", "late", "waiting", "pickup", "afternoon", "4 00"],
+      "code": {
+        "file": "engine/src/props/Home.tsx",
+        "export": "WallClock"
+      },
+      "use": "props: [{ prop: \"wall-clock-4-00\", x, y: 3.1 }]",
+      "still": "knowledge/golden/assets/prop-wall-clock-4-00.png",
+      "version": 1,
+      "added": "2026-10-17"
+    },
+    {
+      "id": "prop/wall-clock-4-15",
+      "kind": "prop",
+      "name": "Wall clock at 4:15",
+      "description": "The round wall clock with a gold rim, its hands at a quarter past four.",
+      "tags": ["prop", "clock", "time", "late", "waiting", "pickup", "afternoon", "4 15"],
+      "code": {
+        "file": "engine/src/props/Home.tsx",
+        "export": "WallClock"
+      },
+      "use": "props: [{ prop: \"wall-clock-4-15\", x, y: 3.1 }]",
+      "still": "knowledge/golden/assets/prop-wall-clock-4-15.png",
+      "version": 1,
+      "added": "2026-10-17"
+    },
+    {
+      "id": "prop/wall-clock-4-20",
+      "kind": "prop",
+      "name": "Wall clock at 4:20",
+      "description": "The round wall clock with a gold rim, its hands at twenty past four.",
+      "tags": ["prop", "clock", "time", "late", "waiting", "pickup", "afternoon", "4 20"],
+      "code": {
+        "file": "engine/src/props/Home.tsx",
+        "export": "WallClock"
+      },
+      "use": "props: [{ prop: \"wall-clock-4-20\", x, y: 3.1 }]",
+      "still": "knowledge/golden/assets/prop-wall-clock-4-20.png",
+      "version": 1,
+      "added": "2026-10-17"
+    },
+    {
+      "id": "prop/wall-clock-4-30",
+      "kind": "prop",
+      "name": "Wall clock at 4:30",
+      "description": "The round wall clock with a gold rim, its hands at half past four.",
+      "tags": ["prop", "clock", "time", "late", "waiting", "pickup", "afternoon", "4 30"],
+      "code": {
+        "file": "engine/src/props/Home.tsx",
+        "export": "WallClock"
+      },
+      "use": "props: [{ prop: \"wall-clock-4-30\", x, y: 3.1 }]",
+      "still": "knowledge/golden/assets/prop-wall-clock-4-30.png",
+      "version": 1,
+      "added": "2026-10-17"
+    },
+    {
+      "id": "prop/wall-clock-4-40",
+      "kind": "prop",
+      "name": "Wall clock at 4:40",
+      "description": "The round wall clock with a gold rim, its hands at twenty to five.",
+      "tags": ["prop", "clock", "time", "late", "waiting", "pickup", "afternoon", "4 40"],
+      "code": {
+        "file": "engine/src/props/Home.tsx",
+        "export": "WallClock"
+      },
+      "use": "props: [{ prop: \"wall-clock-4-40\", x, y: 3.1 }]",
+      "still": "knowledge/golden/assets/prop-wall-clock-4-40.png",
+      "version": 1,
+      "added": "2026-10-17"
+    },
+    {
+      "id": "prop/wall-clock-to-4-40",
+      "kind": "prop",
+      "name": "Wall clock, creeping to 4:40",
+      "description": "The wall clock at twenty-five to five, its minute hand creeping on to twenty to five over the first two and a half seconds of its shot.",
+      "tags": ["prop", "clock", "time", "late", "waiting", "time passing", "minute hand", "4 40"],
+      "code": {
+        "file": "engine/src/props/Home.tsx",
+        "export": "WallClock"
+      },
+      "use": "props: [{ prop: \"wall-clock-to-4-40\", x, y: 3.1 }], with a tick under the shot",
+      "still": "knowledge/golden/assets/prop-wall-clock-to-4-40.png",
+      "version": 1,
+      "added": "2026-10-17"
+    },
+    {
+      "id": "prop/notice-board",
+      "kind": "prop",
+      "name": "Notice board",
+      "description": "A cork board in a wooden frame hung on a wall, with two old slips of paper pinned in its corners and room in the middle for a notice.",
+      "tags": [
+        "prop",
+        "notice",
+        "board",
+        "sign",
+        "rule",
+        "fine",
+        "daycare",
+        "school",
+        "wall",
+        "announcement"
+      ],
+      "code": {
+        "file": "engine/src/props/Daycare.tsx",
+        "export": "NoticeBoard"
+      },
+      "use": "props: [{ prop: \"notice-board\", x, y: 2.5 }] beside a door",
+      "still": "knowledge/golden/assets/prop-notice-board.png",
+      "version": 1,
+      "added": "2026-10-17"
+    },
+    {
+      "id": "prop/notice-board-fine-pinning",
+      "kind": "prop",
+      "name": "Notice board, the fine pinned up",
+      "description": "The notice board, empty as its shot begins; half a second in, a sheet reading LATE FINE $3 is pinned to its middle with a small bounce.",
+      "tags": [
+        "prop",
+        "notice",
+        "board",
+        "sign",
+        "rule",
+        "fine",
+        "daycare",
+        "school",
+        "wall",
+        "announcement"
+      ],
+      "code": {
+        "file": "engine/src/props/Daycare.tsx",
+        "export": "NoticeBoard"
+      },
+      "use": "props: [{ prop: \"notice-board-fine-pinning\", x, y: 2.5 }] beside a door",
+      "still": "knowledge/golden/assets/prop-notice-board-fine-pinning.png",
+      "version": 1,
+      "added": "2026-10-17"
+    },
+    {
+      "id": "prop/notice-board-fine",
+      "kind": "prop",
+      "name": "Notice board, late fine",
+      "description": "The notice board with a sheet pinned to its middle: LATE FINE, and $3 in red.",
+      "tags": [
+        "prop",
+        "notice",
+        "board",
+        "sign",
+        "rule",
+        "fine",
+        "daycare",
+        "school",
+        "wall",
+        "announcement"
+      ],
+      "code": {
+        "file": "engine/src/props/Daycare.tsx",
+        "export": "NoticeBoard"
+      },
+      "use": "props: [{ prop: \"notice-board-fine\", x, y: 2.5 }] beside a door",
+      "still": "knowledge/golden/assets/prop-notice-board-fine.png",
+      "version": 1,
+      "added": "2026-10-17"
+    },
+    {
+      "id": "prop/notice-board-no-fine",
+      "kind": "prop",
+      "name": "Notice board, no more fine",
+      "description": "The notice board with a sheet pinned to its middle: NO MORE LATE FINE.",
+      "tags": [
+        "prop",
+        "notice",
+        "board",
+        "sign",
+        "rule",
+        "fine",
+        "daycare",
+        "school",
+        "wall",
+        "announcement"
+      ],
+      "code": {
+        "file": "engine/src/props/Daycare.tsx",
+        "export": "NoticeBoard"
+      },
+      "use": "props: [{ prop: \"notice-board-no-fine\", x, y: 2.5 }] beside a door",
+      "still": "knowledge/golden/assets/prop-notice-board-no-fine.png",
+      "version": 1,
+      "added": "2026-10-17"
+    },
+    {
+      "id": "prop/car",
+      "kind": "prop",
+      "name": "Car, blue",
+      "description": "A small blue car seen from the side, facing right, with open windows: someone sitting at its x shows through them from the chest up.",
+      "tags": [
+        "prop",
+        "car",
+        "traffic",
+        "driving",
+        "road",
+        "street",
+        "commute",
+        "stuck",
+        "late",
+        "vehicle"
+      ],
+      "code": {
+        "file": "engine/src/props/Car.tsx",
+        "export": "Car"
+      },
+      "use": "props: [{ prop: \"car\", x }] listed after whoever sits in it (pose \"sit-phone\" at the same x)",
+      "still": "knowledge/golden/assets/prop-car.png",
+      "version": 1,
+      "added": "2026-10-17"
+    },
+    {
+      "id": "prop/car-crimson",
+      "kind": "prop",
+      "name": "Car, red",
+      "description": "A small red car seen from the side, facing right, with open windows: someone sitting at its x shows through them from the chest up.",
+      "tags": [
+        "prop",
+        "car",
+        "traffic",
+        "driving",
+        "road",
+        "street",
+        "commute",
+        "stuck",
+        "late",
+        "vehicle"
+      ],
+      "code": {
+        "file": "engine/src/props/Car.tsx",
+        "export": "Car"
+      },
+      "use": "props: [{ prop: \"car-crimson\", x }] listed after whoever sits in it (pose \"sit-phone\" at the same x)",
+      "still": "knowledge/golden/assets/prop-car-crimson.png",
+      "version": 1,
+      "added": "2026-10-17"
+    },
+    {
+      "id": "prop/car-gold",
+      "kind": "prop",
+      "name": "Car, yellow",
+      "description": "A small yellow car seen from the side, facing right, with open windows: someone sitting at its x shows through them from the chest up.",
+      "tags": [
+        "prop",
+        "car",
+        "traffic",
+        "driving",
+        "road",
+        "street",
+        "commute",
+        "stuck",
+        "late",
+        "vehicle"
+      ],
+      "code": {
+        "file": "engine/src/props/Car.tsx",
+        "export": "Car"
+      },
+      "use": "props: [{ prop: \"car-gold\", x }] listed after whoever sits in it (pose \"sit-phone\" at the same x)",
+      "still": "knowledge/golden/assets/prop-car-gold.png",
+      "version": 1,
+      "added": "2026-10-17"
+    },
+    {
+      "id": "prop/car-steel",
+      "kind": "prop",
+      "name": "Car, grey",
+      "description": "A small grey car seen from the side, facing right, with open windows: someone sitting at its x shows through them from the chest up.",
+      "tags": [
+        "prop",
+        "car",
+        "traffic",
+        "driving",
+        "road",
+        "street",
+        "commute",
+        "stuck",
+        "late",
+        "vehicle"
+      ],
+      "code": {
+        "file": "engine/src/props/Car.tsx",
+        "export": "Car"
+      },
+      "use": "props: [{ prop: \"car-steel\", x }] listed after whoever sits in it (pose \"sit-phone\" at the same x)",
+      "still": "knowledge/golden/assets/prop-car-steel.png",
+      "version": 1,
+      "added": "2026-10-17"
+    },
+    {
+      "id": "sfx/rewind",
+      "kind": "sfx",
+      "name": "Rewind",
+      "description": "A tape rewinding: a whirring warble that speeds up and rises, rushes, then slows and stops with a click. Cued by itself on every shot that a rewind leads into.",
+      "tags": ["sound", "rewind", "tape", "time", "going back", "earlier", "flashback", "story"],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a shot's transition: \"rewind\" with rewind: { label: \"10 MINUTES EARLIER\" } cues it",
+      "version": 1,
+      "added": "2026-10-18"
+    },
+    {
+      "id": "camera/rewind",
+      "kind": "camera",
+      "name": "Rewind",
+      "description": "Everything since the start of the last scene plays backwards, fast, over the last moments before a shot, and stops on it with a stamp such as 10 MINUTES EARLIER; as an old video tape, a clean cartoon or a film reel.",
+      "tags": [
+        "camera",
+        "rewind",
+        "flashback",
+        "earlier",
+        "time",
+        "story",
+        "transition",
+        "going back"
+      ],
+      "code": {
+        "file": "engine/src/camera/Rewind.tsx",
+        "export": "RewindOverlay"
+      },
+      "use": "on a shot: transition: \"rewind\", rewind: { label: \"10 MINUTES EARLIER\", style: \"cartoon\" | \"tape\" | \"film\" }",
+      "version": 1,
+      "added": "2026-10-18"
+    },
+    {
+      "id": "sfx/river",
+      "kind": "sfx",
+      "name": "River",
+      "description": "A river running over stones: a rushing hiss that churns, with water babbling on top. Runs under a whole scene or shot.",
+      "tags": [
+        "sound",
+        "river",
+        "stream",
+        "water",
+        "running water",
+        "outdoors",
+        "nature",
+        "bridge",
+        "calm"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a scene's or a shot's \"ambience\": \"river\" runs it under them (a named place may pick it by itself)",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "sfx/waves",
+      "kind": "sfx",
+      "name": "Waves on a shore",
+      "description": "The sea on a shore: a wave gathers, breaks into foam and draws back, every few seconds. Runs under a whole scene or shot.",
+      "tags": ["sound", "sea", "waves", "beach", "shore", "ocean", "coast", "boat", "summer"],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a scene's or a shot's \"ambience\": \"waves\" runs it under them (a named place may pick it by itself)",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "sfx/underwater",
+      "kind": "sfx",
+      "name": "Underwater",
+      "description": "Under the water: a deep muffled hush that slowly moves, and bubbles rising past. Runs under a whole scene or shot.",
+      "tags": [
+        "sound",
+        "underwater",
+        "water",
+        "diving",
+        "deep",
+        "muffled",
+        "swimming",
+        "bath",
+        "inside"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a scene's or a shot's \"ambience\": \"underwater\" runs it under them (a named place may pick it by itself)",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "sfx/birds",
+      "kind": "sfx",
+      "name": "Birds",
+      "description": "A garden or a park by day: birds calling here and there over a soft breath of air. Runs under a whole scene or shot.",
+      "tags": [
+        "sound",
+        "birds",
+        "garden",
+        "park",
+        "day",
+        "morning",
+        "countryside",
+        "forest",
+        "nature"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a scene's or a shot's \"ambience\": \"birds\" runs it under them (a named place may pick it by itself)",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "sfx/night",
+      "kind": "sfx",
+      "name": "Night",
+      "description": "A warm night outside: crickets chirping in pulses, near and far, over a still hush. Runs under a whole scene or shot.",
+      "tags": [
+        "sound",
+        "night",
+        "crickets",
+        "evening",
+        "dark",
+        "outside",
+        "summer",
+        "late",
+        "quiet"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a scene's or a shot's \"ambience\": \"night\" runs it under them (a named place may pick it by itself)",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "sfx/traffic",
+      "kind": "sfx",
+      "name": "Traffic",
+      "description": "A town street: a low rumble of traffic, and now and then a car passing. Runs under a whole scene or shot.",
+      "tags": ["sound", "traffic", "street", "city", "town", "cars", "road", "busy", "outside"],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a scene's or a shot's \"ambience\": \"traffic\" runs it under them (a named place may pick it by itself)",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "sfx/cafe",
+      "kind": "sfx",
+      "name": "Cafe",
+      "description": "A cafe: people talking quietly at their tables, cups and spoons clinking. Runs under a whole scene or shot.",
+      "tags": [
+        "sound",
+        "cafe",
+        "coffee",
+        "restaurant",
+        "tables",
+        "cups",
+        "friends",
+        "meeting",
+        "date"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a scene's or a shot's \"ambience\": \"cafe\" runs it under them (a named place may pick it by itself)",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "sfx/home",
+      "kind": "sfx",
+      "name": "Quiet house",
+      "description": "A quiet house: the fridge humming, the air of the room, a clock ticking in another room. Runs under a whole scene or shot.",
+      "tags": [
+        "sound",
+        "home",
+        "house",
+        "kitchen",
+        "living room",
+        "quiet",
+        "family",
+        "indoors",
+        "waiting"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a scene's or a shot's \"ambience\": \"home\" runs it under them (a named place may pick it by itself)",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "sfx/office",
+      "kind": "sfx",
+      "name": "Office",
+      "description": "An office: the steady air of the building and keyboards tapping in bursts. Runs under a whole scene or shot.",
+      "tags": [
+        "sound",
+        "office",
+        "work",
+        "desk",
+        "keyboard",
+        "computer",
+        "job",
+        "colleagues",
+        "indoors"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a scene's or a shot's \"ambience\": \"office\" runs it under them (a named place may pick it by itself)",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "sfx/phone-ring",
+      "kind": "sfx",
+      "name": "Phone ringing",
+      "description": "A phone ringing: two warbling rings and a pause, twice.",
+      "tags": ["sound", "phone", "ring", "call", "ringing", "waiting", "news", "friend", "mobile"],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a shot's sfx: [{ \"name\": \"phone-ring\", \"at\": \"start\" }]",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "sfx/knock",
+      "kind": "sfx",
+      "name": "Knock",
+      "description": "Three knocks on a wooden door.",
+      "tags": [
+        "sound",
+        "knock",
+        "door",
+        "visitor",
+        "arrival",
+        "someone there",
+        "house",
+        "wood",
+        "surprise"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a shot's sfx: [{ \"name\": \"knock\", \"at\": \"start\" }]",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "sfx/splash",
+      "kind": "sfx",
+      "name": "Splash",
+      "description": "Something going into water: a slap, a burst of spray and drops falling back.",
+      "tags": ["sound", "splash", "water", "river", "jump", "throw", "fall", "pool", "sea"],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a shot's sfx: [{ \"name\": \"splash\", \"at\": \"start\" }]",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "sfx/paper",
+      "kind": "sfx",
+      "name": "Paper",
+      "description": "A page turned or a note unfolded: a dry crackling rustle.",
+      "tags": ["sound", "paper", "page", "note", "letter", "book", "document", "study", "reading"],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a shot's sfx: [{ \"name\": \"paper\", \"at\": \"start\" }]",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "sfx/coins",
+      "kind": "sfx",
+      "name": "Coins",
+      "description": "A handful of coins set down: a quick run of small metal clinks.",
+      "tags": ["sound", "coins", "money", "change", "pay", "cash", "price", "tip", "counter"],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a shot's sfx: [{ \"name\": \"coins\", \"at\": \"start\" }]",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "sfx/bubbles",
+      "kind": "sfx",
+      "name": "Bubbles",
+      "description": "A breath let go under water: a rush of bubbles rising and gone.",
+      "tags": [
+        "sound",
+        "bubbles",
+        "underwater",
+        "breath",
+        "dive",
+        "diving",
+        "water",
+        "air",
+        "bath"
+      ],
+      "code": {
+        "file": "audio/src/studio_audio/sfx.py",
+        "export": "EFFECTS"
+      },
+      "use": "a shot's sfx: [{ \"name\": \"bubbles\", \"at\": \"start\" }]",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "prop/kitchen-sink",
+      "kind": "prop",
+      "name": "Kitchen counter with sink",
+      "description": "A kitchen counter seen from the front: cupboard doors, a wooden top, the sink with its tall tap, washing-up liquid, a stack of dirty dishes and a rack of clean ones drying.",
+      "tags": [
+        "prop",
+        "kitchen",
+        "sink",
+        "dishes",
+        "counter",
+        "home",
+        "washing up",
+        "chores",
+        "tap"
+      ],
+      "code": {
+        "file": "engine/src/props/Kitchen.tsx",
+        "export": "KitchenCounter"
+      },
+      "use": "props: [{ prop: \"kitchen-sink\", x }] behind whoever washes up; its top is at y 1.75",
+      "still": "knowledge/golden/assets/prop-kitchen-sink.png",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "prop/kitchen-sink-done",
+      "kind": "prop",
+      "name": "Kitchen counter, dishes done",
+      "description": "The kitchen counter with only one dirty plate left by the sink and the rack of clean ones full.",
+      "tags": ["prop", "kitchen", "sink", "dishes", "counter", "clean", "done", "home", "chores"],
+      "code": {
+        "file": "engine/src/props/Kitchen.tsx",
+        "export": "KitchenCounter"
+      },
+      "use": "props: [{ prop: \"kitchen-sink-done\", x }]",
+      "still": "knowledge/golden/assets/prop-kitchen-sink-done.png",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "prop/plate",
+      "kind": "prop",
+      "name": "Plate",
+      "description": "A clean white plate held up in the hand, seen nearly face on.",
+      "tags": [
+        "prop",
+        "plate",
+        "dish",
+        "kitchen",
+        "washing up",
+        "clean",
+        "dinner",
+        "home",
+        "china"
+      ],
+      "code": {
+        "file": "engine/src/props/Kitchen.tsx",
+        "export": "Plate"
+      },
+      "use": "holds: \"plate\" with the pose hold-object or stand",
+      "still": "knowledge/golden/assets/prop-plate.png",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "prop/notebook-blue",
+      "kind": "prop",
+      "name": "Blue notebook, lying",
+      "description": "Her small blue notebook lying shut on a table or a counter, with an elastic band round it.",
+      "tags": ["prop", "notebook", "diary", "blue", "list", "record", "proof", "table", "writing"],
+      "code": {
+        "file": "engine/src/props/Kitchen.tsx",
+        "export": "NotebookLying"
+      },
+      "use": "props: [{ prop: \"notebook-blue\", x, y: 1.22 }] on a table, y 1.75 on the counter; holds: \"notebook-blue\" in a hand",
+      "still": "knowledge/golden/assets/prop-notebook-blue.png",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "prop/notebook-orange",
+      "kind": "prop",
+      "name": "Orange notebook, lying",
+      "description": "His small orange notebook lying shut on a table, with an elastic band round it.",
+      "tags": [
+        "prop",
+        "notebook",
+        "diary",
+        "orange",
+        "list",
+        "record",
+        "proof",
+        "table",
+        "writing"
+      ],
+      "code": {
+        "file": "engine/src/props/Kitchen.tsx",
+        "export": "NotebookLying"
+      },
+      "use": "props: [{ prop: \"notebook-orange\", x, y: 1.22 }]; holds: \"notebook-orange\" in a hand",
+      "still": "knowledge/golden/assets/prop-notebook-orange.png",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "prop/notebook-blue-landing",
+      "kind": "prop",
+      "name": "Blue notebook, dropped",
+      "description": "Her blue notebook dropped onto its place as its shot begins: it falls, lands with a small bounce and lies there.",
+      "tags": ["prop", "notebook", "drop", "slam", "proof", "table", "counter", "landing", "blue"],
+      "code": {
+        "file": "engine/src/props/Kitchen.tsx",
+        "export": "NotebookLying"
+      },
+      "use": "props: [{ prop: \"notebook-blue-landing\", x, y: 1.75 }] on the counter or 1.22 on a table",
+      "still": "knowledge/golden/assets/prop-notebook-blue-landing.png",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "prop/notebook-blue-open",
+      "kind": "prop",
+      "name": "Blue notebook, open",
+      "description": "Her blue notebook held open to write in, its pages full of tally marks in groups of five.",
+      "tags": [
+        "prop",
+        "notebook",
+        "open",
+        "writing",
+        "tally",
+        "counting",
+        "blue",
+        "record",
+        "list"
+      ],
+      "code": {
+        "file": "engine/src/props/Kitchen.tsx",
+        "export": "NotebookOpen"
+      },
+      "use": "holds: \"notebook-blue-open\"",
+      "still": "knowledge/golden/assets/prop-notebook-blue-open.png",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "prop/notebook-orange-open",
+      "kind": "prop",
+      "name": "Orange notebook, open",
+      "description": "His orange notebook held open to write in, its pages full of tally marks.",
+      "tags": [
+        "prop",
+        "notebook",
+        "open",
+        "writing",
+        "tally",
+        "counting",
+        "orange",
+        "record",
+        "list"
+      ],
+      "code": {
+        "file": "engine/src/props/Kitchen.tsx",
+        "export": "NotebookOpen"
+      },
+      "use": "holds: \"notebook-orange-open\"",
+      "still": "knowledge/golden/assets/prop-notebook-orange-open.png",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "prop/window-seasons",
+      "kind": "prop",
+      "name": "Window, the seasons passing",
+      "description": "A kitchen window with a tree in the garden outside; over its shot the seasons pass, from snow falling on bare branches through blossom and green to orange leaves falling.",
+      "tags": [
+        "prop",
+        "window",
+        "seasons",
+        "time passing",
+        "year",
+        "winter",
+        "autumn",
+        "garden",
+        "outside"
+      ],
+      "code": {
+        "file": "engine/src/props/Kitchen.tsx",
+        "export": "SeasonWindow"
+      },
+      "use": "props: [{ prop: \"window-seasons\", x, y: 2.9 }] for a year going by",
+      "still": "knowledge/golden/assets/prop-window-seasons.png",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "prop/window-night",
+      "kind": "prop",
+      "name": "Window at night",
+      "description": "A kitchen window at night in autumn: a dark blue sky, the moon, and the garden tree in shadow with its leaves falling.",
+      "tags": ["prop", "window", "night", "midnight", "dark", "moon", "kitchen", "late", "home"],
+      "code": {
+        "file": "engine/src/props/Kitchen.tsx",
+        "export": "SeasonWindow"
+      },
+      "use": "props: [{ prop: \"window-night\", x, y: 2.9 }]",
+      "still": "knowledge/golden/assets/prop-window-night.png",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "prop/window-autumn",
+      "kind": "prop",
+      "name": "Window in autumn",
+      "description": "A kitchen window in autumn: the garden tree orange and leaves falling past.",
+      "tags": [
+        "prop",
+        "window",
+        "autumn",
+        "fall",
+        "leaves",
+        "garden",
+        "outside",
+        "season",
+        "kitchen"
+      ],
+      "code": {
+        "file": "engine/src/props/Kitchen.tsx",
+        "export": "SeasonWindow"
+      },
+      "use": "props: [{ prop: \"window-autumn\", x, y: 2.9 }]",
+      "still": "knowledge/golden/assets/prop-window-autumn.png",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "prop/drawer-cabinet",
+      "kind": "prop",
+      "name": "Cabinet with a drawer",
+      "description": "A small wooden cabinet with a drawer at the top and a shelf, standing by a table.",
+      "tags": [
+        "prop",
+        "cabinet",
+        "drawer",
+        "furniture",
+        "kitchen",
+        "hidden",
+        "secret",
+        "home",
+        "storage"
+      ],
+      "code": {
+        "file": "engine/src/props/Kitchen.tsx",
+        "export": "DrawerCabinet"
+      },
+      "use": "props: [{ prop: \"drawer-cabinet\", x }]",
+      "still": "knowledge/golden/assets/prop-drawer-cabinet.png",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "prop/drawer-cabinet-opening",
+      "kind": "prop",
+      "name": "Cabinet, drawer opening",
+      "description": "The cabinet as its shot begins; half a second in, its drawer slides out on an orange notebook hidden inside.",
+      "tags": [
+        "prop",
+        "cabinet",
+        "drawer",
+        "opening",
+        "reveal",
+        "secret",
+        "hidden",
+        "notebook",
+        "surprise"
+      ],
+      "code": {
+        "file": "engine/src/props/Kitchen.tsx",
+        "export": "DrawerCabinet"
+      },
+      "use": "props: [{ prop: \"drawer-cabinet-opening\", x }]",
+      "still": "knowledge/golden/assets/prop-drawer-cabinet-opening.png",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "prop/drawer-cabinet-open",
+      "kind": "prop",
+      "name": "Cabinet, drawer open",
+      "description": "The cabinet with its drawer out and the orange notebook lying in it.",
+      "tags": [
+        "prop",
+        "cabinet",
+        "drawer",
+        "open",
+        "notebook",
+        "hidden",
+        "secret",
+        "reveal",
+        "home"
+      ],
+      "code": {
+        "file": "engine/src/props/Kitchen.tsx",
+        "export": "DrawerCabinet"
+      },
+      "use": "props: [{ prop: \"drawer-cabinet-open\", x }]",
+      "still": "knowledge/golden/assets/prop-drawer-cabinet-open.png",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "prop/drawer-cabinet-empty",
+      "kind": "prop",
+      "name": "Cabinet, drawer empty",
+      "description": "The cabinet with its drawer out and nothing in it: the notebook has been taken out.",
+      "tags": [
+        "prop",
+        "cabinet",
+        "drawer",
+        "open",
+        "empty",
+        "taken",
+        "home",
+        "furniture",
+        "kitchen"
+      ],
+      "code": {
+        "file": "engine/src/props/Kitchen.tsx",
+        "export": "DrawerCabinet"
+      },
+      "use": "props: [{ prop: \"drawer-cabinet-empty\", x }]",
+      "still": "knowledge/golden/assets/prop-drawer-cabinet-empty.png",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "prop/plate-shares",
+      "kind": "prop",
+      "name": "Plate shared, his and hers",
+      "description": "A big plate seen from above: her blue share slides in from the left and his orange one from the right, each more than half, until together they spill over the rim. HERS and HIS on them.",
+      "tags": [
+        "prop",
+        "plate",
+        "shares",
+        "split",
+        "his",
+        "hers",
+        "more than whole",
+        "credit",
+        "chores"
+      ],
+      "code": {
+        "file": "engine/src/props/Kitchen.tsx",
+        "export": "SharesPlate"
+      },
+      "use": "props: [{ prop: \"plate-shares\", x, y: 2.2 }] in front of the scene",
+      "still": "knowledge/golden/assets/prop-plate-shares.png",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "prop/gloom-split",
+      "kind": "prop",
+      "name": "Kitchen lit in two halves",
+      "description": "A dark veil over the room with two pools of light either side of the middle and a dark seam between them: each person lit only on their own side.",
+      "tags": ["prop", "light", "dark", "split", "half", "divided", "alone", "each side", "two"],
+      "code": {
+        "file": "engine/src/props/Kitchen.tsx",
+        "export": "SplitLight"
+      },
+      "use": "props: [... everyone ..., { prop: \"gloom-split\", x: between the two }] listed last",
+      "still": "knowledge/golden/assets/prop-gloom-split.png",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "place/kitchen",
+      "kind": "place",
+      "name": "Kitchen at home",
+      "description": "A kitchen at home: a row of cupboards high on the wall over tiles, and a tall fridge at the end. The counter with its sink, the window, the table and chairs are props.",
+      "tags": [
+        "place",
+        "set",
+        "kitchen",
+        "home",
+        "house",
+        "family",
+        "couple",
+        "chores",
+        "dinner",
+        "night"
+      ],
+      "code": {
+        "file": "engine/src/backgrounds/places.ts",
+        "export": "PLACES"
+      },
+      "use": "place: \"kitchen\", palette \"warm-interior\", with kitchen-sink, window-night, table, chairs",
+      "still": "knowledge/golden/assets/place-kitchen.png",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "prop/window-winter",
+      "kind": "prop",
+      "name": "Window in winter",
+      "description": "A kitchen window in winter: the garden tree bare and snow falling past.",
+      "tags": [
+        "prop",
+        "window",
+        "winter",
+        "snow",
+        "cold",
+        "garden",
+        "outside",
+        "season",
+        "kitchen"
+      ],
+      "code": {
+        "file": "engine/src/props/Kitchen.tsx",
+        "export": "SeasonWindow"
+      },
+      "use": "props: [{ prop: \"window-winter\", x, y: 2.9 }]",
+      "still": "knowledge/golden/assets/prop-window-winter.png",
+      "version": 1,
+      "added": "2026-10-20"
+    },
+    {
+      "id": "prop/black-hole-glow",
+      "kind": "prop",
+      "name": "Black hole, glowing",
+      "description": "A black hole at the What's the Catch? drawing bar: its glowing disk of gas, the far side bent up over the top by gravity, a thin ring of light, the near side passing in front, dust spiralling in.",
+      "tags": [
+        "prop",
+        "black hole",
+        "space",
+        "gravity",
+        "disk",
+        "glow",
+        "galaxy",
+        "universe",
+        "dark",
+        "stars"
+      ],
+      "code": {
+        "file": "engine/src/props/BlackHoleGlow.tsx",
+        "export": "BlackHoleGlow"
+      },
+      "use": "props: [{ prop: \"black-hole-glow\", x, y: 2.6 }] behind whoever falls toward it; in a poster, a thing layer",
+      "still": "knowledge/golden/assets/prop-black-hole-glow.png",
+      "version": 1,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "prop/black-hole-glow-centred",
+      "kind": "prop",
+      "name": "Black hole, glowing, centred",
+      "description": "The glowing black hole with its middle exactly where it is placed, for a poster or a thumbnail.",
+      "tags": ["prop", "black hole", "space", "thumbnail", "poster", "glow", "gravity", "universe"],
+      "code": {
+        "file": "engine/src/props/BlackHoleGlow.tsx",
+        "export": "BlackHoleGlow"
+      },
+      "use": "a poster thing layer: { kind: \"thing\", prop: \"black-hole-glow-centred\", x, y: its middle, head }",
+      "still": "knowledge/golden/assets/prop-black-hole-glow-centred.png",
+      "version": 1,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "prop/breath-cloud",
+      "kind": "prop",
+      "name": "Breath cloud",
+      "description": "A big bright cloud of breath with a trail of small puffs down to the mouth, for a poster or a thumbnail.",
+      "tags": [
+        "prop",
+        "breath",
+        "cloud",
+        "breathe out",
+        "exhale",
+        "thumbnail",
+        "poster",
+        "body",
+        "air"
+      ],
+      "code": {
+        "file": "engine/src/props/BreathCloud.tsx",
+        "export": "BreathCloud"
+      },
+      "use": "a poster thing layer: { kind: \"thing\", prop: \"breath-cloud\", x, y: its middle, head }, the trail pointing down-left to the mouth",
+      "still": "knowledge/golden/assets/prop-breath-cloud.png",
+      "version": 1,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "prop/food-breath-cloud",
+      "kind": "prop",
+      "name": "Breath cloud full of food",
+      "description": "A cloud of breath stuffed with a burger, fries, a pizza slice and a doughnut, with a trail of puffs to the mouth: you breathe out your food.",
+      "tags": [
+        "prop",
+        "breath",
+        "food",
+        "burger",
+        "fries",
+        "pizza",
+        "exhale",
+        "thumbnail",
+        "poster",
+        "fat"
+      ],
+      "code": {
+        "file": "engine/src/props/FoodBreath.tsx",
+        "export": "FoodBreathCloud"
+      },
+      "use": "a poster thing layer: { kind: \"thing\", prop: \"food-breath-cloud\", x, y: its middle, head }, the trail pointing left to the mouth",
+      "still": "knowledge/golden/assets/prop-food-breath-cloud.png",
+      "version": 1,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "prop/xray-fat",
+      "kind": "prop",
+      "name": "See-through mascot, fat leaving by the mouth",
+      "description": "The What's the Catch? mascot from the side, see-through, the yellow fat in his belly rising up his windpipe and puffing out of his open mouth as golden puffs.",
+      "tags": [
+        "prop",
+        "x-ray",
+        "body",
+        "fat",
+        "breath",
+        "mascot",
+        "thumbnail",
+        "poster",
+        "lungs",
+        "belly"
+      ],
+      "code": {
+        "file": "engine/src/props/FoodBreath.tsx",
+        "export": "XrayFat"
+      },
+      "use": "a poster thing layer: { kind: \"thing\", prop: \"xray-fat\", x, y: its middle, head }",
+      "still": "knowledge/golden/assets/prop-xray-fat.png",
+      "version": 1,
+      "added": "2026-10-21"
     }
   ]
 }

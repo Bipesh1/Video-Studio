@@ -6,14 +6,30 @@ import type {
   Storyboard,
   VoiceTrack,
 } from '@studio/shared';
-import { PUNCH_IN_FRAMES, panShare, punchInZoom, pushInZoom } from '../camera/Camera';
+import {
+  driftShare,
+  panShare,
+  pullBackZoom,
+  PUNCH_IN_FRAMES,
+  punchInZoom,
+  pushInZoom,
+} from '../camera/Camera';
 import { layoutScale, shotTransform } from '../camera/Framing';
 import { captionBox, captionLayout } from '../overlays/captionLayout';
 import type { Box } from '../overlays/captionLayout';
 import { buildPages, pageAt, toCaptions } from '../overlays/captionPages';
 import type { CaptionPage } from '../overlays/captionPages';
 import { markBox } from '../overlays/Brand';
-import { bigNumberBox, meterBox, meterText, pageBox, pointerBox } from '../overlays/Explain';
+import { bubbleBox, bubbleLayout } from '../overlays/Bubble';
+import {
+  bigNumberBox,
+  bigWordsBox,
+  meterBox,
+  meterText,
+  pageBox,
+  pointerBox,
+  SAFE_916,
+} from '../overlays/Explain';
 import type { Mark } from '../overlays/Brand';
 import { labelBox, titleCardBox } from '../overlays/Titles';
 import { movePose } from '../rig/chain';
@@ -121,19 +137,24 @@ export function pointerPlace(
   ts: TimedShot,
   shots: readonly TimedShot[],
   overlay: Extract<Overlay, { kind: 'pointer' }>,
-): { at: { x: number; y: number }; to: { x: number; y: number } } {
+  /** The frame being drawn: the arrow follows a target that moves. Left out, where it is as the shot begins. */
+  frame?: number,
+): { at: { x: number; y: number }; to: { x: number; y: number }; seen: boolean } {
   const { width, height } = input.size;
-  const found =
-    typeof overlay.to === 'string'
-      ? pointOnScreen(input, ts, shots, ts.startFrame + 8, overlay.to)
-      : null;
-  const to =
-    typeof overlay.to === 'string'
-      ? found
-        ? { x: found.x / width, y: found.y / height }
-        : { x: 0.5, y: 0.4 }
-      : overlay.to;
-  if (overlay.at) return { at: overlay.at, to };
+  const targetAt = (f: number): { x: number; y: number } => {
+    if (typeof overlay.to !== 'string') return overlay.to;
+    const found = pointOnScreen(input, ts, shots, f, overlay.to);
+    return found ? { x: found.x / width, y: found.y / height } : { x: 0.5, y: 0.4 };
+  };
+  // The label keeps its place, worked out from where the target is as the shot begins; the
+  // arrow's tip goes with the target (Biku, 2026-10-12: "the arrow ... doesnt move with copy
+  // cat"), and stays inside the picture while someone is still on their way in.
+  const first = targetAt(ts.startFrame + 8);
+  const now = frame === undefined ? first : targetAt(frame);
+  const to = { x: clamp(now.x, 0.04, 0.96), y: clamp(now.y, 0.04, 0.96) };
+  // Someone still outside the picture has no label yet: an arrow at nothing says nothing.
+  const seen = now.x > 0.02 && now.x < 0.98;
+  if (overlay.at) return { at: overlay.at, to, seen };
   const half = pointerBox(overlay.text, { x: 0.5, y: 0.5 }, width, height).width / 2 / width;
   const air = Math.min(0.5, half + 0.03);
   // A video with a counter in its top corner: the label keeps under it.
@@ -144,11 +165,138 @@ export function pointerPlace(
   const top = counter ? (counter.y + counter.height) / height + 0.07 : 0.08;
   return {
     at: {
-      x: clamp(to.x + (to.x > 0.5 ? -0.1 : 0.1), air, 1 - air),
-      y: clamp(to.y - 0.3, top, 0.6),
+      x: clamp(first.x + (first.x > 0.5 ? -0.1 : 0.1), air, 1 - air),
+      y: clamp(first.y - 0.3, top, 0.6),
     },
     to,
+    seen,
   };
+}
+
+/** Where someone's head is on screen at a frame, px, and how big. Null when they are not in the shot. */
+export function headOnScreen(
+  input: MeasureInput,
+  ts: TimedShot,
+  shots: readonly TimedShot[],
+  frame: number,
+  who: string,
+): { x: number; y: number; r: number } | null {
+  const { storyboard, track, size, cards, fps } = input;
+  const staged = stageShot({ ts, shots, storyboard, cards, track, size, frame, fps });
+  const t = shotTransform(staged.shot.camera.framing, staged.focus, size, staged.side);
+  const person = staged.drawn.find((d) => d.actor.character === who);
+  if (!person) return null;
+  const at = toScreen(computeSkeleton(person.pose).head, person.placement);
+  return {
+    x: at.x * t.scale + t.x,
+    y: at.y * t.scale + t.y,
+    r: (person.placement.head / 2) * t.scale,
+  };
+}
+
+/** How far each kind of hat stands above the top of the head, as a share of the head's radius. */
+const HAT_RISE: Record<string, number> = {
+  beanie: 0.85,
+  cap: 0.5,
+  'brim-hat': 0.85,
+  'top-hat': 1.6,
+};
+
+/** How far someone's hat stands above their head, as a share of its radius; no hat, nothing. */
+function hatRise(input: MeasureInput, id: string): number {
+  const member = input.storyboard.cast.find((m) => m.id === id);
+  const outfit = (member?.card ? input.cards[member.card] : member?.look)?.outfit;
+  const hat = outfit && 'clothes' in outfit ? outfit.clothes.hat?.kind : undefined;
+  return hat ? (HAT_RISE[hat] ?? 0) : 0;
+}
+
+/** How far through its shot a drifting balloon sets off, arrives and bursts. */
+const DRIFT = { from: 0.22, to: 0.72, burst: 0.76 } as const;
+
+/**
+ * Where a shot's bubble is at a frame, px: its middle, the point its tail leads to, and how
+ * many frames ago it burst. It sits above its owner's head, a little toward the middle of the
+ * picture, or beside the head when there is no room above; it is always whole inside the frame.
+ * A balloon with somewhere to go drifts there through the middle of the shot and bursts.
+ */
+export function bubblePlace(
+  input: MeasureInput,
+  ts: TimedShot,
+  shots: readonly TimedShot[],
+  overlay: Extract<Overlay, { kind: 'bubble' }>,
+  frame: number,
+): { at: { x: number; y: number }; tail: { x: number; y: number } | null; burst?: number } {
+  const { width, height } = input.size;
+  const settled = ts.startFrame + 8;
+  const owner = headOnScreen(input, ts, shots, settled, overlay.of) ?? {
+    x: width / 2,
+    y: height * 0.4,
+    r: height * 0.06,
+  };
+  const { bw, bh, size } = bubbleLayout(overlay.lines, width, height);
+  const margin = height * 0.03;
+  const inside = (x: number) => clamp(x, bw / 2 + margin, width - bw / 2 - margin);
+  const toMiddle = owner.x > width / 2 ? -1 : 1;
+  // A hat stands above the head: the bubble clears the hat, not just the head under it.
+  const crown = owner.r * (1 + hatRise(input, overlay.of));
+  // Above the head, as high as the tail likes or as high as the frame allows, so long as a
+  // little air is left over the head.
+  let home = {
+    x: inside(owner.x + toMiddle * bw * 0.16),
+    y: Math.max(margin + bh / 2, owner.y - crown - size * 1.7 - bh / 2),
+  };
+  // Beside the head only when the bubble would come down onto the head itself: over the top of a
+  // hat is better than over a face.
+  if (home.y + bh / 2 > owner.y - owner.r - size * 0.3) {
+    home = {
+      x: inside(owner.x + toMiddle * (owner.r + size * 1.3 + bw / 2)),
+      y: clamp(owner.y - owner.r * 0.7, bh / 2 + margin, height * 0.6),
+    };
+  }
+  const away = Math.hypot(home.x - owner.x, home.y - owner.y) || 1;
+  // The tail starts at the edge of the head, or at the top of the hat when it leads upward.
+  const up = Math.max(0, (owner.y - home.y) / away);
+  const edge = owner.r * 1.08 + (crown - owner.r) * up;
+  const tail = {
+    x: owner.x + ((home.x - owner.x) / away) * edge,
+    y: owner.y + ((home.y - owner.y) / away) * edge,
+  };
+  const target = overlay.to ? headOnScreen(input, ts, shots, settled, overlay.to) : null;
+  if (!target) return { at: home, tail };
+  const duration = ts.endFrame - ts.startFrame;
+  const share = (frame - ts.startFrame) / Math.max(1, duration);
+  const k = clamp((share - DRIFT.from) / (DRIFT.to - DRIFT.from), 0, 1);
+  const eased = k * k * (3 - 2 * k);
+  // It comes to rest against the side of the listener's head it arrives from.
+  const side = home.x > target.x ? 1 : -1;
+  const end = {
+    x: target.x + side * (target.r + bw / 2 + size * 0.2),
+    y: target.y - target.r * 0.2,
+  };
+  const at = {
+    x: home.x + (end.x - home.x) * eased,
+    // A balloon bobs a little on its way.
+    y: home.y + (end.y - home.y) * eased - Math.sin(Math.PI * eased) * bh * 0.25,
+  };
+  const burstAt = ts.startFrame + Math.round(DRIFT.burst * duration);
+  return {
+    at,
+    tail: k > 0.02 ? null : tail,
+    ...(frame >= burstAt ? { burst: frame - burstAt } : {}),
+  };
+}
+
+/** The box a bubble takes at a frame, or null once it has burst. */
+function bubbleLabel(
+  input: MeasureInput,
+  ts: TimedShot,
+  shots: readonly TimedShot[],
+  overlay: Extract<Overlay, { kind: 'bubble' }>,
+  frame: number,
+): Box | null {
+  const place = bubblePlace(input, ts, shots, overlay, frame);
+  if (place.burst !== undefined) return null;
+  return bubbleBox(overlay.lines, place.at, input.size.width, input.size.height);
 }
 
 /** One frame of a shot, measured. */
@@ -169,11 +317,19 @@ export function measureFrame(
   const zoom =
     shot.camera.move === 'push-in'
       ? pushInZoom(local, duration, 0.32 * strength)
-      : shot.camera.move === 'punch-in'
-        ? punchInZoom(local, 2, 0.7 * strength, PUNCH_IN_FRAMES)
-        : 1;
+      : shot.camera.move === 'pull-back'
+        ? pullBackZoom(local, duration, 0.32 * strength)
+        : shot.camera.move === 'drift'
+          ? 1 + (2 * 0.08 * strength * size.width) / size.width
+          : shot.camera.move === 'punch-in'
+            ? punchInZoom(local, 2, 0.7 * strength, PUNCH_IN_FRAMES)
+            : 1;
   const slide =
-    shot.camera.move === 'pan' ? 0.3 * strength * size.width * panShare(local, 0, duration) : 0;
+    shot.camera.move === 'pan'
+      ? 0.3 * strength * size.width * panShare(local, 0, duration)
+      : shot.camera.move === 'drift'
+        ? 0.08 * strength * size.width * driftShare(local, duration)
+        : 0;
 
   const people = drawn
     .filter((d) => d !== near)
@@ -240,8 +396,12 @@ export function measureFrame(
                 size.height,
               )
             : overlay?.kind === 'page'
-              ? pageBox(overlay.lines, size.width, size.height)
-              : null,
+              ? pageBox(overlay.lines, size.width, size.height, overlay.tally !== undefined)
+              : overlay?.kind === 'words'
+                ? bigWordsBox(overlay.lines, size.width, size.height, overlay.low)
+                : overlay?.kind === 'bubble'
+                  ? bubbleLabel(input, ts, shots, overlay, frame)
+                  : null,
     caption: page ? captionBox(page, size.width, size.height) : null,
     mark: input.mark ? markBox(input.mark, size.width, size.height) : null,
     meter: storyboard.meter
@@ -256,7 +416,8 @@ export function measureFrame(
       d.outOfReach.map((thing) => ({ who: d.actor.character, thing })),
     ),
     things: staged.shotNow.props.flatMap((p, i) => {
-      if (SCENERY.includes(p.prop)) return [];
+      // Scenery, and a thing close to the camera, may run off the edge on purpose.
+      if (SCENERY.includes(p.prop) || p.near) return [];
       const reach = propReach(p);
       const head = staged.stage.head;
       const x = stageX(staged.stage, p.x) - staged.cameraX;
@@ -371,6 +532,25 @@ export function pictureChecks(input: MeasureInput, limits: { maxShotS?: number }
   const held: QaFinding[] = [];
   const reach: QaFinding[] = [];
   const things: QaFinding[] = [];
+  const safe: QaFinding[] = [];
+  const tall = size.height > size.width;
+  const safeBox = {
+    x: SAFE_916.x * size.width,
+    y: SAFE_916.y * size.height,
+    width: SAFE_916.width * size.width,
+    height: SAFE_916.height * size.height,
+  };
+  // How far a box reaches outside the safe area, px (0 when it is inside).
+  const outside = (b: Box | null) =>
+    !b
+      ? 0
+      : Math.max(
+          safeBox.x - b.x,
+          safeBox.y - b.y,
+          b.x + b.width - (safeBox.x + safeBox.width),
+          b.y + b.height - (safeBox.y + safeBox.height),
+          0,
+        );
   let thingsSeen = 0;
   let fastest = { share: 0, who: '', shot: '' };
   let longest = { s: 0, shot: '' };
@@ -378,6 +558,26 @@ export function pictureChecks(input: MeasureInput, limits: { maxShotS?: number }
   let frames = 0;
 
   for (const { ts, frames: all } of measured) {
+    // Words over the picture stay clear of the app's own buttons in a tall video.
+    if (tall) {
+      for (const [what, pick] of [
+        ['the captions', (m: FrameMeasure) => m.caption],
+        ['the counter', (m: FrameMeasure) => m.meter],
+        ['the label or number', (m: FrameMeasure) => m.label],
+      ] as const) {
+        const worst = all.reduce((a, m) => Math.max(a, outside(pick(m))), 0);
+        if (
+          worst > size.height * 0.01 &&
+          !safe.some((f) => f.shot === ts.shot.id && f.text.startsWith(what))
+        ) {
+          safe.push({
+            level: 'note',
+            shot: ts.shot.id,
+            text: `${what} reach ${Math.round(worst)} px outside the part of a tall picture the apps keep clear of their buttons`,
+          });
+        }
+      }
+    }
     const shot = ts.shot;
     const at = { shot: shot.id };
     frames += all.length;
@@ -391,7 +591,13 @@ export function pictureChecks(input: MeasureInput, limits: { maxShotS?: number }
       // In the picture. Walking or running in or out of it is how people arrive and leave, so
       // someone on the move is judged only by whether they are ever seen; someone holding a
       // pose has to be in the picture while they hold it.
-      const every = seen.map(({ m, p }) => ({ ms: m.ms, cut: cutOff(p.head, size), held: p.held }));
+      // In a shot of the eyes alone the head is meant to be bigger than the picture.
+      const eyesOnly = shot.camera.framing === 'eyes';
+      const every = seen.map(({ m, p }) => ({
+        ms: m.ms,
+        cut: eyesOnly ? 0 : cutOff(p.head, size),
+        held: p.held,
+      }));
       const everSeen = every.some((c) => c.cut < HEAD_CUT_GONE);
       const cuts = everSeen ? every.filter((c) => c.held) : every;
       const worst = cuts.reduce((a, b) => (b.cut > a.cut ? b : a), { ms: 0, cut: 0, held: true });
@@ -494,7 +700,8 @@ export function pictureChecks(input: MeasureInput, limits: { maxShotS?: number }
         (a) => a.lookAt === best.prop || a.then.some((step) => step.lookAt === best.prop),
       );
       const pointedAt = best.prop === named;
-      if (!wide && !pointedAt && !(lookedAt && shot.camera.framing !== 'close-up')) continue;
+      const closeOnFace = shot.camera.framing === 'close-up' || shot.camera.framing === 'eyes';
+      if (!wide && !pointedAt && !(lookedAt && !closeOnFace)) continue;
       thingsSeen++;
       const what = best.prop.replace(/-/g, ' ');
       if (best.out >= THING_CUT_GONE) {
@@ -586,6 +793,18 @@ export function pictureChecks(input: MeasureInput, limits: { maxShotS?: number }
         : 'no shot of this part has a thing standing or hanging in it',
       findings: things,
     },
+    ...(tall
+      ? [
+          {
+            id: 'safe-area',
+            title: "Words over the picture are clear of the apps' own buttons",
+            by: 'measured' as const,
+            detail:
+              'the captions, the counter and any label against the middle 900 by 1400 of a tall picture, on every frame',
+            findings: safe,
+          },
+        ]
+      : []),
     {
       id: 'faces-clear',
       title: 'No face is under the title or the captions',

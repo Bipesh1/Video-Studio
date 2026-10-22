@@ -2,7 +2,7 @@
   "id": "quote",
   "name": "Quote",
   "description": "One saying, given a short scene that makes it land. Pick it for a proverb, a line from a speech or a piece of advice.",
-  "version": 1,
+  "version": 2,
   "structure": [
     {
       "id": "setup",
@@ -63,6 +63,14 @@
     }
   },
   "captionMode": "full",
+  "finish": {
+    "acting": "snappy",
+    "onTwos": true,
+    "shadows": true,
+    "grain": 0.4,
+    "vignette": 0.35,
+    "boil": 0.25
+  },
   "factRules": {
     "sourcesRequired": true,
     "rules": [

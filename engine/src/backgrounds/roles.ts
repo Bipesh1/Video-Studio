@@ -37,7 +37,9 @@ function base(name: string): Base {
   const p = palette(name);
   const c = (i: number) => pick(p, i);
   switch (name) {
+    // Table grey is storm slate with its colour taken out, value for value.
     case 'storm-slate':
+    case 'table-grey':
       return { skyTop: c(1), skyBottom: c(2), ground: c(0), clouds: [c(1), c(2), c(3)], ray: c(4) };
     case 'dusk-violet':
       return {

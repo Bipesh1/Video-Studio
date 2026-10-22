@@ -1,0 +1,290 @@
+2026-10-21T13:02:35.195Z  part 1  part 1 of 3, 9:16: 3 scenes, 8 shots
+2026-10-21T13:02:35.198Z  part 1  voice: start
+2026-10-21T13:04:40.993Z  part 1    voice.wav: 40.91 s, 107 words, timings from kokoro, -17.11 LUFS
+2026-10-21T13:04:41.028Z  part 1  voice: done in 125.8 s
+2026-10-21T13:04:41.029Z  part 1  time: start
+2026-10-21T13:04:41.042Z  part 1    8 shots over 40.9 s: shortest 2.1 s, longest 6.9 s
+2026-10-21T13:04:41.042Z  part 1  time: done in 0.0 s
+2026-10-21T13:04:57.541Z  part 1  part 1 of 3, 9:16: 3 scenes, 8 shots
+2026-10-21T13:04:57.543Z  part 1  stills: start
+2026-10-21T13:04:57.545Z  part 1  bundle: start
+2026-10-21T13:05:29.089Z  part 1  bundle: done in 31.5 s
+2026-10-21T13:06:10.427Z  part 1    8 stills in runs\2026-10-21-fat-breath\part-1\stills\9x16
+2026-10-21T13:06:11.140Z  part 1    runs\2026-10-21-fat-breath\part-1\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-21T13:06:12.483Z  part 1    runs\2026-10-21-fat-breath\part-1\stills\sheet-9x16-1.png (8 shots, 2 rows)
+2026-10-21T13:06:12.483Z  part 1  stills: done in 74.9 s
+2026-10-21T13:10:48.782Z  part 1  part 1 of 3, 9:16: 3 scenes, 8 shots
+2026-10-21T13:10:48.784Z  part 1  sound: start
+2026-10-21T13:11:16.011Z  part 1    F:\Video Studio\runs\2026-10-21-fat-breath\part-1\audio\mix.wav: 40.91 s, -14.05 LUFS, true peak -1.08 dB, 2 music moods, 30 effects, music -17.0 dB under the voice
+2026-10-21T13:11:16.012Z  part 1  sound: done in 27.2 s
+2026-10-21T13:11:22.701Z  part 1  part 1 of 3, 9:16: 3 scenes, 8 shots
+2026-10-21T13:11:22.703Z  part 1  preview: start
+2026-10-21T13:11:22.745Z  part 1  bundle: start
+2026-10-21T13:11:41.785Z  part 1  bundle: done in 19.0 s
+2026-10-21T13:21:16.107Z  part 1    runs\2026-10-21-fat-breath\part-1\preview\fat-breath-part-1-9x16-preview-v1.mp4: 40.93 s of video, 540x960, in 570.2 s (13.93 s per video second)
+2026-10-21T13:21:16.117Z  part 1    runs\2026-10-21-fat-breath\part-1\preview\fat-breath-part-1-9x16-preview-v1.srt
+2026-10-21T13:21:16.141Z  part 1  preview: done in 593.4 s
+2026-10-21T13:22:58.220Z  part 1  part 1 of 3, 9:16: 3 scenes, 8 shots
+2026-10-21T13:22:58.222Z  part 1  time: start
+2026-10-21T13:22:58.226Z  part 1    8 shots over 40.9 s: shortest 2.1 s, longest 6.9 s
+2026-10-21T13:22:58.226Z  part 1  time: done in 0.0 s
+2026-10-21T13:22:58.227Z  part 1  clip: start
+2026-10-21T13:22:58.244Z  part 1  bundle: start
+2026-10-21T13:23:19.162Z  part 1  bundle: done in 20.9 s
+2026-10-21T13:25:33.314Z  part 1    runs\2026-10-21-fat-breath\part-1\clips\fat-breath-part-1-9x16-0-6s-v1.mp4: seconds 0 to 6, in 130.0 s
+2026-10-21T13:25:33.317Z  part 1  clip: done in 155.1 s
+2026-10-21T13:25:55.457Z  part 1  part 1 of 3, 9:16: 3 scenes, 8 shots
+2026-10-21T13:25:55.458Z  part 1  time: start
+2026-10-21T13:25:55.463Z  part 1    8 shots over 40.9 s: shortest 2.1 s, longest 6.9 s
+2026-10-21T13:25:55.464Z  part 1  time: done in 0.0 s
+2026-10-21T13:25:55.464Z  part 1  preview: start
+2026-10-21T13:25:55.483Z  part 1  bundle: start
+2026-10-21T13:26:21.104Z  part 1  bundle: done in 25.6 s
+2026-10-21T13:35:06.960Z  part 1    runs\2026-10-21-fat-breath\part-1\preview\fat-breath-part-1-9x16-preview-v2.mp4: 40.93 s of video, 540x960, in 522.8 s (12.77 s per video second)
+2026-10-21T13:35:06.964Z  part 1    runs\2026-10-21-fat-breath\part-1\preview\fat-breath-part-1-9x16-preview-v2.srt
+2026-10-21T13:35:06.980Z  part 1  preview: done in 551.5 s
+2026-10-21T13:36:08.002Z  part 1  part 1 of 3, 9:16: 3 scenes, 8 shots
+2026-10-21T13:36:08.004Z  part 1  preview: start
+2026-10-21T13:36:08.023Z  part 1  bundle: start
+2026-10-21T13:36:27.594Z  part 1  bundle: done in 19.6 s
+2026-10-21T13:44:57.853Z  part 1    runs\2026-10-21-fat-breath\part-1\preview\fat-breath-part-1-9x16-preview-v3.mp4: 40.93 s of video, 540x960, in 507.9 s (12.41 s per video second)
+2026-10-21T13:44:57.858Z  part 1    runs\2026-10-21-fat-breath\part-1\preview\fat-breath-part-1-9x16-preview-v3.srt
+2026-10-21T13:44:57.872Z  part 1  preview: done in 529.9 s
+2026-10-21T13:45:56.143Z  part 1  part 1 of 3, 9:16: 3 scenes, 8 shots
+2026-10-21T13:45:56.146Z  part 1  time: start
+2026-10-21T13:45:56.156Z  part 1    8 shots over 40.9 s: shortest 2.1 s, longest 6.9 s
+2026-10-21T13:45:56.157Z  part 1  time: done in 0.0 s
+2026-10-21T13:45:56.158Z  part 1  preview: start
+2026-10-21T13:45:56.189Z  part 1  bundle: start
+2026-10-21T13:46:30.797Z  part 1  bundle: done in 34.6 s
+2026-10-21T13:55:07.390Z  part 1    runs\2026-10-21-fat-breath\part-1\preview\fat-breath-part-1-9x16-preview-v4.mp4: 40.93 s of video, 540x960, in 496.1 s (12.12 s per video second)
+2026-10-21T13:55:07.425Z  part 1    runs\2026-10-21-fat-breath\part-1\preview\fat-breath-part-1-9x16-preview-v4.srt
+2026-10-21T13:55:07.746Z  part 1  preview: done in 551.6 s
+2026-10-21T13:59:15.716Z  part 2  part 2 of 3, 9:16: 2 scenes, 8 shots
+2026-10-21T13:59:15.718Z  part 2  voice: start
+2026-10-21T14:02:45.504Z  part 2    voice.wav: 43.38 s, 115 words, timings from kokoro, -17.19 LUFS
+2026-10-21T14:02:45.632Z  part 2  voice: done in 209.8 s
+2026-10-21T14:02:45.632Z  part 2  time: start
+2026-10-21T14:02:45.741Z  part 2    8 shots over 43.4 s: shortest 4.2 s, longest 7.0 s
+2026-10-21T14:02:45.741Z  part 2  time: done in 0.1 s
+2026-10-21T14:03:15.922Z  part 2  part 2 of 3, 9:16: 2 scenes, 8 shots
+2026-10-21T14:03:15.923Z  part 2  stills: start
+2026-10-21T14:03:15.925Z  part 2  bundle: start
+2026-10-21T14:03:59.363Z  part 2  bundle: done in 43.4 s
+2026-10-21T14:04:48.470Z  part 2    8 stills in runs\2026-10-21-fat-breath\part-2\stills\9x16
+2026-10-21T14:04:49.121Z  part 2    runs\2026-10-21-fat-breath\part-2\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-21T14:04:50.225Z  part 2    runs\2026-10-21-fat-breath\part-2\stills\sheet-9x16-1.png (8 shots, 2 rows)
+2026-10-21T14:04:50.226Z  part 2  stills: done in 94.3 s
+2026-10-21T14:06:02.024Z  part 2  part 2 of 3, 9:16: 2 scenes, 8 shots
+2026-10-21T14:06:02.026Z  part 2  clip: start
+2026-10-21T14:06:08.965Z  part 2  part 2 of 3, 9:16: 2 scenes, 8 shots
+2026-10-21T14:06:08.967Z  part 2  sound: start
+2026-10-21T14:06:29.038Z  part 2    F:\Video Studio\runs\2026-10-21-fat-breath\part-2\audio\mix.wav: 43.38 s, -14.02 LUFS, true peak -1.1 dB, 2 music moods, 25 effects, music -17.1 dB under the voice
+2026-10-21T14:06:29.039Z  part 2  sound: done in 20.1 s
+2026-10-21T14:06:32.304Z  part 2  part 2 of 3, 9:16: 2 scenes, 8 shots
+2026-10-21T14:06:32.305Z  part 2  clip: start
+2026-10-21T14:06:32.330Z  part 2  bundle: start
+2026-10-21T14:06:54.115Z  part 2  bundle: done in 21.8 s
+2026-10-21T14:09:01.694Z  part 2    runs\2026-10-21-fat-breath\part-2\clips\fat-breath-part-2-9x16-36-43s-v1.mp4: seconds 36 to 43, in 122.6 s
+2026-10-21T14:09:01.695Z  part 2  clip: done in 149.4 s
+2026-10-21T14:10:12.081Z  part 2  part 2 of 3, 9:16: 2 scenes, 8 shots
+2026-10-21T14:10:12.083Z  part 2  clip: start
+2026-10-21T14:10:12.104Z  part 2  bundle: start
+2026-10-21T14:10:33.785Z  part 2  bundle: done in 21.7 s
+2026-10-21T14:12:16.141Z  part 2    runs\2026-10-21-fat-breath\part-2\clips\fat-breath-part-2-9x16-38-43s-v1.mp4: seconds 38 to 43, in 98.6 s
+2026-10-21T14:12:16.143Z  part 2  clip: done in 124.1 s
+2026-10-21T14:12:32.625Z  part 2  part 2 of 3, 9:16: 2 scenes, 8 shots
+2026-10-21T14:12:32.626Z  part 2  preview: start
+2026-10-21T14:12:32.644Z  part 2  bundle: start
+2026-10-21T14:12:48.103Z  part 2  bundle: done in 15.5 s
+2026-10-21T14:20:51.064Z  part 2    runs\2026-10-21-fat-breath\part-2\preview\fat-breath-part-2-9x16-preview-v1.mp4: 43.40 s of video, 540x960, in 478.8 s (11.03 s per video second)
+2026-10-21T14:20:51.069Z  part 2    runs\2026-10-21-fat-breath\part-2\preview\fat-breath-part-2-9x16-preview-v1.srt
+2026-10-21T14:20:51.248Z  part 2  preview: done in 498.6 s
+2026-10-21T14:21:40.464Z  part 2  part 2 of 3, 9:16: 2 scenes, 8 shots
+2026-10-21T14:21:40.466Z  part 2  preview: start
+2026-10-21T14:21:40.484Z  part 2  bundle: start
+2026-10-21T14:22:08.757Z  part 2  bundle: done in 28.2 s
+2026-10-21T14:31:12.612Z  part 2    runs\2026-10-21-fat-breath\part-2\preview\fat-breath-part-2-9x16-preview-v2.mp4: 43.40 s of video, 540x960, in 510.1 s (11.75 s per video second)
+2026-10-21T14:31:12.657Z  part 2    runs\2026-10-21-fat-breath\part-2\preview\fat-breath-part-2-9x16-preview-v2.srt
+2026-10-21T14:31:12.837Z  part 2  preview: done in 572.4 s
+2026-10-21T14:31:56.621Z  part 2  part 2 of 3, 9:16: 2 scenes, 8 shots
+2026-10-21T14:31:56.622Z  part 2  time: start
+2026-10-21T14:31:56.627Z  part 2    8 shots over 43.4 s: shortest 4.2 s, longest 7.0 s
+2026-10-21T14:31:56.627Z  part 2  time: done in 0.0 s
+2026-10-21T14:31:56.628Z  part 2  preview: start
+2026-10-21T14:31:56.649Z  part 2  bundle: start
+2026-10-21T14:32:23.176Z  part 2  bundle: done in 26.5 s
+2026-10-21T14:40:11.739Z  part 2    runs\2026-10-21-fat-breath\part-2\preview\fat-breath-part-2-9x16-preview-v3.mp4: 43.40 s of video, 540x960, in 465.1 s (10.72 s per video second)
+2026-10-21T14:40:11.744Z  part 2    runs\2026-10-21-fat-breath\part-2\preview\fat-breath-part-2-9x16-preview-v3.srt
+2026-10-21T14:40:11.821Z  part 2  preview: done in 495.2 s
+2026-10-21T14:57:01.015Z  part 3  part 3 of 3, 9:16: 2 scenes, 7 shots
+2026-10-21T14:57:01.120Z  part 3  voice: start
+2026-10-21T14:58:52.620Z  part 3    voice.wav: 37.73 s, 96 words, timings from kokoro, -17.1 LUFS
+2026-10-21T14:58:52.740Z  part 3  voice: done in 111.6 s
+2026-10-21T14:58:52.740Z  part 3  time: start
+2026-10-21T14:58:52.868Z  part 3    7 shots over 37.7 s: shortest 4.5 s, longest 6.1 s
+2026-10-21T14:58:52.869Z  part 3  time: done in 0.1 s
+2026-10-21T14:58:52.869Z  part 3  sound: start
+2026-10-21T14:59:43.455Z  part 3    F:\Video Studio\runs\2026-10-21-fat-breath\part-3\audio\mix.wav: 37.73 s, -14.04 LUFS, true peak -1.06 dB, 2 music moods, 25 effects, music -17.1 dB under the voice
+2026-10-21T14:59:43.455Z  part 3  sound: done in 50.6 s
+2026-10-21T15:00:11.137Z  part 3  part 3 of 3, 9:16: 2 scenes, 7 shots
+2026-10-21T15:00:11.138Z  part 3  stills: start
+2026-10-21T15:00:11.158Z  part 3  bundle: start
+2026-10-21T15:00:54.484Z  part 3  bundle: done in 43.3 s
+2026-10-21T15:01:41.128Z  part 3    7 stills in runs\2026-10-21-fat-breath\part-3\stills\9x16
+2026-10-21T15:01:44.897Z  part 3    runs\2026-10-21-fat-breath\part-3\stills\colours-9x16.png (the first shot of each of 2 scenes)
+2026-10-21T15:01:45.894Z  part 3    runs\2026-10-21-fat-breath\part-3\stills\sheet-9x16-1.png (7 shots, 2 rows)
+2026-10-21T15:01:45.895Z  part 3  stills: done in 94.8 s
+2026-10-21T15:02:40.687Z  part 3  part 3 of 3, 9:16: 2 scenes, 7 shots
+2026-10-21T15:02:40.689Z  part 3  preview: start
+2026-10-21T15:02:40.705Z  part 3  bundle: start
+2026-10-21T15:03:02.171Z  part 3  bundle: done in 21.5 s
+2026-10-21T15:12:13.302Z  part 3    runs\2026-10-21-fat-breath\part-3\preview\fat-breath-part-3-9x16-preview-v1.mp4: 37.73 s of video, 540x960, in 535.6 s (14.19 s per video second)
+2026-10-21T15:12:13.372Z  part 3    runs\2026-10-21-fat-breath\part-3\preview\fat-breath-part-3-9x16-preview-v1.srt
+2026-10-21T15:12:13.633Z  part 3  preview: done in 572.9 s
+2026-10-21T15:19:00.570Z  part 1  part 1 of 3, 9:16: 3 scenes, 8 shots
+2026-10-21T15:19:00.572Z  part 1  video: start
+2026-10-21T15:19:00.906Z  part 1  bundle: start
+2026-10-21T15:19:33.994Z  part 1  bundle: done in 33.1 s
+2026-10-21T15:20:10.561Z  part 1  part 1 of 3, 9:16: 3 scenes, 8 shots
+2026-10-21T15:20:10.563Z  part 1  video: start
+2026-10-21T15:20:10.581Z  part 1  bundle: start
+2026-10-21T15:20:31.056Z  part 1  bundle: done in 20.5 s
+2026-10-21T15:32:31.312Z  part 1    runs\2026-10-21-fat-breath\part-1\out\fat-breath-part-1-9x16-v1.mp4: 40.93 s of video, 1080x1920, in 695.1 s (16.98 s per video second)
+2026-10-21T15:32:31.318Z  part 1    runs\2026-10-21-fat-breath\part-1\out\fat-breath-part-1-9x16-v1.srt
+2026-10-21T15:32:31.587Z  part 1  video: done in 741.0 s
+2026-10-21T15:33:29.364Z  part 2  part 2 of 3, 9:16: 2 scenes, 8 shots
+2026-10-21T15:33:29.368Z  part 2  video: start
+2026-10-21T15:33:29.628Z  part 2  bundle: start
+2026-10-21T15:33:59.349Z  part 2  bundle: done in 29.7 s
+2026-10-21T15:56:10.313Z  part 2    runs\2026-10-21-fat-breath\part-2\out\fat-breath-part-2-9x16-v1.mp4: 43.40 s of video, 1080x1920, in 1326.7 s (30.57 s per video second)
+2026-10-21T15:56:10.329Z  part 2    runs\2026-10-21-fat-breath\part-2\out\fat-breath-part-2-9x16-v1.srt
+2026-10-21T15:56:10.620Z  part 2  video: done in 1361.3 s
+2026-10-21T15:57:14.122Z  part 3  part 3 of 3, 9:16: 2 scenes, 7 shots
+2026-10-21T15:57:14.124Z  part 3  video: start
+2026-10-21T15:57:14.429Z  part 3  bundle: start
+2026-10-21T15:57:51.573Z  part 3  bundle: done in 37.1 s
+2026-10-21T16:13:42.717Z  part 3    runs\2026-10-21-fat-breath\part-3\out\fat-breath-part-3-9x16-v1.mp4: 37.73 s of video, 1080x1920, in 946.9 s (25.10 s per video second)
+2026-10-21T16:13:42.723Z  part 3    runs\2026-10-21-fat-breath\part-3\out\fat-breath-part-3-9x16-v1.srt
+2026-10-21T16:13:42.784Z  part 3  video: done in 988.7 s
+2026-10-21T16:14:22.832Z  output  9:16 full video:
+2026-10-21T16:16:29.222Z  output      F:\Video Studio\runs\2026-10-21-fat-breath\cuts\full\audio\mix.wav: 122.07 s, -14.04 LUFS, true peak -1.0 dB, 5 music moods, 80 effects, music -17.1 dB under the voice
+2026-10-21T16:22:31.423Z  output    runs\2026-10-21-fat-breath\out\fat-breath-9x16-v1.mp4: 122.07 s, 1080x1920
+2026-10-21T16:22:31.425Z  output      ok   The file plays: 1080x1920, 30 pictures a second, 122.1 s, picture and sound both there; played through from start to finish
+2026-10-21T16:22:31.426Z  output      ok   It is as long as its parts together: 122.1 s; its 3 pieces add up to 122.1 s
+2026-10-21T16:22:31.442Z  output      ok   Its pictures are the parts that passed: every frame against fat-breath-part-1-9x16-v1.mp4 and fat-breath-part-2-9x16-v1.mp4 and fat-breath-part-3-9x16-v1.mp4 (the strongest difference is 1 of 255; over 16 would be a different picture)
+2026-10-21T16:22:31.491Z  output      ok   Its sound is the mix made for the whole video: second for second (what is left over is 39 dB under it at most)
+2026-10-21T16:22:31.492Z  output      ok   There is no dead silence: the sound never drops out; the longest pause between words is 2.2 s
+2026-10-21T16:22:31.492Z  output      ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.0 dB (the limit is -1)
+2026-10-21T16:22:31.493Z  output      ok   Nothing drowns the words: 80 sound effects, the loudest of those over words 13 dB under the voice; the music sits 17.1 dB under the voice while someone speaks
+2026-10-21T16:22:31.493Z  output      FIX  Every join and the cover hold up: a strip of frames across each of the 2 joins between parts, and the cover picture
+2026-10-21T16:22:31.494Z  output            problem: the joins and the cover have not been looked at yet
+2026-10-21T16:22:31.494Z  output      to look at: runs\2026-10-21-fat-breath\out\look\fat-breath-9x16-v1 (each join) and runs\2026-10-21-fat-breath\out\fat-breath-9x16-v1-cover-side.jpg; then write runs\2026-10-21-fat-breath\out\fat-breath-9x16-v1.look.json
+2026-10-21T16:22:31.506Z  output  runs\2026-10-21-fat-breath\delivery.md
+2026-10-21T16:41:00.482Z  output  9:16 full video:
+2026-10-21T16:41:01.835Z  output    runs\2026-10-21-fat-breath\out\fat-breath-9x16-v1.mp4: already made from these parts
+2026-10-21T16:41:02.009Z  output  runs\2026-10-21-fat-breath\delivery.md
+2026-10-21T17:04:47.230Z  output  9:16 full video:
+2026-10-21T17:04:48.593Z  output    runs\2026-10-21-fat-breath\out\fat-breath-9x16-v1.mp4: already made from these parts
+2026-10-21T17:04:48.765Z  output  runs\2026-10-21-fat-breath\delivery.md
+2026-10-21T17:51:04.750Z  part 1  part 1 of 3, 9:16: 3 scenes, 8 shots
+2026-10-21T17:51:04.751Z  part 1  time: start
+2026-10-21T17:51:04.754Z  part 1    8 shots over 40.9 s: shortest 2.1 s, longest 6.9 s
+2026-10-21T17:51:04.876Z  part 1  time: done in 0.1 s
+2026-10-21T17:51:04.877Z  part 1  sound: start
+2026-10-21T17:51:23.258Z  part 1    F:\Video Studio\runs\2026-10-21-fat-breath\part-1\audio\mix.wav: 40.91 s, -14.01 LUFS, true peak -1.01 dB, 2 music moods, 31 effects, music -17.1 dB under the voice
+2026-10-21T17:51:23.258Z  part 1  sound: done in 18.4 s
+2026-10-21T17:51:23.259Z  part 1  resound: start
+2026-10-21T17:51:26.025Z  part 1    runs\2026-10-21-fat-breath\part-1\out\fat-breath-part-1-9x16-v2.mp4: the pictures of fat-breath-part-1-9x16-v1.mp4 with the sound as it stands
+2026-10-21T17:51:26.025Z  part 1  resound: done in 2.8 s
+2026-10-21T17:51:29.679Z  part 2  part 2 of 3, 9:16: 2 scenes, 8 shots
+2026-10-21T17:51:29.680Z  part 2  time: start
+2026-10-21T17:51:29.685Z  part 2    8 shots over 43.4 s: shortest 4.2 s, longest 7.0 s
+2026-10-21T17:51:29.686Z  part 2  time: done in 0.0 s
+2026-10-21T17:51:29.686Z  part 2  sound: start
+2026-10-21T17:51:44.551Z  part 2    F:\Video Studio\runs\2026-10-21-fat-breath\part-2\audio\mix.wav: 43.38 s, -14.03 LUFS, true peak -1.1 dB, 2 music moods, 26 effects, music -17.0 dB under the voice
+2026-10-21T17:51:44.551Z  part 2  sound: done in 14.9 s
+2026-10-21T17:51:44.551Z  part 2  resound: start
+2026-10-21T17:51:47.595Z  part 2    runs\2026-10-21-fat-breath\part-2\out\fat-breath-part-2-9x16-v2.mp4: the pictures of fat-breath-part-2-9x16-v1.mp4 with the sound as it stands
+2026-10-21T17:51:47.596Z  part 2  resound: done in 3.0 s
+2026-10-21T17:51:50.983Z  part 3  part 3 of 3, 9:16: 2 scenes, 7 shots
+2026-10-21T17:51:50.985Z  part 3  time: start
+2026-10-21T17:51:50.988Z  part 3    7 shots over 37.7 s: shortest 4.5 s, longest 6.1 s
+2026-10-21T17:51:50.989Z  part 3  time: done in 0.0 s
+2026-10-21T17:51:50.989Z  part 3  sound: start
+2026-10-21T17:52:10.386Z  part 3    F:\Video Studio\runs\2026-10-21-fat-breath\part-3\audio\mix.wav: 37.73 s, -14.03 LUFS, true peak -1.01 dB, 2 music moods, 25 effects, music -16.9 dB under the voice
+2026-10-21T17:52:10.386Z  part 3  sound: done in 19.4 s
+2026-10-21T17:52:10.387Z  part 3  resound: start
+2026-10-21T17:52:12.924Z  part 3    runs\2026-10-21-fat-breath\part-3\out\fat-breath-part-3-9x16-v2.mp4: the pictures of fat-breath-part-3-9x16-v1.mp4 with the sound as it stands
+2026-10-21T17:52:12.924Z  part 3  resound: done in 2.5 s
+2026-10-21T17:54:01.175Z  part 1  part 1 of 3, 9:16: 3 scenes, 8 shots
+2026-10-21T17:54:01.176Z  part 1  resound: start
+2026-10-21T17:54:03.953Z  part 1    runs\2026-10-21-fat-breath\part-1\out\fat-breath-part-1-9x16-v2.mp4: the pictures of fat-breath-part-1-9x16-v1.mp4 with the sound as it stands
+2026-10-21T17:54:03.954Z  part 1  resound: done in 2.8 s
+2026-10-21T17:54:07.457Z  part 2  part 2 of 3, 9:16: 2 scenes, 8 shots
+2026-10-21T17:54:07.459Z  part 2  resound: start
+2026-10-21T17:54:10.482Z  part 2    runs\2026-10-21-fat-breath\part-2\out\fat-breath-part-2-9x16-v2.mp4: the pictures of fat-breath-part-2-9x16-v1.mp4 with the sound as it stands
+2026-10-21T17:54:10.483Z  part 2  resound: done in 3.0 s
+2026-10-21T17:54:20.025Z  part 3  part 3 of 3, 9:16: 2 scenes, 7 shots
+2026-10-21T17:54:20.027Z  part 3  resound: start
+2026-10-21T17:54:22.470Z  part 3    runs\2026-10-21-fat-breath\part-3\out\fat-breath-part-3-9x16-v2.mp4: the pictures of fat-breath-part-3-9x16-v1.mp4 with the sound as it stands
+2026-10-21T17:54:22.471Z  part 3  resound: done in 2.4 s
+2026-10-21T17:55:41.707Z  output  9:16 full video:
+2026-10-21T17:56:22.398Z  output      F:\Video Studio\runs\2026-10-21-fat-breath\cuts\full\audio\mix.wav: 122.07 s, -14.04 LUFS, true peak -1.06 dB, 5 music moods, 82 effects, music -17.1 dB under the voice
+2026-10-21T18:01:40.893Z  output    runs\2026-10-21-fat-breath\out\fat-breath-9x16-v2.mp4: 122.07 s, 1080x1920
+2026-10-21T18:01:40.894Z  output      ok   The file plays: 1080x1920, 30 pictures a second, 122.1 s, picture and sound both there; played through from start to finish
+2026-10-21T18:01:40.894Z  output      ok   It is as long as its parts together: 122.1 s; its 3 pieces add up to 122.1 s
+2026-10-21T18:01:40.895Z  output      ok   Its pictures are the parts that passed: every frame against fat-breath-part-1-9x16-v2.mp4 and fat-breath-part-2-9x16-v2.mp4 and fat-breath-part-3-9x16-v2.mp4 (the strongest difference is 1 of 255; over 16 would be a different picture)
+2026-10-21T18:01:40.941Z  output      ok   Its sound is the mix made for the whole video: second for second (what is left over is 41 dB under it at most)
+2026-10-21T18:01:40.941Z  output      ok   There is no dead silence: the sound never drops out; the longest pause between words is 2.2 s
+2026-10-21T18:01:40.941Z  output      ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.1 dB (the limit is -1)
+2026-10-21T18:01:40.942Z  output      ok   Nothing drowns the words: 82 sound effects, the loudest of those over words 13 dB under the voice; the music sits 17.1 dB under the voice while someone speaks
+2026-10-21T18:01:40.942Z  output      FIX  Every join and the cover hold up: a strip of frames across each of the 2 joins between parts, and the cover picture
+2026-10-21T18:01:40.942Z  output            problem: the joins and the cover have not been looked at yet
+2026-10-21T18:01:40.942Z  output      to look at: runs\2026-10-21-fat-breath\out\look\fat-breath-9x16-v2 (each join) and runs\2026-10-21-fat-breath\out\fat-breath-9x16-v2-cover-side.jpg; then write runs\2026-10-21-fat-breath\out\fat-breath-9x16-v2.look.json
+2026-10-21T18:01:40.944Z  output  runs\2026-10-21-fat-breath\delivery.md
+2026-10-22T12:20:00.694Z  part 1  part 1 of 3, 9:16: 3 scenes, 8 shots
+2026-10-22T12:20:00.705Z  part 1  clip: start
+2026-10-22T12:20:00.970Z  part 1  bundle: start
+2026-10-22T12:20:47.739Z  part 1  bundle: done in 46.8 s
+2026-10-22T12:27:24.497Z  part 1    runs\2026-10-21-fat-breath\part-1\clips\fat-breath-part-1-9x16-4-19s-v1.mp4: seconds 4 to 19, in 366.3 s
+2026-10-22T12:27:24.499Z  part 1  clip: done in 443.8 s
+2026-10-22T13:38:17.763Z  part 1  part 1 of 3, 9:16: 3 scenes, 8 shots
+2026-10-22T13:38:17.813Z  part 1  time: start
+2026-10-22T13:38:17.817Z  part 1    8 shots over 40.9 s: shortest 2.1 s, longest 6.9 s
+2026-10-22T13:38:17.899Z  part 1  time: done in 0.1 s
+2026-10-22T13:38:17.900Z  part 1  clip: start
+2026-10-22T13:38:18.052Z  part 1  bundle: start
+2026-10-22T13:38:53.554Z  part 1  bundle: done in 35.5 s
+2026-10-22T13:45:43.818Z  part 1    runs\2026-10-21-fat-breath\part-1\clips\fat-breath-part-1-9x16-4-19s-v2.mp4: seconds 4 to 19, in 382.1 s
+2026-10-22T13:45:43.856Z  part 1  clip: done in 446.0 s
+2026-10-22T13:49:53.099Z  part 1  part 1 of 3, 9:16: 3 scenes, 8 shots
+2026-10-22T13:49:53.100Z  part 1  clip: start
+2026-10-22T13:49:53.290Z  part 1  bundle: start
+2026-10-22T13:50:10.634Z  part 1  bundle: done in 17.3 s
+2026-10-22T13:55:51.895Z  part 1    runs\2026-10-21-fat-breath\part-1\clips\fat-breath-part-1-9x16-4-19s-v3.mp4: seconds 4 to 19, in 337.8 s
+2026-10-22T13:55:51.896Z  part 1  clip: done in 358.8 s
+2026-10-22T13:57:25.346Z  part 1  part 1 of 3, 9:16: 3 scenes, 8 shots
+2026-10-22T13:57:25.347Z  part 1  clip: start
+2026-10-22T13:57:25.525Z  part 1  bundle: start
+2026-10-22T13:57:52.627Z  part 1  bundle: done in 27.1 s
+2026-10-22T14:03:44.823Z  part 1    runs\2026-10-21-fat-breath\part-1\clips\fat-breath-part-1-9x16-4-19s-v4.mp4: seconds 4 to 19, in 348.2 s
+2026-10-22T14:03:44.824Z  part 1  clip: done in 379.5 s
+2026-10-22T16:40:17.655Z  part 1  part 1 of 3, 9:16: 3 scenes, 8 shots
+2026-10-22T16:40:17.670Z  part 1  clip: start
+2026-10-22T16:40:17.949Z  part 1  bundle: start
+2026-10-22T16:40:47.546Z  part 1  bundle: done in 29.6 s
+2026-10-22T16:50:40.278Z  part 1    runs\2026-10-21-fat-breath\part-1\clips\fat-breath-part-1-9x16-4-19s-v5.mp4: seconds 4 to 19, in 587.3 s
+2026-10-22T16:50:40.280Z  part 1  clip: done in 622.6 s
+2026-10-22T16:52:03.124Z  part 1  part 1 of 3, 9:16: 3 scenes, 8 shots
+2026-10-22T16:52:03.126Z  part 1  clip: start
+2026-10-22T16:52:03.144Z  part 1  bundle: start
+2026-10-22T16:52:19.086Z  part 1  bundle: done in 15.9 s
+2026-10-22T17:04:55.777Z  part 1    runs\2026-10-21-fat-breath\part-1\clips\fat-breath-part-1-9x16-4-19s-v6.mp4: seconds 4 to 19, in 753.2 s
+2026-10-22T17:04:55.780Z  part 1  clip: done in 772.7 s
+2026-10-22T17:09:18.818Z  part 1  part 1 of 3, 9:16: 3 scenes, 8 shots
+2026-10-22T17:09:18.820Z  part 1  clip: start
+2026-10-22T17:09:18.839Z  part 1  bundle: start
+2026-10-22T17:10:06.992Z  part 1  bundle: done in 48.2 s
+2026-10-22T17:16:26.854Z  part 1    runs\2026-10-21-fat-breath\part-1\clips\fat-breath-part-1-9x16-4-19s-v7.mp4: seconds 4 to 19, in 373.4 s
+2026-10-22T17:16:26.895Z  part 1  clip: done in 428.1 s

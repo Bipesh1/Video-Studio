@@ -1,0 +1,393 @@
+{
+  "version": 1,
+  "title": "How to Get Four People Across a Bridge Before the Torch Dies",
+  "request": "this is a thriller script make a video for this one you must use the dark background sounds we created the thriller ones",
+  "mode": "as-is",
+  "format": "dilemma-thriller",
+  "style": "ink-stick",
+  "brand": "dilemma-table",
+  "voice": "leak",
+  "seed": 55713,
+  "finish": {
+    "acting": "gentle",
+    "onTwos": true,
+    "shadows": true,
+    "grain": 0.55,
+    "vignette": 0.4,
+    "boil": 0.25
+  },
+  "sources": [
+    "Saul X. Levmore and Elizabeth Early Cook, Super Strategies for Puzzles and Games, Doubleday, 1981. The earliest known printed version of the bridge puzzle: four people, one light, a bridge that holds two at a time. As given in Biku's script.",
+    "Günter Rote, \"Crossing the Bridge at Night\", Bulletin of the EATCS, No. 78, October 2002, pages 241 to 246. Solves the puzzle for any number of people with any walking times. https://page.mi.fu-berlin.de/rote/Papers/abstract/Crossing+the+bridge+at+night.html",
+    "Checked by Claude on 2026-10-15: with crossing times of 1, 2, 5 and 10 minutes, the fastest walking each one over takes 10 + 1 + 5 + 1 + 2 = 19 minutes; the two fastest over, the fastest back, the two slowest over together, the second fastest back, the two fastest over takes 2 + 1 + 10 + 2 + 2 = 17. What the scene invents: the gorge, the storm, the people."
+  ],
+  "appliedLessons": [],
+  "cast": [
+    {
+      "id": "trainer",
+      "name": "The Trainer",
+      "card": "trainer",
+      "host": true
+    },
+    {
+      "id": "saint",
+      "name": "The Saint",
+      "card": "saint"
+    },
+    {
+      "id": "cheat",
+      "name": "The Cheat",
+      "card": "cheat"
+    },
+    {
+      "id": "old-man",
+      "name": "The old man",
+      "look": {
+        "age": "elder",
+        "identity": {
+          "skinTone": 2,
+          "hair": "short-crop",
+          "hairColor": "white"
+        },
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "jacket",
+              "cloth": "tan",
+              "under": "cream"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "brown"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "woman",
+      "name": "The woman with the bag",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "cream"
+            },
+            "bottom": {
+              "kind": "skirt",
+              "cloth": "brown"
+            },
+            "shoes": {
+              "kind": "boots",
+              "cloth": "brown"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "series": "game-theory",
+  "scenes": [
+    {
+      "id": "s4",
+      "chapter": 1,
+      "beat": "the-squeeze",
+      "mood": "closing-in",
+      "quiet": false,
+      "place": "gorge-bridge",
+      "treatment": "atmospheric",
+      "palette": "storm-slate",
+      "lines": [
+        {
+          "id": "l13",
+          "speaker": "saint",
+          "text": "Nobody stays behind.",
+          "pauseAfterMs": 900
+        },
+        {
+          "id": "l14",
+          "speaker": "saint",
+          "text": "Every trip with the old man takes ten minutes, whoever walks beside him.",
+          "pauseAfterMs": 1300,
+          "thought": true
+        }
+      ],
+      "shots": [
+        {
+          "id": "s4a",
+          "line": "l13",
+          "words": "Nobody stays behind.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "old-man",
+              "pose": "stand",
+              "expression": "afraid",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.03,
+              "lookAt": "down",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.15,
+                  "expression": "hollow"
+                }
+              ]
+            },
+            {
+              "character": "woman",
+              "pose": "stand",
+              "expression": "afraid",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.15,
+              "lookAt": "cheat",
+              "holds": "bag",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.2,
+                  "pose": "cross-arms",
+                  "expression": "suspicious"
+                }
+              ]
+            },
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "afraid",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.27,
+              "lookAt": "cheat",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.2,
+                  "expression": "determined"
+                }
+              ]
+            },
+            {
+              "character": "cheat",
+              "pose": "stand",
+              "expression": "calculating",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.39,
+              "lookAt": "old-man",
+              "holds": "torch-low",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "wind",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "startMs": 0,
+          "endMs": 2102
+        },
+        {
+          "id": "s4b",
+          "line": "l14",
+          "words": "Every trip with the old man takes ten minutes,",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.27,
+              "lookAt": "down",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.35,
+                  "expression": "thinking"
+                }
+              ]
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "wind",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "startMs": 2102,
+          "endMs": 4692
+        },
+        {
+          "id": "s4c",
+          "line": "l14",
+          "words": "whoever walks beside him.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "old-man",
+              "pose": "stand",
+              "expression": "hollow",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.03,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "woman",
+              "pose": "cross-arms",
+              "expression": "suspicious",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.15,
+              "lookAt": "cheat",
+              "holds": "bag",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "thinking",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.27,
+              "lookAt": "down",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "cheat",
+              "pose": "stand",
+              "expression": "calculating",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.39,
+              "lookAt": "old-man",
+              "holds": "torch-low",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "wind",
+              "at": "start",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "startMs": 4692,
+          "endMs": 6886
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chapter": 1,
+      "beat": "the-twist",
+      "mood": "closing-in",
+      "quiet": false,
+      "place": "gorge-bridge",
+      "treatment": "atmospheric",
+      "palette": "storm-slate",
+      "lines": [
+        {
+          "id": "l15",
+          "speaker": "trainer",
+          "text": "So who should walk beside the old man?",
+          "pauseAfterMs": 3000
+        }
+      ],
+      "shots": [
+        {
+          "id": "s5a",
+          "line": "l15",
+          "words": "So who should walk beside the old man?",
+          "camera": {
+            "framing": "eyes",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "saint"
+          },
+          "actors": [
+            {
+              "character": "saint",
+              "pose": "stand",
+              "expression": "thinking",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.27,
+              "lookAt": "ahead",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.4,
+                  "expression": "dread",
+                  "strength": 0.7
+                }
+              ]
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "rain",
+              "at": "start",
+              "gainDb": -6
+            },
+            {
+              "name": "thunder",
+              "at": "start",
+              "gainDb": -6
+            },
+            {
+              "name": "heartbeat-rising",
+              "at": "start",
+              "gainDb": -4
+            }
+          ],
+          "transition": "cut",
+          "startMs": 6886,
+          "endMs": 11869
+        }
+      ]
+    }
+  ]
+}

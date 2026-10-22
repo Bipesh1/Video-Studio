@@ -1,0 +1,90 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l11",
+      "speaker": "saint",
+      "voice": "af_sarah",
+      "text": "He can argue with me. He can't argue with a year of *proof.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/saint.wav",
+      "speed": 0.95,
+      "pauseAfterMs": 518
+    },
+    {
+      "id": "l12",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "Every night the number got *bigger.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.97,
+      "pauseAfterMs": 670
+    },
+    {
+      "id": "l13",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "It's nothing. Go back to bed.",
+      "say": "[surprised] It's nothing. Go back to bed.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/copycat.wav",
+      "speed": 0.99,
+      "pauseAfterMs": 335
+    },
+    {
+      "id": "l14",
+      "speaker": "saint",
+      "voice": "af_sarah",
+      "text": "Nothing? He's hiding *something.*",
+      "engine": "chatterbox",
+      "sample": "voices/samples/saint.wav",
+      "speed": 0.95,
+      "pauseAfterMs": 740
+    },
+    {
+      "id": "l15",
+      "speaker": "saint",
+      "voice": "af_sarah",
+      "text": "Four thousand two hundred and twelve dishes. Every one of them was *me.*",
+      "say": "[dramatic] Four thousand two hundred and twelve dishes. Every one of them was me.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/saint.wav",
+      "speed": 0.91,
+      "pauseAfterMs": 888
+    },
+    {
+      "id": "l16",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "A year of proof, in her own handwriting. So who really did more?",
+      "say": "A year of proof, in her own handwriting. So, who really did more?",
+      "engine": "chatterbox",
+      "sample": "voices/samples/trainer.wav",
+      "speed": 0.92,
+      "pauseAfterMs": 1474
+    }
+  ]
+}

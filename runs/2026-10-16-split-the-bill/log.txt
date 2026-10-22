@@ -1,0 +1,70 @@
+2026-10-16T09:41:31.072Z  part 1  part 1 of 1, 9:16: 6 scenes, 16 shots
+2026-10-16T09:41:31.074Z  part 1  voice: start
+2026-10-16T10:55:12.170Z  part 1  part 1 of 1, 9:16: 6 scenes, 16 shots
+2026-10-16T10:55:12.476Z  part 1  voice: start
+2026-10-16T11:33:35.852Z  part 1  part 1 of 1, 9:16: 6 scenes, 16 shots
+2026-10-16T11:33:35.854Z  part 1  voice: start
+2026-10-16T11:44:48.086Z  part 1    voice.wav: 38.42 s, 88 words, timings from heard, -17.22 LUFS
+2026-10-16T11:44:48.087Z  part 1  voice: done in 672.2 s
+2026-10-16T11:45:30.713Z  part 1  part 1 of 1, 9:16: 6 scenes, 16 shots
+2026-10-16T11:45:30.714Z  part 1  time: start
+2026-10-16T11:45:30.892Z  part 1    16 shots over 38.4 s: shortest 1.0 s, longest 3.8 s
+2026-10-16T11:45:30.893Z  part 1    note: shot "s3a" is only 1.1 s long
+2026-10-16T11:45:30.893Z  part 1    note: shot "s3c1" is only 1.0 s long
+2026-10-16T11:45:30.894Z  part 1    note: shot "s5a" is only 1.2 s long
+2026-10-16T11:45:30.894Z  part 1  time: done in 0.2 s
+2026-10-16T11:45:30.894Z  part 1  sound: start
+2026-10-16T11:46:12.755Z  part 1    F:\Video Studio\runs\2026-10-16-split-the-bill\part-1\audio\mix.wav: 38.42 s, -14.02 LUFS, true peak -1.23 dB, 3 music moods, 6 effects, music -17.9 dB under the voice
+2026-10-16T11:46:12.755Z  part 1  sound: done in 41.9 s
+2026-10-16T11:46:12.755Z  part 1  stills: start
+2026-10-16T11:46:12.811Z  part 1  bundle: start
+2026-10-16T11:46:41.830Z  part 1  bundle: done in 29.0 s
+2026-10-16T11:47:45.002Z  part 1    16 stills in runs\2026-10-16-split-the-bill\part-1\stills\9x16
+2026-10-16T11:47:45.829Z  part 1    runs\2026-10-16-split-the-bill\part-1\stills\colours-9x16.png (the first shot of each of 6 scenes)
+2026-10-16T11:47:47.009Z  part 1    runs\2026-10-16-split-the-bill\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-16T11:47:47.859Z  part 1    runs\2026-10-16-split-the-bill\part-1\stills\sheet-9x16-2.png (4 shots, 1 rows)
+2026-10-16T11:47:47.860Z  part 1  stills: done in 95.1 s
+2026-10-16T11:48:15.046Z  part 1  part 1 of 1, 9:16: 6 scenes, 16 shots
+2026-10-16T11:48:15.048Z  part 1  video: start
+2026-10-16T11:48:15.068Z  part 1  bundle: start
+2026-10-16T11:48:18.618Z  part 1  bundle: done in 3.5 s
+2026-10-16T11:56:38.973Z  part 1    runs\2026-10-16-split-the-bill\part-1\out\split-the-bill-part-1-9x16-v1.mp4: 38.43 s of video, 1080x1920, in 497.6 s (12.95 s per video second)
+2026-10-16T11:56:38.977Z  part 1    runs\2026-10-16-split-the-bill\part-1\out\split-the-bill-part-1-9x16-v1.srt
+2026-10-16T11:56:38.989Z  part 1  video: done in 503.9 s
+2026-10-16T11:58:37.644Z  part 1  part 1 of 1, 9:16: 6 scenes, 16 shots
+2026-10-16T11:58:37.645Z  part 1  time: start
+2026-10-16T11:58:37.649Z  part 1    16 shots over 38.4 s: shortest 1.0 s, longest 3.8 s
+2026-10-16T11:58:37.649Z  part 1    note: shot "s3a" is only 1.1 s long
+2026-10-16T11:58:37.649Z  part 1    note: shot "s3c1" is only 1.0 s long
+2026-10-16T11:58:37.650Z  part 1    note: shot "s5a" is only 1.2 s long
+2026-10-16T11:58:37.650Z  part 1  time: done in 0.0 s
+2026-10-16T11:58:37.650Z  part 1  stills: start
+2026-10-16T11:58:37.667Z  part 1  bundle: start
+2026-10-16T11:58:41.119Z  part 1  bundle: done in 3.5 s
+2026-10-16T11:59:09.064Z  part 1    16 stills in runs\2026-10-16-split-the-bill\part-1\stills\9x16
+2026-10-16T11:59:09.641Z  part 1    runs\2026-10-16-split-the-bill\part-1\stills\colours-9x16.png (the first shot of each of 6 scenes)
+2026-10-16T11:59:10.881Z  part 1    runs\2026-10-16-split-the-bill\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-16T11:59:11.426Z  part 1    runs\2026-10-16-split-the-bill\part-1\stills\sheet-9x16-2.png (4 shots, 1 rows)
+2026-10-16T11:59:11.426Z  part 1  stills: done in 33.8 s
+2026-10-16T11:59:33.738Z  part 1  part 1 of 1, 9:16: 6 scenes, 16 shots
+2026-10-16T11:59:33.740Z  part 1  time: start
+2026-10-16T11:59:33.745Z  part 1    16 shots over 38.4 s: shortest 1.0 s, longest 3.8 s
+2026-10-16T11:59:33.745Z  part 1    note: shot "s3a" is only 1.1 s long
+2026-10-16T11:59:33.745Z  part 1    note: shot "s3c1" is only 1.0 s long
+2026-10-16T11:59:33.746Z  part 1    note: shot "s5a" is only 1.2 s long
+2026-10-16T11:59:33.746Z  part 1  time: done in 0.0 s
+2026-10-16T11:59:33.746Z  part 1  stills: start
+2026-10-16T11:59:33.765Z  part 1  bundle: start
+2026-10-16T11:59:37.271Z  part 1  bundle: done in 3.5 s
+2026-10-16T12:00:04.256Z  part 1    16 stills in runs\2026-10-16-split-the-bill\part-1\stills\9x16
+2026-10-16T12:00:04.846Z  part 1    runs\2026-10-16-split-the-bill\part-1\stills\colours-9x16.png (the first shot of each of 6 scenes)
+2026-10-16T12:00:06.004Z  part 1    runs\2026-10-16-split-the-bill\part-1\stills\sheet-9x16-1.png (12 shots, 3 rows)
+2026-10-16T12:00:06.621Z  part 1    runs\2026-10-16-split-the-bill\part-1\stills\sheet-9x16-2.png (4 shots, 1 rows)
+2026-10-16T12:00:06.621Z  part 1  stills: done in 32.9 s
+2026-10-16T12:00:10.265Z  part 1  part 1 of 1, 9:16: 6 scenes, 16 shots
+2026-10-16T12:00:10.266Z  part 1  video: start
+2026-10-16T12:00:10.284Z  part 1  bundle: start
+2026-10-16T12:00:13.759Z  part 1  bundle: done in 3.5 s
+2026-10-16T12:09:14.059Z  part 1    runs\2026-10-16-split-the-bill\part-1\out\split-the-bill-part-1-9x16-v2.mp4: 38.43 s of video, 1080x1920, in 537.9 s (14.00 s per video second)
+2026-10-16T12:09:14.062Z  part 1    runs\2026-10-16-split-the-bill\part-1\out\split-the-bill-part-1-9x16-v2.srt
+2026-10-16T12:09:14.076Z  part 1  video: done in 543.8 s

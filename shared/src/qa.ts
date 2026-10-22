@@ -346,6 +346,99 @@ export function silenceCheck(input: {
   };
 }
 
+/**
+ * The explainer pictures never stand nearly empty while the narrator talks (Biku, 2026-10-16:
+ * "in between videos there are multiple frames where there is no information or little
+ * information shown. doesnt look good"). Measured on the finished file: the share of the
+ * picture's middle (under the title, above the captions) with something drawn in it, sampled
+ * `rate` times a second.
+ */
+export const EMPTY_PICTURE_SHARE = 0.04;
+/** How long the picture may stand nearly empty before it is a problem, s. */
+export const EMPTY_PICTURE_S = 0.5;
+
+export function emptyPictureCheck(input: { filled: readonly number[]; rate: number }): QaCheck {
+  const findings: QaFinding[] = [];
+  const least = Math.round(EMPTY_PICTURE_S * input.rate);
+  let from = -1;
+  let longest = 0;
+  const close = (end: number) => {
+    const n = end - from;
+    longest = Math.max(longest, n);
+    if (n >= least) {
+      const atMs = Math.round((from / input.rate) * 1000);
+      findings.push(
+        problem(
+          `the picture is nearly empty for ${seconds((n / input.rate) * 1000)} from ${clock(atMs)}`,
+          { atMs },
+        ),
+      );
+    }
+    from = -1;
+  };
+  input.filled.forEach((share, i) => {
+    if (share < EMPTY_PICTURE_SHARE) {
+      if (from < 0) from = i;
+    } else if (from >= 0) close(i);
+  });
+  if (from >= 0) close(input.filled.length);
+  return {
+    id: 'empty-picture',
+    title: 'The picture is never empty',
+    by: 'measured',
+    detail: `${input.filled.length} frames measured, ${input.rate} a second; the longest nearly empty stretch is ${seconds((longest / input.rate) * 1000)} (more than ${EMPTY_PICTURE_S} s is a problem)`,
+    findings,
+  };
+}
+
+/**
+ * The explainer pictures never stand still for long (Biku, 2026-10-19: "it should not be stuck
+ * in one photo for long time. each new info should bring a great animation"). Measured on the
+ * finished file: how much the middle of the picture changed since one second before, `rate`
+ * times a second (`changed[i]` sets the picture at `i / rate + 1` s against the one at
+ * `i / rate` s). Grain and the trembling line change it by about 1; a callout landing, a thing
+ * arriving or the camera moving change it by much more.
+ */
+export const STILL_PICTURE_CHANGE = 2.5;
+/** How long the picture may stand nearly still before it is a problem, s. */
+export const STILL_PICTURE_S = 3;
+
+export function stillPictureCheck(input: { changed: readonly number[]; rate: number }): QaCheck {
+  const findings: QaFinding[] = [];
+  // A run of n still comparisons is a picture held for n / rate + 1 seconds.
+  const least = Math.round((STILL_PICTURE_S - 1) * input.rate) + 1;
+  let from = -1;
+  let longest = 0;
+  const close = (end: number) => {
+    const n = end - from;
+    longest = Math.max(longest, n);
+    if (n >= least) {
+      const atMs = Math.round((from / input.rate) * 1000);
+      findings.push(
+        problem(
+          `the picture hardly moves for ${seconds((n / input.rate + 1) * 1000)} from ${clock(atMs)}`,
+          { atMs },
+        ),
+      );
+    }
+    from = -1;
+  };
+  input.changed.forEach((change, i) => {
+    if (change < STILL_PICTURE_CHANGE) {
+      if (from < 0) from = i;
+    } else if (from >= 0) close(i);
+  });
+  if (from >= 0) close(input.changed.length);
+  const held = longest > 0 ? longest / input.rate + 1 : 0;
+  return {
+    id: 'still-picture',
+    title: 'The picture keeps moving',
+    by: 'measured',
+    detail: `${input.changed.length + input.rate} frames measured, ${input.rate} a second; the longest stretch with the picture nearly still is ${seconds(held * 1000)} (more than ${STILL_PICTURE_S} s is a problem)`,
+    findings,
+  };
+}
+
 /** How far over the true-peak limit a finished file may measure: the last step of making it moves peaks a hair. */
 const PEAK_SLACK_DB = 0.05;
 
@@ -437,7 +530,37 @@ export function wordsHeardCheck(input: { mix: MixReport | null; track: VoiceTrac
 }
 
 /** What the make stage writes beside a video: the plan and the mix it was rendered from. */
-export type MadeFrom = { video: string; storyboard: string; mix: string; madeAt: string };
+export type MadeFrom = {
+  video: string;
+  storyboard: string;
+  mix: string;
+  madeAt: string;
+  /** The plan with its sound left out: the pictures alone. Older records have none. */
+  pictures?: string;
+  /** For a video whose sound was changed on the pictures of another: that video. */
+  soundOn?: string;
+};
+
+/**
+ * The storyboard with everything that is only heard left out (the video's music, each scene's
+ * mood, quiet and place sound, each shot's effects, place sound and drop): two plans that differ
+ * only in these make the same pictures, so a change of sound needs no new pictures.
+ */
+export function picturesOnly(storyboard: unknown): unknown {
+  const sb = structuredClone(storyboard) as Record<string, unknown>;
+  delete sb.score;
+  for (const scene of (sb.scenes as Record<string, unknown>[] | undefined) ?? []) {
+    delete scene.mood;
+    delete scene.quiet;
+    delete scene.ambience;
+    for (const shot of (scene.shots as Record<string, unknown>[] | undefined) ?? []) {
+      delete shot.sfx;
+      delete shot.ambience;
+      delete shot.drop;
+    }
+  }
+  return sb;
+}
 
 /**
  * How far the sound in a video is from the mix it should carry, second by second: the level of
@@ -506,14 +629,18 @@ export function madeFromCheck(input: {
   record: MadeFrom | null;
   /** The storyboard of the part as it stands now. */
   storyboard: string;
+  /** Its pictures alone (picturesOnly), as they stand now. */
+  pictures?: string;
   /** The video's sound against the mix; null when it could not be compared. */
   sound: { worstDb: number; atMs: number } | null;
 }): QaCheck {
-  const { record, storyboard, sound } = input;
+  const { record, storyboard, pictures, sound } = input;
   const findings: QaFinding[] = [];
+  // Only the sound of the plan changed: the pictures are the ones the video shows.
+  const samePictures = Boolean(record?.pictures && pictures && record.pictures === pictures);
   if (!record) {
     findings.push(problem('there is no record of what this video was made from; render it again'));
-  } else if (record.storyboard !== storyboard) {
+  } else if (record.storyboard !== storyboard && !samePictures) {
     findings.push(problem('the plan has changed since this video was made; render it again'));
   }
   if (!sound) {

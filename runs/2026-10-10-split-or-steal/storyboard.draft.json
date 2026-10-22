@@ -1,0 +1,1111 @@
+{
+  "version": 1,
+  "title": "Split or Steal",
+  "request": "a new script for the video. Make video on this and the standard length now is 2 minutes and before you build say if this is possible to make a good video in this story",
+  "mode": "as-is",
+  "format": "explainer",
+  "style": "ink-stick",
+  "brand": "my-page",
+  "voice": "narrator",
+  "seed": 19295,
+  "sources": [
+    "Wikipedia, Golden Balls, https://en.wikipedia.org/wiki/Golden_Balls : the show ran on ITV from 2007 to 2009; the rules of the final (both split and share, one steals and takes it all, both steal and nobody wins).",
+    "Van den Assem, Van Dolder and Thaler, Split or Steal? Cooperative Behavior When the Stakes Are Large, Management Science, 2012, https://repub.eur.nl/pub/31292/SplitorSteal_2012.pdf : 287 episodes and 574 final contestants; 52.8% of contestants chose split (about half); about 73% split with stakes up to 500 pounds (nearly three in four); a player's own promise made them about 31 percentage points more likely to split, and an opponent's promise did not make a player more likely to split; the biggest jackpot, 100,150 pounds, was won by Sarah, who stole it from Stephen, in March 2008.",
+    "Cornell University course blog, 2012, https://blogs.cornell.edu/info2040/2012/09/21/split-or-steal-an-analysis-using-game-theory : Nick announced he would steal and promised to share after the show, the host noted he had no obligation to pay, Ibrahim split, and Nick also split. Fairly sure: well documented, but no original transcript was opened.",
+    "Xataka, 2016, https://www.xataka.com/magnet/cuando-quedarte-con-6-800-libras-es-mejor-que-ganar-13-600-la-brutal-logica-del-dilema-del-prisionero/amp : the Nick and Ibrahim episode, as above."
+  ],
+  "appliedLessons": [],
+  "cast": [
+    {
+      "id": "stranger",
+      "name": "The Stranger",
+      "voice": "man"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "hook",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "atmospheric",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n1",
+          "speaker": "narrator",
+          "text": "Two strangers. One table. A pile of cash.",
+          "speed": 0.92
+        },
+        {
+          "id": "n2",
+          "speaker": "narrator",
+          "text": "Each holds two golden balls: *split, or steal.*",
+          "speed": 0.92
+        },
+        {
+          "id": "n3",
+          "speaker": "narrator",
+          "text": "They choose at the same moment, in secret.",
+          "speed": 0.92
+        },
+        {
+          "id": "n4",
+          "speaker": "narrator",
+          "text": "Take a seat.",
+          "speed": 0.92,
+          "pauseAfterMs": 650
+        },
+        {
+          "id": "n5",
+          "speaker": "narrator",
+          "text": "*You are one of them.*",
+          "speed": 0.92,
+          "pauseAfterMs": 800
+        }
+      ],
+      "shots": [
+        {
+          "id": "s1a",
+          "line": "n1",
+          "words": "Two strangers. One table. A pile of cash.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "title",
+            "text": "Split or Steal"
+          },
+          "transition": "cut"
+        },
+        {
+          "id": "s1b",
+          "line": "n2",
+          "words": "Each holds two golden balls: *split, or steal.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s1c",
+          "line": "n3",
+          "words": "They choose at the same moment, in secret.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s1d",
+          "line": "n4",
+          "words": "Take a seat.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s1e",
+          "line": "n5",
+          "words": "*You are one of them.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "why-it-matters",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n6",
+          "speaker": "narrator",
+          "text": "If you both split, you share.",
+          "speed": 0.92
+        },
+        {
+          "id": "n7",
+          "speaker": "narrator",
+          "text": "If one splits and one steals, *the thief takes it all.*",
+          "speed": 0.92
+        },
+        {
+          "id": "n8",
+          "speaker": "narrator",
+          "text": "If you both steal, nobody gets a penny.",
+          "speed": 0.92,
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "s1",
+          "speaker": "stranger",
+          "text": "I'm splitting. *I promise.*",
+          "speed": 1.05,
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "n9",
+          "speaker": "narrator",
+          "text": "*Now choose.*",
+          "speed": 0.92,
+          "pauseAfterMs": 2400
+        }
+      ],
+      "shots": [
+        {
+          "id": "s2a",
+          "line": "n6",
+          "words": "If you both split, you share.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2b",
+          "line": "n7",
+          "words": "If one splits and one steals,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2c",
+          "line": "n7",
+          "words": "*the thief takes it all.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2d",
+          "line": "n8",
+          "words": "If you both steal, nobody gets a penny.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2e",
+          "line": "s1",
+          "words": "I'm splitting. *I promise.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "stranger",
+              "pose": "stand",
+              "expression": "todo",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "lookAt": "ahead",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2f",
+          "line": "n9",
+          "words": "*Now choose.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "chapter": 1,
+      "beat": "first-part",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n10",
+          "speaker": "narrator",
+          "text": "Here is the cold logic.",
+          "speed": 0.92
+        },
+        {
+          "id": "n11",
+          "speaker": "narrator",
+          "text": "If the stranger splits, stealing gets you double.",
+          "speed": 0.92
+        },
+        {
+          "id": "n12",
+          "speaker": "narrator",
+          "text": "If the stranger steals, you get nothing either way.",
+          "speed": 0.92
+        },
+        {
+          "id": "n13",
+          "speaker": "narrator",
+          "text": "So stealing is *never worse.*",
+          "speed": 0.92,
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "n14",
+          "speaker": "narrator",
+          "text": "The stranger thinks the same.",
+          "speed": 0.92
+        },
+        {
+          "id": "n15",
+          "speaker": "narrator",
+          "text": "Two steals.",
+          "speed": 0.92,
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "n16",
+          "speaker": "narrator",
+          "text": "*Nobody wins.*",
+          "speed": 0.92,
+          "pauseAfterMs": 1200
+        }
+      ],
+      "shots": [
+        {
+          "id": "s3a",
+          "line": "n10",
+          "words": "Here is the cold logic.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3b",
+          "line": "n11",
+          "words": "If the stranger splits, stealing gets you double.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3c",
+          "line": "n12",
+          "words": "If the stranger steals, you get nothing either way.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3d",
+          "line": "n13",
+          "words": "So stealing is *never worse.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3e",
+          "line": "n14",
+          "words": "The stranger thinks the same.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3f",
+          "line": "n15",
+          "words": "Two steals.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3g",
+          "line": "n16",
+          "words": "*Nobody wins.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "chapter": 2,
+      "beat": "second-part",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n17",
+          "speaker": "narrator",
+          "text": "This game was real: a British TV show called Golden Balls.",
+          "speed": 0.92
+        },
+        {
+          "id": "n18",
+          "speaker": "narrator",
+          "text": "Economists studied two hundred and eighty-seven of its finals.",
+          "speed": 0.92
+        },
+        {
+          "id": "n19",
+          "speaker": "narrator",
+          "text": "*About half* the players split anyway.",
+          "speed": 0.92
+        },
+        {
+          "id": "n20",
+          "speaker": "narrator",
+          "text": "With only a few hundred pounds on the table, nearly three in four shared.",
+          "speed": 0.92
+        },
+        {
+          "id": "n21",
+          "speaker": "narrator",
+          "text": "And promises did something strange.",
+          "speed": 0.92
+        },
+        {
+          "id": "n22",
+          "speaker": "narrator",
+          "text": "Making one made a player far more likely to split.",
+          "speed": 0.92
+        },
+        {
+          "id": "n23",
+          "speaker": "narrator",
+          "text": "*Hearing one changed nothing.*",
+          "speed": 0.92,
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "n24",
+          "speaker": "narrator",
+          "text": "The biggest prize ever, over a hundred thousand pounds?",
+          "speed": 0.92,
+          "pauseAfterMs": 700
+        },
+        {
+          "id": "n25",
+          "speaker": "narrator",
+          "text": "*Sarah stole it.*",
+          "speed": 0.92,
+          "pauseAfterMs": 1200
+        }
+      ],
+      "shots": [
+        {
+          "id": "s4a",
+          "line": "n17",
+          "words": "This game was real: a British TV show called Golden Balls.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4b",
+          "line": "n18",
+          "words": "Economists studied two hundred and eighty-seven of its finals.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4c",
+          "line": "n19",
+          "words": "*About half* the players split anyway.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4d",
+          "line": "n20",
+          "words": "With only a few hundred pounds on the table,",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4e",
+          "line": "n20",
+          "words": "nearly three in four shared.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4f",
+          "line": "n21",
+          "words": "And promises did something strange.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4g",
+          "line": "n22",
+          "words": "Making one made a player far more likely to split.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4h",
+          "line": "n23",
+          "words": "*Hearing one changed nothing.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4i",
+          "line": "n24",
+          "words": "The biggest prize ever, over a hundred thousand pounds?",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4j",
+          "line": "n25",
+          "words": "*Sarah stole it.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chapter": 3,
+      "beat": "surprise",
+      "mood": "tense",
+      "place": "todo",
+      "treatment": "atmospheric",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n26",
+          "speaker": "narrator",
+          "text": "Then a player named Nick did the opposite.",
+          "speed": 0.92,
+          "pauseAfterMs": 300
+        },
+        {
+          "id": "n27",
+          "speaker": "narrator",
+          "text": "He told Ibrahim he was *going to steal,* no matter what, and promised to share the money after the show.",
+          "speed": 0.92,
+          "pauseAfterMs": 300
+        },
+        {
+          "id": "n28",
+          "speaker": "narrator",
+          "text": "The host reminded Ibrahim that nothing forced Nick to pay.",
+          "speed": 0.92,
+          "pauseAfterMs": 300
+        },
+        {
+          "id": "n29",
+          "speaker": "narrator",
+          "text": "Think about it.",
+          "speed": 0.92,
+          "pauseAfterMs": 350
+        },
+        {
+          "id": "n30",
+          "speaker": "narrator",
+          "text": "If Nick steals, stealing wins Ibrahim nothing.",
+          "speed": 0.92,
+          "pauseAfterMs": 300
+        },
+        {
+          "id": "n31",
+          "speaker": "narrator",
+          "text": "His only chance is to *split and hope.*",
+          "speed": 0.92,
+          "pauseAfterMs": 300
+        },
+        {
+          "id": "n32",
+          "speaker": "narrator",
+          "text": "So he splits.",
+          "speed": 0.92,
+          "pauseAfterMs": 400
+        },
+        {
+          "id": "n33",
+          "speaker": "narrator",
+          "text": "The balls open.",
+          "speed": 0.92,
+          "pauseAfterMs": 800
+        },
+        {
+          "id": "n34",
+          "speaker": "narrator",
+          "text": "*Nick split too.*",
+          "speed": 0.92,
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s5a",
+          "line": "n26",
+          "words": "Then a player named Nick did the opposite.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5b",
+          "line": "n27",
+          "words": "He told Ibrahim he was *going to steal,* no matter what,",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5c",
+          "line": "n27",
+          "words": "and promised to share the money after the show.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5d",
+          "line": "n28",
+          "words": "The host reminded Ibrahim that nothing forced Nick to pay.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5e",
+          "line": "n29",
+          "words": "Think about it.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5f",
+          "line": "n30",
+          "words": "If Nick steals, stealing wins Ibrahim nothing.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5g",
+          "line": "n31",
+          "words": "His only chance is to *split and hope.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5h",
+          "line": "n32",
+          "words": "So he splits.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5i",
+          "line": "n33",
+          "words": "The balls open.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5j",
+          "line": "n34",
+          "words": "*Nick split too.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 3,
+      "beat": "takeaway",
+      "mood": "reflective",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "n35",
+          "speaker": "narrator",
+          "text": "Nick did not play the game better.",
+          "speed": 0.92,
+          "pauseAfterMs": 250
+        },
+        {
+          "id": "n36",
+          "speaker": "narrator",
+          "text": "*He changed it.*",
+          "speed": 0.92,
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "n37",
+          "speaker": "narrator",
+          "text": "You play this game all the time:",
+          "speed": 0.92,
+          "pauseAfterMs": 250
+        },
+        {
+          "id": "n38",
+          "speaker": "narrator",
+          "text": "price wars,",
+          "speed": 0.92,
+          "pauseAfterMs": 380
+        },
+        {
+          "id": "n39",
+          "speaker": "narrator",
+          "text": "group projects,",
+          "speed": 0.92,
+          "pauseAfterMs": 380
+        },
+        {
+          "id": "n40",
+          "speaker": "narrator",
+          "text": "a shared kitchen.",
+          "speed": 0.92,
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "n41",
+          "speaker": "narrator",
+          "text": "When you are stuck between trust and betrayal, do not ask which ball to pick.",
+          "speed": 0.92,
+          "pauseAfterMs": 300
+        },
+        {
+          "id": "n42",
+          "speaker": "narrator",
+          "text": "Ask how to *change the table.*",
+          "speed": 0.92,
+          "pauseAfterMs": 1100
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6a",
+          "line": "n35",
+          "words": "Nick did not play the game better.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6b",
+          "line": "n36",
+          "words": "*He changed it.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6c",
+          "line": "n37",
+          "words": "You play this game all the time:",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6d",
+          "line": "n38",
+          "words": "price wars,",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6e",
+          "line": "n39",
+          "words": "group projects,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6f",
+          "line": "n40",
+          "words": "a shared kitchen.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6g",
+          "line": "n41",
+          "words": "When you are stuck between trust and betrayal,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6h",
+          "line": "n41",
+          "words": "do not ask which ball to pick.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6i",
+          "line": "n42",
+          "words": "Ask how to *change the table.*",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    }
+  ]
+}

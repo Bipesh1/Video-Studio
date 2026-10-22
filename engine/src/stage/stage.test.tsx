@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SIZES, storyboardSchema } from '@studio/shared';
+import { PLAIN_FINISH, SIZES, storyboardSchema } from '@studio/shared';
 import type { Shot, Storyboard } from '@studio/shared';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { describe, expect, it, vi } from 'vitest';
@@ -10,6 +10,7 @@ import fixture from '../../../shared/src/fixtures/moon-tax.storyboard.json';
 import { sceneBackground } from '../backgrounds/places';
 import { layoutScale, shotTransform } from '../camera/Framing';
 import { pointerBox } from '../overlays/Explain';
+import { computeSkeleton } from '../rig/skeleton';
 import { lookFrom } from '../wardrobe/cast';
 import { unbuildable } from './buildable';
 import {
@@ -28,6 +29,7 @@ import { pointerPlace } from './measure';
 import { HEAD_EFFECTS } from './names';
 import { HELD_PROPS, REACHES, STANDING_PROPS, propHeight, propReach } from './props';
 import { ShotPicture } from './ShotPicture';
+import { actingFrame, stageShot } from './staging';
 
 /**
  * The storyboard builder (Phase 4D): any shot of any storyboard becomes a picture, in a tall
@@ -80,7 +82,7 @@ describe('what the builder can put on screen', () => {
     expect(neither).toEqual([]);
   });
 
-  it('shows every effect that sits on a head, and says which two it cannot show yet', () => {
+  it('shows every effect that sits on a head, and says which it cannot show yet', () => {
     const effects = ids('effect');
     for (const e of HEAD_EFFECTS) expect(effects).toContain(e);
     // An explosion, a fire and smoke happen in the world: they are stood in a scene like a prop.
@@ -88,7 +90,9 @@ describe('what the builder can put on screen', () => {
     expect(inScene).toEqual(['explosion', 'fire', 'smoke']);
     expect(
       effects.filter((e) => !HEAD_EFFECTS.includes(e) && !STANDING_PROPS.includes(e)).sort(),
-    ).toEqual(['impact', 'motion-lines']);
+      // The pencil line and the rubbing out are for the short films: a storyboard cannot ask for
+      // them yet, only a hand-built scene can (compositions/ErasedTest.tsx).
+    ).toEqual(['erased', 'impact', 'motion-lines', 'pencil-line']);
   });
 
   it('hangs the things of the sky where a shot says, or at their usual height', () => {
@@ -372,6 +376,81 @@ describe('where people look and what the camera frames', () => {
       pointerPlace({ storyboard: sb, track: null, size: TALL, cards: {}, fps }, ts, shots, byHand)
         .at,
     ).toEqual({ x: 0.3, y: 0.2 });
+  });
+
+  it('follows someone who walks with the arrow, and leaves their seat where it stands', () => {
+    // Biku, 2026-10-12: "the chair moves with the copycat and the arrow ... doesnt move".
+    const sb = structuredClone(farmer);
+    const shot = shotOf(sb, 's2d');
+    const walker = shot.actors.find((a) => a.action === 'walk');
+    if (!walker) throw new Error('nobody walks in s2d');
+    walker.then = [{ at: 0.6, pose: 'sit' }];
+    const overlay = { kind: 'pointer' as const, text: 'Him', to: walker.character };
+    shot.overlay = overlay;
+    const shots = timedShots(sb, fps);
+    const ts = shots.find((x) => x.shot.id === 's2d');
+    if (!ts) throw new Error('no shot');
+    const input = { storyboard: sb, track: null, size: WIDE, cards: {}, fps };
+    const early = ts.startFrame + 6;
+    const late = ts.endFrame - 2;
+    const a = pointerPlace(input, ts, shots, overlay, early);
+    const b = pointerPlace(input, ts, shots, overlay, late);
+    // The label keeps its place; the tip of the arrow goes with him.
+    expect(a.at).toEqual(b.at);
+    expect(Math.abs(a.to.x - b.to.x)).toBeGreaterThan(0.03);
+    const at = (frame: number) => {
+      const found = stageShot({
+        ts,
+        shots,
+        storyboard: sb,
+        cards: {},
+        track: null,
+        size: WIDE,
+        frame,
+        fps,
+      });
+      const him = found.drawn.find((d) => d.actor.character === walker.character);
+      if (!him) throw new Error('not drawn');
+      return him;
+    };
+    // He is somewhere else on the way in, and the place his seat stands is the same throughout.
+    expect(Math.abs(at(early).placement.x - at(late).placement.x)).toBeGreaterThan(10);
+    expect(at(early).spot).toBeCloseTo(at(late).spot, 6);
+    expect(at(late).spot).toBeCloseTo(at(late).placement.x, 0);
+  });
+
+  it('does not pull a wide shot back to follow someone walking out of it', () => {
+    // 2026-10-15: two guests leaving a party pulled the camera back until every face was tiny.
+    const sb = structuredClone(farmer);
+    const shot = shotOf(sb, 's1a');
+    const tomas = shot.actors[0];
+    if (!tomas) throw new Error('no farmer');
+    shot.camera = { ...shot.camera, framing: 'wide', move: 'none' };
+    delete shot.camera.focus;
+    shot.actors = [
+      { ...tomas, x: 0.4, action: undefined, pose: 'stand', lookAt: 'ahead', then: [] },
+      {
+        ...tomas,
+        character: 'wife',
+        x: 0.6,
+        facing: 'right',
+        action: undefined,
+        pose: 'stand',
+        lookAt: 'ahead',
+        then: [{ at: 0.2, action: 'walk' }],
+      },
+    ];
+    shot.props = [];
+    const shots = timedShots(sb, fps);
+    const ts = shots.find((x) => x.shot.id === 's1a');
+    if (!ts) throw new Error('no shot');
+    const focusAt = (frame: number) =>
+      stageShot({ ts, shots, storyboard: sb, cards: {}, track: null, size: TALL, frame, fps })
+        .focus;
+    const early = focusAt(ts.startFrame + 4);
+    const late = focusAt(ts.endFrame - 1);
+    // Aimed at the one who stays, the shot comes in on him once she is on her way out.
+    expect(late.span ?? 0).toBeLessThan((early.span ?? 0) + 1);
   });
 
   it('keeps the things of a wide shot in a tall picture, but not the furniture', () => {
@@ -704,6 +783,105 @@ describe('moving inside a shot', () => {
     // Once the hand has closed on it, it goes where the hand goes.
     expect(at('s1b', 0.3 + 12 / length)).not.toContain(standing);
     expect(at('s1b', 0.9)).not.toContain(standing);
+  });
+
+  it('takes a thing off a table with the hand, up where it lies, and not with a bow to the floor', () => {
+    // Seated at a desk with a coin on it, a little over a head away: he takes it 0.3 of the way in.
+    const sb = structuredClone(farmer);
+    const shot = shotOf(sb, 's1b');
+    const tomas = shot.actors[0];
+    if (!tomas) throw new Error('no farmer');
+    shot.actors = [tomas];
+    Object.assign(tomas, { x: 0.6, facing: 'left', pose: 'sit', lookAt: 'ahead' });
+    delete tomas.action;
+    delete tomas.holds;
+    tomas.then = [{ at: 0.3, holds: 'coin' }];
+    const DESK = 1.22;
+    shot.props = [{ prop: 'coin', x: 0.6 - 0.13, y: DESK }];
+    const shots = timedShots(sb, fps);
+    const ts = shots.find((x) => x.shot.id === 's1b');
+    if (!ts) throw new Error('no shot');
+    const length = ts.endFrame - ts.startFrame;
+    const him = (frame: number) => {
+      const found = stageShot({
+        ts,
+        shots,
+        storyboard: sb,
+        cards: {},
+        track: null,
+        size: WIDE,
+        frame,
+        fps,
+      });
+      const drawn = found.drawn[0];
+      if (!drawn) throw new Error('not drawn');
+      return { drawn, stage: found.stage };
+    };
+    const { drawn, stage } = him(ts.startFrame);
+    expect(drawn.outOfReach).toEqual([]);
+    const coin = ((DESK + 0.15) * stage.head) / drawn.placement.head;
+    let highest = 0;
+    let lean = 0;
+    for (let f = ts.startFrame; f < ts.startFrame + Math.round(length * 0.3) + 30; f++) {
+      const pose = him(f).drawn.poseAt(f);
+      highest = Math.max(highest, -computeSkeleton(pose).arms.front.hand.y);
+      lean = Math.max(lean, pose.torsoLean);
+    }
+    // The hand gets up to the coin, and the body only leans as far as an arm needs.
+    expect(highest).toBeGreaterThan(coin - 0.15);
+    expect(lean).toBeLessThan(30);
+  });
+
+  it('moves people on twos when the finish asks, and keeps the camera on every frame', () => {
+    const sb = { ...structuredClone(farmer), finish: { ...PLAIN_FINISH, onTwos: true } };
+    const ts = timedShots(sb, fps).find((x) => x.shot.id === 's1b');
+    if (!ts) throw new Error('no shot');
+    const at = (frame: number) =>
+      stageShot({
+        ts,
+        shots: timedShots(sb, fps),
+        storyboard: sb,
+        cards: {},
+        track: null,
+        size: WIDE,
+        frame,
+        fps,
+      });
+    const a = at(ts.startFrame + 10);
+    const b = at(ts.startFrame + 11);
+    expect(actingFrame(sb, ts.startFrame, ts.startFrame + 11)).toBe(ts.startFrame + 10);
+    expect(actingFrame(farmer, ts.startFrame, ts.startFrame + 11)).toBe(ts.startFrame + 11);
+    // The same pose on both frames of a pair, the camera's own count moving on.
+    expect(b.drawn[0]?.poseAt(ts.startFrame + 10)).toEqual(a.drawn[0]?.poseAt(ts.startFrame + 10));
+    expect(b.local).toBe(a.local + 1);
+  });
+
+  it('draws a soft shadow under each person only when the finish asks for one', () => {
+    const draw = (sb: Storyboard) => {
+      const shots = timedShots(sb, fps);
+      const ts = shots.find((x) => x.shot.id === 's1a');
+      if (!ts) throw new Error('no shot');
+      const looks = new Map(sb.cast.map((m) => [m.id, lookFrom(m.look ?? {}, m.id)]));
+      return renderToStaticMarkup(
+        <svg>
+          <ShotPicture
+            ts={ts}
+            shots={shots}
+            storyboard={sb}
+            cards={{}}
+            looks={looks}
+            track={null}
+            size={WIDE}
+            frame={ts.startFrame + 10}
+            fps={fps}
+          />
+        </svg>,
+      );
+    };
+    const plain = draw(farmer);
+    const shaded = draw({ ...farmer, finish: { ...PLAIN_FINISH, shadows: true } });
+    const count = (svg: string) => (svg.match(/<ellipse/g) ?? []).length;
+    expect(count(shaded)).toBeGreaterThan(count(plain));
   });
 
   it('carries someone across a cut as they were: same place, same way round, same pose', () => {

@@ -1,0 +1,247 @@
+import type { ReactNode } from 'react';
+import { accent, ink, lineWeights, pick, shade, white } from '../tokens';
+import { Shaded, lightOffset } from '../wardrobe/Shaded';
+import { Glint, detail, paintOf } from './Hold';
+import type { PropProps } from './Hold';
+
+/**
+ * Things that carried freight in the 1800s, seen from the side and heading right (Style 4): a
+ * steam train, a paddle steamer and a flat ferry. Each stands with the middle of its length at
+ * the origin, on the ground or on the water line, and each can carry a crate (`cargo`). They
+ * are drawn as whole things at the size of a toy beside a person: a shot sizes them, and the
+ * route map uses them small.
+ */
+
+type Paint = { fill: string; shadow: string };
+type VehicleProps = PropProps & { cargo?: boolean };
+
+const rect = (x0: number, y0: number, x1: number, y1: number) =>
+  `M ${x0} ${y0} L ${x1} ${y0} L ${x1} ${y1} L ${x0} ${y1} Z`;
+const disc = (x: number, y: number, r: number) =>
+  `M ${x - r} ${y} A ${r} ${r} 0 1 0 ${x + r} ${y} A ${r} ${r} 0 1 0 ${x - r} ${y} Z`;
+
+/** A small crate as cargo: its bottom edge at y, its middle at x. The arrow says which way is up. */
+export function CargoCrate({ uid, shadowSide, x, y }: PropProps & { x: number; y: number }) {
+  const wood = paintOf('tan');
+  const dark = paintOf('brown');
+  const off = lightOffset(shadowSide, 0.03);
+  const w = 0.5;
+  const h = 0.86;
+  return (
+    <g transform={`translate(${x} ${y})`}>
+      <Shaded id={`${uid}-cargo`} d={rect(-w, -h, w, 0)} {...wood} offset={off} />
+      <Shaded id={`${uid}-cargo-a`} d={rect(-w, -h, -w + 0.12, 0)} {...dark} offset={off} />
+      <Shaded id={`${uid}-cargo-b`} d={rect(w - 0.12, -h, w, 0)} {...dark} offset={off} />
+      <path
+        d={`M 0 ${-h + 0.14} L 0.2 ${-h + 0.4} L 0.07 ${-h + 0.4} L 0.07 -0.16 L -0.07 -0.16 L -0.07 ${-h + 0.4} L -0.2 ${-h + 0.4} Z`}
+        fill={ink}
+      />
+    </g>
+  );
+}
+
+/** A wheel with a hub, standing on the ground line at x. */
+function Wheel({
+  uid,
+  shadowSide,
+  x,
+  r,
+  paint,
+}: PropProps & { x: number; r: number; paint: Paint }) {
+  const iron = paintOf('steel');
+  return (
+    <g>
+      <Shaded
+        id={`${uid}-wheel`}
+        d={disc(x, -r, r)}
+        {...paint}
+        offset={lightOffset(shadowSide, 0.03)}
+      />
+      {detail(`M ${x - r + 0.06} ${-r} L ${x + r - 0.06} ${-r}`, 'spoke-a')}
+      {detail(`M ${x} ${-2 * r + 0.06} L ${x} -0.06`, 'spoke-b')}
+      <Shaded
+        id={`${uid}-hub`}
+        d={disc(x, -r, r * 0.26)}
+        {...iron}
+        offset={lightOffset(shadowSide, 0.012)}
+        strokeWidth={lineWeights.detail}
+      />
+    </g>
+  );
+}
+
+/** Water for a boat to sit in: a strip with pale crests. Water has no outline. */
+const water = (from: number, to: number): ReactNode => {
+  const blue = accent('ocean');
+  const crest = (x: number) => (
+    <path
+      key={x}
+      d={`M ${x - 0.2} 0.03 Q ${x} -0.08 ${x + 0.2} 0.03`}
+      fill="none"
+      stroke={white}
+      strokeWidth={0.04}
+      strokeLinecap="round"
+      opacity={0.8}
+    />
+  );
+  const crests: number[] = [];
+  for (let x = from + 0.35; x < to - 0.2; x += 0.62) crests.push(x);
+  return (
+    <g>
+      <path
+        d={`M ${from} -0.1 Q ${(from + to) / 2} -0.2 ${to} -0.1 L ${to} 0.2 L ${from} 0.2 Z`}
+        fill={pick(blue, 0)}
+      />
+      <path
+        d={`M ${from} 0.08 L ${to} 0.08 L ${to} 0.2 L ${from} 0.2 Z`}
+        fill={pick(blue, 1)}
+      />
+      {crests.map(crest)}
+    </g>
+  );
+};
+
+/** A puff of smoke or steam: soft, pale, no outline. */
+const puff = (x: number, y: number, r: number, key: string): ReactNode => (
+  <circle key={key} cx={x} cy={y} r={r} fill={white} opacity={0.75} />
+);
+
+/** How long each one is, in head units: for placing it and for the route map. */
+export const VEHICLE_LENGTH = { train: 6.2, steamboat: 5, ferry: 4.2 } as const;
+
+/**
+ * A steam train of the 1840s: a small engine with a tall funnel, a cab and a cow catcher,
+ * pulling one flat car, on a length of track.
+ */
+export function Train({ uid, shadowSide, cargo = false }: VehicleProps) {
+  const iron = paintOf('steel');
+  const red = paintOf('crimson');
+  const wood = paintOf('brown');
+  const gold = paintOf('gold');
+  const off = lightOffset(shadowSide, 0.04);
+  const part = (key: string, d: string, paint: Paint, k = off) => (
+    <Shaded key={key} id={`${uid}-train-${key}`} d={d} {...paint} offset={k} />
+  );
+  return (
+    <g>
+      {/* The track. */}
+      <path d={rect(-3.2, -0.02, 3.2, 0.05)} fill={shade(iron.fill, 0.2)} />
+      {puff(1.95, -2.75, 0.2, 'p1')}
+      {puff(1.6, -3.05, 0.26, 'p2')}
+      {puff(1.12, -3.3, 0.32, 'p3')}
+      {/* The flat car and its load. */}
+      {cargo && <CargoCrate uid={`${uid}-train`} shadowSide={shadowSide} x={-1.9} y={-0.66} />}
+      {part('car', rect(-2.95, -0.66, -0.85, -0.46), wood)}
+      {part('link', rect(-0.85, -0.6, -0.45, -0.52), iron, lightOffset(shadowSide, 0.01))}
+      <Wheel uid={`${uid}-w1`} shadowSide={shadowSide} x={-2.5} r={0.27} paint={iron} />
+      <Wheel uid={`${uid}-w2`} shadowSide={shadowSide} x={-1.3} r={0.27} paint={iron} />
+      {/* The engine: funnel, boiler, cab, cow catcher. */}
+      {part('funnel', `M 1.9 -1.55 L 1.82 -2.3 L 1.68 -2.52 L 2.4 -2.52 L 2.26 -2.3 L 2.18 -1.55 Z`, iron)}
+      {part('dome', `M 1.0 -1.55 Q 1.0 -1.92 1.22 -1.92 Q 1.44 -1.92 1.44 -1.55 Z`, gold)}
+      {part(
+        'boiler',
+        `M 0.2 -1.6 L 2.3 -1.6 Q 2.62 -1.6 2.62 -1.15 Q 2.62 -0.7 2.3 -0.7 L 0.2 -0.7 Z`,
+        iron,
+      )}
+      {detail('M 1.0 -1.6 L 1.0 -0.7', 'band-a')}
+      {detail('M 1.7 -1.6 L 1.7 -0.7', 'band-b')}
+      {part('cab', rect(-0.45, -2.05, 0.4, -0.55), red)}
+      {part('roof', rect(-0.58, -2.17, 0.53, -2.02), iron, lightOffset(shadowSide, 0.02))}
+      <rect
+        x={-0.27}
+        y={-1.82}
+        width={0.5}
+        height={0.46}
+        fill={pick(accent('glint'), 0)}
+        stroke={ink}
+        strokeWidth={lineWeights.detail}
+      />
+      {part('frame', rect(-0.45, -0.7, 2.62, -0.52), red, lightOffset(shadowSide, 0.02))}
+      {part('catcher', `M 2.62 -0.62 L 3.05 -0.04 L 2.62 -0.04 Z`, iron, lightOffset(shadowSide, 0.02))}
+      <Wheel uid={`${uid}-w3`} shadowSide={shadowSide} x={0.1} r={0.4} paint={red} />
+      <Wheel uid={`${uid}-w4`} shadowSide={shadowSide} x={1.0} r={0.4} paint={red} />
+      <Wheel uid={`${uid}-w5`} shadowSide={shadowSide} x={2.05} r={0.25} paint={iron} />
+      <Glint x={2.2} y={-1.45} length={0.2} />
+    </g>
+  );
+}
+
+/**
+ * A paddle steamer: a long low hull, a cabin with a row of windows, a tall funnel with a red
+ * band and a big paddle wheel at the stern, sitting in a strip of water.
+ */
+export function Steamboat({ uid, shadowSide, cargo = false }: VehicleProps) {
+  const hull = paintOf('brown');
+  const cabin = paintOf('cream');
+  const iron = paintOf('steel');
+  const red = paintOf('crimson');
+  const off = lightOffset(shadowSide, 0.04);
+  const part = (key: string, d: string, paint: Paint, k = off) => (
+    <Shaded key={key} id={`${uid}-boat-${key}`} d={d} {...paint} offset={k} />
+  );
+  return (
+    <g>
+      {puff(-0.15, -3.0, 0.22, 'p1')}
+      {puff(-0.55, -3.3, 0.3, 'p2')}
+      {part('funnel', rect(-0.1, -2.7, 0.3, -1.5), iron)}
+      {part('band', rect(-0.1, -2.5, 0.3, -2.3), red, lightOffset(shadowSide, 0.015))}
+      {cargo && <CargoCrate uid={`${uid}-boat`} shadowSide={shadowSide} x={1.45} y={-0.66} />}
+      {part('cabin', rect(-1.25, -1.5, 0.75, -0.66), cabin)}
+      {part('roof', rect(-1.4, -1.62, 0.9, -1.48), red, lightOffset(shadowSide, 0.02))}
+      {[-0.95, -0.4, 0.15].map((x) => (
+        <rect
+          key={x}
+          x={x}
+          y={-1.3}
+          width={0.34}
+          height={0.34}
+          fill={shade(hull.shadow, 0.4)}
+          stroke={ink}
+          strokeWidth={lineWeights.detail}
+        />
+      ))}
+      {part('hull', `M -2.2 -0.68 L 2.15 -0.68 Q 2.6 -0.68 2.5 -0.5 L 2.05 0.1 L -2.0 0.1 Z`, hull)}
+      {detail('M -2.1 -0.42 L 2.3 -0.42', 'plank')}
+      {/* The paddle wheel, half in the water. */}
+      {part('paddle', disc(-1.95, -0.5, 0.72), red)}
+      {[0, 45, 90, 135].map((turn) => {
+        const dx = Math.cos((turn * Math.PI) / 180) * 0.62;
+        const dy = Math.sin((turn * Math.PI) / 180) * 0.62;
+        return detail(`M ${-1.95 - dx} ${-0.5 - dy} L ${-1.95 + dx} ${-0.5 + dy}`, `blade-${turn}`);
+      })}
+      {part('axle', disc(-1.95, -0.5, 0.13), iron, lightOffset(shadowSide, 0.012))}
+      {water(-2.9, 2.9)}
+      <Glint x={-0.02} y={-2.62} length={0.08} turn={90} />
+    </g>
+  );
+}
+
+/**
+ * A river ferry: a flat open boat with raked ends, a rail along the side and a lamp on a post,
+ * sitting in a strip of water.
+ */
+export function Ferry({ uid, shadowSide, cargo = false }: VehicleProps) {
+  const hull = paintOf('tan');
+  const wood = paintOf('brown');
+  const gold = paintOf('gold');
+  const off = lightOffset(shadowSide, 0.04);
+  const part = (key: string, d: string, paint: Paint, k = off) => (
+    <Shaded key={key} id={`${uid}-ferry-${key}`} d={d} {...paint} offset={k} />
+  );
+  return (
+    <g>
+      {part('post', rect(-1.38, -1.75, -1.26, -0.5), wood, lightOffset(shadowSide, 0.015))}
+      {part('lamp', rect(-1.5, -2.05, -1.14, -1.72), gold, lightOffset(shadowSide, 0.02))}
+      {cargo && <CargoCrate uid={`${uid}-ferry`} shadowSide={shadowSide} x={0.2} y={-0.5} />}
+      {/* The rail: posts and one bar. */}
+      {[-0.7, 0.95, 1.5].map((x) =>
+        part(`rail-${Math.round(x * 100)}`, rect(x - 0.05, -1.0, x + 0.05, -0.5), wood, lightOffset(shadowSide, 0.012)),
+      )}
+      {part('bar', rect(-1.32, -1.04, 1.6, -0.94), wood, lightOffset(shadowSide, 0.012))}
+      {part('hull', `M -2.1 -0.52 L 2.1 -0.52 L 1.7 0.1 L -1.7 0.1 Z`, hull)}
+      {detail('M -1.95 -0.28 L 1.95 -0.28', 'plank')}
+      {water(-2.6, 2.6)}
+      <Glint x={-1.4} y={-1.95} length={0.07} turn={-35} />
+    </g>
+  );
+}

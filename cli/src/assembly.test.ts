@@ -2,9 +2,15 @@ import path from 'node:path';
 import {
   CUT_LEAD_MS,
   LEAD_IN_MS,
+  QUESTION_LIFT,
   partCount,
   partStoryboard,
+  picturesOnly,
   plainWords,
+  sameWords,
+  scriptLineSchema,
+  arrivalOf,
+  graphicSoundCues,
   soundPlanFor,
   soundPlanSchema,
   storyboardSchema,
@@ -96,6 +102,65 @@ describe('one part of a video', () => {
   it('says so when there is no such part', () => {
     expect(() => part(3)).toThrow('has no part 3');
   });
+
+  it('carries a gauge into the next part at its last value, and puts one away when it is done', () => {
+    const ids = (n: number) => part(n).scenes.flatMap((s) => s.shots.map((t) => t.id));
+    const [a1, a2] = ids(1);
+    const [b1] = ids(2);
+    const last1 = ids(1).at(-1);
+    if (!a1 || !a2 || !b1 || !last1) throw new Error('the plan has too few shots');
+    const withGauges: Storyboard = {
+      ...plan,
+      gauges: [
+        {
+          label: 'SHEEP LEFT',
+          kind: 'count',
+          keys: [
+            { shot: a1, value: 10 },
+            { shot: a2, on: 'the', value: 7 },
+            { shot: b1, value: 3 },
+          ],
+        },
+        { label: 'DONE', kind: 'steps', of: 3, keys: [{ shot: a1, value: 1 }], until: last1 },
+      ],
+    };
+    expect(storyboardSchema.safeParse(withGauges).success).toBe(true);
+    const one = partStoryboard(withGauges, 1);
+    const two = partStoryboard(withGauges, 2);
+    expect(one.gauges?.map((g) => g.keys.length)).toEqual([2, 1]);
+    expect(one.gauges?.[1]?.until).toBe(last1);
+    // Part 2 starts already at 7, then counts to 3; the steps were put away in part 1.
+    expect(two.gauges).toEqual([
+      {
+        label: 'SHEEP LEFT',
+        kind: 'count',
+        keys: [
+          { shot: b1, value: 7, now: true },
+          { shot: b1, value: 3 },
+        ],
+      },
+    ]);
+    expect(storyboardSchema.safeParse(two).success).toBe(true);
+  });
+
+  it('refuses a gauge whose keys are out of the order of the shots', () => {
+    const [a1, a2] = part(1).scenes.flatMap((s) => s.shots.map((t) => t.id));
+    if (!a1 || !a2) throw new Error('the plan has too few shots');
+    const wrong = storyboardSchema.safeParse({
+      ...plan,
+      gauges: [
+        {
+          label: 'BACKWARDS',
+          kind: 'bar',
+          keys: [
+            { shot: a2, value: 1 },
+            { shot: a1, value: 2 },
+          ],
+        },
+      ],
+    });
+    expect(wrong.success).toBe(false);
+  });
 });
 
 describe('the voice script', () => {
@@ -112,6 +177,61 @@ describe('the voice script', () => {
     expect(script.lines.map((l) => l.id)).toEqual(
       part(1).scenes.flatMap((s) => s.lines.map((l) => l.id)),
     );
+  });
+
+  it('passes on how a line is said, a blended voice and the lift of the questions', () => {
+    const one = part(1);
+    const first = one.scenes[0]?.lines[0];
+    if (!first) throw new Error('part 1 has no line');
+    const say = first.text.replace(/\*/g, '').replace(/\.$/, '...');
+    const shaped: Storyboard = {
+      ...one,
+      scenes: one.scenes.map((s, i) =>
+        i === 0
+          ? { ...s, lines: s.lines.map((l, j) => (j === 0 ? { ...l, say, speed: 0.9 } : l)) }
+          : s,
+      ),
+    };
+    const narrator = world.voices.narrator;
+    if (!narrator) throw new Error('no narrator voice');
+    const blended = {
+      ...world,
+      voices: {
+        ...world.voices,
+        narrator: { ...narrator, blend: [{ kokoroVoice: 'am_onyx', share: 0.3 }] },
+      },
+    };
+    const script = voiceScriptSchema.parse(voiceScriptFor(shaped, blended));
+    expect(script.questionLift).toBe(QUESTION_LIFT);
+    const line = script.lines[0];
+    expect(line?.say).toBe(say);
+    expect(line?.text).toBe(first.text);
+    expect(line?.speed).toBeCloseTo(0.9 * narrator.speed, 2);
+    expect(line?.blend).toEqual([
+      { voice: narrator.kokoroVoice, weight: 0.7 },
+      { voice: 'am_onyx', weight: 0.3 },
+    ]);
+    // A voice with nothing mixed in, and a line said as written, carry neither.
+    const plain = voiceScriptFor(one, world).lines[0];
+    expect(plain && 'blend' in plain).toBe(false);
+    expect(plain && 'say' in plain).toBe(false);
+  });
+
+  it('refuses a line said in other words than its own', () => {
+    const line = { id: 'l1', speaker: 'narrator', voice: 'am_onyx', text: 'He *stays.*' };
+    expect(scriptLineSchema.safeParse({ ...line, say: 'He... stays.' }).success).toBe(true);
+    expect(scriptLineSchema.safeParse({ ...line, say: 'He stays put.' }).success).toBe(false);
+    expect(sameWords("It's fine. Is it?", "It's fine... Is it?")).toBe(true);
+    // Chatterbox's mood and sound tags are not words.
+    expect(sameWords('Is that smoke?', '[surprised] Is that... smoke? [chuckle]')).toBe(true);
+    expect(
+      storyboardSchema.safeParse({
+        ...part(1),
+        scenes: part(1).scenes.map((s, i) =>
+          i === 0 ? { ...s, lines: s.lines.map((l) => ({ ...l, say: 'Other words.' })) } : s,
+        ),
+      }).success,
+    ).toBe(false);
   });
 
   it('keeps the words exactly, emphasis marks and all', () => {
@@ -204,8 +324,91 @@ describe('the sound plan', () => {
     expect(plan1.music[2]?.startMs).toBe(sb.scenes[3]?.shots[0]?.startMs);
   });
 
-  it('places every effect inside its shot, and lets steps and wind run for it', () => {
+  /** The story's places with no sound of their own, so a test can hear the rest alone. */
+  const unplaced = (sb: ReturnType<typeof timed>['sb']) => {
+    for (const scene of sb.scenes) scene.place = 'the-table';
+    return sb;
+  };
+
+  it('gives every video its own music, and a Short its own handling', () => {
+    // Biku, 2026-10-21: every Short had "the same background sounds".
     const { sb } = timed(1);
+    const long = soundPlanSchema.parse(soundPlanFor(sb));
+    expect(long.score?.seed).toBe(sb.seed);
+    expect(long.score?.profile).toBe('long');
+    const other = structuredClone(sb);
+    other.seed = sb.seed + 1;
+    const next = soundPlanSchema.parse(soundPlanFor(other)).score;
+    expect([next?.shift, next?.tempo]).not.toEqual([long.score?.shift, long.score?.tempo]);
+    // An opening with no sound of its own gets the hit; one that has its own keeps it.
+    const opening = sb.scenes[0]?.shots[0];
+    if (opening) opening.sfx = [];
+    const short = soundPlanSchema.parse(
+      soundPlanFor(sb, 'wind', [], { profile: 'short', opens: true }),
+    );
+    expect(short.score?.tempo).toBeGreaterThan(long.score?.tempo ?? 0);
+    expect(short.sfx).toContainEqual(expect.objectContaining({ name: 'hit', atMs: 0 }));
+    // Only the part the video opens with opens on a hit.
+    const later = soundPlanFor(sb, 'wind', [], { profile: 'short', opens: false });
+    expect(later.sfx.some((c) => c.name === 'hit' && c.atMs === 0)).toBe(false);
+    sb.score = { palette: 'body' };
+    expect(soundPlanFor(sb).score?.palette).toBe('body');
+  });
+
+  it('cuts the music just before a reveal and brings it back with a hit', () => {
+    const { sb } = timed(1);
+    const shot = sb.scenes[1]?.shots[0];
+    if (!shot?.startMs) throw new Error('no shot');
+    shot.drop = true;
+    const plan1 = soundPlanSchema.parse(soundPlanFor(sb));
+    const at = Math.round(shot.startMs);
+    expect(plan1.hush).toContainEqual({ fromMs: at - 700, toMs: at + 20, sharp: true });
+    expect(plan1.sfx).toContainEqual(expect.objectContaining({ name: 'hit', atMs: at }));
+  });
+
+  it('leaves what is only heard out of the pictures', () => {
+    const { sb } = timed(1);
+    const quieter = structuredClone(sb);
+    quieter.score = { palette: 'mystery' };
+    const scene = quieter.scenes[0];
+    const shot = scene?.shots[0];
+    if (!scene || !shot) throw new Error('no shot');
+    scene.mood = 'sorrow';
+    shot.sfx = [{ name: 'ding', at: 'start', gainDb: 0 }];
+    shot.drop = true;
+    expect(picturesOnly(quieter)).toEqual(picturesOnly(sb));
+    shot.camera = { ...shot.camera, framing: shot.camera.framing === 'wide' ? 'close-up' : 'wide' };
+    expect(picturesOnly(quieter)).not.toEqual(picturesOnly(sb));
+  });
+
+  it('puts the room tone of the format under a scene with no music, or the wind', () => {
+    const sb = unplaced(timed(1).sb);
+    const first = sb.scenes[0];
+    if (!first) throw new Error('no scene');
+    first.quiet = true;
+    expect(soundPlanFor(sb).sfx[0]?.name).toBe('wind');
+    const hum = soundPlanFor(sb, 'hum').sfx[0];
+    expect(hum?.name).toBe('hum');
+    expect(hum?.atMs).toBe(first.shots[0]?.startMs);
+    expect(world.formats.dilemma?.roomTone).toBe('hum');
+  });
+
+  it('stops the music for a quiet scene after it has begun, and goes on after it', () => {
+    // Biku's script, 2026-10-14: "The music stops."
+    const sb = unplaced(timed(1).sb);
+    const second = sb.scenes[1];
+    if (!second) throw new Error('no scene');
+    second.quiet = true;
+    const plan1 = soundPlanSchema.parse(soundPlanFor(sb, 'hum'));
+    const from = second.shots[0]?.startMs;
+    const to = second.shots[second.shots.length - 1]?.endMs;
+    expect(plan1.hush).toEqual([{ fromMs: from, toMs: to }]);
+    expect(plan1.music[0]?.startMs).toBe(0);
+    expect(plan1.sfx.find((c) => c.name === 'hum')?.atMs).toBe(from);
+  });
+
+  it('places every effect inside its shot, and lets steps and wind run for it', () => {
+    const sb = unplaced(timed(1).sb);
     const plan1 = soundPlanFor(sb);
     const shots = sb.scenes.flatMap((s) => s.shots);
     expect(plan1.sfx).toHaveLength(shots.reduce((n, s) => n + s.sfx.length, 0));
@@ -224,5 +427,110 @@ describe('the sound plan', () => {
 
   it('needs the shots to have times', () => {
     expect(() => soundPlanFor(part(1))).toThrow('no times yet');
+  });
+
+  // Biku, 2026-10-20: "we need more background sounds that's according to the story".
+  it('runs the sound of each place under its scene, one sound across its shots', () => {
+    const sb = unplaced(timed(1).sb);
+    const first = sb.scenes[0];
+    if (!first) throw new Error('no scene');
+    first.place = 'forest';
+    const birds = soundPlanFor(sb).sfx.filter((c) => c.name === 'birds');
+    expect(birds).toHaveLength(1);
+    expect(birds[0]?.atMs).toBe(first.shots[0]?.startMs);
+    expect((birds[0]?.atMs ?? 0) + (birds[0]?.durationMs ?? 0)).toBe(
+      first.shots[first.shots.length - 1]?.endMs,
+    );
+    expect(birds[0]?.gainDb).toBe(-3);
+  });
+
+  it('lets a scene or a shot choose its own place sound, and a quiet one needs no room tone', () => {
+    const sb = unplaced(timed(1).sb);
+    const first = sb.scenes[0];
+    const shot = first?.shots[1];
+    if (!first || !shot) throw new Error('no scene');
+    first.ambience = 'river';
+    first.quiet = true;
+    shot.ambience = 'underwater';
+    const plan1 = soundPlanSchema.parse(soundPlanFor(sb, 'hum'));
+    expect(plan1.sfx.some((c) => c.name === 'hum')).toBe(false);
+    const names = plan1.sfx.filter((c) => c.durationMs !== undefined).map((c) => c.name);
+    expect(names.slice(0, 2)).toEqual(['river', 'underwater']);
+    expect(plan1.sfx.find((c) => c.name === 'river')?.gainDb).toBe(0);
+  });
+});
+
+describe('the sound of a graphic building up', () => {
+  const shot = (over: Record<string, unknown>) => ({
+    id: 's01',
+    line: 'l01',
+    words: 'Your ticket goes to the cinema',
+    camera: { framing: 'wide', move: 'none', strength: 0.2 },
+    actors: [],
+    props: [],
+    effects: [],
+    sfx: [],
+    transition: 'cut',
+    startMs: 0,
+    endMs: 3000,
+    ...over,
+  });
+  const board = (shots: unknown[]) =>
+    ({ scenes: [{ id: 'a', lines: [], shots }] }) as unknown as Storyboard;
+  const words = [
+    { lineId: 'l01', text: 'Your', startMs: 100 },
+    { lineId: 'l01', text: 'ticket', startMs: 700 },
+    { lineId: 'l01', text: 'cinema', startMs: 1900 },
+  ];
+  it('gives every piece a sound on the moment it lands', () => {
+    const graphic = {
+      kind: 'flow',
+      nodes: [
+        { label: 'YOU', on: 'your' },
+        { label: 'THE CINEMA', on: 'cinema' },
+      ],
+      links: [{ label: '$11', on: 'ticket' }],
+    };
+    const cues = graphicSoundCues(board([shot({ graphic })]), words);
+    expect(cues.map((c) => c.name)).toEqual(['pop', 'whoosh', 'pop']);
+    expect(cues[1]?.atMs).toBeGreaterThan(650);
+    expect(cues[2]?.atMs).toBeGreaterThan(1850);
+  });
+  it('whooshes when the camera travels to the next picture', () => {
+    const cues = graphicSoundCues(
+      board([
+        shot({}),
+        shot({ id: 's02', transition: 'travel-right', startMs: 3000, endMs: 6000 }),
+      ]),
+      [],
+    );
+    expect(cues).toHaveLength(1);
+    expect(cues[0]?.name).toBe('whoosh');
+  });
+  it('never puts two sounds on top of each other', () => {
+    const graphic = {
+      kind: 'receipt',
+      lines: [
+        { label: 'CORN', value: '35¢', on: 'your' },
+        { label: 'BUCKET', value: '45¢', on: 'your' },
+      ],
+    };
+    const cues = graphicSoundCues(board([shot({ graphic })]), words);
+    for (let i = 1; i < cues.length; i++) {
+      expect((cues[i]?.atMs ?? 0) - (cues[i - 1]?.atMs ?? 0)).toBeGreaterThanOrEqual(200);
+    }
+  });
+});
+
+describe('how a picture arrives', () => {
+  const g = { kind: 'number' };
+  it('travels between two graphics that ask for a plain cut, in each direction in turn', () => {
+    expect(arrivalOf({ transition: 'cut', graphic: g }, { graphic: g }, 1)).toBe('travel-up');
+    expect(arrivalOf({ transition: 'cut', graphic: g }, { graphic: g }, 2)).toBe('travel-left');
+  });
+  it('keeps what a shot asks for, and a cut that is not between two graphics', () => {
+    expect(arrivalOf({ transition: 'match', graphic: g }, { graphic: g }, 1)).toBe('match');
+    expect(arrivalOf({ transition: 'cut' }, {}, 1)).toBe('cut');
+    expect(arrivalOf({ transition: 'cut', graphic: g }, undefined, 0)).toBe('cut');
   });
 });

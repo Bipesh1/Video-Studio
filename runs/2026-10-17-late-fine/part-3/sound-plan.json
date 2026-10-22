@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "aftermath",
+      "startMs": 0
+    }
+  ],
+  "sfx": [
+    {
+      "name": "footsteps",
+      "atMs": 6190,
+      "durationMs": 1350,
+      "gainDb": -10,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "boom",
+      "atMs": 11568,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "footsteps",
+      "atMs": 16652,
+      "durationMs": 1891,
+      "gainDb": -10,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "tick",
+      "atMs": 36547,
+      "durationMs": 2098,
+      "gainDb": -10,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "tick",
+      "atMs": 41067,
+      "durationMs": 3531,
+      "gainDb": -10,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "clunk",
+      "atMs": 44298,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 5
+    }
+  ],
+  "musicGainDb": 0,
+  "hush": []
+}

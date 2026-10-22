@@ -1,0 +1,95 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l13",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Follow one beam from that low Sun as it curves down into your phone.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l14",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Your eyes and your camera assume that light came in a *straight* line.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l15",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "But trace the curved beam back, and the real Sun is already *below* the horizon.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l16",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The air lifts the picture of the Sun by about its own *width*.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l17",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So the Sun on your screen has, in a way, already *set*.",
+      "speed": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l18",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The British Astronomical Association puts that lift at about half a degree, roughly one whole Sun.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l19",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The Hong Kong Observatory says this makes sunset there about two minutes *later* than with no air.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l20",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "And official sunset times already include those extra minutes.",
+      "speed": 1,
+      "pauseAfterMs": 800
+    },
+    {
+      "id": "l21",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "You'll also notice a low Sun looks squashed, flat at the bottom.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l22",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "That is the air lifting its bottom edge more than its top.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l23",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So when the Sun touches the sea, the real Sun is already just *below* it.",
+      "speed": 1,
+      "pauseAfterMs": 1500
+    }
+  ]
+}

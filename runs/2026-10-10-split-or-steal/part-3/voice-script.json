@@ -1,0 +1,142 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "lines": [
+    {
+      "id": "n26",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Then a player named Nick did the opposite.",
+      "speed": 0.92,
+      "pauseAfterMs": 300
+    },
+    {
+      "id": "n27",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "He told Ibrahim he was *going to steal,* no matter what, and promised to share the money after the show.",
+      "speed": 0.92,
+      "pauseAfterMs": 300
+    },
+    {
+      "id": "n28",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The host reminded Ibrahim that nothing forced Nick to pay.",
+      "speed": 0.92,
+      "pauseAfterMs": 300
+    },
+    {
+      "id": "n29",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Think about it.",
+      "speed": 0.92,
+      "pauseAfterMs": 350
+    },
+    {
+      "id": "n30",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "If Nick steals, stealing wins Ibrahim nothing.",
+      "speed": 0.92,
+      "pauseAfterMs": 300
+    },
+    {
+      "id": "n31",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "His only chance is to *split and hope.*",
+      "speed": 0.92,
+      "pauseAfterMs": 300
+    },
+    {
+      "id": "n32",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So he splits.",
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n33",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The balls open.",
+      "speed": 0.92,
+      "pauseAfterMs": 800
+    },
+    {
+      "id": "n34",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "*Nick split too.*",
+      "speed": 0.92,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "n35",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Nick did not play the game better.",
+      "speed": 0.92,
+      "pauseAfterMs": 250
+    },
+    {
+      "id": "n36",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "*He changed it.*",
+      "speed": 0.92,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "n37",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "You play this game all the time:",
+      "speed": 0.92,
+      "pauseAfterMs": 250
+    },
+    {
+      "id": "n38",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "price wars,",
+      "speed": 0.92,
+      "pauseAfterMs": 380
+    },
+    {
+      "id": "n39",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "group projects,",
+      "speed": 0.92,
+      "pauseAfterMs": 380
+    },
+    {
+      "id": "n40",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "a shared kitchen.",
+      "speed": 0.92,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "n41",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "When you are stuck between trust and betrayal, do not ask which ball to pick.",
+      "speed": 0.92,
+      "pauseAfterMs": 300
+    },
+    {
+      "id": "n42",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Ask how to *change the table.*",
+      "speed": 0.92,
+      "pauseAfterMs": 1100
+    }
+  ]
+}

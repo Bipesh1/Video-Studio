@@ -68,9 +68,18 @@ function menu() {
   }
   console.log(`Voices: ${Object.keys(world.voices).join(', ')}`);
   console.log(`Saved characters: ${Object.keys(world.characters).join(', ')}`);
-  console.log(
-    'Cloth colors: white, gold, crimson, orange, steel, denim, forest, brown, tan, cream',
-  );
+  // A fixed cast is used by card, never redrawn: its look and voice are the same in every video.
+  const casts = new Map<string, string[]>();
+  for (const c of Object.values(world.characters)) {
+    if (c.series) casts.set(c.series, [...(casts.get(c.series) ?? []), c.id]);
+  }
+  for (const [series, members] of casts) {
+    console.log(`Fixed cast "${series}" (cast with card: "<id>"): ${members.join(', ')}`);
+  }
+  const colors = world.library.assets
+    .filter((a) => a.kind === 'color')
+    .map((a) => a.id.slice('color/'.length));
+  console.log(`Cloth colors: white, ${colors.join(', ')}`);
 }
 
 function draft() {

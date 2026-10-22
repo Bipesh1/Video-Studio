@@ -1,0 +1,382 @@
+{
+  "version": 1,
+  "title": "Could Humans Evolve to Hold Their Breath Like Seals?",
+  "request": "Biku's What's the Catch? what-if script, used as it is: 'Make a video on this script for the whats if part. make sure the animations are good like it should not be stuck in one photo for long time. each new info should bring a great animation' (2026-10-19).",
+  "mode": "as-is",
+  "format": "fine-print",
+  "style": "ink-stick",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "seed": 11811,
+  "finish": {
+    "acting": "snappy",
+    "onTwos": false,
+    "shadows": false,
+    "grain": 0.2,
+    "vignette": 0.12,
+    "boil": 0.25
+  },
+  "explainerLook": "world",
+  "sources": [
+    "Ilardo, M. et al., \"Physiological and genetic adaptations to diving in sea nomads\", Cell, 2018. Bajau spleens about 50% larger than the neighbouring Saluan, also in Bajau who do not dive; a gene variant near PDE10A linked to spleen size. https://doi.org/10.1016/j.cell.2018.03.054",
+    "NPR (via KPBS), \"The Secret To Deep Diving May Lie In The Spleen\", 2018. Researchers still hope to confirm the thyroid hormone link and that red blood cell levels change during dives. https://www.kpbs.org/news/2018/04/24/the-secret-to-deep-diving-may-lie-in-the-spleen",
+    "AFP report on the Cell study (via Philstar), 2018. Bajau spend up to 60% of their working day diving. https://www.philstar.com/business/science-and-environment/2018/04/20/1807756/scientists-discover-secret-why-bajaus-are-stronger-divers",
+    "The Scientist, \"Free Divers from Southeast Asia Evolved Bigger Spleens\", 2018. A rare example of natural selection in modern humans, over hundreds to thousands of years. https://mobile.the-scientist.com/article/52347/free-divers-from-southeast-asia-evolved-bigger-spleens",
+    "Guinness World Records, \"Longest time breath held voluntarily underwater (male)\". 29 min 3 sec, Vitomir Maričić, Opatija, Croatia, 14 June 2025, after pre-breathing pure oxygen. https://www.guinnessworldrecords.com/world-records/longest-time-breath-held-voluntarily-male",
+    "Checked by Claude on 2026-10-19 against Science News, NPR, The Scientist, Scientific American and reports of the record; no source gives the size of the spleens, so \"roughly the size of a tennis ball\" is unchecked."
+  ],
+  "appliedLessons": [],
+  "cast": [],
+  "scenes": [
+    {
+      "id": "s4",
+      "chapter": 1,
+      "beat": "the-trick",
+      "mood": "tense",
+      "quiet": false,
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l10",
+          "speaker": "narrator",
+          "text": "And here is the catch: the Bajau, sea nomads of Southeast Asia, have already grown a *bigger* tank.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l11",
+          "speaker": "narrator",
+          "text": "Their divers spend up to sixty percent of a working day diving for *fish*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l12",
+          "speaker": "narrator",
+          "text": "Scientists scanned the spleens of the Bajau and of their farming neighbours, the *Saluan*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l13",
+          "speaker": "narrator",
+          "text": "The Bajau spleen was about fifty percent *bigger*, roughly the size of a tennis ball.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l14",
+          "speaker": "narrator",
+          "text": "It was big even in Bajau who do not dive, so it is in their *genes*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l15",
+          "speaker": "narrator",
+          "text": "Scientists think it took only around a thousand years at sea, a *blink* for evolution.",
+          "pauseAfterMs": 1100
+        }
+      ],
+      "shots": [
+        {
+          "id": "s12",
+          "line": "l10",
+          "words": "And here is the catch: the Bajau, sea nomads of Southeast Asia,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "bubbles",
+              "at": "start",
+              "gainDb": -2
+            }
+          ],
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "title": {
+              "lines": [
+                "THE BAJAU",
+                "SEA NOMADS"
+              ],
+              "stress": 0
+            },
+            "from": "seal",
+            "at": "village",
+            "fly": "start",
+            "keep": [],
+            "show": [
+              {
+                "item": "houseboats",
+                "on": "Bajau"
+              }
+            ]
+          },
+          "ambience": "waves",
+          "transition": "cut",
+          "startMs": 0,
+          "endMs": 4785
+        },
+        {
+          "id": "s13",
+          "line": "l10",
+          "words": "have already grown a *bigger* tank.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "from": "village",
+            "at": "family",
+            "fly": "start",
+            "keep": [
+              "houseboats"
+            ],
+            "show": [
+              {
+                "item": "big-tank",
+                "on": "bigger"
+              }
+            ]
+          },
+          "ambience": "waves",
+          "transition": "cut",
+          "startMs": 4785,
+          "endMs": 7070
+        },
+        {
+          "id": "s14",
+          "line": "l11",
+          "words": "Their divers spend up to sixty percent of a working day diving for *fish*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "from": "family",
+            "at": "reef",
+            "fly": "start",
+            "keep": [
+              "houseboats"
+            ],
+            "show": [
+              {
+                "item": "diver",
+                "on": "divers"
+              },
+              {
+                "item": "fish",
+                "on": "fish"
+              }
+            ]
+          },
+          "ambience": "underwater",
+          "transition": "cut",
+          "startMs": 7070,
+          "endMs": 12100
+        },
+        {
+          "id": "s15",
+          "line": "l12",
+          "words": "Scientists scanned the spleens of the Bajau and of their farming neighbours, the *Saluan*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "from": "reef",
+            "at": "scan",
+            "fly": "start",
+            "keep": [
+              "houseboats"
+            ],
+            "show": [
+              {
+                "item": "bajau-spleen",
+                "on": "Bajau"
+              },
+              {
+                "item": "saluan-spleen",
+                "on": "Saluan"
+              }
+            ]
+          },
+          "ambience": "waves",
+          "transition": "cut",
+          "startMs": 12100,
+          "endMs": 17410
+        },
+        {
+          "id": "s16",
+          "line": "l13",
+          "words": "The Bajau spleen was about fifty percent *bigger*,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "from": "scan",
+            "at": "scan-close",
+            "fly": "start",
+            "keep": [
+              "bajau-spleen",
+              "saluan-spleen"
+            ],
+            "show": [],
+            "callout": {
+              "value": "+50%",
+              "caption": "BIGGER THAN THE NEIGHBOURS",
+              "at": "spleen",
+              "on": "fifty"
+            }
+          },
+          "ambience": "waves",
+          "transition": "cut",
+          "startMs": 17410,
+          "endMs": 20462
+        },
+        {
+          "id": "s17",
+          "line": "l13",
+          "words": "roughly the size of a tennis ball.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "from": "scan-close",
+            "at": "scan",
+            "fly": "start",
+            "keep": [
+              "bajau-spleen",
+              "saluan-spleen"
+            ],
+            "show": [
+              {
+                "item": "tennis",
+                "on": "tennis"
+              }
+            ]
+          },
+          "ambience": "waves",
+          "transition": "cut",
+          "startMs": 20462,
+          "endMs": 23000
+        },
+        {
+          "id": "s18",
+          "line": "l14",
+          "words": "It was big even in Bajau who do not dive, so it is in their *genes*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "from": "scan-close",
+            "at": "dna",
+            "fly": "whole",
+            "keep": [
+              "bajau-spleen",
+              "saluan-spleen"
+            ],
+            "show": [
+              {
+                "item": "genes",
+                "on": "genes"
+              }
+            ]
+          },
+          "transition": "cut",
+          "startMs": 23000,
+          "endMs": 27760
+        },
+        {
+          "id": "s19",
+          "line": "l15",
+          "words": "Scientists think it took only around a thousand years at sea, a *blink* for evolution.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "dive",
+            "from": "dna",
+            "at": "boats",
+            "fly": "start",
+            "keep": [
+              "houseboats"
+            ],
+            "show": [
+              {
+                "item": "years",
+                "on": "thousand"
+              }
+            ],
+            "callout": {
+              "value": "1,000",
+              "caption": "YEARS, SCIENTISTS THINK",
+              "at": "boats",
+              "on": "thousand"
+            }
+          },
+          "ambience": "waves",
+          "transition": "cut",
+          "startMs": 27760,
+          "endMs": 35030
+        }
+      ]
+    }
+  ]
+}

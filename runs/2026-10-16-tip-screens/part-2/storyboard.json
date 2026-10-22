@@ -1,0 +1,374 @@
+{
+  "version": 1,
+  "title": "Why Every Screen Asks You for a Tip Now",
+  "request": "Make a good video on this based on the new update now for What's the Catch (Biku, 2026-10-16). Refined with his OK: the coffee shop experiment line and the last line, which said tips go up when the worker watches; the study found the opposite.",
+  "mode": "refine",
+  "format": "fine-print",
+  "style": "ink-stick",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "seed": 71428,
+  "finish": {
+    "acting": "snappy",
+    "onTwos": false,
+    "shadows": false,
+    "grain": 0.2,
+    "vignette": 0.12,
+    "boil": 0.25
+  },
+  "explainerLook": "world",
+  "sources": [
+    "Pew Research Center, \"Tipping Culture in America: Public Sees a Changed Landscape,\" November 2023. Survey of 11,945 US adults in August 2023: 72% say tipping is expected in more places than five years ago; 57% say they tip 15% or less at a sit-down restaurant; more oppose (40%) than favor (24%) suggested tip amounts on screens. https://www.pewresearch.org/2023/11/09/tipping-culture-in-america-public-sees-a-changed-landscape/",
+    "Kareem Haggag and Giovanni Paci, \"Default Tips,\" American Economic Journal: Applied Economics, 2014. Over 13 million New York City taxi rides: screens suggesting 20/25/30% instead of 15/20/25% raised the average tip by about 10%, but rides with the higher suggestions were over 50% more likely to get no card tip at all.",
+    "The New York Times, \"How to Deal With the Many Requests for Tips,\" 2023. Tip prompts with suggested amounts now appear at casual counters, food trucks and even self-service kiosks.",
+    "Bankrate, Annual Tipping Survey, 2025. Notes that 15% was traditionally the average tip, with 20% for excellent service.",
+    "The coffee figures (90¢, $1.20, $1.80, \"a third more\") are plain arithmetic on a $6 coffee, not quoted from a source.",
+    "Francine W. Goh, Alexandria C. Jungck and Jeffrey R. Stevens, \"Pro tip: Screen-based payment methods increase negative feelings in consumers but do not increase tip sizes\", University of Nebraska-Lincoln preprint, 2022. In a simulated coffee shop, people felt negatively about tip screens and did not tip more with them, and did not tip more when a server was visible. https://decisionslab.unl.edu/pubs/goh_etal_2022_preprint.pdf",
+    "Checked by Claude on 2026-10-16: the 72% and 57% against Pew's report; the taxi study's \"more than a 10 percent increase in the average tip\" and \"over 50 percent more likely to receive a zero-valued tip\" in Haggag and Paci (2014); the coffee arithmetic (15% of $6 is 90 cents; 20% $1.20; 30% $1.80; 1.20 is a third more than 0.90)."
+  ],
+  "appliedLessons": [],
+  "cast": [],
+  "scenes": [
+    {
+      "id": "s3",
+      "chapter": 1,
+      "beat": "follow-the-money",
+      "mood": "upbeat",
+      "quiet": false,
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l08",
+          "speaker": "narrator",
+          "text": "But for a long time, fifteen percent was the *usual* tip for good service.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l09",
+          "speaker": "narrator",
+          "text": "In that same survey, more than *half* said they tip fifteen percent or less at a sit-down restaurant.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l10",
+          "speaker": "narrator",
+          "text": "On a six dollar coffee, that old usual tip is just ninety *cents*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l11",
+          "speaker": "narrator",
+          "text": "Next to those ninety cents, the smallest button asks for a dollar twenty, and the biggest a dollar *eighty*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l12",
+          "speaker": "narrator",
+          "text": "So the cheapest button is already a *third* more than the old usual tip.",
+          "pauseAfterMs": 700
+        }
+      ],
+      "shots": [
+        {
+          "id": "s08",
+          "line": "l08",
+          "words": "But for a long time, fifteen percent was the *usual* tip for good service.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "tag",
+            "title": {
+              "lines": [
+                "THE OLD USUAL TIP"
+              ],
+              "stress": 0
+            },
+            "price": "15%",
+            "note": "FOR GOOD SERVICE",
+            "on": "fifteen"
+          },
+          "transition": "cut",
+          "startMs": 0,
+          "endMs": 5480
+        },
+        {
+          "id": "s09",
+          "line": "l09",
+          "words": "In that same survey, more than *half* said they tip fifteen percent or less at a sit-down restaurant.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "number",
+            "value": "57%",
+            "caption": "TIP 15% OR LESS AT DINNER",
+            "picture": "coin",
+            "countUp": true,
+            "on": "half"
+          },
+          "transition": "iris",
+          "diveAt": {
+            "x": 0.5,
+            "y": 0.45
+          },
+          "startMs": 5480,
+          "endMs": 12340
+        },
+        {
+          "id": "s10",
+          "line": "l10",
+          "words": "On a six dollar coffee, that old usual tip is just ninety *cents*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "receipt",
+            "title": {
+              "lines": [
+                "ONE $6 COFFEE"
+              ],
+              "stress": 0
+            },
+            "lines": [
+              {
+                "label": "COFFEE",
+                "value": "$6.00",
+                "on": "coffee"
+              },
+              {
+                "label": "OLD USUAL TIP",
+                "value": "90¢",
+                "on": "ninety"
+              }
+            ],
+            "total": {
+              "label": "TOTAL",
+              "value": "$6.90"
+            }
+          },
+          "transition": "cut",
+          "startMs": 12340,
+          "endMs": 17300
+        },
+        {
+          "id": "s11",
+          "line": "l11",
+          "words": "Next to those ninety cents, the smallest button asks for a dollar twenty, and the biggest a dollar *eighty*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "bars",
+            "title": {
+              "lines": [
+                "THE TIP ON A",
+                "$6 COFFEE"
+              ],
+              "stress": 1
+            },
+            "bars": [
+              {
+                "label": "OLD USUAL / TIP",
+                "value": 0.9,
+                "text": "90¢",
+                "on": "ninety"
+              },
+              {
+                "label": "SMALLEST / BUTTON",
+                "value": 1.2,
+                "text": "$1.20",
+                "on": "smallest"
+              },
+              {
+                "label": "BIGGEST / BUTTON",
+                "value": 1.8,
+                "text": "$1.80",
+                "on": "biggest"
+              }
+            ],
+            "stress": 1
+          },
+          "transition": "cut",
+          "startMs": 17300,
+          "endMs": 24340
+        },
+        {
+          "id": "s12",
+          "line": "l12",
+          "words": "So the cheapest button is already a *third* more than the old usual tip.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "tag",
+            "title": {
+              "lines": [
+                "THE \"CHEAP\" BUTTON"
+              ],
+              "stress": 0
+            },
+            "price": "$1.20",
+            "note": "A THIRD MORE",
+            "was": "90¢",
+            "on": "cheapest",
+            "wasOn": "old"
+          },
+          "transition": "dive",
+          "diveAt": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "startMs": 24340,
+          "endMs": 29250
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "chapter": 1,
+      "beat": "the-trick",
+      "mood": "upbeat",
+      "quiet": false,
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l13",
+          "speaker": "narrator",
+          "text": "Here is the trick: the buttons quietly tell you what a *normal* tip is.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l14",
+          "speaker": "narrator",
+          "text": "The shop picks the buttons, the screen shows them, and *your* choices start right there.",
+          "pauseAfterMs": 500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s13",
+          "line": "l13",
+          "words": "Here is the trick: the buttons quietly tell you what a *normal* tip is.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "scene",
+            "name": "coffee-counter",
+            "title": {
+              "lines": [
+                "THE BUTTONS DECIDE",
+                "WHAT IS NORMAL"
+              ],
+              "stress": 1
+            },
+            "show": [
+              {
+                "item": "tablet"
+              },
+              {
+                "item": "buttons",
+                "on": "buttons"
+              }
+            ]
+          },
+          "transition": "cut",
+          "startMs": 29250,
+          "endMs": 33860
+        },
+        {
+          "id": "s14",
+          "line": "l14",
+          "words": "The shop picks the buttons, the screen shows them, and *your* choices start right there.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "flow",
+            "title": {
+              "lines": [
+                "WHO PICKS",
+                "THE BUTTONS"
+              ],
+              "stress": 1
+            },
+            "nodes": [
+              {
+                "label": "THE SHOP",
+                "on": "shop"
+              },
+              {
+                "label": "THE SCREEN",
+                "on": "screen"
+              },
+              {
+                "label": "YOU",
+                "on": "your"
+              }
+            ],
+            "links": [
+              {
+                "label": "PICKS / 20% 25% 30%",
+                "on": "buttons"
+              },
+              {
+                "label": "SHOWS THEM TO",
+                "on": "shows"
+              }
+            ]
+          },
+          "transition": "wipe",
+          "startMs": 33860,
+          "endMs": 39870
+        }
+      ]
+    }
+  ]
+}

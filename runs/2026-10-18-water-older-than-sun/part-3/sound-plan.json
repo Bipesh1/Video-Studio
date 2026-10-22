@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "tense",
+      "startMs": 0
+    },
+    {
+      "mood": "reflective",
+      "startMs": 10220
+    },
+    {
+      "mood": "hope",
+      "startMs": 28380
+    }
+  ],
+  "sfx": [
+    {
+      "name": "whoosh",
+      "atMs": 60,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "pop",
+      "atMs": 1807,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "whoosh",
+      "atMs": 3115,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "pop",
+      "atMs": 3507,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "whoosh",
+      "atMs": 5000,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "pop",
+      "atMs": 6607,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 5
+    },
+    {
+      "name": "pop",
+      "atMs": 9073,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 6
+    },
+    {
+      "name": "whoosh",
+      "atMs": 10280,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 7
+    },
+    {
+      "name": "ding",
+      "atMs": 15673,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 8
+    },
+    {
+      "name": "pop",
+      "atMs": 17340,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 9
+    },
+    {
+      "name": "pop",
+      "atMs": 20240,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 10
+    },
+    {
+      "name": "ding",
+      "atMs": 20507,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 11
+    },
+    {
+      "name": "whoosh",
+      "atMs": 23310,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 12
+    },
+    {
+      "name": "ding",
+      "atMs": 24873,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 13
+    },
+    {
+      "name": "whoosh",
+      "atMs": 28440,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 14
+    },
+    {
+      "name": "pop",
+      "atMs": 29107,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 15
+    },
+    {
+      "name": "pop",
+      "atMs": 29940,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 16
+    },
+    {
+      "name": "whoosh",
+      "atMs": 33580,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 17
+    }
+  ],
+  "musicGainDb": 0,
+  "hush": []
+}

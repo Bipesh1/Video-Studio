@@ -1,8 +1,8 @@
 {
   "id": "narrator",
   "name": "Narrator",
-  "description": "The storyteller: a calm, clear man's voice. A placeholder until Biku picks from the audition.",
-  "version": 1,
+  "description": "A calm, clear, steady man's voice (Kokoro am_michael), the narrator of the general story page. It was What's the Catch?'s narrator from 2026-10-21 (Biku: \"4 is good\", runs/2026-10-21-catch-look-test/narrator-audition/) until that channel got its own, calmer and more alive voice on 2026-10-22 (voices/catch-narrator.json).",
+  "version": 2,
   "kokoroVoice": "am_michael",
   "speed": 1.0,
   "pauseScale": 1.0,

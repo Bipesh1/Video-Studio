@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "video": "popcorn-part-1-9x16-v2.mp4",
+  "stills": {
+    "s01": "ok",
+    "s02": "ok",
+    "s03": "ok",
+    "s04": "ok",
+    "s05": "ok",
+    "s06": "ok",
+    "s07": "ok",
+    "s08": "ok",
+    "s09": "ok"
+  },
+  "strips": {},
+  "playbook": "ok",
+  "fixed": [
+    "v2, on Biku's word (2026-10-16: 'there are multiple frames where there is no information or little information shown'): every picture now opens with its first piece, what is still to come stands as a pale outline from the first frame and fills in on its word, the big numbers carry a picture (a bucket over $10, a ticket over $11.31, a coin over 48¢ and 30¢), and the counter's bucket is the same real-looking popcorn as the thumbnail. Measured: the longest nearly empty stretch went from 3.4 s (v1) to 0.2 s, at a cut.",
+    "Built for this video: the cinema auditorium (seats, the screen, the smell pipe; used in part 2); a scene now shows only the things the script lists; a price tag takes words as long as CHEAP PRINTER; a number that counts up is there from the start of its shot and lands on its value as the narrator says it, so no shot waits empty.",
+    "The money split of the snack dollar is drawn with the cinema's 82 cents first, so the big share fills the top of the bar as in every split; the words are as written."
+  ],
+  "notes": [
+    "Biku's script, used word for word (as-is); every picture is the one he wrote after each line, its pieces arriving on the words he named. Looked at as frames across the opening: the machine on 'cinema', the bucket on 'popcorn', the hand with $10 on 'ten'. The self-check cuts no strips for explainer graphics (it follows people), so the whole part was looked at two frames a second by hand: no picture opens empty; the pale outlines of the coming pieces (the queue, the film studio box, the second bar) read as shapes still to fill, not as mistakes.",
+    "Checked against the sources: $11.31 (The Numbers, 2025); 48.1% of admissions to film costs (AMC 2025, whole company); $8.57 snacks per visitor and about 18.1% food and drink costs (AMC 2025, US). The CNN, ABC and KTLA figures are as given in his script.",
+    "The narrator is the studio's placeholder voice (Kokoro): no voice has been picked for What's the Catch? yet.",
+    "Claude cannot hear: the voice, the music and the few sounds need Biku's ears."
+  ]
+}

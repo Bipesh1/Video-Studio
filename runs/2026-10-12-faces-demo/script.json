@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "title": "The form",
+  "request": "One short scene, built twice, to compare how faces change: the old way (a new face at every cut) and the new way (a face holds, and changes inside a shot after what causes it). For Biku to judge by eye.",
+  "mode": "as-is",
+  "format": "story",
+  "brand": "my-page",
+  "voice": "narrator",
+  "speakers": [
+    {
+      "id": "trainer",
+      "name": "The Trainer",
+      "voice": "trainer"
+    },
+    {
+      "id": "saint",
+      "name": "The Saint",
+      "voice": "saint"
+    }
+  ],
+  "lines": [
+    {
+      "id": "l1",
+      "speaker": "trainer",
+      "text": "Twenty dollars. It is *yours.*",
+      "beat": "hook",
+      "chapter": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l2",
+      "speaker": "saint",
+      "text": "Just like that?",
+      "beat": "setup",
+      "chapter": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l3",
+      "speaker": "trainer",
+      "text": "Just like that. Sign here.",
+      "beat": "setup",
+      "chapter": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l4",
+      "speaker": "saint",
+      "text": "Nobody gives money away.",
+      "beat": "rising-trouble",
+      "chapter": 1,
+      "pauseAfterMs": 900,
+      "thought": true
+    },
+    {
+      "id": "l5",
+      "speaker": "trainer",
+      "text": "She is right. Nobody does.",
+      "beat": "rising-trouble",
+      "chapter": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l6",
+      "speaker": "saint",
+      "text": "What is the catch?",
+      "beat": "turning-point",
+      "chapter": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l7",
+      "speaker": "trainer",
+      "text": "You already agreed to it.",
+      "beat": "payoff",
+      "chapter": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l8",
+      "speaker": "saint",
+      "text": "What did I sign?",
+      "beat": "closing-line",
+      "chapter": 1,
+      "pauseAfterMs": 900,
+      "thought": true
+    }
+  ],
+  "sources": [],
+  "changes": []
+}

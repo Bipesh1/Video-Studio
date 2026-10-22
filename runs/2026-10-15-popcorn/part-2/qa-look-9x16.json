@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "video": "popcorn-part-2-9x16-v1.mp4",
+  "stills": {
+    "s10": "ok",
+    "s11": "ok",
+    "s12": "ok",
+    "s13": "ok",
+    "s14": "ok",
+    "s15": "ok",
+    "s15b": "ok",
+    "s16": "ok",
+    "s17": "ok",
+    "s18": "ok"
+  },
+  "strips": {},
+  "playbook": "ok",
+  "fixed": [
+    "'In 2025, the average visitor to America's biggest chain spent about eight dollars and fifty seven cents on snacks.' stayed 9 seconds on one picture. It is two shots now, with the words as written: the snack counter with a visitor's hand paying, then $8.57 counting up.",
+    "In that counter shot the sign first read SNACKS $8.57 before the narrator said the number. It carries a title instead, THE AVERAGE VISITOR / IN 2025, and the number arrives with its words."
+  ],
+  "notes": [
+    "Looked at as frames across the moves (the self-check cuts no strips for explainer graphics): in the auditorium the pipe draws itself along the ceiling on 'pipes', the smell puffs out on 'smell' and keeps coming, the screen lights on 'film'; the $5 tag drops and swings on 'share', the crossed-out $10 arrives on 'costs' and is struck through.",
+    "The narrator is the studio's placeholder voice (Kokoro): no voice has been picked for What's the Catch? yet.",
+    "Claude cannot hear: the voice, the music and the few sounds need Biku's ears."
+  ]
+}

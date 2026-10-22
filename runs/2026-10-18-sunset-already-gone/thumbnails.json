@@ -1,0 +1,225 @@
+{
+  "version": 1,
+  "thumbnails": [
+    {
+      "id": "caught-tall",
+      "size": "9:16",
+      "why": "You on the beach: the Sun you see above the sea, the real one dashed below it, circled. Tall, for Reels and Shorts.",
+      "layers": [
+        {
+          "kind": "graphic",
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "at": "below",
+            "fly": "start",
+            "keep": [
+              "ride",
+              "straight-back",
+              "real-sun"
+            ],
+            "show": []
+          },
+          "x": 0.5,
+          "y": 0.56,
+          "size": 1.2
+        },
+        {
+          "kind": "shade",
+          "from": "top",
+          "reach": 0.36,
+          "strength": 0.85
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "THIS SUN IS",
+              "style": "light"
+            },
+            {
+              "text": "ALREADY GONE",
+              "style": "gold"
+            }
+          ],
+          "x": 0.06,
+          "top": 0.05,
+          "size": 0.1,
+          "width": 0.88
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.79,
+            "y": 0.52
+          },
+          "rx": 0.14,
+          "ry": 0.085
+        }
+      ]
+    },
+    {
+      "id": "your-phone-tall",
+      "size": "9:16",
+      "why": "The sunset on your phone, its real Sun a ghost under the sea line, an arrow to it. Tall, for Reels and Shorts.",
+      "layers": [
+        {
+          "kind": "graphic",
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "at": "screen",
+            "fly": "start",
+            "keep": [
+              "ghost"
+            ],
+            "show": []
+          },
+          "x": 0.5,
+          "y": 0.55,
+          "size": 1.1
+        },
+        {
+          "kind": "shade",
+          "from": "top",
+          "reach": 0.3,
+          "strength": 0.8
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "YOUR PHOTO'S SUN",
+              "style": "light"
+            },
+            {
+              "text": "IS ALREADY",
+              "style": "light"
+            },
+            {
+              "text": "GONE",
+              "style": "gold"
+            }
+          ],
+          "x": 0.06,
+          "top": 0.04,
+          "size": 0.085,
+          "width": 0.88
+        },
+        {
+          "kind": "mark",
+          "shape": "arrow",
+          "at": {
+            "x": 0.12,
+            "y": 0.5
+          },
+          "to": {
+            "x": 0.47,
+            "y": 0.64
+          }
+        }
+      ]
+    },
+    {
+      "id": "see-and-really-tall",
+      "size": "9:16",
+      "why": "Cut in two and labelled: the Sun as you see it, and where it really is. Tall, for Reels and Shorts.",
+      "layers": [
+        {
+          "kind": "split",
+          "at": 0.5,
+          "lean": 0.1,
+          "seam": 0.01,
+          "left": [
+            {
+              "kind": "graphic",
+              "graphic": {
+                "kind": "journey",
+                "world": "sunset",
+                "at": "sea",
+                "fly": "start",
+                "keep": [
+                  "shimmer"
+                ],
+                "show": []
+              },
+              "x": 0.02,
+              "y": 0.57,
+              "size": 1.15
+            }
+          ],
+          "right": [
+            {
+              "kind": "graphic",
+              "graphic": {
+                "kind": "journey",
+                "world": "sunset",
+                "at": "gap",
+                "fly": "start",
+                "keep": [
+                  "real-sun"
+                ],
+                "show": []
+              },
+              "x": 0.5,
+              "y": 0.57,
+              "size": 1.15
+            }
+          ]
+        },
+        {
+          "kind": "shade",
+          "from": "top",
+          "reach": 0.32,
+          "strength": 0.85
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "THE SUN'S",
+              "style": "light"
+            },
+            {
+              "text": "NOT THERE",
+              "style": "gold"
+            }
+          ],
+          "x": 0.06,
+          "top": 0.05,
+          "size": 0.1,
+          "width": 0.88
+        },
+        {
+          "kind": "tag",
+          "text": "SEEN",
+          "x": 0.24,
+          "y": 0.84,
+          "size": 0.04,
+          "paint": "cream",
+          "tilt": -4
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.75,
+            "y": 0.56
+          },
+          "rx": 0.11,
+          "ry": 0.065
+        },
+        {
+          "kind": "tag",
+          "text": "REAL",
+          "x": 0.76,
+          "y": 0.84,
+          "size": 0.04,
+          "paint": "gold",
+          "tilt": 4
+        }
+      ]
+    }
+  ]
+}

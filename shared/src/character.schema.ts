@@ -38,9 +38,13 @@ export const clothesSchema = z
       .strict()
       .optional(),
     hat: z
-      .object({ kind: z.enum(['brim-hat', 'top-hat']), cloth: name })
+      .object({ kind: z.enum(['brim-hat', 'top-hat', 'cap', 'beanie']), cloth: name })
       .strict()
       .optional(),
+    /** A scarf wound once round the neck, with one tail hanging down the front. */
+    scarf: z.object({ cloth: name }).strict().optional(),
+    /** A necktie, with slanted stripes in a second cloth (gold when left out). */
+    tie: z.object({ cloth: name, stripe: name.optional() }).strict().optional(),
     /** A pair of glasses. */
     glasses: z.boolean().optional(),
     /** A cloak down the back with drapes over the shoulders; hood: true pulls the hood up. */
@@ -90,6 +94,22 @@ export const characterCardSchema = z
     expression: name,
     /** A voice file name under voices/, once voices are chosen. */
     voice: z.string().min(1).optional(),
+    /**
+     * A cast that always appears together in one kind of video (the game theory cast). A
+     * member of a series keeps its look and its voice: a storyboard may not give it another.
+     */
+    series: name.optional(),
+    /**
+     * The one who runs the games of a series (the Trainer): part of its cast, with a look and
+     * a voice that never change, and not counted among its players.
+     */
+    host: z.boolean().optional(),
+    /** The faces approved for them, by library name. Their sheet shows these. */
+    expressions: z.array(name).min(1).optional(),
+    /** The poses and actions approved for them, by library name. Their sheet shows these. */
+    poses: z.array(name).min(1).optional(),
+    /** The poses that are theirs above all: how they stand and move when nothing else is asked. */
+    signature: z.array(name).min(1).optional(),
     version: z.number().int().min(1),
     added: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
   })

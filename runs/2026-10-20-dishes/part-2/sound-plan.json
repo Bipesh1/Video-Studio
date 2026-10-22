@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "closing-in",
+      "startMs": 0
+    },
+    {
+      "mood": "tense",
+      "startMs": 16559
+    }
+  ],
+  "sfx": [
+    {
+      "name": "home",
+      "atMs": 0,
+      "durationMs": 23740,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "paper",
+      "atMs": 4410,
+      "gainDb": -2,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "thud",
+      "atMs": 11620,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "ding",
+      "atMs": 14536,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "tick",
+      "atMs": 16619,
+      "durationMs": 6971,
+      "gainDb": -12,
+      "pan": 0,
+      "seed": 4
+    }
+  ],
+  "musicGainDb": 0,
+  "hush": []
+}

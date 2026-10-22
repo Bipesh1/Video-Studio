@@ -1,0 +1,300 @@
+{
+  "version": 1,
+  "title": "Why Every Screen Asks You for a Tip Now",
+  "part": 3,
+  "parts": 3,
+  "size": "9:16",
+  "video": "tip-screens-part-3-9x16-v1.mp4",
+  "seconds": 41.266667,
+  "checkedOn": "2026-10-16",
+  "checks": [
+    {
+      "id": "plays",
+      "title": "The file plays",
+      "by": "measured",
+      "detail": "1080x1920, 30 pictures a second, 41.3 s, picture and sound both there; played through from start to finish",
+      "findings": []
+    },
+    {
+      "id": "made-from",
+      "title": "The video is of this plan and this sound",
+      "by": "measured",
+      "detail": "rendered from the plan as it stands; its sound is the mix as it stands, second for second (what is left over is 38 dB under it at most)",
+      "findings": []
+    },
+    {
+      "id": "length",
+      "title": "The length is right",
+      "by": "measured",
+      "detail": "41.3 s; a part may be up to 60 s",
+      "findings": []
+    },
+    {
+      "id": "in-step",
+      "title": "Picture and voice are in step",
+      "by": "measured",
+      "detail": "7 shots end to end with no gap, each line heard while its own pictures are on screen; picture and voice end together at 41.2 s",
+      "findings": []
+    },
+    {
+      "id": "silence",
+      "title": "There is no dead silence",
+      "by": "measured",
+      "detail": "the sound never drops out; the longest pause between words is 0.7 s",
+      "findings": []
+    },
+    {
+      "id": "loudness",
+      "title": "The sound is at the right level",
+      "by": "measured",
+      "detail": "loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.1 dB (the limit is -1)",
+      "findings": []
+    },
+    {
+      "id": "words-heard",
+      "title": "Nothing drowns the words",
+      "by": "measured",
+      "detail": "17 sound effects, the loudest of those over words 18 dB under the voice; the music sits 17 dB under the voice while someone speaks",
+      "findings": []
+    },
+    {
+      "id": "captions",
+      "title": "Captions fit the screen",
+      "by": "measured",
+      "detail": "22 captions of up to 2 lines; the widest takes 74% of the width; the briefest stays up 0.9 s",
+      "findings": []
+    },
+    {
+      "id": "in-frame",
+      "title": "Everyone is inside the picture",
+      "by": "measured",
+      "detail": "where every head lands on screen, on all 1237 frames of the 7 shots",
+      "findings": []
+    },
+    {
+      "id": "things-in-frame",
+      "title": "The things a shot shows are inside the picture",
+      "by": "measured",
+      "detail": "no shot of this part has a thing standing or hanging in it",
+      "findings": []
+    },
+    {
+      "id": "safe-area",
+      "title": "Words over the picture are clear of the apps' own buttons",
+      "by": "measured",
+      "detail": "the captions, the counter and any label against the middle 900 by 1400 of a tall picture, on every frame",
+      "findings": []
+    },
+    {
+      "id": "faces-clear",
+      "title": "No face is under the title or the captions",
+      "by": "measured",
+      "detail": "every face against the title, any label, the captions, on every frame",
+      "findings": []
+    },
+    {
+      "id": "feet",
+      "title": "Feet are on the ground",
+      "by": "measured",
+      "detail": "the lowest foot or knee of every body against the ground line, on every frame",
+      "findings": []
+    },
+    {
+      "id": "smooth",
+      "title": "Nothing jumps",
+      "by": "measured",
+      "detail": "nobody changes pose",
+      "findings": []
+    },
+    {
+      "id": "held",
+      "title": "No picture is held too long",
+      "by": "measured",
+      "detail": "the longest shot is 7.5 s (s21); the longest with nothing moving in it is 7.5 s",
+      "findings": [
+        {
+          "level": "note",
+          "shot": "s15",
+          "atMs": 0,
+          "text": "one picture is held for 4.9 s with nothing moving in it but breathing and blinking"
+        },
+        {
+          "level": "note",
+          "shot": "s16",
+          "atMs": 4900,
+          "text": "one picture is held for 4.8 s with nothing moving in it but breathing and blinking"
+        },
+        {
+          "level": "note",
+          "shot": "s17",
+          "atMs": 9700,
+          "text": "one picture is held for 6.0 s with nothing moving in it but breathing and blinking"
+        },
+        {
+          "level": "note",
+          "shot": "s18",
+          "atMs": 15666,
+          "text": "one picture is held for 6.8 s with nothing moving in it but breathing and blinking"
+        },
+        {
+          "level": "note",
+          "shot": "s19",
+          "atMs": 22500,
+          "text": "one picture is held for 4.9 s with nothing moving in it but breathing and blinking"
+        },
+        {
+          "level": "note",
+          "shot": "s20",
+          "atMs": 27433,
+          "text": "one picture is held for 6.3 s with nothing moving in it but breathing and blinking"
+        },
+        {
+          "level": "note",
+          "shot": "s21",
+          "atMs": 33766,
+          "text": "the shot stays for 7.5 s, a little over the 7 s a shot should take"
+        }
+      ]
+    },
+    {
+      "id": "reach",
+      "title": "Whatever is picked up is within reach",
+      "by": "measured",
+      "detail": "nobody takes a thing in their hand inside a shot",
+      "findings": []
+    },
+    {
+      "id": "empty-picture",
+      "title": "The picture is never empty",
+      "by": "measured",
+      "detail": "413 frames measured, 10 a second; the longest nearly empty stretch is 0.0 s (more than 0.5 s is a problem)",
+      "findings": []
+    },
+    {
+      "id": "plan",
+      "title": "The plan's own checks still pass",
+      "by": "measured",
+      "detail": "every name in the library, the staging rules, the format's beats, for all 21 shots of the video",
+      "findings": [
+        {
+          "level": "note",
+          "text": "the first shot \"s01\" holds still; a Short is judged in its first second: give it a camera move (push-in, drift) or someone moving"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s02\" is the same picture as \"s01\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "four wide shots in a row from \"s01\"; vary the shot size"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s04\" is the same picture as \"s03\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s05\" is the same picture as \"s04\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s06\" is the same picture as \"s05\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s07\" is the same picture as \"s06\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s09\" is the same picture as \"s08\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s10\" is the same picture as \"s09\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s11\" is the same picture as \"s10\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s12\" is the same picture as \"s11\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "scene \"s4\" plays upbeat music; the \"the-trick\" beat usually takes curious or tense or comic"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s14\" is the same picture as \"s13\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "scene \"s5\" plays upbeat music; the \"the-trick\" beat usually takes curious or tense or comic"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s16\" is the same picture as \"s15\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s17\" is the same picture as \"s16\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "scene \"s6\" plays hope music; the \"the-proof\" beat usually takes reflective or curious"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s19\" is the same picture as \"s18\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "shot \"s21\" is the same picture as \"s20\"; change the size or the pose, or let a face change inside it (a step)"
+        },
+        {
+          "level": "note",
+          "text": "the first shot has nobody in it; the first 3 seconds should be the most striking picture"
+        },
+        {
+          "level": "note",
+          "text": "about 0 sound effects a minute; the fine-print format suits 4 to 10. Steps, doors and things landing make the pictures feel real."
+        }
+      ]
+    },
+    {
+      "id": "style",
+      "title": "Every still passes the Style Check",
+      "by": "looked",
+      "detail": "7 stills, each against the 11 questions of the style guide",
+      "findings": []
+    },
+    {
+      "id": "story",
+      "title": "Every still tells its part of the story",
+      "by": "looked",
+      "detail": "7 stills, each against 7 questions: in frame, face visible, expression, hands, feet, action, setting",
+      "findings": []
+    },
+    {
+      "id": "motion",
+      "title": "Every move and every cut holds up frame by frame",
+      "by": "looked",
+      "detail": "0 strips of frames, one across each move inside a shot and each cut that keeps someone on screen",
+      "findings": []
+    },
+    {
+      "id": "playbook",
+      "title": "The playbook was followed",
+      "by": "looked",
+      "detail": "the rules of the general, format and style playbooks, read against the finished part",
+      "findings": []
+    }
+  ],
+  "fixed": [],
+  "notes": [
+    "Looked at three frames a second across the whole part: the queue under 20% NOW FEELS LIKE THE CHEAP ONE; the barista, a pale outline until 'someone', pops in behind the counter, and the dotted line of his look draws to the screen on 'watching'; the tag IN THE EXPERIMENT / FELT WORSE / ABOUT THE SHOP (Biku's agreed fix); +10% counts up on 'ten'; PUSH TOO HARD, GET NOTHING over the queue; the finger slides in on 'press' and CUSTOM lights up on 'custom'; the closing +10% holds to the end. Nothing appears or vanishes without a move.",
+    "The last shot is 7.5 s of one number; it breathes, but it is the stillest moment of the video.",
+    "The narrator is the studio's placeholder voice. Claude cannot hear: the voice, music and sounds need Biku's ears."
+  ]
+}

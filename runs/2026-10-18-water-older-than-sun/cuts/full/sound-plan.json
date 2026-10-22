@@ -1,0 +1,316 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "curious",
+      "startMs": 0
+    },
+    {
+      "mood": "upbeat",
+      "startMs": 22500
+    },
+    {
+      "mood": "tense",
+      "startMs": 58743
+    },
+    {
+      "mood": "reflective",
+      "startMs": 95587
+    },
+    {
+      "mood": "hope",
+      "startMs": 113747
+    }
+  ],
+  "sfx": [
+    {
+      "name": "whoosh",
+      "atMs": 3840,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "pop",
+      "atMs": 8040,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "whoosh",
+      "atMs": 9450,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "whoosh",
+      "atMs": 13720,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "pop",
+      "atMs": 16907,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 4
+    },
+    {
+      "name": "pop",
+      "atMs": 17673,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 5
+    },
+    {
+      "name": "whoosh",
+      "atMs": 18540,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 6
+    },
+    {
+      "name": "whoosh",
+      "atMs": 22560,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 7
+    },
+    {
+      "name": "pop",
+      "atMs": 28773,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 8
+    },
+    {
+      "name": "pop",
+      "atMs": 34940,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 9
+    },
+    {
+      "name": "ding",
+      "atMs": 38907,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 10
+    },
+    {
+      "name": "ding",
+      "atMs": 41540,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 11
+    },
+    {
+      "name": "whoosh",
+      "atMs": 48793,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 12
+    },
+    {
+      "name": "whoosh",
+      "atMs": 51688,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 13
+    },
+    {
+      "name": "whoosh",
+      "atMs": 53953,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 14
+    },
+    {
+      "name": "pop",
+      "atMs": 56206,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 15
+    },
+    {
+      "name": "whoosh",
+      "atMs": 58803,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 16
+    },
+    {
+      "name": "ding",
+      "atMs": 64206,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 17
+    },
+    {
+      "name": "pop",
+      "atMs": 69073,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 18
+    },
+    {
+      "name": "ding",
+      "atMs": 71740,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 19
+    },
+    {
+      "name": "whoosh",
+      "atMs": 73713,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 20
+    },
+    {
+      "name": "whoosh",
+      "atMs": 79183,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 21
+    },
+    {
+      "name": "pop",
+      "atMs": 82773,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 22
+    },
+    {
+      "name": "whoosh",
+      "atMs": 85427,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 23
+    },
+    {
+      "name": "pop",
+      "atMs": 87174,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 24
+    },
+    {
+      "name": "whoosh",
+      "atMs": 88482,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 25
+    },
+    {
+      "name": "pop",
+      "atMs": 88874,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 26
+    },
+    {
+      "name": "whoosh",
+      "atMs": 90367,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 27
+    },
+    {
+      "name": "pop",
+      "atMs": 91974,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 28
+    },
+    {
+      "name": "pop",
+      "atMs": 94440,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 29
+    },
+    {
+      "name": "whoosh",
+      "atMs": 95647,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 30
+    },
+    {
+      "name": "ding",
+      "atMs": 101040,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 31
+    },
+    {
+      "name": "pop",
+      "atMs": 102707,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 32
+    },
+    {
+      "name": "pop",
+      "atMs": 105607,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 33
+    },
+    {
+      "name": "ding",
+      "atMs": 105874,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 34
+    },
+    {
+      "name": "whoosh",
+      "atMs": 108677,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 35
+    },
+    {
+      "name": "ding",
+      "atMs": 110240,
+      "gainDb": -7,
+      "pan": 0,
+      "seed": 36
+    },
+    {
+      "name": "whoosh",
+      "atMs": 113807,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 37
+    },
+    {
+      "name": "pop",
+      "atMs": 114474,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 38
+    },
+    {
+      "name": "pop",
+      "atMs": 115307,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 39
+    },
+    {
+      "name": "whoosh",
+      "atMs": 118947,
+      "gainDb": -8,
+      "pan": 0,
+      "seed": 40
+    }
+  ],
+  "musicGainDb": 0,
+  "hush": []
+}

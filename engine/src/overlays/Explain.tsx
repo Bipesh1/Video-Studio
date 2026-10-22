@@ -1,6 +1,7 @@
 import { Earth, FullMoon, Planet, Sun } from '../props/Sky';
 import { clamp, easeOutBack } from '../rig/math';
 import { accent, ink, lineWeights, pick, tokens, white } from '../tokens';
+import { TALL_APP_BOTTOM, WIDE_SAFE_BOTTOM } from './captionLayout';
 import { VIEWER_FONT, fitSize, textBasis, textWidth, viewerText } from './text';
 
 /**
@@ -37,6 +38,99 @@ export function bigNumberBox(
   return { x: cx - w / 2, y: cy - size * 0.75, width: w, height: size * (caption ? 1.5 : 1) };
 }
 
+/** The sizes of a few big words in a frame, before anything is drawn. */
+export function bigWordsLayout(
+  lines: readonly string[],
+  width: number,
+  height: number,
+  low = false,
+) {
+  const texts = lines.map(viewerText);
+  const basis = textBasis(width, height);
+  // Set low they are a little smaller, so three lines clear the chin of a close face.
+  const size = fitSize(texts, basis * (low ? 0.104 : 0.118), basis * 0.9);
+  const lead = size * 1.16;
+  const tall = lead * (texts.length - 1) + size;
+  // High in the frame, clear of a podium or a head in the middle of it. Set low, they stand
+  // where the captions would, ending where the captions end: for a face that fills the top.
+  const top = low
+    ? height * (1 - (width > height ? WIDE_SAFE_BOTTOM * 0.45 : TALL_APP_BOTTOM)) - tall
+    : height * (width > height ? 0.07 : 0.085);
+  return { texts, basis, size, lead, cx: width / 2, top };
+}
+
+/** The box a few big words take on screen. */
+export function bigWordsBox(lines: readonly string[], width: number, height: number, low = false) {
+  const { texts, size, lead, cx, top } = bigWordsLayout(lines, width, height, low);
+  const w = Math.max(...texts.map((t) => textWidth(t, size)));
+  return { x: cx - w / 2, y: top, width: w, height: lead * (texts.length - 1) + size };
+}
+
+/**
+ * A few big words over the scene ("Would you bid / a nickel for / a dollar bill?"): the
+ * captions' own letters, much larger, white with the black outline and one line in gold.
+ */
+export function BigWords({
+  lines,
+  stress,
+  width,
+  height,
+  frame,
+  low,
+}: {
+  lines: readonly string[];
+  /** Which line is in gold, counting from 0. */
+  stress?: number | undefined;
+  width: number;
+  height: number;
+  /** Frames since they appeared, for the pop. Left out, they are simply there. */
+  frame?: number;
+  /** Low in the picture, where the captions would be, under a face that fills the top. */
+  low?: boolean | undefined;
+}) {
+  const { texts, size, lead, cx, top } = bigWordsLayout(lines, width, height, low);
+  const s = pop(frame);
+  if (s <= 0) return null;
+  const middle = top + (lead * (texts.length - 1) + size) / 2;
+  return (
+    <g transform={`translate(${cx} ${middle}) scale(${s}) translate(${-cx} ${-middle})`}>
+      {texts.map((text, i) => (
+        <text
+          key={i}
+          x={cx}
+          y={top + size * 0.84 + i * lead}
+          textAnchor="middle"
+          fontFamily={font}
+          fontWeight={700}
+          fontSize={size}
+          fill={i === stress ? tokens.captions.emphasis : tokens.captions.fill}
+          stroke={tokens.captions.stroke}
+          strokeWidth={size * 0.16}
+          strokeLinejoin={tokens.line.join}
+          paintOrder="stroke"
+        >
+          {text}
+        </text>
+      ))}
+    </g>
+  );
+}
+
+/**
+ * A number on its way up, for a counter: the figure in the text ("$26,000,000") this share of
+ * the way from nothing, written the same way, with whatever stands before and after it kept.
+ * It rushes at first and slows as it arrives.
+ */
+export function countedText(text: string, share: number): string {
+  const found = /\d[\d,]*/.exec(text);
+  if (!found) return text;
+  const k = clamp(share, 0, 1);
+  const eased = 1 - (1 - k) ** 3;
+  const whole = Number(found[0].replace(/,/g, ''));
+  const now = Math.round(whole * eased).toLocaleString('en-US');
+  return `${text.slice(0, found.index)}${now}${text.slice(found.index + found[0].length)}`;
+}
+
 /**
  * A big number: the one figure a shot is about ("1,670 km/h", "Day 1", "Year 100"), large in
  * gold with the captions' black outline, and an optional short line under it in a cream box.
@@ -49,6 +143,7 @@ export function BigNumber({
   frame,
   y,
   paint = 'gold',
+  shown,
 }: {
   value: string;
   caption?: string;
@@ -60,8 +155,11 @@ export function BigNumber({
   y?: number;
   /** The number's color: an accent of the style by name. */
   paint?: string;
+  /** What it reads at this moment, for a number that counts up; it is sized for `value`. */
+  shown?: string;
 }) {
-  const { text, basis, size, cx, cy } = bigNumberLayout(value, width, height, y);
+  const { text: full, basis, size, cx, cy } = bigNumberLayout(value, width, height, y);
+  const text = shown === undefined ? full : viewerText(shown);
   const s = pop(frame);
   if (s <= 0) return null;
   const sub = caption ? viewerText(caption) : null;
@@ -300,14 +398,15 @@ export function OrbitDiagram({
 }
 
 /** The sizes of a page of writing in a frame, before anything is drawn. */
-export function pageLayout(lines: readonly string[], width: number, height: number) {
+export function pageLayout(lines: readonly string[], width: number, height: number, tally = false) {
   const basis = textBasis(width, height);
   const texts = lines.map(viewerText);
   // A wide frame has room for a bigger sheet.
   const w = basis * (width > height ? 1.12 : 0.88);
   const size = fitSize(texts, basis * 0.074, w * 0.84);
   const lineH = size * 1.75;
-  const h = lineH * texts.length + size * 2.5;
+  // A tally page has rows of marks and its count under the lines.
+  const h = lineH * texts.length + size * 2.5 + (tally ? size * 6.4 : 0);
   return {
     texts,
     basis,
@@ -321,8 +420,8 @@ export function pageLayout(lines: readonly string[], width: number, height: numb
 }
 
 /** The box a page of writing takes on screen. */
-export function pageBox(lines: readonly string[], width: number, height: number) {
-  const { w, h, cx, cy } = pageLayout(lines, width, height);
+export function pageBox(lines: readonly string[], width: number, height: number, tally = false) {
+  const { w, h, cx, cy } = pageLayout(lines, width, height, tally);
   return { x: cx - w / 2, y: cy - h / 2, width: w, height: h };
 }
 
@@ -337,6 +436,9 @@ export function Page({
   width,
   height,
   frame,
+  tally,
+  cover,
+  local = 999,
 }: {
   lines: readonly string[];
   /** Which line is marked, counting from 0. */
@@ -344,8 +446,19 @@ export function Page({
   width: number;
   height: number;
   frame?: number;
+  /** A tally page: marks fill in and the count runs up to this over the shot. */
+  tally?: number | undefined;
+  /** The notebook's cover down the left edge. */
+  cover?: 'blue' | 'orange' | undefined;
+  /** Frames since the shot began, for the tally filling in. */
+  local?: number;
 }) {
-  const { texts, basis, size, lineH, w, h, cx, cy } = pageLayout(lines, width, height);
+  const { texts, basis, size, lineH, w, h, cx, cy } = pageLayout(
+    lines,
+    width,
+    height,
+    tally !== undefined,
+  );
   const s = pop(frame);
   if (s <= 0) return null;
   const paper = accent('cream');
@@ -409,6 +522,77 @@ export function Page({
           </g>
         );
       })}
+      {cover && (
+        <rect
+          x={-w / 2}
+          y={-h / 2}
+          width={size * 0.55}
+          height={h}
+          rx={edge * 2}
+          fill={pick(accent(cover === 'blue' ? 'ocean' : 'orange'), 0)}
+          stroke={ink}
+          strokeWidth={edge}
+        />
+      )}
+      {tally !== undefined &&
+        (() => {
+          // Rows of tally marks in groups of five filling in, and the count running up with them.
+          const rows = 3;
+          const cols = 7;
+          const fill = Math.min(1, Math.max(0, local / 75));
+          const shown = Math.floor(fill * rows * cols + 0.0001);
+          const top = -h / 2 + size * 2.3 + texts.length * lineH - size * 0.3;
+          const gw = (w - size * 2.6) / cols;
+          const mark = size * 0.075;
+          const groups = [];
+          for (let g = 0; g < shown; g++) {
+            const gx = left + (g % cols) * gw;
+            const gy = top + Math.floor(g / cols) * size * 1.25;
+            const strokes = [0, 1, 2, 3].map((k) => (
+              <line
+                key={k}
+                x1={gx + k * gw * 0.16}
+                y1={gy}
+                x2={gx + k * gw * 0.16 + gw * 0.02}
+                y2={gy + size * 0.9}
+                stroke={ink}
+                strokeWidth={mark}
+                strokeLinecap="round"
+              />
+            ));
+            groups.push(
+              <g key={g}>
+                {strokes}
+                <line
+                  x1={gx - gw * 0.06}
+                  y1={gy + size * 0.75}
+                  x2={gx + gw * 0.6}
+                  y2={gy + size * 0.15}
+                  stroke={ink}
+                  strokeWidth={mark}
+                  strokeLinecap="round"
+                />
+              </g>,
+            );
+          }
+          const count = meterText(Math.round(tally * fill * fill * (3 - 2 * fill)));
+          return (
+            <g>
+              {groups}
+              <text
+                x={w / 2 - size * 0.8}
+                y={h / 2 - size * 0.7}
+                fontFamily={font}
+                fontWeight={700}
+                fontSize={size * 1.9}
+                fill={ink}
+                textAnchor="end"
+              >
+                {count}
+              </text>
+            </g>
+          );
+        })()}
     </g>
   );
 }
@@ -437,10 +621,19 @@ export function meterLayout(label: string, digits: number, width: number, height
     cell,
     w,
     h,
-    x: width - w - margin,
-    y: height * (width > height ? 0.03 : 0.045),
+    // A tall video is watched inside an app that lays its own buttons along the top and down
+    // the right edge, so there the counter stands inside the safe area (2026-10-14).
+    x: width > height ? width - w - margin : SAFE_916.x + SAFE_916.width * width - w,
+    y: width > height ? height * 0.03 : SAFE_916.y * height,
   };
 }
+
+/**
+ * The part of a tall picture that YouTube Shorts, Instagram and Facebook Reels leave clear of
+ * their own buttons and text, as shares of the picture: about the middle 900 by 1400 pixels of
+ * 1080 by 1920 (researched 2026-10-14; the apps publish no exact figures, so it is generous).
+ */
+export const SAFE_916 = { x: 90 / 1080, y: 260 / 1920, width: 900 / 1080, height: 1400 / 1920 };
 
 /** The box the corner counter takes on screen. */
 export function meterBox(label: string, digits: number, width: number, height: number) {

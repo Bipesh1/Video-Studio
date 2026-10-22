@@ -1,0 +1,331 @@
+{
+  "version": 1,
+  "title": "Why Every Screen Asks You for a Tip Now",
+  "request": "Make a good video on this based on the new update now for What's the Catch (Biku, 2026-10-16). Refined with his OK: the coffee shop experiment line and the last line, which said tips go up when the worker watches; the study found the opposite.",
+  "mode": "refine",
+  "format": "fine-print",
+  "style": "ink-stick",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "seed": 71428,
+  "finish": {
+    "acting": "snappy",
+    "onTwos": false,
+    "shadows": false,
+    "grain": 0.2,
+    "vignette": 0.12,
+    "boil": 0.25
+  },
+  "explainerLook": "world",
+  "sources": [
+    "Pew Research Center, \"Tipping Culture in America: Public Sees a Changed Landscape,\" November 2023. Survey of 11,945 US adults in August 2023: 72% say tipping is expected in more places than five years ago; 57% say they tip 15% or less at a sit-down restaurant; more oppose (40%) than favor (24%) suggested tip amounts on screens. https://www.pewresearch.org/2023/11/09/tipping-culture-in-america-public-sees-a-changed-landscape/",
+    "Kareem Haggag and Giovanni Paci, \"Default Tips,\" American Economic Journal: Applied Economics, 2014. Over 13 million New York City taxi rides: screens suggesting 20/25/30% instead of 15/20/25% raised the average tip by about 10%, but rides with the higher suggestions were over 50% more likely to get no card tip at all.",
+    "The New York Times, \"How to Deal With the Many Requests for Tips,\" 2023. Tip prompts with suggested amounts now appear at casual counters, food trucks and even self-service kiosks.",
+    "Bankrate, Annual Tipping Survey, 2025. Notes that 15% was traditionally the average tip, with 20% for excellent service.",
+    "The coffee figures (90¢, $1.20, $1.80, \"a third more\") are plain arithmetic on a $6 coffee, not quoted from a source.",
+    "Francine W. Goh, Alexandria C. Jungck and Jeffrey R. Stevens, \"Pro tip: Screen-based payment methods increase negative feelings in consumers but do not increase tip sizes\", University of Nebraska-Lincoln preprint, 2022. In a simulated coffee shop, people felt negatively about tip screens and did not tip more with them, and did not tip more when a server was visible. https://decisionslab.unl.edu/pubs/goh_etal_2022_preprint.pdf",
+    "Checked by Claude on 2026-10-16: the 72% and 57% against Pew's report; the taxi study's \"more than a 10 percent increase in the average tip\" and \"over 50 percent more likely to receive a zero-valued tip\" in Haggag and Paci (2014); the coffee arithmetic (15% of $6 is 90 cents; 20% $1.20; 30% $1.80; 1.20 is a third more than 0.90)."
+  ],
+  "appliedLessons": [],
+  "cast": [],
+  "scenes": [
+    {
+      "id": "s5",
+      "chapter": 1,
+      "beat": "the-trick",
+      "mood": "upbeat",
+      "quiet": false,
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l15",
+          "speaker": "narrator",
+          "text": "When the buttons start at twenty, twenty starts to feel like the *cheap* choice.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l16",
+          "speaker": "narrator",
+          "text": "Then comes a second push: someone is standing right there, *watching* you choose.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l17",
+          "speaker": "narrator",
+          "text": "In a coffee shop experiment, the tip screen mostly made people feel *worse* about the shop.",
+          "pauseAfterMs": 700
+        }
+      ],
+      "shots": [
+        {
+          "id": "s15",
+          "line": "l15",
+          "words": "When the buttons start at twenty, twenty starts to feel like the *cheap* choice.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "queue",
+            "title": {
+              "lines": [
+                "20% NOW FEELS",
+                "LIKE THE CHEAP ONE"
+              ],
+              "stress": 1
+            },
+            "people": 4,
+            "sign": "20% 25% 30%",
+            "on": "cheap"
+          },
+          "transition": "cut",
+          "startMs": 0,
+          "endMs": 4890
+        },
+        {
+          "id": "s16",
+          "line": "l16",
+          "words": "Then comes a second push: someone is standing right there, *watching* you choose.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "scene",
+            "name": "coffee-counter",
+            "show": [
+              {
+                "item": "tablet"
+              },
+              {
+                "item": "barista",
+                "on": "someone"
+              },
+              {
+                "item": "gaze",
+                "on": "watching"
+              }
+            ]
+          },
+          "transition": "cut",
+          "startMs": 4890,
+          "endMs": 9690
+        },
+        {
+          "id": "s17",
+          "line": "l17",
+          "words": "In a coffee shop experiment, the tip screen mostly made people feel *worse* about the shop.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "tag",
+            "title": {
+              "lines": [
+                "IN THE EXPERIMENT"
+              ],
+              "stress": 0
+            },
+            "price": "FELT WORSE",
+            "note": "ABOUT THE SHOP",
+            "on": "worse"
+          },
+          "transition": "cut",
+          "startMs": 9690,
+          "endMs": 15680
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 1,
+      "beat": "the-proof",
+      "mood": "hope",
+      "quiet": false,
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l18",
+          "speaker": "narrator",
+          "text": "A study of thirteen million New York taxi rides found higher buttons raised tips about ten *percent*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l19",
+          "speaker": "narrator",
+          "text": "But with those higher buttons, more riders gave up and left *no* tip at all.",
+          "pauseAfterMs": 700
+        }
+      ],
+      "shots": [
+        {
+          "id": "s18",
+          "line": "l18",
+          "words": "A study of thirteen million New York taxi rides found higher buttons raised tips about ten *percent*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "number",
+            "value": "+10%",
+            "caption": "AVERAGE TAXI TIP",
+            "picture": "coin",
+            "countUp": true,
+            "on": "ten"
+          },
+          "transition": "wipe",
+          "startMs": 15680,
+          "endMs": 22500
+        },
+        {
+          "id": "s19",
+          "line": "l19",
+          "words": "But with those higher buttons, more riders gave up and left *no* tip at all.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "queue",
+            "title": {
+              "lines": [
+                "PUSH TOO HARD,",
+                "GET NOTHING"
+              ],
+              "stress": 1
+            },
+            "people": 4,
+            "sign": "NO TIP",
+            "on": "riders"
+          },
+          "transition": "cut",
+          "startMs": 22500,
+          "endMs": 27420
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "chapter": 1,
+      "beat": "your-move",
+      "mood": "hope",
+      "quiet": false,
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l20",
+          "speaker": "narrator",
+          "text": "So decide your tip before you reach the counter, and press *custom* if the buttons are not yours.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l21",
+          "speaker": "narrator",
+          "text": "Every screen asks now because higher buttons really do make people tip *more*.",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s20",
+          "line": "l20",
+          "words": "So decide your tip before you reach the counter, and press *custom* if the buttons are not yours.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "scene",
+            "name": "coffee-counter",
+            "show": [
+              {
+                "item": "tablet"
+              },
+              {
+                "item": "buttons"
+              },
+              {
+                "item": "finger",
+                "on": "press"
+              },
+              {
+                "item": "custom",
+                "on": "custom"
+              }
+            ]
+          },
+          "transition": "cut",
+          "startMs": 27420,
+          "endMs": 33770
+        },
+        {
+          "id": "s21",
+          "line": "l21",
+          "words": "Every screen asks now because higher buttons really do make people tip *more*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "number",
+            "value": "+10%",
+            "caption": "WHY EVERY SCREEN ASKS",
+            "picture": "coin",
+            "countUp": false,
+            "on": "more"
+          },
+          "transition": "iris",
+          "diveAt": {
+            "x": 0.5,
+            "y": 0.45
+          },
+          "startMs": 33770,
+          "endMs": 41240
+        }
+      ]
+    }
+  ]
+}

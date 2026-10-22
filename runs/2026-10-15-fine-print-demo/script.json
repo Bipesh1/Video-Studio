@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "title": "Why Cinema Popcorn Costs $9 (look demo)",
+  "request": "Demo of The Fine Print's explainer look (look 4): every graphic building up step by step, sample numbers",
+  "mode": "original",
+  "format": "fine-print",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "speakers": [],
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "narrator",
+      "text": "Why does a bucket of cinema popcorn cost nine dollars?",
+      "beat": "the-question",
+      "chapter": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l02",
+      "speaker": "narrator",
+      "text": "Almost everyone has paid it, and almost nobody asks why.",
+      "beat": "the-moment",
+      "chapter": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l03",
+      "speaker": "narrator",
+      "text": "The corn costs about thirty five cents, the bucket forty five, and the butter fifty five.",
+      "beat": "the-moment",
+      "chapter": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l04",
+      "speaker": "narrator",
+      "text": "That is one dollar and thirty five cents of real cost.",
+      "beat": "follow-the-money",
+      "chapter": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l05",
+      "speaker": "narrator",
+      "text": "So the cinema keeps the rest, seven dollars and sixty five cents.",
+      "beat": "follow-the-money",
+      "chapter": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l06",
+      "speaker": "narrator",
+      "text": "Your ticket money goes the other way, mostly to the film studio.",
+      "beat": "follow-the-money",
+      "chapter": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l07",
+      "speaker": "narrator",
+      "text": "The studio can take more than half of every ticket in the first weeks of a new film.",
+      "beat": "the-trick",
+      "chapter": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l08",
+      "speaker": "narrator",
+      "text": "So the cinema earns more from one bucket than from one ticket.",
+      "beat": "the-trick",
+      "chapter": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l09",
+      "speaker": "narrator",
+      "text": "That is why you walk past the snack counter before you reach your seat.",
+      "beat": "the-trick",
+      "chapter": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l10",
+      "speaker": "narrator",
+      "text": "And every one of us in the queue pays it.",
+      "beat": "the-proof",
+      "chapter": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l11",
+      "speaker": "narrator",
+      "text": "It is the same at airports, stadiums and theme parks.",
+      "beat": "the-proof",
+      "chapter": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l12",
+      "speaker": "narrator",
+      "text": "Next time, share one bucket, and it costs you four fifty.",
+      "beat": "your-move",
+      "chapter": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l13",
+      "speaker": "narrator",
+      "text": "Or eat before you go, and it costs you nothing.",
+      "beat": "your-move",
+      "chapter": 1,
+      "pauseAfterMs": 1400
+    }
+  ],
+  "sources": [
+    "Sample numbers for a look demo of The Fine Print, made on 2026-10-15. Not a video to post: a real video takes every price and share from a saved source."
+  ],
+  "changes": [],
+  "masterPrompt": "prompts/fine-print.md"
+}

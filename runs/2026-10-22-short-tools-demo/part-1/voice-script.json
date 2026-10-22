@@ -1,0 +1,63 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "When your bathroom scale drops by one kilo of fat, where does that fat actually *go*?",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l02",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "When a hundred and fifty doctors, dietitians and trainers were asked, more than half got it *wrong*.",
+      "speed": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l03",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Most said it turns into *energy* or heat, and a few said muscle, or the toilet.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l04",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "But fat is made of atoms, and atoms cannot just *vanish*, so let's follow them.",
+      "speed": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l05",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Inside your belly, fat sits in tiny fat cells, each one a little bag of *oil*.",
+      "speed": 1,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "l06",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "That oil is built from just three kinds of atoms: carbon, hydrogen and *oxygen*.",
+      "speed": 1,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "l07",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "To burn that oil, your body needs extra oxygen, which you breathe *in*.",
+      "speed": 1,
+      "pauseAfterMs": 400
+    }
+  ]
+}

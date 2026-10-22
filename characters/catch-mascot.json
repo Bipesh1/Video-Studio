@@ -1,0 +1,68 @@
+{
+  "id": "catch-mascot",
+  "name": "The Catch mascot",
+  "description": "What's the Catch?'s own character: the viewer's stand-in who tries things, gets into trouble and reacts, in every Short. Big curly hair, a teal hoodie, tan trousers and white sneakers, drawn blended into the channel's worlds (look C: navy lines, warm colours, the scene's light on his edge). He never speaks; the narrator tells the story. Picked by Biku on 2026-10-21 from four designs (design 1). His name is still to be chosen.",
+  "tags": [
+    "whats the catch",
+    "mascot",
+    "explainer",
+    "teal hoodie",
+    "hoodie",
+    "curly hair",
+    "viewer",
+    "you"
+  ],
+  "age": "adult",
+  "size": 1,
+  "identity": {
+    "skinTone": 4,
+    "hair": "afro",
+    "hairColor": "black"
+  },
+  "outfit": {
+    "clothes": {
+      "top": {
+        "kind": "hoodie",
+        "cloth": "ocean"
+      },
+      "bottom": {
+        "kind": "trousers",
+        "cloth": "tan"
+      },
+      "shoes": {
+        "kind": "sneakers",
+        "cloth": "white"
+      }
+    }
+  },
+  "eyeStyle": "round",
+  "expression": "happy",
+  "series": "whats-the-catch",
+  "expressions": [
+    "neutral",
+    "happy",
+    "surprised",
+    "horrified",
+    "afraid",
+    "thinking",
+    "laughing",
+    "jaw-drop",
+    "smug",
+    "exhausted"
+  ],
+  "poses": [
+    "stand",
+    "wave",
+    "point",
+    "shrug",
+    "hands-up",
+    "open-arms",
+    "look-up",
+    "look-down",
+    "walk",
+    "run",
+    "float"
+  ],
+  "version": 1,
+  "added": "2026-10-21"
+}

@@ -1,0 +1,103 @@
+import type { HandFrame } from '../rig/Character';
+import { accent, ink, lineWeights, pick, tokens, white } from '../tokens';
+import { Shaded, lightOffset } from '../wardrobe/Shaded';
+import { Glint, detail, paintOf } from './Hold';
+import type { PropProps } from './Hold';
+
+/**
+ * A bandaged hand: white cloth wound round the near hand and wrist. It is worn, not held, so it
+ * goes in a Character's `prop` slot and is drawn over the resting hand; it follows the arm
+ * through any pose. No wound is ever shown under it (Style 4).
+ */
+export function Bandage({
+  hands,
+  uid,
+  shadowSide,
+}: PropProps & { hands: { front: HandFrame; back: HandFrame } }) {
+  const { center, forearm } = hands.front;
+  return (
+    // Its own y runs along the forearm, from the wrist out past the knuckles.
+    <g transform={`translate(${center.x} ${center.y}) rotate(${-forearm})`}>
+      <Shaded
+        id={`${uid}-bandage`}
+        d="M -0.1 -0.31 L 0.1 -0.31 L 0.145 -0.1 Q 0.21 0.2 0 0.215 Q -0.21 0.2 -0.145 -0.1 Z"
+        fill={white}
+        shadow={tokens.fill.headShadow}
+        offset={lightOffset(shadowSide, 0.03)}
+      />
+      {detail('M -0.11 -0.22 L 0.12 -0.15', 'wrap-a')}
+      {detail('M -0.15 -0.06 L 0.16 0.02', 'wrap-b')}
+      {detail('M -0.17 0.09 L 0.15 0.14', 'wrap-c')}
+    </g>
+  );
+}
+
+/** The bottle's size in head units; it is drawn round the middle of its body. */
+export const BOTTLE = { width: 0.3, body: 0.42, neck: 0.16 } as const;
+
+/**
+ * A small glass bottle with a cork: medicine, poison, acid, ink. Drawn round the middle of its
+ * body, so a hand holds it there; standing, lift it by half its body.
+ */
+export function Bottle({ uid, shadowSide }: PropProps) {
+  const glass = paintOf('glint');
+  const cork = paintOf('brown');
+  const w = BOTTLE.width / 2;
+  const b = BOTTLE.body / 2;
+  const n = BOTTLE.neck;
+  return (
+    <g>
+      <Shaded
+        id={`${uid}-bottle-cork`}
+        d={`M -0.06 ${-b - n - 0.09} L 0.06 ${-b - n - 0.09} L 0.05 ${-b - n + 0.02} L -0.05 ${-b - n + 0.02} Z`}
+        {...cork}
+        offset={lightOffset(shadowSide, 0.015)}
+        strokeWidth={lineWeights.detail}
+      />
+      <Shaded
+        id={`${uid}-bottle`}
+        d={`M -0.055 ${-b - n} L 0.055 ${-b - n} L 0.055 ${-b - 0.03} Q ${w} ${-b} ${w} ${-b + 0.1} L ${w} ${b - 0.04} Q ${w} ${b} ${w - 0.04} ${b} L ${-w + 0.04} ${b} Q ${-w} ${b} ${-w} ${b - 0.04} L ${-w} ${-b + 0.1} Q ${-w} ${-b} -0.055 ${-b - 0.03} Z`}
+        {...glass}
+        offset={lightOffset(shadowSide, 0.035)}
+      />
+      {/* A plain paper label. */}
+      <rect
+        x={-w + 0.035}
+        y={-0.05}
+        width={2 * w - 0.07}
+        height={0.17}
+        fill={pick(accent('cream'), 0)}
+        stroke={ink}
+        strokeWidth={lineWeights.detail}
+      />
+      <Glint x={-w + 0.07} y={-b + 0.1} length={0.08} turn={90} />
+    </g>
+  );
+}
+
+/**
+ * A hammer, held by the end of its handle: the handle runs along +x from the fist to the iron
+ * head. Put it in a hand with InHand; a gripping hand's fingers are drawn over the handle.
+ */
+export function Hammer({ uid, shadowSide }: PropProps) {
+  const wood = paintOf('tan');
+  const iron = accent('steel');
+  return (
+    <g>
+      <Shaded
+        id={`${uid}-hammer-handle`}
+        d="M -0.14 -0.04 L 0.66 -0.035 L 0.66 0.035 L -0.14 0.04 Z"
+        {...wood}
+        offset={lightOffset(shadowSide, 0.015)}
+      />
+      <Shaded
+        id={`${uid}-hammer-head`}
+        d="M 0.58 -0.2 L 0.78 -0.2 L 0.78 0.2 L 0.58 0.2 Z"
+        fill={pick(iron, 2)}
+        shadow={pick(iron, 0)}
+        offset={lightOffset(shadowSide, 0.03)}
+      />
+      <Glint x={0.64} y={-0.12} length={0.07} turn={90} />
+    </g>
+  );
+}

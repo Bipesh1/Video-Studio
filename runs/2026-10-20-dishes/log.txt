@@ -1,0 +1,176 @@
+2026-10-20T15:38:32.089Z  part 1  part 1 of 3, 16:9: 2 scenes, 13 shots
+2026-10-20T15:38:32.092Z  part 1  voice: start
+2026-10-20T15:58:13.269Z  part 1    voice.wav: 31.16 s, 89 words, timings from heard, -17.12 LUFS
+2026-10-20T15:58:13.362Z  part 1  voice: done in 1181.3 s
+2026-10-20T15:58:13.363Z  part 1  time: start
+2026-10-20T15:58:13.957Z  part 1    13 shots over 31.2 s: shortest 1.1 s, longest 4.3 s
+2026-10-20T15:58:13.958Z  part 1    note: shot "s2d" is only 1.2 s long
+2026-10-20T15:58:13.958Z  part 1    note: shot "s2f" is only 1.1 s long
+2026-10-20T15:58:13.959Z  part 1    note: shot "s2g" is only 1.1 s long
+2026-10-20T15:58:13.969Z  part 1    note: shot "s2j" is 4.3 s long, a little over the 4 s a shot should take
+2026-10-20T15:58:13.969Z  part 1  time: done in 0.6 s
+2026-10-20T15:58:13.974Z  part 1  sound: start
+2026-10-20T15:58:56.551Z  part 1    F:\Video Studio\runs\2026-10-20-dishes\part-1\audio\mix.wav: 31.16 s, -14.02 LUFS, true peak -1.25 dB, 2 music moods, 7 effects, music -17.4 dB under the voice
+2026-10-20T15:58:56.552Z  part 1  sound: done in 42.6 s
+2026-10-20T15:58:56.552Z  part 1  stills: start
+2026-10-20T15:58:56.610Z  part 1  bundle: start
+2026-10-20T15:59:47.911Z  part 1  bundle: done in 51.3 s
+2026-10-20T16:01:40.328Z  part 1    13 stills in runs\2026-10-20-dishes\part-1\stills\16x9
+2026-10-20T16:01:41.419Z  part 1    runs\2026-10-20-dishes\part-1\stills\colours-16x9.png (the first shot of each of 2 scenes)
+2026-10-20T16:01:42.829Z  part 1    runs\2026-10-20-dishes\part-1\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-20T16:01:43.286Z  part 1    runs\2026-10-20-dishes\part-1\stills\sheet-16x9-2.png (1 shots, 1 rows)
+2026-10-20T16:01:43.287Z  part 1  stills: done in 166.7 s
+2026-10-20T16:03:57.772Z  part 1  part 1 of 3, 16:9: 2 scenes, 13 shots
+2026-10-20T16:03:57.774Z  part 1  time: start
+2026-10-20T16:03:57.870Z  part 1    13 shots over 31.2 s: shortest 1.1 s, longest 4.3 s
+2026-10-20T16:03:57.871Z  part 1    note: shot "s2d" is only 1.2 s long
+2026-10-20T16:03:57.871Z  part 1    note: shot "s2f" is only 1.1 s long
+2026-10-20T16:03:57.871Z  part 1    note: shot "s2g" is only 1.1 s long
+2026-10-20T16:03:57.872Z  part 1    note: shot "s2j" is 4.3 s long, a little over the 4 s a shot should take
+2026-10-20T16:03:57.872Z  part 1  time: done in 0.1 s
+2026-10-20T16:03:57.872Z  part 1  stills: start
+2026-10-20T16:03:58.297Z  part 1  bundle: start
+2026-10-20T16:04:54.737Z  part 1  bundle: done in 56.4 s
+2026-10-20T16:06:41.100Z  part 1    13 stills in runs\2026-10-20-dishes\part-1\stills\16x9
+2026-10-20T16:06:41.810Z  part 1    runs\2026-10-20-dishes\part-1\stills\colours-16x9.png (the first shot of each of 2 scenes)
+2026-10-20T16:06:43.146Z  part 1    runs\2026-10-20-dishes\part-1\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-20T16:06:43.422Z  part 1    runs\2026-10-20-dishes\part-1\stills\sheet-16x9-2.png (1 shots, 1 rows)
+2026-10-20T16:06:43.422Z  part 1  stills: done in 165.6 s
+2026-10-20T16:06:43.422Z  part 1  video: start
+2026-10-20T16:09:50.341Z  part 1    runs\2026-10-20-dishes\part-1\out\dishes-part-1-16x9-v1.mp4: 31.17 s of video, 1920x1080, in 185.9 s (5.96 s per video second)
+2026-10-20T16:09:50.344Z  part 1    runs\2026-10-20-dishes\part-1\out\dishes-part-1-16x9-v1.srt
+2026-10-20T16:09:50.378Z  part 1  video: done in 187.0 s
+2026-10-20T16:10:57.351Z  part 1  part 1 of 3, 16:9: 2 scenes, 13 shots
+2026-10-20T16:10:57.353Z  part 1  time: start
+2026-10-20T16:10:57.357Z  part 1    13 shots over 31.2 s: shortest 1.1 s, longest 4.3 s
+2026-10-20T16:10:57.357Z  part 1    note: shot "s2d" is only 1.2 s long
+2026-10-20T16:10:57.358Z  part 1    note: shot "s2f" is only 1.1 s long
+2026-10-20T16:10:57.358Z  part 1    note: shot "s2g" is only 1.1 s long
+2026-10-20T16:10:57.358Z  part 1    note: shot "s2j" is 4.3 s long, a little over the 4 s a shot should take
+2026-10-20T16:10:57.359Z  part 1  time: done in 0.0 s
+2026-10-20T16:10:57.359Z  part 1  stills: start
+2026-10-20T16:10:57.378Z  part 1  bundle: start
+2026-10-20T16:11:27.690Z  part 1  bundle: done in 30.3 s
+2026-10-20T16:11:54.956Z  part 1    13 stills in runs\2026-10-20-dishes\part-1\stills\16x9
+2026-10-20T16:11:55.327Z  part 1    runs\2026-10-20-dishes\part-1\stills\colours-16x9.png (the first shot of each of 2 scenes)
+2026-10-20T16:11:56.773Z  part 1    runs\2026-10-20-dishes\part-1\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-20T16:11:57.178Z  part 1    runs\2026-10-20-dishes\part-1\stills\sheet-16x9-2.png (1 shots, 1 rows)
+2026-10-20T16:11:57.179Z  part 1  stills: done in 59.8 s
+2026-10-20T16:11:57.179Z  part 1  video: start
+2026-10-20T16:14:01.971Z  part 1  part 1 of 3, 16:9: 2 scenes, 13 shots
+2026-10-20T16:14:01.972Z  part 1  time: start
+2026-10-20T16:14:01.978Z  part 1    13 shots over 31.2 s: shortest 1.1 s, longest 4.3 s
+2026-10-20T16:14:01.978Z  part 1    note: shot "s2d" is only 1.2 s long
+2026-10-20T16:14:01.979Z  part 1    note: shot "s2f" is only 1.1 s long
+2026-10-20T16:14:01.979Z  part 1    note: shot "s2g" is only 1.1 s long
+2026-10-20T16:14:01.980Z  part 1    note: shot "s2j" is 4.3 s long, a little over the 4 s a shot should take
+2026-10-20T16:14:01.980Z  part 1  time: done in 0.0 s
+2026-10-20T16:14:01.980Z  part 1  stills: start
+2026-10-20T16:14:01.999Z  part 1  bundle: start
+2026-10-20T16:14:23.199Z  part 1  bundle: done in 21.2 s
+2026-10-20T16:14:43.033Z  part 1    13 stills in runs\2026-10-20-dishes\part-1\stills\16x9
+2026-10-20T16:14:43.347Z  part 1    runs\2026-10-20-dishes\part-1\stills\colours-16x9.png (the first shot of each of 2 scenes)
+2026-10-20T16:14:44.523Z  part 1    runs\2026-10-20-dishes\part-1\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-20T16:14:44.725Z  part 1    runs\2026-10-20-dishes\part-1\stills\sheet-16x9-2.png (1 shots, 1 rows)
+2026-10-20T16:14:44.725Z  part 1  stills: done in 42.7 s
+2026-10-20T16:14:44.725Z  part 1  video: start
+2026-10-20T16:17:41.117Z  part 1    runs\2026-10-20-dishes\part-1\out\dishes-part-1-16x9-v2.mp4: 31.17 s of video, 1920x1080, in 175.4 s (5.63 s per video second)
+2026-10-20T16:17:41.123Z  part 1    runs\2026-10-20-dishes\part-1\out\dishes-part-1-16x9-v2.srt
+2026-10-20T16:17:41.136Z  part 1  video: done in 176.4 s
+2026-10-20T16:18:20.715Z  part 1  part 1 of 3, 16:9: 2 scenes, 13 shots
+2026-10-20T16:18:20.716Z  part 1  time: start
+2026-10-20T16:18:20.720Z  part 1    13 shots over 31.2 s: shortest 1.1 s, longest 4.3 s
+2026-10-20T16:18:20.720Z  part 1    note: shot "s2d" is only 1.2 s long
+2026-10-20T16:18:20.721Z  part 1    note: shot "s2f" is only 1.1 s long
+2026-10-20T16:18:20.721Z  part 1    note: shot "s2g" is only 1.1 s long
+2026-10-20T16:18:20.721Z  part 1    note: shot "s2j" is 4.3 s long, a little over the 4 s a shot should take
+2026-10-20T16:18:20.721Z  part 1  time: done in 0.0 s
+2026-10-20T16:18:20.721Z  part 1  stills: start
+2026-10-20T16:18:20.736Z  part 1  bundle: start
+2026-10-20T16:18:40.911Z  part 1  bundle: done in 20.2 s
+2026-10-20T16:19:01.949Z  part 1    13 stills in runs\2026-10-20-dishes\part-1\stills\16x9
+2026-10-20T16:19:02.275Z  part 1    runs\2026-10-20-dishes\part-1\stills\colours-16x9.png (the first shot of each of 2 scenes)
+2026-10-20T16:19:03.764Z  part 1    runs\2026-10-20-dishes\part-1\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-20T16:19:04.010Z  part 1    runs\2026-10-20-dishes\part-1\stills\sheet-16x9-2.png (1 shots, 1 rows)
+2026-10-20T16:19:04.011Z  part 1  stills: done in 43.3 s
+2026-10-20T16:19:04.011Z  part 1  video: start
+2026-10-20T16:22:03.969Z  part 1    runs\2026-10-20-dishes\part-1\out\dishes-part-1-16x9-v3.mp4: 31.17 s of video, 1920x1080, in 179.0 s (5.74 s per video second)
+2026-10-20T16:22:03.972Z  part 1    runs\2026-10-20-dishes\part-1\out\dishes-part-1-16x9-v3.srt
+2026-10-20T16:22:03.982Z  part 1  video: done in 180.0 s
+2026-10-20T16:26:14.553Z  part 2  part 2 of 3, 16:9: 2 scenes, 9 shots
+2026-10-20T16:26:14.555Z  part 2  voice: start
+2026-10-20T16:33:20.217Z  part 2    voice.wav: 23.74 s, 55 words, timings from estimated, -17.1 LUFS
+2026-10-20T16:33:20.274Z  part 2  voice: done in 425.7 s
+2026-10-20T16:33:20.275Z  part 2  time: start
+2026-10-20T16:33:20.795Z  part 2    9 shots over 23.7 s: shortest 2.0 s, longest 3.8 s
+2026-10-20T16:33:20.808Z  part 2  time: done in 0.5 s
+2026-10-20T16:33:20.809Z  part 2  sound: start
+2026-10-20T16:34:02.907Z  part 2    F:\Video Studio\runs\2026-10-20-dishes\part-2\audio\mix.wav: 23.74 s, -14.01 LUFS, true peak -1.25 dB, 2 music moods, 5 effects, music -17.7 dB under the voice
+2026-10-20T16:34:02.907Z  part 2  sound: done in 42.1 s
+2026-10-20T16:34:02.907Z  part 2  stills: start
+2026-10-20T16:34:03.066Z  part 2  bundle: start
+2026-10-20T16:35:48.928Z  part 2  bundle: done in 105.8 s
+2026-10-20T16:36:24.204Z  part 2    9 stills in runs\2026-10-20-dishes\part-2\stills\16x9
+2026-10-20T16:36:24.763Z  part 2    runs\2026-10-20-dishes\part-2\stills\colours-16x9.png (the first shot of each of 2 scenes)
+2026-10-20T16:36:25.749Z  part 2    runs\2026-10-20-dishes\part-2\stills\sheet-16x9-1.png (9 shots, 3 rows)
+2026-10-20T16:36:25.749Z  part 2  stills: done in 142.8 s
+2026-10-20T16:36:43.607Z  part 3  part 3 of 3, 16:9: 2 scenes, 19 shots
+2026-10-20T16:36:43.608Z  part 3  voice: start
+2026-10-20T16:50:20.004Z  part 3    voice.wav: 51.74 s, 155 words, timings from estimated, -17.1 LUFS
+2026-10-20T16:50:20.029Z  part 3  voice: done in 816.4 s
+2026-10-20T16:50:20.074Z  part 3  time: start
+2026-10-20T16:50:20.197Z  part 3    19 shots over 51.7 s: shortest 0.9 s, longest 3.6 s
+2026-10-20T16:50:20.198Z  part 3    note: shot "s6d" is only 0.9 s long
+2026-10-20T16:50:20.198Z  part 3  time: done in 0.1 s
+2026-10-20T16:50:20.198Z  part 3  sound: start
+2026-10-20T16:50:45.920Z  part 3    F:\Video Studio\runs\2026-10-20-dishes\part-3\audio\mix.wav: 51.74 s, -14.04 LUFS, true peak -1.26 dB, 2 music moods, 9 effects, music -17.4 dB under the voice
+2026-10-20T16:50:45.921Z  part 3  sound: done in 25.7 s
+2026-10-20T16:50:45.921Z  part 3  stills: start
+2026-10-20T16:50:45.977Z  part 3  bundle: start
+2026-10-20T16:51:11.651Z  part 3  bundle: done in 25.7 s
+2026-10-20T16:52:06.678Z  part 3    19 stills in runs\2026-10-20-dishes\part-3\stills\16x9
+2026-10-20T16:52:07.203Z  part 3    runs\2026-10-20-dishes\part-3\stills\colours-16x9.png (the first shot of each of 2 scenes)
+2026-10-20T16:52:08.524Z  part 3    runs\2026-10-20-dishes\part-3\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-20T16:52:09.357Z  part 3    runs\2026-10-20-dishes\part-3\stills\sheet-16x9-2.png (7 shots, 3 rows)
+2026-10-20T16:52:09.357Z  part 3  stills: done in 83.4 s
+2026-10-20T16:53:59.778Z  part 2  part 2 of 3, 16:9: 2 scenes, 9 shots
+2026-10-20T16:53:59.780Z  part 2  video: start
+2026-10-20T16:53:59.908Z  part 2  bundle: start
+2026-10-20T16:54:04.238Z  part 2  bundle: done in 4.3 s
+2026-10-20T16:56:43.942Z  part 2    runs\2026-10-20-dishes\part-2\out\dishes-part-2-16x9-v1.mp4: 23.77 s of video, 1920x1080, in 154.9 s (6.52 s per video second)
+2026-10-20T16:56:43.946Z  part 2    runs\2026-10-20-dishes\part-2\out\dishes-part-2-16x9-v1.srt
+2026-10-20T16:56:43.953Z  part 2  video: done in 164.2 s
+2026-10-20T16:57:02.481Z  part 3  part 3 of 3, 16:9: 2 scenes, 19 shots
+2026-10-20T16:57:02.483Z  part 3  time: start
+2026-10-20T16:57:02.488Z  part 3    19 shots over 51.7 s: shortest 0.9 s, longest 3.6 s
+2026-10-20T16:57:02.488Z  part 3    note: shot "s6d" is only 0.9 s long
+2026-10-20T16:57:02.488Z  part 3  time: done in 0.0 s
+2026-10-20T16:57:02.488Z  part 3  stills: start
+2026-10-20T16:57:02.510Z  part 3  bundle: start
+2026-10-20T16:57:06.790Z  part 3  bundle: done in 4.3 s
+2026-10-20T16:57:40.123Z  part 3    19 stills in runs\2026-10-20-dishes\part-3\stills\16x9
+2026-10-20T16:57:40.431Z  part 3    runs\2026-10-20-dishes\part-3\stills\colours-16x9.png (the first shot of each of 2 scenes)
+2026-10-20T16:57:41.693Z  part 3    runs\2026-10-20-dishes\part-3\stills\sheet-16x9-1.png (12 shots, 4 rows)
+2026-10-20T16:57:42.466Z  part 3    runs\2026-10-20-dishes\part-3\stills\sheet-16x9-2.png (7 shots, 3 rows)
+2026-10-20T16:57:42.467Z  part 3  stills: done in 40.0 s
+2026-10-20T16:57:42.467Z  part 3  video: start
+2026-10-20T17:05:39.327Z  part 3    runs\2026-10-20-dishes\part-3\out\dishes-part-3-16x9-v1.mp4: 51.77 s of video, 1920x1080, in 475.9 s (9.19 s per video second)
+2026-10-20T17:05:39.331Z  part 3    runs\2026-10-20-dishes\part-3\out\dishes-part-3-16x9-v1.srt
+2026-10-20T17:05:39.347Z  part 3  video: done in 476.9 s
+2026-10-20T17:10:49.461Z  output  16:9 full video:
+2026-10-20T17:11:11.497Z  output      F:\Video Studio\runs\2026-10-20-dishes\cuts\full\audio\mix.wav: 106.70 s, -14.02 LUFS, true peak -1.25 dB, 6 music moods, 21 effects, music -17.5 dB under the voice
+2026-10-20T17:14:45.853Z  output    runs\2026-10-20-dishes\out\dishes-16x9-v1.mp4: 106.70 s, 1920x1080
+2026-10-20T17:14:45.853Z  output      ok   The file plays: 1920x1080, 30 pictures a second, 106.7 s, picture and sound both there; played through from start to finish
+2026-10-20T17:14:45.854Z  output      ok   It is as long as its parts together: 106.7 s; its 3 pieces add up to 106.7 s
+2026-10-20T17:14:45.854Z  output      ok   Its pictures are the parts that passed: every frame against dishes-part-1-16x9-v3.mp4 and dishes-part-2-16x9-v1.mp4 and dishes-part-3-16x9-v1.mp4 (the strongest difference is 1 of 255; over 16 would be a different picture)
+2026-10-20T17:14:45.855Z  output      ok   Its sound is the mix made for the whole video: second for second (what is left over is 34 dB under it at most)
+2026-10-20T17:14:45.855Z  output      ok   There is no dead silence: the sound never drops out; the longest pause between words is 2.7 s
+2026-10-20T17:14:45.855Z  output      ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.2 dB (the limit is -1)
+2026-10-20T17:14:45.855Z  output      ok   Nothing drowns the words: 21 sound effects, the loudest of those over words 13 dB under the voice; the music sits 17.5 dB under the voice while someone speaks
+2026-10-20T17:14:45.855Z  output      FIX  Every join and the cover hold up: a strip of frames across each of the 2 joins between parts, and the cover picture
+2026-10-20T17:14:45.856Z  output            problem: the joins and the cover have not been looked at yet
+2026-10-20T17:14:45.856Z  output      to look at: runs\2026-10-20-dishes\out\look\dishes-16x9-v1 (each join) and runs\2026-10-20-dishes\out\dishes-16x9-v1-cover-side.jpg; then write runs\2026-10-20-dishes\out\dishes-16x9-v1.look.json
+2026-10-20T17:14:45.859Z  output  runs\2026-10-20-dishes\delivery.md
+2026-10-20T17:15:00.732Z  output  16:9 full video:
+2026-10-20T17:15:01.183Z  output    runs\2026-10-20-dishes\out\dishes-16x9-v1.mp4: already made from these parts
+2026-10-20T17:15:01.318Z  output  runs\2026-10-20-dishes\delivery.md

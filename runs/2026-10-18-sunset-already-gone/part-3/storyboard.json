@@ -1,0 +1,504 @@
+{
+  "version": 1,
+  "title": "Why Is the Sun Already Gone When You Watch It Set?",
+  "request": "Biku's What's the Catch? script, used as it is: 'make a video for this script for whats the catch' (2026-10-18).",
+  "mode": "as-is",
+  "format": "fine-print",
+  "style": "ink-stick",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "seed": 6201,
+  "finish": {
+    "acting": "snappy",
+    "onTwos": false,
+    "shadows": false,
+    "grain": 0.2,
+    "vignette": 0.12,
+    "boil": 0.25
+  },
+  "explainerLook": "world",
+  "sources": [
+    "David Basey, \"Atmospheric Refraction\", British Astronomical Association, 2 March 2019. Near the horizon the air lifts the Sun's image by about half a degree, roughly the Sun's apparent diameter; a Sun that seems to sit on the horizon is really below it; the lower edge is lifted more than the upper, so the disc looks oval. https://britastro.org/2019/atmospheric-refraction",
+    "Tong Yu-fai, \"Effect of atmospheric refraction on the times of sunrise and sunset\", Hong Kong Observatory, August 2017. Refraction makes sunset about 2 minutes later in Hong Kong than with no air (about 34 arcminutes of lift under average conditions); the published times already include it; the Sun truly disappears below the horizon before sunset happens. https://www.hko.gov.hk/en/education/astronomy-and-time/astronomy/00493-effect-of-atmospheric-refraction-on-the-times-of-sunrise-and-sunset.html",
+    "Checked by Claude against both pages on 2026-10-18."
+  ],
+  "appliedLessons": [],
+  "cast": [],
+  "scenes": [
+    {
+      "id": "s4",
+      "chapter": 1,
+      "beat": "the-trick",
+      "mood": "tense",
+      "quiet": false,
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l13",
+          "speaker": "narrator",
+          "text": "Follow one beam from that low Sun as it curves down into your phone.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l14",
+          "speaker": "narrator",
+          "text": "Your eyes and your camera assume that light came in a *straight* line.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l15",
+          "speaker": "narrator",
+          "text": "But trace the curved beam back, and the real Sun is already *below* the horizon.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l16",
+          "speaker": "narrator",
+          "text": "The air lifts the picture of the Sun by about its own *width*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l17",
+          "speaker": "narrator",
+          "text": "So the Sun on your screen has, in a way, already *set*.",
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s13",
+          "line": "l13",
+          "words": "Follow one beam from that low Sun as it curves down into your phone.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "from": "curve",
+            "at": "phone",
+            "fly": "whole",
+            "keep": [
+              "low-sun"
+            ],
+            "show": [
+              {
+                "item": "ride",
+                "on": "beam"
+              }
+            ]
+          },
+          "transition": "cut",
+          "startMs": 0,
+          "endMs": 4790
+        },
+        {
+          "id": "s14",
+          "line": "l14",
+          "words": "Your eyes and your camera assume that light came in a *straight* line.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "at": "phone",
+            "fly": "start",
+            "keep": [
+              "ride"
+            ],
+            "show": [
+              {
+                "item": "straight-back",
+                "on": "straight"
+              }
+            ]
+          },
+          "transition": "cut",
+          "startMs": 4790,
+          "endMs": 8850
+        },
+        {
+          "id": "s15",
+          "line": "l15",
+          "words": "But trace the curved beam back, and the real Sun is already *below* the horizon.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "from": "phone",
+            "at": "below",
+            "fly": "start",
+            "keep": [
+              "ride",
+              "straight-back"
+            ],
+            "show": [
+              {
+                "item": "real-sun",
+                "on": "below"
+              }
+            ]
+          },
+          "transition": "cut",
+          "startMs": 8850,
+          "endMs": 14340
+        },
+        {
+          "id": "s16",
+          "line": "l16",
+          "words": "The air lifts the picture of the Sun by about its own *width*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "at": "below",
+            "fly": "start",
+            "keep": [
+              "ride",
+              "straight-back",
+              "real-sun"
+            ],
+            "show": [],
+            "callout": {
+              "value": "1 SUN",
+              "caption": "LIFTED BY ITS OWN WIDTH",
+              "at": "gap",
+              "on": "width"
+            }
+          },
+          "transition": "cut",
+          "startMs": 14340,
+          "endMs": 18430
+        },
+        {
+          "id": "s17",
+          "line": "l17",
+          "words": "So the Sun on your screen has, in a way, already *set*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "from": "below",
+            "at": "gap",
+            "fly": "start",
+            "keep": [
+              "real-sun"
+            ],
+            "show": [
+              {
+                "item": "screen-front",
+                "on": "screen"
+              }
+            ]
+          },
+          "transition": "cut",
+          "startMs": 18430,
+          "endMs": 22520
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chapter": 1,
+      "beat": "the-proof",
+      "mood": "reflective",
+      "quiet": false,
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l18",
+          "speaker": "narrator",
+          "text": "The British Astronomical Association puts that lift at about half a degree, roughly one whole Sun.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l19",
+          "speaker": "narrator",
+          "text": "The Hong Kong Observatory says this makes sunset there about two minutes *later* than with no air.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l20",
+          "speaker": "narrator",
+          "text": "And official sunset times already include those extra minutes.",
+          "pauseAfterMs": 800
+        }
+      ],
+      "shots": [
+        {
+          "id": "s18",
+          "line": "l18",
+          "words": "The British Astronomical Association puts that lift at about half a degree, roughly one whole Sun.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "at": "gap",
+            "fly": "start",
+            "keep": [
+              "real-sun"
+            ],
+            "show": [],
+            "callout": {
+              "value": "0.5°",
+              "caption": "ABOUT ONE WHOLE SUN",
+              "at": "gap",
+              "on": "half"
+            }
+          },
+          "transition": "cut",
+          "startMs": 22520,
+          "endMs": 29300
+        },
+        {
+          "id": "s19",
+          "line": "l19",
+          "words": "The Hong Kong Observatory says this makes sunset there about two minutes *later* than with no air.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "at": "gap",
+            "fly": "start",
+            "keep": [
+              "real-sun"
+            ],
+            "show": [],
+            "callout": {
+              "value": "+2 MIN",
+              "caption": "LATER SUNSET IN HONG KONG",
+              "at": "sun",
+              "on": "two"
+            }
+          },
+          "transition": "cut",
+          "startMs": 29300,
+          "endMs": 35770
+        },
+        {
+          "id": "s20",
+          "line": "l20",
+          "words": "And official sunset times already include those extra minutes.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "from": "gap",
+            "at": "screen",
+            "fly": "start",
+            "keep": [],
+            "show": [],
+            "callout": {
+              "value": "SUNSET",
+              "caption": "INCLUDES THE 2 MINUTES",
+              "at": "screen",
+              "on": "official"
+            }
+          },
+          "transition": "cut",
+          "startMs": 35770,
+          "endMs": 40490
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 1,
+      "beat": "your-move",
+      "mood": "hope",
+      "quiet": false,
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l21",
+          "speaker": "narrator",
+          "text": "You'll also notice a low Sun looks squashed, flat at the bottom.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l22",
+          "speaker": "narrator",
+          "text": "That is the air lifting its bottom edge more than its top.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l23",
+          "speaker": "narrator",
+          "text": "So when the Sun touches the sea, the real Sun is already just *below* it.",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s21",
+          "line": "l21",
+          "words": "You'll also notice a low Sun looks squashed, flat at the bottom.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "from": "screen",
+            "at": "sunclose",
+            "fly": "start",
+            "keep": [],
+            "show": [
+              {
+                "item": "oval",
+                "on": "flat"
+              }
+            ]
+          },
+          "transition": "cut",
+          "startMs": 40490,
+          "endMs": 44720
+        },
+        {
+          "id": "s22",
+          "line": "l22",
+          "words": "That is the air lifting its bottom edge more than its top.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "at": "sunclose",
+            "fly": "start",
+            "keep": [
+              "oval"
+            ],
+            "show": [],
+            "callout": {
+              "value": "BOTTOM",
+              "caption": "LIFTED MORE THAN THE TOP",
+              "at": "bottom",
+              "on": "bottom"
+            }
+          },
+          "transition": "cut",
+          "startMs": 44720,
+          "endMs": 48820
+        },
+        {
+          "id": "s23",
+          "line": "l23",
+          "words": "So when the Sun touches the sea, the real Sun is already just *below* it.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "graphic": {
+            "kind": "journey",
+            "world": "sunset",
+            "title": {
+              "lines": [
+                "ALREADY",
+                "GONE"
+              ],
+              "stress": 1
+            },
+            "from": "sunclose",
+            "at": "screen",
+            "fly": "start",
+            "keep": [],
+            "show": [
+              {
+                "item": "ghost",
+                "on": "below"
+              }
+            ]
+          },
+          "transition": "cut",
+          "startMs": 48820,
+          "endMs": 55630
+        }
+      ]
+    }
+  ]
+}

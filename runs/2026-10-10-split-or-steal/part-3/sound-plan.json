@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "tense",
+      "startMs": 0
+    },
+    {
+      "mood": "hope",
+      "startMs": 27430
+    }
+  ],
+  "sfx": [
+    {
+      "name": "click",
+      "atMs": 23340,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "click",
+      "atMs": 25360,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "applause",
+      "atMs": 26365,
+      "durationMs": 915,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 2
+    },
+    {
+      "name": "ding",
+      "atMs": 27490,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 3
+    },
+    {
+      "name": "ding",
+      "atMs": 46340,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 4
+    }
+  ],
+  "musicGainDb": 0
+}

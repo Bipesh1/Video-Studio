@@ -1,0 +1,63 @@
+{
+  "id": "trainer",
+  "name": "The Trainer",
+  "description": "The Trainer of the game theory videos: the House's man in the room, who runs every game with his own hands. A figure in a grey suit and a plain gold tie, with neat dark hair, heavy-lidded eyes and a small calm smile; the only one in the room with skin and hair, so he is never taken for a player. He is friendly to the player and tells the camera the truth. Look picked by Biku from three on 2026-10-11 (look 3). Trousers and shoes to match his suit, 2026-10-14.",
+  "tags": [
+    "game theory",
+    "cast",
+    "trainer",
+    "the house",
+    "host",
+    "villain",
+    "suit",
+    "gold tie",
+    "calm",
+    "bored"
+  ],
+  "age": "adult",
+  "size": 1.06,
+  "identity": {
+    "skinTone": 1,
+    "hair": "short-crop",
+    "hairColor": "black"
+  },
+  "outfit": {
+    "clothes": {
+      "top": {
+        "kind": "jacket",
+        "cloth": "steel",
+        "under": "white"
+      },
+      "bottom": {
+        "kind": "trousers",
+        "cloth": "steel"
+      },
+      "shoes": {
+        "kind": "boots",
+        "cloth": "brown"
+      },
+      "tie": {
+        "cloth": "gold"
+      }
+    }
+  },
+  "eyeStyle": "round",
+  "expression": "bored",
+  "voice": "trainer",
+  "series": "game-theory",
+  "host": true,
+  "expressions": [
+    "bored",
+    "happy",
+    "neutral",
+    "smug",
+    "calculating",
+    "suspicious",
+    "surprised",
+    "lying"
+  ],
+  "poses": ["stand", "point", "cross-arms", "hold-object", "open-arms", "walk"],
+  "signature": ["fix-tie", "cross-arms"],
+  "version": 3,
+  "added": "2026-10-11"
+}

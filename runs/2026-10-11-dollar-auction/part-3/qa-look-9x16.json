@@ -1,0 +1,47 @@
+{
+    "version":  1,
+    "video":  "dollar-auction-part-3-9x16-preview-v2.mp4",
+    "stills":  {
+                   "s6a":  "ok",
+                   "s6b":  "ok",
+                   "s6c":  "ok",
+                   "s6d":  "ok",
+                   "s6e":  "ok",
+                   "s7a":  "ok",
+                   "s7b":  "ok",
+                   "s7c":  "ok",
+                   "s7d":  "ok",
+                   "s7e":  "ok",
+                   "s7f":  "ok",
+                   "s7g":  "ok",
+                   "s7h":  "ok"
+               },
+    "strips":  {
+                   "cut-s6d-s6e":  "ok",
+                   "cut-s7c-s7d":  "ok",
+                   "cut-s7d-s7e":  "ok",
+                   "cut-s7e-s7f":  "ok",
+                   "s6d-move-1":  "ok",
+                   "s7b-move-1":  "ok",
+                   "s7d-move-1":  "ok",
+                   "s7e-move-1":  "ok",
+                   "s7f-move-1":  "ok",
+                   "s7f-move-2":  "ok"
+               },
+    "playbook":  "ok",
+    "fixed":  [
+                  "You wore a tired face with an open mouth for a few seconds on the sofa, which could read as talking; he never speaks. It is a sad face with the mouth shut now.",
+                  "The few coins in the nearly empty jar were hidden behind the podium. They are piled in the corner of the jar that shows beside it."
+              ],
+    "notes":  [
+                  "The auctioneer\u0027s confession is over the full jar; the sheet EACH PLAYER HAS $2.50 is a page held up to the camera, not slid across the podium, and the gloved hand does not drum its fingers.",
+                  "\u0027Solved in 1986\u0027 is a label over the two bidders: the year is from the source in his table (O\u0027Neill, 1986), and is not in his spoken lines or on-screen notes. It can come off.",
+                  "The replay: the Cheat thinks, then lifts a paddle marked 60 cents; the Copycat folds his arms; the gavel comes down and the jar behind holds only a few coins. The bill is not shown going to the Cheat.",
+                  "THE SECOND BID is big words over the moment it began: the Copycat\u0027s 10 cent paddle going up after the Cheat\u0027s 5 cent one. There is no scoreboard to clear.",
+                  "At home it is pale light: You on a sofa with a phone, a chat filling up beside him one message at a time, and a wall clock whose hands run from nine to past midnight. The writing in the messages cannot be read, on purpose.",
+                  "The last shot: a fresh note slides onto the podium with a tag \u00275 cents ?\u0027, the gavel goes up and holds for about two seconds after the last word.",
+                  "The jar looks very pale against the wall when it is nearly empty; it reads as glass, but faintly.",
+                  "Sounds: a ping for each message, a ticking clock under the running hands, the gavel\u0027s thud and one coin (a ding) in the replay. There is no held breath before the gavel. Music: curious, then reflective from \u0027The trap was never the dollar\u0027. Sound is for Biku\u0027s ears.",
+                  "The part opens on a fade from part 2."
+              ]
+}

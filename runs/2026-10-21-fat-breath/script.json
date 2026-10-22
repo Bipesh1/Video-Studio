@@ -1,0 +1,197 @@
+{
+  "version": 1,
+  "title": "Where Does Your Fat Go When You Lose Weight?",
+  "request": "Biku's What's the Catch? Short, used as it is: 'this is the script build for this script' (2026-10-21). The first Short in the new look: drawing at the black-hole bar, the mascot (design 1) blended in (look C), narrator voice 4.",
+  "mode": "as-is",
+  "format": "fine-print",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "speakers": [],
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "narrator",
+      "text": "When your bathroom scale drops by one kilo of fat, where does that fat actually *go*?",
+      "beat": "the-question",
+      "chapter": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l02",
+      "speaker": "narrator",
+      "text": "When a hundred and fifty doctors, dietitians and trainers were asked, more than half got it *wrong*.",
+      "beat": "the-question",
+      "chapter": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l03",
+      "speaker": "narrator",
+      "text": "Most said it turns into *energy* or heat, and a few said muscle, or the toilet.",
+      "beat": "the-moment",
+      "chapter": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l04",
+      "speaker": "narrator",
+      "text": "But fat is made of atoms, and atoms cannot just *vanish*, so let's follow them.",
+      "beat": "the-moment",
+      "chapter": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l05",
+      "speaker": "narrator",
+      "text": "Inside your belly, fat sits in tiny fat cells, each one a little bag of *oil*.",
+      "beat": "follow-the-money",
+      "chapter": 1,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "l06",
+      "speaker": "narrator",
+      "text": "That oil is built from just three kinds of atoms: carbon, hydrogen and *oxygen*.",
+      "beat": "follow-the-money",
+      "chapter": 1,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "l07",
+      "speaker": "narrator",
+      "text": "To burn that oil, your body needs extra oxygen, which you breathe *in*.",
+      "beat": "follow-the-money",
+      "chapter": 1,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "l08",
+      "speaker": "narrator",
+      "text": "One kilo of fat needs nearly three kilos of oxygen, so your lungs do the heavy *lifting*.",
+      "beat": "follow-the-money",
+      "chapter": 2,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l09",
+      "speaker": "narrator",
+      "text": "Your body pulls the oil apart and joins each piece to that *oxygen*.",
+      "beat": "follow-the-money",
+      "chapter": 2,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "l10",
+      "speaker": "narrator",
+      "text": "Only two leftovers come out: water, and carbon dioxide, the gas that fizzes in *soda*.",
+      "beat": "follow-the-money",
+      "chapter": 2,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "l11",
+      "speaker": "narrator",
+      "text": "That gas slips into your blood and rides it all the way up to your *lungs*.",
+      "beat": "follow-the-money",
+      "chapter": 2,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l12",
+      "speaker": "narrator",
+      "text": "And then, with your next breath, it floats right out of your *mouth*.",
+      "beat": "the-trick",
+      "chapter": 2,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l13",
+      "speaker": "narrator",
+      "text": "Out of every kilo you lose, about eight hundred and forty grams leaves as *breath*.",
+      "beat": "the-trick",
+      "chapter": 2,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "l14",
+      "speaker": "narrator",
+      "text": "The other hundred and sixty grams becomes water, and leaves as *sweat* and pee.",
+      "beat": "the-trick",
+      "chapter": 2,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l15",
+      "speaker": "narrator",
+      "text": "So the gym is really where you go to exhale your *burger*.",
+      "beat": "the-trick",
+      "chapter": 2,
+      "pauseAfterMs": 1000
+    },
+    {
+      "id": "l16",
+      "speaker": "narrator",
+      "text": "Two scientists in Australia worked this out by tracking every *atom* in ten kilos of fat.",
+      "beat": "the-proof",
+      "chapter": 3,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "l17",
+      "speaker": "narrator",
+      "text": "Ten kilos of fat plus twenty nine kilos of oxygen went *in*.",
+      "beat": "the-proof",
+      "chapter": 3,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "l18",
+      "speaker": "narrator",
+      "text": "Twenty eight kilos of carbon dioxide and eleven kilos of water came *out*.",
+      "beat": "the-proof",
+      "chapter": 3,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "l19",
+      "speaker": "narrator",
+      "text": "Both sides weigh thirty nine kilos, so not a single atom went *missing*.",
+      "beat": "the-proof",
+      "chapter": 3,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l20",
+      "speaker": "narrator",
+      "text": "And no, panting on the sofa will not burn more fat. You will just get *dizzy*.",
+      "beat": "the-proof",
+      "chapter": 3,
+      "pauseAfterMs": 800
+    },
+    {
+      "id": "l21",
+      "speaker": "narrator",
+      "text": "From now on, every breath out carries a tiny piece of yesterday's *dinner*.",
+      "beat": "your-move",
+      "chapter": 3,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l22",
+      "speaker": "narrator",
+      "text": "So where did that kilo on your scale go? You breathed it *out*.",
+      "beat": "your-move",
+      "chapter": 3,
+      "pauseAfterMs": 1500
+    }
+  ],
+  "sources": [
+    "Meerman, R. and Brown, A. J., \"When somebody loses weight, where does the fat go?\", BMJ, 2014, 349: g7257. 10 kg of fat needs 29 kg of oxygen and becomes 28 kg of carbon dioxide and 11 kg of water; 84% leaves through the lungs, 16% as water; a survey of 150 doctors, dietitians and personal trainers, with the common wrong answers (energy, heat, muscle, faeces). https://doi.org/10.1136/bmj.g7257",
+    "UNSW press release, \"When you lose weight, where does the fat go?\", via ScienceDaily, 2014. https://www.sciencedaily.com/releases/2014/12/141216212047.htm",
+    "AsianScientist, \"Where Did The Fat Go?\", 2014. Breathing more on its own does not make you lose weight.",
+    "NPR, \"When You Burn Off That Fat, Where Does It Go?\", 2014. The 84% to 16% split; the water leaves as urine, sweat and other body fluids.",
+    "Checked by Claude on 2026-10-21: of the 150 asked, only 3 gave the right answer, so \"more than half got it wrong\" is true and milder than the source; kept as Biku wrote it."
+  ],
+  "changes": [],
+  "masterPrompt": "prompts/fine-print.md"
+}

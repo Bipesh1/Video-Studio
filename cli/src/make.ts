@@ -6,19 +6,26 @@
  *   --voice    speak the part's lines (audio/voice.wav and timings.json)
  *   --time     write the voice's times into the shots (storyboard.json of the part)
  *   --sound    music and effects from the storyboard, mixed under the voice (audio/mix.wav)
- *   --stills   one still per shot, and all of them on one sheet, to look at before the video
+ *   --stills   one still per shot, all of them on sheets, and a colour strip (the first still
+ *              of each scene in a row: the colour of the story at a glance)
+ *   --animatic a rough timed storyboard: each still held for as long as its shot, with the
+ *              sound, made in seconds, to judge the story before the pictures move (numbered)
  *   --preview  the part as a small, quick video to check before the final one is made (numbered too)
  *   --video    the part as a video, in the size given; each render gets the next version number
+ *   --clip=9-15 only those seconds of the part, full size, to look closely at one moment
+ *              (numbered, in part-<n>/clips/; a clip never stands for the video in the self-check)
  *   --all      all of the above
  *
  * `--size=16:9` (or 9:16, 4:5) picks the shape; left out, it is the brand's first size.
  * `--at=0.6` moves each still to that point of its shot. Everything for a part lives in
  * runs/<run>/part-<n>/. A stage whose inputs have not changed is skipped.
  */
+import { picturesSha } from './pictures.js';
 import {
   appendFileSync,
   copyFileSync,
   existsSync,
+  rmSync,
   mkdirSync,
   readFileSync,
   writeFileSync,
@@ -43,7 +50,14 @@ import {
   voiceScriptSchema,
   voiceTrackSchema,
 } from '@studio/shared';
-import type { SizeName, Storyboard, VoiceTrack, World } from '@studio/shared';
+import type {
+  MadeFrom,
+  SizeName,
+  SoundProfile,
+  Storyboard,
+  VoiceTrack,
+  World,
+} from '@studio/shared';
 import { buildPages, toCaptions } from '../../engine/src/overlays/captionPages';
 import { unbuildable } from '../../engine/src/stage/buildable';
 import { timedShots } from '../../engine/src/stage/layout';
@@ -210,9 +224,35 @@ function loadTimed(): Storyboard {
   return loadStoryboard(file);
 }
 
+/**
+ * A Short or a long video, for its sound: a run made only in the tall shape is a Short (Biku,
+ * 2026-10-21: the sound "should be different according to shorts or videos").
+ */
+function soundProfile(): SoundProfile {
+  const file = path.join(runDir, 'run.json');
+  const sizes: unknown = existsSync(file)
+    ? (JSON.parse(readFileSync(file, 'utf8')) as { sizes?: unknown }).sizes
+    : undefined;
+  return Array.isArray(sizes) && sizes.length > 0 && sizes.every((s) => s === '9:16')
+    ? 'short'
+    : 'long';
+}
+
 /** Music and effects from the storyboard, mixed under the voice. */
 function sound(timedPart: Storyboard) {
-  const plan = soundPlanFor(timedPart);
+  // The voice's words time the sound of every piece of an explainer graphic landing.
+  const timings = path.join(partDir, 'audio', 'timings.json');
+  const words = existsSync(timings)
+    ? parseOrExplain(
+        voiceTrackSchema,
+        JSON.parse(readFileSync(timings, 'utf8')),
+        'audio/timings.json',
+      ).words
+    : [];
+  const plan = soundPlanFor(timedPart, world.formats[timedPart.format]?.roomTone, words, {
+    profile: soundProfile(),
+    opens: PART === 1,
+  });
   const text = `${JSON.stringify(plan, null, 2)}\n`;
   const file = path.join(partDir, 'sound-plan.json');
   if (!existsSync(file) || readFileSync(file, 'utf8') !== text) writeFileSync(file, text, 'utf8');
@@ -263,11 +303,25 @@ async function bundled() {
  * of the parts before it, and whether it is the last part. A part is built after the ones
  * before it, so their voices exist; one that does not is counted from the script's guess.
  */
-function meterAt(): { meterStartMs?: number; meterEnds?: boolean } {
+function meterAt(timedPart: Storyboard): {
+  meterStartMs?: number;
+  meterEnds?: boolean;
+  meterFromMs?: number;
+} {
   const whole = loadStoryboard(path.join(runDir, 'storyboard.json'));
   if (!whole.meter) return {};
+  const from = whole.meter.from;
+  // Where the shot the counter starts on begins, in a part's own time, when that part has it.
+  const startIn = (part: Storyboard): number | undefined =>
+    part.scenes.flatMap((s) => s.shots).find((s) => s.id === from)?.startMs;
+  let fromMs: number | undefined = from ? undefined : 0;
   let startMs = 0;
   for (let n = 1; n < PART; n++) {
+    const earlier = path.join(runDir, `part-${n}`, 'storyboard.json');
+    if (fromMs === undefined && existsSync(earlier)) {
+      const at = startIn(loadStoryboard(earlier));
+      if (at !== undefined) fromMs = startMs + at;
+    }
     const timings = path.join(runDir, `part-${n}`, 'audio', 'timings.json');
     if (!existsSync(timings))
       throw new Error(
@@ -279,7 +333,12 @@ function meterAt(): { meterStartMs?: number; meterEnds?: boolean } {
       'timings.json',
     ).durationMs;
   }
-  return { meterStartMs: startMs, meterEnds: PART === partCount(whole) };
+  if (fromMs === undefined) {
+    const at = startIn(timedPart);
+    // Not in this part or an earlier one: it has not started yet.
+    fromMs = at === undefined ? Number.MAX_SAFE_INTEGER : startMs + at;
+  }
+  return { meterStartMs: startMs, meterEnds: PART === partCount(whole), meterFromMs: fromMs };
 }
 
 function inputProps(timedPart: Storyboard, withSound: boolean) {
@@ -291,7 +350,7 @@ function inputProps(timedPart: Storyboard, withSound: boolean) {
     size: SIZE,
     cards: world.characters,
     mark: brand?.watermark ?? null,
-    ...meterAt(),
+    ...meterAt(timedPart),
     ...(brand
       ? { colors: { titleRibbon: brand.colors.titleRibbon, label: brand.colors.label } }
       : {}),
@@ -320,6 +379,7 @@ async function stills(timedPart: Storyboard) {
     files.push(out);
   }
   log(`  ${files.length} stills in ${rel(dir)}`);
+  colourStrip(shots, dir);
   // All the stills on sheets of twelve, small, to look through at a glance.
   const { width, height } = SIZES[SIZE];
   const columns = width > height ? 3 : 4;
@@ -369,6 +429,105 @@ async function stills(timedPart: Storyboard) {
   }
 }
 
+/**
+ * The colour strip: the first still of each scene, in order, side by side, so the colour of the
+ * whole part can be seen at once (step 5, 2026-10-14: a colour plan per scene).
+ */
+function colourStrip(shots: ReturnType<typeof timedShots>, dir: string) {
+  const firsts = shots.filter((s, i) => i === 0 || shots[i - 1]?.scene.id !== s.scene.id);
+  const files = firsts.map((s) => path.join(dir, `${s.shot.id}.png`)).filter((f) => existsSync(f));
+  if (files.length === 0) return;
+  const strip = path.join(partDir, 'stills', `colours-${sizeTag}.png`);
+  const tall = 360;
+  const r = run('ffmpeg', [
+    '-v',
+    'error',
+    '-y',
+    ...files.flatMap((f) => ['-i', f]),
+    '-filter_complex',
+    files.length === 1
+      ? `[0]scale=-2:${tall}[out]`
+      : `${files.map((_, k) => `[${k}]scale=-2:${tall},pad=iw+12:ih:0:0:black[s${k}]`).join(';')};${files
+          .map((_, k) => `[s${k}]`)
+          .join('')}hstack=inputs=${files.length}[out]`,
+    '-map',
+    '[out]',
+    strip,
+  ]);
+  if (r.status === 0) log(`  ${rel(strip)} (the first shot of each of ${files.length} scenes)`);
+  else log(`  could not make the colour strip: ${(r.stderr ?? '').trim().slice(0, 200)}`);
+}
+
+/**
+ * The rough timed storyboard (step 5, 2026-10-14): every shot's still held for as long as the
+ * shot lasts, with the part's sound under it. It takes seconds where a preview takes minutes,
+ * so the story, the pace and the sound can be judged before anything is animated.
+ */
+async function animatic(timedPart: Storyboard) {
+  const dir = path.join(partDir, 'stills', sizeTag);
+  const mix = path.join(audioDir, 'mix.wav');
+  if (!existsSync(mix)) throw new Error('The rough storyboard needs the sound first: run --sound.');
+  const fps = 30;
+  const shots = timedShots(timedPart, fps);
+  const missing = shots.filter((s) => !existsSync(path.join(dir, `${s.shot.id}.png`)));
+  if (missing.length) {
+    throw new Error(
+      `The rough storyboard needs a still of every shot first: run --stills (missing ${missing.map((s) => s.shot.id).join(', ')}).`,
+    );
+  }
+  const outDir = path.join(partDir, 'animatic');
+  mkdirSync(outDir, { recursive: true });
+  const slug = RUN?.replace(/^\d{4}-\d{2}-\d{2}-/, '') ?? 'video';
+  const stem = `${slug}-part-${PART}-${sizeTag}-animatic`;
+  const name = `${stem}-v${nextVersion(outDir, stem)}`;
+  const out = path.join(outDir, `${name}.mp4`);
+  const list = path.join(outDir, `${name}.txt`);
+  const still = (id: string) => path.join(dir, `${id}.png`).replace(/\\/g, '/');
+  const lines = shots.flatMap((s) => [
+    `file '${still(s.shot.id)}'`,
+    `duration ${((s.endFrame - s.startFrame) / fps).toFixed(3)}`,
+  ]);
+  // The last picture is named twice, or the list's last duration is not kept.
+  const last = shots.at(-1);
+  if (last) lines.push(`file '${still(last.shot.id)}'`);
+  writeFileSync(list, `${lines.join('\n')}\n`, 'utf8');
+  const { width, height } = SIZES[SIZE];
+  const r = run('ffmpeg', [
+    '-v',
+    'error',
+    '-y',
+    '-f',
+    'concat',
+    '-safe',
+    '0',
+    '-i',
+    list,
+    '-i',
+    mix,
+    '-vf',
+    `${width > height ? 'scale=-2:540' : 'scale=540:-2'},fps=${fps},format=yuv420p`,
+    '-c:v',
+    'libx264',
+    '-tune',
+    'stillimage',
+    '-crf',
+    '23',
+    '-c:a',
+    'aac',
+    '-b:a',
+    '128k',
+    '-shortest',
+    out,
+  ]);
+  rmSync(list, { force: true });
+  if (r.status !== 0)
+    throw new Error(
+      `The rough storyboard could not be made: ${(r.stderr ?? '').trim().slice(0, 300)}`,
+    );
+  const seconds = shots.reduce((n, s) => n + (s.endFrame - s.startFrame), 0) / fps;
+  log(`  ${rel(out)}: ${shots.length} pictures over ${seconds.toFixed(1)} s, with the sound`);
+}
+
 /** A part's renders are never overwritten: each takes the next free version number. */
 function nextVersion(outDir: string, name: string): number {
   let v = 1;
@@ -384,7 +543,7 @@ const PREVIEW_SCALE = 0.5;
  * number. A preview is a scratch copy to check first (Part 2, section 11, step 9): small
  * and quick, in its own folder, numbered the same way.
  */
-async function video(timedPart: Storyboard, preview = false) {
+async function video(timedPart: Storyboard, preview = false, clip: [number, number] | null = null) {
   const mix = path.join(audioDir, 'mix.wav');
   if (!existsSync(mix)) throw new Error('No sound yet for this part. Run the --sound stage first.');
   const url = await bundled();
@@ -394,12 +553,12 @@ async function video(timedPart: Storyboard, preview = false) {
     id: 'Storyboard',
     inputProps: props,
   });
-  const outDir = path.join(partDir, preview ? 'preview' : 'out');
+  const outDir = path.join(partDir, clip ? 'clips' : preview ? 'preview' : 'out');
   mkdirSync(outDir, { recursive: true });
   const slug = RUN?.replace(/^\d{4}-\d{2}-\d{2}-/, '') ?? 'video';
   const base = `${slug}-part-${PART}-${sizeTag}`;
   // Numbered like every render: a look at one preview can never stand for the next.
-  const stem = preview ? `${base}-preview` : base;
+  const stem = clip ? `${base}-${clip[0]}-${clip[1]}s` : preview ? `${base}-preview` : base;
   const name = `${stem}-v${nextVersion(outDir, stem)}`;
   const out = path.join(outDir, `${name}.mp4`);
   const t0 = Date.now();
@@ -411,9 +570,21 @@ async function video(timedPart: Storyboard, preview = false) {
     outputLocation: out,
     inputProps: props,
     ...(preview ? { scale: PREVIEW_SCALE } : {}),
+    ...(clip
+      ? {
+          frameRange: [
+            Math.round(clip[0] * composition.fps),
+            Math.min(composition.durationInFrames, Math.round(clip[1] * composition.fps)) - 1,
+          ] as [number, number],
+        }
+      : {}),
     concurrency: Math.max(1, Math.min(Math.floor(os.cpus().length / 2), 4)),
   });
   const secs = (Date.now() - t0) / 1000;
+  if (clip) {
+    log(`  ${rel(out)}: seconds ${clip[0]} to ${clip[1]}, in ${secs.toFixed(1)} s`);
+    return;
+  }
   const videoSecs = composition.durationInFrames / composition.fps;
   log(
     `  ${rel(out)}: ${videoSecs.toFixed(2)} s of video, ${composition.width * (preview ? PREVIEW_SCALE : 1)}x${composition.height * (preview ? PREVIEW_SCALE : 1)}, in ${secs.toFixed(1)} s (${(secs / videoSecs).toFixed(2)} s per video second)`,
@@ -428,9 +599,10 @@ async function video(timedPart: Storyboard, preview = false) {
   writeFileSync(path.join(outDir, `${name}.srt`), srt);
   log(`  ${rel(path.join(outDir, `${name}.srt`))}`);
   // What this video was made from, so the self-check can tell a video older than its plan.
-  const madeFrom = {
+  const madeFrom: MadeFrom = {
     video: `${name}.mp4`,
     storyboard: shaOfFile(path.join(partDir, 'storyboard.json')),
+    pictures: picturesSha(path.join(partDir, 'storyboard.json')),
     mix: shaOfFile(mix),
     madeAt: new Date().toISOString(),
   };
@@ -441,9 +613,91 @@ async function video(timedPart: Storyboard, preview = false) {
   );
 }
 
+/**
+ * A new sound on the newest finished video of the part, without drawing a single frame again
+ * (Biku, 2026-10-21: "its only changing sounds why take that much time?"). It takes the
+ * pictures of that video as they are and lays the mix as it stands under them, as the next
+ * version. It refuses when the plan's pictures have changed since that video was made: then
+ * only --video will do.
+ */
+function resound() {
+  const mix = path.join(audioDir, 'mix.wav');
+  if (!existsSync(mix)) throw new Error('No sound yet for this part. Run the --sound stage first.');
+  const outDir = path.join(partDir, 'out');
+  const slug = RUN?.replace(/^\d{4}-\d{2}-\d{2}-/, '') ?? 'video';
+  const stem = `${slug}-part-${PART}-${sizeTag}`;
+  const last = nextVersion(outDir, stem) - 1;
+  if (last < 1)
+    throw new Error(`There is no finished video of part ${PART} yet. Run --video first.`);
+  const from = `${stem}-v${last}`;
+  const recordFile = path.join(outDir, `${from}.json`);
+  const record = existsSync(recordFile)
+    ? (JSON.parse(readFileSync(recordFile, 'utf8')) as MadeFrom)
+    : null;
+  const storyboardFile = path.join(partDir, 'storyboard.json');
+  const pictures = picturesSha(storyboardFile);
+  const same =
+    record !== null &&
+    (record.pictures
+      ? record.pictures === pictures
+      : record.storyboard === shaOfFile(storyboardFile));
+  if (!same) {
+    throw new Error(
+      `The pictures of part ${PART} have changed since ${from}.mp4 was made, so its pictures cannot be kept. Run --video.`,
+    );
+  }
+  const name = `${stem}-v${last + 1}`;
+  const out = path.join(outDir, `${name}.mp4`);
+  const r = run('ffmpeg', [
+    '-v',
+    'error',
+    '-y',
+    '-i',
+    path.join(outDir, `${from}.mp4`),
+    '-i',
+    mix,
+    '-map',
+    '0:v',
+    '-map',
+    '1:a',
+    '-c:v',
+    'copy',
+    '-c:a',
+    'aac',
+    '-b:a',
+    '320k',
+    out,
+  ]);
+  if (r.status !== 0)
+    throw new Error(`The new sound could not be put on the video:
+${r.stderr}`);
+  const srt = path.join(outDir, `${from}.srt`);
+  if (existsSync(srt)) copyFileSync(srt, path.join(outDir, `${name}.srt`));
+  const madeFrom: MadeFrom = {
+    video: `${name}.mp4`,
+    storyboard: shaOfFile(storyboardFile),
+    pictures,
+    mix: shaOfFile(mix),
+    madeAt: new Date().toISOString(),
+    soundOn: `${from}.mp4`,
+  };
+  writeFileSync(
+    path.join(outDir, `${name}.json`),
+    `${JSON.stringify(madeFrom, null, 2)}
+`,
+    'utf8',
+  );
+  log(`  ${rel(out)}: the pictures of ${from}.mp4 with the sound as it stands`);
+}
+
 async function main() {
-  const stages = ['voice', 'time', 'sound', 'stills', 'preview', 'video'];
-  if (!stages.some(want)) {
+  const stages = ['voice', 'time', 'sound', 'stills', 'animatic', 'preview', 'video', 'resound'];
+  const clipArg = value('clip');
+  const clip = clipArg?.match(/^(\d+(?:\.\d+)?)-(\d+(?:\.\d+)?)$/);
+  if (clipArg && (!clip || Number(clip[2]) <= Number(clip[1]))) {
+    throw new Error('Give the seconds of a clip as --clip=<from>-<to>, for example --clip=9-15');
+  }
+  if (!stages.some(want) && !clip) {
     console.log(`Give at least one stage: ${stages.map((s) => `--${s}`).join(' ')} or --all`);
     process.exitCode = 1;
     return;
@@ -459,9 +713,16 @@ async function main() {
   if (want('time')) timedPart = await timed('time', () => time(part));
   if (want('sound')) await timed('sound', () => sound(timedPart ?? loadTimed()));
   if (want('stills')) await timed('stills', () => stills(timedPart ?? loadTimed()));
+  if (args.has('--animatic')) await timed('animatic', () => animatic(timedPart ?? loadTimed()));
   // A preview is asked for by name; --all makes the stills and the final video.
   if (args.has('--preview')) await timed('preview', () => video(timedPart ?? loadTimed(), true));
   if (want('video')) await timed('video', () => video(timedPart ?? loadTimed()));
+  // Asked for by name: a new sound on the pictures already made.
+  if (args.has('--resound')) await timed('resound', async () => resound());
+  if (clip) {
+    const range: [number, number] = [Number(clip[1]), Number(clip[2])];
+    await timed('clip', () => video(timedPart ?? loadTimed(), false, range));
+  }
 }
 
 try {

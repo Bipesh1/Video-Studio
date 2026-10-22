@@ -1,0 +1,397 @@
+{
+  "version": 1,
+  "title": "Split or Steal",
+  "request": "a new script for the video. Make video on this and the standard length now is 2 minutes and before you build say if this is possible to make a good video in this story",
+  "mode": "as-is",
+  "format": "explainer",
+  "brand": "my-page",
+  "voice": "narrator",
+  "speakers": [
+    {
+      "id": "stranger",
+      "name": "The Stranger",
+      "voice": "man"
+    }
+  ],
+  "lines": [
+    {
+      "id": "n1",
+      "speaker": "narrator",
+      "text": "Two strangers. One table. A pile of cash.",
+      "beat": "hook",
+      "chapter": 1,
+      "speed": 0.92
+    },
+    {
+      "id": "n2",
+      "speaker": "narrator",
+      "text": "Each holds two golden balls: *split, or steal.*",
+      "beat": "hook",
+      "chapter": 1,
+      "speed": 0.92
+    },
+    {
+      "id": "n3",
+      "speaker": "narrator",
+      "text": "They choose at the same moment, in secret.",
+      "beat": "hook",
+      "chapter": 1,
+      "speed": 0.92
+    },
+    {
+      "id": "n4",
+      "speaker": "narrator",
+      "text": "Take a seat.",
+      "beat": "hook",
+      "chapter": 1,
+      "speed": 0.92,
+      "pauseAfterMs": 650
+    },
+    {
+      "id": "n5",
+      "speaker": "narrator",
+      "text": "*You are one of them.*",
+      "beat": "hook",
+      "chapter": 1,
+      "speed": 0.92,
+      "pauseAfterMs": 800
+    },
+    {
+      "id": "n6",
+      "speaker": "narrator",
+      "text": "If you both split, you share.",
+      "beat": "why-it-matters",
+      "chapter": 1,
+      "speed": 0.92
+    },
+    {
+      "id": "n7",
+      "speaker": "narrator",
+      "text": "If one splits and one steals, *the thief takes it all.*",
+      "beat": "why-it-matters",
+      "chapter": 1,
+      "speed": 0.92
+    },
+    {
+      "id": "n8",
+      "speaker": "narrator",
+      "text": "If you both steal, nobody gets a penny.",
+      "beat": "why-it-matters",
+      "chapter": 1,
+      "speed": 0.92,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "s1",
+      "speaker": "stranger",
+      "text": "I'm splitting. *I promise.*",
+      "beat": "why-it-matters",
+      "chapter": 1,
+      "speed": 1.05,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "n9",
+      "speaker": "narrator",
+      "text": "*Now choose.*",
+      "beat": "why-it-matters",
+      "chapter": 1,
+      "speed": 0.92,
+      "pauseAfterMs": 2400
+    },
+    {
+      "id": "n10",
+      "speaker": "narrator",
+      "text": "Here is the cold logic.",
+      "beat": "first-part",
+      "chapter": 1,
+      "speed": 0.92
+    },
+    {
+      "id": "n11",
+      "speaker": "narrator",
+      "text": "If the stranger splits, stealing gets you double.",
+      "beat": "first-part",
+      "chapter": 1,
+      "speed": 0.92
+    },
+    {
+      "id": "n12",
+      "speaker": "narrator",
+      "text": "If the stranger steals, you get nothing either way.",
+      "beat": "first-part",
+      "chapter": 1,
+      "speed": 0.92
+    },
+    {
+      "id": "n13",
+      "speaker": "narrator",
+      "text": "So stealing is *never worse.*",
+      "beat": "first-part",
+      "chapter": 1,
+      "speed": 0.92,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "n14",
+      "speaker": "narrator",
+      "text": "The stranger thinks the same.",
+      "beat": "first-part",
+      "chapter": 1,
+      "speed": 0.92
+    },
+    {
+      "id": "n15",
+      "speaker": "narrator",
+      "text": "Two steals.",
+      "beat": "first-part",
+      "chapter": 1,
+      "speed": 0.92,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "n16",
+      "speaker": "narrator",
+      "text": "*Nobody wins.*",
+      "beat": "first-part",
+      "chapter": 1,
+      "speed": 0.92,
+      "pauseAfterMs": 1200
+    },
+    {
+      "id": "n17",
+      "speaker": "narrator",
+      "text": "This game was real: a British TV show called Golden Balls.",
+      "beat": "second-part",
+      "chapter": 2,
+      "speed": 0.92
+    },
+    {
+      "id": "n18",
+      "speaker": "narrator",
+      "text": "Economists studied two hundred and eighty-seven of its finals.",
+      "beat": "second-part",
+      "chapter": 2,
+      "speed": 0.92
+    },
+    {
+      "id": "n19",
+      "speaker": "narrator",
+      "text": "*About half* the players split anyway.",
+      "beat": "second-part",
+      "chapter": 2,
+      "speed": 0.92
+    },
+    {
+      "id": "n20",
+      "speaker": "narrator",
+      "text": "With only a few hundred pounds on the table, nearly three in four shared.",
+      "beat": "second-part",
+      "chapter": 2,
+      "speed": 0.92
+    },
+    {
+      "id": "n21",
+      "speaker": "narrator",
+      "text": "And promises did something strange.",
+      "beat": "second-part",
+      "chapter": 2,
+      "speed": 0.92
+    },
+    {
+      "id": "n22",
+      "speaker": "narrator",
+      "text": "Making one made a player far more likely to split.",
+      "beat": "second-part",
+      "chapter": 2,
+      "speed": 0.92
+    },
+    {
+      "id": "n23",
+      "speaker": "narrator",
+      "text": "*Hearing one changed nothing.*",
+      "beat": "second-part",
+      "chapter": 2,
+      "speed": 0.92,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "n24",
+      "speaker": "narrator",
+      "text": "The biggest prize ever, over a hundred thousand pounds?",
+      "beat": "second-part",
+      "chapter": 2,
+      "speed": 0.92,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "n25",
+      "speaker": "narrator",
+      "text": "*Sarah stole it.*",
+      "beat": "second-part",
+      "chapter": 2,
+      "speed": 0.92,
+      "pauseAfterMs": 1200
+    },
+    {
+      "id": "n26",
+      "speaker": "narrator",
+      "text": "Then a player named Nick did the opposite.",
+      "beat": "surprise",
+      "chapter": 3,
+      "speed": 0.92,
+      "pauseAfterMs": 300
+    },
+    {
+      "id": "n27",
+      "speaker": "narrator",
+      "text": "He told Ibrahim he was *going to steal,* no matter what, and promised to share the money after the show.",
+      "beat": "surprise",
+      "chapter": 3,
+      "speed": 0.92,
+      "pauseAfterMs": 300
+    },
+    {
+      "id": "n28",
+      "speaker": "narrator",
+      "text": "The host reminded Ibrahim that nothing forced Nick to pay.",
+      "beat": "surprise",
+      "chapter": 3,
+      "speed": 0.92,
+      "pauseAfterMs": 300
+    },
+    {
+      "id": "n29",
+      "speaker": "narrator",
+      "text": "Think about it.",
+      "beat": "surprise",
+      "chapter": 3,
+      "speed": 0.92,
+      "pauseAfterMs": 350
+    },
+    {
+      "id": "n30",
+      "speaker": "narrator",
+      "text": "If Nick steals, stealing wins Ibrahim nothing.",
+      "beat": "surprise",
+      "chapter": 3,
+      "speed": 0.92,
+      "pauseAfterMs": 300
+    },
+    {
+      "id": "n31",
+      "speaker": "narrator",
+      "text": "His only chance is to *split and hope.*",
+      "beat": "surprise",
+      "chapter": 3,
+      "speed": 0.92,
+      "pauseAfterMs": 300
+    },
+    {
+      "id": "n32",
+      "speaker": "narrator",
+      "text": "So he splits.",
+      "beat": "surprise",
+      "chapter": 3,
+      "speed": 0.92,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n33",
+      "speaker": "narrator",
+      "text": "The balls open.",
+      "beat": "surprise",
+      "chapter": 3,
+      "speed": 0.92,
+      "pauseAfterMs": 800
+    },
+    {
+      "id": "n34",
+      "speaker": "narrator",
+      "text": "*Nick split too.*",
+      "beat": "surprise",
+      "chapter": 3,
+      "speed": 0.92,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "n35",
+      "speaker": "narrator",
+      "text": "Nick did not play the game better.",
+      "beat": "takeaway",
+      "chapter": 3,
+      "speed": 0.92,
+      "pauseAfterMs": 250
+    },
+    {
+      "id": "n36",
+      "speaker": "narrator",
+      "text": "*He changed it.*",
+      "beat": "takeaway",
+      "chapter": 3,
+      "speed": 0.92,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "n37",
+      "speaker": "narrator",
+      "text": "You play this game all the time:",
+      "beat": "takeaway",
+      "chapter": 3,
+      "speed": 0.92,
+      "pauseAfterMs": 250
+    },
+    {
+      "id": "n38",
+      "speaker": "narrator",
+      "text": "price wars,",
+      "beat": "takeaway",
+      "chapter": 3,
+      "speed": 0.92,
+      "pauseAfterMs": 380
+    },
+    {
+      "id": "n39",
+      "speaker": "narrator",
+      "text": "group projects,",
+      "beat": "takeaway",
+      "chapter": 3,
+      "speed": 0.92,
+      "pauseAfterMs": 380
+    },
+    {
+      "id": "n40",
+      "speaker": "narrator",
+      "text": "a shared kitchen.",
+      "beat": "takeaway",
+      "chapter": 3,
+      "speed": 0.92,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "n41",
+      "speaker": "narrator",
+      "text": "When you are stuck between trust and betrayal, do not ask which ball to pick.",
+      "beat": "takeaway",
+      "chapter": 3,
+      "speed": 0.92,
+      "pauseAfterMs": 300
+    },
+    {
+      "id": "n42",
+      "speaker": "narrator",
+      "text": "Ask how to *change the table.*",
+      "beat": "takeaway",
+      "chapter": 3,
+      "speed": 0.92,
+      "pauseAfterMs": 1100
+    }
+  ],
+  "sources": [
+    "Wikipedia, Golden Balls, https://en.wikipedia.org/wiki/Golden_Balls : the show ran on ITV from 2007 to 2009; the rules of the final (both split and share, one steals and takes it all, both steal and nobody wins).",
+    "Van den Assem, Van Dolder and Thaler, Split or Steal? Cooperative Behavior When the Stakes Are Large, Management Science, 2012, https://repub.eur.nl/pub/31292/SplitorSteal_2012.pdf : 287 episodes and 574 final contestants; 52.8% of contestants chose split (about half); about 73% split with stakes up to 500 pounds (nearly three in four); a player's own promise made them about 31 percentage points more likely to split, and an opponent's promise did not make a player more likely to split; the biggest jackpot, 100,150 pounds, was won by Sarah, who stole it from Stephen, in March 2008.",
+    "Cornell University course blog, 2012, https://blogs.cornell.edu/info2040/2012/09/21/split-or-steal-an-analysis-using-game-theory : Nick announced he would steal and promised to share after the show, the host noted he had no obligation to pay, Ibrahim split, and Nick also split. Fairly sure: well documented, but no original transcript was opened.",
+    "Xataka, 2016, https://www.xataka.com/magnet/cuando-quedarte-con-6-800-libras-es-mejor-que-ganar-13-600-la-brutal-logica-del-dilema-del-prisionero/amp : the Nick and Ibrahim episode, as above."
+  ],
+  "changes": []
+}

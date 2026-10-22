@@ -1,0 +1,206 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "lines": [
+    {
+      "id": "q1",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Would you bid a nickel for *a dollar bill?*",
+      "speed": 0.95,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "q2",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Two bidders said yes. Watch what it cost them.",
+      "speed": 0.95,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "n1",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "*Sold.*",
+      "speed": 0.95,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "n2",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "One dollar bill, to the Cheat, for *a dollar eighty-five.*",
+      "speed": 0.95,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n3",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "And the Copycat pays a dollar eighty.",
+      "speed": 0.95,
+      "pauseAfterMs": 300
+    },
+    {
+      "id": "n4",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "*For nothing.*",
+      "speed": 0.95,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "n5",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So who won?",
+      "speed": 0.95,
+      "pauseAfterMs": 350
+    },
+    {
+      "id": "c1",
+      "speaker": "cheat",
+      "voice": "am_puck",
+      "text": "Me. *Obviously.*",
+      "speed": 1.08,
+      "pauseAfterMs": 720
+    },
+    {
+      "id": "n6",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Rewind.",
+      "speed": 0.95,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "n7",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "One dollar. Bids start at a nickel.",
+      "speed": 0.95,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n8",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Highest bid takes it.",
+      "speed": 0.95,
+      "pauseAfterMs": 400
+    },
+    {
+      "id": "n9",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "One tiny rule.",
+      "speed": 0.95,
+      "pauseAfterMs": 300
+    },
+    {
+      "id": "n10",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "*Second place pays too,* and gets nothing.",
+      "speed": 0.95,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "n11",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "A dollar for a nickel.",
+      "speed": 0.95,
+      "pauseAfterMs": 300
+    },
+    {
+      "id": "n12",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Would you *raise your hand?*",
+      "speed": 0.95,
+      "pauseAfterMs": 1500
+    },
+    {
+      "id": "c2",
+      "speaker": "cheat",
+      "voice": "am_puck",
+      "text": "Five cents.",
+      "speed": 1.08,
+      "pauseAfterMs": 270
+    },
+    {
+      "id": "k1",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "Ten cents.",
+      "speed": 0.97,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "n13",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Ninety-five cents from the Cheat.",
+      "speed": 0.95,
+      "pauseAfterMs": 250
+    },
+    {
+      "id": "n14",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "One dollar from the Copycat.",
+      "speed": 0.95,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "c3",
+      "speaker": "cheat",
+      "voice": "am_puck",
+      "text": "If I stop, I lose ninety-five cents.",
+      "speed": 1.08,
+      "pauseAfterMs": 225
+    },
+    {
+      "id": "c4",
+      "speaker": "cheat",
+      "voice": "am_puck",
+      "text": "If I bid *a dollar five* and win, I only lose a nickel.",
+      "speed": 1.08,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "k2",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "If I stop, I lose a dollar.",
+      "speed": 0.97,
+      "pauseAfterMs": 300
+    },
+    {
+      "id": "k3",
+      "speaker": "copycat",
+      "voice": "am_fenrir",
+      "text": "A dollar ten.",
+      "speed": 0.97,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "n15",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Nobody is chasing the dollar now.",
+      "speed": 0.95,
+      "pauseAfterMs": 300
+    },
+    {
+      "id": "n16",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "They just *can't afford to come second.*",
+      "speed": 0.95,
+      "pauseAfterMs": 1200
+    }
+  ]
+}

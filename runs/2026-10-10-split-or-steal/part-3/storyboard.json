@@ -1,0 +1,2186 @@
+{
+  "version": 1,
+  "title": "Split or Steal",
+  "request": "a new script for the video. Make video on this and the standard length now is 2 minutes and before you build say if this is possible to make a good video in this story",
+  "mode": "as-is",
+  "format": "explainer",
+  "style": "ink-stick",
+  "brand": "my-page",
+  "voice": "narrator",
+  "seed": 19295,
+  "sources": [
+    "Wikipedia, Golden Balls, https://en.wikipedia.org/wiki/Golden_Balls : the show ran on ITV from 2007 to 2009; the rules of the final (both split and share, one steals and takes it all, both steal and nobody wins).",
+    "Van den Assem, Van Dolder and Thaler, Split or Steal? Cooperative Behavior When the Stakes Are Large, Management Science, 2012, https://repub.eur.nl/pub/31292/SplitorSteal_2012.pdf : 287 episodes and 574 final contestants; 52.8% of contestants chose split (about half); about 73% split with stakes up to 500 pounds (nearly three in four); a player's own promise made them about 31 percentage points more likely to split, and an opponent's promise did not make a player more likely to split; the biggest jackpot, 100,150 pounds, was won by Sarah, who stole it from Stephen, in March 2008.",
+    "Cornell University course blog, 2012, https://blogs.cornell.edu/info2040/2012/09/21/split-or-steal-an-analysis-using-game-theory : Nick announced he would steal and promised to share after the show, the host noted he had no obligation to pay, Ibrahim split, and Nick also split. Fairly sure: well documented, but no original transcript was opened.",
+    "Xataka, 2016, https://www.xataka.com/magnet/cuando-quedarte-con-6-800-libras-es-mejor-que-ganar-13-600-la-brutal-logica-del-dilema-del-prisionero/amp : the Nick and Ibrahim episode, as above."
+  ],
+  "appliedLessons": [
+    "L-0013",
+    "L-0023",
+    "L-0027",
+    "L-0029",
+    "L-0030",
+    "L-0031"
+  ],
+  "cast": [
+    {
+      "id": "you",
+      "name": "You, in the green cap",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "hat": {
+              "kind": "cap",
+              "cloth": "forest"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "stranger",
+      "name": "The Stranger, in the striped tie",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "tie": {
+              "cloth": "crimson",
+              "stripe": "gold"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      },
+      "voice": "man"
+    },
+    {
+      "id": "player-a",
+      "name": "A player on the show",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "t-shirt",
+              "cloth": "orange"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "player-b",
+      "name": "Another player on the show",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "denim",
+              "sleeves": "long"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "player-c",
+      "name": "A third player",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "onePiece": {
+              "kind": "dress",
+              "cloth": "denim"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "player-d",
+      "name": "A fourth player",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "hoodie",
+              "cloth": "forest"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "sarah",
+      "name": "Sarah",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "onePiece": {
+              "kind": "dress",
+              "cloth": "cream"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "stephen",
+      "name": "The other finalist",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "jacket",
+              "cloth": "steel",
+              "under": "cream"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "nick",
+      "name": "Nick",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "jacket",
+              "cloth": "denim",
+              "under": "white"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "ibrahim",
+      "name": "Ibrahim",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "tan",
+              "sleeves": "long"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "host",
+      "name": "The host of the show",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "jacket",
+              "cloth": "crimson",
+              "under": "white"
+            },
+            "tie": {
+              "cloth": "gold",
+              "stripe": "steel"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "shop-a",
+      "name": "A shopkeeper",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "cream",
+              "sleeves": "short"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "shop-b",
+      "name": "The shopkeeper across the street",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "shirt",
+              "cloth": "orange",
+              "sleeves": "short"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "student-a",
+      "name": "The student doing the work",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "hoodie",
+              "cloth": "denim"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "student-b",
+      "name": "A student watching",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "t-shirt",
+              "cloth": "crimson"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "denim"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "student-c",
+      "name": "Another student watching",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "t-shirt",
+              "cloth": "gold"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "brown"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "flat-a",
+      "name": "A flatmate",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "t-shirt",
+              "cloth": "forest"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "denim"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    },
+    {
+      "id": "flat-b",
+      "name": "The other flatmate",
+      "look": {
+        "outfit": {
+          "clothes": {
+            "top": {
+              "kind": "hoodie",
+              "cloth": "orange"
+            },
+            "bottom": {
+              "kind": "trousers",
+              "cloth": "steel"
+            }
+          }
+        },
+        "eyeStyle": "round"
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s5",
+      "chapter": 1,
+      "beat": "surprise",
+      "mood": "tense",
+      "place": "game-show",
+      "treatment": "atmospheric",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "n26",
+          "speaker": "narrator",
+          "text": "Then a player named Nick did the opposite.",
+          "speed": 0.92,
+          "pauseAfterMs": 300
+        },
+        {
+          "id": "n27",
+          "speaker": "narrator",
+          "text": "He told Ibrahim he was *going to steal,* no matter what, and promised to share the money after the show.",
+          "speed": 0.92,
+          "pauseAfterMs": 300
+        },
+        {
+          "id": "n28",
+          "speaker": "narrator",
+          "text": "The host reminded Ibrahim that nothing forced Nick to pay.",
+          "speed": 0.92,
+          "pauseAfterMs": 300
+        },
+        {
+          "id": "n29",
+          "speaker": "narrator",
+          "text": "Think about it.",
+          "speed": 0.92,
+          "pauseAfterMs": 350
+        },
+        {
+          "id": "n30",
+          "speaker": "narrator",
+          "text": "If Nick steals, stealing wins Ibrahim nothing.",
+          "speed": 0.92,
+          "pauseAfterMs": 300
+        },
+        {
+          "id": "n31",
+          "speaker": "narrator",
+          "text": "His only chance is to *split and hope.*",
+          "speed": 0.92,
+          "pauseAfterMs": 300
+        },
+        {
+          "id": "n32",
+          "speaker": "narrator",
+          "text": "So he splits.",
+          "speed": 0.92,
+          "pauseAfterMs": 400
+        }
+      ],
+      "shots": [
+        {
+          "id": "s5a",
+          "line": "n26",
+          "words": "Then a player named Nick did the opposite.",
+          "camera": {
+            "framing": "wide",
+            "move": "push-in",
+            "strength": 0.6
+          },
+          "actors": [
+            {
+              "character": "nick",
+              "pose": "sit",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "ibrahim",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "ibrahim",
+              "pose": "sit",
+              "expression": "neutral",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "nick",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "game-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cash-pile",
+              "x": 0.5,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.355,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.397,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.603,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.645,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "pointer",
+            "text": "Nick",
+            "to": "nick"
+          },
+          "transition": "fade",
+          "startMs": 0,
+          "endMs": 2870
+        },
+        {
+          "id": "s5b",
+          "line": "n27",
+          "words": "He told Ibrahim he was *going to steal,* no matter what,",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "nick",
+              "pose": "sit",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "ibrahim",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.15,
+                  "pose": "sit-reach"
+                }
+              ]
+            },
+            {
+              "character": "ibrahim",
+              "pose": "sit",
+              "expression": "surprised",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "nick",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.62,
+                  "pose": "sit-hands-up",
+                  "expression": "angry",
+                  "lookAt": "up"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "game-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cash-pile",
+              "x": 0.5,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.355,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.397,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.603,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.645,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 2870,
+          "endMs": 7228
+        },
+        {
+          "id": "s5d",
+          "line": "n27",
+          "words": "and promised to share the money after the show.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "nick",
+              "pose": "sit-reach",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "ibrahim",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.25,
+                  "pose": "sit-promise"
+                }
+              ]
+            },
+            {
+              "character": "ibrahim",
+              "pose": "sit",
+              "expression": "angry",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "up",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.6,
+                  "expression": "thinking",
+                  "lookAt": "nick"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "game-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cash-pile",
+              "x": 0.5,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.355,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.397,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.603,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.645,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 7228,
+          "endMs": 9970
+        },
+        {
+          "id": "s5e",
+          "line": "n28",
+          "words": "The host reminded Ibrahim that nothing forced Nick to pay.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "nick",
+              "pose": "sit",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "ibrahim",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "host",
+              "pose": "shrug",
+              "expression": "neutral",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.5,
+              "lookAt": "ibrahim",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "ibrahim",
+              "pose": "sit",
+              "expression": "afraid",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "host",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "game-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cash-pile",
+              "x": 0.5,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.355,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.397,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.603,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.645,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 9970,
+          "endMs": 14300
+        },
+        {
+          "id": "s5f",
+          "line": "n29",
+          "words": "Think about it.",
+          "camera": {
+            "framing": "close-up",
+            "move": "push-in",
+            "strength": 0.4
+          },
+          "actors": [
+            {
+              "character": "ibrahim",
+              "pose": "sit",
+              "expression": "thinking",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "up",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "game-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cash-pile",
+              "x": 0.5,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.355,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.397,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.603,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.645,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 14300,
+          "endMs": 15680
+        },
+        {
+          "id": "s5g",
+          "line": "n30",
+          "words": "If Nick steals, stealing wins Ibrahim nothing.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "ibrahim"
+          },
+          "actors": [
+            {
+              "character": "ibrahim",
+              "pose": "sit",
+              "expression": "thinking",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "up",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "game-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cash-pile",
+              "x": 0.5,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.355,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.397,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.603,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.645,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "bubble",
+            "of": "ibrahim",
+            "shape": "thought",
+            "lines": [
+              "STEAL: NOTHING",
+              "SPLIT: A CHANCE"
+            ],
+            "stress": 0
+          },
+          "transition": "cut",
+          "startMs": 15680,
+          "endMs": 19190
+        },
+        {
+          "id": "s5h",
+          "line": "n31",
+          "words": "His only chance is to *split and hope.*",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2,
+            "focus": "ibrahim"
+          },
+          "actors": [
+            {
+              "character": "ibrahim",
+              "pose": "sit",
+              "expression": "thinking",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "up",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.55,
+                  "expression": "sad",
+                  "lookAt": "golden-ball"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "game-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cash-pile",
+              "x": 0.5,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.355,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.397,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.603,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.645,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "bubble",
+            "of": "ibrahim",
+            "shape": "thought",
+            "lines": [
+              "STEAL: NOTHING",
+              "SPLIT: A CHANCE"
+            ],
+            "stress": 1
+          },
+          "transition": "cut",
+          "startMs": 19190,
+          "endMs": 21760
+        },
+        {
+          "id": "s5i",
+          "line": "n32",
+          "words": "So he splits.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "nick",
+              "pose": "sit-reach",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "ibrahim",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "ibrahim",
+              "pose": "sit",
+              "expression": "sad",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "golden-ball",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.25,
+                  "pose": "sit-reach"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "game-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cash-pile",
+              "x": 0.5,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.355,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.397,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.603,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.645,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 21760,
+          "endMs": 23280
+        }
+      ]
+    },
+    {
+      "id": "s5open",
+      "chapter": 1,
+      "beat": "surprise",
+      "mood": "tense",
+      "place": "game-show",
+      "treatment": "atmospheric",
+      "palette": "danger",
+      "lines": [
+        {
+          "id": "n33",
+          "speaker": "narrator",
+          "text": "The balls open.",
+          "speed": 0.92,
+          "pauseAfterMs": 800
+        },
+        {
+          "id": "n34",
+          "speaker": "narrator",
+          "text": "*Nick split too.*",
+          "speed": 0.92,
+          "pauseAfterMs": 900
+        }
+      ],
+      "shots": [
+        {
+          "id": "s5j",
+          "line": "n33",
+          "words": "The balls open.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "nick",
+              "pose": "sit-reach",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "ibrahim",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "ibrahim",
+              "pose": "sit-reach",
+              "expression": "afraid",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "ball-split-opening",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "game-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cash-pile",
+              "x": 0.5,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.355,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.397,
+              "y": 1.22
+            },
+            {
+              "prop": "ball-split-opening",
+              "x": 0.603,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.645,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "click",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 23280,
+          "endMs": 25300
+        },
+        {
+          "id": "s5k",
+          "line": "n34",
+          "words": "*Nick split too.*",
+          "camera": {
+            "framing": "medium",
+            "move": "push-in",
+            "strength": 0.4
+          },
+          "actors": [
+            {
+              "character": "nick",
+              "pose": "sit-reach",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "ibrahim",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "ibrahim",
+              "pose": "sit-reach",
+              "expression": "afraid",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "ball-split-opening",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.3,
+                  "expression": "surprised"
+                },
+                {
+                  "at": 0.62,
+                  "expression": "laughing",
+                  "lookAt": "nick"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "game-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cash-pile",
+              "x": 0.5,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.355,
+              "y": 1.22
+            },
+            {
+              "prop": "ball-split-opening",
+              "x": 0.397,
+              "y": 1.22
+            },
+            {
+              "prop": "ball-split",
+              "x": 0.603,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.645,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "click",
+              "at": "start",
+              "gainDb": 0
+            },
+            {
+              "name": "applause",
+              "at": "middle",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 25300,
+          "endMs": 27430
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 1,
+      "beat": "takeaway",
+      "mood": "hope",
+      "place": "game-show",
+      "treatment": "atmospheric",
+      "palette": "cold-dawn",
+      "lines": [
+        {
+          "id": "n35",
+          "speaker": "narrator",
+          "text": "Nick did not play the game better.",
+          "speed": 0.92,
+          "pauseAfterMs": 250
+        },
+        {
+          "id": "n36",
+          "speaker": "narrator",
+          "text": "*He changed it.*",
+          "speed": 0.92,
+          "pauseAfterMs": 500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6a",
+          "line": "n35",
+          "words": "Nick did not play the game better.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "nick",
+              "pose": "sit",
+              "expression": "laughing",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "ibrahim",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.3,
+                  "pose": "sit-hands-up"
+                }
+              ]
+            },
+            {
+              "character": "ibrahim",
+              "pose": "sit",
+              "expression": "laughing",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "nick",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.38,
+                  "pose": "sit-hands-up"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "game-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cash-half",
+              "x": 0.453,
+              "y": 1.22,
+              "from": 0.473
+            },
+            {
+              "prop": "cash-half",
+              "x": 0.547,
+              "y": 1.22,
+              "from": 0.527
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.355,
+              "y": 1.22
+            },
+            {
+              "prop": "ball-split",
+              "x": 0.397,
+              "y": 1.22
+            },
+            {
+              "prop": "ball-split",
+              "x": 0.603,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.645,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "start",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 27430,
+          "endMs": 29580
+        },
+        {
+          "id": "s6b",
+          "line": "n36",
+          "words": "*He changed it.*",
+          "camera": {
+            "framing": "close-up",
+            "move": "push-in",
+            "strength": 0.4
+          },
+          "actors": [
+            {
+              "character": "nick",
+              "pose": "sit",
+              "expression": "happy",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "ahead",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.3,
+                  "expression": "smug",
+                  "lookAt": "camera"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "game-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cash-half",
+              "x": 0.453,
+              "y": 1.22
+            },
+            {
+              "prop": "cash-half",
+              "x": 0.547,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.355,
+              "y": 1.22
+            },
+            {
+              "prop": "ball-split",
+              "x": 0.397,
+              "y": 1.22
+            },
+            {
+              "prop": "ball-split",
+              "x": 0.603,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.645,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 29580,
+          "endMs": 31170
+        }
+      ]
+    },
+    {
+      "id": "s6you",
+      "chapter": 1,
+      "beat": "takeaway",
+      "mood": "hope",
+      "place": "game-show",
+      "treatment": "atmospheric",
+      "palette": "cold-dawn",
+      "lines": [
+        {
+          "id": "n37",
+          "speaker": "narrator",
+          "text": "You play this game all the time:",
+          "speed": 0.92,
+          "pauseAfterMs": 250
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6c",
+          "line": "n37",
+          "words": "You play this game all the time:",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "sit",
+              "expression": "neutral",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "stranger",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.35,
+                  "expression": "thinking",
+                  "lookAt": "camera"
+                }
+              ]
+            },
+            {
+              "character": "stranger",
+              "pose": "sit",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "you",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "game-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cash-pile",
+              "x": 0.5,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.355,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.397,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.603,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.645,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "fade",
+          "startMs": 31170,
+          "endMs": 33290
+        }
+      ]
+    },
+    {
+      "id": "s6price",
+      "chapter": 1,
+      "beat": "takeaway",
+      "mood": "hope",
+      "place": "day-street",
+      "treatment": "simple",
+      "palette": "clear-day",
+      "lines": [
+        {
+          "id": "n38",
+          "speaker": "narrator",
+          "text": "price wars,",
+          "speed": 0.92,
+          "pauseAfterMs": 380
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6d",
+          "line": "n38",
+          "words": "price wars,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "shop-a",
+              "pose": "point",
+              "expression": "angry",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.242,
+              "lookAt": "shop-b",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "shop-b",
+              "pose": "point",
+              "expression": "shouting",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.758,
+              "lookAt": "shop-a",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "table",
+              "x": 0.105,
+              "tall": {
+                "x": 0.379
+              }
+            },
+            {
+              "prop": "table",
+              "x": 0.895,
+              "tall": {
+                "x": 0.621
+              }
+            },
+            {
+              "prop": "bread",
+              "x": 0.105,
+              "y": 1.22,
+              "tag": "50% OFF",
+              "tall": {
+                "x": 0.379
+              }
+            },
+            {
+              "prop": "bread",
+              "x": 0.895,
+              "y": 1.22,
+              "tag": "60% OFF",
+              "tall": {
+                "x": 0.621
+              }
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.464,
+              "y": 0,
+              "size": 1.5,
+              "tall": {
+                "x": 0.479,
+                "size": 0.95
+              }
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.536,
+              "y": 0,
+              "size": 1.5,
+              "tall": {
+                "x": 0.521,
+                "size": 0.95
+              }
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 33290,
+          "endMs": 34720
+        }
+      ]
+    },
+    {
+      "id": "s6group",
+      "chapter": 1,
+      "beat": "takeaway",
+      "mood": "hope",
+      "place": "lab",
+      "treatment": "simple",
+      "palette": "cold-dawn",
+      "lines": [
+        {
+          "id": "n39",
+          "speaker": "narrator",
+          "text": "group projects,",
+          "speed": 0.92,
+          "pauseAfterMs": 380
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6e",
+          "line": "n39",
+          "words": "group projects,",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "student-a",
+              "pose": "sit-reach",
+              "expression": "exhausted",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "book-open",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "student-b",
+              "pose": "cross-arms",
+              "expression": "smug",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.647,
+              "lookAt": "student-a",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "student-c",
+              "pose": "shrug",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.805,
+              "lookAt": "camera",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "table",
+              "x": 0.468
+            },
+            {
+              "prop": "book-open",
+              "x": 0.437,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.492,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.526,
+              "y": 1.22
+            }
+          ],
+          "effects": [
+            {
+              "effect": "sweat-flying",
+              "on": "student-a"
+            }
+          ],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 34720,
+          "endMs": 36300
+        }
+      ]
+    },
+    {
+      "id": "s6kitchen",
+      "chapter": 1,
+      "beat": "takeaway",
+      "mood": "hope",
+      "place": "home-interior",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "n40",
+          "speaker": "narrator",
+          "text": "a shared kitchen.",
+          "speed": 0.92,
+          "pauseAfterMs": 500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6f",
+          "line": "n40",
+          "words": "a shared kitchen.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "flat-a",
+              "pose": "point",
+              "expression": "angry",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.3,
+              "lookAt": "flat-b",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "flat-b",
+              "pose": "cross-arms",
+              "expression": "angry",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.7,
+              "lookAt": "flat-a",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "table",
+              "x": 0.5
+            },
+            {
+              "prop": "cup",
+              "x": 0.447,
+              "y": 1.22
+            },
+            {
+              "prop": "goblet",
+              "x": 0.471,
+              "y": 1.22
+            },
+            {
+              "prop": "cup",
+              "x": 0.494,
+              "y": 1.22
+            },
+            {
+              "prop": "cup",
+              "x": 0.471,
+              "y": 1.62
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.529,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.563,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 36300,
+          "endMs": 37990
+        }
+      ]
+    },
+    {
+      "id": "s6end",
+      "chapter": 1,
+      "beat": "takeaway",
+      "mood": "hope",
+      "place": "game-show",
+      "treatment": "atmospheric",
+      "palette": "cold-dawn",
+      "lines": [
+        {
+          "id": "n41",
+          "speaker": "narrator",
+          "text": "When you are stuck between trust and betrayal, do not ask which ball to pick.",
+          "speed": 0.92,
+          "pauseAfterMs": 300
+        },
+        {
+          "id": "n42",
+          "speaker": "narrator",
+          "text": "Ask how to *change the table.*",
+          "speed": 0.92,
+          "pauseAfterMs": 1100
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6g",
+          "line": "n41",
+          "words": "When you are stuck between trust and betrayal,",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "sit",
+              "expression": "thinking",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "golden-ball",
+              "back": false,
+              "then": []
+            },
+            {
+              "character": "stranger",
+              "pose": "sit",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "you",
+              "back": false,
+              "then": []
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "game-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cash-pile",
+              "x": 0.5,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.355,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.397,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.603,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.645,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "fade",
+          "startMs": 37990,
+          "endMs": 40850
+        },
+        {
+          "id": "s6h",
+          "line": "n41",
+          "words": "do not ask which ball to pick.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [
+            {
+              "character": "you",
+              "pose": "sit",
+              "expression": "thinking",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.284,
+              "lookAt": "golden-ball",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.2,
+                  "pose": "stand",
+                  "expression": "determined",
+                  "lookAt": "stranger"
+                },
+                {
+                  "at": 0.7,
+                  "action": "walk"
+                }
+              ]
+            },
+            {
+              "character": "stranger",
+              "pose": "sit",
+              "expression": "happy",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "you",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.4,
+                  "expression": "surprised"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "game-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cash-pile",
+              "x": 0.5,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.355,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.397,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.603,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.645,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "startMs": 40850,
+          "endMs": 43060
+        },
+        {
+          "id": "s6i",
+          "line": "n42",
+          "words": "Ask how to *change the table.*",
+          "camera": {
+            "framing": "wide",
+            "move": "push-in",
+            "strength": 0.8
+          },
+          "actors": [
+            {
+              "character": "you",
+              "action": "walk",
+              "expression": "determined",
+              "facing": "right",
+              "headTurn": "three-quarter",
+              "x": 0.584,
+              "lookAt": "stranger",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.4,
+                  "pose": "stand",
+                  "expression": "happy"
+                }
+              ]
+            },
+            {
+              "character": "stranger",
+              "pose": "sit",
+              "expression": "surprised",
+              "facing": "left",
+              "headTurn": "three-quarter",
+              "x": 0.716,
+              "lookAt": "you",
+              "back": false,
+              "then": [
+                {
+                  "at": 0.55,
+                  "expression": "happy"
+                }
+              ]
+            }
+          ],
+          "props": [
+            {
+              "prop": "chair",
+              "x": 0.284
+            },
+            {
+              "prop": "chair",
+              "x": 0.716
+            },
+            {
+              "prop": "game-table",
+              "x": 0.5
+            },
+            {
+              "prop": "cash-pile",
+              "x": 0.5,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.355,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.397,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.603,
+              "y": 1.22
+            },
+            {
+              "prop": "golden-ball",
+              "x": 0.645,
+              "y": 1.22
+            }
+          ],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "end",
+              "gainDb": 0
+            }
+          ],
+          "transition": "cut",
+          "startMs": 43060,
+          "endMs": 46790
+        }
+      ]
+    }
+  ]
+}

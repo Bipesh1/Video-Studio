@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "video": "dishes-part-1-16x9-v3.mp4",
+  "stills": {
+    "s1a": "ok",
+    "s1b": "ok",
+    "s1c": "ok",
+    "s2a": "ok",
+    "s2b": "ok",
+    "s2c": "ok",
+    "s2d": "ok",
+    "s2e": "ok",
+    "s2f": "ok",
+    "s2g": "ok",
+    "s2h": "ok",
+    "s2i": "ok",
+    "s2j": "ok"
+  },
+  "strips": {
+    "s1c-move-1": "ok",
+    "cut-s1c-s2a": "ok",
+    "cut-s2a-s2b": "ok",
+    "s2e-move-1": "ok",
+    "cut-s2e-s2f": "ok",
+    "cut-s2f-s2g": "ok",
+    "cut-s2g-s2h": "ok",
+    "s2h-move-1": "ok",
+    "cut-s2h-s2i": "ok",
+    "cut-s2i-s2j": "ok"
+  },
+  "playbook": "ok",
+  "fixed": [
+    "The opening's big words lay over her face; she stands at the far end of the sink now and the words sit over the kitchen.",
+    "The tally page covered her face; the page shots have nobody in them, the page fills the picture.",
+    "The ONE YEAR EARLIER stamp of the rewind landed across both faces in the wide picture; it is smaller and higher in a wide frame now.",
+    "The blue notebook fell past her face onto the counter; it drops beside her, from less high."
+  ],
+  "notes": [
+    "Midnight in the kitchen: she writes in her blue notebook at the sink under SHE WROTE DOWN / EVERY DISH SHE WASHED / FOR A WHOLE YEAR; the tally page fills and counts up to 4,212; she shuts the notebook and looks at us. The film runs back to ONE YEAR EARLIER: winter, the fight at the full sink, her pointing, his shrug, I DO EVERYTHING against I DO PLENTY, he walks off; her rule, the notebook dropping onto the counter; at the table with it. Faces change on some cuts in the quick back and forth of the fight: kept, the fight is the cause."
+  ]
+}

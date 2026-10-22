@@ -1,3 +1,4 @@
+import { plainWords } from '@studio/shared';
 import type { Storyboard, VoiceTrack } from '@studio/shared';
 import { DEFAULT_PAGE_OPTIONS, buildPages, toCaptions } from '../overlays/captionPages';
 import type { CaptionPage, PageOptions } from '../overlays/captionPages';
@@ -39,12 +40,48 @@ export function captionPagesFor(
       if (shot.endMs !== undefined) lastPicture.set(shot.line, shot.endMs);
     }
   }
-  return buildPages(toCaptions(track.words), captionOptions(size)).map((page) => {
-    const line = page.lines[0]?.[0]?.lineId;
-    const until = line === undefined ? undefined : lastPicture.get(line);
-    const spoken = page.lines.flat().at(-1)?.endMs ?? page.endMs;
-    return until === undefined
-      ? page
-      : { ...page, endMs: Math.max(spoken, Math.min(page.endMs, until)) };
-  });
+  // Words already on screen as the big words of their shot are not captioned under them too.
+  const inBigWords = storyboard.scenes
+    .flatMap((scene) => scene.shots)
+    .filter(
+      (shot) =>
+        shot.overlay?.kind === 'words' &&
+        bare(shot.overlay.lines.join(' ')) === bare(plainWords(shot.words)),
+    );
+  const shownBig = (page: CaptionPage, line: string | undefined) =>
+    inBigWords.some(
+      (shot) =>
+        shot.line === line &&
+        page.startMs >= (shot.startMs ?? 0) - 1 &&
+        page.startMs < (shot.endMs ?? 0),
+    );
+  // A caption still up when the big words of its own line come on goes as they arrive: left
+  // there it lies across them where they stand low, and says their first word twice anywhere.
+  const bigWordsAfter = (page: CaptionPage, line: string | undefined): number | undefined =>
+    inBigWords
+      .filter((shot) => shot.line === line)
+      .map((shot) => shot.startMs ?? 0)
+      .find((startMs) => startMs > page.startMs && startMs < page.endMs);
+  return buildPages(toCaptions(track.words), captionOptions(size))
+    .filter((page) => !shownBig(page, page.lines[0]?.[0]?.lineId))
+    .map((page) => {
+      const line = page.lines[0]?.[0]?.lineId;
+      const until = line === undefined ? undefined : lastPicture.get(line);
+      const spoken = page.lines.flat().at(-1)?.endMs ?? page.endMs;
+      const kept =
+        until === undefined
+          ? page
+          : { ...page, endMs: Math.max(spoken, Math.min(page.endMs, until)) };
+      const big = bigWordsAfter(kept, line);
+      return big === undefined ? kept : { ...kept, endMs: big };
+    });
 }
+
+/** Words alone, for telling whether two texts say the same thing. */
+const bare = (text: string): string =>
+  text
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, '')
+    .split(/\s+/)
+    .filter(Boolean)
+    .join(' ');

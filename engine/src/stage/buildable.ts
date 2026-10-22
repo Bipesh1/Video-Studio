@@ -7,6 +7,7 @@ import { tokens } from '../tokens';
 import { lookFrom } from '../wardrobe/cast';
 import { HELD_PROPS, STANDING_PROPS } from './props';
 import { HEAD_EFFECTS } from './names';
+import { posterProblems } from './posterCheck';
 
 /**
  * Can the engine build this storyboard as it stands? The library check says a piece exists;
@@ -29,6 +30,15 @@ export function unbuildable(sb: Storyboard, cards: Record<string, CharacterCard>
     if (!(scene.palette in tokens.palettes))
       out.add(`the style has no colors called "${scene.palette}"`);
     for (const shot of scene.shots) {
+      if (shot.picture) {
+        const thumb = {
+          id: shot.id,
+          why: 'a picture shot',
+          size: '9:16' as const,
+          layers: shot.picture.layers,
+        };
+        for (const p of posterProblems(thumb, sb.cast)) out.add(p.replace(/^thumbnail/, 'picture'));
+      }
       for (const actor of shot.actors) {
         if (actor.pose && !poses.has(actor.pose))
           out.add(`the builder has no pose called "${actor.pose}"`);

@@ -1,0 +1,289 @@
+{
+  "version": 1,
+  "thumbnails": [
+    {
+      "id": "his-and-hers-wide",
+      "size": "16:9",
+      "why": "Cut in two, blue for her and orange for him, each glaring with their notebook. Wide, for YouTube.",
+      "layers": [
+        {
+          "kind": "split",
+          "at": 0.5,
+          "lean": 0.06,
+          "seam": 0.014,
+          "left": [
+            {
+              "kind": "backdrop",
+              "inner": "glint",
+              "outer": "ocean",
+              "at": {
+                "x": 0.25,
+                "y": 0.6
+              },
+              "rays": 14
+            },
+            {
+              "kind": "person",
+              "character": "saint",
+              "x": 0.28,
+              "y": 0.5,
+              "ground": 1.04,
+              "head": 0.2,
+              "pose": "stand",
+              "facing": "right",
+              "turn": 0.35,
+              "expression": "fuming",
+              "effects": [],
+              "light": 1.0,
+              "outline": 0.04,
+              "looksAt": {
+                "x": 0.75,
+                "y": 0.5
+              }
+            },
+            {
+              "kind": "thing",
+              "prop": "notebook-blue",
+              "x": 0.41,
+              "y": 0.84,
+              "head": 0.36
+            }
+          ],
+          "right": [
+            {
+              "kind": "backdrop",
+              "inner": "gold",
+              "outer": "orange",
+              "at": {
+                "x": 0.75,
+                "y": 0.6
+              },
+              "rays": 14
+            },
+            {
+              "kind": "person",
+              "character": "copycat",
+              "x": 0.72,
+              "y": 0.5,
+              "ground": 1.04,
+              "head": 0.2,
+              "pose": "stand",
+              "facing": "left",
+              "turn": 0.35,
+              "expression": "fuming",
+              "effects": [],
+              "light": 1.0,
+              "outline": 0.04,
+              "looksAt": {
+                "x": 0.25,
+                "y": 0.5
+              }
+            },
+            {
+              "kind": "thing",
+              "prop": "notebook-orange",
+              "x": 0.59,
+              "y": 0.84,
+              "head": 0.36
+            }
+          ]
+        },
+        {
+          "kind": "shade",
+          "from": "top",
+          "reach": 0.34,
+          "strength": 0.8
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "WHO REALLY DID",
+              "style": "light"
+            },
+            {
+              "text": "THE DISHES?",
+              "style": "gold"
+            }
+          ],
+          "x": 0.04,
+          "top": 0.03,
+          "size": 0.13,
+          "width": 0.92
+        }
+      ]
+    },
+    {
+      "id": "her-tally-wide",
+      "size": "16:9",
+      "why": "Her, smug, beside her notebook full of tally marks, circled. Wide, for YouTube.",
+      "layers": [
+        {
+          "kind": "backdrop",
+          "inner": "gold",
+          "outer": "crimson",
+          "at": {
+            "x": 0.72,
+            "y": 0.55
+          },
+          "rays": 18
+        },
+        {
+          "kind": "shade",
+          "from": "left",
+          "reach": 0.5,
+          "strength": 0.8
+        },
+        {
+          "kind": "person",
+          "character": "saint",
+          "x": 0.82,
+          "y": 0.5,
+          "ground": 1.06,
+          "head": 0.24,
+          "pose": "stand",
+          "facing": "left",
+          "turn": 0.35,
+          "expression": "smug",
+          "effects": [],
+          "light": 1.0,
+          "outline": 0.04,
+          "looksAt": {
+            "x": 0.55,
+            "y": 0.55
+          }
+        },
+        {
+          "kind": "thing",
+          "prop": "notebook-blue-open",
+          "x": 0.56,
+          "y": 0.72,
+          "head": 0.62
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.58,
+            "y": 0.53
+          },
+          "rx": 0.14,
+          "ry": 0.2
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "SHE COUNTED",
+              "style": "light"
+            },
+            {
+              "text": "EVERY DISH",
+              "style": "gold"
+            }
+          ],
+          "x": 0.04,
+          "top": 0.1,
+          "size": 0.2,
+          "width": 0.48
+        }
+      ]
+    },
+    {
+      "id": "his-drawer-wide",
+      "size": "16:9",
+      "why": "Her jaw dropped, an arrow to the drawer where he hid his own notebook. Wide, for YouTube.",
+      "layers": [
+        {
+          "kind": "room",
+          "place": "kitchen",
+          "palette": "dusk-violet",
+          "treatment": "atmospheric"
+        },
+        {
+          "kind": "glow",
+          "at": {
+            "x": 0.78,
+            "y": 0.62
+          },
+          "radius": 0.4,
+          "paint": "gold",
+          "strength": 0.8
+        },
+        {
+          "kind": "shade",
+          "from": "top",
+          "reach": 0.4,
+          "strength": 0.75
+        },
+        {
+          "kind": "person",
+          "character": "saint",
+          "x": 0.2,
+          "y": 0.5,
+          "ground": 1.08,
+          "head": 0.26,
+          "pose": "stand",
+          "facing": "right",
+          "turn": 0.35,
+          "expression": "jaw-drop",
+          "effects": [
+            "shock-lines"
+          ],
+          "light": 1.0,
+          "outline": 0.04,
+          "looksAt": {
+            "x": 0.8,
+            "y": 0.6
+          }
+        },
+        {
+          "kind": "thing",
+          "prop": "drawer-cabinet-open",
+          "x": 0.8,
+          "y": 0.98,
+          "head": 0.4
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.8,
+            "y": 0.5
+          },
+          "rx": 0.13,
+          "ry": 0.14
+        },
+        {
+          "kind": "mark",
+          "shape": "arrow",
+          "at": {
+            "x": 0.33,
+            "y": 0.62
+          },
+          "to": {
+            "x": 0.66,
+            "y": 0.52
+          }
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "HE KEPT",
+              "style": "light"
+            },
+            {
+              "text": "A LIST TOO",
+              "style": "gold"
+            }
+          ],
+          "x": 0.42,
+          "top": 0.05,
+          "size": 0.15,
+          "width": 0.55
+        }
+      ]
+    }
+  ]
+}

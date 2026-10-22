@@ -222,10 +222,31 @@ describe('changes inside a shot', () => {
     const king = sb.scenes[0]?.shots[0]?.actors[0];
     if (!king) throw new Error('no king');
     expect(actorMoments(king)).toEqual([
-      { at: 0, pose: 'hold-object', expression: 'smug', lookAt: 'ahead', holds: 'scepter' },
-      { at: 0.3, pose: 'hold-object', expression: 'angry', lookAt: 'ahead', holds: 'scepter' },
-      { at: 0.5, action: 'walk', expression: 'angry', lookAt: 'camera', holds: 'scepter' },
-      { at: 0.8, pose: 'kneel', expression: 'angry', lookAt: 'camera' },
+      {
+        at: 0,
+        pose: 'hold-object',
+        expression: 'smug',
+        strength: 1,
+        lookAt: 'ahead',
+        holds: 'scepter',
+      },
+      {
+        at: 0.3,
+        pose: 'hold-object',
+        expression: 'angry',
+        strength: 1,
+        lookAt: 'ahead',
+        holds: 'scepter',
+      },
+      {
+        at: 0.5,
+        action: 'walk',
+        expression: 'angry',
+        strength: 1,
+        lookAt: 'camera',
+        holds: 'scepter',
+      },
+      { at: 0.8, pose: 'kneel', expression: 'angry', strength: 1, lookAt: 'camera' },
     ]);
   });
 

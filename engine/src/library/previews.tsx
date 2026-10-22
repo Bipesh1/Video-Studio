@@ -9,7 +9,10 @@ import type { BackgroundSpec } from '../backgrounds/Background';
 import { PLACES, placeSpec } from '../backgrounds/places';
 import type { PlaceName } from '../backgrounds/places';
 import { AngerMark } from '../effects/AngerMark';
-import { Explosion, Fire, Smoke } from '../effects/Blast';
+import { Explosion, Fire, SMOKE_LEVELS, Smoke, SmokeBank } from '../effects/Blast';
+import { Crumbs, Erased } from '../effects/Erase';
+import { DollarEyes, ShockLines } from '../effects/Reaction';
+import { Paper, PencilLine, circlePath } from '../effects/Pencil';
 import { DizzyStars } from '../effects/Dizzy';
 import { IMPACT_SECONDS, Impact } from '../effects/Impact';
 import { MotionLines } from '../effects/MotionLines';
@@ -20,18 +23,35 @@ import { EXPRESSIONS, EXPRESSION_NAMES } from '../face/expressions';
 import type { ExpressionName } from '../face/expressions';
 import { MOUTH_FORMS } from '../face/talk';
 import { CoinRain } from '../effects/CoinRain';
+import { Banknote, CashJar, GavelHand, PADDLE_MARKS, Paddle, Podium } from '../props/Auction';
 import { Bag } from '../props/Bag';
 import { Bill, Bills, Bread, Coal, CoinStack, Envelope, FuelCan } from '../props/Bill';
 import { Book } from '../props/Book';
 import { Chair } from '../props/Chair';
+import { BackRow } from '../props/Crowd';
 import { WristChains } from '../props/Chains';
 import { Crate } from '../props/Crate';
 import { Coin } from '../props/Coin';
 import { Cup } from '../props/Cup';
+import { Car } from '../props/Car';
+import { NoticeBoard } from '../props/Daycare';
 import { Door } from '../props/Door';
+import { CashPile, GameTable, GoldenBall } from '../props/Game';
 import { InHand, Placed } from '../props/Hold';
+import { ChatBubbles, Phone, WallClock } from '../props/Home';
+import {
+  DiningTable,
+  LobsterPlate,
+  LongBill,
+  Menu,
+  SaladPlate,
+  WaterGlass,
+  WaterJug,
+} from '../props/Dinner';
 import { Lantern } from '../props/Lantern';
+import { Torch } from '../props/Torch';
 import { Rocket } from '../props/Rocket';
+import { Bulb, Gloom } from '../props/Room';
 import { Scepter } from '../props/Scepter';
 import { Shield } from '../props/Shield';
 import { Asteroid, BlackHole, Earth, FullMoon, Planet, Sun } from '../props/Sky';
@@ -50,12 +70,25 @@ import { Hand } from '../rig/Hand';
 import { vec } from '../rig/math';
 import { JUMP, PUNCH, SWING } from '../rig/moves';
 import { poseAt, resolvePose } from '../rig/pose';
-import { POSES, handsUp, holdObject, stand } from '../rig/poses';
+import { POSES, SEATED_POSES, handsUp, holdObject, stand } from '../rig/poses';
 import { computeSkeleton } from '../rig/skeleton';
 import { HAND_SHAPES } from '../rig/types';
 import type { HandShape, ResolvedPose } from '../rig/types';
 import { walkAt } from '../rig/walk';
 import { boulderProp, clubProp, crateProp, ropeProp } from '../sandbox/fixtures';
+import {
+  DrawerCabinet,
+  KitchenCounter,
+  NotebookLying,
+  NotebookOpen,
+  Plate,
+  SeasonWindow,
+  SharesPlate,
+  SplitLight,
+} from '../props/Kitchen';
+import { BreathCloud } from '../props/BreathCloud';
+import { FoodBreathCloud, XrayFat } from '../props/FoodBreath';
+import { BlackHoleGlow } from '../props/BlackHoleGlow';
 import { Rod } from '../sandbox/Rod';
 import { accent, ink, lineWeights, palette, pick, tokens } from '../tokens';
 import { COSTUMES } from '../wardrobe/cast';
@@ -148,6 +181,18 @@ const POSE_VIEWS: Record<string, { turn?: number; dx?: number; face?: Expression
   cower: { turn: 0.5, face: 'afraid' },
   hug: { turn: 0.5, dx: -30, face: 'happy' },
   'folded-upside-down': { turn: 0.5, dx: -75, face: 'afraid' },
+  'sit-reach': { turn: 0.5, dx: -40, face: 'thinking' },
+  'sit-promise': { turn: 0.5, dx: 10, face: 'happy' },
+  'sit-hands-up': { turn: 0.5, dx: 10, face: 'surprised' },
+  'sit-slump': { turn: 0.5, dx: 0, face: 'sad' },
+  'sit-phone': { turn: 0.5, dx: -10, face: 'determined' },
+  'open-arms': { turn: 0, face: 'happy' },
+  'hand-on-heart': { turn: 0.35, face: 'happy' },
+  'rub-hands': { turn: 0.5, dx: -25, face: 'smug' },
+  'head-tilt': { turn: 0.35, face: 'thinking' },
+  'fix-tie': { turn: 0.35, face: 'smug' },
+  'hold-cup': { turn: 0.35, face: 'neutral' },
+  sip: { turn: 0.35, face: 'neutral' },
 };
 
 /** A moment of each action that shows what it is. */
@@ -225,6 +270,10 @@ const GARMENT_LOOKS: Record<Garment, Clothes> = {
     top: { kind: 'jacket', cloth: 'steel', under: 'cream' },
     bottom: { kind: 'trousers', cloth: 'brown' },
   },
+  cap: { hat: { kind: 'cap', cloth: 'forest' } },
+  beanie: { hat: { kind: 'beanie', cloth: 'orange' } },
+  tie: { tie: { cloth: 'crimson', stripe: 'gold' } },
+  scarf: { scarf: { cloth: 'glint' } },
   sneakers: { shoes: { kind: 'sneakers', cloth: 'white' } },
   boots: { shoes: { kind: 'boots', cloth: 'steel' } },
   't-shirt': {
@@ -343,7 +392,7 @@ const entries: Array<[string, Preview]> = [
       };
       return (
         <>
-          {p.id === 'sit' && <Seat x={BOX / 2 + (view.dx ?? 0)} head={POSE_HEAD} />}
+          {SEATED_POSES.includes(p.id) && <Seat x={BOX / 2 + (view.dx ?? 0)} head={POSE_HEAD} />}
           {p.id === 'folded-upside-down' && (
             <Placed x={BOX / 2} y={362} head={POSE_HEAD}>
               <Crate uid="lib-pose-crate" shadowSide={1} cutaway inverted />
@@ -516,6 +565,10 @@ const entries: Array<[string, Preview]> = [
       ['book', 330, 200, (u) => <Book uid={u} shadowSide={1} />],
       ['book-open', 280, 200, (u) => <Book uid={u} shadowSide={1} open />],
       ['lantern', 250, 90, (u) => <Lantern uid={u} shadowSide={1} />],
+      ['torch', 250, 260, (u) => <Torch uid={u} shadowSide={1} t={0.4} />],
+      ['torch-low', 250, 260, (u) => <Torch uid={u} shadowSide={1} flame={0.62} t={0.4} />],
+      ['torch-dying', 250, 260, (u) => <Torch uid={u} shadowSide={1} flame={0.34} t={0.4} />],
+      ['torch-out', 250, 260, (u) => <Torch uid={u} shadowSide={1} flame={0} t={0.4} />],
       ['cup', 340, 200, (u) => <Cup uid={u} shadowSide={1} />],
       ['goblet', 340, 200, (u) => <Cup uid={u} shadowSide={1} kind="goblet" />],
       ['door', 80, 370, (u) => <Door uid={u} shadowSide={1} open={0.3} />],
@@ -571,6 +624,262 @@ const entries: Array<[string, Preview]> = [
       ['crate-cutaway', 130, 340, (u) => <Crate uid={u} shadowSide={1} cutaway />],
       ['wagon', 96, 300, (u) => <Wagon uid={u} shadowSide={1} />],
       ['rope-barrier', 110, 300, (u) => <RopeBarrier uid={u} shadowSide={1} />],
+      ['golden-ball', 520, 310, (u) => <GoldenBall uid={u} shadowSide={1} />],
+      ['ball-split', 400, 330, (u) => <GoldenBall uid={u} shadowSide={1} word="split" />],
+      ['ball-steal', 400, 330, (u) => <GoldenBall uid={u} shadowSide={1} word="steal" />],
+      [
+        'ball-split-opening',
+        400,
+        330,
+        (u) => <GoldenBall uid={u} shadowSide={1} word="split" open={0.55} />,
+      ],
+      [
+        'ball-steal-opening',
+        400,
+        330,
+        (u) => <GoldenBall uid={u} shadowSide={1} word="steal" open={0.55} />,
+      ],
+      ['cash-pile', 260, 310, (u) => <CashPile uid={u} shadowSide={1} />],
+      ['cash-half', 260, 310, (u) => <CashPile uid={u} shadowSide={1} columns={1} />],
+      ['game-table', 110, 290, (u) => <GameTable uid={u} shadowSide={1} />],
+      ['podium', 150, 330, (u) => <Podium uid={u} shadowSide={1} />],
+      ['iron-chair', 170, 350, (u) => <Chair uid={u} shadowSide={1} made="iron" />],
+      ['iron-table', 150, 320, (u) => <Table uid={u} shadowSide={1} made="iron" />],
+      ['bulb', 150, 230, (u) => <Bulb uid={u} shadowSide={1} cord={3} />],
+      ['bulb-flicker', 150, 230, (u) => <Bulb uid={u} shadowSide={1} cord={3} on={0.55} />],
+      ['bulb-dim', 150, 230, (u) => <Bulb uid={u} shadowSide={1} cord={3} on={0.15} />],
+      [
+        'gloom',
+        150,
+        230,
+        (u) => (
+          <>
+            <Bulb uid={u} shadowSide={1} cord={3} on={0.15} />
+            <Gloom />
+          </>
+        ),
+      ],
+      [
+        'gloom-flicker',
+        150,
+        230,
+        (u) => (
+          <>
+            <Bulb uid={u} shadowSide={1} cord={3} on={0.55} />
+            <Gloom depth={0.22} />
+          </>
+        ),
+      ],
+      ['back-row', 96, 420, (u) => <BackRow uid={u} shadowSide={1} state="calm" />],
+      [
+        'back-row-raising',
+        96,
+        420,
+        (u) => <BackRow uid={u} shadowSide={1} state="raising" shotT={1.05} />,
+      ],
+      ['back-row-raised', 96, 420, (u) => <BackRow uid={u} shadowSide={1} state="raised" />],
+      ['back-row-turned', 96, 420, (u) => <BackRow uid={u} shadowSide={1} state="turned" />],
+      ['house-row', 96, 420, (u) => <BackRow uid={u} shadowSide={1} state="calm" badged />],
+      [
+        'house-row-raising',
+        96,
+        420,
+        (u) => <BackRow uid={u} shadowSide={1} state="raising" badged shotT={1.05} />,
+      ],
+      [
+        'house-row-raised',
+        96,
+        420,
+        (u) => <BackRow uid={u} shadowSide={1} state="raised" badged />,
+      ],
+      [
+        'house-row-turned',
+        96,
+        420,
+        (u) => <BackRow uid={u} shadowSide={1} state="turned" badged />,
+      ],
+      [
+        'smoke-creeping',
+        110,
+        380,
+        () => <SmokeBank t={1} height={SMOKE_LEVELS.low} reach={0.55} />,
+      ],
+      ['smoke-low', 110, 380, () => <SmokeBank t={1} height={SMOKE_LEVELS.low} />],
+      [
+        'smoke-rising',
+        110,
+        380,
+        () => <SmokeBank t={1} height={(SMOKE_LEVELS.low + SMOKE_LEVELS.table) / 2} />,
+      ],
+      ['smoke-table', 110, 380, () => <SmokeBank t={1} height={SMOKE_LEVELS.table} />],
+      [
+        'smoke-filling',
+        110,
+        380,
+        () => <SmokeBank t={1} height={(SMOKE_LEVELS.table + SMOKE_LEVELS.high) / 2} />,
+      ],
+      ['smoke-high', 110, 380, () => <SmokeBank t={1} height={SMOKE_LEVELS.high} />],
+      ['sofa', 170, 350, (u) => <Chair uid={u} shadowSide={1} kind="sofa" />],
+      ['phone', 480, 260, (u) => <Phone uid={u} shadowSide={1} />],
+      ['chat-bubbles', 170, 200, (u) => <ChatBubbles uid={u} shadowSide={1} shotT={1} />],
+      ['chat-full', 170, 200, (u) => <ChatBubbles uid={u} shadowSide={1} />],
+      ['wall-clock', 240, 200, (u) => <WallClock uid={u} shadowSide={1} />],
+      ['wall-clock-spinning', 240, 200, (u) => <WallClock uid={u} shadowSide={1} shotT={2.1} />],
+      ['wall-clock-3-55', 240, 200, (u) => <WallClock uid={u} shadowSide={1} at={3 + 55 / 60} />],
+      ['wall-clock-4-00', 240, 200, (u) => <WallClock uid={u} shadowSide={1} at={4} />],
+      ['wall-clock-4-15', 240, 200, (u) => <WallClock uid={u} shadowSide={1} at={4.25} />],
+      ['wall-clock-4-20', 240, 200, (u) => <WallClock uid={u} shadowSide={1} at={4 + 20 / 60} />],
+      ['wall-clock-4-30', 240, 200, (u) => <WallClock uid={u} shadowSide={1} at={4.5} />],
+      ['wall-clock-4-40', 240, 200, (u) => <WallClock uid={u} shadowSide={1} at={4 + 40 / 60} />],
+      [
+        'wall-clock-to-4-40',
+        240,
+        200,
+        (u) => (
+          <WallClock uid={u} shadowSide={1} at={4 + 35 / 60} until={4 + 40 / 60} shotT={1.2} />
+        ),
+      ],
+      ['car', 50, 300, (u) => <Car uid={u} shadowSide={1} />],
+      ['car-crimson', 50, 300, (u) => <Car uid={u} shadowSide={1} paint="crimson" />],
+      ['car-gold', 50, 300, (u) => <Car uid={u} shadowSide={1} paint="gold" />],
+      ['car-steel', 50, 300, (u) => <Car uid={u} shadowSide={1} paint="steel" />],
+      ['notice-board', 170, 200, (u) => <NoticeBoard uid={u} shadowSide={1} />],
+      [
+        'notice-board-fine-pinning',
+        170,
+        200,
+        (u) => <NoticeBoard uid={u} shadowSide={1} note="fine" pinT={0.62} />,
+      ],
+      ['notice-board-fine', 170, 200, (u) => <NoticeBoard uid={u} shadowSide={1} note="fine" />],
+      [
+        'notice-board-no-fine',
+        170,
+        200,
+        (u) => <NoticeBoard uid={u} shadowSide={1} note="no-fine" />,
+      ],
+      ['dining-table', 110, 290, (u) => <DiningTable uid={u} shadowSide={1} />],
+      ['kitchen-sink', 95, 330, (u) => <KitchenCounter uid={u} shadowSide={1} />],
+      ['kitchen-sink-done', 95, 330, (u) => <KitchenCounter uid={u} shadowSide={1} dishes={1} />],
+      ['plate', 420, 200, (u) => <Plate uid={u} shadowSide={1} />],
+      ['notebook-blue', 420, 230, (u) => <NotebookLying uid={u} shadowSide={1} paint="blue" />],
+      ['notebook-orange', 420, 230, (u) => <NotebookLying uid={u} shadowSide={1} paint="orange" />],
+      [
+        'notebook-blue-landing',
+        420,
+        230,
+        (u) => <NotebookLying uid={u} shadowSide={1} paint="blue" />,
+      ],
+      ['notebook-blue-open', 380, 200, (u) => <NotebookOpen uid={u} shadowSide={1} paint="blue" />],
+      [
+        'notebook-orange-open',
+        380,
+        200,
+        (u) => <NotebookOpen uid={u} shadowSide={1} paint="orange" />,
+      ],
+      [
+        'window-seasons',
+        170,
+        200,
+        (u) => <SeasonWindow uid={u} shadowSide={1} season={1.6} t={1} />,
+      ],
+      [
+        'window-night',
+        170,
+        200,
+        (u) => <SeasonWindow uid={u} shadowSide={1} night season={3} t={1} />,
+      ],
+      ['window-winter', 170, 200, (u) => <SeasonWindow uid={u} shadowSide={1} season={0} t={1} />],
+      ['window-autumn', 170, 200, (u) => <SeasonWindow uid={u} shadowSide={1} season={3} t={1} />],
+      ['drawer-cabinet', 170, 330, (u) => <DrawerCabinet uid={u} shadowSide={1} />],
+      [
+        'drawer-cabinet-opening',
+        170,
+        330,
+        (u) => <DrawerCabinet uid={u} shadowSide={1} open={0.6} />,
+      ],
+      ['drawer-cabinet-open', 170, 330, (u) => <DrawerCabinet uid={u} shadowSide={1} open={1} />],
+      [
+        'drawer-cabinet-empty',
+        170,
+        330,
+        (u) => <DrawerCabinet uid={u} shadowSide={1} open={1} holding={false} />,
+      ],
+      ['plate-shares', 150, 200, (u) => <SharesPlate uid={u} shadowSide={1} />],
+      ['gloom-split', 150, 200, (u) => <SplitLight uid={u} />],
+      [
+        'black-hole-glow',
+        110,
+        200,
+        (u) => <BlackHoleGlow cx={0} cy={0} R={0.5} t={1} u={1 / 300} uid={`${u}-bh`} />,
+      ],
+      [
+        'black-hole-glow-centred',
+        150,
+        200,
+        (u) => <BlackHoleGlow cx={0} cy={0} R={0.5} t={1} u={1 / 300} uid={`${u}-bh`} />,
+      ],
+      ['breath-cloud', 300, 200, (u) => <BreathCloud uid={u} t={1} />],
+      ['food-breath-cloud', 300, 200, (u) => <FoodBreathCloud uid={u} t={1} />],
+      ['xray-fat', 300, 200, (u) => <XrayFat uid={u} t={1} />],
+      ['plate-salad', 560, 230, (u) => <SaladPlate uid={u} shadowSide={1} />],
+      ['plate-lobster', 420, 250, (u) => <LobsterPlate uid={u} shadowSide={1} />],
+      ['water-glass', 560, 250, (u) => <WaterGlass uid={u} shadowSide={1} />],
+      ['menu', 300, 250, (u) => <Menu uid={u} shadowSide={1} />],
+      ['water-jug', 420, 230, (u) => <WaterJug uid={u} shadowSide={1} />],
+      ['bill-long', 70, 290, (u) => <LongBill uid={u} shadowSide={1} shotT={0.9} />],
+      ['bill-long-out', 70, 290, (u) => <LongBill uid={u} shadowSide={1} />],
+      [
+        'gavel-rise',
+        230,
+        320,
+        (u) => (
+          <g transform="translate(-0.3 0)">
+            <GavelHand uid={u} shadowSide={1} lift={0.7} />
+          </g>
+        ),
+      ],
+      ['cash-jar', 112, 372, (u) => <CashJar uid={u} shadowSide={1} hand />],
+      ['cash-jar-low', 120, 372, (u) => <CashJar uid={u} shadowSide={1} holds="coins" />],
+      [
+        'gavel',
+        260,
+        290,
+        (u) => (
+          <g transform="translate(-0.26 0)">
+            <GavelHand uid={u} shadowSide={1} />
+          </g>
+        ),
+      ],
+      [
+        'gavel-raised',
+        230,
+        320,
+        (u) => (
+          <g transform="translate(-0.3 0)">
+            <GavelHand uid={u} shadowSide={1} lift={1} />
+          </g>
+        ),
+      ],
+      [
+        'gavel-knock',
+        230,
+        320,
+        (u) => (
+          <g transform="translate(-0.3 0)">
+            <GavelHand uid={u} shadowSide={1} lift={0.45} />
+          </g>
+        ),
+      ],
+      ['banknote', 400, 200, (u) => <Banknote uid={u} shadowSide={1} />],
+      ['banknote-20', 400, 200, (u) => <Banknote uid={u} shadowSide={1} worth="20" />],
+      ...Object.entries(PADDLE_MARKS).map(
+        ([name, mark]): [string, number, number, (uid: string) => ReactNode] => [
+          name,
+          330,
+          300,
+          (u) => <Paddle uid={u} shadowSide={1} mark={mark} />,
+        ],
+      ),
       [
         'crate-cutaway-upside-down',
         130,
@@ -642,6 +951,20 @@ const entries: Array<[string, Preview]> = [
     (o) => headShot(o, { face: EXPRESSIONS.exhausted, headEffects: <RestingSweat side={-1} /> }),
   ],
   [
+    'effect/dollar-eyes',
+    (o) =>
+      headShot(
+        o,
+        { face: EXPRESSIONS.tempted, headEffects: <DollarEyes turn={o.turn ?? 0.35} /> },
+        0.35,
+        210,
+      ),
+  ],
+  [
+    'effect/shock-lines',
+    (o) => headShot(o, { face: EXPRESSIONS.horrified, headEffects: <ShockLines /> }, 0.35, 180),
+  ],
+  [
     'effect/tear-streams',
     (o) =>
       headShot(
@@ -703,6 +1026,45 @@ const entries: Array<[string, Preview]> = [
       <Placed x={BOX / 2} y={350} head={150}>
         <Fire t={0.3} size={1.9} />
       </Placed>
+    ),
+  ],
+  [
+    'effect/pencil-line',
+    () => (
+      <g>
+        <Paper width={BOX} height={BOX} />
+        <PencilLine
+          d={`M 20 ${BOX * 0.78} C 140 ${BOX * 0.6}, 300 ${BOX * 0.72}, ${BOX - 20} ${BOX * 0.7}`}
+          progress={1}
+        />
+        <PencilLine d={circlePath(BOX * 0.36, BOX * 0.34, 70, 0.8)} progress={1} weight={6} />
+      </g>
+    ),
+  ],
+  [
+    'effect/erased',
+    (o) => (
+      <g>
+        <Paper width={BOX} height={BOX} />
+        <Erased
+          at={{ x: BOX * 0.62, y: BOX * 0.5 }}
+          radius={150}
+          amount={1}
+          width={BOX}
+          height={BOX}
+        >
+          {headShot(o, { face: EXPRESSIONS.hollow }, 0.35, 230)}
+        </Erased>
+        <Crumbs
+          crumbs={[0, 1, 2, 3, 4, 5].map((i) => ({
+            at: i * 0.12,
+            from: { x: BOX * 0.62 + i * 14, y: BOX * 0.55 },
+          }))}
+          t={1.1}
+          groundY={BOX - 30}
+          size={12}
+        />
+      </g>
     ),
   ],
   [

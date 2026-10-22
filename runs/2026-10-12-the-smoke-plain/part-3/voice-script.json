@@ -1,0 +1,156 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l20",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "This is not a story. In 1968, two scientists did this *for real.*",
+      "say": "This is not a story. In 1968, two scientists did this... for real.",
+      "speed": 0.93,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l21",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "Alone in the smoke, three people out of four got up and reported it.",
+      "speed": 0.97,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l22",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "With two calm strangers beside them, only *one in ten* did.",
+      "say": "With two calm strangers beside them... only one in ten did.",
+      "speed": 0.9,
+      "pauseAfterMs": 800
+    },
+    {
+      "id": "l23",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "The smoke was the same. Only the faces changed.",
+      "say": "The smoke was the same. Only the faces... changed.",
+      "speed": 0.91,
+      "pauseAfterMs": 800
+    },
+    {
+      "id": "l24",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "You do this too. A fire alarm rings, everyone looks around, and nobody moves first.",
+      "say": "You do this too. A fire alarm rings, everyone looks around... and nobody moves first.",
+      "speed": 0.95,
+      "pauseAfterMs": 1200
+    },
+    {
+      "id": "l25",
+      "speaker": "narrator",
+      "voice": "af_nicole",
+      "text": "Here is how you beat it. When something feels wrong, do not check the faces around you.",
+      "speed": 0.95,
+      "pauseAfterMs": 440
+    },
+    {
+      "id": "l26",
+      "speaker": "narrator",
+      "voice": "af_nicole",
+      "text": "They are checking yours. Say it out loud, and *stand up first.*",
+      "say": "They are checking yours. Say it out loud... and stand up first.",
+      "speed": 0.9,
+      "pauseAfterMs": 1320
+    },
+    {
+      "id": "l27",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "One person standing up breaks the whole trick.",
+      "say": "One person standing up, breaks the whole trick.",
+      "speed": 0.93,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l28",
+      "speaker": "trainer",
+      "voice": "am_onyx",
+      "blend": [
+        {
+          "voice": "am_onyx",
+          "weight": 0.7
+        },
+        {
+          "voice": "am_michael",
+          "weight": 0.3
+        }
+      ],
+      "text": "So how long would you sit in smoke? As long as everyone else does.",
+      "say": "So, how long would you sit in smoke? As long... as everyone else does.",
+      "speed": 0.9,
+      "pauseAfterMs": 1400
+    }
+  ]
+}

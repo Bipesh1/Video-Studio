@@ -1,0 +1,194 @@
+{
+  "version": 1,
+  "title": "Why Every Screen Asks You for a Tip Now",
+  "request": "Make a good video on this based on the new update now for What's the Catch (Biku, 2026-10-16). Refined with his OK: the coffee shop experiment line and the last line, which said tips go up when the worker watches; the study found the opposite.",
+  "mode": "refine",
+  "format": "fine-print",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "speakers": [],
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "narrator",
+      "text": "Why does every payment screen ask you for a *tip* now?",
+      "beat": "the-question",
+      "chapter": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l02",
+      "speaker": "narrator",
+      "text": "The answer hides in three little buttons, and it is *smarter* than it looks.",
+      "beat": "the-question",
+      "chapter": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l03",
+      "speaker": "narrator",
+      "text": "In a big 2023 survey, seventy two percent of Americans said tipping is expected in *more* places now.",
+      "beat": "the-moment",
+      "chapter": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l04",
+      "speaker": "narrator",
+      "text": "Food trucks ask, coffee counters ask, and even some self-checkout machines *ask*.",
+      "beat": "the-moment",
+      "chapter": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l05",
+      "speaker": "narrator",
+      "text": "So you order a six dollar coffee, and the screen turns round to *face* you.",
+      "beat": "the-moment",
+      "chapter": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l06",
+      "speaker": "narrator",
+      "text": "It offers you a tip of twenty, twenty five or *thirty* percent.",
+      "beat": "the-moment",
+      "chapter": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l07",
+      "speaker": "narrator",
+      "text": "Most of us assume those buttons are simply the *normal* amounts.",
+      "beat": "the-moment",
+      "chapter": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l08",
+      "speaker": "narrator",
+      "text": "But for a long time, fifteen percent was the *usual* tip for good service.",
+      "beat": "follow-the-money",
+      "chapter": 2,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l09",
+      "speaker": "narrator",
+      "text": "In that same survey, more than *half* said they tip fifteen percent or less at a sit-down restaurant.",
+      "beat": "follow-the-money",
+      "chapter": 2,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l10",
+      "speaker": "narrator",
+      "text": "On a six dollar coffee, that old usual tip is just ninety *cents*.",
+      "beat": "follow-the-money",
+      "chapter": 2,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l11",
+      "speaker": "narrator",
+      "text": "Next to those ninety cents, the smallest button asks for a dollar twenty, and the biggest a dollar *eighty*.",
+      "beat": "follow-the-money",
+      "chapter": 2,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l12",
+      "speaker": "narrator",
+      "text": "So the cheapest button is already a *third* more than the old usual tip.",
+      "beat": "follow-the-money",
+      "chapter": 2,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l13",
+      "speaker": "narrator",
+      "text": "Here is the trick: the buttons quietly tell you what a *normal* tip is.",
+      "beat": "the-trick",
+      "chapter": 2,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l14",
+      "speaker": "narrator",
+      "text": "The shop picks the buttons, the screen shows them, and *your* choices start right there.",
+      "beat": "the-trick",
+      "chapter": 2,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l15",
+      "speaker": "narrator",
+      "text": "When the buttons start at twenty, twenty starts to feel like the *cheap* choice.",
+      "beat": "the-trick",
+      "chapter": 3,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l16",
+      "speaker": "narrator",
+      "text": "Then comes a second push: someone is standing right there, *watching* you choose.",
+      "beat": "the-trick",
+      "chapter": 3,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l17",
+      "speaker": "narrator",
+      "text": "In a coffee shop experiment, the tip screen mostly made people feel *worse* about the shop.",
+      "beat": "the-trick",
+      "chapter": 3,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l18",
+      "speaker": "narrator",
+      "text": "A study of thirteen million New York taxi rides found higher buttons raised tips about ten *percent*.",
+      "beat": "the-proof",
+      "chapter": 3,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l19",
+      "speaker": "narrator",
+      "text": "But with those higher buttons, more riders gave up and left *no* tip at all.",
+      "beat": "the-proof",
+      "chapter": 3,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l20",
+      "speaker": "narrator",
+      "text": "So decide your tip before you reach the counter, and press *custom* if the buttons are not yours.",
+      "beat": "your-move",
+      "chapter": 3,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l21",
+      "speaker": "narrator",
+      "text": "Every screen asks now because higher buttons really do make people tip *more*.",
+      "beat": "your-move",
+      "chapter": 3,
+      "pauseAfterMs": 1500
+    }
+  ],
+  "sources": [
+    "Pew Research Center, \"Tipping Culture in America: Public Sees a Changed Landscape,\" November 2023. Survey of 11,945 US adults in August 2023: 72% say tipping is expected in more places than five years ago; 57% say they tip 15% or less at a sit-down restaurant; more oppose (40%) than favor (24%) suggested tip amounts on screens. https://www.pewresearch.org/2023/11/09/tipping-culture-in-america-public-sees-a-changed-landscape/",
+    "Kareem Haggag and Giovanni Paci, \"Default Tips,\" American Economic Journal: Applied Economics, 2014. Over 13 million New York City taxi rides: screens suggesting 20/25/30% instead of 15/20/25% raised the average tip by about 10%, but rides with the higher suggestions were over 50% more likely to get no card tip at all.",
+    "The New York Times, \"How to Deal With the Many Requests for Tips,\" 2023. Tip prompts with suggested amounts now appear at casual counters, food trucks and even self-service kiosks.",
+    "Bankrate, Annual Tipping Survey, 2025. Notes that 15% was traditionally the average tip, with 20% for excellent service.",
+    "The coffee figures (90¢, $1.20, $1.80, \"a third more\") are plain arithmetic on a $6 coffee, not quoted from a source.",
+    "Francine W. Goh, Alexandria C. Jungck and Jeffrey R. Stevens, \"Pro tip: Screen-based payment methods increase negative feelings in consumers but do not increase tip sizes\", University of Nebraska-Lincoln preprint, 2022. In a simulated coffee shop, people felt negatively about tip screens and did not tip more with them, and did not tip more when a server was visible. https://decisionslab.unl.edu/pubs/goh_etal_2022_preprint.pdf",
+    "Checked by Claude on 2026-10-16: the 72% and 57% against Pew's report; the taxi study's \"more than a 10 percent increase in the average tip\" and \"over 50 percent more likely to receive a zero-valued tip\" in Haggag and Paci (2014); the coffee arithmetic (15% of $6 is 90 cents; 20% $1.20; 30% $1.80; 1.20 is a third more than 0.90)."
+  ],
+  "changes": [
+    "Line 17: \"In a coffee shop experiment, people tipped more when the worker was in view.\" became \"In a coffee shop experiment, the tip screen mostly made people feel worse about the shop.\" The study the script cites (Goh, Jungck and Stevens, 2022 preprint) found the opposite of the old line: \"people did not tip more when a server was visible (versus absent)\"; it found people feel negatively about tip screens. Agreed by Biku, 2026-10-16. Its picture is a tag, IN THE EXPERIMENT / FELT WORSE / ABOUT THE SHOP.",
+    "Line 21: \"Every screen asks now because high buttons, with someone watching, really do make people tip more.\" became \"Every screen asks now because higher buttons really do make people tip more.\" The watching part had no source; the higher buttons are backed by the taxi study. Agreed by Biku, 2026-10-16."
+  ],
+  "masterPrompt": "prompts/fine-print.md"
+}

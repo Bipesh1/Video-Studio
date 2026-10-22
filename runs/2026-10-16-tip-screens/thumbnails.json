@@ -1,0 +1,629 @@
+{
+  "version": 1,
+  "thumbnails": [
+    {
+      "id": "why-every-screen",
+      "size": "16:9",
+      "why": "The video's own question, naming the thing everyone has seen.",
+      "layers": [
+        {
+          "kind": "flat",
+          "colour": "yellow"
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "WHY EVERY SCREEN",
+              "style": "ink"
+            },
+            {
+              "text": "WANTS A TIP",
+              "style": "boxed"
+            }
+          ],
+          "x": 0.04,
+          "top": 0.07,
+          "size": 0.22,
+          "width": 0.45
+        },
+        {
+          "kind": "icon",
+          "name": "old-tip",
+          "x": 0.15,
+          "y": 0.8,
+          "size": 0.36,
+          "turn": -12,
+          "crossed": true
+        },
+        {
+          "kind": "icon",
+          "name": "shocked",
+          "x": 0.47,
+          "y": 0.75,
+          "size": 0.44,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "icon",
+          "name": "tip-screen",
+          "x": 0.78,
+          "y": 0.55,
+          "size": 0.74,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.78,
+            "y": 0.54
+          },
+          "rx": 0.215,
+          "ry": 0.45
+        },
+        {
+          "kind": "mark",
+          "shape": "arrow",
+          "at": {
+            "x": 0.535,
+            "y": 0.11
+          },
+          "to": {
+            "x": 0.63,
+            "y": 0.28
+          }
+        }
+      ]
+    },
+    {
+      "id": "the-tip-screen-trick",
+      "size": "16:9",
+      "why": "The topic as a catch: the tip screen trick.",
+      "layers": [
+        {
+          "kind": "flat",
+          "colour": "yellow"
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "THE TIP",
+              "style": "ink"
+            },
+            {
+              "text": "SCREEN",
+              "style": "ink"
+            },
+            {
+              "text": "TRICK",
+              "style": "boxed"
+            }
+          ],
+          "x": 0.04,
+          "top": 0.07,
+          "size": 0.18,
+          "width": 0.5
+        },
+        {
+          "kind": "icon",
+          "name": "old-tip",
+          "x": 0.15,
+          "y": 0.8,
+          "size": 0.36,
+          "turn": -12,
+          "crossed": true
+        },
+        {
+          "kind": "icon",
+          "name": "shocked",
+          "x": 0.5,
+          "y": 0.8,
+          "size": 0.34,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "icon",
+          "name": "tip-screen",
+          "x": 0.78,
+          "y": 0.55,
+          "size": 0.74,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.78,
+            "y": 0.54
+          },
+          "rx": 0.215,
+          "ry": 0.45
+        },
+        {
+          "kind": "mark",
+          "shape": "arrow",
+          "at": {
+            "x": 0.5,
+            "y": 0.17
+          },
+          "to": {
+            "x": 0.63,
+            "y": 0.28
+          }
+        }
+      ]
+    },
+    {
+      "id": "twenty-is-the-new-cheap",
+      "size": "16:9",
+      "why": "The surprise in four words: the smallest button is no longer small.",
+      "layers": [
+        {
+          "kind": "flat",
+          "colour": "yellow"
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "20% IS THE",
+              "style": "ink"
+            },
+            {
+              "text": "NEW \"CHEAP\"",
+              "style": "boxed"
+            }
+          ],
+          "x": 0.04,
+          "top": 0.07,
+          "size": 0.22,
+          "width": 0.45
+        },
+        {
+          "kind": "icon",
+          "name": "old-tip",
+          "x": 0.15,
+          "y": 0.8,
+          "size": 0.36,
+          "turn": -12,
+          "crossed": true
+        },
+        {
+          "kind": "icon",
+          "name": "shocked",
+          "x": 0.47,
+          "y": 0.75,
+          "size": 0.44,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "icon",
+          "name": "tip-screen",
+          "x": 0.78,
+          "y": 0.55,
+          "size": 0.74,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.78,
+            "y": 0.54
+          },
+          "rx": 0.215,
+          "ry": 0.45
+        },
+        {
+          "kind": "mark",
+          "shape": "arrow",
+          "at": {
+            "x": 0.535,
+            "y": 0.11
+          },
+          "to": {
+            "x": 0.63,
+            "y": 0.28
+          }
+        }
+      ]
+    },
+    {
+      "id": "why-every-screen-dark",
+      "size": "16:9",
+      "why": "Option 1 on the dark page, closer to the video's deep ocean look.",
+      "layers": [
+        {
+          "kind": "flat",
+          "colour": "dark"
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "WHY EVERY SCREEN",
+              "style": "light"
+            },
+            {
+              "text": "WANTS A TIP",
+              "style": "gold"
+            }
+          ],
+          "x": 0.04,
+          "top": 0.07,
+          "size": 0.22,
+          "width": 0.45
+        },
+        {
+          "kind": "icon",
+          "name": "old-tip",
+          "x": 0.15,
+          "y": 0.8,
+          "size": 0.36,
+          "turn": -12,
+          "crossed": true
+        },
+        {
+          "kind": "icon",
+          "name": "shocked-light",
+          "x": 0.47,
+          "y": 0.75,
+          "size": 0.44,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "icon",
+          "name": "tip-screen",
+          "x": 0.78,
+          "y": 0.55,
+          "size": 0.74,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.78,
+            "y": 0.54
+          },
+          "rx": 0.215,
+          "ry": 0.45
+        },
+        {
+          "kind": "mark",
+          "shape": "arrow",
+          "at": {
+            "x": 0.535,
+            "y": 0.11
+          },
+          "to": {
+            "x": 0.63,
+            "y": 0.28
+          }
+        }
+      ]
+    },
+    {
+      "id": "why-every-screen-tall",
+      "size": "9:16",
+      "why": "The video's own question, naming the thing everyone has seen. Tall, for Reels and Shorts.",
+      "layers": [
+        {
+          "kind": "flat",
+          "colour": "yellow"
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "WHY EVERY SCREEN",
+              "style": "ink"
+            },
+            {
+              "text": "WANTS A TIP",
+              "style": "boxed"
+            }
+          ],
+          "x": 0.07,
+          "top": 0.06,
+          "size": 0.105,
+          "width": 0.86
+        },
+        {
+          "kind": "icon",
+          "name": "old-tip",
+          "x": 0.2,
+          "y": 0.9,
+          "size": 0.15,
+          "turn": -12,
+          "crossed": true
+        },
+        {
+          "kind": "icon",
+          "name": "shocked",
+          "x": 0.13,
+          "y": 0.6,
+          "size": 0.2,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "icon",
+          "name": "tip-screen",
+          "x": 0.62,
+          "y": 0.62,
+          "size": 0.36,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.62,
+            "y": 0.61
+          },
+          "rx": 0.36,
+          "ry": 0.22
+        },
+        {
+          "kind": "mark",
+          "shape": "arrow",
+          "at": {
+            "x": 0.3,
+            "y": 0.37
+          },
+          "to": {
+            "x": 0.45,
+            "y": 0.44
+          }
+        }
+      ]
+    },
+    {
+      "id": "the-tip-screen-trick-tall",
+      "size": "9:16",
+      "why": "The topic as a catch: the tip screen trick. Tall, for Reels and Shorts.",
+      "layers": [
+        {
+          "kind": "flat",
+          "colour": "yellow"
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "THE TIP",
+              "style": "ink"
+            },
+            {
+              "text": "SCREEN",
+              "style": "ink"
+            },
+            {
+              "text": "TRICK",
+              "style": "boxed"
+            }
+          ],
+          "x": 0.07,
+          "top": 0.06,
+          "size": 0.085,
+          "width": 0.86
+        },
+        {
+          "kind": "icon",
+          "name": "old-tip",
+          "x": 0.2,
+          "y": 0.9,
+          "size": 0.15,
+          "turn": -12,
+          "crossed": true
+        },
+        {
+          "kind": "icon",
+          "name": "shocked",
+          "x": 0.13,
+          "y": 0.6,
+          "size": 0.2,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "icon",
+          "name": "tip-screen",
+          "x": 0.62,
+          "y": 0.62,
+          "size": 0.36,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.62,
+            "y": 0.61
+          },
+          "rx": 0.36,
+          "ry": 0.22
+        },
+        {
+          "kind": "mark",
+          "shape": "arrow",
+          "at": {
+            "x": 0.3,
+            "y": 0.42
+          },
+          "to": {
+            "x": 0.45,
+            "y": 0.44
+          }
+        }
+      ]
+    },
+    {
+      "id": "twenty-is-the-new-cheap-tall",
+      "size": "9:16",
+      "why": "The surprise in four words: the smallest button is no longer small. Tall, for Reels and Shorts.",
+      "layers": [
+        {
+          "kind": "flat",
+          "colour": "yellow"
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "20% IS THE",
+              "style": "ink"
+            },
+            {
+              "text": "NEW \"CHEAP\"",
+              "style": "boxed"
+            }
+          ],
+          "x": 0.07,
+          "top": 0.06,
+          "size": 0.105,
+          "width": 0.86
+        },
+        {
+          "kind": "icon",
+          "name": "old-tip",
+          "x": 0.2,
+          "y": 0.9,
+          "size": 0.15,
+          "turn": -12,
+          "crossed": true
+        },
+        {
+          "kind": "icon",
+          "name": "shocked",
+          "x": 0.13,
+          "y": 0.6,
+          "size": 0.2,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "icon",
+          "name": "tip-screen",
+          "x": 0.62,
+          "y": 0.62,
+          "size": 0.36,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.62,
+            "y": 0.61
+          },
+          "rx": 0.36,
+          "ry": 0.22
+        },
+        {
+          "kind": "mark",
+          "shape": "arrow",
+          "at": {
+            "x": 0.3,
+            "y": 0.37
+          },
+          "to": {
+            "x": 0.45,
+            "y": 0.44
+          }
+        }
+      ]
+    },
+    {
+      "id": "why-every-screen-dark-tall",
+      "size": "9:16",
+      "why": "Option 1 on the dark page, closer to the video's deep ocean look. Tall, for Reels and Shorts.",
+      "layers": [
+        {
+          "kind": "flat",
+          "colour": "dark"
+        },
+        {
+          "kind": "headline",
+          "lines": [
+            {
+              "text": "WHY EVERY SCREEN",
+              "style": "light"
+            },
+            {
+              "text": "WANTS A TIP",
+              "style": "gold"
+            }
+          ],
+          "x": 0.07,
+          "top": 0.06,
+          "size": 0.105,
+          "width": 0.86
+        },
+        {
+          "kind": "icon",
+          "name": "old-tip",
+          "x": 0.2,
+          "y": 0.9,
+          "size": 0.15,
+          "turn": -12,
+          "crossed": true
+        },
+        {
+          "kind": "icon",
+          "name": "shocked-light",
+          "x": 0.13,
+          "y": 0.6,
+          "size": 0.2,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "icon",
+          "name": "tip-screen",
+          "x": 0.62,
+          "y": 0.62,
+          "size": 0.36,
+          "turn": 0,
+          "crossed": false
+        },
+        {
+          "kind": "mark",
+          "shape": "circle",
+          "at": {
+            "x": 0.62,
+            "y": 0.61
+          },
+          "rx": 0.36,
+          "ry": 0.22
+        },
+        {
+          "kind": "mark",
+          "shape": "arrow",
+          "at": {
+            "x": 0.3,
+            "y": 0.37
+          },
+          "to": {
+            "x": 0.45,
+            "y": 0.44
+          }
+        }
+      ]
+    }
+  ]
+}

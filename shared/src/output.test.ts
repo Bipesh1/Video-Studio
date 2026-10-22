@@ -86,11 +86,26 @@ describe('which files to deliver', () => {
 });
 
 describe('one sound plan for the whole video', () => {
-  const plan = (music: SoundPlan['music'], sfx: SoundPlan['sfx'] = []): SoundPlan => ({
+  const plan = (
+    music: SoundPlan['music'],
+    sfx: SoundPlan['sfx'] = [],
+    hush: SoundPlan['hush'] = [],
+  ): SoundPlan => ({
     version: 1,
     music,
     sfx,
     musicGainDb: 0,
+    hush,
+  });
+  it('carries each quiet stretch of a part to its place in the whole video', () => {
+    const whole = mergeSoundPlans(
+      [
+        plan([{ mood: 'unease', startMs: 0 }]),
+        plan([{ mood: 'closing-in', startMs: 0 }], [], [{ fromMs: 15000, toMs: 22000 }]),
+      ],
+      [0, 35000],
+    );
+    expect(whole.hush).toEqual([{ fromMs: 50000, toMs: 57000 }]);
   });
   const ding = { name: 'ding', atMs: 60, gainDb: 0, pan: 0, seed: 0 } as const;
 
@@ -258,11 +273,25 @@ describe('the page that says what to upload', () => {
     from: ['story-part-1-16x9-v14.mp4', 'story-part-2-16x9-v4.mp4'],
   };
 
-  it('says first that everything is ready, then each file and where it goes', () => {
+  it('is not ready while a video has no designed thumbnail, and says so', () => {
     const page = deliveryPage({
       title: 'The Honest Farmer',
       madeOn: '2026-10-07',
       delivered: [wide],
+      waiting: [],
+      notes: [],
+    });
+    expect(page).toContain('**Not all ready yet.**');
+    expect(page).toContain('- Thumbnail: **none yet.** A frame of the video is not a thumbnail.');
+    expect(page).toContain('## Still to do');
+    expect(page).toContain('story-16x9-v2.mp4: its thumbnail.');
+  });
+
+  it('says first that everything is ready, then each file and where it goes', () => {
+    const page = deliveryPage({
+      title: 'The Honest Farmer',
+      madeOn: '2026-10-07',
+      delivered: [{ ...wide, thumbnails: ['story-16x9-thumbnail-v1.jpg'] }],
       waiting: [],
       notes: [],
     });
@@ -271,7 +300,7 @@ describe('the page that says what to upload', () => {
     expect(page).toContain('## Wide full video (1 min 25 s)');
     expect(page).toContain('For YouTube, as a normal wide video.');
     expect(page).toContain('- Video: `story-16x9-v2.mp4`');
-    expect(page).toContain('- Cover picture: `story-16x9-v2-cover-side.jpg`');
+    expect(page).toContain('- Thumbnail: `story-16x9-thumbnail-v1.jpg`');
     expect(page).toContain('- Captions file: `story-16x9-v2.srt`');
     expect(page).toContain('| The file plays | passed: 1920x1080 |');
     expect(page).toContain('Claude cannot hear');

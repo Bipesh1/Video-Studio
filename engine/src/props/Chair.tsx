@@ -3,6 +3,7 @@ import { lineWeights } from '../tokens';
 import { Shaded, lightOffset } from '../wardrobe/Shaded';
 import { Glint, detail, paintOf } from './Hold';
 import type { PropProps } from './Hold';
+import { ironPaint } from './Table';
 
 /** The seat is as high as a shin is long, which is where the sit pose puts the hips. */
 export const SEAT_HEIGHT = body.shin;
@@ -11,16 +12,53 @@ export const SEAT_HEIGHT = body.shin;
  * A chair seen from the side (Style 4), facing +x, standing on the ground. The origin is the
  * ground point under the sitter's hips, so a character in the sit pose at the same place sits
  * on it. chair: plain wood. throne: a tall gold frame with a cushioned back and seat, for a
- * ruler. Stand it with Placed and draw it before the character who sits on it; `flip` on
+ * ruler. sofa: a padded blue sofa with a pale cushion, seen from its end. Stand it with Placed and draw it before the character who sits on it; `flip` on
  * Placed turns it to face left.
  */
 export function Chair({
   uid,
   shadowSide,
   kind = 'chair',
-}: PropProps & { kind?: 'chair' | 'throne' }) {
+  made = 'wood',
+}: PropProps & { kind?: 'chair' | 'throne' | 'sofa'; made?: 'wood' | 'iron' }) {
   const s = SEAT_HEIGHT;
   const off = lightOffset(shadowSide, 0.04);
+  if (kind === 'sofa') {
+    const frame = paintOf('ocean');
+    const cushion = paintOf('glint');
+    return (
+      <g>
+        <Shaded
+          id={`${uid}-sofa-back`}
+          d={`M -0.72 0 L -0.76 -1.5 Q -0.56 -1.7 -0.36 -1.5 L -0.32 ${-s} L -0.32 0 Z`}
+          {...frame}
+          offset={off}
+        />
+        <Shaded
+          id={`${uid}-sofa-base`}
+          d={`M -0.4 0 L -0.4 ${-s + 0.02} L 0.62 ${-s + 0.02} Q 0.68 ${-s + 0.02} 0.68 ${-s + 0.1} L 0.68 0 Z`}
+          {...frame}
+          offset={off}
+        />
+        <Shaded
+          id={`${uid}-sofa-seat`}
+          d={`M -0.34 ${-s - 0.12} L 0.62 ${-s - 0.12} Q 0.72 ${-s - 0.04} 0.62 ${-s + 0.04} L -0.34 ${-s + 0.04} Z`}
+          {...cushion}
+          offset={lightOffset(shadowSide, 0.02)}
+          strokeWidth={lineWeights.detail}
+        />
+        {/* The padded arm at the far end, behind whoever sits. */}
+        <Shaded
+          id={`${uid}-sofa-arm`}
+          d={`M -0.4 ${-s - 0.5} Q -0.4 ${-s - 0.6} -0.3 ${-s - 0.6} L 0.5 ${-s - 0.6} Q 0.66 ${-s - 0.6} 0.66 ${-s - 0.44} L 0.66 ${-s - 0.1} L 0.5 ${-s - 0.1} L 0.5 ${-s - 0.4} L -0.4 ${-s - 0.4} Z`}
+          {...frame}
+          offset={lightOffset(shadowSide, 0.025)}
+        />
+        {detail(`M -0.3 -0.14 L 0.6 -0.14`)}
+        <Glint x={-0.56} y={-1.42} length={0.12} turn={-55} />
+      </g>
+    );
+  }
   if (kind === 'throne') {
     const gold = paintOf('gold');
     const cushion = paintOf('crimson');
@@ -64,7 +102,7 @@ export function Chair({
       </g>
     );
   }
-  const wood = paintOf('brown');
+  const wood = made === 'iron' ? ironPaint() : paintOf('brown');
   return (
     <g>
       <Shaded

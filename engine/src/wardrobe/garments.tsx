@@ -36,6 +36,10 @@ export const GARMENTS = [
   'hood',
   'brim-hat',
   'top-hat',
+  'cap',
+  'beanie',
+  'tie',
+  'scarf',
   'sneakers',
   'boots',
   't-shirt',
@@ -483,6 +487,175 @@ export const topHat =
   };
 
 /**
+ * A peaked cap in head space: a round crown that hugs the top of the head, a button on top and
+ * a stiff peak that sticks out the way the face is turned. Seen from the front the peak is a
+ * short curve over the brows; turned to the side it reaches well past the forehead.
+ */
+export const cap =
+  (color: string): Piece =>
+  (c) => {
+    const k = cloth(color);
+    const off = lightOffset(c.shadowSide, 0.05);
+    const turn = c.back ? 0 : c.turn;
+    const peakX = 0.44 * turn;
+    const peakR = 0.36 + 0.07 * turn;
+    const peakY = -0.39;
+    return (
+      <g key="hat" transform="rotate(-3 0 -0.45)">
+        <Shaded
+          id={`${c.uid}-cap`}
+          d="M -0.42 -0.38 Q -0.5 -0.7 0 -0.72 Q 0.5 -0.7 0.42 -0.38 Q 0 -0.33 -0.42 -0.38 Z"
+          fill={k.fill}
+          shadow={k.shadow}
+          offset={off}
+        />
+        {!c.back && (
+          <path
+            d={`M ${peakX - peakR} ${peakY} A ${peakR} 0.05 0 1 0 ${peakX + peakR} ${peakY} A ${peakR} 0.05 0 1 0 ${peakX - peakR} ${peakY} Z`}
+            fill={k.shadow}
+            stroke={ink}
+            strokeWidth={lineWeights.outline}
+            strokeLinejoin={tokens.line.join}
+          />
+        )}
+        {fold(`M ${0.02 + 0.3 * turn} -0.37 Q ${0.1 * turn} -0.58 0 -0.72`, 'cap-seam')}
+        <circle cy={-0.72} r={0.04} fill={k.shadow} stroke={ink} strokeWidth={lineWeights.detail} />
+      </g>
+    );
+  };
+
+/**
+ * A knitted beanie in head space: a soft dome pulled down over the top of the head, a turned-up
+ * ribbed cuff that crosses the forehead just above the brows, and a bobble on top. It has no
+ * peak, so from the front, the side and behind it is the same hat; only its ribs turn.
+ */
+export const beanie =
+  (color: string): Piece =>
+  (c) => {
+    const k = cloth(color);
+    const off = lightOffset(c.shadowSide, 0.05);
+    const turn = c.back ? 0 : c.turn;
+    // The ribs of the cuff bunch up on the side turned away, as on anything round.
+    const rib = (u: number) => 0.4 * Math.sin((u + 0.35 * turn * (1 - u * u)) * (Math.PI / 2));
+    return (
+      <g key="hat" transform="translate(0 -0.035) rotate(-3 0 -0.45)">
+        <Shaded
+          id={`${c.uid}-bobble`}
+          d="M -0.09 -0.78 A 0.09 0.09 0 1 0 0.09 -0.78 A 0.09 0.09 0 1 0 -0.09 -0.78 Z"
+          fill={k.fill}
+          shadow={k.shadow}
+          offset={lightOffset(c.shadowSide, 0.03)}
+        />
+        <Shaded
+          id={`${c.uid}-beanie`}
+          d="M -0.45 -0.42 Q -0.5 -0.73 0 -0.74 Q 0.5 -0.73 0.45 -0.42 Q 0 -0.36 -0.45 -0.42 Z"
+          fill={k.fill}
+          shadow={k.shadow}
+          offset={off}
+        />
+        <Shaded
+          id={`${c.uid}-cuff`}
+          d="M -0.47 -0.37 Q -0.5 -0.44 -0.46 -0.5 Q 0 -0.44 0.46 -0.5 Q 0.5 -0.44 0.47 -0.37 Q 0 -0.31 -0.47 -0.37 Z"
+          fill={k.fill}
+          shadow={k.shadow}
+          offset={off}
+        />
+        {[-0.72, -0.36, 0, 0.36, 0.72].map((u) => {
+          const x = rib(u);
+          // The cuff's edges bow down in the middle, so each rib stays between them.
+          const bow = -0.03 * (x / 0.47) ** 2;
+          return fold(`M ${x} ${-0.452 + bow} L ${x * 1.02} ${-0.358 + bow}`, `rib${u}`);
+        })}
+      </g>
+    );
+  };
+
+/**
+ * A scarf in the torso frame: one soft roll wound round the neck, tucked up under the chin, and
+ * a tail that hangs down the front with a fringe at its end. The tail trails a moving body. It
+ * is worn over a top, or over the bare torso line of a plain stick figure.
+ */
+export const scarf = (color: string): Piece =>
+  onTorso('scarf', color, (c, x, k) => {
+    const hem = hemTrail(c, 0.7);
+    const end = { x: x(0.19) + hem.x, y: -0.42 + hem.y };
+    const half = 0.115;
+    const tail = `M ${x(0.07)} -0.95 L ${x(0.3)} -0.96 Q ${x(0.31)} -0.7 ${end.x + half} ${end.y} Q ${end.x} ${end.y + 0.04} ${end.x - half} ${end.y} Q ${x(0.06)} -0.7 ${x(0.07)} -0.95 Z`;
+    return (
+      <>
+        {shaded(c, 'scarf-tail', tail, k, 0.03)}
+        {[-0.07, -0.023, 0.023, 0.07].map((dx) =>
+          fold(
+            `M ${end.x + dx} ${end.y + 0.02 - Math.abs(dx) * 0.25} L ${end.x + dx * 1.2} ${end.y + 0.1 - Math.abs(dx) * 0.25}`,
+            `fringe${dx}`,
+          ),
+        )}
+        {fold(
+          `M ${end.x - half + 0.008} ${end.y - 0.07} Q ${end.x} ${end.y - 0.035} ${end.x + half - 0.008} ${end.y - 0.07}`,
+          'band',
+        )}
+        {shaded(
+          c,
+          'scarf-roll',
+          `M ${x(-0.27)} -1.1 Q ${x(-0.36)} -0.99 ${x(-0.27)} -0.89 Q 0 -0.8 ${x(0.27)} -0.89 Q ${x(0.36)} -0.99 ${x(0.27)} -1.1 Q 0 -1.19 ${x(-0.27)} -1.1 Z`,
+          k,
+          0.045,
+        )}
+        {fold(`M ${x(-0.28)} -0.99 Q ${x(-0.02)} -0.87 ${x(0.29)} -1.03`, 'wind')}
+      </>
+    );
+  });
+
+/**
+ * A necktie in the torso frame: a small knot under the chin and a blade that widens down to a
+ * point above the belt, with slanted stripes in a second cloth. It hangs over a shirt, or over
+ * the bare torso line of a plain stick figure.
+ */
+export const tie = (color: string, stripe: string): Piece =>
+  onTorso('tie', color, (c, x, k) => {
+    const s = cloth(stripe);
+    const top = -0.97;
+    const wide = -0.44;
+    const tip = -0.32;
+    // Half the blade's width at a height: narrow under the knot, widest just above the point.
+    const half = (y: number) => 0.042 + ((y - top) / (wide - top)) * 0.062;
+    // Follow-through (2026-10-14): the blade swings behind a moving body, more toward its point.
+    const trail = hemTrail(c, 0.45);
+    const along = (y: number) => Math.max(0, (y - top) / (tip - top));
+    const sx = (y: number) => trail.x * along(y);
+    const sy = (y: number) => trail.y * along(y);
+    const at = (dx: number, y: number) => `${x(dx) + sx(y)} ${y + sy(y)}`;
+    const band = (y: number, key: string) => (
+      <path
+        key={key}
+        d={`M ${at(-half(y + 0.06), y + 0.06)} L ${at(half(y), y)} L ${at(half(y + 0.05), y + 0.05)} L ${at(-half(y + 0.11), y + 0.11)} Z`}
+        fill={s.fill}
+      />
+    );
+    const blade = `M ${at(-half(top), top)} L ${at(half(top), top)} L ${at(half(wide), wide)} L ${at(0, tip)} L ${at(-half(wide), wide)} Z`;
+    return (
+      <>
+        {shaded(c, 'tie-blade', blade, k, 0.02)}
+        {[-0.92, -0.78, -0.64].map((y) => band(y, `stripe${y}`))}
+        <path
+          d={blade}
+          fill="none"
+          stroke={ink}
+          strokeWidth={lineWeights.outline}
+          strokeLinejoin={tokens.line.join}
+        />
+        {shaded(
+          c,
+          'tie-knot',
+          `M ${x(-0.055)} -1.07 L ${x(0.055)} -1.07 L ${x(0.04)} -0.96 L ${x(-0.04)} -0.96 Z`,
+          k,
+          0.015,
+        )}
+      </>
+    );
+  });
+
+/**
  * A plain brimmed hat, like a straw hat, in head space. The crown comes down over the top of
  * the head and the flat brim crosses the forehead just above the brows.
  */
@@ -520,10 +693,14 @@ const pieces = (list: Array<Piece | undefined>): Piece | undefined => {
 
 /** Put garments together into one outfit a Character can wear. */
 export function outfitFrom(clothes: Clothes, id = 'clothes'): Outfit {
-  const { top, bottom, onePiece, shoes, hat, cloak } = clothes;
+  const { top, bottom, onePiece, shoes, hat, cloak, tie: necktie, scarf: wrap } = clothes;
   const specs = clothes.glasses ?? false;
   const colors = [
-    ...new Set([top, bottom, onePiece, shoes, hat, cloak].flatMap((g) => (g ? [g.cloth] : []))),
+    ...new Set(
+      [top, bottom, onePiece, shoes, hat, cloak, necktie, wrap].flatMap((g) =>
+        g ? [g.cloth] : [],
+      ),
+    ),
   ];
   const outfit: Outfit = { id, tier: 1, colors };
 
@@ -579,6 +756,8 @@ export function outfitFrom(clothes: Clothes, id = 'clothes'): Outfit {
       over.push(dress(onePiece.cloth));
     }
   }
+  if (necktie) over.push(tie(necktie.cloth, necktie.stripe ?? 'gold'));
+  if (wrap) over.push(scarf(wrap.cloth));
   if (cloak) over.push(cloakFront(cloak.cloth));
 
   const overTorso = pieces(over);
@@ -587,7 +766,15 @@ export function outfitFrom(clothes: Clothes, id = 'clothes'): Outfit {
 
   const headwear = pieces([
     cloak?.hood ? hood(cloak.cloth) : undefined,
-    hat ? (hat.kind === 'top-hat' ? topHat(hat.cloth) : brimHat(hat.cloth)) : undefined,
+    hat
+      ? hat.kind === 'top-hat'
+        ? topHat(hat.cloth)
+        : hat.kind === 'cap'
+          ? cap(hat.cloth)
+          : hat.kind === 'beanie'
+            ? beanie(hat.cloth)
+            : brimHat(hat.cloth)
+      : undefined,
     specs ? glasses : undefined,
   ]);
   if (headwear) outfit.headwear = headwear;

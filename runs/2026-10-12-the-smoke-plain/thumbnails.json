@@ -1,0 +1,668 @@
+{
+  "version": 1,
+  "thumbnails": [
+    {
+      "id": "the-smoke-test",
+      "size": "16:9",
+      "why": "The plain title on a deep blue that sets off his orange hat: cool, clear, a little eerie.",
+      "layers": [
+        {
+          "kind": "backdrop",
+          "inner": "glint",
+          "outer": "ocean",
+          "at": {
+            "x": 0.775,
+            "y": 0.5
+          },
+          "rays": 18,
+          "deep": 0.6
+        },
+        {
+          "kind": "glow",
+          "at": {
+            "x": 0.775,
+            "y": 0.5
+          },
+          "radius": 0.52,
+          "paint": "cream",
+          "strength": 0.75
+        },
+        {
+          "kind": "extra",
+          "x": 0.565,
+          "y": 0.4,
+          "head": 0.33,
+          "light": 0.6,
+          "facing": "right",
+          "turn": 0.15,
+          "badge": false,
+          "pose": "stand"
+        },
+        {
+          "kind": "extra",
+          "x": 0.985,
+          "y": 0.38,
+          "head": 0.33,
+          "light": 0.6,
+          "facing": "left",
+          "turn": 0.15,
+          "badge": false,
+          "pose": "stand"
+        },
+        {
+          "kind": "smoke",
+          "top": 0.68,
+          "head": 0.3,
+          "seed": 3,
+          "light": 0.8
+        },
+        {
+          "kind": "person",
+          "character": "copycat",
+          "x": 0.775,
+          "y": 0.55,
+          "head": 0.58,
+          "pose": "stand",
+          "expression": "dread",
+          "facing": "left",
+          "turn": 0.2,
+          "effects": [
+            "sweat-resting"
+          ],
+          "looksAt": {
+            "x": 0.565,
+            "y": 0.4
+          },
+          "outline": 0.03
+        },
+        {
+          "kind": "smoke",
+          "top": 0.87,
+          "head": 0.4,
+          "seed": 2,
+          "light": 1.0
+        },
+        {
+          "kind": "shade",
+          "from": "left",
+          "reach": 0.5,
+          "strength": 0.45
+        },
+        {
+          "kind": "words",
+          "lines": [
+            "THE SMOKE",
+            "TEST"
+          ],
+          "gold": [
+            1
+          ],
+          "x": 0.265,
+          "bottom": 0.66,
+          "size": 0.3,
+          "width": 0.56,
+          "justify": true
+        }
+      ]
+    },
+    {
+      "id": "nine-in-ten",
+      "size": "16:9",
+      "why": "The result of the real study on a hot red and gold: alarm, danger, hard to scroll past.",
+      "layers": [
+        {
+          "kind": "backdrop",
+          "inner": "gold",
+          "outer": "crimson",
+          "at": {
+            "x": 0.775,
+            "y": 0.5
+          },
+          "rays": 18,
+          "deep": 0.6
+        },
+        {
+          "kind": "glow",
+          "at": {
+            "x": 0.775,
+            "y": 0.5
+          },
+          "radius": 0.52,
+          "paint": "cream",
+          "strength": 0.75
+        },
+        {
+          "kind": "extra",
+          "x": 0.565,
+          "y": 0.4,
+          "head": 0.33,
+          "light": 0.6,
+          "facing": "right",
+          "turn": 0.15,
+          "badge": false,
+          "pose": "stand"
+        },
+        {
+          "kind": "extra",
+          "x": 0.985,
+          "y": 0.38,
+          "head": 0.33,
+          "light": 0.6,
+          "facing": "left",
+          "turn": 0.15,
+          "badge": false,
+          "pose": "stand"
+        },
+        {
+          "kind": "smoke",
+          "top": 0.68,
+          "head": 0.3,
+          "seed": 3,
+          "light": 0.8
+        },
+        {
+          "kind": "person",
+          "character": "copycat",
+          "x": 0.775,
+          "y": 0.55,
+          "head": 0.58,
+          "pose": "stand",
+          "expression": "dread",
+          "facing": "left",
+          "turn": 0.2,
+          "effects": [
+            "sweat-resting"
+          ],
+          "looksAt": {
+            "x": 0.565,
+            "y": 0.4
+          },
+          "outline": 0.03
+        },
+        {
+          "kind": "smoke",
+          "top": 0.87,
+          "head": 0.4,
+          "seed": 2,
+          "light": 1.0
+        },
+        {
+          "kind": "shade",
+          "from": "left",
+          "reach": 0.5,
+          "strength": 0.45
+        },
+        {
+          "kind": "words",
+          "lines": [
+            "9 IN 10",
+            "SAT IN SMOKE"
+          ],
+          "gold": [
+            0
+          ],
+          "x": 0.265,
+          "bottom": 0.66,
+          "size": 0.3,
+          "width": 0.56,
+          "justify": true
+        }
+      ]
+    },
+    {
+      "id": "why-nobody-leaves",
+      "size": "16:9",
+      "why": "What the video explains, on the green of an exit sign, with his false smile.",
+      "layers": [
+        {
+          "kind": "backdrop",
+          "inner": "cream",
+          "outer": "forest",
+          "at": {
+            "x": 0.775,
+            "y": 0.5
+          },
+          "rays": 18,
+          "deep": 0.6
+        },
+        {
+          "kind": "glow",
+          "at": {
+            "x": 0.775,
+            "y": 0.5
+          },
+          "radius": 0.52,
+          "paint": "cream",
+          "strength": 0.75
+        },
+        {
+          "kind": "extra",
+          "x": 0.565,
+          "y": 0.4,
+          "head": 0.33,
+          "light": 0.6,
+          "facing": "right",
+          "turn": 0.15,
+          "badge": false,
+          "pose": "stand"
+        },
+        {
+          "kind": "extra",
+          "x": 0.985,
+          "y": 0.38,
+          "head": 0.33,
+          "light": 0.6,
+          "facing": "left",
+          "turn": 0.15,
+          "badge": false,
+          "pose": "stand"
+        },
+        {
+          "kind": "smoke",
+          "top": 0.68,
+          "head": 0.3,
+          "seed": 3,
+          "light": 0.8
+        },
+        {
+          "kind": "person",
+          "character": "copycat",
+          "x": 0.775,
+          "y": 0.55,
+          "head": 0.58,
+          "pose": "stand",
+          "expression": "lying",
+          "facing": "left",
+          "turn": 0.2,
+          "effects": [
+            "sweat-resting"
+          ],
+          "looksAt": {
+            "x": 0.565,
+            "y": 0.4
+          },
+          "outline": 0.03
+        },
+        {
+          "kind": "smoke",
+          "top": 0.87,
+          "head": 0.4,
+          "seed": 2,
+          "light": 1.0
+        },
+        {
+          "kind": "shade",
+          "from": "left",
+          "reach": 0.5,
+          "strength": 0.45
+        },
+        {
+          "kind": "words",
+          "lines": [
+            "WHY NOBODY",
+            "LEAVES"
+          ],
+          "gold": [
+            1
+          ],
+          "x": 0.265,
+          "bottom": 0.66,
+          "size": 0.3,
+          "width": 0.56,
+          "justify": true
+        }
+      ]
+    },
+    {
+      "id": "the-smoke-test-tall",
+      "size": "9:16",
+      "why": "The plain title on a deep blue that sets off his orange hat: cool, clear, a little eerie. Stood up, for a Short or a Reel.",
+      "layers": [
+        {
+          "kind": "backdrop",
+          "inner": "glint",
+          "outer": "ocean",
+          "at": {
+            "x": 0.5,
+            "y": 0.62
+          },
+          "rays": 18,
+          "deep": 0.6
+        },
+        {
+          "kind": "glow",
+          "at": {
+            "x": 0.5,
+            "y": 0.62
+          },
+          "radius": 0.3,
+          "paint": "cream",
+          "strength": 0.75
+        },
+        {
+          "kind": "shade",
+          "from": "top",
+          "reach": 0.4,
+          "strength": 0.5
+        },
+        {
+          "kind": "extra",
+          "x": 0.09,
+          "y": 0.47,
+          "head": 0.19,
+          "light": 0.6,
+          "facing": "right",
+          "turn": 0.15,
+          "badge": false,
+          "pose": "stand"
+        },
+        {
+          "kind": "extra",
+          "x": 0.91,
+          "y": 0.47,
+          "head": 0.19,
+          "light": 0.6,
+          "facing": "left",
+          "turn": 0.15,
+          "badge": false,
+          "pose": "stand"
+        },
+        {
+          "kind": "smoke",
+          "top": 0.58,
+          "head": 0.14,
+          "seed": 3,
+          "light": 0.8
+        },
+        {
+          "kind": "person",
+          "character": "copycat",
+          "x": 0.5,
+          "y": 0.64,
+          "head": 0.33,
+          "pose": "stand",
+          "expression": "dread",
+          "facing": "right",
+          "turn": 0.2,
+          "effects": [
+            "sweat-resting"
+          ],
+          "looksAt": {
+            "x": 0.09,
+            "y": 0.47
+          },
+          "outline": 0.03
+        },
+        {
+          "kind": "smoke",
+          "top": 0.84,
+          "head": 0.2,
+          "seed": 2,
+          "light": 1.0
+        },
+        {
+          "kind": "smoke",
+          "top": 0.93,
+          "head": 0.26,
+          "seed": 5,
+          "light": 1.0
+        },
+        {
+          "kind": "shade",
+          "from": "bottom",
+          "reach": 0.22,
+          "strength": 0.75
+        },
+        {
+          "kind": "words",
+          "lines": [
+            "THE SMOKE",
+            "TEST"
+          ],
+          "gold": [
+            1
+          ],
+          "x": 0.5,
+          "bottom": 0.33,
+          "size": 0.16,
+          "width": 0.92,
+          "justify": true
+        }
+      ]
+    },
+    {
+      "id": "nine-in-ten-tall",
+      "size": "9:16",
+      "why": "The result of the real study on a hot red and gold: alarm, danger, hard to scroll past. Stood up, for a Short or a Reel.",
+      "layers": [
+        {
+          "kind": "backdrop",
+          "inner": "gold",
+          "outer": "crimson",
+          "at": {
+            "x": 0.5,
+            "y": 0.62
+          },
+          "rays": 18,
+          "deep": 0.6
+        },
+        {
+          "kind": "glow",
+          "at": {
+            "x": 0.5,
+            "y": 0.62
+          },
+          "radius": 0.3,
+          "paint": "cream",
+          "strength": 0.75
+        },
+        {
+          "kind": "shade",
+          "from": "top",
+          "reach": 0.4,
+          "strength": 0.5
+        },
+        {
+          "kind": "extra",
+          "x": 0.09,
+          "y": 0.47,
+          "head": 0.19,
+          "light": 0.6,
+          "facing": "right",
+          "turn": 0.15,
+          "badge": false,
+          "pose": "stand"
+        },
+        {
+          "kind": "extra",
+          "x": 0.91,
+          "y": 0.47,
+          "head": 0.19,
+          "light": 0.6,
+          "facing": "left",
+          "turn": 0.15,
+          "badge": false,
+          "pose": "stand"
+        },
+        {
+          "kind": "smoke",
+          "top": 0.58,
+          "head": 0.14,
+          "seed": 3,
+          "light": 0.8
+        },
+        {
+          "kind": "person",
+          "character": "copycat",
+          "x": 0.5,
+          "y": 0.64,
+          "head": 0.33,
+          "pose": "stand",
+          "expression": "dread",
+          "facing": "right",
+          "turn": 0.2,
+          "effects": [
+            "sweat-resting"
+          ],
+          "looksAt": {
+            "x": 0.09,
+            "y": 0.47
+          },
+          "outline": 0.03
+        },
+        {
+          "kind": "smoke",
+          "top": 0.84,
+          "head": 0.2,
+          "seed": 2,
+          "light": 1.0
+        },
+        {
+          "kind": "smoke",
+          "top": 0.93,
+          "head": 0.26,
+          "seed": 5,
+          "light": 1.0
+        },
+        {
+          "kind": "shade",
+          "from": "bottom",
+          "reach": 0.22,
+          "strength": 0.75
+        },
+        {
+          "kind": "words",
+          "lines": [
+            "9 IN 10",
+            "SAT IN SMOKE"
+          ],
+          "gold": [
+            0
+          ],
+          "x": 0.5,
+          "bottom": 0.33,
+          "size": 0.16,
+          "width": 0.92,
+          "justify": true
+        }
+      ]
+    },
+    {
+      "id": "why-nobody-leaves-tall",
+      "size": "9:16",
+      "why": "What the video explains, on the green of an exit sign, with his false smile. Stood up, for a Short or a Reel.",
+      "layers": [
+        {
+          "kind": "backdrop",
+          "inner": "cream",
+          "outer": "forest",
+          "at": {
+            "x": 0.5,
+            "y": 0.62
+          },
+          "rays": 18,
+          "deep": 0.6
+        },
+        {
+          "kind": "glow",
+          "at": {
+            "x": 0.5,
+            "y": 0.62
+          },
+          "radius": 0.3,
+          "paint": "cream",
+          "strength": 0.75
+        },
+        {
+          "kind": "shade",
+          "from": "top",
+          "reach": 0.4,
+          "strength": 0.5
+        },
+        {
+          "kind": "extra",
+          "x": 0.09,
+          "y": 0.47,
+          "head": 0.19,
+          "light": 0.6,
+          "facing": "right",
+          "turn": 0.15,
+          "badge": false,
+          "pose": "stand"
+        },
+        {
+          "kind": "extra",
+          "x": 0.91,
+          "y": 0.47,
+          "head": 0.19,
+          "light": 0.6,
+          "facing": "left",
+          "turn": 0.15,
+          "badge": false,
+          "pose": "stand"
+        },
+        {
+          "kind": "smoke",
+          "top": 0.58,
+          "head": 0.14,
+          "seed": 3,
+          "light": 0.8
+        },
+        {
+          "kind": "person",
+          "character": "copycat",
+          "x": 0.5,
+          "y": 0.64,
+          "head": 0.33,
+          "pose": "stand",
+          "expression": "lying",
+          "facing": "right",
+          "turn": 0.2,
+          "effects": [
+            "sweat-resting"
+          ],
+          "looksAt": {
+            "x": 0.09,
+            "y": 0.47
+          },
+          "outline": 0.03
+        },
+        {
+          "kind": "smoke",
+          "top": 0.84,
+          "head": 0.2,
+          "seed": 2,
+          "light": 1.0
+        },
+        {
+          "kind": "smoke",
+          "top": 0.93,
+          "head": 0.26,
+          "seed": 5,
+          "light": 1.0
+        },
+        {
+          "kind": "shade",
+          "from": "bottom",
+          "reach": 0.22,
+          "strength": 0.75
+        },
+        {
+          "kind": "words",
+          "lines": [
+            "WHY NOBODY",
+            "LEAVES"
+          ],
+          "gold": [
+            1
+          ],
+          "x": 0.5,
+          "bottom": 0.33,
+          "size": 0.16,
+          "width": 0.92,
+          "justify": true
+        }
+      ]
+    }
+  ]
+}

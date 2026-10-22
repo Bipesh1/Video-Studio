@@ -1,0 +1,52 @@
+{
+  "id": "you",
+  "name": "You",
+  "description": "The viewer's own figure in the game theory videos: the silent figure in the green cap from Split or Steal, now in a green shirt and grey trousers. He never speaks, so he has no voice. Clothes picked by Biku from three looks on 2026-10-14 (look 3).",
+  "tags": ["game theory", "cast", "you", "viewer", "silent", "green cap", "cap", "player"],
+  "age": "adult",
+  "size": 1,
+  "outfit": {
+    "clothes": {
+      "top": {
+        "kind": "shirt",
+        "cloth": "forest"
+      },
+      "bottom": {
+        "kind": "trousers",
+        "cloth": "steel"
+      },
+      "shoes": {
+        "kind": "sneakers",
+        "cloth": "steel"
+      },
+      "hat": {
+        "kind": "cap",
+        "cloth": "forest"
+      }
+    }
+  },
+  "eyeStyle": "round",
+  "expression": "neutral",
+  "series": "game-theory",
+  "expressions": [
+    "neutral",
+    "happy",
+    "suspicious",
+    "surprised",
+    "sad",
+    "smug",
+    "thinking",
+    "dread",
+    "calculating",
+    "tempted",
+    "lying",
+    "guilty",
+    "hollow",
+    "jaw-drop",
+    "sly-grin",
+    "fuming"
+  ],
+  "poses": ["stand", "sit", "point", "cross-arms", "hands-up", "sit-reach", "walk"],
+  "version": 4,
+  "added": "2026-10-11"
+}

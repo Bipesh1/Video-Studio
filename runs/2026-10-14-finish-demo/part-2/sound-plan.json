@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "music": [
+    {
+      "mood": "closing-in",
+      "startMs": 0
+    }
+  ],
+  "sfx": [
+    {
+      "name": "creak",
+      "atMs": 15268,
+      "gainDb": -4,
+      "pan": 0,
+      "seed": 0
+    },
+    {
+      "name": "heartbeat-rising",
+      "atMs": 20305,
+      "durationMs": 2881,
+      "gainDb": 0,
+      "pan": 0,
+      "seed": 1
+    },
+    {
+      "name": "boom",
+      "atMs": 23396,
+      "gainDb": -3,
+      "pan": 0,
+      "seed": 2
+    }
+  ],
+  "musicGainDb": 0
+}

@@ -1,0 +1,294 @@
+{
+  "version": 1,
+  "title": "How to Make Someone Sit in Smoke",
+  "part": 2,
+  "parts": 3,
+  "size": "9:16",
+  "video": "the-smoke-part-2-9x16-v1.mp4",
+  "seconds": 36.3,
+  "checkedOn": "2026-10-12",
+  "checks": [
+    {
+      "id": "plays",
+      "title": "The file plays",
+      "by": "measured",
+      "detail": "1080x1920, 30 pictures a second, 36.3 s, picture and sound both there; played through from start to finish",
+      "findings": []
+    },
+    {
+      "id": "made-from",
+      "title": "The video is of this plan and this sound",
+      "by": "measured",
+      "detail": "rendered from the plan as it stands; its sound is the mix as it stands, second for second (what is left over is 38 dB under it at most)",
+      "findings": []
+    },
+    {
+      "id": "length",
+      "title": "The length is right",
+      "by": "measured",
+      "detail": "36.3 s; a part may be up to 60 s",
+      "findings": []
+    },
+    {
+      "id": "in-step",
+      "title": "Picture and voice are in step",
+      "by": "measured",
+      "detail": "14 shots end to end with no gap, each line heard while its own pictures are on screen; picture and voice end together at 36.3 s",
+      "findings": []
+    },
+    {
+      "id": "silence",
+      "title": "There is no dead silence",
+      "by": "measured",
+      "detail": "the sound never drops out; the longest pause between words is 2.1 s",
+      "findings": []
+    },
+    {
+      "id": "loudness",
+      "title": "The sound is at the right level",
+      "by": "measured",
+      "detail": "loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.2 dB (the limit is -1)",
+      "findings": []
+    },
+    {
+      "id": "words-heard",
+      "title": "Nothing drowns the words",
+      "by": "measured",
+      "detail": "3 sound effects, the loudest of those over words 12 dB under the voice; the music sits 17.1 dB under the voice while someone speaks",
+      "findings": []
+    },
+    {
+      "id": "captions",
+      "title": "Captions fit the screen",
+      "by": "measured",
+      "detail": "23 captions of up to 2 lines; the widest takes 74% of the width; the briefest stays up 0.4 s",
+      "findings": []
+    },
+    {
+      "id": "in-frame",
+      "title": "Everyone is inside the picture",
+      "by": "measured",
+      "detail": "where every head lands on screen, on all 1089 frames of the 14 shots",
+      "findings": [
+        {
+          "level": "note",
+          "shot": "s4b",
+          "atMs": 3133.3333333333335,
+          "text": "The Trainer is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s4b",
+          "atMs": 2500,
+          "text": "The Copycat is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s4c",
+          "atMs": 5200,
+          "text": "The Trainer is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s4c",
+          "atMs": 4666.666666666667,
+          "text": "The Cheat is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s4e",
+          "atMs": 11033.333333333334,
+          "text": "The Copycat is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s4e",
+          "atMs": 8366.666666666668,
+          "text": "The Cheat is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s4f",
+          "atMs": 12900,
+          "text": "The Trainer is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s4f",
+          "atMs": 12066.666666666666,
+          "text": "The Cheat is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s4g",
+          "atMs": 14833.333333333334,
+          "text": "The Copycat is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s4g",
+          "atMs": 12933.333333333334,
+          "text": "The Cheat is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s5b",
+          "atMs": 20133.333333333332,
+          "text": "The Trainer is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s5b",
+          "atMs": 18933.333333333332,
+          "text": "The Copycat is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s5c",
+          "atMs": 22233.333333333336,
+          "text": "The Trainer is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s5c",
+          "atMs": 21533.333333333336,
+          "text": "The Cheat is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s5e",
+          "atMs": 24200,
+          "text": "The Copycat is in this shot's plan but falls outside the picture"
+        },
+        {
+          "level": "note",
+          "shot": "s5e",
+          "atMs": 25466.666666666664,
+          "text": "The Cheat is in this shot's plan but falls outside the picture"
+        }
+      ]
+    },
+    {
+      "id": "things-in-frame",
+      "title": "The things a shot shows are inside the picture",
+      "by": "measured",
+      "detail": "the body of every thing standing or hanging in a shot against the edges of the picture, on every frame (10 checked)",
+      "findings": []
+    },
+    {
+      "id": "faces-clear",
+      "title": "No face is under the title or the captions",
+      "by": "measured",
+      "detail": "every face against the title, any label, the captions, on every frame",
+      "findings": []
+    },
+    {
+      "id": "feet",
+      "title": "Feet are on the ground",
+      "by": "measured",
+      "detail": "the lowest foot or knee of every body against the ground line, on every frame",
+      "findings": []
+    },
+    {
+      "id": "smooth",
+      "title": "Nothing jumps",
+      "by": "measured",
+      "detail": "the furthest anyone moves in one frame on the way into a pose is 0.08 of a head (The Copycat, shot s5g); a jump would be over 0.3",
+      "findings": []
+    },
+    {
+      "id": "held",
+      "title": "No picture is held too long",
+      "by": "measured",
+      "detail": "the longest shot is 5.1 s (s5g); the longest with nothing moving in it is 4.3 s",
+      "findings": [
+        {
+          "level": "note",
+          "shot": "s5e",
+          "atMs": 24200,
+          "text": "the shot stays for 4.3 s, a little over the 4 s a shot should take"
+        },
+        {
+          "level": "note",
+          "shot": "s5g",
+          "atMs": 31166,
+          "text": "the shot stays for 5.1 s, a little over the 4 s a shot should take"
+        }
+      ]
+    },
+    {
+      "id": "reach",
+      "title": "Whatever is picked up is within reach",
+      "by": "measured",
+      "detail": "nobody takes a thing in their hand inside a shot",
+      "findings": []
+    },
+    {
+      "id": "plan",
+      "title": "The plan's own checks still pass",
+      "by": "measured",
+      "detail": "every name in the library, the staging rules, the format's beats, for all 43 shots of the video",
+      "findings": [
+        {
+          "level": "note",
+          "text": "shot \"s1b\" would be on screen only about 1.3 s, too quick to take in; give it more of the line's words"
+        },
+        {
+          "level": "note",
+          "text": "in shot \"s6a\", \"trainer\" changes pose inside a close-up, which shows only the face; make it a medium shot"
+        },
+        {
+          "level": "note",
+          "text": "four wide shots in a row from \"s6e\"; vary the shot size"
+        }
+      ]
+    },
+    {
+      "id": "same-pictures",
+      "title": "The pictures are the ones that were looked at",
+      "by": "measured",
+      "detail": "Claude looked at \"the-smoke-part-2-9x16-preview-v2.mp4\"; every frame of this video was compared with it (the strongest difference is 11 of 255; over 16 would be a different picture)",
+      "findings": []
+    },
+    {
+      "id": "style",
+      "title": "Every still passes the Style Check",
+      "by": "looked",
+      "detail": "14 stills, each against the 11 questions of the style guide",
+      "findings": []
+    },
+    {
+      "id": "story",
+      "title": "Every still tells its part of the story",
+      "by": "looked",
+      "detail": "14 stills, each against 7 questions: in frame, face visible, expression, hands, feet, action, setting",
+      "findings": []
+    },
+    {
+      "id": "motion",
+      "title": "Every move and every cut holds up frame by frame",
+      "by": "looked",
+      "detail": "22 strips of frames, one across each move inside a shot and each cut that keeps someone on screen",
+      "findings": []
+    },
+    {
+      "id": "playbook",
+      "title": "The playbook was followed",
+      "by": "looked",
+      "detail": "the rules of the general, format and style playbooks, read against the finished part",
+      "findings": []
+    }
+  ],
+  "fixed": [
+    "The smoke at its highest covered the mouth of anyone sitting. Its two upper stages are lower now: just over the table top, and just under the chin.",
+    "Six close shots ran one after another. A wide shot in the middle shows the smoke at the table with nobody but him stirring.",
+    "In the tipped shot the picture closed in so far that half the Copycat's head was off the edge as he sat back down. The tip is gentler and all of him is in."
+  ],
+  "notes": [
+    "The Cheat does not lean back and cross his arms, or tilt his head: there is no seated pose for either. He holds one calm face and the coin throughout.",
+    "The Copycat's fear is the face with clenched teeth and narrowed eyes, from 'My eyes sting' until the choice. It reads as smarting eyes and fright together.",
+    "When the Trainer straightens his tie, his hand comes up under his chin; in a wide shot it can read as a hand on the chin.",
+    "The long quiet after 'What does he do?' is 1.8 seconds with the music still under it, as Biku asked for music through the whole video.",
+    "Claude cannot hear: the boom on the tipped shot, the heartbeat under the eyes and the creak as he stands are placed by measurement and need Biku's ears."
+  ]
+}

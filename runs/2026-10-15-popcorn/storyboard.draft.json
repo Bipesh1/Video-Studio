@@ -1,0 +1,492 @@
+{
+  "version": 1,
+  "title": "Why Does Cinema Popcorn Cost Ten Dollars?",
+  "request": "Make a video on this for whats the catch",
+  "mode": "as-is",
+  "format": "fine-print",
+  "style": "ink-stick",
+  "brand": "fine-print",
+  "voice": "narrator",
+  "seed": 77840,
+  "finish": {
+    "acting": "snappy",
+    "onTwos": false,
+    "shadows": false,
+    "grain": 0.2,
+    "vignette": 0.12,
+    "boil": 0.25
+  },
+  "sources": [
+    "AMC Entertainment Holdings, Form 10-K annual report for 2025 (filed 2026). Film costs were 48.1% of ticket revenue for the year; in the US, food and drink costs were 18.1% of snack revenue, and snack spending per visitor rose to $8.57. https://www.sec.gov/Archives/edgar/data/1411579/000141157926000016/amc-20251231x10k.htm",
+    "CNN Money, small business Q&A on running a movie theater (2002). A cinema equipment company president says the studio might take 70 to 80 percent in a film's opening week, shrinking to about 35 percent by the fifth or sixth week. https://money.cnn.com/2002/03/08/smbusiness/q_movies/",
+    "ABC News, \"What Does a Trip to the Movies Really Cost You?\" (2014). A California cinema owner says the corn for a large bag costs about 8 cents, a tub about 92 cents with the corn, and that he pipes the popcorn smell into the auditorium. https://abcnews.go.com/blogs/lifestyle/2014/03/what-does-a-trip-to-the-movies-really-cost-you-2/",
+    "KTLA (via KRQE), \"$70 for a popcorn bucket? Movie theaters are seeing big business with blockbuster collectables\" (2026). A large bucket costs a cinema under $2 to serve and sells for about $10. https://www.krqe.com/entertainment-news/70-for-a-popcorn-bucket-movie-theaters-are-seeing-big-business-with-blockbuster-collectables/amp/",
+    "The Numbers, Domestic Theatrical Market Summary for 2025. Average ticket price in the US and Canada was $11.31. https://www.the-numbers.com/market/2025/summary",
+    "Worked out from the figures above: 30% of an $11.31 ticket is about $3.40; 82% of a $10 bucket is about $8.20; $10 shared by two is $5 each.",
+    "Checked by Claude on 2026-10-15: $11.31 against The Numbers 2025 summary; $8.57 (US markets), film costs 48.1% of admissions (consolidated) and food and drink costs about 18.1% of food and drink revenue (US) against AMC's results for the full year 2025 (8-K exhibit 99.1, 23 February 2026, https://www.sec.gov/Archives/edgar/data/1411579/000141157926000018/amc-20260223xex99d1.htm). The CNN, ABC and KTLA figures are as given in Biku's script and were not opened."
+  ],
+  "appliedLessons": [],
+  "cast": [],
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "the-question",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l01",
+          "speaker": "narrator",
+          "text": "Why does a bucket of cinema popcorn cost ten dollars?",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l02",
+          "speaker": "narrator",
+          "text": "The surprising answer has almost nothing to do with the corn.",
+          "pauseAfterMs": 700
+        }
+      ],
+      "shots": [
+        {
+          "id": "s1a",
+          "line": "l01",
+          "words": "Why does a bucket of cinema popcorn cost ten dollars?",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "overlay": {
+            "kind": "title",
+            "text": "Why Does Cinema Popcorn Cost Ten Dollars?"
+          },
+          "transition": "cut"
+        },
+        {
+          "id": "s1b",
+          "line": "l02",
+          "words": "The surprising answer has almost nothing to do with the corn.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "the-moment",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l03",
+          "speaker": "narrator",
+          "text": "Everyone in the queue pays the ten dollars, because the film is about to start.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l04",
+          "speaker": "narrator",
+          "text": "Most of us assume the cinema makes its money from our *tickets*.",
+          "pauseAfterMs": 500
+        },
+        {
+          "id": "l05",
+          "speaker": "narrator",
+          "text": "In the US and Canada, the average ticket in 2025 cost about eleven dollars and thirty cents.",
+          "pauseAfterMs": 700
+        }
+      ],
+      "shots": [
+        {
+          "id": "s2a",
+          "line": "l03",
+          "words": "Everyone in the queue pays the ten dollars, because the film is about to start.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2b",
+          "line": "l04",
+          "words": "Most of us assume the cinema makes its money from our *tickets*.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s2c",
+          "line": "l05",
+          "words": "In the US and Canada, the average ticket in 2025 cost about eleven dollars and thirty cents.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "chapter": 1,
+      "beat": "follow-the-money",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l06",
+          "speaker": "narrator",
+          "text": "Your ticket goes to the cinema, and about half of that money goes on to the studio.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l07",
+          "speaker": "narrator",
+          "text": "Of every ticket dollar last year, the world's biggest cinema chain paid studios about forty eight cents.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l08",
+          "speaker": "narrator",
+          "text": "The studio's cut can be *seventy* percent in the opening week, and about thirty five by week six.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l09",
+          "speaker": "narrator",
+          "text": "Most tickets sell in those first weeks, when the cinema may keep just thirty cents of each dollar.",
+          "pauseAfterMs": 1200
+        }
+      ],
+      "shots": [
+        {
+          "id": "s3a",
+          "line": "l06",
+          "words": "Your ticket goes to the cinema, and about half of that money goes on to the studio.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3b",
+          "line": "l07",
+          "words": "Of every ticket dollar last year, the world's biggest cinema chain paid studios about forty eight cents.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3c",
+          "line": "l08",
+          "words": "The studio's cut can be *seventy* percent in the opening week, and about thirty five by week six.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s3d",
+          "line": "l09",
+          "words": "Most tickets sell in those first weeks, when the cinema may keep just thirty cents of each dollar.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "chapter": 2,
+      "beat": "the-trick",
+      "mood": "curious",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l10",
+          "speaker": "narrator",
+          "text": "So the cinema makes its real money where the studio gets *nothing*: the snack counter.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l11",
+          "speaker": "narrator",
+          "text": "One cinema owner said the corn costs about eight cents and the tub ninety two, so a dollar in all.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l12",
+          "speaker": "narrator",
+          "text": "Of every snack dollar, the food and cups cost about eighteen cents, and the cinema *keeps* eighty two.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l13",
+          "speaker": "narrator",
+          "text": "That same owner even pipes the popcorn *smell* into the room where the film plays.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l14",
+          "speaker": "narrator",
+          "text": "In opening week, the cinema keeps about eight dollars twenty from a bucket, but three forty from a ticket.",
+          "pauseAfterMs": 700
+        }
+      ],
+      "shots": [
+        {
+          "id": "s4a",
+          "line": "l10",
+          "words": "So the cinema makes its real money where the studio gets *nothing*: the snack counter.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4b",
+          "line": "l11",
+          "words": "One cinema owner said the corn costs about eight cents and the tub ninety two, so a dollar in all.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4c",
+          "line": "l12",
+          "words": "Of every snack dollar, the food and cups cost about eighteen cents, and the cinema *keeps* eighty two.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4d",
+          "line": "l13",
+          "words": "That same owner even pipes the popcorn *smell* into the room where the film plays.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s4e",
+          "line": "l14",
+          "words": "In opening week, the cinema keeps about eight dollars twenty from a bucket, but three forty from a ticket.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chapter": 2,
+      "beat": "the-proof",
+      "mood": "reflective",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l15",
+          "speaker": "narrator",
+          "text": "In 2025, the average visitor to America's biggest chain spent about eight dollars and fifty seven cents on snacks.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l16",
+          "speaker": "narrator",
+          "text": "You meet the same trick at home, where the printer is cheap and the ink is not.",
+          "pauseAfterMs": 700
+        }
+      ],
+      "shots": [
+        {
+          "id": "s5a",
+          "line": "l15",
+          "words": "In 2025, the average visitor to America's biggest chain spent about eight dollars and fifty seven cents on snacks.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s5b",
+          "line": "l16",
+          "words": "You meet the same trick at home, where the printer is cheap and the ink is not.",
+          "camera": {
+            "framing": "medium",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 2,
+      "beat": "your-move",
+      "mood": "hope",
+      "place": "todo",
+      "treatment": "simple",
+      "palette": "todo",
+      "lines": [
+        {
+          "id": "l17",
+          "speaker": "narrator",
+          "text": "So *share* one bucket between two, and it costs you five dollars each.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l18",
+          "speaker": "narrator",
+          "text": "Because the ticket pays for the movie, but the popcorn pays for the cinema.",
+          "pauseAfterMs": 1500
+        }
+      ],
+      "shots": [
+        {
+          "id": "s6a",
+          "line": "l17",
+          "words": "So *share* one bucket between two, and it costs you five dollars each.",
+          "camera": {
+            "framing": "close-up",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        },
+        {
+          "id": "s6b",
+          "line": "l18",
+          "words": "Because the ticket pays for the movie, but the popcorn pays for the cinema.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut"
+        }
+      ]
+    }
+  ]
+}

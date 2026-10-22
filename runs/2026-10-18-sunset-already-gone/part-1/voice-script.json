@@ -1,0 +1,55 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Where is the Sun really when it touches the sea at sunset?",
+      "speed": 1,
+      "pauseAfterMs": 700
+    },
+    {
+      "id": "l02",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "The answer is in the air around you, and it tricks your *eyes*.",
+      "speed": 1,
+      "pauseAfterMs": 900
+    },
+    {
+      "id": "l03",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "You hold up your phone as the bottom of the Sun touches the sea.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l04",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Everyone filming thinks the Sun is right there, sitting on the water.",
+      "speed": 1,
+      "pauseAfterMs": 500
+    },
+    {
+      "id": "l05",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "And they think its light flies to them in a *straight* line.",
+      "speed": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l06",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Both of those ideas are *wrong*.",
+      "speed": 1,
+      "pauseAfterMs": 1100
+    }
+  ]
+}

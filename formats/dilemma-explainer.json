@@ -1,0 +1,115 @@
+{
+  "id": "dilemma-explainer",
+  "name": "Dilemma explainer (the Kurzgesagt way)",
+  "description": "The Dilemma Table remade the Kurzgesagt way (Biku, 2026-10-22): an explainer of a hidden rule of why people (and animals, and cells) do what they do, built on a true event or a real experiment with its sources, and the social dilemma or game at its heart. It opens on the strangest true moment, shows the rule played out by the cast (often many of them at once in the arena) and ends where the viewer lives, on a hopeful, thoughtful line that leads back to the first. Only the opening (first) and the mirror (last) hold their places; the beats between are a menu, in any order, used as the story needs. Mostly vertical Shorts of about two minutes. Writing rules in prompts/dilemma-explainer.md; research and direction in knowledge/playbooks/formats/dilemma-explainer.md.",
+  "version": 1,
+  "structure": [
+    {
+      "id": "the-strange-moment",
+      "purpose": "The strangest true moment of the story on screen, with one line of at most 12 words that states it, in big words; then one line that makes it stranger.",
+      "share": 0.08,
+      "moods": ["curious", "unease", "comic"],
+      "preferredShots": ["wide", "close-up"],
+      "backgroundTreatment": "either"
+    },
+    {
+      "id": "the-true-story",
+      "purpose": "What really happened: who, when, where, what was at stake, from the source.",
+      "share": 0.2,
+      "moods": ["curious", "unease", "upbeat"],
+      "preferredShots": ["wide", "medium"],
+      "backgroundTreatment": "either",
+      "optional": true
+    },
+    {
+      "id": "the-game",
+      "purpose": "The rule underneath, played out by the cast: the choices, what each gets, and what happens when many play it (the arena).",
+      "share": 0.32,
+      "moods": ["curious", "upbeat", "tense"],
+      "preferredShots": ["wide", "medium", "close-up"],
+      "backgroundTreatment": "either",
+      "optional": true
+    },
+    {
+      "id": "the-twist",
+      "purpose": "The turn nobody expected: what broke the pattern, what the scientists did not predict, or the catch inside the rule.",
+      "share": 0.14,
+      "moods": ["tense", "curious", "comic"],
+      "preferredShots": ["medium", "close-up", "wide"],
+      "backgroundTreatment": "either",
+      "optional": true
+    },
+    {
+      "id": "the-proof",
+      "purpose": "The real result in one or two lines, with who found it and when; what is still argued, said plainly.",
+      "share": 0.12,
+      "moods": ["reflective", "curious"],
+      "preferredShots": ["wide", "medium"],
+      "backgroundTreatment": "either",
+      "optional": true
+    },
+    {
+      "id": "the-mirror",
+      "purpose": "Where the viewer meets this rule in their own life, a hopeful thought to leave with, and a last line that leads back to the first.",
+      "share": 0.14,
+      "moods": ["hope", "reflective"],
+      "preferredShots": ["close-up", "wide"],
+      "backgroundTreatment": "either"
+    }
+  ],
+  "lengthRange": {
+    "min": 60,
+    "max": 200
+  },
+  "shotLength": {
+    "min": 2,
+    "max": 4
+  },
+  "hookRules": [
+    "The first 3 seconds show the story's strangest true moment, with one line of at most 12 words that states it plainly, shown as big words over the scene. No bare question, no greeting, no logo, no game theory words.",
+    "It is the mystery the video answers: the end explains it exactly. It does not start with \"In this video\", \"Did you know\", \"Have you ever wondered\" or \"Imagine\".",
+    "Between 3 and 10 seconds one line makes it stranger or promises more."
+  ],
+  "pacing": {
+    "wordsPerMinute": {
+      "min": 130,
+      "max": 170
+    },
+    "rehookEveryS": {
+      "min": 10,
+      "max": 20
+    },
+    "pauseMs": {
+      "normal": 450,
+      "afterBeat": 1000
+    }
+  },
+  "sfxDensity": {
+    "level": "medium",
+    "perMinute": {
+      "min": 6,
+      "max": 16
+    }
+  },
+  "captionMode": "full",
+  "roomTone": "wind",
+  "finish": {
+    "acting": "gentle",
+    "onTwos": false,
+    "shadows": true,
+    "grain": 0.25,
+    "vignette": 0.2,
+    "boil": 0.1
+  },
+  "factRules": {
+    "sourcesRequired": true,
+    "rules": [
+      "Every event, study and number is true and comes from a saved source, said with who found it and when.",
+      "A rounded figure is spoken as about, nearly or more than, never as exact. What is still argued is said to be argued.",
+      "The cast acting the rule out is a picture of the idea, never passed off as the real people of the story.",
+      "Every video names, for the plan, the social dilemma or game at its heart; the video itself never needs the words game theory."
+    ]
+  },
+  "packaging": true,
+  "freeOrder": true
+}

@@ -146,7 +146,9 @@ describe('library index', () => {
     expect(first('danger', 'music')).toBe('music/tense');
     expect(first('funny', 'music')).toBe('music/comic');
     expect(first('victory', 'music')).toBe('music/triumph');
-    expect(first('coin', 'sfx')).toBe('sfx/ding');
+    // Since 2026-10-20 the studio has a sound of coins of its own; before, the bell stood in.
+    expect(first('coin', 'sfx')).toBe('sfx/coins');
+    expect(first('bell', 'sfx')).toBe('sfx/ding');
     expect(first('punch', 'sfx')).toBe('sfx/hit');
     expect(first('walking', 'sfx')).toBe('sfx/footsteps');
     expect(first('treasure', 'prop')).toBe('prop/coin');

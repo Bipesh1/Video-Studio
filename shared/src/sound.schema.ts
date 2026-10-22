@@ -7,7 +7,7 @@ import { z } from 'zod';
  * side fails if they drift apart.
  */
 
-/** The nine music moods (`audio/src/studio_audio/music.py`, MOODS). */
+/** The music moods (`audio/src/studio_audio/music.py`, MOODS). */
 export const MUSIC_MOODS = [
   'tense',
   'sorrow',
@@ -18,6 +18,9 @@ export const MUSIC_MOODS = [
   'upbeat',
   'calm',
   'comic',
+  'unease',
+  'closing-in',
+  'aftermath',
 ] as const;
 export type MusicMood = (typeof MUSIC_MOODS)[number];
 
@@ -36,11 +39,53 @@ export const SFX_NAMES = [
   'ding',
   'heartbeat',
   'rain',
+  'tick',
+  'applause',
+  'drumroll',
+  'heartbeat-rising',
+  'clunk',
+  'boom',
+  'hum',
+  'thunder',
+  'rewind',
+  'river',
+  'waves',
+  'underwater',
+  'birds',
+  'night',
+  'traffic',
+  'cafe',
+  'home',
+  'office',
+  'phone-ring',
+  'knock',
+  'splash',
+  'paper',
+  'coins',
+  'bubbles',
 ] as const;
 export type SfxName = (typeof SFX_NAMES)[number];
 
 /** Effects that run under a whole shot instead of marking one moment. */
-export const AMBIENT_SFX: readonly SfxName[] = ['wind', 'crowd-murmur', 'heartbeat', 'rain'];
+export const AMBIENT_SFX: readonly SfxName[] = [
+  'wind',
+  'crowd-murmur',
+  'heartbeat',
+  'rain',
+  'tick',
+  'applause',
+  'heartbeat-rising',
+  'hum',
+  'river',
+  'waves',
+  'underwater',
+  'birds',
+  'night',
+  'traffic',
+  'cafe',
+  'home',
+  'office',
+];
 
 /** Loudness every finished sound track is mastered to. Lessons can never loosen these. */
 export const LOUDNESS_TARGET = { lufs: -14, toleranceLu: 0.5, truePeakDb: -1 } as const;
@@ -67,15 +112,74 @@ export const sfxCueSchema = z.object({
   seed: z.number().int().min(0).default(0),
 });
 
+/**
+ * The instruments a video's music is played on (`audio/src/studio_audio/music.py`, PALETTES),
+ * chosen for its topic (Biku, 2026-10-21: every Short "has the same background sounds"):
+ * `own` keeps each mood's own instruments.
+ */
+export const MUSIC_PALETTES = [
+  'own',
+  'body',
+  'space',
+  'water',
+  'food',
+  'mystery',
+  'bright',
+] as const;
+export type MusicPalette = (typeof MUSIC_PALETTES)[number];
+
+/**
+ * How a video's sound is handled: a Short (`short`) opens on a hit, its music a little quicker
+ * and nearer; a long video (`long`) has calmer music, further under the voice.
+ */
+export const SOUND_PROFILES = ['short', 'long'] as const;
+export type SoundProfile = (typeof SOUND_PROFILES)[number];
+
+/**
+ * The video's own music: every mood written fresh from its seed, moved to its own key and
+ * speed, and played on the instruments of its palette, so no two videos share a tune.
+ */
+export const scoreSchema = z
+  .object({
+    seed: z.number().int().min(0),
+    /** Semitones up or down from each mood's own key. */
+    shift: z.number().int().min(-6).max(6).default(0),
+    /** The speed against each mood's own, 0.8 to 1.25. */
+    tempo: z.number().min(0.8).max(1.25).default(1),
+    palette: z.enum(MUSIC_PALETTES).default('own'),
+    profile: z.enum(SOUND_PROFILES).default('long'),
+  })
+  .strict();
+export type Score = z.infer<typeof scoreSchema>;
+
 export const soundPlanSchema = z
   .object({
     version: z.literal(1),
+    /** The video's own music. Left out: the moods as written, the same in every video. */
+    score: scoreSchema.optional(),
     /** The video's length. Needed only when there is no voice track to take it from. */
     durationMs: z.number().positive().optional(),
     music: z.array(musicSegmentSchema).default([]),
     sfx: z.array(sfxCueSchema).default([]),
     /** Turns all the music up or down against the voice. */
     musicGainDb: z.number().min(-12).max(6).default(0),
+    /**
+     * Stretches where the music stops after it has begun (a quiet scene later in a video: Biku's
+     * script, 2026-10-14, "The music stops."). It fades out as the stretch begins and comes back
+     * in after it, if there is music still to come.
+     */
+    hush: z
+      .array(
+        z
+          .object({
+            fromMs: ms,
+            toMs: ms,
+            /** A quick cut out and a quick return, for a drop before a reveal. */
+            sharp: z.boolean().optional(),
+          })
+          .refine((h) => h.toMs > h.fromMs, 'a hush ends after it begins'),
+      )
+      .default([]),
   })
   .superRefine((plan, ctx) => {
     for (let i = 1; i < plan.music.length; i++) {
