@@ -26,7 +26,7 @@ Biku: "I want that channel to be an explainer type channel that explains interes
 
 ## Numbers
 
-- 60 to 130 seconds, parts of under a minute, 260 to 300 spoken words, a shot 2 to 4 seconds, a little quicker than the game theory videos (120 to 165 words a minute). Sources are required for every figure.
+- About 60 to 80 seconds (from 2026-10-22), one or two parts, 145 to 170 spoken words, a shot 2 to 4 seconds, a little quicker than the game theory videos (120 to 165 words a minute). Sources are required for every figure.
 
 ## The world
 
@@ -70,9 +70,12 @@ The general ones apply: plain words a stranger follows (L-0042), faces hold (L-0
 
 What the shot plan does in every Short (the study: `knowledge/playbooks/kurzgesagt-study.md`):
 
-- **One gauge carries the story** (`gauges` on the storyboard, from the script's THE GAUGE line): a count, a bar or steps, changing on the words that say it, and put away when its part of the story is done.
+- **A gauge only when the story has one** (`gauges` on the storyboard, from the script's THE GAUGE line): a count, a bar or steps, changing on the words that say it. Most Shorts have none; the pictures, the lens and the camera are chosen for each topic, and no two Shorts in a row are staged the same way (Biku, 2026-10-24: "be flexible when you work with other shorts").
 - **A label on every new word** as it is said (a journey thing's tag, or a label overlay); the captions stay small.
 - **A new picture every 2 to 4 seconds,** by the camera moving (`cam` on a journey thing, a travel, a dive) or by a cut. **The camera is calm** (Biku, 2026-10-22: "is the camera movement too fast?"; measured, ours moved 35% of the time against Kurzgesagt's 18 to 23%): a move takes 1 to 1.5 seconds, the camera then rests at least 1.5 seconds with only a slow drift, and a thing named sooner than that, or too soon for a move to finish, is cut to (`CAMERA_REST` in `engine/src/explainer/BodyWorld.tsx`). Aim for the picture moving about a fifth of the time.
+- **A beat after every joke, reveal or finished step** (Biku, 2026-10-23: "the pacing from one info to another is too fast ... from the toilet to another frame"; measured, the toilet was on screen 0.9 s): that line's `pauseAfterMs` is about 1200 to 1500, so its picture stays about 2 seconds before the next idea; ordinary lines keep 400 to 600. Every picture the camera goes to is on screen at least about 1.5 seconds.
+- **One continuous camera, a few cuts** (Biku, 2026-10-24: "most of the time it should be continuous camera shots and for few areas it can be separate frames"; the third Kurzgesagt Short has 3 hard cuts in 46 s): build a Short's world so the camera can travel between its places (a door the camera flies through, a lens on the thing named, a lens-out back into the next picture, an x-ray in the same frame), never as separate sets joined by cuts; cut only at a complete change of subject, two or three times a Short.
+- **A view through someone's eyes must say whose it is, and leave by a move that links to the next picture** (Biku, 2026-10-24, on "Your First Memory": after the dive through the baby's eye "it stops at a random picture and then shows the mascot"). The baby's view (the hood, the sky, the blanket) had nothing in it to say it was the baby's, was held through a pause with nothing new said, and was left by a hard cut. Next time: keep a clue of whose view it is in the picture (the baby's own hands and cupcake at the bottom, the eye's edge round the view, or a label), do not hold a picture the viewer cannot read, and leave by pulling back out the way you came (out of the eye, back into the bubble over the mascot's head) instead of a cut.
 - **A lens into the body or a thing** (`transition: "lens"`, `diveAt` on the spot) once or twice a Short, where the story goes inside.
 - **A colour for each part,** matched to its mood: dark for the bad news, a burst of warm light for hope.
 - **Big subjects, faces that react,** and the character's one gag where the script puts it.

@@ -1,0 +1,154 @@
+{
+  "version": 1,
+  "title": "Your First Memory Might Never Have Happened",
+  "request": "Biku's What's the Catch? Short, used as it is: 'create short based on this and remember since the time has been reduced to 1 min the drawing and animation must be good' (2026-10-23). The first Short in the toned look (2), the calm camera, gauges and the Kurzgesagt Short rules.",
+  "mode": "as-is",
+  "format": "fine-print",
+  "brand": "fine-print",
+  "voice": "catch-narrator",
+  "speakers": [],
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "narrator",
+      "text": "Think of your very first memory. Got it?",
+      "beat": "the-question",
+      "chapter": 1,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "l02",
+      "speaker": "narrator",
+      "text": "There's a good chance it never *happened*.",
+      "beat": "the-question",
+      "chapter": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l03",
+      "speaker": "narrator",
+      "text": "Some people even say they remember being *born*.",
+      "beat": "the-moment",
+      "chapter": 1,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "l04",
+      "speaker": "narrator",
+      "text": "No, you don't.",
+      "beat": "the-moment",
+      "chapter": 1,
+      "pauseAfterMs": 1300
+    },
+    {
+      "id": "l05",
+      "speaker": "narrator",
+      "text": "Clue one: most people's oldest real memory is from around age *three*.",
+      "beat": "follow-the-money",
+      "chapter": 1,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "l06",
+      "speaker": "narrator",
+      "text": "Before that, the brain keeps almost nothing, a blank scientists call *childhood amnesia*.",
+      "beat": "follow-the-money",
+      "chapter": 1,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l07",
+      "speaker": "narrator",
+      "text": "Clue two: a British survey asked over six thousand people for their first *memory*.",
+      "beat": "follow-the-money",
+      "chapter": 1,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "l08",
+      "speaker": "narrator",
+      "text": "Nearly four in ten said it came from age two or *younger*.",
+      "beat": "follow-the-money",
+      "chapter": 1,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "l09",
+      "speaker": "narrator",
+      "text": "And almost nine hundred said one or younger.",
+      "beat": "follow-the-money",
+      "chapter": 1,
+      "pauseAfterMs": 1300
+    },
+    {
+      "id": "l10",
+      "speaker": "narrator",
+      "text": "Clue three: a lot of those baby memories are about a *pram*.",
+      "beat": "follow-the-money",
+      "chapter": 2,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "l11",
+      "speaker": "narrator",
+      "text": "But look: this one is seen from *above*.",
+      "beat": "follow-the-money",
+      "chapter": 2,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "l12",
+      "speaker": "narrator",
+      "text": "A baby in a pram could never see that.",
+      "beat": "follow-the-money",
+      "chapter": 2,
+      "pauseAfterMs": 1300
+    },
+    {
+      "id": "l13",
+      "speaker": "narrator",
+      "text": "So here's the catch: the feeling may be real, but the *picture* came later.",
+      "beat": "the-trick",
+      "chapter": 2,
+      "pauseAfterMs": 1300
+    },
+    {
+      "id": "l14",
+      "speaker": "narrator",
+      "text": "Researchers think it was stitched together from family *photos* and stories told at dinner.",
+      "beat": "the-trick",
+      "chapter": 2,
+      "pauseAfterMs": 1000
+    },
+    {
+      "id": "l15",
+      "speaker": "narrator",
+      "text": "And it feels just as *real*.",
+      "beat": "the-proof",
+      "chapter": 2,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l16",
+      "speaker": "narrator",
+      "text": "So is your first memory real? If it's from before age three, probably *not*.",
+      "beat": "your-move",
+      "chapter": 2,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l17",
+      "speaker": "narrator",
+      "text": "So which memories are really *yours*?",
+      "beat": "your-move",
+      "chapter": 2,
+      "pauseAfterMs": 450
+    }
+  ],
+  "sources": [
+    "Akhtar, S., Justice, L. V., Morrison, C. M. and Conway, M. A., \"Fictional First Memories\", Psychological Science, 2018, 29(10): 1612-1619. A survey of 6,641 people in the UK: average age of first memory 3.2 years; 2,487 (nearly 40%) dated it to age two or younger and 893 to age one or younger; the authors judge these likely fictional. https://doi.org/10.1177/0956797618778831",
+    "City, University of London, \"Forty per cent of people have a fictional first memory, says study\", 2018. Fragments of early experience combined with facts from photographs or family talk; a typical example is a memory of a pram; the person does not know it is fictional. https://www.citystgeorges.ac.uk/news-and-events/news/2018/07/forty-per-cent-of-people-have-a-fictional-first-memory-says-study"
+  ],
+  "changes": [],
+  "masterPrompt": "prompts/fine-print.md"
+}

@@ -1,8 +1,12 @@
 # What's the Catch?: how to write a script
 
-## Script guide, explainer edition (v4.2)
+## Script guide, explainer edition (v4.4)
 
 For Biku: paste everything under the line into whichever AI writes the script, and fill in the INPUTS at the bottom.
+
+What changed from v4.3 (2026-10-24): the Kurzgesagt ideas are a toolbox, not a recipe (Biku, after "Your First Memory": "you put those clue 1 clue 2 and clue 3 for every shorts? ... be flexible when you work with other shorts"). Counted steps, a gauge and signposts are used only when the topic asks for them, and no two Shorts in a row are built the same way. v4.3 is in `prompts/old/fine-print-v4.3.md`.
+
+What changed from v4.2 (2026-10-23): the whole guide is fitted to the 1-minute Short. Where the surprise falls inside sixty seconds (section 4), one or two jokes instead of one every 20 to 30 seconds, a `[BEAT]` mark after a joke or a surprise so the picture holds about two seconds there (Biku: "the pacing from one info to another is too fast"), and the read-through checks a 1-minute script. v4.2 is in `prompts/old/fine-print-v4.2.md`.
 
 What changed from v4.1 (2026-10-22), after studying two Kurzgesagt Shorts (`knowledge/playbooks/kurzgesagt-study.md`): a Short follows one thing in steps a stranger can count; turns are signposted out loud ("Here's the bad news", "So what's the good news?") and the narrator talks to you ("right?"); every Short names one gauge that carries its story; the character does one small gag; the end either answers the first line or widens out to wonder, whichever fits the topic. v4.1 is in `prompts/old/fine-print-v4.1.md`.
 
@@ -54,7 +58,7 @@ The test for every topic: **the viewer has touched it today, and the catch flips
 **The second kind: the big "what if".** A wild question about you, your body or the human race, answered with real science: could humans evolve to never sleep, if you never cut your hair how long would it grow, could a person live to two hundred. Its test: **it starts from something every viewer does or has every day, and the answer is never a plain yes or no.** The catch is the twist in the answer: the hidden price ("yes, but..."), the built-in limit ("no, and the reason is stranger than you think"), or the place in nature where it already happens (dolphins rest one half of the brain at a time). Not a what-if: superpowers or science fiction with no research behind it, scare stories, anything that reads as health advice.
 
 - **One narrator** tells it, like a friend letting you in on something: curious, a little amazed, never smug, in the same tone every video. Nobody else speaks.
-- **Humour that grows out of the topic.** A small joke every 20 to 30 seconds: a silly but true comparison, an absurd consequence, the character's reaction. Jokes about the subject help people remember; jokes dropped in from nowhere do not. Never at the cost of a fact.
+- **Humour that grows out of the topic.** One or two small jokes in a 1-minute Short (one can be the character's gag): a silly but true comparison, an absurd consequence, the character's reaction. Jokes about the subject help people remember; jokes dropped in from nowhere do not. Never at the cost of a fact.
 - **The camera travels.** The best videos of this channel are one journey through one drawn world: from the blue dot on your phone, up through the sky, out to the satellites, into one of them. Things open up to show their inside. The viewer should feel they went somewhere, not that they watched slides.
 - **Every line has one picture**, which builds up piece by piece while the line is spoken. The channel's own character (being designed with Biku; until then, simple faceless figures) reacts, tries things and gets into trouble for the viewer: write what he does in round brackets.
 - **One explanation at a time, in order.** The viewer never sees a number before it is said, or a thing before it is named.
@@ -93,15 +97,28 @@ Between them, pick the shape that explains this topic best. Some that work:
 | Countdown or comparison | Sizes, records, extremes                             | From small to unbelievable, or two things side by side until the difference lands                                            |
 | Before and after        | A change in history or the body                      | How it was, the moment it changed, how it is now                                                                             |
 
-**What every 1-minute Short does** (from two Kurzgesagt Shorts, 2026-10-22):
+**A toolbox, not a recipe** (from two Kurzgesagt Shorts, 2026-10-22). Pick only what this topic needs, and do not build two Shorts in a row the same way (Biku, 2026-10-24: "be flexible when you work with other shorts"):
 
-- **One thing, followed in steps the viewer can count.** Say the steps so they can be shown as "1/3, 2/3, 3/3", with a clear "done" near the middle; then turn to what it means for you.
-- **Signpost every turn out loud,** in plain words a stranger follows: "Here's the bad news.", "So what's the good news?", "But there's a catch." Talk to the viewer now and then: "right?"
-- **One gauge carries the story:** a number counting down, a bar filling or draining, or the steps. Name it in the layout (section 9) and say its changes in the words, so it moves on them.
-- **Things get faces and the character gets one gag** (he argues, scribbles, fails, tries again), written in round brackets where it happens.
-- **Science first, then you,** then the twist or the dark side, then hope or wonder.
+- **Steps the viewer can count**, only when the topic really is a process or a list ("1/3, 2/3, 3/3"). A mystery, a journey, a comparison or a single surprising fact does not need them; never number things just to have numbers.
+- **A gauge**, only when something in the story really counts, fills or drains (repairs left, a battery, kilos of fat, the days of a cycle). Most Shorts have none.
+- **Signposts said out loud** at the big turns ("Here's the bad news.", "But there's a catch."), in words that fit this story; talking to the viewer ("right?") now and then.
+- **Faces on things and a gag by the character**, where the topic gives one.
+- **An order that fits the topic:** science first and then you, or you first; the twist early or at the end. The shapes in the table above are the starting points.
 
-Mix them when the topic asks (a journey with a myth at its start). Keep a small laugh about every half minute, and keep the picture moving. The studio's beats (the question, the moment, follow the clue, the catch, the proof, your move) are a menu for the middle, in any order; only the hook and the payoff hold their places.
+**A 1-minute Short, second by second** (about 145 to 170 words; the times are a guide, not a stopwatch):
+
+| When           | What happens                                                                     |
+| -------------- | -------------------------------------------------------------------------------- |
+| 0 to 3 s       | THE HOOK: the question or the wild fact in plain words, over the thing itself    |
+| 3 to 10 s      | Why it matters or what is strange about it: the promise of a surprise            |
+| 10 to 30 s     | The explanation, in the shape the topic needs (steps, a journey, a comparison)   |
+| by about 30 s  | The surprise, after a signpost said out loud ("But here's the catch.")           |
+| 30 to 50 s     | What it means for you: the twist, the bad news and the good news                 |
+| last 5 to 10 s | THE PAYOFF: the last line answers the first, then loops back or widens to wonder |
+
+**Mark the beats.** After a line that lands a joke or a surprise, write `[BEAT]` on its own line. The studio holds that picture about two seconds there before the next idea; every other line follows on quickly. Four or five beats in a Short at most.
+
+Mix the shapes when the topic asks (a journey with a myth at its start), and keep the picture moving. The studio's beats (the question, the moment, follow the clue, the catch, the proof, your move) are a menu for the middle, in any order; only the hook and the payoff hold their places.
 
 **A long YouTube video (only when Biku asks): 4 to 6 minutes, 600 to 900 words.** The same six steps, larger: a hook of 10 to 20 seconds (within three seconds the viewer knows what it is about, by ten the title's promise is proved), a moment of 20 to 30 seconds with one open loop, three or four loops over 2 to 4 minutes (each opens a smaller question, builds it, answers it, and ends a little before the viewer expects), the catch, the proof (what nobody knows yet, said plainly), the payoff. Mark the 30 to 50 seconds that work alone as a Short with `[SHORT FROM HERE]` and `[SHORT TO HERE]`.
 
@@ -172,8 +189,12 @@ Do not write: characters, faces or dialogue; more than one picture for one line;
 6. Would I want to tell a friend the catch?
 7. Does the last line answer the first?
 8. Would the first line and picture alone stop me swiping?
-9. Is there a small laugh at least every half minute, and does each one come from the topic?
+9. Is there a small laugh or two, and does each one come from the topic?
 10. In a what-if: is every answer real, and is what nobody knows said plainly?
+11. Is it about 145 to 170 words, and does the surprise come by about the middle?
+12. Is every big turn clear to a stranger, said in plain words?
+13. Is this Short built differently from the last one, and is every tool in it there because the topic needs it?
+14. Is there a `[BEAT]` after each joke and surprise, and no more than five?
 
 If any answer is no, rewrite that line more plainly.
 
@@ -198,7 +219,7 @@ NARRATOR: Most people think a satellite is watching their phone.
 
 THE WORLD: (where the camera travels, in one or two lines)
 NEEDS DRAWING: (the things of that world the camera visits or opens)
-THE GAUGE: (its label, its kind, a number, a bar or steps, and which words change it, e.g. "REPAIRS LEFT, a number: 2,936 on 'damage', 42 on 'repair'")
+THE GAUGE: (only if something in the story really counts, fills or drains: its label, its kind and the words that change it, e.g. "REPAIRS LEFT, a number: 2,936 on 'damage', 42 on 'repair'"; otherwise "none")
 
 1. THE HOOK
 NARRATOR: ...
@@ -218,18 +239,38 @@ Then add:
 
 ## 10. INPUTS
 
-- **TOPIC:** Where Does Your Fat Go When You Lose Weight?
+- **TOPIC:** Your First Memory Probably Never Happened
 - **THE WORLD:** (where the camera should travel, or leave it to you)
 - **EARLIER VIDEOS:** Why Does Cinema Popcorn Cost Ten Dollars?; Why Every Screen Asks You for a Tip Now; Why Is the Water in Your Glass Older Than the Sun?; Why Is the Sun Already Gone When You Watch It Set?; Could Humans Evolve to Hold Their Breath Like Seals?; (add every video since)
-- **NOTES:** Thumbnail: a person breathing out a big visible cloud; words: YOU BREATHE IT OUT
-  The promise: you will know the real exit door fat uses to leave your body.
-  First ten seconds: a bathroom scale drops by one kilo. “That kilo of fat is gone. But gone where? Most doctors asked this got it wrong.”
-  The catch: most of the fat you lose leaves through your mouth, as the carbon dioxide you breathe out. The rest leaves as water.
-  The journey: from a belly, into one fat cell, the fat molecule is taken apart, its carbon atoms ride the blood to the lungs, and out with one breath into the room.
-  Clue path: fat is made of carbon, hydrogen and oxygen → burning it needs oxygen you breathe in → the leftovers are carbon dioxide and water → carbon dioxide leaves through the lungs → water leaves as sweat, urine and breath.
-  Facts: 10 kg of fat needs 29 kg of oxygen and turns into 28 kg of carbon dioxide and 11 kg of water, so about 84% is breathed out (Meerman and Brown, BMJ, 2014; sure). In the same paper, of 150 doctors, dietitians and personal trainers asked, only three got it right (fairly sure). Breathing faster does not burn more fat; the authors say so themselves (sure).
-  Now you’ll notice: every breath out carries a tiny piece of yesterday’s dinner.
-  Shape: myth then truth, then the journey: wrong answers (energy, heat, muscle) → the atoms → the lungs → the breath.
-  Laughs: “So the gym is where you go to exhale your burger.” “No, panting on the sofa does not count. You will just get dizzy.”
-  Comments: “So hyperventilating is cardio now?” / “My teacher said it turns into energy, I’m calling her” / “Wait, where does the water part go?”
-  Scores: one-second 5, wait-what 5, comment 5, share 5, package 5, evergreen 5, journey 5
+- **NOTES:** Kind: about you
+  Title: Your First Memory Probably Never Happened
+  Thumbnail: a baby in an old pram under a yellow blanket, close and soft-lit, with the words YOUR BRAIN MADE IT UP
+  The promise: you will know why so many people's earliest memories are built later from photos and family stories, and how to test your own.
+  The first ten seconds: the mascot closes his eyes and a fuzzy memory bubble opens above him: himself as a baby in a pram. Narrator: "Think of your very first memory. Got it? There's a good chance it never happened."
+  The catch in one sentence: in a survey of 6,641 people, nearly four in ten placed their first memory at age two or younger, an age the brain almost never keeps memories from, so those memories were most likely assembled later out of photos, family stories and scraps of feeling.
+  The journey: from the memory bubble, into the mascot's head, back to his toddler brain where the shelves for lasting memories are still being built, out to the family photo album and the dinner-table story that supplied the pieces, and back to the bubble, now shown as a collage of cut-out photos.
+  The clue path:
+  Most people's first real memory comes from around age three.
+  Before that the brain keeps very little that lasts; scientists call the blank "childhood amnesia".
+  Yet in a big survey, about 4 in 10 people said their first memory was from age two or younger, and 893 said age one or younger.
+  The researchers concluded those memories are probably fictional: a real feeling (a pram, being sad) stitched to facts learned later from photos and family talk.
+  The person cannot tell. It feels exactly like a real memory.
+  The facts and numbers:
+  Akhtar, Justice, Morrison and Conway, "Fictional First Memories", Psychological Science, 2018: 6,641 respondents; average age of first memory 3.2 years; 2,487 (38.6%) dated it to age two or younger; 893 to age one or younger; the authors judge these likely fictional. (sure)
+  Fictional very early memories were more common in middle-aged and older adults. (sure)
+  What nobody knows yet: exactly why memories from infancy do not last. Several explanations compete (the memory system is still being built, no language yet to file them, new brain cells reshaping old connections).
+  Now you'll notice: when you picture a childhood moment, ask yourself whether you are remembering the moment or the photo of it.
+  The shape that explains it best: myth then truth, then a journey inside the memory.
+  The memory you are sure of.
+  The survey and the "two years or younger" line.
+  Why that age is nearly impossible.
+  Where the pieces really came from.
+  Ending back on the bubble: "So which of your memories are yours?"
+  Where the laughs are: the memory bubble has a tiny "Photo: Mom" credit in the corner; the mascot proudly "remembers" being born and the narrator flatly says "no, you don't"; the memory is seen from above, a camera angle a baby in a pram could never have had.
+  Three comments:
+  "My first memory is from when I was 1 and I KNOW it's real"
+  "Mine is literally the photo hanging in my grandma's hallway... oh no"
+  "Ok so what ELSE has my brain been making up"
+  The mascot: in the first ten seconds he beams at his baby memory, blowing out a candle; at the turn he flips the memory over and finds the back of a printed family photo, and his face drops.
+  Could it grow into a long video? Yes. A 10-minute version: why memories get rebuilt every time you recall them, false memories that people have been convinced of in experiments, what eyewitness memory means in court, and an at-home test viewers can try.
+  The eight scores: one-second 4, "wait, what?" 5, comment 5, share 5, package 5, evergreen 5, journey 4, think 5

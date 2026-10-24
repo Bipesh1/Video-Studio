@@ -1,0 +1,87 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l10",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Clue three: a lot of those baby memories are about a *pram*.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/catch-narrator.wav",
+      "speed": 0.86,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "l11",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "But look: this one is seen from *above*.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/catch-narrator.wav",
+      "speed": 0.86,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "l12",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "A baby in a pram could never see that.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/catch-narrator.wav",
+      "speed": 0.86,
+      "pauseAfterMs": 1300
+    },
+    {
+      "id": "l13",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So here's the catch: the feeling may be real, but the *picture* came later.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/catch-narrator.wav",
+      "speed": 0.86,
+      "pauseAfterMs": 1300
+    },
+    {
+      "id": "l14",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Researchers think it was stitched together from family *photos* and stories told at dinner.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/catch-narrator.wav",
+      "speed": 0.86,
+      "pauseAfterMs": 1000
+    },
+    {
+      "id": "l15",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "And it feels just as *real*.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/catch-narrator.wav",
+      "speed": 0.86,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l16",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So is your first memory real? If it's from before age three, probably *not*.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/catch-narrator.wav",
+      "speed": 0.86,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l17",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "So which memories are really *yours*?",
+      "engine": "chatterbox",
+      "sample": "voices/samples/catch-narrator.wav",
+      "speed": 0.86,
+      "pauseAfterMs": 450
+    }
+  ]
+}

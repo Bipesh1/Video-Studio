@@ -1,0 +1,92 @@
+{
+  "id": "black-history",
+  "name": "Black history (true stories, told as they happened)",
+  "description": "A Reel for Biku's Black history page on Facebook (set up 2026-10-24): one true story from Black history, a person or a moment, told as it happened, from inside it, by one narrator, while one camera travels through a drawn world of that place and time. Researched from official sources first, every fact marked sure or disputed; drawn with dignity (no caricature, real skin tones, period clothes; hardship shown with restraint, never as a joke). Opens on the story's boldest true moment and ends on what happened next and why it matters. Vertical, about 75 to 90 seconds, big captions, a closing question for the comments. Its shape follows the story: only the moment (first) and the legacy (last) hold their places. Writing rules in prompts/black-history.md; how it is made in knowledge/playbooks/formats/black-history.md; the look in styles/black-history/guide.md. Nothing of What's the Catch? applies to it.",
+  "version": 1,
+  "structure": [
+    {
+      "id": "the-moment",
+      "purpose": "The story's boldest or strangest true moment, in one plain line over the scene, so the viewer knows at once whose story this is and why it is worth a minute.",
+      "share": 0.1,
+      "moods": ["tense", "curious"],
+      "preferredShots": ["close-up", "medium"],
+      "backgroundTreatment": "simple"
+    },
+    {
+      "id": "the-world",
+      "purpose": "Where and when, who they were and the rules they lived under: the stakes, shown plainly and with dignity.",
+      "share": 0.15,
+      "moods": ["reflective", "unease"],
+      "preferredShots": ["wide", "medium"],
+      "backgroundTreatment": "either",
+      "optional": true
+    },
+    {
+      "id": "the-plan",
+      "purpose": "What they decided to do and how: the preparation, the people with them, the risk they chose.",
+      "share": 0.2,
+      "moods": ["curious", "closing-in"],
+      "preferredShots": ["medium", "close-up"],
+      "backgroundTreatment": "either",
+      "optional": true
+    },
+    {
+      "id": "the-danger",
+      "purpose": "The test: the moment it could all go wrong, told from inside it, with a clock or a watcher when the story has one.",
+      "share": 0.25,
+      "moods": ["closing-in", "tense"],
+      "preferredShots": ["wide", "close-up", "eyes"],
+      "backgroundTreatment": "either"
+    },
+    {
+      "id": "the-turn",
+      "purpose": "How it ended that day: the escape, the win, the discovery, or the cost.",
+      "share": 0.15,
+      "moods": ["triumph", "hope", "aftermath"],
+      "preferredShots": ["wide", "medium"],
+      "backgroundTreatment": "either"
+    },
+    {
+      "id": "the-legacy",
+      "purpose": "What happened next and why it matters now, ending on a line that stays with the viewer or a question for the comments.",
+      "share": 0.15,
+      "moods": ["reflective", "hope"],
+      "preferredShots": ["wide", "medium"],
+      "backgroundTreatment": "either"
+    }
+  ],
+  "lengthRange": { "min": 55, "max": 150 },
+  "shotLength": { "min": 2, "max": 7 },
+  "hookRules": [
+    "In the first 3 seconds the viewer sees the story's boldest true moment and hears it in one plain line of at most 12 words, shown as big words over the scene. No greeting, no logo, no date lecture.",
+    "By 10 seconds the viewer knows who, roughly when and what is at stake. The line does not start with \"In this video\", \"Did you know\", \"Have you ever wondered\" or \"Imagine\".",
+    "The hook is true as told: never a legend presented as fact, never a moment invented for drama."
+  ],
+  "pacing": {
+    "wordsPerMinute": { "min": 125, "max": 160 },
+    "rehookEveryS": { "min": 15, "max": 25 },
+    "pauseMs": { "normal": 450, "afterBeat": 1100 }
+  },
+  "sfxDensity": { "level": "medium", "perMinute": { "min": 4, "max": 10 } },
+  "captionMode": "full",
+  "roomTone": "wind",
+  "finish": {
+    "acting": "gentle",
+    "onTwos": false,
+    "shadows": false,
+    "grain": 0.22,
+    "vignette": 0.16,
+    "boil": 0.15
+  },
+  "factRules": {
+    "sourcesRequired": true,
+    "rules": [
+      "Every name, date, place and number comes from a saved source, official ones first (the National Park Service, the Library of Congress, the National Archives, the Smithsonian's National Museum of African American History and Culture, the House of Representatives' history pages), and is marked sure or disputed in the fact sheet.",
+      "A detail the sources disagree on is either left out or said as disputed (\"about seventeen people\", \"some accounts say\"); a legend is never told as fact.",
+      "Real people never say words they did not say: a quote is used only when it is documented, with its source; otherwise only the narrator speaks.",
+      "Violence and suffering are told plainly but never shown in detail and never played for laughs; the person's courage, skill and choices are the story."
+    ]
+  },
+  "packaging": true,
+  "freeOrder": true
+}

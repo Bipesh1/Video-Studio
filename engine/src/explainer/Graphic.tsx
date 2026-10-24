@@ -8,6 +8,7 @@ import { JourneyPicture } from './Journey';
 import { WaterPicture } from './WaterWorld';
 import { SunsetPicture } from './SunsetWorld';
 import { BodyPicture } from './BodyWorld';
+import { MemoryPicture } from './MemoryWorld';
 import { DivePicture } from './DiveWorld';
 
 /**
@@ -151,6 +152,15 @@ const WORLD_THEME: Theme = {
   boxText: OCEAN.signText,
   ghost: OCEAN.ink,
   nodes: [C.teal, OCEAN.machine, OCEAN.counter, C.yellow],
+};
+/** Over a dark world (the dusk of the memory world, 2026-10-23): light words, the stressed line gold. */
+const DUSK_THEME: Theme = {
+  world: false,
+  ink: C.light,
+  box: C.yellow,
+  boxText: C.dark,
+  ghost: C.light,
+  nodes: [C.teal, C.red, C.dark, C.yellow],
 };
 const ThemeOf = createContext<Theme>(FLAT_THEME);
 export type ExplainerLook = 'flat' | 'world';
@@ -1478,7 +1488,9 @@ export function ExplainerGraphic({
             ? DivePicture
             : g.world === 'body'
               ? BodyPicture
-              : JourneyPicture;
+              : g.world === 'memory'
+                ? MemoryPicture
+                : JourneyPicture;
     // A journey has no page and no card: the camera flies through its world, and only the title
     // is laid over it.
     return (
@@ -1503,9 +1515,11 @@ export function ExplainerGraphic({
           >
             <ThemeOf.Provider
               value={
-                g.world === 'water' || g.world === 'dive' || g.world === 'body'
-                  ? FLAT_THEME
-                  : WORLD_THEME
+                g.world === 'memory'
+                  ? DUSK_THEME
+                  : g.world === 'water' || g.world === 'dive' || g.world === 'body'
+                    ? FLAT_THEME
+                    : WORLD_THEME
               }
             >
               <Title title={g.title} local={local} spoken={spoken} />

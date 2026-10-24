@@ -1,0 +1,97 @@
+{
+  "leadInMs": 300,
+  "tailMs": 900,
+  "questionLift": 1.5,
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Think of your very first memory. Got it?",
+      "engine": "chatterbox",
+      "sample": "voices/samples/catch-narrator.wav",
+      "speed": 0.86,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "l02",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "There's a good chance it never *happened*.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/catch-narrator.wav",
+      "speed": 0.86,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l03",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Some people even say they remember being *born*.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/catch-narrator.wav",
+      "speed": 0.86,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "l04",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "No, you don't.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/catch-narrator.wav",
+      "speed": 0.86,
+      "pauseAfterMs": 1300
+    },
+    {
+      "id": "l05",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Clue one: most people's oldest real memory is from around age *three*.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/catch-narrator.wav",
+      "speed": 0.86,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "l06",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Before that, the brain keeps almost nothing, a blank scientists call *childhood amnesia*.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/catch-narrator.wav",
+      "speed": 0.86,
+      "pauseAfterMs": 600
+    },
+    {
+      "id": "l07",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Clue two: a British survey asked over six thousand people for their first *memory*.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/catch-narrator.wav",
+      "speed": 0.86,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "l08",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "Nearly four in ten said it came from age two or *younger*.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/catch-narrator.wav",
+      "speed": 0.86,
+      "pauseAfterMs": 450
+    },
+    {
+      "id": "l09",
+      "speaker": "narrator",
+      "voice": "am_michael",
+      "text": "And almost nine hundred said one or younger.",
+      "engine": "chatterbox",
+      "sample": "voices/samples/catch-narrator.wav",
+      "speed": 0.86,
+      "pauseAfterMs": 1300
+    }
+  ]
+}

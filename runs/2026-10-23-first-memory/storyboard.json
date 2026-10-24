@@ -1,0 +1,960 @@
+{
+  "version": 1,
+  "title": "Your First Memory Might Never Have Happened",
+  "request": "Biku's What's the Catch? Short, used as it is: 'create short based on this and remember since the time has been reduced to 1 min the drawing and animation must be good' (2026-10-23). The first Short in the toned look (2), the calm camera, gauges and the Kurzgesagt Short rules.",
+  "mode": "as-is",
+  "format": "fine-print",
+  "style": "ink-stick",
+  "brand": "fine-print",
+  "voice": "catch-narrator",
+  "seed": 66643,
+  "finish": {
+    "acting": "snappy",
+    "onTwos": false,
+    "shadows": false,
+    "grain": 0.2,
+    "vignette": 0.12,
+    "boil": 0.25
+  },
+  "sources": [
+    "Akhtar, S., Justice, L. V., Morrison, C. M. and Conway, M. A., \"Fictional First Memories\", Psychological Science, 2018, 29(10): 1612-1619. A survey of 6,641 people in the UK: average age of first memory 3.2 years; 2,487 (nearly 40%) dated it to age two or younger and 893 to age one or younger; the authors judge these likely fictional. https://doi.org/10.1177/0956797618778831",
+    "City, University of London, \"Forty per cent of people have a fictional first memory, says study\", 2018. Fragments of early experience combined with facts from photographs or family talk; a typical example is a memory of a pram; the person does not know it is fictional. https://www.citystgeorges.ac.uk/news-and-events/news/2018/07/forty-per-cent-of-people-have-a-fictional-first-memory-says-study"
+  ],
+  "appliedLessons": [],
+  "cast": [],
+  "scenes": [
+    {
+      "id": "s1",
+      "chapter": 1,
+      "beat": "the-question",
+      "mood": "curious",
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l01",
+          "speaker": "narrator",
+          "text": "Think of your very first memory. Got it?",
+          "pauseAfterMs": 450
+        },
+        {
+          "id": "l02",
+          "speaker": "narrator",
+          "text": "There's a good chance it never *happened*.",
+          "pauseAfterMs": 600
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s01",
+          "line": "l01",
+          "words": "Think of your very first memory. Got it?",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": "middle",
+              "gainDb": -5
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "memory",
+            "at": "you",
+            "fly": "start",
+            "keep": [],
+            "show": [
+              {
+                "item": "bubble",
+                "on": "first"
+              },
+              {
+                "item": "pram",
+                "on": "memory"
+              }
+            ],
+            "title": {
+              "lines": [
+                "YOUR VERY",
+                "FIRST MEMORY"
+              ],
+              "stress": 1
+            }
+          }
+        },
+        {
+          "id": "s02",
+          "line": "l02",
+          "words": "There's a good chance it never *happened*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "blip",
+              "at": "end",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "memory",
+            "at": "bubble",
+            "fly": "start",
+            "keep": [
+              "bubble",
+              "pram"
+            ],
+            "show": [
+              {
+                "item": "glitch",
+                "on": "never"
+              }
+            ],
+            "from": "you",
+            "title": {
+              "lines": [
+                "DID IT REALLY",
+                "HAPPEN?"
+              ],
+              "stress": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "chapter": 1,
+      "beat": "the-moment",
+      "mood": "comic",
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l03",
+          "speaker": "narrator",
+          "text": "Some people even say they remember being *born*.",
+          "pauseAfterMs": 450
+        },
+        {
+          "id": "l04",
+          "speaker": "narrator",
+          "text": "No, you don't.",
+          "pauseAfterMs": 1300
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s03",
+          "line": "l03",
+          "words": "Some people even say they remember being *born*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": "end",
+              "gainDb": -5
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "memory",
+            "at": "newborn-bubble",
+            "fly": "start",
+            "keep": [
+              "bubble",
+              "pram",
+              "glitch"
+            ],
+            "show": [
+              {
+                "item": "newborn",
+                "on": "born"
+              }
+            ],
+            "from": "bubble"
+          }
+        },
+        {
+          "id": "s04",
+          "line": "l04",
+          "words": "No, you don't.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": "start",
+              "gainDb": -2
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "memory",
+            "at": "newborn-bubble",
+            "fly": "start",
+            "keep": [
+              "bubble",
+              "pram",
+              "glitch",
+              "newborn"
+            ],
+            "show": [
+              {
+                "item": "pop",
+                "on": "don"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "chapter": 1,
+      "beat": "follow-the-money",
+      "mood": "curious",
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l05",
+          "speaker": "narrator",
+          "text": "Clue one: most people's oldest real memory is from around age *three*.",
+          "pauseAfterMs": 450
+        },
+        {
+          "id": "l06",
+          "speaker": "narrator",
+          "text": "Before that, the brain keeps almost nothing, a blank scientists call *childhood amnesia*.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l07",
+          "speaker": "narrator",
+          "text": "Clue two: a British survey asked over six thousand people for their first *memory*.",
+          "pauseAfterMs": 450
+        },
+        {
+          "id": "l08",
+          "speaker": "narrator",
+          "text": "Nearly four in ten said it came from age two or *younger*.",
+          "pauseAfterMs": 450
+        },
+        {
+          "id": "l09",
+          "speaker": "narrator",
+          "text": "And almost nine hundred said one or younger.",
+          "pauseAfterMs": 1300
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s05",
+          "line": "l05",
+          "words": "Clue one: most people's oldest real memory is from around age *three*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "memory",
+            "at": "head",
+            "fly": "start",
+            "keep": [
+              "bubble",
+              "pram"
+            ],
+            "show": [
+              {
+                "item": "brain",
+                "on": "memory"
+              },
+              {
+                "item": "ruler",
+                "on": "three"
+              }
+            ],
+            "from": "newborn-bubble"
+          }
+        },
+        {
+          "id": "s06",
+          "line": "l06",
+          "words": "Before that, the brain keeps almost nothing, a blank scientists call *childhood amnesia*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "memory",
+            "at": "toddler-brain",
+            "fly": "start",
+            "keep": [
+              "bubble",
+              "pram",
+              "brain",
+              "ruler"
+            ],
+            "show": [
+              {
+                "item": "boxes",
+                "on": "nothing"
+              }
+            ],
+            "from": "head",
+            "title": {
+              "lines": [
+                "CHILDHOOD",
+                "AMNESIA"
+              ],
+              "stress": 1
+            }
+          }
+        },
+        {
+          "id": "s07",
+          "line": "l07",
+          "words": "Clue two: a British survey asked over six thousand people for their first *memory*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "whoosh",
+              "at": "start",
+              "gainDb": -4
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "memory",
+            "at": "crowd",
+            "fly": "start",
+            "keep": [
+              "bubble",
+              "pram",
+              "brain",
+              "boxes"
+            ],
+            "show": [
+              {
+                "item": "crowd",
+                "on": "british"
+              },
+              {
+                "item": "asked",
+                "on": "six"
+              }
+            ],
+            "from": "toddler-brain"
+          },
+          "ambience": "crowd-murmur"
+        },
+        {
+          "id": "s08",
+          "line": "l08",
+          "words": "Nearly four in ten said it came from age two or *younger*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "blip",
+              "at": "middle",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "memory",
+            "at": "crowd",
+            "fly": "start",
+            "keep": [
+              "bubble",
+              "pram",
+              "crowd",
+              "asked"
+            ],
+            "show": [
+              {
+                "item": "yellow",
+                "on": "four"
+              }
+            ]
+          },
+          "ambience": "crowd-murmur"
+        },
+        {
+          "id": "s09",
+          "line": "l09",
+          "words": "And almost nine hundred said one or younger.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "ding",
+              "at": "middle",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "memory",
+            "at": "crowd-near",
+            "fly": "start",
+            "keep": [
+              "bubble",
+              "pram",
+              "crowd",
+              "yellow"
+            ],
+            "show": [
+              {
+                "item": "one-or-younger",
+                "on": "nine"
+              },
+              {
+                "item": "hand-up",
+                "on": "younger"
+              }
+            ],
+            "from": "crowd"
+          },
+          "ambience": "crowd-murmur"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "chapter": 2,
+      "beat": "follow-the-money",
+      "mood": "curious",
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l10",
+          "speaker": "narrator",
+          "text": "Clue three: a lot of those baby memories are about a *pram*.",
+          "pauseAfterMs": 450
+        },
+        {
+          "id": "l11",
+          "speaker": "narrator",
+          "text": "But look: this one is seen from *above*.",
+          "pauseAfterMs": 450
+        },
+        {
+          "id": "l12",
+          "speaker": "narrator",
+          "text": "A baby in a pram could never see that.",
+          "pauseAfterMs": 1300
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s10",
+          "line": "l10",
+          "words": "Clue three: a lot of those baby memories are about a *pram*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": "middle",
+              "gainDb": -6
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "memory",
+            "at": "crowd",
+            "fly": "start",
+            "keep": [
+              "bubble",
+              "pram",
+              "crowd",
+              "yellow",
+              "one-or-younger"
+            ],
+            "show": [
+              {
+                "item": "prams",
+                "on": "lot"
+              }
+            ],
+            "from": "crowd-near"
+          },
+          "ambience": "crowd-murmur"
+        },
+        {
+          "id": "s11",
+          "line": "l11",
+          "words": "But look: this one is seen from *above*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "whoosh",
+              "at": "start",
+              "gainDb": -5
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "memory",
+            "at": "garden",
+            "fly": "start",
+            "keep": [
+              "bubble",
+              "pram",
+              "crowd",
+              "yellow",
+              "one-or-younger",
+              "prams"
+            ],
+            "show": [
+              {
+                "item": "above",
+                "on": "above"
+              }
+            ],
+            "from": "crowd"
+          },
+          "ambience": "birds"
+        },
+        {
+          "id": "s12",
+          "line": "l12",
+          "words": "A baby in a pram could never see that.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "memory",
+            "at": "garden",
+            "fly": "start",
+            "keep": [
+              "above"
+            ],
+            "show": [
+              {
+                "item": "inside",
+                "on": "never"
+              }
+            ]
+          },
+          "ambience": "birds"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "chapter": 2,
+      "beat": "the-trick",
+      "mood": "tense",
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l13",
+          "speaker": "narrator",
+          "text": "So here's the catch: the feeling may be real, but the *picture* came later.",
+          "pauseAfterMs": 1300
+        },
+        {
+          "id": "l14",
+          "speaker": "narrator",
+          "text": "Researchers think it was stitched together from family *photos* and stories told at dinner.",
+          "pauseAfterMs": 1000
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s13",
+          "line": "l13",
+          "words": "So here's the catch: the feeling may be real, but the *picture* came later.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "whoosh",
+              "at": "start",
+              "gainDb": -6
+            },
+            {
+              "name": "paper",
+              "at": "end",
+              "gainDb": -3
+            }
+          ],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "memory",
+            "at": "you",
+            "fly": "start",
+            "keep": [
+              "bubble",
+              "pram",
+              "above",
+              "inside"
+            ],
+            "show": [
+              {
+                "item": "flip",
+                "on": "picture",
+                "cam": "photo-back"
+              }
+            ],
+            "from": "pram-inside"
+          },
+          "drop": true
+        },
+        {
+          "id": "s14",
+          "line": "l14",
+          "words": "Researchers think it was stitched together from family *photos* and stories told at dinner.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "paper",
+              "at": "start",
+              "gainDb": -5
+            }
+          ],
+          "transition": "lens",
+          "graphic": {
+            "kind": "journey",
+            "world": "memory",
+            "at": "album",
+            "fly": "start",
+            "keep": [],
+            "show": [
+              {
+                "item": "album",
+                "on": "photos"
+              },
+              {
+                "item": "dinner",
+                "on": "stories",
+                "cam": "dinner"
+              }
+            ]
+          },
+          "diveAt": {
+            "x": 0.51,
+            "y": 0.43,
+            "r": 0.2
+          },
+          "ambience": "home"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "chapter": 2,
+      "beat": "the-proof",
+      "mood": "reflective",
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l15",
+          "speaker": "narrator",
+          "text": "And it feels just as *real*.",
+          "pauseAfterMs": 600
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s15",
+          "line": "l15",
+          "words": "And it feels just as *real*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [
+            {
+              "name": "pop",
+              "at": "end",
+              "gainDb": -6
+            }
+          ],
+          "transition": "lens-out",
+          "graphic": {
+            "kind": "journey",
+            "world": "memory",
+            "at": "bubble",
+            "fly": "start",
+            "keep": [
+              "bubble",
+              "pram"
+            ],
+            "show": [
+              {
+                "item": "collage",
+                "on": "and"
+              }
+            ]
+          },
+          "diveAt": {
+            "x": 0.532,
+            "y": 0.402,
+            "r": 0.34
+          }
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "chapter": 2,
+      "beat": "your-move",
+      "mood": "hope",
+      "place": "classroom",
+      "treatment": "simple",
+      "palette": "warm-interior",
+      "lines": [
+        {
+          "id": "l16",
+          "speaker": "narrator",
+          "text": "So is your first memory real? If it's from before age three, probably *not*.",
+          "pauseAfterMs": 600
+        },
+        {
+          "id": "l17",
+          "speaker": "narrator",
+          "text": "So which memories are really *yours*?",
+          "pauseAfterMs": 450
+        }
+      ],
+      "quiet": false,
+      "shots": [
+        {
+          "id": "s16",
+          "line": "l16",
+          "words": "So is your first memory real? If it's from before age three, probably *not*.",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "memory",
+            "at": "ruler",
+            "fly": "start",
+            "keep": [
+              "bubble",
+              "collage"
+            ],
+            "show": [
+              {
+                "item": "ruler",
+                "on": "three"
+              },
+              {
+                "item": "sink",
+                "on": "not"
+              }
+            ],
+            "from": "bubble"
+          }
+        },
+        {
+          "id": "s17",
+          "line": "l17",
+          "words": "So which memories are really *yours*?",
+          "camera": {
+            "framing": "wide",
+            "move": "none",
+            "strength": 0.2
+          },
+          "actors": [],
+          "props": [],
+          "effects": [],
+          "sfx": [],
+          "transition": "cut",
+          "graphic": {
+            "kind": "journey",
+            "world": "memory",
+            "at": "crowd",
+            "fly": "whole",
+            "keep": [
+              "bubble",
+              "collage",
+              "ruler",
+              "sink",
+              "crowd",
+              "yellow",
+              "one-or-younger",
+              "prams"
+            ],
+            "show": [
+              {
+                "item": "eyes-shut",
+                "on": "yours"
+              }
+            ],
+            "from": "ruler"
+          },
+          "ambience": "crowd-murmur"
+        }
+      ]
+    }
+  ],
+  "explainerLook": "world",
+  "cover": {
+    "shot": "s02",
+    "at": 0.7
+  },
+  "score": {
+    "palette": "mystery"
+  },
+  "gauges": [
+    {
+      "label": "THE CLUES",
+      "kind": "steps",
+      "of": 3,
+      "keys": [
+        {
+          "shot": "s05",
+          "on": "clue",
+          "value": 1
+        },
+        {
+          "shot": "s07",
+          "on": "clue",
+          "value": 2
+        },
+        {
+          "shot": "s10",
+          "on": "clue",
+          "value": 3
+        }
+      ],
+      "until": "s12"
+    }
+  ]
+}

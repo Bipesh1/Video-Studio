@@ -21,8 +21,9 @@ const example = (edit: (sb: Storyboard) => void = () => {}): Storyboard => {
 const problems = (sb: Storyboard, w: World = world) => checkStoryboard(sb, w).problems.join('\n');
 
 describe('the plug-in files', () => {
-  it('has the six starter formats of the plan, and the two niches of his own', () => {
+  it('has the six starter formats of the plan, and the niches of his own', () => {
     expect(Object.keys(world.formats).sort()).toEqual([
+      'black-history',
       'dilemma',
       'dilemma-comedy',
       'dilemma-explainer',
@@ -42,9 +43,11 @@ describe('the plug-in files', () => {
     for (const f of Object.values(world.formats)) {
       expect(f.hookRules.join(' ')).toContain('first 3 seconds');
       expect(f.shotLength.min).toBe(2);
-      // An explainer graphic is held while it builds piece by piece (The Fine Print), so its
-      // shots may run longer; a shot of people changes within about four seconds.
-      expect(f.shotLength.max).toBeLessThanOrEqual(f.id === 'fine-print' ? 7 : 5);
+      // An explainer graphic is held while it builds piece by piece (The Fine Print), and a
+      // journey's camera travels through one world (The Fine Print, the Black history page), so
+      // their shots may run longer; a shot of people changes within about four seconds.
+      const travels = f.id === 'fine-print' || f.id === 'black-history';
+      expect(f.shotLength.max).toBeLessThanOrEqual(travels ? 7 : 5);
       for (const beat of f.structure) {
         for (const mood of beat.moods) expect(MUSIC_MOODS).toContain(mood);
       }
@@ -63,6 +66,7 @@ describe('the plug-in files', () => {
       .map((f) => f.id)
       .sort();
     expect(factual).toEqual([
+      'black-history',
       'dilemma',
       'dilemma-comedy',
       'dilemma-explainer',

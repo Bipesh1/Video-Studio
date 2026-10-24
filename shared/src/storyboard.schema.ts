@@ -311,6 +311,7 @@ export const TRAVELS = [
   'wipe',
   'iris',
   'lens',
+  'lens-out',
 ] as const;
 export type Travel = (typeof TRAVELS)[number];
 /** The directions the camera takes in turn when a shot asks for none (`arrivalOf`). */
@@ -435,9 +436,11 @@ export const shotSchema = z
      * holds on it while the picture around it changes); wipe sweeps the next picture in from
      * the left behind a slanted dark edge; iris opens it in a growing circle from a point of the
      * last picture (`diveAt`). Wipe and iris are the motion-graphics moves (2026-10-16).
-     * lens: a magnifying glass on a point of the last picture (`diveAt`): a ringed circle pops
-     * open there with this picture inside, holds a moment, then grows to fill the frame
-     * (2026-10-22, from the Kurzgesagt Shorts: into the ovary, into a cell).
+     * lens: a circle opens on a thing of the last picture (`diveAt`, its size `r`) with this
+     * picture inside and grows to fill the frame in about half a second; lens-out is the reverse:
+     * the last picture shrinks into a circle that lands on a thing of this one (`diveAt` and
+     * `r`) and settles into it (2026-10-22 and 2026-10-24, from three Kurzgesagt Shorts: a
+     * circle opening on the towel into the dust, the soot shrinking back into the lungs).
      */
     transition: z.enum(['cut', 'fade', 'whip', 'rewind', ...TRAVELS]).default('cut'),
     /**
@@ -459,7 +462,12 @@ export const shotSchema = z
     matchTo: spotSchema.optional(),
     /** Where in the last picture a dive goes in: the thing the next picture grows out of. */
     diveAt: z
-      .object({ x: z.number().min(0).max(1), y: z.number().min(0).max(1) })
+      .object({
+        x: z.number().min(0).max(1),
+        y: z.number().min(0).max(1),
+        /** For a lens: the circle's size on that thing, as a share of the frame's width. */
+        r: z.number().positive().max(1).optional(),
+      })
       .strict()
       .optional(),
     /** Filled in by the voice stage: shot length is always driven by the audio. */

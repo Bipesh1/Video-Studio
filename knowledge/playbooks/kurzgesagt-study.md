@@ -99,3 +99,17 @@ Biku put a screen recording of a Kurzgesagt Short in the project to learn "how t
 6. **The circle into the body:** a silhouette or a body with a magnifying circle that opens and takes the camera through to the next scene.
 7. **A colour per part**, matched to its mood.
 8. **The end widens or leans on:** wonder ("this extraordinary piece of biology") or the next step ("to live even longer, we'd have to...").
+
+## A third Short, studied for its camera (2026-10-24)
+
+`references/kurzgesagt/short-3.mp4` (46 s; household dust: soil, pollen and fibres, dust mites, what fine particles do in the lungs and the blood, and the good side, raindrops and Saharan dust feeding the Amazon). Biku sent it after our first 1-minute Short ("Your First Memory"), whose camera he found "odd": "it should be smooth animations and movement ... most of the time it should be continuous camera shots and for few areas it can be separate frames". Measured: 3 hard cuts in 46 s, each at a complete change of subject (the mites to the man, the man to the fireplace, the deaths to the raindrop); the picture is moving 23% of the time.
+
+How it moves between pictures without cutting:
+
+- **Pans and tilts in one world:** along the windowsill from the plants to the garden outside, a quick swing (motion-blurred, under a second) to the sink, a slow pull back; down out of the cloud of dust onto the carpet where the mites walk, then a slide across to skin.
+- **Lens in:** a small circle opens on the thing being named (the towel, the fire) and grows to fill the frame in about a third of a second; no pop, no pause.
+- **Lens out:** the reverse, the close-up (a soot particle) shrinks back into a circle that lands inside the next picture (the lungs of a person), which is how they jump scale without a cut.
+- **The x-ray in the same frame:** the man turns into a dark silhouette with glowing lungs, then the blood vessels draw on over it; the camera does not move.
+- **Moves are quick (0.3 to 1 s) and then hold** for 2 to 4 seconds with a slow drift.
+
+What changed in the studio (the memory Short rebuilt, 2026-10-24): one continuous camera through a world joined by doors (into the bubble and back out of it), the head as an x-ray instead of a separate set, a quick lens and a lens-out (`lens`, `lens-out` with `diveAt.r`), and a camera that glides to things named close together instead of cutting (`tooSoon: 'glide'` in `wordCamera`).

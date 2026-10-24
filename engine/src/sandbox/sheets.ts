@@ -46,6 +46,9 @@ export const STILL_SHEETS = [
   'drawing-look-3',
   'drawing-people-1',
   'drawing-people-2',
+  'memory-thumb-1',
+  'memory-thumb-2',
+  'memory-thumb-3',
 ] as const;
 export const VIDEO_SHEETS = {
   walk: 4,
@@ -70,6 +73,7 @@ export const VIDEO_SHEETS = {
   'catch-mascots': 1,
   'dilemma-look-world': 6,
   'dilemma-look-arena': 6,
+  'smalls-test': 15,
 } as const;
 export const BACKGROUNDS = ['light', 'dark'] as const;
 

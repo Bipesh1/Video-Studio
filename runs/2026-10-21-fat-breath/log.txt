@@ -288,3 +288,18 @@
 2026-10-22T17:10:06.992Z  part 1  bundle: done in 48.2 s
 2026-10-22T17:16:26.854Z  part 1    runs\2026-10-21-fat-breath\part-1\clips\fat-breath-part-1-9x16-4-19s-v7.mp4: seconds 4 to 19, in 373.4 s
 2026-10-22T17:16:26.895Z  part 1  clip: done in 428.1 s
+2026-10-23T11:23:29.552Z  part 1  part 1 of 3, 9:16: 3 scenes, 8 shots
+2026-10-23T11:23:29.580Z  part 1  voice: start
+2026-10-23T11:29:58.686Z  part 1    voice.wav: 41.71 s, 107 words, timings from kokoro, -17.12 LUFS
+2026-10-23T11:29:58.709Z  part 1  voice: done in 389.1 s
+2026-10-23T11:29:58.709Z  part 1  time: start
+2026-10-23T11:29:58.744Z  part 1    8 shots over 41.7 s: shortest 2.1 s, longest 6.9 s
+2026-10-23T11:29:58.756Z  part 1  time: done in 0.0 s
+2026-10-23T11:29:58.756Z  part 1  sound: start
+2026-10-23T11:30:33.254Z  part 1    F:\Video Studio\runs\2026-10-21-fat-breath\part-1\audio\mix.wav: 41.71 s, -14.03 LUFS, true peak -1.04 dB, 2 music moods, 32 effects, music -16.9 dB under the voice
+2026-10-23T11:30:33.255Z  part 1  sound: done in 34.5 s
+2026-10-23T11:30:33.255Z  part 1  clip: start
+2026-10-23T11:30:33.336Z  part 1  bundle: start
+2026-10-23T11:31:34.264Z  part 1  bundle: done in 60.8 s
+2026-10-23T11:36:38.847Z  part 1    runs\2026-10-21-fat-breath\part-1\clips\fat-breath-part-1-9x16-12-22s-v1.mp4: seconds 12 to 22, in 262.9 s
+2026-10-23T11:36:38.871Z  part 1  clip: done in 365.6 s

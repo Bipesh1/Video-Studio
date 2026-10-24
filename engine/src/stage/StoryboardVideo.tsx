@@ -30,7 +30,7 @@ import {
 import { Gauges } from '../overlays/Gauge';
 import { Label, TitleCard } from '../overlays/Titles';
 import type { Overlay } from '@studio/shared';
-import { clamp, easeOutBack } from '../rig/math';
+import { clamp } from '../rig/math';
 import { ink, white } from '../tokens';
 import { lookFrom } from '../wardrobe/cast';
 import { shotAt, timedShots } from './layout';
@@ -129,12 +129,12 @@ const easeInOutCubic = (t: number): number => {
  * dive goes in before the next picture has grown out of its point, and the blur at its fastest.
  */
 export const TRAVEL_FRAMES = 14;
-/** A lens takes longer: it pops open, holds so the inside can be seen, then grows. */
-export const LENS_FRAMES = 32;
+/** A lens opens or closes in about half a second, as Kurzgesagt's do. */
+export const LENS_FRAMES = 16;
 const DIVE_ZOOM = 6;
 const TRAVEL_BLUR = 0.02;
 const TRAVEL_DIRECTION: Record<
-  Exclude<Travel, 'dive' | 'match' | 'wipe' | 'iris' | 'lens'>,
+  Exclude<Travel, 'dive' | 'match' | 'wipe' | 'iris' | 'lens' | 'lens-out'>,
   { x: number; y: number }
 > = {
   'travel-right': { x: 1, y: 0 },
@@ -194,7 +194,7 @@ export const StoryboardVideo = ({
   // held on its final frame.
   const before = shots[ts.index - 1];
   const arrives = arrivalOf(ts.shot, before?.shot, ts.index);
-  const travelFrames = arrives === 'lens' ? LENS_FRAMES : TRAVEL_FRAMES;
+  const travelFrames = arrives === 'lens' || arrives === 'lens-out' ? LENS_FRAMES : TRAVEL_FRAMES;
   const travel =
     before && (TRAVELS as readonly string[]).includes(arrives) && local < travelFrames
       ? {
@@ -234,41 +234,47 @@ export const StoryboardVideo = ({
       : null;
     const wash = (shown: number) =>
       page ? <rect width={width} height={height} fill={page} opacity={shown} /> : null;
-    if (kind === 'lens') {
-      // A magnifying glass: a ringed circle pops open on the point with this picture inside,
-      // holds while the camera leans in, then grows until it is the whole frame.
-      const { u } = travel;
+    if (kind === 'lens' || kind === 'lens-out') {
+      // A circle on a thing: in, it opens there with this picture inside and grows to fill the
+      // frame; out, the last picture shrinks into a circle that lands on a thing of this one,
+      // then fades into it. A white edge marks the circle while it moves.
       const at = ts.shot.diveAt ?? { x: 0.5, y: 0.5 };
       const px = at.x * width;
       const py = at.y * height;
-      const r0 = 0.24 * Math.min(width, height);
-      const pop = easeOutBack(clamp(u / 0.3, 0, 1), 1.7);
-      const grow = easeInOutCubic(clamp((u - 0.55) / 0.45, 0, 1));
-      const far = Math.hypot(Math.max(px, width - px), Math.max(py, height - py)) * 1.05;
-      const r = r0 * pop + (far - r0) * grow;
-      // Inside, the next picture is centred on the lens, and slides back to the middle as it grows.
-      const dx = (px - width / 2) * (1 - grow);
-      const dy = (py - height / 2) * (1 - grow);
-      const lean = 1 + 0.12 * clamp(u / 0.6, 0, 1);
-      const ring = 0.012 * Math.min(width, height) * (1 - grow);
+      const small = (at.r ?? 0.12) * width;
+      const far = Math.hypot(Math.max(px, width - px), Math.max(py, height - py)) * 1.04;
+      const into = kind === 'lens';
+      const g = easeInOutCubic(travel.u);
+      const r = into ? small + (far - small) * g : far + (small - far) * g;
+      const ring =
+        0.01 * Math.min(width, height) * Math.sin(Math.PI * Math.min(1, travel.u * 1.15));
       const id = `lens-${ts.index}`;
+      // The picture inside the circle sits centred on it while small, and fills the frame when big.
+      const big = into ? g : 1 - g;
+      const inner = into ? now : old;
+      const outer = into ? old : now;
+      const k = into ? 0.55 + 0.45 * g : 1 - 0.45 * g;
+      const cx = width / 2 + (px - width / 2) * (1 - big);
+      const cy = height / 2 + (py - height / 2) * (1 - big);
+      const fade = into ? 1 : 1 - clamp((travel.u - 0.7) / 0.3, 0, 1);
       return (
         <>
-          <g transform={`translate(${px} ${py}) scale(${lean}) translate(${-px} ${-py})`}>{old}</g>
+          <g
+            transform={`translate(${px} ${py}) scale(${into ? 1 + 0.08 * g : 1}) translate(${-px} ${-py})`}
+          >
+            {outer}
+          </g>
           <defs>
             <clipPath id={id}>
               <circle cx={px} cy={py} r={Math.max(0, r)} />
             </clipPath>
           </defs>
-          <circle
-            cx={px}
-            cy={py + ring * 1.5}
-            r={Math.max(0, r + ring)}
-            fill={ink}
-            opacity={0.35}
-          />
-          <g clipPath={`url(#${id})`}>
-            <g transform={`translate(${dx} ${dy})`}>{now}</g>
+          <g clipPath={`url(#${id})`} opacity={fade}>
+            <g
+              transform={`translate(${cx} ${cy}) scale(${k}) translate(${-width / 2} ${-height / 2})`}
+            >
+              {inner}
+            </g>
           </g>
           {ring > 0.5 && (
             <circle
@@ -278,6 +284,7 @@ export const StoryboardVideo = ({
               fill="none"
               stroke={white}
               strokeWidth={ring * 2}
+              opacity={fade}
             />
           )}
         </>

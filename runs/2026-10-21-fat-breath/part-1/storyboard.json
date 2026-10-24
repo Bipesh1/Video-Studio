@@ -186,7 +186,7 @@
           "id": "l03",
           "speaker": "narrator",
           "text": "Most said it turns into *energy* or heat, and a few said muscle, or the toilet.",
-          "pauseAfterMs": 500
+          "pauseAfterMs": 1300
         },
         {
           "id": "l04",
@@ -245,7 +245,7 @@
           "ambience": "crowd-murmur",
           "transition": "cut",
           "startMs": 12790,
-          "endMs": 18060
+          "endMs": 18860
         },
         {
           "id": "s04",
@@ -279,8 +279,8 @@
           },
           "ambience": "home",
           "transition": "cut",
-          "startMs": 18060,
-          "endMs": 23790
+          "startMs": 18860,
+          "endMs": 24590
         }
       ]
     },
@@ -352,8 +352,8 @@
           },
           "ambience": "underwater",
           "transition": "cut",
-          "startMs": 23790,
-          "endMs": 27322
+          "startMs": 24590,
+          "endMs": 28122
         },
         {
           "id": "s06",
@@ -386,8 +386,8 @@
           },
           "ambience": "underwater",
           "transition": "cut",
-          "startMs": 27322,
-          "endMs": 29390
+          "startMs": 28122,
+          "endMs": 30190
         },
         {
           "id": "s07",
@@ -434,8 +434,8 @@
           },
           "ambience": "underwater",
           "transition": "cut",
-          "startMs": 29390,
-          "endMs": 35030
+          "startMs": 30190,
+          "endMs": 35830
         },
         {
           "id": "s08",
@@ -469,8 +469,8 @@
           },
           "ambience": "underwater",
           "transition": "cut",
-          "startMs": 35030,
-          "endMs": 40910
+          "startMs": 35830,
+          "endMs": 41710
         }
       ]
     }

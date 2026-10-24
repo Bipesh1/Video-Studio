@@ -7,6 +7,7 @@ import { J, LINE, MASCOT_HEAD, MASCOT_TALL, at, font, rnd } from './bodyKit';
 import type { Room, State } from './bodyKit';
 import { clamp, outBack, smooth, viewOf, zoomPath } from './Journey';
 import type { Cam } from './Journey';
+import { wordCamera } from './wordCamera';
 
 /**
  * The world `body` (2026-10-21, "Where Does Your Fat Go When You Lose Weight?", Biku's script):
@@ -131,9 +132,6 @@ export function bodyFlightFrames(from: JourneyStop, to: JourneyStop, fps: number
   return Math.round(fps * clamp(0.9 + 0.1 * zoomPath(a.cam, b.cam).S, 1.0, 2.2));
 }
 
-/** Seconds the camera rests after a move before it moves again; anything sooner is a cut. */
-const CAMERA_REST = 1.5;
-
 /** Where the mascot is while the camera is at a stop. */
 const roomOf = (stop: string): Room =>
   stop === 'gym' ||
@@ -223,10 +221,12 @@ export function BodyPicture({
   const a = stopOf(from, tall);
   const b = stopOf(g.at, tall);
   const raw = fly > 0 ? clamp(local / fly) : 1;
-  const held =
-    fly > 0 ? clamp((local - fly) / Math.max(1, duration - fly)) : clamp(local / duration);
   // The camera never quite stops: once there, it keeps drifting slowly in.
-  const drift = (c: Cam): Cam => ({ ...c, x: c.x + c.w * 0.02 * held, w: c.w * (1 - 0.07 * held) });
+  const drift = (c: Cam, held: number): Cam => ({
+    ...c,
+    x: c.x + c.w * 0.02 * held,
+    w: c.w * (1 - 0.07 * held),
+  });
 
   let place: Place;
   let cam: Cam;
@@ -247,39 +247,24 @@ export function BodyPicture({
       rush = 1 - smooth((raw - 0.58) / 0.22);
     }
   }
-  // Moving on, close on one thing after another, each on its word (2026-10-22, the Kurzgesagt
-  // study: few big subjects, a camera that keeps moving between them). Measured against their
-  // Shorts, a move every word was too busy (Biku: "is the camera movement too fast?"), so a move
-  // is unhurried, the camera then rests at least REST (drifting only), and a thing named sooner
-  // than that is cut to, as they do.
-  const legs = g.show
-    .map((x, i) => ({ to: x.cam, start: times[i] ?? 0 }))
-    .filter(
-      (l): l is { to: JourneyStop; start: number } => !!l.to && stopOf(l.to, tall).place === place,
-    )
-    .sort((p, q) => p.start - q.start);
-  const plans: { start: number; from: Cam; to: Cam; frames: number }[] = [];
-  let free = (fly > 0 ? fly : 0) + CAMERA_REST * fps;
-  let where = b.cam;
-  legs.forEach((leg, i) => {
-    const to = stopOf(leg.to, tall).cam;
-    const move = fps * clamp(0.85 + 0.1 * zoomPath(where, to).S, 1.0, 1.5);
-    // A move it has no time to finish and show is a cut: the next thing comes too soon.
-    const next = legs[i + 1]?.start ?? Infinity;
-    const frames = leg.start < free || next - leg.start < move + 0.8 * fps ? 0 : move;
-    plans.push({ start: leg.start, from: where, to, frames });
-    where = to;
-    free = leg.start + frames + CAMERA_REST * fps;
+  // Then on to each stop named on a word, calmly (wordCamera).
+  const moved = wordCamera({
+    legs: g.show
+      .map((x, i) => ({ to: x.cam, start: times[i] ?? 0 }))
+      .filter((l): l is { to: JourneyStop; start: number } => !!l.to)
+      .map((l) => ({ ...l, at: stopOf(l.to, tall) }))
+      .filter((l) => l.at.place === place)
+      .map((l) => ({ to: l.to, at: l.at.cam, start: l.start }))
+      .sort((p, q) => p.start - q.start),
+    flown: cam,
+    arrived: b.cam,
+    fly,
+    local,
+    duration,
+    fps,
+    drift,
   });
-  const last = plans.filter((l) => l.start <= local).at(-1);
-  if (last) {
-    const u = last.frames > 0 ? clamp((local - last.start) / last.frames) : 1;
-    cam = u >= 1 ? last.to : zoomPath(last.from, last.to).at(smooth(u));
-    // Once there, the slow drift in starts again from the new place.
-    const settled = last.start + last.frames;
-    const since = clamp((local - settled) / Math.max(1, duration - settled));
-    cam = { ...cam, x: cam.x + cam.w * 0.015 * since, w: cam.w * (1 - 0.05 * since) };
-  } else cam = drift(cam);
+  cam = moved.cam;
 
   const atWord = new Map<JourneyThing, number>();
   g.show.forEach((x, i) => atWord.set(x.item, times[i] ?? 0));
@@ -304,7 +289,7 @@ export function BodyPicture({
     room,
     wasRoom: was !== room ? was : null,
     leave: clamp(local / (fps * 0.35)),
-    stop: legs.filter((l) => l.start <= local).at(-1)?.to ?? g.at,
+    stop: moved.stop ?? g.at,
   };
 
   const v = viewOf(cam, width, height);

@@ -1,0 +1,286 @@
+2026-10-23T16:16:08.890Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-23T16:16:08.894Z  part 1  voice: start
+2026-10-23T16:39:18.348Z  part 1    voice.wav: 37.24 s, 85 words, timings from estimated, -17.06 LUFS
+2026-10-23T16:39:18.463Z  part 1  voice: done in 1389.5 s
+2026-10-23T16:39:18.463Z  part 1  time: start
+2026-10-23T16:39:18.503Z  part 1    9 shots over 37.2 s: shortest 2.5 s, longest 6.5 s
+2026-10-23T16:39:18.504Z  part 1  time: done in 0.0 s
+2026-10-23T16:40:39.886Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-23T16:40:39.890Z  part 1  time: start
+2026-10-23T16:40:39.895Z  part 1    9 shots over 37.2 s: shortest 2.5 s, longest 6.5 s
+2026-10-23T16:40:39.896Z  part 1  time: done in 0.0 s
+2026-10-23T16:40:39.896Z  part 1  stills: start
+2026-10-23T16:40:39.897Z  part 1  bundle: start
+2026-10-23T16:41:33.014Z  part 1  bundle: done in 53.1 s
+2026-10-23T16:42:30.029Z  part 1    9 stills in runs\2026-10-23-first-memory\part-1\stills\9x16
+2026-10-23T16:42:30.472Z  part 1    runs\2026-10-23-first-memory\part-1\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-23T16:42:31.479Z  part 1    runs\2026-10-23-first-memory\part-1\stills\sheet-9x16-1.png (9 shots, 3 rows)
+2026-10-23T16:42:31.479Z  part 1  stills: done in 111.6 s
+2026-10-23T16:46:29.531Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-23T16:46:29.532Z  part 1  time: start
+2026-10-23T16:46:29.536Z  part 1    9 shots over 37.2 s: shortest 2.5 s, longest 6.5 s
+2026-10-23T16:46:29.537Z  part 1  time: done in 0.0 s
+2026-10-23T16:46:29.537Z  part 1  stills: start
+2026-10-23T16:46:29.538Z  part 1  bundle: start
+2026-10-23T16:46:39.221Z  part 1  bundle: done in 9.7 s
+2026-10-23T16:47:08.007Z  part 1    9 stills in runs\2026-10-23-first-memory\part-1\stills\9x16
+2026-10-23T16:47:08.473Z  part 1    runs\2026-10-23-first-memory\part-1\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-23T16:47:09.573Z  part 1    runs\2026-10-23-first-memory\part-1\stills\sheet-9x16-1.png (9 shots, 3 rows)
+2026-10-23T16:47:09.574Z  part 1  stills: done in 40.0 s
+2026-10-23T16:47:57.129Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-23T16:47:57.131Z  part 1  sound: start
+2026-10-23T16:48:30.061Z  part 1    F:\Video Studio\runs\2026-10-23-first-memory\part-1\audio\mix.wav: 37.24 s, -14.03 LUFS, true peak -1.26 dB, 3 music moods, 27 effects, music -17.4 dB under the voice
+2026-10-23T16:48:30.062Z  part 1  sound: done in 32.9 s
+2026-10-23T16:48:30.062Z  part 1  video: start
+2026-10-23T16:48:30.087Z  part 1  bundle: start
+2026-10-23T16:48:34.041Z  part 1  bundle: done in 4.0 s
+2026-10-23T16:57:49.033Z  part 1    runs\2026-10-23-first-memory\part-1\out\first-memory-part-1-9x16-v1.mp4: 37.27 s of video, 1080x1920, in 549.0 s (14.73 s per video second)
+2026-10-23T16:57:49.038Z  part 1    runs\2026-10-23-first-memory\part-1\out\first-memory-part-1-9x16-v1.srt
+2026-10-23T16:57:49.058Z  part 1  video: done in 559.0 s
+2026-10-23T16:59:23.985Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-23T16:59:23.987Z  part 1  time: start
+2026-10-23T16:59:23.991Z  part 1    9 shots over 37.2 s: shortest 2.5 s, longest 6.5 s
+2026-10-23T16:59:23.992Z  part 1  time: done in 0.0 s
+2026-10-23T16:59:23.992Z  part 1  sound: start
+2026-10-23T16:59:35.434Z  part 1    F:\Video Studio\runs\2026-10-23-first-memory\part-1\audio\mix.wav: 37.24 s, -14.03 LUFS, true peak -1.26 dB, 3 music moods, 27 effects, music -17.4 dB under the voice
+2026-10-23T16:59:35.435Z  part 1  sound: done in 11.4 s
+2026-10-23T16:59:35.435Z  part 1  video: start
+2026-10-23T16:59:35.456Z  part 1  bundle: start
+2026-10-23T16:59:59.098Z  part 1  bundle: done in 23.6 s
+2026-10-23T17:10:17.185Z  part 1    runs\2026-10-23-first-memory\part-1\out\first-memory-part-1-9x16-v2.mp4: 37.27 s of video, 1080x1920, in 612.4 s (16.43 s per video second)
+2026-10-23T17:10:17.190Z  part 1    runs\2026-10-23-first-memory\part-1\out\first-memory-part-1-9x16-v2.srt
+2026-10-23T17:10:17.210Z  part 1  video: done in 641.8 s
+2026-10-23T17:11:39.942Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-23T17:11:39.944Z  part 1  video: start
+2026-10-23T17:11:39.978Z  part 1  bundle: start
+2026-10-23T17:11:58.886Z  part 1  bundle: done in 18.9 s
+2026-10-23T17:22:12.397Z  part 1    runs\2026-10-23-first-memory\part-1\out\first-memory-part-1-9x16-v3.mp4: 37.27 s of video, 1080x1920, in 608.7 s (16.33 s per video second)
+2026-10-23T17:22:12.401Z  part 1    runs\2026-10-23-first-memory\part-1\out\first-memory-part-1-9x16-v3.srt
+2026-10-23T17:22:12.413Z  part 1  video: done in 632.5 s
+2026-10-23T17:23:05.038Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-23T17:23:05.040Z  part 1  stills: start
+2026-10-23T17:23:05.059Z  part 1  bundle: start
+2026-10-23T17:23:26.123Z  part 1  bundle: done in 21.1 s
+2026-10-23T17:23:45.054Z  part 1    9 stills in runs\2026-10-23-first-memory\part-1\stills\9x16
+2026-10-23T17:23:45.437Z  part 1    runs\2026-10-23-first-memory\part-1\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-23T17:23:46.473Z  part 1    runs\2026-10-23-first-memory\part-1\stills\sheet-9x16-1.png (9 shots, 3 rows)
+2026-10-23T17:23:46.473Z  part 1  stills: done in 41.4 s
+2026-10-23T17:27:36.003Z  part 2  part 2 of 2, 9:16: 4 scenes, 8 shots
+2026-10-23T17:27:36.004Z  part 2  voice: start
+2026-10-23T17:37:15.222Z  part 2    voice.wav: 32.53 s, 83 words, timings from heard, -17.09 LUFS
+2026-10-23T17:37:15.274Z  part 2  voice: done in 579.2 s
+2026-10-23T17:37:15.275Z  part 2  time: start
+2026-10-23T17:37:15.364Z  part 2    8 shots over 32.5 s: shortest 2.3 s, longest 5.7 s
+2026-10-23T17:37:15.364Z  part 2  time: done in 0.1 s
+2026-10-23T17:37:15.365Z  part 2  stills: start
+2026-10-23T17:37:15.365Z  part 2  bundle: start
+2026-10-23T17:38:00.672Z  part 2  bundle: done in 45.2 s
+2026-10-23T17:38:36.689Z  part 2    8 stills in runs\2026-10-23-first-memory\part-2\stills\9x16
+2026-10-23T17:38:37.187Z  part 2    runs\2026-10-23-first-memory\part-2\stills\colours-9x16.png (the first shot of each of 4 scenes)
+2026-10-23T17:38:38.077Z  part 2    runs\2026-10-23-first-memory\part-2\stills\sheet-9x16-1.png (8 shots, 2 rows)
+2026-10-23T17:38:38.077Z  part 2  stills: done in 82.7 s
+2026-10-23T17:39:13.464Z  part 2  part 2 of 2, 9:16: 4 scenes, 8 shots
+2026-10-23T17:39:13.465Z  part 2  time: start
+2026-10-23T17:39:13.469Z  part 2    8 shots over 32.5 s: shortest 2.3 s, longest 5.7 s
+2026-10-23T17:39:13.470Z  part 2  time: done in 0.0 s
+2026-10-23T17:39:13.470Z  part 2  stills: start
+2026-10-23T17:39:13.471Z  part 2  bundle: start
+2026-10-23T17:39:17.326Z  part 2  bundle: done in 3.9 s
+2026-10-23T17:39:38.283Z  part 2    8 stills in runs\2026-10-23-first-memory\part-2\stills\9x16
+2026-10-23T17:39:38.760Z  part 2    runs\2026-10-23-first-memory\part-2\stills\colours-9x16.png (the first shot of each of 4 scenes)
+2026-10-23T17:39:39.697Z  part 2    runs\2026-10-23-first-memory\part-2\stills\sheet-9x16-1.png (8 shots, 2 rows)
+2026-10-23T17:39:39.697Z  part 2  stills: done in 26.2 s
+2026-10-23T17:41:05.496Z  part 2  part 2 of 2, 9:16: 4 scenes, 8 shots
+2026-10-23T17:41:05.498Z  part 2  sound: start
+2026-10-23T17:41:25.101Z  part 2    F:\Video Studio\runs\2026-10-23-first-memory\part-2\audio\mix.wav: 32.53 s, -14.05 LUFS, true peak -1.25 dB, 4 music moods, 27 effects, music -17.4 dB under the voice
+2026-10-23T17:41:25.101Z  part 2  sound: done in 19.6 s
+2026-10-23T17:41:25.102Z  part 2  video: start
+2026-10-23T17:41:25.122Z  part 2  bundle: start
+2026-10-23T17:41:32.067Z  part 2  bundle: done in 6.9 s
+2026-10-23T17:49:42.679Z  part 2  part 2 of 2, 9:16: 4 scenes, 8 shots
+2026-10-23T17:49:42.680Z  part 2  video: start
+2026-10-23T17:49:42.696Z  part 2  bundle: start
+2026-10-23T17:49:46.606Z  part 2  bundle: done in 3.9 s
+2026-10-23T17:58:15.368Z  part 2  part 2 of 2, 9:16: 4 scenes, 8 shots
+2026-10-23T17:58:15.369Z  part 2  clip: start
+2026-10-23T17:58:15.384Z  part 2  bundle: start
+2026-10-23T17:58:38.296Z  part 2  bundle: done in 22.9 s
+2026-10-23T18:02:54.444Z  part 2    runs\2026-10-23-first-memory\part-2\clips\first-memory-part-2-9x16-3-7s-v1.mp4: seconds 3 to 7, in 248.3 s
+2026-10-23T18:02:54.445Z  part 2  clip: done in 279.1 s
+2026-10-23T18:03:10.266Z  part 2  part 2 of 2, 9:16: 4 scenes, 8 shots
+2026-10-23T18:03:10.267Z  part 2  video: start
+2026-10-23T18:03:10.281Z  part 2  bundle: start
+2026-10-23T18:03:24.323Z  part 2  bundle: done in 14.0 s
+2026-10-23T18:15:49.341Z  part 2    runs\2026-10-23-first-memory\part-2\out\first-memory-part-2-9x16-v1.mp4: 32.57 s of video, 1080x1920, in 742.3 s (22.79 s per video second)
+2026-10-23T18:15:49.346Z  part 2    runs\2026-10-23-first-memory\part-2\out\first-memory-part-2-9x16-v1.srt
+2026-10-23T18:15:49.361Z  part 2  video: done in 759.1 s
+2026-10-23T18:17:50.541Z  part 2  part 2 of 2, 9:16: 4 scenes, 8 shots
+2026-10-23T18:17:50.543Z  part 2  voice: start
+2026-10-23T18:17:54.739Z  part 2    voice.wav: 33.09 s, 83 words, timings from heard, -17.1 LUFS
+2026-10-23T18:17:54.739Z  part 2  voice: done in 4.2 s
+2026-10-23T18:17:54.740Z  part 2  time: start
+2026-10-23T18:17:54.751Z  part 2    8 shots over 33.1 s: shortest 2.3 s, longest 5.7 s
+2026-10-23T18:17:54.751Z  part 2  time: done in 0.0 s
+2026-10-23T18:17:54.752Z  part 2  sound: start
+2026-10-23T18:18:04.905Z  part 2    F:\Video Studio\runs\2026-10-23-first-memory\part-2\audio\mix.wav: 33.09 s, -14.01 LUFS, true peak -1.25 dB, 4 music moods, 26 effects, music -17.4 dB under the voice
+2026-10-23T18:18:04.906Z  part 2  sound: done in 10.2 s
+2026-10-23T18:18:04.906Z  part 2  video: start
+2026-10-23T18:18:04.925Z  part 2  bundle: start
+2026-10-23T18:18:21.081Z  part 2  bundle: done in 16.2 s
+2026-10-23T18:30:52.294Z  part 2    runs\2026-10-23-first-memory\part-2\out\first-memory-part-2-9x16-v2.mp4: 33.10 s of video, 1080x1920, in 748.4 s (22.61 s per video second)
+2026-10-23T18:30:52.298Z  part 2    runs\2026-10-23-first-memory\part-2\out\first-memory-part-2-9x16-v2.srt
+2026-10-23T18:30:52.308Z  part 2  video: done in 767.4 s
+2026-10-23T18:31:26.266Z  part 2  part 2 of 2, 9:16: 4 scenes, 8 shots
+2026-10-23T18:31:26.268Z  part 2  stills: start
+2026-10-23T18:31:26.282Z  part 2  bundle: start
+2026-10-23T18:31:40.109Z  part 2  bundle: done in 13.8 s
+2026-10-23T18:31:57.703Z  part 2    8 stills in runs\2026-10-23-first-memory\part-2\stills\9x16
+2026-10-23T18:31:58.170Z  part 2    runs\2026-10-23-first-memory\part-2\stills\colours-9x16.png (the first shot of each of 4 scenes)
+2026-10-23T18:31:59.058Z  part 2    runs\2026-10-23-first-memory\part-2\stills\sheet-9x16-1.png (8 shots, 2 rows)
+2026-10-23T18:31:59.058Z  part 2  stills: done in 32.8 s
+2026-10-23T18:36:19.571Z  output  9:16 full video:
+2026-10-23T18:36:42.518Z  output      F:\Video Studio\runs\2026-10-23-first-memory\cuts\full\audio\mix.wav: 70.37 s, -14.01 LUFS, true peak -1.2 dB, 6 music moods, 53 effects, music -17.3 dB under the voice
+2026-10-23T18:39:21.276Z  output    runs\2026-10-23-first-memory\out\first-memory-9x16-v1.mp4: 70.37 s, 1080x1920
+2026-10-23T18:39:21.277Z  output      ok   The file plays: 1080x1920, 30 pictures a second, 70.4 s, picture and sound both there; played through from start to finish
+2026-10-23T18:39:21.278Z  output      ok   It is as long as its parts together: 70.4 s; its 2 pieces add up to 70.4 s
+2026-10-23T18:39:21.278Z  output      ok   Its pictures are the parts that passed: every frame against first-memory-part-1-9x16-v3.mp4 and first-memory-part-2-9x16-v2.mp4 (the strongest difference is 1 of 255; over 16 would be a different picture)
+2026-10-23T18:39:21.279Z  output      ok   Its sound is the mix made for the whole video: second for second (what is left over is 36 dB under it at most)
+2026-10-23T18:39:21.279Z  output      ok   There is no dead silence: the sound never drops out; the longest pause between words is 2.5 s
+2026-10-23T18:39:21.280Z  output      ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.2 dB (the limit is -1)
+2026-10-23T18:39:21.280Z  output      ok   Nothing drowns the words: 53 sound effects, the loudest of those over words 14 dB under the voice; the music sits 17.3 dB under the voice while someone speaks
+2026-10-23T18:39:21.281Z  output      FIX  Every join and the cover hold up: a strip of frames across the join between parts, and the cover picture
+2026-10-23T18:39:21.281Z  output            problem: the joins and the cover have not been looked at yet
+2026-10-23T18:39:21.281Z  output      to look at: runs\2026-10-23-first-memory\out\look\first-memory-9x16-v1 (each join) and runs\2026-10-23-first-memory\out\first-memory-9x16-v1-cover-side.jpg; then write runs\2026-10-23-first-memory\out\first-memory-9x16-v1.look.json
+2026-10-23T18:39:21.284Z  output  runs\2026-10-23-first-memory\delivery.md
+2026-10-23T18:39:53.852Z  output  9:16 full video:
+2026-10-23T18:39:54.250Z  output    runs\2026-10-23-first-memory\out\first-memory-9x16-v1.mp4: already made from these parts
+2026-10-23T18:39:54.422Z  output  runs\2026-10-23-first-memory\delivery.md
+2026-10-24T06:16:30.573Z  part 2  part 2 of 2, 9:16: 4 scenes, 8 shots
+2026-10-24T06:16:30.592Z  part 2  clip: start
+2026-10-24T06:16:30.866Z  part 2  bundle: start
+2026-10-24T06:17:37.558Z  part 2  bundle: done in 66.7 s
+2026-10-24T06:18:40.011Z  part 2    runs\2026-10-23-first-memory\part-2\clips\first-memory-part-2-9x16-6-10s-v1.mp4: seconds 6 to 10, in 41.8 s
+2026-10-24T06:18:40.013Z  part 2  clip: done in 129.4 s
+2026-10-24T06:19:08.474Z  part 2  part 2 of 2, 9:16: 4 scenes, 8 shots
+2026-10-24T06:19:08.476Z  part 2  video: start
+2026-10-24T06:19:08.494Z  part 2  bundle: start
+2026-10-24T06:19:26.241Z  part 2  bundle: done in 17.7 s
+2026-10-24T06:30:28.933Z  part 2  part 2 of 2, 9:16: 4 scenes, 8 shots
+2026-10-24T06:30:28.955Z  part 2  clip: start
+2026-10-24T06:30:28.971Z  part 2  bundle: start
+2026-10-24T06:30:59.772Z  part 2  bundle: done in 30.8 s
+2026-10-24T06:32:44.369Z  part 2    runs\2026-10-23-first-memory\part-2\clips\first-memory-part-2-9x16-3-7s-v2.mp4: seconds 3 to 7, in 101.4 s
+2026-10-24T06:32:44.370Z  part 2  clip: done in 135.4 s
+2026-10-24T06:33:23.262Z  part 2  part 2 of 2, 9:16: 4 scenes, 8 shots
+2026-10-24T06:33:23.263Z  part 2  time: start
+2026-10-24T06:33:23.268Z  part 2    8 shots over 33.1 s: shortest 2.3 s, longest 5.7 s
+2026-10-24T06:33:23.269Z  part 2  time: done in 0.0 s
+2026-10-24T06:33:23.269Z  part 2  video: start
+2026-10-24T06:33:23.433Z  part 2  bundle: start
+2026-10-24T06:33:45.693Z  part 2  bundle: done in 22.3 s
+2026-10-24T06:43:22.762Z  part 2    runs\2026-10-23-first-memory\part-2\out\first-memory-part-2-9x16-v3.mp4: 33.10 s of video, 1080x1920, in 574.5 s (17.36 s per video second)
+2026-10-24T06:43:22.766Z  part 2    runs\2026-10-23-first-memory\part-2\out\first-memory-part-2-9x16-v3.srt
+2026-10-24T06:43:22.841Z  part 2  video: done in 599.6 s
+2026-10-24T06:43:55.113Z  part 2  part 2 of 2, 9:16: 4 scenes, 8 shots
+2026-10-24T06:43:55.115Z  part 2  stills: start
+2026-10-24T06:43:55.140Z  part 2  bundle: start
+2026-10-24T06:44:09.239Z  part 2  bundle: done in 14.1 s
+2026-10-24T06:44:25.167Z  part 2    8 stills in runs\2026-10-23-first-memory\part-2\stills\9x16
+2026-10-24T06:44:25.649Z  part 2    runs\2026-10-23-first-memory\part-2\stills\colours-9x16.png (the first shot of each of 4 scenes)
+2026-10-24T06:44:26.643Z  part 2    runs\2026-10-23-first-memory\part-2\stills\sheet-9x16-1.png (8 shots, 2 rows)
+2026-10-24T06:44:26.644Z  part 2  stills: done in 31.5 s
+2026-10-24T06:44:45.781Z  output  9:16 full video:
+2026-10-24T06:44:46.283Z  output      mix is already up to date (the plan and the voice have not changed)
+2026-10-24T06:47:09.401Z  output    runs\2026-10-23-first-memory\out\first-memory-9x16-v2.mp4: 70.37 s, 1080x1920
+2026-10-24T06:47:09.402Z  output      ok   The file plays: 1080x1920, 30 pictures a second, 70.4 s, picture and sound both there; played through from start to finish
+2026-10-24T06:47:09.402Z  output      ok   It is as long as its parts together: 70.4 s; its 2 pieces add up to 70.4 s
+2026-10-24T06:47:09.403Z  output      ok   Its pictures are the parts that passed: every frame against first-memory-part-1-9x16-v3.mp4 and first-memory-part-2-9x16-v3.mp4 (the strongest difference is 1 of 255; over 16 would be a different picture)
+2026-10-24T06:47:09.403Z  output      ok   Its sound is the mix made for the whole video: second for second (what is left over is 36 dB under it at most)
+2026-10-24T06:47:09.403Z  output      ok   There is no dead silence: the sound never drops out; the longest pause between words is 2.5 s
+2026-10-24T06:47:09.404Z  output      ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.2 dB (the limit is -1)
+2026-10-24T06:47:09.404Z  output      ok   Nothing drowns the words: 53 sound effects, the loudest of those over words 14 dB under the voice; the music sits 17.3 dB under the voice while someone speaks
+2026-10-24T06:47:09.404Z  output      FIX  Every join and the cover hold up: a strip of frames across the join between parts, and the cover picture
+2026-10-24T06:47:09.405Z  output            problem: the joins and the cover have not been looked at yet
+2026-10-24T06:47:09.405Z  output      to look at: runs\2026-10-23-first-memory\out\look\first-memory-9x16-v2 (each join) and runs\2026-10-23-first-memory\out\first-memory-9x16-v2-cover-side.jpg; then write runs\2026-10-23-first-memory\out\first-memory-9x16-v2.look.json
+2026-10-24T06:47:09.407Z  output  runs\2026-10-23-first-memory\delivery.md
+2026-10-24T06:47:23.745Z  output  9:16 full video:
+2026-10-24T06:47:24.018Z  output    runs\2026-10-23-first-memory\out\first-memory-9x16-v2.mp4: already made from these parts
+2026-10-24T06:47:24.133Z  output  runs\2026-10-23-first-memory\delivery.md
+2026-10-24T06:49:44.440Z  output  9:16 full video:
+2026-10-24T06:49:44.736Z  output    runs\2026-10-23-first-memory\out\first-memory-9x16-v2.mp4: already made from these parts
+2026-10-24T06:49:44.849Z  output  runs\2026-10-23-first-memory\delivery.md
+2026-10-24T11:19:38.961Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-24T11:19:38.986Z  part 1  time: start
+2026-10-24T11:19:39.079Z  part 1    9 shots over 37.2 s: shortest 2.5 s, longest 6.5 s
+2026-10-24T11:19:39.080Z  part 1  time: done in 0.1 s
+2026-10-24T11:19:39.080Z  part 1  stills: start
+2026-10-24T11:19:39.418Z  part 1  bundle: start
+2026-10-24T11:20:31.116Z  part 1  bundle: done in 51.7 s
+2026-10-24T11:21:38.641Z  part 1    9 stills in runs\2026-10-23-first-memory\part-1\stills\9x16
+2026-10-24T11:21:40.141Z  part 1    runs\2026-10-23-first-memory\part-1\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-24T11:21:41.253Z  part 1    runs\2026-10-23-first-memory\part-1\stills\sheet-9x16-1.png (9 shots, 3 rows)
+2026-10-24T11:21:41.254Z  part 1  stills: done in 122.2 s
+2026-10-24T11:21:53.264Z  part 2  part 2 of 2, 9:16: 4 scenes, 8 shots
+2026-10-24T11:21:53.265Z  part 2  time: start
+2026-10-24T11:21:53.345Z  part 2    8 shots over 33.1 s: shortest 2.3 s, longest 5.7 s
+2026-10-24T11:21:53.346Z  part 2  time: done in 0.1 s
+2026-10-24T11:21:53.346Z  part 2  stills: start
+2026-10-24T11:21:53.546Z  part 2  bundle: start
+2026-10-24T11:22:16.439Z  part 2  bundle: done in 22.9 s
+2026-10-24T11:22:35.112Z  part 2    8 stills in runs\2026-10-23-first-memory\part-2\stills\9x16
+2026-10-24T11:22:35.567Z  part 2    runs\2026-10-23-first-memory\part-2\stills\colours-9x16.png (the first shot of each of 4 scenes)
+2026-10-24T11:22:36.447Z  part 2    runs\2026-10-23-first-memory\part-2\stills\sheet-9x16-1.png (8 shots, 2 rows)
+2026-10-24T11:22:36.447Z  part 2  stills: done in 43.1 s
+2026-10-24T11:25:45.261Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-24T11:25:45.262Z  part 1  sound: start
+2026-10-24T11:26:27.870Z  part 1    F:\Video Studio\runs\2026-10-23-first-memory\part-1\audio\mix.wav: 37.24 s, -14.03 LUFS, true peak -1.26 dB, 3 music moods, 27 effects, music -17.4 dB under the voice
+2026-10-24T11:26:27.870Z  part 1  sound: done in 42.6 s
+2026-10-24T11:26:27.870Z  part 1  video: start
+2026-10-24T11:26:27.891Z  part 1  bundle: start
+2026-10-24T11:27:03.154Z  part 1  bundle: done in 35.2 s
+2026-10-24T11:35:54.905Z  part 1    runs\2026-10-23-first-memory\part-1\out\first-memory-part-1-9x16-v4.mp4: 37.27 s of video, 1080x1920, in 503.2 s (13.50 s per video second)
+2026-10-24T11:35:54.949Z  part 1    runs\2026-10-23-first-memory\part-1\out\first-memory-part-1-9x16-v4.srt
+2026-10-24T11:35:55.294Z  part 1  video: done in 567.4 s
+2026-10-24T11:36:39.761Z  part 2  part 2 of 2, 9:16: 4 scenes, 8 shots
+2026-10-24T11:36:39.762Z  part 2  sound: start
+2026-10-24T11:36:58.134Z  part 2    F:\Video Studio\runs\2026-10-23-first-memory\part-2\audio\mix.wav: 33.09 s, -14.01 LUFS, true peak -1.25 dB, 4 music moods, 26 effects, music -17.4 dB under the voice
+2026-10-24T11:36:58.135Z  part 2  sound: done in 18.4 s
+2026-10-24T11:36:58.135Z  part 2  video: start
+2026-10-24T11:36:58.156Z  part 2  bundle: start
+2026-10-24T11:37:21.161Z  part 2  bundle: done in 23.0 s
+2026-10-24T11:47:24.144Z  part 2    runs\2026-10-23-first-memory\part-2\out\first-memory-part-2-9x16-v4.mp4: 33.10 s of video, 1080x1920, in 599.9 s (18.12 s per video second)
+2026-10-24T11:47:24.149Z  part 2    runs\2026-10-23-first-memory\part-2\out\first-memory-part-2-9x16-v4.srt
+2026-10-24T11:47:24.245Z  part 2  video: done in 626.1 s
+2026-10-24T11:48:12.831Z  part 1  part 1 of 2, 9:16: 3 scenes, 9 shots
+2026-10-24T11:48:12.832Z  part 1  stills: start
+2026-10-24T11:48:12.849Z  part 1  bundle: start
+2026-10-24T11:48:27.564Z  part 1  bundle: done in 14.7 s
+2026-10-24T11:48:44.656Z  part 1    9 stills in runs\2026-10-23-first-memory\part-1\stills\9x16
+2026-10-24T11:48:45.044Z  part 1    runs\2026-10-23-first-memory\part-1\stills\colours-9x16.png (the first shot of each of 3 scenes)
+2026-10-24T11:48:46.047Z  part 1    runs\2026-10-23-first-memory\part-1\stills\sheet-9x16-1.png (9 shots, 3 rows)
+2026-10-24T11:48:46.048Z  part 1  stills: done in 33.2 s
+2026-10-24T11:49:16.396Z  part 2  part 2 of 2, 9:16: 4 scenes, 8 shots
+2026-10-24T11:49:16.401Z  part 2  stills: start
+2026-10-24T11:49:16.434Z  part 2  bundle: start
+2026-10-24T11:49:32.760Z  part 2  bundle: done in 16.3 s
+2026-10-24T11:49:56.359Z  part 2    8 stills in runs\2026-10-23-first-memory\part-2\stills\9x16
+2026-10-24T11:49:56.957Z  part 2    runs\2026-10-23-first-memory\part-2\stills\colours-9x16.png (the first shot of each of 4 scenes)
+2026-10-24T11:49:58.041Z  part 2    runs\2026-10-23-first-memory\part-2\stills\sheet-9x16-1.png (8 shots, 2 rows)
+2026-10-24T11:49:58.042Z  part 2  stills: done in 41.6 s
+2026-10-24T11:50:29.419Z  output  9:16 full video:
+2026-10-24T11:50:54.399Z  output      F:\Video Studio\runs\2026-10-23-first-memory\cuts\full\audio\mix.wav: 70.37 s, -14.05 LUFS, true peak -1.21 dB, 6 music moods, 53 effects, music -17.3 dB under the voice
+2026-10-24T11:54:07.250Z  output    runs\2026-10-23-first-memory\out\first-memory-9x16-v3.mp4: 70.37 s, 1080x1920
+2026-10-24T11:54:07.251Z  output      ok   The file plays: 1080x1920, 30 pictures a second, 70.4 s, picture and sound both there; played through from start to finish
+2026-10-24T11:54:07.251Z  output      ok   It is as long as its parts together: 70.4 s; its 2 pieces add up to 70.4 s
+2026-10-24T11:54:07.252Z  output      ok   Its pictures are the parts that passed: every frame against first-memory-part-1-9x16-v4.mp4 and first-memory-part-2-9x16-v4.mp4 (the strongest difference is 1 of 255; over 16 would be a different picture)
+2026-10-24T11:54:07.252Z  output      ok   Its sound is the mix made for the whole video: second for second (what is left over is 36 dB under it at most)
+2026-10-24T11:54:07.253Z  output      ok   There is no dead silence: the sound never drops out; the longest pause between words is 2.5 s
+2026-10-24T11:54:07.304Z  output      ok   The sound is at the right level: loudness -14.0 LUFS, the level video sites play at (the target is -14, give or take 0.5); highest peak -1.2 dB (the limit is -1)
+2026-10-24T11:54:07.304Z  output      ok   Nothing drowns the words: 53 sound effects, the loudest of those over words 14 dB under the voice; the music sits 17.3 dB under the voice while someone speaks
+2026-10-24T11:54:07.304Z  output      FIX  Every join and the cover hold up: a strip of frames across the join between parts, and the cover picture
+2026-10-24T11:54:07.305Z  output            problem: the joins and the cover have not been looked at yet
+2026-10-24T11:54:07.305Z  output      to look at: runs\2026-10-23-first-memory\out\look\first-memory-9x16-v3 (each join) and runs\2026-10-23-first-memory\out\first-memory-9x16-v3-cover-side.jpg; then write runs\2026-10-23-first-memory\out\first-memory-9x16-v3.look.json
+2026-10-24T11:54:07.307Z  output  runs\2026-10-23-first-memory\delivery.md
+2026-10-24T11:54:25.645Z  output  9:16 full video:
+2026-10-24T11:54:25.962Z  output    runs\2026-10-23-first-memory\out\first-memory-9x16-v3.mp4: already made from these parts
+2026-10-24T11:54:26.102Z  output  runs\2026-10-23-first-memory\delivery.md

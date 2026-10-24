@@ -1,5 +1,7 @@
 import { DilemmaArenaVideo, DilemmaWorldVideo } from './part-v';
 import { DrawingLookSheet, DrawingPeopleSheet } from './part-w';
+import { SmallsTest } from './part-x';
+import { MemoryThumb } from '../explainer/MemoryWorld';
 import { FinePrintLooksBSheet, FinePrintLooksSheet } from './part-o';
 import { MotionLooksSheet } from './part-p';
 import { IsoMotionVideo, IsoPalettesSheet } from './part-q';
@@ -499,11 +501,15 @@ export const Sandbox = ({ sheet, bg }: SandboxProps) => {
     'catch-mascots': <MascotSheetVideo />,
     'dilemma-look-world': <DilemmaWorldVideo />,
     'dilemma-look-arena': <DilemmaArenaVideo />,
+    'smalls-test': <SmallsTest />,
     'drawing-look-1': <DrawingLookSheet look={1} />,
     'drawing-look-2': <DrawingLookSheet look={2} />,
     'drawing-look-3': <DrawingLookSheet look={3} />,
     'drawing-people-1': <DrawingPeopleSheet look={1} />,
     'drawing-people-2': <DrawingPeopleSheet look={2} />,
+    'memory-thumb-1': <MemoryThumb option={1} />,
+    'memory-thumb-2': <MemoryThumb option={2} />,
+    'memory-thumb-3': <MemoryThumb option={3} />,
   };
   return (
     <AbsoluteFill style={{ backgroundColor: c.base }}>

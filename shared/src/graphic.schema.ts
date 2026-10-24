@@ -74,7 +74,7 @@ export const SCENE_ITEMS = [
  * things open up to show their inside. Each world has places the camera stops at (`STOPS`) and
  * things that arrive on the words that name them (`THINGS`).
  */
-export const JOURNEY_WORLDS = ['orbit', 'water', 'sunset', 'dive', 'body'] as const;
+export const JOURNEY_WORLDS = ['orbit', 'water', 'sunset', 'dive', 'body', 'memory'] as const;
 export const JOURNEY_STOPS = {
   // The Earth, its GPS satellites, and you on a street with your phone (2026-10-17, "Why Your
   // Phone's Map Needs Einstein"): the phone's screen, you in the street, the clouds over the
@@ -196,6 +196,27 @@ export const JOURNEY_STOPS = {
     'signs',
     'flex',
     'toilet-seat',
+  ],
+  // Your first memory (2026-10-23, "Your First Memory Might Never Have Happened"): you in a
+  // dusk with your memory bubble over you (you, the bubble, the newborn bubble, the age ruler
+  // beside you), the crowd of 6,641 you stand in (near, then all of it); the inside of a
+  // toddler's head (the head, its brain); the pram memory in a sunny garden (from the side,
+  // from above, from inside the pram); the printed photo; the album and the dinner table.
+  memory: [
+    'you',
+    'bubble',
+    'newborn-bubble',
+    'ruler',
+    'crowd-near',
+    'crowd',
+    'head',
+    'toddler-brain',
+    'garden',
+    'pram-above',
+    'pram-inside',
+    'photo-back',
+    'album',
+    'dinner',
   ],
 } as const;
 export const JOURNEY_THINGS = {
@@ -361,6 +382,38 @@ export const JOURNEY_THINGS = {
     'dizzy',
     'plate',
   ],
+  // The memory bubble opening, the pram in it, the picture glitching, the newborn bubble and
+  // its pop; the head opening, the toddler brain, the three age candles, the memory boxes that
+  // fade; the crowd, its yellow four in ten, the brighter 893, your hand going up, pram
+  // bubbles everywhere; the garden view tipping to above, and down into the pram; the bubble
+  // turned over to a printed photo, the album, the dinner table, the collage; the age ruler and
+  // the bubble sinking below three; your eyes closing.
+  memory: [
+    'bubble',
+    'pram',
+    'glitch',
+    'newborn',
+    'pop',
+    'head',
+    'brain',
+    'candles',
+    'boxes',
+    'crowd',
+    'asked',
+    'yellow',
+    'one-or-younger',
+    'hand-up',
+    'prams',
+    'above',
+    'inside',
+    'flip',
+    'album',
+    'dinner',
+    'collage',
+    'ruler',
+    'sink',
+    'eyes-shut',
+  ],
 } as const;
 type JourneyStopName = (typeof JOURNEY_STOPS)[keyof typeof JOURNEY_STOPS][number];
 type JourneyThingName = (typeof JOURNEY_THINGS)[keyof typeof JOURNEY_THINGS][number];
@@ -371,6 +424,7 @@ const JOURNEY_ALL_STOPS = [
     ...JOURNEY_STOPS.sunset,
     ...JOURNEY_STOPS.dive,
     ...JOURNEY_STOPS.body,
+    ...JOURNEY_STOPS.memory,
   ]),
 ] as unknown as readonly [JourneyStopName, ...JourneyStopName[]];
 const JOURNEY_ALL_THINGS = [
@@ -380,6 +434,7 @@ const JOURNEY_ALL_THINGS = [
     ...JOURNEY_THINGS.sunset,
     ...JOURNEY_THINGS.dive,
     ...JOURNEY_THINGS.body,
+    ...JOURNEY_THINGS.memory,
   ]),
 ] as unknown as readonly [JourneyThingName, ...JourneyThingName[]];
 export const JOURNEY_ANCHORS = [
@@ -602,7 +657,8 @@ export const graphicSchema = z.discriminatedUnion('kind', [
         g.show.every(
           (x) =>
             !x.cam ||
-            (g.world === 'body' && (JOURNEY_STOPS.body as readonly string[]).includes(x.cam)),
+            ((g.world === 'body' || g.world === 'memory') &&
+              (JOURNEY_STOPS[g.world] as readonly string[]).includes(x.cam)),
         ),
       { message: "a journey stops only at its own world's stops and shows only its own things" },
     ),

@@ -1,0 +1,24 @@
+{
+  "id": "black-history",
+  "pageName": "Black History",
+  "version": 1,
+  "colors": {
+    "captionEmphasis": "gold",
+    "titleRibbon": "brown",
+    "label": "cream"
+  },
+  "font": "Fredoka",
+  "captions": {
+    "maxLines": 2,
+    "maxWordsPerPage": 4
+  },
+  "watermark": null,
+  "closingCard": null,
+  "defaults": {
+    "format": "black-history",
+    "voice": "history-narrator",
+    "sizes": ["9:16"],
+    "vertical": "full"
+  },
+  "identityMode": "always"
+}

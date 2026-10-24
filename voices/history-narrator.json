@@ -1,0 +1,12 @@
+{
+  "id": "history-narrator",
+  "name": "Black history narrator (provisional)",
+  "description": "The storyteller of Biku's Black history page: a deep, warm, unhurried man's voice, spoken by Chatterbox from a sample of Kokoro am_onyx (the deeper voice of the 2026-10-22 audition, runs/2026-10-22-narrator-audition/). Used for the Robert Smalls test of 2026-10-24, which Biku liked (\"looks good\"); the narrator is still his to pick, so this is provisional. Its own voice, apart from What's the Catch?'s narrator.",
+  "version": 1,
+  "kokoroVoice": "am_onyx",
+  "speed": 0.95,
+  "pauseScale": 1.0,
+  "pronunciations": {},
+  "engine": "chatterbox",
+  "sample": "voices/samples/history-narrator.wav"
+}

@@ -14,7 +14,7 @@
     },
     {
       "mood": "upbeat",
-      "startMs": 23790
+      "startMs": 24590
     }
   ],
   "sfx": [
@@ -31,7 +31,7 @@
       "atMs": 0,
       "gainDb": -9,
       "pan": 0,
-      "seed": 30
+      "seed": 31
     },
     {
       "name": "pop",
@@ -57,7 +57,7 @@
     {
       "name": "crowd-murmur",
       "atMs": 5890,
-      "durationMs": 12170,
+      "durationMs": 12970,
       "gainDb": -3,
       "pan": 0,
       "seed": 2
@@ -92,10 +92,17 @@
     },
     {
       "name": "pop",
-      "atMs": 11773,
+      "atMs": 9807,
       "gainDb": -6,
       "pan": 0,
       "seed": 13
+    },
+    {
+      "name": "pop",
+      "atMs": 11773,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 14
     },
     {
       "name": "blip",
@@ -109,39 +116,39 @@
       "atMs": 12850,
       "gainDb": -8,
       "pan": 0,
-      "seed": 14
+      "seed": 15
     },
     {
       "name": "pop",
       "atMs": 14140,
       "gainDb": -6,
       "pan": 0,
-      "seed": 15
+      "seed": 16
     },
     {
       "name": "blip",
       "atMs": 14773,
       "gainDb": -9,
       "pan": 0,
-      "seed": 16
+      "seed": 17
     },
     {
       "name": "click",
       "atMs": 16240,
       "gainDb": -4,
       "pan": 0,
-      "seed": 17
+      "seed": 18
     },
     {
       "name": "pop",
       "atMs": 17173,
       "gainDb": -6,
       "pan": 0,
-      "seed": 18
+      "seed": 19
     },
     {
       "name": "home",
-      "atMs": 18060,
+      "atMs": 18860,
       "durationMs": 5730,
       "gainDb": -3,
       "pan": 0,
@@ -149,21 +156,21 @@
     },
     {
       "name": "whoosh",
-      "atMs": 18120,
+      "atMs": 18920,
       "gainDb": -8,
-      "pan": 0,
-      "seed": 19
-    },
-    {
-      "name": "pop",
-      "atMs": 19207,
-      "gainDb": -6,
       "pan": 0,
       "seed": 20
     },
     {
+      "name": "pop",
+      "atMs": 20007,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 21
+    },
+    {
       "name": "underwater",
-      "atMs": 23790,
+      "atMs": 24590,
       "durationMs": 17120,
       "gainDb": -3,
       "pan": 0,
@@ -171,73 +178,73 @@
     },
     {
       "name": "whoosh",
-      "atMs": 23850,
+      "atMs": 24650,
       "gainDb": -2,
       "pan": 0,
       "seed": 6
     },
     {
       "name": "pop",
-      "atMs": 26573,
+      "atMs": 27373,
       "gainDb": -6,
-      "pan": 0,
-      "seed": 21
-    },
-    {
-      "name": "whoosh",
-      "atMs": 27382,
-      "gainDb": -8,
       "pan": 0,
       "seed": 22
     },
     {
-      "name": "pop",
-      "atMs": 28673,
-      "gainDb": -6,
+      "name": "whoosh",
+      "atMs": 28182,
+      "gainDb": -8,
       "pan": 0,
       "seed": 23
     },
     {
-      "name": "whoosh",
-      "atMs": 29450,
-      "gainDb": -8,
+      "name": "pop",
+      "atMs": 29473,
+      "gainDb": -6,
       "pan": 0,
       "seed": 24
     },
     {
-      "name": "pop",
-      "atMs": 32473,
-      "gainDb": -6,
+      "name": "whoosh",
+      "atMs": 30250,
+      "gainDb": -8,
       "pan": 0,
       "seed": 25
     },
     {
-      "name": "blip",
+      "name": "pop",
       "atMs": 33273,
-      "gainDb": -9,
+      "gainDb": -6,
       "pan": 0,
       "seed": 26
     },
     {
-      "name": "click",
+      "name": "blip",
       "atMs": 34073,
-      "gainDb": -4,
+      "gainDb": -9,
       "pan": 0,
       "seed": 27
     },
     {
-      "name": "whoosh",
-      "atMs": 35090,
-      "gainDb": -8,
+      "name": "click",
+      "atMs": 34873,
+      "gainDb": -4,
       "pan": 0,
       "seed": 28
     },
     {
-      "name": "pop",
-      "atMs": 38907,
-      "gainDb": -6,
+      "name": "whoosh",
+      "atMs": 35890,
+      "gainDb": -8,
       "pan": 0,
       "seed": 29
+    },
+    {
+      "name": "pop",
+      "atMs": 39707,
+      "gainDb": -6,
+      "pan": 0,
+      "seed": 30
     }
   ],
   "musicGainDb": 0,
